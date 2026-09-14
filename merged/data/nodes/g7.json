@@ -1,0 +1,137 @@
+[
+  {
+    "id": "standardized_weights",
+    "no": 217,
+    "n": "Standardized Weights & Measures",
+    "era": "trade",
+    "cat": "economy",
+    "date": "≈ 5,000 years ago onward, earliest in Egypt and Mesopotamia",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "scale",
+    "l1": "A unit of weight that means the same thing in every market.",
+    "l2": "Trade beyond a small circle of trust needs a shared standard, not just mutual goodwill — a trader from one city has to be able to check a merchant's weights against a known reference. States backed this with enforcement: inspected weight sets, stamped denominations, and penalties for short-weighting. Once weight and length are standardized, price comparison, taxation and large contracts between strangers all become practical.",
+    "l3": "Sets of stone and bronze weights, calibrated against each other and often stamped with a denomination, survive by the thousands from Mesopotamia, Egypt, the Indus Valley and the Aegean. Comparing weight sets across sites is how archaeologists reconstruct which regions shared a trading standard.",
+    "ev": "Calibrated weight sets; stamped denominations; cross-site weight comparisons",
+    "src": [
+      "penn_weights",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "trade",
+        "number_system"
+      ],
+      [
+        "administration",
+        "number_system"
+      ]
+    ],
+    "tags": [
+      "standard",
+      "measurement"
+    ]
+  },
+  {
+    "id": "banking",
+    "no": 218,
+    "n": "Banking",
+    "era": "trade",
+    "cat": "economy",
+    "date": "Temple and merchant lending ≈ 4,000 years ago onward; formal banks from medieval Italy",
+    "ds": -2000,
+    "rar": "rare",
+    "vis": "vault",
+    "l1": "Other people's money, held, lent and tracked by a third party.",
+    "l2": "Banking separates saving from spending: a deposit can be lent to someone else while the depositor still expects it back on demand. Mesopotamian temples and merchant houses acted as lenders and safekeepers millennia before anything called a 'bank' existed; what changed in medieval Italy was formalizing the ledger, the interest calculation and the cross-city transfer into a specialised trade of its own.",
+    "l3": "Cuneiform loan contracts record interest rates, collateral and repayment terms from the early second millennium BCE. Medieval Italian merchant-bank account books are the direct ancestor of the modern bank statement.",
+    "ev": "Cuneiform loan contracts; medieval Italian merchant-bank ledgers",
+    "src": [
+      "brit_bank",
+      "isac",
+      "met_cuneiform"
+    ],
+    "rec": [
+      [
+        "money",
+        "record_keeping"
+      ],
+      [
+        "money",
+        "accounting"
+      ]
+    ],
+    "tags": [
+      "credit",
+      "institution"
+    ]
+  },
+  {
+    "id": "bookkeeping",
+    "no": 219,
+    "n": "Double-Entry Bookkeeping",
+    "era": "trade",
+    "cat": "economy",
+    "date": "Formalised in print by Luca Pacioli, 1494 (Venice); practised earlier by Italian merchants",
+    "ds": 1494,
+    "rar": "rare",
+    "vis": "ledger-cross",
+    "l1": "Every transaction recorded twice, so the books have to balance.",
+    "l2": "Double-entry turns bookkeeping into a self-checking system: each transaction is entered as a debit in one account and a matching credit in another, so total debits must equal total credits. An error throws the books out of balance and announces itself — exactly what a merchant running several ventures at once needs, and what let businesses grow past the size one person could track from memory.",
+    "l3": "Luca Pacioli's 1494 Summa de arithmetica did not invent the method — Venetian and Genoese merchants were already using it — but his printed description is the earliest surviving full account of the technique, and print is what spread the practice across Europe.",
+    "ev": "Pacioli's Summa de arithmetica (1494); earlier Italian merchant ledgers",
+    "src": [
+      "icaew_pacioli",
+      "brit_bank"
+    ],
+    "rec": [
+      [
+        "accounting",
+        "number_system"
+      ],
+      [
+        "banking",
+        "record_keeping"
+      ]
+    ],
+    "tags": [
+      "ledger",
+      "verification"
+    ]
+  },
+  {
+    "id": "caravan_routes",
+    "no": 220,
+    "n": "Long-Distance Caravan Trade",
+    "era": "trade",
+    "cat": "economy",
+    "date": "Incense and Silk Road networks active from ≈ 2,000–3,000 years ago",
+    "ds": -1000,
+    "rar": "uncommon",
+    "vis": "caravan",
+    "l1": "Goods carried overland across a distance no single trader ever walks start to finish.",
+    "l2": "A caravan route is a relay, not one journey — goods, and the profit taken on them, pass through many hands between source and destination, each leg run by people who know that particular stretch of road. Silk moved west and glass moved east along the same corridors that also carried papermaking, religious ideas and disease.",
+    "l3": "Way-station and caravanserai remains, incense-route forts and wells in Arabia, and Silk Road oasis cities mark the infrastructure that made the relay possible, and let historians reconstruct route capacity and timing.",
+    "ev": "Way-station and caravanserai forts; oasis city excavations",
+    "src": [
+      "bm_silkroads",
+      "bm_collection",
+      "isac"
+    ],
+    "rec": [
+      [
+        "trade",
+        "roads"
+      ],
+      [
+        "trade",
+        "domestication"
+      ]
+    ],
+    "tags": [
+      "network",
+      "distance"
+    ]
+  }
+]

@@ -1,0 +1,236 @@
+'use client';
+
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { MotionConfig } from 'framer-motion';
+import { Landing } from './Landing';
+import { TopBar } from './TopBar';
+import { InventoryRail } from './InventoryRail';
+import { Bench } from './Bench';
+import { ExhibitPanel } from './ExhibitPanel';
+import { GraphView } from './GraphView';
+import { ArchiveView } from './ArchiveView';
+import { Ending } from './Ending';
+import { Glyph } from './Glyph';
+import { ConfirmDialog } from './ConfirmDialog';
+import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
+import { cn } from '@/lib/utils';
+import type { ViewId } from '@/lib/types';
+
+const PHONE = '(max-width:900px)';
+const isPhone = () => window.matchMedia(PHONE).matches;
+
+export function Sandbox() {
+  const [railOpen, setRailOpen] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const s = useSandbox({
+    // a phone has no room for a permanent exhibit column: raise the sheet instead
+    onReveal: () => { if (isPhone()) { setPanelOpen(true); setRailOpen(false); } },
+  });
+  const { engine, version, view, setView, open, clearSlots, setEnding, reset } = s;
+
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [onlyPath, setOnlyPath] = useState(false);
+  const [fitSignal, setFitSignal] = useState(0);
+  const panelReturn = useRef<HTMLElement | null>(null);
+
+  // The world tint follows the furthest era reached — subtle, not a light show.
+  const era = engine.currentEra();
+  useEffect(() => {
+    document.documentElement.style.setProperty('--era-tint', ERA_TINT[era.id] ?? '16,16,17');
+  }, [era.id]);
+
+  // thirteen bands at most — cheap enough to derive on every render
+  const eraTotal = engine.db.eras.length;
+  const strata = engine.erasReached().map((e, i) => ({
+    id: e.id, y: 100 - (i + 1) * (100 / eraTotal), h: 100 / eraTotal, op: 0.05 + (i / eraTotal) * 0.07,
+  }));
+
+  /** Switching view closes any drawer: an exhibit never follows you between views. */
+  const showView = useCallback((v: ViewId) => {
+    setView(v);
+    setPanelOpen(false);
+    panelReturn.current = null;
+  }, [setView]);
+
+  /** Beside the bench the exhibit is a column that is always there. Over the
+   *  graph or the archive — and on a phone — it has to open as a drawer. */
+  const openExhibit = useCallback((id: string) => {
+    open(id);
+    if (isPhone() || view !== 'work') {
+      if (!panelOpen && document.activeElement instanceof HTMLElement) panelReturn.current = document.activeElement;
+      setPanelOpen(true);
+      if (isPhone()) setRailOpen(false);
+    }
+  }, [open, view, panelOpen]);
+
+  const closePanel = useCallback(() => {
+    setPanelOpen(false);
+    const back = panelReturn.current;
+    panelReturn.current = null;
+    if (back && document.contains(back)) back.focus();
+  }, []);
+
+  const confirmReset = useCallback(() => {
+    setConfirmOpen(false);
+    reset();
+    setPanelOpen(false);
+    setOnlyPath(false);
+  }, [reset]);
+  const cancelReset = useCallback(() => setConfirmOpen(false), []);
+
+  // one keyboard listener for the page; it reads the latest state through a ref
+  const keys = useRef({ confirmOpen, closePanel, clearSlots, setEnding });
+  useEffect(() => { keys.current = { confirmOpen, closePanel, clearSlots, setEnding }; });
+  useEffect(() => {
+    const onKey = (ev: KeyboardEvent) => {
+      const k = keys.current;
+      if (k.confirmOpen) return;                    // the dialog handles its own keys
+      if (ev.key === 'Escape') {
+        k.closePanel(); setRailOpen(false); k.setEnding(null); k.clearSlots();
+        return;
+      }
+      if (ev.key === '/' && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
+        const t = ev.target as HTMLElement | null;
+        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+        ev.preventDefault();
+        document.getElementById('s-q')?.focus();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  const resumed = engine.resumed ? engine.stats().core : 0;
+
+  return (
+    <MotionConfig reducedMotion="user">
+      <div id="ground" aria-hidden="true" />
+      <div id="strata" aria-hidden="true">
+        <svg width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          {strata.map(b => (
+            <g key={b.id}>
+              <rect x="0" y={`${b.y}%`} width="100%" height={`${b.h}%`}
+                fill={`rgb(${ERA_TINT[b.id]})`} opacity={b.op} />
+              <line x1="0" y1={`${b.y}%`} x2="100%" y2={`${b.y}%`}
+                stroke="rgba(233,229,221,.05)" strokeWidth="1" />
+            </g>
+          ))}
+        </svg>
+      </div>
+      <div id="grain" aria-hidden="true" />
+
+      <Landing db={engine.db} gone={s.entered} resumedCount={resumed > 4 ? resumed : 0} onBegin={s.enter} />
+
+      <main id="app" className={cn(s.entered && 'on')}>
+        <TopBar
+          engine={engine}
+          view={view}
+          railOpen={railOpen}
+          onView={showView}
+          onOpen={openExhibit}
+          onReset={() => setConfirmOpen(true)}
+          onMenu={() => setRailOpen(o => !o)}
+        />
+
+        <div id="views" data-current={view}>
+          <section className={'view' + (view === 'work' ? ' on' : '')} id="v-work" role="tabpanel" aria-label="Workspace">
+            <InventoryRail
+              engine={engine}
+              open={railOpen}
+              slotA={s.slotA}
+              slotB={s.slotB}
+              onPick={id => { s.place(id); if (isPhone()) setRailOpen(false); }}
+              onDragStart={() => { /* payload is set on the element itself */ }}
+            />
+            <Bench
+              engine={engine}
+              slotA={s.slotA}
+              slotB={s.slotB}
+              result={s.result}
+              hint={s.hint}
+              onDrop={s.drop}
+              onClear={which => {
+                // clearing the first slot slides the second one across, as in the single-file build
+                if (which === 'a') { s.setSlotA(s.slotB); s.setSlotB(null); } else { s.setSlotB(null); }
+              }}
+              onOpen={openExhibit}
+            />
+          </section>
+
+          <GraphView
+            engine={engine}
+            version={version}
+            active={view === 'graph'}
+            onlyPath={onlyPath}
+            onOnlyPathChange={setOnlyPath}
+            fitSignal={fitSignal}
+            onOpen={openExhibit}
+          />
+          <ArchiveView engine={engine} active={view === 'arch'} onOpen={openExhibit} />
+
+          {/* outside the three views: a column beside the bench, a drawer over the
+              graph and the archive, a bottom sheet on a phone */}
+          <ExhibitPanel
+            engine={engine}
+            node={s.focus}
+            open={panelOpen}
+            onOpen={openExhibit}
+            onClose={closePanel}
+          />
+        </div>
+      </main>
+
+      <nav id="mtabs" aria-label="Views">
+        {([
+          ['work', 'Bench'], ['graph', 'Graph'], ['arch', 'Archive'],
+        ] as [ViewId, string][]).map(([id, label]) => (
+          <button key={id} aria-selected={view === id} onClick={() => showView(id)}>
+            <svg width="17" height="17" viewBox="0 0 20 20" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+              {id === 'work' && <><rect x="2" y="6" width="7" height="8" /><rect x="11" y="6" width="7" height="8" /></>}
+              {id === 'graph' && <><circle cx="4" cy="10" r="2" /><circle cx="16" cy="5" r="2" /><circle cx="16" cy="15" r="2" /><path d="M6 9l8-3M6 11l8 3" /></>}
+              {id === 'arch' && <><rect x="3" y="3" width="6" height="6" /><rect x="11" y="3" width="6" height="6" /><rect x="3" y="11" width="6" height="6" /><rect x="11" y="11" width="6" height="6" /></>}
+            </svg>
+            <span className="mono" style={{ fontSize: 9 }}>{label}</span>
+          </button>
+        ))}
+      </nav>
+
+      {s.ending && (
+        <Ending
+          engine={engine}
+          node={s.ending}
+          onClose={() => setEnding(null)}
+          onSeePath={() => {
+            // same as the single-file build: the graph, filtered to your path, framed on it
+            setEnding(null);
+            showView('graph');
+            setOnlyPath(true);
+            setFitSignal(n => n + 1);
+          }}
+        />
+      )}
+
+      <ConfirmDialog
+        open={confirmOpen}
+        title="Start over"
+        body="Start again from four raw materials? Your current path will be cleared."
+        cancelLabel="Keep playing"
+        confirmLabel="Clear my path"
+        onCancel={cancelReset}
+        onConfirm={confirmReset}
+      />
+
+      <div id="toasts" aria-live="polite">
+        {s.toasts.map(t => (
+          <div key={t.key} className={cn('toast', t.kind)}>
+            <Glyph node={t.node} />
+            <div>
+              <div className="tt">{t.node.n}</div>
+              <div className="ts mono">{t.kind === 'hidden' ? 'Hidden find' : 'Discovered'}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </MotionConfig>
+  );
+}

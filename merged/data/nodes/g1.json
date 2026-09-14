@@ -1,0 +1,1324 @@
+[
+  {
+    "id": "stone",
+    "no": 1,
+    "n": "Stone",
+    "era": "origins",
+    "cat": "material",
+    "date": "Older than us",
+    "ds": -4000000,
+    "rar": "common",
+    "primitive": true,
+    "vis": "cobble",
+    "l1": "A hard lump of rock. Heavy, dull, and one of the most consequential objects in this entire graph.",
+    "l2": "Rock is not a technology. It becomes one the moment somebody notices that it breaks in predictable ways. Certain stones — flint, chert, obsidian, quartzite — fracture along smooth curved surfaces when struck at the right angle, which means their edges can be controlled rather than merely found. Almost every tool tradition of the next three million years begins with someone reading that property correctly.",
+    "l3": "Stone is the reason we can see deep prehistory at all. Wood, hide, fibre and skin rot; knapped stone does not. The entire early archaeological record is biased toward whatever survives, which is mostly rock and bone — a distortion researchers call preservation bias, and one worth remembering before concluding that early people 'only' had stone.",
+    "ev": "Geology and archaeological site material",
+    "src": [
+      "si_ho_tools",
+      "bm_collection"
+    ],
+    "rec": [],
+    "tags": [
+      "raw",
+      "lithic",
+      "starting"
+    ]
+  },
+  {
+    "id": "wood",
+    "no": 2,
+    "n": "Wood",
+    "era": "origins",
+    "cat": "material",
+    "date": "Older than us",
+    "ds": -4000000,
+    "rar": "common",
+    "primitive": true,
+    "vis": "branch",
+    "l1": "Strong along the grain, easy to shape, and almost invisible in the archaeological record.",
+    "l2": "Wood is the material early technology was probably mostly made of, and the one we have almost no evidence for. It carries load, holds an edge poorly but a point well, floats, and burns. Handles, hafts, shafts, frames, containers, traps and boats are all wood problems before they are anything else.",
+    "l3": "Waterlogged and anaerobic sites preserve wood when normal ground does not. The Schöningen spears from Germany — worked wooden throwing spears roughly 300,000 years old — survived because they sat in wet lake sediment. Finds like these show that the wooden component of early toolkits was sophisticated, and that its usual absence is about preservation, not ability.",
+    "ev": "Waterlogged-site finds; Schöningen spears",
+    "src": [
+      "si_ho_food",
+      "nhm_humevo"
+    ],
+    "rec": [],
+    "tags": [
+      "raw",
+      "organic",
+      "starting"
+    ],
+    "caution": "Absence of wooden artefacts is evidence of decay, not of simplicity."
+  },
+  {
+    "id": "bone",
+    "no": 3,
+    "n": "Bone",
+    "era": "origins",
+    "cat": "material",
+    "date": "Older than us",
+    "ds": -4000000,
+    "rar": "common",
+    "primitive": true,
+    "vis": "longbone",
+    "l1": "A material that arrives as a by-product of eating and turns out to be excellent for making things.",
+    "l2": "Bone, antler and ivory are tougher and less brittle than stone. They take a fine point without shattering, which is exactly what stone cannot do. Bone also stores marrow — a dense fat source that is only accessible if you can break the shaft open, which requires a tool and a technique.",
+    "l3": "Cut marks and percussion damage on animal bone are among the clearest early signals of tool use, because a stone edge leaves a V-shaped groove that a carnivore tooth does not. Zooarchaeologists distinguish the two under magnification, and the pattern of marks reveals butchery order, not just presence.",
+    "ev": "Cut-marked faunal remains; worked bone tools",
+    "src": [
+      "si_ho_food",
+      "si_ho_tools"
+    ],
+    "rec": [],
+    "tags": [
+      "raw",
+      "organic",
+      "starting"
+    ]
+  },
+  {
+    "id": "fiber",
+    "no": 4,
+    "n": "Fibre",
+    "era": "origins",
+    "cat": "material",
+    "date": "Older than us",
+    "ds": -4000000,
+    "rar": "common",
+    "primitive": true,
+    "vis": "fibre-bundle",
+    "l1": "Bark, sinew, gut, vine, hair. Individually weak. Twisted together, transformative.",
+    "l2": "A single plant fibre snaps under almost no load. Several fibres twisted in opposition lock against each other by friction and become a cord that can hold a person's weight. This is the first structural material humans manufactured rather than collected, and it is the precondition for hafting, nets, traps, bows, sails and sewn clothing.",
+    "l3": "Fibre survives even less often than wood. A twisted three-ply cord fragment found on a Neanderthal-associated stone flake at Abri du Maras, France, is one of the very few direct traces, and it is only a few centimetres long. Most of the evidence is indirect: impressions in clay, wear patterns on tools, and objects that could not function without cordage.",
+    "ev": "Rare direct cord fragments; impressions; use-wear",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "nhm_humevo"
+    ],
+    "rec": [],
+    "tags": [
+      "raw",
+      "organic",
+      "starting"
+    ],
+    "caution": "Direct fibre evidence is extremely rare; most inferences come from indirect traces."
+  },
+  {
+    "id": "sharp_stone",
+    "no": 5,
+    "n": "Sharp Stone",
+    "era": "origins",
+    "cat": "material",
+    "date": "≈ 3.3 million years ago",
+    "ds": -3300000,
+    "rar": "common",
+    "vis": "edge-fragment",
+    "l1": "A rock with an edge. Not yet designed — but no longer just a rock.",
+    "l2": "The gap between a naturally broken stone and a deliberately broken one is the whole beginning of technology. A sharp edge lets a soft-handed, blunt-toothed primate cut through hide it could not otherwise open. That single capability changes what counts as food.",
+    "l3": "Lomekwi 3 in Kenya has produced very early flaked stone dated to roughly 3.3 million years ago, older than the genus Homo. Interpretation is debated — distinguishing intentional flaking from natural fracture is genuinely hard, and researchers argue about it in print, which is how the question should be settled.",
+    "ev": "Early flaked stone assemblages",
+    "src": [
+      "si_ho_tools",
+      "si_milestones"
+    ],
+    "rec": [
+      [
+        "stone",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "lithic",
+      "edge"
+    ],
+    "caution": "The earliest claimed stone tools are contested; natural fracture can mimic deliberate flaking."
+  },
+  {
+    "id": "stone_flake",
+    "no": 6,
+    "n": "Stone Flake",
+    "era": "origins",
+    "cat": "technique",
+    "date": "≈ 3.3–2.6 million years ago",
+    "ds": -2600000,
+    "rar": "common",
+    "vis": "flake",
+    "l1": "The piece that comes off — and often the piece you actually wanted.",
+    "l2": "Knapping produces two things: a core and the flakes struck from it. For a long time archaeologists assumed the core was the tool. Increasingly the flakes look like the point of the exercise: thin, extremely sharp, disposable, and producible in quantity from one good cobble. A working edge you can make ten of is a different kind of technology from one you have to preserve.",
+    "l3": "Refitting studies — physically reassembling scattered flakes back onto their core like a three-dimensional jigsaw — reconstruct the exact sequence of blows. They show planning, error correction, and in some cases a knapper stopping and restarting, which is about as close to watching the process as archaeology gets.",
+    "ev": "Refitted lithic assemblages; Oldowan industry",
+    "src": [
+      "si_ho_tools",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "sharp_stone",
+        "stone"
+      ],
+      [
+        "stone",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "lithic",
+      "oldowan"
+    ]
+  },
+  {
+    "id": "stone_tool",
+    "no": 7,
+    "n": "Stone Tool",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 2.6 million years ago onward",
+    "ds": -2600000,
+    "rar": "common",
+    "vis": "handaxe",
+    "l1": "A shaped object made to do a job. The first thing in this graph that was designed.",
+    "l2": "A shaped tool implies something a flake does not: a mental template held before the work begins, and maintained across dozens of blows. The Acheulean handaxe holds roughly the same symmetrical form across a million years and three continents — a persistence that says the design was being taught, not reinvented.",
+    "l3": "Experimental archaeology tests this directly. Modern knappers learn to reproduce the forms, and researchers measure how long the skill takes to acquire and whether it can be learned by imitation alone. The results feed a live debate about when teaching — as opposed to copying — became part of how humans transmit skill.",
+    "ev": "Acheulean assemblages; experimental replication",
+    "src": [
+      "si_ho_tools",
+      "si_milestones",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "stone_flake",
+        "wood"
+      ],
+      [
+        "stone_flake",
+        "bone"
+      ],
+      [
+        "stone",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "lithic",
+      "design",
+      "acheulean"
+    ],
+    "caution": "'Tool use' is not unique to humans; chimpanzees, crows and otters use tools. Deliberate shaping to a repeated template is the sharper distinction."
+  },
+  {
+    "id": "cutting",
+    "no": 8,
+    "n": "Cutting",
+    "era": "origins",
+    "cat": "technique",
+    "date": "≈ 3.3 million years ago onward",
+    "ds": -3300000,
+    "rar": "common",
+    "vis": "incision",
+    "l1": "Separating material along a line. Boring, until you consider what it unlocks.",
+    "l2": "Human teeth and nails cannot open a large carcass. A stone edge can. Cutting converts a dead animal from an inaccessible object into food, hide, sinew and bone — four materials at once. It also makes fibre processing possible, which is the doorway to cordage.",
+    "l3": "Microwear analysis reads the polish and striations left on a tool's edge under high magnification, and different worked materials leave different signatures — hide, wood, bone and plant each polish stone differently. This lets researchers say what a tool cut, not merely that it was used.",
+    "ev": "Microwear and residue analysis",
+    "src": [
+      "si_ho_food",
+      "si_ho_tools"
+    ],
+    "rec": [
+      [
+        "stone_flake",
+        "fiber"
+      ],
+      [
+        "stone_tool",
+        "fiber"
+      ],
+      [
+        "stone",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "technique",
+      "processing"
+    ]
+  },
+  {
+    "id": "scraping",
+    "no": 9,
+    "n": "Scraping",
+    "era": "origins",
+    "cat": "technique",
+    "date": "≈ 2 million years ago onward",
+    "ds": -2000000,
+    "rar": "common",
+    "vis": "scraper",
+    "l1": "Removing material from a surface without cutting through it.",
+    "l2": "Scraping is what makes a hide into leather and a branch into a shaft. It is slow, repetitive work, and the tools show it: scrapers are among the most resharpened and longest-curated objects in early assemblages. Someone was carrying these around rather than making a new one each time.",
+    "l3": "Edge angle is the tell. Cutting edges are acute; scraping edges are steep, typically 60–90 degrees, because a steep edge removes material without digging in. Assemblages can be sorted by function on this basis before any wear analysis is done.",
+    "ev": "Edge-angle analysis; curated scraper assemblages",
+    "src": [
+      "si_ho_tools",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "stone_tool",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "technique",
+      "hide",
+      "processing"
+    ]
+  },
+  {
+    "id": "hammering",
+    "no": 10,
+    "n": "Hammering",
+    "era": "origins",
+    "cat": "technique",
+    "date": "≈ 3.3 million years ago onward",
+    "ds": -3300000,
+    "rar": "common",
+    "vis": "hammerstone",
+    "l1": "Applying force through a hard object. The oldest way to make something happen.",
+    "l2": "Percussion does two jobs. It makes other tools, since knapping is controlled hammering. And it opens things that resist opening — nuts, bone shafts, shellfish. Marrow and brain are dense fat and calorie sources available to nobody who cannot break bone.",
+    "l3": "Hammerstones are identifiable by battering damage on their ends, and pitted anvil stones show the reciprocal wear. At some sites the two are found together with broken nutshell, which lets researchers reconstruct a specific processing station rather than a general activity.",
+    "ev": "Battered hammerstones; anvil stones; percussion marks",
+    "src": [
+      "si_ho_food",
+      "si_ho_tools"
+    ],
+    "rec": [
+      [
+        "stone",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "technique",
+      "percussion"
+    ]
+  },
+  {
+    "id": "composite_tool",
+    "no": 11,
+    "n": "Composite Tool",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 300,000 years ago onward",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "hafted-point",
+    "l1": "Two or more materials joined so that each does what the other cannot.",
+    "l2": "A stone point is sharp but cannot be thrown far. A wooden shaft carries distance but has no edge. Joined, they are a weapon that works at a range where the animal cannot reach you. Hafting also multiplies the force delivered to a small edge, which is why a hafted axe cuts wood that a hand-held flake cannot.",
+    "l3": "Adhesive residues survive better than the bindings themselves. Birch-bark tar on Middle Palaeolithic stone points is direct evidence of hafting — and producing that tar requires heating bark under controlled, low-oxygen conditions, which is a multi-step chemical process in its own right.",
+    "ev": "Adhesive residues; impact fractures on points",
+    "src": [
+      "si_ho_tools",
+      "si_ho_neander"
+    ],
+    "rec": [
+      [
+        "stone_tool",
+        "binding"
+      ]
+    ],
+    "tags": [
+      "assembly",
+      "hafting"
+    ]
+  },
+  {
+    "id": "cordage",
+    "no": 12,
+    "n": "Cordage",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 50,000 years ago or earlier",
+    "ds": -50000,
+    "rar": "common",
+    "vis": "twisted-cord",
+    "l1": "Fibres twisted against each other until friction makes them strong.",
+    "l2": "Cordage is an invisible keystone. Nets, snares, bows, fishing lines, sewn clothing, hafted tools, rafts and carrying bags all require it, and none of them survive without it. When you find any of those, you have found cordage by implication.",
+    "l3": "The Abri du Maras cord fragment — three bundles of fibre twisted counter to the ply direction — is a rare direct find. The counter-twist matters: it is the mechanical principle that stops the cord unravelling, and it is not obvious. Somebody worked it out.",
+    "ev": "Rare cord fragments; tool impressions",
+    "src": [
+      "source_required",
+      "nhm_humevo",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "fiber",
+        "fiber"
+      ],
+      [
+        "fiber",
+        "cutting"
+      ]
+    ],
+    "tags": [
+      "fibre",
+      "structural"
+    ]
+  },
+  {
+    "id": "binding",
+    "no": 13,
+    "n": "Binding",
+    "era": "origins",
+    "cat": "technique",
+    "date": "≈ 300,000 years ago onward",
+    "ds": -300000,
+    "rar": "common",
+    "vis": "lashing",
+    "l1": "Holding two things together permanently enough to hit something with them.",
+    "l2": "Lashing solves a mechanical problem that looks trivial and is not: a joint must resist forces from several directions at once while absorbing shock. Get it wrong and the point flies off on the first strike. Most binding traditions combine cord with adhesive because neither alone survives impact.",
+    "l3": "Impact fractures on stone points show they were used as projectiles. When those points also carry adhesive traces, the inference to a bound, hafted weapon is direct rather than assumed.",
+    "ev": "Adhesive traces; impact fracture patterns",
+    "src": [
+      "si_ho_tools"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "wood"
+      ],
+      [
+        "cordage",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "technique",
+      "joining"
+    ]
+  },
+  {
+    "id": "sewing",
+    "no": 14,
+    "n": "Sewing",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 45,000 years ago onward",
+    "ds": -45000,
+    "rar": "uncommon",
+    "vis": "stitch",
+    "l1": "Joining flexible sheets with a thread that passes through them.",
+    "l2": "Draped hide keeps out some cold. Sewn, fitted clothing keeps out much more, because it traps a still layer of air against the body and closes the gaps at neck, wrist and ankle. This is the difference between surviving a cold night and surviving a cold latitude year-round.",
+    "l3": "Eyed needles are the diagnostic artefact — a needle without an eye is an awl, and awls only pierce. The appearance of eyed needles in the archaeological record is used as a proxy for tailored clothing, and it correlates with expansion into colder environments.",
+    "ev": "Eyed bone needles; awls",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "nhm_humevo"
+    ],
+    "rec": [
+      [
+        "needle",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "textile",
+      "cold"
+    ]
+  },
+  {
+    "id": "needle",
+    "no": 15,
+    "n": "Needle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 45,000 years ago onward",
+    "ds": -45000,
+    "rar": "uncommon",
+    "vis": "needle",
+    "l1": "A thin shaft with a hole drilled through one end. Deceptively difficult to make.",
+    "l2": "Making a needle means grinding bone to a fine taper without snapping it, then drilling an eye through a shaft only a couple of millimetres across. The failure rate is high and the finished object is fragile. People made them anyway, which tells you what tailored clothing was worth.",
+    "l3": "Broken needle blanks are as informative as finished ones — they show the production sequence and where it usually failed. Some sites yield far more blanks than complete needles, which is the signature of a difficult craft being practised.",
+    "ev": "Finished needles and failed blanks",
+    "src": [
+      "source_required",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "bone",
+        "sharp_stone"
+      ],
+      [
+        "bone",
+        "scraping"
+      ],
+      [
+        "bone",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "bone",
+      "precision"
+    ]
+  },
+  {
+    "id": "clothing",
+    "no": 16,
+    "n": "Clothing",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 100,000–45,000 years ago",
+    "ds": -70000,
+    "rar": "uncommon",
+    "vis": "garment",
+    "l1": "A portable microclimate worn on the body.",
+    "l2": "Clothing is thermal engineering. It decouples where a hairless tropical primate can live from where its physiology allows, and that decoupling is what puts humans in Siberia, on high plateaus and eventually across an ice-age land bridge. It is also, almost immediately, a social signal.",
+    "l3": "One of the more inventive proxies is genetic: clothing lice diverged from head lice at some point, and that divergence can only happen once there are clothes to live in. Molecular dating of the split gives a rough window, though the error bars are wide and the method is debated.",
+    "ev": "Eyed needles; hide-working tools; clothing-louse divergence",
+    "src": [
+      "nhm_humevo",
+      "si_ho_sapiens"
+    ],
+    "rec": [
+      [
+        "sewing",
+        "fiber"
+      ],
+      [
+        "sewing",
+        "scraping"
+      ]
+    ],
+    "tags": [
+      "thermal",
+      "body"
+    ],
+    "caution": "Dates for the origin of clothing rest largely on indirect proxies and remain uncertain."
+  },
+  {
+    "id": "shelter",
+    "no": 17,
+    "n": "Shelter",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 400,000 years ago onward",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "frame-shelter",
+    "l1": "A constructed space that is warmer, drier and safer than outside it.",
+    "l2": "A built shelter is different in kind from an occupied cave. It can be placed where the resources are rather than where the geology allows, which means the landscape stops dictating the settlement pattern. It also creates the first interior — a bounded space with an inside and an outside, which turns out to matter socially as much as thermally.",
+    "l3": "Structures are read from their traces rather than their walls: post-holes, stone rings weighing down a cover, concentrations of debris that stop abruptly at a line. Mammoth-bone structures on the Russian plain survive because the frame itself was mineral.",
+    "ev": "Post-holes; stone circles; mammoth-bone structures",
+    "src": [
+      "si_ho_hearths"
+    ],
+    "rec": [
+      [
+        "wood",
+        "binding"
+      ],
+      [
+        "wood",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "built",
+      "space"
+    ]
+  },
+  {
+    "id": "spear",
+    "no": 18,
+    "n": "Spear",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 400,000 years ago onward",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "spear",
+    "l1": "A point held at the far end of a shaft. Reach as a weapon.",
+    "l2": "The spear changes the geometry of hunting. Distance means the hunter can act before the animal can, and a thrown spear extends that further. Everything about human hunting — cooperation, planning, tracking — is built on top of a tool that buys separation.",
+    "l3": "The Schöningen spears are the strongest evidence: worked wooden throwing spears roughly two metres long, weighted forward like a modern javelin, from a site with butchered horse remains. They are around 300,000 years old and they were engineered, not merely sharpened.",
+    "ev": "Schöningen wooden spears; impact-fractured points",
+    "src": [
+      "si_ho_food",
+      "si_ho_heidel"
+    ],
+    "rec": [
+      [
+        "composite_tool",
+        "wood"
+      ],
+      [
+        "wood",
+        "sharp_stone"
+      ],
+      [
+        "wood",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "weapon",
+      "reach"
+    ]
+  },
+  {
+    "id": "hunting",
+    "no": 19,
+    "n": "Hunting",
+    "era": "origins",
+    "cat": "culture",
+    "date": "Debated; clear evidence by ≈ 400,000 years ago",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "pursuit",
+    "l1": "Coordinated pursuit of animals that do not wish to be caught.",
+    "l2": "Hunting is less a technology than an organisational problem. It requires shared intention across several people, a plan that survives contact with a moving animal, and a division of the result afterwards that everyone accepts. The weapons are the easy part.",
+    "l3": "Distinguishing hunting from scavenging is a real methodological fight. The evidence is in the details: whether stone cut marks lie above or beneath carnivore tooth marks, and whether the prey are prime adults — which scavengers rarely get — or the old and sick.",
+    "ev": "Cut-mark stratigraphy; prey age profiles",
+    "src": [
+      "si_ho_food",
+      "si_ho_heidel"
+    ],
+    "rec": [
+      [
+        "spear",
+        "cooperation"
+      ],
+      [
+        "spear",
+        "planning"
+      ]
+    ],
+    "tags": [
+      "subsistence",
+      "social"
+    ],
+    "caution": "Early hominin meat-eating may have been largely scavenging; the hunting/scavenging balance is actively debated."
+  },
+  {
+    "id": "fishing",
+    "no": 20,
+    "n": "Fishing",
+    "era": "origins",
+    "cat": "culture",
+    "date": "≈ 40,000 years ago or earlier",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "hook-line",
+    "l1": "Taking food from water, where you cannot see or reach it.",
+    "l2": "Fish are a dense, renewable protein source that most predators on land cannot access. Exploiting them requires tools that work at a distance through an opaque medium — hooks, lines, nets, traps, weirs — and it rewards settling near water rather than following herds.",
+    "l3": "Fish bone is small and fragile, so it is missed unless excavators wet-sieve through fine mesh. Where sieving is done, fish frequently turn out to be a much larger part of the diet than the hand-collected assemblage suggested. Stable isotope analysis of human bone gives an independent check.",
+    "ev": "Sieved fish remains; shell hooks; isotope signatures",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "water_crossing",
+        "spear"
+      ],
+      [
+        "cordage",
+        "bone"
+      ],
+      [
+        "bone",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "subsistence",
+      "aquatic"
+    ]
+  },
+  {
+    "id": "fire",
+    "no": 21,
+    "n": "Fire",
+    "era": "fire",
+    "cat": "energy",
+    "date": "Contested; ≈ 1 million years ago",
+    "ds": -1000000,
+    "rar": "common",
+    "vis": "flame",
+    "l1": "A chemical reaction that releases stored energy as heat and light.",
+    "l2": "Fire is the first external energy source humans directed. Everything downstream that involves changing a material by heating it — cooking, pottery, smelting, glass, steam, engines — is a descendant of somebody learning to keep a flame alive on purpose.",
+    "l3": "Proving control rather than opportunism is the hard part, since lightning also makes fire. The evidence archaeologists look for is repetition and containment: the same spot burned many times, heat-altered sediment, ash lenses with structure, burnt bone in a bounded area.",
+    "ev": "Burnt sediment; ash lenses; heat-altered artefacts",
+    "src": [
+      "si_ho_hearths",
+      "si_ho_firestone"
+    ],
+    "rec": [
+      [
+        "wood",
+        "wood"
+      ],
+      [
+        "stone_flake",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "energy",
+      "transformation"
+    ],
+    "caution": "The date of first controlled fire is genuinely contested; claims range across hundreds of thousands of years and depend on how 'control' is defined."
+  },
+  {
+    "id": "controlled_fire",
+    "no": 22,
+    "n": "Controlled Fire",
+    "era": "fire",
+    "cat": "energy",
+    "date": "Widespread by ≈ 400,000 years ago",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "hearth",
+    "l1": "Fire kept in one place, at a chosen intensity, for as long as you want it.",
+    "l2": "Control is the whole thing. A fire you can start, move, bank overnight and rebuild is infrastructure. It extends the usable day past sunset, holds predators off, makes a cold night survivable, and — not trivially — creates a fixed place people gather around every evening.",
+    "l3": "A hearth is recognisable as a hearth by structure: reddened and cracked sediment beneath, a ring or scatter of stones, ash and charcoal in a bounded shape, and repeated use in the same spot across occupation layers. One burn is a fire; twenty in the same square metre is a hearth.",
+    "ev": "Structured hearths; repeated burning in situ",
+    "src": [
+      "si_ho_hearths",
+      "si_ho_firestone"
+    ],
+    "rec": [
+      [
+        "fire",
+        "stone"
+      ],
+      [
+        "fire",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "energy",
+      "hearth"
+    ]
+  },
+  {
+    "id": "cooking",
+    "no": 23,
+    "n": "Cooking",
+    "era": "fire",
+    "cat": "technology",
+    "date": "≈ 400,000 years ago or earlier",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "roast",
+    "l1": "Using heat to change food before eating it.",
+    "l2": "Heat does chemical work that the gut would otherwise have to do: it gelatinises starch, denatures protein, softens tissue and kills parasites. The net effect is more usable energy per bite and less time spent chewing. Cooking also makes some plants edible that are toxic raw, which enlarges the menu considerably.",
+    "l3": "Burnt bone and charred plant remains sit in hearth contexts. Dental wear and calculus give an independent line — trapped starch granules in ancient dental plaque can be identified to plant type, and cooked starch looks different from raw under the microscope.",
+    "ev": "Charred plant remains; burnt bone; dental calculus",
+    "src": [
+      "si_ho_hearths",
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "controlled_fire",
+        "food_processing"
+      ],
+      [
+        "controlled_fire",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "food",
+      "energy"
+    ],
+    "caution": "The 'cooking hypothesis' linking fire to brain expansion is influential but not settled; the timing of the two does not align cleanly."
+  },
+  {
+    "id": "smoke",
+    "no": 24,
+    "n": "Smoke",
+    "era": "fire",
+    "cat": "technique",
+    "date": "With controlled fire",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "smoke-plume",
+    "l1": "The unburnt part of the fire — and a useful substance in its own right.",
+    "l2": "Smoke preserves meat and fish by drying them and depositing antimicrobial compounds on the surface. It drives insects out of a shelter. It hardens wood. It is also visible for kilometres, which makes it the first long-distance signal humans could send deliberately.",
+    "l3": "Smoke leaves chemical traces. Residue analysis of ceramic and stone surfaces detects combustion products, and soot layers on cave ceilings above hearths record how enclosed spaces were used and ventilated.",
+    "ev": "Soot deposits; combustion residues",
+    "src": [
+      "si_ho_hearths"
+    ],
+    "rec": [
+      [
+        "fire",
+        "wood"
+      ],
+      [
+        "fire",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "preservation",
+      "signal"
+    ]
+  },
+  {
+    "id": "heat_treatment",
+    "no": 25,
+    "n": "Heat Treatment",
+    "era": "fire",
+    "cat": "technique",
+    "date": "≈ 70,000 years ago onward",
+    "ds": -70000,
+    "rar": "rare",
+    "vis": "tempering",
+    "l1": "Heating a material to change its internal structure, not just its temperature.",
+    "l2": "This is the first materials science. Slowly heating silcrete or flint alters its microstructure and makes it flake more predictably — a better tool from the same rock. The insight generalises: heat can change what a substance *is*, not merely warm it. Pottery, metal and glass all live downstream of that idea.",
+    "l3": "Heat-treated stone shows a distinctive glossy fracture surface and altered colour, and the change is reproducible in a laboratory. Experimental heating of raw silcrete under controlled conditions produces the same signature found at Middle Stone Age sites in southern Africa.",
+    "ev": "Fracture gloss; thermoluminescence; experimental replication",
+    "src": [
+      "si_ho_firestone",
+      "si_ho_sapiens"
+    ],
+    "rec": [
+      [
+        "controlled_fire",
+        "stone"
+      ],
+      [
+        "controlled_fire",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "materials",
+      "pyrotechnology"
+    ]
+  },
+  {
+    "id": "food_processing",
+    "no": 26,
+    "n": "Food Processing",
+    "era": "fire",
+    "cat": "technique",
+    "date": "≈ 2 million years ago onward",
+    "ds": -2000000,
+    "rar": "common",
+    "vis": "grinding",
+    "l1": "Doing work on food outside the body so the body has less to do.",
+    "l2": "Slicing, pounding and grinding are external digestion. They cut chewing time dramatically and raise the energy actually extracted from a given amount of food. Human jaws, teeth and guts are all small for a primate our size, and processing is the leading explanation for how we get away with that.",
+    "l3": "Grinding stones carry use-polish and starch residues. Skeletal evidence runs alongside: reduction in tooth size and jaw robusticity through the genus Homo tracks a diet that needed less mechanical work from the body itself.",
+    "ev": "Grinding-stone residues; dental and craniofacial reduction",
+    "src": [
+      "si_ho_food",
+      "si_ho_tools"
+    ],
+    "rec": [
+      [
+        "cutting",
+        "hammering"
+      ],
+      [
+        "scraping",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "food",
+      "technique"
+    ]
+  },
+  {
+    "id": "meat_processing",
+    "no": 27,
+    "n": "Meat Processing",
+    "era": "fire",
+    "cat": "technique",
+    "date": "≈ 2.6 million years ago onward",
+    "ds": -2600000,
+    "rar": "common",
+    "vis": "butchery",
+    "l1": "Turning a carcass into portable food and raw material.",
+    "l2": "Butchery is a sequence, not an act: skin, disarticulate, fillet, crack for marrow. Doing it fast matters when other predators are nearby, and doing it in order matters because each step gives access to the next. A carcass is also hide, sinew, bone and horn — the animal is a materials depot as much as a meal.",
+    "l3": "The order of operations is recoverable. Cut-mark position on specific bones indicates which action happened where, and their relationship to carnivore tooth marks — above or below — indicates whether humans or carnivores reached the carcass first.",
+    "ev": "Cut-mark position and stratigraphy; bone fragmentation",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "food_processing",
+        "hunting"
+      ],
+      [
+        "cooking",
+        "hunting"
+      ]
+    ],
+    "tags": [
+      "food",
+      "butchery"
+    ]
+  },
+  {
+    "id": "plant_processing",
+    "no": 28,
+    "n": "Plant Processing",
+    "era": "fire",
+    "cat": "technique",
+    "date": "≈ 100,000 years ago onward",
+    "ds": -100000,
+    "rar": "common",
+    "vis": "pestle",
+    "l1": "Making plants edible by grinding, soaking, leaching or heating them.",
+    "l2": "Many of the most abundant plant foods are useless raw. Grains are indigestible without grinding; many tubers and nuts carry toxins that require leaching or heat to remove. Processing converts an inedible but abundant resource into a staple — and staples are what surpluses are made of.",
+    "l3": "Starch granules trapped on grinding stones and in dental calculus can be identified to plant species, and processing damages them in characteristic ways. This is how researchers detect cereal use long before any evidence of cultivation.",
+    "ev": "Starch granules; grinding-stone use-wear",
+    "src": [
+      "si_ho_food",
+      "brit_agri"
+    ],
+    "rec": [
+      [
+        "food_processing",
+        "fiber"
+      ],
+      [
+        "hammering",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "food",
+      "plants"
+    ]
+  },
+  {
+    "id": "food_storage",
+    "no": 29,
+    "n": "Food Storage",
+    "era": "fire",
+    "cat": "technology",
+    "date": "≈ 20,000 years ago onward",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "storage-pit",
+    "l1": "Keeping food edible past the moment you acquired it.",
+    "l2": "Storage breaks the link between when food is available and when it is eaten, and that changes everything about how people live. It permits staying in one place through a lean season, and it creates something that did not exist before: a stock that can be counted, owned, defended and unequally divided.",
+    "l3": "Storage pits, raised granaries and sealed vessels leave structural traces — pit shapes with distinctive fills, post-hole patterns for raised floors that keep rodents out. Phytoliths and residues in pit fills identify what was stored.",
+    "ev": "Storage pits; granary post-holes; residue analysis",
+    "src": [
+      "brit_neolithic",
+      "met_meso_early"
+    ],
+    "rec": [
+      [
+        "plant_processing",
+        "shelter"
+      ],
+      [
+        "plant_processing",
+        "pottery"
+      ],
+      [
+        "meat_processing",
+        "smoke"
+      ]
+    ],
+    "tags": [
+      "surplus",
+      "time"
+    ]
+  },
+  {
+    "id": "social_gathering",
+    "no": 30,
+    "n": "Social Gathering",
+    "era": "fire",
+    "cat": "culture",
+    "date": "With controlled fire",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "circle",
+    "l1": "People in one place, at the same time, doing nothing urgent.",
+    "l2": "A hearth creates a nightly appointment. Firelight extends the day into hours that cannot be used for foraging, and what fills those hours is talk, repair, teaching and story. A great deal of what we call culture needs exactly this: recurring, unhurried, face-to-face time.",
+    "l3": "Site structure is the evidence. Artefact scatters around hearths cluster in ways that imply people seated in a ring; different activities leave debris at different distances. Ethnographic studies of contemporary foragers show comparable spatial patterning around fires.",
+    "ev": "Spatial artefact patterning around hearths",
+    "src": [
+      "si_ho_hearths"
+    ],
+    "rec": [
+      [
+        "controlled_fire",
+        "shelter"
+      ],
+      [
+        "cooking",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "social",
+      "hearth"
+    ]
+  },
+  {
+    "id": "communication",
+    "no": 31,
+    "n": "Communication",
+    "era": "fire",
+    "cat": "culture",
+    "date": "Deep and gradual",
+    "ds": -500000,
+    "rar": "common",
+    "vis": "signal",
+    "l1": "Getting something out of one head and into another.",
+    "l2": "Communication predates language and is not the same thing. Gesture, expression, vocalisation and demonstration all transfer information. What matters for everything downstream is that information stops dying with the individual who has it.",
+    "l3": "There is no direct evidence of speech before writing. Inference runs through anatomy — hyoid bone, vocal tract shape, hearing range — and through behaviour that is hard to coordinate without it. Both lines are indirect and contested.",
+    "ev": "Anatomical proxies; behavioural inference",
+    "src": [
+      "si_ho_sapiens",
+      "nhm_humevo"
+    ],
+    "rec": [
+      [
+        "social_gathering",
+        "cooking"
+      ],
+      [
+        "social_gathering",
+        "plant_processing"
+      ]
+    ],
+    "tags": [
+      "social",
+      "information"
+    ],
+    "caution": "Claims about the origin of speech rest on indirect proxies. No consensus exists on when language emerged."
+  },
+  {
+    "id": "symbolic_thought",
+    "no": 32,
+    "n": "Symbolic Thought",
+    "era": "fire",
+    "cat": "culture",
+    "date": "≈ 100,000 years ago onward",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "ochre-mark",
+    "l1": "Letting one thing deliberately stand for another.",
+    "l2": "A mark that means something is a different order of object from a tool. Once a symbol can carry meaning, meaning becomes storable outside the head and transmissible beyond the people present. Writing, mathematics, money, law and code are all downstream of this single move.",
+    "l3": "The Blombos Cave ochre pieces from South Africa carry deliberate cross-hatched engravings roughly 70,000–100,000 years old. Perforated shell beads appear across several regions. What such marks *meant* is unrecoverable; that they were intentional and repeated is not.",
+    "ev": "Engraved ochre; perforated shell beads; pigment use",
+    "src": [
+      "si_ho_sapiens",
+      "nhm_humevo",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "communication",
+        "bone"
+      ],
+      [
+        "communication",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "symbol",
+      "cognition"
+    ],
+    "caution": "Marks can be identified as deliberate; their specific meaning cannot be recovered."
+  },
+  {
+    "id": "language",
+    "no": 33,
+    "n": "Language",
+    "era": "fire",
+    "cat": "culture",
+    "date": "Unknown; deep",
+    "ds": -150000,
+    "rar": "rare",
+    "vis": "utterance",
+    "l1": "A system where arbitrary sounds combine by rules into unlimited meanings.",
+    "l2": "Language is not merely better communication. Its power is recursion and displacement: you can talk about what is not here, what has not happened, and what is not true. Planning a hunt for tomorrow, teaching a technique in the abstract and telling a story all need that.",
+    "l3": "Language leaves no direct trace before writing. Everything before that is inference from anatomy, from genetics, and from behaviours that seem to presuppose it. This is one of the genuinely open questions in the field, and honest accounts say so.",
+    "ev": "Indirect anatomical, genetic and behavioural inference",
+    "src": [
+      "si_ho_sapiens",
+      "nhm_humevo"
+    ],
+    "rec": [
+      [
+        "communication",
+        "symbolic_thought"
+      ],
+      [
+        "symbolic_thought",
+        "social_gathering"
+      ]
+    ],
+    "tags": [
+      "language",
+      "cognition"
+    ],
+    "caution": "The origin of language is one of the least resolved questions in human evolution. Treat any specific date with suspicion."
+  },
+  {
+    "id": "teaching",
+    "no": 34,
+    "n": "Teaching",
+    "era": "fire",
+    "cat": "culture",
+    "date": "Deep and gradual",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "demonstration",
+    "l1": "Deliberately structuring what someone else learns.",
+    "l2": "Copying is common in the animal world; teaching — where the knowledgeable party changes their own behaviour at a cost to help a learner — is rare. Teaching raises how much skill survives each generational handover, and complex skills only accumulate if the handover loss stays low.",
+    "l3": "Experimental studies of stone-tool transmission test this directly: groups are taught knapping by imitation alone, by gesture, or by verbal instruction, and the fidelity of the result is measured. More complex techniques degrade fast without active teaching.",
+    "ev": "Transmission-chain experiments; skill-acquisition studies",
+    "src": [
+      "si_ho_tools"
+    ],
+    "rec": [
+      [
+        "language",
+        "stone_tool"
+      ],
+      [
+        "language",
+        "cooking"
+      ]
+    ],
+    "tags": [
+      "learning",
+      "transmission"
+    ]
+  },
+  {
+    "id": "cultural_transmission",
+    "no": 35,
+    "n": "Cultural Transmission",
+    "era": "fire",
+    "cat": "culture",
+    "date": "Deep and gradual",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "chain",
+    "l1": "Knowledge moving between people and down generations, outside the genes.",
+    "l2": "This is the second inheritance system, and it runs far faster than the first. A useful idea can spread through a population within one lifetime and persist for thousands of years. It is the mechanism that makes everything else in this graph possible — nobody rediscovers fire.",
+    "l3": "Regional tool traditions that persist across many generations while differing from neighbouring regions are the archaeological signature: the variation is too stable to be individual invention and too localised to be genetic.",
+    "ev": "Persistent regional technological traditions",
+    "src": [
+      "si_ho_tools",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "teaching",
+        "social_gathering"
+      ],
+      [
+        "teaching",
+        "language"
+      ],
+      [
+        "cave_art",
+        "teaching"
+      ]
+    ],
+    "tags": [
+      "culture",
+      "inheritance"
+    ]
+  },
+  {
+    "id": "collective_knowledge",
+    "no": 36,
+    "n": "Collective Knowledge",
+    "era": "fire",
+    "cat": "knowledge",
+    "date": "Deep and gradual",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "lattice",
+    "l1": "More understanding held by a group than any member could hold alone.",
+    "l2": "Complex technologies exceed what one person can know. A kayak, a bow, a poison, a smelting furnace — each is a long chain of steps refined over generations, where no individual understands the whole and nobody needs to. This is why population size and connectedness affect technological complexity, sometimes more than individual brilliance does.",
+    "l3": "Ethnographic and modelling work links group size and inter-group contact to toolkit complexity, and isolated small populations have been observed losing technologies. The generality of the effect is debated, but the mechanism is well described.",
+    "ev": "Ethnographic toolkit studies; cultural evolution modelling",
+    "src": [
+      "si_ho_tools",
+      "owid_tech"
+    ],
+    "rec": [
+      [
+        "cultural_transmission",
+        "language"
+      ],
+      [
+        "cultural_transmission",
+        "ritual"
+      ]
+    ],
+    "tags": [
+      "knowledge",
+      "group"
+    ]
+  },
+  {
+    "id": "planning",
+    "no": 37,
+    "n": "Planning",
+    "era": "fire",
+    "cat": "knowledge",
+    "date": "≈ 400,000 years ago onward",
+    "ds": -400000,
+    "rar": "uncommon",
+    "vis": "sequence",
+    "l1": "Acting now for a result that arrives later.",
+    "l2": "Carrying a tool to a place where you expect to need it is a small act with large implications: it requires modelling a future that does not exist yet. Planning depth is one of the clearer cognitive thresholds visible in the archaeological record, because it shows up as material moved across a landscape.",
+    "l3": "Raw-material transport distance is the standard measure. Stone sourced tens or hundreds of kilometres from where it was used implies the toolmaker anticipated future need. Curated, resharpened tools carried between sites tell the same story.",
+    "ev": "Raw-material transport distances; tool curation",
+    "src": [
+      "si_ho_tools",
+      "si_ho_heidel"
+    ],
+    "rec": [
+      [
+        "collective_knowledge",
+        "cooperation"
+      ],
+      [
+        "collective_knowledge",
+        "landscape_knowledge"
+      ]
+    ],
+    "tags": [
+      "cognition",
+      "time"
+    ]
+  },
+  {
+    "id": "art",
+    "no": 38,
+    "n": "Art",
+    "era": "fire",
+    "cat": "culture",
+    "date": "≈ 100,000 years ago onward",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "pigment",
+    "l1": "Making something whose purpose is not use.",
+    "l2": "Art is expensive and does no obvious work, which is exactly why it is informative. Pigment must be sourced, ground and bound; an engraving takes hours. People who were not short of problems spent time on this, which says the output mattered — as identity, as memory, as claim, as meaning.",
+    "l3": "Ochre processing kits, engraved objects and pigment-stained tools appear across Africa, Europe and Asia. Uranium-series dating of the calcite crusts over cave paintings gives minimum ages, which is how some European cave art has been pushed back beyond earlier estimates.",
+    "ev": "Ochre kits; engraved objects; uranium-series dated pigment",
+    "src": [
+      "si_ho_sapiens",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "symbolic_thought",
+        "stone"
+      ],
+      [
+        "symbolic_thought",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "symbol",
+      "expression"
+    ]
+  },
+  {
+    "id": "ritual",
+    "no": 39,
+    "n": "Ritual",
+    "era": "fire",
+    "cat": "culture",
+    "date": "≈ 100,000 years ago onward",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "arrangement",
+    "l1": "Repeated action whose value is in the doing, not the outcome.",
+    "l2": "Ritual is social technology. Costly, synchronised, repeated behaviour builds trust between people who are not related — and trust between non-relatives is the load-bearing wall of every large society that follows. It is also how knowledge gets encoded in a form people rehearse rather than merely remember.",
+    "l3": "Deliberate burial with grave goods, arranged non-utilitarian objects, and structures with no practical function are the usual signatures. Each is contested individually, since a burial may be hygiene and an arrangement may be chance, but the pattern across sites is harder to dismiss.",
+    "ev": "Deliberate burials; grave goods; non-utilitarian structures",
+    "src": [
+      "si_ho_sapiens",
+      "si_ho_neander",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "art",
+        "social_gathering"
+      ],
+      [
+        "art",
+        "cooking"
+      ],
+      [
+        "music",
+        "social_gathering"
+      ]
+    ],
+    "tags": [
+      "social",
+      "meaning"
+    ],
+    "caution": "Individual claims of ritual behaviour — especially for Neanderthals — are frequently disputed on taphonomic grounds."
+  },
+  {
+    "id": "cave_art",
+    "no": 40,
+    "n": "Cave Art",
+    "era": "fire",
+    "cat": "culture",
+    "date": "≈ 45,000 years ago onward",
+    "ds": -45000,
+    "rar": "rare",
+    "vis": "cave-panel",
+    "l1": "Images placed deliberately in deep, dark, hard-to-reach spaces.",
+    "l2": "Cave art is not decoration — decoration goes where people live. These images are often hundreds of metres inside, in chambers reachable only by crawling, visible only by carried firelight. Somebody planned a lighting system, an expedition and a composition, and the result was meant to be seen by few.",
+    "l3": "Uranium-series dating of overlying calcite gives minimum ages. Charcoal in the pigment itself can be radiocarbon dated. Sites in Europe and in Sulawesi, Indonesia, both yield very early dates, which undercuts any single-origin story for figurative image-making.",
+    "ev": "Uranium-series and radiocarbon dating; pigment analysis",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah",
+      "nhm_humevo"
+    ],
+    "rec": [
+      [
+        "art",
+        "controlled_fire"
+      ],
+      [
+        "art",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "symbol",
+      "image",
+      "deep-time"
+    ],
+    "caution": "Figurative cave art appears independently in widely separated regions; a single European origin is not supported."
+  }
+]

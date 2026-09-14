@@ -1,0 +1,649 @@
+{
+  "_note": "Every URL in this file was fetched and confirmed to resolve on 2026-09-11. scope 'topic' means the page is about the entry's subject or its field; scope 'general' means a homepage, portal, collection search or index list, which is kept as background reading but never counts as evidence for a specific entry. An entry whose sources are all general carries the literal string 'source_required' instead of an invented citation. Earlier rejections, kept for the record: si.edu/spotlight/history-of-flight and britannica.com/topic/origins-of-agriculture returned 404 on 2026-09-09.",
+  "tiers": {
+    "S": "Primary institutional and peer-reviewed: national museums, university institutes, scientific and engineering societies, the Nobel Foundation, peer-reviewed journals.",
+    "A": "Major data, standards and public bodies, and primary announcements: Our World in Data, Internet Society, UN family (UNESCO, WHO), NASA, GPS.gov, publisher and company statements.",
+    "B": "Established reference and educational publishers."
+  },
+  "sources": {
+    "si_ho": {
+      "t": "S",
+      "title": "Human Origins Program",
+      "org": "Smithsonian Institution",
+      "url": "https://humanorigins.si.edu/",
+      "type": "institutional",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "si_ho_food": {
+      "t": "S",
+      "title": "Getting Food — evidence of early human diet and foraging",
+      "org": "Smithsonian Human Origins Program",
+      "url": "https://humanorigins.si.edu/evidence/behavior/getting-food",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_ho_hearths": {
+      "t": "S",
+      "title": "Hearths & Shelters",
+      "org": "Smithsonian Human Origins Program",
+      "url": "https://humanorigins.si.edu/evidence/behavior/hearths-shelters",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_ho_firestone": {
+      "t": "S",
+      "title": "Fire-Altered Stone Tools",
+      "org": "Smithsonian Human Origins Program",
+      "url": "https://humanorigins.si.edu/evidence/behavior/hearths-shelters/fire-altered-stone-tools",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_ho_tools": {
+      "t": "S",
+      "title": "Tools & Food",
+      "org": "Smithsonian Human Origins Program",
+      "url": "https://humanorigins.si.edu/human-characteristics/tools-food",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_ho_sapiens": {
+      "t": "S",
+      "title": "Homo sapiens",
+      "org": "Smithsonian Human Origins Program",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_ho_heidel": {
+      "t": "S",
+      "title": "Homo heidelbergensis",
+      "org": "Smithsonian Human Origins Program",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-heidelbergensis",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_ho_neander": {
+      "t": "S",
+      "title": "Homo neanderthalensis",
+      "org": "Smithsonian Human Origins Program",
+      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-neanderthalensis",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_milestones": {
+      "t": "S",
+      "title": "Milestones in Human Evolution (fact sheet)",
+      "org": "Smithsonian Institution",
+      "url": "https://www.si.edu/newsdesk/factsheets/milestones-human-evolution",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_lighting": {
+      "t": "S",
+      "title": "Lighting A Revolution — invention of electric light",
+      "org": "Smithsonian National Museum of American History",
+      "url": "https://americanhistory.si.edu/lighting",
+      "type": "exhibition",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "si_airspace": {
+      "t": "S",
+      "title": "Stories — aviation and spaceflight history",
+      "org": "Smithsonian National Air and Space Museum",
+      "url": "https://airandspace.si.edu/explore/stories",
+      "type": "institutional",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "nhm_humevo": {
+      "t": "S",
+      "title": "Human evolution",
+      "org": "Natural History Museum, London",
+      "url": "https://www.nhm.ac.uk/discover/human-evolution.html",
+      "type": "institutional",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "bm_collection": {
+      "t": "S",
+      "title": "The Collection — two million years of human history",
+      "org": "British Museum",
+      "url": "https://www.britishmuseum.org/collection",
+      "type": "collection",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "met_toah": {
+      "t": "S",
+      "title": "Heilbrunn Timeline of Art History",
+      "org": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/",
+      "type": "institutional",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "met_writing": {
+      "t": "S",
+      "title": "The Origins of Writing",
+      "org": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/the-origins-of-writing",
+      "type": "scholarly-essay",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "met_uruk": {
+      "t": "S",
+      "title": "Uruk: The First City",
+      "org": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/essays/uruk-the-first-city",
+      "type": "scholarly-essay",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "met_meso_early": {
+      "t": "S",
+      "title": "Mesopotamia, 8000–2000 B.C. — chronology",
+      "org": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/ht/02/wam.html",
+      "type": "chronology",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "met_cuneiform": {
+      "t": "S",
+      "title": "Cuneiform — keyword collection",
+      "org": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/toah/keywords/cuneiform",
+      "type": "collection",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "isac": {
+      "t": "S",
+      "title": "Institute for the Study of Ancient Cultures",
+      "org": "University of Chicago",
+      "url": "https://isac.uchicago.edu/",
+      "type": "institutional",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "chm_timeline": {
+      "t": "S",
+      "title": "Timeline of Computer History",
+      "org": "Computer History Museum",
+      "url": "https://computerhistory.org/timeline/",
+      "type": "institutional",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "chm_graphics": {
+      "t": "S",
+      "title": "Graphics & Games — Timeline of Computer History",
+      "org": "Computer History Museum",
+      "url": "https://www.computerhistory.org/timeline/graphics-games/",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "chm_spacewar": {
+      "t": "S",
+      "title": "Spacewar! — PDP-1 Restoration Project",
+      "org": "Computer History Museum",
+      "url": "https://www.computerhistory.org/pdp-1/spacewar/",
+      "type": "collection",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "chm_revolution": {
+      "t": "S",
+      "title": "Revolution: The First 2000 Years of Computing",
+      "org": "Computer History Museum",
+      "url": "https://computerhistory.org/exhibits/revolution/",
+      "type": "exhibition",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "ethw": {
+      "t": "S",
+      "title": "Engineering and Technology History Wiki",
+      "org": "IEEE, ASME, ASCE, AIAA and partner societies",
+      "url": "https://ethw.org/Main_Page",
+      "type": "institutional",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "ethw_newcomen": {
+      "t": "S",
+      "title": "Thomas Newcomen and the Steam Engine",
+      "org": "Engineering and Technology History Wiki",
+      "url": "https://ethw.org/Thomas_Newcomen_and_the_Steam_Engine",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ethw_watt": {
+      "t": "S",
+      "title": "ASME Landmark: Boulton & Watt Rotative Steam Engine",
+      "org": "Engineering and Technology History Wiki / ASME",
+      "url": "https://ethw.org/ASME-Landmark:Boulton_&_Watt_Rotative_Steam_Engine",
+      "type": "landmark",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ethw_mecheng": {
+      "t": "S",
+      "title": "Timeline of mechanical engineering innovation",
+      "org": "Engineering and Technology History Wiki",
+      "url": "https://ethw.org/Timeline_of_mechanical_engineering_innovation",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ethw_milestones": {
+      "t": "S",
+      "title": "IEEE Milestones — list of commemorated achievements",
+      "org": "Engineering and Technology History Wiki / IEEE",
+      "url": "https://ethw.org/Milestones:List_of_IEEE_Milestones",
+      "type": "landmark",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "nobel_transistor": {
+      "t": "S",
+      "title": "The Nobel Prize in Physics 1956 — Shockley, Bardeen and Brattain, for the transistor effect",
+      "org": "The Nobel Foundation",
+      "url": "https://www.nobelprize.org/prizes/physics/1956/summary/",
+      "type": "award-record",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "owid_tech": {
+      "t": "A",
+      "title": "Technological Change",
+      "org": "Our World in Data",
+      "url": "https://ourworldindata.org/technological-change",
+      "type": "dataset",
+      "scope": "general",
+      "checked": "2026-09-11"
+    },
+    "owid_urban": {
+      "t": "A",
+      "title": "Urbanization",
+      "org": "Our World in Data",
+      "url": "https://ourworldindata.org/urbanization",
+      "type": "dataset",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "owid_urban500": {
+      "t": "A",
+      "title": "Urbanization over the past 500 years",
+      "org": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/urbanization-last-500-years",
+      "type": "dataset",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "owid_cities": {
+      "t": "A",
+      "title": "Population of the world's largest cities",
+      "org": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/population-of-the-worlds-largest-cities",
+      "type": "dataset",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "isoc_internet": {
+      "t": "A",
+      "title": "A Brief History of the Internet — Leiner, Cerf, Clark, Kahn, Kleinrock, Lynch, Postel, Roberts, Wolff",
+      "org": "Internet Society",
+      "url": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/",
+      "type": "primary-account",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_agri": {
+      "t": "B",
+      "title": "Origins of agriculture",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/agriculture",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_agri_began": {
+      "t": "B",
+      "title": "How agriculture and domestication began",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/agriculture/How-agriculture-and-domestication-began",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_neolithic": {
+      "t": "B",
+      "title": "Neolithic",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/event/Neolithic",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_domestication": {
+      "t": "B",
+      "title": "Domestication",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/science/domestication",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "rockstar_gta6": {
+      "t": "A",
+      "title": "Grand Theft Auto VI is Now Set to Launch November 19, 2026",
+      "org": "Rockstar Games (publisher announcement)",
+      "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+      "type": "primary-announcement",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "unesco_swabian": {
+      "t": "A",
+      "title": "Caves and Ice Age Art in the Swabian Jura — World Heritage listing",
+      "org": "UNESCO World Heritage Centre",
+      "url": "https://whc.unesco.org/en/list/1527/",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "nature_flutes2009": {
+      "t": "S",
+      "title": "New flutes document the earliest musical tradition in southwestern Germany (Conard, Malina & Münzel, 2009)",
+      "org": "Nature (peer-reviewed)",
+      "url": "https://www.nature.com/articles/nature08169",
+      "type": "peer-reviewed",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "cmog_glass": {
+      "t": "S",
+      "title": "Origins of Glassmaking — All About Glass",
+      "org": "Corning Museum of Glass",
+      "url": "https://www.cmog.org/article/origins-glassmaking",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_paper": {
+      "t": "B",
+      "title": "Paper — origin and development",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/technology/paper",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_printing": {
+      "t": "B",
+      "title": "Printing — from its origins in China to Gutenberg",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/technology/printing-publishing",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_money": {
+      "t": "B",
+      "title": "Money — definition, history and types",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/topic/money",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_compass": {
+      "t": "B",
+      "title": "Compass — history, uses and types",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/technology/compass-navigational-instrument",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_eyeglasses": {
+      "t": "B",
+      "title": "Eyeglasses — the history of spectacles",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/technology/eyeglasses",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_gunpowder": {
+      "t": "B",
+      "title": "Gunpowder — facts and history",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/technology/gunpowder",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "who_vaccination": {
+      "t": "A",
+      "title": "A brief history of vaccination",
+      "org": "World Health Organization",
+      "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/a-brief-history-of-vaccination",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "nobel_med1945": {
+      "t": "S",
+      "title": "The Nobel Prize in Physiology or Medicine 1945 — Fleming, Chain and Florey, for the discovery of penicillin",
+      "org": "The Nobel Foundation",
+      "url": "https://www.nobelprize.org/prizes/medicine/1945/summary/",
+      "type": "award-record",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "nobel_fleming_lecture": {
+      "t": "S",
+      "title": "Sir Alexander Fleming — Nobel Lecture",
+      "org": "The Nobel Foundation",
+      "url": "https://www.nobelprize.org/prizes/medicine/1945/fleming/lecture/",
+      "type": "primary-account",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "acs_bakelite": {
+      "t": "S",
+      "title": "Leo Baekeland and the Invention of Bakelite — National Historic Chemical Landmark",
+      "org": "American Chemical Society",
+      "url": "https://www.acs.org/education/whatischemistry/landmarks/bakelite.html",
+      "type": "landmark",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ethw_magnetron": {
+      "t": "S",
+      "title": "Milestones: Development of the Cavity Magnetron, 1939–1941",
+      "org": "Engineering and Technology History Wiki / IEEE",
+      "url": "https://ethw.org/Milestones:Development_of_the_Cavity_Magnetron,_1939-1941",
+      "type": "landmark",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "nasa_sputnik": {
+      "t": "A",
+      "title": "Sputnik and the Origins of the Space Age (Roger D. Launius)",
+      "org": "NASA History Office",
+      "url": "https://www.nasa.gov/history/sputnik/sputorig.html",
+      "type": "scholarly-essay",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "gpsgov": {
+      "t": "A",
+      "title": "GPS — the Global Positioning System",
+      "org": "GPS.gov (U.S. National Coordination Office for Space-Based PNT)",
+      "url": "https://www.gps.gov/gps",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ashby_gps": {
+      "t": "S",
+      "title": "Relativity in the Global Positioning System (Neil Ashby, 2003)",
+      "org": "Living Reviews in Relativity (peer-reviewed)",
+      "url": "https://link.springer.com/article/10.12942/lrr-2003-1",
+      "type": "peer-reviewed",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "nasm_wright_flyer": {
+      "t": "S",
+      "title": "1903 Wright Flyer",
+      "org": "Smithsonian National Air and Space Museum",
+      "url": "https://airandspace.si.edu/collection-objects/1903-wright-flyer/nasm_A19610048000",
+      "type": "collection",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "nobel_radio1909": {
+      "t": "S",
+      "title": "The Nobel Prize in Physics 1909 — Marconi and Braun, for wireless telegraphy",
+      "org": "The Nobel Foundation",
+      "url": "https://www.nobelprize.org/prizes/physics/1909/summary/",
+      "type": "award-record",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "nobel_ic2000": {
+      "t": "S",
+      "title": "The Nobel Prize in Physics 2000 — Kilby, for his part in the invention of the integrated circuit",
+      "org": "The Nobel Foundation",
+      "url": "https://www.nobelprize.org/prizes/physics/2000/summary/",
+      "type": "award-record",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "chm_4004": {
+      "t": "S",
+      "title": "1971: Microprocessor Integrates CPU Function onto a Single Chip",
+      "org": "Computer History Museum — The Silicon Engine",
+      "url": "https://www.computerhistory.org/siliconengine/microprocessor-integrates-cpu-function-onto-a-single-chip/",
+      "type": "exhibition",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "chm_birth_computer": {
+      "t": "S",
+      "title": "Birth of the Computer — Revolution: The First 2000 Years of Computing",
+      "org": "Computer History Museum",
+      "url": "https://www.computerhistory.org/revolution/birth-of-the-computer/4",
+      "type": "exhibition",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ethw_bell1876": {
+      "t": "S",
+      "title": "Milestones: First Intelligible Voice Transmission over Electric Wire, 1876",
+      "org": "Engineering and Technology History Wiki / IEEE",
+      "url": "https://ethw.org/Milestones:First_Intelligible_Voice_Transmission_over_Electric_Wire,_1876",
+      "type": "landmark",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ethw_telegraph1838": {
+      "t": "S",
+      "title": "Milestones: Demonstration of Practical Telegraphy, 1838",
+      "org": "Engineering and Technology History Wiki / IEEE",
+      "url": "https://ethw.org/Milestones:Demonstration_of_Practical_Telegraphy,_1838",
+      "type": "landmark",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ethw_fleming_valve": {
+      "t": "S",
+      "title": "Milestones: Fleming Valve, 1904",
+      "org": "Engineering and Technology History Wiki / IEEE",
+      "url": "https://ethw.org/Milestones:Fleming_Valve,_1904",
+      "type": "landmark",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "owid_ai": {
+      "t": "A",
+      "title": "Artificial Intelligence — including computation used to train notable AI systems",
+      "org": "Our World in Data",
+      "url": "https://ourworldindata.org/artificial-intelligence",
+      "type": "dataset",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "owid_mobile": {
+      "t": "A",
+      "title": "Mobile phone subscriptions per 100 people (ITU, via the World Bank)",
+      "org": "Our World in Data",
+      "url": "https://ourworldindata.org/grapher/mobile-cellular-subscriptions-per-100-people",
+      "type": "dataset",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "ttwo_q1fy27": {
+      "t": "A",
+      "title": "Take-Two Interactive Software, Inc. Reports Results for Fiscal First Quarter 2027",
+      "org": "Take-Two Interactive (earnings release filed with the SEC)",
+      "url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026054580/ttwo1q27earningsrelease.htm",
+      "type": "primary-announcement",
+      "scope": "topic",
+      "checked": "2026-09-11"
+    },
+    "brit_bank": {
+      "t": "B",
+      "title": "Bank — historical development",
+      "org": "Encyclopaedia Britannica",
+      "url": "https://www.britannica.com/money/bank/Historical-development",
+      "type": "reference",
+      "scope": "topic",
+      "checked": "2026-09-12"
+    },
+    "icaew_pacioli": {
+      "t": "S",
+      "title": "Luca Pacioli: The 'Father of Accounting'",
+      "org": "Institute of Chartered Accountants in England and Wales",
+      "url": "https://www.icaew.com/library/library-collection/historical-accounting-literature/pacioli",
+      "type": "institutional",
+      "scope": "topic",
+      "checked": "2026-09-12"
+    },
+    "penn_weights": {
+      "t": "S",
+      "title": "Hanging in the Balance: Precision Weighing in Antiquity",
+      "org": "Penn Museum, University of Pennsylvania",
+      "url": "https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/",
+      "type": "scholarly-essay",
+      "scope": "topic",
+      "checked": "2026-09-12"
+    },
+    "bm_silkroads": {
+      "t": "S",
+      "title": "Silk Roads",
+      "org": "British Museum",
+      "url": "https://www.britishmuseum.org/exhibitions/silk-roads",
+      "type": "exhibition",
+      "scope": "topic",
+      "checked": "2026-09-12"
+    }
+  }
+}

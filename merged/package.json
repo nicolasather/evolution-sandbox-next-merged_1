@@ -1,0 +1,38 @@
+{
+  "name": "evolution-sandbox",
+  "version": "1.3.0",
+  "private": true,
+  "description": "An explorable discovery graph — combine four raw materials into 220 discoveries, each with its evidence and an honest flag where a source is still missing.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "data:validate": "node tools/py.mjs tools/validate.py",
+    "data:build": "node tools/py.mjs tools/build_db.py && node -e \"require('fs').copyFileSync('build/db.json','data/db.json')\"",
+    "data:sync": "node tools/py.mjs tools/sync_data.py",
+    "data:check": "node tools/py.mjs tools/sync_data.py --check"
+  },
+  "dependencies": {
+    "next": "^16.3.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "framer-motion": "^12.38.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "eslint": "^9",
+    "eslint-config-next": "^16.3.4",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

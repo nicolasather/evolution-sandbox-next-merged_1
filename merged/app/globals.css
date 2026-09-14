@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* The game screens (workspace, graph, archive, exhibit) are styled by the shared
+   design system — byte-for-byte the stylesheet of the single-file build
+   (`npm run data:check` verifies that), so both builds stay in visual sync.
+   Everything that exists only in this app — the method / FAQ / privacy / 404
+   pages and the Vengeance UI components — is styled with Tailwind utilities
+   drawing on the same tokens below.
+
+   It is imported into the `components` layer on purpose. Unlayered, its element
+   rules (`button { padding: 0; border: 0 }` and friends) outranked every
+   Tailwind utility, so a padded or bordered button written in Tailwind silently
+   lost its styling. Layered, the order is: preflight < design system < utilities. */
+@import "./_design-system.css" layer(components);
+
+/* One palette, two names: the design system's custom properties and these
+   Tailwind theme tokens hold the same values, so `text-bone-2` in a component
+   and `var(--bone-2)` in the stylesheet are the same colour. */
+@theme inline {
+  --color-ink-0: #0a0a0b;
+  --color-ink-1: #0f1011;
+  --color-ink-2: #141517;
+  --color-ink-3: #1b1d20;
+  --color-ink-4: #24272b;
+
+  --color-bone: #e9e5dd;
+  --color-bone-2: #a6a199;
+  --color-bone-3: #6d6963;
+  --color-bone-4: #474441;
+
+  --color-line: rgba(233, 229, 221, .10);
+  --color-line-2: rgba(233, 229, 221, .18);
+  --color-line-3: rgba(233, 229, 221, .30);
+
+  --color-ochre: #c4642c;
+  --color-ochre-lo: rgba(196, 100, 44, .14);
+  --color-ochre-mid: rgba(196, 100, 44, .42);
+  --color-r-common: #7e7a73;
+  --color-r-uncommon: #8fa08d;
+  --color-r-rare: #c09a4e;
+  --color-r-hidden: #d8623f;
+
+  /* names Vengeance UI (shadcn-style) components expect, mapped to this palette */
+  --color-background: #0a0a0b;
+  --color-foreground: #e9e5dd;
+  --color-muted: #1b1d20;
+  --color-muted-foreground: #6d6963;
+
+  --font-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", Georgia, serif;
+  --font-ui: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* The design system names its families directly; here they come from next/font,
+   which self-hosts them. Same stacks and fallbacks, different source. */
+:root {
+  --fs-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", Georgia, serif;
+  --fs-ui: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --fs-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* The Glyph component wraps its SVG in a span; make that span transparent to
+   layout so `.g` sizing rules from the design system still apply. */
+.glyph-host { display: contents; }
