@@ -79,7 +79,7 @@ export function TierProgressBar({ engine }: { engine: Engine }) {
                 </div>
               )}
 
-              {isNextTierReady && tier !== 'late' && (
+              {isNextTierReady && (
                 <div style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#facc15', fontWeight: 600 }}>
                   ✓ Ready to unlock next tier
                 </div>
