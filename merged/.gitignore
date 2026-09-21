@@ -7,3 +7,34 @@ build/
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Environment variables
+.env*.local
+.env.production
+.env.development
+
+# Logs & temp files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.DS_Store
+*.pem
+.vercel/
+
+# Prettier / Editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# Ignore global redundant git folder (if any)
+.git/

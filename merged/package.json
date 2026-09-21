@@ -12,27 +12,60 @@
     "data:validate": "node tools/py.mjs tools/validate.py",
     "data:build": "node tools/py.mjs tools/build_db.py && node -e \"require('fs').copyFileSync('build/db.json','data/db.json')\"",
     "data:sync": "node tools/py.mjs tools/sync_data.py",
-    "data:check": "node tools/py.mjs tools/sync_data.py --check"
+    "data:check": "node tools/py.mjs tools/sync_data.py --check",
+    "prepare": "husky",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,md,json}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,md,json}\"",
+    "clean": "rm -rf .next out build",
+    "analyze": "ANALYZE=true next build",
+    "preview": "next build && next start",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
+    "@sentry/nextjs": "^10.75.0",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
     "next": "^16.3.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "framer-motion": "^12.38.0",
-    "clsx": "^2.1.1",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.3.5",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.10.0",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
-    "@tailwindcss/postcss": "^4.3.0",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "^16.3.4",
+    "husky": "^9.1.7",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.7",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=20.9.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }

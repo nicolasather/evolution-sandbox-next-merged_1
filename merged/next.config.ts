@@ -1,17 +1,13 @@
 import type { NextConfig } from 'next';
+import { withSentryConfig } from '@sentry/nextjs';
 
-// No inline scripts other than this app's own two JSON-LD blocks (FAQPage,
-// WebSite/WebApplication), which take no user input and are escaped against
-// "<" at the point they're written — see app/layout.tsx and app/faq/page.tsx.
-// No third-party origin is ever contacted at runtime (fonts and data are
-// bundled at build time), so every fetch/connect directive can stay 'self'.
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://sentry.io https://*.sentry.io",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  "img-src 'self' data: https://sentry.io https://www.google-analytics.com https://www.googletagmanager.com",
   "font-src 'self' data:",
-  "connect-src 'self'",
+  "connect-src 'self' https://sentry.io https://*.sentry.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -22,18 +18,32 @@ const SECURITY_HEADERS = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
-  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
-  // Only takes effect over HTTPS; harmless (ignored) over plain http:// in local dev.
+  { key: 'X-DNS-Prefetch-Control', value: 'on' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()' },
   { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
 ];
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // The discovery database is a build-time JSON import, not a runtime fetch.
-  experimental: { optimizePackageImports: ['framer-motion'] },
+  output: 'standalone',
+  poweredByHeader: false,
+  compress: true,
+  generateEtags: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+  },
+  experimental: { 
+    optimizePackageImports: ['framer-motion']
+  },
   async headers() {
     return [{ source: '/:path*', headers: SECURITY_HEADERS }];
   },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+});

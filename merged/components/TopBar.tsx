@@ -44,7 +44,7 @@ export function TopBar({
         </button>
         <div className="counter">
           <AnimatedCount value={s.core} pad={3} className="big" />
-          <span className="of">/ {s.coreTotal}</span>
+          <span className="of" aria-label={`of ${s.coreTotal} core items`}>/ {s.coreTotal}</span>
         </div>
         <div className="tick-row" aria-hidden="true">
           {engine.db.eras.map((e, i) => (
@@ -58,14 +58,14 @@ export function TopBar({
         </div>
       </div>
 
-      <div className="top-slot" id="slot-era">
+      <div className="top-slot" id="slot-era" aria-live="polite">
         <span className="mono" style={{ color: 'var(--bone-4)' }}>ERA</span>
         <span className="era-now">{engine.currentEra().name}</span>
       </div>
 
-      <div className="top-slot" id="slot-hidden">
-        <span className="mono" style={{ color: 'var(--bone-4)' }}>HIDDEN</span>
-        <span className="num" style={{ fontSize: 12 }}>{s.hidden}/{s.hiddenTotal}</span>
+      <div className="top-slot" id="slot-hidden" title="Hidden discoveries">
+        <span className="mono" style={{ color: 'var(--bone-4)' }} aria-hidden="true">HIDDEN</span>
+        <span className="num" style={{ fontSize: 12 }} aria-label={`${s.hidden} hidden items found out of ${s.hiddenTotal}`}>{s.hidden}/{s.hiddenTotal}</span>
       </div>
 
       <nav className="tabs top-spacer" id="tabs" role="tablist" aria-label="Views">
@@ -76,6 +76,7 @@ export function TopBar({
             role="tab"
             aria-selected={view === v.id}
             onClick={() => onView(v.id)}
+            aria-controls={`${v.id}-view`}
           >
             {v.label}
           </button>
@@ -96,6 +97,10 @@ export function TopBar({
             aria-label="Search all discoveries"
             aria-keyshortcuts="/"
             autoComplete="off"
+            aria-expanded={open && results.length > 0}
+            aria-controls="s-results"
+            aria-owns="s-results"
+            aria-autocomplete="list"
             onChange={e => { setQ(e.target.value); setOpen(true); }}
             onFocus={() => setOpen(true)}
             onBlur={() => window.setTimeout(() => setOpen(false), 180)}
@@ -110,13 +115,15 @@ export function TopBar({
                 <button
                   key={n.id}
                   className="item"
+                  role="option"
+                  aria-selected="false"
                   // keep focus in the input so its blur does not hide the list before the click lands
                   onMouseDown={e => e.preventDefault()}
                   onClick={() => { onOpen(n.id); setQ(''); setOpen(false); }}
                 >
                   <Glyph node={n} locked={!known} />
                   <span className="nm">{known ? n.n : 'Undiscovered'}</span>
-                  <span className="no mono">{String(n.no).padStart(3, '0')}</span>
+                  <span className="no mono" aria-hidden="true">{String(n.no).padStart(3, '0')}</span>
                 </button>
               );
             })}
@@ -125,7 +132,7 @@ export function TopBar({
       </div>
 
       <div className="top-slot">
-        <button className="icon-btn" id="reset" aria-label="Start over" title="Start over" onClick={onReset}>
+        <button className="icon-btn" id="reset" aria-label="Start over (Reset progress)" title="Start over" onClick={onReset}>
           <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" fill="none" aria-hidden="true">
             <path d="M14 8A6 6 0 1 1 8 2c2 0 3.7 1 4.7 2.5" /><path d="M13 1v4h-4" />
           </svg>

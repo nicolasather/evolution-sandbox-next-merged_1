@@ -575,17 +575,17 @@ const S: Record<string, Spec> = {
 const FALLBACK: Record<string, (id: string) => Spec> = {
   material: id => [['knap', { n: 7, r: 30, seed: hash(id) }], ['hatch', { n: 3, w: 22, h: 16, ang: (hash(id) % 90) }]],
   technique: id => [['arcs', { n: 3, r0: 12, dr: 9, a0: -2.4, a1: -.4 }], ['rays', { n: 3, r0: 30, r1: 40, a0: hash(id) % 6 }]],
-  technology: id => [['frame', { w: 46, h: 38 }], ['teeth', { n: 8, r: 14, t: 4 }]],
+  technology: _id => [['frame', { w: 46, h: 38 }], ['teeth', { n: 8, r: 14, t: 4 }]],
   biology: id => [['branchTree', { depth: 4, len: 17, seed: hash(id) }]],
   culture: id => [['ring', { r: 28 }], ['dots', { n: 6, spread: 20, seed: hash(id) }]],
   society: id => [['netLinks', { n: 6, seed: hash(id) }]],
   knowledge: id => [['grid', { cols: 3, rows: 3, w: 44, h: 44 }], ['dots', { n: 3, spread: 16, seed: hash(id) }]],
   science: id => [['axes', { kind: 'line' }], ['dots', { n: 4, spread: 18, seed: hash(id) }]],
-  engineering: id => [['teeth', { n: 9, r: 22, t: 7 }]],
-  energy: id => [['disc', { r: 14 }], ['rays', { n: 9, r0: 18, r1: 34 }]],
+  engineering: _id => [['teeth', { n: 9, r: 22, t: 7 }]],
+  energy: _id => [['disc', { r: 14 }], ['rays', { n: 9, r0: 18, r1: 34 }]],
   computing: id => [['traces', { n: 4, seed: hash(id) }]],
-  media: id => [['frame', { w: 52, h: 38 }], ['wave', { n: 2, amp: 5, freq: 2, w: 40, gap: 12 }]],
-  economy: id => [['arcs', { n: 1, r0: 24, a0: -2.8, a1: -.4 }], ['arcs', { n: 1, r0: 24, a0: .35, a1: 2.75 }]]
+  media: _id => [['frame', { w: 52, h: 38 }], ['wave', { n: 2, amp: 5, freq: 2, w: 40, gap: 12 }]],
+  economy: _id => [['arcs', { n: 1, r0: 24, a0: -2.8, a1: -.4 }], ['arcs', { n: 1, r0: 24, a0: .35, a1: 2.75 }]]
 };
 
 function build(node: GlyphNode): string {
