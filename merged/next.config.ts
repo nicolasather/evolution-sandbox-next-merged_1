@@ -25,7 +25,6 @@ const SECURITY_HEADERS = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: 'standalone',
   poweredByHeader: false,
   compress: true,
   generateEtags: true,
