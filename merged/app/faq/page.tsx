@@ -25,7 +25,7 @@ const QA: { q: string; a: string; more?: { href: string; label: string } }[] = [
   },
   {
     q: 'What are the hidden discoveries?',
-    a: 'Sixteen entries outside the main 204 that are only reachable by experimenting — things like music, glass, printing, money, the compass, and satellite positioning. They are not required to finish anything. They are there because the graph should reward curiosity, and because several of them are quietly load-bearing: without glass there is no lens, and without lenses there are no spectacles and no refracting telescope.',
+    a: 'Sixteen entries outside the main 306 that are only reachable by experimenting — things like music, glass, printing, money, the compass, and satellite positioning. They are not required to finish anything. They are there because the graph should reward curiosity, and because several of them are quietly load-bearing: without glass there is no lens, and without lenses there are no spectacles and no refracting telescope.',
   },
   {
     q: 'Is GTA VI the point of this?',

@@ -10,7 +10,7 @@ const GAME_JSON_LD = {
   isAccessibleForFree: true,
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   description:
-    'An explorable discovery graph. Combine four raw materials — stone, wood, bone, fibre — into 220 discoveries, each with its evidence and an honest flag where a source is still missing.',
+    'An explorable discovery graph. Combine four raw materials — stone, wood, bone, fibre — into 322 discoveries, each with its evidence and an honest flag where a source is still missing.',
 };
 
 export default function Home() {

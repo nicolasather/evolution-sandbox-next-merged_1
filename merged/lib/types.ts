@@ -18,7 +18,7 @@ export type Recipe = [string, string];
 
 export interface Discovery {
   id: string;
-  /** Catalogue number, 1–220. Stable; used as the plate number in the exhibit. */
+  /** Catalogue number, 1–322. Stable; used as the plate number in the exhibit. */
   no: number;
   /** Display name. */
   n: string;

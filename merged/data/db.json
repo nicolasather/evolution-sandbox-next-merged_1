@@ -13448,10 +13448,10 @@
     }
   ],
   "counts": {
-    "total": 220,
-    "core": 204,
+    "total": 322,
+    "core": 306,
     "hidden": 16,
-    "sourceRequired": 67
+    "sourceRequired": 83
   },
   "stone_age_tiers": {
     "olduvai": {

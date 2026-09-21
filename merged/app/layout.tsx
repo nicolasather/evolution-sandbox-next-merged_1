@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE = siteUrl();
 const DESCRIPTION =
-  'Start with a stone, a stick, a bone and a length of fibre. Combine them into 220 discoveries — each with its evidence, and an honest flag wherever a source is still missing.';
+  'Start with a stone, a stick, a bone and a length of fibre. Combine them into 322 discoveries — each with its evidence, and an honest flag wherever a source is still missing.';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     siteName: 'Evolution Sandbox',
     title: 'Evolution Sandbox',
     description:
-      'How did we get here? Combine four raw materials into 220 discoveries, from a knapped stone to a virtual world.',
+      'How did we get here? Combine four raw materials into 322 discoveries, from a knapped stone to a virtual world.',
     url: SITE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Evolution Sandbox',
-    description: 'Combine four raw materials into 220 discoveries, from a knapped stone to a virtual world.',
+    description: 'Combine four raw materials into 322 discoveries, from a knapped stone to a virtual world.',
   },
   robots: { index: true, follow: true },
 };
