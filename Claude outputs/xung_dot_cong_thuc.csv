@@ -1,0 +1,83 @@
+﻿Cặp nguyên liệu,No,ID,Tên,Tier,Kết quả game thực tế (engine lấy node CUỐI)
+sharp_stone + stone,6,stone_flake,Stone Flake,olduvai,BỊ CHE (không bao giờ ra)
+sharp_stone + stone,262,mortar,Mortar,middle,THẮNG
+stone_flake + wood,7,stone_tool,Stone Tool,olduvai,BỊ CHE (không bao giờ ra)
+stone_flake + wood,232,scraper,Scraper,middle,BỊ CHE (không bao giờ ra)
+stone_flake + wood,301,kindling,Kindling,middle,THẮNG
+bone + stone_flake,7,stone_tool,Stone Tool,olduvai,BỊ CHE (không bao giờ ra)
+bone + stone_flake,272,engraver,Engraver,middle,THẮNG
+fiber + fiber,12,cordage,Cordage,olduvai,BỊ CHE (không bao giờ ra)
+fiber + fiber,309,cloth,Cloth,olduvai,THẮNG
+cordage + wood,13,binding,Binding,middle,BỊ CHE (không bao giờ ra)
+cordage + wood,47,raft,Raft,late,BỊ CHE (không bao giờ ra)
+cordage + wood,255,lashing,Lashing,middle,BỊ CHE (không bao giờ ra)
+cordage + wood,268,bundle,Bundle,middle,BỊ CHE (không bao giờ ra)
+cordage + wood,276,bow,Bow,middle,THẮNG
+cordage + needle,14,sewing,Sewing,middle,BỊ CHE (không bao giờ ra)
+cordage + needle,237,fishing_hook,Fishing Hook,middle,BỊ CHE (không bao giờ ra)
+cordage + needle,259,weaving_shuttle,Weaving Shuttle,middle,THẮNG
+bone + sharp_stone,15,needle,Needle,olduvai,BỊ CHE (không bao giờ ra)
+bone + sharp_stone,266,bone_container,Bone Container,middle,BỊ CHE (không bao giờ ra)
+bone + sharp_stone,273,flute,Flute,middle,THẮNG
+fiber + wood,17,shelter,Shelter,olduvai,BỊ CHE (không bao giờ ra)
+fiber + wood,314,thatch_roof,Thatch Roof,olduvai,THẮNG
+sharp_stone + wood,18,spear,Spear,olduvai,BỊ CHE (không bao giờ ra)
+sharp_stone + wood,230,chisel,Chisel,middle,BỊ CHE (không bao giờ ra)
+sharp_stone + wood,264,wooden_bowl,Wooden Bowl,middle,BỊ CHE (không bao giờ ra)
+sharp_stone + wood,274,bullroarer,Bullroarer,middle,THẮNG
+bone + cordage,20,fishing,Fishing,olduvai,BỊ CHE (không bao giờ ra)
+bone + cordage,257,ladder,Ladder,middle,BỊ CHE (không bao giờ ra)
+bone + cordage,269,trophy_necklace,Trophy Necklace,middle,THẮNG
+bone + fiber,20,fishing,Fishing,olduvai,BỊ CHE (không bao giờ ra)
+bone + fiber,313,smudge_fire,Smudge Fire,olduvai,THẮNG
+wood + wood,21,fire,Fire,olduvai,BỊ CHE (không bao giờ ra)
+wood + wood,275,bow_drill,Bow Drill,middle,THẮNG
+stone_flake + stone_flake,21,fire,Fire,olduvai,BỊ CHE (không bao giờ ra)
+stone_flake + stone_flake,283,microblade,Microblade,middle,THẮNG
+fire + stone,22,controlled_fire,Controlled Fire,middle,BỊ CHE (không bao giờ ra)
+fire + stone,242,hearth,Hearth,middle,BỊ CHE (không bao giờ ra)
+fire + stone,278,boiling_stone,Boiling Stone,middle,THẮNG
+fire + shelter,22,controlled_fire,Controlled Fire,middle,BỊ CHE (không bao giờ ra)
+fire + shelter,244,kiln,Kiln,middle,BỊ CHE (không bao giờ ra)
+fire + shelter,254,smokehouse,Smokehouse,middle,BỊ CHE (không bao giờ ra)
+fire + shelter,270,sauna,Sauna,middle,THẮNG
+fire + wood,24,smoke,Smoke,middle,BỊ CHE (không bao giờ ra)
+fire + wood,241,campfire,Campfire,middle,BỊ CHE (không bao giờ ra)
+fire + wood,265,dugout_canoe,Dugout Canoe,middle,THẮNG
+cordage + fishing,50,fishing_technology,Fishing Technology,middle,BỊ CHE (không bao giờ ra)
+cordage + fishing,239,fishing_line,Fishing Line,middle,THẮNG
+fire + hafted_tool,222,torch,Torch,middle,BỊ CHE (không bao giờ ra)
+fire + hafted_tool,296,brand,Brand,middle,THẮNG
+bone + hafted_tool,223,pickaxe,Pickaxe,middle,BỊ CHE (không bao giờ ra)
+bone + hafted_tool,305,hoe,Hoe,middle,THẮNG
+cordage + hafted_tool,224,axe,Axe,middle,BỊ CHE (không bao giờ ra)
+cordage + hafted_tool,287,flail,Flail,middle,THẮNG
+fire + spear,226,hardened_spear,Hardened Spear,middle,BỊ CHE (không bao giờ ra)
+fire + spear,292,beacon,Beacon,middle,THẮNG
+spear + stone_flake,227,stone_spear,Stone Spear,middle,BỊ CHE (không bao giờ ra)
+spear + stone_flake,297,javelin,Javelin,middle,THẮNG
+cordage + spear,228,harpoon,Harpoon,middle,BỊ CHE (không bao giờ ra)
+cordage + spear,277,atlatl,Atlatl,middle,THẮNG
+cordage + sharp_stone,231,bolas,Bolas,middle,BỊ CHE (không bao giờ ra)
+cordage + sharp_stone,261,slingshot,Slingshot,middle,THẮNG
+cordage + stone_flake,233,scythe,Scythe,middle,BỊ CHE (không bao giờ ra)
+cordage + stone_flake,303,weight,Weight,middle,THẮNG
+cutting + wood,234,carving_knife,Carving Knife,middle,BỊ CHE (không bao giờ ra)
+cutting + wood,279,tallies,Tallies,middle,THẮNG
+bone + cutting,235,bone_saw,Bone Saw,middle,BỊ CHE (không bao giờ ra)
+bone + cutting,280,dice,Dice,middle,THẮNG
+bone + fire,243,charcoal,Charcoal,middle,BỊ CHE (không bao giờ ra)
+bone + fire,267,lime,Lime,middle,THẮNG
+fire + stone_flake,247,ash,Ash,middle,BỊ CHE (không bao giờ ra)
+fire + stone_flake,304,flint_spark,Flint Spark,middle,THẮNG
+cordage + shelter,252,reinforced_shelter,Reinforced Shelter,middle,BỊ CHE (không bao giờ ra)
+cordage + shelter,293,tripwire,Tripwire,middle,THẮNG
+hafted_tool + shelter,271,fence,Fence,middle,BỊ CHE (không bao giờ ra)
+hafted_tool + shelter,306,workshop,Workshop,middle,THẮNG
+cordage + fiber,311,net,Net,olduvai,BỊ CHE (không bao giờ ra)
+cordage + fiber,312,thread_and_needle,Thread & Needle,olduvai,THẮNG
+fiber + plant,315,plant_thread,Plant Thread,olduvai,BỊ CHE (không bao giờ ra)
+fiber + plant,317,flax_fiber,Flax Fiber,olduvai,BỊ CHE (không bao giờ ra)
+fiber + plant,322,pulp,Pulp,olduvai,THẮNG
+cloth + fiber,320,embroidery,Embroidery,middle,BỊ CHE (không bao giờ ra)
+cloth + fiber,321,camouflage,Camouflage,middle,THẮNG

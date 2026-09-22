@@ -57,6 +57,8 @@ export interface Discovery {
   uses: string[];
   /** Stone Age tier classification (olduvai/middle/late). */
   stone_age_tier?: StoneAgeTier;
+  /** Progressive hints for this discovery (l1→l2→l3→l4) */
+  hints?: Hints;
 }
 
 export interface Source {
@@ -125,3 +127,33 @@ export interface TierProgress {
 }
 
 export type ViewId = 'work' | 'graph' | 'arch';
+
+/**
+ * Progressive hint levels for discoveries.
+ * Level 1 (vague) → Level 4 (strong) → player discovers answer.
+ */
+export interface Hints {
+  /** Level 1: Very vague, conceptual clue */
+  l1?: string;
+  /** Level 2: More specific, functional hint */
+  l2?: string;
+  /** Level 3: Strong hint, contextual clue */
+  l3?: string;
+  /** Level 4: Very strong hint, nearly reveals recipe */
+  l4?: string;
+}
+
+/**
+ * Tracks which hint level the player has seen for a discovery.
+ * 0 = no hint seen, 1–4 = hint level shown.
+ */
+export type HintProgress = Record<string, number>;
+
+/**
+ * Result of getHint() call — tells UI what hint to show.
+ */
+export interface HintResult {
+  level: 1 | 2 | 3 | 4;
+  text: string;
+  nextLevel: (1 | 2 | 3 | 4) | null;
+}

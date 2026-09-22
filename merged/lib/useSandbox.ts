@@ -3,7 +3,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import rawDb from '@/data/db.json';
 import { Engine } from './engine';
-import type { CombineResult, Db, Discovery, ViewId } from './types';
+import { HintManager } from './hints';
+import { MultiRouteManager } from './multiRoutes';
+import type { CombineResult, Db, Discovery, ViewId, HintResult } from './types';
 
 export const db = rawDb as unknown as Db;
 
@@ -24,9 +26,17 @@ export function useSandbox(options: {
   onReveal?: (id: string) => void;
 } = {}) {
   const [engine] = useState(() => new Engine(db));
+  const [hintManager] = useState(() => new HintManager());
+  const [routeManager] = useState(() => new MultiRouteManager());
   const onReveal = useRef(options.onReveal);
   useEffect(() => { onReveal.current = options.onReveal; });
   const version = useSyncExternalStore(engine.subscribe, engine.getVersion, SERVER_VERSION);
+
+  // Load hint and route progress on mount
+  useEffect(() => {
+    hintManager.load();
+    routeManager.load();
+  }, [hintManager, routeManager]);
 
   // Saved progress lives in localStorage, which the server cannot see. Loading
   // it during the first render made the client's markup differ from the
@@ -43,6 +53,8 @@ export function useSandbox(options: {
   const [ending, setEnding] = useState<Discovery | null>(null);
   const [hint, setHint] = useState(true);
   const [entered, setEntered] = useState(false);
+  const [currentHint, setCurrentHint] = useState<HintResult | null>(null);
+  const [focusedRouteIndex, setFocusedRouteIndex] = useState(0);
   const toastKey = useRef(0);
 
   const pushToast = useCallback((node: Discovery) => {
@@ -98,9 +110,27 @@ export function useSandbox(options: {
 
   const reset = useCallback(() => {
     engine.reset(); clearSlots(); setFocusId(null); setEnding(null); setHint(true);
-  }, [engine, clearSlots]);
+    hintManager.resetProgress();
+    routeManager.resetProgress();
+    setCurrentHint(null);
+    setFocusedRouteIndex(0);
+  }, [engine, clearSlots, hintManager, routeManager]);
 
   const enter = useCallback(() => setEntered(true), []);
+
+  /** Request next hint level for focused discovery */
+  const requestHint = useCallback(() => {
+    if (!focus) return;
+    const result = hintManager.getHint(focus);
+    setCurrentHint(result);
+  }, [focus, hintManager]);
+
+  /** Set which route to focus on for a discovery */
+  const setFocusRoute = useCallback((routeIndex: number) => {
+    if (!focus) return;
+    routeManager.setFocusedRoute(focus.id, routeIndex);
+    setFocusedRouteIndex(routeIndex);
+  }, [focus, routeManager]);
 
   const focus = useMemo(() => (focusId ? engine.get(focusId) ?? null : null), [focusId, engine]);
 
@@ -108,6 +138,8 @@ export function useSandbox(options: {
     engine, db, version, view, setView, slotA, slotB, setSlotA, setSlotB,
     focus, open, place, drop, clearSlots, fire, reset, hint,
     result, toasts, ending, setEnding, entered, enter,
+    // New hint + multiRoute features
+    hintManager, routeManager, currentHint, requestHint, setFocusRoute, focusedRouteIndex,
   };
 }
 
