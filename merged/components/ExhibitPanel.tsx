@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Glyph } from './Glyph';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
@@ -16,7 +16,7 @@ function Pill({ node, engine, onOpen }: { node?: Discovery; engine: Engine; onOp
   return (
     <button className={cn('pill', !known && 'locked')} onClick={() => onOpen(node.id)}>
       <Glyph node={node} locked={!known} />
-      <span>{node.n}</span>
+      <span>{known ? node.n : 'Undiscovered'}</span>
     </button>
   );
 }
@@ -34,8 +34,46 @@ function SourceLink({ s }: { s: Source }) {
   );
 }
 
+function Closed({
+  engine, node, onHint,
+}: { engine: Engine; node: Discovery; onHint: (id: string) => string | null }) {
+  const [msg, setMsg] = useState<string | null>(null);
+  const eraName = engine.db.eras.find(e => e.id === node.era)?.name ?? node.era;
+  const d = engine.distance(node.id);
+  const tier = node.stone_age_tier ? engine.gate(node.stone_age_tier) : null;
+  const status = tier && !tier.open
+    ? `Opens with the ${tier.name} stage.`
+    : d === 0 ? 'Within reach — you already hold what it takes.'
+    : d === 1 ? 'Close — one piece is still missing.'
+    : `Further off — ${d} pieces are still missing.`;
+  return (
+    <div className="exh-body">
+      <section className="sec">
+        <h3>Not yet discovered</h3>
+        <p className="lead">Somewhere in {eraName}. What it is — and how to make it — stays closed until you find it.</p>
+        <p className="mono" style={{ color: 'var(--bone-3)' }}>{status}</p>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
+          <button className="chip" onClick={() => setMsg(onHint(node.id))}>Aim my hints here</button>
+        </div>
+        {msg && <p className="mono" style={{ color: 'var(--ochre)', marginTop: 10 }}>{msg}</p>}
+      </section>
+      <section className="sec">
+        <h3>Position</h3>
+        <div className="evline">
+          <span className="mono" style={{ color: 'var(--bone-4)', flex: 'none' }}>ROUTES</span>
+          <span>{node.rec.length === 1 ? 'One way in' : `${node.rec.length} different ways in`}</span>
+        </div>
+        <div className="evline">
+          <span className="mono" style={{ color: 'var(--bone-4)', flex: 'none' }}>DEPTH</span>
+          <span>{node.depth} {node.depth === 1 ? 'step' : 'steps'} from a bare stone</span>
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export function ExhibitPanel({
-  engine, node, open, onOpen, onClose,
+  engine, node, open, onOpen, onClose, onHint,
 }: {
   engine: Engine;
   node: Discovery | null;
@@ -44,6 +82,8 @@ export function ExhibitPanel({
   open: boolean;
   onOpen: (id: string) => void;
   onClose: () => void;
+  /** Point the hint system at an undiscovered entry; returns an error line or null. */
+  onHint: (id: string) => string | null;
 }) {
   const panelRef = useRef<HTMLElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -73,7 +113,11 @@ export function ExhibitPanel({
   const known = engine.has(node.id);
   const eraName = engine.db.eras.find(e => e.id === node.era)?.name ?? node.era;
   const recipes = engine.availableRecipes(node.id);
-  const uses = (node.uses || []).slice(0, 14);
+  const foundRoutes = recipes.filter(r => r.found);
+  const openRoutes = recipes.length - foundRoutes.length;
+  const uses = engine.usesOf(node.id);
+  const usesFound = uses.filter(u => engine.has(u)).slice(0, 16);
+  const usesOpen = uses.filter(u => !engine.has(u)).length;
 
   // subject-level sources first, general references after — and say so when
   // there is nothing but general references
@@ -102,14 +146,21 @@ export function ExhibitPanel({
         <div className="exh-art">
           <Glyph node={node} plate locked={!known} sw={1.6} />
         </div>
-        <h2 className="exh-name">{node.n}</h2>
+        <h2 className="exh-name">{known ? node.n : 'Undiscovered'}</h2>
         <div className="exh-meta mono">
-          <span>{node.date}</span><span className="sep">·</span>
-          <span>{node.cat}</span><span className="sep">·</span>
-          <span className="rarity-tag"><i className={`dot ${node.rar}`} />{RARITY_LABEL[node.rar]}</span>
-          {!known && (<><span className="sep">·</span><span style={{ color: 'var(--ochre)' }}>Undiscovered</span></>)}
+          {known ? (
+            <>
+              <span>{node.date}</span><span className="sep">·</span>
+              <span>{node.cat}</span><span className="sep">·</span>
+              <span className="rarity-tag"><i className={`dot r-${node.rar}`} />{RARITY_LABEL[node.rar]}</span>
+            </>
+          ) : (
+            <span style={{ color: 'var(--ochre)' }}>Not found yet</span>
+          )}
         </div>
       </div>
+
+      {!known ? <Closed key={node.id} engine={engine} node={node} onHint={onHint} /> : (
 
       <div className="exh-body">
         <section className="sec">
@@ -154,11 +205,11 @@ export function ExhibitPanel({
         </section>
 
         <section className="sec">
-          <h3>What came before{recipes.length > 1 ? ` · ${recipes.length} routes` : ''}</h3>
+          <h3>Your routes here{recipes.length > 1 ? ` · ${foundRoutes.length} of ${recipes.length}` : ''}</h3>
           {recipes.length === 0 ? (
             <p>Nothing. This is where you start.</p>
           ) : (
-            recipes.map(r => (
+            foundRoutes.map(r => (
               <div className="reqrow" key={`${r.a?.id}+${r.b?.id}`}>
                 <Pill node={r.a} engine={engine} onOpen={onOpen} />
                 <span className="plus">+</span>
@@ -166,15 +217,31 @@ export function ExhibitPanel({
               </div>
             ))
           )}
-          {recipes.length > 1 && <p className="alt-note mono">More than one way to get here.</p>}
+          {recipes.length > 0 && foundRoutes.length === 0 && (
+            <p className="alt-note mono">Found before routes were recorded — make it again to log a route.</p>
+          )}
+          {openRoutes > 0 && (
+            <p className="alt-note mono">
+              {openRoutes === 1 ? 'One more way to get here.' : `${openRoutes} more ways to get here.`} Find them.
+            </p>
+          )}
+          <p className="alt-note" style={{ textTransform: 'none', letterSpacing: 0 }}>
+            Recipes are a game&rsquo;s shorthand for how ideas connect — not a claim about how,
+            where or in what order anything was first made.
+          </p>
         </section>
 
         {uses.length > 0 && (
           <section className="sec">
-            <h3>What it enabled</h3>
+            <h3>What it led to</h3>
             <div className="reqrow">
-              {uses.map(uid => <Pill key={uid} node={engine.get(uid)} engine={engine} onOpen={onOpen} />)}
+              {usesFound.map(uid => <Pill key={uid} node={engine.get(uid)} engine={engine} onOpen={onOpen} />)}
             </div>
+            {usesOpen > 0 && (
+              <p className="alt-note mono">
+                {usesFound.length ? '+ ' : ''}{usesOpen} {usesOpen === 1 ? 'thing' : 'things'} you have not found yet
+              </p>
+            )}
           </section>
         )}
 
@@ -182,14 +249,21 @@ export function ExhibitPanel({
           <h3>Position</h3>
           <div className="evline">
             <span className="mono" style={{ color: 'var(--bone-4)', flex: 'none' }}>DEPTH</span>
-            <span>{node.depth} steps from a bare stone</span>
+            <span>{node.depth} {node.depth === 1 ? 'step' : 'steps'} from a bare stone</span>
           </div>
           <div className="evline">
             <span className="mono" style={{ color: 'var(--bone-4)', flex: 'none' }}>CHAIN</span>
             <span>at least {node.need} distinct discoveries stand behind it</span>
           </div>
+          {engine.foundAt(node.id) && (
+            <div className="evline">
+              <span className="mono" style={{ color: 'var(--bone-4)', flex: 'none' }}>FOUND</span>
+              <span>{new Date(engine.foundAt(node.id)!).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+            </div>
+          )}
         </section>
       </div>
+      )}
     </aside>
   );
 }

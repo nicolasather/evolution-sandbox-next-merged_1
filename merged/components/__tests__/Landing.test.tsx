@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- test doubles are deliberately partial */
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Landing } from '@/components/Landing';
 

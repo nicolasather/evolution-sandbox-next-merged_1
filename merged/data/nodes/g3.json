@@ -1,248 +1,1439 @@
 [
-{"id":"pottery","no":71,"n":"Pottery","era":"civilization","cat":"technology","date":"≈ 20,000 years ago onward","ds":-16000,"rar":"uncommon","vis":"vessel",
- "l1":"Clay heated until it stops being clay and becomes ceramic.",
- "l2":"Firing is irreversible chemistry: above roughly 600 °C the clay minerals lose their bound water and cannot be re-softened. That gives waterproof, rot-proof, insect-proof containers — and containers are what let you store liquid, boil food, ship oil and count a harvest. Pottery is also the archaeologist's clock, because styles change fast and sherds survive forever.",
- "l3":"Ceramics are dated by thermoluminescence, which measures the energy accumulated since the last firing. Fabric analysis identifies clay sources; residue analysis of absorbed lipids reveals what a pot actually held.",
- "ev":"Thermoluminescence dating; fabric sourcing; absorbed lipid residues","src":["bm_collection","met_toah","brit_neolithic"],"rec":[["heat_treatment","village"],["heat_treatment","settlement"]],"tags":["ceramic","container"],
- "caution":"Pottery predates farming in some regions — East Asian hunter-gatherer ceramics are considerably older than Southwest Asian farming ones."},
-
-{"id":"brick","no":72,"n":"Brick","era":"civilization","cat":"material","date":"≈ 9,000 years ago onward","ds":-7000,"rar":"common","vis":"brick-course",
- "l1":"A standard unit of building, made from mud where there is no stone.",
- "l2":"The brick is arguably the first mass-produced standardised object. Identical modules mean a wall can be built by many hands without individual fitting, and it means the design can be planned before the material exists. Mesopotamian civilisation was built almost entirely from mud brick because it had abundant clay and almost no stone.",
- "l3":"Brick dimensions are recorded and compared across sites and periods; standard sizes changed in ways precise enough to help date a structure. Mud-brick collapse creates the characteristic layered mounds — tells — that mark long-occupied Near Eastern sites.",
- "ev":"Standardised brick dimensions; tell stratigraphy","src":["isac","met_meso_early","bm_collection"],"rec":[["pottery","land_management"],["pottery","village"]],"tags":["building","standard"]},
-
-{"id":"construction","no":73,"n":"Construction","era":"civilization","cat":"engineering","date":"≈ 11,000 years ago onward","ds":-9000,"rar":"common","vis":"scaffold",
- "l1":"Assembling material into a structure that stays up.",
- "l2":"Building large means solving for loads that will not forgive a mistake, and organising labour that must arrive in the right order. Göbekli Tepe in Turkey shows monumental stone construction around 11,000 years ago — before farming was established there, which upends the assumption that surplus must come first and monuments second.",
- "l3":"Construction sequence is recovered from quarry marks, tool traces, ramp remains and the stratigraphy of building phases. Experimental archaeology tests how many people and how long a given method would take.",
- "ev":"Quarry and tool marks; construction ramps; build phasing","src":["source_required","isac","bm_collection","met_toah"],"rec":[["brick","cooperation"],["wood","specialized_labor"],["mechanical_advantage","cooperation"]],"tags":["building","labour"],
- "caution":"Göbekli Tepe suggests monumental construction can precede agriculture, reversing a long-assumed sequence."},
-
-{"id":"architecture","no":74,"n":"Architecture","era":"civilization","cat":"engineering","date":"≈ 6,000 years ago onward","ds":-4000,"rar":"uncommon","vis":"elevation",
- "l1":"Building designed before it is built, to mean something as well as stand up.",
- "l2":"Architecture is construction plus intention. A temple is not larger than it needs to be by accident — scale, alignment, approach and sightline are used deliberately to produce an effect on the person walking in. It is one of the oldest technologies for making a large group feel something at once.",
- "l3":"Plans exist. Mesopotamian and Egyptian architectural drawings, scale models and written specifications survive, and building alignments can be checked against solar and stellar positions for the relevant period.",
- "ev":"Ancient plans and models; astronomical alignments; standing structures","src":["source_required","met_toah","isac","bm_collection"],"rec":[["construction","planning"],["construction","geometry"]],"tags":["design","meaning"]},
-
-{"id":"roads","no":75,"n":"Roads","era":"civilization","cat":"engineering","date":"≈ 6,000 years ago onward","ds":-4000,"rar":"common","vis":"causeway",
- "l1":"A prepared surface that makes travel predictable.",
- "l2":"Roads compress distance. They cut transport cost and time, which enlarges the area a single authority can govern, an army can reach and a market can serve. Almost every empire in history is partly a road network — the political map tends to stop where the roads do.",
- "l3":"Road surfaces, kerbs and cuttings survive and are excavated directly. Milestones and itineraries give named routes and distances. Wheel ruts worn into stone record gauge and traffic volume.",
- "ev":"Excavated road surfaces; milestones; wheel ruts","src":["source_required","bm_collection","met_toah","ethw"],"rec":[["construction","trade"],["construction","migration"]],"tags":["transport","network"]},
-
-{"id":"urban_planning","no":76,"n":"Urban Planning","era":"civilization","cat":"engineering","date":"≈ 4,600 years ago onward","ds":-2600,"rar":"rare","vis":"grid-plan",
- "l1":"Deciding the shape of a settlement before people live in it.",
- "l2":"A planned city is an argument about how life should be organised, executed in stone and drainage. Grid streets, zoned quarters, standardised housing and centralised water are all decisions imposed in advance — which means somebody had both the authority to impose them and a model of the city in mind.",
- "l3":"Indus Valley cities such as Mohenjo-daro and Harappa show grid layouts, standardised brick ratios and covered drainage across the whole settlement. Uniformity at that scale is not emergent; it is administered.",
- "ev":"Grid layouts; standardised brick ratios; city-wide drainage","src":["bm_collection","met_toah","owid_urban"],"rec":[["architecture","land_management"],["roads","architecture"]],"tags":["city","design"]},
-
-{"id":"town","no":77,"n":"Town","era":"civilization","cat":"society","date":"≈ 7,000 years ago onward","ds":-5000,"rar":"uncommon","vis":"townscape",
- "l1":"Bigger than a village, and no longer feeding itself.",
- "l2":"A town is the point at which a settlement stops being agricultural and starts being a node — it lives off exchange, craft and administration, drawing food from a hinterland. That dependence is a structural vulnerability as much as an achievement.",
- "l3":"Regional survey maps settlement hierarchies: many small sites, fewer medium ones, a handful of large ones. That distribution is itself the evidence of a town-and-hinterland economy.",
- "ev":"Regional settlement-hierarchy survey; craft concentration","src":["met_meso_early","owid_urban"],"rec":[["village","trade"],["farming_community","trade"]],"tags":["settlement","exchange"]},
-
-{"id":"city","no":78,"n":"City","era":"civilization","cat":"society","date":"≈ 6,000 years ago onward","ds":-4000,"rar":"rare","vis":"city-block",
- "l1":"Enough people in one place that most of them are strangers.",
- "l2":"Anonymity is the defining feature. In a village, behaviour is regulated by everyone knowing everyone; in a city that mechanism fails, and something else must replace it — written law, contracts, currency, police, formal institutions. Cities are also where ideas meet, which is why they produce disproportionate innovation and disproportionate disease.",
- "l3":"Uruk in southern Mesopotamia is among the earliest, with monumental architecture, mass-produced ration bowls and the earliest known writing. Population estimates come from built area and household density, with wide error bars.",
- "ev":"Uruk excavations; built-area demography; administrative records","src":["met_uruk","isac","owid_cities"],"rec":[["town","urban_planning"],["town","population_growth"],["trade","infrastructure"]],"tags":["urban","threshold"]},
-
-{"id":"government","no":79,"n":"Government","era":"civilization","cat":"society","date":"≈ 5,500 years ago onward","ds":-3500,"rar":"rare","vis":"seal",
- "l1":"Somebody who can make a decision that binds everyone else.",
- "l2":"Government is the answer to problems too large for negotiation: defence, irrigation, famine reserve, dispute settlement between strangers. It is also, immediately and everywhere, a mechanism for extraction. Both faces appear together in the record; neither is a later corruption of the other.",
- "l3":"Administrative seals, standardised ration containers, monumental construction requiring coordinated labour, and elite burials with restricted goods all indicate centralised authority before any text describes it.",
- "ev":"Administrative sealings; ration standardisation; elite burials","src":["isac","met_meso_early","bm_collection"],"rec":[["city","division_of_labor"],["city","resource_management"]],"tags":["power","institution"]},
-
-{"id":"law","no":80,"n":"Law","era":"civilization","cat":"society","date":"≈ 4,100 years ago (earliest surviving codes)","ds":-2100,"rar":"rare","vis":"stele",
- "l1":"Rules written down so they outlive the person who made them.",
- "l2":"An unwritten rule is whatever the powerful person says it is today. Writing a rule down and displaying it publicly does something structurally different: it makes the rule checkable, and it binds the ruler to their own past statement. That is a real constraint even when it is frequently ignored.",
- "l3":"The Code of Ur-Nammu and the later Code of Hammurabi survive as inscribed stone and clay. Alongside the codes sit thousands of ordinary court records and contracts, which show how law was actually applied rather than merely proclaimed.",
- "ev":"Inscribed law codes; court records; contracts","src":["source_required","isac","met_cuneiform","bm_collection"],"rec":[["government","writing"],["government","collective_knowledge"]],"tags":["rules","text"]},
-
-{"id":"administration","no":81,"n":"Administration","era":"civilization","cat":"society","date":"≈ 5,000 years ago onward","ds":-3000,"rar":"uncommon","vis":"tablet-stack",
- "l1":"Running a society by paperwork rather than by personal presence.",
- "l2":"Beyond a few thousand people, a ruler cannot personally know what is happening. Administration substitutes records for presence: lists, receipts, inventories, personnel rolls. It is unglamorous and it is the actual machinery of every large state — most surviving cuneiform is not literature but accounts.",
- "l3":"Archives of administrative tablets survive in tens of thousands from Mesopotamian and Egyptian sites, recording rations, livestock, labour rosters and land. They are the most abundant written source from the ancient world.",
- "ev":"Administrative tablet archives; sealings; inventories","src":["isac","met_cuneiform","met_meso_early"],"rec":[["government","record_keeping"],["law","writing"]],"tags":["bureaucracy","scale"]},
-
-{"id":"taxation","no":82,"n":"Taxation","era":"civilization","cat":"economy","date":"≈ 5,000 years ago onward","ds":-3000,"rar":"uncommon","vis":"tally",
- "l1":"A share of what you produce, taken by an authority.",
- "l2":"Taxation converts a diffuse surplus into a concentrated one that can be spent on armies, monuments, canals and scribes. It requires knowing what exists and who owns it — which is why the state's need to tax has driven the development of measurement, census, cadastral survey and writing itself.",
- "l3":"Tax assessments, receipts and exemption grants survive in quantity. Egyptian records of Nile flood height used to predict yield and set tax rates are a striking case of measurement in the service of extraction.",
- "ev":"Tax receipts and assessments; Nilometer records; cadastral survey","src":["source_required","isac","met_cuneiform"],"rec":[["administration","trade"],["administration","grain_storage"]],"tags":["state","extraction"]},
-
-{"id":"writing","no":83,"n":"Writing","era":"civilization","cat":"knowledge","date":"≈ 5,400–5,000 years ago (Mesopotamia); independently elsewhere","ds":-3300,"rar":"rare","vis":"cuneiform",
- "l1":"Language made visible, durable and separable from the speaker.",
- "l2":"Writing detaches a message from the presence of the person who made it. It can outlive them, travel without them and be checked against later. Everything that depends on accumulating knowledge across generations rather than within a lifetime — law, science, contract, history — sits on top of that one property.",
- "l3":"Cuneiform's development is unusually well documented, because it begins as an accounting system and gradually becomes general-purpose. The earliest tablets from Uruk record commodities and quantities; the abstraction to full language takes centuries.",
- "ev":"Uruk proto-cuneiform tablets; script development sequences","src":["met_writing","met_cuneiform","isac"],"rec":[["record_keeping","language"],["record_keeping","art"]],"tags":["symbol","record"],
- "caution":"Writing was invented independently at least three or four times — Mesopotamia, Egypt, China, Mesoamerica — with different mechanisms and no shared origin."},
-
-{"id":"record_keeping","no":84,"n":"Record Keeping","era":"civilization","cat":"knowledge","date":"≈ 10,000–5,000 years ago","ds":-6000,"rar":"uncommon","vis":"token-set",
- "l1":"Storing a quantity outside anyone's memory.",
- "l2":"Records came before writing. Clay tokens representing commodities were sealed in containers, and marks pressed on the outside noted what was inside. This is the actual ancestor of the script — writing seems to have grown out of the need to count things reliably, not out of a wish to tell stories.",
- "l3":"Token systems are found across the Near East over several millennia, followed by sealed clay envelopes, then impressed tablets, then signs. The sequence is materially continuous, which is why the accounting-origin argument for writing is well supported.",
- "ev":"Clay token systems; sealed bullae; impressed tablets","src":["met_writing","isac","met_cuneiform"],"rec":[["accounting","symbolic_thought"],["accounting","art"]],"tags":["count","memory"]},
-
-{"id":"number_system","no":85,"n":"Number System","era":"civilization","cat":"knowledge","date":"≈ 5,000 years ago onward","ds":-3000,"rar":"uncommon","vis":"numerals",
- "l1":"Symbols for quantity that can be combined by rules.",
- "l2":"A notation is not just shorthand — it determines what calculations are practical. Positional notation with a zero makes long multiplication and division routine; Roman numerals make them a specialist skill. The tool for thinking shapes what gets thought.",
- "l3":"Mesopotamian scribes used base-60 positional notation, which survives in our minutes, seconds and degrees. Mathematical tablets show multiplication tables, reciprocals and problem sets — teaching material, complete with student errors.",
- "ev":"Cuneiform mathematical tablets; numeral systems across scripts","src":["source_required","isac","met_cuneiform","bm_collection"],"rec":[["accounting","record_keeping"],["measurement","record_keeping"]],"tags":["number","notation"]},
-
-{"id":"accounting","no":86,"n":"Accounting","era":"civilization","cat":"economy","date":"≈ 8,000 years ago onward","ds":-5500,"rar":"uncommon","vis":"ledger",
- "l1":"Keeping track of who owes what to whom.",
- "l2":"Accounting is the technology that lets economic relationships outlive memory and trust. Once obligation is recorded, it can be transferred, enforced and audited — and credit becomes possible between people who have no reason to trust each other. Most early writing is accounting, which says something about priorities.",
- "l3":"Token systems, then tablets, record quantities, commodities, parties and dates. Double-entry bookkeeping appears much later, formalised in fifteenth-century Italy, and transforms what can be tracked in a complex business.",
- "ev":"Accounting tablets; token systems; later double-entry manuals","src":["met_writing","isac","met_cuneiform"],"rec":[["trade","grain_storage"],["food_surplus","trade"]],"tags":["economy","record"]},
-
-{"id":"calendar","no":87,"n":"Calendar","era":"civilization","cat":"knowledge","date":"≈ 5,000 years ago onward","ds":-3000,"rar":"uncommon","vis":"calendar-disc",
- "l1":"Dividing time into named units that repeat.",
- "l2":"Farming needs to know when to plant, and ritual needs to know when to gather. Both require predicting a date months ahead, which means modelling the sky. The awkward part is that the solar year, lunar month and day do not divide evenly into each other — every calendar in history is a different compromise with that fact.",
- "l3":"Calendrical texts, intercalation records — inserted extra months to keep drift in check — and monument alignments to solstice or heliacal risings all survive. The Mesoamerican Long Count and Egyptian civil calendar show independent solutions to the same arithmetic problem.",
- "ev":"Calendrical texts; intercalation records; monument alignments","src":["source_required","isac","met_toah","bm_collection"],"rec":[["astronomy","record_keeping"],["agriculture","astronomy"]],"tags":["time","sky"]},
-
-{"id":"astronomy","no":88,"n":"Astronomy","era":"civilization","cat":"science","date":"≈ 4,000 years ago onward as systematic record","ds":-2000,"rar":"uncommon","vis":"ephemeris",
- "l1":"Watching the sky carefully enough to predict it.",
- "l2":"Astronomy is where prediction was invented. Babylonian scribes kept nightly records for centuries and found that eclipses recur in cycles — meaning a future event could be forecast from past data alone, without any theory of why. That is the template for empirical science, arrived at through the sky because the sky is the one system that repeats reliably.",
- "l3":"Babylonian astronomical diaries span many centuries of continuous observation and survive on clay. Their eclipse records are precise enough that modern astronomers use them to measure the long-term slowing of Earth's rotation.",
- "ev":"Babylonian astronomical diaries; eclipse records; alignments","src":["source_required","isac","met_cuneiform","bm_collection"],"rec":[["navigation","record_keeping"],["ritual","navigation"]],"tags":["sky","prediction"]},
-
-{"id":"economy","no":89,"n":"Economy","era":"civilization","cat":"economy","date":"≈ 5,000 years ago onward","ds":-3000,"rar":"uncommon","vis":"flow",
- "l1":"A whole system of production, exchange and obligation, larger than anyone in it.",
- "l2":"Once exchange, credit, taxation and specialised production interlock, the result behaves as a system with its own dynamics — prices, shortages, booms and crashes that nobody chose. Ancient records include price series, interest rates, debt and periodic debt cancellation, which suggests the instabilities were recognised early.",
- "l3":"Price and wage series reconstructed from Mesopotamian and Egyptian records allow economic history well before coinage. Debt-remission edicts are direct evidence that debt accumulation was a recurring structural problem.",
- "ev":"Ancient price series; interest and debt records; remission edicts","src":["source_required","isac","met_cuneiform","owid_tech"],"rec":[["trade","taxation"],["accounting","city"],["money","trade"]],"tags":["system","exchange"]},
-
-{"id":"civilization","no":90,"n":"Civilisation","era":"civilization","cat":"society","date":"≈ 5,000 years ago onward","ds":-3000,"rar":"rare","vis":"ziggurat",
- "l1":"Cities, writing, specialists and institutions, interlocking.",
- "l2":"The word carries baggage worth naming: it has often been used to rank societies, with the ranking following whoever was doing the ranking. As a descriptive term for a particular configuration — dense urban settlement, record-keeping, occupational specialisation, formal institutions — it is useful. As a judgement of worth, it has a poor record.",
- "l3":"The configuration appears independently in Mesopotamia, Egypt, the Indus Valley, China, Mesoamerica and the Andes, with different crops, scripts, architecture and beliefs. The recurrence of the pattern is the interesting finding; the ranking of the instances is not a scientific question.",
- "ev":"Independent regional sequences; comparative archaeology","src":["source_required","bm_collection","met_toah","isac"],"rec":[["city","writing"],["city","law"],["government","economy"]],"tags":["society","threshold"],
- "caution":"'Civilisation' has a long history of use as a value judgement ranking peoples. Used here strictly as a description of a social configuration."},
-
-{"id":"copper","no":91,"n":"Copper","era":"metallurgy","cat":"material","date":"≈ 9,000 years ago onward","ds":-7000,"rar":"uncommon","vis":"copper-ingot",
- "l1":"The first metal worked at scale — soft, red, and reshapeable without breaking.",
- "l2":"Copper introduces a property no earlier material had: it deforms without fracturing, and it can be melted and recast indefinitely. A broken stone tool is gone; a broken copper tool is raw material. That single fact changes how tools are valued, repaired and inherited.",
- "l3":"Lead isotope analysis fingerprints copper to its ore source, mapping ancient metal trade across regions. Native copper artefacts predate smelting and are identifiable by their worked-but-unmelted microstructure.",
- "ev":"Lead-isotope provenance; metallography; slag and crucible finds","src":["source_required","bm_collection","met_toah","ethw"],"rec":[["smelting","stone"],["smelting","trade"]],"tags":["metal","reversible"]},
-
-{"id":"smelting","no":92,"n":"Smelting","era":"metallurgy","cat":"technique","date":"≈ 7,000 years ago onward","ds":-5000,"rar":"rare","vis":"furnace",
- "l1":"Extracting metal from rock that does not look remotely like metal.",
- "l2":"Smelting is a conceptual leap larger than it appears. Green malachite ore looks nothing like copper, and getting one from the other requires high temperature *and* a reducing atmosphere — starving the fire of oxygen so carbon monoxide strips oxygen from the ore. Both conditions must hold at once, and neither is obvious.",
- "l3":"Smelting sites are identified by slag — the glassy waste with a distinctive chemistry — plus furnace remains, tuyère fragments from bellows, and crucibles. Slag composition reveals furnace temperature and atmosphere.",
- "ev":"Slag chemistry; furnace and tuyère remains; crucibles","src":["source_required","ethw","bm_collection","met_toah"],"rec":[["pottery","heat_treatment"],["controlled_fire","heat_treatment"]],"tags":["pyrotechnology","chemistry"],
- "caution":"Kiln technology developed for pottery plausibly supplied the temperature control smelting needs, but a direct causal link is inferred rather than documented."},
-
-{"id":"bronze","no":93,"n":"Bronze","era":"metallurgy","cat":"material","date":"≈ 5,300 years ago onward","ds":-3300,"rar":"rare","vis":"bronze-alloy",
- "l1":"Copper deliberately mixed with tin to make something better than either.",
- "l2":"Bronze is the first engineered alloy: harder than copper, lower melting point, casts more cleanly. It also has an awkward property — tin is rare and rarely found near copper, so bronze forces long-distance trade. Bronze Age economies were bound together by a supply chain, and were vulnerable when it broke.",
- "l3":"Alloy composition is measured directly by spectrometry, and tin content proves deliberate alloying rather than accidental ore mixing. Shipwreck cargoes such as Uluburun preserve ingots in transit and map the trade.",
- "ev":"Alloy composition analysis; ingot cargoes; shipwreck assemblages","src":["source_required","bm_collection","met_toah","ethw"],"rec":[["copper","smelting"],["copper","trade"]],"tags":["alloy","trade"]},
-
-{"id":"bronze_tools","no":94,"n":"Bronze Tools","era":"metallurgy","cat":"technology","date":"≈ 5,000 years ago onward","ds":-3000,"rar":"uncommon","vis":"bronze-blade",
- "l1":"Cast, sharpened, resharpened, and eventually melted down and recast.",
- "l2":"Bronze tools hold an edge far better than copper and can be produced to a consistent shape by casting from a mould. Casting is the key: it turns toolmaking from individual craft into repeatable production, and it makes complex shapes — sockets, hollow forms — that no stone tool could take.",
- "l3":"Moulds survive in stone and clay, and casting seams on finished objects match them. Recycling is visible chemically, because remelted bronze accumulates a mixed impurity signature.",
- "ev":"Casting moulds; casting seams; recycling signatures","src":["source_required","bm_collection","met_toah"],"rec":[["bronze","casting"],["bronze","specialized_labor"]],"tags":["tools","cast"]},
-
-{"id":"iron","no":95,"n":"Iron","era":"metallurgy","cat":"material","date":"≈ 3,200 years ago onward at scale","ds":-1200,"rar":"rare","vis":"iron-bloom",
- "l1":"Common, cheap, and much harder to work than bronze.",
- "l2":"Iron ore is everywhere, which is its whole advantage — no trade route required. The problem is that iron melts far above the temperature ancient furnaces reached, so early ironworking produced a spongy solid bloom that had to be hammered while hot to drive out slag. More labour, worse initial product, vastly better supply.",
- "l3":"Bloomery slag differs chemically from copper slag and is abundant at ironworking sites. Metallography of finished objects reveals forging history in the grain structure, including how many times a piece was folded and welded.",
- "ev":"Bloomery slag; metallographic grain structure; forge sites","src":["source_required","ethw","bm_collection"],"rec":[["smelting","bronze"],["smelting","forging"]],"tags":["metal","abundant"],
- "caution":"Iron replaced bronze because of supply, not because early iron was a better material. The first iron tools were often inferior."},
-
-{"id":"ironworking","no":96,"n":"Ironworking","era":"metallurgy","cat":"technique","date":"≈ 3,200 years ago onward","ds":-1200,"rar":"uncommon","vis":"anvil",
- "l1":"Hammering hot iron into shape, over and over.",
- "l2":"Because iron could not be melted and poured, it had to be forged — heated to red heat and beaten, repeatedly, to consolidate the metal and expel slag. Folding and welding distributes carbon and impurities more evenly, and the resulting layered structure is both stronger and, in some traditions, visibly patterned.",
- "l3":"Grain structure and slag-stringer patterns in cross-sections record the forging sequence. Experimental smithing reproduces the signatures and calibrates how much work each stage represents.",
- "ev":"Metallography; slag inclusions; experimental smithing","src":["source_required","ethw","bm_collection"],"rec":[["iron","forging"],["iron","specialized_labor"]],"tags":["forge","craft"]},
-
-{"id":"steel","no":97,"n":"Steel","era":"metallurgy","cat":"material","date":"Ancient in small quantities; industrial from 1856","ds":1856,"rar":"rare","vis":"steel-bar",
- "l1":"Iron with a precisely controlled trace of carbon — around one part in a hundred.",
- "l2":"A very small amount of carbon transforms iron's mechanical behaviour: hard enough to hold an edge, tough enough not to shatter. Ancient smiths achieved it by skill and feel. Bessemer's converter in 1856 achieved it by process control, and cheap bulk steel is the material that rails, ships, skyscrapers and machine tools are made of.",
- "l3":"Carbon content and heat-treatment history are readable from microstructure. The Bessemer process is documented in patents, plant records and production statistics, and the resulting collapse in steel prices is visible in economic series.",
- "ev":"Microstructure analysis; patents and plant records; price series","src":["source_required","ethw","owid_tech","ethw_milestones"],"rec":[["ironworking","controlled_fire"],["iron","heat_treatment"]],"tags":["alloy","industrial"]},
-
-{"id":"metallurgy","no":98,"n":"Metallurgy","era":"metallurgy","cat":"science","date":"Practical for millennia; theoretical from the 1800s","ds":-3000,"rar":"rare","vis":"phase-diagram",
- "l1":"Understanding metals well enough to design one for a job.",
- "l2":"For most of history metallurgy was inherited procedure — do exactly this and it works, nobody knows why. Understanding why, through phase diagrams and crystal structure, converted it into design: specify the properties you need, then choose the composition and heat treatment that deliver them. That shift underlies every modern engineered material.",
- "l3":"Ancient practice is reconstructed from workshop remains and object analysis. Modern metallurgy is documented in the phase diagrams, crystallographic studies and standards that let alloys be specified and reproduced anywhere.",
- "ev":"Workshop archaeology; phase diagrams; materials standards","src":["source_required","ethw","ethw_milestones"],"rec":[["smelting","collective_knowledge"],["ironworking","experiment"]],"tags":["materials","science"]},
-
-{"id":"forging","no":99,"n":"Forging","era":"metallurgy","cat":"technique","date":"≈ 9,000 years ago onward","ds":-7000,"rar":"common","vis":"hammer-blow",
- "l1":"Shaping metal by hitting it, usually hot.",
- "l2":"Forging does more than change shape. Working metal deforms its grain structure and hardens it, and hot working lets it be reshaped without cracking. A forged component is generally stronger than a cast one of the same alloy because the grain flow follows the part's geometry.",
- "l3":"Hammer marks survive on unfinished work, and grain flow in cross-section distinguishes forged from cast components. Anvils, tongs and hearth remains identify smithies archaeologically.",
- "ev":"Hammer marks; grain-flow metallography; smithy remains","src":["source_required","ethw","bm_collection"],"rec":[["copper","hammering"],["bronze","hammering"]],"tags":["technique","metal"]},
-
-{"id":"casting","no":100,"n":"Casting","era":"metallurgy","cat":"technique","date":"≈ 6,000 years ago onward","ds":-4000,"rar":"uncommon","vis":"mould",
- "l1":"Pouring liquid metal into a shaped cavity and letting it solidify.",
- "l2":"Casting decouples the complexity of a shape from the difficulty of making it. Once a mould exists, a complicated form costs the same as a simple one, and it can be repeated exactly. Lost-wax casting can reproduce a modelled original in metal at full detail — a capability that runs from ancient bronzes to modern turbine blades.",
- "l3":"Moulds, crucibles and sprues survive, and casting flaws — porosity, cold shuts, seams — identify the technique in finished objects. Lost-wax work is recognisable because the object has no mould seam and no draft angle.",
- "ev":"Moulds and crucibles; casting flaws; absence of mould seams","src":["source_required","bm_collection","met_toah","ethw"],"rec":[["copper","pottery"],["bronze","pottery"]],"tags":["technique","reproduction"]},
-
-{"id":"wheel","no":101,"n":"Wheel","era":"metallurgy","cat":"engineering","date":"≈ 5,500 years ago onward","ds":-3500,"rar":"rare","vis":"wheel",
- "l1":"A disc that turns on a fixed centre, converting drag into rolling.",
- "l2":"The wheel is famously counter-intuitive as an invention because it is useless alone. It needs a low-friction axle bearing, a hard enough material for both, and a prepared surface to run on — which is why it appears late, and why several sophisticated societies never adopted it for transport. It is not obvious, and it is not always the best answer.",
- "l3":"The earliest evidence includes potter's wheels, model wagons, wheel ruts and actual wooden wheels preserved in waterlogged conditions, appearing across Mesopotamia and Europe within a few centuries of each other.",
- "ev":"Preserved wooden wheels; wagon models; wheel ruts; pictographs","src":["bm_collection","ethw_mecheng","met_toah"],"rec":[["pottery","wood"],["construction","wood"]],"tags":["mechanism","rotation"],
- "caution":"Mesoamerican societies knew the wheel — it appears on toys — but lacked draught animals, so it was not used for transport. Absence is not ignorance."},
-
-{"id":"axle","no":102,"n":"Axle","era":"metallurgy","cat":"engineering","date":"≈ 5,500 years ago onward","ds":-3500,"rar":"uncommon","vis":"axle",
- "l1":"The fixed shaft a wheel turns around. The hard half of the problem.",
- "l2":"The wheel is easy; the bearing is not. The axle must carry the full load while allowing rotation, with tolerances tight enough to avoid wobble and loose enough to avoid seizing, and it wears constantly. Most of the engineering history of the wheel is actually the history of bearings and lubrication.",
- "l3":"Wear patterns on surviving axles and hubs record load and lubrication. Some early designs rotate the axle with the wheels; others fix it — the two solutions leave different wear signatures.",
- "ev":"Axle and hub wear analysis; surviving wagon components","src":["ethw_mecheng","bm_collection"],"rec":[["wheel","wood"],["wheel","binding"]],"tags":["mechanism","bearing"]},
-
-{"id":"cart","no":103,"n":"Cart","era":"metallurgy","cat":"technology","date":"≈ 5,500 years ago onward","ds":-3500,"rar":"uncommon","vis":"cart",
- "l1":"Wheels, axle and a box, pulled by an animal.",
- "l2":"A cart multiplies how much one person and one animal can move by roughly an order of magnitude. That changes the economic radius of a settlement: how far fields can be from the village, how far grain can travel before the cost of moving it exceeds its value.",
- "l3":"Wagon burials, ceramic models, cart ruts and depictions in art document form and use. Draught-animal skeletons show pathologies from pulling loads, which independently confirms traction.",
- "ev":"Wagon burials; ceramic models; draught-animal pathology","src":["source_required","bm_collection","met_toah"],"rec":[["axle","herding"],["axle","construction"]],"tags":["transport","load"]},
-
-{"id":"mechanical_advantage","no":104,"n":"Mechanical Advantage","era":"metallurgy","cat":"engineering","date":"Ancient practice; formalised ≈ 250 BCE","ds":-250,"rar":"rare","vis":"force-diagram",
- "l1":"Trading distance for force — moving a heavy thing a short way by moving a light thing a long way.",
- "l2":"This is the central idea of pre-industrial engineering. Levers, pulleys, screws, wedges and inclined planes all do the same trick, and once the principle is stated abstractly it can be applied to any of them. It is also an early example of a general law being extracted from a set of specific tricks.",
- "l3":"Archimedes gave the law of the lever a formal treatment in the third century BCE, and his works on statics survive through later copies. The practical techniques are far older and visible in construction evidence.",
- "ev":"Archimedean statics; construction evidence; surviving machines","src":["ethw_mecheng","met_toah"],"rec":[["lever","pulley"],["lever","mechanism"]],"tags":["physics","principle"]},
-
-{"id":"pulley","no":105,"n":"Pulley","era":"metallurgy","cat":"engineering","date":"≈ 4,000 years ago onward","ds":-2000,"rar":"uncommon","vis":"pulley",
- "l1":"A grooved wheel that redirects a rope — and, in sets, multiplies force.",
- "l2":"A single pulley only changes direction, which is already useful because pulling down is easier than lifting up. Several in a block-and-tackle divide the required force by the number of supporting rope lengths. This is how ancient construction lifted blocks that no crowd could carry.",
- "l3":"Pulley blocks survive from classical contexts, and crane bases and lifting-boss cuttings on stone blocks show where hoists were anchored. Roman treatises describe the machines directly.",
- "ev":"Surviving pulley blocks; lifting bosses; ancient engineering texts","src":["ethw_mecheng","met_toah","bm_collection"],"rec":[["wheel","cordage"],["wheel","fiber"]],"tags":["mechanism","lifting"]},
-
-{"id":"lever","no":106,"n":"Lever","era":"metallurgy","cat":"engineering","date":"Deep and gradual","ds":-100000,"rar":"common","vis":"lever",
- "l1":"A rigid bar and a pivot. The simplest machine there is.",
- "l2":"A lever converts a small force over a long distance into a large force over a short one, and it requires nothing but a stick and a rock. It is almost certainly the oldest machine humans used, and it is still inside most mechanisms — every pair of scissors, every crank, every bone-and-muscle joint in your arm.",
- "l3":"Levering is inferred from what was moved rather than from surviving levers, since a wooden pole leaves no trace. Prying marks on megalithic stone and the geometry of construction sites indicate the technique.",
- "ev":"Prying marks on megaliths; construction geometry; later texts","src":["ethw_mecheng","bm_collection"],"rec":[["wood","stone"]],"tags":["machine","simple"]},
-
-{"id":"gear","no":107,"n":"Gear","era":"metallurgy","cat":"engineering","date":"≈ 2,300 years ago onward","ds":-300,"rar":"rare","vis":"gear",
- "l1":"Toothed wheels that mesh, transmitting rotation at a chosen ratio.",
- "l2":"Gears make rotation programmable. A chosen tooth ratio converts speed into torque or the reverse, exactly and repeatably, and a train of gears can compute a ratio far too awkward to arrange any other way. Everything from clocks to gearboxes to differential drives is a consequence.",
- "l3":"The Antikythera mechanism, recovered from a Greek shipwreck and dated to roughly the second century BCE, contains dozens of precisely cut bronze gears used to model astronomical cycles. Imaging by X-ray tomography reconstructed the gear train without dismantling it.",
- "ev":"Antikythera mechanism; X-ray tomography; ancient gear finds","src":["ethw_mecheng","bm_collection","met_toah"],"rec":[["wheel","metallurgy"],["wheel","casting"]],"tags":["mechanism","ratio"]},
-
-{"id":"mechanism","no":108,"n":"Mechanism","era":"metallurgy","cat":"engineering","date":"≈ 2,300 years ago onward","ds":-300,"rar":"rare","vis":"linkage",
- "l1":"Parts arranged so that motion in one produces determined motion in another.",
- "l2":"A mechanism embodies a rule in metal. Given the input, the output is fixed by geometry — no decision, no supervision. This is the beginning of automation as a concept: behaviour built into a physical arrangement, and the direct ancestor of the idea that a machine can execute a procedure.",
- "l3":"Surviving devices, ancient engineering treatises such as those of Hero of Alexandria, and later medieval clockwork document the tradition. Tomographic imaging recovers internal arrangements from corroded objects.",
- "ev":"Surviving devices; ancient engineering texts; tomographic imaging","src":["ethw_mecheng","ethw"],"rec":[["gear","axle"],["gear","pulley"]],"tags":["machine","automation"]},
-
-{"id":"engineering","no":109,"n":"Engineering","era":"metallurgy","cat":"engineering","date":"Practice is ancient; formal discipline from the 1700s","ds":-2000,"rar":"rare","vis":"drawing",
- "l1":"Designing something to work before it exists, and knowing why it will.",
- "l2":"Engineering is the point where building stops being craft tradition and becomes calculation. You can predict whether a beam will hold, size it deliberately, and justify the number. That lets structures be built that nobody has attempted before, which craft tradition alone cannot do because tradition only encodes what has already worked.",
- "l3":"The shift is visible in the documents: from pattern books and rules of thumb, to engineering drawings with dimensions and tolerances, to calculated load analyses. Professional societies and formal training appear alongside.",
- "ev":"Engineering drawings; calculated load analyses; professional records","src":["ethw","ethw_mecheng","ethw_milestones"],"rec":[["mathematics","construction"],["mechanism","construction"],["physics","mechanism"]],"tags":["design","calculation"]},
-
-{"id":"infrastructure","no":110,"n":"Infrastructure","era":"metallurgy","cat":"engineering","date":"≈ 4,000 years ago onward","ds":-2000,"rar":"uncommon","vis":"aqueduct",
- "l1":"The systems everything else runs on, noticed mainly when they fail.",
- "l2":"Water supply, drainage, roads, ports, power and networks share a shape: enormous fixed cost, long life, benefits spread across everyone, and no individual incentive to build them. That is why infrastructure is almost always collective — and why its condition is one of the more reliable indicators of a society's capacity.",
- "l3":"Aqueducts, sewers, harbours and road networks survive as structures and are datable. Maintenance records — Roman water administration is documented in detail — show the ongoing cost that construction figures alone hide.",
- "ev":"Surviving aqueducts and sewers; maintenance records; port works","src":["source_required","ethw","met_toah","bm_collection"],"rec":[["engineering","roads"],["engineering","irrigation"]],"tags":["systems","collective"]}
+  {
+    "id": "pottery",
+    "no": 71,
+    "n": "Pottery",
+    "era": "civilization",
+    "cat": "technology",
+    "date": "≈ 20,000 years ago onward",
+    "ds": -16000,
+    "rar": "uncommon",
+    "vis": "vessel",
+    "l1": "Clay heated until it stops being clay and becomes ceramic.",
+    "l2": "Firing is irreversible chemistry: above roughly 600 °C the clay minerals lose their bound water and cannot be re-softened. That gives waterproof, rot-proof, insect-proof containers — and containers are what let you store liquid, boil food, ship oil and count a harvest. Pottery is also the archaeologist's clock, because styles change fast and sherds survive forever.",
+    "l3": "Ceramics are dated by thermoluminescence, which measures the energy accumulated since the last firing. Fabric analysis identifies clay sources; residue analysis of absorbed lipids reveals what a pot actually held.",
+    "ev": "Thermoluminescence dating; fabric sourcing; absorbed lipid residues",
+    "src": [
+      "bm_collection",
+      "met_toah",
+      "brit_neolithic"
+    ],
+    "rec": [
+      [
+        "heat_treatment",
+        "village"
+      ],
+      [
+        "heat_treatment",
+        "settlement"
+      ]
+    ],
+    "tags": [
+      "ceramic",
+      "container"
+    ],
+    "caution": "Pottery predates farming in some regions — East Asian hunter-gatherer ceramics are considerably older than Southwest Asian farming ones.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "brick",
+    "no": 72,
+    "n": "Brick",
+    "era": "civilization",
+    "cat": "material",
+    "date": "≈ 9,000 years ago onward",
+    "ds": -7000,
+    "rar": "common",
+    "vis": "brick-course",
+    "l1": "A standard unit of building, made from mud where there is no stone.",
+    "l2": "The brick is arguably the first mass-produced standardised object. Identical modules mean a wall can be built by many hands without individual fitting, and it means the design can be planned before the material exists. Mesopotamian civilisation was built almost entirely from mud brick because it had abundant clay and almost no stone.",
+    "l3": "Brick dimensions are recorded and compared across sites and periods; standard sizes changed in ways precise enough to help date a structure. Mud-brick collapse creates the characteristic layered mounds — tells — that mark long-occupied Near Eastern sites.",
+    "ev": "Standardised brick dimensions; tell stratigraphy",
+    "src": [
+      "isac",
+      "met_meso_early",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "pottery",
+        "land_management"
+      ],
+      [
+        "pottery",
+        "village"
+      ]
+    ],
+    "tags": [
+      "building",
+      "standard"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "construction",
+    "no": 73,
+    "n": "Construction",
+    "era": "civilization",
+    "cat": "engineering",
+    "date": "≈ 11,000 years ago onward",
+    "ds": -9000,
+    "rar": "common",
+    "vis": "scaffold",
+    "l1": "Assembling material into a structure that stays up.",
+    "l2": "Building large means solving for loads that will not forgive a mistake, and organising labour that must arrive in the right order. Göbekli Tepe in Turkey shows monumental stone construction around 11,000 years ago — before farming was established there, which upends the assumption that surplus must come first and monuments second.",
+    "l3": "Construction sequence is recovered from quarry marks, tool traces, ramp remains and the stratigraphy of building phases. Experimental archaeology tests how many people and how long a given method would take.",
+    "ev": "Quarry and tool marks; construction ramps; build phasing",
+    "src": [
+      "source_required",
+      "isac",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "brick",
+        "cooperation"
+      ],
+      [
+        "wood",
+        "specialized_labor"
+      ],
+      [
+        "mechanical_advantage",
+        "cooperation"
+      ]
+    ],
+    "tags": [
+      "building",
+      "labour"
+    ],
+    "caution": "Göbekli Tepe suggests monumental construction can precede agriculture, reversing a long-assumed sequence.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "architecture",
+    "no": 74,
+    "n": "Architecture",
+    "era": "civilization",
+    "cat": "engineering",
+    "date": "≈ 6,000 years ago onward",
+    "ds": -4000,
+    "rar": "uncommon",
+    "vis": "elevation",
+    "l1": "Building designed before it is built, to mean something as well as stand up.",
+    "l2": "Architecture is construction plus intention. A temple is not larger than it needs to be by accident — scale, alignment, approach and sightline are used deliberately to produce an effect on the person walking in. It is one of the oldest technologies for making a large group feel something at once.",
+    "l3": "Plans exist. Mesopotamian and Egyptian architectural drawings, scale models and written specifications survive, and building alignments can be checked against solar and stellar positions for the relevant period.",
+    "ev": "Ancient plans and models; astronomical alignments; standing structures",
+    "src": [
+      "source_required",
+      "met_toah",
+      "isac",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "construction",
+        "planning"
+      ],
+      [
+        "construction",
+        "geometry"
+      ]
+    ],
+    "tags": [
+      "design",
+      "meaning"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "roads",
+    "no": 75,
+    "n": "Roads",
+    "era": "civilization",
+    "cat": "engineering",
+    "date": "≈ 6,000 years ago onward",
+    "ds": -4000,
+    "rar": "common",
+    "vis": "causeway",
+    "l1": "A prepared surface that makes travel predictable.",
+    "l2": "Roads compress distance. They cut transport cost and time, which enlarges the area a single authority can govern, an army can reach and a market can serve. Almost every empire in history is partly a road network — the political map tends to stop where the roads do.",
+    "l3": "Road surfaces, kerbs and cuttings survive and are excavated directly. Milestones and itineraries give named routes and distances. Wheel ruts worn into stone record gauge and traffic volume.",
+    "ev": "Excavated road surfaces; milestones; wheel ruts",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "construction",
+        "trade"
+      ],
+      [
+        "construction",
+        "migration"
+      ]
+    ],
+    "tags": [
+      "transport",
+      "network"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "urban_planning",
+    "no": 76,
+    "n": "Urban Planning",
+    "era": "civilization",
+    "cat": "engineering",
+    "date": "≈ 4,600 years ago onward",
+    "ds": -2600,
+    "rar": "rare",
+    "vis": "grid-plan",
+    "l1": "Deciding the shape of a settlement before people live in it.",
+    "l2": "A planned city is an argument about how life should be organised, executed in stone and drainage. Grid streets, zoned quarters, standardised housing and centralised water are all decisions imposed in advance — which means somebody had both the authority to impose them and a model of the city in mind.",
+    "l3": "Indus Valley cities such as Mohenjo-daro and Harappa show grid layouts, standardised brick ratios and covered drainage across the whole settlement. Uniformity at that scale is not emergent; it is administered.",
+    "ev": "Grid layouts; standardised brick ratios; city-wide drainage",
+    "src": [
+      "bm_collection",
+      "met_toah",
+      "owid_urban"
+    ],
+    "rec": [
+      [
+        "architecture",
+        "land_management"
+      ],
+      [
+        "roads",
+        "architecture"
+      ]
+    ],
+    "tags": [
+      "city",
+      "design"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "town",
+    "no": 77,
+    "n": "Town",
+    "era": "civilization",
+    "cat": "society",
+    "date": "≈ 7,000 years ago onward",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "townscape",
+    "l1": "Bigger than a village, and no longer feeding itself.",
+    "l2": "A town is the point at which a settlement stops being agricultural and starts being a node — it lives off exchange, craft and administration, drawing food from a hinterland. That dependence is a structural vulnerability as much as an achievement.",
+    "l3": "Regional survey maps settlement hierarchies: many small sites, fewer medium ones, a handful of large ones. That distribution is itself the evidence of a town-and-hinterland economy.",
+    "ev": "Regional settlement-hierarchy survey; craft concentration",
+    "src": [
+      "met_meso_early",
+      "owid_urban"
+    ],
+    "rec": [
+      [
+        "village",
+        "trade"
+      ],
+      [
+        "farming_community",
+        "trade"
+      ]
+    ],
+    "tags": [
+      "settlement",
+      "exchange"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "city",
+    "no": 78,
+    "n": "City",
+    "era": "civilization",
+    "cat": "society",
+    "date": "≈ 6,000 years ago onward",
+    "ds": -4000,
+    "rar": "rare",
+    "vis": "city-block",
+    "l1": "Enough people in one place that most of them are strangers.",
+    "l2": "Anonymity is the defining feature. In a village, behaviour is regulated by everyone knowing everyone; in a city that mechanism fails, and something else must replace it — written law, contracts, currency, police, formal institutions. Cities are also where ideas meet, which is why they produce disproportionate innovation and disproportionate disease.",
+    "l3": "Uruk in southern Mesopotamia is among the earliest, with monumental architecture, mass-produced ration bowls and the earliest known writing. Population estimates come from built area and household density, with wide error bars.",
+    "ev": "Uruk excavations; built-area demography; administrative records",
+    "src": [
+      "met_uruk",
+      "isac",
+      "owid_cities"
+    ],
+    "rec": [
+      [
+        "town",
+        "urban_planning"
+      ],
+      [
+        "town",
+        "population_growth"
+      ],
+      [
+        "trade",
+        "infrastructure"
+      ]
+    ],
+    "tags": [
+      "urban",
+      "threshold"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "government",
+    "no": 79,
+    "n": "Government",
+    "era": "civilization",
+    "cat": "society",
+    "date": "≈ 5,500 years ago onward",
+    "ds": -3500,
+    "rar": "rare",
+    "vis": "seal",
+    "l1": "Somebody who can make a decision that binds everyone else.",
+    "l2": "Government is the answer to problems too large for negotiation: defence, irrigation, famine reserve, dispute settlement between strangers. It is also, immediately and everywhere, a mechanism for extraction. Both faces appear together in the record; neither is a later corruption of the other.",
+    "l3": "Administrative seals, standardised ration containers, monumental construction requiring coordinated labour, and elite burials with restricted goods all indicate centralised authority before any text describes it.",
+    "ev": "Administrative sealings; ration standardisation; elite burials",
+    "src": [
+      "isac",
+      "met_meso_early",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "city",
+        "division_of_labor"
+      ],
+      [
+        "city",
+        "resource_management"
+      ]
+    ],
+    "tags": [
+      "power",
+      "institution"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "law",
+    "no": 80,
+    "n": "Law",
+    "era": "civilization",
+    "cat": "society",
+    "date": "≈ 4,100 years ago (earliest surviving codes)",
+    "ds": -2100,
+    "rar": "rare",
+    "vis": "stele",
+    "l1": "Rules written down so they outlive the person who made them.",
+    "l2": "An unwritten rule is whatever the powerful person says it is today. Writing a rule down and displaying it publicly does something structurally different: it makes the rule checkable, and it binds the ruler to their own past statement. That is a real constraint even when it is frequently ignored.",
+    "l3": "The Code of Ur-Nammu and the later Code of Hammurabi survive as inscribed stone and clay. Alongside the codes sit thousands of ordinary court records and contracts, which show how law was actually applied rather than merely proclaimed.",
+    "ev": "Inscribed law codes; court records; contracts",
+    "src": [
+      "source_required",
+      "isac",
+      "met_cuneiform",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "government",
+        "writing"
+      ],
+      [
+        "government",
+        "collective_knowledge"
+      ]
+    ],
+    "tags": [
+      "rules",
+      "text"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "administration",
+    "no": 81,
+    "n": "Administration",
+    "era": "civilization",
+    "cat": "society",
+    "date": "≈ 5,000 years ago onward",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "tablet-stack",
+    "l1": "Running a society by paperwork rather than by personal presence.",
+    "l2": "Beyond a few thousand people, a ruler cannot personally know what is happening. Administration substitutes records for presence: lists, receipts, inventories, personnel rolls. It is unglamorous and it is the actual machinery of every large state — most surviving cuneiform is not literature but accounts.",
+    "l3": "Archives of administrative tablets survive in tens of thousands from Mesopotamian and Egyptian sites, recording rations, livestock, labour rosters and land. They are the most abundant written source from the ancient world.",
+    "ev": "Administrative tablet archives; sealings; inventories",
+    "src": [
+      "isac",
+      "met_cuneiform",
+      "met_meso_early"
+    ],
+    "rec": [
+      [
+        "government",
+        "record_keeping"
+      ],
+      [
+        "law",
+        "writing"
+      ]
+    ],
+    "tags": [
+      "bureaucracy",
+      "scale"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "taxation",
+    "no": 82,
+    "n": "Taxation",
+    "era": "civilization",
+    "cat": "economy",
+    "date": "≈ 5,000 years ago onward",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "tally",
+    "l1": "A share of what you produce, taken by an authority.",
+    "l2": "Taxation converts a diffuse surplus into a concentrated one that can be spent on armies, monuments, canals and scribes. It requires knowing what exists and who owns it — which is why the state's need to tax has driven the development of measurement, census, cadastral survey and writing itself.",
+    "l3": "Tax assessments, receipts and exemption grants survive in quantity. Egyptian records of Nile flood height used to predict yield and set tax rates are a striking case of measurement in the service of extraction.",
+    "ev": "Tax receipts and assessments; Nilometer records; cadastral survey",
+    "src": [
+      "source_required",
+      "isac",
+      "met_cuneiform"
+    ],
+    "rec": [
+      [
+        "administration",
+        "trade"
+      ],
+      [
+        "administration",
+        "grain_storage"
+      ]
+    ],
+    "tags": [
+      "state",
+      "extraction"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "writing",
+    "no": 83,
+    "n": "Writing",
+    "era": "civilization",
+    "cat": "knowledge",
+    "date": "≈ 5,400–5,000 years ago (Mesopotamia); independently elsewhere",
+    "ds": -3300,
+    "rar": "rare",
+    "vis": "cuneiform",
+    "l1": "Language made visible, durable and separable from the speaker.",
+    "l2": "Writing detaches a message from the presence of the person who made it. It can outlive them, travel without them and be checked against later. Everything that depends on accumulating knowledge across generations rather than within a lifetime — law, science, contract, history — sits on top of that one property.",
+    "l3": "Cuneiform's development is unusually well documented, because it begins as an accounting system and gradually becomes general-purpose. The earliest tablets from Uruk record commodities and quantities; the abstraction to full language takes centuries.",
+    "ev": "Uruk proto-cuneiform tablets; script development sequences",
+    "src": [
+      "met_writing",
+      "met_cuneiform",
+      "isac"
+    ],
+    "rec": [
+      [
+        "record_keeping",
+        "language"
+      ],
+      [
+        "record_keeping",
+        "art"
+      ]
+    ],
+    "tags": [
+      "symbol",
+      "record"
+    ],
+    "caution": "Writing was invented independently at least three or four times — Mesopotamia, Egypt, China, Mesoamerica — with different mechanisms and no shared origin.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "record_keeping",
+    "no": 84,
+    "n": "Record Keeping",
+    "era": "civilization",
+    "cat": "knowledge",
+    "date": "≈ 10,000–5,000 years ago",
+    "ds": -6000,
+    "rar": "uncommon",
+    "vis": "token-set",
+    "l1": "Storing a quantity outside anyone's memory.",
+    "l2": "Records came before writing. Clay tokens representing commodities were sealed in containers, and marks pressed on the outside noted what was inside. This is the actual ancestor of the script — writing seems to have grown out of the need to count things reliably, not out of a wish to tell stories.",
+    "l3": "Token systems are found across the Near East over several millennia, followed by sealed clay envelopes, then impressed tablets, then signs. The sequence is materially continuous, which is why the accounting-origin argument for writing is well supported.",
+    "ev": "Clay token systems; sealed bullae; impressed tablets",
+    "src": [
+      "met_writing",
+      "isac",
+      "met_cuneiform"
+    ],
+    "rec": [
+      [
+        "accounting",
+        "symbolic_thought"
+      ],
+      [
+        "accounting",
+        "art"
+      ]
+    ],
+    "tags": [
+      "count",
+      "memory"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "number_system",
+    "no": 85,
+    "n": "Number System",
+    "era": "civilization",
+    "cat": "knowledge",
+    "date": "≈ 5,000 years ago onward",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "numerals",
+    "l1": "Symbols for quantity that can be combined by rules.",
+    "l2": "A notation is not just shorthand — it determines what calculations are practical. Positional notation with a zero makes long multiplication and division routine; Roman numerals make them a specialist skill. The tool for thinking shapes what gets thought.",
+    "l3": "Mesopotamian scribes used base-60 positional notation, which survives in our minutes, seconds and degrees. Mathematical tablets show multiplication tables, reciprocals and problem sets — teaching material, complete with student errors.",
+    "ev": "Cuneiform mathematical tablets; numeral systems across scripts",
+    "src": [
+      "source_required",
+      "isac",
+      "met_cuneiform",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "accounting",
+        "record_keeping"
+      ],
+      [
+        "measurement",
+        "record_keeping"
+      ]
+    ],
+    "tags": [
+      "number",
+      "notation"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "accounting",
+    "no": 86,
+    "n": "Accounting",
+    "era": "civilization",
+    "cat": "economy",
+    "date": "≈ 8,000 years ago onward",
+    "ds": -5500,
+    "rar": "uncommon",
+    "vis": "ledger",
+    "l1": "Keeping track of who owes what to whom.",
+    "l2": "Accounting is the technology that lets economic relationships outlive memory and trust. Once obligation is recorded, it can be transferred, enforced and audited — and credit becomes possible between people who have no reason to trust each other. Most early writing is accounting, which says something about priorities.",
+    "l3": "Token systems, then tablets, record quantities, commodities, parties and dates. Double-entry bookkeeping appears much later, formalised in fifteenth-century Italy, and transforms what can be tracked in a complex business.",
+    "ev": "Accounting tablets; token systems; later double-entry manuals",
+    "src": [
+      "met_writing",
+      "isac",
+      "met_cuneiform"
+    ],
+    "rec": [
+      [
+        "trade",
+        "grain_storage"
+      ],
+      [
+        "food_surplus",
+        "trade"
+      ]
+    ],
+    "tags": [
+      "economy",
+      "record"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "calendar",
+    "no": 87,
+    "n": "Calendar",
+    "era": "civilization",
+    "cat": "knowledge",
+    "date": "≈ 5,000 years ago onward",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "calendar-disc",
+    "l1": "Dividing time into named units that repeat.",
+    "l2": "Farming needs to know when to plant, and ritual needs to know when to gather. Both require predicting a date months ahead, which means modelling the sky. The awkward part is that the solar year, lunar month and day do not divide evenly into each other — every calendar in history is a different compromise with that fact.",
+    "l3": "Calendrical texts, intercalation records — inserted extra months to keep drift in check — and monument alignments to solstice or heliacal risings all survive. The Mesoamerican Long Count and Egyptian civil calendar show independent solutions to the same arithmetic problem.",
+    "ev": "Calendrical texts; intercalation records; monument alignments",
+    "src": [
+      "source_required",
+      "isac",
+      "met_toah",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "astronomy",
+        "record_keeping"
+      ],
+      [
+        "agriculture",
+        "astronomy"
+      ]
+    ],
+    "tags": [
+      "time",
+      "sky"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "astronomy",
+    "no": 88,
+    "n": "Astronomy",
+    "era": "civilization",
+    "cat": "science",
+    "date": "≈ 4,000 years ago onward as systematic record",
+    "ds": -2000,
+    "rar": "uncommon",
+    "vis": "ephemeris",
+    "l1": "Watching the sky carefully enough to predict it.",
+    "l2": "Astronomy is where prediction was invented. Babylonian scribes kept nightly records for centuries and found that eclipses recur in cycles — meaning a future event could be forecast from past data alone, without any theory of why. That is the template for empirical science, arrived at through the sky because the sky is the one system that repeats reliably.",
+    "l3": "Babylonian astronomical diaries span many centuries of continuous observation and survive on clay. Their eclipse records are precise enough that modern astronomers use them to measure the long-term slowing of Earth's rotation.",
+    "ev": "Babylonian astronomical diaries; eclipse records; alignments",
+    "src": [
+      "source_required",
+      "isac",
+      "met_cuneiform",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "navigation",
+        "record_keeping"
+      ],
+      [
+        "ritual",
+        "navigation"
+      ]
+    ],
+    "tags": [
+      "sky",
+      "prediction"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "economy",
+    "no": 89,
+    "n": "Economy",
+    "era": "civilization",
+    "cat": "economy",
+    "date": "≈ 5,000 years ago onward",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "flow",
+    "l1": "A whole system of production, exchange and obligation, larger than anyone in it.",
+    "l2": "Once exchange, credit, taxation and specialised production interlock, the result behaves as a system with its own dynamics — prices, shortages, booms and crashes that nobody chose. Ancient records include price series, interest rates, debt and periodic debt cancellation, which suggests the instabilities were recognised early.",
+    "l3": "Price and wage series reconstructed from Mesopotamian and Egyptian records allow economic history well before coinage. Debt-remission edicts are direct evidence that debt accumulation was a recurring structural problem.",
+    "ev": "Ancient price series; interest and debt records; remission edicts",
+    "src": [
+      "source_required",
+      "isac",
+      "met_cuneiform",
+      "owid_tech"
+    ],
+    "rec": [
+      [
+        "trade",
+        "taxation"
+      ],
+      [
+        "accounting",
+        "city"
+      ],
+      [
+        "money",
+        "trade"
+      ]
+    ],
+    "tags": [
+      "system",
+      "exchange"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "civilization",
+    "no": 90,
+    "n": "Civilisation",
+    "era": "civilization",
+    "cat": "society",
+    "date": "≈ 5,000 years ago onward",
+    "ds": -3000,
+    "rar": "rare",
+    "vis": "ziggurat",
+    "l1": "Cities, writing, specialists and institutions, interlocking.",
+    "l2": "The word carries baggage worth naming: it has often been used to rank societies, with the ranking following whoever was doing the ranking. As a descriptive term for a particular configuration — dense urban settlement, record-keeping, occupational specialisation, formal institutions — it is useful. As a judgement of worth, it has a poor record.",
+    "l3": "The configuration appears independently in Mesopotamia, Egypt, the Indus Valley, China, Mesoamerica and the Andes, with different crops, scripts, architecture and beliefs. The recurrence of the pattern is the interesting finding; the ranking of the instances is not a scientific question.",
+    "ev": "Independent regional sequences; comparative archaeology",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah",
+      "isac"
+    ],
+    "rec": [
+      [
+        "city",
+        "writing"
+      ],
+      [
+        "city",
+        "law"
+      ],
+      [
+        "government",
+        "economy"
+      ]
+    ],
+    "tags": [
+      "society",
+      "threshold"
+    ],
+    "caution": "'Civilisation' has a long history of use as a value judgement ranking peoples. Used here strictly as a description of a social configuration.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "copper",
+    "no": 91,
+    "n": "Copper",
+    "era": "metallurgy",
+    "cat": "material",
+    "date": "≈ 9,000 years ago onward",
+    "ds": -7000,
+    "rar": "uncommon",
+    "vis": "copper-ingot",
+    "l1": "The first metal worked at scale — soft, red, and reshapeable without breaking.",
+    "l2": "Copper introduces a property no earlier material had: it deforms without fracturing, and it can be melted and recast indefinitely. A broken stone tool is gone; a broken copper tool is raw material. That single fact changes how tools are valued, repaired and inherited.",
+    "l3": "Lead isotope analysis fingerprints copper to its ore source, mapping ancient metal trade across regions. Native copper artefacts predate smelting and are identifiable by their worked-but-unmelted microstructure.",
+    "ev": "Lead-isotope provenance; metallography; slag and crucible finds",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "smelting",
+        "stone"
+      ],
+      [
+        "smelting",
+        "trade"
+      ]
+    ],
+    "tags": [
+      "metal",
+      "reversible"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "smelting",
+    "no": 92,
+    "n": "Smelting",
+    "era": "metallurgy",
+    "cat": "technique",
+    "date": "≈ 7,000 years ago onward",
+    "ds": -5000,
+    "rar": "rare",
+    "vis": "furnace",
+    "l1": "Extracting metal from rock that does not look remotely like metal.",
+    "l2": "Smelting is a conceptual leap larger than it appears. Green malachite ore looks nothing like copper, and getting one from the other requires high temperature *and* a reducing atmosphere — starving the fire of oxygen so carbon monoxide strips oxygen from the ore. Both conditions must hold at once, and neither is obvious.",
+    "l3": "Smelting sites are identified by slag — the glassy waste with a distinctive chemistry — plus furnace remains, tuyère fragments from bellows, and crucibles. Slag composition reveals furnace temperature and atmosphere.",
+    "ev": "Slag chemistry; furnace and tuyère remains; crucibles",
+    "src": [
+      "source_required",
+      "ethw",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "pottery",
+        "heat_treatment"
+      ],
+      [
+        "controlled_fire",
+        "heat_treatment"
+      ]
+    ],
+    "tags": [
+      "pyrotechnology",
+      "chemistry"
+    ],
+    "caution": "Kiln technology developed for pottery plausibly supplied the temperature control smelting needs, but a direct causal link is inferred rather than documented.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "bronze",
+    "no": 93,
+    "n": "Bronze",
+    "era": "metallurgy",
+    "cat": "material",
+    "date": "≈ 5,300 years ago onward",
+    "ds": -3300,
+    "rar": "rare",
+    "vis": "bronze-alloy",
+    "l1": "Copper deliberately mixed with tin to make something better than either.",
+    "l2": "Bronze is the first engineered alloy: harder than copper, lower melting point, casts more cleanly. It also has an awkward property — tin is rare and rarely found near copper, so bronze forces long-distance trade. Bronze Age economies were bound together by a supply chain, and were vulnerable when it broke.",
+    "l3": "Alloy composition is measured directly by spectrometry, and tin content proves deliberate alloying rather than accidental ore mixing. Shipwreck cargoes such as Uluburun preserve ingots in transit and map the trade.",
+    "ev": "Alloy composition analysis; ingot cargoes; shipwreck assemblages",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "copper",
+        "smelting"
+      ],
+      [
+        "copper",
+        "trade"
+      ]
+    ],
+    "tags": [
+      "alloy",
+      "trade"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "bronze_tools",
+    "no": 94,
+    "n": "Bronze Tools",
+    "era": "metallurgy",
+    "cat": "technology",
+    "date": "≈ 5,000 years ago onward",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "bronze-blade",
+    "l1": "Cast, sharpened, resharpened, and eventually melted down and recast.",
+    "l2": "Bronze tools hold an edge far better than copper and can be produced to a consistent shape by casting from a mould. Casting is the key: it turns toolmaking from individual craft into repeatable production, and it makes complex shapes — sockets, hollow forms — that no stone tool could take.",
+    "l3": "Moulds survive in stone and clay, and casting seams on finished objects match them. Recycling is visible chemically, because remelted bronze accumulates a mixed impurity signature.",
+    "ev": "Casting moulds; casting seams; recycling signatures",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "bronze",
+        "casting"
+      ],
+      [
+        "bronze",
+        "specialized_labor"
+      ]
+    ],
+    "tags": [
+      "tools",
+      "cast"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "iron",
+    "no": 95,
+    "n": "Iron",
+    "era": "metallurgy",
+    "cat": "material",
+    "date": "≈ 3,200 years ago onward at scale",
+    "ds": -1200,
+    "rar": "rare",
+    "vis": "iron-bloom",
+    "l1": "Common, cheap, and much harder to work than bronze.",
+    "l2": "Iron ore is everywhere, which is its whole advantage — no trade route required. The problem is that iron melts far above the temperature ancient furnaces reached, so early ironworking produced a spongy solid bloom that had to be hammered while hot to drive out slag. More labour, worse initial product, vastly better supply.",
+    "l3": "Bloomery slag differs chemically from copper slag and is abundant at ironworking sites. Metallography of finished objects reveals forging history in the grain structure, including how many times a piece was folded and welded.",
+    "ev": "Bloomery slag; metallographic grain structure; forge sites",
+    "src": [
+      "source_required",
+      "ethw",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "smelting",
+        "bronze"
+      ],
+      [
+        "smelting",
+        "forging"
+      ]
+    ],
+    "tags": [
+      "metal",
+      "abundant"
+    ],
+    "caution": "Iron replaced bronze because of supply, not because early iron was a better material. The first iron tools were often inferior.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "ironworking",
+    "no": 96,
+    "n": "Ironworking",
+    "era": "metallurgy",
+    "cat": "technique",
+    "date": "≈ 3,200 years ago onward",
+    "ds": -1200,
+    "rar": "uncommon",
+    "vis": "anvil",
+    "l1": "Hammering hot iron into shape, over and over.",
+    "l2": "Because iron could not be melted and poured, it had to be forged — heated to red heat and beaten, repeatedly, to consolidate the metal and expel slag. Folding and welding distributes carbon and impurities more evenly, and the resulting layered structure is both stronger and, in some traditions, visibly patterned.",
+    "l3": "Grain structure and slag-stringer patterns in cross-sections record the forging sequence. Experimental smithing reproduces the signatures and calibrates how much work each stage represents.",
+    "ev": "Metallography; slag inclusions; experimental smithing",
+    "src": [
+      "source_required",
+      "ethw",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "iron",
+        "forging"
+      ],
+      [
+        "iron",
+        "specialized_labor"
+      ]
+    ],
+    "tags": [
+      "forge",
+      "craft"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "steel",
+    "no": 97,
+    "n": "Steel",
+    "era": "metallurgy",
+    "cat": "material",
+    "date": "Ancient in small quantities; industrial from 1856",
+    "ds": 1856,
+    "rar": "rare",
+    "vis": "steel-bar",
+    "l1": "Iron with a precisely controlled trace of carbon — around one part in a hundred.",
+    "l2": "A very small amount of carbon transforms iron's mechanical behaviour: hard enough to hold an edge, tough enough not to shatter. Ancient smiths achieved it by skill and feel. Bessemer's converter in 1856 achieved it by process control, and cheap bulk steel is the material that rails, ships, skyscrapers and machine tools are made of.",
+    "l3": "Carbon content and heat-treatment history are readable from microstructure. The Bessemer process is documented in patents, plant records and production statistics, and the resulting collapse in steel prices is visible in economic series.",
+    "ev": "Microstructure analysis; patents and plant records; price series",
+    "src": [
+      "source_required",
+      "ethw",
+      "owid_tech",
+      "ethw_milestones"
+    ],
+    "rec": [
+      [
+        "ironworking",
+        "controlled_fire"
+      ],
+      [
+        "iron",
+        "heat_treatment"
+      ]
+    ],
+    "tags": [
+      "alloy",
+      "industrial"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "metallurgy",
+    "no": 98,
+    "n": "Metallurgy",
+    "era": "metallurgy",
+    "cat": "science",
+    "date": "Practical for millennia; theoretical from the 1800s",
+    "ds": -3000,
+    "rar": "rare",
+    "vis": "phase-diagram",
+    "l1": "Understanding metals well enough to design one for a job.",
+    "l2": "For most of history metallurgy was inherited procedure — do exactly this and it works, nobody knows why. Understanding why, through phase diagrams and crystal structure, converted it into design: specify the properties you need, then choose the composition and heat treatment that deliver them. That shift underlies every modern engineered material.",
+    "l3": "Ancient practice is reconstructed from workshop remains and object analysis. Modern metallurgy is documented in the phase diagrams, crystallographic studies and standards that let alloys be specified and reproduced anywhere.",
+    "ev": "Workshop archaeology; phase diagrams; materials standards",
+    "src": [
+      "source_required",
+      "ethw",
+      "ethw_milestones"
+    ],
+    "rec": [
+      [
+        "smelting",
+        "collective_knowledge"
+      ],
+      [
+        "ironworking",
+        "experiment"
+      ]
+    ],
+    "tags": [
+      "materials",
+      "science"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "forging",
+    "no": 99,
+    "n": "Forging",
+    "era": "metallurgy",
+    "cat": "technique",
+    "date": "≈ 9,000 years ago onward",
+    "ds": -7000,
+    "rar": "common",
+    "vis": "hammer-blow",
+    "l1": "Shaping metal by hitting it, usually hot.",
+    "l2": "Forging does more than change shape. Working metal deforms its grain structure and hardens it, and hot working lets it be reshaped without cracking. A forged component is generally stronger than a cast one of the same alloy because the grain flow follows the part's geometry.",
+    "l3": "Hammer marks survive on unfinished work, and grain flow in cross-section distinguishes forged from cast components. Anvils, tongs and hearth remains identify smithies archaeologically.",
+    "ev": "Hammer marks; grain-flow metallography; smithy remains",
+    "src": [
+      "source_required",
+      "ethw",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "copper",
+        "hammering"
+      ],
+      [
+        "bronze",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "technique",
+      "metal"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "casting",
+    "no": 100,
+    "n": "Casting",
+    "era": "metallurgy",
+    "cat": "technique",
+    "date": "≈ 6,000 years ago onward",
+    "ds": -4000,
+    "rar": "uncommon",
+    "vis": "mould",
+    "l1": "Pouring liquid metal into a shaped cavity and letting it solidify.",
+    "l2": "Casting decouples the complexity of a shape from the difficulty of making it. Once a mould exists, a complicated form costs the same as a simple one, and it can be repeated exactly. Lost-wax casting can reproduce a modelled original in metal at full detail — a capability that runs from ancient bronzes to modern turbine blades.",
+    "l3": "Moulds, crucibles and sprues survive, and casting flaws — porosity, cold shuts, seams — identify the technique in finished objects. Lost-wax work is recognisable because the object has no mould seam and no draft angle.",
+    "ev": "Moulds and crucibles; casting flaws; absence of mould seams",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "copper",
+        "pottery"
+      ],
+      [
+        "bronze",
+        "pottery"
+      ]
+    ],
+    "tags": [
+      "technique",
+      "reproduction"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "wheel",
+    "no": 101,
+    "n": "Wheel",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "≈ 5,500 years ago onward",
+    "ds": -3500,
+    "rar": "rare",
+    "vis": "wheel",
+    "l1": "A disc that turns on a fixed centre, converting drag into rolling.",
+    "l2": "The wheel is famously counter-intuitive as an invention because it is useless alone. It needs a low-friction axle bearing, a hard enough material for both, and a prepared surface to run on — which is why it appears late, and why several sophisticated societies never adopted it for transport. It is not obvious, and it is not always the best answer.",
+    "l3": "The earliest evidence includes potter's wheels, model wagons, wheel ruts and actual wooden wheels preserved in waterlogged conditions, appearing across Mesopotamia and Europe within a few centuries of each other.",
+    "ev": "Preserved wooden wheels; wagon models; wheel ruts; pictographs",
+    "src": [
+      "bm_collection",
+      "ethw_mecheng",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "pottery",
+        "wood"
+      ],
+      [
+        "construction",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "mechanism",
+      "rotation"
+    ],
+    "caution": "Mesoamerican societies knew the wheel — it appears on toys — but lacked draught animals, so it was not used for transport. Absence is not ignorance.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "axle",
+    "no": 102,
+    "n": "Axle",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "≈ 5,500 years ago onward",
+    "ds": -3500,
+    "rar": "uncommon",
+    "vis": "axle",
+    "l1": "The fixed shaft a wheel turns around. The hard half of the problem.",
+    "l2": "The wheel is easy; the bearing is not. The axle must carry the full load while allowing rotation, with tolerances tight enough to avoid wobble and loose enough to avoid seizing, and it wears constantly. Most of the engineering history of the wheel is actually the history of bearings and lubrication.",
+    "l3": "Wear patterns on surviving axles and hubs record load and lubrication. Some early designs rotate the axle with the wheels; others fix it — the two solutions leave different wear signatures.",
+    "ev": "Axle and hub wear analysis; surviving wagon components",
+    "src": [
+      "ethw_mecheng",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "wheel",
+        "wood"
+      ],
+      [
+        "wheel",
+        "binding"
+      ]
+    ],
+    "tags": [
+      "mechanism",
+      "bearing"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "cart",
+    "no": 103,
+    "n": "Cart",
+    "era": "metallurgy",
+    "cat": "technology",
+    "date": "≈ 5,500 years ago onward",
+    "ds": -3500,
+    "rar": "uncommon",
+    "vis": "cart",
+    "l1": "Wheels, axle and a box, pulled by an animal.",
+    "l2": "A cart multiplies how much one person and one animal can move by roughly an order of magnitude. That changes the economic radius of a settlement: how far fields can be from the village, how far grain can travel before the cost of moving it exceeds its value.",
+    "l3": "Wagon burials, ceramic models, cart ruts and depictions in art document form and use. Draught-animal skeletons show pathologies from pulling loads, which independently confirms traction.",
+    "ev": "Wagon burials; ceramic models; draught-animal pathology",
+    "src": [
+      "source_required",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "axle",
+        "herding"
+      ],
+      [
+        "axle",
+        "construction"
+      ]
+    ],
+    "tags": [
+      "transport",
+      "load"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "mechanical_advantage",
+    "no": 104,
+    "n": "Mechanical Advantage",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "Ancient practice; formalised ≈ 250 BCE",
+    "ds": -250,
+    "rar": "rare",
+    "vis": "force-diagram",
+    "l1": "Trading distance for force — moving a heavy thing a short way by moving a light thing a long way.",
+    "l2": "This is the central idea of pre-industrial engineering. Levers, pulleys, screws, wedges and inclined planes all do the same trick, and once the principle is stated abstractly it can be applied to any of them. It is also an early example of a general law being extracted from a set of specific tricks.",
+    "l3": "Archimedes gave the law of the lever a formal treatment in the third century BCE, and his works on statics survive through later copies. The practical techniques are far older and visible in construction evidence.",
+    "ev": "Archimedean statics; construction evidence; surviving machines",
+    "src": [
+      "ethw_mecheng",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "lever",
+        "pulley"
+      ],
+      [
+        "lever",
+        "mechanism"
+      ]
+    ],
+    "tags": [
+      "physics",
+      "principle"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "pulley",
+    "no": 105,
+    "n": "Pulley",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "≈ 4,000 years ago onward",
+    "ds": -2000,
+    "rar": "uncommon",
+    "vis": "pulley",
+    "l1": "A grooved wheel that redirects a rope — and, in sets, multiplies force.",
+    "l2": "A single pulley only changes direction, which is already useful because pulling down is easier than lifting up. Several in a block-and-tackle divide the required force by the number of supporting rope lengths. This is how ancient construction lifted blocks that no crowd could carry.",
+    "l3": "Pulley blocks survive from classical contexts, and crane bases and lifting-boss cuttings on stone blocks show where hoists were anchored. Roman treatises describe the machines directly.",
+    "ev": "Surviving pulley blocks; lifting bosses; ancient engineering texts",
+    "src": [
+      "ethw_mecheng",
+      "met_toah",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "wheel",
+        "cordage"
+      ],
+      [
+        "wheel",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "mechanism",
+      "lifting"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "lever",
+    "no": 106,
+    "n": "Lever",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "Deep and gradual",
+    "ds": -100000,
+    "rar": "common",
+    "vis": "lever",
+    "l1": "A rigid bar and a pivot. The simplest machine there is.",
+    "l2": "A lever converts a small force over a long distance into a large force over a short one, and it requires nothing but a stick and a rock. It is almost certainly the oldest machine humans used, and it is still inside most mechanisms — every pair of scissors, every crank, every bone-and-muscle joint in your arm.",
+    "l3": "Levering is inferred from what was moved rather than from surviving levers, since a wooden pole leaves no trace. Prying marks on megalithic stone and the geometry of construction sites indicate the technique.",
+    "ev": "Prying marks on megaliths; construction geometry; later texts",
+    "src": [
+      "ethw_mecheng",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "lumber",
+        "stone"
+      ],
+      [
+        "wood",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "machine",
+      "simple"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "gear",
+    "no": 107,
+    "n": "Gear",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "≈ 2,300 years ago onward",
+    "ds": -300,
+    "rar": "rare",
+    "vis": "gear",
+    "l1": "Toothed wheels that mesh, transmitting rotation at a chosen ratio.",
+    "l2": "Gears make rotation programmable. A chosen tooth ratio converts speed into torque or the reverse, exactly and repeatably, and a train of gears can compute a ratio far too awkward to arrange any other way. Everything from clocks to gearboxes to differential drives is a consequence.",
+    "l3": "The Antikythera mechanism, recovered from a Greek shipwreck and dated to roughly the second century BCE, contains dozens of precisely cut bronze gears used to model astronomical cycles. Imaging by X-ray tomography reconstructed the gear train without dismantling it.",
+    "ev": "Antikythera mechanism; X-ray tomography; ancient gear finds",
+    "src": [
+      "ethw_mecheng",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "wheel",
+        "metallurgy"
+      ],
+      [
+        "wheel",
+        "casting"
+      ]
+    ],
+    "tags": [
+      "mechanism",
+      "ratio"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "mechanism",
+    "no": 108,
+    "n": "Mechanism",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "≈ 2,300 years ago onward",
+    "ds": -300,
+    "rar": "rare",
+    "vis": "linkage",
+    "l1": "Parts arranged so that motion in one produces determined motion in another.",
+    "l2": "A mechanism embodies a rule in metal. Given the input, the output is fixed by geometry — no decision, no supervision. This is the beginning of automation as a concept: behaviour built into a physical arrangement, and the direct ancestor of the idea that a machine can execute a procedure.",
+    "l3": "Surviving devices, ancient engineering treatises such as those of Hero of Alexandria, and later medieval clockwork document the tradition. Tomographic imaging recovers internal arrangements from corroded objects.",
+    "ev": "Surviving devices; ancient engineering texts; tomographic imaging",
+    "src": [
+      "ethw_mecheng",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "gear",
+        "axle"
+      ],
+      [
+        "gear",
+        "pulley"
+      ]
+    ],
+    "tags": [
+      "machine",
+      "automation"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "engineering",
+    "no": 109,
+    "n": "Engineering",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "Practice is ancient; formal discipline from the 1700s",
+    "ds": -2000,
+    "rar": "rare",
+    "vis": "drawing",
+    "l1": "Designing something to work before it exists, and knowing why it will.",
+    "l2": "Engineering is the point where building stops being craft tradition and becomes calculation. You can predict whether a beam will hold, size it deliberately, and justify the number. That lets structures be built that nobody has attempted before, which craft tradition alone cannot do because tradition only encodes what has already worked.",
+    "l3": "The shift is visible in the documents: from pattern books and rules of thumb, to engineering drawings with dimensions and tolerances, to calculated load analyses. Professional societies and formal training appear alongside.",
+    "ev": "Engineering drawings; calculated load analyses; professional records",
+    "src": [
+      "ethw",
+      "ethw_mecheng",
+      "ethw_milestones"
+    ],
+    "rec": [
+      [
+        "mathematics",
+        "construction"
+      ],
+      [
+        "mechanism",
+        "construction"
+      ],
+      [
+        "physics",
+        "mechanism"
+      ]
+    ],
+    "tags": [
+      "design",
+      "calculation"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "infrastructure",
+    "no": 110,
+    "n": "Infrastructure",
+    "era": "metallurgy",
+    "cat": "engineering",
+    "date": "≈ 4,000 years ago onward",
+    "ds": -2000,
+    "rar": "uncommon",
+    "vis": "aqueduct",
+    "l1": "The systems everything else runs on, noticed mainly when they fail.",
+    "l2": "Water supply, drainage, roads, ports, power and networks share a shape: enormous fixed cost, long life, benefits spread across everyone, and no individual incentive to build them. That is why infrastructure is almost always collective — and why its condition is one of the more reliable indicators of a society's capacity.",
+    "l3": "Aqueducts, sewers, harbours and road networks survive as structures and are datable. Maintenance records — Roman water administration is documented in detail — show the ongoing cost that construction figures alone hide.",
+    "ev": "Surviving aqueducts and sewers; maintenance records; port works",
+    "src": [
+      "source_required",
+      "ethw",
+      "met_toah",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "engineering",
+        "roads"
+      ],
+      [
+        "engineering",
+        "irrigation"
+      ]
+    ],
+    "tags": [
+      "systems",
+      "collective"
+    ],
+    "stone_age_tier": "late"
+  }
 ]

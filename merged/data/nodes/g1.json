@@ -23,7 +23,8 @@
       "raw",
       "lithic",
       "starting"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "wood",
@@ -50,7 +51,8 @@
       "organic",
       "starting"
     ],
-    "caution": "Absence of wooden artefacts is evidence of decay, not of simplicity."
+    "caution": "Absence of wooden artefacts is evidence of decay, not of simplicity.",
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "bone",
@@ -76,7 +78,8 @@
       "raw",
       "organic",
       "starting"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "fiber",
@@ -104,7 +107,8 @@
       "organic",
       "starting"
     ],
-    "caution": "Direct fibre evidence is extremely rare; most inferences come from indirect traces."
+    "caution": "Direct fibre evidence is extremely rare; most inferences come from indirect traces.",
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "sharp_stone",
@@ -134,7 +138,8 @@
       "lithic",
       "edge"
     ],
-    "caution": "The earliest claimed stone tools are contested; natural fracture can mimic deliberate flaking."
+    "caution": "The earliest claimed stone tools are contested; natural fracture can mimic deliberate flaking.",
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "stone_flake",
@@ -167,7 +172,8 @@
     "tags": [
       "lithic",
       "oldowan"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "stone_tool",
@@ -194,12 +200,8 @@
         "wood"
       ],
       [
-        "stone_flake",
-        "bone"
-      ],
-      [
-        "stone",
-        "wood"
+        "sharp_stone",
+        "stone_flake"
       ]
     ],
     "tags": [
@@ -207,7 +209,8 @@
       "design",
       "acheulean"
     ],
-    "caution": "'Tool use' is not unique to humans; chimpanzees, crows and otters use tools. Deliberate shaping to a repeated template is the sharper distinction."
+    "caution": "'Tool use' is not unique to humans; chimpanzees, crows and otters use tools. Deliberate shaping to a repeated template is the sharper distinction.",
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "cutting",
@@ -244,7 +247,8 @@
     "tags": [
       "technique",
       "processing"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "scraping",
@@ -268,13 +272,18 @@
       [
         "stone_tool",
         "bone"
+      ],
+      [
+        "stone_tool",
+        "plant"
       ]
     ],
     "tags": [
       "technique",
       "hide",
       "processing"
-    ]
+    ],
+    "stone_age_tier": "middle"
   },
   {
     "id": "hammering",
@@ -298,12 +307,17 @@
       [
         "stone",
         "stone_tool"
+      ],
+      [
+        "handaxe",
+        "stone"
       ]
     ],
     "tags": [
       "technique",
       "percussion"
-    ]
+    ],
+    "stone_age_tier": "middle"
   },
   {
     "id": "composite_tool",
@@ -327,12 +341,17 @@
       [
         "stone_tool",
         "binding"
+      ],
+      [
+        "hafted_tool",
+        "binding"
       ]
     ],
     "tags": [
       "assembly",
       "hafting"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "cordage",
@@ -366,7 +385,8 @@
     "tags": [
       "fibre",
       "structural"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "binding",
@@ -398,7 +418,8 @@
     "tags": [
       "technique",
       "joining"
-    ]
+    ],
+    "stone_age_tier": "middle"
   },
   {
     "id": "sewing",
@@ -423,12 +444,17 @@
       [
         "needle",
         "cordage"
+      ],
+      [
+        "thread_and_needle",
+        "scraping"
       ]
     ],
     "tags": [
       "textile",
       "cold"
-    ]
+    ],
+    "stone_age_tier": "middle"
   },
   {
     "id": "needle",
@@ -465,7 +491,8 @@
     "tags": [
       "bone",
       "precision"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "clothing",
@@ -499,7 +526,8 @@
       "thermal",
       "body"
     ],
-    "caution": "Dates for the origin of clothing rest largely on indirect proxies and remain uncertain."
+    "caution": "Dates for the origin of clothing rest largely on indirect proxies and remain uncertain.",
+    "stone_age_tier": "late"
   },
   {
     "id": "shelter",
@@ -525,13 +553,18 @@
       ],
       [
         "wood",
-        "fiber"
+        "grass"
+      ],
+      [
+        "lumber",
+        "thatch"
       ]
     ],
     "tags": [
       "built",
       "space"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "spear",
@@ -568,7 +601,8 @@
     "tags": [
       "weapon",
       "reach"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "hunting",
@@ -602,7 +636,8 @@
       "subsistence",
       "social"
     ],
-    "caution": "Early hominin meat-eating may have been largely scavenging; the hunting/scavenging balance is actively debated."
+    "caution": "Early hominin meat-eating may have been largely scavenging; the hunting/scavenging balance is actively debated.",
+    "stone_age_tier": "late"
   },
   {
     "id": "fishing",
@@ -638,7 +673,8 @@
     "tags": [
       "subsistence",
       "aquatic"
-    ]
+    ],
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "fire",
@@ -664,15 +700,16 @@
         "wood"
       ],
       [
-        "stone_flake",
-        "stone_flake"
+        "bow_drill",
+        "fiber"
       ]
     ],
     "tags": [
       "energy",
       "transformation"
     ],
-    "caution": "The date of first controlled fire is genuinely contested; claims range across hundreds of thousands of years and depend on how 'control' is defined."
+    "caution": "The date of first controlled fire is genuinely contested; claims range across hundreds of thousands of years and depend on how 'control' is defined.",
+    "stone_age_tier": "olduvai"
   },
   {
     "id": "controlled_fire",
@@ -695,7 +732,7 @@
     "rec": [
       [
         "fire",
-        "stone"
+        "hearth"
       ],
       [
         "fire",
@@ -705,7 +742,8 @@
     "tags": [
       "energy",
       "hearth"
-    ]
+    ],
+    "stone_age_tier": "middle"
   },
   {
     "id": "cooking",
@@ -739,7 +777,8 @@
       "food",
       "energy"
     ],
-    "caution": "The 'cooking hypothesis' linking fire to brain expansion is influential but not settled; the timing of the two does not align cleanly."
+    "caution": "The 'cooking hypothesis' linking fire to brain expansion is influential but not settled; the timing of the two does not align cleanly.",
+    "stone_age_tier": "late"
   },
   {
     "id": "smoke",
@@ -761,17 +800,18 @@
     "rec": [
       [
         "fire",
-        "wood"
+        "fiber"
       ],
       [
         "fire",
-        "fiber"
+        "grass"
       ]
     ],
     "tags": [
       "preservation",
       "signal"
-    ]
+    ],
+    "stone_age_tier": "middle"
   },
   {
     "id": "heat_treatment",
@@ -799,12 +839,17 @@
       [
         "controlled_fire",
         "sharp_stone"
+      ],
+      [
+        "fire",
+        "stone_flake"
       ]
     ],
     "tags": [
       "materials",
       "pyrotechnology"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "food_processing",
@@ -837,7 +882,8 @@
     "tags": [
       "food",
       "technique"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "meat_processing",
@@ -869,7 +915,8 @@
     "tags": [
       "food",
       "butchery"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "plant_processing",
@@ -902,7 +949,8 @@
     "tags": [
       "food",
       "plants"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "food_storage",
@@ -939,7 +987,8 @@
     "tags": [
       "surplus",
       "time"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "social_gathering",
@@ -971,7 +1020,8 @@
     "tags": [
       "social",
       "hearth"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "communication",
@@ -1005,7 +1055,8 @@
       "social",
       "information"
     ],
-    "caution": "Claims about the origin of speech rest on indirect proxies. No consensus exists on when language emerged."
+    "caution": "Claims about the origin of speech rest on indirect proxies. No consensus exists on when language emerged.",
+    "stone_age_tier": "late"
   },
   {
     "id": "symbolic_thought",
@@ -1040,7 +1091,8 @@
       "symbol",
       "cognition"
     ],
-    "caution": "Marks can be identified as deliberate; their specific meaning cannot be recovered."
+    "caution": "Marks can be identified as deliberate; their specific meaning cannot be recovered.",
+    "stone_age_tier": "late"
   },
   {
     "id": "language",
@@ -1074,7 +1126,8 @@
       "language",
       "cognition"
     ],
-    "caution": "The origin of language is one of the least resolved questions in human evolution. Treat any specific date with suspicion."
+    "caution": "The origin of language is one of the least resolved questions in human evolution. Treat any specific date with suspicion.",
+    "stone_age_tier": "late"
   },
   {
     "id": "teaching",
@@ -1106,7 +1159,8 @@
     "tags": [
       "learning",
       "transmission"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "cultural_transmission",
@@ -1143,7 +1197,8 @@
     "tags": [
       "culture",
       "inheritance"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "collective_knowledge",
@@ -1176,7 +1231,8 @@
     "tags": [
       "knowledge",
       "group"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "planning",
@@ -1209,7 +1265,8 @@
     "tags": [
       "cognition",
       "time"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "art",
@@ -1243,7 +1300,8 @@
     "tags": [
       "symbol",
       "expression"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "ritual",
@@ -1282,7 +1340,8 @@
       "social",
       "meaning"
     ],
-    "caution": "Individual claims of ritual behaviour — especially for Neanderthals — are frequently disputed on taphonomic grounds."
+    "caution": "Individual claims of ritual behaviour — especially for Neanderthals — are frequently disputed on taphonomic grounds.",
+    "stone_age_tier": "late"
   },
   {
     "id": "cave_art",
@@ -1319,6 +1378,7 @@
       "image",
       "deep-time"
     ],
-    "caution": "Figurative cave art appears independently in widely separated regions; a single European origin is not supported."
+    "caution": "Figurative cave art appears independently in widely separated regions; a single European origin is not supported.",
+    "stone_age_tier": "late"
   }
 ]

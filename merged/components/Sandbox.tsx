@@ -2,14 +2,12 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { MotionConfig } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { Landing } from './Landing';
 import { TopBar } from './TopBar';
 import { InventoryRail } from './InventoryRail';
 import { Bench } from './Bench';
 import { ExhibitPanel } from './ExhibitPanel';
-import dynamic from 'next/dynamic';
-const GraphView = dynamic(() => import('./GraphView').then(mod => mod.GraphView), { ssr: false });
-const ArchiveView = dynamic(() => import('./ArchiveView').then(mod => mod.ArchiveView), { ssr: false });
 import { Ending } from './Ending';
 import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
@@ -17,16 +15,15 @@ import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { cn } from '@/lib/utils';
 import type { ViewId } from '@/lib/types';
 
+const GraphView = dynamic(() => import('./GraphView').then(mod => mod.GraphView), { ssr: false });
+const ArchiveView = dynamic(() => import('./ArchiveView').then(mod => mod.ArchiveView), { ssr: false });
+
 const PHONE = '(max-width:900px)';
 const isPhone = () => window.matchMedia(PHONE).matches;
 
 export function Sandbox() {
-  const [railOpen, setRailOpen] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
-  const s = useSandbox({
-    // a phone has no room for a permanent exhibit column: raise the sheet instead
-    onReveal: () => { if (isPhone()) { setPanelOpen(true); setRailOpen(false); } },
-  });
+  const s = useSandbox();
   const { engine, version, view, setView, open, clearSlots, setEnding, reset } = s;
 
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -54,13 +51,13 @@ export function Sandbox() {
   }, [setView]);
 
   /** Beside the bench the exhibit is a column that is always there. Over the
-   *  graph or the archive — and on a phone — it has to open as a drawer. */
+   *  graph or the archive — and on a phone — it opens as a drawer, and only
+   *  when the player asks for it: a discovery never throws a sheet over the bench. */
   const openExhibit = useCallback((id: string) => {
     open(id);
     if (isPhone() || view !== 'work') {
       if (!panelOpen && document.activeElement instanceof HTMLElement) panelReturn.current = document.activeElement;
       setPanelOpen(true);
-      if (isPhone()) setRailOpen(false);
     }
   }, [open, view, panelOpen]);
 
@@ -79,6 +76,16 @@ export function Sandbox() {
   }, [reset]);
   const cancelReset = useCallback(() => setConfirmOpen(false), []);
 
+  const { setHintError } = s;
+  const aimHint = useCallback((id: string): string | null => {
+    const r = engine.requestHint(id);
+    if ('error' in r) return r.error;
+    setHintError(null);
+    // take the player to the bench, where the hint line lives
+    showView('work');
+    return null;
+  }, [engine, setHintError, showView]);
+
   // one keyboard listener for the page; it reads the latest state through a ref
   const keys = useRef({ confirmOpen, closePanel, clearSlots, setEnding });
   useEffect(() => { keys.current = { confirmOpen, closePanel, clearSlots, setEnding }; });
@@ -87,7 +94,7 @@ export function Sandbox() {
       const k = keys.current;
       if (k.confirmOpen) return;                    // the dialog handles its own keys
       if (ev.key === 'Escape') {
-        k.closePanel(); setRailOpen(false); k.setEnding(null); k.clearSlots();
+        k.closePanel(); k.setEnding(null); k.clearSlots();
         return;
       }
       if (ev.key === '/' && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
@@ -102,6 +109,8 @@ export function Sandbox() {
   }, []);
 
   const resumed = engine.resumed ? engine.stats().core : 0;
+  const hint = engine.hintView();
+  const highlightId = engine.coached === 0 ? 'stone' : hint.highlightId;
 
   return (
     <MotionConfig reducedMotion="user">
@@ -112,8 +121,7 @@ export function Sandbox() {
             <g key={b.id}>
               <rect x="0" y={`${b.y}%`} width="100%" height={`${b.h}%`}
                 fill={`rgb(${ERA_TINT[b.id]})`} opacity={b.op} />
-              <line x1="0" y1={`${b.y}%`} x2="100%" y2={`${b.y}%`}
-                stroke="rgba(233,229,221,.05)" strokeWidth="1" />
+              <line x1="0" y1={`${b.y}%`} x2="100%" y2={`${b.y}%`} style={{ stroke: 'var(--line)' }} strokeWidth="1" />
             </g>
           ))}
         </svg>
@@ -126,35 +134,34 @@ export function Sandbox() {
         <TopBar
           engine={engine}
           view={view}
-          railOpen={railOpen}
           onView={showView}
           onOpen={openExhibit}
           onReset={() => setConfirmOpen(true)}
-          onMenu={() => setRailOpen(o => !o)}
         />
 
         <div id="views" data-current={view}>
           <section className={'view' + (view === 'work' ? ' on' : '')} id="v-work" role="tabpanel" aria-label="Workspace">
-            <InventoryRail
-              engine={engine}
-              open={railOpen}
-              slotA={s.slotA}
-              slotB={s.slotB}
-              onPick={id => { s.place(id); if (isPhone()) setRailOpen(false); }}
-              onDragStart={() => { /* payload is set on the element itself */ }}
-            />
             <Bench
               engine={engine}
               slotA={s.slotA}
               slotB={s.slotB}
               result={s.result}
-              hint={s.hint}
+              busy={s.busy}
+              hint={hint}
+              hintError={s.hintError}
               onDrop={s.drop}
-              onClear={which => {
-                // clearing the first slot slides the second one across, as in the single-file build
-                if (which === 'a') { s.setSlotA(s.slotB); s.setSlotB(null); } else { s.setSlotB(null); }
-              }}
+              onClear={s.clearSlot}
               onOpen={openExhibit}
+              onUse={id => s.place(id)}
+              onRequestHint={() => { s.requestHint(); }}
+              onDropHint={() => { engine.dropHint(); s.setHintError(null); }}
+            />
+            <InventoryRail
+              engine={engine}
+              slotA={s.slotA}
+              slotB={s.slotB}
+              highlightId={highlightId}
+              onPick={s.place}
             />
           </section>
 
@@ -165,9 +172,10 @@ export function Sandbox() {
             onlyPath={onlyPath}
             onOnlyPathChange={setOnlyPath}
             fitSignal={fitSignal}
+            focusId={s.focus?.id ?? null}
             onOpen={openExhibit}
           />
-          <ArchiveView engine={engine} active={view === 'arch'} onOpen={openExhibit} />
+          <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
 
           {/* outside the three views: a column beside the bench, a drawer over the
               graph and the archive, a bottom sheet on a phone */}
@@ -177,21 +185,22 @@ export function Sandbox() {
             open={panelOpen}
             onOpen={openExhibit}
             onClose={closePanel}
+            onHint={aimHint}
           />
         </div>
       </main>
 
       <nav id="mtabs" aria-label="Views">
         {([
-          ['work', 'Bench'], ['graph', 'Graph'], ['arch', 'Archive'],
+          ['work', 'Workspace'], ['graph', 'Graph'], ['arch', 'Archive'],
         ] as [ViewId, string][]).map(([id, label]) => (
-          <button key={id} aria-selected={view === id} onClick={() => showView(id)}>
-            <svg width="17" height="17" viewBox="0 0 20 20" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+          <button key={id} aria-pressed={view === id} onClick={() => showView(id)}>
+            <svg width="18" height="18" viewBox="0 0 20 20" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
               {id === 'work' && <><rect x="2" y="6" width="7" height="8" /><rect x="11" y="6" width="7" height="8" /></>}
               {id === 'graph' && <><circle cx="4" cy="10" r="2" /><circle cx="16" cy="5" r="2" /><circle cx="16" cy="15" r="2" /><path d="M6 9l8-3M6 11l8 3" /></>}
               {id === 'arch' && <><rect x="3" y="3" width="6" height="6" /><rect x="11" y="3" width="6" height="6" /><rect x="3" y="11" width="6" height="6" /><rect x="11" y="11" width="6" height="6" /></>}
             </svg>
-            <span className="mono" style={{ fontSize: 9 }}>{label}</span>
+            <span className="mono">{label}</span>
           </button>
         ))}
       </nav>
@@ -202,7 +211,6 @@ export function Sandbox() {
           node={s.ending}
           onClose={() => setEnding(null)}
           onSeePath={() => {
-            // same as the single-file build: the graph, filtered to your path, framed on it
             setEnding(null);
             showView('graph');
             setOnlyPath(true);
@@ -214,7 +222,7 @@ export function Sandbox() {
       <ConfirmDialog
         open={confirmOpen}
         title="Start over"
-        body="Start again from four raw materials? Your current path will be cleared."
+        body="Start again from four raw materials? Your discoveries, routes and hints will be cleared."
         cancelLabel="Keep playing"
         confirmLabel="Clear my path"
         onCancel={cancelReset}
@@ -223,11 +231,11 @@ export function Sandbox() {
 
       <div id="toasts" aria-live="polite">
         {s.toasts.map(t => (
-          <div key={t.key} className={cn('toast', t.kind)}>
-            <Glyph node={t.node} />
+          <div key={t.key} className={cn('toast', `t-${t.kind}`)}>
+            {t.node && <Glyph node={t.node} />}
             <div>
-              <div className="tt">{t.node.n}</div>
-              <div className="ts mono">{t.kind === 'hidden' ? 'Hidden find' : 'Discovered'}</div>
+              <div className="tt">{t.title}</div>
+              <div className="ts mono">{t.sub}</div>
             </div>
           </div>
         ))}

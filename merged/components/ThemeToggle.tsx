@@ -1,80 +1,45 @@
-/**
- * ThemeToggle — System/Light/Dark mode selector with localStorage persistence
- */
+'use client';
 
-import React, { useEffect, useState } from 'react';
-import styles from './ThemeToggle.module.css';
+import { useEffect, useSyncExternalStore } from 'react';
+import { applyTheme, readPref, savePref, THEME_EVENT, type ThemePref } from '@/lib/theme';
 
-type ThemeMode = 'system' | 'light' | 'dark';
+const ORDER: ThemePref[] = ['system', 'light', 'dark'];
+const LABEL: Record<ThemePref, string> = { system: 'System', light: 'Light', dark: 'Dark' };
 
-interface ThemeToggleProps {
-  className?: string;
-}
+/** One button that cycles System → Light → Dark. The choice is remembered. */
+const subscribe = (cb: () => void) => {
+  window.addEventListener(THEME_EVENT, cb);
+  return () => window.removeEventListener(THEME_EVENT, cb);
+};
+const snapshot = (): ThemePref => (document.documentElement.dataset.themePref as ThemePref) || 'system';
+const serverSnapshot = (): ThemePref => 'system';
 
-export function ThemeToggle({ className }: ThemeToggleProps) {
-  const [theme, setTheme] = useState<ThemeMode>('system');
-  const [mounted, setMounted] = useState(false);
+export function ThemeToggle({ className = 'icon-btn' }: { className?: string }) {
+  const pref = useSyncExternalStore(subscribe, snapshot, serverSnapshot);
 
-  // Load theme preference from localStorage on mount
   useEffect(() => {
-    const saved = localStorage.getItem('evo.theme.v1') as ThemeMode | null;
-    if (saved && ['system', 'light', 'dark'].includes(saved)) {
-      setTheme(saved);
-      applyTheme(saved);
-    } else {
-      applyTheme('system');
-    }
-    setMounted(true);
+    // follow the OS while the preference is "system"
+    const mq = window.matchMedia?.('(prefers-color-scheme: light)');
+    const onChange = () => { if (readPref() === 'system') applyTheme('system'); };
+    mq?.addEventListener?.('change', onChange);
+    return () => mq?.removeEventListener?.('change', onChange);
   }, []);
 
-  const applyTheme = (mode: ThemeMode) => {
-    const html = document.documentElement;
-
-    if (mode === 'system') {
-      html.removeAttribute('data-theme');
-    } else {
-      html.setAttribute('data-theme', mode);
-    }
-
-    // Save preference
-    localStorage.setItem('evo.theme.v1', mode);
-  };
-
-  const handleThemeChange = (newTheme: ThemeMode) => {
-    setTheme(newTheme);
-    applyTheme(newTheme);
-  };
-
-  if (!mounted) return null;
+  const next = ORDER[(ORDER.indexOf(pref) + 1) % ORDER.length];
 
   return (
-    <div className={`${styles.themeToggle} ${className || ''}`}>
-      <button
-        className={`${styles.button} ${theme === 'light' ? styles.active : ''}`}
-        onClick={() => handleThemeChange('light')}
-        title="Light mode"
-        aria-label="Switch to light mode"
-      >
-        ☀️ Light
-      </button>
-
-      <button
-        className={`${styles.button} ${theme === 'system' ? styles.active : ''}`}
-        onClick={() => handleThemeChange('system')}
-        title="Follow system preference"
-        aria-label="Follow system theme preference"
-      >
-        ⚙️ System
-      </button>
-
-      <button
-        className={`${styles.button} ${theme === 'dark' ? styles.active : ''}`}
-        onClick={() => handleThemeChange('dark')}
-        title="Dark mode"
-        aria-label="Switch to dark mode"
-      >
-        🌙 Dark
-      </button>
-    </div>
+    <button
+      className={className}
+      id="theme-toggle"
+      aria-label={`Theme: ${LABEL[pref]}. Switch to ${LABEL[next]}.`}
+      title={`Theme: ${LABEL[pref]}`}
+      onClick={() => savePref(next)}
+    >
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+        {pref === 'system' && (<><rect x="1.5" y="2.5" width="13" height="9" /><path d="M5.5 14h5M8 11.5V14" /><path d="M8 4.5a2.5 2.5 0 0 0 0 5z" fill="currentColor" /></>)}
+        {pref === 'light' && (<><circle cx="8" cy="8" r="3" /><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3" /></>)}
+        {pref === 'dark' && <path d="M13.5 10.2A6 6 0 0 1 5.8 2.5a6 6 0 1 0 7.7 7.7z" />}
+      </svg>
+    </button>
   );
 }

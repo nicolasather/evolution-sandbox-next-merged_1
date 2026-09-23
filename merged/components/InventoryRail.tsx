@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { Glyph } from './Glyph';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
@@ -9,23 +9,42 @@ import type { Discovery } from '@/lib/types';
 const RARITY_LABEL: Record<string, string> = {
   common: 'Common', uncommon: 'Uncommon', rare: 'Rare', hidden: 'Hidden find',
 };
+const HIDE_DONE_KEY = 'evo.inv.hideDone';
+const HIDE_DONE_EVENT = 'evo:hide-done';
+
+// a per-browser convenience, read through a tiny external store so the server
+// render (always "show everything") and the client agree during hydration
+const subscribeHideDone = (cb: () => void) => {
+  window.addEventListener(HIDE_DONE_EVENT, cb);
+  return () => window.removeEventListener(HIDE_DONE_EVENT, cb);
+};
+const readHideDone = () => { try { return window.localStorage.getItem(HIDE_DONE_KEY) === '1'; } catch { return false; } };
+const setHideDoneStored = (v: boolean) => {
+  try { window.localStorage.setItem(HIDE_DONE_KEY, v ? '1' : '0'); } catch { /* ignore */ }
+  window.dispatchEvent(new Event(HIDE_DONE_EVENT));
+};
 
 export function InventoryRail({
-  engine, open, slotA, slotB, onPick, onDragStart,
+  engine, slotA, slotB, highlightId, onPick,
 }: {
   engine: Engine;
-  open: boolean;
   slotA: string | null;
   slotB: string | null;
+  /** Item a hint or the onboarding line points at. */
+  highlightId: string | null;
   onPick: (id: string) => void;
-  onDragStart: (id: string) => void;
 }) {
   const [q, setQ] = useState('');
   const [era, setEra] = useState<string | null>(null);
+  const hideDone = useSyncExternalStore(subscribeHideDone, readHideDone, () => false);
+  const toggleDone = () => setHideDoneStored(!hideDone);
 
   const all = engine.inventory();
+  const potential = new Map(all.map(n => [n.id, engine.potential(n.id)]));
+  const doneCount = all.filter(n => potential.get(n.id) === 'done').length;
   let list = all;
   if (era) list = list.filter(n => n.era === era);
+  if (hideDone) list = list.filter(n => potential.get(n.id) !== 'done');
   if (q.trim()) {
     const needle = q.trim().toLowerCase();
     list = list.filter(n => n.n.toLowerCase().includes(needle) || n.tags?.some(t => t.includes(needle)));
@@ -38,17 +57,29 @@ export function InventoryRail({
   });
 
   return (
-    <aside id="rail" className={cn(open && 'open')} aria-label="Discovered items">
+    <aside id="rail" aria-label="Your discoveries">
       <div className="rail-head">
         <span className="mono">Inventory</span>
         <span className="mono">{all.length} held</span>
       </div>
 
-      <div className="searchbox" style={{ padding: '9px 15px', borderBottom: '1px solid var(--line)' }}>
-        <input
-          type="search" value={q} placeholder="Filter" aria-label="Filter inventory"
-          autoComplete="off" onChange={e => setQ(e.target.value)}
-        />
+      <div className="rail-tools">
+        <div className="searchbox">
+          <svg width="12" height="12" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" fill="none"
+            style={{ color: 'var(--bone-4)', flex: 'none' }} aria-hidden="true">
+            <circle cx="7" cy="7" r="5" /><path d="M11 11l4 4" />
+          </svg>
+          <input
+            type="search" value={q} placeholder="Filter" aria-label="Filter inventory"
+            autoComplete="off" onChange={e => setQ(e.target.value)}
+          />
+        </div>
+        {doneCount > 0 && (
+          <button className="chip" aria-pressed={hideDone} onClick={toggleDone}
+            title="Items that have nothing left to make">
+            Hide used up · {doneCount}
+          </button>
+        )}
       </div>
 
       <div className="rail-filters">
@@ -66,23 +97,34 @@ export function InventoryRail({
           const g = groups.get(e.id);
           if (!g?.length) return null;
           return (
-            <div key={e.id}>
+            <div key={e.id} className="inv-group">
               <div className="inv-era mono">{e.name} · {g.length}</div>
-              {g.map(n => (
-                <button
-                  key={n.id}
-                  data-id={n.id}
-                  className={cn('item', engine.isFresh(n.id) && 'is-new', (slotA === n.id || slotB === n.id) && 'picked')}
-                  draggable
-                  onDragStart={ev => { ev.dataTransfer.setData('text/plain', n.id); onDragStart(n.id); }}
-                  onClick={() => onPick(n.id)}
-                  aria-label={`${n.n}. ${RARITY_LABEL[n.rar]}. Select to place on the bench.`}
-                >
-                  <Glyph node={n} />
-                  <span className="nm">{n.n}</span>
-                  <span className={`dot ${n.rar}`} aria-hidden="true" />
-                </button>
-              ))}
+              <div className="inv-items">
+                {g.map(n => {
+                  const p = potential.get(n.id);
+                  return (
+                    <button
+                      key={n.id}
+                      data-id={n.id}
+                      className={cn(
+                        'item',
+                        engine.isFresh(n.id) && 'is-new',
+                        (slotA === n.id || slotB === n.id) && 'picked',
+                        p === 'done' && 'is-done',
+                        highlightId === n.id && 'hinted',
+                      )}
+                      draggable
+                      onDragStart={ev => { ev.dataTransfer.setData('text/plain', n.id); ev.dataTransfer.effectAllowed = 'copy'; }}
+                      onClick={() => onPick(n.id)}
+                      aria-label={`${n.n}. ${RARITY_LABEL[n.rar]}.${p === 'done' ? ' Used up.' : ''} Place on the bench.`}
+                    >
+                      <Glyph node={n} />
+                      <span className="nm">{n.n}</span>
+                      <span className={`dot r-${n.rar}`} aria-hidden="true" />
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           );
         })}

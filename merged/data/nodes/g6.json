@@ -1,103 +1,595 @@
 [
-{"id":"music","no":201,"n":"Music","era":"fire","cat":"culture","date":"≈ 40,000 years ago (oldest instruments)","ds":-40000,"rar":"hidden","vis":"flute","hidden":true,
- "l1":"Organised sound, made on purpose, for no practical reason at all.",
- "l2":"Music has no obvious survival function and every known society has it. It synchronises groups, encodes memory — sung information survives far better than spoken — and moves people emotionally in ways that are cross-cultural in some respects and completely learned in others. Nobody has a settled explanation for why it exists.",
- "l3":"Bone and ivory flutes from caves in the Swabian Jura in Germany are the oldest musical instruments yet found — among them a five-hole flute made of bird bone from Hohle Fels. The excavators date them to more than 35,000 years ago, and UNESCO's World Heritage listing places the region's Ice Age finds between about 43,000 and 33,000 years ago. Replicas have been made and played, so the tuning can be checked rather than assumed.",
- "ev":"Palaeolithic bone flutes; playable replicas","src":["unesco_swabian","nature_flutes2009","bm_collection","nhm_humevo","met_toah"],"rec":[["art","bone"],["ritual","fiber"]],"tags":["sound","universal"],
- "caution":"Why music exists is genuinely unresolved. Adaptive, by-product and cultural explanations all have serious advocates."},
-
-{"id":"glass","no":202,"n":"Glass","era":"metallurgy","cat":"material","date":"≈ 4,000 years ago onward","ds":-2000,"rar":"hidden","vis":"glass-ingot","hidden":true,
- "l1":"A liquid cooled so fast its atoms never got around to forming crystals.",
- "l2":"Glass is transparent, chemically inert and shapeable when hot — a combination nothing else offered for millennia. It gave containers you can see into, windows, and eventually lenses. It is not an exaggeration to say that the microscope, the telescope, spectacles and the laboratory flask all wait on glass.",
- "l3":"Glass vessels, ingots and workshop waste survive from Bronze Age Egypt and Mesopotamia onward. Compositional analysis identifies production centres and traces trade in raw glass.",
- "ev":"Glass workshop remains; compositional sourcing; surviving vessels","src":["cmog_glass","met_toah","bm_collection","isac"],"rec":[["smelting","heat_treatment"],["pottery","smelting"]],"tags":["transparent","enabling"]},
-
-{"id":"paper","no":203,"n":"Paper","era":"civilization","cat":"material","date":"≈ 100 CE onward","ds":105,"rar":"hidden","vis":"sheet","hidden":true,
- "l1":"Plant fibre beaten to pulp and dried flat. Cheap enough to waste.",
- "l2":"The point of paper is cost. Papyrus needed a specific plant; parchment needed a herd of animals per book. Paper can be made from rags and plant waste anywhere, which drops the price of a written surface by orders of magnitude — and the price of the surface is what determines whether ordinary people can write at all.",
- "l3":"Chinese papermaking is documented in court records from the second century CE, and the technology's westward spread through Central Asia and the Islamic world into Europe is traceable through surviving documents and mill records.",
- "ev":"Early Chinese records; surviving documents; papermaking mill records","src":["brit_paper","met_toah","bm_collection"],"rec":[["fiber","writing"],["plant_processing","writing"]],"tags":["surface","cheap"]},
-
-{"id":"printing","no":204,"n":"Printing","era":"science","cat":"technology","date":"Woodblock ≈ 700 CE; movable type ≈ 1040 and 1450 CE","ds":1450,"rar":"hidden","vis":"type-case","hidden":true,
- "l1":"Making many identical copies without copying by hand.",
- "l2":"Hand copying introduces errors and every copy costs as much as the last. Printing makes copies nearly free after setup and — the underrated part — identical, so scholars in different cities could argue over the same page and cite the same line. Reproducible reference is what made a scientific community possible across distance.",
- "l3":"Bi Sheng's ceramic movable type is described in an eleventh-century Chinese account; Korean metal type predates Gutenberg. Surviving incunabula, printers' records and the collapse in book prices document the European transition.",
- "ev":"Surviving early printed books; printers' records; book price series","src":["brit_printing","met_toah","bm_collection","owid_tech"],"rec":[["paper","metallurgy"],["paper","standardized_parts"]],"tags":["copy","identical"],
- "caution":"Movable type was invented in China and Korea well before Gutenberg. His contribution was a practical metal-type system suited to alphabetic script."},
-
-{"id":"money","no":205,"n":"Money","era":"civilization","cat":"economy","date":"Debt records ≈ 3000 BCE; coinage ≈ 600 BCE","ds":-600,"rar":"hidden","vis":"coin","hidden":true,
- "l1":"A thing everyone accepts, so nobody has to want what you have.",
- "l2":"Money solves the coordination problem of barter, but the historical record suggests it did not start as barter's replacement. Credit and accounted debt appear in Mesopotamian records long before coined money, which implies money began as a unit for reckoning obligation and only later became a physical token.",
- "l3":"Cuneiform debt records substantially predate the earliest Lydian coinage of around 600 BCE. Both survive: the tablets and the coins, with several millennia between them.",
- "ev":"Cuneiform debt records; early coinage; hoard finds","src":["brit_money","bm_collection","isac","met_cuneiform"],"rec":[["trade","metallurgy"],["economy","copper"]],"tags":["exchange","abstraction"],
- "caution":"The textbook story that money replaced barter is not well supported. Credit systems appear first in the written record."},
-
-{"id":"compass","no":206,"n":"Compass","era":"science","cat":"technology","date":"12th century CE onward for navigation","ds":1120,"rar":"hidden","vis":"needle-card","hidden":true,
- "l1":"A magnetised needle that finds north with no sky visible.",
- "l2":"Before the compass, open-water navigation depended on seeing the sun or stars — so overcast weather meant stopping. A direction reference that works in fog and at night extended the sailing season and the viable route, which is a precondition for sustained long-distance ocean voyaging.",
- "l3":"Chinese and European sources both describe mariners finding direction with a floating lodestone or a magnetised needle in the twelfth century, apparently independently. Surviving instruments and navigational treatises document how the device was refined over the following centuries.",
- "ev":"Chinese and European texts; surviving instruments; navigational treatises","src":["brit_compass","bm_collection","met_toah","ethw"],"rec":[["navigation","iron"],["navigation","metallurgy"]],"tags":["direction","sea"]},
-
-{"id":"clock","no":207,"n":"Clock","era":"science","cat":"technology","date":"Mechanical ≈ 1300 CE; pendulum 1656 CE","ds":1300,"rar":"hidden","vis":"escapement","hidden":true,
- "l1":"A machine that divides time into equal, countable pieces.",
- "l2":"Before clocks, time was local and elastic — an hour in winter was shorter than one in summer in some systems. Mechanical time is uniform and abstract, and once it exists it can be used to schedule, to pay by the hour and to measure. It is also the instrument that made precise physics and, eventually, longitude possible.",
- "l3":"Surviving tower clocks and escapement mechanisms, Huygens's 1656 pendulum work, and Harrison's marine chronometers are preserved and documented, with measured accuracy figures for each.",
- "ev":"Surviving clocks and escapements; Huygens's work; marine chronometers","src":["ethw_mecheng","met_toah","bm_collection"],"rec":[["mechanism","astronomy"],["gear","calendar"]],"tags":["time","precision"]},
-
-{"id":"lens","no":208,"n":"Lens","era":"science","cat":"technology","date":"Spectacles ≈ 1290 CE; instruments from ≈ 1600","ds":1290,"rar":"hidden","vis":"biconvex","hidden":true,
- "l1":"Shaped glass that bends light to a focus.",
- "l2":"The lens is the single component behind both the microscope and the telescope, which between them opened the very small and the very distant within a few decades of each other. Spectacles came first and are their own quiet revolution: they roughly doubled the working life of anyone whose job needed close vision.",
- "l3":"Surviving spectacle lenses, grinding equipment and the optical treatises describing focal geometry document the craft. Early instrument lenses have been measured and their performance characterised.",
- "ev":"Surviving lenses and grinding equipment; optical treatises","src":["brit_eyeglasses","met_toah","ethw","bm_collection"],"rec":[["glass","optics"],["glass","geometry"]],"tags":["focus","instrument"]},
-
-{"id":"gunpowder","no":209,"n":"Gunpowder","era":"science","cat":"material","date":"≈ 900 CE onward","ds":900,"rar":"hidden","vis":"charge","hidden":true,
- "l1":"A mixture that carries its own oxygen and therefore burns extremely fast.",
- "l2":"Gunpowder was found by Chinese alchemists looking for an elixir of immortality, which is a good reminder that research programmes rarely produce what they set out to. Its effect on fortification, state power and the balance between defence and attack was profound, and largely destructive.",
- "l3":"Chinese alchemical and military texts describe formulations from the ninth and tenth centuries onward. Surviving weapons, fortification changes and the archaeology of siege sites document the consequences.",
- "ev":"Chinese alchemical and military manuals; weapon finds; siege archaeology","src":["brit_gunpowder","bm_collection","met_toah"],"rec":[["chemistry","smoke"],["smoke","smelting"]],"tags":["energy","weapon"],
- "caution":"Included because it shaped states, cities and technology. Its primary historical use was killing people."},
-
-{"id":"vaccine","no":210,"n":"Vaccine","era":"science","cat":"science","date":"Variolation earlier; vaccination from 1796 CE","ds":1796,"rar":"hidden","vis":"ampoule","hidden":true,
- "l1":"Teaching the immune system to recognise a threat before it arrives.",
- "l2":"Vaccination is among the highest-return interventions ever devised, and smallpox — a disease that killed hundreds of millions — is the only human disease deliberately eradicated. It also produces the paradox that its own success makes it look unnecessary, which is a recurring problem for preventive measures generally.",
- "l3":"Variolation is documented in Asia and Africa before Jenner. The eradication of smallpox is documented by the World Health Organization, and long-run mortality series show the effect of each vaccination programme directly.",
- "ev":"Historical inoculation records; eradication documentation; mortality series","src":["who_vaccination","owid_tech","ethw"],"rec":[["medicine","biology"],["medicine","experiment"]],"tags":["health","prevention"]},
-
-{"id":"antibiotics","no":211,"n":"Antibiotics","era":"science","cat":"science","date":"1928 CE onward; clinical from 1942","ds":1928,"rar":"hidden","vis":"culture-dish","hidden":true,
- "l1":"Chemicals that kill bacteria without killing you.",
- "l2":"Before antibiotics, a scratch could be fatal and most surgery carried a serious infection risk. Their arrival changed medicine so completely that the pre-antibiotic world is hard to imagine. Resistance was predicted by Fleming himself in his Nobel lecture, and it is now a serious and growing problem.",
- "l3":"Fleming's 1928 observation, the Oxford team's clinical development in the 1940s, and subsequent resistance surveillance are all documented. Resistance rates are tracked by national and international monitoring programmes.",
- "ev":"Original research records; clinical trial history; resistance surveillance","src":["nobel_med1945","nobel_fleming_lecture","owid_tech","ethw"],"rec":[["medicine","chemistry"],["biology","chemistry"]],"tags":["health","fragile"],
- "caution":"Antibiotic resistance is rising and was anticipated from the beginning. This is a gain that is not guaranteed to persist."},
-
-{"id":"plastic","no":212,"n":"Plastic","era":"industry","cat":"material","date":"≈ 1907 CE onward","ds":1907,"rar":"hidden","vis":"polymer-chain","hidden":true,
- "l1":"Long molecular chains that can be shaped into almost anything.",
- "l2":"Plastics can be made light, strong, flexible, insulating, transparent or sterile as required, and cheaply. They made modern medicine, electronics and food safety possible in their present form. The same durability that makes them useful means they persist in the environment for a very long time, and that consequence took decades to register.",
- "l3":"Bakelite's 1907 synthesis and subsequent polymer chemistry are documented in patents and the research literature. Production statistics and environmental monitoring — including microplastic distribution studies — document the scale.",
- "ev":"Polymer patents and literature; production statistics; environmental monitoring","src":["acs_bakelite","owid_tech","ethw"],"rec":[["chemistry","mass_production"],["chemistry","industrialization"]],"tags":["material","persistent"],
- "caution":"Plastics' durability is both their advantage and their environmental problem. Both belong in any honest account."},
-
-{"id":"silicon","no":213,"n":"Silicon","era":"computing","cat":"material","date":"Purified at scale from the 1950s","ds":1954,"rar":"hidden","vis":"ingot","hidden":true,
- "l1":"Sand, purified to roughly one impure atom in a billion.",
- "l2":"Silicon is the second most abundant element in Earth's crust and utterly useless for electronics in its natural state. What made the semiconductor industry possible was purification and crystal growth — producing single crystals of a perfection unmatched by any other bulk manufactured material. The scarcity was never the element; it was the process.",
- "l3":"The Czochralski crystal-growth process, zone refining and semiconductor-grade purity specifications are documented in the materials science literature and in industrial standards.",
- "ev":"Crystal growth literature; purity specifications; industry standards","src":["chm_timeline","nobel_transistor","ethw"],"rec":[["semiconductor","stone"],["chemistry","stone"]],"tags":["purity","process"]},
-
-{"id":"radar","no":214,"n":"Radar","era":"electric","cat":"technology","date":"≈ 1935 CE onward","ds":1935,"rar":"hidden","vis":"sweep","hidden":true,
- "l1":"Finding things by bouncing radio waves off them and timing the echo.",
- "l2":"Radar gave sight through darkness, cloud and distance. Its development drove microwave electronics hard — the cavity magnetron in particular — and that wartime push fed directly into post-war electronics, radio astronomy and, eventually, the microwave oven, which is a rather blunt illustration of dual-use technology.",
- "l3":"Development records, surviving equipment and IEEE milestone documentation record the systems and their performance. The technology transfer into civilian electronics is well traced.",
- "ev":"Development records; surviving equipment; IEEE milestones","src":["ethw_magnetron","ethw_milestones","ethw","si_airspace"],"rec":[["radio","flight"],["radio","telescope"]],"tags":["sensing","echo"]},
-
-{"id":"satellite","no":215,"n":"Satellite","era":"network","cat":"technology","date":"1957 CE onward","ds":1957,"rar":"hidden","vis":"orbit","hidden":true,
- "l1":"A machine placed in orbit, falling around the Earth indefinitely.",
- "l2":"Orbit gives a vantage point over a whole hemisphere at once, which is why satellites transformed communication, weather forecasting, navigation, mapping and climate monitoring simultaneously. Most of what is known about global climate change comes from instruments that had to be put above the atmosphere to work.",
- "l3":"Launch records, orbital catalogues and the continuous data archives from Earth observation missions are public. Satellite counts and launch-cost series are tracked over decades.",
- "ev":"Launch and orbital records; Earth observation data archives","src":["nasa_sputnik","si_airspace","owid_tech"],"rec":[["flight","radar"],["flight","physics"]],"tags":["orbit","vantage"]},
-
-{"id":"gps","no":216,"n":"Satellite Positioning","era":"network","cat":"technology","date":"Fully operational 1995 CE","ds":1995,"rar":"hidden","vis":"trilateration","hidden":true,
- "l1":"Knowing exactly where you are, anywhere, from timing signals in space.",
- "l2":"Position is computed from the tiny differences in arrival time of signals from several satellites — which means the system depends on clocks accurate to nanoseconds, and on correcting for relativistic time dilation. Without applying both special and general relativity, positions would drift by kilometres per day. It is the most routine practical use of Einstein's physics there is.",
- "l3":"System specifications, published accuracy analyses and the documented relativistic corrections are public. Independent verification of the relativistic effects is a standard textbook case.",
- "ev":"System specifications; accuracy analyses; relativistic correction documentation","src":["gpsgov","ashby_gps","si_airspace","ethw_milestones","owid_tech"],"rec":[["satellite","navigation"],["satellite","cartography"]],"tags":["position","relativity"]}
+  {
+    "id": "music",
+    "no": 201,
+    "n": "Music",
+    "era": "fire",
+    "cat": "culture",
+    "date": "≈ 40,000 years ago (oldest instruments)",
+    "ds": -40000,
+    "rar": "hidden",
+    "vis": "flute",
+    "hidden": true,
+    "l1": "Organised sound, made on purpose, for no practical reason at all.",
+    "l2": "Music has no obvious survival function and every known society has it. It synchronises groups, encodes memory — sung information survives far better than spoken — and moves people emotionally in ways that are cross-cultural in some respects and completely learned in others. Nobody has a settled explanation for why it exists.",
+    "l3": "Bone and ivory flutes from caves in the Swabian Jura in Germany are the oldest musical instruments yet found — among them a five-hole flute made of bird bone from Hohle Fels. The excavators date them to more than 35,000 years ago, and UNESCO's World Heritage listing places the region's Ice Age finds between about 43,000 and 33,000 years ago. Replicas have been made and played, so the tuning can be checked rather than assumed.",
+    "ev": "Palaeolithic bone flutes; playable replicas",
+    "src": [
+      "unesco_swabian",
+      "nature_flutes2009",
+      "bm_collection",
+      "nhm_humevo",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "art",
+        "bone"
+      ],
+      [
+        "ritual",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "sound",
+      "universal"
+    ],
+    "caution": "Why music exists is genuinely unresolved. Adaptive, by-product and cultural explanations all have serious advocates.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "glass",
+    "no": 202,
+    "n": "Glass",
+    "era": "metallurgy",
+    "cat": "material",
+    "date": "≈ 4,000 years ago onward",
+    "ds": -2000,
+    "rar": "hidden",
+    "vis": "glass-ingot",
+    "hidden": true,
+    "l1": "A liquid cooled so fast its atoms never got around to forming crystals.",
+    "l2": "Glass is transparent, chemically inert and shapeable when hot — a combination nothing else offered for millennia. It gave containers you can see into, windows, and eventually lenses. It is not an exaggeration to say that the microscope, the telescope, spectacles and the laboratory flask all wait on glass.",
+    "l3": "Glass vessels, ingots and workshop waste survive from Bronze Age Egypt and Mesopotamia onward. Compositional analysis identifies production centres and traces trade in raw glass.",
+    "ev": "Glass workshop remains; compositional sourcing; surviving vessels",
+    "src": [
+      "cmog_glass",
+      "met_toah",
+      "bm_collection",
+      "isac"
+    ],
+    "rec": [
+      [
+        "smelting",
+        "heat_treatment"
+      ],
+      [
+        "pottery",
+        "smelting"
+      ]
+    ],
+    "tags": [
+      "transparent",
+      "enabling"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "paper",
+    "no": 203,
+    "n": "Paper",
+    "era": "civilization",
+    "cat": "material",
+    "date": "≈ 100 CE onward",
+    "ds": 105,
+    "rar": "hidden",
+    "vis": "sheet",
+    "hidden": true,
+    "l1": "Plant fibre beaten to pulp and dried flat. Cheap enough to waste.",
+    "l2": "The point of paper is cost. Papyrus needed a specific plant; parchment needed a herd of animals per book. Paper can be made from rags and plant waste anywhere, which drops the price of a written surface by orders of magnitude — and the price of the surface is what determines whether ordinary people can write at all.",
+    "l3": "Chinese papermaking is documented in court records from the second century CE, and the technology's westward spread through Central Asia and the Islamic world into Europe is traceable through surviving documents and mill records.",
+    "ev": "Early Chinese records; surviving documents; papermaking mill records",
+    "src": [
+      "brit_paper",
+      "met_toah",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "fiber",
+        "writing"
+      ],
+      [
+        "plant_processing",
+        "writing"
+      ]
+    ],
+    "tags": [
+      "surface",
+      "cheap"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "printing",
+    "no": 204,
+    "n": "Printing",
+    "era": "science",
+    "cat": "technology",
+    "date": "Woodblock ≈ 700 CE; movable type ≈ 1040 and 1450 CE",
+    "ds": 1450,
+    "rar": "hidden",
+    "vis": "type-case",
+    "hidden": true,
+    "l1": "Making many identical copies without copying by hand.",
+    "l2": "Hand copying introduces errors and every copy costs as much as the last. Printing makes copies nearly free after setup and — the underrated part — identical, so scholars in different cities could argue over the same page and cite the same line. Reproducible reference is what made a scientific community possible across distance.",
+    "l3": "Bi Sheng's ceramic movable type is described in an eleventh-century Chinese account; Korean metal type predates Gutenberg. Surviving incunabula, printers' records and the collapse in book prices document the European transition.",
+    "ev": "Surviving early printed books; printers' records; book price series",
+    "src": [
+      "brit_printing",
+      "met_toah",
+      "bm_collection",
+      "owid_tech"
+    ],
+    "rec": [
+      [
+        "paper",
+        "metallurgy"
+      ],
+      [
+        "paper",
+        "standardized_parts"
+      ]
+    ],
+    "tags": [
+      "copy",
+      "identical"
+    ],
+    "caution": "Movable type was invented in China and Korea well before Gutenberg. His contribution was a practical metal-type system suited to alphabetic script.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "money",
+    "no": 205,
+    "n": "Money",
+    "era": "civilization",
+    "cat": "economy",
+    "date": "Debt records ≈ 3000 BCE; coinage ≈ 600 BCE",
+    "ds": -600,
+    "rar": "hidden",
+    "vis": "coin",
+    "hidden": true,
+    "l1": "A thing everyone accepts, so nobody has to want what you have.",
+    "l2": "Money solves the coordination problem of barter, but the historical record suggests it did not start as barter's replacement. Credit and accounted debt appear in Mesopotamian records long before coined money, which implies money began as a unit for reckoning obligation and only later became a physical token.",
+    "l3": "Cuneiform debt records substantially predate the earliest Lydian coinage of around 600 BCE. Both survive: the tablets and the coins, with several millennia between them.",
+    "ev": "Cuneiform debt records; early coinage; hoard finds",
+    "src": [
+      "brit_money",
+      "bm_collection",
+      "isac",
+      "met_cuneiform"
+    ],
+    "rec": [
+      [
+        "trade",
+        "metallurgy"
+      ],
+      [
+        "economy",
+        "copper"
+      ]
+    ],
+    "tags": [
+      "exchange",
+      "abstraction"
+    ],
+    "caution": "The textbook story that money replaced barter is not well supported. Credit systems appear first in the written record.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "compass",
+    "no": 206,
+    "n": "Compass",
+    "era": "science",
+    "cat": "technology",
+    "date": "12th century CE onward for navigation",
+    "ds": 1120,
+    "rar": "hidden",
+    "vis": "needle-card",
+    "hidden": true,
+    "l1": "A magnetised needle that finds north with no sky visible.",
+    "l2": "Before the compass, open-water navigation depended on seeing the sun or stars — so overcast weather meant stopping. A direction reference that works in fog and at night extended the sailing season and the viable route, which is a precondition for sustained long-distance ocean voyaging.",
+    "l3": "Chinese and European sources both describe mariners finding direction with a floating lodestone or a magnetised needle in the twelfth century, apparently independently. Surviving instruments and navigational treatises document how the device was refined over the following centuries.",
+    "ev": "Chinese and European texts; surviving instruments; navigational treatises",
+    "src": [
+      "brit_compass",
+      "bm_collection",
+      "met_toah",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "navigation",
+        "iron"
+      ],
+      [
+        "navigation",
+        "metallurgy"
+      ]
+    ],
+    "tags": [
+      "direction",
+      "sea"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "clock",
+    "no": 207,
+    "n": "Clock",
+    "era": "science",
+    "cat": "technology",
+    "date": "Mechanical ≈ 1300 CE; pendulum 1656 CE",
+    "ds": 1300,
+    "rar": "hidden",
+    "vis": "escapement",
+    "hidden": true,
+    "l1": "A machine that divides time into equal, countable pieces.",
+    "l2": "Before clocks, time was local and elastic — an hour in winter was shorter than one in summer in some systems. Mechanical time is uniform and abstract, and once it exists it can be used to schedule, to pay by the hour and to measure. It is also the instrument that made precise physics and, eventually, longitude possible.",
+    "l3": "Surviving tower clocks and escapement mechanisms, Huygens's 1656 pendulum work, and Harrison's marine chronometers are preserved and documented, with measured accuracy figures for each.",
+    "ev": "Surviving clocks and escapements; Huygens's work; marine chronometers",
+    "src": [
+      "ethw_mecheng",
+      "met_toah",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "mechanism",
+        "astronomy"
+      ],
+      [
+        "gear",
+        "calendar"
+      ]
+    ],
+    "tags": [
+      "time",
+      "precision"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "lens",
+    "no": 208,
+    "n": "Lens",
+    "era": "science",
+    "cat": "technology",
+    "date": "Spectacles ≈ 1290 CE; instruments from ≈ 1600",
+    "ds": 1290,
+    "rar": "hidden",
+    "vis": "biconvex",
+    "hidden": true,
+    "l1": "Shaped glass that bends light to a focus.",
+    "l2": "The lens is the single component behind both the microscope and the telescope, which between them opened the very small and the very distant within a few decades of each other. Spectacles came first and are their own quiet revolution: they roughly doubled the working life of anyone whose job needed close vision.",
+    "l3": "Surviving spectacle lenses, grinding equipment and the optical treatises describing focal geometry document the craft. Early instrument lenses have been measured and their performance characterised.",
+    "ev": "Surviving lenses and grinding equipment; optical treatises",
+    "src": [
+      "brit_eyeglasses",
+      "met_toah",
+      "ethw",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "glass",
+        "optics"
+      ],
+      [
+        "glass",
+        "geometry"
+      ]
+    ],
+    "tags": [
+      "focus",
+      "instrument"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "gunpowder",
+    "no": 209,
+    "n": "Gunpowder",
+    "era": "science",
+    "cat": "material",
+    "date": "≈ 900 CE onward",
+    "ds": 900,
+    "rar": "hidden",
+    "vis": "charge",
+    "hidden": true,
+    "l1": "A mixture that carries its own oxygen and therefore burns extremely fast.",
+    "l2": "Gunpowder was found by Chinese alchemists looking for an elixir of immortality, which is a good reminder that research programmes rarely produce what they set out to. Its effect on fortification, state power and the balance between defence and attack was profound, and largely destructive.",
+    "l3": "Chinese alchemical and military texts describe formulations from the ninth and tenth centuries onward. Surviving weapons, fortification changes and the archaeology of siege sites document the consequences.",
+    "ev": "Chinese alchemical and military manuals; weapon finds; siege archaeology",
+    "src": [
+      "brit_gunpowder",
+      "bm_collection",
+      "met_toah"
+    ],
+    "rec": [
+      [
+        "chemistry",
+        "smoke"
+      ],
+      [
+        "smoke",
+        "smelting"
+      ]
+    ],
+    "tags": [
+      "energy",
+      "weapon"
+    ],
+    "caution": "Included because it shaped states, cities and technology. Its primary historical use was killing people.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "vaccine",
+    "no": 210,
+    "n": "Vaccine",
+    "era": "science",
+    "cat": "science",
+    "date": "Variolation earlier; vaccination from 1796 CE",
+    "ds": 1796,
+    "rar": "hidden",
+    "vis": "ampoule",
+    "hidden": true,
+    "l1": "Teaching the immune system to recognise a threat before it arrives.",
+    "l2": "Vaccination is among the highest-return interventions ever devised, and smallpox — a disease that killed hundreds of millions — is the only human disease deliberately eradicated. It also produces the paradox that its own success makes it look unnecessary, which is a recurring problem for preventive measures generally.",
+    "l3": "Variolation is documented in Asia and Africa before Jenner. The eradication of smallpox is documented by the World Health Organization, and long-run mortality series show the effect of each vaccination programme directly.",
+    "ev": "Historical inoculation records; eradication documentation; mortality series",
+    "src": [
+      "who_vaccination",
+      "owid_tech",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "medicine",
+        "biology"
+      ],
+      [
+        "medicine",
+        "experiment"
+      ]
+    ],
+    "tags": [
+      "health",
+      "prevention"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "antibiotics",
+    "no": 211,
+    "n": "Antibiotics",
+    "era": "science",
+    "cat": "science",
+    "date": "1928 CE onward; clinical from 1942",
+    "ds": 1928,
+    "rar": "hidden",
+    "vis": "culture-dish",
+    "hidden": true,
+    "l1": "Chemicals that kill bacteria without killing you.",
+    "l2": "Before antibiotics, a scratch could be fatal and most surgery carried a serious infection risk. Their arrival changed medicine so completely that the pre-antibiotic world is hard to imagine. Resistance was predicted by Fleming himself in his Nobel lecture, and it is now a serious and growing problem.",
+    "l3": "Fleming's 1928 observation, the Oxford team's clinical development in the 1940s, and subsequent resistance surveillance are all documented. Resistance rates are tracked by national and international monitoring programmes.",
+    "ev": "Original research records; clinical trial history; resistance surveillance",
+    "src": [
+      "nobel_med1945",
+      "nobel_fleming_lecture",
+      "owid_tech",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "medicine",
+        "chemistry"
+      ],
+      [
+        "biology",
+        "chemistry"
+      ]
+    ],
+    "tags": [
+      "health",
+      "fragile"
+    ],
+    "caution": "Antibiotic resistance is rising and was anticipated from the beginning. This is a gain that is not guaranteed to persist.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "plastic",
+    "no": 212,
+    "n": "Plastic",
+    "era": "industry",
+    "cat": "material",
+    "date": "≈ 1907 CE onward",
+    "ds": 1907,
+    "rar": "hidden",
+    "vis": "polymer-chain",
+    "hidden": true,
+    "l1": "Long molecular chains that can be shaped into almost anything.",
+    "l2": "Plastics can be made light, strong, flexible, insulating, transparent or sterile as required, and cheaply. They made modern medicine, electronics and food safety possible in their present form. The same durability that makes them useful means they persist in the environment for a very long time, and that consequence took decades to register.",
+    "l3": "Bakelite's 1907 synthesis and subsequent polymer chemistry are documented in patents and the research literature. Production statistics and environmental monitoring — including microplastic distribution studies — document the scale.",
+    "ev": "Polymer patents and literature; production statistics; environmental monitoring",
+    "src": [
+      "acs_bakelite",
+      "owid_tech",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "chemistry",
+        "mass_production"
+      ],
+      [
+        "chemistry",
+        "industrialization"
+      ]
+    ],
+    "tags": [
+      "material",
+      "persistent"
+    ],
+    "caution": "Plastics' durability is both their advantage and their environmental problem. Both belong in any honest account.",
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "silicon",
+    "no": 213,
+    "n": "Silicon",
+    "era": "computing",
+    "cat": "material",
+    "date": "Purified at scale from the 1950s",
+    "ds": 1954,
+    "rar": "hidden",
+    "vis": "ingot",
+    "hidden": true,
+    "l1": "Sand, purified to roughly one impure atom in a billion.",
+    "l2": "Silicon is the second most abundant element in Earth's crust and utterly useless for electronics in its natural state. What made the semiconductor industry possible was purification and crystal growth — producing single crystals of a perfection unmatched by any other bulk manufactured material. The scarcity was never the element; it was the process.",
+    "l3": "The Czochralski crystal-growth process, zone refining and semiconductor-grade purity specifications are documented in the materials science literature and in industrial standards.",
+    "ev": "Crystal growth literature; purity specifications; industry standards",
+    "src": [
+      "chm_timeline",
+      "nobel_transistor",
+      "ethw"
+    ],
+    "rec": [
+      [
+        "semiconductor",
+        "stone"
+      ],
+      [
+        "chemistry",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "purity",
+      "process"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "radar",
+    "no": 214,
+    "n": "Radar",
+    "era": "electric",
+    "cat": "technology",
+    "date": "≈ 1935 CE onward",
+    "ds": 1935,
+    "rar": "hidden",
+    "vis": "sweep",
+    "hidden": true,
+    "l1": "Finding things by bouncing radio waves off them and timing the echo.",
+    "l2": "Radar gave sight through darkness, cloud and distance. Its development drove microwave electronics hard — the cavity magnetron in particular — and that wartime push fed directly into post-war electronics, radio astronomy and, eventually, the microwave oven, which is a rather blunt illustration of dual-use technology.",
+    "l3": "Development records, surviving equipment and IEEE milestone documentation record the systems and their performance. The technology transfer into civilian electronics is well traced.",
+    "ev": "Development records; surviving equipment; IEEE milestones",
+    "src": [
+      "ethw_magnetron",
+      "ethw_milestones",
+      "ethw",
+      "si_airspace"
+    ],
+    "rec": [
+      [
+        "radio",
+        "flight"
+      ],
+      [
+        "radio",
+        "telescope"
+      ]
+    ],
+    "tags": [
+      "sensing",
+      "echo"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "satellite",
+    "no": 215,
+    "n": "Satellite",
+    "era": "network",
+    "cat": "technology",
+    "date": "1957 CE onward",
+    "ds": 1957,
+    "rar": "hidden",
+    "vis": "orbit",
+    "hidden": true,
+    "l1": "A machine placed in orbit, falling around the Earth indefinitely.",
+    "l2": "Orbit gives a vantage point over a whole hemisphere at once, which is why satellites transformed communication, weather forecasting, navigation, mapping and climate monitoring simultaneously. Most of what is known about global climate change comes from instruments that had to be put above the atmosphere to work.",
+    "l3": "Launch records, orbital catalogues and the continuous data archives from Earth observation missions are public. Satellite counts and launch-cost series are tracked over decades.",
+    "ev": "Launch and orbital records; Earth observation data archives",
+    "src": [
+      "nasa_sputnik",
+      "si_airspace",
+      "owid_tech"
+    ],
+    "rec": [
+      [
+        "flight",
+        "radar"
+      ],
+      [
+        "flight",
+        "physics"
+      ]
+    ],
+    "tags": [
+      "orbit",
+      "vantage"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "gps",
+    "no": 216,
+    "n": "Satellite Positioning",
+    "era": "network",
+    "cat": "technology",
+    "date": "Fully operational 1995 CE",
+    "ds": 1995,
+    "rar": "hidden",
+    "vis": "trilateration",
+    "hidden": true,
+    "l1": "Knowing exactly where you are, anywhere, from timing signals in space.",
+    "l2": "Position is computed from the tiny differences in arrival time of signals from several satellites — which means the system depends on clocks accurate to nanoseconds, and on correcting for relativistic time dilation. Without applying both special and general relativity, positions would drift by kilometres per day. It is the most routine practical use of Einstein's physics there is.",
+    "l3": "System specifications, published accuracy analyses and the documented relativistic corrections are public. Independent verification of the relativistic effects is a standard textbook case.",
+    "ev": "System specifications; accuracy analyses; relativistic correction documentation",
+    "src": [
+      "gpsgov",
+      "ashby_gps",
+      "si_airspace",
+      "ethw_milestones",
+      "owid_tech"
+    ],
+    "rec": [
+      [
+        "satellite",
+        "navigation"
+      ],
+      [
+        "satellite",
+        "cartography"
+      ]
+    ],
+    "tags": [
+      "position",
+      "relativity"
+    ],
+    "stone_age_tier": "late"
+  }
 ]

@@ -3,6 +3,65 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.4.0 — 23 September 2026
+
+A gameplay upgrade, built on the existing engine rather than a rewrite.
+
+### Crafting that can be figured out
+- **The graph was mostly unreachable.** 34 ingredient pairs were declared for two to
+  five different results, and the engine kept only the last, so a player could reach
+  50 of 322 entries. Every pair now yields exactly one result, the nine entries with no
+  working recipe have one, and 311 entries have two or more routes
+  (`tools/rework_recipes.py`). A test plays the whole graph from the four raw materials,
+  tier gates included, on every run.
+- **Stone Age tiers** open at 25% of the previous stage (was 50%) and are named as
+  gameplay stages, not archaeological periods. A right pair tried too early now says so,
+  shows the progress needed, and is offered again when its stage opens.
+- **Failure feedback nudges without spoiling**: it says which of the two items still has
+  something to give, or that both are used up — never what they make. Repeated pairs
+  are recognised.
+- **Progressive hints**: a direction, then the idea (the entry's own description with its
+  name taken out), then one ingredient — never both. Each level opens only after two more
+  tries. The bench offers a nudge by itself after four misses in a row. Hints can be aimed
+  at any undiscovered entry that is within reach, from the archive or the graph.
+- **Routes are collectable**: reaching something you already have by a new pair is a
+  "New route", counted per entry and in the archive.
+
+### Feedback, flow and mobile
+- Discovery card with a short spring and ring, slot merge / shake, toasts only for rare,
+  hidden, new-route, stage-opened and "you figured it out" moments. Feedback stays until
+  the next pair — nothing is taken away on a timer.
+- Tap-to-combine everywhere; "Use" puts a result straight back on the bench. Items with
+  nothing left to make are struck through and can be hidden. A "within reach" count is
+  always visible.
+- Onboarding is one line on the bench (tap Stone twice), no modal.
+- Phones get their own layout: bench on top, a grid of large tiles below, a bottom nav,
+  a bottom-sheet exhibit that opens only when asked, 16px inputs, no horizontal overflow.
+
+### Graph, archive, theme
+- Graph: eras wrap into sub-columns, pinch-zoom, zoom buttons, animated camera, a pulse
+  on new finds, and tracing of an entry's origins and descendants. Undiscovered entries
+  are never named.
+- Archive: stage progress, per-era counts, "within reach" and "routes left" filters,
+  a personal discovery history, and a pressure-free "Today's find".
+- Light, dark and system themes across every screen and the graph canvas, chosen before
+  first paint and remembered.
+- Search covers your own collection; undiscovered matches are counted, not named.
+
+### Trust
+- 85 Stone Age entries carried placeholder text, one false date ("~3 million years ago")
+  and a non-existent source id. They now have original descriptions, hedged or
+  "not yet sourced" dates, `source_required`, and a gameplay caution
+  (`tools/rewrite_placeholders.py`). The validator reports 0 errors.
+- Exhibits of undiscovered entries no longer show names, text or recipes; found entries
+  show only the routes you have used.
+
+### Removed
+- Unwired components from an earlier attempt (HintPanel, MultiRoutesPicker,
+  DiscoveryReveal, OnboardingModal, the old ThemeToggle, TierProgressBar,
+  `theme-system.css`, `mobile-responsive.css`, `lib/hints.ts`, `lib/multiRoutes.ts`,
+  `lib/useSandbox-1.ts`). The last commit that added them did not compile.
+
 ## 1.3.0 — 12 September 2026
 
 A pass against a general-purpose 200-point website checklist, keeping only

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- CommonJS by design */
 require('@testing-library/jest-dom');
 
 // jsdom has no IntersectionObserver; framer-motion's viewport hooks need one.

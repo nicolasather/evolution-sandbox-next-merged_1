@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- test doubles are deliberately partial */
 import { render, screen, fireEvent } from '@testing-library/react';
 import { TopBar } from '@/components/TopBar';
 
@@ -8,7 +9,7 @@ describe('TopBar', () => {
     erasReached: () => [{ id: 'e1', name: 'Era1' }],
     currentEra: () => ({ name: 'Era1', id: 'e1' }),
     has: () => true,
-    search: () => [],
+    search: () => ({ hits: [], hiddenMatches: 0 }),
   } as any;
 
   it('renders', () => {
@@ -16,11 +17,9 @@ describe('TopBar', () => {
       <TopBar
         engine={mockEngine}
         view="work"
-        railOpen={false}
         onView={() => {}}
         onOpen={() => {}}
         onReset={() => {}}
-        onMenu={() => {}}
       />
     );
     expect(screen.getByText('Workspace')).toBeInTheDocument();
@@ -31,11 +30,9 @@ describe('TopBar', () => {
       <TopBar
         engine={mockEngine}
         view="work"
-        railOpen={false}
         onView={() => {}}
         onOpen={() => {}}
         onReset={() => {}}
-        onMenu={() => {}}
       />
     );
     const input = screen.getByPlaceholderText('Search');

@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from 'next';
 import { Archivo, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { siteUrl } from '@/lib/site';
+import { THEME_BOOT } from '@/lib/theme';
 import './globals.css';
 
 /* next/font downloads these at build time and serves them from this site, so a
@@ -56,8 +57,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0a0a0b',
-  colorScheme: 'dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f2eee6' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0b' },
+  ],
+  colorScheme: 'dark light',
   width: 'device-width',
   initialScale: 1,
 };
@@ -74,7 +78,14 @@ const WEBSITE_JSON_LD = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
+    // data-theme is set by THEME_BOOT before React hydrates, so the server's
+    // markup cannot know it — suppressHydrationWarning covers that one attribute
+    <html lang="en" data-theme="dark" suppressHydrationWarning
+      className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        {/* first thing to run: pick light or dark before anything paints */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
+      </head>
       <body>
         <script
           type="application/ld+json"

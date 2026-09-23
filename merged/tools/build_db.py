@@ -43,6 +43,24 @@ ERAS = [
     ("simulation", "Simulation", "Worlds that keep running."),
 ]
 
+# Stone Age tiers gate the early game lightly: a recipe in a later tier opens
+# once a quarter of the previous tier's discoveries have been made. The
+# threshold was 50% until 2026-09; at 50% the middle tier walled off core
+# chain entries such as controlled fire for too long. The names are gameplay
+# stages, deliberately not archaeological periods: the "kit" tier mixes objects
+# from very different times.
+STONE_AGE_TIERS = {
+    "olduvai": {"name": "First Edges",
+                "description": "First edges: stone, wood, bone, fibre and the tools struck from them.",
+                "unlock_percentage": 0},
+    "middle": {"name": "Stone Age Kit",
+               "description": "Hafted tools, kept fire, traps, cord and shelter: the practical kit.",
+               "unlock_percentage": 25},
+    "late": {"name": "Ideas & Settlement",
+             "description": "Language, symbol, settlement, and everything built on them.",
+             "unlock_percentage": 25},
+}
+
 CATEGORIES = [
     "material", "technique", "technology", "biology", "culture", "society",
     "knowledge", "science", "engineering", "energy", "computing", "media", "economy",
@@ -129,6 +147,11 @@ def main() -> None:
 
     checked = sorted(s.get("checked", "") for s in sources["sources"].values())
 
+    tiers = {}
+    for key, info in STONE_AGE_TIERS.items():
+        members = [n for n in nodes if n.get("stone_age_tier") == key and n["id"] not in PRIMITIVES]
+        tiers[key] = {**info, "total_recipes": len(members)}
+
     payload = {
         "version": 1,
         "dataHash": data_hash,
@@ -145,6 +168,7 @@ def main() -> None:
             "hidden": sum(1 for n in nodes if n.get("hidden")),
             "sourceRequired": sum(1 for n in nodes if "source_required" in n.get("src", [])),
         },
+        "stone_age_tiers": tiers,
     }
 
     text = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))

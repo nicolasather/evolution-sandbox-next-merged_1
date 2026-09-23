@@ -1,7 +1,9 @@
 # Evolution Sandbox
 
 An explorable discovery graph. You start with four raw materials — stone, wood,
-bone, fibre — and combine them into 220 discoveries. Each carries a short
+bone, fibre — and combine them into 322 discoveries (306 core, 16 hidden), most of
+them reachable by more than one route. See CHANGELOG 1.4.0 for the hint system,
+route collection, themes and the mobile layout. Each carries a short
 definition, an argument for why it mattered, an account of how we know, and
 its sources: subject-level pages where one has been verified, and an honest
 **source required** flag where it has not.
@@ -73,7 +75,9 @@ components/             view layer — presentational, no game rules
   ConfirmDialog.tsx     in-page confirmation (window.confirm is blocked in sandboxed frames)
   vengeance/            Vengeance UI components, copied from the registry (MIT)
 lib/
-  engine.ts             the whole game: pair index, combining, path, stats — and a tiny store
+  engine.ts             the whole game: pair index, combining, nudges, hints, routes, tiers — and a tiny store
+  theme.ts              light / dark / system, applied before first paint
+  daily.ts              "Today's find" (date-seeded, no streaks)
   glyphs.ts             the shape grammar that draws all 220 marks
   useSandbox.ts         the only place React and the engine meet
   site.ts, format.ts    site URL resolution; locale-independent dates

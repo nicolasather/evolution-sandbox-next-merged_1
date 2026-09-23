@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- test doubles are deliberately partial */
 import { siteUrl } from '@/lib/site';
 
 describe('siteUrl', () => {

@@ -1,0 +1,3448 @@
+[
+  {
+    "id": "hafted_tool",
+    "no": 221,
+    "n": "Hafted Tool",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 500,000 years ago or earlier (debated)",
+    "ds": -500000,
+    "rar": "common",
+    "vis": "hafted_tool",
+    "l1": "A stone blade secured to a wooden handle. More effective than either alone.",
+    "l2": "Hafting — attaching a stone head to a wooden shaft — multiplies the utility of both materials. The leverage of the handle amplifies force; the durability of the stone preserves an edge. This combination made hunting, processing, and construction work radically more efficient.",
+    "l3": "Evidence of hafted tools appears in the archaeological record by the Middle Pleistocene, with clear examples from Acheulean and Mousterian tool kits. The technique required not just the ability to shape stone and select wood, but to understand how materials with different properties could be joined to complement each other's strengths.",
+    "ev": "Archaeological tool assemblages",
+    "src": [
+      "si_ho_tools",
+      "bm_collection"
+    ],
+    "rec": [
+      [
+        "stone",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "hafted",
+      "composite",
+      "tool"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "torch",
+    "no": 222,
+    "n": "Torch",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -60000,
+    "rar": "uncommon",
+    "vis": "torch",
+    "l1": "Burning material carried on a stick: fire you can take with you.",
+    "l2": "A torch turns fire from a place into a tool. It lights the way into caves, keeps animals back at night, and carries a flame from one hearth to start the next.",
+    "l3": "Torches rarely survive, so evidence is indirect: soot marks and charcoal smears on cave walls far beyond the reach of daylight.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fire",
+        "hafted_tool"
+      ],
+      [
+        "fire",
+        "bundle"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "pickaxe",
+    "no": 223,
+    "n": "Pick",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "pickaxe",
+    "l1": "A pointed head on a handle, swung to break ground or loosen rock.",
+    "l2": "A point concentrates the whole swing on a tiny area, which is what hard ground and seamed rock need. Picks made from antler were a standard mining tool long before metal ones.",
+    "l3": "Worn antler picks left behind in ancient mine shafts and pits are the usual evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "hafted_tool"
+      ],
+      [
+        "hafted_tool",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "axe",
+    "no": 224,
+    "n": "Axe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "axe",
+    "l1": "A heavy edge fixed to a handle and swung to cut wood.",
+    "l2": "The handle turns the arm into a longer lever, so each blow lands harder than a hand-held stone could. Felling and shaping timber at scale depends on it.",
+    "l3": "Stone axe heads survive well and often show polish or wear where a handle once gripped them; the handles themselves rarely survive.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "hafted_tool"
+      ],
+      [
+        "binding",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "adze",
+    "no": 225,
+    "n": "Adze",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "adze",
+    "l1": "Like an axe, but with the blade turned across the handle, for shaving and hollowing wood.",
+    "l2": "An adze takes off thin curls instead of chopping through, which is what shaping a plank, a bowl or a canoe hull requires.",
+    "l3": "Archaeologists tell adze blades from axe blades by their asymmetric edge and wear pattern.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "stone_flake"
+      ],
+      [
+        "chisel",
+        "hafted_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "hardened_spear",
+    "no": 226,
+    "n": "Fire-Hardened Spear",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "hardened_spear",
+    "l1": "A wooden spear whose point has been dried and toughened in a fire.",
+    "l2": "Careful heating drives moisture out of the tip and makes it harder and less likely to split — a sharper weapon with no stone at all.",
+    "l3": "Wooden spears are among the rarest survivals in archaeology; where they do survive, waterlogged or buried, their tips can be examined for heat treatment.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fire",
+        "spear"
+      ],
+      [
+        "controlled_fire",
+        "spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_spear",
+    "no": 227,
+    "n": "Stone-Tipped Spear",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "stone_spear",
+    "l1": "A spear with a knapped stone point fixed to its tip.",
+    "l2": "A stone tip cuts deeper and stays sharp longer than wood alone. Making one joins three skills at once: knapping, shaping a shaft, and fixing the two together.",
+    "l3": "Stone points with damage typical of impact, and with traces of the glue or binding that held them, are the main evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "spear",
+        "stone_flake"
+      ],
+      [
+        "spear",
+        "binding"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "harpoon",
+    "no": 228,
+    "n": "Harpoon",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "harpoon",
+    "l1": "A barbed point that stays in its target, often tied to a line.",
+    "l2": "Barbs and a line let a hunter keep hold of something in water, where a plain spear would simply come loose and be lost.",
+    "l3": "Carved bone and antler points with barbs are the typical finds; how early they appear is actively debated.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "spear"
+      ],
+      [
+        "fishing",
+        "stone_spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "barbed_spear",
+    "no": 229,
+    "n": "Barbed Spear",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "barbed_spear",
+    "l1": "A spear with backward-facing barbs cut or set into its head.",
+    "l2": "Barbs make a point hard to pull back out, so a wounded animal cannot shake it free.",
+    "l3": "Rows of small stone inserts set along a shaft, and carved bone points with barbs, are the usual evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "spear"
+      ],
+      [
+        "microblade",
+        "spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "chisel",
+    "no": 230,
+    "n": "Chisel",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "chisel",
+    "l1": "A narrow edge driven by a hammer to cut grooves and joints.",
+    "l2": "Striking the tool instead of swinging it gives precise, controlled cuts — the basis of joinery and carving.",
+    "l3": "Chisels are identified by their shape and by the tool marks they leave on worked wood, bone and antler.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hammering",
+        "stone_flake"
+      ],
+      [
+        "sharp_stone",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bolas",
+    "no": 231,
+    "n": "Bolas",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "bolas",
+    "l1": "Weights joined by cords, thrown to tangle an animal's legs.",
+    "l2": "A bolas does not need to hit a vital spot; it only has to wrap around something moving. It is a way of catching fast animals alive.",
+    "l3": "Grooved or rounded stones found in sets are often interpreted as bolas weights, though the identification is not always certain.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "sharp_stone"
+      ],
+      [
+        "rope",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "scraper",
+    "no": 232,
+    "n": "Scraper",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "scraper",
+    "l1": "A stone flake with a steep, sturdy edge for scraping hides and wood.",
+    "l2": "Cleaning a hide is slow, repetitive work, and a scraper's robust edge survives it. Scrapers are among the most common tools in many stone tool assemblages.",
+    "l3": "Microscopic wear and residues on scraper edges show what they were used on — hide, wood or plant.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "scraping",
+        "stone_flake"
+      ],
+      [
+        "stone_tool",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "scythe",
+    "no": 233,
+    "n": "Sickle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "scythe",
+    "l1": "A handle set with a row of small sharp blades, used to cut stems of grass and grain.",
+    "l2": "Cutting wild cereals by the handful is far quicker with a sickle than by hand, which matters once people start relying on grain.",
+    "l3": "Stone blades with a distinctive glossy polish — sickle gloss, left by silica in plant stems — are the evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microblade",
+        "wood"
+      ],
+      [
+        "microblade",
+        "hafted_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Scythe' until 2026-09. A scythe is a much later, two-handed tool. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "carving_knife",
+    "no": 234,
+    "n": "Carving Knife",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "carving_knife",
+    "l1": "A small, controllable blade for shaping wood and bone by hand.",
+    "l2": "Fine control, not force, is what a carving knife is for: whittling a handle, a peg, or a figure.",
+    "l3": "Knife marks on worked objects, and small blades with suitable wear, are the evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cutting",
+        "wood"
+      ],
+      [
+        "stone_tool",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bone_saw",
+    "no": 235,
+    "n": "Saw-Edged Blade",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "bone_saw",
+    "l1": "A blade with a notched edge, drawn back and forth to cut through bone or antler.",
+    "l2": "Bone and antler are too hard to slice. Sawing a groove and snapping along it is how they were cut into blanks for needles, points and ornaments.",
+    "l3": "Saw and groove marks on bone and antler offcuts show how the material was divided.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "cutting"
+      ],
+      [
+        "microblade",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "snares",
+    "no": 236,
+    "n": "Snare",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "snares",
+    "l1": "A loop of cord set so that an animal pulls it tight around itself.",
+    "l2": "A snare keeps working while the hunter is elsewhere. Several set at once can feed people with far less effort than a chase.",
+    "l3": "Snares are made of materials that rot; the evidence is mostly indirect, such as large numbers of small animal bones at a site.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "cutting"
+      ],
+      [
+        "cordage",
+        "peg"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "fishing_hook",
+    "no": 237,
+    "n": "Fish Hook",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 23,000 years ago or earlier",
+    "ds": -23000,
+    "rar": "uncommon",
+    "vis": "fishing_hook",
+    "l1": "A curved point that holds a fish once it takes the bait.",
+    "l2": "A hook lets one person fish from a shore or a boat without nets or traps, and it works in deep water where spears cannot reach.",
+    "l3": "Hooks carved from shell and bone are among the finds; the oldest examples known come from islands in the western Pacific.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "fishing"
+      ],
+      [
+        "bone",
+        "fishing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "awl",
+    "no": 238,
+    "n": "Awl",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -60000,
+    "rar": "uncommon",
+    "vis": "awl",
+    "l1": "A sharp point for piercing holes in hide.",
+    "l2": "Before an eyed needle, clothing was made by punching holes with an awl and pushing cord through them. It is the tool that makes fitted clothing possible.",
+    "l3": "Pointed bone tools with polish and wear at the tip are the evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "needle"
+      ],
+      [
+        "sharp_stone",
+        "needle"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "fishing_line",
+    "no": 239,
+    "n": "Fishing Line",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -23000,
+    "rar": "uncommon",
+    "vis": "fishing_line",
+    "l1": "A long cord that joins a hook to the person holding it.",
+    "l2": "The line is what lets a hook be cast out, sunk deep, and pulled back in.",
+    "l3": "Lines rarely survive; their use is inferred from hooks, sinkers and the fish bones found with them.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fishing_hook",
+        "cordage"
+      ],
+      [
+        "fishing_hook",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "trident",
+    "no": 240,
+    "n": "Fish Spear",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "trident",
+    "l1": "A spear with several prongs, used to pin fish in shallow water.",
+    "l2": "Several points spread the strike, so a quick, slippery fish is easier to hold than with a single tip.",
+    "l3": "Pronged fishing spears are known from wet sites where wood survives; the three-pronged metal trident is much later.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fishing",
+        "spear"
+      ],
+      [
+        "harpoon",
+        "spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "The name 'Trident' suggests a much later metal tool; this entry means any multi-pronged fish spear. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "campfire",
+    "no": 241,
+    "n": "Campfire",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -400000,
+    "rar": "uncommon",
+    "vis": "campfire",
+    "l1": "An open fire built on the ground and tended through the night.",
+    "l2": "A campfire is the social centre of a camp: warmth, light, cooking and a place where people sit together and talk.",
+    "l3": "Burned bone, heated stones, ash lenses and charcoal in the ground are how archaeologists recognise ancient fires; separating deliberate fires from natural ones is often debated.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fire",
+        "wood"
+      ],
+      [
+        "fire",
+        "kindling"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "hearth",
+    "no": 242,
+    "n": "Hearth",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "hearth",
+    "l1": "A fireplace deliberately built and reused, often ringed with stones.",
+    "l2": "A hearth is fire given a fixed place. People return to it, organise work around it, and build shelters beside it.",
+    "l3": "Repeated layers of ash and burned material in the same spot, sometimes with a stone ring, mark a hearth.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fire",
+        "stone"
+      ],
+      [
+        "campfire",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "charcoal",
+    "no": 243,
+    "n": "Charcoal",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "charcoal",
+    "l1": "Wood burned with little air, leaving a light, black fuel that burns hot.",
+    "l2": "Charcoal burns hotter and cleaner than wood, and it also made one of the first drawing materials.",
+    "l3": "Charcoal survives very well, and it is also what radiocarbon dating most often measures.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hearth",
+        "wood"
+      ],
+      [
+        "smoke",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "kiln",
+    "no": 244,
+    "n": "Kiln",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "kiln",
+    "l1": "An enclosed fire built to reach and hold high temperatures.",
+    "l2": "Walling a fire in traps its heat, which is what firing pottery, burning lime and eventually smelting metal require.",
+    "l3": "Fired clay objects, burned structures and heat-reddened ground reveal kilns and their temperatures.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hearth",
+        "stone_hut"
+      ],
+      [
+        "controlled_fire",
+        "stone_hut"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Clay figurines were fired in some places long before pottery vessels and purpose-built kilns. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flint",
+    "no": 245,
+    "n": "Flint",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -500000,
+    "rar": "uncommon",
+    "vis": "flint",
+    "l1": "A hard, glassy stone that breaks into very sharp edges.",
+    "l2": "Flint and similar stones fracture predictably, which made them the preferred raw material for knapping wherever they could be found.",
+    "l3": "Where a tool's stone came from can often be traced by its chemistry and appearance, which shows people carrying good stone over long distances.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fire",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "slow_match",
+    "no": 246,
+    "n": "Smouldering Cord",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "slow_match",
+    "l1": "A cord that burns slowly, used to keep a flame alive while travelling.",
+    "l2": "Starting a fire from nothing is hard work. Carrying a smouldering ember is easier, and a slow-burning cord is one way to do it.",
+    "l3": "Such cords rarely survive; the practice is known mainly from later historical and ethnographic accounts.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "fire"
+      ],
+      [
+        "rope",
+        "fire"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Slow Match' until 2026-09. A slow match in the strict sense is a gunpowder-era fuse. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "ash",
+    "no": 247,
+    "n": "Ash",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -400000,
+    "rar": "uncommon",
+    "vis": "ash",
+    "l1": "The pale, powdery residue left when a fire burns out.",
+    "l2": "Ash was useful as well as waste: it was spread on floors, mixed into plaster, and used to preserve and clean.",
+    "l3": "Layers of ash in a site are one of the clearest signs of repeated fire use.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "campfire",
+        "fire"
+      ],
+      [
+        "charcoal",
+        "fire"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "cooked_marrow",
+    "no": 248,
+    "n": "Cooked Marrow",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "cooked_marrow",
+    "l1": "The fatty tissue inside large bones, eaten after cracking or heating them.",
+    "l2": "Marrow is rich in fat, which is hard to come by from lean wild meat. Getting it out was worth the effort.",
+    "l3": "Bones broken open in a consistent pattern, sometimes burned, show deliberate marrow extraction.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "hearth"
+      ],
+      [
+        "bone",
+        "campfire"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "spit",
+    "no": 249,
+    "n": "Roasting Spit",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "spit",
+    "l1": "A stick used to hold food over a fire.",
+    "l2": "Holding food over the flames instead of in them cooks it evenly without burning it.",
+    "l3": "Spits are wooden and rarely survive; the practice is inferred from burned bone and hearth layout.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "campfire",
+        "spear"
+      ],
+      [
+        "hearth",
+        "spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "palisade",
+    "no": 250,
+    "n": "Palisade",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -9000,
+    "rar": "uncommon",
+    "vis": "palisade",
+    "l1": "A fence of upright timbers set closely side by side.",
+    "l2": "A palisade marks a settlement's edge and protects what is inside it: people, animals and stored food.",
+    "l3": "Rows of post-holes in the ground outline where palisades once stood.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "shelter",
+        "wood"
+      ],
+      [
+        "shelter",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_hut",
+    "no": 251,
+    "n": "Stone Hut",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "stone_hut",
+    "l1": "A small dwelling with walls or foundations of stone.",
+    "l2": "Stone walls last for generations. A stone house is a commitment to a place.",
+    "l3": "Stone foundations are among the most durable remains of early dwellings.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "shelter",
+        "stone"
+      ],
+      [
+        "shelter",
+        "quarry"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "reinforced_shelter",
+    "no": 252,
+    "n": "Braced Shelter",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "reinforced_shelter",
+    "l1": "A shelter whose frame has been tied and braced to stand up to wind and weight.",
+    "l2": "Tying the frame together turns a lean-to into a structure that can hold a heavy covering and last a season.",
+    "l3": "Frames are perishable; post-holes and floor layouts give the shape of what stood there.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "shelter"
+      ],
+      [
+        "lashing",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bone_tent",
+    "no": 253,
+    "n": "Bone Dwelling",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "bone_tent",
+    "l1": "A shelter whose frame or weights are made from large animal bones.",
+    "l2": "Where trees are scarce, big bones can do the work of timber.",
+    "l3": "Arrangements of large bones in circular patterns, found in cold, treeless regions, are interpreted as dwellings.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "shelter"
+      ],
+      [
+        "bone",
+        "reinforced_shelter"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "smokehouse",
+    "no": 254,
+    "n": "Smokehouse",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "smokehouse",
+    "l1": "A shelter in which food is hung in smoke to dry and preserve it.",
+    "l2": "Smoke dries food and slows spoilage. Preserving a large catch means food lasts well beyond the season it was caught in.",
+    "l3": "Evidence is indirect: structures with heavy smoke deposits and large accumulations of fish or meat bones.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "smoke",
+        "shelter"
+      ],
+      [
+        "smoke",
+        "fish_drying_rack"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "lashing",
+    "no": 255,
+    "n": "Lashing",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "lashing",
+    "l1": "Rope wound tightly around two pieces to hold them together.",
+    "l2": "Lashing is how frames get built without nails or glue: shelters, rafts, racks and ladders.",
+    "l3": "Lashings themselves rarely survive; notches and grooves worn into wood show where they sat.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "rope",
+        "wood"
+      ],
+      [
+        "binding",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "anchor",
+    "no": 256,
+    "n": "Stone Anchor",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "anchor",
+    "l1": "A heavy stone tied to a line to hold a boat or a net in place.",
+    "l2": "An anchor keeps a boat steady against current and wind while its crew fishes or waits.",
+    "l3": "Pierced or grooved heavy stones found near shores and wrecks are identified as anchors.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "rope",
+        "sharp_stone"
+      ],
+      [
+        "raft",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "ladder",
+    "no": 257,
+    "n": "Ladder",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "ladder",
+    "l1": "Two rails joined by rungs, for climbing up and down.",
+    "l2": "A ladder reaches roofs, storage platforms and cliff dwellings that feet alone cannot.",
+    "l3": "Ladders are known from rock art and from wooden examples preserved in dry or waterlogged sites.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "lashing",
+        "lumber"
+      ],
+      [
+        "lumber",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "rope",
+    "no": 258,
+    "n": "Rope",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -50000,
+    "rar": "uncommon",
+    "vis": "rope",
+    "l1": "Several strands of cord twisted together into one strong line.",
+    "l2": "Twisting strands together multiplies strength. Rope pulls, hauls, lashes, climbs and anchors.",
+    "l3": "Fragments of twisted fibre, and impressions of cord in clay, are the evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "cordage"
+      ],
+      [
+        "cordage",
+        "plant_thread"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "weaving_shuttle",
+    "no": 259,
+    "n": "Weaving Shuttle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -9000,
+    "rar": "uncommon",
+    "vis": "weaving_shuttle",
+    "l1": "A tool that carries thread back and forth between the threads of a weave.",
+    "l2": "A shuttle speeds up weaving, which turns fibre into cloth much faster than knotting or twining by hand.",
+    "l3": "Weaving tools are known from later sites; how early simple weaving began is uncertain.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "rope"
+      ],
+      [
+        "carving_knife",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "tapestry",
+    "no": 260,
+    "n": "Woven Hanging",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "tapestry",
+    "l1": "A decorated textile hung on a wall or across a doorway.",
+    "l2": "A hanging keeps out draughts and marks a space as someone's own, with colour and pattern.",
+    "l3": "Textiles rarely survive; ancient examples come from very dry or waterlogged places.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "shelter"
+      ],
+      [
+        "cloth",
+        "art"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Tapestry in the strict sense is a much later craft; this entry stands for decorated hangings in general. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "slingshot",
+    "no": 261,
+    "n": "Sling",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "slingshot",
+    "l1": "A pouch between two cords, whirled to throw a stone hard and far.",
+    "l2": "A sling multiplies the speed of a throw. It is light, easy to make, and fires ammunition you can pick up anywhere.",
+    "l3": "Slings rot; stones shaped as sling ammunition are the usual evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "stone"
+      ],
+      [
+        "rope",
+        "hunting"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Slingshot' until 2026-09. A slingshot with an elastic band is a modern object. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "mortar",
+    "no": 262,
+    "n": "Mortar",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "mortar",
+    "l1": "A hollowed stone in which things are pounded or ground.",
+    "l2": "Pounding seeds, nuts and pigments in a mortar makes food and colour that hands alone cannot produce.",
+    "l3": "Hollowed stones with residues of plants or pigment show what was ground in them.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "pestle",
+        "stone"
+      ],
+      [
+        "hammering",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "pestle",
+    "no": 263,
+    "n": "Pestle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "pestle",
+    "l1": "A heavy, rounded stone held in the hand to pound and grind.",
+    "l2": "The pestle is the moving half of a grinding pair; it turns hard seeds into flour and paste.",
+    "l3": "Worn ends and residues of starch on grinding stones reveal what was processed.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone",
+        "stone_flake"
+      ],
+      [
+        "stone",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "wooden_bowl",
+    "no": 264,
+    "n": "Wooden Bowl",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "wooden_bowl",
+    "l1": "A container carved or burned out of a single piece of wood.",
+    "l2": "A bowl holds food and water, and it can be carried. Before pottery, wood, bark and gourds did this job.",
+    "l3": "Wooden vessels survive only in waterlogged or very dry sites.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "wood",
+        "chisel"
+      ],
+      [
+        "wood",
+        "scraper"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "dugout_canoe",
+    "no": 265,
+    "n": "Dugout Canoe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago or earlier",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "dugout_canoe",
+    "l1": "A boat made by hollowing out a single log.",
+    "l2": "A dugout carries people and loads along rivers, lakes and coasts. It turns water from a barrier into a route.",
+    "l3": "The oldest surviving dugouts were preserved in peat and mud; older boats almost certainly existed but have not survived.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "adze",
+        "wood"
+      ],
+      [
+        "fire",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bone_container",
+    "no": 266,
+    "n": "Bone Container",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "bone_container",
+    "l1": "A hollow bone or horn used to hold small things.",
+    "l2": "Hollow bones make ready-made tubes for pigment, needles or tinder, sealed with a plug.",
+    "l3": "Hollow bones with residues or wear consistent with use as containers have been found at a number of sites.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "chisel"
+      ],
+      [
+        "bone",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "lime",
+    "no": 267,
+    "n": "Lime",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "lime",
+    "l1": "A white powder made by burning limestone or shell, which hardens again when wet.",
+    "l2": "Lime makes plaster and mortar. It set floors and walls hard, and later bound whole buildings together.",
+    "l3": "Lime plaster floors are identified by their chemistry and texture, which differ from natural deposits.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "kiln",
+        "stone"
+      ],
+      [
+        "bone",
+        "fire"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bundle",
+    "no": 268,
+    "n": "Bundle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "bundle",
+    "l1": "Stems or reeds tied tightly together.",
+    "l2": "A bundle of reeds floats, burns steadily, thatches a roof or builds a boat. Tying weak things together makes a strong one.",
+    "l3": "Bundles rarely survive; impressions and ethnographic comparison are the main evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "plant",
+        "cordage"
+      ],
+      [
+        "grass",
+        "binding"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "trophy_necklace",
+    "no": 269,
+    "n": "Pendant Necklace",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "trophy_necklace",
+    "l1": "Teeth, shells or carved pieces strung and worn around the neck.",
+    "l2": "Ornaments say something about the wearer — who they are, where they belong, what they have done. Wearing them is a form of symbolic communication.",
+    "l3": "Perforated teeth and shells with string wear around their holes show they were worn.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hunting",
+        "cordage"
+      ],
+      [
+        "bone",
+        "rope"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "sauna",
+    "no": 270,
+    "n": "Sweat Lodge",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "sauna",
+    "l1": "A small, closed shelter filled with heat from hot stones.",
+    "l2": "Steam and heat were used for cleaning, healing and ritual in many cultures around the world.",
+    "l3": "Structures with heaps of fire-cracked stones are sometimes interpreted as sweat houses, though the identification can be uncertain.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "boiling_stone",
+        "shelter"
+      ],
+      [
+        "hearth",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Sauna' until 2026-09. The Finnish sauna is one late example of a much wider practice. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "fence",
+    "no": 271,
+    "n": "Fence",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -9000,
+    "rar": "uncommon",
+    "vis": "fence",
+    "l1": "A barrier of posts and rails around a plot or an enclosure.",
+    "l2": "A fence keeps animals in or out and marks land as someone's. It is closely tied to herding and farming.",
+    "l3": "Post-holes in regular lines show where fences once stood.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "shelter"
+      ],
+      [
+        "palisade",
+        "rope"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "engraver",
+    "no": 272,
+    "n": "Engraver",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "engraver",
+    "l1": "A stone tool with a strong, narrow point for cutting grooves.",
+    "l2": "An engraver cuts lines into bone, antler and stone: marks, patterns, and the first carved images.",
+    "l3": "Microscopic wear on the tip, and the grooves themselves, identify engraving tools.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "stone_flake"
+      ],
+      [
+        "needle",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flute",
+    "no": 273,
+    "n": "Flute",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 40,000 years ago",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "flute",
+    "l1": "A hollow bone with finger holes, played by blowing across or into it.",
+    "l2": "A flute is deliberate, repeatable music. Some of the oldest securely identified musical instruments are flutes carved from bird bone and ivory.",
+    "l3": "Carved flutes from caves in southwest Germany are among the oldest known instruments.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "awl"
+      ],
+      [
+        "music",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bullroarer",
+    "no": 274,
+    "n": "Bullroarer",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "bullroarer",
+    "l1": "A flat piece of wood on a cord, swung in a circle to make a roaring sound.",
+    "l2": "The bullroarer carries sound over long distances and is used in ceremony in many cultures.",
+    "l3": "Some carved slats found at old sites are interpreted as bullroarers; the identification is not always certain.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "carving_knife",
+        "rope"
+      ],
+      [
+        "lumber",
+        "ritual"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bow_drill",
+    "no": 275,
+    "n": "Bow Drill",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "bow_drill",
+    "l1": "A bow whose string is wrapped around a spindle, spinning it fast.",
+    "l2": "Spinning a spindle against wood makes enough friction heat to start a fire. The same trick drills holes in beads and wood.",
+    "l3": "Drilled beads and wear marks on hearth boards are the evidence for bow drills.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bow",
+        "wood"
+      ],
+      [
+        "cordage",
+        "kindling"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bow",
+    "no": 276,
+    "n": "Bow",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Possibly ≈ 60,000 years ago or earlier (debated)",
+    "ds": -60000,
+    "rar": "uncommon",
+    "vis": "bow",
+    "l1": "A springy stave and a string, which store the pull of the arm and release it into an arrow.",
+    "l2": "A bow shoots farther and more accurately than a thrown spear, and lets a hunter strike from hiding.",
+    "l3": "Bows rarely survive; the case for early archery rests on small stone points with impact damage, which is debated.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "lumber",
+        "cordage"
+      ],
+      [
+        "hardened_spear",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "atlatl",
+    "no": 277,
+    "n": "Spear-Thrower",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Upper Palaeolithic",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "atlatl",
+    "l1": "A handle that holds the back of a dart, extending the arm when throwing.",
+    "l2": "The spear-thrower works as a lever: it lengthens the arm, so a dart leaves the hand much faster.",
+    "l3": "Carved spear-throwers of antler and bone are known from Upper Palaeolithic Europe.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "spear",
+        "lever"
+      ],
+      [
+        "hafted_tool",
+        "spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "boiling_stone",
+    "no": 278,
+    "n": "Boiling Stones",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "boiling_stone",
+    "l1": "Stones heated in a fire and dropped into water to heat it.",
+    "l2": "Boiling stones heat water in a container that cannot go on a fire: a skin, a basket or a wooden trough. It makes stews, softens plants and renders fat.",
+    "l3": "Heaps of fire-cracked rock, shattered by sudden cooling, are the evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hearth",
+        "stone"
+      ],
+      [
+        "hearth",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "tallies",
+    "no": 279,
+    "n": "Tally Marks",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "tallies",
+    "l1": "A series of notches cut into bone or wood.",
+    "l2": "Marks that stand for things counted are a small step towards writing numbers down.",
+    "l3": "Notched bones are well known; whether a particular set of marks was a count is often debated.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "engraver",
+        "wood"
+      ],
+      [
+        "engraver",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "dice",
+    "no": 280,
+    "n": "Knucklebones",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "dice",
+    "l1": "Small animal ankle bones thrown in games of chance and skill.",
+    "l2": "Throwing bones to see how they land is one of the oldest games, and was also used in divination.",
+    "l3": "Collections of ankle bones, some worn or marked, are found at many sites.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "carving_knife",
+        "bone"
+      ],
+      [
+        "ritual",
+        "bone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Dice' until 2026-09. Six-sided dice are a later development of the same idea. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "sledge",
+    "no": 281,
+    "n": "Maul",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "sledge",
+    "l1": "A heavy hammer on a long handle.",
+    "l2": "Weight and a long swing split logs, drive stakes and break stone.",
+    "l3": "Heavy hammer stones with handle wear are the usual evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "hafted_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Sledge' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "mattock",
+    "no": 282,
+    "n": "Mattock",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "mattock",
+    "l1": "A digging tool with a broad blade on one side of the head.",
+    "l2": "A mattock breaks and turns heavy ground, which matters for digging roots, ditches and, later, fields.",
+    "l3": "Heavy blades with digging wear are the typical evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "sharp_stone"
+      ],
+      [
+        "pickaxe",
+        "hoe"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "microblade",
+    "no": 283,
+    "n": "Microblade",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "microblade",
+    "l1": "A tiny, very regular stone blade, made in large numbers.",
+    "l2": "Microblades are small replaceable parts: set in rows along a shaft or handle, they make points, knives and sickles that can be repaired one blade at a time.",
+    "l3": "Microblades and the cores they were struck from are distinctive and easy to recognise.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_flake",
+        "stone_flake"
+      ],
+      [
+        "engraver",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "handaxe",
+    "no": 284,
+    "n": "Handaxe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 1.7 million years ago onward",
+    "ds": -1700000,
+    "rar": "uncommon",
+    "vis": "handaxe",
+    "l1": "A stone shaped on both faces into a teardrop with a sharp edge all round.",
+    "l2": "The handaxe was made to a consistent plan for more than a million years. It shows that its makers held a shape in mind before they started.",
+    "l3": "Handaxes of the Acheulean tradition are found across Africa, Europe and Asia.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "sharp_stone",
+        "sharp_stone"
+      ],
+      [
+        "sharp_stone",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "shears",
+    "no": 285,
+    "n": "Paired Blades",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "shears",
+    "l1": "Two blades that cut by closing on each other.",
+    "l2": "Cutting from both sides at once gives a clean, controlled cut through hair, fibre and cloth.",
+    "l3": "True shears are made of metal and appear much later; this entry stands for the idea of cutting with two edges.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cutting",
+        "cutting"
+      ],
+      [
+        "cutting",
+        "scraper"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Shears' until 2026-09. Metal shears are Iron Age and later. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "weir",
+    "no": 286,
+    "n": "Fish Weir",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "weir",
+    "l1": "A barrier of stones or stakes built across a stream to steer fish into a trap.",
+    "l2": "A weir harvests fish every day with no one watching. Some systems were built and maintained over many generations.",
+    "l3": "Lines of stakes and stones in rivers and tidal zones mark ancient weirs.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fishing",
+        "fishing"
+      ],
+      [
+        "fish_trap",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flail",
+    "no": 287,
+    "n": "Flail",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "flail",
+    "l1": "Two sticks joined by a short cord, swung to beat grain from its husk.",
+    "l2": "Threshing separates grain from straw. The flail made this slow task much faster.",
+    "l3": "Flails are perishable; the practice is known from later depictions and historical records.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "lumber",
+        "rope"
+      ],
+      [
+        "hammering",
+        "rope"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "wildfire",
+    "no": 288,
+    "n": "Wildfire",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Older than us",
+    "ds": -4000000,
+    "rar": "uncommon",
+    "vis": "wildfire",
+    "l1": "Fire that spreads across the land on its own.",
+    "l2": "Long before people made fire, they met it. Early fire use probably began by taking burning material from natural fires.",
+    "l3": "Charcoal in ancient lake and ocean sediments records the history of natural fire.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fire",
+        "fire"
+      ],
+      [
+        "fire",
+        "plant"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "tattoo_needle",
+    "no": 289,
+    "n": "Tattoo Needle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "tattoo_needle",
+    "l1": "A fine point used to put pigment into skin.",
+    "l2": "Tattoos mark identity, status, healing or belonging, and they cannot be taken off.",
+    "l3": "Tattooed preserved bodies prove the practice; sharp points with pigment on them are evidence for the tools.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "needle"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "spike_trap",
+    "no": 290,
+    "n": "Spike Trap",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "spike_trap",
+    "l1": "A pit or passage set with sharpened stakes.",
+    "l2": "Traps let terrain do the hunting. A well-placed pit on a game trail works without a hunter nearby.",
+    "l3": "Pit features and sharpened stakes are occasionally preserved; many identifications are uncertain.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "shelter",
+        "spear"
+      ],
+      [
+        "snares",
+        "spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "moat_wall",
+    "no": 291,
+    "n": "Ditch and Bank",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -7000,
+    "rar": "uncommon",
+    "vis": "moat_wall",
+    "l1": "A ditch dug around a settlement, with the earth piled up on the inside.",
+    "l2": "Digging a ditch and piling up a bank marks a boundary, drains the ground and makes the inside harder to reach.",
+    "l3": "Enclosure ditches show up clearly in excavation and in aerial photographs of crop marks.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "sharp_stone",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Moat Wall' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "beacon",
+    "no": 292,
+    "n": "Signal Fire",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "beacon",
+    "l1": "A fire lit on high ground to be seen from far away.",
+    "l2": "Fire and smoke carry a message across a valley faster than a runner can.",
+    "l3": "Signal fires leave little trace; most evidence comes from historical and ethnographic accounts.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "campfire",
+        "smoke"
+      ],
+      [
+        "torch",
+        "landscape_knowledge"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Beacon' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "tripwire",
+    "no": 293,
+    "n": "Tripwire",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "tripwire",
+    "l1": "A cord stretched low across a path, which sets off a trap when touched.",
+    "l2": "A tripwire lets the animal spring the trap itself, so it can be set and left.",
+    "l3": "Known mainly from ethnographic practice; the materials rarely survive.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "snares",
+        "wood"
+      ],
+      [
+        "snares",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "fish_drying_rack",
+    "no": 294,
+    "n": "Fish Drying Rack",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "fish_drying_rack",
+    "l1": "A frame on which split fish are hung to dry in the sun, wind or smoke.",
+    "l2": "Dried fish keeps for months. A large seasonal run of fish becomes food for the whole year.",
+    "l3": "Post-holes near shores, together with large numbers of fish bones, point to drying and storage.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fishing",
+        "shelter"
+      ],
+      [
+        "fishing",
+        "smoke"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "trench",
+    "no": 295,
+    "n": "Drainage Ditch",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "trench",
+    "l1": "A channel dug to carry water away from a dwelling or field.",
+    "l2": "Keeping water out of a floor or away from crops makes a place livable and farmable.",
+    "l3": "Ditches appear in excavation as bands of different soil that filled them in.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cutting",
+        "shelter"
+      ],
+      [
+        "hoe",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Trench' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "brand",
+    "no": 296,
+    "n": "Firebrand",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -60000,
+    "rar": "uncommon",
+    "vis": "brand",
+    "l1": "A burning stick taken from a fire.",
+    "l2": "A firebrand carries fire to a new place, drives off animals, and lights a torch or a new hearth.",
+    "l3": "Firebrands leave no specific trace; their use is inferred from fire use generally.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "torch",
+        "hafted_tool"
+      ],
+      [
+        "fire",
+        "pickaxe"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Brand' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "javelin",
+    "no": 297,
+    "n": "Javelin",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "javelin",
+    "l1": "A light spear balanced for throwing rather than thrusting.",
+    "l2": "A thrown spear reaches an animal before it gets close, which makes hunting safer.",
+    "l3": "Whether early wooden spears were thrown or thrust is judged from their balance and shape, and remains debated.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hardened_spear",
+        "stone_flake"
+      ],
+      [
+        "spear",
+        "hunting"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "pike",
+    "no": 298,
+    "n": "Long Spear",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "pike",
+    "l1": "A long, heavy spear used for thrusting.",
+    "l2": "A long thrusting spear keeps a large animal at a distance while the hunter holds his ground.",
+    "l3": "Preserved wooden spears and wear on stone points help separate thrusting from throwing weapons.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "spear"
+      ],
+      [
+        "spear",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Pike' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "lumber",
+    "no": 299,
+    "n": "Split Timber",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "lumber",
+    "l1": "Wood split or cut into beams and planks.",
+    "l2": "Straight, even timber is what frames, boats and furniture are built from.",
+    "l3": "Tool marks on preserved wood show how it was split and shaped.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "wood"
+      ],
+      [
+        "axe",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Lumber' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "quarry",
+    "no": 300,
+    "n": "Quarry",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "quarry",
+    "l1": "A place where stone is dug or broken out of the ground.",
+    "l2": "Good stone is not everywhere. A quarry is a place people returned to again and again to get it.",
+    "l3": "Quarries leave pits, waste flakes and abandoned blanks in large quantities.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "stone"
+      ],
+      [
+        "pickaxe",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "kindling",
+    "no": 301,
+    "n": "Kindling",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -400000,
+    "rar": "uncommon",
+    "vis": "kindling",
+    "l1": "Small, dry, thin pieces of wood and plant that catch fire easily.",
+    "l2": "A fire is built up in stages; kindling bridges the gap between a spark and a log.",
+    "l3": "Kindling burns away completely; its use is inferred from fire-making itself.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "carving_knife",
+        "wood"
+      ],
+      [
+        "lumber",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "peg",
+    "no": 302,
+    "n": "Peg",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "peg",
+    "l1": "A small shaped stick driven into the ground or into wood to hold things in place.",
+    "l2": "Pegs hold down tents, snares and hides being stretched, and they join wood without nails.",
+    "l3": "Pegs survive in waterlogged sites, and peg holes are visible in preserved woodwork.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "wood"
+      ],
+      [
+        "carving_knife",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "weight",
+    "no": 303,
+    "n": "Net Sinker",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "weight",
+    "l1": "A small weight tied to the bottom of a net or line to make it sink.",
+    "l2": "Sinkers hold a net upright in the water, so it catches fish instead of floating on the surface.",
+    "l3": "Notched or grooved small stones found near water are often identified as sinkers.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "net",
+        "stone"
+      ],
+      [
+        "cordage",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Weight' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flint_spark",
+    "no": 304,
+    "n": "Strike-a-Light",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "flint_spark",
+    "l1": "A hard stone struck against a mineral to throw sparks into tinder.",
+    "l2": "Striking sparks is a fast, portable way to make fire, with no need to carry an ember.",
+    "l3": "Wear marks on some flint tools have been interpreted as evidence of striking sparks; the interpretation is debated.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "flint",
+        "stone"
+      ],
+      [
+        "flint",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Flint Spark' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "hoe",
+    "no": 305,
+    "n": "Hoe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "hoe",
+    "l1": "A blade set across a handle for loosening soil and pulling weeds.",
+    "l2": "A hoe breaks up soil and clears weeds, one of the most basic tasks in tending plants.",
+    "l3": "Stone and bone blades with soil polish are the evidence.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "plant"
+      ],
+      [
+        "hafted_tool",
+        "cultivation"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "workshop",
+    "no": 306,
+    "n": "Work Area",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "workshop",
+    "l1": "A place set aside for making things.",
+    "l2": "Separating work into areas — knapping here, butchering there — shows planning and organised activity.",
+    "l3": "Clusters of debris from a single activity, such as knapping flakes, mark work areas at a site.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "shelter",
+        "stone_tool"
+      ],
+      [
+        "stone_hut",
+        "hafted_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Named 'Workshop' until 2026-09. Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "plant",
+    "no": 307,
+    "n": "Plant",
+    "era": "origins",
+    "cat": "material",
+    "date": "Older than us",
+    "ds": -4000000,
+    "rar": "common",
+    "vis": "leaf",
+    "l1": "Living plants for food, medicine, fiber, and tools.",
+    "l2": "Plants are the foundation of human diet and material culture. Every ecosystem offers edible plants, medicinal plants, and plants for fiber or construction.",
+    "l3": "Plant processing gave us fiber, food preservation, medicine, and poisons.",
+    "ev": "Pollen, seeds, charred remains",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "wood",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "raw",
+      "organic",
+      "starting"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "grass",
+    "no": 308,
+    "n": "Grass",
+    "era": "origins",
+    "cat": "material",
+    "date": "Older than us",
+    "ds": -4000000,
+    "rar": "common",
+    "vis": "grass-bundle",
+    "l1": "Dried grass and reeds for thatching and bedding.",
+    "l2": "Grass provides insulation, water resistance, and structure when dried and bundled together.",
+    "l3": "Thatch made from grass and reeds is one of the oldest roofing materials.",
+    "ev": "Archaeological remains of thatched structures",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "plant",
+        "fiber"
+      ],
+      [
+        "plant",
+        "plant"
+      ]
+    ],
+    "tags": [
+      "raw",
+      "organic",
+      "starting"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "cloth",
+    "no": 309,
+    "n": "Cloth",
+    "era": "origins",
+    "cat": "material",
+    "date": "≈ 50,000 years ago or earlier",
+    "ds": -50000,
+    "rar": "common",
+    "vis": "fabric",
+    "l1": "Woven or felted fibers forming a flexible material.",
+    "l2": "Cloth can be made from plant fibers or animal hair by weaving or felting strands together.",
+    "l3": "Early cloth provided protection from weather and later became a medium for decoration and social signaling.",
+    "ev": "Fiber fragments, tool impressions, pictorial evidence",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "weaving_shuttle",
+        "fiber"
+      ],
+      [
+        "weaving_shuttle",
+        "flax_fiber"
+      ],
+      [
+        "net",
+        "needle"
+      ]
+    ],
+    "tags": [
+      "fibre",
+      "structural"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "thatch",
+    "no": 310,
+    "n": "Thatch",
+    "era": "settlement",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago",
+    "ds": -10000,
+    "rar": "common",
+    "vis": "thatch-roof",
+    "l1": "Bundled grass or reeds tied together to form weatherproof covering.",
+    "l2": "Thatch is a durable roofing material that sheds water and insulates. It can last 30+ years if properly maintained.",
+    "l3": "Thatch roofs require specific construction knowledge and are particularly suited to areas with abundant grass or reeds.",
+    "ev": "Archaeological remains of thatched structures across multiple continents",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "grass",
+        "fiber"
+      ],
+      [
+        "grass",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "structural",
+      "roofing"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "net",
+    "no": 311,
+    "n": "Net",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 50,000 years ago or earlier",
+    "ds": -50000,
+    "rar": "common",
+    "vis": "net",
+    "l1": "Open mesh of knotted cordage for catching fish and small game.",
+    "l2": "Nets dramatically increase hunting and fishing efficiency by creating a boundary that animals cannot see or understand. A single net can trap many animals where a spear might catch one.",
+    "l3": "Nets appear in the archaeological record as impressions, wear patterns on tools, and in artistic representations. They are older than agriculture and remain one of humanity's most important food-acquisition technologies.",
+    "ev": "Net fragments, artistic depictions, tool wear patterns",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cordage",
+        "fiber"
+      ],
+      [
+        "rope",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "fibre",
+      "hunting",
+      "fishing"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "thread_and_needle",
+    "no": 312,
+    "n": "Thread & Needle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 40,000 years ago",
+    "ds": -40000,
+    "rar": "common",
+    "vis": "needle-thread",
+    "l1": "Cordage twisted into thread, sharpened bone shaped into needle.",
+    "l2": "Thread and needle enable sewn clothing, which allowed humans to adapt clothing to fit their body precisely, crucial for surviving cold climates.",
+    "l3": "Sewn clothing appears in the archaeological record around 40,000 years ago, coinciding with human expansion into colder regions.",
+    "ev": "Bone needles, tool marks, sewn fabric fragments",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "fiber"
+      ],
+      [
+        "needle",
+        "plant_thread"
+      ]
+    ],
+    "tags": [
+      "bone",
+      "tool",
+      "clothing"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "smudge_fire",
+    "no": 313,
+    "n": "Smudge Fire",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Older than recorded history",
+    "ds": -10000,
+    "rar": "common",
+    "vis": "smudge-fire",
+    "l1": "Smoke created by burning bone and fiber to repel insects and animals.",
+    "l2": "Smudge fires create dense smoke that repels biting insects and keeps animals at a distance. Critical for survival in warm climates with aggressive insect swarms.",
+    "l3": "Smudging remains an important technique for both insect control and ceremonial purposes in many cultures.",
+    "ev": "Ash deposits with bone char, ethnographic evidence",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "smoke",
+        "grass"
+      ],
+      [
+        "smoke",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "smoke",
+      "fire",
+      "repellent"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "thatch_roof",
+    "no": 314,
+    "n": "Thatch Roof",
+    "era": "settlement",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago",
+    "ds": -10000,
+    "rar": "common",
+    "vis": "thatch-roof",
+    "l1": "Thatch made from bundled grass, reeds, or straw, used to cover and insulate roofs.",
+    "l2": "Thatched roofs are remarkably durable, shedding water effectively while providing excellent insulation. A well-built thatch roof can last 30-60 years.",
+    "l3": "Thatching is a specialized craft requiring knowledge of local materials and building techniques. Thatched structures remain common in regions with abundant grass or reed.",
+    "ev": "Archaeological remains of thatched structures, reconstructions",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "thatch",
+        "wood"
+      ],
+      [
+        "thatch",
+        "shelter"
+      ]
+    ],
+    "tags": [
+      "shelter",
+      "roofing",
+      "insulation"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "plant_thread",
+    "no": 315,
+    "n": "Plant Thread",
+    "era": "origins",
+    "cat": "material",
+    "date": "≈ 50,000 years ago",
+    "ds": -50000,
+    "rar": "uncommon",
+    "vis": "plant-fiber",
+    "l1": "Thin cordage made from plant fibers, useful for fine work and delicate applications.",
+    "l2": "Plant-derived fibers can be processed into extremely thin, strong threads suitable for sewing fine cloth, making nets with small mesh, and detailed basketry.",
+    "l3": "Different plants yield fibers with different properties: flax produces strong fine thread, hemp produces rough strong cordage, and various plants yield specialty fibers.",
+    "ev": "Fiber fragments, impressions, artistic depictions",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "plant",
+        "scraping"
+      ],
+      [
+        "plant",
+        "cutting"
+      ]
+    ],
+    "tags": [
+      "fibre",
+      "plant"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "mat",
+    "no": 316,
+    "n": "Mat",
+    "era": "settlement",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago",
+    "ds": -10000,
+    "rar": "common",
+    "vis": "woven-mat",
+    "l1": "Thatch woven into flat, flexible sheets for flooring, walls, or portable shelter.",
+    "l2": "Mats provide insulation and waterproofing. They can be rolled up for transport, making them ideal for nomadic peoples. Tightly woven mats can also serve as walls or temporary shelters.",
+    "l3": "Mat-weaving remains an important technology in cultures with abundant reed or grass. Mat designs reflect regional plant availability and cultural preferences.",
+    "ev": "Mat fragments, impressions in clay, artwork",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "thatch",
+        "fiber"
+      ],
+      [
+        "grass",
+        "grass"
+      ]
+    ],
+    "tags": [
+      "woven",
+      "shelter",
+      "portable"
+    ],
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "flax_fiber",
+    "no": 317,
+    "n": "Flax Fiber",
+    "era": "agriculture",
+    "cat": "material",
+    "date": "≈ 8,000 years ago",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "flax-stalk",
+    "l1": "Long fibers extracted from flax plants, processed into strong, fine thread and linen cloth.",
+    "l2": "Flax fibers are exceptionally strong and fine, producing the smoothest and strongest plant-derived fabric. Linen made from flax resists rotting and improves with age and washing.",
+    "l3": "Flax production requires specialized knowledge: planting, retting (water-soaking), breaking, scutching (beating), and hackling (combing). Ancient Egyptians prized linen for both clothing and mummification wraps.",
+    "ev": "Flax seeds, processed fiber, linen cloth fragments, artwork",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "plant",
+        "hammering"
+      ],
+      [
+        "plant_knowledge",
+        "fiber"
+      ]
+    ],
+    "tags": [
+      "fibre",
+      "plant",
+      "agriculture"
+    ],
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "fish_trap",
+    "no": 318,
+    "n": "Fish Trap",
+    "era": "settlement",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago or earlier",
+    "ds": -10000,
+    "rar": "common",
+    "vis": "fish-trap",
+    "l1": "Wooden trap with net webbing that fish swim into but cannot escape from easily.",
+    "l2": "Fish traps are passive fishing technology that allows continuous capture without constant attention. They can be left in place and checked periodically, making fishing more efficient.",
+    "l3": "Different fish traps are optimized for different species and water conditions. Some rely on funnel entrances that fish can find but cannot navigate back through.",
+    "ev": "Preserved traps, artistic depictions, tool wear patterns",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "wood",
+        "net"
+      ],
+      [
+        "fishing",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "fishing",
+      "hunting",
+      "technology"
+    ],
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "retiarius_trap",
+    "no": 319,
+    "n": "Weighted Net",
+    "era": "settlement",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "weighted-net",
+    "l1": "Net weighted with stones or bone, designed to sink and trap fish and aquatic animals.",
+    "l2": "Weighted nets sink to the bottom and can cover a larger area. When deployed strategically in water, they trap fish trying to escape. The Retiarius (net-fighter) of ancient Rome used a similar concept as a weapon.",
+    "l3": "Weighted casting nets remain a highly effective fishing technique. A skilled fisher can cast a weighted net and retrieve a catch with a single motion.",
+    "ev": "Net weights (stones with grooves), net fragments, artwork",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "net",
+        "rope"
+      ],
+      [
+        "net",
+        "weight"
+      ]
+    ],
+    "tags": [
+      "fishing",
+      "hunting",
+      "tool"
+    ],
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "embroidery",
+    "no": 320,
+    "n": "Embroidery",
+    "era": "civilization",
+    "cat": "culture",
+    "date": "≈ 3,000 years ago",
+    "ds": -3000,
+    "rar": "uncommon",
+    "vis": "embroidered-fabric",
+    "l1": "Decorated cloth created by stitching thread into existing cloth to form patterns and images.",
+    "l2": "Embroidery adds aesthetic value and symbolic meaning to cloth. It transforms plain fabric into art, and in many cultures, embroidery patterns communicate identity, status, and cultural affiliation.",
+    "l3": "Different cultures developed distinct embroidery styles. Chinese silk embroidery, Middle Eastern gold thread work, and European needlepoint each represent sophisticated artistic traditions.",
+    "ev": "Embroidered textiles, artwork, historical garments",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cloth",
+        "thread_and_needle"
+      ],
+      [
+        "cloth",
+        "needle"
+      ]
+    ],
+    "tags": [
+      "art",
+      "culture",
+      "decoration"
+    ],
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "camouflage",
+    "no": 321,
+    "n": "Camouflage",
+    "era": "civilization",
+    "cat": "technology",
+    "date": "≈ 2,000 years ago",
+    "ds": -2000,
+    "rar": "uncommon",
+    "vis": "camouflage-pattern",
+    "l1": "Cloth dyed or decorated to blend with natural surroundings for hunting or military purposes.",
+    "l2": "Camouflage works by breaking up the visual outline and matching the colors of the environment. Effective camouflage requires understanding local colors, textures, and lighting conditions.",
+    "l3": "Modern military camouflage patterns evolved from hunting traditions. Each environment requires different patterns: forest, desert, snow, and urban camouflage all use different color and shape combinations.",
+    "ev": "Historical hunting garments, military uniforms, natural dye analysis",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cloth",
+        "grass"
+      ],
+      [
+        "cloth",
+        "plant"
+      ]
+    ],
+    "tags": [
+      "hunting",
+      "military",
+      "adaptation"
+    ],
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "pulp",
+    "no": 322,
+    "n": "Pulp",
+    "era": "civilization",
+    "cat": "material",
+    "date": "≈ 3,000 years ago",
+    "ds": -3000,
+    "rar": "common",
+    "vis": "pulp-fibers",
+    "l1": "Plant fibers broken down into a mushy consistency for papermaking or insulation.",
+    "l2": "Pulp is created by soaking plant fibers in water and beating them until they break down into fine fibers. This pulp can be spread thin and dried to make paper, or used for insulation and padding.",
+    "l3": "Chinese papermaking, developed around 2,000 years ago, refined pulp-making techniques. Quality paper requires controlling fiber length, fiber distribution, and the density of the final sheet.",
+    "ev": "Paper fragments, papermaking equipment, historical documents",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "plant",
+        "pestle"
+      ],
+      [
+        "plant",
+        "mortar"
+      ]
+    ],
+    "tags": [
+      "material",
+      "writing",
+      "insulation"
+    ],
+    "stone_age_tier": "olduvai"
+  }
+]

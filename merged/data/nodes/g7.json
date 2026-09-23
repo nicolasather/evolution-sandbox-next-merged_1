@@ -31,7 +31,8 @@
     "tags": [
       "standard",
       "measurement"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "banking",
@@ -65,7 +66,8 @@
     "tags": [
       "credit",
       "institution"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "bookkeeping",
@@ -98,7 +100,8 @@
     "tags": [
       "ledger",
       "verification"
-    ]
+    ],
+    "stone_age_tier": "late"
   },
   {
     "id": "caravan_routes",
@@ -132,6 +135,7 @@
     "tags": [
       "network",
       "distance"
-    ]
+    ],
+    "stone_age_tier": "late"
   }
 ]

@@ -1,7 +1,7 @@
 /** Shapes of the discovery database. Mirrors data/sources.json + data/nodes/*.json. */
 
 export type EraId =
-  | 'origins' | 'fire' | 'settlement' | 'agriculture' | 'civilization'
+  | 'origins' | 'fire' | 'settlement' | 'agriculture' | 'civilization' | 'trade'
   | 'metallurgy' | 'science' | 'industry' | 'electric' | 'computing'
   | 'network' | 'games' | 'simulation';
 
@@ -57,8 +57,6 @@ export interface Discovery {
   uses: string[];
   /** Stone Age tier classification (olduvai/middle/late). */
   stone_age_tier?: StoneAgeTier;
-  /** Progressive hints for this discovery (l1→l2→l3→l4) */
-  hints?: Hints;
 }
 
 export interface Source {
@@ -85,7 +83,6 @@ export interface StoneAgeTierInfo {
   name: string;
   description: string;
   total_recipes: number;
-  unlock_requirement: string;
   unlock_percentage: number;
 }
 
@@ -105,10 +102,35 @@ export interface Db {
   stone_age_tiers?: Record<StoneAgeTier, StoneAgeTierInfo>;
 }
 
+/** What an item still has to give: something makeable now, something later, or nothing. */
+export type Potential = 'ready' | 'later' | 'done';
+
+export interface TierGate {
+  tier: StoneAgeTier;
+  name: string;
+  open: boolean;
+  /** Discoveries made in the previous tier, and how many open this one. */
+  have: number;
+  need: number;
+  prevTier: StoneAgeTier | null;
+  prevName: string;
+}
+
 export type CombineResult =
-  | { status: 'new' | 'known'; node: Discovery; a: Discovery; b: Discovery }
-  | { status: 'fail'; message: string; a: Discovery; b: Discovery }
-  | { status: 'tier_locked'; message: string; a: Discovery; b: Discovery; requiredTier: StoneAgeTier }
+  | {
+      status: 'new' | 'known'; node: Discovery; a: Discovery; b: Discovery;
+      /** A result already held, reached by a pair not used before. */
+      newRoute: boolean;
+      routes: { found: number; total: number };
+      /** Tiers this discovery opened. */
+      opened: StoneAgeTier[];
+      /** The hint target was just found after at least one hint. */
+      solvedHint: boolean;
+      /** Pairs the player got right while their tier was still closed, which now work. */
+      reopened: [string, string][];
+    }
+  | { status: 'fail'; message: string; nudge: string | null; repeat: boolean; a: Discovery; b: Discovery }
+  | { status: 'tier_locked'; message: string; a: Discovery; b: Discovery; requiredTier: StoneAgeTier; gate: TierGate }
   | { status: 'error' };
 
 export interface Stats {
@@ -118,6 +140,7 @@ export interface Stats {
   eras: number; eraTotal: number;
   percent: number;
   deepest: Discovery;
+  routesFound: number; routesTotal: number;
 }
 
 export interface TierProgress {
@@ -128,32 +151,19 @@ export interface TierProgress {
 
 export type ViewId = 'work' | 'graph' | 'arch';
 
-/**
- * Progressive hint levels for discoveries.
- * Level 1 (vague) → Level 4 (strong) → player discovers answer.
- */
-export interface Hints {
-  /** Level 1: Very vague, conceptual clue */
-  l1?: string;
-  /** Level 2: More specific, functional hint */
-  l2?: string;
-  /** Level 3: Strong hint, contextual clue */
-  l3?: string;
-  /** Level 4: Very strong hint, nearly reveals recipe */
-  l4?: string;
-}
-
-/**
- * Tracks which hint level the player has seen for a discovery.
- * 0 = no hint seen, 1–4 = hint level shown.
- */
-export type HintProgress = Record<string, number>;
-
-/**
- * Result of getHint() call — tells UI what hint to show.
- */
-export interface HintResult {
-  level: 1 | 2 | 3 | 4;
+/** What the hint line shows. Level 1 is a direction, 2 the idea, 3 one ingredient — never both. */
+export interface HintView {
+  targetId: string | null;
+  level: 0 | 1 | 2 | 3;
   text: string;
-  nextLevel: (1 | 2 | 3 | 4) | null;
+  /** Inventory item to mark (level 3 only). */
+  highlightId: string | null;
+  /** The next level is available now. */
+  canEscalate: boolean;
+  /** Tries left before the next level opens. */
+  triesNeeded: number;
+  /** The player picked this target from the archive. */
+  custom: boolean;
+  /** Enough misses in a row that the bench should offer a nudge. */
+  stuck: boolean;
 }

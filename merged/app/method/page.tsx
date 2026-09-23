@@ -97,7 +97,11 @@ export default function MethodPage() {
           <li>
             <b>an ambiguous pair.</b> Two recipes producing different results from the same pair
             of ingredients would make the engine non-deterministic. The first run of this check
-            found six such collisions.
+            found six such collisions. It was later bypassed when 102 Stone Age entries were
+            added straight into the built file: 34 pairs collided again, and only 50 of the
+            entries could actually be reached. In September 2026 every pair was made unique
+            again, the missing routes were written, and a test now plays the whole graph from
+            the four raw materials on every build.
           </li>
           <li>
             <b>an unflagged entry.</b> An entry that cites only general references but does not say
@@ -122,6 +126,40 @@ export default function MethodPage() {
           was invented in China and Korea well before Gutenberg. Biological evolution has no
           goal and no direction toward complexity. Each of those is in the data, on the node it
           belongs to.
+        </p>
+      </section>
+
+      <section>
+        <h2>Hints, routes and what stays closed</h2>
+        <p>
+          The game never lists recipes. An undiscovered entry shows no name, no description and
+          no ingredients — only its era and how far away it is. When a combination fails, the
+          game may say which of the two items still has something to give, never what it
+          gives. Hints come in three steps — a direction, then the idea, then one ingredient —
+          and each step opens only after a couple more tries of your own. The other half is
+          always left for you to find.
+        </p>
+        <p>
+          Recipes are a game&rsquo;s shorthand for how ideas depend on each other. Many entries
+          can be reached by two or three routes; a route is a plausible connection, not a claim
+          about how, where or in what order something was first made.
+        </p>
+        <p>
+          Every mark in the game is drawn by code from a small shape grammar. No third-party
+          images are used, so there is nothing to license or attribute beyond the sources
+          listed on each entry.
+        </p>
+      </section>
+
+      <section>
+        <h2>The Stone Age entries</h2>
+        <p>
+          85 of the Stone Age entries were first added with placeholder text, one false date for
+          all of them and a source id that did not exist. They have been rewritten with short
+          original descriptions. Where a date is widely established it is given as a wide range;
+          otherwise the entry says <i>Date not yet sourced</i>. All of them are marked source
+          required and carry a caution that they are gameplay entries, until each is checked
+          against a subject-level source.
         </p>
       </section>
 

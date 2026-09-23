@@ -25,8 +25,9 @@ export function Landing({
             ) : (
               <>
                 Start with almost nothing — a stone, a stick, a bone, a length of fibre.
-                Put two things together and see what comes out. Some combinations work.
-                Most don&rsquo;t. A few will surprise you.
+                Tap two things together and see what comes out. Most things can be reached
+                more than one way, and when you get stuck the game nudges — it never hands
+                you the answer.
               </>
             )}
           </p>
