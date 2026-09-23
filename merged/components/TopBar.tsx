@@ -5,6 +5,7 @@ import { AnimatedCount } from './vengeance/animated-count';
 import { Kbd } from './vengeance/kbd';
 import { Glyph } from './Glyph';
 import { ThemeToggle } from './ThemeToggle';
+import { FullscreenButton } from './FullscreenButton';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, ViewId } from '@/lib/types';
 
@@ -131,6 +132,7 @@ export function TopBar({
 
       <div className="top-slot top-actions">
         <ThemeToggle />
+        <FullscreenButton />
         <button className="icon-btn" id="reset" aria-label="Start over (Reset progress)" title="Start over" onClick={onReset}>
           <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" fill="none" aria-hidden="true">
             <path d="M14 8A6 6 0 1 1 8 2c2 0 3.7 1 4.7 2.5" /><path d="M13 1v4h-4" />

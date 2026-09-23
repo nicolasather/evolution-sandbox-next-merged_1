@@ -16,6 +16,9 @@
 /* Neon blue theme and the 3D exhibit plate — layered after the design system. */
 @import "./_theme-neon.css" layer(components);
 
+/* Scenes, round craft slots, hover / press animation, immersive top bar. */
+@import "./_fx.css" layer(components);
+
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and
    `var(--bone-2)` in the stylesheet are the same colour in either theme. */

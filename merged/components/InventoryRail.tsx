@@ -2,6 +2,7 @@
 
 import { useState, useSyncExternalStore } from 'react';
 import { Glyph } from './Glyph';
+import { flyToSlot } from '@/lib/fx';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { Discovery } from '@/lib/types';
@@ -115,7 +116,10 @@ export function InventoryRail({
                       )}
                       draggable
                       onDragStart={ev => { ev.dataTransfer.setData('text/plain', n.id); ev.dataTransfer.effectAllowed = 'copy'; }}
-                      onClick={() => onPick(n.id)}
+                      onClick={ev => {
+                        flyToSlot(ev.currentTarget.querySelector('svg'), slotA && !slotB ? 'b' : 'a');
+                        onPick(n.id);
+                      }}
                       aria-label={`${n.n}. ${RARITY_LABEL[n.rar]}.${p === 'done' ? ' Used up.' : ''} Place on the bench.`}
                     >
                       <Glyph node={n} />

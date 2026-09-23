@@ -3,6 +3,36 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.6.0 — 23 September 2026
+
+### Full screen, with the chrome out of the way
+- On a desktop the game opens in **full screen** when you press Begin, and a new button in
+  the top bar enters and leaves it.
+- The **top bar tucks away**: it slides down when the pointer reaches the top edge of the
+  screen (or keyboard focus enters it, e.g. with `/`) and hides again when you move away.
+  A small handle at the top centre hints that it is there. Phones keep the fixed bar.
+
+### Eleven scene backdrops behind the craft screen
+- Engraved line-art landscapes in the same style as the plates (`data/scenes.json`):
+  Open Savanna, Night Camp, River Village, First Fields, Ancient City, Trading Harbour,
+  Forge Valley, Observatory Hill, Industrial Age, Electric City, Digital Frontier.
+- The scene follows the furthest era reached, or pick one with the ‹ › control on the
+  bench. Layers drift with the mouse (parallax); clouds drift, grass sways, fires flicker,
+  smoke rises, water flows, lights blink. Faded under the centre and the side columns so
+  text stays readable; loaded lazily in its own chunk (`components/SceneBackdrop.tsx`).
+
+### Round, animated craft slots
+- The two square slots are now **circles**: a tick ring, a counter-rotating dashed orbit, a
+  sweeping accent arc and a breathing inner ring. They speed up and light up under a
+  dragged item, the placed item floats, a flowing link joins the circles and the + turns as
+  they fill. On a combine the circles pull into each other and the + flashes.
+
+### Hover and press animation
+- Inventory resources: a light sweep, the icon springs and tilts, the name nudges; pressing
+  one sends a ghost of its icon flying in an arc to the circle it lands in.
+- Buttons, chips, tabs and the path lift on hover and press in on click; every press
+  answers with a ring-and-sparks burst (`lib/fx.ts`). All of it respects reduced motion.
+
 ## 1.5.0 — 23 September 2026
 
 ### Every discovery has its own drawing

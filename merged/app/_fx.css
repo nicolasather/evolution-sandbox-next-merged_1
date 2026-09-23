@@ -1,0 +1,211 @@
+/* ============================================================================
+   FX — immersive shell, scene backdrops, round craft slots, hover / press
+   animation. Layered after the design system (see globals.css) and kept out of
+   _design-system.css, which mirrors the single-file build.
+   ========================================================================== */
+
+/* ── immersive shell: desktop top bar tucks away (lib/fx.ts) ───────────── */
+#top-handle{display:none}
+:root.immersive #app{grid-template-rows:minmax(0,1fr)}
+:root.immersive #top{position:fixed;top:0;left:0;right:0;height:var(--top);z-index:60;
+  transform:translateY(-101%);transition:transform .34s cubic-bezier(.2,.8,.2,1),box-shadow .34s}
+:root.immersive.top-show #top{transform:none;box-shadow:0 16px 44px var(--shadow)}
+:root.immersive body:has(#app.on) #top-handle{display:block;position:fixed;top:0;left:50%;z-index:59;
+  width:140px;height:12px;transform:translateX(-50%);pointer-events:none}
+#top-handle i{display:block;width:46px;height:3px;margin:4px auto 0;background:var(--line-3);
+  transition:opacity .3s,width .3s;animation:handleHint 3.2s ease-in-out 1.2s 3}
+:root.top-show #top-handle i{opacity:0}
+@keyframes handleHint{0%,100%{width:46px;background:var(--line-3)}50%{width:92px;background:var(--ochre)}}
+
+/* ── scene backdrops (components/SceneBackdrop.tsx) ───────────────────── */
+:root{--scene-opacity:.2}
+:root[data-theme="light"]{--scene-opacity:.24}
+:root[data-theme="neon"]{--scene-opacity:.32}
+#scene{position:fixed;inset:0;z-index:1;pointer-events:none;color:var(--bone);opacity:0;
+  transition:opacity 1s ease;
+  /* the craft circles sit in the middle: keep that part of the picture quiet */
+  -webkit-mask-image:radial-gradient(ellipse 36% 32% at 50% 40%,rgba(0,0,0,.28) 0%,#000 100%);
+          mask-image:radial-gradient(ellipse 36% 32% at 50% 40%,rgba(0,0,0,.28) 0%,#000 100%)}
+/* on a desktop the inventory and the exhibit text sit over the picture: fade it there */
+@media (min-width:901px){
+  #scene{
+    -webkit-mask-image:radial-gradient(ellipse 36% 32% at 50% 40%,rgba(0,0,0,.28) 0%,#000 100%),
+      linear-gradient(90deg,rgba(0,0,0,.3) 0,rgba(0,0,0,.3) calc(var(--rail) - 40px),#000 calc(var(--rail) + 60px),
+        #000 calc(100% - var(--panel) - 60px),rgba(0,0,0,.22) calc(100% - var(--panel) + 40px));
+    -webkit-mask-composite:source-in;
+    mask-image:radial-gradient(ellipse 36% 32% at 50% 40%,rgba(0,0,0,.28) 0%,#000 100%),
+      linear-gradient(90deg,rgba(0,0,0,.3) 0,rgba(0,0,0,.3) calc(var(--rail) - 40px),#000 calc(var(--rail) + 60px),
+        #000 calc(100% - var(--panel) - 60px),rgba(0,0,0,.22) calc(100% - var(--panel) + 40px));
+    mask-composite:intersect}
+}
+#scene.on{opacity:var(--scene-opacity)}
+:root[data-theme="neon"] #scene{color:var(--plate-line)}
+.scene-layer{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s ease}
+.scene-layer.front{opacity:1}
+.scene-layer g[data-depth]{will-change:transform}
+#scene:not(.on) .scene-layer *,.scene-layer:not(.front) *{animation-play-state:paused!important}
+
+.scene-layer .drift{animation:scDrift 46s ease-in-out infinite alternate}
+@keyframes scDrift{from{transform:translateX(-40px)}to{transform:translateX(40px)}}
+.scene-layer .sway{transform-box:fill-box;transform-origin:50% 100%;animation:scSway 7s ease-in-out infinite alternate}
+@keyframes scSway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+.scene-layer .twinkle{animation:scTwinkle 3s ease-in-out infinite}
+@keyframes scTwinkle{0%,100%{opacity:1}50%{opacity:.18}}
+.scene-layer .flicker{transform-box:fill-box;transform-origin:50% 100%;animation:scFlicker .9s ease-in-out infinite alternate}
+@keyframes scFlicker{0%{opacity:.6;transform:scale(.96,.93)}40%{opacity:1;transform:scale(1.03,1.07)}
+  70%{opacity:.78;transform:scale(.99,1.01)}100%{opacity:1;transform:scale(1.02,1.09)}}
+.scene-layer .rise{animation:scRise 8s linear infinite}
+@keyframes scRise{0%{transform:translateY(14px);opacity:0}18%{opacity:1}100%{transform:translateY(-74px);opacity:0}}
+.scene-layer .flow{animation:scFlow 3s linear infinite}
+@keyframes scFlow{to{stroke-dashoffset:-72}}
+.scene-layer .spin{transform-box:fill-box;transform-origin:center;animation:scSpin 16s linear infinite}
+@keyframes scSpin{to{transform:rotate(360deg)}}
+.scene-layer .blink{animation:scBlink 2.6s steps(1,end) infinite}
+@keyframes scBlink{0%,58%{opacity:1}60%,100%{opacity:.12}}
+.scene-layer .bob{animation:scBob 4.6s ease-in-out infinite alternate}
+@keyframes scBob{from{transform:translateY(-4px)}to{transform:translateY(4px)}}
+
+/* scene picker on the bench */
+.scene-pick{position:absolute;top:14px;right:16px;z-index:3;display:flex;align-items:center;gap:6px;
+  color:var(--bone-4);opacity:.72;transition:opacity .2s}
+.scene-pick:hover,.scene-pick:focus-within{opacity:1}
+.sp-btn{width:26px;height:26px;display:grid;place-items:center;border:1px solid var(--line);
+  font-family:var(--fs-ui);font-size:15px;line-height:1;color:var(--bone-3);background:var(--glass-trail);
+  transition:color .18s,border-color .18s,transform .22s cubic-bezier(.34,1.56,.64,1)}
+.sp-btn:hover{color:var(--bone);border-color:var(--ochre);transform:translateY(-2px)}
+.sp-btn:active{transform:scale(.9)}
+.sp-name{display:flex;flex-direction:column;align-items:center;min-width:128px;line-height:1.35;text-align:center}
+.sp-k{font-size:8.5px;color:var(--bone-4)}
+.sp-v{font-size:10px;color:var(--bone-2)}
+
+/* ── round craft slots (components/Bench.tsx) ─────────────────────────── */
+.slots .slot{border:0;border-radius:50%;z-index:1;overflow:visible;
+  /* an opaque lens under the ring, so the link line stops at its edge */
+  background:radial-gradient(circle,var(--slot-bg) 0 57%,transparent 58%),
+    radial-gradient(circle,var(--ink-1) 0 69%,transparent 70%);
+  transition:background .3s,transform .4s cubic-bezier(.34,1.56,.64,1)}
+.slots .slot:hover{transform:scale(1.035)}
+.slots .slot.full{background:radial-gradient(circle,var(--slot-full) 0 57%,transparent 58%),
+    radial-gradient(circle,var(--ink-1) 0 69%,transparent 70%)}
+.slots .slot.over{background:radial-gradient(circle,var(--ochre-lo) 0 62%,transparent 63%),
+    radial-gradient(circle,var(--ink-1) 0 69%,transparent 70%);transform:scale(1.07)}
+
+.slot-ring{position:absolute;left:-4%;top:-4%;width:108%;height:108%;color:var(--line-3);
+  pointer-events:none;overflow:visible;transition:color .3s}
+.slot-ring *{vector-effect:non-scaling-stroke}
+.sr-ticks{stroke-width:1;opacity:.75;transform-origin:100px 100px;animation:srSpin 90s linear infinite}
+.sr-outer{stroke-width:1;opacity:.45}
+.sr-dash{stroke-width:1.2;opacity:.85;transform-origin:100px 100px;animation:srSpin 48s linear infinite reverse}
+.sr-sweep{stroke:var(--ochre);stroke-width:2;opacity:.4;transform-origin:100px 100px;animation:srSpin 5.5s linear infinite}
+.sr-inner{stroke-width:1;opacity:.35;transform-origin:100px 100px;animation:srBreathe 3.8s ease-in-out infinite}
+.sr-marks{fill:currentColor;stroke:none;opacity:.7;transform-origin:100px 100px;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes srSpin{to{transform:rotate(360deg)}}
+@keyframes srBreathe{0%,100%{transform:scale(.96);opacity:.22}50%{transform:scale(1.02);opacity:.55}}
+
+.slot:hover .slot-ring{color:var(--bone-3)}
+.slot:hover .sr-sweep{opacity:.8}
+.slot:hover .sr-marks{transform:rotate(45deg)}
+.slot.over .slot-ring{color:var(--ochre)}
+.slot.over .sr-dash{animation-duration:5s}
+.slot.over .sr-sweep{animation-duration:1.3s;opacity:1}
+.slot.full .slot-ring{color:var(--bone-4)}
+.slot.full .sr-sweep{opacity:.85;animation-duration:3.2s}
+.slot.full .sr-inner{animation-duration:2.4s}
+.slot.landed .slot-ring{animation:ringPop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes ringPop{40%{transform:scale(1.08);color:var(--ochre)}100%{transform:scale(1)}}
+.slot.full .slot-g .g{animation:slotFloat 3.4s ease-in-out infinite alternate}
+@keyframes slotFloat{from{transform:translateY(-3%) rotate(-2deg)}to{transform:translateY(3%) rotate(2deg)}}
+.slot .ph{animation:phPulse 3.8s ease-in-out infinite}
+@keyframes phPulse{0%,100%{opacity:.55;letter-spacing:.10em}50%{opacity:1;letter-spacing:.16em}}
+.slot .clear{top:8%;right:8%;border-radius:50%;background:var(--glass-top);border:1px solid var(--line-2);
+  transition:opacity .18s,color .18s,transform .25s cubic-bezier(.34,1.56,.64,1)}
+.slot .clear:hover{transform:rotate(90deg) scale(1.1)}
+
+/* the two slots pull into each other when a pair combines */
+.slot.merge[data-which="a"]{animation:mergeA .5s cubic-bezier(.55,0,.7,.2) forwards}
+.slot.merge[data-which="b"]{animation:mergeB .5s cubic-bezier(.55,0,.7,.2) forwards}
+@keyframes mergeA{35%{transform:translateX(-6%) scale(1.05)}100%{transform:translateX(64%) scale(.45);opacity:0}}
+@keyframes mergeB{35%{transform:translateX(6%) scale(1.05)}100%{transform:translateX(-64%) scale(.45);opacity:0}}
+.slot.merge .sr-sweep{animation-duration:.45s;opacity:1}
+.slot.merge .slot-ring{color:var(--ochre)}
+
+/* the link and the + between the circles */
+.slot-link{position:absolute;left:20%;right:20%;top:50%;height:1px;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,var(--line-3) 0 6px,transparent 6px 12px);
+  background-size:24px 1px;opacity:.45;animation:linkFlow 1.4s linear infinite;transition:opacity .3s}
+.slots.armed .slot-link{opacity:.8}
+.slots.charged .slot-link{background:repeating-linear-gradient(90deg,var(--ochre) 0 8px,transparent 8px 12px);
+  background-size:24px 1px;animation-duration:.45s;opacity:1;box-shadow:0 0 10px var(--ochre-mid)}
+@keyframes linkFlow{to{background-position:24px 0}}
+.slots .slot-op{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line-2);background:var(--ink-1);font-size:26px;line-height:1;
+  transition:border-color .3s,color .3s,box-shadow .3s}
+.slot-op span{display:block;transform:translateY(-1px);transition:transform .6s cubic-bezier(.34,1.56,.64,1)}
+.slots.armed .slot-op span{transform:translateY(-1px) rotate(90deg)}
+.slots.charged .slot-op{border-color:var(--ochre);color:var(--ochre);box-shadow:0 0 0 6px var(--ochre-lo)}
+.slots.charged .slot-op span{transform:translateY(-1px) rotate(180deg)}
+.slots.merging .slot-op{animation:opFlash .55s cubic-bezier(.2,.8,.2,1)}
+@keyframes opFlash{45%{transform:scale(1.7);box-shadow:0 0 0 20px var(--ochre-lo),0 0 44px var(--ochre)}100%{transform:scale(1)}}
+
+/* ── hover / press on controls and resources ──────────────────────────── */
+.item{position:relative;overflow:hidden;
+  transition:background .16s,color .16s,border-color .16s,transform .18s cubic-bezier(.34,1.56,.64,1)}
+.item::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(100deg,transparent 30%,var(--ochre-lo) 50%,transparent 70%);
+  transform:translateX(-110%);transition:transform .75s cubic-bezier(.2,.8,.2,1)}
+.item:hover::after{transform:translateX(110%)}
+.item .g{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.item:hover .g{transform:scale(1.2) rotate(-7deg)}
+.item .nm{transition:transform .3s ease}
+.item:hover .nm{transform:translateX(3px)}
+.item:active{transform:scale(.965)}
+.item.picked .g{animation:pickedBob 1.8s ease-in-out infinite alternate}
+@keyframes pickedBob{from{transform:translateY(-2px) rotate(-4deg)}to{transform:translateY(2px) rotate(4deg)}}
+
+.chip,.icon-btn,.trail-item,.panel-close,.begin{
+  transition:color .18s,border-color .18s,background .18s,box-shadow .25s,transform .22s cubic-bezier(.34,1.56,.64,1)}
+.chip:hover:not(:disabled),.icon-btn:hover,.panel-close:hover{transform:translateY(-2px);box-shadow:0 8px 18px -10px var(--ochre-mid)}
+.chip:active:not(:disabled),.icon-btn:active,.panel-close:active{transform:translateY(0) scale(.92);transition-duration:.08s}
+.icon-btn svg{transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.icon-btn:hover svg{transform:rotate(-14deg) scale(1.12)}
+.begin:hover{transform:translateY(-2px)}
+.begin:active{transform:scale(.96)}
+.tab{position:relative;transition:color .2s,border-color .2s,transform .2s}
+.tab::after{content:"";position:absolute;left:20%;right:20%;bottom:-2px;height:2px;background:var(--ochre);
+  opacity:.55;transform:scaleX(0);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.tab:hover::after{transform:scaleX(1)}
+.tab[aria-selected="true"]::after{display:none}
+.tab:active{transform:translateY(1px)}
+.trail-item .g{transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.trail-item:hover .g{transform:scale(1.25) rotate(-8deg)}
+.trail-item:active{transform:scale(.94)}
+.oc-win .oc-art{transition:transform .4s cubic-bezier(.34,1.56,.64,1)}
+.oc-win:hover .oc-art{transform:scale(1.06)}
+
+/* press burst (lib/fx.ts) */
+.fx-burst{position:fixed;left:0;top:0;width:0;height:0;z-index:200;pointer-events:none}
+.fx-burst .ring{position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;
+  border:1.5px solid var(--ochre);animation:fxRing .55s cubic-bezier(.2,.7,.3,1) forwards}
+.fx-burst.strong .ring{left:-20px;top:-20px;width:40px;height:40px}
+.fx-burst .sp{position:absolute;left:-2px;top:-2px;width:4px;height:4px;border-radius:50%;background:var(--ochre);
+  opacity:0;animation:fxSpark .62s cubic-bezier(.15,.7,.3,1) forwards}
+@keyframes fxRing{from{transform:scale(.2);opacity:.95}to{transform:scale(2.3);opacity:0}}
+@keyframes fxSpark{0%{transform:translate(0,0) scale(1.2);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
+:root[data-theme="neon"] .fx-burst .ring{box-shadow:0 0 12px var(--ochre),inset 0 0 8px var(--ochre-mid)}
+:root[data-theme="neon"] .fx-burst .sp{box-shadow:0 0 6px var(--ochre)}
+.fx-ghost{color:var(--bone);filter:drop-shadow(0 0 6px var(--ochre-mid))}
+
+/* ── phone ────────────────────────────────────────────────────────────── */
+@media (max-width:900px){
+  :root{--scene-opacity:.13}
+  #bench-stage{padding-top:44px}
+  .scene-pick{top:8px;right:10px}
+  .sp-name{min-width:100px}
+  .slots .slot-op{width:36px;height:36px;font-size:20px}
+  .slot-link{left:22%;right:22%}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .scene-layer *,.slot-ring *,.slot .ph,.slot.full .slot-g .g,.slot-link,.item.picked .g,#top-handle i{animation:none!important}
+  .item::after{display:none}
+}

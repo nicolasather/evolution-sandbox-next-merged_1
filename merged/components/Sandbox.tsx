@@ -11,6 +11,8 @@ import { ExhibitPanel } from './ExhibitPanel';
 import { Ending } from './Ending';
 import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
+import { SceneBackdrop } from './SceneBackdrop';
+import { enterFullscreen, installImmersiveTop, installPressFx } from '@/lib/fx';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { cn } from '@/lib/utils';
 import type { ViewId } from '@/lib/types';
@@ -36,6 +38,11 @@ export function Sandbox() {
   useEffect(() => {
     document.documentElement.style.setProperty('--era-tint', ERA_TINT[era.id] ?? '16,16,17');
   }, [era.id]);
+
+  // press bursts everywhere; on a desktop the top bar tucks away until the
+  // pointer reaches the top edge
+  useEffect(() => installPressFx(), []);
+  useEffect(() => installImmersiveTop(), []);
 
   // thirteen bands at most — cheap enough to derive on every render
   const eraTotal = engine.db.eras.length;
@@ -126,9 +133,11 @@ export function Sandbox() {
           ))}
         </svg>
       </div>
+      <SceneBackdrop era={era.id} active={s.entered && view === 'work'} />
       <div id="grain" aria-hidden="true" />
+      <div id="top-handle" aria-hidden="true"><i /></div>
 
-      <Landing db={engine.db} gone={s.entered} resumedCount={resumed > 4 ? resumed : 0} onBegin={s.enter} />
+      <Landing db={engine.db} gone={s.entered} resumedCount={resumed > 4 ? resumed : 0} onBegin={() => { enterFullscreen(); s.enter(); }} />
 
       <main id="app" className={cn(s.entered && 'on')}>
         <TopBar

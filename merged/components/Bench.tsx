@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Glyph } from './Glyph';
 import { Plate3D } from './Plate3D';
+import { ScenePicker } from './SceneBackdrop';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { CombineResult, HintView } from '@/lib/types';
@@ -26,6 +27,7 @@ function Slot({
   return (
     <div
       className={cn('slot', over && 'over', node && 'full', state)}
+      data-which={which}
       aria-label={which === 'a' ? 'First ingredient' : 'Second ingredient'}
       onDragOver={e => { e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; setOver(true); }}
       onDragLeave={() => setOver(false)}
@@ -35,6 +37,7 @@ function Slot({
         if (dropped && engine.has(dropped)) onDrop(which, dropped);
       }}
     >
+      <SlotRing />
       {!node ? (
         <span className="ph mono">{which === 'a' ? 'First' : 'Second'}</span>
       ) : (
@@ -57,6 +60,30 @@ function Slot({
         </>
       )}
     </div>
+  );
+}
+
+/* The ritual circle drawn around each slot: ticks, a dashed orbit, four
+   registration marks and a bright sweep arc. Pure decoration, animated in CSS. */
+const TICKS = Array.from({ length: 72 }, (_, i) => {
+  const a = (i * 5 * Math.PI) / 180, r1 = 97, r2 = i % 6 === 0 ? 87 : 92;
+  const f = (n: number) => Math.round(n * 10) / 10;
+  return [f(100 + r1 * Math.cos(a)), f(100 + r1 * Math.sin(a)), f(100 + r2 * Math.cos(a)), f(100 + r2 * Math.sin(a))];
+});
+function SlotRing() {
+  return (
+    <svg className="slot-ring" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true" focusable="false">
+      <g className="sr-ticks">
+        {TICKS.map(([x1, y1, x2, y2], i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} />)}
+      </g>
+      <circle className="sr-outer" cx="100" cy="100" r="97" />
+      <circle className="sr-dash" cx="100" cy="100" r="80" strokeDasharray="3 7" />
+      <circle className="sr-sweep" cx="100" cy="100" r="80" strokeDasharray="70 433" />
+      <circle className="sr-inner" cx="100" cy="100" r="66" />
+      <g className="sr-marks">
+        <path d="M100 0l4 7h-8z" /><path d="M200 100l-7 4v-8z" /><path d="M100 200l-4-7h8z" /><path d="M0 100l7-4v8z" />
+      </g>
+    </svg>
   );
 }
 
@@ -191,9 +218,11 @@ export function Bench({
   return (
     <div id="bench">
       <div id="bench-stage">
-        <div className="slots">
+        <ScenePicker era={engine.currentEra().id} />
+        <div className={cn('slots', (slotA || slotB) && 'armed', slotA && slotB && 'charged', slotState === 'merge' && 'merging')}>
+          <i className="slot-link" aria-hidden="true" />
           <Slot which="a" id={slotA} engine={engine} onDrop={onDrop} onClear={onClear} state={slotState} />
-          <div className="slot-op" aria-hidden="true">+</div>
+          <div className="slot-op" aria-hidden="true"><span>+</span></div>
           <Slot which="b" id={slotB} engine={engine} onDrop={onDrop} onClear={onClear} state={slotState} />
         </div>
 
