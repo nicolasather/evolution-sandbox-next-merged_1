@@ -9,6 +9,15 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import ART_JSON from '@/data/art.json';
+
+/** Hand-drawn plate for every discovery, keyed by node id (data/art.json).
+ *  One unique line drawing per entry, in the same 100x100 / currentColor
+ *  stroke language. Parts may sit on <g data-z="N"> layers — the 3D exhibit
+ *  plate (components/Plate3D.tsx) reads those as depth; the flat icon ignores
+ *  them. The primitive grammar below remains only as a fallback. */
+const ART: Record<string, string> = ART_JSON as Record<string, string>;
+
 /** Options bag for a primitive. Deliberately loose — each primitive reads only
  *  the keys it needs, which is what keeps the spec table compact. */
 type O = Record<string, any>;
@@ -589,6 +598,8 @@ const FALLBACK: Record<string, (id: string) => Spec> = {
 };
 
 function build(node: GlyphNode): string {
+  const drawn = ART[node.id];
+  if (drawn) return drawn;
   const spec = S[node.vis] || (FALLBACK[node.cat] || FALLBACK.material)(node.id);
   return spec.map(([fn, args]) => (P[fn] ? P[fn](args || {}) : '')).join('');
 }
@@ -638,5 +649,11 @@ export function heroStone(): string {
 }
 
 
+/** Inner SVG markup of a node's drawing, without the plate ticks. */
+export function markup(node: GlyphNode): string {
+  return build(node);
+}
+
 export const specCount = Object.keys(S).length;
+export const artCount = Object.keys(ART).length;
 export { hash, rng };

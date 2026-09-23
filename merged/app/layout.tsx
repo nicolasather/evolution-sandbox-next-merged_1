@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-theme="dark" suppressHydrationWarning
       className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
       <head>
-        {/* first thing to run: pick light or dark before anything paints */}
+        {/* first thing to run: pick light, dark or neon before anything paints */}
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
       </head>
       <body>

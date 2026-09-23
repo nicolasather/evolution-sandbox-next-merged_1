@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Glyph } from './Glyph';
+import { Plate3D } from './Plate3D';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { CombineResult, HintView } from '@/lib/types';
@@ -117,7 +118,7 @@ function OutcomeCard({
     >
       <div className="oc-art">
         {isNew && <span className="oc-ring" aria-hidden="true" />}
-        <Glyph node={n} />
+        <Plate3D node={n} variant="card" label={n.n} />
       </div>
       <div className="oc-text">
         <span className="oc-tag mono">{tag}</span>

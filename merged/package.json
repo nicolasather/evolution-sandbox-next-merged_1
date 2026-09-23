@@ -1,6 +1,6 @@
 {
   "name": "evolution-sandbox",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "description": "An explorable discovery graph — combine four raw materials into 322 discoveries, each with its evidence and an honest flag where a source is still missing.",
   "scripts": {

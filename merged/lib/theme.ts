@@ -1,11 +1,14 @@
-/* Light / dark / system theme.
+/* Light / dark / neon / system theme.
    The preference is stored per browser; the resolved theme lives on
-   <html data-theme="light|dark">, set by an inline script before first paint so
+   <html data-theme="light|dark|neon">, set by an inline script before first paint so
    there is no flash. Everything visual — CSS tokens, the graph canvas, the
    strata — reads from that attribute. */
 
-export type ThemePref = 'system' | 'light' | 'dark';
-export type Theme = 'light' | 'dark';
+export type ThemePref = 'system' | 'light' | 'dark' | 'neon';
+export type Theme = 'light' | 'dark' | 'neon';
+
+/** Browser-chrome colour per theme (the <meta name="theme-color">). */
+const CHROME: Record<Theme, string> = { light: '#f2eee6', dark: '#0a0a0b', neon: '#03060d' };
 
 export const THEME_KEY = 'evo.theme';
 export const THEME_EVENT = 'evo:theme';
@@ -13,7 +16,7 @@ export const THEME_EVENT = 'evo:theme';
 export function readPref(): ThemePref {
   try {
     const v = window.localStorage.getItem(THEME_KEY);
-    if (v === 'light' || v === 'dark' || v === 'system') return v;
+    if (v === 'light' || v === 'dark' || v === 'neon' || v === 'system') return v;
   } catch { /* storage blocked */ }
   return 'system';
 }
@@ -28,8 +31,9 @@ export function applyTheme(pref: ThemePref) {
   const el = document.documentElement;
   el.dataset.theme = t;
   el.dataset.themePref = pref;
-  el.style.colorScheme = t;
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', t === 'light' ? '#f2eee6' : '#0a0a0b');
+  // neon is a dark scheme as far as form controls and scrollbars are concerned
+  el.style.colorScheme = t === 'light' ? 'light' : 'dark';
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', CHROME[t]);
   window.dispatchEvent(new CustomEvent(THEME_EVENT, { detail: t }));
 }
 
@@ -39,7 +43,7 @@ export function savePref(pref: ThemePref) {
 }
 
 /** Runs inline in <head> before paint. Kept tiny and dependency-free. */
-export const THEME_BOOT = `(function(){try{var p=localStorage.getItem('${THEME_KEY}');if(p!=='light'&&p!=='dark')p='system';var t=p==='system'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):p;var d=document.documentElement;d.dataset.theme=t;d.dataset.themePref=p;d.style.colorScheme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();`;
+export const THEME_BOOT = `(function(){try{var p=localStorage.getItem('${THEME_KEY}');if(p!=='light'&&p!=='dark'&&p!=='neon')p='system';var t=p==='system'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):p;var d=document.documentElement;d.dataset.theme=t;d.dataset.themePref=p;d.style.colorScheme=t==='light'?'light':'dark';}catch(e){document.documentElement.dataset.theme='dark';}})();`;
 
 /** Read a CSS custom property from :root (for canvas drawing). */
 export function cssVar(name: string, fallback: string): string {

@@ -3,6 +3,32 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.5.0 — 23 September 2026
+
+### Every discovery has its own drawing
+- **322 hand-drawn plates** (`data/art.json`) replace the abstract glyph grammar. Each
+  entry is a line illustration of the real thing — a hand axe is a knapped biface, a
+  steam engine has boiler, cylinder and flywheel, abstract ideas become a recognisable
+  emblem (Law → balance over a tablet, Language → two speakers). No two are alike; a
+  test (`lib/__tests__/art.test.ts`) checks coverage, uniqueness and the stroke-only
+  grammar. The old primitive grammar in `lib/glyphs.ts` stays only as a fallback.
+
+### The exhibit plate is a 3D object
+- **`components/Plate3D.tsx`**: the drawing floats as an extruded wireframe (front and
+  back contours joined at the corners; `data-z` groups sit at different depths), bobs
+  and sways, and sits in a cloud of drifting particles. Drag with the mouse to spin it
+  freely (flick for inertia, double-click to spin, arrow keys on the keyboard, sideways
+  swipe on touch). Used on the exhibit panel and the "New discovery" card.
+- Canvas 2D with its own perspective projection — no WebGL, no new dependency. Pauses
+  when off-screen or in a background tab; honours reduced motion; the flat SVG is the
+  server render and the fallback.
+
+### Neon blue theme
+- The theme button now cycles **System → Light → Dark → Neon blue**. Neon is a deep
+  navy ground with an electric-cyan accent and a restrained glow on the accent rules,
+  the active tab and the 3D plate. It lives in `app/_theme-neon.css`, so
+  `_design-system.css` stays in sync with the single-file build.
+
 ## 1.4.0 — 23 September 2026
 
 A gameplay upgrade, built on the existing engine rather than a rewrite.

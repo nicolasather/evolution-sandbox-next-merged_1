@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Glyph } from './Glyph';
+import { Plate3D } from './Plate3D';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, Source } from '@/lib/types';
@@ -102,7 +103,7 @@ export function ExhibitPanel({
       <aside id="panel" ref={panelRef} className={cn(open && 'open')} aria-label="Exhibit">
         <div className="pan-empty">
           <div style={{ width: 52, height: 52, margin: '0 auto 16px', opacity: 0.4 }}>
-            <Glyph node={{ id: 'placeholder', vis: 'cobble', cat: 'material' }} />
+            <Glyph node={{ id: 'stone', vis: 'cobble', cat: 'material' }} />
           </div>
           <p className="mono">Select a discovery<br />to open its exhibit</p>
         </div>
@@ -144,7 +145,7 @@ export function ExhibitPanel({
           <span>{eraName}</span>
         </div>
         <div className="exh-art">
-          <Glyph node={node} plate locked={!known} sw={1.6} />
+          <Plate3D node={node} locked={!known} label={known ? node.n : 'Undiscovered entry'} />
         </div>
         <h2 className="exh-name">{known ? node.n : 'Undiscovered'}</h2>
         <div className="exh-meta mono">

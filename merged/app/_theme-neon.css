@@ -1,0 +1,102 @@
+/* ============================================================================
+   NEON BLUE THEME + 3D EXHIBIT PLATE
+   Kept out of _design-system.css on purpose: that file mirrors the single-file
+   build byte for byte (tools/sync_data.py --check). Everything here layers on
+   top of it through the same custom properties.
+   ========================================================================== */
+
+/* tokens the 3D plate reads (components/Plate3D.tsx) — dark / light defaults */
+:root{
+  --plate-line:var(--bone);
+  --plate-spark:var(--ochre);
+  --plate-glow:0;
+}
+:root[data-theme="light"]{
+  --plate-line:#2a2622;
+  --plate-spark:#a9501c;
+}
+
+/* ── neon blue: deep navy ground, ice-white type, electric-cyan accent ── */
+:root[data-theme="neon"]{
+  --ink-0:#03060d;
+  --ink-1:#060b16;
+  --ink-2:#0a1120;
+  --ink-3:#0f1a2e;
+  --ink-4:#16243d;
+
+  --bone:#e2f7ff;
+  --bone-2:#9fcbe0;
+  --bone-3:#7ea9c1;
+  --bone-4:#5f86a0;
+
+  --line:rgba(0,212,255,.13);
+  --line-2:rgba(0,212,255,.24);
+  --line-3:rgba(0,212,255,.42);
+
+  --ochre:#00d4ff;
+  --ochre-lo:rgba(0,212,255,.12);
+  --ochre-mid:rgba(0,212,255,.46);
+
+  --r-common:#6b8fa6;
+  --r-uncommon:#35e0c6;
+  --r-rare:#4f8cff;
+  --r-hidden:#b8f6ff;
+
+  --glass-top:rgba(3,6,13,.86);
+  --glass-rail-a:rgba(8,16,32,.62);
+  --glass-rail-b:rgba(3,6,13,.25);
+  --hover:rgba(0,212,255,.06);
+  --slot-bg:rgba(8,18,36,.35);
+  --slot-full:rgba(12,26,50,.62);
+  --glass-trail:rgba(3,6,13,.6);
+  --glass-panel-a:rgba(8,16,32,.7);
+  --glass-panel-b:rgba(3,6,13,.3);
+  --shadow:rgba(0,0,0,.6);
+  --plate-a:rgba(8,26,52,.55);
+  --plate-b:rgba(3,8,18,.6);
+  --glass-sticky:rgba(3,6,13,.94);
+  --scrim:rgba(2,5,12,.78);
+  --glass-nav:rgba(3,6,13,.96);
+  --on-ochre:#001019;
+  --ground-strength:.9;
+  --strata-opacity:.38;
+  --grain-opacity:.03;
+
+  --plate-line:#8feaff;
+  --plate-spark:#00d4ff;
+  --plate-glow:1;
+}
+
+/* the era tint is warm by design; under neon the ground is a cold blue bloom */
+:root[data-theme="neon"] #ground{background:
+  radial-gradient(110% 80% at 50% 0%, rgba(0,120,255,.20) 0%, rgba(0,40,90,.10) 38%, var(--ink-0) 70%);}
+
+/* glow, used sparingly: the accent rules, the active tab, discovery marks */
+:root[data-theme="neon"] .tab[aria-selected="true"]{text-shadow:0 0 10px rgba(0,212,255,.55)}
+:root[data-theme="neon"] .oc-art,
+:root[data-theme="neon"] .slot-g{filter:drop-shadow(0 0 4px rgba(0,212,255,.55))}
+:root[data-theme="neon"] .exh-name,
+:root[data-theme="neon"] .oc-name{text-shadow:0 0 18px rgba(0,212,255,.35)}
+:root[data-theme="neon"] .chip:hover,
+:root[data-theme="neon"] .icon-btn:hover{box-shadow:0 0 0 1px rgba(0,212,255,.35),0 0 14px rgba(0,212,255,.25)}
+:root[data-theme="neon"] ::selection{background:rgba(0,212,255,.35);color:#fff}
+
+/* ── 3D exhibit plate ─────────────────────────────────────────────────── */
+.p3d{position:relative;width:100%;height:100%;display:block;outline:none}
+.p3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;
+  cursor:grab;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
+.p3d.dragging canvas{cursor:grabbing}
+.p3d:focus-visible{outline:2px solid var(--ochre);outline-offset:-2px}
+/* the flat drawing is the server render and the fallback when canvas is unavailable */
+.p3d .p3d-flat{position:absolute;inset:0;display:grid;place-items:center;color:var(--bone)}
+.p3d .p3d-flat .g{width:56%;height:56%}
+.p3d.live .p3d-flat{display:none}
+.p3d-hint{position:absolute;right:10px;top:8px;color:var(--bone-4);pointer-events:none;
+  transition:opacity .6s ease;font-size:9.5px}
+.p3d.touched .p3d-hint{opacity:0}
+.exh-art{overflow:hidden}
+.exh-art .p3d{grid-area:1/1}
+.oc-art .p3d .p3d-flat .g{width:100%;height:100%}
+.oc-art .p3d canvas{cursor:grab}
+:root[data-theme="neon"] .exh-art{box-shadow:inset 0 0 40px rgba(0,140,255,.10)}
+@media (prefers-reduced-motion:reduce){.p3d-hint{transition:none}}
