@@ -97,7 +97,7 @@ function burst(dest: AudioNode, kind: BiquadFilterType, f0: number, f1: number, 
   s.start(t, Math.random() * 0.3); s.stop(t + dur + 0.02);
 }
 
-const MIN_GAP: Partial<Record<SoundId, number>> = { scrape: 70, rustle: 90, crackle: 80, hiss: 180, hum: 120, splash: 60 };
+const MIN_GAP: Partial<Record<SoundId, number>> = { scrape: 70, rustle: 90, crackle: 80, hiss: 180, hum: 120, splash: 60, plip: 55, puff: 140 };
 
 export function play(id: SoundId, o: Opts = {}) {
   if (!ctx || !master || !soundEnabled()) return;
@@ -167,6 +167,18 @@ export function play(id: SoundId, o: Opts = {}) {
       break;
     case 'pop':
       tone(dest, 420 * r, 900 * r, 0.04, 'sine', 0.3 * v);
+      break;
+    case 'plip':
+      // a drop breaking the surface: a short rising sine, a wet hiss of noise, and a
+      // little after-drop. `rate` varies the pitch so no two clicks sound the same.
+      tone(dest, 520 * r, 1500 * r, 0.09, 'sine', 0.34 * v);
+      burst(dest, 'bandpass', 1800 * r, 900 * r, 1.1, 0.14, 0.2 * v);
+      tone(dest, 760 * r, 1900 * r, 0.06, 'sine', 0.16 * v, 0.07 + Math.random() * 0.05);
+      break;
+    case 'puff':
+      // dust or a brush of grass: air through a soft low-pass
+      burst(dest, 'lowpass', 900 * r, 260 * r, 0.5, 0.2, 0.26 * v);
+      burst(dest, 'bandpass', 2600 * r, 1500 * r, 0.7, 0.1, 0.07 * v);
       break;
   }
 }

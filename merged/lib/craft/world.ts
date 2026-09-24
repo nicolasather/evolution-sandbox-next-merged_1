@@ -37,9 +37,14 @@ export interface ZoneRect { x: number; y: number; w: number; h: number }
 const G = 2600;               // px/s² while a body is falling to the bench
 const LIFT = 9;               // how high a held body rides
 const MAX_BODIES = 9;
+/** The play box: crafting minigames and stations are laid out inside a centred
+ *  area of about this size, however large the screen is. It is not a visible
+ *  or clickable limit — bodies can be carried and combined anywhere. */
+const PLAY_W = 720;
+const PLAY_H = 400;
 let UID = 1;
 
-/** Zone layout as fractions of the bench, so it survives any size. */
+/** Zone layout as fractions of the play box, so it survives any size. */
 const ZONE_FRAC: Record<ZoneId, [number, number, number, number]> = {
   hearth: [0.7, 0.08, 0.27, 0.36],
   anvil: [0.7, 0.55, 0.27, 0.36],
@@ -50,6 +55,10 @@ export class World {
   bodies: Body[] = [];
   w = 600;
   h = 360;
+  /** Room taken by interface that floats over the scenery (the inventory, the
+   *  bottom strip). Bodies keep out of it so nothing is hidden or unreachable;
+   *  it is zero when that interface is folded away. */
+  pad = { l: 0, t: 0, r: 0, b: 0 };
   /** Base radius of a body of size 1. */
   unit = 34;
   private host: HTMLElement;
@@ -79,23 +88,50 @@ export class World {
     }
   }
 
-  zoneRect(id: ZoneId): ZoneRect {
-    const [fx, fy, fw, fh] = ZONE_FRAC[id];
-    return { x: fx * this.w, y: fy * this.h, w: fw * this.w, h: fh * this.h };
+  /** Where interface floats over the scene. Bodies that end up beneath it are moved clear. */
+  setPad(p: { l?: number; t?: number; r?: number; b?: number }) {
+    const n = { l: Math.max(0, p.l ?? 0), t: Math.max(0, p.t ?? 0), r: Math.max(0, p.r ?? 0), b: Math.max(0, p.b ?? 0) };
+    const o = this.pad;
+    if (n.l === o.l && n.t === o.t && n.r === o.r && n.b === o.b) return false;
+    this.pad = n;
+    for (const b of this.bodies) this.clampIn(b);
+    return true;
   }
 
+  /** The free area, in world px. */
+  get area(): ZoneRect {
+    const { l, t, r, b } = this.pad;
+    return { x: l, y: t, w: Math.max(80, this.w - l - r), h: Math.max(80, this.h - t - b) };
+  }
+
+  /** The centred box that stations and hands-on steps are laid out in. */
+  get play(): ZoneRect {
+    const a = this.area;
+    const w = Math.min(a.w, PLAY_W), h = Math.min(a.h, PLAY_H);
+    return { x: a.x + (a.w - w) / 2, y: a.y + (a.h - h) / 2, w, h };
+  }
+
+  /** A station's soft, elliptical patch of ground (its bounding box). */
+  zoneRect(id: ZoneId): ZoneRect {
+    const [fx, fy, fw, fh] = ZONE_FRAC[id];
+    const p = this.play;
+    return { x: p.x + fx * p.w, y: p.y + fy * p.h, w: fw * p.w, h: fh * p.h };
+  }
+
+  /** Inside the station's ellipse — the same shape the player sees. */
   zoneAt(x: number, y: number): ZoneId | null {
     for (const id of this.zones) {
       const r = this.zoneRect(id);
-      if (x >= r.x && x <= r.x + r.w && y >= r.y && y <= r.y + r.h) return id;
+      const nx = (x - (r.x + r.w / 2)) / (r.w / 2), ny = (y - (r.y + r.h / 2)) / (r.h / 2);
+      if (nx * nx + ny * ny <= 1) return id;
     }
     return null;
   }
 
   private clampIn(b: Body) {
-    const p = b.r * 0.85;
-    b.x = Math.max(p, Math.min(this.w - p, b.x));
-    b.y = Math.max(p, Math.min(this.h - p, b.y));
+    const p = b.r * 0.85, a = this.area;
+    b.x = Math.max(a.x + p, Math.min(a.x + a.w - p, b.x));
+    b.y = Math.max(a.y + p, Math.min(a.y + a.h - p, b.y));
   }
 
   /* ── bodies ───────────────────────────────────────────────────────── */
@@ -186,7 +222,7 @@ export class World {
     for (const b of this.bodies) {
       if (!b.grabbable || (only && !only(b))) continue;
       const d = Math.hypot(x - b.x, y - (b.y - b.z));
-      if (d < b.r * 1.05 && d < bd) { best = b; bd = d; }
+      if (d < b.r * 1.25 && d < bd) { best = b; bd = d; }
     }
     return best;
   }
@@ -305,12 +341,13 @@ export class World {
   }
 
   private walls(b: Body) {
-    const p = b.r * 0.85;
+    const p = b.r * 0.85, a = this.area;
+    const x0 = a.x + p, x1 = a.x + a.w - p, y0 = a.y + p, y1 = a.y + a.h - p;
     let hit = 0;
-    if (b.x < p) { b.x = p; if (b.vx < 0) { hit = Math.max(hit, -b.vx); b.vx = -b.vx * (0.25 + b.props.bounce * 0.7); } }
-    if (b.x > this.w - p) { b.x = this.w - p; if (b.vx > 0) { hit = Math.max(hit, b.vx); b.vx = -b.vx * (0.25 + b.props.bounce * 0.7); } }
-    if (b.y < p) { b.y = p; if (b.vy < 0) { hit = Math.max(hit, -b.vy); b.vy = -b.vy * (0.25 + b.props.bounce * 0.7); } }
-    if (b.y > this.h - p) { b.y = this.h - p; if (b.vy > 0) { hit = Math.max(hit, b.vy); b.vy = -b.vy * (0.25 + b.props.bounce * 0.7); } }
+    if (b.x < x0) { b.x = x0; if (b.vx < 0) { hit = Math.max(hit, -b.vx); b.vx = -b.vx * (0.25 + b.props.bounce * 0.7); } }
+    if (b.x > x1) { b.x = x1; if (b.vx > 0) { hit = Math.max(hit, b.vx); b.vx = -b.vx * (0.25 + b.props.bounce * 0.7); } }
+    if (b.y < y0) { b.y = y0; if (b.vy < 0) { hit = Math.max(hit, -b.vy); b.vy = -b.vy * (0.25 + b.props.bounce * 0.7); } }
+    if (b.y > y1) { b.y = y1; if (b.vy > 0) { hit = Math.max(hit, b.vy); b.vy = -b.vy * (0.25 + b.props.bounce * 0.7); } }
     if (hit > 80) { b.q = Math.max(b.q, Math.min(0.28, hit / 3200 + b.props.squash)); this.hooks.onWall(b, hit); }
   }
 

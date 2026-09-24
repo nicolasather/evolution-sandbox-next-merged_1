@@ -29,6 +29,13 @@
    timeline, eras, light/dark identities. */
 @import "./_museum.css" layer(components);
 
+/* The 4–6 second journey through time, and its reduced-motion strip. */
+@import "./_time-tunnel.css" layer(components);
+
+/* Open world: the scenery is the workspace, materials have no wrappers, the
+   exhibit is a drawer that has to be asked for. Loaded last on purpose. */
+@import "./_open-world.css" layer(components);
+
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and
    `var(--bone-2)` in the stylesheet are the same colour in either theme. */

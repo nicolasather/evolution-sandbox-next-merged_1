@@ -29,9 +29,6 @@ const GraphView = dynamic(() => import('./GraphView').then(mod => mod.GraphView)
 const TimelineView = dynamic(() => import('./TimelineView').then(mod => mod.TimelineView), { ssr: false });
 const ArchiveView = dynamic(() => import('./ArchiveView').then(mod => mod.ArchiveView), { ssr: false });
 
-const PHONE = '(max-width:900px)';
-const isPhone = () => window.matchMedia(PHONE).matches;
-
 export function Sandbox() {
   const [panelOpen, setPanelOpen] = useState(false);
   const s = useSandbox();
@@ -41,6 +38,7 @@ export function Sandbox() {
   const [onlyPath, setOnlyPath] = useState(false);
   const [fitSignal, setFitSignal] = useState(0);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [replay, setReplay] = useState(0);
   const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
   const panelReturn = useRef<HTMLElement | null>(null);
 
@@ -80,17 +78,17 @@ export function Sandbox() {
     panelReturn.current = null;
   }, [setView]);
 
-  /** Beside the bench the exhibit is a column that is always there. Over the
-   *  graph or the archive — and on a phone — it opens as a drawer, and only
-   *  when the player asks for it: a discovery never throws a sheet over the bench. */
+  /** Inspect. The exhibit is closed until the player asks for it — pressing
+   *  Inspect, the "i" on an inventory item, the I key, the context menu or a
+   *  search result. Choosing or dragging a piece never comes through here.
+   *  It opens as an overlay drawer (a bottom sheet on a phone) and never
+   *  moves what is on the bench. */
   const openExhibit = useCallback((id: string) => {
     sound.sfx('select', 0.5);
     open(id);
-    if (isPhone() || view !== 'work') {
-      if (!panelOpen && document.activeElement instanceof HTMLElement) panelReturn.current = document.activeElement;
-      setPanelOpen(true);
-    }
-  }, [open, view, panelOpen]);
+    if (!panelOpen && document.activeElement instanceof HTMLElement) panelReturn.current = document.activeElement;
+    setPanelOpen(true);
+  }, [open, panelOpen]);
 
   const closePanel = useCallback(() => {
     setPanelOpen(false);
@@ -111,6 +109,14 @@ export function Sandbox() {
     panelReturn.current = null;
   }, [open, setView]);
 
+  /** Play the journey through time again, over the running game. */
+  const replayJourney = useCallback(() => {
+    setPanelOpen(false);
+    setShortcutsOpen(false);
+    setIntroDone(false);
+    setReplay(n => n + 1);
+  }, []);
+
   const confirmReset = useCallback(() => {
     setConfirmOpen(false);
     reset();
@@ -130,9 +136,9 @@ export function Sandbox() {
   }, [engine, setHintError, showView]);
 
   // one keyboard listener for the page; it reads the latest state through a ref
-  const keys = useRef({ showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place });
+  const keys = useRef({ showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered });
   useEffect(() => {
-    keys.current = { showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place };
+    keys.current = { showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered };
   });
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
@@ -157,6 +163,9 @@ export function Sandbox() {
         ev.preventDefault();
         setShortcutsOpen(true);
         return;
+      }
+      if ((ev.key === 'j' || ev.key === 'J') && k.entered && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
+        ev.preventDefault(); k.replay(); return;
       }
       // W G A T: go to a view — only when nothing modal is up and no key combo is held
       if (!typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
@@ -230,9 +239,16 @@ export function Sandbox() {
           stage([[2, 450], [3, 1150], [4, 1600], [5, 2050], [6, 2500]]);
         }}
         onDone={() => setIntroDone(true)}
+        replay={replay}
         getBenchTarget={() => {
-          const r = benchElement()?.getBoundingClientRect();
-          return r && r.width > 40 ? { x: r.left + r.width / 2, y: r.top + r.height * 0.52 } : null;
+          const el = benchElement();
+          const r = el?.getBoundingClientRect();
+          if (!el || !r || r.width < 40) return null;
+          // the middle of the free scenery, not of the whole screen
+          const vars = el.parentElement ?? el;
+          const pad = (k: string) => parseFloat(vars.style.getPropertyValue(k)) || 0;
+          const l = pad('--wb-pl'), rr = pad('--wb-pr'), t = pad('--wb-pt'), b = pad('--wb-pb');
+          return { x: r.left + l + (r.width - l - rr) / 2, y: r.top + t + (r.height - t - b) * 0.52 };
         }}
       />
 
@@ -270,6 +286,7 @@ export function Sandbox() {
               onDrop={s.drop}
               onBenchDrop={s.dropOnBench}
               onContextMenu={openContextMenu}
+              onInspect={openExhibit}
             />
           </section>
 
@@ -356,7 +373,7 @@ export function Sandbox() {
         onClose={closeContextMenu}
       />
 
-      <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} />
+      <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
 
       <div id="toasts" aria-live="polite">
         {s.toasts.map(t => (

@@ -24,9 +24,12 @@ export type FxMode = 'idle' | 'collapse' | 'tunnel' | 'slow' | 'still';
 interface Dust { x: number; y: number; vx: number; vy: number; w: number; h: number; a: number; ph: number; d: number; ox: number; oy: number; glow: number; rot: number }
 interface Warp { ang: number; cos: number; sin: number; r: number; layer: 0 | 1 | 2; warm: boolean }
 interface Fly {
-  sprite: HTMLCanvasElement | null; label: string; t0: number; life: number;
+  sprite: HTMLCanvasElement | null; label: string; date: string; t0: number; life: number;
   ang: number; size: number; near: boolean; far: boolean; spin: number; base: number;
 }
+
+/** A soft out-of-focus light in the walls of the tunnel — the blurred environment. */
+interface Bokeh { ang: number; cos: number; sin: number; r: number; size: number; a: number; warm: boolean; v: number }
 
 export interface IntroFxOptions { quality: Quality; lite: boolean }
 
@@ -55,6 +58,8 @@ export class IntroFx {
   private running = false;
   private dust: Dust[] = [];
   private warp: Warp[] = [];
+  private bokeh: Bokeh[] = [];
+  private disc: HTMLCanvasElement | null = null;
   private flies: Fly[] = [];
   private mx = 0; private my = 0; private sx = 0; private sy = 0;
   private hasPointer = false;
@@ -158,16 +163,18 @@ export class IntroFx {
     this.setMode('tunnel', ms);
     const scale = ms / 3600;
     this.flies = [];
-    const golden = 2.399963;
-    let a = Math.random() * Math.PI * 2;
+    // history passes beside the viewer: pieces alternate left and right of the
+    // axis, at varied heights, so each one sweeps past rather than straight at the lens
     objects.forEach((o, i) => {
       const sp = this.sprites?.get(o.id);
-      a += golden * (0.8 + (i % 3) * 0.3);
+      const side = i % 2 ? 0 : Math.PI;
+      const lift = ((i * 37) % 5 - 2) * 0.16;
+      const ang = side + (side === 0 ? -lift : lift) + (i % 3 - 1) * 0.12;
       this.flies.push({
-        sprite: sp?.canvas ?? null, label: sp?.name.toUpperCase() ?? '',
-        t0: o.at * ms, life: Math.max(110, o.life * scale), ang: a,
+        sprite: sp?.canvas ?? null, label: sp?.name.toUpperCase() ?? '', date: sp?.date ?? '',
+        t0: o.at * ms, life: Math.max(160, o.life * scale), ang,
         size: o.size * (this.w < 700 ? 0.7 : 1), near: !!o.near, far: !!o.far,
-        spin: (i % 2 ? 1 : -1) * (0.5 + (i % 4) * 0.35), base: (i * 0.7) % 0.6 - 0.3,
+        spin: (i % 2 ? 1 : -1) * (0.35 + (i % 4) * 0.25), base: (i * 0.7) % 0.6 - 0.3,
       });
     });
     const n = Math.round(clamp((this.w * this.h) / 2600, 160, 640) * PARTICLE_SCALE[this.quality]);
@@ -180,6 +187,31 @@ export class IntroFx {
         layer: q < 0.5 ? 0 : q < 0.82 ? 1 : 2, warm: Math.random() < 0.08,
       });
     }
+    // out-of-focus lights racing past the walls: depth without detail
+    const nb = this.lite || this.quality === 'low' ? 0 : Math.round(20 * PARTICLE_SCALE[this.quality] + 6);
+    this.bokeh = [];
+    this.ensureDisc();
+    for (let i = 0; i < nb; i++) {
+      const ang = Math.random() * Math.PI * 2;
+      this.bokeh.push({
+        ang, cos: Math.cos(ang), sin: Math.sin(ang), r: Math.random(),
+        size: 28 + Math.random() * 90, a: 0.05 + Math.random() * 0.09, warm: Math.random() < 0.3, v: 0.6 + Math.random() * 0.9,
+      });
+    }
+  }
+
+  private ensureDisc() {
+    if (this.disc) return;
+    const c = document.createElement('canvas');
+    c.width = c.height = 96;
+    const g = c.getContext('2d');
+    if (!g) return;
+    const gr = g.createRadialGradient(48, 48, 0, 48, 48, 48);
+    gr.addColorStop(0, 'rgba(255,255,255,0.9)');
+    gr.addColorStop(0.55, 'rgba(255,255,255,0.35)');
+    gr.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 96, 96);
+    this.disc = c;
   }
 
   slow(ms: number) { this.frozenSpeed = this.speed; this.setMode('slow', ms); }
@@ -194,7 +226,7 @@ export class IntroFx {
     };
     step();
   }
-  reset() { this.fade = 1; this.flies = []; this.warp = []; this.setMode('idle', 0); }
+  reset() { this.fade = 1; this.flies = []; this.warp = []; this.bokeh = []; this.setMode('idle', 0); }
 
   private setMode(m: FxMode, ms: number) { this.mode = m; this.t = 0; this.modeMs = ms; }
 
@@ -336,26 +368,60 @@ export class IntroFx {
 
   private drawTunnel(dt: number) {
     const u = clamp(this.t / this.modeMs, 0, 1);
-    // slow → medium → fast → very fast
-    this.speed = 0.08 + 0.92 * Math.pow(u, 2.4);
+    // slow → medium → fast → very fast: the camera accelerates all the way in
+    this.speed = 0.08 + 0.92 * Math.pow(u, 2.2);
     this.holeR = Math.min(this.w, this.h) * (0.05 + 0.02 * u);
+    const g = this.g;
+    g.save();
+    // the camera leans a little as it picks up speed
+    g.translate(this.w / 2, this.h / 2);
+    g.rotate(Math.sin(u * 5.2) * 0.022 * u);
+    g.translate(-this.w / 2, -this.h / 2);
     this.drawRings(dt, 1);
+    this.drawBokeh(dt, 1);
     this.drawWarp(dt, 1);
     this.drawFlies(u);
     this.drawWarpNear(dt, 1);
+    g.restore();
     this.drawHole(1);
     if (this.vignette) {
-      this.g.globalAlpha = this.fade * (0.75 + 0.2 * u);
+      this.g.globalAlpha = this.fade * (0.6 + 0.3 * u);
       this.g.drawImage(this.vignette, 0, 0, this.w, this.h);
       this.g.globalAlpha = this.fade;
     }
     if (u >= 1) this.onModeEnd?.('tunnel');
   }
 
+  /** Soft discs drifting outward from the vanishing point, growing as they come. */
+  private drawBokeh(dt: number, gain: number) {
+    if (!this.bokeh.length || !this.disc) return;
+    const g = this.g, cx = this.w / 2, cy = this.h / 2;
+    const R = Math.hypot(this.w, this.h) / 2;
+    const sec = dt / 1000, v = this.speed;
+    for (const b of this.bokeh) {
+      if (dt > 0) {
+        b.r += v * b.v * sec * (0.08 + b.r * 1.1);
+        if (b.r > 1.1) { b.r = 0.02; b.ang = Math.random() * Math.PI * 2; b.cos = Math.cos(b.ang); b.sin = Math.sin(b.ang); }
+      }
+      const rr = b.r * R * 0.95;
+      if (rr < this.holeR * 1.1) continue;
+      const size = b.size * (0.25 + b.r * 1.7);
+      const a = b.a * clamp(b.r * 4, 0, 1) * clamp((1.1 - b.r) * 6, 0, 1) * (0.35 + 0.65 * v) * gain;
+      if (a < 0.004) continue;
+      g.globalAlpha = a * this.fade;
+      g.globalCompositeOperation = 'lighter';
+      g.drawImage(this.disc, cx + b.cos * rr - size / 2, cy + b.sin * rr - size / 2, size, size);
+      if (b.warm) { g.globalAlpha = a * 0.5 * this.fade; g.drawImage(this.disc, cx + b.cos * rr - size * 0.3, cy + b.sin * rr - size * 0.3, size * 0.6, size * 0.6); }
+    }
+    g.globalCompositeOperation = 'source-over';
+    g.globalAlpha = this.fade;
+  }
+
   private drawSlow(dt: number) {
     const k = clamp(this.t / this.modeMs, 0, 1);
     this.speed = this.frozenSpeed * (1 - easeOut3(k));
     this.drawRings(dt, 1 - k);
+    this.drawBokeh(dt, 1 - k);
     this.drawWarp(dt, 1 - k * 0.25);
     this.drawWarpNear(dt, 1 - k * 0.25);
     this.drawHole(1 - k * 0.4);

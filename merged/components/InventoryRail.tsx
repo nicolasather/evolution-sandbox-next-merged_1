@@ -25,8 +25,24 @@ const setHideDoneStored = (v: boolean) => {
   window.dispatchEvent(new Event(HIDE_DONE_EVENT));
 };
 
+/* The inventory folds away. First visit it is open — that is where the
+   materials are — and after that the player's own choice is remembered. */
+const OPEN_KEY = 'evo.inv.open';
+const OPEN_EVENT = 'evo:inv-open';
+const subscribeOpen = (cb: () => void) => {
+  window.addEventListener(OPEN_EVENT, cb);
+  return () => window.removeEventListener(OPEN_EVENT, cb);
+};
+const readOpen = () => { try { return window.localStorage.getItem(OPEN_KEY) !== '0'; } catch { return true; } };
+const setOpenStored = (v: boolean) => {
+  try { window.localStorage.setItem(OPEN_KEY, v ? '1' : '0'); } catch { /* ignore */ }
+  window.dispatchEvent(new Event(OPEN_EVENT));
+  // the bench re-measures once the tray has finished moving
+  window.setTimeout(() => window.dispatchEvent(new Event('evo:layout')), 340);
+};
+
 export function InventoryRail({
-  engine, slotA, slotB, highlightId, onPick, onDrop, onBenchDrop, onContextMenu,
+  engine, slotA, slotB, highlightId, onPick, onDrop, onBenchDrop, onContextMenu, onInspect,
 }: {
   engine: Engine;
   slotA: string | null;
@@ -37,6 +53,8 @@ export function InventoryRail({
   onDrop: (which: 'a' | 'b', id: string) => void;
   onBenchDrop: (id: string, clientX: number, clientY: number) => void;
   onContextMenu: (x: number, y: number, id: string) => void;
+  /** Read about a discovery — only ever from an explicit press. */
+  onInspect: (id: string) => void;
 }) {
   const [q, setQ] = useState('');
   const [era, setEra] = useState<string | null>(null);
@@ -44,6 +62,7 @@ export function InventoryRail({
   useEffect(() => { slots.current = { a: slotA, b: slotB }; }, [slotA, slotB]);
   const hideDone = useSyncExternalStore(subscribeHideDone, readHideDone, () => false);
   const toggleDone = () => setHideDoneStored(!hideDone);
+  const open = useSyncExternalStore(subscribeOpen, readOpen, () => true);
 
   const all = engine.inventory();
   const potential = new Map(all.map(n => [n.id, engine.potential(n.id)]));
@@ -63,10 +82,18 @@ export function InventoryRail({
   });
 
   return (
-    <aside id="rail" aria-label="Your discoveries">
+    <>
+    {!open && (
+      <button type="button" id="rail-tab" className="mono" aria-expanded="false" aria-controls="rail"
+        onClick={() => setOpenStored(true)}>
+        Inventory · {all.length}
+      </button>
+    )}
+    <aside id="rail" aria-label="Your discoveries" data-open={open ? 'true' : 'false'} data-wb-avoid={open ? '' : 'off'}>
       <div className="rail-head">
-        <span className="mono">Inventory</span>
-        <span className="mono">{all.length} held</span>
+        <span className="mono">Inventory · {all.length}</span>
+        <button type="button" className="rail-hide mono" aria-expanded={open} aria-controls="inv"
+          onClick={() => setOpenStored(false)}>Hide</button>
       </div>
 
       <div className="rail-tools">
@@ -109,8 +136,8 @@ export function InventoryRail({
                 {g.map(n => {
                   const p = potential.get(n.id);
                   return (
+                    <div key={n.id} className="item-wrap">
                     <button
-                      key={n.id}
                       data-id={n.id}
                       className={cn(
                         'item',
@@ -137,6 +164,9 @@ export function InventoryRail({
                       <span className="nm">{n.n}</span>
                       <span className={`dot r-${n.rar}`} aria-hidden="true" />
                     </button>
+                    <button type="button" className="item-i mono" onClick={() => onInspect(n.id)}
+                      aria-label={`Inspect ${n.n}`} title="Inspect: read about it">i</button>
+                    </div>
                   );
                 })}
               </div>
@@ -145,5 +175,6 @@ export function InventoryRail({
         })}
       </div>
     </aside>
+    </>
   );
 }

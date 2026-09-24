@@ -47,7 +47,9 @@ export interface MaterialProps {
 
 export type SoundId =
   | 'clack' | 'knock' | 'click' | 'rustle' | 'ring' | 'splash' | 'hiss' | 'thud'
-  | 'chime' | 'snap' | 'tick' | 'whoosh' | 'crackle' | 'hum' | 'scrape' | 'pop';
+  | 'chime' | 'snap' | 'tick' | 'whoosh' | 'crackle' | 'hum' | 'scrape' | 'pop'
+  /* the scenery answering a click: a drop of water, a puff of dust */
+  | 'plip' | 'puff';
 
 /** Every interaction a recipe step can name. New kinds register in steps/index.ts. */
 export type StepKind =
@@ -183,8 +185,10 @@ export interface StepCtx {
   world: import('./world').World;
   /** Seconds since the session began. */
   t: number;
-  /** World size in px. */
+  /** Size of the work area (the play box) in px — not of the whole screen. */
   w: number; h: number;
+  /** Top-left corner of the work area, in world px. */
+  x0: number; y0: number;
   /** Centre of the work area. */
   cx: number; cy: number;
   a: Body; b: Body;

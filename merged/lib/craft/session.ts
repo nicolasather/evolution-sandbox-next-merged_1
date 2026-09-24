@@ -77,7 +77,11 @@ export class CraftSession {
 
     // Work happens at the station when there is one and nothing carries the pieces there.
     const carries = this.steps.some(s => s.kind === 'place');
-    let cx = world.w / 2, cy = world.h / 2;
+    // the work happens where the pair met, kept inside the free area (never at a fixed screen centre)
+    const area = world.area, play0 = world.play;
+    const clampC = (v: number, lo: number, hi: number) => (hi < lo ? (lo + hi) / 2 : Math.max(lo, Math.min(hi, v)));
+    let cx = clampC((a.x + b.x) / 2, area.x + play0.w / 2, area.x + area.w - play0.w / 2);
+    let cy = clampC((a.y + b.y) / 2, area.y + play0.h / 2, area.y + area.h - play0.h / 2);
     if (spec.station) {
       world.zones.add(spec.station);
       if (!carries) { const r = world.zoneRect(spec.station); cx = r.x + r.w / 2; cy = r.y + r.h * 0.55; }
@@ -88,7 +92,7 @@ export class CraftSession {
       pressed: false, released: false, type: 'mouse', grab: null, seen: false,
     };
     this.ctx = {
-      world, t: 0, w: world.w, h: world.h, cx, cy, a, b, temp: this.temps, ptr, keys: this.keys,
+      world, t: 0, w: play0.w, h: play0.h, x0: cx - play0.w / 2, y0: cy - play0.h / 2, cx, cy, a, b, temp: this.temps, ptr, keys: this.keys,
       fx, pal, rnd, assist: Math.max(0, Math.min(1, opts.assist ?? 0)),
       res: spec.resistance, reduced: opts.reduced,
       fail: (weight = 0.3) => { this.ctx.assist = Math.min(1, this.ctx.assist + weight * 0.22); },
@@ -224,7 +228,9 @@ export class CraftSession {
     if (this.done || this.cancelled) return;
     const c = this.ctx;
     c.t += dt;
-    c.w = this.world.w; c.h = this.world.h;
+    const pl = this.world.play;
+    c.w = pl.w; c.h = pl.h;
+    c.x0 = c.cx - pl.w / 2; c.y0 = c.cy - pl.h / 2;
     const p = c.ptr;
     if (p.down) p.held += dt;
 

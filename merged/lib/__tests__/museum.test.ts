@@ -77,3 +77,14 @@ describe('perf tiers', () => {
     expect(t.tunnel).toBeGreaterThanOrEqual(tunnelDuration('low').tunnel);
   });
 });
+
+describe('time journey length', () => {
+  it('runs 4 to 6 seconds on every tier', async () => {
+    const { filmLength } = await import('@/lib/perf');
+    for (const q of ['low', 'medium', 'high'] as const) {
+      const ms = filmLength(q);
+      expect(ms).toBeGreaterThanOrEqual(4000);
+      expect(ms).toBeLessThanOrEqual(6000);
+    }
+  });
+});

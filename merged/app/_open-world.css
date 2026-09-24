@@ -1,0 +1,245 @@
+/* ============================================================================
+   OPEN WORLD — the scenery is the workspace.
+
+   Loaded last (see globals.css), so it takes the workspace apart on purpose:
+
+     1. No crafting rectangle. The bench is the whole screen. Pieces are
+        carried, dropped and combined anywhere on the scenery; the only things
+        they keep clear of are interface that is actually showing.
+     2. No wrappers. Materials — on the ground and in the inventory — are
+        etched illustrations with a name beside them. Choosing one lights its
+        own outline, not a box.
+     3. Explanations on request. The exhibit is an overlay drawer (a bottom
+        sheet on a phone) that takes no room until the player presses Inspect.
+
+   _design-system.css stays byte-identical; everything here is an override.
+   ============================================================================ */
+
+:root{
+  --rail-w:300px;
+  --panel:0px;                 /* no column is ever reserved for the exhibit */
+  --panel-w:400px;
+  --scene-opacity:.5;
+}
+:root[data-theme="light"]{--scene-opacity:.5}
+:root[data-theme="neon"]{--scene-opacity:.55}
+
+/* ── 1. the whole screen is the bench ─────────────────────────────────── */
+#v-work{right:0}
+#v-work.on{display:block}
+#bench{position:absolute;inset:0;z-index:1;isolation:isolate;display:block;overflow:visible;border:0}
+#bench-stage,#bench-stage:has(.wb){position:absolute;inset:0;display:block;gap:0;padding:0;min-height:0}
+#bench .wb{position:absolute;inset:0;width:auto;max-width:none;height:auto;border:0;
+  background:transparent;box-shadow:none;overflow:hidden;
+  transition:box-shadow .3s}
+#bench .wb::before,#bench .wb::after{display:none}
+/* a piece from the inventory is over the scenery: the ground takes a faint glow, nothing more */
+#bench .wb.wb-over{border:0;background:transparent;
+  box-shadow:inset 0 0 140px color-mix(in srgb,var(--ochre) 14%,transparent)}
+#bench .wb[data-resolve]{background:transparent;border:0}
+#bench .wb[data-resolve="major"]{border:0}
+
+/* the scenery reads as the world now: less veiled, no quiet patch in the middle */
+#scene{-webkit-mask-image:none;mask-image:none}
+@media (min-width:901px){
+  #scene{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.42) 0,#000 calc(var(--rail-w) + 80px));
+    mask-image:linear-gradient(90deg,rgba(0,0,0,.42) 0,#000 calc(var(--rail-w) + 80px));
+    -webkit-mask-composite:source-over;mask-composite:add}
+}
+
+/* stations: a soft patch of ground, not a dashed box */
+#bench .wb-zone{border:0;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--bone) 10%,transparent),transparent 82%)}
+#bench .wb-zone::after{left:0;right:0;top:auto;bottom:10%;text-align:center;color:var(--bone-3);
+  text-shadow:0 0 6px var(--ink-0),0 0 2px var(--ink-0)}
+#bench .wb-zone.lit{border:0;background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 26%,transparent),transparent 84%)}
+#bench .wb-zone[data-z="hearth"].on{background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 18%,transparent),transparent 84%)}
+#bench .wb-zone[data-z="basin"].on{background:radial-gradient(closest-side,color-mix(in srgb,#5aa0d0 20%,transparent),transparent 84%)}
+#bench .wb-zone[data-z="hearth"].lit{box-shadow:none;background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 34%,transparent),transparent 84%)}
+#bench .wb-zone[data-z="basin"].lit{box-shadow:none;background:radial-gradient(closest-side,color-mix(in srgb,#5aa0d0 34%,transparent),transparent 84%)}
+
+/* the canvas the scenery's answers are drawn on: over the picture, under the pieces */
+.scene-fx{position:fixed;inset:0;width:100vw;height:100dvh;pointer-events:none}
+
+/* the words the bench says to itself, kept clear of the inventory */
+#bench .wb-empty{inset:var(--wb-pt,0px) var(--wb-pr,0px) var(--wb-pb,0px) var(--wb-pl,0px);
+  text-shadow:0 0 8px var(--ink-0),0 0 2px var(--ink-0);color:var(--bone-3)}
+#bench .wb-hud{left:var(--wb-pl,0px);right:var(--wb-pr,0px);top:calc(var(--wb-pt,0px) + 12px);justify-content:center}
+#bench .wb-cue{text-shadow:0 0 8px var(--ink-0),0 0 2px var(--ink-0)}
+
+/* compact tools, tucked into the top-right corner */
+#bench .wb-tools{top:10px;right:12px;bottom:auto;gap:4px}
+#bench .wb-tools .chip{padding:3px 8px;font-size:10px;border-color:transparent;
+  background:color-mix(in srgb,var(--ink-0) 55%,transparent)}
+#bench .wb-tools .chip:hover,#bench .wb-tools .chip[aria-pressed="true"]{border-color:var(--line-2)}
+#bench .wb-prog{bottom:var(--wb-pb,0px)}
+
+/* the floating outcome */
+#outcome{position:absolute;top:calc(var(--wb-pt,0px) + 46px);left:var(--wb-pl,0px);right:var(--wb-pr,0px);
+  width:auto;max-width:none;min-height:0;display:flex;justify-content:center;pointer-events:none;z-index:7}
+#bench-stage:has(.wb) #outcome{min-height:0}
+#outcome > *{pointer-events:auto;max-width:min(520px,92%)}
+#outcome .oc-msg,#outcome .oc-nudge,#outcome .oc-near{text-shadow:0 0 10px var(--ink-0),0 0 3px var(--ink-0)}
+#outcome .oc-win{border:0;background:none;padding:0;gap:14px;
+  text-shadow:0 0 12px var(--ink-0),0 0 3px var(--ink-0)}
+#outcome .oc-art{filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+
+/* the foot strip: guidance, hints, the path — floating, no bars */
+#bench-foot{position:absolute;left:0;right:0;bottom:0;z-index:8;pointer-events:none;
+  background:linear-gradient(0deg,color-mix(in srgb,var(--ink-0) 80%,transparent),transparent);
+  padding-top:12px}
+#bench-foot > *{pointer-events:none}
+@media (min-width:901px){
+  /* the foot starts where the inventory ends, so nothing dims it */
+  #v-work:has(#rail[data-open="true"]) #bench-foot{left:var(--rail-w)}
+}
+#bench-foot .guide,#bench-foot .bar-right,#bench-foot #trail-items,#bench-foot .trail-lbl{pointer-events:auto}
+#bench-foot .guide,#bench-foot .reach,#bench-foot .trail-lbl,#bench-foot .trail-item,#bench-foot .sp-k,#bench-foot .sp-v,#bench-foot .trail-sep{
+  text-shadow:0 0 8px var(--ink-0),0 0 3px var(--ink-0)}
+#bench-foot .reach,#bench-foot .trail-lbl,#bench-foot .sp-k{color:var(--bone-3)}
+#bench-foot .guide{color:var(--bone-2)}
+#bench-bar{border-top:0;padding:4px 16px 2px;min-height:0}
+#trail{border-top:0;background:none;padding:2px 16px 10px;min-height:0}
+.scene-pick{position:static;opacity:.8}
+.scene-pick .sp-name{min-width:96px}
+.sp-btn{background:none;border-color:transparent}
+.sp-btn:hover{border-color:var(--line-2)}
+
+/* ── the inventory: a fold-away tray of etched illustrations ─────────── */
+#rail{position:absolute;left:0;top:0;bottom:0;width:var(--rail-w);z-index:9;border:0;
+  background:linear-gradient(90deg,
+    color-mix(in srgb,var(--ink-0) 88%,transparent) 0,
+    color-mix(in srgb,var(--ink-0) 76%,transparent) 68%,
+    transparent 100%);
+  transition:transform .32s cubic-bezier(.4,0,.2,1),visibility 0s linear 0s}
+#rail[data-open="false"]{transform:translateX(-102%);visibility:hidden;
+  transition:transform .32s cubic-bezier(.4,0,.2,1),visibility 0s linear .32s}
+#rail .rail-head{border-bottom:0;padding:14px 16px 6px}
+.rail-hide{color:var(--bone-3);padding:2px 6px;border:1px solid transparent}
+.rail-hide:hover{color:var(--bone);border-color:var(--line-2)}
+#rail .rail-tools{border-bottom:0;padding:4px 14px 6px}
+#rail .rail-filters{border-bottom:0;padding:4px 12px 8px}
+#rail-tab{position:absolute;left:10px;top:12px;z-index:9;padding:6px 10px;color:var(--bone-3);
+  border:1px solid var(--line);background:color-mix(in srgb,var(--ink-0) 60%,transparent);
+  backdrop-filter:blur(4px);transition:color .18s,border-color .18s}
+#rail-tab:hover{color:var(--bone);border-color:var(--ochre)}
+#rail #inv{padding:0 6px 90px}
+#rail .inv-era{padding:12px 12px 3px;background:none;text-shadow:0 0 6px var(--ink-0)}
+#rail .inv-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 0;padding:0 4px}
+
+.item-wrap{position:relative;min-width:0}
+#rail .item{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  gap:3px;width:100%;min-height:0;padding:8px 2px 6px;text-align:center;overflow:visible;
+  border:0;border-left:0;background:none;box-shadow:none;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1),opacity .2s}
+#rail .item::after{display:none}
+#rail .item:hover{background:none;border-left-color:transparent;transform:none}
+#rail .item .g{width:46px;height:46px;transform:none;
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.34));
+  transition:filter .2s,transform .28s cubic-bezier(.34,1.56,.64,1)}
+#rail .item:hover .g{transform:translateY(-2px) scale(1.08);
+  filter:drop-shadow(0 6px 6px rgba(0,0,0,.3)) drop-shadow(0 0 8px color-mix(in srgb,var(--ochre) 30%,transparent))}
+#rail .item .nm{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;
+  max-width:100%;font-size:11.5px;line-height:1.2;transform:none;text-shadow:0 0 6px var(--ink-0)}
+#rail .item:hover .nm{transform:none;color:var(--bone)}
+#rail .item .dot{position:absolute;top:10px;right:14px}
+#rail .item.picked{background:none;border-left-color:transparent;transform:none}
+#rail .item.picked .g,#rail .item.hinted .g{
+  filter:drop-shadow(0 0 2px var(--ochre)) drop-shadow(0 0 10px color-mix(in srgb,var(--ochre) 55%,transparent))}
+#rail .item.hinted{border-left-color:transparent;animation:none}
+#rail .item.hinted .g{animation:hintGlow 1.6s ease-in-out infinite}
+@keyframes hintGlow{0%,100%{filter:drop-shadow(0 0 1px var(--ochre)) drop-shadow(0 0 4px color-mix(in srgb,var(--ochre) 30%,transparent))}
+  50%{filter:drop-shadow(0 0 2px var(--ochre)) drop-shadow(0 0 14px color-mix(in srgb,var(--ochre) 70%,transparent))}}
+#rail .item.is-new .nm::after{display:block;margin:2px 0 0}
+#rail .item.is-done .g{opacity:.4}
+#rail .item:active{transform:scale(.96)}
+
+/* Inspect: a small, deliberate button — never implied by choosing or dragging */
+.item-i{position:absolute;top:8px;left:12px;width:20px;height:20px;border-radius:50%;
+  display:grid;place-items:center;font-size:10px;line-height:1;color:var(--bone-4);
+  border:1px solid var(--line);background:color-mix(in srgb,var(--ink-0) 60%,transparent);
+  opacity:.55;transition:opacity .18s,color .18s,border-color .18s}
+.item-wrap:hover .item-i,.item-i:focus-visible{opacity:1;color:var(--bone);border-color:var(--ochre)}
+@media (hover:none){.item-i{opacity:.8;width:24px;height:24px}}
+
+/* the world arrives layer by layer: the item stagger targets the wrappers now */
+#app[data-reveal="2"] #inv .item-wrap:nth-child(n+2) .item{animation:itemIn .7s cubic-bezier(.2,.7,.2,1) both}
+#app[data-reveal="2"] #inv .item-wrap:nth-child(2) .item{animation-delay:.05s}
+#app[data-reveal="2"] #inv .item-wrap:nth-child(3) .item{animation-delay:.28s}
+#app[data-reveal="2"] #inv .item-wrap:nth-child(4) .item{animation-delay:.51s}
+
+/* ── 2. pieces on the ground: illustrations, not cards ────────────────── */
+#bench .wb-body:not(.wb-part)::before,
+#bench .wb-body:not(.wb-part)::after{content:none;display:none}
+#bench .wb-body:not(.wb-part) .wb-art .g{width:92%;height:92%}
+#bench .wb-body:not(.wb-part) .wb-shadow{display:block;inset:64% 8% -6% 8%;
+  background:radial-gradient(closest-side,rgba(0,0,0,.32),transparent 74%)}
+#bench .wb-art{filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))
+  drop-shadow(0 0 calc(var(--glow) * 12px + var(--heat) * 14px) color-mix(in srgb,var(--ochre) calc((var(--glow) + var(--heat)) * 100%),transparent))}
+/* chosen: the outline itself glows (the shadow follows the drawing, not a box) */
+#bench .wb-body[data-sel] .wb-art{
+  filter:drop-shadow(0 0 1.5px var(--ochre)) drop-shadow(0 0 11px color-mix(in srgb,var(--ochre) 60%,transparent))}
+#bench .wb-body.wb-held .wb-art{
+  filter:drop-shadow(0 10px 8px rgba(0,0,0,.3)) drop-shadow(0 0 7px color-mix(in srgb,var(--ochre) 38%,transparent))}
+#bench .wb-body[data-near] .wb-art{
+  filter:drop-shadow(0 0 2px var(--ochre)) drop-shadow(0 0 12px color-mix(in srgb,var(--ochre) 55%,transparent))}
+#bench .wb-body.wb-held .wb-shadow{opacity:.5}
+/* names beside the things they name */
+#bench .wb-lbl{font-size:10.5px;letter-spacing:.04em;text-transform:none;color:var(--bone-2);
+  text-shadow:0 0 7px var(--ink-0),0 0 3px var(--ink-0),0 1px 0 var(--ink-0)}
+#bench .wb-lbl b{display:none}
+
+/* Inspect, next to the piece you chose */
+.wb-sel{position:absolute;left:0;top:0;z-index:600;pointer-events:none;will-change:transform}
+.wb-inspect{pointer-events:auto;padding:5px 12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bone);border:1px solid var(--ochre);background:color-mix(in srgb,var(--ink-0) 82%,transparent);
+  backdrop-filter:blur(4px);transition:background .18s}
+.wb-inspect:hover{background:var(--ochre-lo)}
+
+/* ── 3. the exhibit is a drawer that has to be asked for ──────────────── */
+#panel{z-index:40}
+@media (min-width:901px){
+  #panel{width:min(var(--panel-w),92vw);background:var(--ink-1);border-left-color:var(--line-2);
+    box-shadow:-28px 0 56px var(--shadow);transform:translateX(101%);visibility:hidden;
+    transition:transform .32s cubic-bezier(.4,0,.2,1),visibility 0s linear .32s}
+  #panel.open{transform:none;visibility:visible;transition:transform .32s cubic-bezier(.4,0,.2,1)}
+  #panel .panel-close{display:grid}
+  #panel .exh-head{padding-top:48px}
+}
+
+/* ── phones: the scenery fills the screen, the inventory is a bottom tray ── */
+@media (max-width:900px){
+  #v-work{right:0}
+  #bench{border-bottom:0;overflow:visible}
+  #bench-foot{top:0;bottom:auto;padding:6px 0 14px;
+    background:linear-gradient(180deg,color-mix(in srgb,var(--ink-0) 80%,transparent),transparent)}
+  #bench-bar{padding:2px 12px 0;flex-wrap:nowrap}
+  #bench-bar .guide{flex:1 1 auto;font-size:12px}
+  .bar-right{width:auto;flex:none;gap:8px}
+  .bar-right .reach{display:none}
+  .scene-pick .sp-name{min-width:0}
+  .scene-pick .sp-k{display:none}
+  #bench .wb-tools{top:auto;bottom:calc(var(--wb-pb,0px) + 8px);left:8px;right:auto;justify-content:flex-start}
+  #outcome{top:calc(var(--wb-pt,0px) + 34px);left:0;right:0}
+
+  #rail{top:auto;left:0;right:0;bottom:0;width:auto;height:min(40%,320px);
+    background:linear-gradient(0deg,
+      color-mix(in srgb,var(--ink-0) 92%,transparent) 0,
+      color-mix(in srgb,var(--ink-0) 80%,transparent) 78%,
+      transparent 100%);
+    padding-top:6px}
+  #rail[data-open="false"]{transform:translateY(102%)}
+  #rail .rail-head{display:flex;padding:6px 14px 2px}
+  #rail #inv{padding:0 4px 12px}
+  #rail .inv-items{grid-template-columns:repeat(auto-fill,minmax(76px,1fr));padding:0 2px}
+  #rail .item{min-height:0;padding:6px 2px 4px}
+  #rail .item .g{width:40px;height:40px}
+  #rail .item .dot{right:10px}
+  #rail-tab{left:auto;right:8px;top:auto;bottom:8px;min-height:36px}
+  #app .rail-filters{padding:4px 12px 6px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  #rail,#panel,#bench .wb{transition:none}
+  #rail .item .g{transition:none}
+  #rail .item.hinted .g{animation:none}
+}

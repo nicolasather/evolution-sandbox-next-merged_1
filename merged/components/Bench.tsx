@@ -6,6 +6,8 @@ import { Plate3D } from './Plate3D';
 import { ScenePicker } from './SceneBackdrop';
 import { DiscoveryCeremony } from './fx/DiscoveryCeremony';
 import { Workbench } from './Workbench';
+import { SceneFx, type SceneFxHandle } from './fx/SceneFx';
+import { useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { nearLine } from '@/lib/near';
 import type { Engine } from '@/lib/engine';
@@ -126,6 +128,7 @@ export function Bench({
   onRequestHint: () => void;
   onDropHint: () => void;
 }) {
+  const sceneFx = useRef<SceneFxHandle>(null);
   const trail = engine.path().slice(-26);
   const reach = engine.withinReach().length;
   // one short line of guidance: onboarding first, then the hint, then nothing
@@ -143,8 +146,9 @@ export function Bench({
   return (
     <div id="bench">
       <div id="bench-stage">
-        <ScenePicker era={engine.currentEra().id} />
-        <Workbench engine={engine} active={active} onCombine={onCombine} onBegin={onBegin} />
+        <SceneFx ref={sceneFx} active={active} />
+        <Workbench engine={engine} active={active} onCombine={onCombine} onBegin={onBegin} onInspect={onOpen}
+          onScenery={(x, y) => { sceneFx.current?.click(x, y); }} />
 
         <div id="outcome" aria-live="polite">
           <AnimatePresence mode="popLayout" initial={false}>
@@ -153,6 +157,7 @@ export function Bench({
         </div>
       </div>
 
+      <div id="bench-foot" data-wb-avoid>
       <div id="bench-bar">
         <p className={cn('guide', hint.targetId && engine.coached === 2 && 'is-hint', `lvl-${hint.level}`)} aria-live="polite">
           <span className="guide-t">{hintError ?? line}</span>
@@ -163,6 +168,7 @@ export function Bench({
           )}
         </p>
         <div className="bar-right">
+          <ScenePicker era={engine.currentEra().id} />
           <span className="reach mono" title="Undiscovered entries that a pair you already hold can make">
             <b className="num">{reach}</b> within reach
           </span>
@@ -176,13 +182,14 @@ export function Bench({
           {trail.map((n, i) => (
             <span key={n.id} style={{ display: 'contents' }}>
               {i > 0 && <span className="trail-sep">→</span>}
-              <button className="trail-item" title={n.n} onClick={() => onOpen(n.id)}>
+              <button className="trail-item" title={`Inspect ${n.n}`} onClick={() => onOpen(n.id)}>
                 <Glyph node={n} />
                 <span className="mono">{n.n}</span>
               </button>
             </span>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

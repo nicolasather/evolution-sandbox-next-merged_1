@@ -1,0 +1,69 @@
+/* ============================================================================
+   TIME TUNNEL — the 4–6 second journey from "How did we get here?" to the
+   first stone lying on the scenery (components/Landing.tsx, lib/intro/fx.ts).
+   Loaded after _museum.css, which it overrides for the phases that changed:
+
+     collapse → tunnel → slow → fall → exit        (reduced motion: reduced → exit)
+
+   There is no black screen between the tunnel and the world: while the streaks
+   are still running, the scenery for the current era comes up behind them out
+   of focus, and it sharpens as the camera slows.
+   ============================================================================ */
+
+/* the curtain thins as the camera picks up speed, then goes altogether */
+#landing[data-phase="tunnel"]{background:rgba(8,8,10,.5);transition:background .6s ease}
+#landing[data-phase="slow"]{background:rgba(8,8,10,.3);transition:background .8s ease}
+
+/* the scenery behind: soft, then sharp */
+#scene{transition:opacity 1s ease,filter 1.2s ease}
+:root[data-film="tunnel"]:not([data-lowfx]) #scene{filter:blur(14px) brightness(1.2)}
+:root[data-film="clear"] #scene{filter:none}
+:root[data-film="tunnel"] #scene.on{opacity:calc(var(--scene-opacity) * 1.7)}
+
+/* arrival happens *during* the slowing, not after it */
+#landing[data-phase="slow"] .intro-arrive,
+#landing[data-phase="reduced"] .intro-arrive{visibility:visible;opacity:1}
+#landing[data-phase="slow"] .intro-stone{animation:stoneIn .55s .12s cubic-bezier(.2,.7,.2,1) both}
+#landing[data-phase="slow"] .intro-line span:first-child{animation:mIn .5s .15s ease-out both}
+#landing[data-phase="slow"] .intro-line span:last-child{animation:mIn .6s .3s ease-out both}
+#landing[data-phase="fall"] .intro-line span{animation:mOut .3s ease-in both;transition:none}
+@keyframes mOut{from{opacity:1}to{opacity:0}}
+#landing[data-phase="reduced"] .intro-stone,#landing[data-phase="reduced"] .intro-line span{opacity:0}
+
+/* legible over any scenery, dark or light */
+.intro-stone{filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
+.intro-line{text-shadow:0 0 22px rgba(8,8,10,.75),0 0 4px rgba(8,8,10,.6)}
+
+/* the curtain lifts quickly */
+#landing[data-phase="exit"]{transition:opacity .45s ease,background .5s ease}
+
+/* skip is offered for as long as there is anything to skip */
+#landing[data-phase="reduced"] .intro-skip,#landing[data-phase="slow"] .intro-skip{opacity:.5;pointer-events:auto}
+
+/* reduced motion: the same objects, oldest first, standing still */
+.intro-strip{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:2;pointer-events:none;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,3vw,44px) clamp(14px,3vw,40px);
+  margin:0;padding:0 clamp(16px,5vw,80px);list-style:none;visibility:hidden}
+#landing[data-phase="reduced"] .intro-strip{visibility:visible}
+.intro-strip li{display:grid;justify-items:center;gap:6px;width:clamp(78px,12vw,128px);opacity:0;transition:opacity .5s ease}
+#landing[data-phase="reduced"] .intro-strip li{opacity:1}
+#landing:not([data-phase="reduced"]) .intro-strip li{transition-delay:0s!important}
+.strip-art{width:clamp(44px,7vw,72px);aspect-ratio:1;color:var(--bone);display:block}
+.strip-art svg{width:100%;height:100%;overflow:visible}
+.strip-name{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-2);text-align:center}
+.strip-date{font-size:9px;letter-spacing:.06em;color:var(--bone-4);text-align:center;text-transform:none}
+
+/* the shortcuts list's replay control */
+.shortcuts-replay{margin-top:14px;display:flex;align-items:center;gap:10px;color:var(--bone-3)}
+
+@media (prefers-reduced-motion:reduce){
+  #landing[data-phase="tunnel"],#landing[data-phase="slow"],#landing[data-phase="exit"]{transition:opacity .3s ease,background .3s ease}
+  #landing[data-phase="slow"] .intro-stone,#landing[data-phase="slow"] .intro-line span{animation:none!important;opacity:1}
+  :root[data-film] #scene{filter:none!important}
+}
+
+/* while the film runs and the interface loads in, the bench keeps its own words to itself */
+#app:not([data-reveal="6"]) .wb-empty,
+#app:not([data-reveal="6"]) .wb-tools,
+#app:not([data-reveal="6"]) .wb-hud{opacity:0}
+.wb-empty,.wb-tools,.wb-hud{transition:opacity .6s ease}

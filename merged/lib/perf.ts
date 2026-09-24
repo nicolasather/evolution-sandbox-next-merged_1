@@ -77,9 +77,19 @@ export function subscribeQuality(cb: () => void): () => void {
   return () => window.removeEventListener(EVENT, cb);
 }
 
-/** Length of the time-tunnel in ms, by tier and screen. Phones get the short one. */
-export function tunnelDuration(q: Quality = getQuality()): { collapse: number; tunnel: number } {
-  if (isPhone() || q === 'low') return { collapse: 600, tunnel: 1700 };
-  if (q === 'medium') return { collapse: 800, tunnel: 2800 };
-  return { collapse: 900, tunnel: 3600 };
+/** How long each beat of the time journey lasts, in ms. The whole film — from
+ *  pressing Start to the world being yours — runs 4 to 6 seconds:
+ *  collapse + tunnel + slow + fall + exit. Phones and low-power devices get the short one. */
+export interface FilmTiming { collapse: number; tunnel: number; slow: number; fall: number; exit: number }
+
+export function tunnelDuration(q: Quality = getQuality()): FilmTiming {
+  if (isPhone() || q === 'low') return { collapse: 450, tunnel: 2300, slow: 650, fall: 560, exit: 420 };   // ≈ 4.4 s
+  if (q === 'medium') return { collapse: 500, tunnel: 2700, slow: 750, fall: 600, exit: 440 };           // ≈ 5.0 s
+  return { collapse: 550, tunnel: 3000, slow: 850, fall: 650, exit: 460 };                                // ≈ 5.5 s
+}
+
+/** Total film length in ms for a tier. */
+export function filmLength(q: Quality = getQuality()): number {
+  const t = tunnelDuration(q);
+  return t.collapse + t.tunnel + t.slow + t.fall + t.exit;
 }

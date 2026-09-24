@@ -21,13 +21,15 @@ const ROWS: [string, string][] = [
   ['Wheel', 'Turn a piece · zoom the bench'],
   ['Right-click', 'Open, find in graph, or place a discovery'],
   ['Long-press', 'Same menu, for touch'],
+  ['I', 'Inspect: read about the piece you are pointing at or have chosen'],
+  ['J', 'Replay the journey through time'],
   ['?', 'Show or hide this list'],
 ];
 
 /** Presentational only — Sandbox's own keydown handler owns opening and
  *  closing this (including Escape and the ? toggle), so a stray Escape here
  *  can never also fire the game's own Escape handling underneath it. */
-export function ShortcutsOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
+export function ShortcutsOverlay({ open, onClose, onReplay }: { open: boolean; onClose: () => void; onReplay?: () => void }) {
   const pref = useSyncExternalStore(subscribeQuality, qualityPref, () => 'auto' as QualityPref);
   const tier = useSyncExternalStore(subscribeQuality, getQuality, () => 'medium');
   if (!open) return null;
@@ -58,6 +60,12 @@ export function ShortcutsOverlay({ open, onClose }: { open: boolean; onClose: ()
             </button>
           ))}
         </div>
+        {onReplay && (
+          <div className="shortcuts-replay">
+            <span className="mono">Time journey</span>
+            <button type="button" className="chip" onClick={() => { onClose(); onReplay(); }}>Replay</button>
+          </div>
+        )}
         <div className="confirm-row">
           <button type="button" className="chip" onClick={onClose}>Close</button>
         </div>

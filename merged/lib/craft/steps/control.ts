@@ -233,7 +233,7 @@ class Keep extends Step {
       const w0 = 20 / (0.7 + 0.32 * a.mass);
       this.vx += (w0 * w0 * (tx - this.px) - 2 * w0 * this.vx) * dt; this.vy += (w0 * w0 * (ty - this.py) - 2 * w0 * this.vy) * dt;
       this.px += this.vx * dt; this.py += this.vy * dt;
-      this.px = clamp(this.px, a.r, c.w - a.r); this.py = clamp(this.py, a.r, c.h - a.r);
+      this.px = clamp(this.px, c.x0 + a.r, c.x0 + c.w - a.r); this.py = clamp(this.py, c.y0 + a.r, c.y0 + c.h - a.r);
       a.x = this.px; a.y = this.py; a.z = lerp(a.z, on ? 8 : 0, Math.min(1, dt * 10));
       this.inside = dist(this.px, this.py, this.zx, this.zy) < this.zr;
     } else {

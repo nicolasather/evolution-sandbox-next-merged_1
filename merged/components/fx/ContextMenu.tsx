@@ -52,7 +52,7 @@ export function ContextMenu({
   return (
     <div ref={ref} className="ctxmenu" role="menu" aria-label={`Actions for ${n.n}`} style={{ left: x, top: y }}>
       <p className="ctxmenu-title mono">{n.n}</p>
-      <button type="button" role="menuitem" onClick={() => act(onOpen)}>Open</button>
+      <button type="button" role="menuitem" onClick={() => act(onOpen)}>Inspect</button>
       <button type="button" role="menuitem" onClick={() => act(onFindInGraph)}>Find in graph</button>
       <button type="button" role="menuitem" onClick={() => act(onPlace)}>Place on bench</button>
     </div>

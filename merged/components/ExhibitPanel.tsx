@@ -79,8 +79,8 @@ export function ExhibitPanel({
 }: {
   engine: Engine;
   node: Discovery | null;
-  /** Drawer (graph, archive) or sheet (phone) is showing. Beside the bench the
-   *  panel is a plain column and ignores this. */
+  /** The drawer (a bottom sheet on a phone) is showing. It starts closed and
+   *  takes no room until the player asks for it. */
   open: boolean;
   onOpen: (id: string) => void;
   onClose: () => void;
@@ -101,7 +101,7 @@ export function ExhibitPanel({
 
   if (!node) {
     return (
-      <aside id="panel" ref={panelRef} className={cn(open && 'open')} aria-label="Exhibit">
+      <aside id="panel" ref={panelRef} className={cn(open && 'open')} aria-label="Exhibit" aria-hidden={!open} inert={!open}>
         <div className="pan-empty">
           <div style={{ width: 52, height: 52, margin: '0 auto 16px', opacity: 0.4 }}>
             <Glyph node={{ id: 'stone', vis: 'cobble', cat: 'material' }} />
@@ -135,7 +135,8 @@ export function ExhibitPanel({
   const unavailable = node.src.filter(sid => sid !== 'source_required' && !engine.db.sources[sid]).length;
 
   return (
-    <aside id="panel" ref={panelRef} className={cn(open && 'open')} aria-label="Exhibit">
+    <aside id="panel" ref={panelRef} className={cn(open && 'open')} aria-label="Exhibit" aria-hidden={!open} inert={!open}
+      role="dialog" aria-modal="false">
       <div className="panel-grab" aria-hidden="true" onClick={onClose} />
       <button ref={closeRef} className="panel-close" aria-label="Close exhibit" onClick={onClose}>
         <svg width="12" height="12" viewBox="0 0 12 12" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">

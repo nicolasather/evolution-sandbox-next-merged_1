@@ -1,9 +1,9 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { heroStone } from '@/lib/glyphs';
+import { heroStone, svg as glyphSvg } from '@/lib/glyphs';
 import { IntroFx } from '@/lib/intro/fx';
-import { TUNNEL_OBJECTS, loadTunnelSprites } from '@/lib/intro/objects';
+import { TUNNEL_OBJECTS, loadTunnelSprites, shortDate } from '@/lib/intro/objects';
 import { getQuality, isPhone, prefersReducedMotion, tunnelDuration } from '@/lib/perf';
 import { sound } from '@/lib/sound';
 import { cn } from '@/lib/utils';
@@ -12,25 +12,32 @@ import type { Db } from '@/lib/types';
 /* ============================================================================
    LANDING — the exhibition's opening, and the time-tunnel that follows it.
 
-   It is one component because it is one continuous shot:
+   It is one component because it is one continuous shot, and the whole shot
+   is 4–6 seconds from the moment Start is pressed:
 
      idle      "HOW DID WE / GET HERE?", dust that leans away from the cursor
      collapse  the title folds into the centre; the dust spirals into a point
-               that becomes a ring — the time hole
-     tunnel    the camera travels forward through history; real discoveries
-               (stone → smartphone) fly through it
-     slow      everything decelerates to a stop
-     flash     a single white breath
-     arrive    silence. One stone. "BEGIN WITH ALMOST NOTHING."
-     fall      the stone drops toward the bench; the world loads in beneath it
-     exit      the curtain lifts
+               that becomes a ring — the time hole                       ~0.5 s
+     tunnel    the camera accelerates toward a vanishing point through soft,
+               out-of-focus light; real discoveries, oldest first — stone
+               tools, pottery, the wheel, metal, machines, the modern world —
+               swing in beside the viewer and are gone behind. Meanwhile the
+               current era's scenery, blurred, comes up behind the streaks
+                                                                          ~2.5–3 s
+     slow      the camera decelerates, the streaks settle, the scenery comes
+               into focus; the first stone appears: "Begin with almost
+               nothing."                                                  ~0.8 s
+     fall      the stone drops onto the ground it will be worked on      ~0.6 s
+     exit      the curtain lifts; nothing black in between               ~0.45 s
 
-   Returning players get CONTINUE TIMELINE (no tunnel) and, quietly, a way to
-   replay the journey. Reduced motion replaces the whole thing with a short
-   fade. Any click, Space or Escape during the film skips to the arrival.
+   Skip is immediate: any click, Space, Enter, Escape or the Skip button drops
+   the stone on the scenery on the very next frame. Returning players get
+   CONTINUE (no film at all, straight back in) and can replay the journey from
+   here or from the shortcuts list. Reduced motion swaps the whole thing for a
+   still strip of the same objects in the same order, fading in one by one.
    ========================================================================== */
 
-type Phase = 'idle' | 'collapse' | 'tunnel' | 'slow' | 'flash' | 'arrive' | 'fall' | 'exit' | 'done';
+type Phase = 'idle' | 'collapse' | 'tunnel' | 'slow' | 'reduced' | 'fall' | 'exit' | 'done';
 
 export interface Returning {
   /** Name of the furthest era reached. */
@@ -57,12 +64,23 @@ interface Props {
   onDone?: () => void;
   /** Where the stone should land, in viewport px. */
   getBenchTarget?: () => { x: number; y: number } | null;
+  /** Bumped by the player (shortcuts list) to play the journey again over the running game. */
+  replay?: number;
 }
 
-const SKIPPABLE: Phase[] = ['collapse', 'tunnel', 'slow', 'flash'];
+const SKIPPABLE: Phase[] = ['collapse', 'tunnel', 'slow', 'reduced'];
+
+/** Set on <html> while the film runs: the scenery behind it is blurred, then comes into focus. */
+function setFilm(v: 'tunnel' | 'clear' | null) {
+  const el = document.documentElement;
+  if (v) {
+    el.dataset.film = v;
+    if (getQuality() === 'low' || isPhone()) el.dataset.lowfx = ''; else delete el.dataset.lowfx;
+  } else { delete el.dataset.film; delete el.dataset.lowfx; }
+}
 
 export function Landing({
-  db, gone, resumedCount, onBegin, returning, onEnter, onLanded, onDone, getBenchTarget,
+  db, gone, resumedCount, onBegin, returning, onEnter, onLanded, onDone, getBenchTarget, replay = 0,
 }: Props) {
   const routes = db.nodes.reduce((a, n) => a + (n.rec?.length || 0), 0);
   const [phase, setPhase] = useState<Phase>('idle');
@@ -110,26 +128,54 @@ export function Landing({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => () => { clearTimers(); stopSound.current(); }, [clearTimers]);
+  useEffect(() => () => { clearTimers(); stopSound.current(); setFilm(null); }, [clearTimers]);
 
   /* ── the film ─────────────────────────────────────────────────────── */
 
-  const fall = useCallback(() => {
-    if (phaseRef.current !== 'arrive') return;
-    go('fall');
+  const replaying = useRef(false);
+  const entered = useRef(false);
+
+  /** The world starts appearing beneath the film (once). Not on a replay: it is already there. */
+  const enterWorld = useCallback(() => {
+    if (entered.current || replaying.current) return;
+    entered.current = true;
     cb.current.onEnter?.(true);
+  }, []);
+
+  /** The curtain lifts. */
+  const finish = useCallback((ms: number) => {
+    setFilm('clear');
+    go('exit');
+    later(() => { go('done'); setFilm(null); fxRef.current?.stop(); cb.current.onDone?.(); }, ms);
+  }, [go, later]);
+
+  /** The stone is on the ground: hand over to the game. */
+  const land = useCallback((x: number, y: number, exitMs: number) => {
+    if (!replaying.current) { cb.current.onLanded?.(x, y); sound.sfx('stone'); }
+    finish(exitMs);
+  }, [finish]);
+
+  const target = useCallback(
+    () => cb.current.getBenchTarget?.() ?? { x: window.innerWidth * 0.5, y: window.innerHeight * 0.55 },
+    [],
+  );
+
+  /** The stone drops from where it appeared to where it will be worked. */
+  const fall = useCallback(() => {
+    if (phaseRef.current !== 'slow' && phaseRef.current !== 'reduced') return;
+    const t = tunnelDuration(getQuality());
+    enterWorld();
+    // a replay has no stone to drop: the bench already holds the player's work
+    if (replaying.current) { finish(t.exit); return; }
+    // reduced motion: nothing falls — the stone is simply there when the curtain lifts
+    if (prefersReducedMotion()) { const to0 = target(); land(to0.x, to0.y, t.exit); return; }
+    go('fall');
     const el = stoneRef.current;
-    const target = cb.current.getBenchTarget?.() ?? { x: window.innerWidth * 0.5, y: window.innerHeight * 0.55 };
-    const finish = () => {
-      cb.current.onLanded?.(target.x, target.y);
-      sound.sfx('stone');
-      go('exit');
-      later(() => { go('done'); cb.current.onDone?.(); }, 760);
-    };
-    if (!el || typeof el.animate !== 'function') { later(finish, 400); return; }
+    const to = target();
+    if (!el || typeof el.animate !== 'function') { later(() => land(to.x, to.y, t.exit), 200); return; }
     const r = el.getBoundingClientRect();
-    const dx = target.x - (r.left + r.width / 2);
-    const dy = target.y - (r.top + r.height / 2);
+    const dx = to.x - (r.left + r.width / 2);
+    const dy = to.y - (r.top + r.height / 2);
     const s = Math.min(1, 96 / Math.max(48, r.width));
     const a = el.animate([
       { transform: 'translate3d(0,0,0) scale(1) rotate(0deg)', offset: 0 },
@@ -137,74 +183,100 @@ export function Landing({
       { transform: `translate3d(${dx}px, ${dy}px, 0) scale(${s}) rotate(28deg)`, offset: 0.86 },
       { transform: `translate3d(${dx}px, ${dy - 8}px, 0) scale(${s * 1.04}) rotate(30deg)`, offset: 0.93 },
       { transform: `translate3d(${dx}px, ${dy}px, 0) scale(${s}) rotate(28deg)`, offset: 1 },
-    ], { duration: 820, easing: 'cubic-bezier(.55,.05,.85,.45)', fill: 'forwards' });
-    a.onfinish = finish;
-  }, [go, later]);
+    ], { duration: t.fall, easing: 'cubic-bezier(.55,.05,.85,.45)', fill: 'forwards' });
+    a.onfinish = () => land(to.x, to.y, t.exit);
+  }, [go, later, enterWorld, finish, land, target]);
 
-  const arrive = useCallback(() => {
+  /** Deceleration: the streaks settle, the scenery comes into focus, the stone appears. */
+  const settle = useCallback(() => {
+    const fx = fxRef.current;
+    const t = tunnelDuration(getQuality());
     stopSound.current();
-    fxRef.current?.fadeOut(500);
-    go('arrive');
-    const lite = isPhone();
-    // after the line has been read, the stone falls
-    later(() => fall(), lite ? 2100 : 2900);
+    go('slow');
+    setFilm('clear');
+    if (fx) {
+      fx.onModeEnd = m => { if (m === 'slow') { fx.still(); fall(); } };
+      fx.slow(t.slow);
+      fx.fadeOut(t.slow * 0.92);
+    } else later(fall, t.slow);
   }, [go, later, fall]);
 
   const startTunnel = useCallback(async () => {
     const fx = fxRef.current;
-    if (!fx) { arrive(); return; }
-    await Promise.race([spritesReady.current, new Promise<void>(r => window.setTimeout(r, 700))]);
+    if (!fx) { settle(); return; }
+    await Promise.race([spritesReady.current, new Promise<void>(r => window.setTimeout(r, 500))]);
     if (phaseRef.current !== 'collapse') return;
     const { tunnel } = tunnelDuration(getQuality());
     const lite = isPhone() || getQuality() === 'low';
     go('tunnel');
+    setFilm('tunnel');
+    enterWorld();
     fx.tunnel(tunnel, TUNNEL_OBJECTS.filter(o => !lite || o.lite));
     stopSound.current = sound.tunnel(tunnel / 1000);
-  }, [arrive, go]);
+  }, [settle, go, enterWorld]);
 
-  const begin = useCallback((journey: boolean) => {
+  const begin = useCallback((journey: boolean, again = false) => {
     if (phaseRef.current !== 'idle') return;
     onBegin();
     sound.unlock();
+    replaying.current = again;
 
     // returning player, straight back in: no film at all
     if (!journey) {
       go('exit');
       cb.current.onEnter?.(false);
-      later(() => { go('done'); cb.current.onDone?.(); }, 700);
+      later(() => { go('done'); fxRef.current?.stop(); cb.current.onDone?.(); }, 480);
       return;
     }
     sound.sfx('begin');
+    entered.current = false;
     const fx = fxRef.current;
     if (prefersReducedMotion() || !fx) {
-      // a short, still version of the same beats
-      go('arrive');
-      later(() => fall(), 1500);
+      // the same objects in the same order, standing still, fading in one by one
+      go('reduced');
+      later(fall, 2300);
       return;
     }
     const { collapse } = tunnelDuration(getQuality());
     go('collapse');
     fx.onModeEnd = m => {
       if (m === 'collapse') void startTunnel();
-      else if (m === 'tunnel') { stopSound.current(); fx.slow(460); }
-      else if (m === 'slow') {
-        fx.still();
-        go('flash');
-        sound.sfx('flash');
-        later(() => arrive(), 520);
-      }
+      else if (m === 'tunnel') settle();
     };
     fx.collapse(collapse);
-  }, [onBegin, go, later, startTunnel, arrive, fall]);
+  }, [onBegin, go, later, startTunnel, settle, fall]);
 
-  /** Any click / Space / Esc during the film jumps to the arrival. */
+  /** Skip is immediate: the film is gone on the next frame and the stone is already on the scenery. */
   const skip = useCallback(() => {
     if (!SKIPPABLE.includes(phaseRef.current)) return;
     clearTimers();
+    stopSound.current();
     const fx = fxRef.current;
-    if (fx) { fx.onModeEnd = null; fx.still(); }
-    arrive();
-  }, [arrive, clearTimers]);
+    if (fx) { fx.onModeEnd = null; fx.still(); fx.fadeOut(120); }
+    const t = tunnelDuration(getQuality());
+    enterWorld();
+    setFilm('clear');
+    const to = target();
+    if (replaying.current) { finish(200); return; }
+    // the stone is already where it belongs; the curtain just lifts
+    land(to.x, to.y, Math.min(t.exit, 320));
+  }, [clearTimers, enterWorld, finish, land, target]);
+
+  /** The player asked to see it again, from inside the game. */
+  const lastReplay = useRef(replay);
+  useEffect(() => {
+    if (replay === lastReplay.current) return;
+    lastReplay.current = replay;
+    if (replay <= 0) return;
+    clearTimers();
+    stopSound.current();
+    const fx = fxRef.current;
+    if (fx) { fx.reset(); fx.start(); }
+    phaseRef.current = 'idle';
+    // a replay is an explicit request from outside: the film restarts in response to it
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    begin(true, true);
+  }, [replay, begin, clearTimers]);
 
   useEffect(() => {
     if (gone) return;
@@ -213,11 +285,10 @@ export function Landing({
       if (SKIPPABLE.includes(p) && (e.key === 'Escape' || e.key === ' ' || e.key === 'Enter')) {
         e.preventDefault(); skip(); return;
       }
-      if (p === 'arrive' && (e.key === 'Escape' || e.key === ' ')) { e.preventDefault(); fall(); }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [gone, skip, fall]);
+  }, [gone, skip]);
 
   /* ── pointer → dust ───────────────────────────────────────────────── */
 
@@ -232,6 +303,13 @@ export function Landing({
     fxRef.current.attract(r.left + r.width / 2, r.top + r.height / 2, 1);
   };
   const hotOff = () => fxRef.current?.release();
+
+  // the still strip: the same real, non-hidden discoveries the tunnel flies past, in the same order
+  const strip = TUNNEL_OBJECTS.filter(o => o.lite).flatMap(o => {
+    const n = db.nodes.find(x => x.id === o.id);
+    if (!n || n.hidden) return [];
+    return [{ id: n.id, name: n.n, date: shortDate(n.date), art: glyphSvg({ id: n.id, vis: n.vis, cat: n.cat }) }];
+  });
 
   const showReturn = resumedCount > 0 && !!returning;
   const facts = [
@@ -312,9 +390,19 @@ export function Landing({
         </span>
       </div>
 
-      {/* the centre of the film: hole label, flash, arrival */}
-      <div className="intro-flash" aria-hidden="true" />
-      <div className="intro-arrive" aria-hidden={phase !== 'arrive' && phase !== 'fall'}>
+      {/* reduced motion: the journey as a still strip, oldest first */}
+      <ol className="intro-strip" aria-label="A journey through time, oldest first" aria-hidden={phase !== 'reduced'}>
+        {strip.map((n, i) => (
+          <li key={n.id} style={{ transitionDelay: `${i * 240}ms` }}>
+            <span className="strip-art" dangerouslySetInnerHTML={{ __html: n.art }} />
+            <span className="strip-name mono">{n.name}</span>
+            {n.date && <span className="strip-date mono">{n.date}</span>}
+          </li>
+        ))}
+      </ol>
+
+      {/* the centre of the film: the first stone and its line */}
+      <div className="intro-arrive" aria-hidden={phase !== 'slow' && phase !== 'fall' && phase !== 'reduced'}>
         <div ref={stoneRef} className="intro-stone" dangerouslySetInnerHTML={{ __html: heroStone() }} />
         <p className="intro-line">
           <span>Begin with</span>

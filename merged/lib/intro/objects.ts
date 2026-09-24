@@ -26,23 +26,30 @@ export interface TunnelObject {
   lite?: boolean;
 }
 
-/** In historical order — stone to smartphone. Lifetimes shorten as the tunnel speeds up. */
+/** In historical order — stone tools, pottery, the wheel, metal, machines, then the modern world.
+ *  Only real, non-hidden discoveries; anything missing from the database is skipped. */
 export const TUNNEL_OBJECTS: TunnelObject[] = [
-  { id: 'stone',          at: 0.04, life: 900, size: 150, far: true, lite: true },
-  { id: 'spear',          at: 0.13, life: 760, size: 170 },
-  { id: 'fire',           at: 0.22, life: 640, size: 160, lite: true },
-  { id: 'pottery',        at: 0.31, life: 560, size: 170 },
-  { id: 'writing',        at: 0.40, life: 460, size: 150, far: true },
-  { id: 'wheel',          at: 0.48, life: 420, size: 200, near: true, lite: true },
-  { id: 'telescope',      at: 0.57, life: 340, size: 170 },
-  { id: 'steam_engine',   at: 0.66, life: 320, size: 200, near: true, lite: true },
-  { id: 'electric_light', at: 0.75, life: 240, size: 160, far: true },
-  { id: 'telephone',      at: 0.82, life: 200, size: 160 },
-  { id: 'computer',       at: 0.88, life: 190, size: 210, near: true, lite: true },
-  { id: 'smartphone',     at: 0.94, life: 160, size: 190, lite: true },
+  { id: 'handaxe',        at: 0.03, life: 1100, size: 150, far: true, lite: true },
+  { id: 'microblade',     at: 0.12, life: 800,  size: 150 },
+  { id: 'pottery',        at: 0.21, life: 700,  size: 170, lite: true },
+  { id: 'wheel',          at: 0.31, life: 560,  size: 200, near: true, lite: true },
+  { id: 'bronze_tools',   at: 0.40, life: 460,  size: 160, far: true },
+  { id: 'steam_engine',   at: 0.50, life: 400,  size: 200, near: true, lite: true },
+  { id: 'locomotive',     at: 0.60, life: 340,  size: 180 },
+  { id: 'electric_light', at: 0.70, life: 290,  size: 160, far: true },
+  { id: 'telephone',      at: 0.78, life: 250,  size: 160 },
+  { id: 'computer',       at: 0.86, life: 220,  size: 210, near: true, lite: true },
+  { id: 'smartphone',     at: 0.93, life: 200,  size: 190, lite: true },
 ];
 
-export interface Sprite { canvas: HTMLCanvasElement; name: string }
+export interface Sprite { canvas: HTMLCanvasElement; name: string; /** A short, real date from the database, or ''. */ date: string }
+
+/** "≈ 1.7 million years ago onward" → "≈ 1.7 million years ago"; unsourced or contested dates give ''. */
+export function shortDate(raw: string | undefined): string {
+  if (!raw || /not yet sourced|contested/i.test(raw)) return '';
+  const cut = raw.split(/[;(]/)[0].replace(/\s+onward.*$/i, '').replace(/\s+at scale.*$/i, '').trim();
+  return cut.length <= 30 ? cut : '';
+}
 
 const SPRITE_PX = 192;
 const STROKE = '#e6e1d8';
@@ -75,7 +82,7 @@ function rasterise(node: GlyphNode): Promise<HTMLCanvasElement | null> {
  * `nodes` is the discovery list; hidden entries are refused even if named above.
  */
 export async function loadTunnelSprites(
-  nodes: (GlyphNode & { n: string; hidden?: true })[],
+  nodes: (GlyphNode & { n: string; date?: string; hidden?: true })[],
 ): Promise<Map<string, Sprite>> {
   const byId = new Map(nodes.map(n => [n.id, n]));
   const out = new Map<string, Sprite>();
@@ -83,7 +90,7 @@ export async function loadTunnelSprites(
     const n = byId.get(o.id);
     if (!n || n.hidden) return;
     const canvas = await rasterise(n);
-    if (canvas) out.set(o.id, { canvas, name: n.n });
+    if (canvas) out.set(o.id, { canvas, name: n.n, date: shortDate(n.date) });
   }));
   return out;
 }

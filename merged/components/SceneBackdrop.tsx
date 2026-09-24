@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { EraId } from '@/lib/types';
+import { sceneState } from '@/lib/scenefx/state';
 
 /* ============================================================================
    SCENE BACKDROP — engraved line-art landscapes behind the craft screen.
@@ -95,6 +96,10 @@ export function SceneBackdrop({ era, active }: { era: EraId; active: boolean }) 
       : shown.front === 'a' ? { a: shown.a, b: target, front: 'b' } : { a: target, b: shown.b, front: 'a' });
   }
 
+  // the pointer-reactive layer needs to know which picture is in front
+  const targetId = target?.id;
+  useEffect(() => { if (targetId) sceneState.id = targetId; }, [targetId]);
+
   // stagger animations whenever a scene is mounted
   useEffect(() => {
     const host = hostRef.current;
@@ -117,6 +122,7 @@ export function SceneBackdrop({ era, active }: { era: EraId; active: boolean }) 
     const tick = () => {
       raf = 0;
       x += (tx - x) * 0.08; y += (ty - y) * 0.08;
+      sceneState.px = x; sceneState.py = y;
       host.querySelectorAll<SVGGElement>('g[data-depth]').forEach(g => {
         const d = parseFloat(g.getAttribute('data-depth') || '0');
         g.style.transform = `translate(${(-x * d * 26).toFixed(2)}px, ${(-y * d * 12).toFixed(2)}px)`;

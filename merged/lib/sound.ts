@@ -47,6 +47,11 @@ export const sound = {
     const m = MATERIAL[name];
     if (m) play(m.id, { vol: (vol ?? 1) * m.vol, rate: m.rate });
   },
+  /** The scenery answering a click: a drop on water, a brush of grass, a puff of dust.
+   *  The caller supplies the variation (pitch, loudness, stereo position). */
+  scene(kind: 'water' | 'grass' | 'dust', o: { vol?: number; rate?: number; pan?: number } = {}) {
+    play(kind === 'water' ? 'plip' : kind === 'grass' ? 'rustle' : 'puff', o);
+  },
   /** The rush of the time tunnel; call the returned function to fade it out. */
   tunnel: tunnelRise,
 };

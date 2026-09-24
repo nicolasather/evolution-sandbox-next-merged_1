@@ -322,8 +322,8 @@ class Assemble extends Step {
       const b = list[idx];
       const row = Math.floor(k / per), col = k % per;
       const cnt = row === rows - 1 ? list.length - per * row : per;
-      b.x = c.w * (0.14 + (0.72 * (col + 0.5)) / Math.max(1, cnt));
-      b.y = Math.min(c.h - b.r - 6, c.cy + S * (2.25 + row * 0.85));
+      b.x = c.x0 + c.w * (0.14 + (0.72 * (col + 0.5)) / Math.max(1, cnt));
+      b.y = Math.min(c.y0 + c.h - b.r - 6, c.cy + S * (2.25 + row * 0.85));
       b.vx = b.vy = 0; b.tx = b.x; b.ty = b.y; b.z = 0;
       b.angle = b.targetAngle = (c.rnd() - 0.5) * 1.2;
       b.grabbable = true; b.locked = false;

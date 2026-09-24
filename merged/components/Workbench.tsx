@@ -45,6 +45,10 @@ interface Props {
   onCombine: (a: string, b: string) => CombineResult;
   /** A new attempt begins: the previous outcome gives way. */
   onBegin: () => void;
+  /** The player asked, on purpose, to read about a piece. Never called by selecting or dragging. */
+  onInspect: (id: string) => void;
+  /** A plain click on the bare scenery: not on a piece, not during a craft, not after a drag. */
+  onScenery?: (clientX: number, clientY: number) => void;
 }
 
 const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
@@ -56,13 +60,15 @@ function hashStr(s: string): number {
   return h >>> 0;
 }
 
-export function Workbench({ engine, active, onCombine, onBegin }: Props) {
+export function Workbench({ engine, active, onCombine, onBegin, onInspect, onScenery }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const bodiesRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const zonesRef = useRef<HTMLDivElement>(null);
   const progRef = useRef<HTMLElement>(null);
+  const selRef = useRef<HTMLDivElement>(null);
+  const selIdRef = useRef<string | null>(null);
   const api = useRef<Api | null>(null);
 
   const [hud, setHud] = useState<Hud | null>(null);
@@ -74,8 +80,10 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
   const instant = useSyncExternalStore(subscribePrefs, instantEnabled, () => false);
 
   // the loop reads the latest props without being torn down by them
-  const latest = useRef({ engine, active, onCombine, onBegin, instant });
-  useEffect(() => { latest.current = { engine, active, onCombine, onBegin, instant }; });
+  const latest = useRef({ engine, active, onCombine, onBegin, onInspect, onScenery, instant });
+  useEffect(() => { latest.current = { engine, active, onCombine, onBegin, onInspect, onScenery, instant }; });
+  const latest2 = useRef(onInspect);
+  useEffect(() => { latest2.current = onInspect; });
   const wakeRef = useRef<() => void>(() => {});
   useEffect(() => { if (active) wakeRef.current(); }, [active]);
   useEffect(() => { wakeRef.current(); }, [instant]);
@@ -108,6 +116,9 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
     let pull: { a: Body; b: Body; t: number } | null = null;
     let cool = 0;
     let sel: Body | null = null;
+    let shown: Body | null = null;
+    /** A press that began on bare scenery — it becomes a scenery click only if it stays a click. */
+    let bgTap: { x: number; y: number; t: number; id: number } | null = null;
     let hover: Body | null = null;
     let lastTap: { body: Body; at: number } | null = null;
     let drag: { body: Body; t0: number; x0: number; y0: number; moved: boolean; lx: number; ly: number; lt: number; vx: number; vy: number } | null = null;
@@ -153,6 +164,39 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       }
     };
 
+    /** The scenery is the workspace. Only interface that is actually showing
+     *  (the inventory, the foot strip) keeps pieces out from under it. */
+    const measurePad = () => {
+      const hr = host.getBoundingClientRect();
+      if (hr.width < 40 || hr.height < 40) return;
+      const pad = { l: 0, t: 0, r: 0, b: 0 };
+      document.querySelectorAll<HTMLElement>('[data-wb-avoid]').forEach(el => {
+        if (el.dataset.wbAvoid === 'off') return;
+        const r = el.getBoundingClientRect();
+        if (r.width < 4 || r.height < 4 || getComputedStyle(el).visibility === 'hidden') return;
+        const cx = (r.left + r.right) / 2 - hr.left, cy = (r.top + r.bottom) / 2 - hr.top;
+        if (r.right < hr.left + 2 || r.left > hr.right - 2 || r.bottom < hr.top + 2 || r.top > hr.bottom - 2) return;
+        if (r.width > hr.width * 0.6) {
+          if (cy < hr.height / 2) pad.t = Math.max(pad.t, r.bottom - hr.top);
+          else pad.b = Math.max(pad.b, hr.bottom - r.top);
+        } else if (cx < hr.width / 2) pad.l = Math.max(pad.l, r.right - hr.left);
+        else pad.r = Math.max(pad.r, hr.right - r.left);
+      });
+      const cap = { l: hr.width * 0.4, r: hr.width * 0.4, t: hr.height * 0.35, b: hr.height * 0.5 };
+      (Object.keys(pad) as (keyof typeof pad)[]).forEach(k => { pad[k] = Math.min(cap[k], Math.round(pad[k])); });
+      if (world.setPad(pad)) { layoutZones(); wake(); }
+      // shared with the floating outcome beside the host
+      const vars = host.parentElement ?? host;
+      vars.style.setProperty('--wb-pl', `${pad.l}px`);
+      vars.style.setProperty('--wb-pr', `${pad.r}px`);
+      vars.style.setProperty('--wb-pt', `${pad.t}px`);
+      vars.style.setProperty('--wb-pb', `${pad.b}px`);
+    };
+    const onLayout = () => measurePad();
+    const onTransEnd = (e: TransitionEvent) => { if ((e.target as HTMLElement | null)?.closest?.('[data-wb-avoid]')) measurePad(); };
+    window.addEventListener('evo:layout', onLayout);
+    document.addEventListener('transitionend', onTransEnd);
+
     const resize = () => {
       const r = host.getBoundingClientRect();
       if (r.width < 40 || r.height < 40) return;
@@ -160,6 +204,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       world.resize(r.width, r.height);
       canvas.width = Math.round(r.width * dpr); canvas.height = Math.round(r.height * dpr);
       canvas.style.width = `${r.width}px`; canvas.style.height = `${r.height}px`;
+      measurePad();
       layoutZones();
       world.paintAll();
       wake();
@@ -467,11 +512,21 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       g.clearRect(0, 0, world.w, world.h);
       g.save();
       world.paintAll();
-      if (sel && world.bodies.includes(sel) && !session) {
-        g.strokeStyle = fx.pal.ochre; g.lineWidth = 1.5; g.globalAlpha = 0.85;
-        g.setLineDash([4, 5]);
-        g.beginPath(); g.arc(sel.x, sel.y - sel.z, sel.r * 1.12, 0, Math.PI * 2); g.stroke();
-        g.setLineDash([]);
+      // the chosen piece is lit by a soft shadow that follows its outline (CSS), not a ring
+      const chosen = sel && world.bodies.includes(sel) && !session ? sel : null;
+      if (chosen !== shown) { shown?.el.removeAttribute('data-sel'); chosen?.el.setAttribute('data-sel', ''); shown = chosen; }
+      const bar = selRef.current;
+      if (bar) {
+        if (chosen) {
+          const cx = world.w / 2, cy = world.h / 2;
+          const sx = cx + (chosen.x - cx) * zoom, sy = cy + (chosen.y - chosen.z - cy) * zoom;
+          const top = sy - chosen.r * zoom - 10;
+          const y = top < 34 ? sy + chosen.r * zoom + 34 : top;
+          const x = clamp(sx, 70, Math.max(70, world.w - 70));
+          bar.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) translate(-50%, -100%)`;
+          if (selIdRef.current !== chosen.itemId) selIdRef.current = chosen.itemId;
+          if (bar.hidden) bar.hidden = false;
+        } else if (!bar.hidden) { bar.hidden = true; selIdRef.current = null; }
       }
       g.globalAlpha = 1;
       session?.draw(g);
@@ -500,14 +555,23 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
 
     const onDown = (e: PointerEvent) => {
       if (e.pointerType === 'mouse' && e.button !== 0) return;
-      if ((e.target as HTMLElement).closest('.wb-tools, .wb-hud button')) return;
+      if ((e.target as HTMLElement).closest('.wb-tools, .wb-hud button, .wb-sel')) return;
       unlockAudio();
       if (resolving) return;
       const p = local(e.clientX, e.clientY);
       host.setPointerCapture?.(e.pointerId);
       if (session) { session.pointerDown(p.x, p.y, e.pointerType as 'mouse' | 'touch' | 'pen'); wake(); return; }
       const b = world.bodyAt(p.x, p.y, q => !q.locked);
-      if (!b) { sel = null; if (e.detail >= 2 && zoom !== 1) { zoom = 1; } wake(); return; }
+      if (!b) {
+        // a click that only lets go of a chosen piece belongs to crafting, not to the scenery
+        const hadChoice = !!sel || !!pull;
+        sel = null;
+        if (e.detail >= 2 && zoom !== 1) { zoom = 1; }
+        bgTap = hadChoice ? null : { x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId };
+        wake();
+        return;
+      }
+      bgTap = null;
       if (pull && (pull.a === b || pull.b === b)) { unlockBoth(pull.a, pull.b); pull = null; }
       world.grab(b, p.x, p.y);
       drag = { body: b, t0: performance.now(), x0: e.clientX, y0: e.clientY, moved: false, lx: p.x, ly: p.y, lt: performance.now(), vx: 0, vy: 0 };
@@ -539,6 +603,12 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
     const onUp = (e: PointerEvent) => {
       host.releasePointerCapture?.(e.pointerId);
       if (session) { session.pointerUp(); wake(); return; }
+      const tap0 = bgTap;
+      bgTap = null;
+      if (tap0 && e.type === 'pointerup' && e.pointerId === tap0.id && !drag && !resolving
+        && performance.now() - tap0.t < 450 && Math.hypot(e.clientX - tap0.x, e.clientY - tap0.y) < 8) {
+        latest.current.onScenery?.(e.clientX, e.clientY);
+      }
       const d = drag;
       if (!d) return;
       drag = null;
@@ -580,6 +650,12 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
         wake();
         return;
       }
+      if (!session && (k === 'i' || k === 'I')) {
+        // Inspect: only ever on purpose, for the piece you are pointing at or have chosen
+        const t = hover ?? sel ?? drag?.body;
+        if (t) { e.preventDefault(); latest.current.onInspect(t.itemId); }
+        return;
+      }
       if (!session && (k === 'r' || k === 'R')) {
         const t = drag?.body ?? hover ?? sel;
         if (t) { world.rotate(t, e.shiftKey ? -Math.PI / 12 : Math.PI / 12); wake(); }
@@ -600,14 +676,16 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
     /* ── the handle the rest of the app uses ──────────────────────── */
 
     const freeSpot = (): { x: number; y: number } => {
-      const xs = [0.5, 0.36, 0.64, 0.24, 0.76, 0.42, 0.58];
+      // anywhere in the free area, spread around its centre — not a fixed square
+      const a = world.area;
+      const xs = [0.5, 0.36, 0.64, 0.24, 0.76, 0.42, 0.58, 0.14, 0.86];
       const ys = [0.5, 0.38, 0.62, 0.3, 0.7];
       const cand: { x: number; y: number }[] = [];
-      for (const fy of ys) for (const fx_ of xs) cand.push({ x: world.w * fx_, y: world.h * fy });
+      for (const fy of ys) for (const fx_ of xs) cand.push({ x: a.x + a.w * fx_, y: a.y + a.h * fy });
       cand.sort(() => Math.random() - 0.5);
       const loose = world.bodies.filter(b => !b.temp);
       for (const c of cand) if (loose.every(b => Math.hypot(b.x - c.x, b.y - c.y) > world.unit * 2.3)) return c;
-      return { x: world.w * (0.3 + Math.random() * 0.4), y: world.h * (0.4 + Math.random() * 0.3) };
+      return { x: a.x + a.w * (0.3 + Math.random() * 0.4), y: a.y + a.h * (0.4 + Math.random() * 0.3) };
     };
 
     const spawn = (id: string, o: SpawnOptions = {}): boolean => {
@@ -640,7 +718,10 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       spawn,
       contains: (x, y) => {
         const r = host.getBoundingClientRect();
-        return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+        if (x < r.left || x > r.right || y < r.top || y > r.bottom) return false;
+        // over the inventory or the foot strip is not "on the scenery"
+        const hit = document.elementFromPoint(x, y);
+        return !hit?.closest('[data-wb-avoid]:not([data-wb-avoid="off"]), .wb-sel');
       },
       element: () => host,
     });
@@ -667,6 +748,8 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       ro?.disconnect();
       if (!ro) window.removeEventListener('resize', resize);
       themeWatch.disconnect();
+      window.removeEventListener('evo:layout', onLayout);
+      document.removeEventListener('transitionend', onTransEnd);
       mq.removeEventListener?.('change', onMq);
       host.removeEventListener('pointerdown', onDown);
       host.removeEventListener('pointermove', onMove);
@@ -695,7 +778,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       className="wb"
       data-craft={hud ? 'on' : 'off'}
       role="application"
-      aria-label="Workbench. Drag two items together to combine them."
+      aria-label="The scenery is your workbench. Drag two things together anywhere to combine them. Press I to read about a piece."
     >
       <div className="wb-stage" ref={stageRef}>
         <div className="wb-zones" ref={zonesRef} aria-hidden="true">
@@ -724,7 +807,13 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
         )}
       </div>
 
-      <div className="wb-tools">
+      <div className="wb-sel" ref={selRef} hidden>
+        <button type="button" className="wb-inspect mono"
+          onClick={() => { const id = selIdRef.current; if (id) latest2.current(id); }}
+          aria-label="Inspect: read about this piece">Inspect</button>
+      </div>
+
+      <div className="wb-tools" data-wb-avoid="off">
         {hud && rotatable && (
           <button type="button" className="chip" onClick={() => api.current?.rotate()} aria-label="Rotate the piece (R)">Rotate</button>
         )}
