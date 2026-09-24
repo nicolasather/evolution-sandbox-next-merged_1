@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import { StaticPage, DocLink } from '@/components/StaticPage';
-import db from '@/data/db.json';
-import type { Db } from '@/lib/types';
+import { playDb } from '@/lib/processing';
 import { formatDate } from '@/lib/format';
 
-const DB = db as unknown as Db;
+const DB = playDb;
 
 export const metadata: Metadata = {
   title: 'How this was built',
@@ -25,7 +24,7 @@ export default function MethodPage() {
   const generalSources = sources.length - topicSources;
   const cautions = DB.nodes.filter(n => n.caution).length;
   const alt = DB.nodes.filter(n => (n.rec?.length ?? 0) > 1).length;
-  const recipes = DB.nodes.reduce((a, n) => a + (n.rec?.length ?? 0), 0);
+  const recipes = DB.nodes.reduce((a, n) => a + (n.rec?.length ?? 0) + (n.via?.length ?? 0), 0);
   const sourced = DB.counts.total - DB.counts.sourceRequired;
 
   return (
@@ -95,8 +94,8 @@ export default function MethodPage() {
             discovery nobody can reach is a dead entry, and it is invisible on inspection.
           </li>
           <li>
-            <b>an ambiguous pair.</b> Two recipes producing different results from the same pair
-            of ingredients would make the engine non-deterministic. The first run of this check
+            <b>an ambiguous set.</b> Two recipes producing different results from the same set
+            of ingredients — or one recipe that is a strict subset of another — would make the engine non-deterministic. The first run of this check
             found six such collisions. It was later bypassed when 102 Stone Age entries were
             added straight into the built file: 34 pairs collided again, and only 50 of the
             entries could actually be reached. In September 2026 every pair was made unique
@@ -134,10 +133,11 @@ export default function MethodPage() {
         <p>
           The game never lists recipes. An undiscovered entry shows no name, no description and
           no ingredients — only its era and how far away it is. When a combination fails, the
-          game may say which of the two items still has something to give, never what it
-          gives. Hints come in three steps — a direction, then the idea, then one ingredient —
-          and each step opens only after a couple more tries of your own. The other half is
-          always left for you to find.
+          game may say why — a piece that does not belong, a material that is not ready, a
+          recipe that needs more components — never what it makes. Hints come in five steps: the
+          idea, a direction, the kind of work, how many components, and finally the roles they
+          play. Each step opens only after a couple more tries of your own, and the last one
+          still never names an ingredient.
         </p>
         <p>
           Recipes are a game&rsquo;s shorthand for how ideas depend on each other. Many entries

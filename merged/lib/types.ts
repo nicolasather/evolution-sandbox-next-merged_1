@@ -13,8 +13,16 @@ export type Rarity = 'common' | 'uncommon' | 'rare' | 'hidden';
 
 export type StoneAgeTier = 'olduvai' | 'middle' | 'late';
 
-/** An unordered pair of ingredient ids that yields a discovery. */
-export type Recipe = [string, string];
+/** An unordered set of 2–5 ingredient ids that yields a discovery. Repeats are allowed
+ *  (two stones); order never matters. Base data authors pairs; the processing layer
+ *  (data/processing.json, lib/processing/overlay.ts) can raise them to 3, 4 or 5. */
+export type Recipe = string[];
+
+/** The five things a hand can do to one resource. Semantics live in lib/processing/actions.ts. */
+export type ActionId = 'brush' | 'smash' | 'cut' | 'separate' | 'dig';
+
+/** A discovery that is made by working ONE resource with an action (Stone → Smash → …). */
+export interface ProcessRoute { from: string; action: ActionId }
 
 export interface Discovery {
   id: string;
@@ -57,6 +65,11 @@ export interface Discovery {
   uses: string[];
   /** Stone Age tier classification (olduvai/middle/late). */
   stone_age_tier?: StoneAgeTier;
+  /** Derived by the processing layer: ways to make this by working a single resource. */
+  via?: ProcessRoute[];
+  /** A worked state of a resource (Cracked Stone, Stick, Clay…): held and used like a
+   *  discovery, but never counted, numbered or drawn in the archive, graph or timeline. */
+  state?: true;
 }
 
 export interface Source {
@@ -100,6 +113,10 @@ export interface Db {
   nodes: Discovery[];
   counts: { total: number; core: number; hidden: number; sourceRequired: number };
   stone_age_tiers?: Record<StoneAgeTier, StoneAgeTierInfo>;
+  /** Worked and offered forms of resources (Stick, Clay…). Held like discoveries, never counted. */
+  states?: Discovery[];
+  /** The processing layer's run-time tables. Absent in the bare database. */
+  proc?: import('./processing/types').Processing;
 }
 
 /** What an item still has to give: something makeable now, something later, or nothing. */
@@ -116,21 +133,82 @@ export interface TierGate {
   prevName: string;
 }
 
+/** Why a set of things on the bench made nothing — never a name, never a recipe. */
+export type FailKind =
+  | 'same'             // two of one thing
+  | 'far'              // separated by most of history
+  | 'wrong_state'      // the idea is right, the material is not ready
+  | 'needs_processing' // this may work once one material is worked first
+  | 'incomplete'       // on the right road, but more components are needed
+  | 'irrelevant'       // all but one of these belong; one does not
+  | 'related'          // these are related, just not like this
+  | 'none';
+
+export interface FailInfo {
+  kind: FailKind;
+  /** The short line shown on the bench. */
+  message: string;
+  /** For 'incomplete': how many more pieces the nearest recipe would take (0 when it may not be said). */
+  missing: number;
+  /** For 'irrelevant' / 'wrong_state' / 'needs_processing': the id of the piece on the bench the message is about. */
+  about: string | null;
+  /** For 'needs_processing': the family of action that may help (never a recipe). */
+  action: ActionId | null;
+}
+
+interface Made {
+  node: Discovery;
+  /** Everything that went into it (a single piece for a process). */
+  items: Discovery[];
+  /** First two, for callers that still speak in pairs. */
+  a: Discovery; b: Discovery;
+  /** Worked from ONE resource with an action rather than assembled. */
+  process?: ProcessRoute;
+  /** A result already held, reached by a way not used before. */
+  newRoute: boolean;
+  routes: { found: number; total: number };
+  /** Tiers this discovery opened. */
+  opened: StoneAgeTier[];
+  /** The hint target was just found after at least one hint. */
+  solvedHint: boolean;
+  /** Ways the player got right while their tier was still closed, which now work. */
+  reopened: string[][];
+  /** New materials the world offered as a consequence (Soil after the first Stick). */
+  unlocked: Discovery[];
+}
+
 export type CombineResult =
+  | ({ status: 'new' | 'known' } & Made)
+  | { status: 'fail'; message: string; nudge: string | null; repeat: boolean; a: Discovery; b: Discovery; items: Discovery[]; info: FailInfo }
+  | { status: 'tier_locked'; message: string; a: Discovery; b: Discovery; items: Discovery[]; requiredTier: StoneAgeTier; gate: TierGate }
+  | { status: 'error' };
+
+/** The answer to working one resource with one action. */
+export type ProcessResult =
   | {
-      status: 'new' | 'known'; node: Discovery; a: Discovery; b: Discovery;
-      /** A result already held, reached by a pair not used before. */
-      newRoute: boolean;
-      routes: { found: number; total: number };
-      /** Tiers this discovery opened. */
-      opened: StoneAgeTier[];
-      /** The hint target was just found after at least one hint. */
-      solvedHint: boolean;
-      /** Pairs the player got right while their tier was still closed, which now work. */
-      reopened: [string, string][];
+      status: 'done';
+      action: ActionId;
+      from: Discovery;
+      /** Everything the work yielded, discoveries and states alike, in order. */
+      outputs: Discovery[];
+      /** One combine-shaped result for each yield that is a discovery (new or already known). */
+      discoveries: Extract<CombineResult, { status: 'new' | 'known' }>[];
+      /** States the player did not hold before. */
+      fresh: Discovery[];
+      unlocked: Discovery[];
+      message: string;
     }
-  | { status: 'fail'; message: string; nudge: string | null; repeat: boolean; a: Discovery; b: Discovery }
-  | { status: 'tier_locked'; message: string; a: Discovery; b: Discovery; requiredTier: StoneAgeTier; gate: TierGate }
+  | {
+      status: 'nothing';
+      action: ActionId;
+      from: Discovery;
+      /** Why: `material` (wrong for this material), `tool` (something is missing), `spent` (worked out). */
+      reason: 'material' | 'tool' | 'spent';
+      message: string;
+      /** A second, gentler line — for `tool`, what kind of thing is missing. */
+      note: string | null;
+    }
+  | { status: 'tier_locked'; action: ActionId; from: Discovery; message: string; gate: TierGate }
   | { status: 'error' };
 
 export interface Stats {
@@ -151,10 +229,12 @@ export interface TierProgress {
 
 export type ViewId = 'work' | 'graph' | 'arch' | 'time';
 
-/** What the hint line shows. Level 1 is a direction, 2 the idea, 3 one ingredient — never both. */
+/** What the hint line shows. Five levels, never a recipe until the last, and then only in roles:
+ *  1 conceptual · 2 directional · 3 the kind of work · 4 how many components · 5 what kind of pieces. */
+export type HintLevel = 0 | 1 | 2 | 3 | 4 | 5;
 export interface HintView {
   targetId: string | null;
-  level: 0 | 1 | 2 | 3;
+  level: HintLevel;
   text: string;
   /** Inventory item to mark (level 3 only). */
   highlightId: string | null;
@@ -166,4 +246,6 @@ export interface HintView {
   custom: boolean;
   /** Enough misses in a row that the bench should offer a nudge. */
   stuck: boolean;
+  /** Action the hint leans on at level 3+ (for the hand animation on the bench). */
+  action: ActionId | null;
 }

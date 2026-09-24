@@ -101,3 +101,154 @@
   .wb-body,.wb-lbl,.wb-zone,.wb-prog i{transition:none}
   .wb-cue.show{animation:none}
 }
+
+/* ============================================================================
+   THE HANDS — the five ways one thing can be worked, the ground they are done
+   on, the quiet note the ground speaks in, and the pieces flying home.
+   ========================================================================== */
+
+/* two patches of ground: one to work a single thing on, one to bring things together.
+   No boxes: a faint ring of dust, almost nothing until the hand or a piece is over it. */
+.wb-patch{position:absolute;border-radius:50%;pointer-events:none;opacity:.55;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--bone) 7%,transparent),transparent 86%);
+  transition:opacity .3s,background .3s}
+.wb-patch::after{content:attr(data-label);position:absolute;left:0;right:0;bottom:6%;text-align:center;
+  font:500 9.5px/1 var(--mono,ui-monospace,monospace);letter-spacing:.16em;text-transform:uppercase;color:var(--bone-4);opacity:0;transition:opacity .3s}
+.wb[data-mode]:not([data-mode=""]) .wb-patch[data-p="processing"]{opacity:1;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 15%,transparent),transparent 86%)}
+.wb[data-mode]:not([data-mode=""]) .wb-patch[data-p="processing"]::after{opacity:1}
+.wb-patch.lit{opacity:1;background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 20%,transparent),transparent 86%)}
+.wb-patch.lit::after{opacity:1}
+
+/* a hand held up: the pointer becomes the drawn hand, so the real cursor goes */
+.wb[data-mode]:not([data-mode=""]){cursor:none}
+.wb[data-mode]:not([data-mode=""]) .wb-body{cursor:none}
+
+/* the dock — five hands, one line, no card */
+.wb-dock{position:absolute;z-index:520;display:flex;gap:2px;align-items:center;pointer-events:auto;
+  padding:2px;flex-wrap:nowrap}
+.wb-act{display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:52px;padding:4px 6px 3px;
+  color:var(--bone-3);background:transparent;border:1px solid transparent;
+  font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  transition:color .18s,border-color .18s,background .18s,transform .18s}
+.wb-act:hover{color:var(--bone);transform:translateY(-1px)}
+.wb-act[aria-pressed="true"]{color:var(--bone);border-color:var(--ochre);background:var(--ochre-lo)}
+.wb-act .wb-hand-icon{display:block;color:inherit}
+.wb-act[data-hint]:not([aria-pressed="true"]){animation:wbActHint 1.8s ease-in-out infinite}
+@keyframes wbActHint{0%,100%{color:var(--bone-3)}50%{color:var(--ochre);transform:translateY(-2px)}}
+.wb-act.wb-do{flex-direction:row;min-width:0;padding:6px 10px;margin-left:6px;border-color:var(--line-2);color:var(--bone-2)}
+.wb-act.wb-do:hover{border-color:var(--ochre)}
+
+/* what the ground says — a short line beside the things, a second gentler line under it */
+.wb-note{position:absolute;left:50%;top:14px;transform:translateX(-50%);margin:0;z-index:510;max-width:min(520px,90%);
+  display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;pointer-events:none;
+  font-size:13px;line-height:1.45;color:var(--bone);animation:wbNote .32s ease-out;
+  text-shadow:0 0 10px var(--ink-0),0 0 3px var(--ink-0)}
+.wb-note em{font-style:normal;font-size:10.5px;letter-spacing:.06em;color:var(--bone-3);text-transform:none}
+.wb-note-good em{color:var(--ochre)}
+.wb-note-warn{color:var(--bone-2)}
+@keyframes wbNote{from{opacity:0;transform:translate(-50%,-4px)}to{opacity:1;transform:translate(-50%,0)}}
+#bench .wb-note{top:calc(var(--wb-pt,0px) + 14px)}
+
+/* two small actions beside the chosen piece */
+.wb-sel{display:flex;gap:4px}
+
+/* a piece going home: the same drawing, drawn on top of everything, on its way to the inventory */
+.wb-fly{position:fixed;left:0;top:0;z-index:2000;pointer-events:none;will-change:transform,opacity}
+.wb-fly .wb-art{position:absolute;inset:0;display:grid;place-items:center;color:var(--bone);
+  filter:drop-shadow(0 0 8px color-mix(in srgb,var(--ochre) 55%,transparent))}
+.wb-fly .wb-art .g{width:92%;height:92%;overflow:visible}
+
+/* and the entry it lands on answers */
+#inv .item[data-return]{animation:invReturn .7s ease-out}
+@keyframes invReturn{0%{transform:scale(1)}28%{transform:scale(1.16);
+  box-shadow:0 0 0 1px var(--ochre),0 0 18px color-mix(in srgb,var(--ochre) 55%,transparent)}100%{transform:scale(1)}}
+
+/* the bodies: things that are about to work on their own */
+.wb-body[data-hold] .wb-art{filter:drop-shadow(0 0 6px color-mix(in srgb,var(--ochre) 45%,transparent))}
+.wb-body[data-unstable]{animation:wbShiver .16s linear infinite}
+.wb-body[data-eager] .wb-art{filter:drop-shadow(0 0 10px color-mix(in srgb,var(--ochre) 70%,transparent))}
+.wb-body[data-work] .wb-art{filter:drop-shadow(0 0 4px var(--ochre))}
+@keyframes wbShiver{0%{translate:0 0}25%{translate:.7px -.5px}50%{translate:-.6px .5px}75%{translate:.5px .6px}100%{translate:0 0}}
+
+@media (max-width:900px){
+  .wb-act{min-width:44px;min-height:44px;padding:5px 4px;justify-content:center}
+  /* icons only on a phone: the names stay for screen readers and for the note that opens with each hand */
+  .wb-act:not(.wb-do) span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .wb-act .wb-hand-icon{width:30px!important;height:30px!important}
+  .wb-act.wb-do{min-height:44px;padding:6px 10px;margin-left:2px;font-size:9.5px;letter-spacing:.08em}
+  .wb-note{font-size:12px}
+  .wb-patch::after{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .wb-act,.wb-patch,.wb-patch::after{transition:none}
+  .wb-act[data-hint]:not([aria-pressed="true"]){animation:none;color:var(--ochre)}
+  .wb-note{animation:none}
+  .wb-body[data-unstable]{animation:none}
+  #inv .item[data-return]{animation:none;box-shadow:0 0 0 1px var(--ochre)}
+}
+
+/* the volume: a hairline slider beside the Sound switch */
+.wb-vol{-webkit-appearance:none;appearance:none;width:64px;height:16px;background:transparent;align-self:center;margin:0 2px;cursor:pointer}
+.wb-vol::-webkit-slider-runnable-track{height:1px;background:var(--line-3)}
+.wb-vol::-moz-range-track{height:1px;background:var(--line-3)}
+.wb-vol::-webkit-slider-thumb{-webkit-appearance:none;width:9px;height:9px;margin-top:-4px;border-radius:50%;background:var(--bone-2);border:0}
+.wb-vol::-moz-range-thumb{width:9px;height:9px;border-radius:50%;background:var(--bone-2);border:0}
+.wb-vol:hover::-webkit-slider-thumb,.wb-vol:focus-visible::-webkit-slider-thumb{background:var(--ochre)}
+.wb-vol:focus-visible{outline:1px solid var(--ochre);outline-offset:2px}
+@media (max-width:900px){.wb-vol{width:56px;height:34px}}
+
+/* ============================================================================
+   IDLE LIFE — every kind of thing has its own way of sitting still. Slow,
+   small, transform-only, out of phase from piece to piece; stops the moment
+   a piece is held, worked or about to react, and for anyone who asked for
+   less motion.
+   ========================================================================== */
+.wb-body:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]):not(.wb-out) .wb-art .g{
+  transform-origin:50% 62%;animation-duration:var(--idle-d,5s);animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;animation-delay:var(--idle-o,0s)}
+.wb-body:nth-child(2n){--idle-o:-1.7s}
+.wb-body:nth-child(3n){--idle-o:-3.1s;--idle-d:5.6s}
+.wb-body:nth-child(5n){--idle-o:-.6s;--idle-d:4.4s}
+
+.wb-body[data-mat="stone"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleStone;--idle-d:9s}
+.wb-body[data-mat="wood"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleWood;--idle-d:6s}
+.wb-body[data-mat="bone"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleBone;--idle-d:7s}
+.wb-body[data-mat="fibre"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleFibre;--idle-d:3.4s}
+.wb-body[data-mat="metal"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleMetal;--idle-d:6.5s}
+.wb-body[data-mat="earth"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleEarth;--idle-d:8s}
+.wb-body[data-mat="glass"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleGlass;--idle-d:7.5s}
+.wb-body[data-mat="liquid"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleLiquid;--idle-d:2.6s}
+.wb-body[data-mat="fire"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleFire;--idle-d:.9s;animation-direction:alternate}
+.wb-body[data-mat="tool"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleTool;--idle-d:6s}
+.wb-body[data-mat="structure"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleStructure;--idle-d:10s}
+.wb-body[data-mat="machine"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleMachine;--idle-d:.42s;animation-timing-function:steps(2,end)}
+.wb-body[data-mat="energy"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleEnergy;--idle-d:1.9s}
+.wb-body[data-mat="signal"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleSignal;--idle-d:2.8s;animation-timing-function:steps(1,end)}
+.wb-body[data-mat="idea"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleIdea;--idle-d:4.2s}
+.wb-body[data-mat="life"]:not(.wb-part):not(.wb-held):not([data-work]):not([data-unstable]) .wb-art .g{animation-name:idleLife;--idle-d:3.8s}
+
+@keyframes idleStone{0%,86%,100%{transform:none;filter:none}90%{transform:scale(1.012) rotate(.4deg);filter:brightness(1.08)}95%{transform:scale(.996)}}
+@keyframes idleWood{0%,100%{transform:rotate(0)}30%{transform:rotate(-.9deg)}62%{transform:rotate(.7deg)}}
+@keyframes idleBone{0%,70%,100%{transform:rotate(0)}78%{transform:rotate(-1.6deg)}88%{transform:rotate(1.2deg)}}
+@keyframes idleFibre{0%,100%{transform:rotate(-2.4deg) skewX(1.6deg)}50%{transform:rotate(2.6deg) skewX(-1.8deg)}}
+@keyframes idleMetal{0%,80%,100%{filter:none;transform:none}88%{filter:brightness(1.22) contrast(1.05);transform:scale(1.01)}}
+@keyframes idleEarth{0%,100%{transform:none}55%{transform:translateY(.8px) scaleY(.992)}}
+@keyframes idleGlass{0%,100%{opacity:1}45%{opacity:.86}60%{opacity:1;filter:brightness(1.12)}}
+@keyframes idleLiquid{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,.975)}}
+@keyframes idleFire{0%{transform:scale(1,1) rotate(-.6deg)}100%{transform:scale(.98,1.07) rotate(.8deg)}}
+@keyframes idleTool{0%,72%,100%{transform:none}82%{transform:translateY(-2px) rotate(-1.4deg)}92%{transform:translateY(0) rotate(.5deg)}}
+@keyframes idleStructure{0%,100%{transform:none}50%{transform:translateY(-.6px)}}
+@keyframes idleMachine{0%{transform:translate(0,0)}50%{transform:translate(.5px,-.4px)}}
+@keyframes idleEnergy{0%,100%{transform:scale(1);filter:none}50%{transform:scale(1.045);filter:brightness(1.15)}}
+@keyframes idleSignal{0%,58%{opacity:1}60%,66%{opacity:.62}68%,100%{opacity:1}}
+@keyframes idleIdea{0%,100%{transform:translateY(1px)}50%{transform:translateY(-3.5px)}}
+@keyframes idleLife{0%,100%{transform:scale(1)}50%{transform:scale(1.03,1.02)}}
+
+@media (prefers-reduced-motion:reduce){
+  .wb-body .wb-art .g{animation:none!important}
+}
+
+/* the dock sits over busy scenery: give the hands and their names a quiet ground */
+#bench .wb-act:not([aria-pressed="true"]){background:color-mix(in srgb,var(--ink-0) 38%,transparent);backdrop-filter:blur(3px)}
+#bench .wb-act{text-shadow:0 0 8px var(--ink-0),0 0 3px var(--ink-0)}

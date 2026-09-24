@@ -271,6 +271,7 @@ export function Sandbox() {
               hint={hint}
               hintError={s.hintError}
               onCombine={s.combineOnBench}
+              onProcess={s.processOnBench}
               onBegin={s.dismissResult}
               onOpen={openExhibit}
               onUse={id => s.place(id)}

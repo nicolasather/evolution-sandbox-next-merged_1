@@ -10,6 +10,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import ART_JSON from '@/data/art.json';
+import { EXTRA_ART } from './processing/art';
 
 /** Hand-drawn plate for every discovery, keyed by node id (data/art.json).
  *  One unique line drawing per entry, in the same 100x100 / currentColor
@@ -598,7 +599,7 @@ const FALLBACK: Record<string, (id: string) => Spec> = {
 };
 
 function build(node: GlyphNode): string {
-  const drawn = ART[node.id];
+  const drawn = EXTRA_ART[node.id] ?? ART[node.id];
   if (drawn) return drawn;
   const spec = S[node.vis] || (FALLBACK[node.cat] || FALLBACK.material)(node.id);
   return spec.map(([fn, args]) => (P[fn] ? P[fn](args || {}) : '')).join('');

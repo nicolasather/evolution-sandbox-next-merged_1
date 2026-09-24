@@ -30,13 +30,29 @@ export interface WorldHooks {
   onWall(b: Body, speed: number): void;
   onLand(b: Body, speed: number): void;
   onZone(b: Body, from: ZoneId | null, to: ZoneId | null): void;
+  /** A body was hit hard enough to fly out through the boundary and has overshot; it is the hook's now. */
+  onKnockOut?(b: Body, vx: number, vy: number): void;
+  /** A crowded bench wants to put this idle piece away. If given, the hook does it (with a flight home). */
+  onEvict?(b: Body): void;
 }
+
+/** A soft ground mark: where one thing is worked, and where things are put together. */
+export type PatchId = 'processing' | 'assembly';
+export interface Patch { cx: number; cy: number; rx: number; ry: number }
 
 export interface ZoneRect { x: number; y: number; w: number; h: number }
 
 const G = 2600;               // px/s² while a body is falling to the bench
 const LIFT = 9;               // how high a held body rides
-const MAX_BODIES = 9;
+const MAX_BODIES = 12;
+
+/** How fast (px/s) a fresh knock must carry a body into a wall to send it through. Heavy and hard things go
+ *  easily; light and soft things never do — a fibre just bounces, an idea just drifts. */
+const KNOCK: Partial<Record<MaterialId, number>> = {
+  stone: 430, metal: 400, earth: 520, tool: 520, machine: 540, glass: 560, structure: 700,
+  wood: 640, bone: 680, life: 640, fibre: 1300, liquid: 1500, fire: 1500, energy: 1500, signal: 1500, idea: 1500,
+};
+export const knockSpeed = (m: MaterialId) => KNOCK[m] ?? 760;
 /** The play box: crafting minigames and stations are laid out inside a centred
  *  area of about this size, however large the screen is. It is not a visible
  *  or clickable limit — bodies can be carried and combined anywhere. */
@@ -145,8 +161,8 @@ export class World {
     const b = this.make(res.id, res.n, material, res, x, y, o);
     // a crowded bench drops its oldest idle piece rather than growing
     if (this.bodies.filter(q => !q.temp).length > MAX_BODIES) {
-      const idle = this.bodies.find(q => !q.temp && !q.held && !q.locked && q !== b);
-      if (idle) this.remove(idle, true);
+      const idle = this.bodies.find(q => !q.temp && !q.held && !q.locked && !q.outside && q !== b);
+      if (idle) { if (this.hooks.onEvict) this.hooks.onEvict(idle); else this.remove(idle, true); }
     }
     return b;
   }
@@ -196,7 +212,7 @@ export class World {
       z: o.z ?? 0, vz: 0, sx: 1, sy: 1, q: 0, qv: 0, gx: 0, gy: 0, lbl, name, ox: 0, oy: 0,
       heat: 0, glow: 0, held: false, locked: false, solid: true, grabbable: true,
       prepared: new Set(), zone: null, el, temp: false, tx: x, ty: y, targetAngle: 0, rest: 0,
-      age: o.pop === false ? 1 : 0, layer: 0,
+      age: o.pop === false ? 1 : 0, layer: 0, kick: 0, kickT: 0, outside: false, outT: 0,
     };
     b.targetAngle = b.angle;
     this.bodies.push(b);
@@ -220,7 +236,7 @@ export class World {
   bodyAt(x: number, y: number, only?: (b: Body) => boolean): Body | null {
     let best: Body | null = null, bd = Infinity;
     for (const b of this.bodies) {
-      if (!b.grabbable || (only && !only(b))) continue;
+      if (!b.grabbable || b.outside || (only && !only(b))) continue;
       const d = Math.hypot(x - b.x, y - (b.y - b.z));
       if (d < b.r * 1.25 && d < bd) { best = b; bd = d; }
     }
@@ -265,7 +281,7 @@ export class World {
   get busy(): boolean {
     for (const b of this.bodies) {
       if (b.held || b.z > 0.1 || b.age < 1 || b.q * b.q > 1e-4 || Math.abs(b.qv) > 0.01
-        || Math.abs(b.vx) + Math.abs(b.vy) > 4 || Math.abs(b.av) > 0.03 || b.locked
+        || Math.abs(b.vx) + Math.abs(b.vy) > 4 || Math.abs(b.av) > 0.03 || b.locked || b.outside
         || Math.abs(b.ox) + Math.abs(b.oy) > 0.05 || Math.abs(b.targetAngle - b.angle) > 0.01) return true;
     }
     return false;
@@ -277,6 +293,23 @@ export class World {
 
     for (const b of bodies) {
       b.age = Math.min(1, b.age + dt * 4);
+      b.kickT = Math.max(0, b.kickT - dt);
+
+      if (b.outside) {
+        // through the wall: a short, natural overshoot before it is sent home
+        const k = Math.exp(-2.6 * dt);
+        b.vx *= k; b.vy *= k;
+        b.x += b.vx * dt; b.y += b.vy * dt;
+        b.angle += b.av * dt + b.vx * 0.0004;
+        b.outT += dt;
+        const a = this.area;
+        const beyond = Math.max(a.x - b.x, b.x - (a.x + a.w), a.y - b.y, b.y - (a.y + a.h));
+        if (b.outT > 0.42 || beyond > b.r * 1.9) {
+          b.outside = false;
+          this.hooks.onKnockOut?.(b, b.vx, b.vy);
+        }
+        continue;
+      }
 
       // zone effects: the same item behaves differently in the fire, the water, on the anvil
       const z = this.zoneAt(b.x, b.y);
@@ -343,6 +376,12 @@ export class World {
   private walls(b: Body) {
     const p = b.r * 0.85, a = this.area;
     const x0 = a.x + p, x1 = a.x + a.w - p, y0 = a.y + p, y1 = a.y + a.h - p;
+    // a hard knock, arriving at speed: it goes through instead of bouncing
+    const need = knockSpeed(b.material);
+    if (b.kickT > 0 && !b.temp) {
+      const out = (b.x < x0 && -b.vx >= need) || (b.x > x1 && b.vx >= need) || (b.y < y0 && -b.vy >= need) || (b.y > y1 && b.vy >= need);
+      if (out) { b.outside = true; b.outT = 0; b.kickT = 0; this.hooks.onWall(b, Math.hypot(b.vx, b.vy)); return; }
+    }
     let hit = 0;
     if (b.x < x0) { b.x = x0; if (b.vx < 0) { hit = Math.max(hit, -b.vx); b.vx = -b.vx * (0.25 + b.props.bounce * 0.7); } }
     if (b.x > x1) { b.x = x1; if (b.vx > 0) { hit = Math.max(hit, b.vx); b.vx = -b.vx * (0.25 + b.props.bounce * 0.7); } }
@@ -367,10 +406,10 @@ export class World {
     const bs = this.bodies;
     for (let i = 0; i < bs.length; i++) {
       const a = bs[i];
-      if (!a.solid || a.temp) continue;
+      if (!a.solid || a.temp || a.outside) continue;
       for (let j = i + 1; j < bs.length; j++) {
         const b = bs[j];
-        if (!b.solid || b.temp) continue;
+        if (!b.solid || b.temp || b.outside) continue;
         if (a.locked && b.locked) continue;
         const dx = b.x - a.x, dy = b.y - a.y;
         const min = (a.r + b.r) * 0.86;
@@ -398,6 +437,10 @@ export class World {
             b.q = Math.max(b.q, Math.min(0.3, speed / 2600 + b.props.squash * 0.8));
             const rm = (a.mass * b.mass) / (a.mass + b.mass);
             const drop = Math.max(0, (a.z > 2 ? 1 : 0) + (b.z > 2 ? 1 : 0)) > 0;
+            if (speed > 200) {
+              // remember the knock: a body carried into a wall by it can be sent through
+              a.kick = b.kick = Math.max(a.kick, b.kick, speed); a.kickT = b.kickT = 0.9;
+            }
             this.hooks.onImpact({ a, b, speed, force: speed * rm * 0.0022, fromDrop: drop });
           }
         }
@@ -411,10 +454,10 @@ export class World {
     const bs = this.bodies;
     for (let i = 0; i < bs.length; i++) {
       const a = bs[i];
-      if (!a.solid || a.temp) continue;
+      if (!a.solid || a.temp || a.outside) continue;
       for (let j = i + 1; j < bs.length; j++) {
         const b = bs[j];
-        if (!b.solid || b.temp) continue;
+        if (!b.solid || b.temp || b.outside) continue;
         const d = Math.hypot(b.x - a.x, b.y - a.y);
         if (d < (a.r + b.r) * 0.86 + 4) {
           const k = a.uid < b.uid ? `${a.uid}|${b.uid}` : `${b.uid}|${a.uid}`;
@@ -428,15 +471,32 @@ export class World {
     }
   }
 
-  /** Pairs that have been touching, with how long. */
-  touching(): { a: Body; b: Body; t: number; key: string }[] {
+  /** Pairs that have been touching, with how long. Pairs already answered are left out unless asked for. */
+  touching(withLatched = false): { a: Body; b: Body; t: number; key: string }[] {
     const out: { a: Body; b: Body; t: number; key: string }[] = [];
     for (const [k, t] of this.touch) {
       const [ua, ub] = k.split('|').map(Number);
       const a = this.bodies.find(q => q.uid === ua), b = this.bodies.find(q => q.uid === ub);
-      if (a && b && !this.latched.has(k)) out.push({ a, b, t, key: k });
+      if (a && b && (withLatched || !this.latched.has(k))) out.push({ a, b, t, key: k });
     }
     return out;
+  }
+
+  /** Where a soft ground mark sits, in world px. Processing to the left, assembly beside it. */
+  patch(id: PatchId): Patch {
+    const a = this.area;
+    if (id === 'processing') {
+      const rx = Math.max(64, Math.min(150, a.w * 0.15)), ry = Math.max(58, Math.min(120, a.h * 0.2));
+      return { cx: a.x + Math.max(rx + 8, a.w * 0.2), cy: a.y + a.h * 0.6, rx, ry };
+    }
+    const rx = Math.max(90, Math.min(260, a.w * 0.26)), ry = Math.max(70, Math.min(170, a.h * 0.27));
+    return { cx: a.x + a.w * 0.58, cy: a.y + a.h * 0.56, rx, ry };
+  }
+
+  inPatch(b: { x: number; y: number }, id: PatchId): boolean {
+    const p = this.patch(id);
+    const nx = (b.x - p.cx) / p.rx, ny = (b.y - p.cy) / p.ry;
+    return nx * nx + ny * ny <= 1;
   }
   /** A pair the game has already answered: leave it alone until they part. */
   latch(key: string) { this.latched.add(key); }

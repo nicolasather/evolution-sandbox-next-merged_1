@@ -2,7 +2,7 @@
 
 import { useEffect, useImperativeHandle, useRef, type Ref } from 'react';
 import { readPalette } from '@/lib/craft/fx';
-import { unlockAudio } from '@/lib/craft/audio';
+import { play, unlockAudio } from '@/lib/craft/audio';
 import { sound } from '@/lib/sound';
 import { SceneFxEngine } from '@/lib/scenefx/engine';
 import { hitRegion, pointInPoly, regionsFor, toScene } from '@/lib/scenefx/regions';
@@ -22,7 +22,7 @@ import { sceneState } from '@/lib/scenefx/state';
 
 export interface SceneFxHandle {
   /** A bare click at this viewport point. Returns the kind of response, or null when the point is neither water, grass nor ground. */
-  click(clientX: number, clientY: number): 'water' | 'grass' | 'dust' | null;
+  click(clientX: number, clientY: number): 'water' | 'grass' | 'dust' | 'fire' | 'smoke' | 'gear' | 'star' | 'light' | 'drift' | null;
 }
 
 /** Real blades in the picture lean away from the click, only where the picture has grass. */
@@ -52,6 +52,43 @@ function nudgeBlades(cx: number, cy: number, vw: number, vh: number) {
       n++;
     } catch { /* individual transform properties are not everywhere; the seeds still fly */ }
   });
+}
+
+/* ── the parts of a picture that are alive without being water, grass or ground ──
+   A flame flares, smoke swells and drifts, a wheel spins up, a star or a lamp flashes, a boat
+   or a bird bobs. Found by the class the picture already animates them with, and only within
+   a short reach of the click. The picture's own loop resumes underneath. */
+type Ambient = 'fire' | 'smoke' | 'gear' | 'star' | 'light' | 'drift';
+const AMBIENT: { sel: string; kind: Ambient; frames: Keyframe[]; ms: number; tone: number }[] = [
+  { sel: 'g.flicker', kind: 'fire',  ms: 900,  tone: 0.8, frames: [{ transform: 'scale(1,1)', opacity: 1 }, { transform: 'scale(1.35,1.75)', opacity: 1, offset: 0.22 }, { transform: 'scale(.92,1.2)', offset: 0.5 }, { transform: 'scale(1,1)' }] },
+  { sel: 'g.rise',    kind: 'smoke', ms: 1500, tone: 0.5, frames: [{ transform: 'translate(0,0) scale(1)' }, { transform: 'translate(6px,-14px) scale(1.18)', offset: 0.4 }, { transform: 'translate(-4px,-4px) scale(1.05)', offset: 0.75 }, { transform: 'translate(0,0) scale(1)' }] },
+  { sel: 'g.spin',    kind: 'gear',  ms: 1300, tone: 1.2, frames: [{ rotate: '0deg' }, { rotate: '200deg', offset: 0.6 }, { rotate: '240deg' }] },
+  { sel: 'g.twinkle', kind: 'star',  ms: 700,  tone: 2.0, frames: [{ transform: 'scale(1)', opacity: 1 }, { transform: 'scale(1.7)', opacity: 1, offset: 0.25 }, { transform: 'scale(1)', opacity: 1 }] },
+  { sel: 'g.blink',   kind: 'light', ms: 600,  tone: 1.6, frames: [{ opacity: 1 }, { opacity: 0.15, offset: 0.2 }, { opacity: 1, offset: 0.4 }, { opacity: 0.3, offset: 0.6 }, { opacity: 1 }] },
+  { sel: 'g.bob',     kind: 'drift', ms: 1100, tone: 0.9, frames: [{ transform: 'translateY(0)' }, { transform: 'translateY(-9px) rotate(-2deg)', offset: 0.35 }, { transform: 'translateY(2px) rotate(1deg)', offset: 0.7 }, { transform: 'translateY(0)' }] },
+];
+
+function reactAmbient(cx: number, cy: number, reduced: boolean): Ambient | null {
+  const layers = document.querySelectorAll<SVGElement>('#scene .scene-layer');
+  if (!layers.length) return null;
+  const vw = window.innerWidth;
+  const reach = 70 * Math.min(1.4, Math.max(0.8, vw / 1440));
+  let best: { el: SVGGElement; def: (typeof AMBIENT)[number]; d: number } | null = null;
+  for (const def of AMBIENT) {
+    layers.forEach(layer => layer.querySelectorAll<SVGGElement>(def.sel).forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (!r.width || !r.height || r.width > vw * 0.5) return;
+      const dx = Math.max(r.left - cx, 0, cx - r.right), dy = Math.max(r.top - cy, 0, cy - r.bottom);
+      const d = Math.hypot(dx, dy);
+      if (d <= reach && (!best || d < best.d)) best = { el, def, d };
+    }));
+  }
+  const hit = best as { el: SVGGElement; def: (typeof AMBIENT)[number]; d: number } | null;
+  if (!hit) return null;
+  if (!reduced) {
+    try { hit.el.animate(hit.def.frames, { duration: hit.def.ms, easing: 'ease-out' }); } catch { /* the picture keeps its own loop */ }
+  }
+  return hit.def.kind;
 }
 
 export function SceneFx({ active, ref }: { active: boolean; ref?: Ref<SceneFxHandle> }) {
@@ -104,6 +141,18 @@ export function SceneFx({ active, ref }: { active: boolean; ref?: Ref<SceneFxHan
       const vw = window.innerWidth, vh = window.innerHeight;
       eng.reduced = !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
       pal.current = readPaletteSafe();
+      // something alive close by (a flame, a wheel, a lamp) answers before the ground under it does
+      const k = reactAmbient(x, y, eng.reduced);
+      if (k) {
+        unlockAudio();
+        const t = AMBIENT.find(a => a.kind === k)!.tone;
+        if (k === 'fire') play('crackle', { vol: 0.4, rate: t });
+        else if (k === 'smoke') play('puff', { vol: 0.3, rate: t });
+        else if (k === 'gear') play('knock', { vol: 0.3, rate: t });
+        else if (k === 'drift') play('plip', { vol: 0.3, rate: t });
+        else play('click', { vol: 0.3, rate: t });
+        return k;
+      }
       const res = eng.click(sceneState.id, x, y, vw, vh, { x: sceneState.px, y: sceneState.py }, performance.now());
       if (!res) return null;
       if (res.sound) { unlockAudio(); sound.scene(res.sound.kind, res.sound); }

@@ -138,6 +138,10 @@ export interface Body {
   part?: string;
   /** Low z-order for parts that sit under others. */
   layer: number;
+  /** Speed of the hardest knock this body took from another (px/s), and seconds it stays "fresh". */
+  kick: number; kickT: number;
+  /** Knocked through the boundary: flying free, about to head home. */
+  outside: boolean; outT: number;
 }
 
 export interface Pointer {

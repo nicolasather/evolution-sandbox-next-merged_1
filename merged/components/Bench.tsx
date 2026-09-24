@@ -7,18 +7,24 @@ import { ScenePicker } from './SceneBackdrop';
 import { DiscoveryCeremony } from './fx/DiscoveryCeremony';
 import { Workbench } from './Workbench';
 import { SceneFx, type SceneFxHandle } from './fx/SceneFx';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { ambienceForEra, setAmbience } from '@/lib/craft/audio';
 import { cn } from '@/lib/utils';
 import { nearLine } from '@/lib/near';
 import type { Engine } from '@/lib/engine';
-import type { CombineResult, HintView } from '@/lib/types';
+import type { CombineResult, HintView, ProcessResult, ActionId } from '@/lib/types';
 
 type Outcome = (CombineResult & { key: number }) | null;
+
+const SPEAK_IN_PLACE = true;
 
 function OutcomeCard({
   result, onUse, onOpen, engine,
 }: { result: NonNullable<Outcome>; onUse: (id: string) => void; onOpen: (id: string) => void; engine: Engine }) {
   if (result.status === 'error') return null;
+  // The workbench answers a refusal where it happens (a quiet note by the things themselves);
+  // only finds get a card. The old boxed cards stay below for callers without a workbench.
+  if (SPEAK_IN_PLACE && (result.status === 'fail' || result.status === 'tier_locked')) return null;
 
   if (result.status === 'fail') {
     return (
@@ -94,7 +100,7 @@ function OutcomeCard({
 }
 
 function HintButton({ hint, onRequest }: { hint: HintView; onRequest: () => void }) {
-  if (hint.targetId && hint.level >= 3) {
+  if (hint.targetId && hint.level >= 5) {
     return <button className="chip" disabled>No more hints</button>;
   }
   if (hint.targetId && !hint.canEscalate) {
@@ -113,7 +119,7 @@ function HintButton({ hint, onRequest }: { hint: HintView; onRequest: () => void
 }
 
 export function Bench({
-  engine, active, result, hint, hintError, onCombine, onBegin, onOpen, onUse, onRequestHint, onDropHint,
+  engine, active, result, hint, hintError, onCombine, onBegin, onOpen, onUse, onProcess, onRequestHint, onDropHint,
 }: {
   engine: Engine;
   /** The workspace view is showing (the bench sleeps otherwise). */
@@ -121,7 +127,8 @@ export function Bench({
   result: Outcome;
   hint: HintView;
   hintError: string | null;
-  onCombine: (a: string, b: string) => CombineResult;
+  onCombine: (ids: string[]) => CombineResult;
+  onProcess: (id: string, action: ActionId) => ProcessResult;
   onBegin: () => void;
   onOpen: (id: string) => void;
   onUse: (id: string) => void;
@@ -129,25 +136,31 @@ export function Bench({
   onDropHint: () => void;
 }) {
   const sceneFx = useRef<SceneFxHandle>(null);
+  // the bed of sound that belongs to how far the player has come; only while the workspace is showing
+  const eraId = engine.currentEra().id;
+  useEffect(() => {
+    setAmbience(active ? ambienceForEra(eraId) : null);
+    return () => setAmbience(null);
+  }, [active, eraId]);
   const trail = engine.path().slice(-26);
   const reach = engine.withinReach().length;
   // one short line of guidance: onboarding first, then the hint, then nothing
   let line: React.ReactNode = null;
   if (engine.coached === 0) {
-    line = <>Tap <b>Stone</b> twice. Then do the work with your hands.</>;
+    line = <>Tap <b>Stone</b> twice to knock two together — or choose a hand below and work one thing.</>;
   } else if (engine.coached === 1) {
-    line = <>Most pairs make nothing. That is normal — try another pair.</>;
+    line = <>Most attempts make nothing. That is normal — smash, brush, cut, or try something else.</>;
   } else if (hint.targetId && hint.text) {
     line = <>{hint.text}</>;
   } else if (engine.order.length < 9) {
-    line = <>Bring two things together → work it with your hands → discover. Every find is a new ingredient.</>;
+    line = <>Work one thing with your hands, bring several together, discover. Every find is a new ingredient.</>;
   }
 
   return (
     <div id="bench">
       <div id="bench-stage">
         <SceneFx ref={sceneFx} active={active} />
-        <Workbench engine={engine} active={active} onCombine={onCombine} onBegin={onBegin} onInspect={onOpen}
+        <Workbench engine={engine} active={active} onCombine={onCombine} onProcess={onProcess} onBegin={onBegin} onInspect={onOpen} hintAction={hint.action}
           onScenery={(x, y) => { sceneFx.current?.click(x, y); }} />
 
         <div id="outcome" aria-live="polite">

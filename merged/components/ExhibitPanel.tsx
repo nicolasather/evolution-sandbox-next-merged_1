@@ -224,15 +224,19 @@ export function ExhibitPanel({
             <p>Nothing. This is where you start.</p>
           ) : (
             paths.map(p => (
-              <div className={cn('path', !p.found && 'closed')} key={`${p.a.id}+${p.b.id}`}>
+              <div className={cn('path', !p.found && 'closed')} key={`${p.items.map(i => i.id).join('+')}${p.action ? `:${p.action}` : ''}`}>
                 <div className="path-h mono">
                   <span>PATH {String(p.index).padStart(2, '0')}</span>
                   <span>{p.found ? 'walked' : 'not yet walked'}</span>
                 </div>
                 <div className="reqrow">
-                  <Pill node={p.a} engine={engine} onOpen={onOpen} />
-                  <span className="plus">+</span>
-                  <Pill node={p.b} engine={engine} onOpen={onOpen} />
+                  {p.items.map((it, k) => (
+                    <span key={`${it.id}:${k}`} style={{ display: 'contents' }}>
+                      {k > 0 && <span className="plus">+</span>}
+                      <Pill node={it} engine={engine} onOpen={onOpen} />
+                    </span>
+                  ))}
+                  {p.action && <span className="plus mono">→ {p.action}</span>}
                 </div>
                 {p.found && p.chain.length > 0 && (
                   <details className="path-chain">

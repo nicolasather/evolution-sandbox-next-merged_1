@@ -10,7 +10,10 @@ import type { SoundId } from './types';
    ========================================================================== */
 
 const KEY = 'evo.craft.sound';
+const VOL_KEY = 'evo.craft.volume';
 const EVENT = 'evo:craft-sound';
+/** The master gain at full volume: everything is quiet by design. */
+const MASTER_GAIN = 0.34;
 
 let ctx: AudioContext | null = null;
 let master: GainNode | null = null;
@@ -22,6 +25,21 @@ export function soundEnabled(): boolean {
 }
 export function setSoundEnabled(on: boolean) {
   try { window.localStorage.setItem(KEY, on ? '1' : '0'); } catch { /* storage blocked */ }
+  window.dispatchEvent(new Event(EVENT));
+}
+/** 0–1, what the player set with the volume control (1 = the designed level). */
+export function getVolume(): number {
+  try {
+    const v = window.localStorage.getItem(VOL_KEY);
+    if (v === null) return 1;
+    const n = parseFloat(v);
+    return Number.isFinite(n) ? Math.max(0, Math.min(1, n)) : 1;
+  } catch { return 1; }
+}
+export function setVolume(v: number) {
+  const n = Math.max(0, Math.min(1, v));
+  try { window.localStorage.setItem(VOL_KEY, String(n)); } catch { /* storage blocked */ }
+  if (ctx && master) master.gain.setTargetAtTime(MASTER_GAIN * n, ctx.currentTime, 0.03);
   window.dispatchEvent(new Event(EVENT));
 }
 export function subscribeSound(cb: () => void): () => void {
@@ -38,7 +56,7 @@ export function unlockAudio() {
     try {
       ctx = new AC();
       master = ctx.createGain();
-      master.gain.value = 0.34;
+      master.gain.value = MASTER_GAIN * getVolume();
       const comp = ctx.createDynamicsCompressor();
       master.connect(comp);
       comp.connect(ctx.destination);
@@ -49,6 +67,7 @@ export function unlockAudio() {
     } catch { ctx = null; return; }
   }
   if (ctx.state === 'suspended') void ctx.resume().catch(() => {});
+  if (wantAmbience) applyAmbience();
 }
 
 interface Opts { vol?: number; rate?: number; pan?: number }
@@ -317,3 +336,145 @@ export function tunnelRise(seconds: number): () => void {
     src.stop(n + 0.22); o.stop(n + 0.22);
   };
 }
+
+
+/* ============================================================================
+   AMBIENCE — a very quiet bed under everything, one per stretch of history.
+   Wind on the plains, a hearth's low crackle, a market's murmur, a forge's
+   pulse, machine rumble, mains hum, a faint digital shimmer. Built from the
+   same noise buffer and a few oscillators; crossfaded, never abrupt; silent
+   whenever sound is off, and it follows the volume control through the master.
+   ========================================================================== */
+
+export type Ambience = 'wind' | 'hearth' | 'murmur' | 'forge' | 'machine' | 'hum' | 'digital';
+
+interface Bed { kind: Ambience; gain: GainNode; stop: (at: number) => void }
+let bed: Bed | null = null;
+let wantAmbience: Ambience | null = null;
+/** Level of every bed (they are all far below the effects). */
+const BED_LEVEL = 0.5;
+
+function buildBed(kind: Ambience): Bed | null {
+  if (!ctx || !master || !noise) return null;
+  const c = ctx;
+  const gain = c.createGain();
+  gain.gain.value = 0.0001;
+  gain.connect(master);
+  const srcs: (AudioScheduledSourceNode)[] = [];
+  const nodes: AudioNode[] = [gain];
+  const src = (): AudioBufferSourceNode => { const b = c.createBufferSource(); b.buffer = noise; b.loop = true; srcs.push(b); return b; };
+  const lfo = (freq: number, depth: number, target: AudioParam) => {
+    const o = c.createOscillator(); o.type = 'sine'; o.frequency.value = freq;
+    const g = c.createGain(); g.gain.value = depth;
+    o.connect(g); g.connect(target); srcs.push(o); nodes.push(g);
+  };
+  const filt = (type: BiquadFilterType, f: number, q: number) => { const b = c.createBiquadFilter(); b.type = type; b.frequency.value = f; b.Q.value = q; nodes.push(b); return b; };
+  const amp = (v: number) => { const g = c.createGain(); g.gain.value = v; nodes.push(g); return g; };
+  const osc = (type: OscillatorType, f: number) => { const o = c.createOscillator(); o.type = type; o.frequency.value = f; srcs.push(o); return o; };
+
+  switch (kind) {
+    case 'wind': {            // air over open ground, slowly gusting
+      const n = src(), f = filt('bandpass', 420, 0.6), a = amp(0.55);
+      lfo(0.07, 260, f.frequency); lfo(0.11, 0.25, a.gain);
+      n.connect(f); f.connect(a); a.connect(gain);
+      break;
+    }
+    case 'hearth': {          // a low fire: dull roar, and flickering
+      const n = src(), f = filt('lowpass', 520, 0.7), a = amp(0.5);
+      lfo(0.9, 0.18, a.gain); lfo(0.23, 120, f.frequency);
+      n.connect(f); f.connect(a); a.connect(gain);
+      const n2 = src(), h = filt('highpass', 3800, 0.6), a2 = amp(0.05);
+      lfo(3.1, 0.05, a2.gain);
+      n2.connect(h); h.connect(a2); a2.connect(gain);
+      break;
+    }
+    case 'murmur': {          // far-off voices: noise in the vowel band, breathing
+      const n = src(), f = filt('bandpass', 620, 1.4), a = amp(0.4);
+      lfo(0.31, 0.22, a.gain); lfo(0.13, 180, f.frequency);
+      n.connect(f); f.connect(a); a.connect(gain);
+      break;
+    }
+    case 'forge': {           // a bellows' pulse over a low glow
+      const n = src(), f = filt('lowpass', 380, 0.9), a = amp(0.55);
+      lfo(0.42, 0.3, a.gain);
+      n.connect(f); f.connect(a); a.connect(gain);
+      const o = osc('sine', 55), og = amp(0.35);
+      lfo(0.42, 0.2, og.gain);
+      o.connect(og); og.connect(gain);
+      break;
+    }
+    case 'machine': {         // engines somewhere below the floor
+      const o = osc('sawtooth', 44), f = filt('lowpass', 150, 0.8), a = amp(0.32);
+      lfo(6.3, 0.06, a.gain);
+      o.connect(f); f.connect(a); a.connect(gain);
+      const n = src(), nf = filt('lowpass', 300, 0.5), na = amp(0.3);
+      n.connect(nf); nf.connect(na); na.connect(gain);
+      break;
+    }
+    case 'hum': {             // mains: 50 Hz and its second harmonic, a little unsteady
+      const o1 = osc('sine', 50), o2 = osc('sine', 100), a1 = amp(0.28), a2 = amp(0.1);
+      lfo(0.2, 0.03, a1.gain);
+      o1.connect(a1); a1.connect(gain); o2.connect(a2); a2.connect(gain);
+      const n = src(), nf = filt('highpass', 5200, 0.5), na = amp(0.012);
+      n.connect(nf); nf.connect(na); na.connect(gain);
+      break;
+    }
+    case 'digital': {         // a faint shimmer of very high partials, drifting
+      const fs = [1320, 1760, 2349], os = fs.map(f => osc('sine', f));
+      os.forEach((o, i) => { const a = amp(0.025); lfo(0.09 + i * 0.05, 0.02, a.gain); lfo(0.05 + i * 0.03, 8 + i * 5, o.frequency); o.connect(a); a.connect(gain); });
+      const o = osc('sine', 62), a = amp(0.16);
+      o.connect(a); a.connect(gain);
+      break;
+    }
+  }
+  const t = c.currentTime;
+  srcs.forEach(sr => { try { if (sr instanceof AudioBufferSourceNode) sr.start(t, Math.random() * 0.4); else sr.start(t); } catch { /* already started */ } });
+  return {
+    kind, gain,
+    stop(at: number) {
+      srcs.forEach(sr => { try { sr.stop(at); } catch { /* not running */ } });
+      window.setTimeout(() => { nodes.forEach(nd => { try { nd.disconnect(); } catch { /* gone */ } }); }, Math.max(0, (at - c.currentTime) * 1000) + 60);
+    },
+  };
+}
+
+function applyAmbience() {
+  if (!ctx || !master) return;
+  const c = ctx, want = soundEnabled() ? wantAmbience : null;
+  if (bed && bed.kind === want) { bed.gain.gain.setTargetAtTime(BED_LEVEL, c.currentTime, 0.4); return; }
+  if (bed) {                                   // fade the old one out, and let it go
+    const old = bed; bed = null;
+    old.gain.gain.cancelScheduledValues(c.currentTime);
+    old.gain.gain.setTargetAtTime(0.0001, c.currentTime, 0.5);
+    old.stop(c.currentTime + 2.6);
+  }
+  if (!want) return;
+  const nb = buildBed(want);
+  if (!nb) return;
+  bed = nb;
+  nb.gain.gain.setValueAtTime(0.0001, c.currentTime);
+  nb.gain.gain.setTargetAtTime(BED_LEVEL, c.currentTime, 0.9);
+}
+
+/** Ask for a bed (or none). Safe to call at any time: it starts as soon as audio is unlocked and sound is on. */
+export function setAmbience(kind: Ambience | null) {
+  wantAmbience = kind;
+  if (typeof window === 'undefined') return;
+  applyAmbience();
+}
+
+/** The bed that belongs to an era. */
+export function ambienceForEra(era: string): Ambience {
+  switch (era) {
+    case 'origins': case 'agriculture': return 'wind';
+    case 'fire': case 'settlement': return 'hearth';
+    case 'civilization': case 'trade': return 'murmur';
+    case 'metallurgy': case 'science': return 'forge';
+    case 'industry': return 'machine';
+    case 'electric': return 'hum';
+    default: return 'digital';               // computing, network, games, simulation
+  }
+}
+
+// the bed follows the sound switch
+if (typeof window !== 'undefined') window.addEventListener(EVENT, () => applyAmbience());

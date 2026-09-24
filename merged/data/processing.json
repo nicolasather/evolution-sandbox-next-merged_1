@@ -1,0 +1,783 @@
+{
+ "capabilities": {
+  "edged": [
+   "sharp_stone",
+   "stone_flake",
+   "stone_tool",
+   "microblade",
+   "handaxe",
+   "cutting",
+   "carving_knife",
+   "axe",
+   "adze",
+   "chisel",
+   "scraper",
+   "bone_saw",
+   "shears",
+   "scythe",
+   "bronze_tools"
+  ],
+  "digger": [
+   "stick",
+   "pickaxe",
+   "hoe",
+   "mattock",
+   "hafted_tool",
+   "quarry",
+   "bronze_tools"
+  ]
+ },
+ "materialTags": {
+  "stone": [
+   "hard",
+   "heavy",
+   "mineral",
+   "brittle"
+  ],
+  "wood": [
+   "woody",
+   "organic"
+  ],
+  "bone": [
+   "hard",
+   "boney",
+   "organic"
+  ],
+  "fibre": [
+   "fibrous",
+   "organic",
+   "soft"
+  ],
+  "metal": [
+   "metal",
+   "hard",
+   "heavy"
+  ],
+  "earth": [
+   "earthy"
+  ],
+  "glass": [
+   "glassy",
+   "hard",
+   "brittle"
+  ],
+  "liquid": [
+   "fluid"
+  ],
+  "fire": [
+   "hot"
+  ],
+  "tool": [
+   "made",
+   "hard"
+  ],
+  "structure": [
+   "made",
+   "large"
+  ],
+  "machine": [
+   "made",
+   "mechanical"
+  ],
+  "energy": [
+   "intangible",
+   "energy"
+  ],
+  "signal": [
+   "intangible",
+   "signal"
+  ],
+  "idea": [
+   "intangible",
+   "idea"
+  ],
+  "life": [
+   "living",
+   "organic"
+  ]
+ },
+ "tags": {
+  "clay": [
+   "plastic"
+  ],
+  "soil": [
+   "loose",
+   "diggable"
+  ],
+  "sand": [
+   "loose",
+   "glassy"
+  ],
+  "crushed_ore": [
+   "loose",
+   "mineral"
+  ],
+  "mixed_ore": [
+   "mineral",
+   "heavy",
+   "composite"
+  ],
+  "stick": [
+   "straight"
+  ],
+  "bark": [
+   "flat"
+  ],
+  "seed": [
+   "small"
+  ],
+  "cleaned_stone": [
+   "mineral"
+  ],
+  "plant": [
+   "living"
+  ],
+  "grass": [
+   "living"
+  ],
+  "cloth": [
+   "woven"
+  ],
+  "charcoal": [
+   "burnable"
+  ],
+  "ash": [
+   "loose"
+  ]
+ },
+ "states": [
+  {
+   "id": "stick",
+   "n": "Stick",
+   "era": "origins",
+   "l1": "A branch snapped to length. Something to prop, poke and dig with."
+  },
+  {
+   "id": "bark",
+   "n": "Bark",
+   "era": "origins",
+   "l1": "Loose bark peeled off in strips: dry, flat and quick to catch."
+  },
+  {
+   "id": "strands",
+   "n": "Fibre Strands",
+   "era": "origins",
+   "l1": "Fibre pulled fine along its length. Strong for its weight."
+  },
+  {
+   "id": "seed",
+   "n": "Seeds",
+   "era": "origins",
+   "l1": "Hard little seeds shaken loose from a plant."
+  },
+  {
+   "id": "cleaned_stone",
+   "n": "Cleaned Stone",
+   "era": "origins",
+   "l1": "Brushed clean: a bright, glassy seam runs through it."
+  },
+  {
+   "id": "bone_shards",
+   "n": "Bone Shards",
+   "era": "origins",
+   "l1": "Splinters of bone, some with a point on them."
+  },
+  {
+   "id": "soil",
+   "n": "Soil",
+   "era": "settlement",
+   "l1": "Loose ground to dig into. Something is always under it."
+  },
+  {
+   "id": "clay",
+   "n": "Clay",
+   "era": "settlement",
+   "l1": "Sticky and cool. It takes any shape and keeps it."
+  },
+  {
+   "id": "sand",
+   "n": "Sand",
+   "era": "settlement",
+   "l1": "Fine grit sifted from soil. Melts to something clear."
+  },
+  {
+   "id": "water",
+   "n": "Water",
+   "era": "settlement",
+   "l1": "Slow, clear and always moving."
+  },
+  {
+   "id": "mixed_ore",
+   "n": "Mixed Ore",
+   "era": "metallurgy",
+   "l1": "Heavy, green-streaked rock with something bright inside."
+  },
+  {
+   "id": "crushed_ore",
+   "n": "Crushed Ore",
+   "era": "metallurgy",
+   "l1": "Broken small enough to pick the bright bits out."
+  }
+ ],
+ "transforms": [
+  {
+   "from": "stone",
+   "action": "smash",
+   "out": [
+    "sharp_stone"
+   ],
+   "say": "A crack, and one edge is left keen."
+  },
+  {
+   "from": "stone",
+   "action": "brush",
+   "out": [
+    "cleaned_stone"
+   ],
+   "say": "The dust goes, and a bright seam shows."
+  },
+  {
+   "from": "cleaned_stone",
+   "action": "smash",
+   "out": [
+    "flint"
+   ],
+   "say": "It splits along the seam: flint."
+  },
+  {
+   "from": "wood",
+   "action": "smash",
+   "out": [
+    "stick"
+   ],
+   "say": "The branch snaps clean."
+  },
+  {
+   "from": "wood",
+   "action": "brush",
+   "out": [
+    "bark"
+   ],
+   "say": "The loose bark comes away in strips."
+  },
+  {
+   "from": "wood",
+   "action": "cut",
+   "out": [
+    "lumber"
+   ],
+   "needs": "edged",
+   "say": "Split along the grain."
+  },
+  {
+   "from": "bone",
+   "action": "smash",
+   "out": [
+    "bone_shards"
+   ],
+   "say": "It splinters. Some pieces have a point."
+  },
+  {
+   "from": "bone",
+   "action": "cut",
+   "out": [
+    "needle"
+   ],
+   "needs": "edged",
+   "say": "Worked down to a thin, sharp point."
+  },
+  {
+   "from": "fiber",
+   "action": "cut",
+   "out": [
+    "strands"
+   ],
+   "needs": "edged",
+   "say": "Pulled fine and cut to length."
+  },
+  {
+   "from": "plant",
+   "action": "separate",
+   "out": [
+    "fiber",
+    "seed"
+   ],
+   "say": "The fibre comes away from the seeds."
+  },
+  {
+   "from": "grass",
+   "action": "separate",
+   "out": [
+    "fiber",
+    "seed"
+   ],
+   "say": "Stalk and seed part easily."
+  },
+  {
+   "from": "soil",
+   "action": "dig",
+   "out": [
+    "clay"
+   ],
+   "needs": "digger",
+   "say": "Under the top layer the ground turns sticky: clay."
+  },
+  {
+   "from": "soil",
+   "action": "brush",
+   "out": [
+    "sand"
+   ],
+   "say": "The loose top sifts away to fine sand."
+  },
+  {
+   "from": "mixed_ore",
+   "action": "smash",
+   "out": [
+    "crushed_ore"
+   ],
+   "say": "It breaks small enough to sort."
+  },
+  {
+   "from": "crushed_ore",
+   "action": "separate",
+   "out": [
+    "copper"
+   ],
+   "say": "You pick out the bright nuggets: native copper."
+  }
+ ],
+ "unlocks": [
+  {
+   "when": [
+    "stick"
+   ],
+   "give": "soil",
+   "say": "The ground here is soft enough to dig now."
+  },
+  {
+   "when": [
+    "fishing",
+    "wooden_bowl",
+    "bone_container",
+    "pottery"
+   ],
+   "any": true,
+   "give": "water",
+   "say": "You are near water now — enough to carry some."
+  },
+  {
+   "when": [
+    "pickaxe",
+    "quarry"
+   ],
+   "any": true,
+   "give": "mixed_ore",
+   "say": "Your tool bites into heavy, green-streaked rock."
+  }
+ ],
+ "recipes": {
+  "add": [
+   {
+    "id": "hafted_tool",
+    "rec": [
+     "stone",
+     "stick",
+     "strands"
+    ]
+   },
+   {
+    "id": "spear",
+    "rec": [
+     "stick",
+     "sharp_stone",
+     "strands"
+    ]
+   },
+   {
+    "id": "fire",
+    "rec": [
+     "stick",
+     "stick",
+     "bark"
+    ]
+   },
+   {
+    "id": "torch",
+    "rec": [
+     "stick",
+     "bark",
+     "fire"
+    ]
+   },
+   {
+    "id": "fishing",
+    "rec": [
+     "stick",
+     "cordage",
+     "bone_shards"
+    ]
+   },
+   {
+    "id": "shelter",
+    "rec": [
+     "stick",
+     "stick",
+     "stick",
+     "strands"
+    ]
+   },
+   {
+    "id": "cordage",
+    "rec": [
+     "strands",
+     "strands"
+    ]
+   },
+   {
+    "id": "bow",
+    "rec": [
+     "stick",
+     "cordage",
+     "strands"
+    ]
+   },
+   {
+    "id": "needle",
+    "rec": [
+     "bone_shards",
+     "sharp_stone"
+    ]
+   },
+   {
+    "id": "pottery",
+    "rec": [
+     "clay",
+     "water",
+     "controlled_fire"
+    ]
+   },
+   {
+    "id": "brick",
+    "rec": [
+     "clay",
+     "sand",
+     "controlled_fire"
+    ]
+   },
+   {
+    "id": "glass",
+    "rec": [
+     "sand",
+     "controlled_fire",
+     "ash"
+    ]
+   },
+   {
+    "id": "kiln",
+    "rec": [
+     "clay",
+     "stone_hut",
+     "controlled_fire"
+    ]
+   },
+   {
+    "id": "copper",
+    "rec": [
+     "crushed_ore",
+     "charcoal",
+     "controlled_fire"
+    ]
+   },
+   {
+    "id": "bronze",
+    "rec": [
+     "copper",
+     "copper",
+     "charcoal",
+     "clay"
+    ]
+   },
+   {
+    "id": "casting",
+    "rec": [
+     "bronze",
+     "clay",
+     "kiln"
+    ]
+   },
+   {
+    "id": "iron",
+    "rec": [
+     "crushed_ore",
+     "charcoal",
+     "kiln",
+     "forging"
+    ]
+   },
+   {
+    "id": "steel",
+    "rec": [
+     "iron",
+     "charcoal",
+     "controlled_fire",
+     "hammering"
+    ]
+   },
+   {
+    "id": "wheel",
+    "rec": [
+     "lumber",
+     "stone_tool",
+     "water"
+    ]
+   },
+   {
+    "id": "lime",
+    "rec": [
+     "stone",
+     "ash",
+     "water"
+    ]
+   },
+   {
+    "id": "smelting",
+    "rec": [
+     "crushed_ore",
+     "kiln",
+     "controlled_fire"
+    ]
+   },
+   {
+    "id": "clothing",
+    "rec": [
+     "scraping",
+     "needle",
+     "strands"
+    ]
+   },
+   {
+    "id": "cooking",
+    "rec": [
+     "controlled_fire",
+     "spit",
+     "hunting"
+    ]
+   },
+   {
+    "id": "axe",
+    "rec": [
+     "stone_flake",
+     "stick",
+     "strands"
+    ]
+   },
+   {
+    "id": "harpoon",
+    "rec": [
+     "bone_shards",
+     "spear",
+     "cordage"
+    ]
+   },
+   {
+    "id": "pickaxe",
+    "rec": [
+     "stone_tool",
+     "stick",
+     "strands"
+    ]
+   },
+   {
+    "id": "hoe",
+    "rec": [
+     "stick",
+     "scraper",
+     "strands"
+    ]
+   },
+   {
+    "id": "charcoal",
+    "rec": [
+     "controlled_fire",
+     "stick",
+     "clay"
+    ]
+   },
+   {
+    "id": "writing",
+    "rec": [
+     "clay",
+     "stick",
+     "record_keeping"
+    ]
+   },
+   {
+    "id": "agriculture",
+    "rec": [
+     "cultivation",
+     "seed",
+     "water",
+     "farming_tools"
+    ]
+   },
+   {
+    "id": "irrigation",
+    "rec": [
+     "cultivation",
+     "water",
+     "trench"
+    ]
+   },
+   {
+    "id": "steam_engine",
+    "rec": [
+     "steam",
+     "iron",
+     "gear",
+     "coal"
+    ]
+   },
+   {
+    "id": "locomotive",
+    "rec": [
+     "steam_engine",
+     "railway",
+     "iron",
+     "coal"
+    ]
+   },
+   {
+    "id": "electric_motor",
+    "rec": [
+     "electricity",
+     "copper",
+     "gear",
+     "iron"
+    ]
+   },
+   {
+    "id": "telegraph",
+    "rec": [
+     "electricity",
+     "copper",
+     "writing",
+     "record_keeping"
+    ]
+   },
+   {
+    "id": "integrated_circuit",
+    "rec": [
+     "transistor",
+     "silicon",
+     "copper",
+     "standardized_parts"
+    ]
+   },
+   {
+    "id": "world_wide_web",
+    "rec": [
+     "internet",
+     "software",
+     "digital_media",
+     "computer_graphics"
+    ]
+   },
+   {
+    "id": "grand_theft_auto_vi",
+    "rec": [
+     "grand_theft_auto",
+     "massive_game_production",
+     "photorealistic_rendering",
+     "cinematic_game",
+     "virtual_city"
+    ]
+   },
+   {
+    "id": "virtual_world",
+    "rec": [
+     "open_world_simulation",
+     "digital_communication",
+     "virtual_city",
+     "artificial_intelligence"
+    ]
+   }
+  ],
+  "retire": [
+   {
+    "id": "grand_theft_auto_vi",
+    "rec": [
+     "grand_theft_auto",
+     "massive_game_production"
+    ]
+   },
+   {
+    "id": "grand_theft_auto_vi",
+    "rec": [
+     "grand_theft_auto",
+     "photorealistic_rendering"
+    ]
+   },
+   {
+    "id": "virtual_world",
+    "rec": [
+     "open_world_simulation",
+     "digital_communication"
+    ]
+   },
+   {
+    "id": "virtual_world",
+    "rec": [
+     "virtual_city",
+     "artificial_intelligence"
+    ]
+   }
+  ]
+ },
+ "objectify": {
+  "cutting": {
+   "n": "Stone Knife",
+   "l1": "A flake with an edge, held in the hand and drawn across things."
+  },
+  "scraping": {
+   "n": "Scraped Hide",
+   "l1": "A skin scraped clean of flesh and fat, ready to be worked."
+  },
+  "hammering": {
+   "n": "Hammerstone",
+   "l1": "A round stone that fits the hand and hits hard."
+  },
+  "sewing": {
+   "n": "Sewing Kit",
+   "l1": "An awl, a needle and thread rolled in a scrap of hide."
+  },
+  "binding": {
+   "n": "Knotted Cord",
+   "l1": "Cord tied off in a knot that holds under load."
+  },
+  "fishing": {
+   "n": "Fishing Rod",
+   "l1": "A pole, a line and a hook. It reaches where hands cannot."
+  },
+  "cooking": {
+   "n": "Cooked Meal",
+   "l1": "Food changed by fire: softer, safer, richer."
+  },
+  "heat_treatment": {
+   "n": "Baked Stone",
+   "l1": "Stone taken slowly through fire until it cuts more cleanly."
+  },
+  "smoke": {
+   "n": "Smoked Meat",
+   "l1": "Meat cured in smoke so it keeps for weeks."
+  },
+  "food_processing": {
+   "n": "Ground Meal",
+   "l1": "Seed and root pounded to a paste or a flour."
+  },
+  "hunting": {
+   "n": "Hunting Kit",
+   "l1": "Spears, cords and a plan, carried together for the chase."
+  }
+ }
+}

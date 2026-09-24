@@ -3,6 +3,48 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.9.0 — 24 September 2026 (unreleased)
+
+### An experimentation world: hands, materials, several things at once
+Discovery is no longer only "two things touch". The 322-entry database is untouched; a new
+additive layer (`data/processing.json`, `lib/processing/`) sits on top of it and the old pair
+routes keep working exactly as before.
+
+- **Five hands.** Brush, Smash, Cut, Separate and Dig work **one** resource. The player performs
+  the gesture (sweep, strike, draw a line, pull apart, scoop); a drawn white line-art hand follows the
+  pointer, each with its own motion. What a hand can do follows the material's tags: stone smashes
+  to a keen edge, wood needs an edge to cut, soil needs something to dig with. Refusals say why
+  ("Fibre is one thing all through") and are never a recipe.
+- **Tangible results.** Actions are gestures, not inventory. Discoveries that used to be a verb
+  (Fishing, Cutting, Sewing, Cooking…) are now the thing they make (Fishing Rod, Stone Knife, Sewing Kit,
+  Cooked Meal). Worked forms of a material (Stick, Clay, Soil, Bark…) are held like resources but never counted
+  or drawn in the archive.
+- **2–5 ingredient recipes.** `Recipe` is now `string[]`; the engine matches by multiset. Early routes stay
+  pairs, mid-game routes take three, later four, the largest five. The validator's conflict rule extends to
+  "no recipe may be a strict subset of a different result's recipe".
+- **Informative failures.** Wrong processing, needs preparation, right idea but more components needed,
+  an irrelevant piece, a wrong state: each has its own quiet line beside the things themselves (no boxed
+  card). Nothing names a recipe.
+- **Five-level hints** (idea → direction → kind of work with the matching hand pulsing → how many
+  components → what roles they play), escalating with failures.
+- **Physical bench.** Right click (or a long press on touch) puts a piece away: it flies back to its inventory
+  entry, which pulses; nothing is deleted. A hard collision that carries a stone, metal or tool into the boundary
+  sends it through the wall for a moment before it returns; fibre and liquids never do. Pieces near a
+  complete route react, near-complete routes tremble, resources lean toward what they could become.
+  Undo, and the bench is remembered for the session.
+- **Layout.** The scenery is the workspace with a "work one thing" ground and a "put things together"
+  ground (soft patches, not boxes); the hands are a single quiet line.
+- **Life.** Every material has its own way of sitting still (stone glints, fibre sways, fire flickers, signals blink);
+  clicking a flame, smoke, wheel, star, lamp or boat in the scenery makes it answer; a hairline volume control
+  and a very quiet ambience per era (wind, hearth, murmur, forge, machines, mains hum, digital shimmer).
+- **Dependencies** brought to the latest releases (Next 16.3.6, React 19.3, Tailwind 4.3.3, framer-motion 13,
+  Sentry 11, Jest 30, Vercel Analytics/Speed Insights 2). Two are held one step back on purpose:
+  TypeScript stays on 6.0 (typescript-eslint does not support 7 yet) and ESLint on 9.39 (eslint-plugin-react,
+  bundled in eslint-config-next, does not run on ESLint 10). Sentry 11 moved `withSentryConfig` to
+  `@sentry/nextjs/config` (`next.config.ts`).
+- **Tests.** `lib/__tests__/processing.test.ts` (data invariants, actions, hints, failures, saves),
+  `lib/craft/__tests__/{gesture,memory,knockout}.test.ts`.
+
 ## 1.8.0 — 24 September 2026
 
 ### A playable museum: the visual and interaction redesign

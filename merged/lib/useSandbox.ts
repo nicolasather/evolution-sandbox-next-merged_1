@@ -1,14 +1,14 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
-import rawDb from '@/data/db.json';
 import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
-import type { CombineResult, Db, Discovery, ViewId } from './types';
+import { playDb } from './processing';
+import type { ActionId, CombineResult, Db, Discovery, ProcessResult, ViewId } from './types';
 
-export const db = rawDb as unknown as Db;
+export const db: Db = playDb;
 
-export type ToastKind = 'new' | 'rare' | 'hidden' | 'route' | 'tier' | 'solved' | 'reopen';
+export type ToastKind = 'new' | 'rare' | 'hidden' | 'route' | 'tier' | 'solved' | 'reopen' | 'state' | 'world';
 export interface Toast { key: number; kind: ToastKind; title: string; sub: string; node?: Discovery }
 
 /** Server and first client render see a fresh engine; saved progress arrives after. */
@@ -63,10 +63,35 @@ export function useSandbox() {
     if (engine.has(id)) engine.markSeen(id);
   }, [engine]);
 
+  /** Everything a made discovery sets off: the card, the toasts, the ending. */
+  const announce = useCallback((res: Extract<CombineResult, { status: 'new' | 'known' }>) => {
+    const n = res.node;
+    setFocusId(n.id);
+    engine.markSeen(n.id);
+    if (res.status === 'new') {
+      if (n.hidden) pushToast({ kind: 'hidden', title: n.n, sub: 'Hidden find', node: n });
+      else if (n.rar === 'rare') pushToast({ kind: 'rare', title: n.n, sub: 'Rare discovery', node: n });
+      if (res.solvedHint) pushToast({ kind: 'solved', title: 'You figured it out.', sub: n.n, node: n });
+      if (ENDPOINTS.has(n.id)) later(() => setEnding(n), 1400);
+    } else if (res.newRoute) {
+      pushToast({ kind: 'route', title: 'New route', sub: `${n.n} · ${res.routes.found} of ${res.routes.total} ways found`, node: n });
+    }
+    res.opened.forEach(t => pushToast({
+      kind: 'tier', title: `${engine.tierName(t)} opened`, sub: 'More combinations work now',
+    }, 4200));
+    if (res.reopened.length) {
+      pushToast({
+        kind: 'reopen', title: 'Try it again',
+        sub: `${res.reopened[0].map(i => engine.get(i)?.n).join(' + ')} works now`,
+      }, 6000);
+    }
+    res.unlocked.forEach(u => pushToast({ kind: 'world', title: `${u.n} appears`, sub: engine.unlockNote(u.id) ?? 'The world offers something new.', node: u }, 4200));
+  }, [engine, pushToast, later]);
+
   /** Ask the engine. `viaSlots` is the classic path (slots clear after a beat);
    *  the workbench passes false and handles its own bodies. Returns the answer. */
-  const fire = useCallback((a: string, b: string, viaSlots = true): CombineResult => {
-    const res = engine.combine(a, b);
+  const fireMany = useCallback((ids: string[], viaSlots = true): CombineResult => {
+    const res = engine.combineMany(ids);
     if (res.status === 'error') { if (viaSlots) clearSlots(); return res; }
     setResult({ ...res, key: ++seq.current });
     setHintError(null);
@@ -74,35 +99,31 @@ export function useSandbox() {
       setBusy(true);
       later(() => { clearSlots(); setBusy(false); }, SETTLE_MS);
     }
+    if (res.status === 'new' || res.status === 'known') announce(res);
+    return res;
+  }, [engine, clearSlots, later, announce]);
 
-    if (res.status === 'new' || res.status === 'known') {
-      const n = res.node;
-      setFocusId(n.id);
-      engine.markSeen(n.id);
-      if (res.status === 'new') {
-        if (n.hidden) pushToast({ kind: 'hidden', title: n.n, sub: 'Hidden find', node: n });
-        else if (n.rar === 'rare') pushToast({ kind: 'rare', title: n.n, sub: 'Rare discovery', node: n });
-        if (res.solvedHint) pushToast({ kind: 'solved', title: 'You figured it out.', sub: n.n, node: n });
-        if (ENDPOINTS.has(n.id)) later(() => setEnding(n), 1400);
-      } else if (res.newRoute) {
-        pushToast({ kind: 'route', title: 'New route', sub: `${n.n} · ${res.routes.found} of ${res.routes.total} ways found`, node: n });
-      }
-      res.opened.forEach(t => pushToast({
-        kind: 'tier', title: `${engine.tierName(t)} opened`, sub: 'More combinations work now',
-      }, 4200));
-      if (res.reopened.length) {
-        const [x, y] = res.reopened[0];
-        pushToast({
-          kind: 'reopen', title: 'Try it again',
-          sub: `${engine.get(x)?.n} + ${engine.get(y)?.n} works now`,
-        }, 6000);
-      }
+  const fire = useCallback((a: string, b: string, viaSlots = true): CombineResult => fireMany([a, b], viaSlots), [fireMany]);
+
+  /** Smash, cut, brush, separate or dig one resource. What it makes is announced like any find. */
+  const processOnBench = useCallback((id: string, action: ActionId): ProcessResult => {
+    const res = engine.process(id, action);
+    if (res.status === 'error') return res;
+    setHintError(null);
+    if (res.status === 'done') {
+      const first = res.discoveries.find(d => d.status === 'new') ?? res.discoveries[0];
+      if (first) setResult({ ...first, key: ++seq.current });
+      res.discoveries.forEach(announce);
+      res.fresh.forEach(f => pushToast({ kind: 'state', title: f.n, sub: 'New material', node: f }, 2600));
+      // world offers that came from a plain state (Soil after the first Stick)
+      res.unlocked.filter(u => !res.discoveries.some(d => d.unlocked.some(x => x.id === u.id)))
+        .forEach(u => pushToast({ kind: 'world', title: `${u.n} appears`, sub: engine.unlockNote(u.id) ?? 'The world offers something new.', node: u }, 4200));
     }
     return res;
-  }, [engine, pushToast, clearSlots, later]);
+  }, [engine, announce, pushToast]);
 
   /** The workbench's way in: same engine, same toasts, no slots. */
-  const combineOnBench = useCallback((a: string, b: string) => fire(a, b, false), [fire]);
+  const combineOnBench = useCallback((ids: string[]) => fireMany(ids, false), [fireMany]);
 
   /** Tap-to-combine: first tap fills A, second fills B and combines at once. */
   const place = useCallback((id: string) => {
@@ -158,7 +179,7 @@ export function useSandbox() {
 
   return {
     engine, db, version, view, setView, slotA, slotB,
-    focus, open, place, drop, dropOnBench, clearSlot, clearSlots, fire, combineOnBench, reset,
+    focus, open, place, drop, dropOnBench, clearSlot, clearSlots, fire, fireMany, combineOnBench, processOnBench, reset,
     result, dismissResult, busy, toasts, ending, setEnding, entered, enter,
     requestHint, hintError, setHintError,
   };
