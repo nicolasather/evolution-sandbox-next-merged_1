@@ -217,11 +217,12 @@ input{font:inherit;color:inherit}
 .tick.on{background:var(--ochre)}
 
 .tabs{display:flex;height:100%}
-.tab{padding:0 17px;display:flex;align-items:center;color:var(--bone-3);
-  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+.tab{position:relative;padding:0 17px;display:flex;align-items:center;color:var(--bone-3);
+  border-bottom:2px solid transparent;transition:color .2s;
   font-family:var(--fs-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
 .tab:hover{color:var(--bone-2)}
-.tab[aria-selected="true"]{color:var(--bone);border-bottom-color:var(--ochre)}
+.tab[aria-selected="true"]{color:var(--bone)}
+.tab-ind{position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--ochre)}
 
 .searchbox{display:flex;align-items:center;gap:9px;min-width:190px}
 .searchbox input{background:none;border:0;width:100%;color:var(--bone);
@@ -280,11 +281,14 @@ input{font:inherit;color:inherit}
 
 .item{display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:10px;
   width:100%;padding:6px 15px;text-align:left;color:var(--bone-2);
-  border-left:2px solid transparent;transition:background .16s,color .16s,border-color .16s}
+  border-left:2px solid transparent;
+  transition:background .16s,color .16s,border-color .16s,transform .22s cubic-bezier(.2,.8,.2,1)}
 .item:hover{background:var(--hover);color:var(--bone);border-left-color:var(--line-3)}
-.item.picked{background:var(--ochre-lo);color:var(--bone);border-left-color:var(--ochre)}
+/* Held, not just colored: a small step toward the bench it is bound for. */
+.item.picked{background:var(--ochre-lo);color:var(--bone);border-left-color:var(--ochre);transform:translateX(4px)}
+.item.picked .g{transform:scale(1.08)}
 .item.dragging{opacity:.35}
-.item .g{width:32px;height:32px}
+.item .g{width:32px;height:32px;transition:transform .22s cubic-bezier(.2,.8,.2,1)}
 .item .nm{font-size:12.5px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .item .no{font-family:var(--fs-mono);font-size:9px;color:var(--bone-4)}
 .item.is-done{color:var(--bone-4)}

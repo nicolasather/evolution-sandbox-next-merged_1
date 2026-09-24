@@ -1,41 +1,44 @@
 'use client';
 
-import { useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Glyph } from './Glyph';
 import { Plate3D } from './Plate3D';
 import { ScenePicker } from './SceneBackdrop';
+import { DiscoveryCeremony } from './fx/DiscoveryCeremony';
+import { getDragSnapshot, subscribeDrag } from '@/lib/dragcraft';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { CombineResult, HintView } from '@/lib/types';
 
 type Outcome = (CombineResult & { key: number }) | null;
 
+const NO_DRAG = { which: null, compatible: null, itemId: null } as const;
+
 function Slot({
-  which, id, engine, onDrop, onClear, state,
+  which, id, engine, onClear, state,
 }: {
   which: 'a' | 'b';
   id: string | null;
   engine: Engine;
-  onDrop: (which: 'a' | 'b', id: string) => void;
   onClear: (which: 'a' | 'b') => void;
   state: '' | 'merge' | 'shake';
 }) {
-  const [over, setOver] = useState(false);
+  // the actual drop is handled by lib/dragcraft (armItemDrag, wired from
+  // InventoryRail) — this only reads its published state to show the ring
+  const drag = useSyncExternalStore(subscribeDrag, getDragSnapshot, () => NO_DRAG);
+  const over = drag.which === which;
   const node = id ? engine.get(id) : undefined;
 
   return (
     <div
-      className={cn('slot', over && 'over', node && 'full', state)}
+      className={cn(
+        'slot', over && 'over', node && 'full', state,
+        over && drag.compatible === true && 'compatible',
+        over && drag.compatible === false && 'incompatible',
+      )}
       data-which={which}
       aria-label={which === 'a' ? 'First ingredient' : 'Second ingredient'}
-      onDragOver={e => { e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; setOver(true); }}
-      onDragLeave={() => setOver(false)}
-      onDrop={e => {
-        e.preventDefault(); setOver(false);
-        const dropped = e.dataTransfer.getData('text/plain');
-        if (dropped && engine.has(dropped)) onDrop(which, dropped);
-      }}
     >
       <SlotRing />
       {!node ? (
@@ -127,16 +130,20 @@ function OutcomeCard({
     );
   }
 
+  // a genuinely new discovery gets the slow reveal; an already-known result
+  // (even by a new route) keeps the snappier card — it is not the ceremony's
+  // subject
+  if (result.status === 'new') {
+    return <DiscoveryCeremony result={result} onUse={onUse} onOpen={onOpen} />;
+  }
+
   const n = result.node;
-  const isNew = result.status === 'new';
-  const tag = isNew
-    ? (n.hidden ? 'Hidden find' : n.rar === 'rare' ? 'Rare discovery' : 'New discovery')
-    : result.newRoute ? `New route · ${result.routes.found}/${result.routes.total}` : 'Already known';
+  const tag = result.newRoute ? `New route · ${result.routes.found}/${result.routes.total}` : 'Already known';
 
   return (
     <motion.div
       key={result.key}
-      className={cn('oc oc-win', isNew && 'is-new', n.hidden && 'is-hidden', n.rar === 'rare' && 'is-rare')}
+      className="oc oc-win"
       role="status"
       initial={{ opacity: 0, scale: 0.86, y: -10 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -144,7 +151,6 @@ function OutcomeCard({
       transition={{ type: 'spring', stiffness: 420, damping: 26 }}
     >
       <div className="oc-art">
-        {isNew && <span className="oc-ring" aria-hidden="true" />}
         <Plate3D node={n} variant="card" label={n.n} />
       </div>
       <div className="oc-text">
@@ -156,7 +162,7 @@ function OutcomeCard({
         <button className="chip" onClick={() => onUse(n.id)} title="Put it on the bench">Use</button>
         <button className="chip only-narrow" onClick={() => onOpen(n.id)}>Read</button>
       </div>
-      <span className="sr">{isNew ? `Discovered ${n.n}` : `${n.n}, already known`}</span>
+      <span className="sr">{`${n.n}, already known`}</span>
     </motion.div>
   );
 }
@@ -181,7 +187,7 @@ function HintButton({ hint, onRequest }: { hint: HintView; onRequest: () => void
 }
 
 export function Bench({
-  engine, slotA, slotB, result, busy, hint, hintError, onDrop, onClear, onOpen, onUse, onRequestHint, onDropHint,
+  engine, slotA, slotB, result, busy, hint, hintError, onClear, onOpen, onUse, onRequestHint, onDropHint,
 }: {
   engine: Engine;
   slotA: string | null;
@@ -190,7 +196,6 @@ export function Bench({
   busy: boolean;
   hint: HintView;
   hintError: string | null;
-  onDrop: (which: 'a' | 'b', id: string) => void;
   onClear: (which: 'a' | 'b') => void;
   onOpen: (id: string) => void;
   onUse: (id: string) => void;
@@ -221,9 +226,9 @@ export function Bench({
         <ScenePicker era={engine.currentEra().id} />
         <div className={cn('slots', (slotA || slotB) && 'armed', slotA && slotB && 'charged', slotState === 'merge' && 'merging')}>
           <i className="slot-link" aria-hidden="true" />
-          <Slot which="a" id={slotA} engine={engine} onDrop={onDrop} onClear={onClear} state={slotState} />
+          <Slot which="a" id={slotA} engine={engine} onClear={onClear} state={slotState} />
           <div className="slot-op" aria-hidden="true"><span>+</span></div>
-          <Slot which="b" id={slotB} engine={engine} onDrop={onDrop} onClear={onClear} state={slotState} />
+          <Slot which="b" id={slotB} engine={engine} onClear={onClear} state={slotState} />
         </div>
 
         <div id="outcome" aria-live="polite">

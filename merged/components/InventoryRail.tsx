@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useSyncExternalStore } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { Glyph } from './Glyph';
 import { flyToSlot } from '@/lib/fx';
+import { armItemDrag } from '@/lib/dragcraft';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { Discovery } from '@/lib/types';
@@ -26,7 +27,7 @@ const setHideDoneStored = (v: boolean) => {
 };
 
 export function InventoryRail({
-  engine, slotA, slotB, highlightId, onPick,
+  engine, slotA, slotB, highlightId, onPick, onDrop, onContextMenu,
 }: {
   engine: Engine;
   slotA: string | null;
@@ -34,9 +35,13 @@ export function InventoryRail({
   /** Item a hint or the onboarding line points at. */
   highlightId: string | null;
   onPick: (id: string) => void;
+  onDrop: (which: 'a' | 'b', id: string) => void;
+  onContextMenu: (x: number, y: number, id: string) => void;
 }) {
   const [q, setQ] = useState('');
   const [era, setEra] = useState<string | null>(null);
+  const slots = useRef({ a: slotA, b: slotB });
+  useEffect(() => { slots.current = { a: slotA, b: slotB }; }, [slotA, slotB]);
   const hideDone = useSyncExternalStore(subscribeHideDone, readHideDone, () => false);
   const toggleDone = () => setHideDoneStored(!hideDone);
 
@@ -114,12 +119,20 @@ export function InventoryRail({
                         p === 'done' && 'is-done',
                         highlightId === n.id && 'hinted',
                       )}
-                      draggable
-                      onDragStart={ev => { ev.dataTransfer.setData('text/plain', n.id); ev.dataTransfer.effectAllowed = 'copy'; }}
+                      style={{ touchAction: 'none' }}
+                      onPointerDown={ev => armItemDrag(ev, {
+                        id: n.id,
+                        originEl: ev.currentTarget,
+                        engine,
+                        getSlots: () => slots.current,
+                        onDrop,
+                        onLongPress: (x, y) => onContextMenu(x, y, n.id),
+                      })}
                       onClick={ev => {
                         flyToSlot(ev.currentTarget.querySelector('svg'), slotA && !slotB ? 'b' : 'a');
                         onPick(n.id);
                       }}
+                      onContextMenu={ev => { ev.preventDefault(); onContextMenu(ev.clientX, ev.clientY, n.id); }}
                       aria-label={`${n.n}. ${RARITY_LABEL[n.rar]}.${p === 'done' ? ' Used up.' : ''} Place on the bench.`}
                     >
                       <Glyph node={n} />

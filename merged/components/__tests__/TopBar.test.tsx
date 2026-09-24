@@ -20,9 +20,13 @@ describe('TopBar', () => {
         onView={() => {}}
         onOpen={() => {}}
         onReset={() => {}}
+        onShortcuts={() => {}}
       />
     );
-    expect(screen.getByText('Workspace')).toBeInTheDocument();
+    // the label's characters are split into their own spans for the spatial
+    // hover effect, so its accessible name (not a single text node) is what
+    // is queried here — see components/fx/ReactiveLabel.
+    expect(screen.getByRole('tab', { name: 'Workspace' })).toBeInTheDocument();
   });
 
   it('search input works', () => {
@@ -33,6 +37,7 @@ describe('TopBar', () => {
         onView={() => {}}
         onOpen={() => {}}
         onReset={() => {}}
+        onShortcuts={() => {}}
       />
     );
     const input = screen.getByPlaceholderText('Search');

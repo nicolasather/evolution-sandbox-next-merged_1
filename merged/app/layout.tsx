@@ -5,6 +5,7 @@ import type { Metadata, Viewport } from 'next';
 import { Archivo, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { siteUrl } from '@/lib/site';
 import { THEME_BOOT } from '@/lib/theme';
+import { GlobalFX } from '@/components/fx/GlobalFX';
 import './globals.css';
 
 /* next/font downloads these at build time and serves them from this site, so a
@@ -103,6 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
         {children}
+        <GlobalFX />
         <Analytics />
         <SpeedInsights />
       </body>

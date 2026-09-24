@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { AnimatedCount } from './vengeance/animated-count';
 import { Kbd } from './vengeance/kbd';
 import { Glyph } from './Glyph';
+import { ReactiveLabel } from './fx/ReactiveLabel';
 import { ThemeToggle } from './ThemeToggle';
 import { FullscreenButton } from './FullscreenButton';
 import type { Engine } from '@/lib/engine';
@@ -16,13 +18,14 @@ const VIEWS: { id: ViewId; label: string }[] = [
 ];
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset,
+  engine, view, onView, onOpen, onReset, onShortcuts,
 }: {
   engine: Engine;
   view: ViewId;
   onView: (v: ViewId) => void;
   onOpen: (id: string) => void;
   onReset: () => void;
+  onShortcuts: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -71,7 +74,15 @@ export function TopBar({
             onClick={() => onView(v.id)}
             aria-controls={`${v.id}-view`}
           >
-            {v.label}
+            <ReactiveLabel text={v.label} />
+            {view === v.id && (
+              <motion.span
+                layoutId="tab-ind"
+                className="tab-ind"
+                aria-hidden="true"
+                transition={{ type: 'spring', stiffness: 500, damping: 40 }}
+              />
+            )}
           </button>
         ))}
       </nav>
@@ -131,6 +142,16 @@ export function TopBar({
       </div>
 
       <div className="top-slot top-actions">
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="shortcuts"
+          aria-label="Keyboard shortcuts"
+          aria-keyshortcuts="?"
+          title="Keyboard shortcuts (?)"
+          onClick={onShortcuts}
+        >
+          <span className="mono" aria-hidden="true">?</span>
+        </button>
         <ThemeToggle />
         <FullscreenButton />
         <button className="icon-btn" id="reset" aria-label="Start over (Reset progress)" title="Start over" onClick={onReset}>

@@ -12,6 +12,11 @@ import { Ending } from './Ending';
 import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
 import { SceneBackdrop } from './SceneBackdrop';
+import { ReactiveField } from './fx/ReactiveField';
+import { ReactiveLabel } from './fx/ReactiveLabel';
+import { ViewVeil } from './fx/ViewVeil';
+import { ContextMenu, type ContextMenuTarget } from './fx/ContextMenu';
+import { ShortcutsOverlay } from './fx/ShortcutsOverlay';
 import { enterFullscreen, installImmersiveTop, installPressFx } from '@/lib/fx';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { cn } from '@/lib/utils';
@@ -31,6 +36,8 @@ export function Sandbox() {
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [onlyPath, setOnlyPath] = useState(false);
   const [fitSignal, setFitSignal] = useState(0);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
   const panelReturn = useRef<HTMLElement | null>(null);
 
   // The world tint follows the furthest era reached — subtle, not a light show.
@@ -75,6 +82,18 @@ export function Sandbox() {
     if (back && document.contains(back)) back.focus();
   }, []);
 
+  const openContextMenu = useCallback((x: number, y: number, id: string) => setCtxMenu({ x, y, id }), []);
+  const closeContextMenu = useCallback(() => setCtxMenu(null), []);
+
+  /** The context menu's "Find in graph": jump straight there with the node
+   *  already focused, regardless of which view the menu was opened from. */
+  const findInGraph = useCallback((id: string) => {
+    open(id);
+    setView('graph');
+    setPanelOpen(true);
+    panelReturn.current = null;
+  }, [open, setView]);
+
   const confirmReset = useCallback(() => {
     setConfirmOpen(false);
     reset();
@@ -94,21 +113,40 @@ export function Sandbox() {
   }, [engine, setHintError, showView]);
 
   // one keyboard listener for the page; it reads the latest state through a ref
-  const keys = useRef({ confirmOpen, closePanel, clearSlots, setEnding });
-  useEffect(() => { keys.current = { confirmOpen, closePanel, clearSlots, setEnding }; });
+  const keys = useRef({ confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place });
+  useEffect(() => {
+    keys.current = { confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place };
+  });
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
       const k = keys.current;
       if (k.confirmOpen) return;                    // the dialog handles its own keys
-      if (ev.key === 'Escape') {
-        k.closePanel(); k.setEnding(null); k.clearSlots();
+      if (k.shortcutsOpen) {                         // the overlay owns the keyboard while it's up
+        if (ev.key === 'Escape' || ev.key === '?') { ev.preventDefault(); setShortcutsOpen(false); }
         return;
       }
-      if (ev.key === '/' && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
-        const t = ev.target as HTMLElement | null;
-        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      if (ev.key === 'Escape') {
+        k.closePanel(); k.setEnding(null); k.clearSlots(); setCtxMenu(null);
+        return;
+      }
+      const t = ev.target as HTMLElement | null;
+      const typing = !!t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+      if (ev.key === '/' && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
         ev.preventDefault();
         document.getElementById('s-q')?.focus();
+        return;
+      }
+      if (ev.key === '?' && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
+        ev.preventDefault();
+        setShortcutsOpen(true);
+        return;
+      }
+      // Enter: accept whatever discovery is currently showing, unless focus
+      // is already on something with its own idea of what Enter should do
+      if (ev.key === 'Enter' && t && ['INPUT', 'TEXTAREA', 'BUTTON', 'A'].includes(t.tagName)) return;
+      if (ev.key === 'Enter' && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
+        const r = k.result;
+        if (r && (r.status === 'new' || r.status === 'known')) { ev.preventDefault(); k.place(r.node.id); }
       }
     };
     window.addEventListener('keydown', onKey);
@@ -133,6 +171,7 @@ export function Sandbox() {
           ))}
         </svg>
       </div>
+      <ReactiveField active={s.entered} />
       <SceneBackdrop era={era.id} active={s.entered && view === 'work'} />
       <div id="grain" aria-hidden="true" />
       <div id="top-handle" aria-hidden="true"><i /></div>
@@ -146,6 +185,7 @@ export function Sandbox() {
           onView={showView}
           onOpen={openExhibit}
           onReset={() => setConfirmOpen(true)}
+          onShortcuts={() => setShortcutsOpen(true)}
         />
 
         <div id="views" data-current={view}>
@@ -158,7 +198,6 @@ export function Sandbox() {
               busy={s.busy}
               hint={hint}
               hintError={s.hintError}
-              onDrop={s.drop}
               onClear={s.clearSlot}
               onOpen={openExhibit}
               onUse={id => s.place(id)}
@@ -171,6 +210,8 @@ export function Sandbox() {
               slotB={s.slotB}
               highlightId={highlightId}
               onPick={s.place}
+              onDrop={s.drop}
+              onContextMenu={openContextMenu}
             />
           </section>
 
@@ -197,6 +238,7 @@ export function Sandbox() {
             onHint={aimHint}
           />
         </div>
+        <ViewVeil view={view} />
       </main>
 
       <nav id="mtabs" aria-label="Views">
@@ -209,7 +251,7 @@ export function Sandbox() {
               {id === 'graph' && <><circle cx="4" cy="10" r="2" /><circle cx="16" cy="5" r="2" /><circle cx="16" cy="15" r="2" /><path d="M6 9l8-3M6 11l8 3" /></>}
               {id === 'arch' && <><rect x="3" y="3" width="6" height="6" /><rect x="11" y="3" width="6" height="6" /><rect x="3" y="11" width="6" height="6" /><rect x="11" y="11" width="6" height="6" /></>}
             </svg>
-            <span className="mono">{label}</span>
+            <ReactiveLabel text={label} className="mono" />
           </button>
         ))}
       </nav>
@@ -237,6 +279,17 @@ export function Sandbox() {
         onCancel={cancelReset}
         onConfirm={confirmReset}
       />
+
+      <ContextMenu
+        target={ctxMenu}
+        engine={engine}
+        onOpen={openExhibit}
+        onFindInGraph={findInGraph}
+        onPlace={s.place}
+        onClose={closeContextMenu}
+      />
+
+      <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} />
 
       <div id="toasts" aria-live="polite">
         {s.toasts.map(t => (
