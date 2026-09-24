@@ -15,25 +15,13 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] px-4 text-center">
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-          Something went wrong
-        </h2>
-        <p className="text-zinc-500 max-w-md mx-auto">
-          We encountered an unexpected issue while processing your request.
-          Please try again later.
-        </p>
-        <div className="pt-4">
-          <button 
-            onClick={() => reset()} 
-            className="px-4 py-2 bg-zinc-900 text-zinc-50 rounded-md font-medium text-sm hover:bg-zinc-800 transition-colors shadow-sm dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
-            aria-label="Try again"
-          >
-            Try again
-          </button>
-        </div>
-      </div>
+    <div className="state-screen">
+      <p className="state-k mono">The archive could not be recovered.</p>
+      <h2 className="state-h">Something went wrong</h2>
+      <p className="state-p">Your progress is stored on this device and has not been touched. Try again.</p>
+      <button onClick={() => reset()} className="chip state-btn" aria-label="Try again">
+        Try again
+      </button>
     </div>
   );
 }

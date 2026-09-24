@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 /* ============================================================================
    CURSOR — a minimal custom pointer for fine-pointer, motion-allowed visitors.
 
-   States: default (tiny dot) · text (hovering interactive text) · drag
+   States: default (tiny dot) · begin (the BEGIN label) · look (an archive card, a timeline point) · text (hovering interactive text) · drag
    (hovering something you can pick up) · dragging (a native HTML5 drag is in
    flight) · craft (both bench slots are loaded — hovering the combine point
    confirms the pairing). Everything else keeps its own native cursor: touch
@@ -16,6 +16,9 @@ import { useEffect, useRef } from 'react';
 
 const TEXT_SEL = 'a, button, input, textarea, [role="tab"], [role="button"], .tab, .chip, .LineHoverLink, summary';
 const DRAG_SEL = '[draggable="true"], .item, .p3d, #gcanvas, .wb';
+// a thing to look at rather than pick up: archive cards, timeline points, route pills
+const LOOK_SEL = '.card, .tl-pt button, .pill, .path-chain li button';
+const BEGIN_SEL = '#begin, .begin, .begin-alt';
 
 export function Cursor() {
   const ref = useRef<HTMLDivElement>(null);
@@ -50,8 +53,10 @@ export function Cursor() {
       el.classList.add('on');
       if (!raf) raf = requestAnimationFrame(() => { raf = 0; paint(); });
 
-      if (dragging) { setState('dragging'); return; }
       const t = e.target as Element | null;
+      if (dragging || document.querySelector('.wb-held')) { setState('dragging'); return; }
+      if (t?.closest(BEGIN_SEL)) { setState('begin'); return; }
+      if (t?.closest(LOOK_SEL)) { setState('look'); return; }
       const charging = !!document.querySelector('.slots.charged');
       if (charging && t?.closest('.slot-op, .slots')) { setState('craft'); return; }
       if (t?.closest(DRAG_SEL)) { setState('drag'); return; }

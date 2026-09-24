@@ -22,7 +22,7 @@ import type { Body, ContactInfo, MaterialId, ZoneId } from './types';
    when everything is at rest.
    ========================================================================== */
 
-export interface Resolved { id: string; n: string; vis: string; cat: string; era: string }
+export interface Resolved { id: string; n: string; vis: string; cat: string; era: string; no?: number }
 
 export interface WorldHooks {
   resolve(id: string): Resolved | null;
@@ -137,6 +137,7 @@ export class World {
     el.className = 'wb-body';
     el.dataset.item = itemId;
     el.dataset.mat = material;
+    if (res?.era) el.dataset.era = res.era;
     el.style.width = `${r * 2}px`;
     el.style.height = `${r * 2}px`;
     const art = res ? svg({ id: res.id, vis: res.vis, cat: res.cat }) : partSvg(itemId);
@@ -146,7 +147,11 @@ export class World {
     if (name) {
       lbl = document.createElement('span');
       lbl.className = 'wb-lbl mono';
-      lbl.textContent = name;
+      if (res?.no) {
+        const no = document.createElement('b');
+        no.textContent = String(res.no).padStart(3, '0');
+        lbl.append(no, document.createTextNode(name));
+      } else lbl.textContent = name;
       this.host.appendChild(lbl);
     }
     const b: Body = {

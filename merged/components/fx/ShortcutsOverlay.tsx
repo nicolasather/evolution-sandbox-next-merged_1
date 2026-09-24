@@ -1,10 +1,16 @@
 'use client';
 
+import { useSyncExternalStore } from 'react';
 import { Kbd } from '../vengeance/kbd';
+import { getQuality, qualityPref, setQualityPref, subscribeQuality, type QualityPref } from '@/lib/perf';
 
 const KBD_CLS = 'rounded-none border border-line-2 bg-ink-3 font-mono text-[10px] text-bone-3';
 
 const ROWS: [string, string][] = [
+  ['W', 'Workspace'],
+  ['G', 'Graph'],
+  ['A', 'Archive'],
+  ['T', 'Timeline'],
   ['/', 'Search your discoveries'],
   ['Enter', 'Use the discovery just found'],
   ['Esc', 'Close a panel · dismiss an ending · let go of a craft'],
@@ -22,6 +28,8 @@ const ROWS: [string, string][] = [
  *  closing this (including Escape and the ? toggle), so a stray Escape here
  *  can never also fire the game's own Escape handling underneath it. */
 export function ShortcutsOverlay({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const pref = useSyncExternalStore(subscribeQuality, qualityPref, () => 'auto' as QualityPref);
+  const tier = useSyncExternalStore(subscribeQuality, getQuality, () => 'medium');
   if (!open) return null;
 
   return (
@@ -42,6 +50,14 @@ export function ShortcutsOverlay({ open, onClose }: { open: boolean; onClose: ()
             </div>
           ))}
         </dl>
+        <div className="quality-row" role="group" aria-label="Visual quality">
+          <span className="mono">Effects</span>
+          {(['auto', 'high', 'medium', 'low'] as QualityPref[]).map(q => (
+            <button key={q} type="button" className="chip" aria-pressed={pref === q} onClick={() => setQualityPref(q)}>
+              {q === 'auto' ? `Auto · ${tier}` : q}
+            </button>
+          ))}
+        </div>
         <div className="confirm-row">
           <button type="button" className="chip" onClick={onClose}>Close</button>
         </div>

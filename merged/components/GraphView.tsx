@@ -5,6 +5,7 @@ import type { Engine } from '@/lib/engine';
 import type { Discovery } from '@/lib/types';
 import { cssVar, THEME_EVENT } from '@/lib/theme';
 
+interface Trace { up: Set<string>; down: Set<string>; upEdges: Set<string>; downEdges: Set<string> }
 interface Pos { x: number; y: number; node: Discovery; col: number }
 interface Layout { pos: Record<string, Pos>; edges: [string, string][]; eraX: number[] }
 interface Palette {
@@ -14,6 +15,37 @@ interface Palette {
 
 const ROWH = 34, SUBW = 176, ERA_GAP = 64, MAX_ROWS = 22;
 const MIN_K = 0.09, MAX_K = 2.6;
+
+/** Everything upstream along the routes the player used, and what it went on to make. */
+function traceOf(engine: Engine, focusId: string): Trace {
+  const up = new Set<string>([focusId]);
+  const upEdges = new Set<string>();
+  const stack = [focusId];
+  while (stack.length) {
+    const id = stack.pop()!;
+    engine.get(id)?.rec?.forEach(([a, b]) => {
+      if (!engine.hasRoute(id, a, b)) return;
+      for (const x of [a, b]) {
+        upEdges.add(`${x}>${id}`);
+        if (!up.has(x)) { up.add(x); stack.push(x); }
+      }
+    });
+  }
+  const down = new Set<string>();
+  const downEdges = new Set<string>();
+  const q = [focusId];
+  while (q.length) {
+    const id = q.shift()!;
+    for (const u of engine.usesOf(id)) {
+      if (!engine.has(u)) continue;
+      const used = engine.get(u)!.rec.some(([a, b]) => (a === id || b === id) && engine.hasRoute(u, a, b));
+      if (!used) continue;
+      downEdges.add(`${id}>${u}`);
+      if (!down.has(u)) { down.add(u); q.push(u); }
+    }
+  }
+  return { up, down, upEdges, downEdges };
+}
 
 /** Eras are columns; an era with many entries wraps into several sub-columns
  *  instead of one very tall one, so the whole map fits a screen at a readable size. */
@@ -110,35 +142,20 @@ export function GraphView({
   // descendants (what it went on to make), as node and edge sets
   const lineage = useMemo(() => {
     if (!focusId || !trace || !engine.has(focusId)) return null;
-    const up = new Set<string>([focusId]);
-    const upEdges = new Set<string>();
-    const stack = [focusId];
-    while (stack.length) {
-      const id = stack.pop()!;
-      engine.get(id)?.rec?.forEach(([a, b]) => {
-        if (!engine.hasRoute(id, a, b)) return;
-        for (const x of [a, b]) {
-          upEdges.add(`${x}>${id}`);
-          if (!up.has(x)) { up.add(x); stack.push(x); }
-        }
-      });
-    }
-    const down = new Set<string>();
-    const downEdges = new Set<string>();
-    const q = [focusId];
-    while (q.length) {
-      const id = q.shift()!;
-      for (const u of engine.usesOf(id)) {
-        if (!engine.has(u)) continue;
-        const used = engine.get(u)!.rec.some(([a, b]) => (a === id || b === id) && engine.hasRoute(u, a, b));
-        if (!used) continue;
-        downEdges.add(`${id}>${u}`);
-        if (!down.has(u)) { down.add(u); q.push(u); }
-      }
-    }
-    return { up, down, upEdges, downEdges };
+    return traceOf(engine, focusId);
     // version: the lineage grows as the player finds more
   }, [focusId, trace, engine, version]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // hovering a find lights its ancestors and descendants; cached per find
+  const hoverCache = useRef<{ ver: number; map: Map<string, Trace | null> }>({ ver: -1, map: new Map() });
+  const hoverTrace = useCallback((id: string): Trace | null => {
+    const c = hoverCache.current;
+    if (c.ver !== version) { c.ver = version; c.map = new Map(); }
+    if (!c.map.has(id)) c.map.set(id, engine.has(id) ? traceOf(engine, id) : null);
+    return c.map.get(id) ?? null;
+  }, [engine, version]);
+  /** Which trace is showing, and since when: a new one draws itself in. */
+  const anim = useRef<{ key: string | null; t0: number }>({ key: null, t0: 0 });
 
   const fitBox = useCallback((ids?: string[], minK = MIN_K) => {
     const cv = canvasRef.current;
@@ -237,7 +254,15 @@ export function GraphView({
     const { x: tx, y: ty, k } = view.current;
     const show = (id: string) => !onlyPath || engine.has(id);
     const X = (p: Pos) => p.x * k + tx, Y = (p: Pos) => p.y * k + ty;
-    const L = lineage;
+    const hoverL = hover.current ? hoverTrace(hover.current) : null;
+    const L = hoverL ?? lineage;
+    const traceKey = L ? (hoverL ? `h:${hover.current}` : `f:${focusId}`) : null;
+    if (anim.current.key !== traceKey) anim.current = { key: traceKey, t0: now };
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    // the route draws itself outward from the find in ~0.8s
+    const drawP = !L || reduceMotion ? 1 : Math.min(1, (now - anim.current.t0) / 800);
+    const ease = 1 - Math.pow(1 - drawP, 3);
+    let animating = drawP < 1;
     const inTrace = (id: string) => !L || L.up.has(id) || L.down.has(id);
 
     // era rules
@@ -271,13 +296,18 @@ export function GraphView({
       c.beginPath();
       c.moveTo(ax, ay);
       c.bezierCurveTo(ax + (bx - ax) * 0.5, ay, bx - (bx - ax) * 0.5, by, bx, by);
-      c.stroke();
+      const lit = L && (L.upEdges.has(`${a}>${b}`) || L.downEdges.has(`${a}>${b}`));
+      if (lit && ease < 1) {
+        const len = Math.hypot(bx - ax, by - ay) * 1.25 + 20;
+        c.setLineDash([len * ease, len]);
+        c.stroke();
+        c.setLineDash([]);
+      } else c.stroke();
     });
 
     // nodes
     c.textAlign = 'left';
     c.font = '11px Archivo, sans-serif';
-    let animating = false;
     for (const id of Object.keys(layout.pos)) {
       if (!show(id)) continue;
       const p = layout.pos[id];
@@ -287,7 +317,7 @@ export function GraphView({
       const lit = inTrace(id);
       const isFocus = id === focusId;
       const r = known ? (hover.current === id || isFocus ? 6.5 : 4.6) : 2.2;
-      c.globalAlpha = lit ? 1 : 0.18;
+      c.globalAlpha = lit ? 1 : (L ? 0.18 - 0.0 : 0.18);
       c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2);
       c.fillStyle = known ? (P.rar[p.node.rar] ?? P.rar.common) : alpha(P.bone, 0.16);
       c.fill();
@@ -336,7 +366,7 @@ export function GraphView({
 
     cv.dataset.draws = String(++draws.current);   // lets the smoke test prove the canvas idles
     if (animating) requestDraw();
-  }, [engine, layout, onlyPath, lineage, focusId, requestDraw]);
+  }, [engine, layout, onlyPath, lineage, focusId, requestDraw, hoverTrace]);
   useEffect(() => { drawRef.current = draw; });
 
   // anything that changes the picture — becoming visible, a discovery, the

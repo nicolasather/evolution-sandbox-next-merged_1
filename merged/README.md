@@ -70,9 +70,14 @@ only right for local runs. There is deliberately no invented placeholder domain.
 ```
 app/                    App Router: the game, plus method / FAQ / privacy / 404
   _design-system.css    the shared stylesheet — identical to ../evolution-sandbox/src/styles.css
+  _museum.css           the 1.8 layer: landing film, world reveal, cards, ceremony, exhibit, timeline, HUD
   globals.css           Tailwind, the design system (in the components layer), tokens
 components/             view layer — presentational, no game rules
   ConfirmDialog.tsx     in-page confirmation (window.confirm is blocked in sandboxed frames)
+  Landing.tsx           the cinematic opening; drives lib/intro (canvas time tunnel) and the stone's fall
+  Workbench.tsx         the physical bench: artifact cards, magnetic pull, orbit-and-impact crafting
+  TimelineView.tsx      one horizontal rail, real recorded dates only
+  fx/CeremonyStage.tsx  the full-screen discovery ceremony; fx/EraShift.tsx marks a new era
   vengeance/            Vengeance UI components, copied from the registry (MIT)
 lib/
   engine.ts             the whole game: pair index, combining, nudges, hints, routes, tiers — and a tiny store
@@ -80,6 +85,10 @@ lib/
   daily.ts              "Today's find" (date-seeded, no streaks)
   glyphs.ts             the shape grammar that draws all 220 marks
   useSandbox.ts         the only place React and the engine meet
+  perf.ts               HIGH / MEDIUM / LOW quality tiers, reduced motion, tunnel length by device
+  sound.ts              the one door for every sound (SOUND on/off); synthesis in craft/audio.ts
+  routes.ts, near.ts    PATH 01/02… derived from recipes; vague "something is forming" lines
+  intro/                tunnel canvas (fx.ts) and the real plates that fly through it (objects.ts)
   site.ts, format.ts    site URL resolution; locale-independent dates
   types.ts              the database contract
 data/

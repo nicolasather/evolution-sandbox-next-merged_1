@@ -3,6 +3,52 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.8.0 — 24 September 2026
+
+### A playable museum: the visual and interaction redesign
+The game is the same game. Every route, hint, source and save is untouched
+(`lib/engine.ts` was not edited); what changed is how it is staged.
+
+- **Opening.** A cinematic landing ("How did we get here?") with dust that reacts to the cursor
+  and a museum-label BEGIN. BEGIN collapses the screen into a point, opens a **time tunnel**
+  (three depth layers, real plates of Stone, Spear, Fire, Pottery, Writing, Wheel, Telescope,
+  Steam engine, Electric light, Telephone, Computer and Smartphone flying past), a flash, a
+  moment of silence, then one rotating Stone: "Begin with almost nothing." The Stone falls onto
+  the bench and the interface arrives layer by layer. Returning players get CONTINUE TIMELINE and
+  Replay time journey; the film is skippable (click, Esc, Space) and short on phones.
+- **Workbench.** Pieces are **artifact cards** with catalogue numbers. Carrying one near another
+  draws the resting one toward it and makes both tremble; combining orbits the pair, the rest of
+  the table dims, dust gathers, and the impact scales with the tier (about 0.5 s known route,
+  about 1.1 s new discovery, about 2.4 s major).
+- **Discovery ceremony.** The room darkens; the piece is lifted to the centre with "NEW
+  DISCOVERY", its catalogue number counting up (`018 / 322`), name, era, date and an evidence
+  line — "Verified evidence · N sources" or "Source needed", from the record, never invented.
+  Rising dust, longer for rare finds. Hidden discoveries arrive as `?????????` and resolve
+  letter by letter. Tap to fast-forward, tap again to close.
+- **Era shift.** Reaching a later era is marked once (never on resume or reset) with the era's
+  name and blurb. Seven material accent colours follow the era.
+- **Exhibit.** Spotlight and pedestal, sections that read in order, **PATH 01/02…** for every
+  recipe computed from the real data (walked routes first, "Trace it back" for the chain behind
+  them), "Source unavailable" when a cited source cannot be loaded.
+- **Graph.** Hover any find to light its ancestors and descendants and dim the rest; the route
+  draws itself in.
+- **Archive.** Catalogue cards, staggered in; hidden finds stay `?????????` and unnumbered
+  until found; "Source needed" flag on found entries without a verified source.
+- **Timeline (new view, key T).** One horizontal rail, era after era, real recorded dates only;
+  unfound entries are unnamed ticks, hidden finds are absent until found.
+- **Hints.** After a pair that makes nothing the game may say "Something is forming." or "This
+  material has more uses than you think." (`lib/near.ts`) — never a name, never a count.
+- **HUD and sound.** A small progress ring, animated counters (including routes walked), one
+  Sound on/off button. All sound goes through `lib/sound.ts`; nothing plays before a gesture.
+- **Keys.** W G A T switch view; `/` search; `?` help (now with an Effects quality switch).
+- **Performance.** `lib/perf.ts` picks HIGH / MEDIUM / LOW from the device (or the player's
+  choice) and scales every decorative particle count; transform/opacity/canvas only;
+  `prefers-reduced-motion` skips the film and replaces motion with fades.
+- **Voice.** Loading reads "Recovering timeline…"; failures read "The archive could not be
+  recovered." and say that progress is safe on the device. Returning players are greeted with
+  "The world remembers."
+- Fixed: a hydration mismatch in `ViewVeil` under reduced motion.
+
 ## 1.7.0 — 24 September 2026
 
 ### Discoveries are made with the hands, not by clicking two things together

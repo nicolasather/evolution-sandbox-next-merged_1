@@ -14,10 +14,10 @@ export default function GlobalError({
         <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center bg-zinc-50 dark:bg-zinc-950">
           <div className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-              Critical System Error
+              The archive could not be recovered
             </h2>
             <p className="text-zinc-500 max-w-md mx-auto">
-              Failed to initialize the application. We have recorded this issue.
+              Something failed before the game could start. Your progress is stored on this device and has not been touched.
             </p>
             <div className="pt-4">
               <button 

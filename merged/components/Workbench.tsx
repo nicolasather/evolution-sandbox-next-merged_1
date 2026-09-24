@@ -47,6 +47,7 @@ interface Props {
   onBegin: () => void;
 }
 
+const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
 const clamp = (v: number, lo: number, hi: number) => (v < lo ? lo : v > hi ? hi : v);
 const pairId = (a: string, b: string) => (a < b ? `${a}|${b}` : `${b}|${a}`);
 function hashStr(s: string): number {
@@ -103,7 +104,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
     let session: CraftSession | null = null;
     let sessionKey = '';
     let sessionTime = 0;
-    let resolving: { a: Body; b: Body; t: number; dur: number; tier: Tier } | null = null;
+    let resolving: { a: Body; b: Body; t: number; dur: number; tier: Tier; a0: number; d0: number; dust: number } | null = null;
     let pull: { a: Body; b: Body; t: number } | null = null;
     let cool = 0;
     let sel: Body | null = null;
@@ -120,7 +121,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
     const world = new World(bodiesEl, {
       resolve: id => {
         const n = latest.current.engine.get(id);
-        return n ? { id: n.id, n: n.n, vis: n.vis, cat: n.cat, era: n.era } : null;
+        return n ? { id: n.id, n: n.n, vis: n.vis, cat: n.cat, era: n.era, no: n.no } : null;
       },
       onImpact: info => {
         const { a, b, speed, force } = info;
@@ -201,12 +202,44 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       world.step(dt);
       if (cool > 0) cool -= dt;
       updatePull(dt);
+      magnet(dt);
       if (session) updateSession(dt);
       if (resolving) updateResolving(dt);
       if (!session && !resolving && !pull && cool <= 0) checkPairs();
       hits.clear();
       fx.update(dt);
       syncChrome();
+    }
+
+    /* ── magnetic attraction ───────────────────────────────────────────
+       A piece carried close to another is gently drawn toward it and both
+       tremble a little — a hint that they can meet, never that they combine.
+       Only the resting piece is nudged; nothing is combined from here. */
+    let nearA: Body | null = null, nearB: Body | null = null;
+    function setNear(a: Body | null, b: Body | null) {
+      if (a === nearA && b === nearB) return;
+      nearA?.el.removeAttribute('data-near'); nearB?.el.removeAttribute('data-near');
+      nearA = a; nearB = b;
+      a?.el.setAttribute('data-near', ''); b?.el.setAttribute('data-near', '');
+    }
+    function magnet(dt: number) {
+      const held = drag?.body;
+      if (!held || session || resolving || pull || !world.bodies.includes(held)) { setNear(null, null); return; }
+      let best: Body | null = null, bd = Infinity;
+      for (const o of world.bodies) {
+        if (o === held || o.temp || o.locked || o.held) continue;
+        const d = Math.hypot(o.x - held.x, o.y - held.y);
+        if (d < bd) { bd = d; best = o; }
+      }
+      if (!best) { setNear(null, null); return; }
+      const reach = (held.r + best.r) * 1.7, touch = (held.r + best.r) * 0.95;
+      if (bd > reach) { setNear(null, null); return; }
+      setNear(held, best);
+      if (bd > touch) {
+        const k = (1 - (bd - touch) / (reach - touch)) * 90 * dt;
+        best.vx += ((held.x - best.x) / bd) * k;
+        best.vy += ((held.y - best.y) / bd) * k;
+      }
     }
 
     /* ── attempts ─────────────────────────────────────────────────── */
@@ -232,7 +265,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       const tooEarly = !!node && !eng.has(node.id) && !eng.isRecipeUnlocked(node.id);
       if (!rid || !node || tooEarly) { answerNow(a, b); return; }
       // a way already found is not made twice; the Instant option skips the hands entirely
-      if (eng.hasRoute(rid, a.itemId, b.itemId) || latest.current.instant) { beginResolve(a, b, 'quick', 0.26); return; }
+      if (eng.hasRoute(rid, a.itemId, b.itemId) || latest.current.instant) { beginResolve(a, b, 'quick', latest.current.instant ? 0.26 : 0.46); return; }
       startSession(a, b, rid, pairId(a.itemId, b.itemId));
     }
 
@@ -254,7 +287,9 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
 
     function beginResolve(a: Body, b: Body, tier: Tier, dur: number) {
       latest.current.onBegin();
-      resolving = { a, b, t: 0, dur, tier };
+      resolving = { a, b, t: 0, dur, tier, a0: Math.atan2(b.y - a.y, b.x - a.x), d0: Math.hypot(b.x - a.x, b.y - a.y), dust: 0 };
+      // the rest of the bench dims while the two pieces work on each other
+      if (tier !== 'quick') { host.dataset.resolve = tier; a.el.dataset.res = ''; b.el.dataset.res = ''; }
       a.locked = b.locked = true; a.grabbable = b.grabbable = false;
       if (drag && (drag.body === a || drag.body === b)) { world.release(drag.body, 0, 0); drag = null; }
       wake();
@@ -267,13 +302,29 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       const { a, b } = r;
       const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
       const k = clamp(r.t / r.dur, 0, 1);
-      // they draw into each other, and a major find glows before it lands
-      world.glide(a, mx, my, 10 + k * 14); world.glide(b, mx, my, 10 + k * 14);
       a.z += (0 - a.z) * Math.min(1, dt * 12); b.z += (0 - b.z) * Math.min(1, dt * 12);
       a.glow = b.glow = r.tier === 'major' ? k : k * 0.5;
-      if (r.tier === 'major' && r.t > 0.05 && !fx.alive) fx.ring(mx, my, a.r * (1.5 + k), { color: 'ochre', life: 0.7 });
+      if (r.tier === 'quick') {
+        // a known way: the two simply draw together
+        world.glide(a, mx, my, 10 + k * 14); world.glide(b, mx, my, 10 + k * 14);
+      } else {
+        // they circle each other, closing in as the work nears its end
+        const turns = r.tier === 'major' ? 1.6 : 0.9;
+        const ang = r.a0 + easeInOut(k) * Math.PI * 2 * turns;
+        const rad = Math.max(a.r * 0.35, (Math.max(r.d0, (a.r + b.r) * 0.9) / 2) * (1 - k * k * 0.85));
+        world.glide(a, mx + Math.cos(ang + Math.PI) * rad, my + Math.sin(ang + Math.PI) * rad, 16);
+        world.glide(b, mx + Math.cos(ang) * rad, my + Math.sin(ang) * rad, 16);
+        r.dust += dt;
+        if (r.dust > (r.tier === 'major' ? 0.05 : 0.09)) {
+          r.dust = 0;
+          const th = Math.random() * Math.PI * 2, dd = a.r * (1.8 + Math.random());
+          fx.burst(mx + Math.cos(th) * dd, my + Math.sin(th) * dd, { n: 1, color: 'bone3', speed: 0, life: 0.5, size: 1.6, drag: 0 });
+        }
+        if (r.tier === 'major') { fx.shake(k * 1.2); if (r.t > 0.3 && Math.random() < dt * 5) fx.ring(mx, my, a.r * (1.3 + k * 1.4), { color: 'ochre', life: 0.7 }); }
+      }
       if (r.t >= r.dur) {
         resolving = null;
+        clearResolveMark(a, b);
         a.glow = b.glow = 0;
         const res = latest.current.onCombine(a.itemId, b.itemId);
         if (res.status === 'error') { removeQuiet(a, b); return; }
@@ -282,6 +333,11 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
         unlockBoth(a, b); a.grabbable = b.grabbable = true;
         world.repel(a, b, 300); fx.sound('tick', { vol: 0.5 }); cool = 0.4;
       }
+    }
+
+    function clearResolveMark(a: Body, b: Body) {
+      delete host.dataset.resolve;
+      a.el.removeAttribute('data-res'); b.el.removeAttribute('data-res');
     }
 
     /** The engine said yes: the two become one, and the result stays on the bench. */
@@ -294,7 +350,8 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       fx.ring(mx, my, world.unit * (fresh ? 2.6 : 1.8), { color: 'ochre', life: fresh ? 0.8 : 0.5, width: fresh ? 2 : 1.4 });
       fx.burst(mx, my, { n: fresh ? 16 : 8, color: 'ochre', speed: fresh ? 150 : 90, life: 0.6, size: 2.4 });
       fx.sound(fresh ? 'chime' : 'pop', { vol: fresh ? 0.9 : 0.6 });
-      if (fresh && tier === 'major') { fx.flash(0.9); fx.shake(3); }
+      if (fresh && tier !== 'quick') { fx.shake(tier === 'major' ? 4 : 2); fx.spark(mx, my, { n: tier === 'major' ? 14 : 8, color: 'ochre', speed: 200, life: 0.5 }); }
+      if (fresh && tier === 'major') fx.flash(0.9);
       lastTap = null;
       sel = null;
       cool = 0.3;
@@ -311,7 +368,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
         if (b.temp) continue;
         if (!eng.has(b.itemId)) { if (session && (session.a === b || session.b === b)) { session.cancel(); endSession(false); } world.remove(b, true); dropped = true; }
       }
-      if (dropped) { sel = null; lastTap = null; pull = null; resolving = null; wake(); }
+      if (dropped) { sel = null; lastTap = null; pull = null; resolving = null; delete host.dataset.resolve; wake(); }
     }
     const unsub = engine.subscribe(prune);
 
@@ -355,7 +412,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       world.zones.clear();
       setHud(null); setStuck(false);
       delete host.dataset.tier;
-      if (done) beginResolve(s.a, s.b, s.spec.tier, s.spec.tier === 'major' ? 0.8 : 0.34);
+      if (done) beginResolve(s.a, s.b, s.spec.tier, latest.current.instant ? 0.3 : s.spec.tier === 'major' ? 2.4 : 1.1);
       else {
         world.repel(s.a, s.b, 240);
         cool = 0.7;
@@ -592,7 +649,7 @@ export function Workbench({ engine, active, onCombine, onBegin }: Props) {
       clear: () => {
         if (session) { session.cancel(); endSession(false); }
         for (const b of [...world.bodies]) world.remove(b, true);
-        sel = null; lastTap = null; pull = null; resolving = null; drag = null; hits.clear();
+        sel = null; lastTap = null; pull = null; resolving = null; delete host.dataset.resolve; drag = null; hits.clear();
         wake();
       },
       cancel: () => { if (session) { session.cancel(); endSession(false); wake(); } },

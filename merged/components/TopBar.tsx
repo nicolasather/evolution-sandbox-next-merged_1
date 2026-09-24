@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { motion } from 'framer-motion';
 import { AnimatedCount } from './vengeance/animated-count';
 import { Kbd } from './vengeance/kbd';
@@ -8,6 +8,7 @@ import { Glyph } from './Glyph';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { ThemeToggle } from './ThemeToggle';
 import { FullscreenButton } from './FullscreenButton';
+import { sound } from '@/lib/sound';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, ViewId } from '@/lib/types';
 
@@ -15,7 +16,28 @@ const VIEWS: { id: ViewId; label: string }[] = [
   { id: 'work', label: 'Workspace' },
   { id: 'graph', label: 'Graph' },
   { id: 'arch', label: 'Archive' },
+  { id: 'time', label: 'Timeline' },
 ];
+
+/** SOUND ON / OFF — the one switch for every sound in the game. */
+function SoundButton() {
+  const on = useSyncExternalStore(sound.subscribe, sound.enabled, () => true);
+  return (
+    <button
+      className="icon-btn"
+      id="sound-toggle"
+      aria-pressed={on}
+      aria-label={on ? 'Sound on' : 'Sound off'}
+      title={on ? 'Sound on — click to mute' : 'Sound off — click to unmute'}
+      onClick={() => { sound.unlock(); sound.set(!on); if (!on) sound.sfx('select'); }}
+    >
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+        <path d="M2 6h2.5L8 3v10L4.5 10H2z" />
+        {on ? <path d="M10.5 5.5a3.5 3.5 0 0 1 0 5M12.4 3.6a6 6 0 0 1 0 8.8" /> : <path d="M11 6l4 4M15 6l-4 4" />}
+      </svg>
+    </button>
+  );
+}
 
 export function TopBar({
   engine, view, onView, onOpen, onReset, onShortcuts,
@@ -39,6 +61,11 @@ export function TopBar({
     <header id="top">
       <div className="top-slot">
         <div className="counter">
+          <svg className="hud-ring" width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+            <circle cx="11" cy="11" r="9" className="trk" />
+            <circle cx="11" cy="11" r="9" className="val" pathLength={100}
+              strokeDasharray={`${Math.max(0.5, (s.core / s.coreTotal) * 100)} 100`} />
+          </svg>
           <AnimatedCount value={s.core} pad={3} className="big" />
           <span className="of" aria-label={`of ${s.coreTotal} core items`}>/ {s.coreTotal}</span>
         </div>
@@ -52,6 +79,11 @@ export function TopBar({
             />
           ))}
         </div>
+      </div>
+
+      <div className="top-slot" id="slot-routes" title="Routes you have walked">
+        <span className="mono" style={{ color: 'var(--bone-4)' }} aria-hidden="true">ROUTES</span>
+        <AnimatedCount value={s.routesFound} className="num" />
       </div>
 
       <div className="top-slot" id="slot-era" aria-live="polite">
@@ -152,6 +184,7 @@ export function TopBar({
         >
           <span className="mono" aria-hidden="true">?</span>
         </button>
+        <SoundButton />
         <ThemeToggle />
         <FullscreenButton />
         <button className="icon-btn" id="reset" aria-label="Start over (Reset progress)" title="Start over" onClick={onReset}>

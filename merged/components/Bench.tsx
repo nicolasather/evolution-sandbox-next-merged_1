@@ -7,14 +7,15 @@ import { ScenePicker } from './SceneBackdrop';
 import { DiscoveryCeremony } from './fx/DiscoveryCeremony';
 import { Workbench } from './Workbench';
 import { cn } from '@/lib/utils';
+import { nearLine } from '@/lib/near';
 import type { Engine } from '@/lib/engine';
 import type { CombineResult, HintView } from '@/lib/types';
 
 type Outcome = (CombineResult & { key: number }) | null;
 
 function OutcomeCard({
-  result, onUse, onOpen,
-}: { result: NonNullable<Outcome>; onUse: (id: string) => void; onOpen: (id: string) => void }) {
+  result, onUse, onOpen, engine,
+}: { result: NonNullable<Outcome>; onUse: (id: string) => void; onOpen: (id: string) => void; engine: Engine }) {
   if (result.status === 'error') return null;
 
   if (result.status === 'fail') {
@@ -28,6 +29,7 @@ function OutcomeCard({
       >
         <p className="oc-msg">{result.message}</p>
         {result.nudge && <p className="oc-nudge mono">{result.nudge}</p>}
+        {!result.nudge && (() => { const n = nearLine(engine, result.a.id, result.b.id); return n ? <p className={cn('oc-near mono', `is-${n.level}`)}>{n.text}</p> : null; })()}
       </motion.div>
     );
   }
@@ -146,7 +148,7 @@ export function Bench({
 
         <div id="outcome" aria-live="polite">
           <AnimatePresence mode="popLayout" initial={false}>
-            {result && <OutcomeCard key={result.key} result={result} onUse={onUse} onOpen={onOpen} />}
+            {result && <OutcomeCard key={result.key} result={result} onUse={onUse} onOpen={onOpen} engine={engine} />}
           </AnimatePresence>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Glyph } from './Glyph';
 import { Plate3D } from './Plate3D';
 import { cn } from '@/lib/utils';
+import { routePaths } from '@/lib/routes';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, Source } from '@/lib/types';
 
@@ -116,6 +117,7 @@ export function ExhibitPanel({
   const recipes = engine.availableRecipes(node.id);
   const foundRoutes = recipes.filter(r => r.found);
   const openRoutes = recipes.length - foundRoutes.length;
+  const paths = routePaths(engine, node);
   const uses = engine.usesOf(node.id);
   const usesFound = uses.filter(u => engine.has(u)).slice(0, 16);
   const usesOpen = uses.filter(u => !engine.has(u)).length;
@@ -129,6 +131,8 @@ export function ExhibitPanel({
   const topic = refs.filter(s => s.scope !== 'general');
   const general = refs.filter(s => s.scope === 'general');
   const sourceRequired = node.src.includes('source_required');
+  // a source id the database cannot resolve is said so, never silently dropped
+  const unavailable = node.src.filter(sid => sid !== 'source_required' && !engine.db.sources[sid]).length;
 
   return (
     <aside id="panel" ref={panelRef} className={cn(open && 'open')} aria-label="Exhibit">
@@ -163,7 +167,7 @@ export function ExhibitPanel({
 
       {!known ? <Closed key={node.id} engine={engine} node={node} onHint={onHint} /> : (
 
-      <div className="exh-body">
+      <div className="exh-body" key={node.id}>
         <section className="sec">
           <h3>Discovery</h3>
           <p className="lead">{node.l1}</p>
@@ -202,19 +206,48 @@ export function ExhibitPanel({
           )}
           {topic.map(s => <SourceLink key={s.url} s={s} />)}
           {general.map(s => <SourceLink key={s.url} s={s} />)}
-          {refs.length === 0 && !sourceRequired && <p>—</p>}
+          {unavailable > 0 && (
+            <div className="src src-req">
+              <span className="src-o mono">Source unavailable</span>
+              <span className="src-t">
+                {unavailable === 1 ? 'One cited source' : `${unavailable} cited sources`} could not be loaded from the archive.
+              </span>
+            </div>
+          )}
+          {refs.length === 0 && !sourceRequired && unavailable === 0 && <p>—</p>}
         </section>
 
-        <section className="sec">
-          <h3>Your routes here{recipes.length > 1 ? ` · ${foundRoutes.length} of ${recipes.length}` : ''}</h3>
+        <section className="sec sec-routes">
+          <h3>Routes here{recipes.length > 1 ? ` · ${foundRoutes.length} of ${recipes.length} walked` : ''}</h3>
           {recipes.length === 0 ? (
             <p>Nothing. This is where you start.</p>
           ) : (
-            foundRoutes.map(r => (
-              <div className="reqrow" key={`${r.a?.id}+${r.b?.id}`}>
-                <Pill node={r.a} engine={engine} onOpen={onOpen} />
-                <span className="plus">+</span>
-                <Pill node={r.b} engine={engine} onOpen={onOpen} />
+            paths.map(p => (
+              <div className={cn('path', !p.found && 'closed')} key={`${p.a.id}+${p.b.id}`}>
+                <div className="path-h mono">
+                  <span>PATH {String(p.index).padStart(2, '0')}</span>
+                  <span>{p.found ? 'walked' : 'not yet walked'}</span>
+                </div>
+                <div className="reqrow">
+                  <Pill node={p.a} engine={engine} onOpen={onOpen} />
+                  <span className="plus">+</span>
+                  <Pill node={p.b} engine={engine} onOpen={onOpen} />
+                </div>
+                {p.found && p.chain.length > 0 && (
+                  <details className="path-chain">
+                    <summary className="mono">Trace it back · {p.chain.length} {p.chain.length === 1 ? 'step' : 'steps'}</summary>
+                    <ol>
+                      {p.chain.map((c, i) => (
+                        <li key={c.id} style={{ ['--i' as string]: i }}>
+                          <button onClick={() => onOpen(c.id)}>
+                            <Glyph node={c} locked={!engine.has(c.id)} />
+                            <span>{engine.has(c.id) ? c.n : 'Undiscovered'}</span>
+                          </button>
+                        </li>
+                      ))}
+                    </ol>
+                  </details>
+                )}
               </div>
             ))
           )}

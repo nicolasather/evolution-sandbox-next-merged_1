@@ -143,23 +143,27 @@ export function ArchiveView({
       {tab === 'collection' ? (
         <div className="arch-grid" id="arch-grid">
           {list.length === 0 && <p className="arch-note mono">Nothing here yet.</p>}
-          {list.map(n => {
+          {list.map((n, i) => {
             const known = engine.has(n.id);
             const r = engine.routeCount(n.id);
+            // a hidden find stays a mystery: no number, no name, no era until it is found
+            const mystery = !!n.hidden && !known;
             return (
               <button
                 key={n.id}
-                className={cn('card', !known && 'locked', reach.has(n.id) && 'reach')}
+                className={cn('card', !known && 'locked', reach.has(n.id) && 'reach', mystery && 'mystery', known && n.rar === 'rare' && 'rare')}
                 data-id={n.id}
+                style={{ ['--i' as string]: Math.min(i, 30) }}
                 onClick={() => onOpen(n.id)}
               >
                 <Glyph node={n} locked={!known} />
-                <span className="cm mono">NO. {String(n.no).padStart(3, '0')}</span>
-                <span className="cn">{known ? n.n : reach.has(n.id) ? 'Within reach' : '—'}</span>
+                <span className="cm mono">NO. {mystery ? '???' : String(n.no).padStart(3, '0')}</span>
+                <span className="cn">{known ? n.n : mystery ? '?????????' : reach.has(n.id) ? 'Within reach' : '—'}</span>
                 <span className="cm mono">
-                  {engine.db.eras.find(e => e.id === n.era)?.name}
+                  {mystery ? 'Unknown' : engine.db.eras.find(e => e.id === n.era)?.name}
                   {known && r.total > 1 && <> · {r.found}/{r.total} routes</>}
                 </span>
+                {known && n.src.includes('source_required') && <span className="card-flag mono">Source needed</span>}
               </button>
             );
           })}

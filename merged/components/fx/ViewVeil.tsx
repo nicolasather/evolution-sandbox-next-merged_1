@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 /* ============================================================================
@@ -19,7 +19,12 @@ export function ViewVeil({ view }: { view: string }) {
     if (prev.current !== view) { prev.current = view; setKey(k => k + 1); }
   }, [view]);
 
-  const reduced = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  // read through an external-store hook so server and first client render agree
+  const reduced = useSyncExternalStore(
+    () => () => {},
+    () => !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
+    () => false,
+  );
   if (reduced) return null;
 
   return (

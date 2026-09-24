@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Plate3D } from '../Plate3D';
 import { cn } from '@/lib/utils';
 import { emitFieldPulse, setFieldQuiet } from './ReactiveField';
+import { CeremonyStage } from './CeremonyStage';
 import type { CombineResult } from '@/lib/types';
 
 /* ============================================================================
@@ -24,7 +25,6 @@ import type { CombineResult } from '@/lib/types';
 type NewResult = Extract<CombineResult, { newRoute: boolean }> & { key: number };
 
 const SEEN_KEY = 'evo.reveal.seen';
-const seenBefore = () => { try { return window.localStorage.getItem(SEEN_KEY) === '1'; } catch { return false; } };
 const markSeen = () => { try { window.localStorage.setItem(SEEN_KEY, '1'); } catch { /* storage blocked */ } };
 
 type Phase = 'pause' | 'form' | 'expand' | 'materialize' | 'name' | 'done';
@@ -39,62 +39,27 @@ export function DiscoveryCeremony({
   const [phase, setPhase] = useState<Phase>(reduced ? 'done' : 'pause');
   const [skipped, setSkipped] = useState(reduced);
   const hostRef = useRef<HTMLDivElement>(null);
-  const timers = useRef<number[]>([]);
   const finished = useRef(reduced);
-  const skipRef = useRef<() => void>(() => {});
 
   useEffect(() => {
     if (reduced) return;
-    const seen = seenBefore();
-    const scale = seen ? 0.55 : 1;
-    const weight = (n.hidden || n.rar === 'rare') ? 1.15 : 1;
-    const ms = (base: number) => Math.round(base * scale * weight);
-
+    // the field of dots goes still while the room is given over to the find
     setFieldQuiet(true);
-    const t = timers.current;
-    t.push(window.setTimeout(() => setPhase('form'), ms(420)));
-    t.push(window.setTimeout(() => setPhase('expand'), ms(420 + 1300)));
-    t.push(window.setTimeout(() => setPhase('materialize'), ms(420 + 1300 + 1500)));
-    t.push(window.setTimeout(() => setPhase('name'), ms(420 + 1300 + 1500 + 1250)));
-    t.push(window.setTimeout(() => land(), ms(420 + 1300 + 1500 + 1250 + 550)));
-
-    /** Reached the end on its own timing — the CSS keyframes have already
-     *  played (or are just finishing), so there is nothing to jump. */
-    function land() {
-      if (finished.current) return;
-      finished.current = true;
-      setPhase('done');
-      pulse();
-    }
-    /** The player asked to skip, from any phase — jump straight to the
-     *  final state instead of racing the remaining keyframes. */
-    function skipNow() {
-      if (finished.current) return;
-      finished.current = true;
-      setSkipped(true);
-      setPhase('done');
-      pulse();
-    }
-    function pulse() {
-      setFieldQuiet(false);
-      const r = hostRef.current?.getBoundingClientRect();
-      emitFieldPulse(r ? r.left + r.width / 2 : undefined, r ? r.top + r.height / 2 : undefined, 1.1);
-      markSeen();
-    }
-    skipRef.current = skipNow;
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') { e.preventDefault(); skipNow(); }
-    };
-    window.addEventListener('keydown', onKey);
-
-    return () => {
-      window.removeEventListener('keydown', onKey);
-      t.forEach(id => window.clearTimeout(id));
-      if (!finished.current) setFieldQuiet(false);
-    };
+    return () => { if (!finished.current) setFieldQuiet(false); };
     // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once per mounted (i.e. per result.key) instance
   }, []);
+
+  /** The stage has closed: the small card takes its place, already finished. */
+  const landed = () => {
+    if (finished.current) return;
+    finished.current = true;
+    setSkipped(true);
+    setPhase('done');
+    setFieldQuiet(false);
+    const r = hostRef.current?.getBoundingClientRect();
+    emitFieldPulse(r ? r.left + r.width / 2 : undefined, r ? r.top + r.height / 2 : undefined, 1.1);
+    markSeen();
+  };
 
   const past = (p: Phase) => {
     const order: Phase[] = ['pause', 'form', 'expand', 'materialize', 'name', 'done'];
@@ -109,7 +74,6 @@ export function DiscoveryCeremony({
       role="status"
       tabIndex={-1}
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}
-      onClick={() => { if (phase !== 'done') skipRef.current(); }}
     >
       <span className={cn('dc-seed', past('form') && !past('expand') && 'show')} aria-hidden="true" />
       <span className={cn('dc-ring', past('expand') && !past('materialize') && 'show')} aria-hidden="true" />
@@ -129,7 +93,7 @@ export function DiscoveryCeremony({
           <button className="chip only-narrow" onClick={() => onOpen(n.id)}>Read</button>
         </div>
       )}
-      {phase !== 'done' && <span className="dc-skip show mono" aria-hidden="true">tap to skip</span>}
+      {!reduced && phase !== 'done' && <CeremonyStage node={n} onDone={landed} />}
       <span className="sr">{`Discovered ${n.n}`}</span>
     </motion.div>
   );

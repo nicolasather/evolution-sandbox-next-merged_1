@@ -1,0 +1,547 @@
+/* ============================================================================
+   MUSEUM — the 1.8 visual layer: an interactive museum, a scientific archive,
+   a time machine. Layered after the shared design system, so nothing here
+   edits _design-system.css; it only overrides or adds.
+
+   Sections
+     1. Landing + time tunnel
+     2. World reveal (the interface loading into existence)
+   ========================================================================== */
+
+/* ══ 1. LANDING ═════════════════════════════════════════════════════════ */
+
+/* The opening is always a night museum, whatever theme the game is in. */
+#landing{
+  --ink-0:#08080a; --ink-3:#1b1d20; --ink-4:#24272b;
+  --bone:#e9e5dd; --bone-2:#aaa59c; --bone-3:#86817a; --bone-4:#66625c;
+  --line:rgba(233,229,221,.10); --line-2:rgba(233,229,221,.18); --line-3:rgba(233,229,221,.30);
+  display:block; background:#08080a; color:var(--bone); overflow:hidden;
+  transition:opacity .8s cubic-bezier(.4,0,.2,1),visibility .8s,background .9s ease;
+}
+#landing .intro-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+
+.landing-stage{
+  position:absolute;inset:0;display:grid;place-content:center;justify-items:center;
+  text-align:center;padding:0 clamp(20px,6vw,90px);
+  transform-origin:50% 50%;
+  transition:transform .95s cubic-bezier(.55,0,.85,.3),opacity .85s ease-in,filter .85s ease-in;
+}
+
+.landing-kicker{margin:0 0 clamp(18px,3vw,34px);color:var(--ochre);letter-spacing:.34em;
+  animation:mIn 1.2s .2s ease-out both}
+
+.landing-q{margin:0 0 clamp(22px,3.6vw,44px);font-family:var(--fs-display);font-weight:400;
+  text-transform:uppercase;line-height:.86;display:flex;flex-direction:column;align-items:center}
+.landing-q .q-1{
+  font-size:clamp(17px,2.9vw,42px);letter-spacing:.42em;margin-right:-.42em;color:var(--bone-2);
+  margin-bottom:clamp(6px,1.4vw,18px);
+  opacity:0;animation:qOne 1.3s .3s cubic-bezier(.2,.7,.2,1) forwards;
+  transition:letter-spacing .9s cubic-bezier(.55,0,.85,.3),transform .95s cubic-bezier(.55,0,.85,.3);
+}
+.landing-q .q-2{
+  position:relative;font-size:clamp(54px,14.5vw,232px);letter-spacing:-.025em;
+  /* a printed, slightly worn surface rather than a flat fill */
+  color:var(--bone);
+  background-color:var(--bone);
+  background-image:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 .05  0 0 0 0 .04  0 0 0 0 .03  0 0 0 -.75 .5'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23g)'/%3E%3C/svg%3E");
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  opacity:0;animation:qTwo 1.5s .8s cubic-bezier(.2,.7,.2,1) forwards;
+  transition:transform .95s cubic-bezier(.55,0,.85,.3);
+}
+.landing-q .q-mark{font-style:italic;-webkit-text-fill-color:var(--ochre);color:var(--ochre);
+  display:inline-block;margin-left:.02em;animation:qBreath 6s 2.4s ease-in-out infinite}
+
+@keyframes mIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes qOne{from{opacity:0;letter-spacing:.9em;transform:translateY(8px)}to{opacity:1;letter-spacing:.42em;transform:none}}
+@keyframes qTwo{from{opacity:0;transform:translateY(14px) scale(.985);clip-path:inset(0 -20% 100% -20%)}
+  60%{clip-path:inset(-20% -20% -20% -20%)}to{opacity:1;transform:none;clip-path:inset(-20% -20% -20% -20%)}}
+@keyframes qBreath{0%,100%{transform:translateY(0) rotate(0);opacity:1}50%{transform:translateY(-1.5%) rotate(3deg);opacity:.72}}
+
+.landing-sub{margin:0 0 14px;font-family:var(--fs-display);font-style:italic;
+  font-size:clamp(18px,2.1vw,27px);color:var(--bone-2);max-width:none;line-height:1.3;
+  opacity:0;animation:mIn 1.2s 1.7s ease-out forwards}
+.landing-mats{margin:0 0 clamp(34px,5.2vw,64px);display:flex;flex-wrap:wrap;justify-content:center;
+  gap:0 .85em;color:var(--bone-3);letter-spacing:.3em;font-size:10.5px}
+.landing-mats span,.landing-mats i{opacity:0;animation:mIn .9s ease-out forwards;font-style:normal}
+.landing-mats span:nth-of-type(1){animation-delay:2.0s}.landing-mats i:nth-of-type(1){animation-delay:2.1s}
+.landing-mats span:nth-of-type(2){animation-delay:2.2s}.landing-mats i:nth-of-type(2){animation-delay:2.3s}
+.landing-mats span:nth-of-type(3){animation-delay:2.4s}.landing-mats i:nth-of-type(3){animation-delay:2.5s}
+.landing-mats span:nth-of-type(4){animation-delay:2.6s}
+.landing-mats i{color:var(--bone-4)}
+
+.landing-return{display:grid;gap:10px;justify-items:center;margin:0 0 clamp(30px,4.6vw,54px);
+  opacity:0;animation:mIn 1.1s 1.5s ease-out forwards}
+.landing-last{margin:0;display:grid;grid-template-columns:auto auto;gap:6px 18px;color:var(--bone-4);text-align:left;letter-spacing:.22em}
+.landing-last b{color:var(--bone);font-weight:400;letter-spacing:.1em}
+.landing-recent{margin:0;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;color:var(--bone-3);letter-spacing:.2em}
+.landing-recent span+span::before{content:"·";margin-right:16px;color:var(--bone-4)}
+
+/* BEGIN: an invitation, not a button — a museum label with a line that opens */
+.landing-actions{display:grid;justify-items:center;gap:16px;opacity:0;animation:mIn 1.2s 2.9s ease-out forwards;
+  transition:opacity .14s}
+#landing .begin{border:0;background:none;padding:14px 6px;color:var(--bone-2);
+  font-size:12px;letter-spacing:.34em;gap:16px;overflow:visible;cursor:pointer;
+  transition:color .35s,letter-spacing .5s cubic-bezier(.2,.7,.2,1)}
+#landing .begin::before{display:none}
+#landing .begin::after{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;background:var(--ochre);
+  transform:scaleX(.16);transform-origin:50% 50%;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+#landing .begin:hover,#landing .begin:focus-visible{color:var(--bone);border:0;letter-spacing:.4em}
+#landing .begin:hover::after,#landing .begin:focus-visible::after{transform:scaleX(1)}
+#landing .begin .arrow{transition:transform .5s cubic-bezier(.2,.7,.2,1);color:var(--ochre)}
+#landing .begin:hover .arrow,#landing .begin:focus-visible .arrow{transform:translateX(9px)}
+.begin-alt{color:var(--bone-4);font-size:10px;letter-spacing:.26em;text-transform:uppercase;padding:8px 10px;transition:color .3s}
+.begin-alt:hover,.begin-alt:focus-visible{color:var(--bone-2)}
+
+.landing-foot{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:flex-end;
+  gap:12px 28px;flex-wrap:wrap;padding:0 clamp(20px,4vw,56px) clamp(16px,2.4vw,28px);max-width:none;margin:0;
+  color:var(--bone-4);font-size:10px;letter-spacing:.16em;
+  opacity:0;animation:mIn 1.4s 3.4s ease-out forwards;transition:opacity .4s}
+.landing-facts{display:flex;gap:6px 22px;flex-wrap:wrap}
+.landing-facts b{color:var(--bone-3);font-weight:400}
+
+/* ── the film ────────────────────────────────────────────────────────── */
+/* collapse: the title folds toward the point that is about to open */
+#landing:not([data-phase="idle"]) .landing-actions{opacity:0!important;pointer-events:none;animation:none}
+#landing:not([data-phase="idle"]) .landing-foot{opacity:0!important}
+#landing:not([data-phase="idle"]) .landing-stage{transform:scale(.42);opacity:0;pointer-events:none}
+#landing[data-q="high"]:not([data-phase="idle"]) .landing-stage,
+#landing[data-q="medium"]:not([data-phase="idle"]) .landing-stage{filter:blur(7px)}
+#landing:not([data-phase="idle"]) .landing-q .q-1{letter-spacing:0;transform:translateY(4vh)}
+#landing:not([data-phase="idle"]) .landing-q .q-2{transform:translateY(-3vh)}
+
+.intro-flash{position:absolute;inset:0;background:#f3eee4;opacity:0;pointer-events:none;z-index:3}
+#landing[data-phase="flash"] .intro-flash{animation:introFlash .52s ease-out both}
+@keyframes introFlash{0%{opacity:0}10%{opacity:.96}100%{opacity:0}}
+
+.intro-arrive{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:2;
+  opacity:0;visibility:hidden}
+#landing[data-phase="arrive"] .intro-arrive,
+#landing[data-phase="fall"] .intro-arrive,
+#landing[data-phase="exit"] .intro-arrive{visibility:visible;opacity:1}
+.intro-stone{width:clamp(150px,21vw,250px);aspect-ratio:1;color:var(--bone);opacity:0;will-change:transform,opacity}
+.intro-stone svg{width:100%;height:100%;overflow:visible;animation:stoneSpin 48s linear infinite}
+#landing[data-phase="arrive"] .intro-stone{animation:stoneIn 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
+#landing[data-phase="fall"] .intro-stone,#landing[data-phase="exit"] .intro-stone{opacity:1}
+#landing[data-phase="exit"] .intro-stone{opacity:0;transition:opacity .25s}
+@keyframes stoneIn{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:none}}
+@keyframes stoneSpin{to{transform:rotate(360deg)}}
+
+.intro-line{position:absolute;left:0;right:0;bottom:clamp(90px,21vh,220px);margin:0;text-align:center;
+  font-family:var(--fs-display);text-transform:uppercase;line-height:1.05;color:var(--bone)}
+.intro-line span{display:block;opacity:0}
+.intro-line span:first-child{font-size:clamp(13px,1.6vw,20px);letter-spacing:.5em;margin-right:-.5em;color:var(--bone-3);margin-bottom:8px}
+.intro-line span:last-child{font-size:clamp(26px,5.2vw,68px);letter-spacing:.04em}
+#landing[data-phase="arrive"] .intro-line span:first-child{animation:mIn .9s .95s ease-out both}
+#landing[data-phase="arrive"] .intro-line span:last-child{animation:mIn 1.1s 1.35s ease-out both}
+#landing[data-phase="fall"] .intro-line span,#landing[data-phase="exit"] .intro-line span{opacity:0;transition:opacity .3s}
+
+/* falling: the curtain opens onto the workbench, which loads in beneath */
+#landing[data-phase="fall"],#landing[data-phase="exit"]{background:transparent}
+#landing[data-phase="fall"] .intro-canvas,#landing[data-phase="exit"] .intro-canvas{opacity:0}
+#landing[data-phase="exit"]{opacity:0;pointer-events:none;transition:opacity .75s ease,background .9s ease}
+#landing[data-phase="done"]{background:transparent}
+
+.intro-skip{position:absolute;right:clamp(16px,3vw,36px);bottom:clamp(16px,2.6vw,30px);z-index:4;
+  color:var(--bone-3);letter-spacing:.3em;font-size:10px;text-transform:uppercase;padding:10px 6px;
+  opacity:0;pointer-events:none;transition:opacity .4s,color .3s}
+#landing[data-phase="collapse"] .intro-skip,#landing[data-phase="tunnel"] .intro-skip,
+#landing[data-phase="slow"] .intro-skip,#landing[data-phase="flash"] .intro-skip{opacity:.5;pointer-events:auto}
+.intro-skip:hover,.intro-skip:focus-visible{color:var(--bone);opacity:1!important}
+
+@media (max-width:700px){
+  .landing-foot{justify-content:center;text-align:center}
+  .landing-foot>span:first-child{flex:1 1 100%}
+  .landing-facts{justify-content:center}
+  .landing-last{grid-template-columns:1fr;text-align:center;gap:2px}
+  .landing-last span{margin-top:8px}
+  .landing-mats{letter-spacing:.2em}
+  #landing .begin{padding:18px 10px;font-size:13px}
+}
+
+/* reduced motion: the same beats, held still */
+@media (prefers-reduced-motion: reduce){
+  .landing-q .q-1,.landing-q .q-2,.landing-sub,.landing-mats span,.landing-mats i,
+  .landing-actions,.landing-foot,.landing-kicker,.landing-return{animation:none!important;opacity:1;clip-path:none}
+  .landing-q .q-mark{animation:none}
+  .intro-stone svg{animation:none}
+  #landing[data-phase="arrive"] .intro-stone,#landing[data-phase="arrive"] .intro-line span{animation:none!important;opacity:1}
+  .landing-stage{transition:opacity .3s}
+  #landing:not([data-phase="idle"]) .landing-stage{transform:none;filter:none}
+}
+
+/* ══ 2. WORLD REVEAL ════════════════════════════════════════════════════ */
+/* After the stone lands, the interface arrives one layer at a time:
+   the bench, the other materials, the navigation, the inventory, the
+   counters — then it becomes interactive. Stages are set by Sandbox as
+   data-reveal="0…6" on #app; 6 (or no attribute) is the finished state. */
+#app[data-reveal]{--rv:.7s}
+#app[data-reveal] #top,
+#app[data-reveal] #rail,
+#app[data-reveal] #bench-bar,
+#app[data-reveal] #trail,
+#app[data-reveal] #mtabs{transition:opacity var(--rv) ease,transform var(--rv) cubic-bezier(.2,.7,.2,1)}
+#app[data-reveal="0"] #bench,
+#app[data-reveal="0"] #v-work{opacity:0}
+#app[data-reveal="0"] #top{opacity:0;transform:translateY(-10px)}
+#app[data-reveal="0"] #rail{opacity:0;transform:translateX(-14px)}
+#app[data-reveal="0"] #bench-bar,#app[data-reveal="0"] #trail{opacity:0}
+#app[data-reveal="1"] #top{opacity:0;transform:translateY(-10px)}
+#app[data-reveal="1"] #rail{opacity:0;transform:translateX(-14px)}
+#app[data-reveal="1"] #bench-bar,#app[data-reveal="1"] #trail{opacity:0}
+#app[data-reveal="2"] #top{opacity:0;transform:translateY(-10px)}
+#app[data-reveal="2"] #rail{opacity:.45;transform:none}
+#app[data-reveal="2"] #bench-bar,#app[data-reveal="2"] #trail{opacity:0}
+#app[data-reveal="3"] #rail{opacity:.75;transform:none}
+#app[data-reveal="3"] #bench-bar,#app[data-reveal="3"] #trail{opacity:0}
+#app[data-reveal="4"] #bench-bar,#app[data-reveal="4"] #trail{opacity:0}
+#app[data-reveal="5"] #trail{opacity:.4}
+#app[data-reveal]:not([data-reveal="6"]) #views,
+#app[data-reveal]:not([data-reveal="6"]) #top{pointer-events:none}
+#app[data-reveal="0"] #v-work,#app[data-reveal="1"] #v-work{transition:opacity 1s ease}
+#v-work,#bench{transition:opacity 1s ease}
+/* the materials arrive one after another */
+#app[data-reveal="0"] #inv .item,#app[data-reveal="1"] #inv .item{opacity:0;transform:translateY(8px)}
+#inv .item{transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s}
+#app[data-reveal="2"] #inv .item:nth-child(n+2){animation:itemIn .7s cubic-bezier(.2,.7,.2,1) both}
+#app[data-reveal="2"] #inv .item:nth-child(2){animation-delay:.05s}
+#app[data-reveal="2"] #inv .item:nth-child(3){animation-delay:.28s}
+#app[data-reveal="2"] #inv .item:nth-child(4){animation-delay:.51s}
+@keyframes itemIn{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+
+/* the film hides the real app until it is time */
+#app{transition:opacity .5s ease}
+
+/* ============================================================================
+   3. WORKBENCH — the bench is a specimen table; every piece is a small
+   artifact card (paper plate, hairline frame, corner ticks). Physics is
+   unchanged: the plate lives inside the body's square and turns with it.
+   ========================================================================== */
+.wb{
+  background:
+    radial-gradient(120% 90% at 50% 0%,color-mix(in srgb,var(--bone) 5%,transparent),transparent 65%),
+    repeating-linear-gradient(90deg,transparent 0 46px,color-mix(in srgb,var(--bone) 3.5%,transparent) 46px 47px),
+    var(--slot-bg);
+  box-shadow:inset 0 1px 0 color-mix(in srgb,var(--bone) 8%,transparent),inset 0 -30px 60px rgba(0,0,0,.14);
+}
+.wb-body:not(.wb-part)::before{
+  content:"";position:absolute;inset:11%;pointer-events:none;
+  background:
+    linear-gradient(160deg,color-mix(in srgb,var(--bone) 11%,var(--ink-1)),color-mix(in srgb,var(--bone) 5%,var(--ink-1)));
+  border:1px solid color-mix(in srgb,var(--bone) 24%,transparent);
+  box-shadow:0 1px 0 color-mix(in srgb,var(--bone) 16%,transparent) inset,0 calc(2px + var(--z) * .12px) calc(6px + var(--z) * .4px) rgba(0,0,0,.34);
+  transition:border-color .2s,box-shadow .2s;
+}
+.wb-body:not(.wb-part)::after{
+  /* corner ticks, like a mounted specimen card */
+  content:"";position:absolute;inset:17%;pointer-events:none;opacity:.55;
+  background:
+    linear-gradient(var(--line-3),var(--line-3)) 0 0/7px 1px no-repeat,
+    linear-gradient(var(--line-3),var(--line-3)) 0 0/1px 7px no-repeat,
+    linear-gradient(var(--line-3),var(--line-3)) 100% 0/7px 1px no-repeat,
+    linear-gradient(var(--line-3),var(--line-3)) 100% 0/1px 7px no-repeat,
+    linear-gradient(var(--line-3),var(--line-3)) 0 100%/7px 1px no-repeat,
+    linear-gradient(var(--line-3),var(--line-3)) 0 100%/1px 7px no-repeat,
+    linear-gradient(var(--line-3),var(--line-3)) 100% 100%/7px 1px no-repeat,
+    linear-gradient(var(--line-3),var(--line-3)) 100% 100%/1px 7px no-repeat;
+}
+.wb-body:not(.wb-part) .wb-art .g{width:64%;height:64%}
+.wb-body:not(.wb-part) .wb-shadow{display:none}
+.wb-body.wb-held::before{border-color:color-mix(in srgb,var(--ochre) 60%,transparent)}
+.wb-body[data-near]::before{border-color:var(--ochre);
+  box-shadow:0 0 calc(10px + var(--glow) * 18px) color-mix(in srgb,var(--ochre) 45%,transparent)}
+.wb-lbl{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-3);
+  text-shadow:0 1px 0 color-mix(in srgb,var(--ink-0) 60%,transparent)}
+.wb-lbl b{font-weight:500;color:var(--ochre);margin-right:.6em;letter-spacing:.06em}
+
+/* a piece being pulled toward its partner trembles a little */
+@keyframes wbQuiver{0%,100%{translate:0 0}25%{translate:.6px -.5px}50%{translate:-.5px .6px}75%{translate:.5px .5px}}
+.wb-body[data-near] .wb-art{animation:wbQuiver .18s linear infinite}
+@media (prefers-reduced-motion:reduce){.wb-body[data-near] .wb-art{animation:none}}
+
+/* while two pieces work on each other the rest of the table falls back */
+.wb::after{transition:opacity .3s}
+.wb-bodies{transition:filter .5s}
+.wb[data-resolve] .wb-body:not([data-res]),.wb[data-resolve] .wb-lbl{opacity:.32;transition:opacity .4s}
+.wb[data-resolve]{background-color:color-mix(in srgb,var(--ink-0) 55%,transparent)}
+.wb[data-resolve="major"]{border-color:var(--ochre)}
+.wb[data-resolve] .wb-body[data-res]::before{border-color:var(--ochre)}
+
+/* ============================================================================
+   4. DISCOVERY CEREMONY — the whole room dims; one piece is lifted to the
+   centre and written up like a museum label.
+   ========================================================================== */
+.cer{position:fixed;inset:0;z-index:95;display:grid;place-items:center;cursor:pointer;
+  background:color-mix(in srgb,var(--ink-0) 96%,transparent);
+  animation:cerIn .5s ease both;overflow:hidden;text-align:center;
+  -webkit-tap-highlight-color:transparent}
+.cer[data-step="7"]{animation:cerOut .42s ease forwards;pointer-events:none}
+@keyframes cerIn{from{opacity:0}to{opacity:1}}
+@keyframes cerOut{to{opacity:0}}
+.cer-dust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.cer-vig{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 55% at 50% 46%,color-mix(in srgb,var(--ochre) 13%,transparent),transparent 70%)}
+.cer.is-hidden .cer-vig{background:radial-gradient(60% 55% at 50% 46%,color-mix(in srgb,var(--r-hidden) 16%,transparent),transparent 70%)}
+.cer-body{position:relative;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 24px;max-width:min(640px,100vw)}
+
+.cer-plate{width:clamp(150px,26vh,240px);aspect-ratio:1;display:grid;place-items:center;position:relative;
+  opacity:0;transform:translateY(26px) scale(.9);filter:brightness(0) blur(8px);
+  transition:opacity .9s cubic-bezier(.16,.7,.2,1),transform 1.1s cubic-bezier(.16,.7,.2,1),filter .9s ease}
+.cer-plate::before{content:"";position:absolute;inset:-8%;border:1px solid var(--line-3);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--bone) 8%,transparent),transparent);
+  box-shadow:0 22px 60px rgba(0,0,0,.5)}
+.cer-plate::after{content:"";position:absolute;left:12%;right:12%;bottom:-14%;height:14%;
+  background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent);filter:blur(4px)}
+.cer-plate .p3d,.cer-plate .g{width:100%;height:100%;position:relative;z-index:1}
+.cer[data-step="1"] .cer-plate,.cer[data-step="2"] .cer-plate,.cer[data-step="3"] .cer-plate,
+.cer[data-step="4"] .cer-plate,.cer[data-step="5"] .cer-plate,.cer[data-step="6"] .cer-plate,.cer[data-step="7"] .cer-plate{
+  opacity:1;transform:none;filter:none}
+
+.cer-tag,.cer-no,.cer-name,.cer-meta,.cer-ev,.cer-go{margin:0;opacity:0;transform:translateY(8px);
+  transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.cer-tag{margin-top:34px;color:var(--ochre);letter-spacing:.34em;font-size:11px;text-transform:uppercase}
+.cer.is-hidden .cer-tag{color:var(--r-hidden)}
+.cer-no{margin-top:12px;color:var(--bone-3);font-size:13px;letter-spacing:.2em;font-variant-numeric:tabular-nums}
+.cer-no span{color:var(--bone);font-size:20px;letter-spacing:.12em}
+.cer-no i{font-style:normal;color:var(--bone-4)}
+.cer-name{margin-top:10px;font-family:var(--fs-display);font-weight:400;font-size:clamp(38px,7vw,68px);
+  line-height:1;letter-spacing:-.01em;color:var(--bone);text-wrap:balance}
+.cer.is-hidden .cer-name{letter-spacing:.02em}
+.cer-meta{margin-top:14px;color:var(--bone-3);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+.cer-ev{margin-top:8px;color:var(--bone-3);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px}
+.cer-ev::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ochre)}
+.cer-ev.need{color:var(--bone-4)}
+.cer-ev.need::before{background:transparent;border:1px solid var(--bone-4)}
+.cer-go{margin-top:30px;color:var(--bone-4);font-size:10px;letter-spacing:.3em;text-transform:uppercase}
+
+.cer[data-step="2"] .cer-tag,.cer[data-step="3"] .cer-tag,.cer[data-step="4"] .cer-tag,.cer[data-step="5"] .cer-tag,.cer[data-step="6"] .cer-tag,.cer[data-step="7"] .cer-tag,
+.cer[data-step="3"] .cer-no,.cer[data-step="4"] .cer-no,.cer[data-step="5"] .cer-no,.cer[data-step="6"] .cer-no,.cer[data-step="7"] .cer-no,
+.cer[data-step="4"] .cer-name,.cer[data-step="5"] .cer-name,.cer[data-step="6"] .cer-name,.cer[data-step="7"] .cer-name,
+.cer[data-step="5"] .cer-meta,.cer[data-step="6"] .cer-meta,.cer[data-step="7"] .cer-meta,
+.cer[data-step="5"] .cer-ev,.cer[data-step="6"] .cer-ev,.cer[data-step="7"] .cer-ev{opacity:1;transform:none}
+.cer[data-step="6"] .cer-go{opacity:.75;animation:cerBlink 2.4s ease-in-out infinite}
+@keyframes cerBlink{50%{opacity:.35}}
+@media (max-width:900px){
+  .cer-plate{width:clamp(130px,22vh,190px)}
+  .cer-tag{margin-top:28px;letter-spacing:.26em}
+}
+@media (prefers-reduced-motion:reduce){
+  .cer,.cer[data-step="7"]{animation:none}
+  .cer-plate,.cer-tag,.cer-no,.cer-name,.cer-meta,.cer-ev,.cer-go{transition:none;animation:none !important}
+  .cer[data-step="7"]{opacity:0}
+}
+
+/* ============================================================================
+   7. EXHIBIT — a specimen on a pedestal under a single light; the label
+   reads in order, section by section.
+   ========================================================================== */
+.exh-art{position:relative;isolation:isolate}
+.exh-art::before{ /* the spotlight: a soft cone from above */
+  content:"";position:absolute;left:50%;top:-30%;width:120%;height:150%;transform:translateX(-50%);z-index:-1;pointer-events:none;
+  background:radial-gradient(50% 60% at 50% 30%,color-mix(in srgb,var(--bone) 11%,transparent),transparent 72%);
+  clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);opacity:.9}
+.exh-art::after{ /* the pedestal: a low step with a lit top edge */
+  content:"";position:absolute;left:18%;right:18%;bottom:-6px;height:12px;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--bone) 16%,var(--ink-2)),var(--ink-2));
+  border-top:1px solid color-mix(in srgb,var(--bone) 34%,transparent);
+  box-shadow:0 14px 26px rgba(0,0,0,.35)}
+:root[data-theme="light"] .exh-art::before{background:radial-gradient(50% 60% at 50% 30%,rgba(255,255,255,.7),transparent 72%)}
+.exh-name{animation:exhIn .7s cubic-bezier(.2,.7,.2,1) both}
+.exh-meta,.exh-plate{animation:exhIn .7s cubic-bezier(.2,.7,.2,1) .08s both}
+@keyframes exhIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.exh-body .sec{animation:exhIn .7s cubic-bezier(.2,.7,.2,1) both}
+.exh-body .sec:nth-child(1){animation-delay:.16s}
+.exh-body .sec:nth-child(2){animation-delay:.26s}
+.exh-body .sec:nth-child(3){animation-delay:.36s}
+.exh-body .sec:nth-child(4){animation-delay:.46s}
+.exh-body .sec:nth-child(n+5){animation-delay:.56s}
+
+/* routes */
+.path{border:1px solid var(--line);padding:10px 12px 6px;margin:0 0 10px;background:var(--slot-bg);position:relative}
+.path::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--ochre)}
+.path.closed::before{background:var(--line-3)}
+.path.closed{border-style:dashed}
+.path-h{display:flex;justify-content:space-between;color:var(--bone-4);font-size:9.5px;letter-spacing:.2em;margin-bottom:8px}
+.path.closed .path-h{color:var(--bone-4)}
+.path:not(.closed) .path-h span:first-child{color:var(--ochre)}
+.path-chain{margin:2px 0 6px}
+.path-chain summary{cursor:pointer;color:var(--bone-3);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  list-style:none;padding:4px 0}
+.path-chain summary::-webkit-details-marker{display:none}
+.path-chain summary::after{content:" ↓";color:var(--ochre)}
+.path-chain[open] summary::after{content:" ↑"}
+.path-chain ol{list-style:none;margin:6px 0 0;padding:0 0 0 10px;border-left:1px solid var(--line-3);display:flex;flex-direction:column;gap:2px}
+.path-chain li{position:relative;animation:pathStep .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 55ms)}
+.path-chain li::before{content:"";position:absolute;left:-14px;top:50%;width:7px;height:1px;background:var(--line-3)}
+.path-chain li button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:3px 4px;
+  color:var(--bone-2);font-size:12.5px;background:none;border:0;cursor:pointer}
+.path-chain li button:hover{color:var(--bone)}
+.path-chain li .g{width:17px;height:17px;flex:none}
+@keyframes pathStep{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .exh-name,.exh-meta,.exh-plate,.exh-body .sec,.path-chain li{animation:none}
+}
+
+/* ============================================================================
+   8. TIMELINE — one rail, era after era.
+   ========================================================================== */
+#v-time{overflow:hidden}
+.tl-head{position:absolute;left:24px;top:52px;z-index:2;max-width:min(520px,calc(100vw - 48px));pointer-events:none}
+.tl-scroll{position:absolute;inset:0;overflow-x:auto;overflow-y:hidden;display:flex;align-items:stretch;
+  padding:0 80px 0 40px;gap:0;scroll-behavior:auto;outline:none}
+.tl-rail{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--line-3);
+  min-width:100%;width:max-content;pointer-events:none;z-index:0}
+.tl-era{position:relative;flex:none;display:flex;flex-direction:column;justify-content:center;padding:0 44px 0 0;min-width:120px;z-index:1}
+.tl-era::before{content:"";position:absolute;left:-14px;top:14%;bottom:14%;width:1px;background:var(--line)}
+.tl-era-h{position:absolute;left:0;top:118px;display:flex;flex-direction:column;gap:3px;
+  color:var(--bone-4);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;pointer-events:none}
+.tl-era-h b{font-weight:500;color:var(--bone-2);font-size:10.5px;letter-spacing:.2em}
+.tl-era.empty .tl-era-h b{color:var(--bone-4)}
+.tl-pts{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:0;height:100%}
+.tl-pt{position:relative;width:104px;height:100%;flex:none}
+.tl-pt.ahead{width:26px}
+.tl-tick{position:absolute;left:50%;top:50%;width:1px;height:8px;background:var(--line-3);transform:translate(-50%,-50%)}
+.tl-pt button{position:absolute;inset:0;background:none;border:0;padding:0;cursor:pointer;color:var(--bone-2);text-align:center}
+.tl-dot{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;transform:translate(-50%,-50%);
+  background:var(--bone);border:2px solid var(--ink-0);box-shadow:0 0 0 1px var(--line-3);transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .2s}
+.tl-dot.r-rare{background:var(--r-rare)}.tl-dot.r-hidden{background:var(--r-hidden)}
+.tl-dot.r-uncommon{background:var(--r-uncommon)}.tl-dot.r-common{background:var(--r-common)}
+.tl-stem{position:absolute;left:50%;width:1px;background:var(--line-3);transform-origin:50% 0;transition:background .2s}
+.tl-pt.up .tl-stem{bottom:calc(50% + 5px);height:34px}
+.tl-pt.dn .tl-stem{top:calc(50% + 5px);height:34px}
+.tl-card{position:absolute;left:50%;width:132px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:8px 8px 7px;border:1px solid var(--line-2);background:var(--slot-bg);
+  backdrop-filter:blur(2px);transition:border-color .2s,background .2s,transform .3s cubic-bezier(.2,.7,.2,1)}
+.tl-pt.up .tl-card{bottom:calc(50% + 39px)}
+.tl-pt.dn .tl-card{top:calc(50% + 39px)}
+.tl-card .g{width:34px;height:34px;color:var(--bone)}
+.tl-name{font-family:var(--fs-display);font-size:16px;line-height:1.05;color:var(--bone);text-wrap:balance}
+.tl-date{font-size:9px;letter-spacing:.08em;color:var(--bone-4);text-transform:none;line-height:1.3}
+.tl-pt:hover .tl-card,.tl-pt.sel .tl-card,.tl-pt button:focus-visible .tl-card{border-color:var(--ochre);background:var(--ochre-lo)}
+.tl-pt:hover .tl-dot,.tl-pt.sel .tl-dot{transform:translate(-50%,-50%) scale(1.5);box-shadow:0 0 0 1px var(--ochre),0 0 14px color-mix(in srgb,var(--ochre) 50%,transparent)}
+.tl-pt:hover .tl-stem,.tl-pt.sel .tl-stem{background:var(--ochre)}
+.tl-pt:not(.ahead){animation:tlIn .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 35ms)}
+@keyframes tlIn{from{opacity:0}to{opacity:1}}
+#v-time.on .tl-pt:not(.ahead) .tl-stem{animation:tlStem .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 35ms + .1s)}
+@keyframes tlStem{from{transform:scaleY(0)}to{transform:none}}
+@media (max-width:900px){
+  .tl-head{top:44px;left:16px}
+  .tl-scroll{padding:0 40px 0 22px}
+  .tl-pt{width:92px}
+  .tl-card{width:112px}
+}
+@media (prefers-reduced-motion:reduce){.tl-pt:not(.ahead),#v-time.on .tl-pt:not(.ahead) .tl-stem{animation:none}}
+
+/* ============================================================================
+   5. HUD — a small ring beside the counter, quiet numbers, one sound switch.
+   ========================================================================== */
+.counter{align-items:center}
+.hud-ring{flex:none;transform:rotate(-90deg);margin-right:1px}
+.hud-ring circle{fill:none;stroke-width:1.6}
+.hud-ring .trk{stroke:var(--line-2)}
+.hud-ring .val{stroke:var(--ochre);stroke-linecap:butt;transition:stroke-dasharray 1s cubic-bezier(.2,.7,.2,1)}
+#slot-routes .num{font-size:12px;font-family:var(--fs-mono)}
+#sound-toggle[aria-pressed="false"]{color:var(--bone-4)}
+#sound-toggle[aria-pressed="true"]{color:var(--bone-2)}
+@media (max-width:1180px){#slot-routes{display:none}}
+
+/* ERA SHIFT */
+.era-shift{position:fixed;inset:0;z-index:60;pointer-events:none;display:grid;place-items:center;text-align:center}
+.es-wash{position:absolute;inset:0;
+  background:radial-gradient(90% 70% at 50% 50%,rgba(var(--tint),.92),rgba(var(--tint),.55) 60%,transparent);
+  opacity:0;animation:esWash 1.7s ease both}
+@keyframes esWash{0%{opacity:0}22%{opacity:1}72%{opacity:1}100%{opacity:0}}
+.es-body{position:relative;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 24px}
+.es-k{margin:0;color:var(--ochre);letter-spacing:.42em;font-size:10.5px;text-transform:uppercase;opacity:0;animation:esUp 1.7s ease both .1s}
+.es-name{margin:12px 0 0;font-family:var(--fs-display);font-weight:400;font-size:clamp(44px,9vw,104px);line-height:1;
+  letter-spacing:-.015em;color:var(--bone);opacity:0;animation:esUp 1.7s cubic-bezier(.2,.7,.2,1) both .18s}
+.es-rule{display:block;height:1px;width:min(420px,60vw);margin:18px 0 14px;background:var(--ochre);transform-origin:50% 50%;
+  transform:scaleX(0);animation:esRule 1.7s cubic-bezier(.3,.7,.2,1) both .2s}
+.es-blurb{margin:0;color:var(--bone-3);font-size:11px;letter-spacing:.1em;max-width:520px;text-transform:none;opacity:0;animation:esUp 1.7s ease both .32s}
+@keyframes esUp{0%{opacity:0;transform:translateY(10px)}24%{opacity:1;transform:none}72%{opacity:1}100%{opacity:0;transform:translateY(-4px)}}
+@keyframes esRule{0%{transform:scaleX(0);opacity:1}30%{transform:scaleX(1)}72%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){
+  .es-wash,.es-k,.es-name,.es-rule,.es-blurb{animation:none;opacity:1;transform:none}
+  .es-wash{opacity:.85}
+}
+
+/* ============================================================================
+   7b. ARCHIVE — a catalogue of specimen cards.
+   ========================================================================== */
+.arch-grid{gap:10px;background:transparent;border-bottom:0;padding:16px clamp(18px,4vw,44px) 8px;margin-top:0;
+  grid-template-columns:repeat(auto-fill,minmax(176px,1fr))}
+.arch-grid .card{position:relative;border:1px solid var(--line-2);background:
+    linear-gradient(170deg,color-mix(in srgb,var(--bone) 5%,var(--ink-1)),var(--ink-1));
+  padding:16px 14px 13px;min-height:190px;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .2s,background .2s,box-shadow .3s;
+  animation:cardIn .55s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 24ms)}
+@keyframes cardIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.arch-grid .card::before{content:"";position:absolute;left:6px;top:6px;width:9px;height:9px;pointer-events:none;
+  border-left:1px solid var(--line-3);border-top:1px solid var(--line-3)}
+.arch-grid .card::after{content:"";position:absolute;right:6px;bottom:6px;width:9px;height:9px;pointer-events:none;
+  border-right:1px solid var(--line-3);border-bottom:1px solid var(--line-3)}
+.arch-grid .card:hover{transform:translateY(-3px);border-color:var(--ochre);
+  background:linear-gradient(170deg,color-mix(in srgb,var(--bone) 9%,var(--ink-1)),var(--ink-1));
+  box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.arch-grid .card .g{width:60px;height:60px;margin:2px auto 4px}
+.arch-grid .card:not(.locked) .cn{font-family:var(--fs-display);font-size:19px;line-height:1.05}
+.arch-grid .card.locked{opacity:.42;border-style:dashed;background:transparent}
+.arch-grid .card.locked:hover{opacity:.75;background:transparent}
+.arch-grid .card.reach{border-color:color-mix(in srgb,var(--ochre) 45%,var(--line-2))}
+.arch-grid .card.rare{border-top:2px solid var(--r-rare)}
+.arch-grid .card.mystery{border-color:color-mix(in srgb,var(--r-hidden) 38%,var(--line-2));opacity:.62}
+.arch-grid .card.mystery .cn{letter-spacing:.18em;color:var(--r-hidden);font-family:var(--fs-mono);font-size:13px}
+.arch-grid .card.mystery .g{filter:blur(2.5px) brightness(.7)}
+.card-flag{position:absolute;right:8px;top:7px;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--bone-4);border:1px solid var(--line-2);padding:1px 5px}
+@media (prefers-reduced-motion:reduce){.arch-grid .card{animation:none}}
+
+/* near-discovery: one quiet line, never a name */
+.oc-near{margin:4px 0 0;color:var(--bone-3);font-size:11px;letter-spacing:.06em;text-transform:none;font-style:italic;
+  animation:nearIn .8s ease both .15s}
+.oc-near.is-forming{color:var(--ochre)}
+@keyframes nearIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+
+/* ============================================================================
+   14. STATES — loading and failure, in the archive's own voice.
+   ========================================================================== */
+.state-screen{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;text-align:center;padding:24px;background:var(--ink-0);color:var(--bone)}
+.state-k{margin:0;color:var(--bone-3);letter-spacing:.3em;font-size:11px;text-transform:uppercase}
+.state-h{margin:0;font-family:var(--fs-display);font-weight:400;font-size:clamp(34px,6vw,54px);line-height:1}
+.state-p{margin:0;color:var(--bone-3);max-width:420px;line-height:1.6;font-size:13.5px}
+.state-btn{margin-top:8px}
+.state-ring{width:26px;height:26px;border-radius:50%;border:1px solid var(--line-3);border-top-color:var(--ochre);animation:stateSpin 1.4s linear infinite}
+@keyframes stateSpin{to{transform:rotate(360deg)}}
+.state-loading{color:var(--bone-4);letter-spacing:.24em;font-size:10.5px;text-transform:uppercase;padding:60px 24px;text-align:center}
+@media (prefers-reduced-motion:reduce){.state-ring{animation:none}}
+
+.remember{position:fixed;left:50%;top:92px;transform:translateX(-50%);z-index:40;margin:0;
+  text-align:center;color:var(--bone-2);letter-spacing:.26em;font-size:11px;text-transform:uppercase;pointer-events:none;
+  animation:remIn 6.5s ease both;text-shadow:0 1px 12px var(--ink-0)}
+.remember span{display:block;margin-top:6px;color:var(--bone-4);letter-spacing:.14em;font-size:10px;text-transform:none}
+@keyframes remIn{0%{opacity:0;transform:translate(-50%,6px)}12%{opacity:1;transform:translate(-50%,0)}80%{opacity:1}100%{opacity:0}}
+.quality-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:14px 0 4px;color:var(--bone-4)}
+.quality-row .mono{margin-right:6px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+.quality-row .chip{text-transform:capitalize}
+@media (prefers-reduced-motion:reduce){.remember{animation:none}}
+
+/* ============================================================================
+   5b. ERA MATERIALS — seven quiet accent colours, one per material world.
+   <html data-era-group> is set by components/fx/EraShift.tsx; only small
+   accents follow it (the HUD ring, the era title, its rule), never the whole
+   interface, and the default is the museum's own ochre.
+   ========================================================================== */
+:root{--era-accent:var(--ochre)}
+:root[data-era-group="earth"]{--era-accent:#a8935a}
+:root[data-era-group="metal"]{--era-accent:#c98a4a}
+:root[data-era-group="paper"]{--era-accent:#8fa3b8}
+:root[data-era-group="iron"]{--era-accent:#a29d94}
+:root[data-era-group="circuit"]{--era-accent:#4fb3a9}
+:root[data-era-group="glow"]{--era-accent:#8a93ff}
+.hud-ring .val{stroke:var(--era-accent)}
+.es-rule{background:var(--era-accent)}
+.es-k{color:var(--era-accent)}
+.cer-tag{color:var(--era-accent)}
+.cer.is-hidden .cer-tag{color:var(--r-hidden)}
+#slot-era .era-now{transition:color .8s}

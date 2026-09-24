@@ -15,14 +15,18 @@ import { SceneBackdrop } from './SceneBackdrop';
 import { ReactiveField } from './fx/ReactiveField';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { ViewVeil } from './fx/ViewVeil';
+import { EraShift } from './fx/EraShift';
 import { ContextMenu, type ContextMenuTarget } from './fx/ContextMenu';
 import { ShortcutsOverlay } from './fx/ShortcutsOverlay';
 import { enterFullscreen, installImmersiveTop, installPressFx } from '@/lib/fx';
+import { benchElement, benchSpawn } from '@/lib/craft/bus';
+import { sound } from '@/lib/sound';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { cn } from '@/lib/utils';
 import type { ViewId } from '@/lib/types';
 
 const GraphView = dynamic(() => import('./GraphView').then(mod => mod.GraphView), { ssr: false });
+const TimelineView = dynamic(() => import('./TimelineView').then(mod => mod.TimelineView), { ssr: false });
 const ArchiveView = dynamic(() => import('./ArchiveView').then(mod => mod.ArchiveView), { ssr: false });
 
 const PHONE = '(max-width:900px)';
@@ -39,6 +43,17 @@ export function Sandbox() {
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
   const panelReturn = useRef<HTMLElement | null>(null);
+
+  /* The film is over → the interface loads into existence, one layer at a
+     time (see the WORLD REVEAL block in _museum.css). 6 is the finished state. */
+  const [introDone, setIntroDone] = useState(false);
+  const [reveal, setReveal] = useState(0);
+  const revealTimers = useRef<number[]>([]);
+  const stage = useCallback((steps: [number, number][]) => {
+    revealTimers.current.forEach(t => window.clearTimeout(t));
+    revealTimers.current = steps.map(([n, ms]) => window.setTimeout(() => setReveal(n), ms));
+  }, []);
+  useEffect(() => () => revealTimers.current.forEach(t => window.clearTimeout(t)), []);
 
   // The world tint follows the furthest era reached — subtle, not a light show.
   const era = engine.currentEra();
@@ -59,6 +74,7 @@ export function Sandbox() {
 
   /** Switching view closes any drawer: an exhibit never follows you between views. */
   const showView = useCallback((v: ViewId) => {
+    sound.sfx(v === 'graph' ? 'graph' : v === 'arch' || v === 'time' ? 'archive' : 'tab', 0.6);
     setView(v);
     setPanelOpen(false);
     panelReturn.current = null;
@@ -68,6 +84,7 @@ export function Sandbox() {
    *  graph or the archive — and on a phone — it opens as a drawer, and only
    *  when the player asks for it: a discovery never throws a sheet over the bench. */
   const openExhibit = useCallback((id: string) => {
+    sound.sfx('select', 0.5);
     open(id);
     if (isPhone() || view !== 'work') {
       if (!panelOpen && document.activeElement instanceof HTMLElement) panelReturn.current = document.activeElement;
@@ -113,9 +130,9 @@ export function Sandbox() {
   }, [engine, setHintError, showView]);
 
   // one keyboard listener for the page; it reads the latest state through a ref
-  const keys = useRef({ confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place });
+  const keys = useRef({ showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place });
   useEffect(() => {
-    keys.current = { confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place };
+    keys.current = { showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place };
   });
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
@@ -141,6 +158,12 @@ export function Sandbox() {
         setShortcutsOpen(true);
         return;
       }
+      // W G A T: go to a view — only when nothing modal is up and no key combo is held
+      if (!typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
+        const to: Record<string, ViewId> = { w: 'work', g: 'graph', a: 'arch', t: 'time' };
+        const v = to[ev.key.toLowerCase()];
+        if (v) { ev.preventDefault(); k.showView(v); return; }
+      }
       // Enter: accept whatever discovery is currently showing, unless focus
       // is already on something with its own idea of what Enter should do
       if (ev.key === 'Enter' && t && ['INPUT', 'TEXTAREA', 'BUTTON', 'A'].includes(t.tagName)) return;
@@ -154,6 +177,16 @@ export function Sandbox() {
   }, []);
 
   const resumed = engine.resumed ? engine.stats().core : 0;
+  const recent = engine.path().slice(-3).reverse().map(n => n.n);
+  const returning = resumed > 4 ? { era: engine.currentEra().name, latest: recent[0] ?? '', recent } : null;
+  /* a returning player is greeted once, quietly, after the world has loaded in */
+  const [greeted, setGreeted] = useState(false);
+  const showRemember = reveal >= 6 && !!returning && !greeted;
+  useEffect(() => {
+    if (!showRemember) return;
+    const t = window.setTimeout(() => setGreeted(true), 6500);
+    return () => window.clearTimeout(t);
+  }, [showRemember]);
   const hint = engine.hintView();
   const highlightId = engine.coached === 0 ? 'stone' : hint.highlightId;
 
@@ -172,13 +205,38 @@ export function Sandbox() {
         </svg>
       </div>
       <ReactiveField active={s.entered} />
+      <EraShift era={era} index={engine.db.eras.findIndex(e => e.id === era.id)} active={s.entered && reveal >= 6} />
       <SceneBackdrop era={era.id} active={s.entered && view === 'work'} />
       <div id="grain" aria-hidden="true" />
       <div id="top-handle" aria-hidden="true"><i /></div>
 
-      <Landing db={engine.db} gone={s.entered} resumedCount={resumed > 4 ? resumed : 0} onBegin={() => { enterFullscreen(); s.enter(); }} />
+      <Landing
+        db={engine.db}
+        gone={introDone}
+        resumedCount={resumed > 4 ? resumed : 0}
+        returning={returning}
+        onBegin={enterFullscreen}
+        onEnter={film => {
+          s.enter();
+          setReveal(1);
+          // no film: the same layers, quickly; the film's own timing follows onLanded
+          if (!film) stage([[2, 80], [3, 240], [4, 400], [5, 560], [6, 720]]);
+        }}
+        onLanded={(x, y) => {
+          // a brand-new game: the stone that fell is now the first thing on the bench
+          if (engine.coached === 0 && engine.order.length <= engine.db.primitives.length) {
+            benchSpawn('stone', { clientX: x, clientY: y });
+          }
+          stage([[2, 450], [3, 1150], [4, 1600], [5, 2050], [6, 2500]]);
+        }}
+        onDone={() => setIntroDone(true)}
+        getBenchTarget={() => {
+          const r = benchElement()?.getBoundingClientRect();
+          return r && r.width > 40 ? { x: r.left + r.width / 2, y: r.top + r.height * 0.52 } : null;
+        }}
+      />
 
-      <main id="app" className={cn(s.entered && 'on')}>
+      <main id="app" className={cn(s.entered && 'on')} data-reveal={reveal}>
         <TopBar
           engine={engine}
           view={view}
@@ -226,6 +284,7 @@ export function Sandbox() {
             onOpen={openExhibit}
           />
           <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
+          <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
 
           {/* outside the three views: a column beside the bench, a drawer over the
               graph and the archive, a bottom sheet on a phone */}
@@ -241,14 +300,22 @@ export function Sandbox() {
         <ViewVeil view={view} />
       </main>
 
+      {showRemember && returning && (
+        <p className="remember mono" role="status">
+          The world remembers.
+          <span>{returning.era} · {resumed} discoveries{returning.latest ? ` · last, ${returning.latest}` : ''}</span>
+        </p>
+      )}
+
       <nav id="mtabs" aria-label="Views">
         {([
-          ['work', 'Workspace'], ['graph', 'Graph'], ['arch', 'Archive'],
+          ['work', 'Workspace'], ['graph', 'Graph'], ['arch', 'Archive'], ['time', 'Timeline'],
         ] as [ViewId, string][]).map(([id, label]) => (
           <button key={id} aria-pressed={view === id} onClick={() => showView(id)}>
             <svg width="18" height="18" viewBox="0 0 20 20" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
               {id === 'work' && <><rect x="2" y="6" width="7" height="8" /><rect x="11" y="6" width="7" height="8" /></>}
               {id === 'graph' && <><circle cx="4" cy="10" r="2" /><circle cx="16" cy="5" r="2" /><circle cx="16" cy="15" r="2" /><path d="M6 9l8-3M6 11l8 3" /></>}
+              {id === 'time' && <><path d="M2 10h16" /><circle cx="5" cy="10" r="1.6" /><circle cx="10" cy="10" r="1.6" /><circle cx="15" cy="10" r="1.6" /><path d="M5 4v4M10 12v4M15 4v4" /></>}
               {id === 'arch' && <><rect x="3" y="3" width="6" height="6" /><rect x="11" y="3" width="6" height="6" /><rect x="3" y="11" width="6" height="6" /><rect x="11" y="11" width="6" height="6" /></>}
             </svg>
             <ReactiveLabel text={label} className="mono" />

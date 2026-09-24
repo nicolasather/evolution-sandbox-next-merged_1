@@ -148,3 +148,12 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
 @media (prefers-reduced-motion: reduce) {
   .ctxmenu { animation: none !important; }
 }
+
+/* museum states: the label you begin with, and things to be looked at */
+#rcursor.begin { width: 38px; height: 38px; margin: -19px 0 0 -19px; background: transparent;
+  border: 1px solid var(--ochre); box-shadow: 0 0 0 6px var(--ochre-lo); }
+#rcursor.look { width: 26px; height: 26px; margin: -13px 0 0 -13px; background: transparent;
+  border: 1px solid var(--bone-3); }
+#rcursor.look::before,#rcursor.look::after { content: ""; position: absolute; left: 50%; top: 50%; background: var(--bone-3); }
+#rcursor.look::before { width: 8px; height: 1px; margin: -0.5px 0 0 -4px; }
+#rcursor.look::after { width: 1px; height: 8px; margin: -4px 0 0 -0.5px; }

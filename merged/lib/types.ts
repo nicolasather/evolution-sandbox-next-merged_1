@@ -149,7 +149,7 @@ export interface TierProgress {
   late: { unlocked: number; total: number };
 }
 
-export type ViewId = 'work' | 'graph' | 'arch';
+export type ViewId = 'work' | 'graph' | 'arch' | 'time';
 
 /** What the hint line shows. Level 1 is a direction, 2 the idea, 3 one ingredient — never both. */
 export interface HintView {
