@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { Glyph } from './Glyph';
-import { flyToSlot } from '@/lib/fx';
 import { armItemDrag } from '@/lib/dragcraft';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
@@ -27,7 +26,7 @@ const setHideDoneStored = (v: boolean) => {
 };
 
 export function InventoryRail({
-  engine, slotA, slotB, highlightId, onPick, onDrop, onContextMenu,
+  engine, slotA, slotB, highlightId, onPick, onDrop, onBenchDrop, onContextMenu,
 }: {
   engine: Engine;
   slotA: string | null;
@@ -36,6 +35,7 @@ export function InventoryRail({
   highlightId: string | null;
   onPick: (id: string) => void;
   onDrop: (which: 'a' | 'b', id: string) => void;
+  onBenchDrop: (id: string, clientX: number, clientY: number) => void;
   onContextMenu: (x: number, y: number, id: string) => void;
 }) {
   const [q, setQ] = useState('');
@@ -126,14 +126,12 @@ export function InventoryRail({
                         engine,
                         getSlots: () => slots.current,
                         onDrop,
+                        onBenchDrop,
                         onLongPress: (x, y) => onContextMenu(x, y, n.id),
                       })}
-                      onClick={ev => {
-                        flyToSlot(ev.currentTarget.querySelector('svg'), slotA && !slotB ? 'b' : 'a');
-                        onPick(n.id);
-                      }}
+                      onClick={() => onPick(n.id)}
                       onContextMenu={ev => { ev.preventDefault(); onContextMenu(ev.clientX, ev.clientY, n.id); }}
-                      aria-label={`${n.n}. ${RARITY_LABEL[n.rar]}.${p === 'done' ? ' Used up.' : ''} Place on the bench.`}
+                      aria-label={`${n.n}. ${RARITY_LABEL[n.rar]}.${p === 'done' ? ' Used up.' : ''} Put on the bench.`}
                     >
                       <Glyph node={n} />
                       <span className="nm">{n.n}</span>

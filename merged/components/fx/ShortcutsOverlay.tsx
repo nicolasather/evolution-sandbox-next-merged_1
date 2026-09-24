@@ -7,7 +7,12 @@ const KBD_CLS = 'rounded-none border border-line-2 bg-ink-3 font-mono text-[10px
 const ROWS: [string, string][] = [
   ['/', 'Search your discoveries'],
   ['Enter', 'Use the discovery just found'],
-  ['Esc', 'Close a panel · dismiss an ending · clear the bench'],
+  ['Esc', 'Close a panel · dismiss an ending · let go of a craft'],
+  ['Drag', 'Move, throw and drop things on the bench'],
+  ['Space', 'The main action while crafting: hold, strike, press'],
+  ['E', 'Interact while crafting: quench, place, link'],
+  ['R', 'Turn the piece in hand (Shift turns it back)'],
+  ['Wheel', 'Turn a piece · zoom the bench'],
   ['Right-click', 'Open, find in graph, or place a discovery'],
   ['Long-press', 'Same menu, for touch'],
   ['?', 'Show or hide this list'],

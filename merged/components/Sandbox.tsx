@@ -192,13 +192,12 @@ export function Sandbox() {
           <section className={'view' + (view === 'work' ? ' on' : '')} id="v-work" role="tabpanel" aria-label="Workspace">
             <Bench
               engine={engine}
-              slotA={s.slotA}
-              slotB={s.slotB}
+              active={s.entered && view === 'work'}
               result={s.result}
-              busy={s.busy}
               hint={hint}
               hintError={s.hintError}
-              onClear={s.clearSlot}
+              onCombine={s.combineOnBench}
+              onBegin={s.dismissResult}
               onOpen={openExhibit}
               onUse={id => s.place(id)}
               onRequestHint={() => { s.requestHint(); }}
@@ -211,6 +210,7 @@ export function Sandbox() {
               highlightId={highlightId}
               onPick={s.place}
               onDrop={s.drop}
+              onBenchDrop={s.dropOnBench}
               onContextMenu={openContextMenu}
             />
           </section>

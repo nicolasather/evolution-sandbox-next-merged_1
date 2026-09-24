@@ -3,6 +3,41 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.7.0 — 24 September 2026
+
+### Discoveries are made with the hands, not by clicking two things together
+- The two craft slots are gone. Items now live on a **physical workbench** (`components/Workbench.tsx`):
+  drag, throw and drop them and they carry weight, inertia and bounce. Tap an item in the
+  inventory (or drag it in) to put it on the bench; tap **Stone** twice and the second one
+  walks over to the first.
+- Bringing two things together no longer resolves them. The pair starts a short **process**
+  chosen by their materials and by how important the result is: hold, rub and grind, shake,
+  stretch or separate, align and rotate into place, wrap, pour, trace a line, link matching
+  ends, guide a piece along a channel, keep it inside a ring, hit the beat, strike, stack,
+  and assemble a multi-part build with gentle snapping (the cart takes wheels, axle and frame).
+- **Hidden difficulty tiers.** Quick finds take about a second, mid-game finds two to four
+  steps, and the important milestones ask for five to fifteen seconds of work. A pacing
+  governor (`govern()` in `lib/craft/specs.ts`) trims or pads any recipe to fit its tier.
+- **Stations.** Fire and metalwork recipes are worked at a hearth, an anvil or a basin that
+  lights up on the bench.
+- **Never stuck.** Every step has a keyboard route (Space, E, R, mouse wheel, hold), failures
+  quietly widen the windows for the next try, and a **Do it for me** button appears after
+  22 seconds. An **Instant** switch on the bench restores the old one-touch combine.
+- Restrained feedback: squash on impact, dust, sparks, a soft ring on success and a few
+  synthesised sounds (mute with the Sound button). Reduced motion is respected.
+
+### What did not change
+- `lib/engine.ts` is untouched and still the only authority: the craft layer decides *how* the
+  player reaches an answer, `Engine.combine` decides *what* it is. Discoveries, routes, tiers,
+  hints and saved progress work exactly as before.
+- `app/_design-system.css` is byte-identical to the single-file build; new styles are in
+  `app/_craft.css`.
+
+### Tests
+- `lib/craft/__tests__`: every one of the 664 recipe pairs is completed by a keyboard-only bot
+  and by an ideal-hands pointer bot with no failures, and the pointer bot's times are asserted
+  against the tier targets.
+
 ## 1.6.0 — 23 September 2026
 
 ### Full screen, with the chrome out of the way

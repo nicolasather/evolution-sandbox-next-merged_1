@@ -1,0 +1,103 @@
+/* ============================================================================
+   CRAFT — the physical workbench (components/Workbench.tsx, lib/craft/*).
+
+   Only tokens from the design system are used, so light, dark and neon all
+   follow for free. Bodies are DOM nodes moved by transforms (the world sets
+   position, rotation, squash, --z, --heat and --glow); everything that is not
+   a body — gauges, rings, ghosts, particles — is drawn on one canvas above.
+   ========================================================================== */
+
+.wb{position:relative;width:100%;max-width:660px;height:clamp(230px,40vh,370px);
+  border:1px solid var(--line-2);background:var(--slot-bg);overflow:hidden;
+  touch-action:none;user-select:none;-webkit-user-select:none;
+  transition:border-color .2s,background .2s;flex:none}
+.wb.wb-over{border-color:var(--ochre);background:var(--ochre-lo)}
+.wb[data-craft="on"]{border-color:var(--line-3)}
+/* a specimen bench: faint registration marks at the corners */
+.wb::before,.wb::after{content:"";position:absolute;width:14px;height:14px;pointer-events:none;
+  border:0 solid var(--line-3);opacity:.7;z-index:1}
+.wb::before{left:6px;top:6px;border-left-width:1px;border-top-width:1px}
+.wb::after{right:6px;bottom:6px;border-right-width:1px;border-bottom-width:1px}
+
+.wb-stage{position:absolute;inset:0;transform-origin:50% 50%;will-change:transform}
+.wb-bodies{position:absolute;inset:0}
+.wb-fx{position:absolute;inset:0;pointer-events:none;z-index:400}
+
+/* stations: appear only when a recipe needs them */
+.wb-zones{position:absolute;inset:0;pointer-events:none}
+.wb-zone{position:absolute;border:1px dashed var(--line-3);opacity:0;transform:scale(.97);
+  transition:opacity .3s,transform .3s,border-color .25s,background .25s,box-shadow .35s}
+.wb-zone.on{opacity:1;transform:none}
+.wb-zone::after{content:attr(data-label);position:absolute;left:8px;top:6px;
+  font:500 9.5px/1 var(--fs-mono,ui-monospace,monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--bone-4)}
+.wb-zone.lit{border-color:var(--ochre);border-style:solid;background:var(--ochre-lo)}
+.wb-zone[data-z="hearth"].lit{box-shadow:inset 0 0 44px color-mix(in srgb,var(--ochre) 38%,transparent)}
+.wb-zone[data-z="basin"].lit{box-shadow:inset 0 0 36px color-mix(in srgb,#5aa0d0 30%,transparent)}
+.wb-zone[data-z="hearth"].on{background:linear-gradient(to top,color-mix(in srgb,var(--ochre) 12%,transparent),transparent 70%)}
+.wb-zone[data-z="basin"].on{background:linear-gradient(to top,color-mix(in srgb,#5aa0d0 12%,transparent),transparent 70%)}
+
+/* bodies */
+.wb-body{position:absolute;left:0;top:0;pointer-events:none;transform-origin:50% 50%;
+  will-change:transform;color:var(--bone);--z:0;--heat:0;--glow:0;
+  transition:opacity .24s,filter .24s}
+.wb-body.wb-out{opacity:0;filter:blur(3px)}
+.wb-art{position:absolute;inset:0;display:grid;place-items:center;
+  filter:drop-shadow(0 0 calc(var(--glow) * 12px + var(--heat) * 14px) color-mix(in srgb,var(--ochre) calc((var(--glow) + var(--heat)) * 100%),transparent));
+  color:color-mix(in srgb,var(--ochre) calc(var(--heat) * 70%),var(--bone))}
+.wb-art .g{width:78%;height:78%;overflow:visible}
+.wb-part .wb-art{color:var(--bone-2)}
+.wb-part .wb-art .g{width:88%;height:88%}
+.wb-shadow{position:absolute;inset:14% 6% -4%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(0,0,0,.34),transparent 72%);
+  transform:translateY(calc(var(--z) * .55px)) scale(calc(1 + var(--z) * .004));
+  opacity:calc(.85 - var(--z) * .006)}
+.wb-aura{position:absolute;inset:-14%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 60%,transparent),transparent 72%);
+  opacity:calc(var(--glow) * .8 + var(--heat) * .5)}
+.wb-held .wb-art{filter:drop-shadow(0 6px 8px rgba(0,0,0,.28)) drop-shadow(0 0 calc(var(--glow) * 12px) var(--ochre))}
+.wb-lbl{position:absolute;left:0;top:0;pointer-events:none;white-space:nowrap;
+  font-size:10px;letter-spacing:.06em;color:var(--bone-3);text-transform:none;
+  transition:opacity .24s}
+.wb-lbl.wb-out{opacity:0}
+
+/* what the bench says when it is empty */
+.wb-empty{position:absolute;inset:0;display:grid;place-content:center;text-align:center;margin:0;
+  color:var(--bone-4);line-height:1.8;pointer-events:none;z-index:2}
+
+/* how-to line and step pips */
+.wb-hud{position:absolute;left:12px;right:12px;top:10px;display:flex;align-items:center;gap:10px;
+  pointer-events:none;z-index:500;min-height:20px}
+.wb-pips{display:inline-flex;gap:4px}
+.wb-pips i{width:14px;height:3px;background:var(--line-3);transition:background .2s,width .2s}
+.wb-pips i.done{background:var(--ochre)}
+.wb-pips i.now{background:var(--bone-2);width:22px}
+.wb-cue{color:var(--bone-3);text-transform:none;letter-spacing:.04em;font-size:11.5px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.wb-cue b{font-weight:500;color:var(--bone)}
+.wb-cue:not(.show){opacity:.7}
+.wb-cue.show{animation:wbCue .5s ease-out}
+@keyframes wbCue{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:none}}
+
+.wb-tools{position:absolute;right:8px;bottom:8px;display:flex;gap:6px;z-index:500;flex-wrap:wrap;justify-content:flex-end}
+.wb-tools .chip{padding:4px 9px;font-size:11px;background:color-mix(in srgb,var(--slot-bg) 80%,transparent);
+  backdrop-filter:blur(4px)}
+.wb-prog{position:absolute;left:0;right:0;bottom:0;height:2px;background:transparent;z-index:500;pointer-events:none}
+.wb-prog i{display:block;height:100%;width:100%;background:var(--ochre);transform-origin:0 50%;transform:scaleX(0);
+  transition:transform .12s linear}
+
+/* stage: the bench takes the slots' place, the outcome sits under it */
+#bench-stage:has(.wb){gap:14px;justify-content:center}
+#bench-stage:has(.wb) #outcome{min-height:96px}
+
+@media (max-width:900px){
+  .wb{height:clamp(214px,34vh,290px)}
+  #bench-stage:has(.wb){gap:12px;padding-top:12px}
+  #bench-stage:has(.wb) #outcome{min-height:64px}
+  .wb-tools .chip{min-height:34px;padding:5px 11px}
+  .wb-cue{font-size:11px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .wb-body,.wb-lbl,.wb-zone,.wb-prog i{transition:none}
+  .wb-cue.show{animation:none}
+}

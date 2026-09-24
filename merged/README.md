@@ -99,6 +99,41 @@ the first render used to make every returning player's page fail hydration.
 The same logic drives the single-file build; a randomised run of 16,000
 combinations through both engines gives identical results.
 
+### The craft system (physical merging)
+
+Combining is a physical act. Two items are put on a bench, brought together, and the
+pair runs a short process before the engine is asked for the result.
+
+```
+lib/craft/
+  types.ts        Body, StepSpec / CraftSpec (the data), StepCtx (what a step can use)
+  specs.ts        recipe -> CraftSpec: FAMILIES (rules by material/tags), CRAFT_OVERRIDES (by pair), govern() pacing
+  materials.ts    stone, wood, metal, fibre, liquid, fire ... registerMaterial()
+  world.ts        the lightweight circle physics: held spring, walls, impulses, squash, zones
+  session.ts      CraftSession: runs a spec's steps in order, routes pointer / keys / wheel
+  steps/          one runtime per interaction kind; index.ts is the registry (registerStep)
+  fx.ts, audio.ts one canvas overlay; synthesised WebAudio sounds
+  prefs.ts, bus.ts  Instant / sound / seen-cue prefs; lets the rail and drag-and-drop spawn onto the bench
+components/Workbench.tsx   the DOM bench: bodies, HUD, tools, input
+```
+
+`Engine.combine` remains the only authority on what a pair makes; the craft layer only
+decides how the player gets there. Recipes name their interaction in data, so new
+behaviour never needs a change to the engine.
+
+- **Add a material:** `registerMaterial({...})` in `materials.ts` (weight, bounce, sound, colour).
+  Steps read those properties, so the new material behaves sensibly everywhere.
+- **Add an interaction kind:** write a `StepDef` `{ kind, verb, estimate, create }`, add the name
+  to `StepKind`, `registerStep()` it and give it a line in `HINTS`. Recipes then use
+  `{ kind: 'yours', ...params }`.
+- **Change one recipe:** add it to `CRAFT_OVERRIDES` in `specs.ts` (keyed by the two item ids).
+  Everything else is derived from materials and the discovery's era and tier.
+- **Add an assembly:** add a layout to `LAYOUTS` in `steps/build.ts`.
+- **Pacing:** `BUDGET` in `specs.ts` sets the target seconds per tier; `govern()` enforces it.
+  `lib/craft/__tests__/pointer.test.ts` fails if an ideal player runs over.
+- **Accessibility:** every step has a keyboard route (Space, E, R, wheel), an **Instant** mode
+  turns the whole layer off, and **Do it for me** appears after 22 seconds of being stuck.
+
 ### The glyph system
 
 220 discoveries, zero emoji. `lib/glyphs.ts` is a shape grammar: about thirty

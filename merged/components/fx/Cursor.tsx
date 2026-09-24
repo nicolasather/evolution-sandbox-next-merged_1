@@ -15,7 +15,7 @@ import { useEffect, useRef } from 'react';
    ========================================================================== */
 
 const TEXT_SEL = 'a, button, input, textarea, [role="tab"], [role="button"], .tab, .chip, .LineHoverLink, summary';
-const DRAG_SEL = '[draggable="true"], .item, .p3d, #gcanvas';
+const DRAG_SEL = '[draggable="true"], .item, .p3d, #gcanvas, .wb';
 
 export function Cursor() {
   const ref = useRef<HTMLDivElement>(null);

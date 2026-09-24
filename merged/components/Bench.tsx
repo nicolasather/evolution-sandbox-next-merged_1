@@ -1,94 +1,16 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Glyph } from './Glyph';
 import { Plate3D } from './Plate3D';
 import { ScenePicker } from './SceneBackdrop';
 import { DiscoveryCeremony } from './fx/DiscoveryCeremony';
-import { getDragSnapshot, subscribeDrag } from '@/lib/dragcraft';
+import { Workbench } from './Workbench';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { CombineResult, HintView } from '@/lib/types';
 
 type Outcome = (CombineResult & { key: number }) | null;
-
-const NO_DRAG = { which: null, compatible: null, itemId: null } as const;
-
-function Slot({
-  which, id, engine, onClear, state,
-}: {
-  which: 'a' | 'b';
-  id: string | null;
-  engine: Engine;
-  onClear: (which: 'a' | 'b') => void;
-  state: '' | 'merge' | 'shake';
-}) {
-  // the actual drop is handled by lib/dragcraft (armItemDrag, wired from
-  // InventoryRail) — this only reads its published state to show the ring
-  const drag = useSyncExternalStore(subscribeDrag, getDragSnapshot, () => NO_DRAG);
-  const over = drag.which === which;
-  const node = id ? engine.get(id) : undefined;
-
-  return (
-    <div
-      className={cn(
-        'slot', over && 'over', node && 'full', state,
-        over && drag.compatible === true && 'compatible',
-        over && drag.compatible === false && 'incompatible',
-      )}
-      data-which={which}
-      aria-label={which === 'a' ? 'First ingredient' : 'Second ingredient'}
-    >
-      <SlotRing />
-      {!node ? (
-        <span className="ph mono">{which === 'a' ? 'First' : 'Second'}</span>
-      ) : (
-        <>
-          <motion.span
-            key={node.id}
-            className="slot-g"
-            initial={{ scale: 0.6, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 520, damping: 30 }}
-          >
-            <Glyph node={node} />
-          </motion.span>
-          <span className="lbl">{node.n}</span>
-          <button className="clear" aria-label={`Remove ${node.n}`} onClick={() => onClear(which)}>
-            <svg width="11" height="11" viewBox="0 0 12 12" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-              <path d="M1 1l10 10M11 1L1 11" />
-            </svg>
-          </button>
-        </>
-      )}
-    </div>
-  );
-}
-
-/* The ritual circle drawn around each slot: ticks, a dashed orbit, four
-   registration marks and a bright sweep arc. Pure decoration, animated in CSS. */
-const TICKS = Array.from({ length: 72 }, (_, i) => {
-  const a = (i * 5 * Math.PI) / 180, r1 = 97, r2 = i % 6 === 0 ? 87 : 92;
-  const f = (n: number) => Math.round(n * 10) / 10;
-  return [f(100 + r1 * Math.cos(a)), f(100 + r1 * Math.sin(a)), f(100 + r2 * Math.cos(a)), f(100 + r2 * Math.sin(a))];
-});
-function SlotRing() {
-  return (
-    <svg className="slot-ring" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true" focusable="false">
-      <g className="sr-ticks">
-        {TICKS.map(([x1, y1, x2, y2], i) => <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} />)}
-      </g>
-      <circle className="sr-outer" cx="100" cy="100" r="97" />
-      <circle className="sr-dash" cx="100" cy="100" r="80" strokeDasharray="3 7" />
-      <circle className="sr-sweep" cx="100" cy="100" r="80" strokeDasharray="70 433" />
-      <circle className="sr-inner" cx="100" cy="100" r="66" />
-      <g className="sr-marks">
-        <path d="M100 0l4 7h-8z" /><path d="M200 100l-7 4v-8z" /><path d="M100 200l-4-7h8z" /><path d="M0 100l7-4v8z" />
-      </g>
-    </svg>
-  );
-}
 
 function OutcomeCard({
   result, onUse, onOpen,
@@ -187,16 +109,16 @@ function HintButton({ hint, onRequest }: { hint: HintView; onRequest: () => void
 }
 
 export function Bench({
-  engine, slotA, slotB, result, busy, hint, hintError, onClear, onOpen, onUse, onRequestHint, onDropHint,
+  engine, active, result, hint, hintError, onCombine, onBegin, onOpen, onUse, onRequestHint, onDropHint,
 }: {
   engine: Engine;
-  slotA: string | null;
-  slotB: string | null;
+  /** The workspace view is showing (the bench sleeps otherwise). */
+  active: boolean;
   result: Outcome;
-  busy: boolean;
   hint: HintView;
   hintError: string | null;
-  onClear: (which: 'a' | 'b') => void;
+  onCombine: (a: string, b: string) => CombineResult;
+  onBegin: () => void;
   onOpen: (id: string) => void;
   onUse: (id: string) => void;
   onRequestHint: () => void;
@@ -204,32 +126,23 @@ export function Bench({
 }) {
   const trail = engine.path().slice(-26);
   const reach = engine.withinReach().length;
-  const slotState: '' | 'merge' | 'shake' = !busy || !result ? ''
-    : result.status === 'new' || result.status === 'known' ? 'merge'
-    : result.status === 'fail' ? 'shake' : '';
-
   // one short line of guidance: onboarding first, then the hint, then nothing
   let line: React.ReactNode = null;
   if (engine.coached === 0) {
-    line = <>Tap <b>Stone</b>, then tap <b>Stone</b> again.</>;
+    line = <>Tap <b>Stone</b> twice. Then do the work with your hands.</>;
   } else if (engine.coached === 1) {
     line = <>Most pairs make nothing. That is normal — try another pair.</>;
   } else if (hint.targetId && hint.text) {
     line = <>{hint.text}</>;
   } else if (engine.order.length < 9) {
-    line = <>Combine → discover → try again. Every find is a new ingredient.</>;
+    line = <>Bring two things together → work it with your hands → discover. Every find is a new ingredient.</>;
   }
 
   return (
     <div id="bench">
       <div id="bench-stage">
         <ScenePicker era={engine.currentEra().id} />
-        <div className={cn('slots', (slotA || slotB) && 'armed', slotA && slotB && 'charged', slotState === 'merge' && 'merging')}>
-          <i className="slot-link" aria-hidden="true" />
-          <Slot which="a" id={slotA} engine={engine} onClear={onClear} state={slotState} />
-          <div className="slot-op" aria-hidden="true"><span>+</span></div>
-          <Slot which="b" id={slotB} engine={engine} onClear={onClear} state={slotState} />
-        </div>
+        <Workbench engine={engine} active={active} onCombine={onCombine} onBegin={onBegin} />
 
         <div id="outcome" aria-live="polite">
           <AnimatePresence mode="popLayout" initial={false}>

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import rawDb from '@/data/db.json';
+import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
 import type { CombineResult, Db, Discovery, ViewId } from './types';
 
@@ -62,13 +63,17 @@ export function useSandbox() {
     if (engine.has(id)) engine.markSeen(id);
   }, [engine]);
 
-  const fire = useCallback((a: string, b: string) => {
+  /** Ask the engine. `viaSlots` is the classic path (slots clear after a beat);
+   *  the workbench passes false and handles its own bodies. Returns the answer. */
+  const fire = useCallback((a: string, b: string, viaSlots = true): CombineResult => {
     const res = engine.combine(a, b);
-    if (res.status === 'error') { clearSlots(); return; }
+    if (res.status === 'error') { if (viaSlots) clearSlots(); return res; }
     setResult({ ...res, key: ++seq.current });
     setHintError(null);
-    setBusy(true);
-    later(() => { clearSlots(); setBusy(false); }, SETTLE_MS);
+    if (viaSlots) {
+      setBusy(true);
+      later(() => { clearSlots(); setBusy(false); }, SETTLE_MS);
+    }
 
     if (res.status === 'new' || res.status === 'known') {
       const n = res.node;
@@ -93,10 +98,16 @@ export function useSandbox() {
         }, 6000);
       }
     }
+    return res;
   }, [engine, pushToast, clearSlots, later]);
+
+  /** The workbench's way in: same engine, same toasts, no slots. */
+  const combineOnBench = useCallback((a: string, b: string) => fire(a, b, false), [fire]);
 
   /** Tap-to-combine: first tap fills A, second fills B and combines at once. */
   const place = useCallback((id: string) => {
+    // with the workbench mounted, an item goes onto the bench as a body
+    if (benchSpawn(id, { tap: true })) { setResult(null); return; }
     if (busy) return;
     if (slotA && !slotB) {
       setSlotB(id);
@@ -116,6 +127,12 @@ export function useSandbox() {
     setSlotA(a); setSlotB(b);
     if (a && b) later(() => fire(a, b), 140);
   }, [busy, slotA, slotB, fire, later]);
+
+  /** Dropped from the inventory onto the bench at a point (viewport px). */
+  const dropOnBench = useCallback((id: string, clientX: number, clientY: number) => {
+    if (benchSpawn(id, { clientX, clientY })) { setResult(null); return; }
+    place(id);
+  }, [place]);
 
   const clearSlot = useCallback((which: 'a' | 'b') => {
     // clearing the first slot slides the second one across
@@ -141,7 +158,7 @@ export function useSandbox() {
 
   return {
     engine, db, version, view, setView, slotA, slotB,
-    focus, open, place, drop, clearSlot, clearSlots, fire, reset,
+    focus, open, place, drop, dropOnBench, clearSlot, clearSlots, fire, combineOnBench, reset,
     result, dismissResult, busy, toasts, ending, setEnding, entered, enter,
     requestHint, hintError, setHintError,
   };

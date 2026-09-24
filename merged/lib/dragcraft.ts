@@ -1,6 +1,7 @@
 'use client';
 
 import type { PointerEvent as ReactPointerEvent } from 'react';
+import { benchContains, benchElement } from './craft/bus';
 import type { Engine } from './engine';
 
 /* ============================================================================
@@ -66,6 +67,8 @@ export interface DragCraftOptions {
   engine: Engine;
   getSlots: () => { a: string | null; b: string | null };
   onDrop: (which: 'a' | 'b', id: string) => void;
+  /** Dropped on the workbench: viewport point, where the item should land. */
+  onBenchDrop?: (id: string, clientX: number, clientY: number) => void;
   /** Touch's stand-in for a right-click: held past LONG_PRESS_MS without
    *  moving into a drag. Never armed for a mouse, which already has one. */
   onLongPress?: (x: number, y: number) => void;
@@ -76,7 +79,7 @@ export interface DragCraftOptions {
  *  then the element's own onClick still fires normally for a tap. */
 export function armItemDrag(e: ReactPointerEvent<HTMLElement>, opts: DragCraftOptions) {
   if (e.button !== 0 && e.pointerType === 'mouse') return;
-  const { id, originEl, engine, getSlots, onDrop, onLongPress } = opts;
+  const { id, originEl, engine, getSlots, onDrop, onBenchDrop, onLongPress } = opts;
   const startX = e.clientX, startY = e.clientY;
   const pointerId = e.pointerId;
   let dragging = false;
@@ -84,6 +87,7 @@ export function armItemDrag(e: ReactPointerEvent<HTMLElement>, opts: DragCraftOp
   let raf = 0;
   let gx = startX, gy = startY, tx = startX, ty = startY;
   let lastWhich: 'a' | 'b' | null = null;
+  let overBench = false;
 
   const suppressNextClick = (ev: MouseEvent) => { ev.preventDefault(); ev.stopPropagation(); };
   const suppressUpcomingClick = () => {
@@ -142,7 +146,9 @@ export function armItemDrag(e: ReactPointerEvent<HTMLElement>, opts: DragCraftOp
       ox = gx + (r.left + r.width / 2 - gx) * lean;
       oy = gy + (r.top + r.height / 2 - gy) * lean;
     }
-    const scale = which ? 0.94 : 1;
+    const nowOver = !which && !!onBenchDrop && benchContains(tx, ty);
+    if (nowOver !== overBench) { overBench = nowOver; benchElement()?.classList.toggle('wb-over', nowOver); }
+    const scale = which || overBench ? 0.94 : 1;
     ghost.style.left = `${ox - ghost.offsetWidth / 2}px`;
     ghost.style.top = `${oy - ghost.offsetHeight / 2}px`;
     ghost.style.transform = `scale(${scale})`;
@@ -151,15 +157,23 @@ export function armItemDrag(e: ReactPointerEvent<HTMLElement>, opts: DragCraftOp
       lastWhich = which;
       publish({ which, compatible: which ? compatFor(which) : null, itemId: id });
     }
-    if (Math.abs(tx - gx) > 0.4 || Math.abs(ty - gy) > 0.4 || which) raf = requestAnimationFrame(tick);
+    if (Math.abs(tx - gx) > 0.4 || Math.abs(ty - gy) > 0.4 || which || overBench) raf = requestAnimationFrame(tick);
   };
 
-  const settle = (dropped: boolean, which: 'a' | 'b' | null) => {
+  const settle = (dropped: boolean, which: 'a' | 'b' | null, onBench = false) => {
     if (raf) cancelAnimationFrame(raf);
     originEl.classList.remove('dragging');
+    benchElement()?.classList.remove('wb-over');
     publish({ which: null, compatible: null, itemId: null });
     if (!ghost) return;
     const g = ghost;
+    if (onBench) {
+      // the bench takes over: the item appears there as a body and drops in
+      const anim = g.animate([{ opacity: 1 }, { opacity: 0, transform: 'scale(.7)' }], { duration: reduced() ? 1 : 140, easing: 'ease-out' });
+      anim.onfinish = () => g.remove();
+      anim.oncancel = () => g.remove();
+      return;
+    }
     if (dropped && which) {
       const target = slotEl(which);
       if (target) {
@@ -202,8 +216,10 @@ export function armItemDrag(e: ReactPointerEvent<HTMLElement>, opts: DragCraftOp
     clearLongPress();
     if (dragging) {
       const which = hitSlot(ev.clientX, ev.clientY);
-      settle(!!which, which);
+      const onBench = !which && !!onBenchDrop && benchContains(ev.clientX, ev.clientY);
+      settle(!!which, which, onBench);
       if (which) onDrop(which, id);
+      else if (onBench) onBenchDrop?.(id, ev.clientX, ev.clientY);
       // a drag just happened — the browser's own synthetic click for this
       // press must not also fire and re-place the item
       suppressUpcomingClick();

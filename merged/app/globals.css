@@ -22,6 +22,9 @@
 /* Custom cursor, reactive background field, spatial text, discovery ceremony. */
 @import "./_reactive-fx.css" layer(components);
 
+/* The physical workbench: bodies, stations, gauges, how-to cues. */
+@import "./_craft.css" layer(components);
+
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and
    `var(--bone-2)` in the stylesheet are the same colour in either theme. */
