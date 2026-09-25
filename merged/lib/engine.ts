@@ -55,8 +55,9 @@ export interface Reveal {
   message: string;
   /** How many things already held could react to it (never which). */
   affects: number;
-  /** How it came: by holding what it needs, or by answering a question. */
-  via: 'found' | 'question';
+  /** How it came: by holding what it needs, by answering a question, or by a freeform
+   *  gesture matching it before it was ever selected from the rail. */
+  via: 'found' | 'question' | 'behaviour';
 }
 
 interface Saved {
@@ -226,7 +227,7 @@ export class Engine {
     return n;
   }
 
-  private learn(a: ActionId, via: 'found' | 'question', silent: boolean): boolean {
+  private learn(a: ActionId, via: 'found' | 'question' | 'behaviour', silent: boolean): boolean {
     if (this.knownSet.has(a)) return false;
     this.knownSet.add(a); this.known.push(a);
     if (!silent) {
@@ -249,6 +250,23 @@ export class Engine {
   teach(a: ActionId): boolean {
     if (!TECH_BY_ID[a]) return false;
     const fresh = this.learn(a, 'question', false);
+    if (fresh) { this.save(); this.emit(); }
+    return fresh;
+  }
+
+  /** Not-yet-known techniques the player already qualifies for by what they hold, regardless
+   *  of whether they have ever selected one from the rail — the pool a freeform gesture is
+   *  allowed to discover (lib/craft/freeform.ts). Never a technique they couldn't rightfully
+   *  have yet. */
+  unknownReady(): ActionId[] {
+    return TECHNIQUES.filter(t => !this.knownSet.has(t.id)
+      && ruleHolds(t.unlock, id => this.holds(id), c => this.hasCap(c))).map(t => t.id);
+  }
+
+  /** A freeform gesture matched an unlearned technique's own motion before it was ever
+   *  selected from the rail. Returns whether it was new (mirrors teach()). */
+  discoverByBehaviour(a: ActionId): boolean {
+    const fresh = this.learn(a, 'behaviour', false);
     if (fresh) { this.save(); this.emit(); }
     return fresh;
   }

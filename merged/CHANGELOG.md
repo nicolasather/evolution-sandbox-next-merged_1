@@ -44,6 +44,43 @@ scene is showing, gated on a specific discovery rather than an era.
   one only needs a discovery id and a small shape (see `OVERLAYS` in
   `discoveryOverlays.ts`).
 
+### A technique can be discovered by doing it, not only by holding what it needs (P1.2)
+Checked the architecture first, per the brief's own rule, and flagged it before building:
+the brief's examples (rub a hard object against an abrasive material → Grind) describe two
+bodies in contact, but neither existing input pathway fit as-is — single-body hand gestures
+require a technique already selected from the rail (unknown ones aren't even selectable),
+and two-body combining only starts once the engine has already validated the pair. Confirmed
+a design with the user before touching `Workbench.tsx`'s pointer state machine.
+
+- **`lib/craft/freeform.ts`** (`FreeformTrial`, pure, unit tested): while no technique is
+  selected and the hand is on a single piece, it runs a real `Gesture` — the exact same
+  class and tuning a known technique would use, not a second copy of the rules — for every
+  not-yet-known technique the player already qualifies for by what they hold
+  (`Engine.unknownReady()`, new). A light rub can complete an easy one (Scrape) before a
+  harder one needing more of the same motion (Grind); a smash-kind candidate accumulates
+  repeat presses exactly like the real hand does. 'hold'-kind techniques (heat/cool/dry/
+  burn/press) are out of scope — they read as holding something near a source, not a
+  motion, and freeform contact has no source to be near.
+- **Why it can't be confused with just carrying the piece elsewhere**: the trial's target
+  stays fixed at the piece's position when the hand first took hold of it (unlike the real
+  gesture pathway, which re-centres on the piece every tick because there the piece is
+  locked in place). Carrying it away moves the pointer out of the gesture's reach, so
+  progress simply stops rather than firing wrongly — no extra bookkeeping needed for that
+  distinction, it falls out of geometry `Gesture` already had.
+- **A technique can be qualified-for without being about the piece in hand** — `holds()`
+  is bag-wide, the way the rail's own unlock check already works. Completing the motion on
+  the wrong piece still reveals the technique, but applying it (below) just runs into the
+  existing "close / wrong action / impossible" failure feedback (P1.3), unchanged — no new
+  rule needed for that case, it was already there.
+- On a match: `Engine.discoverByBehaviour()` (new, mirrors the existing `teach()` used by
+  the question system) reveals it through the same "NEW TECHNIQUE" banner as any other
+  discovery, and the motion that found it also completes it immediately (`finishWork`,
+  unchanged) — the point is "I performed a process," not "a button appeared, now do it
+  properly through the rail."
+- Deterministic throughout, per the brief ("never AI to guess basic physical actions"):
+  when two candidates would complete on the very same tick, the one earlier in the
+  technique catalogue wins, always, not at random.
+
 ## 1.11.0 — 25 September 2026 (unreleased)
 
 ### P1 game-feel gaps, filled without touching what already worked

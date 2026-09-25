@@ -9,6 +9,7 @@ import { drawHand } from '@/lib/craft/hand';
 import { flyHome } from '@/lib/craft/homeFlight';
 import { loadBench, saveBench, UndoStack, type Placed } from '@/lib/craft/benchMemory';
 import { CUE_LIMIT, instantEnabled, markStepSeen, seenSteps, setInstant, subscribePrefs } from '@/lib/craft/prefs';
+import { FreeformTrial } from '@/lib/craft/freeform';
 import { CraftSession } from '@/lib/craft/session';
 import { deriveSpec, tierOf } from '@/lib/craft/specs';
 import { stepHint } from '@/lib/craft/steps';
@@ -179,6 +180,10 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     const ptr = { x: 0, y: 0, inside: false, down: false, vx: 0, vy: 0, lt: 0, touch: false };
     let act: { g: Gesture; b: Body; struckAt: number; lastDust: number } | null = null;
     let demo: { b: Body; t: number; action: ActionId } | null = null;
+    /** No technique selected, but the hand is on a piece: a freeform motion may still match
+     *  an unlearned one it already qualifies for (brief P1.2). Survives a release so a repeat
+     *  press on the same piece still counts as a second strike, for smash-kind candidates. */
+    let trial: { body: Body; sim: FreeformTrial } | null = null;
     let handA = 0;
     let actCool = 0;
     let workFails = 0;
@@ -368,7 +373,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     const handWanted = () => !!mode && (ptr.inside && (!ptr.touch || ptr.down) || !!demo);
     const needFrame = () =>
       world.busy || !!session || !!resolving || !!pull || fx.alive || cool > 0 || !!drag || hits.size > 0 || world.touching().length > 0
-      || !!act || !!demo || handA > 0.02 || handWanted() || feel.size > 0 || ghostBody() !== null;
+      || !!act || !!trial || !!demo || handA > 0.02 || handWanted() || feel.size > 0 || ghostBody() !== null;
 
     function frame(now: number) {
       raf = 0;
@@ -389,6 +394,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (session) updateSession(dt);
       if (resolving) updateResolving(dt);
       updateAct(dt);
+      updateTrial(dt);
       updateDemo(dt);
       if (!session && !resolving && !pull && cool <= 0 && !mode) checkClusters(dt);
       hits.clear();
@@ -767,6 +773,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (sel === b) sel = null;
       if (hover === b) hover = null;
       if (act?.b === b) act = null;
+      if (trial?.body === b) trial = null;
       if (longPress?.b === b) { window.clearTimeout(longPress.timer); longPress = null; }
       setNear(null, null);
       b.el.removeAttribute('data-unstable'); b.el.removeAttribute('data-hold');
@@ -788,7 +795,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (session || resolving) return;
       mode = m;
       if (act) act.b.locked = false;
-      act = null; demo = null; workFails = 0;
+      act = null; demo = null; workFails = 0; trial = null;
       setNear(null, null);
       setModeUi(m);
       requestAnimationFrame(layoutZones);
@@ -866,6 +873,24 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (unlock) { b.locked = false; b.ox = b.oy = 0; }
       act = null;
       setWorking(false);
+    }
+
+    /** A freeform motion just matched a technique the player never selected (P1.2): reveal
+     *  it exactly like any other new technique, then apply it — the motion already performed
+     *  it, so there is nothing left for the player to redo through the rail. */
+    function resolveTrial(action: ActionId, b: Body) {
+      trial = null;
+      if (drag?.body === b) { world.release(b, 0, 0); drag = null; }
+      latest.current.engine.discoverByBehaviour(action);
+      finishWork(b, action);
+    }
+
+    function updateTrial(dt: number) {
+      if (!trial) return;
+      const { body, sim } = trial;
+      if (!world.bodies.includes(body)) { trial = null; return; }
+      const won = sim.tick(dt);
+      if (won) resolveTrial(won, body);
     }
 
     function updateAct(dt: number) {
@@ -1191,6 +1216,18 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       }
       bgTap = null;
       if (pull && (pull.a === b || pull.b === b)) { pull.a.locked = pull.b.locked = false; pull = null; }
+      // no technique chosen, but the hand is on a piece: a freeform motion may still discover
+      // one it already qualifies for (P1.2) — a repeat press on the same piece continues the
+      // same trial (so a second strike still counts), a different piece starts a fresh one
+      if (trial && trial.body !== b) trial = null;
+      if (trial) { trial.sim.down(p.x, p.y); }
+      else {
+        const cands = latest.current.engine.unknownReady();
+        if (cands.length) {
+          const sim = new FreeformTrial(cands, { x: b.x, y: b.y - b.z, r: b.r, hard: b.props.hard }, p.x, p.y);
+          if (sim.active) trial = { body: b, sim };
+        }
+      }
       world.grab(b, p.x, p.y);
       drag = { body: b, t0: performance.now(), x0: e.clientX, y0: e.clientY, moved: false, lx: p.x, ly: p.y, lt: performance.now(), vx: 0, vy: 0 };
       fx.sound(b.props.sound, { vol: 0.12, rate: 1.4 });
@@ -1232,6 +1269,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       drag.lx = p.x; drag.ly = p.y; drag.lt = now;
       if (Math.hypot(e.clientX - drag.x0, e.clientY - drag.y0) > 6) drag.moved = true;
       world.dragTo(drag.body, p.x, p.y);
+      if (trial && trial.body === drag.body) trial.sim.move(p.x, p.y);
       wake();
     };
 
@@ -1309,6 +1347,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       setUndoable(undo.size);
       if (!items) { say_('Nothing to undo.', 'info', undefined, 2200); return; }
       endAct();
+      trial = null;
       restoreItems(items);
       sel = null; pull = null; clusterDone.clear(); clusterAge.clear();
       fx.sound('tick', { vol: 0.3, rate: 0.9 });
