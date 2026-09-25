@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* The game screens (workspace, graph, archive, exhibit) are styled by the shared
+   design system — byte-for-byte the stylesheet of the single-file build
+   (`npm run data:check` verifies that), so both builds stay in visual sync.
+   Everything that exists only in this app — the method / FAQ / privacy / 404
+   pages and the Vengeance UI components — is styled with Tailwind utilities
+   drawing on the same tokens below.
+
+   It is imported into the `components` layer on purpose. Unlayered, its element
+   rules (`button { padding: 0; border: 0 }` and friends) outranked every
+   Tailwind utility, so a padded or bordered button written in Tailwind silently
+   lost its styling. Layered, the order is: preflight < design system < utilities. */
+@import "./_design-system.css" layer(components);
+
+/* Neon blue theme and the 3D exhibit plate — layered after the design system. */
+@import "./_theme-neon.css" layer(components);
+
+/* Scenes, round craft slots, hover / press animation, immersive top bar. */
+@import "./_fx.css" layer(components);
+
+/* Custom cursor, reactive background field, spatial text, discovery ceremony. */
+@import "./_reactive-fx.css" layer(components);
+
+/* The physical workbench: bodies, stations, gauges, how-to cues. */
+@import "./_craft.css" layer(components);
+
+/* 1.8: the museum layer — landing film, world reveal, artifact cards, exhibits,
+   timeline, eras, light/dark identities. */
+@import "./_museum.css" layer(components);
+
+/* The 4–6 second journey through time, and its reduced-motion strip. */
+@import "./_time-tunnel.css" layer(components);
+
+/* Open world: the scenery is the workspace, materials have no wrappers, the
+   exhibit is a drawer that has to be asked for. Loaded last on purpose. */
+@import "./_open-world.css" layer(components);
+
+/* The Action Rail and the technique reveal (replaces the old five-hand dock). */
+@import "./_rail.css" layer(components);
+
+/* What things physically are: warmth, scorch, wetness, ripples, wind. Motion-safe. */
+@import "./_physics.css" layer(components);
+@import "./_learn.css" layer(components);
+@import "./_narrator.css" layer(components);
+@import "./_journal.css" layer(components);
+
+/* One palette, two names: these Tailwind theme tokens point at the design
+   system's custom properties, so `text-bone-2` in a component and
+   `var(--bone-2)` in the stylesheet are the same colour in either theme. */
+@theme inline {
+  /* values point at the design system's tokens, so Tailwind utilities follow
+     the light/dark theme exactly like the stylesheet does */
+  --color-ink-0: var(--ink-0);
+  --color-ink-1: var(--ink-1);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-4: var(--ink-4);
+
+  --color-bone: var(--bone);
+  --color-bone-2: var(--bone-2);
+  --color-bone-3: var(--bone-3);
+  --color-bone-4: var(--bone-4);
+
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-line-3: var(--line-3);
+
+  --color-ochre: var(--ochre);
+  --color-ochre-lo: var(--ochre-lo);
+  --color-ochre-mid: var(--ochre-mid);
+  --color-r-common: var(--r-common);
+  --color-r-uncommon: var(--r-uncommon);
+  --color-r-rare: var(--r-rare);
+  --color-r-hidden: var(--r-hidden);
+
+  /* names Vengeance UI (shadcn-style) components expect, mapped to this palette */
+  --color-background: var(--ink-0);
+  --color-foreground: var(--bone);
+  --color-muted: var(--ink-3);
+  --color-muted-foreground: var(--bone-3);
+
+  --font-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", Georgia, serif;
+  --font-ui: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* The design system names its families directly; here they come from next/font,
+   which self-hosts them. Same stacks and fallbacks, different source. */
+:root {
+  --fs-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", Georgia, serif;
+  --fs-ui: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --fs-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* The Glyph component wraps its SVG in a span; make that span transparent to
+   layout so `.g` sizing rules from the design system still apply. */
+.glyph-host { display: contents; }

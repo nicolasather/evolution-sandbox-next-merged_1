@@ -1,0 +1,88 @@
+/* ============================================================================
+   ACTION RAIL + TECHNIQUE REVEAL
+   The rail lives at the edge: down the right side on a desktop, along the
+   bottom on a phone. It never reflows when a technique is learned (each has a
+   fixed place). Layered after _craft.css, whose old dock rules it replaces.
+   ========================================================================== */
+
+.wb-rail{position:absolute;z-index:520;right:8px;bottom:calc(var(--wb-pb,0px) + 10px);
+  display:flex;flex-direction:column;align-items:flex-end;gap:4px;pointer-events:none;
+  max-height:calc(100% - 150px)}
+.wb-rail > *{pointer-events:auto}
+.wb-rail-tab{display:inline-flex;align-items:center;gap:6px;padding:3px 8px;font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--bone-3);background:color-mix(in srgb,var(--ink-0) 55%,transparent);
+  border:1px solid var(--line);backdrop-filter:blur(3px);cursor:pointer}
+.wb-rail-tab:hover{color:var(--bone);border-color:var(--ochre)}
+.wb-rail-tab i{font-style:normal;font-size:12px;line-height:1}
+.wb-rail-body{display:flex;flex-direction:column;gap:6px;padding:6px;overflow-y:auto;overscroll-behavior:contain;
+  background:color-mix(in srgb,var(--ink-0) 46%,transparent);border:1px solid var(--line);backdrop-filter:blur(3px);
+  scrollbar-width:thin;min-height:0}
+.wb-rail-group{display:flex;flex-direction:column;gap:2px}
+.wb-rail-h{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-3);padding:0 2px}
+.wb-rail-row{display:grid;grid-template-columns:repeat(2,46px);gap:2px}
+
+.wb-rail .wb-act{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  width:46px;min-width:0;height:46px;padding:3px 0 2px;color:var(--bone-3);background:transparent;border:1px solid transparent;
+  font-size:7px;letter-spacing:.02em;text-transform:uppercase;cursor:pointer;
+  transition:color .18s,border-color .18s,background .18s,transform .18s}
+.wb-rail .wb-act:hover{color:var(--bone);transform:translateY(-1px)}
+.wb-rail .wb-act[aria-pressed="true"]{color:var(--bone);border-color:var(--ochre);background:var(--ochre-lo)}
+.wb-rail .wb-act span{max-width:100%;overflow:hidden;text-overflow:clip;white-space:nowrap}
+.wb-rail .wb-act span.mono{font-size:7.5px;letter-spacing:.01em}
+.wb-rail .wb-act svg{flex:none}
+.wb-locked-chip{grid-column:1/-1;display:flex;align-items:center;gap:0;height:16px;padding:0 4px;color:var(--bone-3);
+  opacity:.4;border:1px dashed var(--line);cursor:help;pointer-events:auto}
+.wb-locked-chip:hover{opacity:.65}
+.wb-rail .wb-locked{color:var(--bone-3);opacity:.32;border:1px dashed var(--line);cursor:help;pointer-events:auto}
+.wb-rail .wb-locked:hover{transform:none;opacity:.5}
+.wb-rail .wb-act[data-hint]:not([aria-pressed="true"]){animation:wbActHint 1.8s ease-in-out infinite}
+.wb-rail .wb-act[data-new]:not([aria-pressed="true"]){border-color:var(--ochre);animation:railNew 1.6s ease-in-out infinite}
+@keyframes railNew{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ochre) 0%,transparent)}
+  50%{box-shadow:0 0 0 4px color-mix(in srgb,var(--ochre) 30%,transparent)}}
+.wb-rail .wb-act.wb-do{flex-direction:row;align-self:stretch;flex:none;width:auto;height:auto;min-width:0;padding:6px 8px;margin-top:2px;
+  border-color:var(--line-2);color:var(--bone-2);font-size:9.5px;letter-spacing:.1em}
+.wb-rail .wb-act.wb-do:hover{border-color:var(--ochre)}
+
+/* families read as a subtle tint on the pressed state, so the grouping is felt as well as labelled */
+.wb-rail-group[data-family="impact"] .wb-act[aria-pressed="true"]{border-color:#d08a5a}
+.wb-rail-group[data-family="edge"] .wb-act[aria-pressed="true"]{border-color:#c9c3b5}
+.wb-rail-group[data-family="material"] .wb-act[aria-pressed="true"]{border-color:var(--ochre)}
+.wb-rail-group[data-family="flexible"] .wb-act[aria-pressed="true"]{border-color:#8fb28a}
+.wb-rail-group[data-family="thermal"] .wb-act[aria-pressed="true"]{border-color:#e07a4a}
+
+/* phones: a strip along the bottom, scrolled sideways, icons only */
+@media (max-width:900px){
+  .wb-rail{left:6px;right:6px;bottom:calc(var(--wb-pb,0px) + 6px);max-height:none;align-items:stretch}
+  .wb-rail-tab{align-self:flex-end}
+  .wb-rail-body{flex-direction:row;align-items:flex-end;gap:8px;overflow-x:auto;overflow-y:hidden;padding:4px 6px;
+    scroll-snap-type:x proximity}
+  .wb-rail-group{flex:none;scroll-snap-align:start}
+  .wb-rail-row{display:flex;gap:2px}
+  .wb-rail .wb-act{width:44px;height:44px}
+  .wb-locked-chip{align-self:center;height:44px;padding:0 6px;flex-wrap:wrap;max-width:60px}
+  .wb-rail .wb-act span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .wb-rail .wb-act.wb-do{width:auto;flex:none;align-self:center;min-height:44px}
+}
+
+/* the moment a technique is learned */
+.tech-reveal{position:absolute;z-index:530;right:96px;bottom:calc(var(--wb-pb,0px) + 20px);width:min(300px,calc(100% - 120px));
+  padding:10px 30px 10px 12px;color:var(--bone);background:color-mix(in srgb,var(--ink-0) 82%,transparent);
+  border:1px solid var(--ochre);backdrop-filter:blur(4px);pointer-events:auto;
+  animation:techIn .5s cubic-bezier(.2,.9,.3,1.1)}
+.tech-reveal p{margin:4px 0 0;font-size:12.5px;line-height:1.4;color:var(--bone-2)}
+.tech-reveal-k{font-size:9px;letter-spacing:.22em;color:var(--ochre)}
+.tech-reveal-row{display:flex;align-items:center;gap:8px;margin-top:4px;color:var(--bone)}
+.tech-reveal-row b{font-size:12px;letter-spacing:.14em;font-weight:600}
+.tech-reveal-sub{font-size:9.5px!important;letter-spacing:.1em;color:var(--ochre)!important}
+.tech-reveal-x{position:absolute;top:2px;right:4px;width:24px;height:24px;font-size:16px;line-height:1;color:var(--bone-3);
+  background:none;border:0;cursor:pointer}
+.tech-reveal-x:hover{color:var(--bone)}
+@keyframes techIn{from{opacity:0;transform:translateX(18px) scale(.97)}to{opacity:1;transform:none}}
+@media (max-width:900px){
+  .tech-reveal{right:8px;left:8px;width:auto;bottom:calc(var(--wb-pb,0px) + 70px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .tech-reveal{animation:none}
+  .wb-rail .wb-act,.wb-rail .wb-act[data-new]{transition:none;animation:none}
+  .wb-rail .wb-act[data-new]:not([aria-pressed="true"]){box-shadow:0 0 0 2px color-mix(in srgb,var(--ochre) 45%,transparent)}
+}

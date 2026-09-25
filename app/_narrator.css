@@ -1,0 +1,56 @@
+/* ============================================================================
+   NARRATOR — bottom-left of the workspace, beside the inventory rail. A quiet
+   engraved portrait and one short line. Tone shows in the type, not in noise.
+   ========================================================================== */
+
+.nar,.nar-chip{position:fixed;z-index:33;left:calc(var(--rail,238px) + 16px);bottom:16px}
+/* clear of the guide line and the scene picker along the bottom of the bench */
+.nar{bottom:96px}
+.nar{display:flex;align-items:flex-start;gap:12px;max-width:min(380px,calc(100vw - var(--rail,238px) - 40px));
+  padding:10px 30px 10px 12px;color:var(--bone);
+  background:color-mix(in srgb,var(--ink-1) 86%,transparent);border:1px solid var(--line-2);
+  border-left:2px solid var(--ochre);backdrop-filter:blur(8px);animation:narIn .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes narIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.nar-portrait{flex:none;color:var(--bone-2);margin-top:2px}
+.nar-body{min-width:0}
+.nar-name{margin:0 0 3px;color:var(--ochre);font-size:9.5px;letter-spacing:.16em}
+.nar-line{margin:0;font-family:var(--fs-display);font-size:17px;line-height:1.3;text-wrap:balance}
+.nar-note{margin:6px 0 0;color:var(--bone-3);font-size:8.5px;letter-spacing:.06em;text-transform:none;line-height:1.45}
+.nar-modes{display:flex;gap:2px;margin-top:8px}
+.nar-modes button{padding:2px 7px;background:transparent;color:var(--bone-3);border:1px solid var(--line);
+  font-family:var(--fs-mono);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.nar-modes button:hover{color:var(--bone)}
+.nar-modes button[aria-pressed="true"]{color:var(--bone);border-color:var(--ochre-mid);background:var(--ochre-lo)}
+.nar-x{position:absolute;top:2px;right:2px;width:26px;height:26px;display:grid;place-items:center;
+  background:transparent;border:0;color:var(--bone-3);font-size:16px;line-height:1;cursor:pointer}
+.nar-x:hover{color:var(--bone)}
+
+/* the register of each voice, in the type only */
+.nar[data-tone="spare"] .nar-line,.nar[data-tone="blunt"] .nar-line{font-size:16px;letter-spacing:.01em}
+.nar[data-tone="formal"] .nar-line,.nar[data-tone="measured"] .nar-line{font-style:italic}
+.nar[data-tone="precise"] .nar-line{font-family:var(--fs-mono);font-size:12.5px;letter-spacing:.02em;line-height:1.5}
+.nar[data-tone="playful"] .nar-line{font-family:var(--fs-ui);font-size:14.5px;font-weight:500}
+.nar[data-tone="awed"] .nar-line,.nar[data-tone="curious"] .nar-line{font-size:18px}
+
+/* an era welcome is the one line that gets room */
+.nar[data-kind="era"]{border-left-color:var(--bone)}
+.nar[data-kind="era"] .nar-line{font-size:19px}
+
+/* minimal: the line alone, no portrait, no fine print unless the voice is dramatised */
+.nar[data-mode="minimal"]{padding:7px 28px 7px 11px;max-width:min(340px,calc(100vw - var(--rail,238px) - 40px))}
+.nar[data-mode="minimal"] .nar-line{font-size:14.5px}
+.nar[data-mode="minimal"] .nar-modes{display:none}
+.nar[data-mode="minimal"]:hover .nar-modes,.nar[data-mode="minimal"]:focus-within .nar-modes{display:flex}
+
+.nar-chip{padding:3px 8px;background:transparent;color:var(--bone-3);border:1px solid var(--line);
+  font-size:8.5px;letter-spacing:.14em;cursor:pointer;opacity:.6}
+.nar-chip:hover{opacity:1;color:var(--bone);border-color:var(--ochre)}
+
+@media (max-width:900px){
+  .nar,.nar-chip{left:10px;bottom:calc(var(--nav-h,58px) + 10px)}
+  .nar{max-width:calc(100vw - 20px)}
+  .nar-portrait{width:44px;height:53px}
+  .nar-line{font-size:15px}
+  .nar[data-kind="era"] .nar-line{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){ .nar{animation:none} }
