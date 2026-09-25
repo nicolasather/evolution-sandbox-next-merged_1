@@ -44,6 +44,8 @@
 @import "./_learn.css" layer(components);
 @import "./_narrator.css" layer(components);
 @import "./_journal.css" layer(components);
+/* The globe reveal, the world panel and the world marks (timeline, graph, archive). */
+@import "./_world.css" layer(components);
 
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and

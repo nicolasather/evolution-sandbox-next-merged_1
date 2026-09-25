@@ -24,7 +24,7 @@ function OutcomeCard({
   if (result.status === 'error') return null;
   // The workbench answers a refusal where it happens (a quiet note by the things themselves);
   // only finds get a card. The old boxed cards stay below for callers without a workbench.
-  if (SPEAK_IN_PLACE && (result.status === 'fail' || result.status === 'tier_locked')) return null;
+  if (SPEAK_IN_PLACE && (result.status === 'fail' || result.status === 'tier_locked' || result.status === 'era_locked')) return null;
 
   if (result.status === 'fail') {
     return (
@@ -38,6 +38,26 @@ function OutcomeCard({
         <p className="oc-msg">{result.message}</p>
         {result.nudge && <p className="oc-nudge mono">{result.nudge}</p>}
         {!result.nudge && (() => { const n = nearLine(engine, result.a.id, result.b.id); return n ? <p className={cn('oc-near mono', `is-${n.level}`)}>{n.text}</p> : null; })()}
+      </motion.div>
+    );
+  }
+
+  if (result.status === 'era_locked') {
+    const g = result.gate;
+    const pct = g.required ? Math.min(100, Math.round((g.requiredDone / g.required) * 100)) : 0;
+    return (
+      <motion.div
+        key={result.key}
+        className="oc oc-locked"
+        role="status"
+        initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <p className="oc-msg">{result.message}</p>
+        <div className="gate" aria-label={`${g.requiredDone} of ${g.required} major inventions in ${g.blockerName}`}>
+          <span className="gate-bar"><i style={{ width: `${pct}%` }} /></span>
+          <span className="mono">{g.requiredDone}/{g.required}</span>
+        </div>
       </motion.div>
     );
   }

@@ -5,6 +5,7 @@ import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
 import { playDb } from './processing';
 import type { ActionId, CombineResult, Db, Discovery, ProcessResult, ViewId } from './types';
+import { afterWorld } from './world/bus';
 
 export const db: Db = playDb;
 
@@ -68,24 +69,28 @@ export function useSandbox() {
     const n = res.node;
     setFocusId(n.id);
     engine.markSeen(n.id);
-    if (res.status === 'new') {
-      if (n.hidden) pushToast({ kind: 'hidden', title: n.n, sub: 'Hidden find', node: n });
-      else if (n.rar === 'rare') pushToast({ kind: 'rare', title: n.n, sub: 'Rare discovery', node: n });
-      if (res.solvedHint) pushToast({ kind: 'solved', title: 'You figured it out.', sub: n.n, node: n });
-      if (ENDPOINTS.has(n.id)) later(() => setEnding(n), 1400);
-    } else if (res.newRoute) {
-      pushToast({ kind: 'route', title: 'New route', sub: `${n.n} · ${res.routes.found} of ${res.routes.total} ways found`, node: n });
-    }
-    res.opened.forEach(t => pushToast({
-      kind: 'tier', title: `${engine.tierName(t)} opened`, sub: 'More combinations work now',
-    }, 4200));
-    if (res.reopened.length) {
-      pushToast({
-        kind: 'reopen', title: 'Try it again',
-        sub: `${res.reopened[0].map(i => engine.get(i)?.n).join(' + ')} works now`,
-      }, 6000);
-    }
-    res.unlocked.forEach(u => pushToast({ kind: 'world', title: `${u.n} appears`, sub: engine.unlockNote(u.id) ?? 'The world offers something new.', node: u }, 4200));
+    // A major invention plays the globe: the toasts and the ending wait for it, not the other way round.
+    const expect = engine.peekWorldEvents() > 0;
+    afterWorld(() => {
+      if (res.status === 'new') {
+        if (n.hidden) pushToast({ kind: 'hidden', title: n.n, sub: 'Hidden find', node: n });
+        else if (n.rar === 'rare') pushToast({ kind: 'rare', title: n.n, sub: 'Rare discovery', node: n });
+        if (res.solvedHint) pushToast({ kind: 'solved', title: 'You figured it out.', sub: n.n, node: n });
+        if (ENDPOINTS.has(n.id)) later(() => setEnding(n), 1400);
+      } else if (res.newRoute) {
+        pushToast({ kind: 'route', title: 'New route', sub: `${n.n} · ${res.routes.found} of ${res.routes.total} ways found`, node: n });
+      }
+      res.opened.forEach(t => pushToast({
+        kind: 'tier', title: `${engine.tierName(t)} opened`, sub: 'More combinations work now',
+      }, 4200));
+      if (res.reopened.length) {
+        pushToast({
+          kind: 'reopen', title: 'Try it again',
+          sub: `${res.reopened[0].map(i => engine.get(i)?.n).join(' + ')} works now`,
+        }, 6000);
+      }
+      res.unlocked.forEach(u => pushToast({ kind: 'world', title: `${u.n} appears`, sub: engine.unlockNote(u.id) ?? 'The world offers something new.', node: u }, 4200));
+    }, expect);
   }, [engine, pushToast, later]);
 
   /** Ask the engine. `viaSlots` is the classic path (slots clear after a beat);
@@ -114,10 +119,13 @@ export function useSandbox() {
       const first = res.discoveries.find(d => d.status === 'new') ?? res.discoveries[0];
       if (first) setResult({ ...first, key: ++seq.current });
       res.discoveries.forEach(announce);
-      res.fresh.forEach(f => pushToast({ kind: 'state', title: f.n, sub: 'New material', node: f }, 2600));
-      // world offers that came from a plain state (Soil after the first Stick)
-      res.unlocked.filter(u => !res.discoveries.some(d => d.unlocked.some(x => x.id === u.id)))
-        .forEach(u => pushToast({ kind: 'world', title: `${u.n} appears`, sub: engine.unlockNote(u.id) ?? 'The world offers something new.', node: u }, 4200));
+      // these small toasts, too, wait for a globe reveal that is about to play
+      afterWorld(() => {
+        res.fresh.forEach(f => pushToast({ kind: 'state', title: f.n, sub: 'New material', node: f }, 2600));
+        // world offers that came from a plain state (Soil after the first Stick)
+        res.unlocked.filter(u => !res.discoveries.some(d => d.unlocked.some(x => x.id === u.id)))
+          .forEach(u => pushToast({ kind: 'world', title: `${u.n} appears`, sub: engine.unlockNote(u.id) ?? 'The world offers something new.', node: u }, 4200));
+      }, engine.peekWorldEvents() > 0);
     }
     return res;
   }, [engine, announce, pushToast]);

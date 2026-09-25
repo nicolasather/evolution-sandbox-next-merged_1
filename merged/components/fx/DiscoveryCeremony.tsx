@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { emitFieldPulse, setFieldQuiet } from './ReactiveField';
 import { CeremonyStage } from './CeremonyStage';
 import { discoveryTier } from '@/lib/discoveryTier';
+import { playback } from '@/lib/world/prefs';
 import type { CombineResult } from '@/lib/types';
 
 /* ============================================================================
@@ -39,7 +40,10 @@ export function DiscoveryCeremony({
   const reducedMotion = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   // a light find, once the full reveal has been seen, gets a quick card instead of a stage
   const [tier] = useState(() => discoveryTier(result, typeof window !== 'undefined' && hasSeen()));
-  const reduced = reducedMotion || tier === 'minor';
+  // a major invention is celebrated by the globe reveal, which takes the place of this stage
+  // (with the globe turned off, the stage plays as it always did)
+  const [globeCelebrates] = useState(() => !!result.major && playback().enabled);
+  const reduced = reducedMotion || tier === 'minor' || globeCelebrates;
 
   const [phase, setPhase] = useState<Phase>(reduced ? 'done' : 'pause');
   const [skipped, setSkipped] = useState(reduced);

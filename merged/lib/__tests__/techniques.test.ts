@@ -13,7 +13,8 @@ import type { Db } from '@/lib/types';
 
 const data = processingJson as unknown as ProcessingData;
 const db = applyProcessing(rawDb as unknown as Db, data);
-const fresh = () => new Engine(db);
+/** These tests are about techniques and construction, not about the era lock: play with it waived. */
+const fresh = () => { const e = new Engine(db); e.waiveEraLock(); return e; };
 type Priv = { emit(): void };
 
 /** Put things in the player's hands without playing for them. */

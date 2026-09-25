@@ -1,4 +1,5 @@
 /** Shapes of the discovery database. Mirrors data/sources.json + data/nodes/*.json. */
+import type { EraGate } from './world/types';
 
 export type EraId =
   | 'origins' | 'fire' | 'settlement' | 'agriculture' | 'civilization' | 'trade'
@@ -183,12 +184,16 @@ interface Made {
   unlocked: Discovery[];
   /** The first thing found in its era: the player has arrived somewhere new. */
   firstOfEra: boolean;
+  /** Set when this is one of the world's major inventions (see lib/world): it has a place on Earth. */
+  major?: { id: string; tier: 'A' | 'B'; /** The era this find just completed, if it did. */ eraCompleted: EraId | null };
 }
 
 export type CombineResult =
   | ({ status: 'new' | 'known' } & Made)
   | { status: 'fail'; message: string; nudge: string | null; repeat: boolean; a: Discovery; b: Discovery; items: Discovery[]; info: FailInfo }
   | { status: 'tier_locked'; message: string; a: Discovery; b: Discovery; items: Discovery[]; requiredTier: StoneAgeTier; gate: TierGate }
+  /** Right idea, but its era is still closed: the world has to finish the era before it first. */
+  | { status: 'era_locked'; message: string; a: Discovery; b: Discovery; items: Discovery[]; gate: EraGate }
   | { status: 'error' };
 
 /** The answer to working one resource with one action. */
@@ -224,6 +229,7 @@ export type ProcessResult =
       insight?: { id: string; text: string; property: string };
     }
   | { status: 'tier_locked'; action: ActionId; from: Discovery; message: string; gate: TierGate }
+  | { status: 'era_locked'; action: ActionId; from: Discovery; message: string; gate: EraGate }
   | { status: 'error' };
 
 export interface Stats {

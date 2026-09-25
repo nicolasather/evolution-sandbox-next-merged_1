@@ -1,0 +1,1807 @@
+{
+ "version": 1,
+ "regions": [
+  {
+   "id": "africa",
+   "name": "Africa"
+  },
+  {
+   "id": "west_central_asia",
+   "name": "West & Central Asia"
+  },
+  {
+   "id": "europe",
+   "name": "Europe"
+  },
+  {
+   "id": "south_asia",
+   "name": "South Asia"
+  },
+  {
+   "id": "east_asia",
+   "name": "East Asia"
+  },
+  {
+   "id": "americas",
+   "name": "The Americas"
+  },
+  {
+   "id": "oceania_sea",
+   "name": "Southeast Asia & Oceania"
+  }
+ ],
+ "majors": [
+  {
+   "id": "sharp_stone",
+   "tier": "A",
+   "required": true,
+   "lat": 3.6,
+   "lon": 35.85,
+   "precision": "site",
+   "geo": "africa",
+   "region": "Lomekwi, West Turkana, Kenya",
+   "civ": "Early toolmakers",
+   "period": "Early Stone Age",
+   "certainty": "firm",
+   "fact": "Sharp-edged stone tools from Lomekwi 3 in Kenya are about 3.3 million years old — among the oldest known."
+  },
+  {
+   "id": "stone_flake",
+   "tier": "A",
+   "required": true,
+   "lat": 11.1,
+   "lon": 40.5,
+   "precision": "site",
+   "geo": "africa",
+   "region": "Gona, Afar, Ethiopia",
+   "civ": "Oldowan toolmakers",
+   "period": "Early Stone Age",
+   "certainty": "firm",
+   "fact": "Among the earliest deliberately struck flakes come from Gona, Ethiopia, about 2.6 million years ago."
+  },
+  {
+   "id": "handaxe",
+   "tier": "A",
+   "required": true,
+   "lat": -2.99,
+   "lon": 35.35,
+   "precision": "area",
+   "geo": "africa",
+   "region": "East Africa (Olduvai and the Rift Valley)",
+   "civ": "Acheulean toolmakers",
+   "period": "Early Stone Age",
+   "certainty": "regional",
+   "fact": "Symmetrical handaxes appear in East Africa about 1.7 million years ago, then spread across Africa and Eurasia."
+  },
+  {
+   "id": "hafted_tool",
+   "tier": "A",
+   "required": true,
+   "lat": -27.67,
+   "lon": 23.03,
+   "precision": "site",
+   "geo": "africa",
+   "region": "Kathu Pan, Northern Cape, South Africa",
+   "civ": "Early toolmakers",
+   "period": "Early Stone Age",
+   "certainty": "firm",
+   "fact": "Stone points mounted on shafts at Kathu Pan date to roughly 500,000 years ago — early evidence of hafting."
+  },
+  {
+   "id": "spear",
+   "tier": "A",
+   "required": true,
+   "lat": 52.14,
+   "lon": 10.96,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Schöningen, Lower Saxony, Germany",
+   "civ": "Lower Palaeolithic hunters",
+   "period": "Lower Palaeolithic",
+   "certainty": "firm",
+   "fact": "Wooden spears from Schöningen are among the oldest hunting weapons ever preserved — several hundred thousand years old."
+  },
+  {
+   "id": "bow",
+   "tier": "A",
+   "required": true,
+   "lat": -29.53,
+   "lon": 31.09,
+   "precision": "area",
+   "geo": "africa",
+   "region": "KwaZulu-Natal, South Africa",
+   "civ": null,
+   "period": "Middle Stone Age",
+   "certainty": "debated",
+   "fact": "Small stone points from Sibudu Cave may be early arrow tips; when the bow first appeared is still debated."
+  },
+  {
+   "id": "needle",
+   "tier": "A",
+   "required": true,
+   "lat": 51.4,
+   "lon": 84.68,
+   "precision": "site",
+   "geo": "west_central_asia",
+   "region": "Denisova Cave, Altai, Russia",
+   "civ": null,
+   "period": "Upper Palaeolithic",
+   "certainty": "firm",
+   "fact": "A polished bone needle from Denisova Cave is among the earliest known — around 50,000 years old."
+  },
+  {
+   "id": "fishing_hook",
+   "tier": "A",
+   "required": true,
+   "lat": 26.15,
+   "lon": 127.78,
+   "precision": "site",
+   "geo": "east_asia",
+   "region": "Sakitari Cave, Okinawa, Japan",
+   "civ": null,
+   "period": "Upper Palaeolithic",
+   "certainty": "multiple",
+   "fact": "Shell fish hooks from Okinawa, and others from Timor, are about 23,000 years old — among the earliest known.",
+   "alsoAt": [
+    {
+     "lat": -8.4,
+     "lon": 127.0,
+     "label": "Jerimalai, Timor-Leste"
+    }
+   ]
+  },
+  {
+   "id": "flute",
+   "tier": "B",
+   "required": false,
+   "lat": 48.38,
+   "lon": 9.76,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Hohle Fels, Swabian Jura, Germany",
+   "civ": null,
+   "period": "Upper Palaeolithic",
+   "certainty": "firm",
+   "fact": "Bone and ivory flutes from caves in the Swabian Jura are about 40,000 years old."
+  },
+  {
+   "id": "cordage",
+   "tier": "B",
+   "required": false,
+   "lat": 44.33,
+   "lon": 4.62,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Abri du Maras, Ardèche, France",
+   "civ": "Neanderthals",
+   "period": "Middle Palaeolithic",
+   "certainty": "firm",
+   "fact": "A twisted three-ply cord fragment from Abri du Maras, France, is attributed to Neanderthals."
+  },
+  {
+   "id": "fire",
+   "tier": "A",
+   "required": true,
+   "lat": -27.85,
+   "lon": 23.55,
+   "precision": "area",
+   "geo": "africa",
+   "region": "Southern Africa (Wonderwerk Cave, South Africa)",
+   "civ": "Early hominins",
+   "period": "Early Stone Age",
+   "certainty": "debated",
+   "fact": "Burned bone and ash at Wonderwerk Cave suggest fire use about a million years ago; the earliest use is still debated."
+  },
+  {
+   "id": "controlled_fire",
+   "tier": "A",
+   "required": true,
+   "lat": 33.01,
+   "lon": 35.62,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "The Levant (Gesher Benot Ya'aqov, Israel)",
+   "civ": null,
+   "period": "Lower Palaeolithic",
+   "certainty": "debated",
+   "fact": "Fire control was widespread by about 400,000 years ago; burned flint at Gesher Benot Ya'aqov may push the record back."
+  },
+  {
+   "id": "heat_treatment",
+   "tier": "A",
+   "required": true,
+   "lat": -34.21,
+   "lon": 22.09,
+   "precision": "site",
+   "geo": "africa",
+   "region": "Pinnacle Point, Western Cape, South Africa",
+   "civ": null,
+   "period": "Middle Stone Age",
+   "certainty": "firm",
+   "fact": "Around 72,000 years ago people at Pinnacle Point heated silcrete stone to make it flake more cleanly."
+  },
+  {
+   "id": "language",
+   "tier": "A",
+   "required": true,
+   "lat": 0.0,
+   "lon": 0.0,
+   "precision": "unlocated",
+   "geo": "global",
+   "region": "No single place — deep in human history",
+   "civ": null,
+   "period": "Prehistory",
+   "certainty": "unknown",
+   "fact": "No one knows where or when language began: it leaves no fossils, only its consequences."
+  },
+  {
+   "id": "cave_art",
+   "tier": "A",
+   "required": true,
+   "lat": -4.95,
+   "lon": 119.65,
+   "precision": "area",
+   "geo": "oceania_sea",
+   "region": "Maros-Pangkep caves, Sulawesi, Indonesia",
+   "civ": null,
+   "period": "Upper Palaeolithic",
+   "certainty": "multiple",
+   "fact": "Cave paintings in Sulawesi and northern Spain are among the oldest known, more than 40,000 years old.",
+   "alsoAt": [
+    {
+     "lat": 43.29,
+     "lon": -3.96,
+     "label": "El Castillo, Spain"
+    }
+   ]
+  },
+  {
+   "id": "water_crossing",
+   "tier": "A",
+   "required": true,
+   "lat": -9.0,
+   "lon": 125.0,
+   "precision": "region",
+   "geo": "oceania_sea",
+   "region": "Wallacea, between Southeast Asia and Australia",
+   "civ": null,
+   "period": "Upper Palaeolithic",
+   "certainty": "regional",
+   "fact": "People reached Australia by sea at least 50,000 years ago — a crossing that took planning, craft and open water.",
+   "alsoAt": [
+    {
+     "lat": -12.65,
+     "lon": 132.9,
+     "label": "Madjedbebe, northern Australia"
+    }
+   ]
+  },
+  {
+   "id": "settlement",
+   "tier": "A",
+   "required": true,
+   "lat": 35.87,
+   "lon": 38.4,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "Abu Hureyra, Syria",
+   "civ": "Natufian-era communities",
+   "period": "Epipalaeolithic",
+   "certainty": "regional",
+   "fact": "Abu Hureyra is one of the earliest known settled communities — people stayed year-round before farming began.",
+   "alsoAt": [
+    {
+     "lat": 33.05,
+     "lon": 35.6,
+     "label": "Ain Mallaha, Israel"
+    }
+   ]
+  },
+  {
+   "id": "boat",
+   "tier": "A",
+   "required": true,
+   "lat": 52.7,
+   "lon": 6.5,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Pesse, Drenthe, Netherlands",
+   "civ": null,
+   "period": "Mesolithic",
+   "certainty": "firm",
+   "fact": "The Pesse canoe, a hollowed pine log, is about 10,000 years old — among the oldest boats known."
+  },
+  {
+   "id": "agriculture",
+   "tier": "A",
+   "required": true,
+   "lat": 36.0,
+   "lon": 38.0,
+   "precision": "region",
+   "geo": "west_central_asia",
+   "region": "Multiple early centres — beginning in the Fertile Crescent",
+   "civ": null,
+   "period": "Neolithic",
+   "certainty": "multiple",
+   "fact": "Farming arose independently in several regions, including the Fertile Crescent, China, Mesoamerica and the Andes.",
+   "alsoAt": [
+    {
+     "lat": 30.0,
+     "lon": 112.0,
+     "label": "Yangtze valley, China"
+    },
+    {
+     "lat": 18.0,
+     "lon": -100.5,
+     "label": "Balsas valley, Mexico"
+    },
+    {
+     "lat": -15.8,
+     "lon": -69.5,
+     "label": "Lake Titicaca basin, Andes"
+    },
+    {
+     "lat": -5.78,
+     "lon": 144.33,
+     "label": "Highland New Guinea"
+    }
+   ]
+  },
+  {
+   "id": "herding",
+   "tier": "A",
+   "required": true,
+   "lat": 34.3,
+   "lon": 47.0,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "Zagros Mountains, Iran",
+   "civ": null,
+   "period": "Neolithic",
+   "certainty": "regional",
+   "fact": "Sheep and goats were among the first animals herded for food, in the Zagros and nearby uplands about 10,000 years ago."
+  },
+  {
+   "id": "irrigation",
+   "tier": "A",
+   "required": true,
+   "lat": 31.5,
+   "lon": 46.0,
+   "precision": "region",
+   "geo": "west_central_asia",
+   "region": "Southern Mesopotamia, Iraq",
+   "civ": "Early Mesopotamian communities",
+   "period": "Neolithic–Chalcolithic",
+   "certainty": "regional",
+   "fact": "Canal irrigation on the Mesopotamian plain is among the earliest known, and it made dense farming and cities possible."
+  },
+  {
+   "id": "pottery",
+   "tier": "A",
+   "required": true,
+   "lat": 28.7,
+   "lon": 117.1,
+   "precision": "site",
+   "geo": "east_asia",
+   "region": "Xianrendong Cave, Jiangxi, China",
+   "civ": null,
+   "period": "Upper Palaeolithic",
+   "certainty": "multiple",
+   "fact": "Fired-clay vessels in southern China and Japan are 20,000 years old or more — long before farming.",
+   "alsoAt": [
+    {
+     "lat": 41.0,
+     "lon": 140.5,
+     "label": "Jōmon sites, Aomori, Japan"
+    }
+   ]
+  },
+  {
+   "id": "city",
+   "tier": "A",
+   "required": true,
+   "lat": 31.32,
+   "lon": 45.64,
+   "precision": "site",
+   "geo": "west_central_asia",
+   "region": "Uruk, southern Iraq",
+   "civ": "Sumerian",
+   "period": "Chalcolithic",
+   "certainty": "regional",
+   "fact": "Uruk in southern Mesopotamia grew into one of the world's earliest cities; Tell Brak in Syria is another candidate.",
+   "alsoAt": [
+    {
+     "lat": 36.67,
+     "lon": 41.06,
+     "label": "Tell Brak, Syria"
+    }
+   ]
+  },
+  {
+   "id": "writing",
+   "tier": "A",
+   "required": true,
+   "lat": 31.32,
+   "lon": 45.64,
+   "precision": "site",
+   "geo": "west_central_asia",
+   "region": "Uruk, southern Iraq",
+   "civ": "Sumerian",
+   "period": "Bronze Age",
+   "certainty": "multiple",
+   "fact": "Early writing appears in Mesopotamia around 3300 BCE; China and Mesoamerica developed scripts independently.",
+   "alsoAt": [
+    {
+     "lat": 26.18,
+     "lon": 31.92,
+     "label": "Abydos, Egypt"
+    },
+    {
+     "lat": 36.1,
+     "lon": 114.35,
+     "label": "Anyang, China"
+    },
+    {
+     "lat": 17.0,
+     "lon": -96.75,
+     "label": "Oaxaca, Mexico"
+    }
+   ]
+  },
+  {
+   "id": "urban_planning",
+   "tier": "A",
+   "required": true,
+   "lat": 27.33,
+   "lon": 68.14,
+   "precision": "site",
+   "geo": "south_asia",
+   "region": "Mohenjo-daro, Sindh, Pakistan",
+   "civ": "Indus Valley Civilisation",
+   "period": "Bronze Age",
+   "certainty": "firm",
+   "fact": "Indus cities such as Mohenjo-daro were laid out on grids, with standard bricks and covered brick drains."
+  },
+  {
+   "id": "law",
+   "tier": "A",
+   "required": true,
+   "lat": 30.96,
+   "lon": 46.1,
+   "precision": "site",
+   "geo": "west_central_asia",
+   "region": "Ur, southern Iraq",
+   "civ": "Third Dynasty of Ur",
+   "period": "Bronze Age",
+   "certainty": "firm",
+   "fact": "The Code of Ur-Nammu, from about 2100 BCE, is the oldest law code that survives."
+  },
+  {
+   "id": "money",
+   "tier": "A",
+   "required": false,
+   "lat": 38.49,
+   "lon": 28.04,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "Lydia, western Anatolia",
+   "civ": "Kingdom of Lydia",
+   "period": "Iron Age",
+   "certainty": "regional",
+   "fact": "Some of the earliest known coins were struck in Lydia about 2,600 years ago; China developed coinage separately."
+  },
+  {
+   "id": "paper",
+   "tier": "A",
+   "required": false,
+   "lat": 34.62,
+   "lon": 112.45,
+   "precision": "area",
+   "geo": "east_asia",
+   "region": "Han-dynasty China",
+   "civ": "Han dynasty",
+   "period": "Classical antiquity",
+   "certainty": "regional",
+   "fact": "Paper is traditionally credited to Cai Lun in 105 CE, though earlier paper fragments have been found in China."
+  },
+  {
+   "id": "calendar",
+   "tier": "B",
+   "required": false,
+   "lat": 29.85,
+   "lon": 31.25,
+   "precision": "region",
+   "geo": "africa",
+   "region": "Multiple early centres — Egypt, Mesopotamia, Mesoamerica",
+   "civ": null,
+   "period": "Bronze Age",
+   "certainty": "multiple",
+   "fact": "Calendars arose in several places — Egypt and Mesopotamia among the earliest, the Maya later and independently.",
+   "alsoAt": [
+    {
+     "lat": 32.54,
+     "lon": 44.42,
+     "label": "Babylon, Iraq"
+    },
+    {
+     "lat": 17.2,
+     "lon": -89.6,
+     "label": "Maya lowlands"
+    }
+   ]
+  },
+  {
+   "id": "standardized_weights",
+   "tier": "A",
+   "required": true,
+   "lat": 30.63,
+   "lon": 72.86,
+   "precision": "site",
+   "geo": "south_asia",
+   "region": "Harappa, Punjab, Pakistan",
+   "civ": "Indus Valley Civilisation",
+   "period": "Bronze Age",
+   "certainty": "firm",
+   "fact": "Cubical stone weights in a consistent system turn up across Indus towns, so a trader's measure meant the same thing everywhere."
+  },
+  {
+   "id": "banking",
+   "tier": "A",
+   "required": false,
+   "lat": 32.54,
+   "lon": 44.42,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "Babylonia, Mesopotamia",
+   "civ": "Temples and merchant lenders",
+   "period": "Bronze Age",
+   "certainty": "regional",
+   "fact": "Mesopotamian temples and merchants lent grain and silver, and Babylonian records and law set rules for interest."
+  },
+  {
+   "id": "caravan_routes",
+   "tier": "A",
+   "required": true,
+   "lat": 26.6,
+   "lon": 37.9,
+   "precision": "broad",
+   "geo": "west_central_asia",
+   "region": "Arabia and the Levant",
+   "civ": null,
+   "period": "Iron Age",
+   "certainty": "regional",
+   "fact": "Camel caravans linked Arabia, the Levant and beyond, carrying incense and spices across the desert."
+  },
+  {
+   "id": "bookkeeping",
+   "tier": "A",
+   "required": true,
+   "lat": 45.44,
+   "lon": 12.33,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Venice, Italy",
+   "civ": "Renaissance merchants",
+   "period": "Renaissance",
+   "certainty": "firm",
+   "fact": "Luca Pacioli printed the first description of double-entry bookkeeping in Venice in 1494 — a method merchants already used."
+  },
+  {
+   "id": "copper",
+   "tier": "A",
+   "required": true,
+   "lat": 38.21,
+   "lon": 39.72,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "Çayönü and the Anatolian highlands, Turkey",
+   "civ": null,
+   "period": "Neolithic",
+   "certainty": "regional",
+   "fact": "Some of the earliest worked copper — beads and tools hammered from native metal — comes from Anatolia and its neighbours."
+  },
+  {
+   "id": "smelting",
+   "tier": "A",
+   "required": true,
+   "lat": 44.37,
+   "lon": 21.42,
+   "precision": "area",
+   "geo": "europe",
+   "region": "The Balkans (Belovode, Serbia)",
+   "civ": "Vinča culture",
+   "period": "Chalcolithic",
+   "certainty": "debated",
+   "fact": "Copper smelting at Belovode is dated to about 5000 BCE; Iran and Anatolia are also candidates for the earliest."
+  },
+  {
+   "id": "wheel",
+   "tier": "A",
+   "required": true,
+   "lat": 32.5,
+   "lon": 44.8,
+   "precision": "region",
+   "geo": "west_central_asia",
+   "region": "Mesopotamia, the Caucasus and Central Europe",
+   "civ": null,
+   "period": "Bronze Age",
+   "certainty": "debated",
+   "fact": "Among the earliest known wheel technologies appeared around Mesopotamia; where the idea first arose is debated.",
+   "alsoAt": [
+    {
+     "lat": 45.96,
+     "lon": 14.5,
+     "label": "Ljubljana Marshes, Slovenia"
+    },
+    {
+     "lat": 44.6,
+     "lon": 40.1,
+     "label": "Maykop, Northern Caucasus"
+    }
+   ]
+  },
+  {
+   "id": "bronze",
+   "tier": "A",
+   "required": true,
+   "lat": 33.5,
+   "lon": 50.0,
+   "precision": "region",
+   "geo": "west_central_asia",
+   "region": "Southwest Asia — Iranian plateau and Mesopotamia",
+   "civ": null,
+   "period": "Bronze Age",
+   "certainty": "multiple",
+   "fact": "Copper alloyed with arsenic or tin gave bronze — in use in Southwest Asia by about 3300 BCE and thriving in China by 2000 BCE.",
+   "alsoAt": [
+    {
+     "lat": 34.7,
+     "lon": 112.7,
+     "label": "Erlitou, China"
+    }
+   ]
+  },
+  {
+   "id": "iron",
+   "tier": "A",
+   "required": true,
+   "lat": 39.5,
+   "lon": 35.0,
+   "precision": "region",
+   "geo": "west_central_asia",
+   "region": "Anatolia and the Near East",
+   "civ": null,
+   "period": "Iron Age",
+   "certainty": "debated",
+   "fact": "Iron smelting spread widely from about 1200 BCE, with early centres in Anatolia and the Near East; its first invention is still discussed."
+  },
+  {
+   "id": "mechanism",
+   "tier": "A",
+   "required": true,
+   "lat": 35.87,
+   "lon": 23.31,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Antikythera, Greece",
+   "civ": "Hellenistic Greece",
+   "period": "Classical antiquity",
+   "certainty": "firm",
+   "fact": "The Antikythera mechanism, recovered from a shipwreck, used bronze gears to model the sky about 2,000 years ago."
+  },
+  {
+   "id": "steel",
+   "tier": "A",
+   "required": false,
+   "lat": 53.38,
+   "lon": -1.47,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Sheffield, England",
+   "civ": "Henry Bessemer",
+   "period": "Industrial Revolution",
+   "certainty": "regional",
+   "fact": "Bessemer's converter, patented in 1856, made steel cheap enough for rails, ships and bridges; crucible steel is far older."
+  },
+  {
+   "id": "glass",
+   "tier": "A",
+   "required": false,
+   "lat": 33.0,
+   "lon": 44.0,
+   "precision": "region",
+   "geo": "west_central_asia",
+   "region": "Mesopotamia and Egypt",
+   "civ": null,
+   "period": "Bronze Age",
+   "certainty": "multiple",
+   "fact": "Some of the earliest known glass objects come from Mesopotamia and Egypt, made by skilled workers of the Bronze Age.",
+   "alsoAt": [
+    {
+     "lat": 27.6,
+     "lon": 30.9,
+     "label": "Amarna, Egypt"
+    }
+   ]
+  },
+  {
+   "id": "casting",
+   "tier": "B",
+   "required": false,
+   "lat": 31.35,
+   "lon": 35.4,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "Nahal Mishmar, Judean Desert",
+   "civ": "Chalcolithic Levant",
+   "period": "Chalcolithic",
+   "certainty": "regional",
+   "fact": "Lost-wax casting shaped the intricate copper objects of the Nahal Mishmar hoard, hidden in a desert cave."
+  },
+  {
+   "id": "geometry",
+   "tier": "A",
+   "required": true,
+   "lat": 31.2,
+   "lon": 29.92,
+   "precision": "area",
+   "geo": "africa",
+   "region": "Alexandria, Egypt",
+   "civ": "Hellenistic Alexandria",
+   "period": "Classical antiquity",
+   "certainty": "firm",
+   "fact": "Euclid's Elements, written in Alexandria around 300 BCE, built geometry from proof upward."
+  },
+  {
+   "id": "medicine",
+   "tier": "A",
+   "required": true,
+   "lat": 25.7,
+   "lon": 32.64,
+   "precision": "area",
+   "geo": "africa",
+   "region": "Thebes (Luxor), Egypt",
+   "civ": "Ancient Egypt",
+   "period": "Bronze Age",
+   "certainty": "regional",
+   "fact": "The Edwin Smith and Ebers papyri, about 3,500 years old, record examinations, treatments and prognoses."
+  },
+  {
+   "id": "cartography",
+   "tier": "B",
+   "required": false,
+   "lat": 31.2,
+   "lon": 29.92,
+   "precision": "area",
+   "geo": "africa",
+   "region": "Alexandria, Egypt",
+   "civ": "Ptolemy",
+   "period": "Roman Egypt",
+   "certainty": "firm",
+   "fact": "Ptolemy's Geography, written in Alexandria around 150 CE, mapped the known world with coordinates."
+  },
+  {
+   "id": "optics",
+   "tier": "A",
+   "required": true,
+   "lat": 30.04,
+   "lon": 31.24,
+   "precision": "area",
+   "geo": "africa",
+   "region": "Cairo, Egypt",
+   "civ": "Islamic Golden Age",
+   "period": "Medieval",
+   "certainty": "firm",
+   "fact": "Ibn al-Haytham's Book of Optics, written in Cairo in the early 11th century, tested how light and vision work by experiment."
+  },
+  {
+   "id": "anatomy",
+   "tier": "A",
+   "required": true,
+   "lat": 45.41,
+   "lon": 11.88,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Padua, Italy",
+   "civ": "Renaissance",
+   "period": "Renaissance",
+   "certainty": "firm",
+   "fact": "Andreas Vesalius, teaching in Padua, published his dissection-based Fabrica in 1543."
+  },
+  {
+   "id": "telescope",
+   "tier": "A",
+   "required": true,
+   "lat": 51.5,
+   "lon": 3.61,
+   "precision": "area",
+   "geo": "europe",
+   "region": "The Netherlands (Middelburg)",
+   "civ": "Dutch Republic",
+   "period": "Scientific Revolution",
+   "certainty": "debated",
+   "fact": "In 1608 Dutch spectacle-makers, including Hans Lippershey of Middelburg, sought patents on a device for seeing far things."
+  },
+  {
+   "id": "scientific_method",
+   "tier": "A",
+   "required": true,
+   "lat": 51.51,
+   "lon": -0.12,
+   "precision": "area",
+   "geo": "europe",
+   "region": "London, England",
+   "civ": "The Royal Society",
+   "period": "Scientific Revolution",
+   "certainty": "regional",
+   "fact": "The Royal Society, founded in London in 1660, championed experiments witnessed and reported openly."
+  },
+  {
+   "id": "physics",
+   "tier": "A",
+   "required": true,
+   "lat": 52.2,
+   "lon": 0.12,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Cambridge, England",
+   "civ": "Isaac Newton",
+   "period": "Scientific Revolution",
+   "certainty": "firm",
+   "fact": "Newton's Principia, published in 1687, brought motion on Earth and in the heavens under mathematical laws."
+  },
+  {
+   "id": "chemistry",
+   "tier": "A",
+   "required": true,
+   "lat": 48.86,
+   "lon": 2.35,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Paris, France",
+   "civ": "Antoine Lavoisier",
+   "period": "Enlightenment",
+   "certainty": "regional",
+   "fact": "In 1780s Paris, Lavoisier's careful weighing of reactants and products turned chemistry into a quantitative science."
+  },
+  {
+   "id": "biology",
+   "tier": "A",
+   "required": true,
+   "lat": 51.33,
+   "lon": 0.05,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Down House, Kent, England",
+   "civ": "Charles Darwin",
+   "period": "Victorian era",
+   "certainty": "firm",
+   "fact": "Darwin's On the Origin of Species, published in 1859, gave the study of life a unifying theory."
+  },
+  {
+   "id": "gunpowder",
+   "tier": "A",
+   "required": false,
+   "lat": 34.3,
+   "lon": 108.9,
+   "precision": "region",
+   "geo": "east_asia",
+   "region": "China",
+   "civ": "Tang and Song dynasties",
+   "period": "Medieval",
+   "certainty": "regional",
+   "fact": "Gunpowder emerged in China, where alchemists' experiments led to it and military formulas were written down by the 11th century."
+  },
+  {
+   "id": "compass",
+   "tier": "A",
+   "required": false,
+   "lat": 23.13,
+   "lon": 113.26,
+   "precision": "region",
+   "geo": "east_asia",
+   "region": "Song-dynasty China",
+   "civ": "Song dynasty",
+   "period": "Medieval",
+   "certainty": "regional",
+   "fact": "Chinese writers of the 11th–12th centuries described the magnetised needle and its use for navigation at sea."
+  },
+  {
+   "id": "lens",
+   "tier": "A",
+   "required": false,
+   "lat": 43.7,
+   "lon": 11.0,
+   "precision": "region",
+   "geo": "europe",
+   "region": "Northern Italy",
+   "civ": "Italian glassworkers",
+   "period": "Medieval",
+   "certainty": "debated",
+   "fact": "Reading spectacles appear in northern Italy in the late 13th century — the first lenses in everyday use."
+  },
+  {
+   "id": "clock",
+   "tier": "A",
+   "required": false,
+   "lat": 46.0,
+   "lon": 9.0,
+   "precision": "broad",
+   "geo": "europe",
+   "region": "Medieval Europe",
+   "civ": "Town and monastery clockmakers",
+   "period": "Medieval",
+   "certainty": "debated",
+   "fact": "Mechanical clocks with escapements appeared in European towns and monasteries around 1300; the inventors are unknown."
+  },
+  {
+   "id": "printing",
+   "tier": "A",
+   "required": false,
+   "lat": 49.99,
+   "lon": 8.27,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Mainz, Germany",
+   "civ": "Johannes Gutenberg",
+   "period": "Renaissance",
+   "certainty": "multiple",
+   "fact": "Movable type was used in China and Korea long before Gutenberg; his press in Mainz around 1450 spread it across Europe.",
+   "alsoAt": [
+    {
+     "lat": 32.0,
+     "lon": 114.0,
+     "label": "China (movable type, 11th century)"
+    },
+    {
+     "lat": 36.64,
+     "lon": 127.49,
+     "label": "Cheongju, Korea"
+    }
+   ]
+  },
+  {
+   "id": "vaccine",
+   "tier": "A",
+   "required": false,
+   "lat": 51.69,
+   "lon": -2.46,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Berkeley, Gloucestershire, England",
+   "civ": "Edward Jenner",
+   "period": "Enlightenment",
+   "certainty": "firm",
+   "fact": "In 1796 Edward Jenner tested cowpox against smallpox in Berkeley, building on centuries of inoculation elsewhere."
+  },
+  {
+   "id": "antibiotics",
+   "tier": "A",
+   "required": false,
+   "lat": 51.52,
+   "lon": -0.17,
+   "precision": "site",
+   "geo": "europe",
+   "region": "St Mary's Hospital, London",
+   "civ": "Alexander Fleming",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "In 1928 Alexander Fleming noticed that a Penicillium mould stopped bacteria growing; it took years more to make penicillin a medicine."
+  },
+  {
+   "id": "steam_engine",
+   "tier": "A",
+   "required": true,
+   "lat": 52.51,
+   "lon": -2.08,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Dudley, England",
+   "civ": "Thomas Newcomen",
+   "period": "Industrial Revolution",
+   "certainty": "firm",
+   "fact": "Newcomen's atmospheric engine, installed near Dudley in 1712, pumped water from a mine; Watt's later design made steam a general power source."
+  },
+  {
+   "id": "factory",
+   "tier": "A",
+   "required": true,
+   "lat": 53.11,
+   "lon": -1.56,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Cromford, Derbyshire, England",
+   "civ": "Richard Arkwright",
+   "period": "Industrial Revolution",
+   "certainty": "firm",
+   "fact": "Arkwright's water-powered cotton mill at Cromford, from 1771, put workers, machines and power under one roof."
+  },
+  {
+   "id": "machine_tools",
+   "tier": "A",
+   "required": true,
+   "lat": 53.0,
+   "lon": -3.05,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Bersham, Wales",
+   "civ": "John Wilkinson",
+   "period": "Industrial Revolution",
+   "certainty": "firm",
+   "fact": "John Wilkinson's boring machine at Bersham cut engine cylinders precisely enough for Watt's steam engines to work."
+  },
+  {
+   "id": "locomotive",
+   "tier": "A",
+   "required": true,
+   "lat": 51.75,
+   "lon": -3.38,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Merthyr Tydfil, Wales",
+   "civ": "Richard Trevithick",
+   "period": "Industrial Revolution",
+   "certainty": "firm",
+   "fact": "In 1804 Richard Trevithick's steam locomotive hauled a load of iron along the Penydarren tramroad."
+  },
+  {
+   "id": "railway",
+   "tier": "A",
+   "required": true,
+   "lat": 54.53,
+   "lon": -1.5,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Stockton and Darlington, England",
+   "civ": "Public steam railway",
+   "period": "Industrial Revolution",
+   "certainty": "firm",
+   "fact": "The Stockton & Darlington Railway opened in 1825 as the first public railway to use steam locomotives."
+  },
+  {
+   "id": "standardized_parts",
+   "tier": "A",
+   "required": true,
+   "lat": 42.1,
+   "lon": -72.59,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Springfield, Massachusetts, USA",
+   "civ": "American armories",
+   "period": "Industrial Revolution",
+   "certainty": "multiple",
+   "fact": "Armories in the United States, and earlier work in France, pushed weapons toward parts that could be swapped.",
+   "alsoAt": [
+    {
+     "lat": 48.85,
+     "lon": 2.35,
+     "label": "Paris, France"
+    }
+   ]
+  },
+  {
+   "id": "mass_production",
+   "tier": "A",
+   "required": true,
+   "lat": 42.4,
+   "lon": -83.1,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Highland Park, Michigan, USA",
+   "civ": "Ford Motor Company",
+   "period": "Second Industrial Revolution",
+   "certainty": "firm",
+   "fact": "Ford's Highland Park plant introduced the moving assembly line in 1913, sharply cutting the time to build a car."
+  },
+  {
+   "id": "plastic",
+   "tier": "A",
+   "required": false,
+   "lat": 40.93,
+   "lon": -73.9,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Yonkers, New York, USA",
+   "civ": "Leo Baekeland",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "Leo Baekeland's Bakelite, made in 1907, was among the first fully synthetic plastics."
+  },
+  {
+   "id": "wind_power",
+   "tier": "B",
+   "required": false,
+   "lat": 31.0,
+   "lon": 61.5,
+   "precision": "area",
+   "geo": "west_central_asia",
+   "region": "Sistan, eastern Iran",
+   "civ": "Medieval Islamic world",
+   "period": "Medieval",
+   "certainty": "regional",
+   "fact": "Some of the earliest known windmills turned in Sistan, in eastern Iran, about a thousand years ago."
+  },
+  {
+   "id": "electricity",
+   "tier": "A",
+   "required": true,
+   "lat": 45.19,
+   "lon": 9.16,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Pavia, Italy",
+   "civ": "Alessandro Volta",
+   "period": "Napoleonic era",
+   "certainty": "firm",
+   "fact": "In 1800 Alessandro Volta announced the voltaic pile — the first battery, and the first steady electric current."
+  },
+  {
+   "id": "electric_motor",
+   "tier": "A",
+   "required": true,
+   "lat": 51.51,
+   "lon": -0.14,
+   "precision": "area",
+   "geo": "europe",
+   "region": "London, with early motors also in America",
+   "civ": null,
+   "period": "Victorian era",
+   "certainty": "multiple",
+   "fact": "Faraday showed continuous electromagnetic rotation in London in 1821; in the 1830s inventors on both sides of the Atlantic built working motors.",
+   "alsoAt": [
+    {
+     "lat": 43.79,
+     "lon": -73.08,
+     "label": "Brandon, Vermont, USA"
+    }
+   ]
+  },
+  {
+   "id": "telegraph",
+   "tier": "A",
+   "required": true,
+   "lat": 51.53,
+   "lon": -0.13,
+   "precision": "area",
+   "geo": "europe",
+   "region": "London and the eastern United States",
+   "civ": "Cooke & Wheatstone; Morse & Vail",
+   "period": "Victorian era",
+   "certainty": "multiple",
+   "fact": "Electric telegraphs were patented in Britain and demonstrated in the United States in the late 1830s.",
+   "alsoAt": [
+    {
+     "lat": 40.8,
+     "lon": -74.48,
+     "label": "Morristown, New Jersey, USA"
+    }
+   ]
+  },
+  {
+   "id": "telephone",
+   "tier": "A",
+   "required": true,
+   "lat": 42.36,
+   "lon": -71.06,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Boston, Massachusetts, USA",
+   "civ": "Alexander Graham Bell",
+   "period": "Gilded Age",
+   "certainty": "firm",
+   "fact": "Alexander Graham Bell was granted a US telephone patent in 1876; the priority dispute with Elisha Gray is still discussed."
+  },
+  {
+   "id": "electric_light",
+   "tier": "A",
+   "required": true,
+   "lat": 40.56,
+   "lon": -74.32,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Menlo Park, New Jersey, USA",
+   "civ": "Thomas Edison",
+   "period": "Gilded Age",
+   "certainty": "multiple",
+   "fact": "Edison in New Jersey and Joseph Swan in England each developed a practical incandescent lamp around 1879.",
+   "alsoAt": [
+    {
+     "lat": 54.97,
+     "lon": -1.61,
+     "label": "Newcastle upon Tyne, England"
+    }
+   ]
+  },
+  {
+   "id": "electrical_generation",
+   "tier": "A",
+   "required": true,
+   "lat": 40.71,
+   "lon": -74.0,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Lower Manhattan, New York, USA",
+   "civ": "Pearl Street Station",
+   "period": "Gilded Age",
+   "certainty": "firm",
+   "fact": "Edison's Pearl Street Station, opened in 1882, was among the first central power stations to sell electricity to customers."
+  },
+  {
+   "id": "internal_combustion_engine",
+   "tier": "A",
+   "required": true,
+   "lat": 50.93,
+   "lon": 6.98,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Cologne-Deutz, Germany",
+   "civ": "Nikolaus Otto",
+   "period": "Gilded Age",
+   "certainty": "firm",
+   "fact": "Nikolaus Otto's four-stroke engine, built at Deutz in 1876, became the model for most later petrol engines."
+  },
+  {
+   "id": "automobile",
+   "tier": "A",
+   "required": true,
+   "lat": 49.49,
+   "lon": 8.47,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Mannheim, Germany",
+   "civ": "Carl Benz",
+   "period": "Gilded Age",
+   "certainty": "firm",
+   "fact": "In 1886 Carl Benz patented his Motorwagen in Mannheim — a purpose-built car with its own internal-combustion engine."
+  },
+  {
+   "id": "flight",
+   "tier": "A",
+   "required": true,
+   "lat": 36.0,
+   "lon": -75.67,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Kitty Hawk, North Carolina, USA",
+   "civ": "The Wright brothers",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "On 17 December 1903 the Wright brothers made the first controlled, powered, sustained flights at Kitty Hawk."
+  },
+  {
+   "id": "photography",
+   "tier": "B",
+   "required": false,
+   "lat": 46.78,
+   "lon": 4.87,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Saint-Loup-de-Varennes, France",
+   "civ": "Nicéphore Niépce",
+   "period": "Victorian era",
+   "certainty": "firm",
+   "fact": "Nicéphore Niépce made the earliest surviving photograph from an upstairs window of his estate around 1826–27."
+  },
+  {
+   "id": "cinema",
+   "tier": "B",
+   "required": false,
+   "lat": 48.87,
+   "lon": 2.33,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Paris, France",
+   "civ": "The Lumière brothers",
+   "period": "Belle Époque",
+   "certainty": "firm",
+   "fact": "The Lumière brothers screened films to a paying audience in Paris in December 1895."
+  },
+  {
+   "id": "radar",
+   "tier": "A",
+   "required": false,
+   "lat": 52.26,
+   "lon": -1.16,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Daventry, England",
+   "civ": "Robert Watson-Watt's team",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "In 1935 Robert Watson-Watt's team showed that radio waves could detect aircraft, leading to Britain's Chain Home network."
+  },
+  {
+   "id": "programming",
+   "tier": "A",
+   "required": true,
+   "lat": 51.51,
+   "lon": -0.15,
+   "precision": "area",
+   "geo": "europe",
+   "region": "London, England",
+   "civ": "Ada Lovelace and Charles Babbage",
+   "period": "Victorian era",
+   "certainty": "firm",
+   "fact": "In 1843 Ada Lovelace published notes on Babbage's Analytical Engine that describe a program to compute Bernoulli numbers."
+  },
+  {
+   "id": "radio",
+   "tier": "A",
+   "required": true,
+   "lat": 44.4,
+   "lon": 11.27,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Pontecchio, near Bologna, Italy",
+   "civ": "Guglielmo Marconi",
+   "period": "Belle Époque",
+   "certainty": "multiple",
+   "fact": "Marconi's experiments near Bologna in 1895 grew into practical wireless telegraphy; Tesla, Popov and others also contributed.",
+   "alsoAt": [
+    {
+     "lat": 59.93,
+     "lon": 30.32,
+     "label": "St Petersburg, Russia (Popov, 1895)"
+    },
+    {
+     "lat": 38.63,
+     "lon": -90.2,
+     "label": "St. Louis, USA (Tesla, 1893 demonstration)"
+    }
+   ]
+  },
+  {
+   "id": "vacuum_tube",
+   "tier": "A",
+   "required": true,
+   "lat": 51.52,
+   "lon": -0.13,
+   "precision": "area",
+   "geo": "europe",
+   "region": "London, England",
+   "civ": "John Ambrose Fleming",
+   "period": "Edwardian era",
+   "certainty": "multiple",
+   "fact": "Fleming's diode valve of 1904 and de Forest's triode in the United States made electronic amplification possible.",
+   "alsoAt": [
+    {
+     "lat": 40.75,
+     "lon": -73.99,
+     "label": "New York, USA"
+    }
+   ]
+  },
+  {
+   "id": "computer",
+   "tier": "A",
+   "required": true,
+   "lat": 39.95,
+   "lon": -75.19,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Philadelphia, USA — with Britain and Germany",
+   "civ": null,
+   "period": "Modern era",
+   "certainty": "multiple",
+   "fact": "Zuse's Z3 in Germany, Colossus in Britain and ENIAC in the United States were among the first programmable digital machines.",
+   "alsoAt": [
+    {
+     "lat": 51.998,
+     "lon": -0.74,
+     "label": "Bletchley Park, England"
+    },
+    {
+     "lat": 52.52,
+     "lon": 13.4,
+     "label": "Berlin, Germany"
+    }
+   ]
+  },
+  {
+   "id": "transistor",
+   "tier": "A",
+   "required": true,
+   "lat": 40.68,
+   "lon": -74.4,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Murray Hill, New Jersey, USA",
+   "civ": "Bell Labs",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "In December 1947 Bardeen and Brattain, in Shockley's group at Bell Labs, demonstrated the first transistor."
+  },
+  {
+   "id": "integrated_circuit",
+   "tier": "A",
+   "required": true,
+   "lat": 32.9,
+   "lon": -96.75,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Dallas, Texas — and Silicon Valley",
+   "civ": null,
+   "period": "Modern era",
+   "certainty": "multiple",
+   "fact": "Jack Kilby at Texas Instruments in 1958 and Robert Noyce at Fairchild in 1959 each put a whole circuit on one chip.",
+   "alsoAt": [
+    {
+     "lat": 37.4,
+     "lon": -122.1,
+     "label": "Silicon Valley, California"
+    }
+   ]
+  },
+  {
+   "id": "microprocessor",
+   "tier": "A",
+   "required": true,
+   "lat": 37.39,
+   "lon": -121.96,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Santa Clara, California, USA",
+   "civ": "Intel",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "Intel's 4004, released in 1971, put a computer's whole processor on a single chip."
+  },
+  {
+   "id": "personal_computer",
+   "tier": "A",
+   "required": true,
+   "lat": 35.08,
+   "lon": -106.65,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Albuquerque, New Mexico, USA",
+   "civ": "MITS",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "The MITS Altair 8800, sold from Albuquerque in 1975, set off the personal-computer era for hobbyists."
+  },
+  {
+   "id": "storage",
+   "tier": "B",
+   "required": false,
+   "lat": 37.34,
+   "lon": -121.89,
+   "precision": "area",
+   "geo": "americas",
+   "region": "San Jose, California, USA",
+   "civ": "IBM",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "IBM's 305 RAMAC, announced in 1956, was the first computer to use a hard disk drive."
+  },
+  {
+   "id": "computer_graphics",
+   "tier": "B",
+   "required": false,
+   "lat": 42.36,
+   "lon": -71.09,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Cambridge, Massachusetts, USA",
+   "civ": "Ivan Sutherland",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "Ivan Sutherland's Sketchpad, built at MIT in 1963, let people draw on a screen with a light pen."
+  },
+  {
+   "id": "artificial_intelligence",
+   "tier": "A",
+   "required": true,
+   "lat": 43.7,
+   "lon": -72.29,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Hanover, New Hampshire, USA",
+   "civ": "Dartmouth workshop",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "The 1956 Dartmouth workshop gave 'artificial intelligence' its name and set the field's first goals."
+  },
+  {
+   "id": "computer_network",
+   "tier": "A",
+   "required": true,
+   "lat": 34.07,
+   "lon": -118.44,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Los Angeles, California, USA",
+   "civ": "ARPANET",
+   "period": "Modern era",
+   "certainty": "firm",
+   "fact": "On 29 October 1969 the first ARPANET message was sent from UCLA to the Stanford Research Institute."
+  },
+  {
+   "id": "internet",
+   "tier": "A",
+   "required": true,
+   "lat": 37.43,
+   "lon": -122.17,
+   "precision": "area",
+   "geo": "americas",
+   "region": "California and Washington, USA",
+   "civ": "Cerf, Kahn and DARPA",
+   "period": "Modern era",
+   "certainty": "multiple",
+   "fact": "TCP/IP was designed by Vint Cerf and Robert Kahn; ARPANET switched to it on 1 January 1983.",
+   "alsoAt": [
+    {
+     "lat": 38.9,
+     "lon": -77.04,
+     "label": "Washington, DC, USA"
+    }
+   ]
+  },
+  {
+   "id": "world_wide_web",
+   "tier": "A",
+   "required": true,
+   "lat": 46.23,
+   "lon": 6.05,
+   "precision": "site",
+   "geo": "europe",
+   "region": "CERN, Geneva, Switzerland",
+   "civ": "Tim Berners-Lee",
+   "period": "Information age",
+   "certainty": "firm",
+   "fact": "Tim Berners-Lee proposed the World Wide Web at CERN in 1989, and it was running there by 1990–91."
+  },
+  {
+   "id": "web_browser",
+   "tier": "A",
+   "required": true,
+   "lat": 40.11,
+   "lon": -88.23,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Urbana-Champaign, Illinois, USA",
+   "civ": "NCSA Mosaic team",
+   "period": "Information age",
+   "certainty": "multiple",
+   "fact": "The first browser was written at CERN in 1990; NCSA Mosaic, released in Illinois in 1993, brought the Web to ordinary users.",
+   "alsoAt": [
+    {
+     "lat": 46.23,
+     "lon": 6.05,
+     "label": "CERN, Switzerland"
+    }
+   ]
+  },
+  {
+   "id": "cloud_computing",
+   "tier": "A",
+   "required": true,
+   "lat": 47.61,
+   "lon": -122.33,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Seattle, Washington, USA",
+   "civ": "Amazon Web Services",
+   "period": "Information age",
+   "certainty": "firm",
+   "fact": "Amazon Web Services launched its Elastic Compute Cloud in 2006, renting computing power by the hour."
+  },
+  {
+   "id": "smartphone",
+   "tier": "A",
+   "required": true,
+   "lat": 37.32,
+   "lon": -122.03,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Cupertino, California, USA",
+   "civ": "Apple",
+   "period": "Information age",
+   "certainty": "regional",
+   "fact": "Touch-screen phones such as IBM's Simon (1994) came earlier, but Apple's 2007 iPhone made the smartphone mainstream."
+  },
+  {
+   "id": "satellite",
+   "tier": "A",
+   "required": false,
+   "lat": 45.96,
+   "lon": 63.31,
+   "precision": "site",
+   "geo": "west_central_asia",
+   "region": "Baikonur Cosmodrome, Kazakhstan",
+   "civ": "Soviet space programme",
+   "period": "Space age",
+   "certainty": "firm",
+   "fact": "Sputnik 1, launched on 4 October 1957, was the first artificial satellite."
+  },
+  {
+   "id": "gps",
+   "tier": "A",
+   "required": false,
+   "lat": 38.83,
+   "lon": -104.82,
+   "precision": "region",
+   "geo": "americas",
+   "region": "Colorado, USA",
+   "civ": "US Air Force",
+   "period": "Space age",
+   "certainty": "regional",
+   "fact": "GPS was built by the US military and declared fully operational in 1995; its control centre has long been in Colorado."
+  },
+  {
+   "id": "game_design",
+   "tier": "A",
+   "required": true,
+   "lat": 30.96,
+   "lon": 46.1,
+   "precision": "site",
+   "geo": "west_central_asia",
+   "region": "Ur, southern Iraq — and Egypt",
+   "civ": null,
+   "period": "Bronze Age",
+   "certainty": "multiple",
+   "fact": "Boards for the Royal Game of Ur, about 4,500 years old, and for Egypt's senet are among the oldest known games.",
+   "alsoAt": [
+    {
+     "lat": 29.87,
+     "lon": 31.22,
+     "label": "Egypt (senet)"
+    }
+   ]
+  },
+  {
+   "id": "animation",
+   "tier": "A",
+   "required": true,
+   "lat": 48.86,
+   "lon": 2.34,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Paris, France",
+   "civ": "Émile Cohl",
+   "period": "Belle Époque",
+   "certainty": "regional",
+   "fact": "Émile Cohl's Fantasmagorie (1908), drawn frame by frame, is often cited as the first fully animated film."
+  },
+  {
+   "id": "video_game",
+   "tier": "A",
+   "required": true,
+   "lat": 42.36,
+   "lon": -71.09,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Cambridge, Massachusetts, USA",
+   "civ": "MIT students",
+   "period": "Cold War era",
+   "certainty": "multiple",
+   "fact": "Spacewar!, written at MIT in 1962, spread across university computer labs; earlier games such as Tennis for Two (1958) came first.",
+   "alsoAt": [
+    {
+     "lat": 40.87,
+     "lon": -72.88,
+     "label": "Upton, New York, USA (Tennis for Two, 1958)"
+    }
+   ]
+  },
+  {
+   "id": "game_console",
+   "tier": "A",
+   "required": true,
+   "lat": 42.77,
+   "lon": -71.47,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Nashua, New Hampshire, USA",
+   "civ": "Ralph Baer",
+   "period": "Cold War era",
+   "certainty": "firm",
+   "fact": "Ralph Baer's team at Sanders Associates built the 'Brown Box'; Magnavox released it as the Odyssey in 1972."
+  },
+  {
+   "id": "game_engine",
+   "tier": "A",
+   "required": true,
+   "lat": 32.77,
+   "lon": -96.6,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Mesquite, Texas, USA",
+   "civ": "id Software",
+   "period": "Information age",
+   "certainty": "firm",
+   "fact": "Doom (1993) separated the game's engine from its content, so fans and other studios could build new games on it."
+  },
+  {
+   "id": "three_d_graphics",
+   "tier": "B",
+   "required": false,
+   "lat": 40.76,
+   "lon": -111.85,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Salt Lake City, Utah, USA",
+   "civ": "University of Utah",
+   "period": "Cold War era",
+   "certainty": "firm",
+   "fact": "The University of Utah's graphics lab pioneered 1970s shading techniques, and gave us the famous 'Utah teapot'."
+  },
+  {
+   "id": "large_scale_simulation",
+   "tier": "A",
+   "required": true,
+   "lat": 35.88,
+   "lon": -106.3,
+   "precision": "site",
+   "geo": "americas",
+   "region": "Los Alamos, New Mexico, USA",
+   "civ": "Los Alamos scientists",
+   "period": "Cold War era",
+   "certainty": "firm",
+   "fact": "In the late 1940s Los Alamos scientists ran Monte Carlo simulations on early computers such as ENIAC."
+  },
+  {
+   "id": "open_world",
+   "tier": "A",
+   "required": true,
+   "lat": 52.2,
+   "lon": 0.12,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Cambridge, England",
+   "civ": "David Braben and Ian Bell",
+   "period": "Information age",
+   "certainty": "regional",
+   "fact": "Elite (1984), made by two Cambridge students, let players roam a galaxy generated by algorithm."
+  },
+  {
+   "id": "virtual_world",
+   "tier": "A",
+   "required": true,
+   "lat": 37.97,
+   "lon": -122.53,
+   "precision": "area",
+   "geo": "americas",
+   "region": "Marin County, California — and Texas",
+   "civ": null,
+   "period": "Information age",
+   "certainty": "multiple",
+   "fact": "Habitat (1986) and Ultima Online (1997) were among the first persistent online worlds where many people shared one place.",
+   "alsoAt": [
+    {
+     "lat": 30.27,
+     "lon": -97.74,
+     "label": "Austin, Texas"
+    }
+   ]
+  },
+  {
+   "id": "grand_theft_auto",
+   "tier": "A",
+   "required": true,
+   "lat": 56.46,
+   "lon": -2.97,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Dundee, Scotland",
+   "civ": "DMA Design",
+   "period": "Information age",
+   "certainty": "firm",
+   "fact": "Grand Theft Auto (1997) was made by DMA Design in Dundee, Scotland, and put players in a living city."
+  },
+  {
+   "id": "open_world_simulation",
+   "tier": "A",
+   "required": true,
+   "lat": 55.95,
+   "lon": -3.19,
+   "precision": "area",
+   "geo": "europe",
+   "region": "Edinburgh, Scotland",
+   "civ": "Rockstar North",
+   "period": "Information age",
+   "certainty": "firm",
+   "fact": "Rockstar North in Edinburgh built Grand Theft Auto V (2013), a detailed city simulated around the player."
+  }
+ ]
+}

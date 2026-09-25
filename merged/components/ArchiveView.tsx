@@ -7,11 +7,12 @@ import { LineHoverLink } from './vengeance/line-hover-link';
 import { cn } from '@/lib/utils';
 import { formatDate } from '@/lib/format';
 import { dailyPick } from '@/lib/daily';
+import { WorldOrigins } from './world/WorldOrigins';
 import type { Engine } from '@/lib/engine';
 import type { StoneAgeTier } from '@/lib/types';
 
 type Filter = 'all' | 'found' | 'missing' | 'reach' | 'routes' | 'rare' | 'hidden' | 'req';
-type Tab = 'collection' | 'history';
+type Tab = 'collection' | 'history' | 'world';
 const STAGES: StoneAgeTier[] = ['olduvai', 'middle', 'late'];
 
 function Stages({ engine }: { engine: Engine }) {
@@ -96,6 +97,7 @@ export function ArchiveView({
   ];
 
   const history = engine.history().slice().reverse();
+  const worldSum = engine.worldSummary();
   const eraProgress = engine.db.eras.map(e => {
     const all = engine.db.nodes.filter(n => n.era === e.id && !n.hidden);
     return { e, have: all.filter(n => engine.has(n.id)).length, total: all.length };
@@ -120,6 +122,9 @@ export function ArchiveView({
         <div className="arch-tabs" role="tablist" aria-label="Archive sections">
           <button role="tab" className="chip" aria-selected={tab === 'collection'} onClick={() => setTab('collection')}>Collection</button>
           <button role="tab" className="chip" aria-selected={tab === 'history'} onClick={() => setTab('history')}>Your history · {history.length}</button>
+          <button role="tab" className="chip" data-tab="world" aria-selected={tab === 'world'} onClick={() => setTab('world')}>
+            World origins · {worldSum.found}/{worldSum.total}
+          </button>
         </div>
         {tab === 'collection' && (
           <>
@@ -140,7 +145,9 @@ export function ArchiveView({
         )}
       </div>
 
-      {tab === 'collection' ? (
+      {tab === 'world' ? (
+        <WorldOrigins engine={engine} onOpen={onOpen} />
+      ) : tab === 'collection' ? (
         <div className="arch-grid" id="arch-grid">
           {list.length === 0 && <p className="arch-note mono">Nothing here yet.</p>}
           {list.map((n, i) => {

@@ -17,7 +17,11 @@ import { cn } from '@/lib/utils';
    scale — deep time and the last two centuries cannot share one axis.
    ========================================================================== */
 
-interface Column { eraId: string; name: string; blurb: string; found: Discovery[]; ahead: number; items: (Discovery | null)[] }
+interface Column {
+  eraId: string; name: string; blurb: string; found: Discovery[]; ahead: number; items: (Discovery | null)[];
+  /** Which slots are major world inventions (the rail's milestones), and how far the era's required set has come. */
+  majorAt: boolean[]; required: number; requiredDone: number;
+}
 
 export function TimelineView({
   engine, version, active, focusId, onOpen,
@@ -33,9 +37,12 @@ export function TimelineView({
         .filter(n => n.era === e.id && !(n.hidden && !engine.has(n.id)))   // hidden finds stay hidden until found
         .slice().sort((a, b) => (a.ds - b.ds) || (a.no - b.no));
       const found = all.filter(n => engine.has(n.id));
+      const p = engine.eraProgress(e.id);
       return {
         eraId: e.id, name: e.name, blurb: e.blurb, found, ahead: all.length - found.length,
         items: all.map(n => (engine.has(n.id) ? n : null)),
+        majorAt: all.map(n => engine.isMajor(n.id)),
+        required: p.required, requiredDone: p.requiredDone,
       };
     });
     // version: the rail fills in as the player finds more
@@ -92,23 +99,29 @@ export function TimelineView({
             <div className="tl-era-h mono">
               <b>{c.name}</b>
               <span>{c.found.length ? `${c.found.length} found` : 'not reached'}{c.ahead > 0 && c.found.length ? ` · ${c.ahead} ahead` : ''}</span>
+              {c.required > 0 && (
+                <span className={cn('tl-world', c.requiredDone >= c.required && 'done')} title="Major world inventions this era needs before the next one opens">
+                  {c.requiredDone >= c.required ? 'Era complete' : `${c.requiredDone}/${c.required} world`}
+                </span>
+              )}
             </div>
             <ol className="tl-pts">
               {c.items.map((n, i) => n ? (
-                <li key={n.id} className={cn('tl-pt', i % 2 ? 'dn' : 'up', n.id === focusId && 'sel')} data-id={n.id}
+                <li key={n.id} className={cn('tl-pt', i % 2 ? 'dn' : 'up', n.id === focusId && 'sel', c.majorAt[i] && 'major')} data-id={n.id}
                     style={{ ['--i' as string]: Math.min(i, 24) }}>
-                  <button onClick={() => onOpen(n.id)} aria-label={`${n.n}, ${n.date}`}>
+                  <button onClick={() => onOpen(n.id)} aria-label={`${n.n}, ${n.date}${c.majorAt[i] ? ', major world invention' : ''}`}>
                     <span className="tl-card">
                       <Glyph node={n} />
                       <span className="tl-name">{n.n}</span>
                       <span className="tl-date mono">{n.date}</span>
+                      {c.majorAt[i] && <span className="tl-flag mono">World milestone</span>}
                     </span>
                     <span className="tl-stem" />
                     <span className={cn('tl-dot', `r-${n.rar}`)} />
                   </button>
                 </li>
               ) : (
-                <li key={`u${i}`} className="tl-pt ahead" aria-hidden="true"><span className="tl-tick" /></li>
+                <li key={`u${i}`} className={cn('tl-pt ahead', c.majorAt[i] && 'major')} aria-hidden="true"><span className="tl-tick" /></li>
               ))}
             </ol>
           </div>

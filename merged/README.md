@@ -79,6 +79,7 @@ components/             view layer — presentational, no game rules
   HandIcon.tsx          the small line-art hand on each action button
   TimelineView.tsx      one horizontal rail, real recorded dates only
   fx/CeremonyStage.tsx  the full-screen discovery ceremony; fx/EraShift.tsx marks a new era
+  world/                the global invention map: the globe reveal, the world-progress panel, the archive's World Origins
   vengeance/            Vengeance UI components, copied from the registry (MIT)
 lib/
   engine.ts             the whole game: pair index, combining, nudges, hints, routes, tiers — and a tiny store
@@ -90,12 +91,14 @@ lib/
   sound.ts              the one door for every sound (SOUND on/off); synthesis in craft/audio.ts
   routes.ts, near.ts    PATH 01/02… derived from recipes; vague "something is forming" lines
   processing/           the additive layer: tags, actions, states, 2-5 piece recipes, assess()/probe() (see below)
+  world/                major inventions on Earth: catalogue model, era lock maths, camera geometry, choreography, queue (see below)
   intro/                tunnel canvas (fx.ts) and the real plates that fly through it (objects.ts)
   site.ts, format.ts    site URL resolution; locale-independent dates
   types.ts              the database contract
 data/
   nodes/g1..g6.json     authored data — edit in ../evolution-sandbox, then `npm run data:sync`
   sources.json          the citation registry, with scope and checked date per source
+  majors.json           the 110 major inventions: where they began, how sure we are, which ones an era waits on (this build only)
   db.json               built artefact — do not edit by hand
 tools/                  validator, builder, sync (python3) and the cross-platform runner
 ```
@@ -154,6 +157,44 @@ behaviour never needs a change to the engine.
   `lib/craft/__tests__/pointer.test.ts` fails if an ideal player runs over.
 - **Accessibility:** every step has a keyboard route (Space, E, R, wheel), an **Instant** mode
   turns the whole layer off, and **Do it for me** appears after 22 seconds of being stuck.
+
+### The world layer (major inventions, the era lock, the globe)
+
+A **major invention** is an ordinary discovery that also has a place on Earth. `data/majors.json` lists
+110 of them (99 full-cinematic, 11 shorter), joined by `id` to the nodes of `db.json`, so a name, era or
+date is never written down twice. Each entry says where it began (`lat`/`lon`), **how exactly that may be
+claimed** (`precision`: site, area, region, broad or unlocated), **how sure the origin is** (`certainty`:
+firm, regional, debated, multiple, unknown), one short educational line, and whether an era waits on it
+(`required`). Contested origins carry region-level labels and a ring, never a pin; other early centres
+(agriculture, writing, pottery) are listed in `alsoAt` and shown as quieter markers. A hidden node can never
+be required — the model enforces that even if the data slipped.
+
+**The era lock is hard.** An era opens when every *required* major of the era before it is found (an era
+before it that is itself closed keeps it closed). Recipes of a closed era answer with `era_locked`, a message
+that gives the numbers ("Origins still has 7 major inventions to find (1 / 8)") and never names the
+discovery, and the pair is remembered so "Try it again" is said when the era opens. Saves made before this
+existed are never locked out of ground they already stand on: they load with a floor at the furthest era held.
+`Engine.waiveEraLock()` gives the same waiver to a teaching mode or a test. Every era can be finished from
+its required majors alone, with no hidden discovery — `lib/world/__tests__/majors.test.ts` plays the whole
+game under the lock to prove it.
+
+**The reveal.** When a major is found, the engine queues a world event (`takeWorldEvents`); `WorldLayer` turns
+it into a moment for `WorldDirector`, which plays them one after another (a backlog turns into the shorter
+version). `lib/world/choreography.ts` is pure: `buildPlan` and `frameAt(plan, t)` decide every duration and
+camera position, so the timings (3–5 s, skippable after ~1.5 s, no travel under reduced motion) are unit tests.
+The first major ever starts from a neutral view of the world; every later one starts at the previous major's
+place. Toasts and the reflective ending wait for the picture through `lib/world/bus.ts`, with a 14 s safety
+limit so a missing layer can never swallow one.
+
+**The picture.** A raw WebGL fragment shader (ray–sphere, a signed-distance land texture, atmosphere, terminator,
+stars) with a 2D overlay for markers, the arc and labels drawn from the same camera maths (`lib/world/geo.ts`).
+If WebGL is unavailable or its context is lost, a CPU version of the same globe (`lib/world/soft.ts`) draws
+instead, and with no canvas at all the card still lands. Visitors choose Full, Quick or Off in the World
+progress panel (`evo.world.mode`); the OS reduced-motion setting always wins.
+
+`public/world/land-sdf.png` is generated by `scripts/world/` from Natural Earth 1:50m land (public domain,
+via the `world-atlas` package) and is served from this origin, as the content-security policy requires.
+Saved state gains one optional block, `world: { seen, celebrated, floor }`, in the existing `evo.sandbox.v1` save.
 
 ### The glyph system
 
@@ -254,6 +295,11 @@ Recorded because they were choices, not oversights.
    library is built for bright, rounded, gradient-heavy landing pages; the
    parts that fit a dark, square museum interface are used, restyled onto the
    project tokens, and each change is listed in the file's header.
+6. **The era lock and the globe exist in this build only.** `data/majors.json`,
+   `lib/world/` and the hard era gate in `lib/engine.ts` are not in the
+   single-file edition, so the two engines now differ in *when* a recipe of a
+   later era works (they still agree on every recipe's result). The node data,
+   and so `data:check`, are untouched.
 
 See `CHANGELOG.md` for what changed in 1.1.0.
 
