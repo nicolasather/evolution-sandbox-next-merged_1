@@ -6,6 +6,8 @@ import { Plate3D } from './Plate3D';
 import { cn } from '@/lib/utils';
 import { routePaths } from '@/lib/routes';
 import { revealedPhysics } from '@/lib/processing/reveal';
+import { requestReplay } from '@/lib/world/bus';
+import { LOCK_MESSAGE } from '@/lib/world/progress';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, Source } from '@/lib/types';
 
@@ -78,7 +80,10 @@ function Closed({
   const eraName = engine.db.eras.find(e => e.id === node.era)?.name ?? node.era;
   const d = engine.distance(node.id);
   const tier = node.stone_age_tier ? engine.gate(node.stone_age_tier) : null;
-  const status = tier && !tier.open
+  const gate = engine.eraGate(node.era);
+  const status = gate
+    ? `${gate.eraName} is still closed — ${gate.blockerName} has ${gate.required - gate.requiredDone} major ${gate.required - gate.requiredDone === 1 ? 'invention' : 'inventions'} to find (${gate.requiredDone} / ${gate.required}).`
+    : tier && !tier.open
     ? `Opens with the ${tier.name} stage.`
     : d === 0 ? 'Within reach — you already hold what it takes.'
     : d === 1 ? 'Close — one piece is still missing.'
@@ -89,6 +94,7 @@ function Closed({
         <h3>Not yet discovered</h3>
         <p className="lead">Somewhere in {eraName}. What it is — and how to make it — stays closed until you find it.</p>
         <p className="mono" style={{ color: 'var(--bone-3)' }}>{status}</p>
+        {gate && <p className="mono" style={{ color: 'var(--bone-4)', marginTop: 6 }}>{LOCK_MESSAGE}</p>}
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
           <button className="chip" onClick={() => setMsg(onHint(node.id))}>Aim my hints here</button>
         </div>
@@ -209,6 +215,24 @@ export function ExhibitPanel({
           <p className="lead">{node.l1}</p>
           <ShareButton node={node} engine={engine} />
         </section>
+
+        {(() => {
+          const m = engine.world.get(node.id);
+          if (!m) return null;
+          const certainty = { firm: null, regional: 'Region-level origin', debated: 'Origin debated', multiple: 'Several early centres', unknown: 'Origin unknown' }[m.certainty];
+          return (
+            <section className="sec sec-world">
+              <h3>Where it began</h3>
+              <p className="lead">{m.region}{m.civ ? ` · ${m.civ}` : ''} · {m.period}</p>
+              <p>{m.fact}</p>
+              {m.more && <p className="alt-note mono" style={{ marginTop: 8 }}>{m.more}</p>}
+              {certainty && <p className="alt-note mono" style={{ marginTop: 8 }}>{certainty}{m.certainty !== 'unknown' && '. The globe marks the region, not a single point.'}</p>}
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
+                <button type="button" className="chip" onClick={() => requestReplay(node.id)}>Watch on the globe</button>
+              </div>
+            </section>
+          );
+        })()}
 
         <section className="sec">
           <h3>What it&rsquo;s like</h3>

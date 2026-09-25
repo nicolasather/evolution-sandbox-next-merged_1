@@ -9,10 +9,11 @@ const db = rawDb as unknown as Db;
 describe('TimelineView', () => {
   it('names only what has been found, with its recorded date, and never a hidden find', () => {
     const e = new Engine(db);
+    e.waiveEraLock();            // this test is about the rail, not the era lock
     e.combine('wood', 'wood');   // fire
     render(<TimelineView engine={e} version={1} active focusId={null} onOpen={() => {}} />);
     const fire = e.get('fire')!;
-    expect(screen.getByRole('button', { name: `${fire.n}, ${fire.date}` })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: new RegExp(`^${fire.n}, ${fire.date.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(, major world invention)?$`) })).toBeInTheDocument();
     // nothing undiscovered is named on the rail
     const unfound = db.nodes.find(n => !e.has(n.id) && !n.hidden)!;
     expect(screen.queryByText(unfound.n)).toBeNull();

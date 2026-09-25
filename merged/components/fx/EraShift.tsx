@@ -42,8 +42,8 @@ export function EraShift({ era, index, active }: { era: Era; index: number; acti
     const t = timers.current;
     let tries = 0;
     const show = () => {
-      // wait for a discovery ceremony to close
-      if (document.querySelector('.cer') && tries++ < 60) { t.push(window.setTimeout(show, 200)); return; }
+      // wait for a discovery ceremony, or a globe reveal, to close
+      if (document.querySelector('.cer, .wg[data-on="true"]') && tries++ < 60) { t.push(window.setTimeout(show, 200)); return; }
       setShown({ era, key: Date.now() });
       sound.sfx('era');
       t.push(window.setTimeout(() => setShown(null), prefersReducedMotion() ? 1200 : 1700));

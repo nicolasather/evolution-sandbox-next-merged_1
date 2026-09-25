@@ -3,6 +3,76 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.12.0 — 25 September 2026 (unreleased)
+
+### The Global Invention Map — a major progression system, with a 3D Earth
+Some discoveries are milestones of the whole species, and they now play like it. Finding one of the
+110 **major inventions** (fire, the handaxe, pottery, the wheel, agriculture, writing, bronze, iron,
+the printing press, the steam engine, electricity, the telephone, the aeroplane, the computer, the
+internet, the smartphone…) pauses the bench for half a second, brings up a dark Earth, carries the
+camera from the *previous* major's place to the new one, and registers it on your world map — about
+3–5 seconds, skippable after 1.5 s. Finishing every required major of an era is what opens the next.
+Next.js build only; the single-file edition is untouched (see the README's deviations).
+
+- **Catalogue** (`data/majors.json`, `lib/world/registry.ts`): 110 majors joined by `id` to `db.json`
+  (99 full cinematic, 11 shorter). Each says where it began, **how exactly that may be claimed**
+  (`site` / `area` / `region` / `broad` / `unlocated`), **how sure the origin is** (`firm` / `regional`
+  / `debated` / `multiple` / `unknown`), and gives one short educational line; other early centres
+  (agriculture, writing, pottery…) are `alsoAt` and drawn as quieter markers. Contested origins get
+  region-level labels and a ring, never a pin — fire, controlled fire, copper smelting and the
+  telescope are all region-level; language has no place at all and rests on the whole world.
+- **Era hard lock**: an era opens when every *required* major of the one before it is found (83
+  required over the 14 eras). Hidden discoveries (paper, compass, gunpowder, printing, lens, clock,
+  vaccine…) are *optional*, never required — the model enforces it even if the data slipped. A closed
+  era's recipes answer `era_locked` with the numbers and without naming the discovery; the pair is
+  remembered and "Try it again" is said when the era opens. Saves from before this are never locked out
+  of ground they already stand on (a floor at the furthest era held; what they already hold counts as
+  seen and celebrated). Design consequence worth knowing: *Fire* belongs to the second era, so a new
+  player's first "wood + wood" is turned away until the eight Origins majors are found.
+- **The reveal** (`lib/world/choreography.ts`, `director.ts`, `components/world/GlobeSequence.tsx`):
+  pause 0.2–0.5 s → the globe fades up at the previous major's place (the first ever: a neutral view of
+  the whole world) → spin 0.65–1.6 s along the great circle, pulling back for a long journey, with a
+  thin arc → zoom 0.7–1.1 s → the marker pulses → a card (name, region, period and culture, certainty
+  note, one line of history, "n / N required", "Registered · k / 110") → back to the bench. Tier A is
+  the full sequence, tier B two thirds of it, tier C (a repeat found by a new route) a quiet ping on the
+  top-bar chip. A nearby place is a short regional shift, not a journey. Several early centres pull the
+  camera back so they are all in the picture. Rapid finds are **queued** and played in order (a backlog
+  turns into the shorter version). Toasts and the reflective ending wait for the picture (14 s safety
+  limit). Skip: click or tap, Space or Enter (this one), Esc (this one and everything queued) — nothing
+  is honoured for the first 1.2–1.5 s, and state was saved before the first frame, so skipping breaks
+  nothing.
+- **Era Complete**: the world lights up marker by marker in the era's own light, the era title and
+  what has unlocked arrive, then it settles. `EraShift` waits for it.
+- **The picture**: a raw WebGL fragment shader (ray–sphere, a signed-distance land texture,
+  atmosphere, terminator, stars) plus a 2D overlay for markers, arc and labels. If WebGL is missing or
+  its context is lost, a CPU version of the same globe draws instead (`lib/world/soft.ts`); with no
+  canvas at all the card still lands. Adaptive resolution steps down on slow frames.
+- **World Progress** (`components/world/WorldProgressPanel.tsx`; top-bar chip, key **M**): the era in
+  focus as "6 / 9 required inventions" with a bar and % complete, the next era locked but visible with
+  "Complete all major world inventions from this era to advance.", a flat dotted world map, regions
+  represented, majors on the map, required overall, hidden majors remaining, progress by region and by
+  era, and the reveal setting.
+- **Integrations**: the Archive gains a **World origins** tab (every major by era; undiscovered ones
+  stay closed, hidden ones show only that they exist; "Watch again" replays a reveal lighter, without
+  the arc); the Timeline flags major inventions as world milestones and counts each era's required set;
+  the Graph marks them with a small diamond; the Exhibit panel gains "Where it began", the lock message
+  for a closed era and "Watch on the globe"; the ceremony stage gives way to the globe for a major.
+- **Settings and access**: Full / Quick / Off (`evo.world.mode`); the OS reduced-motion setting always
+  wins (the globe fades up already on the place, no spinning or zooming); with the globe off the map and
+  counters still update. The card is announced through a polite live region.
+- **Data**: land comes from Natural Earth 1:50m (public domain, via `world-atlas`), turned into
+  `public/world/land-sdf.png` (4096×2048 signed distance field, ~0.9 MB, served from this origin as the
+  content-security policy requires) by `scripts/world/`. Saved state gains one optional block,
+  `world: { seen, celebrated, floor }`. New engine API: `eraGate`, `eraProgress`, `worldSummary`,
+  `majorsFound`, `takeWorldEvents`, `markMajorSeen`, `waiveEraLock`.
+- **Tests**: 367 in 45 suites, all passing (ten of the suites are new). They cover the catalogue's integrity, that the
+  whole game plays through under the lock with no hidden discovery, the era gate, events, save/load
+  including older saves, the camera maths, every timing rule of the choreography, the queue and skip
+  rules, the toast deferral, and the panel, archive tab and globe components.
+- **Verified**: `tsc` clean; eslint 0 errors; production build compiles (Google Fonts mocked where the
+  sandbox had no network); the reveal watched in Chromium with and without WebGL, on desktop and phone
+  widths, and with reduced motion.
+
 ## 1.11.0 — 25 September 2026 (unreleased)
 
 ### P1 game-feel gaps, filled without touching what already worked

@@ -9,7 +9,8 @@ import type { Db } from '@/lib/types';
 const base = rawDb as unknown as Db;
 const data = processingJson as unknown as ProcessingData;
 const db = applyProcessing(base, data);
-const fresh = () => new Engine(db);
+/** These tests are about what working a thing does, not about the era lock: play with it waived. */
+const fresh = () => { const e = new Engine(db); e.waiveEraLock(); return e; };
 
 const strictSub = (sub: string[], sup: string[]) => {
   if (sub.length >= sup.length) return false;

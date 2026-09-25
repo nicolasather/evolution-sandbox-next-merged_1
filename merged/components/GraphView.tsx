@@ -345,6 +345,12 @@ export function GraphView({
         c.strokeStyle = hover.current === id || isFocus ? alpha(P.ochre, 0.95) : alpha(P.bone, 0.16);
         c.lineWidth = isFocus ? 1.6 : 1; c.stroke();
       }
+      // a major world invention is marked with a small diamond: the graph's own milestone
+      if (known && engine.isMajor(id)) {
+        const cy = y - r - 10, d = 3.4;
+        c.beginPath(); c.moveTo(x, cy - d); c.lineTo(x + d, cy); c.lineTo(x, cy + d); c.lineTo(x - d, cy); c.closePath();
+        c.fillStyle = alpha(P.ochre, 0.92); c.fill();
+      }
       const t0 = pulses.current.get(id);
       if (t0 !== undefined) {
         const age = (now - t0) / 1100;
@@ -562,6 +568,7 @@ export function GraphView({
         <span><i className="dot r-uncommon" />uncommon</span>
         <span><i className="dot r-rare" />rare</span>
         <span><i className="dot r-hidden" />hidden</span>
+        <span><i className="dot major" />major world invention</span>
         <span style={{ opacity: 0.7 }}>faint = not found yet</span>
         <span style={{ opacity: 0.7 }}>??? = something you could make now</span>
       </div>

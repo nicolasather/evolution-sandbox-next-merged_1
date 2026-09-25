@@ -8,6 +8,7 @@ import { Glyph } from './Glyph';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { ThemeToggle } from './ThemeToggle';
 import { FullscreenButton } from './FullscreenButton';
+import { WorldChip } from './world/WorldChip';
 import { sound } from '@/lib/sound';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, ViewId } from '@/lib/types';
@@ -40,7 +41,7 @@ function SoundButton() {
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts, onJournal,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld,
 }: {
   engine: Engine;
   view: ViewId;
@@ -49,6 +50,7 @@ export function TopBar({
   onReset: () => void;
   onShortcuts: () => void;
   onJournal: () => void;
+  onWorld: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -91,6 +93,8 @@ export function TopBar({
         <span className="mono" style={{ color: 'var(--bone-4)' }}>ERA</span>
         <span className="era-now">{engine.currentEra().name}</span>
       </div>
+
+      <WorldChip engine={engine} onOpen={onWorld} />
 
       <div className="top-slot" id="slot-hidden" title="Hidden discoveries">
         <span className="mono" style={{ color: 'var(--bone-4)' }} aria-hidden="true">HIDDEN</span>

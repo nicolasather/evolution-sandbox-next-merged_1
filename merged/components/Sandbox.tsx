@@ -12,6 +12,8 @@ import { Ending } from './Ending';
 import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
 import { JournalPanel } from './JournalPanel';
+import { WorldLayer } from './world/WorldLayer';
+import { WorldProgressPanel } from './world/WorldProgressPanel';
 import { SceneBackdrop } from './SceneBackdrop';
 import { ReactiveField } from './fx/ReactiveField';
 import { ReactiveLabel } from './fx/ReactiveLabel';
@@ -44,6 +46,7 @@ export function Sandbox() {
   const [fitSignal, setFitSignal] = useState(0);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [journalOpen, setJournalOpen] = useState(false);
+  const [worldOpen, setWorldOpen] = useState(false);
   const [replay, setReplay] = useState(0);
   const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
   const panelReturn = useRef<HTMLElement | null>(null);
@@ -179,6 +182,10 @@ export function Sandbox() {
       if ((ev.key === 'j' || ev.key === 'J') && k.entered && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
         ev.preventDefault(); k.replay(); return;
       }
+      // M: the world progress panel
+      if ((ev.key === 'm' || ev.key === 'M') && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
+        ev.preventDefault(); setWorldOpen(true); return;
+      }
       // W G A T: go to a view — only when nothing modal is up and no key combo is held
       if (!typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
         const to: Record<string, ViewId> = { w: 'work', g: 'graph', a: 'arch', t: 'time' };
@@ -274,6 +281,7 @@ export function Sandbox() {
           onReset={() => setConfirmOpen(true)}
           onShortcuts={() => setShortcutsOpen(true)}
           onJournal={() => setJournalOpen(true)}
+          onWorld={() => setWorldOpen(true)}
         />
 
         <div id="views" data-current={view}>
@@ -385,6 +393,8 @@ export function Sandbox() {
       />
 
       <JournalPanel open={journalOpen} engine={engine} onClose={() => setJournalOpen(false)} />
+      <WorldProgressPanel open={worldOpen} engine={engine} onClose={() => setWorldOpen(false)} />
+      <WorldLayer engine={engine} version={version} active={s.entered && reveal >= 6} />
 
       <ContextMenu
         target={ctxMenu}
@@ -407,7 +417,7 @@ export function Sandbox() {
         <QuestionCard
           tutor={tutor}
           engine={engine}
-          busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || view !== 'work'}
+          busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || worldOpen || view !== 'work'}
         />
       )}
 

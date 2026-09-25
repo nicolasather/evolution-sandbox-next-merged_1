@@ -25,8 +25,10 @@ import { physicsOf } from './processing/physics';
 import { rolePhrase, sayRoles, tagsOf } from './processing/tags';
 import { TECHNIQUES, TECH_BY_ID, ruleHolds, type Family } from './processing/techniques';
 import type { Capability, Processing, TransformDef } from './processing/types';
+import { buildWorldModel, type WorldModel } from './world/registry';
+import type { EraGate, EraProgress, Major, WorldEvent, WorldSave, WorldSummary } from './world/types';
 import type {
-  ActionId, CombineResult, Db, Discovery, Era, FailInfo, HintLevel, HintView, Potential, ProcessResult,
+  ActionId, CombineResult, Db, Discovery, Era, EraId, FailInfo, HintLevel, HintView, Potential, ProcessResult,
   ProcessRoute, Stats, StoneAgeTier, TierGate, TierProgress,
 } from './types';
 
@@ -74,6 +76,8 @@ interface Saved {
   known?: ActionId[];
   /** v4: small things noticed while working (see processing/insights.ts). */
   insights?: string[];
+  /** Global Invention Progression (additive; an older save simply lacks it — see load()). */
+  world?: WorldSave;
 }
 
 export const pairKey = (a: string, b: string) => (a < b ? `${a} ${b}` : `${b} ${a}`);
@@ -108,6 +112,18 @@ export class Engine {
   private readonly eraIndex: Record<string, number> = Object.create(null);
   private readonly primitives: Set<string>;
   private readonly tierMembers: Record<StoneAgeTier, string[]> = { olduvai: [], middle: [], late: [] };
+  /** The catalogue of major inventions, joined to this database (see lib/world). */
+  readonly world: WorldModel;
+  /** Majors whose reveal has played, been skipped, or was already behind the player in an older save. */
+  private worldSeen = new Set<string>();
+  /** Eras whose completion has been celebrated. */
+  private celebrated = new Set<EraId>();
+  /** Era indices up to this are open whatever the required majors say (ground an older save already stands on). */
+  private eraFloor = 0;
+  /** What the interface has not yet been told about (see takeWorldEvents). */
+  private worldEvents: WorldEvent[] = [];
+  private eraOpenCache: boolean[] = [];
+  private eraOpenSize = -1;
 
   /** Discoveries held (counted, numbered, shown in the archive). */
   found: Set<string>;
@@ -181,6 +197,7 @@ export class Engine {
     }));
     [...db.nodes, ...(db.states ?? [])].forEach(n => n.via?.forEach(v => use(v.from, n.id)));
     db.eras.forEach((e, i) => { this.eraIndex[e.id] = i; });
+    this.world = buildWorldModel(db);
     db.nodes.forEach(n => {
       if (n.stone_age_tier && !this.primitives.has(n.id)) this.tierMembers[n.stone_age_tier].push(n.id);
     });
@@ -346,9 +363,70 @@ export class Engine {
   }
 
   isRecipeUnlocked(resultId: string): boolean {
-    const t = this.byId[resultId]?.stone_age_tier;
+    const n = this.byId[resultId];
+    if (n && !n.state && !this.isEraOpen(n.era)) return false;
+    const t = n?.stone_age_tier;
     return !t || this.gate(t).open;
   }
+
+  /* ── era gate — a hard lock: an era opens once every REQUIRED major invention of the era before it is found ── */
+  private openEras(): boolean[] {
+    // `found` only grows between resets, so its size is a sound cache key (load() and reset() clear it)
+    if (this.eraOpenSize !== this.found.size) {
+      this.eraOpenCache = this.db.eras.map((_, i) => this.world.isOpen(i, this.found, this.eraFloor));
+      this.eraOpenSize = this.found.size;
+    }
+    return this.eraOpenCache;
+  }
+
+  /** Whether new discoveries of this era can be made yet. */
+  isEraOpen(era: EraId): boolean {
+    const i = this.eraIndex[era];
+    return i === undefined ? true : this.openEras()[i];
+  }
+
+  /** What a closed era is waiting on, or null when it is open. */
+  eraGate(era: EraId): EraGate | null {
+    const i = this.eraIndex[era];
+    if (i === undefined || this.openEras()[i]) return null;
+    const blocker = this.world.blocker(i, this.found, this.eraFloor);
+    if (!blocker) return null;
+    const p = this.world.eraProgress(blocker, this.found, this.eraFloor);
+    const left = p.required - p.requiredDone;
+    return {
+      era, eraName: this.world.eraName(era), blocker, blockerName: p.name,
+      required: p.required, requiredDone: p.requiredDone,
+      message: `Right idea — too early. ${p.name} still has ${left} major ${left === 1 ? 'invention' : 'inventions'} to find (${p.requiredDone} / ${p.required}).`,
+    };
+  }
+
+  eraProgress(era: EraId): EraProgress { return this.world.eraProgress(era, this.found, this.eraFloor); }
+  /**
+   * Treat every era as open from now on. This is the same waiver an older save gets for the ground
+   * it already stands on — exposed so a teaching mode, or a test about something other than the
+   * lock, can play without it. It is written with the next save (it does not save by itself).
+   */
+  waiveEraLock(): void {
+    this.eraFloor = this.db.eras.length - 1;
+    this.eraOpenSize = -1;
+    this.emit();
+  }
+  worldSummary(): WorldSummary { return this.world.summary(this.found); }
+  /** Majors found so far, in the order they were found. */
+  majorsFound(): Major[] { return this.world.foundInOrder(this.order); }
+  isMajor(id: string): boolean { return this.world.isMajor(id); }
+  hasSeenMajor(id: string): boolean { return this.worldSeen.has(id); }
+  isEraCelebrated(era: EraId): boolean { return this.celebrated.has(era); }
+
+  /** The interface has shown (or skipped) this major's reveal: it plays in full once. */
+  markMajorSeen(id: string): void {
+    if (!this.world.isMajor(id) || this.worldSeen.has(id)) return;
+    this.worldSeen.add(id); this.save(); this.emit();
+  }
+
+  /** What the world has to announce since the interface last looked. */
+  takeWorldEvents(): WorldEvent[] { const e = this.worldEvents; this.worldEvents = []; return e; }
+  peekWorldEvents(): number { return this.worldEvents.length; }
 
   getUnlockedTiers(): StoneAgeTier[] { return TIERS.filter(t => this.gate(t).open); }
 
@@ -494,6 +572,13 @@ export class Engine {
 
     const node = this.byId[rid];
     if (!this.found.has(rid) && !this.isRecipeUnlocked(rid)) {
+      const eg = this.eraGate(node.era);
+      if (eg) {
+        this.lockedPairs.add(pk);
+        this.streak = 0; // a right answer, just early: never counts as being stuck
+        this.save(); this.emit();
+        return { status: 'era_locked', a: A, b: B, items, gate: eg, message: `${eg.message} Remember this pair.` };
+      }
       const g = this.gate(node.stone_age_tier!);
       this.lockedPairs.add(pk);
       this.streak = 0; // a right answer, just early: never counts as being stuck
@@ -519,6 +604,7 @@ export class Engine {
     Extract<CombineResult, { status: 'new' | 'known' }> {
     const node = this.byId[rid];
     const opensBefore = this.getUnlockedTiers();
+    const erasBefore = this.openEras().slice();
     const isNew = !this.found.has(rid);
     let firstOfEra = false;
     if (isNew) { firstOfEra = true; for (const f of this.found) if (this.byId[f].era === node.era) { firstOfEra = false; break; } }
@@ -550,9 +636,11 @@ export class Engine {
 
     const unlocked = this.runUnlocks();
     const opened = this.getUnlockedTiers().filter(t => !opensBefore.includes(t));
+    const eraOpened = this.openEras().some((o, i) => o && !erasBefore[i]);
+    const major = this.noteMajor(rid, isNew, newRoute);
     // pairs the player got right too early, which work now
     const reopened: string[][] = [];
-    if (opened.length) {
+    if (opened.length || eraOpened) {
       for (const k of this.lockedPairs) {
         const r = this.pairIndex.get(k);
         if (r && !this.found.has(r) && this.isRecipeUnlocked(r)) reopened.push(k.split(' '));
@@ -562,7 +650,28 @@ export class Engine {
     return {
       status: isNew ? 'new' : 'known', node, items, a: items[0], b: items[1] ?? items[0], process: via,
       newRoute: !isNew && newRoute, routes: this.routeCount(rid), opened, solvedHint, reopened, unlocked, firstOfEra,
+      ...(major ? { major } : {}),
     };
+  }
+
+  /** A major invention was just made (or reached by a new way): queue what the interface should show. */
+  private noteMajor(rid: string, isNew: boolean, newRoute: boolean): { id: string; tier: 'A' | 'B'; eraCompleted: EraId | null } | undefined {
+    const m = this.world.get(rid);
+    if (!m) return undefined;
+    if (!isNew) {
+      // already held, found again by a way not used before: a quiet marker pulse, never a cinematic
+      if (newRoute) this.worldEvents.push({ kind: 'major', id: rid, tier: 'C', previousId: null, first: false });
+      return undefined;
+    }
+    const previous = this.world.previousOf(rid, this.order);
+    this.worldEvents.push({ kind: 'major', id: rid, tier: m.tier, previousId: previous?.id ?? null, first: !previous });
+    let eraCompleted: EraId | null = null;
+    if (m.required && !this.celebrated.has(m.era) && this.world.eraComplete(m.era, this.found)) {
+      this.celebrated.add(m.era);
+      eraCompleted = m.era;
+      this.worldEvents.push({ kind: 'era_complete', era: m.era, next: this.world.nextEra(m.era) });
+    }
+    return { id: rid, tier: m.tier, eraCompleted };
   }
 
   /* ── working one resource with a hand action ─────────────────────────── */
@@ -623,6 +732,12 @@ export class Engine {
     const outs = t.out.map(o => this.byId[o]).filter(Boolean);
     const open = outs.filter(o => o.state || this.found.has(o.id) || this.isRecipeUnlocked(o.id));
     if (!open.length) {
+      const eg = outs.map(o => this.eraGate(o.era)).find((x): x is EraGate => !!x);
+      if (eg) {
+        this.streak = 0;
+        this.save(); this.emit();
+        return { status: 'era_locked', action, from, gate: eg, message: eg.message };
+      }
       const g = this.gate(outs[0].stone_age_tier!);
       this.streak = 0;
       this.save(); this.emit();
@@ -872,6 +987,8 @@ export class Engine {
       const t = this.byId[targetId];
       if (!t || this.found.has(targetId)) return { error: 'You already have that one.' };
       if (!this.isRecipeUnlocked(targetId)) {
+        const eg = this.eraGate(t.era);
+        if (eg) return { error: eg.message };
         const g = this.gate(t.stone_age_tier!);
         return { error: `That one opens with the ${g.name} stage — ${Math.max(1, g.need - g.have)} more ${g.prevName} discoveries first.` };
       }
@@ -1030,6 +1147,7 @@ export class Engine {
         lockedPairs: [...this.lockedPairs], hint: this.hint, streak: this.streak,
         coached: this.coached, when: this.when,
         discoveredCount: this.discoveredCount, hintedCount: this.hintedCount,
+        world: { seen: [...this.worldSeen], celebrated: [...this.celebrated], floor: this.eraFloor },
       };
       window.localStorage.setItem(SAVE_KEY, JSON.stringify(payload));
     } catch { /* private mode or blocked storage — play continues in memory */ }
@@ -1076,6 +1194,7 @@ export class Engine {
       this.coached = d.coached ?? (valid.length > this.db.primitives.length ? 2 : 0);
       this.discoveredCount = d.discoveredCount ?? 0;
       this.hintedCount = d.hintedCount ?? 0;
+      this.restoreWorld(d, valid);
       this.runUnlocks();
       // techniques: what was learned, plus whatever the holdings already earn — a returning player is told nothing twice
       this.knownSet = new Set((d.known ?? []).filter(a => TECH_BY_ID[a]));
@@ -1091,8 +1210,31 @@ export class Engine {
     } catch { return false; }
   }
 
+  /** Restore the world state. An older save has none: it is never locked out of ground it already stands on,
+   *  and majors it already holds are marked seen so nothing replays for what the player did long ago. */
+  private restoreWorld(d: Saved, valid: string[]) {
+    this.eraOpenSize = -1;
+    this.worldEvents = [];
+    const w = d.world;
+    if (w && Array.isArray(w.seen)) {
+      this.worldSeen = new Set(w.seen.filter(id => this.world.isMajor(id)));
+      this.celebrated = new Set((w.celebrated ?? []).filter(e => this.eraIndex[e] !== undefined));
+      const f = Number(w.floor);
+      this.eraFloor = Number.isFinite(f) ? Math.max(0, Math.min(this.db.eras.length - 1, Math.floor(f))) : 0;
+      return;
+    }
+    const held = new Set(valid);
+    this.worldSeen = new Set(valid.filter(id => this.world.isMajor(id)));
+    this.eraFloor = valid.reduce((m, id) => Math.max(m, this.eraIndex[this.byId[id].era] ?? 0), 0);
+    this.celebrated = new Set(
+      this.db.eras.map(e => e.id).filter(e => (this.world.required.get(e)?.length ?? 0) > 0 && this.world.eraComplete(e, held)),
+    );
+  }
+
   reset() {
     this.gateCacheSize = -1;
+    this.eraOpenSize = -1;
+    this.worldSeen = new Set(); this.celebrated = new Set(); this.eraFloor = 0; this.worldEvents = [];
     this.found = new Set(this.db.primitives);
     this.order = this.db.primitives.slice();
     this.bag = this.db.primitives.slice();

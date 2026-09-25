@@ -26,6 +26,7 @@ function played(): Engine {
 describe('routePaths', () => {
   it('lists one path per recipe, walked ones first, and never invents a step', () => {
     const e = new Engine(db);
+    e.waiveEraLock();                                // this test is about routes, not the era lock
     e.combine('wood', 'wood');                       // fire, by the only route the player has walked
     const fire = e.get('fire')!;
     const paths = routePaths(e, fire);
