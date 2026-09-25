@@ -3,6 +3,47 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.12.0 — 25 September 2026 (unreleased)
+
+### The next brief, checked against the code before anything was built (P0)
+A new development brief arrived covering P0 through P9. Audited it against the
+actual code and CHANGELOG first, per its own rule — most of P0–P3 turned out
+to already exist. `docs/ROADMAP.md` keeps the brief and that status audit in
+the repo (it was living only in chat before), so later rounds do not
+re-investigate what an earlier round already checked.
+
+- **Dead code from the merge, removed.** `components/{HintPanel,
+  MultiRoutesPicker,DiscoveryReveal,OnboardingModal,TierProgressBar}.tsx` and
+  `lib/{hints,multiRoutes,useSandbox-1}.ts` were unreferenced anywhere in the
+  app — the 1.4.0 entry above already recorded them as removed ("did not
+  compile"), but they were resurrected when this repo was merged from two
+  histories. Verified unreferenced by grep before deleting; typecheck, lint
+  and the full suite stay clean.
+
+### Discoveries start reshaping the world, not just the era (P2.1)
+Scenery was purely `era → background` (one of 11 fixed SVGs picked by the
+furthest era reached, `components/SceneBackdrop.tsx`). A first slice of
+`discovery → world state` was added on top, without touching that system:
+`lib/scenefx/discoveryOverlays.ts` layers small extra marks onto whichever
+scene is showing, gated on a specific discovery rather than an era.
+
+- **Controlled Fire lights a campfire.** Once found, a small stone ring,
+  crossed logs, a flame (the forge scene's own hearth flame shape, reused —
+  only its anchor moves) and rising smoke appear, placed on whichever ground
+  the current scene actually has (`lib/scenefx/regions.ts`'s traced 'dust'
+  region — a scene with none, e.g. the fully abstract Digital Frontier, gets
+  no mark rather than a guessed position). Because the gate is the discovery
+  and not the era, the mark keeps appearing in every later scene too: reach
+  the Ancient City and the fire lit in the Stone Age is still there — P2.5
+  ("the world should remember") for free from the same mechanism.
+- Deterministic and covered (`lib/scenefx/__tests__/discoveryOverlays.test.ts`):
+  no mark before the discovery, none on a scene with no dry ground, the same
+  inputs always produce the same markup, everything stays inside the picture.
+- The rest of P2.1's list (Shelter, Cordage, Agriculture, Pottery, Roads…) is
+  real future work, one discovery at a time, not stubbed out here — adding
+  one only needs a discovery id and a small shape (see `OVERLAYS` in
+  `discoveryOverlays.ts`).
+
 ## 1.11.0 — 25 September 2026 (unreleased)
 
 ### P1 game-feel gaps, filled without touching what already worked

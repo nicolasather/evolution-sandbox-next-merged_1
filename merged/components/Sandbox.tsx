@@ -228,7 +228,7 @@ export function Sandbox() {
       </div>
       <ReactiveField active={s.entered} />
       <EraShift era={era} index={engine.db.eras.findIndex(e => e.id === era.id)} active={s.entered && reveal >= 6} />
-      <SceneBackdrop era={era.id} active={s.entered && view === 'work'} />
+      <SceneBackdrop era={era.id} active={s.entered && view === 'work'} discovered={engine.found} />
       <div id="grain" aria-hidden="true" />
       <div id="top-handle" aria-hidden="true"><i /></div>
 

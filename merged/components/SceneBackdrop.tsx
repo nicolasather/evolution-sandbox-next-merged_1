@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { EraId } from '@/lib/types';
+import { overlaysFor } from '@/lib/scenefx/discoveryOverlays';
 import { sceneState } from '@/lib/scenefx/state';
 
 /* ============================================================================
@@ -17,6 +18,11 @@ import { sceneState } from '@/lib/scenefx/state';
    small <g class="drift|sway|twinkle|flicker|rise|flow|spin|blink|bob"> groups
    animated in CSS (app/_fx.css). The JSON is loaded lazily, in its own chunk,
    only once the workspace is on screen.
+
+   `discovered` (optional — the engine's own found-ids set) adds a second,
+   much smaller layer on top: marks gated on a specific discovery rather than
+   an era, so they keep appearing in every later scene too (lib/scenefx/
+   discoveryOverlays.ts). The era picture itself is untouched by this.
    ========================================================================== */
 
 export interface Scene { id: string; name: string; eras: EraId[]; svg: string }
@@ -71,7 +77,7 @@ function stagger(root: Element, seed: string) {
   });
 }
 
-export function SceneBackdrop({ era, active }: { era: EraId; active: boolean }) {
+export function SceneBackdrop({ era, active, discovered }: { era: EraId; active: boolean; discovered?: ReadonlySet<string> }) {
   const [scenes, setScenes] = useState<Scene[] | null>(loaded);
   const pref = useScenePref();
   const hostRef = useRef<HTMLDivElement>(null);
@@ -142,8 +148,8 @@ export function SceneBackdrop({ era, active }: { era: EraId; active: boolean }) 
       preserveAspectRatio="xMidYMax slice"
       fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"
       aria-hidden="true" focusable="false"
-      // stroke-only markup from our own data file — no external input
-      dangerouslySetInnerHTML={{ __html: s.svg }}
+      // stroke-only markup from our own data file plus our own generated overlay marks — no external input
+      dangerouslySetInnerHTML={{ __html: s.svg + (discovered ? overlaysFor(s.id, discovered) : '') }}
     />
   );
 
