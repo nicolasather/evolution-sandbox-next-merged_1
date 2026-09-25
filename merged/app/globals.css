@@ -36,6 +36,15 @@
    exhibit is a drawer that has to be asked for. Loaded last on purpose. */
 @import "./_open-world.css" layer(components);
 
+/* The Action Rail and the technique reveal (replaces the old five-hand dock). */
+@import "./_rail.css" layer(components);
+
+/* What things physically are: warmth, scorch, wetness, ripples, wind. Motion-safe. */
+@import "./_physics.css" layer(components);
+@import "./_learn.css" layer(components);
+@import "./_narrator.css" layer(components);
+@import "./_journal.css" layer(components);
+
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and
    `var(--bone-2)` in the stylesheet are the same colour in either theme. */

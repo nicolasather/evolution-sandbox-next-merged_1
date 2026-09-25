@@ -142,6 +142,18 @@ export interface Body {
   kick: number; kickT: number;
   /** Knocked through the boundary: flying free, about to head home. */
   outside: boolean; outT: number;
+  /** What the environment does to it (from lib/processing/physics.ts): fire chars it, water soaks it. */
+  env: { chars: boolean; soaks: boolean };
+  /** 0–1, eased: how near a flame it has been, and how wet it is. Ramp; the loop rests once they settle. */
+  warm: number; wet: number;
+  /** 0–1: seconds beside a flame turn into a scorch. */
+  scorch: number;
+  /** Whether physics.ts calls this item's material brittle — only brittle things take visible damage;
+   *  everything else just squashes (see `q`) and springs back. Set once, at spawn. */
+  brittle: boolean;
+  /** 0–1, never decays: hard knocks accumulate into a lasting crack, then a break. Cosmetic only —
+   *  never a stat, never blocks an action. See P2.4 in the roadmap. */
+  wear: number;
 }
 
 export interface Pointer {

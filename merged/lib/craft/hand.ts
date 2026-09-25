@@ -1,4 +1,5 @@
 import type { ActionId } from '../types';
+import { handKindOf, type HandKind } from './kinds';
 
 /* ============================================================================
    HAND — the cursor becomes a white line-art hand while a gesture is being
@@ -59,7 +60,7 @@ const PALM: readonly number[] = [-11.4, -12.2, -3, -15.4, 4, -15, 10.4, -12.3, 1
 interface Pose { d: readonly number[]; pitch: number; roll: number; yaw: number }
 
 /* Each action has a rest pose and an alternate that the motion blends towards. */
-const POSES: Record<ActionId, readonly [Pose, Pose]> = {
+const POSES: Record<HandKind, readonly [Pose, Pose]> = {
   brush: [
     { d: [-20, 17, 6, 5, 18, -15, 37, 37, 16, 0, 2, 52, 60, 36, 0, 6, 72, 72, 42, 0, 10, 78, 72, 42, 0], pitch: 8, roll: 22, yaw: 4 },
     { d: [-20, 17, 6, 5, 18, -15, 37, 37, 16, 0, 2, 52, 60, 36, 0, 6, 72, 72, 42, 0, 10, 78, 72, 42, 0], pitch: 8, roll: 22, yaw: 4 },
@@ -104,6 +105,8 @@ let pk = 0;               // eased press 0..1
 let phase = 0;            // accumulated cycles for brush / dig
 let cutYaw = BASE_YAW;
 let lastAction: ActionId | null = null;
+/** The pose family of the action being drawn this frame (the other actions borrow one of five poses). */
+let HK: HandKind = 'brush';
 const TRAIL = new Float32Array(3 * 24);
 let trailHead = 0;
 let trailN = 0;
@@ -117,7 +120,7 @@ function tilt(x: number, y: number, z: number): void {
   TMP[0] = x1; TMP[1] = y * cp + z1 * sp; TMP[2] = -y * sp + z1 * cp;
 }
 
-function blendPose(action: ActionId, w: number): void {
+function blendPose(action: HandKind, w: number): void {
   const pair = POSES[action]; const a = pair[0]; const b = pair[1];
   for (let i = 0; i < 25; i++) Q[i] = mix(a.d[i] ?? 0, b.d[i] ?? 0, w);
   Q[25] = mix(a.pitch, b.pitch, w); Q[26] = mix(a.roll, b.roll, w); Q[27] = mix(a.yaw, b.yaw, w);
@@ -169,7 +172,7 @@ function line(g: CanvasRenderingContext2D, x0: number, y0: number, x1: number, y
 function motion(s: HandState, dt: number): void {
   const t = s.t; const p = clamp01(s.progress);
   M.w = 0; M.pitch = 0; M.roll = 0; M.yaw = 0; M.ox = 0; M.oy = 0; M.s = 1; M.sqx = 1; M.sqy = 1; M.bend = 0; M.splay = 0.4;
-  switch (s.action) {
+  switch (HK) {
     case 'brush': {
       phase += dt * mix(1 / 1.1, 1 / 0.55, pk);
       const a = TAU * phase; const sn = Math.sin(a); const cs = Math.cos(a);
@@ -244,17 +247,18 @@ function sweep(u: number, v: number): void {
 export function drawHand(g: CanvasRenderingContext2D, s: HandState, ink: string, backdrop: string): void {
   const dt = lastT < 0 || s.t < lastT ? 0 : Math.min(0.1, s.t - lastT);
   lastT = s.t;
-  if (s.action !== lastAction) { lastAction = s.action; trailN = 0; if (s.action === 'cut') cutYaw = BASE_YAW; }
+  HK = handKindOf(s.action);
+  if (s.action !== lastAction) { lastAction = s.action; trailN = 0; if (HK === 'cut') cutYaw = BASE_YAW; }
   pk += ((s.press ? 1 : 0) - pk) * (1 - Math.exp(-dt * 12));
   const alpha = clamp01(s.alpha) * 0.96;
   if (alpha <= 0.002) return;
 
   motion(s, dt);
-  blendPose(s.action, M.w);
+  blendPose(HK, M.w);
   solve(Q[25] * DEG + M.pitch, Q[26] * DEG + M.roll);
 
   // Brush geometry (local), from the grip between thumb pad and index pad.
-  const brush = s.action === 'brush';
+  const brush = HK === 'brush';
   if (brush) {
     // Pen grip: the handle lies under the index's last phalanx and against the thumb pad.
     const gx = (LJ[9] + LJ[18]) / 2; const gy = (LJ[10] + LJ[19]) / 2; const gz = (LJ[11] + LJ[20]) / 2 - 1;
@@ -269,7 +273,7 @@ export function drawHand(g: CanvasRenderingContext2D, s: HandState, ink: string,
 
   // Working point in the projected rig.
   let ax: number; let ay: number;
-  switch (s.action) {
+  switch (HK) {
     case 'brush': ax = BR[12]; ay = BR[13]; break;
     case 'smash': ax = (PJ[15] + PJ[27] + PJ[39] + PJ[51]) / 4; ay = (PJ[16] + PJ[28] + PJ[40] + PJ[52]) / 4 - 3.5; break;
     case 'cut': ax = (PJ[21] + PJ[33]) / 2; ay = (PJ[22] + PJ[34]) / 2; tipOut(ax, ay, 21, 3); ax = TX; ay = TY; break;
@@ -277,7 +281,7 @@ export function drawHand(g: CanvasRenderingContext2D, s: HandState, ink: string,
     case 'dig': ax = (PJ[21] + PJ[33] + PJ[45]) / 3; ay = (PJ[22] + PJ[34] + PJ[46]) / 3; tipOut(ax, ay, 33, 3); ax = TX; ay = TY; break;
   }
 
-  const yaw = (s.action === 'cut' ? cutYaw : BASE_YAW) + Q[27] * DEG + M.yaw;
+  const yaw = (HK === 'cut' ? cutYaw : BASE_YAW) + Q[27] * DEG + M.yaw;
   const X = s.x + M.ox * s.scale; const Y = s.y + M.oy * s.scale;
   const S = UNIT * s.scale * M.s;
 
@@ -453,7 +457,7 @@ function bristles(g: CanvasRenderingContext2D, alpha: number, lw: number): void 
 function underFx(g: CanvasRenderingContext2D, s: HandState, X: number, Y: number, yaw: number): void {
   const sc = s.scale; const p = clamp01(s.progress); const a0 = g.globalAlpha;
   const fx = Math.sin(yaw); const fy = -Math.cos(yaw); // forwards along the fingers
-  switch (s.action) {
+  switch (HK) {
     case 'smash': {
       if (p > 0) {
         g.lineWidth = 1 * sc; g.globalAlpha = a0 * 0.8;
@@ -523,7 +527,7 @@ function underFx(g: CanvasRenderingContext2D, s: HandState, X: number, Y: number
 
 function overFx(g: CanvasRenderingContext2D, s: HandState, alpha: number, X: number, Y: number, yaw: number): void {
   const sc = s.scale; const p = clamp01(s.progress);
-  if (s.action === 'brush' && pk > 0.05) {
+  if (HK === 'brush' && pk > 0.05) {
     const rate = mix(1 / 1.1, 1 / 0.55, pk); const amp = mix(10, 17, pk);
     const c = Math.cos(BASE_YAW); const n = Math.sin(BASE_YAW);
     g.lineWidth = 0.9 * sc;
@@ -537,7 +541,7 @@ function overFx(g: CanvasRenderingContext2D, s: HandState, alpha: number, X: num
       g.globalAlpha = alpha * pk * (0.35 + 0.65 * p) * (1 - k / 6);
       line(g, x, y, x - c * vel * 3 * sc, y - n * vel * 3 * sc);
     }
-  } else if (s.action === 'dig' && pk > 0.05) {
+  } else if (HK === 'dig' && pk > 0.05) {
     const rate = mix(1 / 1.6, 1 / 0.9, pk); const u = phase % 1;
     if (u > 0.5) {
       const tau = (u - 0.5) / rate;
@@ -597,7 +601,7 @@ export function drawHandIcon(g: CanvasRenderingContext2D, action: ActionId, cx: 
   const knuckles = (x0: number, n: number, y: number): void => {
     g.beginPath(); for (let i = 0; i < n; i++) g.arc(x0 + i * 3 + 1.5, y, 1.5, Math.PI, 0); g.stroke();
   };
-  switch (action) {
+  switch (handKindOf(action)) {
     case 'brush':
       hand(2); knuckles(-0.5, 2, 2);
       g.beginPath(); g.moveTo(3.5, 6); g.lineTo(-3.4, -3.6); g.stroke();                  // handle, held in the web

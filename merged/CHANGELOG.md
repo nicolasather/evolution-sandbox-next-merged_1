@@ -3,6 +3,130 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.11.0 — 25 September 2026 (unreleased)
+
+### P1 game-feel gaps, filled without touching what already worked
+Most of the P1 "game feel" roadmap (layered impact feedback, material-specific sound, drag inertia,
+subtle camera, discovery presentation, near-discovery wobble, the technique-unlock "N materials may
+react" line) was already built in 1.10.0. This round fills the two pieces that genuinely were not
+there — object inspection and an unknown-property system — plus a small session-recap addition, and
+adds the two client-only P3 items (shareable find, personal journal). Nothing here rewrites an
+existing system; all of it reads data the engine already keeps.
+
+- **Properties, revealed through play** (`lib/processing/reveal.ts`): the Exhibit panel's "What it's
+  like" section shows a resource's physical properties (already computed by `physicsOf` for sound,
+  drift and hints) as chips — the most obvious one free the moment it is held, the rest `???` until an
+  Insight about that exact item has actually been noticed. Reuses `lib/processing/insights.ts`
+  one-for-one; no new authored data.
+- **Known / unknown reactions**: the same section states how many uses are already found, how many are
+  not, and how many properties are still `???` — reusing the exhibit's existing route/use counts.
+- **Journal** (`components/JournalPanel.tsx`, a `#journal-open` button in the top bar): first
+  discovery, deepest reached, most-used technique, and percent discovered without an escalated hint —
+  the last needs two small persisted counters (`Engine.discoveredCount` / a private `hintedCount`);
+  everything else reads state the engine already had (`order`, `steps`, `stats().deepest`).
+- **Share a find**: a "Share this find" button on a discovered Exhibit entry, using the Web Share API
+  where the browser offers it and the clipboard otherwise. Best-effort, never load-bearing.
+- **Returning-player recap**: "The world remembers" now also says how many held things still have a
+  known, untried technique open on them (`Engine.openWork()`), so a returning player has somewhere to
+  start.
+
+### Brittle things take a lasting mark (P2.4)
+Checked the rest of the P2 "world depth" list against the code first: most of it (environment states,
+temperature/moisture visuals, wind, multiple routes to one result, the timeline and the graph's "???"
+branches) turned out to already be built, in `lib/craft/world.ts` / `app/_physics.css` / the recipe
+data itself. Durability was the one genuinely missing piece, so it's the one built this round —
+cosmetic only, per the brief ("not every resource needs an HP bar. Use visual state instead").
+
+- **`Body.wear`** (`lib/craft/world.ts`): a 0–1 value that only ever climbs, added to on a hard landing,
+  wall hit or collision (`World.wearHit`) — and only for a body whose material `physicsOf` already
+  calls `brittle` (glass, stone, bone…); anything else just squashes (`q`) and springs back, unchanged.
+  Never a stat, never read by any recipe or gesture — purely a paint-time flag.
+- **`data-damage="cracked"|"broken"` + `--wear`** (`app/_physics.css`): at 0.35 a hairline crack fades
+  in over the piece's art; at 0.85, a second one, plus a touch more contrast and a duller saturation.
+  Both are a still CSS filter + a masked overlay, not an animation, so `prefers-reduced-motion` needs no
+  special case. Covered by `lib/craft/__tests__/damage.test.ts` (a brittle body cracks and eventually
+  breaks under repeated hard drops; a non-brittle one never marks, however hard it lands).
+
+Left for a dedicated round, deliberately: regional/independent-invention notes across the discovery
+set (P2.8) — a large data-authoring pass, not a small addition, and risk exactly what the brief warns
+against if folded into an already-large patch.
+
+### Component assembly (P2.5) — and a false start worth recording
+Investigated first, per the brief. The machinery for "bring 3–5 physical pieces together at once" was
+already fully built and already shipping: `Engine.combineMany`/`multiKey` (2–5 ingredients, order-
+independent), `Workbench.tsx`'s bench-side clustering (`clusters()` — union-find over touching bodies,
+already generalised to groups of 2–5), and `lib/processing/assess.ts`'s partial-match detection all
+predate this round. `data/processing.json` already exercises it 42 times, from Axe (`stone_flake +
+stick + strands`) up to five-piece endgame items. What P2.5 actually needed was two more data
+routes and a fix to a test that would not have caught a bad one.
+
+- **A false start, reverted before delivery**: the brief's own example — Axe from `sharp_stone + wood +
+  cordage`, added straight to `data/db.json` — looked reasonable and passed a quick check, but the full
+  suite caught it: every one of that trio's three pairs already makes a *different* item (`wood+cordage`
+  → Binding, `wood+sharp_stone` → Spear, `sharp_stone+cordage` → Bolas). Physically that means touching
+  any two of the three pieces first — the ordinary way a player would drag things in one at a time —
+  quietly turns them into the wrong object before the third can ever join, which is exactly what
+  `lib/__tests__/processing.test.ts`'s existing invariant test ("never lets one recipe sit inside another
+  that makes something else") exists to catch. Caught, reverted with `git checkout`, no trace left in
+  this patch.
+- **Two routes added instead, checked against the full recipe pool first** (`data/db.json`): every
+  candidate was verified programmatically — no exact duplicate, and no 2-of-3 sub-pair colliding with a
+  *different* item anywhere in the merged `db.json` + `processing.json` recipe pool — before being
+  written.
+  - **Spear**: `composite_tool + wood + bone` — a composite-bladed shaft reinforced with a bone point,
+    assembled in one motion instead of two.
+  - **Shelter**: `wood + binding + sewing` — poles, lashing and a sewn cover. Verified live in the
+    browser bringing binding + sewing together *first* correctly does nothing (neither pair alone makes
+    anything — it just "holds," trembling, on the bench) until wood completes the trio, which fires the
+    genuine three-body cluster path (`age > 0.5`, not the two-body `CraftSession` minigame) and the
+    "New Discovery — Shelter" ceremony.
+- **`lib/__tests__/engine.test.ts`**: the recipe-collision validator destructured only the first two
+  ingredients of every recipe (`pairKey(a, b)`), which would have silently ignored a 3rd+ ingredient —
+  harmless while nothing but pairs existed in `db.json`, but it would not have caught a genuine 3-way
+  collision once one did. Switched to the already-exported `multiKey(r)` over the full ingredient array.
+- **Not touched**: `lib/craft/session.ts`'s `CraftSession` (the richer hands-on minigame) stays hard-
+  coded to exactly two bodies, as before — N-body clusters already route through the simpler, still
+  fully physical `beginResolve()` ceremony instead. Extending `CraftSession` itself to N bodies would be
+  a genuine rewrite of a large, stable system and was left alone, per the brief.
+
+## 1.10.0 — 24 September 2026 (unreleased)
+
+### Twenty-five techniques, a guiding voice, and a question in the corner
+Built around the existing data (`data/db.json` untouched, `data/processing.json` extended) and the
+existing craft system; no parallel database, no separate mode.
+
+- **Techniques.** The five hands became 25 (Smash, Hammer, Split, Chisel · Cut, Carve, Scrape, Saw · Brush, Dig,
+  Grind, Mix, Shape, Press, Polish · Separate, Pull, Twist, Tie, Stretch · Burn, Heat, Dry, Cool, Pour). They map onto
+  seven gesture kinds and five hand poses (`lib/craft/kinds.ts`), so the original five behave exactly as before.
+  A technique **appears** the first time the player holds what it needs (`lib/processing/techniques.ts`), with a
+  "NEW TECHNIQUE" reveal that says how many held materials may react differently, never which.
+- **Action Rail** (`components/ActionRail.tsx`) at the edge of the workspace: a column on the right on a desktop, a strip
+  along the bottom on a phone; grouped Impact / Edge / Material / Flexible / Thermal; collapsible; the middle of the
+  screen stays for play. Unlearned techniques are only a row of "?" marks per family.
+- **Multi-stage making.** ~30 new transforms and 8 new worked states (wet / shaped / dried clay, shavings, flour, polished
+  stone, molten and poured copper): clay → pottery is five stages, copper casting four, twist → cordage → rope → net.
+- **Physics classes.** Every resource derives `materialClass / shapeClass / properties / stateModifiers` from its tags
+  (`lib/processing/physics.ts`). Fire warms and scorches what lies beside it, water wets clay and splashes, wind moves
+  light things in the open eras — all CSS-driven and idle at rest.
+- **Failure feedback** in three kinds: impossible, close (one step off), right material but wrong action — each with its own
+  small animation and sound, none of them a recipe.
+- **Hints.** Five rungs (vague → property → action → ghost gesture → direct), aware of what the player has already tried,
+  with a varying riddle/behaviour form on rung 2 and a "coach" line when the player is stuck.
+- **Micro-discoveries** (`lib/processing/insights.ts`): a short "NOTICED …" line the first time a material behaves in a
+  telling way. **Discovery tiers** (`lib/discoveryTier.ts`): minor finds get a quick card, major finds (hidden, rare,
+  first of an era, a gate opening) get the full reveal.
+- **Questions** (`lib/learn/`, `components/QuestionCard.tsx`): a card top-right, first about a minute in, then every 60–120 s
+  (never under 45 s). Not a modal; no score, XP or streak; a wrong answer fades and a different question follows; ignored,
+  it folds to "?". A right answer may open a technique. 36 questions are asked: each was checked against a source page that could be read (`checked` date) and carries `source` ids
+  from `data/sources.json`, a confidence level, and stated uncertainty where scholars disagree. 7 more are written but held
+  back (`hold` reason) until their claim is checked; only `checked` questions without `hold` are ever shown.
+- **Narrator** (`lib/narrator/`, `components/Narrator.tsx`): a voice per era with a self-drawn line-art portrait
+  (Full / Minimal / Off). Priority era > major find > technique > stuck > minor, with cooldowns. Early voices are anonymous
+  archetypes; the Observer, Experimenter and Logician are dramatised figures, labelled as such. No quotations anywhere.
+- **The world through the ages.** The bench surface follows the era's material world; the graph draws "???" for things you
+  could make right now (never for hidden finds).
+- Tests: 34 suites, 182 tests, all passing.
+
 ## 1.9.0 — 24 September 2026 (unreleased)
 
 ### An experimentation world: hands, materials, several things at once

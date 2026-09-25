@@ -18,7 +18,10 @@ import type { Engine } from '@/lib/engine';
 import { ACTIONS, ACTION_ORDER } from '@/lib/processing/actions';
 import type { ActionId, CombineResult, ProcessResult } from '@/lib/types';
 import { nearLine } from '@/lib/near';
-import { HandIcon } from './HandIcon';
+import { kindOf } from '@/lib/craft/kinds';
+import { envOf, physicsOf } from '@/lib/processing/physics';
+import { ActionRail } from './ActionRail';
+import { TechniqueReveal } from './TechniqueReveal';
 
 /* ============================================================================
    WORKBENCH — the ground where things are worked and put together.
@@ -29,9 +32,10 @@ import { HandIcon } from './HandIcon';
      ASSEMBLE  Bring 2–5 together. When the set is a real recipe it comes
                together; when it is on the road to one it holds and trembles;
                when it is not, the ground says why (and never what).
-     PROCESS   Take up a hand — Brush, Smash, Cut, Separate or Dig — and work
-               ONE resource with the gesture the hand needs. Materials answer
-               by what they are made of.
+     PROCESS   Take up a technique from the rail — Smash, Cut, Carve, Twist,
+               Burn… whichever the player has learned — and work ONE resource
+               with the gesture it needs. Materials answer by what they are
+               made of; new techniques appear as the player finds what they need.
 
    Nothing here decides what anything makes, opens tiers, or records routes;
    that stays in lib/engine.ts. The hands-on CraftSession runs only for a
@@ -39,6 +43,9 @@ import { HandIcon } from './HandIcon';
    click, long press, Delete) and flies home to the inventory; a piece hit hard
    enough into a wall goes through it, overshoots, and comes home the same way.
    ========================================================================== */
+
+/** Eras spent out of doors: the bench has a breeze. */
+const OPEN_AIR = new Set(['origins', 'fire', 'settlement', 'agriculture']);
 
 const ZONES: { id: ZoneId; label: string }[] = [
   { id: 'hearth', label: 'Hearth' },
@@ -51,7 +58,7 @@ interface Api {
   clear(): void; cancel(): void; skip(): void; rotate(): void;
   setMode(m: ActionId | null): void; undo(): void; finishWork(): void;
 }
-interface Note { key: number; text: string; sub?: string; tone: 'info' | 'warn' | 'good' }
+interface Note { key: number; text: string; sub?: string; tone: 'info' | 'warn' | 'good'; noticed?: string }
 
 interface Props {
   engine: Engine;
@@ -69,6 +76,8 @@ interface Props {
   onScenery?: (clientX: number, clientY: number) => void;
   /** A hint at level 3+ leans on this action: its hand pulses. */
   hintAction?: ActionId | null;
+  /** A hint at level 4+ shows this gesture, faintly, on this piece if it is on the ground. */
+  hintGhost?: { action: ActionId; from: string } | null;
 }
 
 const easeInOut = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
@@ -84,13 +93,12 @@ function hashStr(s: string): number {
 type Cluster = Body[];
 const sigOf = (c: Cluster) => c.map(b => b.uid).sort((x, y) => x - y).join('|');
 
-export function Workbench({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, hintAction = null }: Props) {
+export function Workbench({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, hintAction = null, hintGhost = null }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const bodiesRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const zonesRef = useRef<HTMLDivElement>(null);
-  const dockRef = useRef<HTMLDivElement>(null);
   const progRef = useRef<HTMLElement>(null);
   const selRef = useRef<HTMLDivElement>(null);
   const selIdRef = useRef<string | null>(null);
@@ -111,13 +119,14 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
   const instant = useSyncExternalStore(subscribePrefs, instantEnabled, () => false);
 
   // the loop reads the latest props without being torn down by them
-  const latest = useRef({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, instant });
-  useEffect(() => { latest.current = { engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, instant }; });
+  const latest = useRef({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, instant, hintGhost });
+  useEffect(() => { latest.current = { engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, instant, hintGhost }; });
   const latest2 = useRef(onInspect);
   useEffect(() => { latest2.current = onInspect; });
   const wakeRef = useRef<() => void>(() => {});
   useEffect(() => { if (active) wakeRef.current(); }, [active]);
   useEffect(() => { wakeRef.current(); }, [instant]);
+  useEffect(() => { wakeRef.current(); }, [hintGhost]);
 
   useEffect(() => {
     const hostN = hostRef.current, bodiesN_ = bodiesRef.current, stageN = stageRef.current, canvasN = canvasRef.current;
@@ -178,16 +187,22 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     const clusterAge = new Map<string, number>();
     const clusterDone = new Set<string>();
 
-    const say_ = (text: string, tone: Note['tone'] = 'info', sub?: string, ms = 5200) => {
-      setNote({ key: performance.now(), text, sub, tone });
+    const say_ = (text: string, tone: Note['tone'] = 'info', sub?: string, ms = 5200, noticed?: string) => {
+      setNote({ key: performance.now(), text, sub, tone, noticed });
       window.clearTimeout(noteTimer);
       noteTimer = window.setTimeout(() => setNote(null), ms);
     };
 
     const world = new World(bodiesEl, {
       resolve: id => {
-        const n = latest.current.engine.get(id);
-        return n ? { id: n.id, n: n.n, vis: n.vis, cat: n.cat, era: n.era, no: n.no } : null;
+        const eng = latest.current.engine;
+        const n = eng.get(id);
+        if (!n) return null;
+        const ph = physicsOf(eng.proc, n), env = envOf(ph);
+        return {
+          id: n.id, n: n.n, vis: n.vis, cat: n.cat, era: n.era, no: n.no,
+          phys: { materialClass: ph.materialClass, shapeClass: ph.shapeClass, properties: ph.properties, chars: env.chars, soaks: env.soaks, windy: env.windy },
+        };
       },
       onImpact: info => {
         const { a, b, speed, force } = info;
@@ -224,21 +239,6 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         if (!el) continue;
         const p = world.patch(id);
         el.style.left = `${p.cx - p.rx}px`; el.style.top = `${p.cy - p.ry}px`; el.style.width = `${p.rx * 2}px`; el.style.height = `${p.ry * 2}px`;
-      }
-      const dock = dockRef.current;
-      if (dock) {
-        const p = world.patch('processing'), a = world.area;
-        const w = dock.offsetWidth || 220;
-        dock.style.left = `${clamp(p.cx - w / 2, a.x + 6, Math.max(a.x + 6, a.x + a.w - w - 6))}px`;
-        let top = Math.min(a.y + a.h - 44, p.cy + p.ry + 10);
-        // keep clear of the small tools row when it sits along the same edge (phones)
-        const tools = host.querySelector<HTMLElement>('.wb-tools');
-        if (tools) {
-          const hr = host.getBoundingClientRect(), tr = tools.getBoundingClientRect();
-          const tTop = tr.top - hr.top, tBot = tr.bottom - hr.top;
-          if (tr.width > 0 && tBot > top - 4 && tTop < top + 48 && tTop > hr.height / 2) top = Math.max(a.y, tTop - 52);
-        }
-        dock.style.top = `${top}px`;
       }
     };
 
@@ -347,10 +347,28 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     }
     wakeRef.current = wake;
 
+    /** The piece a hint's ghost hand is working on, if it is on the ground and nothing else is going on. */
+    function ghostBody(): Body | null {
+      const gh = latest.current.hintGhost;
+      if (!gh || mode || act || session || resolving || !latest.current.active) return null;
+      return world.bodies.find(b => b.itemId === gh.from && !b.temp && !b.outside && !b.held) ?? null;
+    }
+    /** Where the working point of a gesture sits at fraction k of the way through it, on a piece. */
+    function gesturePoint(action: ActionId, b: Body, k: number): { x: number; y: number } {
+      const r = b.r; let x = b.x, y = b.y - b.z;
+      const km = kindOf(action);
+      if (km === 'brush') x += Math.sin(k * Math.PI * 6) * r * 0.75;
+      else if (km === 'cut') x += (k - 0.5) * r * 2.6;
+      else if (km === 'separate') { x += k * r * 1.1; y -= k * r * 0.5; }
+      else if (km === 'dig') y += Math.sin(k * Math.PI * 4) * r * 0.4;
+      else if (km === 'circle') { x += Math.cos(k * Math.PI * 4) * r * 0.7; y += Math.sin(k * Math.PI * 4) * r * 0.7; }
+      return { x, y };
+    }
+
     const handWanted = () => !!mode && (ptr.inside && (!ptr.touch || ptr.down) || !!demo);
     const needFrame = () =>
       world.busy || !!session || !!resolving || !!pull || fx.alive || cool > 0 || !!drag || hits.size > 0 || world.touching().length > 0
-      || !!act || !!demo || handA > 0.02 || handWanted() || feel.size > 0;
+      || !!act || !!demo || handA > 0.02 || handWanted() || feel.size > 0 || ghostBody() !== null;
 
     function frame(now: number) {
       raf = 0;
@@ -821,7 +839,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
      *  it is heading through, the work moves to the piece it does cross. */
     function retargetCut() {
       const a = act;
-      if (!a || a.g.action !== 'cut' || a.g.done || !a.g.cut) return;
+      if (!a || a.g.kind !== 'cut' || a.g.done || !a.g.cut) return;
       const { x0, y0, x1, y1 } = a.g.cut;
       if (Math.hypot(x1 - x0, y1 - y0) < 26) return;
       const dOf = (q: Body) => segDist(q.x, q.y - q.z, x0, y0, x1, y1);
@@ -833,11 +851,11 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         if (d < q.r * 0.5 && d < bd) { best = q; bd = d; }
       }
       if (!best) return;
-      const ng = new Gesture('cut', { x: best.x, y: best.y - best.z, r: best.r, hard: best.props.hard });
+      const ng = new Gesture(a.g.action, { x: best.x, y: best.y - best.z, r: best.r, hard: best.props.hard });
       if (!ng.down(x0, y0)) { ng.pressed = true; ng.cut = { x0, y0, x1: x0, y1: y0 }; }
       ng.move(x1, y1);
       a.b.el.removeAttribute('data-work'); a.b.locked = false; a.b.ox = a.b.oy = 0;
-      best.locked = true; best.z = 0; best.el.setAttribute('data-work', 'cut');
+      best.locked = true; best.z = 0; best.el.setAttribute('data-work', a.g.action);
       act = { g: ng, b: best, struckAt: 0, lastDust: 0 };
     }
 
@@ -857,7 +875,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (!world.bodies.includes(b)) { act = null; setWorking(false); return; }
       gst.tick(dt);
       gst.t.x = b.x; gst.t.y = b.y - b.z;
-      const act_ = gst.action;
+      const act_ = gst.kind;
       const now = performance.now();
       if (act_ === 'brush') {
         b.ox = Math.sin(now / 38) * 1.4 * gst.prog;
@@ -869,10 +887,12 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       } else if (act_ === 'smash') {
         const n = gst.takeStrikes();
         if (n) {
-          b.q = 0.34; b.qv = 0;
-          b.ox = (Math.random() - 0.5) * 6; b.oy = 2 + Math.random() * 3;
-          fx.sound(b.props.sound, { vol: 0.85, rate: 0.9 + gst.prog * 0.3 });
-          fx.shake(2.2 + gst.prog * 2);
+          // a chisel taps, a hammer strikes true, a split is one firm blow: same gesture, different weight
+          const soft = gst.action === 'chisel';
+          b.q = soft ? 0.16 : 0.34; b.qv = 0;
+          b.ox = (Math.random() - 0.5) * (soft ? 2.5 : 6); b.oy = 2 + Math.random() * (soft ? 1.5 : 3);
+          fx.sound(soft ? 'tick' : b.props.sound, { vol: soft ? 0.6 : 0.85, rate: (soft ? 1.4 : 0.9) + gst.prog * 0.3 });
+          fx.shake((soft ? 0.8 : 2.2) + gst.prog * (soft ? 0.8 : 2));
           fx.burst(b.x, b.y - b.z, { n: 6 + Math.round(gst.prog * 6), color: b.props.dust, speed: 120, life: 0.45, size: 2 });
           if (b.props.hard > 0.6) fx.spark(b.x, b.y - b.z, { n: 4, color: 'ochre', speed: 160, life: 0.3 });
           b.glow = Math.max(b.glow, 0.5);
@@ -884,6 +904,28 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       } else if (act_ === 'separate') {
         b.ox = gst.pull.x * 0.5; b.oy = gst.pull.y * 0.5;
         if (gst.pressed && gst.prog > 0.1 && now - a.struckAt > 200) { a.struckAt = now; fx.sound('scrape', { vol: 0.15, rate: 0.7 + gst.prog * 0.5 }); }
+      } else if (act_ === 'circle') {
+        // going round: the piece turns a little with the hand and creaks
+        b.angle += Math.sign(gst.turn || 1) * 0.02 * gst.prog;
+        b.ox = Math.sin(now / 60) * 0.8 * gst.prog;
+        if (gst.pressed && gst.prog > 0.05 && now - a.struckAt > 190) {
+          a.struckAt = now;
+          fx.sound(gst.action === 'mix' ? 'plip' : 'rustle', { vol: 0.2, rate: 0.8 + gst.prog * 0.5 });
+          if (gst.action === 'mix') fx.burst(ptr.x, ptr.y, { n: 1, color: 'water', speed: 20, life: 0.4, size: 1.6 });
+        }
+      } else if (act_ === 'hold') {
+        // held to the heat, the piece warms and lets off what it has: embers for a flame, steam for drying
+        const hot = gst.action === 'burn' || gst.action === 'heat';
+        const cold = gst.action === 'cool';
+        b.heat = cold ? Math.max(0, 1 - gst.prog) : Math.max(b.heat, gst.prog * (hot ? 1 : 0.35));
+        b.glow = Math.max(b.glow, gst.prog * (hot ? 0.6 : 0.2));
+        if (gst.action === 'press') b.q = Math.max(b.q, 0.18 * gst.prog);
+        if (gst.pressed && gst.prog > 0.02 && now - a.lastDust > 110) {
+          a.lastDust = now;
+          if (hot) fx.spark(b.x + (Math.random() - 0.5) * b.r, b.y - b.z - b.r * 0.4, { n: 1, color: 'ochre', speed: 70, life: 0.5 });
+          else if (gst.action !== 'press') fx.burst(b.x + (Math.random() - 0.5) * b.r, b.y - b.z - b.r * 0.5, { n: 1, color: 'water', speed: 24, life: 0.7, size: 1.6 });
+          if (now - a.struckAt > 260) { a.struckAt = now; fx.sound(hot ? 'crackle' : 'hiss', { vol: 0.14, rate: 0.9 + gst.prog * 0.4 }); }
+        }
       } else if (act_ === 'dig') {
         b.oy = gst.dip * b.r * 0.22;
         if (gst.dip > 0.95 && now - a.struckAt > 260) {
@@ -909,10 +951,25 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (res.status === 'error') return;
       if (res.status === 'nothing') {
         workFails++;
-        b.q = 0.2; b.av += (Math.random() - 0.5) * 5;
-        fx.sound(res.reason === 'tool' ? 'tick' : 'thud', { vol: 0.4, rate: 0.75 });
-        fx.burst(bx, by, { n: 4, color: 'bone3', speed: 40, life: 0.3 });
-        say_(res.message, res.reason === 'tool' ? 'warn' : 'info', res.note ?? (workFails >= 3 ? 'Not every hand suits every thing. Try another hand — or another thing.' : undefined));
+        // three kinds of no, felt differently: never (a dull thud), the wrong way (a shrug), nearly (a tremble)
+        const kind = res.kind ?? 'impossible';
+        b.av += (Math.random() - 0.5) * 5;
+        if (kind === 'close') {
+          b.q = 0.12; b.glow = Math.max(b.glow, 0.55);
+          fx.sound('chime', { vol: 0.22, rate: 0.6 });
+          fx.ring(bx, by, world.unit * 1.2, { color: 'ochre', life: 0.4, width: 1 });
+        } else if (kind === 'wrong_action') {
+          b.q = 0.16;
+          fx.sound('tick', { vol: 0.35, rate: 0.9 });
+          fx.burst(bx, by, { n: 3, color: 'bone3', speed: 30, life: 0.3 });
+        } else {
+          b.q = 0.2;
+          fx.sound(res.reason === 'tool' ? 'tick' : 'thud', { vol: 0.4, rate: 0.75 });
+          fx.burst(bx, by, { n: 4, color: 'bone3', speed: 40, life: 0.3 });
+        }
+        b.el.setAttribute('data-fail', kind);
+        window.setTimeout(() => b.el.removeAttribute('data-fail'), 700);
+        say_(res.message, res.reason === 'tool' ? 'warn' : 'info', res.note ?? (workFails >= 3 ? 'Not every technique suits every thing. Try another — or another thing.' : undefined), res.insight ? 7000 : 5200, res.insight?.text);
         wake();
         return;
       }
@@ -938,7 +995,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       fx.sound(isNew ? 'chime' : 'pop', { vol: isNew ? 0.7 : 0.5 });
       if (res.discoveries.some(d => d.status === 'new')) fx.shake(2);
       const sub = res.unlocked.length ? `${res.unlocked.map(u => u.n).join(', ')} appears.` : undefined;
-      say_(res.message, 'good', sub);
+      say_(res.message, 'good', sub, res.insight ? 7000 : 5200, res.insight?.text);
       dirty = true;
       wake();
     }
@@ -958,13 +1015,8 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       let x = ptr.x, y = ptr.y, progress = act?.g.prog ?? 0, press = !!(act?.g.pressed && ptr.down);
       if (demo) {
         const b = demo.b, k = demo.t / 1.5;
-        const r = b.r;
         press = true; progress = Math.min(0.75, k * 0.8);
-        x = b.x; y = b.y - b.z;
-        if (mode === 'brush') x += Math.sin(k * Math.PI * 6) * r * 0.75;
-        else if (mode === 'cut') { x += (k - 0.5) * r * 2.6; }
-        else if (mode === 'separate') { x += k * r * 1.1; y -= k * r * 0.5; }
-        else if (mode === 'dig') { y += Math.sin(k * Math.PI * 4) * r * 0.4; }
+        ({ x, y } = gesturePoint(mode, b, k));
       } else if (ptr.touch) { x -= 22; y -= 30; }
       const scale = clamp(world.unit / 34, 0.75, 1.25) * (ptr.touch ? 1.12 : 1);
       return { action: mode, x, y, t: now / 1000, progress, press, vx: ptr.vx, vy: ptr.vy, scale, alpha: handA };
@@ -1001,7 +1053,21 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       fx.draw(g, world.w, world.h);
       const hs = handFrame(now);
       if (hs) drawHand(g, hs, fx.pal.bone, fx.pal.ink);
+      else drawGhost(now);
       g.restore();
+    }
+
+    /** A hint at level 4 or 5: a faint hand does the gesture on the piece, over and over, until it is taken up. */
+    function drawGhost(now: number) {
+      const gh = latest.current.hintGhost;
+      const b = ghostBody();
+      if (!gh || !b) return;
+      const cycle = (now / 1000 % 2.6) / 2.6;
+      const k = cycle < 0.85 ? cycle / 0.85 : 1;
+      const p = gesturePoint(gh.action, b, k);
+      const scale = clamp(world.unit / 34, 0.75, 1.25);
+      const fade = cycle < 0.08 ? cycle / 0.08 : cycle > 0.92 ? (1 - cycle) / 0.08 : 1;
+      drawHand(g, { action: gh.action, x: p.x, y: p.y, t: now / 1000, progress: Math.min(0.75, k * 0.8), press: true, vx: 0, vy: 0, scale, alpha: 0.42 * fade }, fx.pal.bone, fx.pal.ink);
     }
 
     /** The work in progress: a ring that fills, and the line of a cut. */
@@ -1020,14 +1086,14 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         g.globalAlpha = 0.18; g.strokeStyle = fx.pal.bone; g.beginPath(); g.arc(cx, cy, b.r * 1.08, 0, Math.PI * 2); g.stroke();
         g.restore();
       }
-      if (gst.action === 'cut' && gst.cut) {
+      if (gst.kind === 'cut' && gst.cut) {
         const c = gst.cut;
         g.save();
         g.strokeStyle = fx.pal.bone; g.lineWidth = 1.4; g.setLineDash([5, 4]); g.globalAlpha = 0.8; g.lineCap = 'round';
         g.beginPath(); g.moveTo(c.x0, c.y0); g.lineTo(c.x1, c.y1); g.stroke();
         g.restore();
       }
-      if (gst.action === 'smash' && gst.prog > 0) {
+      if (gst.kind === 'smash' && gst.prog > 0) {
         // cracks grow with every blow
         g.save();
         g.strokeStyle = fx.pal.bone; g.lineWidth = 1.3; g.globalAlpha = 0.85; g.lineJoin = 'round';
@@ -1097,7 +1163,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
 
     const onDown = (e: PointerEvent) => {
       if (e.pointerType === 'mouse' && e.button !== 0) return;
-      if ((e.target as HTMLElement).closest('.wb-tools, .wb-hud button, .wb-sel, .wb-dock')) return;
+      if ((e.target as HTMLElement).closest('.wb-tools, .wb-hud button, .wb-sel, .wb-rail, .tech-reveal')) return;
       unlockAudio();
       if (resolving) return;
       const p = track(e);
@@ -1105,7 +1171,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       host.setPointerCapture?.(e.pointerId);
       if (session) { session.pointerDown(p.x, p.y, e.pointerType as 'mouse' | 'touch' | 'pen'); wake(); return; }
       if (mode) {
-        const b = mode === 'cut' ? (world.bodyAt(p.x, p.y, q => !q.locked) ?? nearestBody(p.x, p.y, 2.4)) : world.bodyAt(p.x, p.y, q => !q.locked || q === act?.b);
+        const b = kindOf(mode) === 'cut' ? (world.bodyAt(p.x, p.y, q => !q.locked) ?? nearestBody(p.x, p.y, 2.4)) : world.bodyAt(p.x, p.y, q => !q.locked || q === act?.b);
         if (b) {
           if (act && act.b === b) { act.g.down(p.x, p.y); if (act.g.pressed) act.b.el.setAttribute('data-work', mode); }
           else if (actCool <= 0) startAct(b, p.x, p.y);
@@ -1265,7 +1331,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         return;
       }
       if (!session && !resolving) {
-        const hotkey = ACTION_ORDER.find(a => ACTIONS[a].key === k.toLowerCase());
+        const hotkey = ACTION_ORDER.find(a => ACTIONS[a].key === k.toLowerCase() && latest.current.engine.knows(a));
         if (hotkey) { e.preventDefault(); setMode(mode === hotkey ? null : hotkey); return; }
         if (mode && (k === 'Enter' || k === ' ')) {
           // keyboard and switch users: do the work on the piece you are pointing at or have chosen
@@ -1417,6 +1483,8 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // the open-air eras have a breeze; light things answer it (see app/_physics.css)
+  const windy = OPEN_AIR.has(engine.currentEra().id);
   const rotatable = hud?.kind === 'align' || hud?.kind === 'assemble' || hud?.kind === 'stack';
   const pips = hud ? Array.from({ length: hud.total }, (_, i) => i) : [];
   const toggleSound = useCallback(() => { unlockAudio(); setSoundEnabled(!soundEnabled()); if (!soundEnabled()) return; play('tick', { vol: 0.4 }); }, []);
@@ -1427,8 +1495,9 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       className="wb"
       data-craft={hud ? 'on' : 'off'}
       data-mode={mode ?? ''}
+      data-wind={windy ? 'breeze' : undefined}
       role="application"
-      aria-label="The scenery is your workbench. Drag two or more things together anywhere to combine them, or choose a hand — Brush, Smash, Cut, Separate or Dig — and work one thing. Press I to read about a piece. Right click puts a piece away."
+      aria-label="The scenery is your workbench. Drag two or more things together anywhere to combine them, or choose a technique from the rail and work one thing. Press I to read about a piece. Right click puts a piece away."
     >
       <div className="wb-stage" ref={stageRef}>
         <div className="wb-zones" ref={zonesRef} aria-hidden="true">
@@ -1442,7 +1511,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
 
       {empty && (
         <p className="wb-empty mono" aria-hidden="true">
-          Put things on the ground.<br />Bring two or more together — or take up a hand and work one.
+          Put things on the ground.<br />Bring two or more together — or take up a technique and work one.
         </p>
       )}
 
@@ -1463,29 +1532,13 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         <p key={note.key} className={`wb-note wb-note-${note.tone}`} role="status">
           <span>{note.text}</span>
           {note.sub && <em className="mono">{note.sub}</em>}
+          {note.noticed && <em className="mono wb-noticed"><b>NOTICED</b> {note.noticed}</em>}
         </p>
       )}
 
-      <div className="wb-dock" ref={dockRef} role="toolbar" aria-label="Hands: choose how to work one thing" data-wb-avoid="off">
-        {ACTION_ORDER.map(a => (
-          <button
-            key={a} type="button" className="wb-act" data-a={a}
-            aria-pressed={mode === a}
-            data-hint={hintAction === a ? '' : undefined}
-            title={`${ACTIONS[a].label} (${ACTIONS[a].key.toUpperCase()}) — ${ACTIONS[a].gesture}. ${ACTIONS[a].blurb}`}
-            onClick={() => api.current?.setMode(mode === a ? null : a)}
-          >
-            <HandIcon action={a} />
-            <span className="mono">{ACTIONS[a].label}</span>
-          </button>
-        ))}
-        {mode && (
-          <button type="button" className="wb-act wb-do mono" onClick={() => api.current?.finishWork()}
-            title="Do the work on the piece you are pointing at (Enter)">
-            {working ? 'Finish it' : 'Do it for me'}
-          </button>
-        )}
-      </div>
+      <ActionRail engine={engine} mode={mode} hintAction={hintAction} working={working}
+        onPick={m => api.current?.setMode(m)} onDo={() => api.current?.finishWork()} />
+      <TechniqueReveal engine={engine} />
 
       <div className="wb-sel" ref={selRef} hidden>
         <button type="button" className="wb-inspect mono"

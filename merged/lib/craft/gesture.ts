@@ -1,4 +1,5 @@
 import type { ActionId } from '../types';
+import { TUNE, type GestureKind, type Tune } from './kinds';
 
 /* ============================================================================
    GESTURES — what the player's hand has to DO for each action. Pure geometry:
@@ -11,7 +12,10 @@ import type { ActionId } from '../types';
      cut       draw one straight line through it
      separate  take hold and pull it apart from the middle
      dig       scoop down and out, three times
+     circle    go round it (twist, tie, mix)
+     hold      keep the pointer on it and wait (heat, dry, burn…)
 
+   The other twenty actions are these seven, tuned (lib/craft/kinds.ts).
    Each is forgiving on purpose (a hand is not a ruler) and each un-does itself
    if the player lets go, so nothing is ever half spent.
    ========================================================================== */
@@ -32,6 +36,8 @@ export function segDist(px: number, py: number, ax: number, ay: number, bx: numb
 
 export class Gesture {
   readonly action: ActionId;
+  readonly kind: GestureKind;
+  private readonly tune: Tune;
   readonly t: Target;
   prog = 0;
   done = false;
@@ -60,11 +66,18 @@ export class Gesture {
   private phase: 'down' | 'up' = 'down';
   private acc = 0;
   private scoops = 0;
+  /** circle: turns made so far (signed, in full turns) and the last angle seen. */
+  turn = 0;
+  private lastAng = 0;
+  /** hold: seconds held. */
+  private heldT = 0;
 
   constructor(action: ActionId, target: Target) {
     this.action = action;
+    this.tune = TUNE[action];
+    this.kind = this.tune.kind;
     this.t = target;
-    this.need = target.hard >= 0.5 ? 3 : 2;
+    this.need = this.tune.need ?? (target.hard >= 0.5 ? 3 : 2);
   }
 
   private near(x: number, y: number, k = 1.3) { return dist(x, y, this.t.x, this.t.y) <= this.t.r * k; }
@@ -72,17 +85,22 @@ export class Gesture {
   /** Pointer went down. Returns whether it took hold of the work. */
   down(x: number, y: number): boolean {
     if (this.done) return false;
-    const { action } = this;
-    if (action === 'cut') {
+    const { kind } = this;
+    if (kind === 'cut') {
       if (!this.near(x, y, 2.4)) return false;
       this.pressed = true; this.cut = { x0: x, y0: y, x1: x, y1: y };
       return true;
     }
-    if (!this.near(x, y)) return false;
+    if (kind === 'circle') {
+      if (!this.near(x, y, 2.6)) return false;
+      this.pressed = true; this.lastAng = Math.atan2(y - this.t.y, x - this.t.x);
+      return true;
+    }
+    if (!this.near(x, y, kind === 'hold' ? 1.7 : 1.3)) return false;
     this.pressed = true;
     this.lx = x; this.ly = y; this.ax = x; this.ay = y;
-    if (action === 'smash') {
-      if (this.sinceStrike >= 0.16 || this.struck === 0) {
+    if (kind === 'smash') {
+      if (this.sinceStrike >= (this.tune.gap ?? 0.16) || this.struck === 0) {
         this.struck++; this.strikes++; this.sinceStrike = 0;
         this.prog = clamp01(this.struck / this.need);
         if (this.struck >= this.need) this.done = true;
@@ -93,25 +111,38 @@ export class Gesture {
 
   move(x: number, y: number) {
     if (this.done || !this.pressed) return;
-    const { action, t } = this;
-    if (action === 'brush') {
+    const { kind, t } = this;
+    if (kind === 'brush') {
       if (!this.near(x, y, 1.45)) { this.lx = x; this.ly = y; return; }
       const dx = x - this.lx;
       this.path += dist(x, y, this.lx, this.ly);
       const d = Math.abs(dx) > 1.5 ? Math.sign(dx) : 0;
       if (d !== 0) { if (this.dir !== 0 && d !== this.dir) this.sweeps++; this.dir = d; }
       this.lx = x; this.ly = y;
-      const raw = clamp01(this.path / (t.r * 5.5));
-      this.prog = this.sweeps >= 2 ? raw : Math.min(raw, 0.9);
+      const raw = clamp01(this.path / (t.r * 5.5 * (this.tune.reach ?? 1)));
+      this.prog = this.sweeps >= (this.tune.sweeps ?? 2) ? raw : Math.min(raw, 0.9);
       if (this.prog >= 1) this.done = true;
-    } else if (action === 'cut' && this.cut) {
+    } else if (kind === 'cut' && this.cut) {
       this.cut.x1 = x; this.cut.y1 = y;
       const len = dist(this.cut.x0, this.cut.y0, x, y);
       const through = segDist(t.x, t.y, this.cut.x0, this.cut.y0, x, y) <= t.r * 0.75;
-      const raw = clamp01(len / (t.r * 2));
+      const raw = clamp01(len / (t.r * 2 * (this.tune.reach ?? 1)));
       this.prog = through ? raw : Math.min(raw, 0.3);
       if (this.prog >= 1) this.done = true;
-    } else if (action === 'separate') {
+    } else if (kind === 'circle') {
+      // go round it: count the angle swept around its centre, but only while the hand keeps a sensible distance
+      const d = dist(x, y, t.x, t.y);
+      const ang = Math.atan2(y - t.y, x - t.x);
+      if (d >= t.r * 0.3 && d <= t.r * 2.6) {
+        let da = ang - this.lastAng;
+        da -= Math.PI * 2 * Math.round(da / (Math.PI * 2));
+        // a hand goes round in small steps; a big jump is a slip across the middle, not a turn
+        if (Math.abs(da) < 1.4) this.turn += da / (Math.PI * 2);
+      }
+      this.lastAng = ang;
+      this.prog = clamp01(Math.abs(this.turn) / (this.tune.turns ?? 1));
+      if (this.prog >= 1) this.done = true;
+    } else if (kind === 'separate') {
       let px = x - this.ax, py = y - this.ay;
       const len = Math.hypot(px, py);
       const lim = t.r * 0.7;
@@ -119,7 +150,7 @@ export class Gesture {
       this.pull.x = px; this.pull.y = py;
       this.prog = clamp01(len / (t.r * 1.5));
       if (this.prog >= 1) this.done = true;
-    } else if (action === 'dig') {
+    } else if (kind === 'dig') {
       const dy = y - this.ly;
       this.lx = x; this.ly = y;
       if (this.phase === 'down') {
@@ -138,25 +169,34 @@ export class Gesture {
 
   up() {
     this.pressed = false;
-    if (this.action === 'separate') { this.pull.x = 0; this.pull.y = 0; }
-    if (this.action === 'cut' && !this.done) this.cut = null;
-    if (this.action === 'dig') this.dip = 0;
+    if (this.kind === 'separate') { this.pull.x = 0; this.pull.y = 0; }
+    if (this.kind === 'cut' && !this.done) this.cut = null;
+    if (this.kind === 'dig') this.dip = 0;
+    if (this.kind === 'hold') this.heldT = this.prog * (this.tune.secs ?? 2);
   }
 
   /** Time passes. Half-done work slowly un-does itself once the hand is off it. */
   tick(dt: number) {
     if (this.done) return;
     this.sinceStrike += dt;
-    if (this.action === 'smash') {
+    if (this.kind === 'smash') {
       if (this.struck > 0 && this.sinceStrike > 1.6) { this.struck = 0; this.prog = 0; }
       return;
     }
+    if (this.kind === 'hold' && this.pressed) {
+      this.heldT += dt;
+      this.prog = clamp01(this.heldT / (this.tune.secs ?? 2));
+      if (this.prog >= 1) this.done = true;
+      return;
+    }
     if (this.pressed) return;
-    const k = this.action === 'brush' ? 0.22 : 1.6;
+    const k = this.kind === 'brush' ? 0.22 : this.kind === 'hold' ? 0.5 : 1.6;
     this.prog = Math.max(0, this.prog - dt * k);
-    if (this.action === 'brush' && this.prog === 0) { this.path = 0; this.sweeps = 0; this.dir = 0; }
-    if (this.action === 'dig' && this.prog === 0) { this.scoops = 0; this.acc = 0; this.phase = 'down'; }
-    if (this.action === 'separate' || this.action === 'cut') { if (this.prog === 0) this.cut = null; }
+    if (this.kind === 'hold') this.heldT = this.prog * (this.tune.secs ?? 2);
+    if (this.kind === 'circle') this.turn = Math.sign(this.turn) * this.prog * (this.tune.turns ?? 1);
+    if (this.kind === 'brush' && this.prog === 0) { this.path = 0; this.sweeps = 0; this.dir = 0; }
+    if (this.kind === 'dig' && this.prog === 0) { this.scoops = 0; this.acc = 0; this.phase = 'down'; }
+    if (this.kind === 'separate' || this.kind === 'cut') { if (this.prog === 0) this.cut = null; }
   }
 
   /** Read and clear the strikes made since the last call. */

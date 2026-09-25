@@ -5,8 +5,43 @@ import { Glyph } from './Glyph';
 import { Plate3D } from './Plate3D';
 import { cn } from '@/lib/utils';
 import { routePaths } from '@/lib/routes';
+import { revealedPhysics } from '@/lib/processing/reveal';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, Source } from '@/lib/types';
+
+const MATERIAL_WORD: Record<string, string> = {
+  mineral: 'stone-like', wood: 'woody', bone: 'bony', fibre: 'stringy', earth: 'earthy', liquid: 'runny',
+  flame: 'fiery', metal: 'metallic', glass: 'glassy', made: 'made', living: 'living', abstract: 'abstract',
+};
+
+/** A short, shareable line — never a claim, never a spoiler for anyone reading it. */
+function shareText(node: Discovery, core: number, coreTotal: number): string {
+  return `I discovered ${node.n} in Evolution Sandbox — ${core} of ${coreTotal} so far.`;
+}
+
+/** Share, if the browser offers it (mostly phones); otherwise copy to the clipboard.
+ *  Never load-bearing: a failure or a declined share is quietly swallowed. */
+function ShareButton({ node, engine }: { node: Discovery; engine: Engine }) {
+  const [state, setState] = useState<'idle' | 'copied' | 'shared'>('idle');
+  const onShare = async () => {
+    const text = shareText(node, engine.stats().core, engine.stats().coreTotal);
+    try {
+      if (typeof navigator !== 'undefined' && navigator.share) {
+        await navigator.share({ text, title: 'Evolution Sandbox' });
+        setState('shared');
+      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        await navigator.clipboard.writeText(text);
+        setState('copied');
+      }
+    } catch { /* the person cancelled, or the browser refused — never load-bearing */ return; }
+    window.setTimeout(() => setState('idle'), 2200);
+  };
+  return (
+    <button type="button" className="chip" onClick={onShare}>
+      {state === 'idle' ? 'Share this find' : state === 'copied' ? 'Copied' : 'Shared'}
+    </button>
+  );
+}
 
 const RARITY_LABEL: Record<string, string> = {
   common: 'Common', uncommon: 'Uncommon', rare: 'Rare', hidden: 'Hidden find',
@@ -172,6 +207,32 @@ export function ExhibitPanel({
         <section className="sec">
           <h3>Discovery</h3>
           <p className="lead">{node.l1}</p>
+          <ShareButton node={node} engine={engine} />
+        </section>
+
+        <section className="sec">
+          <h3>What it&rsquo;s like</h3>
+          {(() => {
+            const { ph, reveals, unknownCount } = revealedPhysics(engine, node);
+            return (
+              <>
+                <p className="mono" style={{ color: 'var(--bone-4)' }}>{MATERIAL_WORD[ph.materialClass]}</p>
+                <div className="reqrow" style={{ flexWrap: 'wrap' }}>
+                  {reveals.map(r => (
+                    <span key={r.id} className="chip" style={!r.known ? { opacity: 0.45 } : undefined}>
+                      {r.known ? r.word : '???'}
+                    </span>
+                  ))}
+                  {reveals.length === 0 && <span className="chip" style={{ opacity: 0.45 }}>???</span>}
+                </div>
+                <p className="alt-note mono" style={{ marginTop: 8 }}>
+                  {usesFound.length} known {usesFound.length === 1 ? 'reaction' : 'reactions'}
+                  {usesOpen > 0 && ` · ${usesOpen} more not yet found`}
+                  {unknownCount > 0 && ` · ${unknownCount} ${unknownCount === 1 ? 'property' : 'properties'} still unknown`}
+                </p>
+              </>
+            );
+          })()}
         </section>
 
         <section className="sec">

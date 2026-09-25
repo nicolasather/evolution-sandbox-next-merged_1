@@ -25,6 +25,50 @@
    "hafted_tool",
    "quarry",
    "bronze_tools"
+  ],
+  "hammer": [
+   "hammering",
+   "stone_tool",
+   "handaxe",
+   "hafted_tool",
+   "axe",
+   "pickaxe",
+   "sledge",
+   "mattock"
+  ],
+  "flame": [
+   "fire",
+   "controlled_fire",
+   "campfire",
+   "hearth",
+   "torch",
+   "kiln"
+  ],
+  "kiln": [
+   "kiln"
+  ],
+  "wet": [
+   "water"
+  ],
+  "mold": [
+   "pottery",
+   "brick"
+  ],
+  "metalblade": [
+   "bronze_tools",
+   "ironworking",
+   "iron",
+   "steel"
+  ],
+  "optics": [
+   "optics",
+   "geometry",
+   "magnification"
+  ],
+  "cord": [
+   "cordage",
+   "rope",
+   "binding"
   ]
  },
  "materialTags": {
@@ -143,6 +187,46 @@
   ],
   "ash": [
    "loose"
+  ],
+  "wet_clay": [
+   "plastic",
+   "wet"
+  ],
+  "shaped_clay": [
+   "plastic"
+  ],
+  "dried_clay": [
+   "brittle",
+   "dry",
+   "earthy"
+  ],
+  "shavings": [
+   "loose",
+   "burnable",
+   "dry"
+  ],
+  "flour": [
+   "loose",
+   "dry",
+   "burnable"
+  ],
+  "molten_copper": [
+   "fluid",
+   "hot",
+   "metal"
+  ],
+  "poured_copper": [
+   "hot",
+   "metal",
+   "heavy"
+  ],
+  "polished_stone": [
+   "hard",
+   "mineral"
+  ],
+  "water": [
+   "fluid",
+   "wet"
   ]
  },
  "states": [
@@ -217,6 +301,54 @@
    "n": "Crushed Ore",
    "era": "metallurgy",
    "l1": "Broken small enough to pick the bright bits out."
+  },
+  {
+   "id": "wet_clay",
+   "n": "Wet Clay",
+   "era": "settlement",
+   "l1": "Clay softened with water until it works like dough."
+  },
+  {
+   "id": "shaped_clay",
+   "n": "Shaped Clay",
+   "era": "settlement",
+   "l1": "Clay drawn up into a vessel. Soft still: it slumps if left."
+  },
+  {
+   "id": "dried_clay",
+   "n": "Dried Clay",
+   "era": "settlement",
+   "l1": "Shaped clay left until it lost its water. Pale, stiff and brittle."
+  },
+  {
+   "id": "shavings",
+   "n": "Wood Shavings",
+   "era": "origins",
+   "l1": "Thin curls of wood scraped off. Dry, and quick to catch."
+  },
+  {
+   "id": "flour",
+   "n": "Flour",
+   "era": "agriculture",
+   "l1": "Seed ground between stones into a fine meal."
+  },
+  {
+   "id": "polished_stone",
+   "n": "Polished Stone",
+   "era": "origins",
+   "l1": "Stone rubbed against sand until it shines and takes an edge."
+  },
+  {
+   "id": "molten_copper",
+   "n": "Molten Copper",
+   "era": "metallurgy",
+   "l1": "Copper gone bright and runny. It will take the shape of whatever holds it."
+  },
+  {
+   "id": "poured_copper",
+   "n": "Poured Copper",
+   "era": "metallurgy",
+   "l1": "Metal in a mould, still glowing. It has to set."
   }
  ],
  "transforms": [
@@ -345,6 +477,275 @@
     "copper"
    ],
    "say": "You pick out the bright nuggets: native copper."
+  },
+  {
+   "from": "stick",
+   "action": "carve",
+   "out": [
+    "spear"
+   ],
+   "needs": "edged",
+   "say": "The tip is worn down to a point."
+  },
+  {
+   "from": "lumber",
+   "action": "carve",
+   "out": [
+    "wooden_bowl"
+   ],
+   "needs": "edged",
+   "say": "You scoop the heart out of the timber."
+  },
+  {
+   "from": "lumber",
+   "action": "chisel",
+   "out": [
+    "wooden_bowl"
+   ],
+   "needs": "edged",
+   "say": "Tap by tap the hollow deepens."
+  },
+  {
+   "from": "bone",
+   "action": "chisel",
+   "out": [
+    "bone_container"
+   ],
+   "needs": "edged",
+   "say": "You tap out the marrow, leaving a hollow shell."
+  },
+  {
+   "from": "bark",
+   "action": "scrape",
+   "out": [
+    "strands"
+   ],
+   "needs": "edged",
+   "say": "The inner bark comes away in long threads."
+  },
+  {
+   "from": "wood",
+   "action": "scrape",
+   "out": [
+    "shavings"
+   ],
+   "needs": "edged",
+   "say": "Curls of dry wood fall away."
+  },
+  {
+   "from": "seed",
+   "action": "grind",
+   "out": [
+    "flour"
+   ],
+   "say": "Between two stones the seeds become meal."
+  },
+  {
+   "from": "fiber",
+   "action": "pull",
+   "out": [
+    "strands"
+   ],
+   "say": "The fibre draws out fine and long."
+  },
+  {
+   "from": "strands",
+   "action": "twist",
+   "out": [
+    "cordage"
+   ],
+   "say": "Each strand turns round the next — and holds."
+  },
+  {
+   "from": "cordage",
+   "action": "twist",
+   "out": [
+    "rope"
+   ],
+   "say": "Cord turned on cord: thick enough to haul."
+  },
+  {
+   "from": "grass",
+   "action": "tie",
+   "out": [
+    "thatch"
+   ],
+   "needs": "cord",
+   "say": "A bundle, bound tight at the top."
+  },
+  {
+   "from": "cordage",
+   "action": "tie",
+   "out": [
+    "binding"
+   ],
+   "say": "A knot that holds under load."
+  },
+  {
+   "from": "rope",
+   "action": "stretch",
+   "out": [
+    "net"
+   ],
+   "say": "Drawn out, the rope opens into a mesh."
+  },
+  {
+   "from": "clay",
+   "action": "mix",
+   "out": [
+    "wet_clay"
+   ],
+   "needs": "wet",
+   "say": "Water works in until the clay is soft."
+  },
+  {
+   "from": "wet_clay",
+   "action": "shape",
+   "out": [
+    "shaped_clay"
+   ],
+   "say": "The walls rise under your palms."
+  },
+  {
+   "from": "shaped_clay",
+   "action": "dry",
+   "out": [
+    "dried_clay"
+   ],
+   "say": "Left in the air, it pales and stiffens."
+  },
+  {
+   "from": "dried_clay",
+   "action": "heat",
+   "out": [
+    "pottery"
+   ],
+   "needs": "flame",
+   "say": "Fired hard, it rings when tapped: pottery."
+  },
+  {
+   "from": "sand",
+   "action": "heat",
+   "out": [
+    "glass"
+   ],
+   "needs": "kiln",
+   "say": "In a hot enough fire the sand runs clear."
+  },
+  {
+   "from": "glass",
+   "action": "polish",
+   "out": [
+    "lens"
+   ],
+   "needs": "optics",
+   "say": "Ground and polished, it bends light."
+  },
+  {
+   "from": "cleaned_stone",
+   "action": "polish",
+   "out": [
+    "polished_stone"
+   ],
+   "say": "Rubbed with sand until it shines."
+  },
+  {
+   "from": "wood",
+   "action": "burn",
+   "out": [
+    "charcoal"
+   ],
+   "needs": "flame",
+   "say": "Smothered as it burns, the wood turns black and light."
+  },
+  {
+   "from": "charcoal",
+   "action": "burn",
+   "out": [
+    "ash"
+   ],
+   "needs": "flame",
+   "say": "Burned through, only pale ash is left."
+  },
+  {
+   "from": "copper",
+   "action": "heat",
+   "out": [
+    "molten_copper"
+   ],
+   "needs": "kiln",
+   "say": "The metal slumps, then runs bright."
+  },
+  {
+   "from": "molten_copper",
+   "action": "pour",
+   "out": [
+    "poured_copper"
+   ],
+   "needs": "mold",
+   "say": "Poured into the mould, it takes the shape."
+  },
+  {
+   "from": "poured_copper",
+   "action": "cool",
+   "out": [
+    "casting"
+   ],
+   "say": "It sets, and the mould gives it up: a cast."
+  },
+  {
+   "from": "copper",
+   "action": "hammer",
+   "out": [
+    "forging"
+   ],
+   "needs": "hammer",
+   "say": "Hammered, the copper hardens and spreads."
+  },
+  {
+   "from": "bronze",
+   "action": "hammer",
+   "out": [
+    "forging"
+   ],
+   "needs": "hammer",
+   "say": "Hammered, the bronze holds an edge."
+  },
+  {
+   "from": "stone",
+   "action": "split",
+   "out": [
+    "stone_flake"
+   ],
+   "needs": "hammer",
+   "say": "A single blow strikes a flake clean off."
+  },
+  {
+   "from": "wood",
+   "action": "split",
+   "out": [
+    "lumber"
+   ],
+   "needs": "hammer",
+   "say": "The log opens along the grain."
+  },
+  {
+   "from": "strands",
+   "action": "press",
+   "out": [
+    "pulp"
+   ],
+   "needs": "wet",
+   "say": "Pressed wet, the fibres mat together."
+  },
+  {
+   "from": "wood",
+   "action": "saw",
+   "out": [
+    "lumber"
+   ],
+   "needs": "metalblade",
+   "say": "A metal edge parts the log in one clean cut."
   }
  ],
  "unlocks": [
@@ -701,6 +1102,28 @@
      "virtual_city",
      "artificial_intelligence"
     ]
+   },
+   {
+    "id": "axe",
+    "rec": [
+     "polished_stone",
+     "stick",
+     "strands"
+    ]
+   },
+   {
+    "id": "fire",
+    "rec": [
+     "shavings",
+     "stick"
+    ]
+   },
+   {
+    "id": "cooking",
+    "rec": [
+     "controlled_fire",
+     "flour"
+    ]
    }
   ],
   "retire": [
@@ -778,6 +1201,110 @@
   "hunting": {
    "n": "Hunting Kit",
    "l1": "Spears, cords and a plan, carried together for the chase."
+  }
+ },
+ "physics": {
+  "stick": {
+   "shape": "rod"
+  },
+  "bark": {
+   "shape": "sheet"
+  },
+  "strands": {
+   "shape": "strand"
+  },
+  "fiber": {
+   "shape": "strand"
+  },
+  "seed": {
+   "shape": "grain"
+  },
+  "sand": {
+   "shape": "pile"
+  },
+  "soil": {
+   "shape": "pile"
+  },
+  "clay": {
+   "shape": "pile"
+  },
+  "wet_clay": {
+   "shape": "pile"
+  },
+  "flour": {
+   "shape": "pile"
+  },
+  "ash": {
+   "shape": "pile"
+  },
+  "crushed_ore": {
+   "shape": "pile"
+  },
+  "shavings": {
+   "shape": "strand"
+  },
+  "water": {
+   "shape": "liquid"
+  },
+  "shaped_clay": {
+   "shape": "vessel"
+  },
+  "dried_clay": {
+   "shape": "vessel"
+  },
+  "pottery": {
+   "shape": "vessel"
+  },
+  "wooden_bowl": {
+   "shape": "vessel"
+  },
+  "bone_container": {
+   "shape": "vessel"
+  },
+  "sharp_stone": {
+   "shape": "shard"
+  },
+  "bone_shards": {
+   "shape": "shard"
+  },
+  "stone_flake": {
+   "shape": "shard"
+  },
+  "flint": {
+   "shape": "shard"
+  },
+  "cloth": {
+   "shape": "sheet"
+  },
+  "paper": {
+   "shape": "sheet"
+  },
+  "thatch": {
+   "shape": "sheet"
+  },
+  "cordage": {
+   "shape": "strand"
+  },
+  "rope": {
+   "shape": "strand"
+  },
+  "molten_copper": {
+   "shape": "liquid"
+  },
+  "poured_copper": {
+   "shape": "block"
+  },
+  "lumber": {
+   "shape": "block"
+  },
+  "plant": {
+   "shape": "strand",
+   "props": [
+    "flammable"
+   ]
+  },
+  "grass": {
+   "shape": "strand"
   }
  }
 }

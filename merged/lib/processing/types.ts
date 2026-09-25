@@ -1,7 +1,8 @@
 import type { ActionId, Category, EraId } from '../types';
 
-/** The two things a player can HOLD that let their hands do more. Not items on the bench. */
-export type Capability = 'edged' | 'digger';
+/** Something a player can HOLD that lets their hands do more (an edge, a digger, a flame, a hammer…).
+ *  Not an item on the bench: the set of items that give it is data (`capabilities` in processing.json). */
+export type Capability = string;
 
 /** A worked or offered form of a resource: Stick, Clay, Sand… Held and used like a discovery,
  *  never counted or shown in the archive. */
@@ -40,10 +41,21 @@ export interface UnlockDef {
   say: string;
 }
 
+/** What a resource is, when its tags do not say enough. */
+export interface PhysicsOverride {
+  shape?: string;
+  material?: string;
+  props?: string[];
+  /** Extra states it can be in (wet, dry, hot…) beyond what its tags imply. */
+  mods?: string[];
+}
+
 export interface RecipeEdit { id: string; rec: string[] }
 
 export interface ProcessingData {
   capabilities: Record<Capability, string[]>;
+  /** Physical overrides by id (shape, extra properties) — the rest is worked out from tags (physics.ts). */
+  physics?: Record<string, PhysicsOverride>;
   /** Default tags by craft material. */
   materialTags: Record<string, string[]>;
   /** Extra tags by item id. */

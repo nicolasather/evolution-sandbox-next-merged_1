@@ -22,7 +22,11 @@ import type { Body, ContactInfo, MaterialId, ZoneId } from './types';
    when everything is at rest.
    ========================================================================== */
 
-export interface Resolved { id: string; n: string; vis: string; cat: string; era: string; no?: number }
+export interface Resolved {
+  id: string; n: string; vis: string; cat: string; era: string; no?: number;
+  /** Physical record (lib/processing/physics.ts): drives looks and how the environment treats it. */
+  phys?: { materialClass: string; shapeClass: string; properties: string[]; chars: boolean; soaks: boolean; windy: number };
+}
 
 export interface WorldHooks {
   resolve(id: string): Resolved | null;
@@ -190,6 +194,12 @@ export class World {
     el.dataset.item = itemId;
     el.dataset.mat = material;
     if (res?.era) el.dataset.era = res.era;
+    if (res?.phys) {
+      el.dataset.mclass = res.phys.materialClass;
+      el.dataset.shape = res.phys.shapeClass;
+      if (res.phys.properties.length) el.dataset.props = res.phys.properties.join(' ');
+      if (res.phys.windy > 0) el.dataset.windy = res.phys.windy >= 0.9 ? '2' : '1';
+    }
     el.style.width = `${r * 2}px`;
     el.style.height = `${r * 2}px`;
     const art = res ? svg({ id: res.id, vis: res.vis, cat: res.cat }) : partSvg(itemId);
@@ -213,6 +223,8 @@ export class World {
       heat: 0, glow: 0, held: false, locked: false, solid: true, grabbable: true,
       prepared: new Set(), zone: null, el, temp: false, tx: x, ty: y, targetAngle: 0, rest: 0,
       age: o.pop === false ? 1 : 0, layer: 0, kick: 0, kickT: 0, outside: false, outT: 0,
+      env: { chars: !!res?.phys?.chars, soaks: !!res?.phys?.soaks }, warm: 0, wet: 0, scorch: 0,
+      brittle: !!res?.phys?.properties?.includes('brittle'), wear: 0,
     };
     b.targetAngle = b.angle;
     this.bodies.push(b);
@@ -283,8 +295,24 @@ export class World {
       if (b.held || b.z > 0.1 || b.age < 1 || b.q * b.q > 1e-4 || Math.abs(b.qv) > 0.01
         || Math.abs(b.vx) + Math.abs(b.vy) > 4 || Math.abs(b.av) > 0.03 || b.locked || b.outside
         || Math.abs(b.ox) + Math.abs(b.oy) > 0.05 || Math.abs(b.targetAngle - b.angle) > 0.01) return true;
+      // the environment is still working on it (warming, cooling, soaking, drying)
+      if ((b.warm > 0.004 && b.warm < 0.996) || (b.wet > 0.004 && b.wet < 0.996) || this.envMoving(b)) return true;
     }
     return false;
+  }
+
+  /** A flame or water is close enough that a fresh ramp is under way. */
+  private envMoving(b: Body): boolean {
+    if (b.temp || b.outside) return false;
+    return (this.nearFire(b) && b.warm < 0.996) || (b.env.chars && b.warm > 0.99 && b.scorch < 1) || (this.nearWater(b) && b.env.soaks && b.wet < 0.996);
+  }
+  private nearFire(b: Body): boolean {
+    for (const o of this.bodies) if (o !== b && o.material === 'fire' && !o.temp && !o.outside && Math.hypot(o.x - b.x, o.y - b.y) < (o.r + b.r) * 1.55) return true;
+    return b.zone === 'hearth' && b.material !== 'fire' && b.material !== 'idea' && b.material !== 'signal' && b.material !== 'energy';
+  }
+  private nearWater(b: Body): boolean {
+    for (const o of this.bodies) if (o !== b && o.material === 'liquid' && !o.temp && !o.outside && Math.hypot(o.x - b.x, o.y - b.y) < (o.r + b.r) * 1.35) return true;
+    return b.zone === 'basin';
   }
 
   step(dt: number) {
@@ -345,7 +373,11 @@ export class World {
           b.vz -= G * dt; b.z += b.vz * dt;
           if (b.z <= 0) {
             const s = -b.vz; b.z = 0; b.vz = 0;
-            if (s > 60) { b.q = Math.max(b.q, Math.min(0.32, s / 2400 + b.props.squash)); this.hooks.onLand(b, s); this.landed(b, s); }
+            if (s > 60) {
+              b.q = Math.max(b.q, Math.min(0.32, s / 2400 + b.props.squash)); this.hooks.onLand(b, s); this.landed(b, s);
+              this.wearHit(b, s);
+              if (b.material === 'liquid' && s > 120 && !b.temp) this.splash(b);
+            }
           }
         }
         const zoneDrag = z === 'basin' ? 2.4 : z === 'anvil' ? 1.2 : 1;
@@ -371,6 +403,38 @@ export class World {
 
     this.collide(dt);
     this.tickTouch(dt);
+    this.environment(dt);
+  }
+
+  /** Fire warms what is beside it and, given time, scorches what burns; water soaks what drinks it; both fade
+   *  when the source goes. Cheap: a handful of bodies, and nothing at all when there is no fire or water. */
+  private environment(dt: number) {
+    let any = false;
+    for (const o of this.bodies) if (!o.temp && (o.material === 'fire' || o.material === 'liquid')) { any = true; break; }
+    for (const b of this.bodies) {
+      if (b.temp || b.outside) continue;
+      if (!any && b.zone === null && b.warm === 0 && b.wet === 0) continue;
+      const isSource = b.material === 'fire' || b.material === 'liquid';
+      const warmTo = !isSource && !b.held && this.nearFire(b) ? 1 : 0;
+      const wetTo = b.env.soaks && !b.held && this.nearWater(b) ? 1 : 0;
+      b.warm += (warmTo - b.warm) * Math.min(1, dt * (warmTo ? 0.9 : 0.6));
+      b.wet += (wetTo - b.wet) * Math.min(1, dt * (wetTo ? 0.8 : 0.25));
+      if (b.warm < 0.004) b.warm = 0; else if (b.warm > 0.996) b.warm = 1;
+      if (b.wet < 0.004) b.wet = 0; else if (b.wet > 0.996) b.wet = 1;
+      // a flame beside a thing that burns, for long enough, leaves a mark that stays; water takes it out of the heat
+      if (b.env.chars && b.warm > 0.99 && b.wet < 0.2) b.scorch = Math.min(1, b.scorch + dt * 0.18);
+      if (b.warm > 0.02 && !b.held) b.heat = Math.max(b.heat, b.warm * 0.6);
+    }
+  }
+
+  /** A ripple where a liquid lands: a ring that grows and goes. DOM only, removed when done. */
+  private splash(b: Body) {
+    const el = document.createElement('i');
+    el.className = 'wb-ripple';
+    el.style.left = `${b.x}px`; el.style.top = `${b.y}px`;
+    el.style.width = el.style.height = `${b.r * 3.2}px`;
+    this.host.appendChild(el);
+    window.setTimeout(() => el.remove(), 760);
   }
 
   private walls(b: Body) {
@@ -387,7 +451,16 @@ export class World {
     if (b.x > x1) { b.x = x1; if (b.vx > 0) { hit = Math.max(hit, b.vx); b.vx = -b.vx * (0.25 + b.props.bounce * 0.7); } }
     if (b.y < y0) { b.y = y0; if (b.vy < 0) { hit = Math.max(hit, -b.vy); b.vy = -b.vy * (0.25 + b.props.bounce * 0.7); } }
     if (b.y > y1) { b.y = y1; if (b.vy > 0) { hit = Math.max(hit, b.vy); b.vy = -b.vy * (0.25 + b.props.bounce * 0.7); } }
-    if (hit > 80) { b.q = Math.max(b.q, Math.min(0.28, hit / 3200 + b.props.squash)); this.hooks.onWall(b, hit); }
+    if (hit > 80) { b.q = Math.max(b.q, Math.min(0.28, hit / 3200 + b.props.squash)); this.hooks.onWall(b, hit); this.wearHit(b, hit); }
+  }
+
+  /** A hard knock against something brittle leaves a lasting mark — cosmetic only (never a stat,
+   *  never blocks an action), and only on materials physics.ts calls brittle; everything else just
+   *  squashes (`q`) and springs back. Never decays: once cracked, it stays cracked this session. */
+  private wearHit(b: Body, strength: number) {
+    if (!b.brittle || b.temp) return;
+    const add = Math.max(0, (strength - 500) / 6000);
+    if (add > 0) b.wear = Math.min(1, b.wear + add);
   }
 
   /** A body just came down: if it landed on another, that is a drop. */
@@ -435,6 +508,7 @@ export class World {
           if (speed > 60) {
             a.q = Math.max(a.q, Math.min(0.3, speed / 2600 + a.props.squash * 0.8));
             b.q = Math.max(b.q, Math.min(0.3, speed / 2600 + b.props.squash * 0.8));
+            this.wearHit(a, speed); this.wearHit(b, speed);
             const rm = (a.mass * b.mass) / (a.mass + b.mass);
             const drop = Math.max(0, (a.z > 2 ? 1 : 0) + (b.z > 2 ? 1 : 0)) > 0;
             if (speed > 200) {
@@ -533,6 +607,23 @@ export class World {
     st.setProperty('--z', lift.toFixed(2));
     st.setProperty('--heat', b.heat.toFixed(3));
     st.setProperty('--glow', b.glow.toFixed(3));
+    if (b.warm !== 0 || b.el.hasAttribute('data-warm')) {
+      st.setProperty('--warm', b.warm.toFixed(3));
+      if (b.warm > 0.4) b.el.setAttribute('data-warm', ''); else b.el.removeAttribute('data-warm');
+    }
+    if (b.wet !== 0 || b.el.hasAttribute('data-wet')) {
+      st.setProperty('--wet', b.wet.toFixed(3));
+      if (b.wet > 0.4) b.el.setAttribute('data-wet', ''); else b.el.removeAttribute('data-wet');
+    }
+    if (b.scorch > 0 || b.el.hasAttribute('data-scorch')) {
+      st.setProperty('--scorch', b.scorch.toFixed(3));
+      if (b.scorch > 0.35) b.el.setAttribute('data-scorch', ''); else b.el.removeAttribute('data-scorch');
+    }
+    if (b.wear > 0) {
+      st.setProperty('--wear', b.wear.toFixed(3));
+      if (b.wear >= 0.85) b.el.setAttribute('data-damage', 'broken');
+      else if (b.wear >= 0.35) b.el.setAttribute('data-damage', 'cracked');
+    }
     if (b.lbl) {
       b.lbl.style.transform = `translate3d(${(b.x + b.ox).toFixed(1)}px, ${(b.y + b.oy + b.r * 0.92).toFixed(1)}px, 0) translateX(-50%)`;
       b.lbl.style.zIndex = st.zIndex;

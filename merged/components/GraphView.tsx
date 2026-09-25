@@ -133,6 +133,8 @@ export function GraphView({
   /** Discoveries made since the graph last showed them: they pulse once. */
   const pulses = useRef(new Map<string, number>());
   const knownAtLastDraw = useRef<Set<string> | null>(null);
+  /** Undiscovered entries whose ingredients are all in hand — drawn as "???", never named. */
+  const branches = useRef<{ n: number; set: Set<string> }>({ n: -1, set: new Set() });
   const [tip, setTip] = useState<{ x: number; y: number; node: Discovery } | null>(null);
   const [trace, setTrace] = useState(true);
 
@@ -251,6 +253,17 @@ export function GraphView({
     }
     knownAtLastDraw.current = new Set(engine.found);
 
+    // unknown branches: not yet found, and not a hidden find, but every ingredient of some
+    // route to it is already in hand — "there is something here", never what
+    if (branches.current.n !== engine.found.size) {
+      const set = new Set<string>();
+      for (const id of Object.keys(layout.pos)) {
+        const node = layout.pos[id].node;
+        if (engine.has(id) || node.hidden) continue;
+        if (node.rec?.some(([a, b]) => engine.has(a) && engine.has(b))) set.add(id);
+      }
+      branches.current = { n: engine.found.size, set };
+    }
     const { x: tx, y: ty, k } = view.current;
     const show = (id: string) => !onlyPath || engine.has(id);
     const X = (p: Pos) => p.x * k + tx, Y = (p: Pos) => p.y * k + ty;
@@ -316,11 +329,17 @@ export function GraphView({
       const known = engine.has(id);
       const lit = inTrace(id);
       const isFocus = id === focusId;
-      const r = known ? (hover.current === id || isFocus ? 6.5 : 4.6) : 2.2;
+      const branch = !known && branches.current.set.has(id);
+      const r = known ? (hover.current === id || isFocus ? 6.5 : 4.6) : branch ? 3.2 : 2.2;
       c.globalAlpha = lit ? 1 : (L ? 0.18 - 0.0 : 0.18);
       c.beginPath(); c.arc(x, y, r, 0, Math.PI * 2);
-      c.fillStyle = known ? (P.rar[p.node.rar] ?? P.rar.common) : alpha(P.bone, 0.16);
+      c.fillStyle = known ? (P.rar[p.node.rar] ?? P.rar.common) : alpha(P.bone, branch ? 0.3 : 0.16);
       c.fill();
+      if (branch) {
+        c.beginPath(); c.arc(x, y, r + 3, 0, Math.PI * 2);
+        c.setLineDash([2, 3]); c.strokeStyle = alpha(P.bone, 0.32); c.lineWidth = 1; c.stroke(); c.setLineDash([]);
+        if (k > 0.5) { c.fillStyle = alpha(P.bone, 0.42); c.fillText('???', x + 10, y + 4); }
+      }
       if (known) {
         c.beginPath(); c.arc(x, y, r + 3.5, 0, Math.PI * 2);
         c.strokeStyle = hover.current === id || isFocus ? alpha(P.ochre, 0.95) : alpha(P.bone, 0.16);
@@ -544,6 +563,7 @@ export function GraphView({
         <span><i className="dot r-rare" />rare</span>
         <span><i className="dot r-hidden" />hidden</span>
         <span style={{ opacity: 0.7 }}>faint = not found yet</span>
+        <span style={{ opacity: 0.7 }}>??? = something you could make now</span>
       </div>
 
       {tip && (

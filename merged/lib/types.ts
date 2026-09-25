@@ -18,8 +18,14 @@ export type StoneAgeTier = 'olduvai' | 'middle' | 'late';
  *  (data/processing.json, lib/processing/overlay.ts) can raise them to 3, 4 or 5. */
 export type Recipe = string[];
 
-/** The five things a hand can do to one resource. Semantics live in lib/processing/actions.ts. */
-export type ActionId = 'brush' | 'smash' | 'cut' | 'separate' | 'dig';
+/** The things a hand can do to one resource. Which of them the player knows is decided by
+ *  lib/processing/techniques.ts; what each does to what is data (data/processing.json);
+ *  how each is performed is lib/craft/kinds.ts. */
+export type ActionId =
+  | 'brush' | 'smash' | 'cut' | 'separate' | 'dig'
+  | 'carve' | 'scrape' | 'grind' | 'pull' | 'twist' | 'tie' | 'stretch' | 'mix' | 'shape'
+  | 'pour' | 'heat' | 'cool' | 'dry' | 'burn' | 'hammer' | 'split' | 'press' | 'saw'
+  | 'chisel' | 'polish';
 
 /** A discovery that is made by working ONE resource with an action (Stone → Smash → …). */
 export interface ProcessRoute { from: string; action: ActionId }
@@ -175,6 +181,8 @@ interface Made {
   reopened: string[][];
   /** New materials the world offered as a consequence (Soil after the first Stick). */
   unlocked: Discovery[];
+  /** The first thing found in its era: the player has arrived somewhere new. */
+  firstOfEra: boolean;
 }
 
 export type CombineResult =
@@ -197,16 +205,23 @@ export type ProcessResult =
       fresh: Discovery[];
       unlocked: Discovery[];
       message: string;
+      /** A small thing noticed while working: what the material is like. Once per insight. */
+      insight?: { id: string; text: string; property: string };
     }
   | {
       status: 'nothing';
       action: ActionId;
       from: Discovery;
-      /** Why: `material` (wrong for this material), `tool` (something is missing), `spent` (worked out). */
-      reason: 'material' | 'tool' | 'spent';
+      /** Why: `material` (wrong for this material), `tool` (something is missing), `spent` (worked out),
+       *  `locked` (the technique is not known yet). */
+      reason: 'material' | 'tool' | 'spent' | 'locked';
+      /** How the player should read the refusal: `impossible` (this material never does that),
+       *  `close` (right material, the wrong action or order), `tool` (something is missing). */
+      kind?: 'impossible' | 'close' | 'wrong_action' | 'tool' | 'spent' | 'locked';
       message: string;
       /** A second, gentler line — for `tool`, what kind of thing is missing. */
       note: string | null;
+      insight?: { id: string; text: string; property: string };
     }
   | { status: 'tier_locked'; action: ActionId; from: Discovery; message: string; gate: TierGate }
   | { status: 'error' };
@@ -229,8 +244,8 @@ export interface TierProgress {
 
 export type ViewId = 'work' | 'graph' | 'arch' | 'time';
 
-/** What the hint line shows. Five levels, never a recipe until the last, and then only in roles:
- *  1 conceptual · 2 directional · 3 the kind of work · 4 how many components · 5 what kind of pieces. */
+/** What the hint line shows. Five levels, and the last is the only one that names a piece (never both):
+ *  1 vague · 2 material (what the pieces are like) · 3 the kind of work · 4 a ghost hand, or how many pieces · 5 direct. */
 export type HintLevel = 0 | 1 | 2 | 3 | 4 | 5;
 export interface HintView {
   targetId: string | null;
@@ -248,4 +263,8 @@ export interface HintView {
   stuck: boolean;
   /** Action the hint leans on at level 3+ (for the hand animation on the bench). */
   action: ActionId | null;
+  /** Level 4+: a faint hand shows this gesture on this piece, if it is on the bench. */
+  ghost: { action: ActionId; from: string } | null;
+  /** A word on HOW the player is playing (never what to make), when they have been stuck and no hint is open. */
+  coach: string | null;
 }

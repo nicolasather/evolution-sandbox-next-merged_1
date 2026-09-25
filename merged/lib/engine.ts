@@ -16,10 +16,14 @@
      and the strongest hint names ONE ingredient, never both;
    - undiscovered names, routes and uses are never shown before they are found.
    ========================================================================== */
-import { ACTIONS, CAPABILITY_NOTE, refusal } from './processing/actions';
+import { ACTIONS, capabilityNote, refusal } from './processing/actions';
 import { assess as assessSet, probe as probeSet, type AssessCtx, type Pull, type RecipeRow } from './processing/assess';
 import { multiKey } from './processing/overlay';
+import { actionLine, behaviourLine, coachLine, level2Form, likeLine } from './processing/coach';
+import { insightFor } from './processing/insights';
+import { physicsOf } from './processing/physics';
 import { rolePhrase, sayRoles, tagsOf } from './processing/tags';
+import { TECHNIQUES, TECH_BY_ID, ruleHolds, type Family } from './processing/techniques';
 import type { Capability, Processing, TransformDef } from './processing/types';
 import type {
   ActionId, CombineResult, Db, Discovery, Era, FailInfo, HintLevel, HintView, Potential, ProcessResult,
@@ -41,6 +45,20 @@ export const stepItems = (s: Step): string[] => (s.p ? [s.a] : [s.a, s.b, ...(s.
 
 interface HintState { target: string | null; level: HintLevel; tries: number; custom: boolean }
 
+/** A technique the player has just learned — the interface announces it once. */
+export interface Reveal {
+  kind: 'technique';
+  action: ActionId;
+  label: string;
+  family: Family;
+  /** One line on what it is, never a recipe. */
+  message: string;
+  /** How many things already held could react to it (never which). */
+  affects: number;
+  /** How it came: by holding what it needs, or by answering a question. */
+  via: 'found' | 'question';
+}
+
 interface Saved {
   v: number; order: string[]; steps: Step[];
   failed: number; failedPairs: string[]; seen: string[];
@@ -50,6 +68,12 @@ interface Saved {
   when?: Record<string, number>;
   /** v3: everything held in the order it came (discoveries and worked states). */
   bag?: string[];
+  /** For the personal journal — discoveries made total, and how many leant on an escalated hint. Additive; older saves simply lack them. */
+  discoveredCount?: number; hintedCount?: number;
+  /** v4: techniques known, in the order learned. */
+  known?: ActionId[];
+  /** v4: small things noticed while working (see processing/insights.ts). */
+  insights?: string[];
 }
 
 export const pairKey = (a: string, b: string) => (a < b ? `${a} ${b}` : `${b} ${a}`);
@@ -104,8 +128,21 @@ export class Engine {
   private hint: HintState = { ...NO_HINT };
   /** Consecutive combinations that produced nothing new. */
   streak = 0;
+  /** Techniques known, in the order learned. */
+  known: ActionId[] = [];
+  private knownSet = new Set<ActionId>();
+  private reveals: Reveal[] = [];
+  /** Learned this session and not yet used: the rail lets these pulse. */
+  private newTech = new Set<ActionId>();
+  /** Small observations already made. */
+  private insights = new Set<string>();
+  /** What has been tried on each piece this session — the coach reads it; it is never a verdict. */
+  private tried = new Map<string, Set<ActionId>>();
   /** Onboarding stage: 0 = never combined, 1 = has combined, 2 = has discovered something. */
   coached = 0;
+  /** For the personal journal (never shown as a live counter, only a recap): discoveries made, and how many were made while a hint past level 0 was open on them. */
+  discoveredCount = 0;
+  private hintedCount = 0;
 
   /** True once saved progress has been restored into this engine. */
   resumed = false;
@@ -120,6 +157,7 @@ export class Engine {
   };
   getVersion = (): number => this.version;
   private emit() {
+    this.syncTechniques();
     this.version++;
     this.listeners.forEach(fn => fn());
   }
@@ -150,7 +188,82 @@ export class Engine {
     this.found = new Set(db.primitives);
     this.order = db.primitives.slice();
     this.bag = db.primitives.slice();
+    this.syncTechniques(true);
   }
+
+  /* ── techniques ─────────────────────────────────────────────────────── */
+  /** Whether the player has learned this technique yet. */
+  knows(a: ActionId): boolean { return this.knownSet.has(a); }
+
+  /** How many held resources have something to give to this action (never which). */
+  affectedBy(a: ActionId): number {
+    const proc = this.proc;
+    if (!proc) return 0;
+    let n = 0;
+    for (const id of this.bag) if (proc.byFrom.get(id)?.some(t => t.action === a)) n++;
+    return n;
+  }
+
+  /** How many held things still have a known technique worth trying on them, never tried yet
+   *  (each item counted once even if several of its ways are still open) — for the "welcome
+   *  back" recap. Never which, and never a live counter during play. */
+  openWork(): number {
+    const proc = this.proc;
+    if (!proc) return 0;
+    let n = 0;
+    for (const id of this.bag) {
+      const ts = proc.byFrom.get(id);
+      if (!ts) continue;
+      const done = this.tried.get(id);
+      for (const t of ts) {
+        if (!this.knownSet.has(t.action)) continue;
+        if (done?.has(t.action)) continue;
+        if (t.needs && !this.hasCap(t.needs)) continue;
+        n++;
+        break;
+      }
+    }
+    return n;
+  }
+
+  private learn(a: ActionId, via: 'found' | 'question', silent: boolean): boolean {
+    if (this.knownSet.has(a)) return false;
+    this.knownSet.add(a); this.known.push(a);
+    if (!silent) {
+      this.newTech.add(a);
+      const t = TECH_BY_ID[a];
+      this.reveals.push({ kind: 'technique', action: a, label: t.label, family: t.family, message: t.reveal, affects: this.affectedBy(a), via });
+    }
+    return true;
+  }
+
+  /** Learn every technique whose condition now holds. `silent`: restoring a save, nothing to announce. */
+  private syncTechniques(silent = false): void {
+    for (const t of TECHNIQUES) {
+      if (this.knownSet.has(t.id)) continue;
+      if (ruleHolds(t.unlock, id => this.holds(id), c => this.hasCap(c))) this.learn(t.id, 'found', silent);
+    }
+  }
+
+  /** A correct answer can teach a technique early. Returns whether it was new. */
+  teach(a: ActionId): boolean {
+    if (!TECH_BY_ID[a]) return false;
+    const fresh = this.learn(a, 'question', false);
+    if (fresh) { this.save(); this.emit(); }
+    return fresh;
+  }
+
+  /** Learned this session and not yet picked up. */
+  isNewTech(a: ActionId): boolean { return this.newTech.has(a); }
+  /** The player has taken it up: it stops pulsing. */
+  usedTech(a: ActionId): void { if (this.newTech.delete(a)) this.emit(); }
+
+  /** Techniques learned since the interface last looked. */
+  takeReveals(): Reveal[] { const r = this.reveals; this.reveals = []; return r; }
+  peekReveals(): number { return this.reveals.length; }
+
+  /** Techniques still unknown that could act on something held once learned, as a count — for a foreshadowing line. */
+  lockedCount(): number { return TECHNIQUES.length - this.knownSet.size; }
 
   /* ── holding ────────────────────────────────────────────────────────── */
   /** In hand: a discovery or a worked state. */
@@ -407,6 +520,8 @@ export class Engine {
     const node = this.byId[rid];
     const opensBefore = this.getUnlockedTiers();
     const isNew = !this.found.has(rid);
+    let firstOfEra = false;
+    if (isNew) { firstOfEra = true; for (const f of this.found) if (this.byId[f].era === node.era) { firstOfEra = false; break; } }
     const newRoute = !this.routes.has(rk);
     this.routes.add(rk);
     if (isNew) {
@@ -431,6 +546,7 @@ export class Engine {
     } else {
       this.hintTry();
     }
+    if (isNew) { this.discoveredCount++; if (solvedHint) this.hintedCount++; }
 
     const unlocked = this.runUnlocks();
     const opened = this.getUnlockedTiers().filter(t => !opensBefore.includes(t));
@@ -445,7 +561,7 @@ export class Engine {
     const items = itemIds.map(i => this.byId[i]);
     return {
       status: isNew ? 'new' : 'known', node, items, a: items[0], b: items[1] ?? items[0], process: via,
-      newRoute: !isNew && newRoute, routes: this.routeCount(rid), opened, solvedHint, reopened, unlocked,
+      newRoute: !isNew && newRoute, routes: this.routeCount(rid), opened, solvedHint, reopened, unlocked, firstOfEra,
     };
   }
 
@@ -457,7 +573,7 @@ export class Engine {
 
   /** Could this way of working be done right now (piece held, capability held)? */
   canWork(v: ProcessRoute): boolean {
-    if (!this.holds(v.from)) return false;
+    if (!this.holds(v.from) || !this.knows(v.action)) return false;
     const n = this.needsOf(v.from, v.action);
     return !n || this.hasCap(n);
   }
@@ -474,18 +590,34 @@ export class Engine {
     const proc = this.proc;
     if (!from || !proc || !this.holds(id) || !ACTIONS[action]) return { status: 'error' };
     if (!this.coached) this.coached = 1;
+    this.noteTried(id, action);
 
-    const nothing = (reason: 'material' | 'tool' | 'spent', message: string, note: string | null = null): ProcessResult => {
+    const nothing = (reason: 'material' | 'tool' | 'spent' | 'locked', message: string, note: string | null = null,
+      kind?: 'impossible' | 'close' | 'wrong_action'): ProcessResult => {
       this.streak++;
       if (reason !== 'spent') this.hintTry();
       this.save(); this.emit();
-      return { status: 'nothing', action, from, reason, message, note };
+      const k = reason === 'material' ? (kind ?? 'impossible') : reason;
+      const insight = reason === 'spent' || reason === 'locked' ? undefined : this.notice(id, action, 'nothing');
+      return { status: 'nothing', action, from, reason, kind: k, message, note, ...(insight ? { insight } : {}) };
     };
 
     const ts = (proc.byFrom.get(id) ?? []).filter((t: TransformDef) => t.action === action);
-    if (!ts.length) return nothing('material', refusal(action, from, tagsOf(proc, from)));
+    if (!ts.length) {
+      // right material, wrong way? the refusal says so without saying which way is right
+      const others = proc.byFrom.get(id) ?? [];
+      const oneStepOff = others.some(o => o.out.some(out => proc.byFrom.get(out)?.some(t2 => t2.action === action)));
+      if (oneStepOff) {
+        return nothing('material', `${from.n} is not ready for that yet. Something has to be done to it first.`,
+          null, 'close');
+      }
+      const text = refusal(action, from, tagsOf(proc, from));
+      if (others.length) return nothing('material', text, `${from.n} does respond to work — just not like this.`, 'wrong_action');
+      return nothing('material', text, null, 'impossible');
+    }
     const t = ts[0];
-    if (t.needs && !this.hasCap(t.needs)) return nothing('tool', this.bareHands(action, from), CAPABILITY_NOTE[t.needs]);
+    if (t.needs && !this.hasCap(t.needs)) return nothing('tool', this.bareHands(action, from), capabilityNote(t.needs));
+    if (!this.knows(action)) return nothing('locked', 'You have not learned how to do that yet.');
 
     // outputs the tier still holds back
     const outs = t.out.map(o => this.byId[o]).filter(Boolean);
@@ -526,12 +658,34 @@ export class Engine {
     unlocked = unlocked.filter((u, i, arr) => arr.findIndex(z => z.id === u.id) === i);
     // work that made a state is one more try at any hint, unless it was the hint's own answer
     if (!discoveries.length && this.hint.target && !this.holds(this.hint.target)) this.hintTry();
+    const insight = this.notice(id, action, 'done');
     this.save(); this.emit();
     return {
       status: 'done', action, from, outputs, discoveries, fresh, unlocked,
       message: t.say ?? `${from.n}, worked.`,
+      ...(insight ? { insight } : {}),
     };
   }
+
+  private noteTried(id: string, action: ActionId) {
+    let set = this.tried.get(id);
+    if (!set) { set = new Set(); this.tried.set(id, set); }
+    set.add(action);
+  }
+
+  /** A small thing about what the material is like, noticed once. */
+  private notice(from: string, action: ActionId, on: 'done' | 'nothing') {
+    const ins = insightFor(from, action, on);
+    if (!ins || this.insights.has(ins.id)) return undefined;
+    this.insights.add(ins.id);
+    return { id: ins.id, text: ins.text, property: ins.property };
+  }
+
+  /** Observations made so far (for the questions and the coach). */
+  insightsSeen(): string[] { return [...this.insights]; }
+
+  /** Whether the player has tried working anything with their hands yet. */
+  triedAnyWork(): boolean { return this.tried.size > 0 || this.steps.some(s => !!s.p); }
 
   /* ── routes ─────────────────────────────────────────────────────────── */
   routeCount(id: string): { found: number; total: number } {
@@ -626,9 +780,10 @@ export class Engine {
     return t;
   }
 
-  private hintText(target: Discovery, level: number): { text: string; highlight: string | null; action: ActionId | null } {
+  private hintText(target: Discovery, level: number):
+    { text: string; highlight: string | null; action: ActionId | null; ghost: { action: ActionId; from: string } | null } {
     const era = this.db.eras.find(e => e.id === target.era)?.name ?? '';
-    const none = { highlight: null, action: null };
+    const none = { highlight: null, action: null, ghost: null };
     if (level <= 1) {
       const ing = this.hintIngredient(target);
       const from = ing ? this.db.eras.find(e => e.id === ing.era)?.name : era;
@@ -638,33 +793,59 @@ export class Engine {
         : 'a thing you could hold';
       return { text: `Something new is hiding among your ${from} finds. Think of ${cat}.`, ...none };
     }
-    if (level === 2) return { text: `Picture this: “${this.riddle(target)}”`, ...none };
+    if (level === 2) {
+      // three shapes of the same rung, stable per target: what a piece is like, a riddle, or how a piece behaves
+      const ing = this.hintIngredient(target);
+      const form = level2Form(target.id);
+      if (ing && form !== 1) {
+        const ph = physicsOf(this.proc, ing);
+        const text = (form === 2 ? behaviourLine(ph) : null) ?? likeLine(ph, !!ing.state);
+        return { text, ...none };
+      }
+      return { text: `Picture this: “${this.riddle(target)}”`, ...none };
+    }
 
     const route = this.readyRoute(target);
     if (level === 3) {
       if (route && 'via' in route) {
-        return { text: `This is done with your hands, not put together. Think: ${ACTIONS[route.via.action].label}.`, highlight: null, action: route.via.action };
+        const tried = [...(this.tried.get(route.via.from) ?? [])].filter(a => a !== route.via.action).map(a => ACTIONS[a].label);
+        return { text: actionLine(ACTIONS[route.via.action].label, tried), highlight: null, action: route.via.action, ghost: null };
       }
       const stateIn = route && 'set' in route ? route.set.find(i => this.states.has(i)) : undefined;
       if (stateIn) {
         const act = this.proc?.byOut.get(stateIn)?.[0]?.action ?? null;
-        return { text: 'It is put together — but one of the pieces has been worked first.', highlight: null, action: act };
+        return { text: 'It is put together — but one of the pieces has been worked first.', highlight: null, action: act, ghost: null };
       }
       return { text: 'It is put together from pieces. No working needed.', ...none };
     }
     if (level === 4) {
-      if (route && 'via' in route) return { text: 'One piece, and your hands.', ...none };
+      if (route && 'via' in route) {
+        // a faint hand shows the gesture on the piece, if it is on the bench
+        return {
+          text: 'Watch the hand. This is how it is done — on one piece.',
+          highlight: route.via.from, action: route.via.action, ghost: { action: route.via.action, from: route.via.from },
+        };
+      }
       const n = route && 'set' in route ? route.set.length : 2;
       const dup = route && 'set' in route && new Set(route.set).size < route.set.length ? ', one of them twice' : '';
       return { text: `It takes ${['', '', 'two', 'three', 'four', 'five'][n] ?? n} pieces${dup}.`, ...none };
     }
-    // 5 — by role, and one piece marked
+    // 5 — direct: one piece named (never both), and the action; the rest by role
     const ing = this.hintIngredient(target);
     if (route && 'via' in route) {
-      return { text: `Start with ${rolePhrase(this.proc, this.byId[route.via.from])}.`, highlight: ing?.id ?? null, action: route.via.action };
+      const from = this.byId[route.via.from];
+      return {
+        text: `Try ${ACTIONS[route.via.action].label} on ${from.n}.`, highlight: ing?.id ?? null, action: route.via.action,
+        ghost: { action: route.via.action, from: route.via.from },
+      };
     }
-    const phrases = route && 'set' in route ? route.set.map(i => rolePhrase(this.proc, this.byId[i])) : [];
-    return { text: phrases.length ? `It wants ${sayRoles(phrases)}.` : 'Keep experimenting.', highlight: ing?.id ?? null, action: null };
+    if (route && 'set' in route && ing) {
+      const rest = [...route.set];
+      rest.splice(rest.indexOf(ing.id), 1);
+      const phrases = rest.map(i => rolePhrase(this.proc, this.byId[i]));
+      return { text: `Start with ${ing.n}. It wants ${sayRoles(phrases)} beside it.`, highlight: ing.id, action: null, ghost: null };
+    }
+    return { text: 'Keep experimenting.', ...none };
   }
 
   /** The current hint, without changing anything. */
@@ -672,15 +853,16 @@ export class Engine {
     const h = this.hint;
     const base = { stuck: this.streak >= STUCK_AFTER };
     if (!h.target || this.found.has(h.target)) {
-      return { ...base, targetId: null, level: 0, text: '', highlightId: null, canEscalate: true, triesNeeded: 0, custom: false, action: null };
+      const coach = coachLine({ triedAnyWork: this.triedAnyWork(), lockedLeft: this.lockedCount(), failedInARow: this.streak, stuckAfter: STUCK_AFTER });
+      return { ...base, targetId: null, level: 0, text: '', highlightId: null, canEscalate: true, triesNeeded: 0, custom: false, action: null, ghost: null, coach };
     }
     const target = this.byId[h.target];
-    const shown = h.level ? this.hintText(target, h.level) : { text: '', highlight: null, action: null };
+    const shown = h.level ? this.hintText(target, h.level) : { text: '', highlight: null, action: null, ghost: null };
     const triesNeeded = h.level === 0 ? 0 : Math.max(0, HINT_TRIES - h.tries);
     return {
       ...base, targetId: h.target, level: h.level, text: shown.text, highlightId: shown.highlight,
       canEscalate: h.level < MAX_HINT && triesNeeded === 0, triesNeeded: h.level >= MAX_HINT ? 0 : triesNeeded,
-      custom: h.custom, action: shown.action,
+      custom: h.custom, action: shown.action, ghost: shown.ghost, coach: null,
     };
   }
 
@@ -824,15 +1006,30 @@ export class Engine {
     };
   }
 
+  /** A personal history of how THIS game went — "the history of their civilisation", not a
+   *  scoreboard. Reads what is already kept; adds nothing to the save but the two counters
+   *  above. Never which discovery is "hardest", only the deepest one actually reached. */
+  journal(): { first: Discovery | null; deepest: Discovery; mostUsedAction: ActionId | null; noHintPercent: number | null } {
+    const firstId = this.order.find(id => !this.db.primitives.includes(id));
+    const tally = new Map<ActionId, number>();
+    for (const s of this.steps) if (s.p) tally.set(s.p, (tally.get(s.p) ?? 0) + 1);
+    let mostUsedAction: ActionId | null = null, best = 0;
+    for (const [a, n] of tally) if (n > best) { best = n; mostUsedAction = a; }
+    const noHintPercent = this.discoveredCount > 0
+      ? Math.round(((this.discoveredCount - this.hintedCount) / this.discoveredCount) * 100) : null;
+    return { first: firstId ? this.byId[firstId] : null, deepest: this.stats().deepest, mostUsedAction, noHintPercent };
+  }
+
   /* ── persistence (best-effort; never load-bearing) ───────────────────── */
   save() {
     if (typeof window === 'undefined') return;
     try {
       const payload: Saved = {
-        v: 3, order: this.order, bag: this.bag, steps: this.steps, failed: this.failed,
+        v: 4, order: this.order, known: this.known, insights: [...this.insights], bag: this.bag, steps: this.steps, failed: this.failed,
         failedPairs: [...this.failedPairs], seen: [...this.seen],
         lockedPairs: [...this.lockedPairs], hint: this.hint, streak: this.streak,
         coached: this.coached, when: this.when,
+        discoveredCount: this.discoveredCount, hintedCount: this.hintedCount,
       };
       window.localStorage.setItem(SAVE_KEY, JSON.stringify(payload));
     } catch { /* private mode or blocked storage — play continues in memory */ }
@@ -845,7 +1042,7 @@ export class Engine {
     if (!raw) return false;
     try {
       const d = JSON.parse(raw) as Saved;
-      if (!d || (d.v !== 1 && d.v !== 2 && d.v !== 3) || !Array.isArray(d.order)) return false;
+      if (!d || (d.v !== 1 && d.v !== 2 && d.v !== 3 && d.v !== 4) || !Array.isArray(d.order)) return false;
       const valid = d.order.filter(id => this.byId[id] && !this.byId[id].state);
       if (d.v === 1 && valid.length <= this.db.primitives.length) return false;
       for (const p of this.db.primitives) if (!valid.includes(p)) valid.unshift(p);
@@ -877,7 +1074,16 @@ export class Engine {
       this.hint = h && (h.target === null || this.byId[h.target]) ? { ...NO_HINT, ...h } : { ...NO_HINT };
       this.streak = d.streak || 0;
       this.coached = d.coached ?? (valid.length > this.db.primitives.length ? 2 : 0);
+      this.discoveredCount = d.discoveredCount ?? 0;
+      this.hintedCount = d.hintedCount ?? 0;
       this.runUnlocks();
+      // techniques: what was learned, plus whatever the holdings already earn — a returning player is told nothing twice
+      this.knownSet = new Set((d.known ?? []).filter(a => TECH_BY_ID[a]));
+      this.known = [...this.knownSet];
+      this.reveals = [];
+      this.insights = new Set(d.insights ?? []);
+      this.tried = new Map();
+      this.syncTechniques(true);
       this.fresh = new Set();
       this.resumed = valid.length > this.db.primitives.length;
       this.emit();
@@ -895,6 +1101,9 @@ export class Engine {
     this.failedPairs = new Set(); this.lockedPairs = new Set(); this.routes = new Set();
     this.seen = new Set(); this.fresh = new Set(); this.when = Object.create(null);
     this.hint = { ...NO_HINT }; this.streak = 0;
+    this.knownSet = new Set(); this.known = []; this.reveals = []; this.newTech = new Set(); this.insights = new Set(); this.tried = new Map();
+    this.discoveredCount = 0; this.hintedCount = 0;
+    this.syncTechniques(true);
     this.resumed = false;
     this.emit();
     if (typeof window === 'undefined') return;

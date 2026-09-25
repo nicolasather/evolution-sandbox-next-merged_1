@@ -21,6 +21,7 @@ describe('TopBar', () => {
         onOpen={() => {}}
         onReset={() => {}}
         onShortcuts={() => {}}
+        onJournal={() => {}}
       />
     );
     // the label's characters are split into their own spans for the spatial
@@ -38,6 +39,7 @@ describe('TopBar', () => {
         onOpen={() => {}}
         onReset={() => {}}
         onShortcuts={() => {}}
+        onJournal={() => {}}
       />
     );
     const input = screen.getByPlaceholderText('Search');

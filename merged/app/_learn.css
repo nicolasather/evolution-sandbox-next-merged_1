@@ -1,0 +1,57 @@
+/* ============================================================================
+   QUESTION CARD — top-right, under the top bar. A note, not a dialog: it takes
+   no focus, dims nothing, and folds to a "?" when ignored.
+   ========================================================================== */
+
+.qc,.qc-fold{position:fixed;z-index:34;right:120px;top:calc(var(--top,52px) + 12px)}   /* left of the technique rail */
+.qc{width:min(320px,calc(100vw - 32px));padding:11px 13px 12px;color:var(--bone);
+  background:color-mix(in srgb,var(--ink-1) 88%,transparent);border:1px solid var(--line-2);
+  backdrop-filter:blur(8px);animation:qcIn .5s cubic-bezier(.2,.7,.2,1) both;
+  transition:opacity 1.2s ease,transform 1.2s ease}
+.qc[data-phase="wrong"]{opacity:0;transform:translateY(-4px)}
+@keyframes qcIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+.qc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.qc-k{color:var(--ochre);letter-spacing:.16em}
+.qc-x{width:24px;height:24px;display:grid;place-items:center;background:transparent;border:0;color:var(--bone-3);
+  font-size:16px;line-height:1;cursor:pointer}
+.qc-x:hover{color:var(--bone)}
+
+.qc-q{margin:0 0 9px;font-family:var(--fs-display);font-size:17px;line-height:1.28;text-wrap:balance}
+
+.qc-a{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.qc-a button{width:100%;text-align:left;padding:7px 10px;background:transparent;color:var(--bone-2);
+  border:1px solid var(--line);font:inherit;font-size:13px;line-height:1.3;cursor:pointer;
+  transition:border-color .18s,color .18s,background .18s,opacity .9s}
+.qc-a button:hover:not(:disabled){color:var(--bone);border-color:var(--ochre);background:var(--ochre-lo)}
+/* a wrong answer does not turn red or shake: it simply lets go */
+.qc-a button.is-faded{opacity:.18}
+.qc-a button:disabled{cursor:default}
+
+.qc-right{margin:0 0 4px;font-size:14px}
+.qc-why{margin:0 0 8px;font-size:13px;line-height:1.5;color:var(--bone-2)}
+.qc-ctx,.qc-conf,.qc-src{margin:0 0 4px;color:var(--bone-3);font-size:9.5px;letter-spacing:.08em;text-transform:none;line-height:1.5}
+.qc-conf[data-conf="medium"],.qc-conf[data-conf="contested"]{color:var(--ochre)}
+.qc-src a{color:var(--bone-2);text-decoration:underline;text-underline-offset:2px}
+.qc-src a:hover{color:var(--bone)}
+.qc-taught{display:flex;align-items:center;gap:7px;margin:8px 0 6px;padding:6px 8px;border:1px solid var(--ochre-mid);
+  background:var(--ochre-lo);color:var(--bone)}
+.qc-taught span{font-size:10px;letter-spacing:.14em}
+
+.qc-fold{width:34px;height:34px;display:grid;place-items:center;padding:0;cursor:pointer;
+  font-family:var(--fs-display);font-size:19px;line-height:1;color:var(--bone-2);
+  background:color-mix(in srgb,var(--ink-1) 80%,transparent);border:1px solid var(--line-2);border-radius:50%;
+  backdrop-filter:blur(6px);animation:qcIn .4s ease both}
+.qc-fold:hover{color:var(--bone);border-color:var(--ochre)}
+
+@media (max-width:900px){
+  .qc,.qc-fold{right:10px;top:calc(var(--top,48px) + 8px)}
+  .qc{width:min(300px,calc(100vw - 20px));padding:8px 10px 9px}
+  .qc-q{font-size:14.5px;margin-bottom:7px}
+  .qc-a{gap:4px}
+  .qc-a button{padding:5px 8px;font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  .qc,.qc-fold{animation:none}
+  .qc,.qc-a button{transition:none}
+}

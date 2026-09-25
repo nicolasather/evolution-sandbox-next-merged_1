@@ -28,10 +28,8 @@ export function compile(data: ProcessingData): Processing {
       byOut.get(o)!.push(t);
     }
   }
-  const capSet = {
-    edged: new Set(data.capabilities.edged),
-    digger: new Set(data.capabilities.digger),
-  } as Record<Capability, Set<string>>;
+  const capSet: Record<Capability, Set<string>> = Object.create(null);
+  for (const [cap, ids] of Object.entries(data.capabilities)) capSet[cap] = new Set(ids);
   return { ...data, stateIds: new Set(data.states.map(s => s.id)), byFrom, byOut, capSet };
 }
 
@@ -48,7 +46,7 @@ export function computeDepths(nodes: Discovery[], proc: Processing, primitives: 
   const depth = new Map<string, number>(primitives.map(p => [p, 0]));
   const capDepth = (cap: Capability) => {
     let best = Infinity;
-    for (const id of proc.capSet[cap]) { const d = depth.get(id); if (d !== undefined && d < best) best = d; }
+    for (const id of proc.capSet[cap] ?? []) { const d = depth.get(id); if (d !== undefined && d < best) best = d; }
     return best;
   };
   const set = (id: string, v: number) => {

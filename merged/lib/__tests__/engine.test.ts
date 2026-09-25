@@ -1,15 +1,19 @@
 import rawDb from '@/data/db.json';
-import { Engine, HINT_TRIES, pairKey } from '@/lib/engine';
+import { Engine, HINT_TRIES } from '@/lib/engine';
+import { multiKey } from '@/lib/processing/overlay';
 import type { Db } from '@/lib/types';
 
 const db = rawDb as unknown as Db;
 const fresh = () => new Engine(db);
 
 describe('recipe data', () => {
-  it('maps every unordered pair to exactly one result', () => {
+  it('maps every unordered set of ingredients (pairs, and any larger assembly) to exactly one result', () => {
+    // multiKey, not a bare pairKey(a, b): a recipe can be 2–5 ingredients (component assembly —
+    // e.g. spear's composite_tool+wood+bone route), and a key built from only the first two
+    // would falsely collide an assembly's third+ ingredient away, or miss a genuine clash.
     const seen = new Map<string, string>();
-    for (const n of db.nodes) for (const [a, b] of n.rec) {
-      const k = pairKey(a, b);
+    for (const n of db.nodes) for (const r of n.rec) {
+      const k = multiKey(r);
       expect(seen.get(k) ?? n.id).toBe(n.id);
       seen.set(k, n.id);
     }

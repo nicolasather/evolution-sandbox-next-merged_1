@@ -1,0 +1,12 @@
+/* JOURNAL — a personal recap (P3.7). Reuses .confirm/.confirm-box/.chip from
+   the design system; only the row layout is new. */
+
+.journal-box { text-align: left; }
+.jr-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 8px 0; border-top: 1px solid var(--line);
+}
+.jr-row:first-of-type { border-top: none; }
+.jr-k { color: var(--bone-4); flex: none; font-size: 10px; letter-spacing: .08em; }
+.jr-v { display: flex; align-items: center; gap: 6px; color: var(--bone-2); text-align: right; }
+.jr-v svg, .jr-v img { width: 16px; height: 16px; flex: none; }

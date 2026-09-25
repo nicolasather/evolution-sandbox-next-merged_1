@@ -1,11 +1,14 @@
 import type { ActionId, Discovery } from '../types';
+import { TECHNIQUES, TECH_ORDER } from './techniques';
+import { gestureOf } from './techniques';
 import type { Capability } from './types';
 
 /* ============================================================================
-   ACTIONS — the five things a hand can do to ONE resource. The player performs
-   them (a gesture on the bench); the data says what each does to what. This
-   file is only their names and, when a material refuses, why — written from
-   tags, so a new material gets sensible refusals without new copy.
+   ACTIONS — the things a hand can do to ONE resource. The player performs
+   them (a gesture on the bench); the data says what each does to what; the
+   technique catalogue (techniques.ts) says when each becomes known. This file
+   is only their names and, when a material refuses, why — written from tags,
+   so a new material gets sensible refusals without new copy.
    ========================================================================== */
 
 export interface ActionInfo {
@@ -19,20 +22,27 @@ export interface ActionInfo {
   key: string;
 }
 
-export const ACTION_ORDER: ActionId[] = ['brush', 'smash', 'cut', 'separate', 'dig'];
+/** Every action, in the catalogue's order (family by family). */
+export const ACTION_ORDER: ActionId[] = TECH_ORDER;
 
-export const ACTIONS: Record<ActionId, ActionInfo> = {
-  brush:    { id: 'brush',    label: 'Brush',    key: 'b', gesture: 'Sweep back and forth', blurb: 'Clean a thing to see what is under it.' },
-  smash:    { id: 'smash',    label: 'Smash',    key: 's', gesture: 'Strike hard, once or twice', blurb: 'Break a hard thing into what it is made of.' },
-  cut:      { id: 'cut',      label: 'Cut',      key: 'c', gesture: 'Draw a line across it', blurb: 'Shape a thing with an edge.' },
-  separate: { id: 'separate', label: 'Separate', key: 'p', gesture: 'Pull apart from the middle', blurb: 'Take one thing out of a mixture.' },
-  dig:      { id: 'dig',      label: 'Dig',      key: 'd', gesture: 'Scoop down and out', blurb: 'Uncover what is buried.' },
-};
+export const ACTIONS: Record<ActionId, ActionInfo> = Object.fromEntries(
+  TECHNIQUES.map(t => [t.id, { id: t.id, label: t.label, key: t.key, gesture: gestureOf(t.id), blurb: t.blurb } satisfies ActionInfo]),
+) as Record<ActionId, ActionInfo>;
 
-export const CAPABILITY_NOTE: Record<Capability, string> = {
+/** What is missing when the hands lack a capability — a kind of thing, never an answer. */
+export const CAPABILITY_NOTE: Record<string, string> = {
   edged: 'Something with an edge would do it.',
   digger: 'Something to dig with would do it.',
+  hammer: 'Something to strike with would do it.',
+  flame: 'It would need fire.',
+  kiln: 'It would need a hotter, closed fire.',
+  wet: 'It would need water.',
+  mold: 'It would need something to hold its shape.',
+  metalblade: 'It would need a harder edge than stone.',
+  optics: 'It would need an understanding of light.',
+  literacy: 'It would need a way of keeping records.',
 };
+export const capabilityNote = (c: Capability): string => CAPABILITY_NOTE[c] ?? 'Something more would be needed.';
 
 /** The family a tag set belongs to for refusal copy; first match wins. */
 function family(tags: ReadonlySet<string>): string {
@@ -42,7 +52,7 @@ function family(tags: ReadonlySet<string>): string {
 
 type Copy = Partial<Record<string, string>> & { default: string };
 
-const REFUSAL: Record<ActionId, Copy> = {
+const REFUSAL: Partial<Record<ActionId, Copy>> = {
   brush: {
     intangible: 'There is nothing to brush. You cannot touch it.',
     fluid: 'You cannot brush a liquid.',
@@ -88,10 +98,46 @@ const REFUSAL: Record<ActionId, Copy> = {
   },
 };
 
+/** Copy for the actions that have no table of their own: by what the thing is, then a plain default. */
+const GENERIC: Record<ActionId, string> = {
+  brush: '', smash: '', cut: '', separate: '', dig: '',
+  carve: 'Carving {n} gives nothing new.',
+  scrape: 'Scraping {n} only marks it.',
+  grind: '{n} will not wear down into anything useful.',
+  pull: '{n} does not come away in the hand.',
+  twist: 'Twisting {n} only twists it.',
+  tie: 'Tying {n} holds nothing together.',
+  stretch: '{n} does not stretch. It would tear.',
+  mix: 'Stirring does nothing to {n} alone.',
+  shape: '{n} will not hold a shape.',
+  pour: 'There is nothing in {n} to pour.',
+  heat: 'Heat does nothing useful to {n} yet.',
+  cool: '{n} is not hot.',
+  dry: '{n} has no water to lose.',
+  burn: '{n} will not burn to anything new.',
+  hammer: 'Hammering {n} only bruises it.',
+  split: '{n} has no grain to split along.',
+  press: 'Pressing {n} changes nothing.',
+  saw: 'Sawing {n} only wears the edge.',
+  chisel: 'A chisel finds no way into {n}.',
+  polish: 'Polishing {n} makes no difference.',
+};
+const BY_FAMILY: Partial<Record<ActionId, Partial<Record<string, string>>>> = {
+  scrape: { intangible: 'There is nothing to scrape.', fluid: 'You cannot scrape a liquid.', hot: 'You cannot scrape a flame.', metal: 'Scraping only scratches {n}.' },
+  heat: { intangible: 'You cannot heat that.', fluid: 'Warm water is just warm water.', hot: 'It is already hot.', fibrous: 'Fibre burns before it changes.', woody: 'Wood chars before it changes.' },
+  burn: { intangible: 'You cannot burn that.', fluid: 'Water puts the flame out.', hot: 'It is already burning.', metal: 'Metal glows, but does not burn.', earthy: 'It bakes, and does not burn.', mineral: 'Stone does not burn.', hard: 'It will not burn.' },
+  press: { fluid: 'A liquid squeezes out of your hand.', hard: 'It does not give. Pressing {n} does nothing.' },
+  hammer: { fluid: 'You cannot hammer a liquid.', intangible: 'There is nothing to strike.', fibrous: 'Fibre only flattens.', hot: 'You cannot hammer a flame.' },
+  twist: { hard: '{n} does not bend. It would break before it twisted.', intangible: 'There is nothing to twist.', fluid: 'You cannot twist a liquid.' },
+  dry: { hot: 'A flame is not wet.', intangible: 'There is nothing to dry.', fluid: 'Left alone, it would only evaporate.', mineral: 'It is already dry.', hard: 'It is already dry.' },
+};
+
 /** Why working `node` with `action` did nothing, in a line. */
 export function refusal(action: ActionId, node: Pick<Discovery, 'n'>, tags: ReadonlySet<string>): string {
+  const fam = family(tags);
   const copy = REFUSAL[action];
-  const text = copy[family(tags)] ?? copy.default;
+  let text: string | undefined = copy ? (copy[fam] ?? copy.default) : undefined;
+  if (!text) text = BY_FAMILY[action]?.[fam] ?? [...tags].map(t => BY_FAMILY[action]?.[t]).find(Boolean) ?? GENERIC[action];
   return text.replace('{n}', node.n);
 }
 

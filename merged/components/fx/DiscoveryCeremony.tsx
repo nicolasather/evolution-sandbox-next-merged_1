@@ -6,6 +6,7 @@ import { Plate3D } from '../Plate3D';
 import { cn } from '@/lib/utils';
 import { emitFieldPulse, setFieldQuiet } from './ReactiveField';
 import { CeremonyStage } from './CeremonyStage';
+import { discoveryTier } from '@/lib/discoveryTier';
 import type { CombineResult } from '@/lib/types';
 
 /* ============================================================================
@@ -26,6 +27,7 @@ type NewResult = Extract<CombineResult, { newRoute: boolean }> & { key: number }
 
 const SEEN_KEY = 'evo.reveal.seen';
 const markSeen = () => { try { window.localStorage.setItem(SEEN_KEY, '1'); } catch { /* storage blocked */ } };
+const hasSeen = (): boolean => { try { return window.localStorage.getItem(SEEN_KEY) === '1'; } catch { return false; } };
 
 type Phase = 'pause' | 'form' | 'expand' | 'materialize' | 'name' | 'done';
 
@@ -33,8 +35,11 @@ export function DiscoveryCeremony({
   result, onUse, onOpen,
 }: { result: NewResult; onUse: (id: string) => void; onOpen: (id: string) => void }) {
   const n = result.node;
-  const tag = n.hidden ? 'Hidden find' : n.rar === 'rare' ? 'Rare discovery' : 'New discovery';
-  const reduced = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const tag = n.hidden ? 'Hidden find' : n.rar === 'rare' ? 'Rare discovery' : result.firstOfEra ? 'A new era begins' : 'New discovery';
+  const reducedMotion = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  // a light find, once the full reveal has been seen, gets a quick card instead of a stage
+  const [tier] = useState(() => discoveryTier(result, typeof window !== 'undefined' && hasSeen()));
+  const reduced = reducedMotion || tier === 'minor';
 
   const [phase, setPhase] = useState<Phase>(reduced ? 'done' : 'pause');
   const [skipped, setSkipped] = useState(reduced);
@@ -57,7 +62,7 @@ export function DiscoveryCeremony({
     setPhase('done');
     setFieldQuiet(false);
     const r = hostRef.current?.getBoundingClientRect();
-    emitFieldPulse(r ? r.left + r.width / 2 : undefined, r ? r.top + r.height / 2 : undefined, 1.1);
+    emitFieldPulse(r ? r.left + r.width / 2 : undefined, r ? r.top + r.height / 2 : undefined, tier === 'major' ? 1.7 : 1.1);
     markSeen();
   };
 
@@ -70,7 +75,7 @@ export function DiscoveryCeremony({
     <motion.div
       key={result.key}
       ref={hostRef}
-      className={cn('oc oc-win is-new', n.hidden && 'is-hidden', n.rar === 'rare' && 'is-rare', 'dc-host')}
+      className={cn('oc oc-win is-new', n.hidden && 'is-hidden', n.rar === 'rare' && 'is-rare', tier === 'major' && 'is-major', tier === 'minor' && 'is-minor', 'dc-host')}
       role="status"
       tabIndex={-1}
       initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}

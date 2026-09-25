@@ -147,11 +147,13 @@ export function Bench({
   // one short line of guidance: onboarding first, then the hint, then nothing
   let line: React.ReactNode = null;
   if (engine.coached === 0) {
-    line = <>Tap <b>Stone</b> twice to knock two together — or choose a hand below and work one thing.</>;
+    line = <>Tap <b>Stone</b> twice to knock two together — or pick a technique on the right and work one thing.</>;
   } else if (engine.coached === 1) {
-    line = <>Most attempts make nothing. That is normal — smash, brush, cut, or try something else.</>;
+    line = <>Most attempts make nothing. That is normal — smash, brush, or try something else.</>;
   } else if (hint.targetId && hint.text) {
     line = <>{hint.text}</>;
+  } else if (hint.coach) {
+    line = <>{hint.coach}</>;
   } else if (engine.order.length < 9) {
     line = <>Work one thing with your hands, bring several together, discover. Every find is a new ingredient.</>;
   }
@@ -160,7 +162,7 @@ export function Bench({
     <div id="bench">
       <div id="bench-stage">
         <SceneFx ref={sceneFx} active={active} />
-        <Workbench engine={engine} active={active} onCombine={onCombine} onProcess={onProcess} onBegin={onBegin} onInspect={onOpen} hintAction={hint.action}
+        <Workbench engine={engine} active={active} onCombine={onCombine} onProcess={onProcess} onBegin={onBegin} onInspect={onOpen} hintAction={hint.action} hintGhost={hint.ghost}
           onScenery={(x, y) => { sceneFx.current?.click(x, y); }} />
 
         <div id="outcome" aria-live="polite">

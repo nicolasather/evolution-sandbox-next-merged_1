@@ -40,7 +40,7 @@ function SoundButton() {
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal,
 }: {
   engine: Engine;
   view: ViewId;
@@ -48,6 +48,7 @@ export function TopBar({
   onOpen: (id: string) => void;
   onReset: () => void;
   onShortcuts: () => void;
+  onJournal: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -174,6 +175,17 @@ export function TopBar({
       </div>
 
       <div className="top-slot top-actions">
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="journal-open"
+          aria-label="Your journal"
+          title="Your journal — a personal recap"
+          onClick={onJournal}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M3 2.5h8a1 1 0 0 1 1 1V14l-2.2-1.4L8 14l-1.8-1.4L4 14V3.5a1 1 0 0 1 1-1Z" />
+          </svg>
+        </button>
         <button
           className="icon-btn max-[900px]:hidden"
           id="shortcuts"

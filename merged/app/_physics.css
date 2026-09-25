@@ -1,0 +1,105 @@
+/* ============================================================================
+   PHYSICS — the look of what the environment does to things on the bench.
+   All driven by attributes the world sets (data-warm, data-wet, data-scorch,
+   data-windy) and by per-body variables (--warm, --wet, --scorch), so no
+   script runs per frame for any of it. Everything that moves stops for
+   prefers-reduced-motion; the still look (a warm tint, a dark scorch) stays.
+   ========================================================================== */
+
+/* fire beside it: it warms, and the drawing takes on a glow */
+.wb-body[data-warm] .wb-art{
+  filter:drop-shadow(0 0 calc(3px + 9px * var(--warm,0)) color-mix(in srgb,#e07a4a calc(70% * var(--warm,0)),transparent)) sepia(calc(.35 * var(--warm,0)))}
+
+/* a flame beside a thing that burns, for long enough: a scorch that stays */
+.wb-body[data-scorch] .wb-art{filter:brightness(calc(1 - .5 * var(--scorch,0))) contrast(calc(1 + .25 * var(--scorch,0))) sepia(calc(.5 * var(--scorch,0)))}
+.wb-body[data-scorch][data-warm] .wb-art{filter:brightness(calc(1 - .5 * var(--scorch,0))) sepia(.6) drop-shadow(0 0 8px color-mix(in srgb,#e07a4a 55%,transparent))}
+
+/* water beside a thing that drinks it: darker, cooler, and it holds a sheen */
+.wb-body[data-wet] .wb-art{filter:brightness(calc(1 - .2 * var(--wet,0))) saturate(calc(1 + .3 * var(--wet,0))) drop-shadow(0 2px 3px color-mix(in srgb,#5aa0d0 55%,transparent))}
+.wb-body[data-wet] .wb-aura{opacity:.7;background:radial-gradient(closest-side,color-mix(in srgb,#5aa0d0 26%,transparent),transparent 82%)}
+
+/* a brittle thing, hit hard enough, hit often enough: a lasting crack, then a break — cosmetic only,
+   never a stat and never a block on any action (P2.4). --wear is 0–1 and never decays. */
+.wb-body[data-damage="cracked"] .wb-art{filter:contrast(calc(1 + .12 * var(--wear,0))) brightness(calc(1 - .06 * var(--wear,0)))}
+.wb-body[data-damage="broken"] .wb-art{filter:contrast(1.14) brightness(.9) saturate(.85)}
+.wb-body[data-damage] .wb-art::after{
+  content:'';position:absolute;inset:6%;pointer-events:none;mix-blend-mode:multiply;opacity:calc(.35 + .35 * var(--wear,0));
+  background-image:
+    linear-gradient(105deg,transparent 46%,#151311 47%,transparent 48%),
+    linear-gradient(18deg,transparent 62%,#151311 63%,transparent 64%);
+}
+.wb-body[data-damage="broken"] .wb-art::after{
+  opacity:.6;
+  background-image:
+    linear-gradient(105deg,transparent 44%,#151311 45.5%,transparent 47%),
+    linear-gradient(18deg,transparent 58%,#151311 59.5%,transparent 61%),
+    linear-gradient(-70deg,transparent 71%,#151311 72.5%,transparent 74%);
+}
+/* the ring where a liquid lands */
+.wb-ripple{position:absolute;pointer-events:none;border-radius:50%;z-index:6;transform:translate(-50%,-50%) scale(.25);opacity:.9;
+  border:1.5px solid color-mix(in srgb,#5aa0d0 80%,var(--bone));
+  box-shadow:0 0 0 6px color-mix(in srgb,#5aa0d0 22%,transparent);
+  animation:wbRipple .75s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes wbRipple{to{transform:translate(-50%,-50%) scale(1.15);opacity:0}}
+
+/* how each shape sits: a pile settles low and wide, a strand hangs light, a grain trembles */
+.wb-body[data-shape="pile"] .wb-shadow{transform:scaleX(1.25)}
+.wb-body[data-shape="liquid"] .wb-shadow{transform:scale(1.2,.8);opacity:.6}
+.wb-body[data-shape="strand"]:not(.wb-held) .wb-art{transform-origin:50% 90%}
+
+/* wind: the open-air eras have a breeze; light things answer it and heavy things do not. It is a class of the
+   whole bench (set from the era), so turning it off costs nothing. */
+.wb[data-wind="breeze"] .wb-body[data-windy]:not(.wb-held):not([data-work]):not(.wb-part) .wb-art{
+  transform-origin:50% 88%;animation:wbGust 3.6s ease-in-out infinite;animation-delay:var(--idle-o,0s)}
+.wb[data-wind="breeze"] .wb-body[data-windy="2"]:not(.wb-held):not([data-work]):not(.wb-part) .wb-art{animation-name:wbGustLight;animation-duration:2.7s}
+@keyframes wbGust{0%,100%{transform:rotate(-.4deg)}50%{transform:rotate(1.1deg)}}
+@keyframes wbGustLight{0%,100%{transform:translateX(-.5px) rotate(-1.4deg)}40%{transform:translateX(1.4px) rotate(2.4deg)}70%{transform:translateX(.4px) rotate(.6deg)}}
+
+/* the three kinds of "no" on a piece that has just been worked */
+.wb-body[data-fail="impossible"]{animation:wbNoThud .34s ease-out}
+.wb-body[data-fail="wrong_action"]{animation:wbNoShrug .5s ease-in-out}
+.wb-body[data-fail="close"] .wb-art{animation:wbNearly .7s ease-in-out;filter:drop-shadow(0 0 9px color-mix(in srgb,var(--ochre) 65%,transparent))}
+@keyframes wbNoThud{0%{translate:0 0}25%{translate:0 2px}55%{translate:0 -.5px}100%{translate:0 0}}
+@keyframes wbNoShrug{0%,100%{rotate:0deg}25%{rotate:-3deg}55%{rotate:3deg}80%{rotate:-1deg}}
+@keyframes wbNearly{0%,100%{transform:scale(1)}35%{transform:scale(1.07)}60%{transform:scale(.98)}}
+
+@media (prefers-reduced-motion:reduce){
+  .wb-ripple{animation:none;opacity:0}
+  .wb[data-wind] .wb-body[data-windy] .wb-art{animation:none!important}
+  .wb-body[data-fail]{animation:none}
+  .wb-body[data-fail="close"] .wb-art{animation:none}
+}
+
+/* a small thing noticed while working: what the material is like */
+.wb-note .wb-noticed{color:var(--ochre);margin-top:2px;max-width:100%}
+.wb-note .wb-noticed b{font-weight:600;letter-spacing:.16em;margin-right:6px;opacity:.85}
+
+/* ============================================================================
+   THE BENCH THROUGH THE AGES — the surface under the hands changes with the
+   material world (data-era-group is set on <html> by EraShift). Static
+   gradients only: nothing animates, nothing is measured, and it costs nothing
+   at rest. Kept faint: the play stays the brightest thing on the screen.
+   ========================================================================== */
+:root[data-era-group] .wb[data-craft="on"]{border-color:color-mix(in srgb,var(--era-accent) 28%,var(--line-3))}
+:root[data-era-group="stone"] .wb{background-image:
+  radial-gradient(circle at 18% 30%,color-mix(in srgb,var(--bone) 5%,transparent) 0 1px,transparent 1.5px),
+  radial-gradient(circle at 72% 64%,color-mix(in srgb,var(--bone) 4%,transparent) 0 1px,transparent 1.5px);
+  background-size:38px 34px,52px 46px}
+:root[data-era-group="earth"] .wb{background-image:
+  repeating-linear-gradient(0deg,transparent 0 15px,color-mix(in srgb,var(--era-accent) 9%,transparent) 15px 16px)}
+:root[data-era-group="metal"] .wb{background-image:
+  linear-gradient(115deg,transparent 38%,color-mix(in srgb,var(--era-accent) 8%,transparent) 50%,transparent 62%)}
+:root[data-era-group="paper"] .wb{background-image:
+  repeating-linear-gradient(0deg,transparent 0 21px,color-mix(in srgb,var(--era-accent) 10%,transparent) 21px 22px),
+  linear-gradient(90deg,transparent 7%,color-mix(in srgb,var(--ochre) 14%,transparent) 7% calc(7% + 1px),transparent calc(7% + 1px))}
+:root[data-era-group="iron"] .wb{background-image:
+  radial-gradient(circle,color-mix(in srgb,var(--bone) 8%,transparent) 0 1.2px,transparent 1.8px);
+  background-size:28px 28px}
+:root[data-era-group="circuit"] .wb{background-image:
+  linear-gradient(color-mix(in srgb,var(--era-accent) 7%,transparent) 1px,transparent 1px),
+  linear-gradient(90deg,color-mix(in srgb,var(--era-accent) 7%,transparent) 1px,transparent 1px);
+  background-size:24px 24px}
+:root[data-era-group="glow"] .wb{background-image:
+  radial-gradient(ellipse at 50% 55%,color-mix(in srgb,var(--era-accent) 9%,transparent),transparent 70%),
+  radial-gradient(circle,color-mix(in srgb,var(--era-accent) 12%,transparent) 0 1px,transparent 1.6px);
+  background-size:100% 100%,26px 26px}

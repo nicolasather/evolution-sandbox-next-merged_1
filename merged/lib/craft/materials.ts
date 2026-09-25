@@ -94,15 +94,15 @@ const LISTS: Record<MaterialId, string> = {
     anchor weight silicon coal stone_spear scraper hammering sledge cleaned_stone mixed_ore crushed_ore`,
   wood: `wood lumber peg ladder palisade fence wooden_bowl dugout_canoe raft boat bow spear hafted_tool kindling
     plant grass wheel axle lever bow_drill fish_trap weir spit atlatl javelin pike trident harpoon pickaxe mattock hoe
-    fishing thatch_roof workshop bullroarer flail tripwire spike_trap hardened_spear barbed_spear scythe stick bark`,
+    fishing thatch_roof workshop bullroarer flail tripwire spike_trap hardened_spear barbed_spear scythe stick bark shavings`,
   bone: `bone needle awl bone_saw fishing_hook tattoo_needle dice flute bone_container bone_tent engraver tallies
     cooked_marrow trophy_necklace bone_shards`,
   fibre: `fiber cordage rope net cloth thread_and_needle plant_thread flax_fiber thatch mat snares bundle lashing
     binding sewing clothing weaving_shuttle tapestry embroidery camouflage paper pulp slow_match fishing_line bolas
     retiarius_trap slingshot strands`,
   metal: `copper bronze iron steel bronze_tools ironworking forging casting money compass gear standardized_weights
-    machine_tools`,
-  earth: `pottery brick lime ash charcoal kiln gunpowder plastic smokehouse sauna clay sand soil seed`,
+    machine_tools molten_copper poured_copper`,
+  earth: `pottery brick lime ash charcoal kiln gunpowder plastic smokehouse sauna clay sand soil seed wet_clay shaped_clay dried_clay flour`,
   glass: `glass lens optics magnification`,
   liquid: `irrigation chemistry vaccine antibiotics medicine steam water_power fishing_technology water`,
   fire: `fire controlled_fire campfire hearth torch wildfire smoke smudge_fire brand beacon flint_spark heat_treatment

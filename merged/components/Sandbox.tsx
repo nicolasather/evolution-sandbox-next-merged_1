@@ -11,11 +11,16 @@ import { ExhibitPanel } from './ExhibitPanel';
 import { Ending } from './Ending';
 import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
+import { JournalPanel } from './JournalPanel';
 import { SceneBackdrop } from './SceneBackdrop';
 import { ReactiveField } from './fx/ReactiveField';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { ViewVeil } from './fx/ViewVeil';
 import { EraShift } from './fx/EraShift';
+import { QuestionCard } from './QuestionCard';
+import { NarratorView } from './Narrator';
+import { Narrator } from '@/lib/narrator/narrator';
+import { Tutor } from '@/lib/learn/tutor';
 import { ContextMenu, type ContextMenuTarget } from './fx/ContextMenu';
 import { ShortcutsOverlay } from './fx/ShortcutsOverlay';
 import { enterFullscreen, installImmersiveTop, installPressFx } from '@/lib/fx';
@@ -38,9 +43,14 @@ export function Sandbox() {
   const [onlyPath, setOnlyPath] = useState(false);
   const [fitSignal, setFitSignal] = useState(0);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [journalOpen, setJournalOpen] = useState(false);
   const [replay, setReplay] = useState(0);
   const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
   const panelReturn = useRef<HTMLElement | null>(null);
+  /** The corner questions: when one appears, which one, and what it opens. */
+  const [tutor] = useState(() => new Tutor(Math.random, Date.now()));
+  /** The voice of the era: welcomes an era, marks the weighty finds, nudges when stuck. */
+  const [narrator] = useState(() => new Narrator(Math.random, Date.now()));
 
   /* The film is over → the interface loads into existence, one layer at a
      time (see the WORLD REVEAL block in _museum.css). 6 is the finished state. */
@@ -119,10 +129,12 @@ export function Sandbox() {
 
   const confirmReset = useCallback(() => {
     setConfirmOpen(false);
+    narrator.reset(Date.now());
     reset();
+    tutor.reset(Date.now());
     setPanelOpen(false);
     setOnlyPath(false);
-  }, [reset]);
+  }, [reset, tutor, narrator]);
   const cancelReset = useCallback(() => setConfirmOpen(false), []);
 
   const { setHintError } = s;
@@ -187,7 +199,8 @@ export function Sandbox() {
 
   const resumed = engine.resumed ? engine.stats().core : 0;
   const recent = engine.path().slice(-3).reverse().map(n => n.n);
-  const returning = resumed > 4 ? { era: engine.currentEra().name, latest: recent[0] ?? '', recent } : null;
+  const returning = resumed > 4
+    ? { era: engine.currentEra().name, latest: recent[0] ?? '', recent, openWork: engine.openWork() } : null;
   /* a returning player is greeted once, quietly, after the world has loaded in */
   const [greeted, setGreeted] = useState(false);
   const showRemember = reveal >= 6 && !!returning && !greeted;
@@ -260,6 +273,7 @@ export function Sandbox() {
           onOpen={openExhibit}
           onReset={() => setConfirmOpen(true)}
           onShortcuts={() => setShortcutsOpen(true)}
+          onJournal={() => setJournalOpen(true)}
         />
 
         <div id="views" data-current={view}>
@@ -322,6 +336,11 @@ export function Sandbox() {
         <p className="remember mono" role="status">
           The world remembers.
           <span>{returning.era} · {resumed} discoveries{returning.latest ? ` · last, ${returning.latest}` : ''}</span>
+          {returning.openWork > 0 && (
+            <span>
+              {returning.openWork} {returning.openWork === 1 ? 'thing' : 'things'} you hold could still react to what you know
+            </span>
+          )}
         </p>
       )}
 
@@ -365,6 +384,8 @@ export function Sandbox() {
         onConfirm={confirmReset}
       />
 
+      <JournalPanel open={journalOpen} engine={engine} onClose={() => setJournalOpen(false)} />
+
       <ContextMenu
         target={ctxMenu}
         engine={engine}
@@ -373,6 +394,22 @@ export function Sandbox() {
         onPlace={s.place}
         onClose={closeContextMenu}
       />
+
+      <NarratorView
+        narrator={narrator}
+        engine={engine}
+        entered={s.entered && reveal >= 6}
+        active={s.entered && reveal >= 6 && view === 'work' && !s.ending && !confirmOpen}
+        result={s.result}
+      />
+
+      {s.entered && reveal >= 6 && (
+        <QuestionCard
+          tutor={tutor}
+          engine={engine}
+          busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || view !== 'work'}
+        />
+      )}
 
       <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
 
