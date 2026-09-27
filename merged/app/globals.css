@@ -16,6 +16,14 @@
 /* Neon blue theme and the 3D exhibit plate — layered after the design system. */
 @import "./_theme-neon.css" layer(components);
 
+/* Five more accent skins — ember, verdant, glacier, bronze, dusk — layered the
+   same way neon is, plus the theme picker menu's own styling. */
+@import "./_theme-variants.css" layer(components);
+
+/* Era-driven colour progression, orthogonal to the (now eight) themes above:
+   the world's own palette widens slowly as civilisation advances. */
+@import "./_era-glow.css" layer(components);
+
 /* Scenes, round craft slots, hover / press animation, immersive top bar. */
 @import "./_fx.css" layer(components);
 

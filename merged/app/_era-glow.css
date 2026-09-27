@@ -1,0 +1,33 @@
+/* ============================================================================
+   ERA GLOW — the world's own palette widens slowly as civilisation advances,
+   independent of the (now eight) player-chosen themes.
+
+   `_design-system.css` already mutates `--era-tint` per the *current* era
+   (components/Sandbox.tsx) and colours #ground's own gradient with it; that
+   axis recolours with every era shift. `--era-glow` (0..1, same component)
+   is the other axis: it only grows, tracking how much of the whole game has
+   been reached, not which part of it the player is standing in right now.
+
+   Kept out of `_design-system.css` on purpose — that file is checked
+   byte-identical against the single-file build's stylesheet (`data:check`),
+   the same reason `_theme-variants.css` exists as its own file. This adds a
+   pseudo-element layer on top of `#ground` rather than touching its
+   `background`, so it never has to duplicate or fight that file's own rule:
+   `#ground` is already `position:fixed` in `_design-system.css`, which is
+   enough of a containing block for this `absolute` layer.
+
+   `--era-glow` defaults to `0` (declared in `_design-system.css`), so with
+   this file merely loaded and no era ever reached, the layer is fully
+   transparent — silent until there is real progress to show.
+   ========================================================================== */
+
+#ground::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(70% 55% at 50% 100%,
+    color-mix(in srgb, var(--ochre) calc(var(--era-glow) * 16%), transparent) 0%,
+    transparent 70%);
+  transition:background .8s ease;
+  pointer-events:none;
+}

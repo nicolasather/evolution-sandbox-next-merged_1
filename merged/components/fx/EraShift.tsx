@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { sound } from '@/lib/sound';
 import { prefersReducedMotion } from '@/lib/perf';
+import { claimAttention, isAttentionClaimed } from '@/lib/attention';
 import { ERA_TINT } from '@/lib/useSandbox';
 import type { Era } from '@/lib/types';
 
@@ -11,7 +12,10 @@ import type { Era } from '@/lib/types';
    a half: the room takes on the new era's colour, a line draws across, and
    the era's name is set in type. Only a forward step counts: resuming a
    saved game or starting over never triggers it. It waits for a discovery
-   ceremony to close, never on top of one, and it never blocks input.
+   ceremony, or a globe reveal, to close (lib/attention — see the ceremony
+   and the globe layer's own claims), never showing on top of one, and once
+   its own banner is up it claims attention in turn so the reactive field
+   quiets for it too. It never blocks input.
    ========================================================================== */
 
 /** Fourteen eras, seven material worlds — used for CSS hooks on <html>. */
@@ -43,7 +47,7 @@ export function EraShift({ era, index, active }: { era: Era; index: number; acti
     let tries = 0;
     const show = () => {
       // wait for a discovery ceremony, or a globe reveal, to close
-      if (document.querySelector('.cer, .wg[data-on="true"]') && tries++ < 60) { t.push(window.setTimeout(show, 200)); return; }
+      if (isAttentionClaimed() && tries++ < 60) { t.push(window.setTimeout(show, 200)); return; }
       setShown({ era, key: Date.now() });
       sound.sfx('era');
       t.push(window.setTimeout(() => setShown(null), prefersReducedMotion() ? 1200 : 1700));
@@ -53,6 +57,9 @@ export function EraShift({ era, index, active }: { era: Era; index: number; acti
   }, [index, active]);
 
   useEffect(() => () => timers.current.forEach(id => window.clearTimeout(id)), []);
+
+  // the banner itself is a claim too, so anything ambient quiets for it
+  useEffect(() => { if (shown) return claimAttention('era-shift'); }, [shown]);
 
   if (!shown) return null;
   return (

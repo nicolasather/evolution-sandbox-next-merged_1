@@ -6,6 +6,7 @@ import { Plate3D } from '../Plate3D';
 import { cn } from '@/lib/utils';
 import { sound } from '@/lib/sound';
 import { PARTICLE_SCALE, getQuality, prefersReducedMotion } from '@/lib/perf';
+import { claimAttention } from '@/lib/attention';
 import rawDb from '@/data/db.json';
 import type { Discovery } from '@/lib/types';
 
@@ -53,6 +54,9 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
   const era = ERA_NAME.get(node.era) ?? node.era;
 
   const finish = useRef(() => {});
+
+  // the room stays quiet around this for as long as it is on screen
+  useEffect(() => claimAttention('ceremony'), []);
 
   /* the sequence */
   useEffect(() => {

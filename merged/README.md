@@ -83,7 +83,7 @@ components/             view layer — presentational, no game rules
   vengeance/            Vengeance UI components, copied from the registry (MIT)
 lib/
   engine.ts             the whole game: pair index, combining, nudges, hints, routes, tiers — and a tiny store
-  theme.ts              light / dark / system, applied before first paint
+  theme.ts              light / dark / system, plus six accent skins (neon, ember, verdant, glacier, bronze, dusk), applied before first paint
   daily.ts              "Today's find" (date-seeded, no streaks)
   glyphs.ts             the shape grammar that draws all 220 marks
   useSandbox.ts         the only place React and the engine meet
@@ -217,9 +217,15 @@ Two layers, one palette:
   the same tokens (`ink-*`, `bone-*`, `line*`, `ochre`, declared in
   `app/globals.css`).
 
-Deliberately single-theme: a near-black museum interior with a red-ochre
-accent, the oldest pigment humans used. No light theme, no gradients, square
-corners, no emoji anywhere in the interface.
+Eight themes share one structure. `dark` is the design's default: a near-black
+museum interior with a red-ochre accent, the oldest pigment humans used.
+`light` inverts it onto warm paper. `neon`, `ember`, `verdant`, `glacier`,
+`bronze` and `dusk` are accent skins layered on top the same way
+(`app/_theme-neon.css`, `app/_theme-variants.css`) — each recolours the same
+tokens rather than reworking the layout, so the discipline holds everywhere
+no matter which is picked: no gradient-blob decoration, square corners, no
+emoji anywhere in the interface. Pick one from the theme button in the top
+bar (`components/ThemeToggle.tsx`).
 
 ---
 

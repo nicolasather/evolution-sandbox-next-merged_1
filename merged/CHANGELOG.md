@@ -7,6 +7,118 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 Built on top of 1.12.0 below (merged in after it had already landed on `main`).
 
+### Five more accent themes, and a picker menu instead of a click-cycle (theme system, three → eight)
+The theme button cycled System → Light → Dark → Neon one click at a time; asked
+for more themes to build on, and a fifth click-through state would have made
+that worse rather than better. Added five accent skins — `ember`, `verdant`,
+`glacier`, `bronze`, `dusk` — the same way `neon` was originally added (a
+`:root[data-theme="…"]` token block layered after the design system,
+`app/_theme-variants.css`, kept out of `app/_design-system.css` on purpose so
+`data:check` against the single-file build's stylesheet stays clean), each
+recolouring the full token set (`--ink-*`, `--bone-*`, `--line-*`, `--ochre*`,
+the rarity ramp, the glass/plate surfaces, `--plate-line/spark/glow`) rather
+than only the accent colour, so every screen — workbench, exhibit plate,
+graph, archive — looks intentional in all eight. Loosely tied to the game's
+own materials (Ember → fire, Verdant → plants, Glacier → water, Bronze →
+metal, Dusk → the "mystery" violet the design already reserved) so picking
+one is a small nod to what a player has found, not just a colour swap.
+
+- **`lib/theme.ts`**: `Theme`/`ThemePref` now derive from one `THEMES` array
+  instead of a hand-written union repeated in three places (the type, the
+  boot script's validity check, `readPref`'s guard) — adding a ninth theme
+  later is a one-line change.
+- **`components/ThemeToggle.tsx`**: replaced the four-state click-cycle with a
+  small menu (`role="listbox"`, closes on outside click or Escape) listing
+  all eight themes plus System, each with a colour dot; picking one behaves
+  exactly like the old `savePref` cycle did — same button, same
+  `applyTheme`/`savePref` plumbing, no new dependency.
+- `app/_theme-variants.css` also carries the menu's own styling, reusing the
+  search dropdown's visual language (`--ink-2` panel, hairline border)
+  rather than inventing a second one.
+- `Plate3D.tsx`'s canvas reads `--plate-line` / `--plate-spark` / `--plate-glow`
+  generically already, so the exhibit plate picked up all five new themes
+  with no code change there.
+
+### A second, larger brief — the "living world" visual/interaction layer, taken slice by slice
+A second brief arrived, asking for a much deeper visual/interaction pass:
+a reactive opening scene, a shared cursor field, a "withheld colour" reveal,
+material-specific response, a generalised camera director, an attention
+manager, era-driven colour, and eventually a Workbench decluttering pass.
+Per its own instruction, audited against the code first — `docs/ROADMAP-IMMERSIVE.md`
+keeps that brief, the audit and a ten-phase build order in the repo, the same
+way `ROADMAP.md` already does for the mechanics brief. Confirmed with the
+person to extend the existing Canvas 2D + WebGL architecture rather than
+rebuild the opening in Three.js. Phases below land in order; see that doc for
+what's done, what's deliberately deferred, and why.
+
+- **`lib/cursorField.ts` (new)** — one shared, ref-counted singleton for
+  pointer position/velocity/"active" state (an eased position, a computed
+  velocity and speed, an idle timeout), replacing `ReactiveField.tsx`'s
+  private `pointermove` listener. `ReactiveField` now reads it every frame
+  instead of tracking its own mouse state; nothing else changed about how it
+  looks or feels. `Landing.tsx` was deliberately left alone here — it already
+  gets pointer coordinates through its own `onPointerMove` prop and
+  `IntroFx`'s `pointer()`/`attract()`/`release()`/`leave()` API, so it has no
+  need of the new singleton.
+- **Withheld-colour reveal (`Landing.tsx`, `app/_museum.css`)** — the title,
+  the materials line and the falling stone sit in a muted, desaturated tone
+  until the cursor comes near, then warm toward `--ochre` within a ~260px
+  radius (`color-mix(in srgb, var(--ochre) calc(var(--reveal) * N%), …)`),
+  and settle back on pointer-leave. `--reveal` is set as an inline custom
+  property on each element's own container (the `<h1>`, the materials `<p>`,
+  the existing stone ref) so ordinary CSS inheritance carries it to the
+  children that actually use it in their `color`/`background-color` — the
+  default (`--reveal:0`) has to live on that same parent, not the child,
+  or a child's own stylesheet value would shadow the JS-set one and the
+  effect would silently do nothing.
+- **`lib/attention.ts` (new)** — a small shared "something is the visual
+  centre of the screen right now" registry (`claimAttention(name)` → a
+  release function, `isAttentionClaimed()`, `subscribeAttention()`). Wires
+  together three things that were previously either unconnected or only
+  loosely coordinated:
+  - `ReactiveField.tsx`'s `setFieldQuiet`/`emitFieldPulse` were already
+    exported but, it turned out, never actually called from anywhere —
+    dormant hooks. The field's quiet mode now also follows
+    `subscribeAttention` (OR'd with the still-working manual event), so
+    wiring in real callers was purely additive.
+  - `components/world/WorldLayer.tsx` claims `'globe'` for exactly the span
+    a moment is on screen (its Director `onStart`/`onEnd` callbacks) —
+    tighter than the existing `lib/world/bus.ts` "busy" signal, which also
+    covers queued-but-not-yet-playing.
+  - `components/fx/CeremonyStage.tsx` claims `'ceremony'` for its mounted
+    lifetime; `components/fx/EraShift.tsx` claims `'era-shift'` while its own
+    banner is up (new — nothing quieted the field for the era-shift banner
+    before) and its "wait for a ceremony or the globe to close" check now
+    reads `isAttentionClaimed()` instead of polling
+    `document.querySelector('.cer, .wg[data-on="true"]')` on a 200ms timer.
+  - `lib/world/director.ts` + `choreography.ts` were re-audited against the
+    brief's "generalise the camera director" ask: `WorldDirector<P>` already
+    queues both `major` and `era` moments through the one system (confirmed
+    via the real production call site in `WorldLayer.tsx`, not just its
+    tests) — more done than first assumed. Fully merging `CeremonyStage`/
+    `EraShift` into that same queue would mean rewriting two separate,
+    already-working timer/skip/keyboard state machines with no way to run
+    the app this session to prove it didn't regress; deliberately deferred
+    rather than forced. `docs/ROADMAP-IMMERSIVE.md` also corrects an earlier
+    line in its own audit table that said `ogl` "wasn't found imported
+    anywhere" — it is, in `ReactiveField.tsx`.
+- **Scene material response: hover, alongside the existing click (`lib/scenefx/engine.ts`,
+  `components/fx/SceneFx.tsx`)** — `SceneFxEngine.hover()` plays the same
+  region-based reaction (splash/lift/dust) as a click, at `HOVER_STRENGTH`
+  (0.4×: fewer parts, the click-only "grit" left out entirely, silent) and
+  behind its own, coarser repeat guard (`HOVER_REPEAT_MS`/`HOVER_REPEAT_PX`)
+  tuned for a slower gesture than a click. `click()` itself is untouched —
+  `strength` defaults to `1` and reproduces the exact original formulas.
+  `SceneFxHandle.hover()` exposes it the same way `click()` is exposed. Not
+  yet wired to an actual `pointermove`: that caller lives in `Workbench.tsx`
+  (81 KB), which this pass deliberately left alone — see
+  `docs/ROADMAP-IMMERSIVE.md` phase 6/8. Also corrected that document's
+  characterisation of material response as "only three families": a second,
+  separate system (`SceneFx.tsx`'s `AMBIENT` table) already answers six more
+  kinds of picture element by class name (fire/smoke/gear/star/light/drift)
+  with no traced region needed, so click response already reaches most of
+  the brief's material list in spirit.
+
 ### The next brief, checked against the code before anything was built (P0)
 A new development brief arrived covering P0 through P9. Audited it against the
 actual code and CHANGELOG first, per its own rule — most of P0–P3 turned out

@@ -1,0 +1,330 @@
+/* ============================================================================
+   FIVE MORE ACCENT THEMES + THE THEME PICKER MENU
+   Same idea as _theme-neon.css (kept out of _design-system.css on purpose —
+   that file mirrors the single-file build byte for byte, tools/sync_data.py
+   --check): a full token set per `:root[data-theme="…"]`, layered on top of
+   the base design system through the same custom properties. Each one keeps
+   the game's near-black-ground / hairline-rule structure and only recolours
+   it, the way `neon` did first. Loosely tied to the game's own materials —
+   Ember (fire), Verdant (plants), Glacier (water), Bronze (metal) and Dusk
+   (the "mystery" accent the design already reserves a muted violet for) — so
+   picking one is itself a small nod to what the player has found.
+   ========================================================================== */
+
+/* ── ember: charcoal-red ground, warm ivory type, a lit-coal accent ─────── */
+:root[data-theme="ember"]{
+  --ink-0:#0d0604;
+  --ink-1:#140a06;
+  --ink-2:#1c0f09;
+  --ink-3:#26150d;
+  --ink-4:#331d12;
+
+  --bone:#f5e6d8;
+  --bone-2:#c9a48c;
+  --bone-3:#a3806a;
+  --bone-4:#7d604f;
+
+  --line:rgba(255,140,66,.12);
+  --line-2:rgba(255,140,66,.22);
+  --line-3:rgba(255,140,66,.38);
+
+  --ochre:#ff6a2e;
+  --ochre-lo:rgba(255,106,46,.14);
+  --ochre-mid:rgba(255,106,46,.46);
+
+  --r-common:#8a6a55;
+  --r-uncommon:#d99a4e;
+  --r-rare:#ff8f3d;
+  --r-hidden:#ffb454;
+
+  --glass-top:rgba(13,6,4,.86);
+  --glass-rail-a:rgba(28,15,9,.6);
+  --glass-rail-b:rgba(13,6,4,.22);
+  --hover:rgba(255,140,66,.07);
+  --slot-bg:rgba(28,15,9,.35);
+  --slot-full:rgba(38,21,13,.62);
+  --glass-trail:rgba(13,6,4,.6);
+  --glass-panel-a:rgba(28,15,9,.7);
+  --glass-panel-b:rgba(13,6,4,.3);
+  --shadow:rgba(0,0,0,.6);
+  --plate-a:rgba(51,29,18,.55);
+  --plate-b:rgba(14,7,5,.6);
+  --glass-sticky:rgba(13,6,4,.94);
+  --scrim:rgba(10,5,3,.78);
+  --glass-nav:rgba(13,6,4,.96);
+  --on-ochre:#1a0800;
+  --ground-strength:.9;
+  --strata-opacity:.4;
+  --grain-opacity:.04;
+
+  --plate-line:#ffb987;
+  --plate-spark:#ff6a2e;
+  --plate-glow:1;
+}
+:root[data-theme="ember"] #ground{background:
+  radial-gradient(120% 85% at 50% 0%, rgba(255,90,30,.22) 0%, rgba(70,25,8,.10) 38%, var(--ink-0) 70%);}
+
+/* ── verdant: near-black forest floor, moss-green accent ────────────────── */
+:root[data-theme="verdant"]{
+  --ink-0:#06100a;
+  --ink-1:#09160d;
+  --ink-2:#0d1e12;
+  --ink-3:#132a19;
+  --ink-4:#1a3722;
+
+  --bone:#e6f2e2;
+  --bone-2:#a8c4a0;
+  --bone-3:#85a37c;
+  --bone-4:#647d5d;
+
+  --line:rgba(140,214,120,.11);
+  --line-2:rgba(140,214,120,.20);
+  --line-3:rgba(140,214,120,.34);
+
+  --ochre:#57c785;
+  --ochre-lo:rgba(87,199,133,.13);
+  --ochre-mid:rgba(87,199,133,.42);
+
+  --r-common:#6f8a6b;
+  --r-uncommon:#3fae7a;
+  --r-rare:#c9a83e;
+  --r-hidden:#ff8fb0;
+
+  --glass-top:rgba(6,16,10,.86);
+  --glass-rail-a:rgba(13,30,18,.6);
+  --glass-rail-b:rgba(6,16,10,.22);
+  --hover:rgba(140,214,120,.06);
+  --slot-bg:rgba(13,30,18,.35);
+  --slot-full:rgba(19,42,25,.62);
+  --glass-trail:rgba(6,16,10,.6);
+  --glass-panel-a:rgba(13,30,18,.7);
+  --glass-panel-b:rgba(6,16,10,.3);
+  --shadow:rgba(0,0,0,.55);
+  --plate-a:rgba(26,55,34,.5);
+  --plate-b:rgba(9,22,13,.55);
+  --glass-sticky:rgba(6,16,10,.94);
+  --scrim:rgba(5,13,8,.78);
+  --glass-nav:rgba(6,16,10,.96);
+  --on-ochre:#04170c;
+  --ground-strength:.85;
+  --strata-opacity:.4;
+  --grain-opacity:.04;
+
+  --plate-line:#bfe6c2;
+  --plate-spark:#57c785;
+  --plate-glow:1;
+}
+:root[data-theme="verdant"] #ground{background:
+  radial-gradient(120% 85% at 50% 0%, rgba(60,180,110,.18) 0%, rgba(15,50,30,.10) 38%, var(--ink-0) 70%);}
+
+/* ── glacier: slate-blue ground, pale ice accent (cooler and quieter than neon) ── */
+:root[data-theme="glacier"]{
+  --ink-0:#060a0f;
+  --ink-1:#0a1119;
+  --ink-2:#101a24;
+  --ink-3:#172531;
+  --ink-4:#20313f;
+
+  --bone:#eaf4fb;
+  --bone-2:#a9c2d1;
+  --bone-3:#85a1b3;
+  --bone-4:#63808f;
+
+  --line:rgba(140,200,230,.11);
+  --line-2:rgba(140,200,230,.20);
+  --line-3:rgba(140,200,230,.34);
+
+  --ochre:#6fc7e8;
+  --ochre-lo:rgba(111,199,232,.12);
+  --ochre-mid:rgba(111,199,232,.4);
+
+  --r-common:#6f8896;
+  --r-uncommon:#7fd0c9;
+  --r-rare:#8fb2ff;
+  --r-hidden:#dff3ff;
+
+  --glass-top:rgba(6,10,15,.86);
+  --glass-rail-a:rgba(16,26,36,.6);
+  --glass-rail-b:rgba(6,10,15,.22);
+  --hover:rgba(140,200,230,.06);
+  --slot-bg:rgba(16,26,36,.35);
+  --slot-full:rgba(23,37,49,.62);
+  --glass-trail:rgba(6,10,15,.6);
+  --glass-panel-a:rgba(16,26,36,.7);
+  --glass-panel-b:rgba(6,10,15,.3);
+  --shadow:rgba(0,0,0,.55);
+  --plate-a:rgba(32,49,63,.5);
+  --plate-b:rgba(10,17,25,.55);
+  --glass-sticky:rgba(6,10,15,.94);
+  --scrim:rgba(4,8,12,.78);
+  --glass-nav:rgba(6,10,15,.96);
+  --on-ochre:#021018;
+  --ground-strength:.85;
+  --strata-opacity:.35;
+  --grain-opacity:.035;
+
+  --plate-line:#cdeaf7;
+  --plate-spark:#6fc7e8;
+  --plate-glow:1;
+}
+:root[data-theme="glacier"] #ground{background:
+  radial-gradient(120% 85% at 50% 0%, rgba(90,160,210,.16) 0%, rgba(20,45,65,.09) 38%, var(--ink-0) 70%);}
+
+/* ── bronze: warm graphite ground, oxidised-copper accent ───────────────── */
+:root[data-theme="bronze"]{
+  --ink-0:#0b0806;
+  --ink-1:#120d09;
+  --ink-2:#1a130d;
+  --ink-3:#241a11;
+  --ink-4:#312316;
+
+  --bone:#f2e6d5;
+  --bone-2:#c7ac8c;
+  --bone-3:#a58a6c;
+  --bone-4:#806a52;
+
+  --line:rgba(214,150,90,.12);
+  --line-2:rgba(214,150,90,.22);
+  --line-3:rgba(214,150,90,.36);
+
+  --ochre:#c98a3f;
+  --ochre-lo:rgba(201,138,63,.13);
+  --ochre-mid:rgba(201,138,63,.44);
+
+  --r-common:#8c7c65;
+  --r-uncommon:#9fae6f;
+  --r-rare:#e0b64a;
+  --r-hidden:#ff9a5a;
+
+  --glass-top:rgba(11,8,6,.86);
+  --glass-rail-a:rgba(26,19,13,.6);
+  --glass-rail-b:rgba(11,8,6,.22);
+  --hover:rgba(214,150,90,.06);
+  --slot-bg:rgba(26,19,13,.35);
+  --slot-full:rgba(36,26,18,.62);
+  --glass-trail:rgba(11,8,6,.6);
+  --glass-panel-a:rgba(26,19,13,.7);
+  --glass-panel-b:rgba(11,8,6,.3);
+  --shadow:rgba(0,0,0,.55);
+  --plate-a:rgba(49,35,22,.5);
+  --plate-b:rgba(13,10,7,.55);
+  --glass-sticky:rgba(11,8,6,.94);
+  --scrim:rgba(9,6,4,.78);
+  --glass-nav:rgba(11,8,6,.96);
+  --on-ochre:#180d02;
+  --ground-strength:.88;
+  --strata-opacity:.42;
+  --grain-opacity:.045;
+
+  --plate-line:#e8c99b;
+  --plate-spark:#c98a3f;
+  --plate-glow:1;
+}
+:root[data-theme="bronze"] #ground{background:
+  radial-gradient(120% 85% at 50% 0%, rgba(200,130,55,.18) 0%, rgba(60,35,15,.10) 38%, var(--ink-0) 70%);}
+
+/* ── dusk: near-black violet ground, the reserved "mystery" accent ──────── */
+:root[data-theme="dusk"]{
+  --ink-0:#08060f;
+  --ink-1:#0c0a16;
+  --ink-2:#12101f;
+  --ink-3:#191529;
+  --ink-4:#221d38;
+
+  --bone:#ece7f7;
+  --bone-2:#b3a8cf;
+  --bone-3:#9086b0;
+  --bone-4:#6d6389;
+
+  --line:rgba(170,140,230,.12);
+  --line-2:rgba(170,140,230,.22);
+  --line-3:rgba(170,140,230,.36);
+
+  --ochre:#9b7cf0;
+  --ochre-lo:rgba(155,124,240,.13);
+  --ochre-mid:rgba(155,124,240,.44);
+
+  --r-common:#7b7096;
+  --r-uncommon:#6a9fd6;
+  --r-rare:#d6a2f5;
+  --r-hidden:#ffd27a;
+
+  --glass-top:rgba(8,6,15,.86);
+  --glass-rail-a:rgba(18,16,31,.6);
+  --glass-rail-b:rgba(8,6,15,.22);
+  --hover:rgba(170,140,230,.06);
+  --slot-bg:rgba(18,16,31,.35);
+  --slot-full:rgba(25,21,41,.62);
+  --glass-trail:rgba(8,6,15,.6);
+  --glass-panel-a:rgba(18,16,31,.7);
+  --glass-panel-b:rgba(8,6,15,.3);
+  --shadow:rgba(0,0,0,.6);
+  --plate-a:rgba(34,29,56,.5);
+  --plate-b:rgba(11,9,18,.55);
+  --glass-sticky:rgba(8,6,15,.94);
+  --scrim:rgba(6,5,11,.8);
+  --glass-nav:rgba(8,6,15,.96);
+  --on-ochre:#0d0518;
+  --ground-strength:.9;
+  --strata-opacity:.4;
+  --grain-opacity:.04;
+
+  --plate-line:#cabdf2;
+  --plate-spark:#9b7cf0;
+  --plate-glow:1;
+}
+:root[data-theme="dusk"] #ground{background:
+  radial-gradient(120% 85% at 50% 0%, rgba(150,110,230,.16) 0%, rgba(35,20,60,.10) 38%, var(--ink-0) 70%);}
+
+/* ── glow, shared by all six accent themes — same rules _theme-neon.css uses,
+   scoped to every data-theme value in the family instead of just "neon" ──── */
+:root[data-theme="ember"] .tab[aria-selected="true"],
+:root[data-theme="verdant"] .tab[aria-selected="true"],
+:root[data-theme="glacier"] .tab[aria-selected="true"],
+:root[data-theme="bronze"] .tab[aria-selected="true"],
+:root[data-theme="dusk"] .tab[aria-selected="true"]{text-shadow:0 0 10px var(--ochre-mid)}
+
+:root[data-theme="ember"] .oc-art, :root[data-theme="ember"] .slot-g,
+:root[data-theme="verdant"] .oc-art, :root[data-theme="verdant"] .slot-g,
+:root[data-theme="glacier"] .oc-art, :root[data-theme="glacier"] .slot-g,
+:root[data-theme="bronze"] .oc-art, :root[data-theme="bronze"] .slot-g,
+:root[data-theme="dusk"] .oc-art, :root[data-theme="dusk"] .slot-g{filter:drop-shadow(0 0 4px var(--ochre-mid))}
+
+:root[data-theme="ember"] .exh-name, :root[data-theme="ember"] .oc-name,
+:root[data-theme="verdant"] .exh-name, :root[data-theme="verdant"] .oc-name,
+:root[data-theme="glacier"] .exh-name, :root[data-theme="glacier"] .oc-name,
+:root[data-theme="bronze"] .exh-name, :root[data-theme="bronze"] .oc-name,
+:root[data-theme="dusk"] .exh-name, :root[data-theme="dusk"] .oc-name{text-shadow:0 0 18px var(--ochre-lo)}
+
+:root[data-theme="ember"] .chip:hover, :root[data-theme="ember"] .icon-btn:hover,
+:root[data-theme="verdant"] .chip:hover, :root[data-theme="verdant"] .icon-btn:hover,
+:root[data-theme="glacier"] .chip:hover, :root[data-theme="glacier"] .icon-btn:hover,
+:root[data-theme="bronze"] .chip:hover, :root[data-theme="bronze"] .icon-btn:hover,
+:root[data-theme="dusk"] .chip:hover, :root[data-theme="dusk"] .icon-btn:hover{
+  box-shadow:0 0 0 1px var(--ochre-mid),0 0 14px var(--ochre-lo)}
+
+:root[data-theme="ember"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}
+:root[data-theme="verdant"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}
+:root[data-theme="glacier"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}
+:root[data-theme="bronze"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}
+:root[data-theme="dusk"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}
+
+:root[data-theme="ember"] .exh-art{box-shadow:inset 0 0 40px var(--ochre-lo)}
+:root[data-theme="verdant"] .exh-art{box-shadow:inset 0 0 40px var(--ochre-lo)}
+:root[data-theme="glacier"] .exh-art{box-shadow:inset 0 0 40px var(--ochre-lo)}
+:root[data-theme="bronze"] .exh-art{box-shadow:inset 0 0 40px var(--ochre-lo)}
+:root[data-theme="dusk"] .exh-art{box-shadow:inset 0 0 40px var(--ochre-lo)}
+
+/* ── the theme picker menu (components/ThemeToggle.tsx) ─────────────────
+   Same visual language as #s-results (the search dropdown) — a plain panel
+   in --ink-2 with a hairline border — so a second floating list in the top
+   bar doesn't invent a new pattern. */
+.theme-picker{position:relative}
+.theme-menu{position:absolute;top:calc(100% + 6px);right:0;width:176px;max-height:70vh;
+  overflow-y:auto;background:var(--ink-2);border:1px solid var(--line-2);z-index:40;padding:4px 0}
+.theme-menu .item.theme-item{grid-template-columns:12px 1fr;gap:10px;padding:7px 13px}
+.theme-dot{width:10px;height:10px;flex:none;border-radius:50%;border:1px solid var(--line-3)}
+
+@media (max-width:900px){
+  .theme-menu{position:fixed;top:var(--top);right:8px;left:auto}
+}

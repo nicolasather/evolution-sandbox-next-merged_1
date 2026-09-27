@@ -89,6 +89,8 @@ export function Landing({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const beginRef = useRef<HTMLButtonElement>(null);
   const stoneRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const matsRef = useRef<HTMLParagraphElement>(null);
   const fxRef = useRef<IntroFx | null>(null);
   const spritesReady = useRef<Promise<void>>(Promise.resolve());
   const timers = useRef<number[]>([]);
@@ -292,9 +294,31 @@ export function Landing({
 
   /* ── pointer → dust ───────────────────────────────────────────────── */
 
+  /** "Withheld colour": the title, the material words and the hero stone
+   *  stay muted until the cursor is near, then warm toward the current
+   *  theme's own accent — see .landing-q .q-1/.q-2, .landing-mats span and
+   *  .intro-stone in app/_museum.css, which read the --reveal (0–1) this
+   *  sets. Plain distance-to-centre falloff, written straight to the
+   *  element's own style so it never triggers a React re-render; CSS does
+   *  the actual easing (transition: color / background-color), including
+   *  the drift back to muted on resetReveal below. */
+  const REVEAL_RADIUS = 260;
+  const revealAt = (el: HTMLElement | null, x: number, y: number) => {
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const d = Math.hypot(x - (r.left + r.width / 2), y - (r.top + r.height / 2));
+    el.style.setProperty('--reveal', Math.max(0, 1 - d / REVEAL_RADIUS).toFixed(3));
+  };
+  const resetReveal = () => {
+    for (const ref of [titleRef, matsRef, stoneRef]) ref.current?.style.setProperty('--reveal', '0');
+  };
+
   const onMove = (e: React.PointerEvent) => {
     if (e.pointerType === 'touch') return;
     fxRef.current?.pointer(e.clientX, e.clientY);
+    revealAt(titleRef.current, e.clientX, e.clientY);
+    revealAt(matsRef.current, e.clientX, e.clientY);
+    revealAt(stoneRef.current, e.clientX, e.clientY);
   };
   const hotOn = () => {
     const b = beginRef.current;
@@ -324,7 +348,7 @@ export function Landing({
       className={cn(gone && 'gone')}
       aria-label="Introduction"
       onPointerMove={onMove}
-      onPointerLeave={() => fxRef.current?.leave()}
+      onPointerLeave={() => { fxRef.current?.leave(); resetReveal(); }}
       onPointerDown={() => { if (SKIPPABLE.includes(phaseRef.current)) skip(); }}
     >
       <canvas ref={canvasRef} className="intro-canvas" aria-hidden="true" />
@@ -333,7 +357,7 @@ export function Landing({
         {showReturn && (
           <p className="landing-kicker mono" role="status">You left the world here.</p>
         )}
-        <h1 className="landing-q">
+        <h1 className="landing-q" ref={titleRef}>
           <span className="q-1">How did we</span>
           <span className="q-2">get here<i className="q-mark">?</i></span>
         </h1>
@@ -353,7 +377,7 @@ export function Landing({
         ) : (
           <>
             <p className="landing-sub">Start with almost nothing.</p>
-            <p className="landing-mats mono" aria-label="Stone, wood, bone, fibre">
+            <p className="landing-mats mono" ref={matsRef} aria-label="Stone, wood, bone, fibre">
               <span>Stone</span><i>·</i><span>Wood</span><i>·</i><span>Bone</span><i>·</i><span>Fibre</span>
             </p>
           </>

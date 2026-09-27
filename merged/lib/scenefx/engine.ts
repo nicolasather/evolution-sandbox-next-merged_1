@@ -2,18 +2,24 @@ import type { Palette } from '@/lib/craft/types';
 import { fit, hitRegion, toScreen, type Hit, type Par, type Region, type RegionKind } from './regions';
 
 /* ============================================================================
-   SCENEFX ENGINE — the scenery answering a click.
+   SCENEFX ENGINE — the scenery answering a click, or just the pointer
+   passing over it.
 
    A click on visible water makes a small splash and rings that widen across
    the water's own plane (squashed, clipped to the shore); on grass, a few
-   seeds and blades lift off; on dry ground, a puff of dust and grit. Effects
-   are anchored in the scene's own coordinates, so they stay glued to the
-   picture while its layers drift with the mouse.
+   seeds and blades lift off; on dry ground, a puff of dust and grit. `hover`
+   plays the same reaction at a fraction of the strength (fewer parts, no
+   grit, no sound) and on its own, coarser repeat guard, so the scenery reads
+   as alive under the cursor without turning every pointermove into a click.
+   Effects are anchored in the scene's own coordinates, so they stay glued to
+   the picture while its layers drift with the mouse.
 
    Pure canvas 2D, pooled and capped: at most MAX_ACTIVE effects live at once,
    at most PER_KIND of each sort, and at most MAX_VOICES sounds at a time.
    The engine decides *what* to show and *whether* to sound; it never plays
    anything itself — the caller does, so tests can run it without audio.
+   `hover` never returns a sound cue: a click is the only gesture this layer
+   speaks for.
    ========================================================================== */
 
 export const MAX_ACTIVE = 5;
@@ -36,18 +42,25 @@ export interface ClickResult { hit: Hit; effect: Effect; sound: SoundCue | null 
 const clamp = (v: number, lo: number, hi: number) => (v < lo ? lo : v > hi ? hi : v);
 const easeOut = (t: number) => 1 - Math.pow(1 - t, 2.4);
 
+/** How far a hover has to travel, and how long it has to wait, before it may answer again. */
+export const HOVER_REPEAT_MS = 220;
+export const HOVER_REPEAT_PX = 60;
+/** A hover's version of an effect is this much of a click's — present, not attention-grabbing. */
+export const HOVER_STRENGTH = 0.4;
+
 export class SceneFxEngine {
   effects: Effect[] = [];
   reduced = false;
   /** End times (ms) of sounds still ringing — the voice cap reads this. */
   private voices: number[] = [];
   private lastClick: { kind: RegionKind; x: number; y: number; at: number } | null = null;
+  private lastHover: { kind: RegionKind; x: number; y: number; at: number } | null = null;
   private rnd: () => number;
 
   constructor(rnd: () => number = Math.random) { this.rnd = rnd; }
 
   get alive() { return this.effects.length > 0; }
-  clear() { this.effects.length = 0; this.voices.length = 0; this.lastClick = null; }
+  clear() { this.effects.length = 0; this.voices.length = 0; this.lastClick = null; this.lastHover = null; }
 
   private r(lo: number, hi: number) { return lo + (hi - lo) * this.rnd(); }
 
@@ -64,9 +77,33 @@ export class SceneFxEngine {
     if (same.length >= PER_KIND) this.effects.splice(this.effects.indexOf(same[0]), 1);
     while (this.effects.length >= MAX_ACTIVE) this.effects.shift();
 
-    const effect = this.make(hit, cx, cy, vh, now);
+    const effect = this.make(hit, cx, cy, vh, now, 1);
     this.effects.push(effect);
     return { hit, effect, sound: this.voice(hit, cx, vw, now) };
+  }
+
+  /**
+   * The pointer resting or passing over a point, without a click — a quieter
+   * version of the same reaction (fewer drops, no grit, no sound), so the
+   * scenery reads as alive under the cursor without competing with an actual
+   * click. Callers should throttle how often they call this themselves (it
+   * is meant for a `pointermove`, not fired on every pixel); this only adds
+   * its own, coarser repeat guard on top, tuned for a hover's slower pace.
+   */
+  hover(sceneId: string, cx: number, cy: number, vw: number, vh: number, par: Par, now: number): Effect | null {
+    const hit = hitRegion(sceneId, cx, cy, vw, vh, par);
+    if (!hit) return null;
+    const prev = this.lastHover;
+    if (prev && prev.kind === hit.kind && now - prev.at < HOVER_REPEAT_MS && Math.hypot(prev.x - cx, prev.y - cy) < HOVER_REPEAT_PX) return null;
+    this.lastHover = { kind: hit.kind, x: cx, y: cy, at: now };
+
+    const same = this.effects.filter(e => e.kind === hit.kind);
+    if (same.length >= PER_KIND) this.effects.splice(this.effects.indexOf(same[0]), 1);
+    while (this.effects.length >= MAX_ACTIVE) this.effects.shift();
+
+    const effect = this.make(hit, cx, cy, vh, now, HOVER_STRENGTH);
+    this.effects.push(effect);
+    return effect;
   }
 
   /** Decide whether this click may be heard; at most MAX_VOICES at once. */
@@ -81,19 +118,28 @@ export class SceneFxEngine {
     return { kind: hit.kind, vol, rate, pan: clamp((cx / Math.max(1, vw) - 0.5) * 1.2, -0.7, 0.7) };
   }
 
-  private make(hit: Hit, cx: number, cy: number, vh: number, now: number): Effect {
+  /**
+   * `strength` scales how much of a reaction this is: 1 for a real click,
+   * `HOVER_STRENGTH` for the pointer merely passing over. It thins the part
+   * counts and ripple reach rather than changing the *kind* of reaction, so a
+   * hover reads as the same material responding more quietly, not a
+   * different effect. At `strength === 1` this is exactly the original
+   * click reaction, unchanged.
+   */
+  private make(hit: Hit, cx: number, cy: number, vh: number, now: number, strength = 1): Effect {
     // things nearer the bottom of the picture are nearer the viewer, so they are bigger
     const k = 0.65 + 0.7 * clamp(hit.v / 900, 0, 1);
     const e: Effect = { kind: hit.kind, u: hit.u, v: hit.v, depth: hit.region.depth, poly: hit.region.poly, t: 0, life: 1, k, parts: [], ripples: [], born: now, cx, cy };
     void vh;
     const calm = this.reduced;
+    const thin = (n: number) => Math.max(1, Math.round(n * strength));
     if (hit.kind === 'water') {
       e.life = calm ? 0.7 : 1.5;
-      if (calm) e.ripples.push({ delay: 0, dur: 0.7, reach: 26 * k });
+      if (calm) e.ripples.push({ delay: 0, dur: 0.7, reach: 26 * k * strength });
       else {
-        const n = 3;
-        for (let i = 0; i < n; i++) e.ripples.push({ delay: i * this.r(0.11, 0.17), dur: this.r(1.0, 1.3), reach: this.r(62, 100) * k * (1 - i * 0.12) });
-        const drops = Math.round(this.r(7, 11));
+        const n = strength >= 1 ? 3 : 1;
+        for (let i = 0; i < n; i++) e.ripples.push({ delay: i * this.r(0.11, 0.17), dur: this.r(1.0, 1.3), reach: this.r(62, 100) * k * strength * (1 - i * 0.12) });
+        const drops = Math.round(this.r(7, 11) * strength);
         for (let i = 0; i < drops; i++) {
           const a = this.r(-1.05, 1.05);             // fan around straight up
           const sp = this.r(110, 250) * k;
@@ -103,10 +149,10 @@ export class SceneFxEngine {
     } else if (hit.kind === 'grass') {
       e.life = calm ? 0.5 : 1.5;
       if (!calm) {
-        const n = Math.round(this.r(6, 10));
+        const n = thin(this.r(6, 10));
         for (let i = 0; i < n; i++) {
           e.parts.push({
-            dx: this.r(-16, 16) * k, dy: this.r(-4, 4), vx: this.r(-40, 40) * k, vy: -this.r(28, 90) * k, g: -this.r(4, 16),
+            dx: this.r(-16, 16) * k, dy: this.r(-4, 4), vx: this.r(-40, 40) * k * strength, vy: -this.r(28, 90) * k * strength, g: -this.r(4, 16),
             life: this.r(0.8, 1.4), size: this.r(5, 11) * k, rot: this.r(-1.2, 1.2), len: this.r(0.7, 1.3), sway: this.r(0, Math.PI * 2),
           });
         }
@@ -114,19 +160,22 @@ export class SceneFxEngine {
     } else {
       e.life = calm ? 0.6 : 1.4;
       if (!calm) {
-        const puffs = Math.round(this.r(5, 8));
+        const puffs = thin(this.r(5, 8));
         for (let i = 0; i < puffs; i++) {
           e.parts.push({
-            dx: this.r(-14, 14) * k, dy: this.r(-3, 3), vx: this.r(-34, 34) * k, vy: -this.r(6, 26) * k, g: 0,
-            life: this.r(0.7, 1.3), size: this.r(12, 26) * k, rot: 0, len: 1, sway: 0,
+            dx: this.r(-14, 14) * k, dy: this.r(-3, 3), vx: this.r(-34, 34) * k, vy: -this.r(6, 26) * k * strength, g: 0,
+            life: this.r(0.7, 1.3), size: this.r(12, 26) * k * Math.max(0.6, strength), rot: 0, len: 1, sway: 0,
           });
         }
-        const grit = Math.round(this.r(5, 9));
-        for (let i = 0; i < grit; i++) {
-          e.parts.push({
-            dx: this.r(-8, 8) * k, dy: 0, vx: this.r(-90, 90) * k, vy: -this.r(50, 130) * k, g: 520 * k,
-            life: this.r(0.35, 0.65), size: this.r(0.9, 1.7), rot: 0, len: 0, sway: 0,
-          });
+        // grit (the sharpest, most click-like part of the reaction) is left out of a hover entirely
+        if (strength >= 1) {
+          const grit = Math.round(this.r(5, 9));
+          for (let i = 0; i < grit; i++) {
+            e.parts.push({
+              dx: this.r(-8, 8) * k, dy: 0, vx: this.r(-90, 90) * k, vy: -this.r(50, 130) * k, g: 520 * k,
+              life: this.r(0.35, 0.65), size: this.r(0.9, 1.7), rot: 0, len: 0, sway: 0,
+            });
+          }
         }
       }
     }

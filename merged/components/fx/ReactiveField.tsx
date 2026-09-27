@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { cursorField } from '@/lib/cursorField';
+import { subscribeAttention } from '@/lib/attention';
 
 /* ============================================================================
    REACTIVE FIELD — a quiet WebGL field of points behind the scene art.
@@ -16,7 +18,16 @@ import { useEffect, useRef } from 'react';
    updates a handful of uniforms per frame, however many points there are.
    Disabled outright for reduced motion; point density scales down on small
    / touch screens. Quiets itself (opacity + reduced influence) while a
-   discovery is being revealed — see emitFieldPulse / setFieldQuiet below.
+   discovery is being revealed — see emitFieldPulse / setFieldQuiet below,
+   and the shared lib/attention claim that now drives the same quiet mode
+   automatically for the discovery ceremony, the era-shift banner and the
+   globe sequence, without any of them needing to know this field exists.
+
+   Position, velocity and "is the pointer active" now come from the shared
+   lib/cursorField singleton rather than a private pointermove listener —
+   this component still owns everything specific to *this* effect (the
+   ripple queue, the press-and-hold charge, quiet-mode easing), which is
+   presentation, not shared state.
    ========================================================================== */
 
 const VERT = /* glsl */ `
@@ -106,6 +117,8 @@ export function ReactiveField({ active }: { active: boolean }) {
     let disposed = false;
     let cleanupGL: (() => void) | undefined;
 
+    cursorField.start();
+
     // ogl only touches the DOM/WebGL — safe to import lazily so it never
     // lands in the very first, most-blocking chunk.
     import('ogl').then(({ Renderer, Geometry, Program, Mesh }) => {
@@ -163,20 +176,12 @@ export function ReactiveField({ active }: { active: boolean }) {
       };
       resize();
 
-      let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-      let tmx = mx, tmy = my;
-      let mActive = 0, mTarget = 0;
       let quiet = 0, quietTarget = 0;
-      let idleTimer = 0;
+      let manualQuiet = false, attentionQuiet = false;
+      const applyQuietTarget = () => { quietTarget = (manualQuiet || attentionQuiet) ? 1 : 0; };
       const ripples: { x: number; y: number; born: number; strength: number }[] = [];
       let holdStart = 0;
 
-      const onMove = (e: PointerEvent) => {
-        tmx = e.clientX; tmy = e.clientY;
-        mTarget = 1;
-        window.clearTimeout(idleTimer);
-        idleTimer = window.setTimeout(() => { mTarget = 0; }, 900);
-      };
       const onDown = (e: PointerEvent) => { holdStart = performance.now(); void e; };
       const onUp = (e: PointerEvent) => {
         const held = Math.min(1, (performance.now() - holdStart) / 900);
@@ -191,24 +196,20 @@ export function ReactiveField({ active }: { active: boolean }) {
         });
         if (ripples.length > MAX_RIPPLES) ripples.shift();
       };
-      const onQuiet = (e: Event) => { quietTarget = (e as CustomEvent).detail ? 1 : 0; };
-      const onVis = () => { if (document.hidden) mTarget = 0; };
+      const onQuiet = (e: Event) => { manualQuiet = !!(e as CustomEvent).detail; applyQuietTarget(); };
+      const unsubAttention = subscribeAttention(on => { attentionQuiet = on; applyQuietTarget(); });
 
-      window.addEventListener('pointermove', onMove, { passive: true });
       window.addEventListener('pointerdown', onDown, { passive: true });
       window.addEventListener('pointerup', onUp, { passive: true });
       window.addEventListener('resize', resize);
       window.addEventListener(FIELD_PULSE_EVENT, onPulse);
       window.addEventListener(FIELD_QUIET_EVENT, onQuiet);
-      document.addEventListener('visibilitychange', onVis);
 
       let raf = 0;
       const tick = () => {
         raf = requestAnimationFrame(tick);
         if (document.hidden) return;
-        const vx = (tmx - mx), vy = (tmy - my);
-        mx += vx * 0.12; my += vy * 0.12;
-        mActive += (mTarget - mActive) * 0.06;
+        const cf = cursorField.get();
         quiet += (quietTarget - quiet) * 0.08;
 
         const now = performance.now();
@@ -226,9 +227,9 @@ export function ReactiveField({ active }: { active: boolean }) {
           }
         }
 
-        program.uniforms.uMouse.value = [mx, my];
-        program.uniforms.uMouseVel.value = [vx, vy];
-        program.uniforms.uMouseActive.value = mActive;
+        program.uniforms.uMouse.value = [cf.x, cf.y];
+        program.uniforms.uMouseVel.value = [cf.vx, cf.vy];
+        program.uniforms.uMouseActive.value = cf.active;
         program.uniforms.uQuiet.value = quiet;
         program.uniforms.uRipple.value = Array.from({ length: MAX_RIPPLES }, (_, k) =>
           [ripple[k * 4], ripple[k * 4 + 1], ripple[k * 4 + 2], ripple[k * 4 + 3]]);
@@ -239,20 +240,18 @@ export function ReactiveField({ active }: { active: boolean }) {
 
       cleanupGL = () => {
         cancelAnimationFrame(raf);
-        window.clearTimeout(idleTimer);
-        window.removeEventListener('pointermove', onMove);
         window.removeEventListener('pointerdown', onDown);
         window.removeEventListener('pointerup', onUp);
         window.removeEventListener('resize', resize);
         window.removeEventListener(FIELD_PULSE_EVENT, onPulse);
         window.removeEventListener(FIELD_QUIET_EVENT, onQuiet);
-        document.removeEventListener('visibilitychange', onVis);
+        unsubAttention();
         canvas.remove();
         gl.getExtension('WEBGL_lose_context')?.loseContext();
       };
     }).catch(() => { /* WebGL unavailable — the engraved scene art carries the background alone */ });
 
-    return () => { disposed = true; cleanupGL?.(); };
+    return () => { disposed = true; cleanupGL?.(); cursorField.stop(); };
   }, []);
 
   return <div id="rfield" ref={hostRef} className={active ? 'on' : ''} aria-hidden="true" />;

@@ -7,6 +7,7 @@ import { startDelay } from '@/lib/world/choreography';
 import { eraMoment, inspectMoment, majorMoment, type MomentEnv, type WorldPayload } from '@/lib/world/moments';
 import { playback } from '@/lib/world/prefs';
 import { notifyWorldDrained, pingWorld, setReplayHandler, setWorldBusy } from '@/lib/world/bus';
+import { claimAttention } from '@/lib/attention';
 import { preloadLand } from '@/lib/world/land';
 import { getQuality, isPhone } from '@/lib/perf';
 import { sound } from '@/lib/sound';
@@ -33,16 +34,25 @@ const ENV: MomentEnv = {
 };
 
 export function WorldLayer({ engine, version, active }: { engine: Engine; version: number; /** The world is live (the film is over). */ active: boolean }) {
+  // held for exactly as long as a moment is actually on screen, so the
+  // reactive field (and anything else listening to lib/attention) quiets
+  // down for the globe the same way it does for a discovery ceremony
+  const attentionRelease = useRef<(() => void) | null>(null);
+  const releaseAttention = () => { attentionRelease.current?.(); attentionRelease.current = null; };
+
   const [director] = useState(() => new WorldDirector<WorldPayload>({
     delay: () => startDelay(getQuality(), playback().motion === 'reduced'),
     open: active,
     onStart: m => {
       if (m.payload.kind === 'major' && !m.payload.inspect) engine.markMajorSeen(m.payload.major.id);
       sound.sfx(m.payload.kind === 'era' ? 'era' : 'major', 0.6);
+      releaseAttention();
+      attentionRelease.current = claimAttention('globe');
     },
     onEnd: m => {
       // the place is on the map now
       if (!(m.payload.kind === 'major' && m.payload.inspect)) pingWorld();
+      releaseAttention();
     },
     onDrop: m => {
       // an invention that was queued and dropped still counts as seen
@@ -103,8 +113,9 @@ export function WorldLayer({ engine, version, active }: { engine: Engine; versio
   // warm the land texture when the browser is idle
   useEffect(() => { preloadLand(); }, []);
 
-  // leaving the page while something plays must not leave the bus stuck
-  useEffect(() => () => { director.clear(); setWorldBusy(false); }, [director]);
+  // leaving the page while something plays must not leave the bus, or the
+  // attention claim, stuck
+  useEffect(() => () => { director.clear(); setWorldBusy(false); releaseAttention(); }, [director]);
 
   return <GlobeSequence director={director} onSkip={() => { /* state was saved before the first frame: nothing to undo */ }} />;
 }

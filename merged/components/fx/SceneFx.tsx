@@ -23,6 +23,14 @@ import { sceneState } from '@/lib/scenefx/state';
 export interface SceneFxHandle {
   /** A bare click at this viewport point. Returns the kind of response, or null when the point is neither water, grass nor ground. */
   click(clientX: number, clientY: number): 'water' | 'grass' | 'dust' | 'fire' | 'smoke' | 'gear' | 'star' | 'light' | 'drift' | null;
+  /**
+   * The pointer passing over this viewport point, without a click — a
+   * quieter version of the same reaction (fewer parts, no grit, silent).
+   * Callers should throttle their own `pointermove` before reaching for
+   * this (it is not meant to run on every pixel); the engine adds its own,
+   * coarser repeat guard on top. Returns the kind of response, or null.
+   */
+  hover(clientX: number, clientY: number): 'water' | 'grass' | 'dust' | null;
 }
 
 /** Real blades in the picture lean away from the click, only where the picture has grass. */
@@ -159,6 +167,18 @@ export function SceneFx({ active, ref }: { active: boolean; ref?: Ref<SceneFxHan
       if (res.hit.kind === 'grass' && !eng.reduced) nudgeBlades(x, y, vw, vh);
       if (!raf.current) { last.current = performance.now(); raf.current = requestAnimationFrame(frame.current); }
       return res.hit.kind;
+    },
+    hover(x, y) {
+      const eng = engine.current;
+      if (!eng || !activeRef.current) return null;
+      const vw = window.innerWidth, vh = window.innerHeight;
+      eng.reduced = !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+      if (eng.reduced) return null;                    // a resting reaction is exactly the motion reduced motion asks to skip
+      pal.current = readPaletteSafe();
+      const effect = eng.hover(sceneState.id, x, y, vw, vh, { x: sceneState.px, y: sceneState.py }, performance.now());
+      if (!effect) return null;
+      if (!raf.current) { last.current = performance.now(); raf.current = requestAnimationFrame(frame.current); }
+      return effect.kind;
     },
   }), []);
 

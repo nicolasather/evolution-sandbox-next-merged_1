@@ -84,7 +84,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-theme="dark" suppressHydrationWarning
       className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
       <head>
-        {/* first thing to run: pick light, dark or neon before anything paints */}
+        {/* first thing to run: pick the stored theme — light, dark, or one of the
+            six accent skins (lib/theme.ts THEMES) — before anything paints */}
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
       </head>
       <body>

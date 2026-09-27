@@ -67,10 +67,17 @@ export function Sandbox() {
   useEffect(() => () => revealTimers.current.forEach(t => window.clearTimeout(t)), []);
 
   // The world tint follows the furthest era reached — subtle, not a light show.
+  // --era-glow is the second, slower half of the same idea: it only grows, so
+  // it reads as the world *widening* over the whole game rather than
+  // recolouring with each era shift the way --era-tint does. Independent of
+  // the (now eight) player-chosen themes — it warms whichever accent the
+  // active theme already uses, rather than adding a colour of its own.
   const era = engine.currentEra();
+  const eraProgress = engine.erasReached().length / Math.max(1, engine.db.eras.length);
   useEffect(() => {
     document.documentElement.style.setProperty('--era-tint', ERA_TINT[era.id] ?? '16,16,17');
-  }, [era.id]);
+    document.documentElement.style.setProperty('--era-glow', eraProgress.toFixed(3));
+  }, [era.id, eraProgress]);
 
   // press bursts everywhere; on a desktop the top bar tucks away until the
   // pointer reaches the top edge
