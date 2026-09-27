@@ -59,7 +59,7 @@ export function EraShift({ era, index, active }: { era: Era; index: number; acti
   useEffect(() => () => timers.current.forEach(id => window.clearTimeout(id)), []);
 
   // the banner itself is a claim too, so anything ambient quiets for it
-  useEffect(() => { if (shown) return claimAttention('era-shift'); }, [shown]);
+  useEffect(() => { return shown ? claimAttention('era-shift') : undefined; }, [shown]);
 
   if (!shown) return null;
   return (
