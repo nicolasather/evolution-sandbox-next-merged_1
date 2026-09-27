@@ -7,6 +7,7 @@ import { LineHoverLink } from './vengeance/line-hover-link';
 import { cn } from '@/lib/utils';
 import { formatDate } from '@/lib/format';
 import { dailyPick } from '@/lib/daily';
+import { sortDiscoveries } from '@/lib/chronology';
 import { WorldOrigins } from './world/WorldOrigins';
 import type { Engine } from '@/lib/engine';
 import type { StoneAgeTier } from '@/lib/types';
@@ -80,7 +81,11 @@ export function ArchiveView({
   else if (filter === 'rare') list = list.filter(n => n.rar === 'rare' && engine.has(n.id));
   else if (filter === 'hidden') list = list.filter(n => n.hidden && engine.has(n.id));
   else if (filter === 'req') list = list.filter(n => n.src.includes('source_required') && engine.has(n.id));
-  list.sort((a, b) => a.no - b.no);
+  // default (and every filter's) order is now historical, oldest to newest —
+  // filters narrow the collection, they never reorder it. `no` (catalogue
+  // number) is still the tie-break inside the central comparator, so this is
+  // a superset of the old behaviour, not a replacement for it.
+  list = sortDiscoveries(list);
 
   const stats: [string, React.ReactNode][] = [
     ['discoveries', <StatsCounter key="c" value={s.core} suffix={` / ${s.coreTotal}`} />],

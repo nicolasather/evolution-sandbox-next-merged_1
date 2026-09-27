@@ -40,12 +40,13 @@ export function TechniqueReveal({ engine }: { engine: Engine }) {
   const n = now.affects;
   return (
     <div className="tech-reveal" role="status" data-family={now.family} key={now.action}>
-      <span className="tech-reveal-k mono">{now.via === 'question' ? 'LEARNED' : 'NEW TECHNIQUE'}</span>
+      <span className="tech-reveal-k mono">{now.notedEarlier ? 'NOW POSSIBLE' : now.via === 'question' ? 'LEARNED' : 'NEW TECHNIQUE'}</span>
       <div className="tech-reveal-row">
         <TechniqueIcon id={now.action} size={26} />
         <b className="mono">{now.label.toUpperCase()} UNLOCKED</b>
       </div>
       <p>{now.message}</p>
+      {now.notedEarlier && <p className="tech-reveal-sub mono">YOU ALREADY UNDERSTOOD THIS — THE MATERIALS ARE HERE NOW</p>}
       {n > 0 && (
         <p className="tech-reveal-sub mono">
           {n} {n === 1 ? 'MATERIAL' : 'MATERIALS'} YOU HOLD MAY REACT DIFFERENTLY

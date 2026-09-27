@@ -44,6 +44,11 @@ export interface Question {
   range?: [number, number];
   /** A technique a right answer may open. */
   teaches?: ActionId;
+  /** Explicit chronological gate: not asked while the player's held world (its
+   *  furthest reached `ds`) is earlier than this. Falls back to `range[0]` when
+   *  absent — most questions need no override, since their `range` already says
+   *  when they belong; this exists for the rare case where the two should differ. */
+  notBeforeDs?: number;
   /** ISO date on which the cited page was read and found to say this. Only checked questions are asked. */
   checked?: string;
   /** Set when the claim could not be confirmed from the cited page: the question is kept, and never asked. */

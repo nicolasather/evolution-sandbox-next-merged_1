@@ -43,12 +43,14 @@
   border-color:var(--line-2);color:var(--bone-2);font-size:9.5px;letter-spacing:.1em}
 .wb-rail .wb-act.wb-do:hover{border-color:var(--ochre)}
 
-/* families read as a subtle tint on the pressed state, so the grouping is felt as well as labelled */
-.wb-rail-group[data-family="impact"] .wb-act[aria-pressed="true"]{border-color:#d08a5a}
-.wb-rail-group[data-family="edge"] .wb-act[aria-pressed="true"]{border-color:#c9c3b5}
-.wb-rail-group[data-family="material"] .wb-act[aria-pressed="true"]{border-color:var(--ochre)}
-.wb-rail-group[data-family="flexible"] .wb-act[aria-pressed="true"]{border-color:#8fb28a}
-.wb-rail-group[data-family="thermal"] .wb-act[aria-pressed="true"]{border-color:#e07a4a}
+/* families read as a subtle tint on the pressed state, so the grouping is still
+   felt (and narratable) even though chronological bands, not family, now
+   decide where a technique sits in the rail. */
+.wb-rail .wb-act[data-family="impact"][aria-pressed="true"]{border-color:#d08a5a}
+.wb-rail .wb-act[data-family="edge"][aria-pressed="true"]{border-color:#c9c3b5}
+.wb-rail .wb-act[data-family="material"][aria-pressed="true"]{border-color:var(--ochre)}
+.wb-rail .wb-act[data-family="flexible"][aria-pressed="true"]{border-color:#8fb28a}
+.wb-rail .wb-act[data-family="thermal"][aria-pressed="true"]{border-color:#e07a4a}
 
 /* phones: a strip along the bottom, scrolled sideways, icons only */
 @media (max-width:900px){

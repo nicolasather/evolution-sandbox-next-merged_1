@@ -95,12 +95,38 @@ describe('learning a technique', () => {
     expect(e2.knows('cut')).toBe(true);
   });
 
-  it('a correct answer can teach a technique early, once', () => {
+  it('a correct answer can teach a technique early, once its materials already exist', () => {
     const e = fresh();
+    // Put the materials in place WITHOUT going through emit()/syncTechniques() first — otherwise
+    // the ordinary "found" path would grant polish on its own before teach() ever runs, and this
+    // test would no longer be exercising teach()'s own eligibility check. This mirrors the one
+    // real window where teach()'s "eligible" branch fires: the instant a gate opens, before the
+    // next sync — in play, syncTechniques() usually wins that race, which is exactly why the old,
+    // unconditional version of this test could never tell the two branches apart.
+    e.found.add('cleaned_stone'); e.found.add('sand');
     expect(e.teach('polish')).toBe(true);
     expect(e.knows('polish')).toBe(true);
     expect(e.takeReveals()[0]).toMatchObject({ action: 'polish', via: 'question' });
     expect(e.teach('polish')).toBe(false);
+  });
+
+  it('a correct answer cannot make a technique practically usable before its materials exist — it is noted as understood, not granted', () => {
+    const e = fresh();
+    // On a fresh engine only the primitives are held; polish needs cleaned_stone + sand.
+    expect(e.knows('polish')).toBe(false);
+    expect(e.isPending('polish')).toBe(false);
+    expect(e.teach('polish')).toBe(false); // eligible per the unlock rule? no — recorded as pending instead
+    expect(e.knows('polish')).toBe(false); // still NOT usable: a quiz can never skip the world's own gate
+    expect(e.isPending('polish')).toBe(true);
+    expect(e.takeReveals()).toEqual([]); // nothing to celebrate yet — no reveal for knowledge with no practice
+    expect(e.teach('polish')).toBe(false); // answering again does not double-register or change anything
+
+    // once the real prerequisites turn up, the technique becomes usable on its own — unprompted,
+    // exactly as if the question had never been asked — and the reveal says the idea was already known.
+    give(e, 'cleaned_stone', 'sand');
+    expect(e.knows('polish')).toBe(true);
+    expect(e.isPending('polish')).toBe(false);
+    expect(e.takeReveals()[0]).toMatchObject({ action: 'polish', via: 'found', notedEarlier: true });
   });
 
   it('will not do work it has not learned', () => {

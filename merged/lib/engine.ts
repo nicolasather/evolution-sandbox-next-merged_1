@@ -60,6 +60,9 @@ export interface Reveal {
   /** How it came: by holding what it needs, by answering a question, or by a freeform
    *  gesture matching it before it was ever selected from the rail. */
   via: 'found' | 'question' | 'behaviour';
+  /** A question already taught the underlying idea, before the world could actually
+   *  support it — the technique is only becoming PRACTICAL just now. */
+  notedEarlier?: true;
 }
 
 interface Saved {
@@ -79,6 +82,9 @@ interface Saved {
   insights?: string[];
   /** Global Invention Progression (additive; an older save simply lacks it — see load()). */
   world?: WorldSave;
+  /** v5: techniques a question has already taught the idea behind, but whose
+   *  material/chronological gate was not open yet — see teach()/pendingKnowledge. */
+  pending?: ActionId[];
 }
 
 export const pairKey = (a: string, b: string) => (a < b ? `${a} ${b}` : `${b} ${a}`);
@@ -151,6 +157,11 @@ export class Engine {
   private reveals: Reveal[] = [];
   /** Learned this session and not yet used: the rail lets these pulse. */
   private newTech = new Set<ActionId>();
+  /** A question already taught these — CONCEPTUALLY — but the player's world does not
+   *  yet hold what the technique actually needs (see teach()). Never a shortcut past
+   *  the technique's own unlock rule: syncTechniques() still decides when it becomes
+   *  practically usable, exactly as it would if no question had ever been asked. */
+  private pendingKnowledge = new Set<ActionId>();
   /** Small observations already made. */
   private insights = new Set<string>();
   /** What has been tried on each piece this session — the coach reads it; it is never a verdict. */
@@ -246,16 +257,23 @@ export class Engine {
 
   private learn(a: ActionId, via: 'found' | 'question' | 'behaviour', silent: boolean): boolean {
     if (this.knownSet.has(a)) return false;
+    const notedEarlier = this.pendingKnowledge.delete(a);
     this.knownSet.add(a); this.known.push(a);
     if (!silent) {
       this.newTech.add(a);
       const t = TECH_BY_ID[a];
-      this.reveals.push({ kind: 'technique', action: a, label: t.label, family: t.family, message: t.reveal, affects: this.affectedBy(a), via });
+      this.reveals.push({
+        kind: 'technique', action: a, label: t.label, family: t.family, message: t.reveal,
+        affects: this.affectedBy(a), via, ...(notedEarlier ? { notedEarlier: true as const } : {}),
+      });
     }
     return true;
   }
 
-  /** Learn every technique whose condition now holds. `silent`: restoring a save, nothing to announce. */
+  /** Learn every technique whose condition now holds. `silent`: restoring a save, nothing to announce.
+   *  This is the ONLY path that ever makes a technique practically usable — teach()
+   *  below cannot skip it, so a quiz can never put a historically later action into a
+   *  player's hands while their held world still fails its unlock rule. */
   private syncTechniques(silent = false): void {
     for (const t of TECHNIQUES) {
       if (this.knownSet.has(t.id)) continue;
@@ -263,13 +281,27 @@ export class Engine {
     }
   }
 
-  /** A correct answer can teach a technique early. Returns whether it was new. */
+  /** A correct answer OFFERS to teach a technique early. If the player's world already
+   *  satisfies the technique's own unlock rule, it becomes usable now (returns true) —
+   *  exactly the old behaviour. If it does not (the historically/materially later case:
+   *  Saw before a metal blade exists, Pour before there is anything to pour), the
+   *  knowledge is recorded as understood-but-not-yet-practical and returns false;
+   *  syncTechniques() will make it usable, unprompted, the moment the gate opens for
+   *  real, and will note that the player already knew the idea (see `notedEarlier`). */
   teach(a: ActionId): boolean {
-    if (!TECH_BY_ID[a]) return false;
+    if (!TECH_BY_ID[a] || this.knownSet.has(a)) return false;
+    const eligible = ruleHolds(TECH_BY_ID[a].unlock, id => this.holds(id), c => this.hasCap(c));
+    if (!eligible) {
+      if (!this.pendingKnowledge.has(a)) { this.pendingKnowledge.add(a); this.save(); this.emit(); }
+      return false;
+    }
     const fresh = this.learn(a, 'question', false);
     if (fresh) { this.save(); this.emit(); }
     return fresh;
   }
+
+  /** A question already taught the idea behind this, but the world cannot support it yet. */
+  isPending(a: ActionId): boolean { return this.pendingKnowledge.has(a); }
 
   /** Not-yet-known techniques the player already qualifies for by what they hold, regardless
    *  of whether they have ever selected one from the rail — the pool a freeform gesture is
@@ -1160,12 +1192,13 @@ export class Engine {
     if (typeof window === 'undefined') return;
     try {
       const payload: Saved = {
-        v: 4, order: this.order, known: this.known, insights: [...this.insights], bag: this.bag, steps: this.steps, failed: this.failed,
+        v: 5, order: this.order, known: this.known, insights: [...this.insights], bag: this.bag, steps: this.steps, failed: this.failed,
         failedPairs: [...this.failedPairs], seen: [...this.seen],
         lockedPairs: [...this.lockedPairs], hint: this.hint, streak: this.streak,
         coached: this.coached, when: this.when,
         discoveredCount: this.discoveredCount, hintedCount: this.hintedCount,
         world: { seen: [...this.worldSeen], celebrated: [...this.celebrated], floor: this.eraFloor },
+        pending: [...this.pendingKnowledge],
       };
       window.localStorage.setItem(SAVE_KEY, JSON.stringify(payload));
     } catch { /* private mode or blocked storage — play continues in memory */ }
@@ -1178,7 +1211,7 @@ export class Engine {
     if (!raw) return false;
     try {
       const d = JSON.parse(raw) as Saved;
-      if (!d || (d.v !== 1 && d.v !== 2 && d.v !== 3 && d.v !== 4) || !Array.isArray(d.order)) return false;
+      if (!d || (d.v !== 1 && d.v !== 2 && d.v !== 3 && d.v !== 4 && d.v !== 5) || !Array.isArray(d.order)) return false;
       const valid = d.order.filter(id => this.byId[id] && !this.byId[id].state);
       if (d.v === 1 && valid.length <= this.db.primitives.length) return false;
       for (const p of this.db.primitives) if (!valid.includes(p)) valid.unshift(p);
@@ -1217,6 +1250,10 @@ export class Engine {
       // techniques: what was learned, plus whatever the holdings already earn — a returning player is told nothing twice
       this.knownSet = new Set((d.known ?? []).filter(a => TECH_BY_ID[a]));
       this.known = [...this.knownSet];
+      // v5+: knowledge a question taught before the world could support it yet.
+      // Absent (v1–v4) simply means no such record exists — nothing to migrate,
+      // since those saves' teach() always granted the technique outright.
+      this.pendingKnowledge = new Set((d.pending ?? []).filter(a => TECH_BY_ID[a] && !this.knownSet.has(a)));
       this.reveals = [];
       this.insights = new Set(d.insights ?? []);
       this.tried = new Map();
@@ -1262,6 +1299,7 @@ export class Engine {
     this.seen = new Set(); this.fresh = new Set(); this.when = Object.create(null);
     this.hint = { ...NO_HINT }; this.streak = 0;
     this.knownSet = new Set(); this.known = []; this.reveals = []; this.newTech = new Set(); this.insights = new Set(); this.tried = new Map();
+    this.pendingKnowledge = new Set();
     this.discoveredCount = 0; this.hintedCount = 0;
     this.syncTechniques(true);
     this.resumed = false;
@@ -1277,6 +1315,19 @@ export class Engine {
     if (wasFresh) this.emit();   // only the NEW badge is visible; nothing else to redraw
   }
   isFresh(id: string) { return this.fresh.has(id); }
+
+  /** The furthest real chronological point the player's held world has reached —
+   *  the max `ds` among discoveries currently held. Used to gate which questions
+   *  are historically available (lib/learn/tutor.ts), independent of the coarser
+   *  era index: eras overlap in real history, `ds` does not lie about it. */
+  reachedDs(): number {
+    let max = -Infinity;
+    for (const id of this.found) {
+      const d = this.byId[id]?.ds;
+      if (d !== undefined && d > max) max = d;
+    }
+    return max === -Infinity ? 0 : max;
+  }
 }
 
 export function createEngine(db: Db) { return new Engine(db); }

@@ -35,6 +35,7 @@ export function QuestionCard({ tutor, engine, busy }: { tutor: Tutor; engine: En
         discoveries: engine.found.size,
         busy,
         knows: a => engine.knows(a),
+        reachedDs: engine.reachedDs(),
       });
     }, 1000);
     return () => window.clearInterval(id);
@@ -55,6 +56,7 @@ export function QuestionCard({ tutor, engine, busy }: { tutor: Tutor; engine: En
   const done = phase === 'right';
   const cites = q.source.map(id => engine.db.sources[id]).filter(Boolean);
   const taught = shown.taught ? TECH_BY_ID[shown.taught] : null;
+  const noted = !taught && shown.notedPending ? TECH_BY_ID[shown.notedPending] : null;
 
   return (
     <aside className="qc" data-phase={phase} data-conf={q.confidence} aria-label="A question" role="region">
@@ -71,7 +73,7 @@ export function QuestionCard({ tutor, engine, busy }: { tutor: Tutor; engine: En
           {shown.order.map(a => (
             <li key={a}>
               <button type="button" className={shown.faded.includes(a) ? 'is-faded' : ''} disabled={phase === 'wrong'}
-                onClick={() => { tutor.answer(a, Date.now(), { knows: k => engine.knows(k) }, k => engine.teach(k)); }}>
+                onClick={() => { tutor.answer(a, Date.now(), { knows: k => engine.knows(k), isPending: k => engine.isPending(k) }, k => engine.teach(k)); }}>
                 {a}
               </button>
             </li>
@@ -93,6 +95,11 @@ export function QuestionCard({ tutor, engine, busy }: { tutor: Tutor; engine: En
             <p className="qc-taught">
               <TechniqueIcon id={taught.id} size={18} />
               <span className="mono">{taught.label} learned</span>
+            </p>
+          )}
+          {noted && (
+            <p className="qc-conf mono">
+              Knowledge noted — the materials for {noted.label} do not exist in your world yet.
             </p>
           )}
           {q.checked && <p className="qc-conf mono">Source read {new Date(q.checked).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>}

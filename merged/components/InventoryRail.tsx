@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { Glyph } from './Glyph';
 import { armItemDrag } from '@/lib/dragcraft';
+import { sortDiscoveries } from '@/lib/chronology';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
 import type { Discovery } from '@/lib/types';
@@ -75,8 +76,11 @@ export function InventoryRail({
     list = list.filter(n => n.n.toLowerCase().includes(needle) || n.tags?.some(t => t.includes(needle)));
   }
 
+  // era still groups the rail (a useful chapter heading), but within each
+  // group items now read oldest to newest instead of the order they were
+  // picked up — acquisition order stays available separately via `is-new`.
   const groups = new Map<string, Discovery[]>();
-  list.forEach(n => {
+  sortDiscoveries(list).forEach(n => {
     if (!groups.has(n.era)) groups.set(n.era, []);
     groups.get(n.era)!.push(n);
   });

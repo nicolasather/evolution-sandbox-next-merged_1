@@ -1,5 +1,6 @@
 import type { Db, Discovery } from '../types';
 import type { Capability, Processing, ProcessingData, StateDef, TransformDef } from './types';
+import { resolveStateChronology } from '../chronology';
 
 /* ============================================================================
    OVERLAY — lays the processing layer over the authored database WITHOUT
@@ -35,6 +36,9 @@ export function compile(data: ProcessingData): Processing {
 
 function makeState(s: StateDef): Discovery {
   return {
+    // `ds` is a placeholder here — applyProcessing() overwrites it with a
+    // chronology anchor derived from whatever can produce this state, right
+    // after this map runs, using lib/chronology.ts's resolveStateChronology().
     id: s.id, no: 0, n: s.n, era: s.era, cat: s.cat ?? 'material', date: '', ds: 0, rar: 'common',
     l1: s.l1, l2: s.l2 ?? s.l1, l3: '', ev: '', src: [], rec: [], tags: s.tags ?? [], vis: s.vis ?? s.id,
     depth: null, need: 0, uses: [], state: true,
@@ -86,6 +90,24 @@ export function applyProcessing(raw: Db, data: ProcessingData): Db {
   const byId = new Map(nodes.map(n => [n.id, n]));
   const states = data.states.map(makeState);
   const stateById = new Map(states.map(s => [s.id, s]));
+
+  // 0 — a state's chronological anchor, inherited from whatever can produce
+  // it (never fabricated). A state must NEVER look like an independent
+  // invention with its own date, so this is placement metadata only: every
+  // state keeps `src: ['source_required']` regardless of whether an anchor
+  // resolved, since none of them carries a verified, subject-level source of
+  // its own — the anchor is derived, not authored.
+  const stateChronology = resolveStateChronology({
+    states,
+    transforms: data.transforms,
+    unlocks: data.unlocks,
+    dsOf: id => byId.get(id)?.ds,
+  });
+  const earliestPrimitiveDs = raw.primitives.reduce((m, id) => Math.min(m, byId.get(id)?.ds ?? 0), 0);
+  for (const s of states) {
+    s.ds = stateChronology.get(s.id) ?? earliestPrimitiveDs;
+    s.src = ['source_required'];
+  }
 
   // 1 — tangible names
   for (const [id, o] of Object.entries(data.objectify)) {

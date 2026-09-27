@@ -38,7 +38,9 @@ export const EXPLAIN_MS = 14_000;
 export type Phase = 'idle' | 'open' | 'folded' | 'right' | 'wrong';
 
 export interface TutorContext {
-  /** Index in ERA_ORDER of the furthest era reached. */
+  /** Index in ERA_ORDER of the furthest era reached. Kept as a secondary relevance
+   *  boost (see `score`) and a back-compat fallback gate for questions that carry
+   *  no chronological anchor of their own — it is no longer the ONLY gate. */
   eraIndex: number;
   /** Discoveries made so far. */
   discoveries: number;
@@ -46,7 +48,19 @@ export interface TutorContext {
   busy: boolean;
   /** Techniques the player already has, to keep `teaches` honest. */
   knows: (a: ActionId) => boolean;
+  /** The furthest real chronological point the player's held world has reached — the
+   *  max `ds` among discoveries currently held. Optional so older callers keep
+   *  working on era-index alone; when present, it gates questions whose own
+   *  `range`/`notBeforeDs` says they belong to a later point than the player's
+   *  world has actually reached, even if `eraIndex` alone would have allowed them
+   *  (eras overlap in real history — see lib/chronology.ts). */
+  reachedDs?: number;
 }
+
+/** A question's own chronological anchor, when it has one — an explicit override,
+ *  or the EARLY end of its authored `range`. Never invented for a question that
+ *  has neither; those keep the era-index gate as their only chronological check. */
+const questionAnchor = (q: Question): number | undefined => q.notBeforeDs ?? q.range?.[0];
 
 export interface Shown {
   q: Question;
@@ -54,8 +68,11 @@ export interface Shown {
   order: string[];
   /** Answers already tried and faded. */
   faded: string[];
-  /** What a right answer did, once it has. */
+  /** What a right answer made usable, once it has. */
   taught: ActionId | null;
+  /** A right answer taught the IDEA behind this technique, but the player's world
+   *  cannot support it yet — noted, never granted early (see Engine.teach()). */
+  notedPending: ActionId | null;
 }
 
 interface Saved { v: 1; right: string[]; wrong: string[] }
@@ -75,13 +92,18 @@ export function shuffled<T>(xs: readonly T[], rng: () => number): T[] {
 
 /** Pick a question: within reach, not answered right, prefer this era and what could open something. */
 export function pick(
-  pool: readonly Question[], ctx: Pick<TutorContext, 'eraIndex' | 'discoveries' | 'knows'>,
+  pool: readonly Question[], ctx: Pick<TutorContext, 'eraIndex' | 'discoveries' | 'knows' | 'reachedDs'>,
   right: ReadonlySet<string>, recent: readonly string[], rng: () => number,
 ): Question | null {
   const top = maxDifficulty(ctx.discoveries);
   const ok = pool.filter(q => {
     const ei = ERA_ORDER.indexOf(q.era);
-    return askable(q) && ei >= 0 && ei <= ctx.eraIndex && q.difficulty <= top && !right.has(q.id) && !recent.includes(q.id);
+    if (!(askable(q) && ei >= 0 && ei <= ctx.eraIndex && q.difficulty <= top && !right.has(q.id) && !recent.includes(q.id))) return false;
+    // a question dated later than the player's own world has really reached is
+    // held back even if its (coarser, overlapping) era was technically allowed
+    const anchor = questionAnchor(q);
+    if (anchor !== undefined && ctx.reachedDs !== undefined && anchor > ctx.reachedDs) return false;
+    return true;
   });
   if (!ok.length) return null;
   const score = (q: Question) => {
@@ -128,7 +150,7 @@ export class Tutor {
       const q = pick(this.pool, ctx, this.right, this.recent, this.rng);
       if (!q) { this.nextAt = now + nextGap(this.rng); return; }
       this.recent = [...this.recent.slice(-3), q.id];
-      this.shown = { q, order: shuffled(q.answers, this.rng), faded: [], taught: null };
+      this.shown = { q, order: shuffled(q.answers, this.rng), faded: [], taught: null, notedPending: null };
       this.phase = 'open'; this.since = now; this.emit();
       return;
     }
@@ -158,13 +180,19 @@ export class Tutor {
    * An answer. Returns 'right' or 'wrong'; for a right answer, `teach` is called
    * with the technique the question offers, if the player does not have it.
    */
-  answer(choice: string, now: number, ctx: Pick<TutorContext, 'knows'>, teach: (a: ActionId) => boolean): 'right' | 'wrong' | null {
+  answer(
+    choice: string, now: number, ctx: Pick<TutorContext, 'knows'> & { isPending?: (a: ActionId) => boolean },
+    teach: (a: ActionId) => boolean,
+  ): 'right' | 'wrong' | null {
     const s = this.shown;
     if (!s || this.phase !== 'open' || s.faded.includes(choice)) return null;
     if (choice === s.q.correctAnswer) {
       this.right.add(s.q.id); this.wrong.delete(s.q.id); this.wrongRun = 0;
       const a = s.q.teaches;
-      if (a && !ctx.knows(a) && teach(a)) s.taught = a;
+      if (a && !ctx.knows(a)) {
+        if (teach(a)) s.taught = a;
+        else if (ctx.isPending?.(a)) s.notedPending = a;
+      }
       this.phase = 'right'; this.since = now; this.save(); this.emit();
       return 'right';
     }

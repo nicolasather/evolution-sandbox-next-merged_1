@@ -26,7 +26,13 @@ export function WorldOrigins({ engine, onOpen }: { engine: Engine; onOpen: (id: 
   const points = found.filter(m => m.precision !== 'unlocated').map(m => ({ id: m.id, lat: m.lat, lon: m.lon, name: m.name }));
   const latest = found.length ? found[found.length - 1].id : null;
   const eras = engine.db.eras
-    .map(e => ({ e, list: (engine.world.inEra.get(e.id) ?? []).map(id => engine.world.get(id)!).filter(Boolean), p: engine.eraProgress(e.id) }))
+    .map(e => ({
+      e,
+      // within an era, majors read oldest to newest too, not catalogue/file order
+      list: (engine.world.inEra.get(e.id) ?? []).map(id => engine.world.get(id)!).filter(Boolean)
+        .sort((a, b) => a.ds - b.ds || a.id.localeCompare(b.id)),
+      p: engine.eraProgress(e.id),
+    }))
     .filter(x => x.list.length > 0);
 
   return (

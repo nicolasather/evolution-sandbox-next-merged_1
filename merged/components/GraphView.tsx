@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Engine } from '@/lib/engine';
 import type { Discovery } from '@/lib/types';
+import { sortDiscoveries } from '@/lib/chronology';
 import { cssVar, THEME_EVENT } from '@/lib/theme';
 
 interface Trace { up: Set<string>; down: Set<string>; upEdges: Set<string>; downEdges: Set<string> }
@@ -13,7 +14,7 @@ interface Palette {
   rar: Record<string, string>;
 }
 
-const ROWH = 34, SUBW = 176, ERA_GAP = 64, MAX_ROWS = 22;
+const ROWH = 34, SUBW = 176, MAX_ROWS = 22;
 const MIN_K = 0.09, MAX_K = 2.6;
 
 /** Everything upstream along the routes the player used, and what it went on to make. */
@@ -47,28 +48,39 @@ function traceOf(engine: Engine, focusId: string): Trace {
   return { up, down, upEdges, downEdges };
 }
 
-/** Eras are columns; an era with many entries wraps into several sub-columns
- *  instead of one very tall one, so the whole map fits a screen at a readable size. */
+/** X now comes from GLOBAL chronological rank, not from one column per era —
+ *  an era column implied every entry of one era predates every entry of the
+ *  next, which real history (Agriculture/Settlement/Trade and others overlap)
+ *  does not support. Ranked discoveries are chunked into fixed-height bands
+ *  of MAX_ROWS, in that same chronological order: bands read left→right as
+ *  "older→newer", each one internally tied at (almost) the same x rather than
+ *  spread by raw `ds` — four million years of prehistory would otherwise
+ *  crush the last few centuries into a handful of pixels. Because every band
+ *  is a contiguous slice of the SAME sorted list, x is guaranteed
+ *  non-decreasing with chronological rank; nothing here can place a
+ *  historically later item to the left of an earlier one.
+ *
+ *  `eraX`: kept as the x of each era's FIRST chronological occurrence — a
+ *  translucent chapter label anchor, not a column boundary an era owns
+ *  (an era's discoveries can span many bands, or reappear after another
+ *  era's band if the real dates interleave). */
 function buildLayout(engine: Engine): Layout {
-  const cols = new Map<string, Discovery[]>();
-  engine.db.eras.forEach(e => cols.set(e.id, []));
-  engine.db.nodes.forEach(n => (cols.get(n.era) ?? cols.get('origins')!).push(n));
+  const ranked = sortDiscoveries(engine.db.nodes);
 
   const pos: Record<string, Pos> = Object.create(null);
-  const eraX: number[] = [];
-  let x0 = 0;
-  engine.db.eras.forEach((e, ci) => {
-    eraX.push(x0);
-    const list = (cols.get(e.id) ?? []).slice()
-      .sort((a, b) => (a.depth || 0) - (b.depth || 0) || a.no - b.no);
-    const nsub = Math.max(1, Math.ceil(list.length / MAX_ROWS));
-    const rows = Math.ceil(list.length / nsub);
-    list.forEach((n, i) => {
-      const sub = Math.floor(i / rows), ri = i % rows;
-      pos[n.id] = { x: x0 + 18 + sub * SUBW, y: ri * ROWH - (rows * ROWH) / 2, node: n, col: ci };
+  const nbands = Math.max(1, Math.ceil(ranked.length / MAX_ROWS));
+  for (let b = 0; b < nbands; b++) {
+    const slice = ranked.slice(b * MAX_ROWS, (b + 1) * MAX_ROWS);
+    const x0 = 18 + b * SUBW;
+    slice.forEach((n, ri) => {
+      pos[n.id] = { x: x0, y: ri * ROWH - (slice.length * ROWH) / 2, node: n, col: b };
     });
-    x0 += nsub * SUBW + ERA_GAP;
-  });
+  }
+
+  // one label anchor per era: the x of its earliest chronological appearance
+  const firstXOfEra = new Map<string, number>();
+  ranked.forEach(n => { if (!firstXOfEra.has(n.era)) firstXOfEra.set(n.era, pos[n.id].x); });
+  const eraX = engine.db.eras.map(e => firstXOfEra.get(e.id) ?? 0);
 
   const edges: [string, string][] = [];
   engine.db.nodes.forEach(n => n.rec?.forEach(([a, b]) => {
@@ -377,15 +389,21 @@ export function GraphView({
     c.beginPath(); c.moveTo(0, 34.5); c.lineTo(w, 34.5); c.stroke();
     c.font = '10px "JetBrains Mono", ui-monospace, monospace';
     c.fillStyle = alpha(P.bone, 0.5);
-    engine.db.eras.forEach((e, i) => {
-      const x = layout.eraX[i] * k + tx;
-      const next = (layout.eraX[i + 1] ?? layout.eraX[i] + 400) * k + tx;
+    // labels are chapter markers at each era's earliest chronological x, not
+    // column owners — an era later in the game's chapter order can still sit
+    // to the LEFT of one that comes before it, if its real dates are earlier.
+    // Sorting by x (rather than by db.eras' fixed chapter order) keeps each
+    // label's clip region pointed at the next label actually to its right.
+    const labels = engine.db.eras.map((e, i) => ({ name: e.name, x0: layout.eraX[i] })).sort((p, q) => p.x0 - q.x0);
+    labels.forEach((lab, i) => {
+      const x = lab.x0 * k + tx;
+      const next = (labels[i + 1]?.x0 ?? lab.x0 + 400) * k + tx;
       if (next < 0 || x > w) return;
       // keep the label on screen while any of its column is, and never over the next one
       const lx = Math.min(Math.max(x + 10, 10), next - 20);
       c.save();
       c.beginPath(); c.rect(x, 0, Math.max(0, next - x - 8), 34); c.clip();
-      c.fillText(e.name.toUpperCase(), lx, 21);
+      c.fillText(lab.name.toUpperCase(), lx, 21);
       c.restore();
     });
 
