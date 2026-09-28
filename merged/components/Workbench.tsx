@@ -75,6 +75,11 @@ interface Props {
   onInspect: (id: string) => void;
   /** A plain click on the bare scenery: not on a piece, not during a craft, not after a drag. */
   onScenery?: (clientX: number, clientY: number) => void;
+  /** The pointer resting or passing over bare scenery (mouse only, not dragging, not
+   *  mid-craft, not over a piece) — the quieter P0.14 "the background must respond to
+   *  the player" cousin of `onScenery`. Never fired for a touch pointer or while
+   *  anything else is held, so it never competes with drag/craft feedback. */
+  onSceneryHover?: (clientX: number, clientY: number) => void;
   /** A hint at level 3+ leans on this action: its hand pulses. */
   hintAction?: ActionId | null;
   /** A hint at level 4+ shows this gesture, faintly, on this piece if it is on the ground. */
@@ -94,7 +99,7 @@ function hashStr(s: string): number {
 type Cluster = Body[];
 const sigOf = (c: Cluster) => c.map(b => b.uid).sort((x, y) => x - y).join('|');
 
-export function Workbench({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, hintAction = null, hintGhost = null }: Props) {
+export function Workbench({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, onSceneryHover, hintAction = null, hintGhost = null }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const bodiesRef = useRef<HTMLDivElement>(null);
@@ -120,8 +125,8 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
   const instant = useSyncExternalStore(subscribePrefs, instantEnabled, () => false);
 
   // the loop reads the latest props without being torn down by them
-  const latest = useRef({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, instant, hintGhost });
-  useEffect(() => { latest.current = { engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, instant, hintGhost }; });
+  const latest = useRef({ engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, onSceneryHover, instant, hintGhost });
+  useEffect(() => { latest.current = { engine, active, onCombine, onProcess, onBegin, onInspect, onScenery, onSceneryHover, instant, hintGhost }; });
   const latest2 = useRef(onInspect);
   useEffect(() => { latest2.current = onInspect; });
   const wakeRef = useRef<() => void>(() => {});
@@ -162,6 +167,9 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     /** A press that began on bare scenery — it becomes a scenery click only if it stays a click. */
     let bgTap: { x: number; y: number; t: number; id: number } | null = null;
     let hover: Body | null = null;
+    /** Last time bare-scenery hover was reported upstream — throttled here on top of
+     *  SceneFxEngine's own repeat guard, so a fast mouse sweep is not a call per pixel. */
+    let lastHoverFx = 0;
     let lastTap: { body: Body; at: number } | null = null;
     let drag: { body: Body; t0: number; x0: number; y0: number; moved: boolean; lx: number; ly: number; lt: number; vx: number; vy: number } | null = null;
     let zoom = 1;
@@ -1263,6 +1271,14 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         if (e.pointerType === 'mouse') {
           const h = world.bodyAt(p.x, p.y, q => !q.locked);
           if (h !== hover) { hover = h; host.style.cursor = h ? 'grab' : ''; }
+          // P0.14: the scenery answers the pointer passing over it too, not only a click —
+          // only over bare ground (no piece under the cursor), never mid-drag/craft (both
+          // already excluded by the branches above), throttled on top of the engine's own
+          // repeat guard so a fast sweep is one call per beat, not one per pixel.
+          if (!h) {
+            const t = performance.now();
+            if (t - lastHoverFx > 120) { lastHoverFx = t; latest.current.onSceneryHover?.(e.clientX, e.clientY); }
+          }
         }
         return;
       }

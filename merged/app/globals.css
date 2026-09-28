@@ -13,6 +13,17 @@
    lost its styling. Layered, the order is: preflight < design system < utilities. */
 @import "./_design-system.css" layer(components);
 
+/* The shared cinematic motion language — five duration/easing tiers, a
+   handful of reveal/dissolve/breathe keyframes — the CSS half of
+   `lib/motion.ts`. Tokens only until a screen opts in; see that file and
+   `docs/ROADMAP-IMMERSIVE.md` for how each surface should adopt it. */
+@import "./_cinematic-motion.css" layer(components);
+
+/* The shared world-camera system (P0.2): breathe/lean/focus, written by
+   `lib/camera.ts` via `<WorldCamera/>`, read here as `translate`/`scale` on
+   `#ground`/`#strata`. Inert until that component mounts. */
+@import "./_camera.css" layer(components);
+
 /* Neon blue theme and the 3D exhibit plate — layered after the design system. */
 @import "./_theme-neon.css" layer(components);
 
@@ -23,6 +34,12 @@
 /* Era-driven colour progression, orthogonal to the (now eight) themes above:
    the world's own palette widens slowly as civilisation advances. */
 @import "./_era-glow.css" layer(components);
+
+/* The "maximal, colourful, alive" correction: a second, multi-hue ambient
+   wash per era GROUP (stone/earth/metal/iron/paper/circuit/glow), keyed off
+   the `data-era-group` attribute `EraShift.tsx` already sets. Independent of
+   `_era-glow.css` above — that one tracks progress, this one tracks period. */
+@import "./_era-palette.css" layer(components);
 
 /* Scenes, round craft slots, hover / press animation, immersive top bar. */
 @import "./_fx.css" layer(components);

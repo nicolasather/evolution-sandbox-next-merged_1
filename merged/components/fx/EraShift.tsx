@@ -8,14 +8,16 @@ import { ERA_TINT } from '@/lib/useSandbox';
 import type { Era } from '@/lib/types';
 
 /* ============================================================================
-   ERA SHIFT — reaching a later era is marked, once, for about a second and
-   a half: the room takes on the new era's colour, a line draws across, and
-   the era's name is set in type. Only a forward step counts: resuming a
-   saved game or starting over never triggers it. It waits for a discovery
-   ceremony, or a globe reveal, to close (lib/attention — see the ceremony
-   and the globe layer's own claims), never showing on top of one, and once
-   its own banner is up it claims attention in turn so the reactive field
-   quiets for it too. It never blocks input.
+   ERA SHIFT — reaching a later era is marked, once, for a major-event-tier
+   ceremony (~7s, ~2.4s under reduced motion — see `_museum.css`'s ERA SHIFT
+   block for why it stops short of the full era-transition tier): the room
+   takes on the new era's colour, a line draws across, and the era's name is
+   set in type. Only a forward step counts: resuming a saved game or starting
+   over never triggers it. It waits for a discovery ceremony, or a globe
+   reveal, to close (lib/attention — see the ceremony and the globe layer's
+   own claims), never showing on top of one, and once its own banner is up it
+   claims attention in turn so the reactive field quiets for it too. It never
+   blocks input — the workbench stays live underneath the whole time.
    ========================================================================== */
 
 /** Fourteen eras, seven material worlds — used for CSS hooks on <html>. */
@@ -50,7 +52,8 @@ export function EraShift({ era, index, active }: { era: Era; index: number; acti
       if (isAttentionClaimed() && tries++ < 60) { t.push(window.setTimeout(show, 200)); return; }
       setShown({ era, key: Date.now() });
       sound.sfx('era');
-      t.push(window.setTimeout(() => setShown(null), prefersReducedMotion() ? 1200 : 1700));
+      // kept in step with --dur-major-event in _museum.css's ERA SHIFT block
+      t.push(window.setTimeout(() => setShown(null), prefersReducedMotion() ? 2400 : 7000));
     };
     t.push(window.setTimeout(show, 350));
     // eslint-disable-next-line react-hooks/exhaustive-deps -- reacts to the era index only

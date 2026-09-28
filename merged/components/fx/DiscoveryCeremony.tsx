@@ -82,7 +82,7 @@ export function DiscoveryCeremony({
       className={cn('oc oc-win is-new', n.hidden && 'is-hidden', n.rar === 'rare' && 'is-rare', tier === 'major' && 'is-major', tier === 'minor' && 'is-minor', 'dc-host')}
       role="status"
       tabIndex={-1}
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}
     >
       <span className={cn('dc-seed', past('form') && !past('expand') && 'show')} aria-hidden="true" />
       <span className={cn('dc-ring', past('expand') && !past('materialize') && 'show')} aria-hidden="true" />

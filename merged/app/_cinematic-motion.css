@@ -1,0 +1,100 @@
+/* ============================================================================
+   CINEMATIC MOTION — the CSS half of `lib/motion.ts`. Same five tiers, same
+   numbers, same easings; kept in sync by hand (a `<style>` block cannot read
+   a `.ts` constant, and duplicating the handful of numbers is cheaper than
+   inventing a build step to share them — the same trade-off `EraShift.tsx`'s
+   `ERA_GROUP` already makes with its CSS counterpart below).
+
+     --dur-micro              100–250 ms   press, pickup, collision
+     --dur-interface-reveal   600–1400 ms  panels, filters, secondary info
+     --dur-important-reveal   2–4 s        new technique, quiz, artifact
+     --dur-major-event        5–12 s       a major invention
+     --dur-era-transition     12–25 s      leaving one era for the next
+
+   Everything here is additive: new custom properties and a handful of
+   opt-in `.cin-*` utility classes, never a rule against an existing
+   selector. Nothing in the game is wired to these yet by default — that is
+   deliberate, slice-by-slice work for the screens that use them (see
+   `docs/ROADMAP-IMMERSIVE.md`), not a blanket restyle applied blind.
+   ========================================================================== */
+
+:root {
+  --dur-micro: 180ms;
+  --dur-interface-reveal: 900ms;
+  --dur-important-reveal: 2800ms;
+  --dur-major-event: 7000ms;
+  --dur-era-transition: 16000ms;
+
+  /* small reveals: quick out, no overshoot */
+  --ease-reveal: cubic-bezier(0.2, 0.7, 0.2, 1);
+  /* text/objects emerging from blur or darkness: slow start */
+  --ease-materialize: cubic-bezier(0.16, 0.02, 0.13, 1);
+  /* a large camera or object move settling in: begins almost
+     imperceptibly, accelerates, decelerates for a long tail */
+  --ease-cinematic-in: cubic-bezier(0.11, 0, 0.15, 1);
+  /* the mirror, for something leaving frame or dissolving */
+  --ease-cinematic-out: cubic-bezier(0.7, 0, 0.84, 0);
+  /* tiny continuous idle motion: symmetric, no snap either end */
+  --ease-breathe: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* ── materialize: the P0.1 "emerging from darkness / coming into focus"
+   default for important-or-larger reveals. Blur + rise + fade, never a bare
+   opacity cut. `.cin-materialize-in` is the mounted state to animate *to*. */
+@keyframes cinMaterialize {
+  from { opacity: 0; filter: blur(14px); transform: translateY(10px) scale(0.985); }
+  to   { opacity: 1; filter: blur(0);    transform: translateY(0)    scale(1); }
+}
+.cin-materialize {
+  animation: cinMaterialize var(--dur-important-reveal) var(--ease-materialize) both;
+}
+.cin-materialize.cin-tier-major { animation-duration: var(--dur-major-event); }
+.cin-materialize.cin-tier-interface { animation-duration: var(--dur-interface-reveal); }
+
+/* ── rise through fog: for objects/panels that should feel like they are
+   arriving from below the world rather than simply fading in place. */
+@keyframes cinRiseThroughFog {
+  from { opacity: 0; filter: blur(10px); transform: translateY(28px); }
+  60%  { opacity: 1; filter: blur(2px); }
+  to   { opacity: 1; filter: blur(0);  transform: translateY(0); }
+}
+.cin-rise {
+  animation: cinRiseThroughFog var(--dur-important-reveal) var(--ease-cinematic-in) both;
+}
+
+/* ── dissolve out: the mirror of materialize, for something leaving —
+   large cinematic text, a closing overlay. Pairs with `lib/motion.ts`'s
+   `cinematicOut` easing. */
+@keyframes cinDissolveOut {
+  from { opacity: 1; filter: blur(0); transform: scale(1); letter-spacing: normal; }
+  to   { opacity: 0; filter: blur(18px); transform: scale(1.02); letter-spacing: 0.04em; }
+}
+.cin-dissolve-out {
+  animation: cinDissolveOut var(--dur-interface-reveal) var(--ease-cinematic-out) both;
+}
+
+/* ── breathe: the "world never feels like a static image" idle drift the
+   camera/ambient-scene brief asks for. Amplitude stays tiny on purpose —
+   this is a life sign, not a wobble. Opt in per element with `--breathe-*`. */
+@keyframes cinBreathe {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(var(--breathe-x, 0), var(--breathe-y, -2px), 0); }
+}
+.cin-breathe {
+  animation: cinBreathe var(--breathe-dur, 9s) var(--ease-breathe) infinite;
+}
+
+/* ── micro response: the 100–250 ms floor for direct manipulation — pickup,
+   press, hover settle. Never used for anything narrative. */
+.cin-micro {
+  transition-duration: var(--dur-micro);
+  transition-timing-function: var(--ease-reveal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cin-materialize, .cin-rise, .cin-dissolve-out {
+    animation-duration: 1ms !important;
+    filter: none !important;
+  }
+  .cin-breathe { animation: none; }
+}

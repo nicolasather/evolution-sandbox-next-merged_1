@@ -1,0 +1,113 @@
+/* ============================================================================
+   ERA PALETTE — the "maximal, colourful, alive" correction to this brief's
+   own P0.5/P0.65 wording: the person confirmed directly that the intended
+   direction is NOT a sparse/minimal interface, it is a rich, layered,
+   multi-colour atmosphere. This file is that correction's colour half.
+
+   `_era-glow.css` already adds one radial layer on `#ground::after` — a
+   single-hue wash (`--ochre`, opacity tied to real progress via
+   `--era-glow`). This file adds a second, independent layer on
+   `#ground::before` (unused until now — `#ground` only ever had `::after`,
+   confirmed by grep before adding this): a *multi*-colour ambient gradient
+   per era GROUP, not per single era, keyed off the `data-era-group`
+   attribute `components/fx/EraShift.tsx` already sets on `<html>` on every
+   era change (`ERA_GROUP` in that file — stone/earth/metal/iron/paper/
+   circuit/glow). No JS changes needed: that hook already exists and is
+   already live.
+
+   Kept out of `_design-system.css` for the same reason `_era-glow.css` and
+   `_theme-variants.css` are — that file is checked byte-identical against
+   the single-file build (`npm run data:check`).
+
+   Paint order on `#ground` (all `position:fixed`, so this layer's `inset:0`
+   is contained by it): the base single-hue radial (`_design-system.css`) →
+   this multi-colour wash (`::before`) → the progress glow (`::after`,
+   `_era-glow.css`, on top). Every gradient here stays low-opacity and sits
+   *behind* the workbench and every panel (`#ground` is `z-index:0`) — this
+   widens the ambient atmosphere, it does not touch foreground contrast or
+   text legibility anywhere.
+   ========================================================================== */
+
+#ground::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  transition: opacity 1.2s ease, background 1.2s ease;
+  pointer-events: none;
+}
+
+/* stone — origins, fire: charcoal, forest green, deep blue, clay orange,
+   ember red, warm gold, subtle violet shadow */
+[data-era-group="stone"] #ground::before {
+  background:
+    radial-gradient(38% 30% at 12% 85%, rgba(196,100,44,.10) 0%, transparent 70%),
+    radial-gradient(34% 26% at 88% 18%, rgba(58,74,58,.12) 0%, transparent 70%),
+    radial-gradient(46% 40% at 70% 90%, rgba(45,58,84,.10) 0%, transparent 72%),
+    radial-gradient(30% 24% at 20% 15%, rgba(96,70,110,.07) 0%, transparent 70%);
+}
+
+/* earth — settlement, agriculture, civilization: green, wheat gold,
+   terracotta, river blue */
+[data-era-group="earth"] #ground::before {
+  background:
+    radial-gradient(40% 32% at 15% 20%, rgba(112,132,74,.12) 0%, transparent 70%),
+    radial-gradient(42% 34% at 85% 80%, rgba(196,150,72,.11) 0%, transparent 70%),
+    radial-gradient(34% 28% at 75% 15%, rgba(178,96,62,.09) 0%, transparent 70%),
+    radial-gradient(38% 30% at 25% 88%, rgba(70,110,132,.09) 0%, transparent 70%);
+}
+
+/* metal — trade, metallurgy: copper, oxidised green, charcoal, gold, stone grey */
+[data-era-group="metal"] #ground::before {
+  background:
+    radial-gradient(40% 32% at 82% 22%, rgba(196,118,60,.13) 0%, transparent 70%),
+    radial-gradient(36% 30% at 14% 78%, rgba(86,124,102,.10) 0%, transparent 70%),
+    radial-gradient(44% 36% at 60% 92%, rgba(120,120,126,.08) 0%, transparent 72%),
+    radial-gradient(28% 22% at 30% 10%, rgba(200,166,88,.09) 0%, transparent 70%);
+}
+
+/* paper — science: parchment warmth, ink blue, a single restrained accent —
+   this era is about restraint by design (the writing/measuring years), so
+   its wash stays the quietest of the seven on purpose */
+[data-era-group="paper"] #ground::before {
+  background:
+    radial-gradient(40% 32% at 20% 25%, rgba(210,196,164,.08) 0%, transparent 70%),
+    radial-gradient(36% 30% at 82% 75%, rgba(70,92,120,.08) 0%, transparent 70%);
+}
+
+/* iron — industry: steel blue, tungsten orange, coal black, brass, rust red,
+   chemical green */
+[data-era-group="iron"] #ground::before {
+  background:
+    radial-gradient(42% 34% at 78% 20%, rgba(212,132,52,.13) 0%, transparent 70%),
+    radial-gradient(38% 30% at 18% 80%, rgba(64,92,120,.12) 0%, transparent 70%),
+    radial-gradient(30% 24% at 55% 90%, rgba(150,60,52,.08) 0%, transparent 70%),
+    radial-gradient(26% 20% at 30% 8%, rgba(96,132,84,.06) 0%, transparent 70%);
+}
+
+/* circuit — electric, computing: electric blue, cyan, violet, amber —
+   restrained per the brief's own instruction to avoid a cyberpunk-neon look */
+[data-era-group="circuit"] #ground::before {
+  background:
+    radial-gradient(42% 34% at 80% 18%, rgba(70,140,214,.13) 0%, transparent 70%),
+    radial-gradient(36% 30% at 16% 82%, rgba(120,90,196,.10) 0%, transparent 70%),
+    radial-gradient(30% 24% at 55% 92%, rgba(70,190,196,.09) 0%, transparent 70%),
+    radial-gradient(24% 18% at 30% 12%, rgba(214,164,70,.07) 0%, transparent 70%);
+}
+
+/* glow — network, games, simulation: the same family as circuit, one notch
+   brighter and cooler — the world's most saturated period, still nowhere
+   near neon-soup levels */
+[data-era-group="glow"] #ground::before {
+  background:
+    radial-gradient(44% 36% at 78% 20%, rgba(90,160,230,.15) 0%, transparent 70%),
+    radial-gradient(38% 32% at 18% 80%, rgba(150,110,220,.12) 0%, transparent 70%),
+    radial-gradient(32% 26% at 55% 92%, rgba(80,210,210,.11) 0%, transparent 70%);
+}
+
+/* light theme: same hues, gentler — the ground is paper, not graphite */
+:root[data-theme="light"] #ground::before { opacity: 0.32; }
+
+@media (prefers-reduced-motion: reduce) {
+  #ground::before { transition: none; }
+}

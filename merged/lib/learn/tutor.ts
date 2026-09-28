@@ -29,8 +29,10 @@ export const FLOOR_MS = 45_000;
 export const FOLD_MS = 22_000;
 /** A folded "?" nobody touches slips away after this long. */
 export const DROP_MS = 90_000;
-/** How long a wrong answer takes to fade, and the pause before a different question. */
-export const WRONG_FADE_MS = 1_300;
+/** How long a wrong answer takes to fade, and the pause before a different question.
+ *  Kept in step with `.qc`'s `transition:opacity …,transform …` in `_learn.css`
+ *  (2.1s there, just under this, so the fade finishes before the phase changes). */
+export const WRONG_FADE_MS = 2_200;
 export const RETRY_MS = 3_500;
 /** How long the explanation stays after a right answer. */
 export const EXPLAIN_MS = 14_000;

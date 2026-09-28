@@ -40,6 +40,10 @@ export function evidenceLine(n: Pick<Discovery, 'src'>): { text: string; verifie
 
 const pad = (v: number) => String(Math.round(v)).padStart(3, '0');
 
+// see the "sequence" effect below for the full reasoning; also read by
+// `advance()`'s own skip-ahead timing so the two stay in step.
+const CINEMATIC_STRETCH = 1.5;
+
 export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () => void }) {
   const mounted = typeof document !== 'undefined';
   const [step, setStep] = useState(0);            // 0 dark · 1 plate · 2 tag · 3 number · 4 name · 5 meta · 6 ready
@@ -64,7 +68,17 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
     const reduced = prefersReducedMotion();
     let seen = false;
     try { seen = window.localStorage.getItem('evo.ceremony.seen') === '1'; } catch { /* storage blocked */ }
-    const k = reduced ? 0.01 : (seen ? 0.72 : 1) * (major ? 1.25 : 1);
+    // the "new craft/discovery" ceremony, lengthened by CINEMATIC_STRETCH as
+    // one uniform multiplier rather than touching every `at()` call below —
+    // it scales the countUp/letter-resolve durations too, since both read
+    // `k` as well, so the internal proportions this sequence was tuned
+    // around (pause → plate → tag → count → name → meta → ready) survive
+    // untouched. Lands an ordinary first discovery at ~7.4s, a repeat at
+    // ~5.3s, a rare/major one at ~12s — the major-event tier (5–12s, see
+    // `_cinematic-motion.css`) rather than the full era-transition tier:
+    // this fires every discovery, often several times a session, so it
+    // needed real weight without becoming a wait.
+    const k = reduced ? 0.01 : (seen ? 0.72 : 1) * (major ? 1.25 : 1) * CINEMATIC_STRETCH;
     const at = (ms: number, fn: () => void) => { timers.current.push(window.setTimeout(fn, ms * k)); };
     const go = (s: number) => { stepRef.current = s; setStep(s); };
 
@@ -122,7 +136,7 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
       setName(node.n);
       stepRef.current = 6; setStep(6);
       // a finished page stays until the player has read it
-      timers.current.push(window.setTimeout(() => finish.current(), major ? 7000 : 5200));
+      timers.current.push(window.setTimeout(() => finish.current(), (major ? 7000 : 5200) * CINEMATIC_STRETCH));
     } else finish.current();
   }; });
 

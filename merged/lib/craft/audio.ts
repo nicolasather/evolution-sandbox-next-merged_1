@@ -1,3 +1,4 @@
+import { isAttentionClaimed, subscribeAttention } from '../attention';
 import type { SoundId } from './types';
 
 /* ============================================================================
@@ -354,6 +355,18 @@ let wantAmbience: Ambience | null = null;
 /** Level of every bed (they are all far below the effects). */
 const BED_LEVEL = 0.5;
 
+/* ── ducking: P0.45's "silence is part of the cinematic language" as one gain
+   change, not a second audio system. Whenever `lib/attention.ts` has a claim
+   (a discovery ceremony, an era-shift banner, a globe moment — anything that
+   is, right now, the thing the eye should be on), the ambience bed sinks to
+   a fraction of itself and rises back the moment the claim releases. Reuses
+   the same shared signal `components/fx/ReactiveField.tsx` already quiets
+   its point field on, so a major moment goes quiet on screen and in the
+   speakers together, from one source of truth. ────────────────────────── */
+const DUCK_LEVEL = 0.32;
+let ducked = false;
+const targetBedLevel = () => BED_LEVEL * (isAttentionClaimed() ? DUCK_LEVEL : 1);
+
 function buildBed(kind: Ambience): Bed | null {
   if (!ctx || !master || !noise) return null;
   const c = ctx;
@@ -441,7 +454,7 @@ function buildBed(kind: Ambience): Bed | null {
 function applyAmbience() {
   if (!ctx || !master) return;
   const c = ctx, want = soundEnabled() ? wantAmbience : null;
-  if (bed && bed.kind === want) { bed.gain.gain.setTargetAtTime(BED_LEVEL, c.currentTime, 0.4); return; }
+  if (bed && bed.kind === want) { bed.gain.gain.setTargetAtTime(targetBedLevel(), c.currentTime, 0.4); return; }
   if (bed) {                                   // fade the old one out, and let it go
     const old = bed; bed = null;
     old.gain.gain.cancelScheduledValues(c.currentTime);
@@ -453,8 +466,17 @@ function applyAmbience() {
   if (!nb) return;
   bed = nb;
   nb.gain.gain.setValueAtTime(0.0001, c.currentTime);
-  nb.gain.gain.setTargetAtTime(BED_LEVEL, c.currentTime, 0.9);
+  nb.gain.gain.setTargetAtTime(targetBedLevel(), c.currentTime, 0.9);
 }
+
+// the bed ducks under whatever currently claims visual attention, and rises
+// back the moment nothing does — see the "ducking" block above `bed`.
+if (typeof window !== 'undefined') subscribeAttention(claimed => {
+  if (claimed === ducked || !ctx || !bed) { ducked = claimed; return; }
+  ducked = claimed;
+  bed.gain.gain.cancelScheduledValues(ctx.currentTime);
+  bed.gain.gain.setTargetAtTime(targetBedLevel(), ctx.currentTime, ducked ? 0.45 : 1.1);
+});
 
 /** Ask for a bed (or none). Safe to call at any time: it starts as soon as audio is unlocked and sound is on. */
 export function setAmbience(kind: Ambience | null) {

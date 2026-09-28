@@ -1,0 +1,37 @@
+/* ============================================================================
+   CAMERA — the CSS half of `lib/camera.ts` (P0.2: a simulated camera that
+   stays subtle during normal play and leans in on an important moment).
+
+   `translate`/`scale` are used as their own standalone CSS properties (not
+   the `transform` shorthand) on purpose: `--cam-x`/`--cam-y` are rewritten
+   every animation frame by `lib/camera.ts` and must apply immediately (the
+   breathing/lean motion is already smooth at the JS level — an eased cursor
+   position and a sine wave — so a CSS transition on top would fight it,
+   chasing a moving target and never arriving). `--cam-scale` changes rarely
+   (only when `lib/attention.ts` gains or loses a claim), so it alone gets a
+   slow transition — the "camera gradually moves toward the discovery" cue
+   from the brief, as one property write plus a CSS transition rather than a
+   second per-frame animation loop.
+
+   Defaults are the identity transform, so a page that never mounts
+   `<WorldCamera/>` (every screen but Main Evolution, for now) is unaffected.
+   ========================================================================== */
+
+:root {
+  --cam-x: 0px;
+  --cam-y: 0px;
+  --cam-scale: 1;
+}
+
+#ground, #strata {
+  scale: var(--cam-scale);
+  transition: scale 2.4s var(--ease-cinematic-in, ease);
+  will-change: transform;
+}
+#ground { translate: var(--cam-x) var(--cam-y); }
+/* strata reads as a step further back: three fifths of the ground's own drift */
+#strata { translate: calc(var(--cam-x) * 0.6) calc(var(--cam-y) * 0.6); }
+
+@media (prefers-reduced-motion: reduce) {
+  #ground, #strata { transition: none; }
+}

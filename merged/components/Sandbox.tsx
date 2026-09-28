@@ -19,6 +19,7 @@ import { TradePanel } from './trade/TradePanel';
 import { ExperimentWorkspace } from './experiments/ExperimentWorkspace';
 import { WorldLayer } from './world/WorldLayer';
 import { WorldProgressPanel } from './world/WorldProgressPanel';
+import { WorldCamera } from './world/WorldCamera';
 import { SceneBackdrop } from './SceneBackdrop';
 import { ReactiveField } from './fx/ReactiveField';
 import { ReactiveLabel } from './fx/ReactiveLabel';
@@ -248,6 +249,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           ))}
         </svg>
       </div>
+      <WorldCamera active={s.entered} />
       <ReactiveField active={s.entered} />
       <EraShift era={era} index={engine.db.eras.findIndex(e => e.id === era.id)} active={s.entered && reveal >= 6} />
       <SceneBackdrop era={era.id} active={s.entered && view === 'work'} discovered={engine.found} />
@@ -271,7 +273,13 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           if (engine.coached === 0 && engine.order.length <= engine.db.primitives.length) {
             benchSpawn('stone', { clientX: x, clientY: y });
           }
-          stage([[2, 450], [3, 1150], [4, 1600], [5, 2050], [6, 2500]]);
+          // stretched to match the now much longer time-tunnel film (see
+          // `lib/perf.ts`'s `tunnelDuration`) and `--rv` in the WORLD REVEAL
+          // block of `_museum.css`, which each layer's own fade now reads
+          // off too. The "no film" quick path just above is untouched on
+          // purpose — a returning player chose Continue specifically to
+          // skip the ceremony, the same as Skip or reduced motion.
+          stage([[2, 1000], [3, 2500], [4, 3500], [5, 4500], [6, 5500]]);
         }}
         onDone={() => setIntroDone(true)}
         replay={replay}

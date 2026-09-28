@@ -7,7 +7,16 @@
 
 .hub-wrap{max-width:720px;margin:0 auto;padding:clamp(40px,7vw,90px) clamp(18px,4vw,44px) 0}
 
-.hub-head{padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:clamp(28px,5vw,46px)}
+/* Entering the Hub — P0's "enter a new mode" ceremony. `.view` is a plain
+   `display:none → block` toggle (see _design-system.css), never a remount,
+   so an `animation` applied only under `.view.on` genuinely restarts each
+   time this screen is shown, with no JS needed to reset anything. The head
+   leads, then each exhibit card materialises in turn — `:nth-of-type` reads
+   the DOM order safely here because `.hub-exhibit` are the only `<div>`s at
+   this nesting level (see ModeHub.tsx), so it needs no `--i` custom
+   property threaded in from the component, unlike ArchiveView's cards. */
+.hub-head{padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:clamp(28px,5vw,46px);opacity:0}
+.view.on .hub-head{animation:hubIn var(--dur-interface-reveal,900ms) var(--ease-materialize,cubic-bezier(.16,.02,.13,1)) both}
 .hub-eyebrow{color:var(--ochre);margin:0 0 10px}
 .hub-title{font-family:var(--fs-display);font-size:clamp(34px,5vw,56px);line-height:1;margin:0 0 14px;text-wrap:balance}
 .hub-sub{color:var(--bone-3);max-width:46ch;margin:0;font-size:14px;line-height:1.55}
@@ -15,6 +24,20 @@
 .hub-exhibit{
   position:relative;border:1px solid var(--line-2);padding:clamp(22px,4vw,36px);
   display:grid;gap:4px;margin-bottom:16px;
+  opacity:0;
+}
+.view.on .hub-exhibit{animation:hubIn var(--dur-interface-reveal,900ms) var(--ease-materialize,cubic-bezier(.16,.02,.13,1)) both}
+.view.on .hub-exhibit:nth-of-type(1){animation-delay:.16s}
+.view.on .hub-exhibit:nth-of-type(2){animation-delay:.26s}
+.view.on .hub-exhibit:nth-of-type(3){animation-delay:.36s}
+.view.on .hub-exhibit:nth-of-type(4){animation-delay:.46s}
+.view.on .hub-exhibit:nth-of-type(5){animation-delay:.56s}
+.view.on .hub-exhibit:nth-of-type(6){animation-delay:.66s}
+.view.on .hub-exhibit:nth-of-type(7){animation-delay:.76s}
+.view.on .hub-exhibit:nth-of-type(8){animation-delay:.86s}
+@keyframes hubIn{from{opacity:0;filter:blur(8px);transform:translateY(16px)}to{opacity:1;filter:blur(0);transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .hub-head,.hub-exhibit{animation:none!important;opacity:1;filter:none;transform:none}
 }
 .hub-exhibit-plate{position:absolute;top:0;left:0;width:34px;height:3px;background:var(--ochre)}
 .hub-exhibit-kicker{color:var(--bone-4);margin:0 0 8px}

@@ -6,10 +6,16 @@
 .qc,.qc-fold{position:fixed;z-index:34;right:120px;top:calc(var(--top,52px) + 12px)}   /* left of the technique rail */
 .qc{width:min(320px,calc(100vw - 32px));padding:11px 13px 12px;color:var(--bone);
   background:color-mix(in srgb,var(--ink-1) 88%,transparent);border:1px solid var(--line-2);
-  backdrop-filter:blur(8px);animation:qcIn .5s cubic-bezier(.2,.7,.2,1) both;
-  transition:opacity 1.2s ease,transform 1.2s ease}
+  backdrop-filter:blur(8px);
+  /* `_cinematic-motion.css` names "quiz" an important-reveal (2–4s)
+     alongside "new technique" and "artifact" — matched here and on
+     `.tech-reveal` in `_rail.css` so the two read as the same language */
+  animation:qcIn var(--dur-important-reveal,2800ms) var(--ease-materialize,cubic-bezier(.16,.02,.13,1)) both;
+  /* kept just under lib/learn/tutor.ts's WRONG_FADE_MS (2.2s) so a wrong
+     answer's fade finishes before the phase machine drops the question */
+  transition:opacity 2.1s ease,transform 2.1s ease}
 .qc[data-phase="wrong"]{opacity:0;transform:translateY(-4px)}
-@keyframes qcIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes qcIn{from{opacity:0;filter:blur(6px);transform:translateY(-10px) scale(.98)}to{opacity:1;filter:blur(0);transform:none}}
 
 .qc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .qc-k{color:var(--ochre);letter-spacing:.16em}
@@ -41,7 +47,8 @@
 .qc-fold{width:34px;height:34px;display:grid;place-items:center;padding:0;cursor:pointer;
   font-family:var(--fs-display);font-size:19px;line-height:1;color:var(--bone-2);
   background:color-mix(in srgb,var(--ink-1) 80%,transparent);border:1px solid var(--line-2);border-radius:50%;
-  backdrop-filter:blur(6px);animation:qcIn .4s ease both}
+  backdrop-filter:blur(6px);
+  animation:qcIn var(--dur-micro,180ms) var(--ease-reveal,cubic-bezier(.2,.7,.2,1)) both}
 .qc-fold:hover{color:var(--bone);border-color:var(--ochre)}
 
 @media (max-width:900px){

@@ -8,7 +8,9 @@ import { TechniqueIcon } from './TechniqueIcon';
 /* The moment a technique is learned: a quiet banner beside the rail, once, then gone.
    It says what became possible and how many things already held may react — never which. */
 
-const SHOW_MS = 6500;
+// kept ahead of `.tech-reveal`'s now `--dur-important-reveal` (2.8s)
+// materialize in `_rail.css`, so it isn't dismissed mid-entrance
+const SHOW_MS = 9000;
 
 interface St { now: Reveal | null; queue: Reveal[] }
 
