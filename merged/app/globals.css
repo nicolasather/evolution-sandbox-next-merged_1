@@ -82,6 +82,9 @@
 /* Historical Escape Room — its own sealed-vault visual language (components/escaperoom/). */
 @import "./_escaperoom.css" layer(components);
 
+/* Alien Archaeology — its own violet xenoarchaeology-lab visual language (components/alienarchaeology/). */
+@import "./_alienarchaeology.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

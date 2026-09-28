@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Phase 10)
+## Status (28 September 2026, updated same day through Phase 11)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -44,7 +44,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 8. Archaeologist vertical slice | **Built — a third genuinely different game, and the first real consumer of lib/notebook's Hypothesis/Evidence methods** | See below. |
 | 9. Decipher (authored tutorial + beginner procedural generator) | **Built — a fourth genuinely different game, and a real solvability-validated logic puzzle, not a guessing game** | See below. |
 | 10. One authored Historical Escape Room episode | **Built — a fifth genuinely different game, and the first with no procedural generation at all** | See below. |
-| 11. Alien Archaeology | **Not started** — correctly gated behind 8–10 (shares their evidence/procedural-generation architecture). | |
+| 11. Alien Archaeology | **Built — a sixth genuinely different game, and the only mode graded on calibration rather than correctness** | See below. |
 | Reverse Evolution, Minimum Path variants | Can proceed in parallel with 6–11 once phase 5's graph-edge validation exists. | |
 
 ### What "Phase 1" actually built
@@ -630,6 +630,79 @@ component per puzzle" — is the actual architectural contribution here.
   layout, only parallel stations feeding one exit; no drag-and-drop
   (the sequence station uses accessible up/down buttons instead).
 
+## Phase 11 — what actually built (Alien Archaeology)
+
+A sixth genuinely different interaction language, and correctly the
+last mode built, since the brief gates it behind Phases 8–10's evidence
+architecture. It reuses that architecture's shape — recover specimens,
+weigh evidence, write a hypothesis — but changes what "done" means:
+human Archaeologist (Phase 8) and Decipher (Phase 9) each have one
+hidden ground truth a thorough player can fully prove. Here the
+deliberate epistemic point is that a nonhuman civilization's biology,
+social structure and purpose may never be fully knowable from ruins
+alone, so this mode is **never graded right or wrong** — only on
+calibration: how well the player's own stated confidence matched how
+right they actually turned out to be.
+
+- **Calibration scoring, not correctness, is the entire win condition**
+  — `lib/alienarchaeology/simulate.ts`'s `buildReport` scores each of
+  three independent axes (manipulator count, social structure, site
+  purpose) as `matched ? confidence : (1 − confidence)`, the textbook
+  reward for honest uncertainty: a confident wrong guess scores worse
+  than a hedged wrong one, and a confident right guess scores better
+  than an unnecessarily hedged right one (both directions proven in
+  `lib/alienarchaeology/__tests__/simulate.test.ts`). This is the first
+  real numeric consumer of `lib/notebook/types.ts`'s own
+  `Hypothesis.confidence` field and its documented "a well-hedged
+  uncertain can score better than a confident wrong guess" discipline —
+  Phase 8 first activated the Notebook system, Phase 9 was its second
+  consumer, this is its third and first to actually score against it.
+- **Evidence is deliberately noisier than every other mode's** —
+  `lib/alienarchaeology/catalog.ts`'s twelve specimen templates give
+  real xenoarchaeological-reasoning evidence (tool ergonomics implying
+  manipulator count; spatial/social layout implying social structure;
+  room and residue type implying purpose) but, unlike
+  `lib/archaeology/catalog.ts`'s templates, are authored so no amount of
+  study fully resolves the answer — there is no solvability validator
+  here, because provable certainty would quietly undo the mode's actual
+  point.
+- **A real, worked-through balance problem, not hand-waved**: an
+  empirical "weigh the evidence honestly" test policy was checked across
+  many seeds and initially landed at ~0.51 average calibration —
+  indistinguishable from always guessing 50% confidence. Tracing it
+  down: the scoring rule `matched?c:(1−c)` has expected value
+  `2p²−2p+1` for true accuracy `p`, which only clearly exceeds 0.5 once
+  `p` is well away from a coin flip (below ~28% or above ~72%) — so a
+  policy whose real accuracy sits near 40–62% per axis, as this one's
+  first pass did, is mathematically capped near 0.5 even when perfectly
+  calibrated. Fixed two ways: rebalancing the catalog's weakest axis
+  (`purpose`, which was diluted by overlapping secondary evidence across
+  templates) to a cleaner signal, and correcting the test's own policy,
+  which had been artificially flooring confidence at 0.5 even on
+  genuinely weak axes — exactly the miscalibration this scoring rule is
+  built to punish. The test's final bar (>0.53, "meaningfully above the
+  uninformative floor") is itself an honest number, not a loosened one:
+  demanding a high absolute score would have meant quietly engineering
+  away the ambiguity that is this mode's actual subject.
+- **Cross-mode Museum output, framed around calibration, not a
+  verdict**: a filed report becomes an `AlienMemory`
+  (`lib/alienarchaeology/memory.ts`), tagged `procedural-fictional`,
+  whose headline reports the calibration percentage rather than
+  "solved"/"failed".
+- **Verified live**: a Playwright smoke test studied all eight
+  specimens, set a (deliberately naive, always-first-option) hypothesis
+  and confidence on all three axes through the real UI, filed the
+  report, and confirmed the ending screen's own honest framing — a
+  poorly calibrated report, correctly, since the naive policy's guesses
+  didn't match the site's own best reading — alongside the Hub and
+  Museum both reflecting the completed run afterward.
+- **Not built**: no branching follow-up dig based on the filed report;
+  only three fixed hypothesis axes (no free-text or open-ended
+  interpretation); no visual specimen imagery beyond text description;
+  a second, harder tier (procedurally varying which evidence is
+  reliable vs. actively misleading, rather than merely noisy) is real,
+  scoped future work.
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -644,7 +717,7 @@ component per puzzle" — is the actual architectural contribution here.
 8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into. ✅ see "Phase 8 — what actually built" above. The evidence backend is real and reusable but not yet wired to a second consumer.
 9. Decipher: authored tutorial chapters, then a beginner procedural script generator with a solvability validator, before advanced grammar. ✅ see "Phase 9 — what actually built" above. One tutorial chapter (a fixed-seed instance of the validated generator, not an independently hand-typed corpus) plus the validated beginner generator; advanced grammar (role itself deducible, not given) remains future work.
 10. One authored Historical Escape Room episode using a real puzzle-authoring schema (not a bespoke React component per puzzle). ✅ see "Phase 10 — what actually built" above.
-11. Alien Archaeology, only once 8–10's evidence/procedural-generation architecture is proven.
+11. Alien Archaeology, only once 8–10's evidence/procedural-generation architecture is proven. ✅ see "Phase 11 — what actually built" above.
 
 Reverse Evolution and Minimum Path's challenge variants (no-backtracking,
 chronological-only, etc.) can proceed in parallel with 6–11 once the

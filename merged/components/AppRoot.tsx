@@ -19,6 +19,7 @@ const CivilizationMode = dynamic(() => import('./civilization/CivilizationMode')
 const ArchaeologyMode = dynamic(() => import('./archaeology/ArchaeologyMode').then(m => m.ArchaeologyMode), { ssr: false });
 const DecipherMode = dynamic(() => import('./decipher/DecipherMode').then(m => m.DecipherMode), { ssr: false });
 const EscapeRoomMode = dynamic(() => import('./escaperoom/EscapeRoomMode').then(m => m.EscapeRoomMode), { ssr: false });
+const AlienArchaeologyMode = dynamic(() => import('./alienarchaeology/AlienArchaeologyMode').then(m => m.AlienArchaeologyMode), { ssr: false });
 
 export function AppRoot() {
   const [mode, setMode] = useState<ModeId>('main-evolution');
@@ -29,5 +30,6 @@ export function AppRoot() {
   if (mode === 'archaeology') return <ArchaeologyMode onExit={exitToHub} />;
   if (mode === 'decipher') return <DecipherMode onExit={exitToHub} />;
   if (mode === 'escape-room') return <EscapeRoomMode onExit={exitToHub} />;
+  if (mode === 'alien-archaeology') return <AlienArchaeologyMode onExit={exitToHub} />;
   return <Sandbox onLaunchMode={setMode} />;
 }

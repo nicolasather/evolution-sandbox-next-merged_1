@@ -59,7 +59,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Alien Archaeology',
     subtitle: 'Unknown Worlds',
     description: 'Reconstruct an extinct nonhuman civilization from ruins whose builders, biology and purpose start out unknown.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.alienarchaeology.v1',
   },
   {

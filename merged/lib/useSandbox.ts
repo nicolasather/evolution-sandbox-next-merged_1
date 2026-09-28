@@ -5,6 +5,7 @@ import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
 import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
+import { alienArchaeologyStore } from './alienarchaeology/store';
 import { archaeologyStore } from './archaeology/store';
 import { civilizationStore } from './civilization/store';
 import { decipherStore } from './decipher/store';
@@ -68,6 +69,8 @@ export function useSandbox() {
   useEffect(() => { decipherStore.load(); }, []);
   // Same for the Escape Room's.
   useEffect(() => { escapeRoomStore.load(); }, []);
+  // Same for Alien Archaeology's.
+  useEffect(() => { alienArchaeologyStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);

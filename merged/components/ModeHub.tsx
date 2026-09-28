@@ -5,6 +5,7 @@ import { ReactiveLabel } from './fx/ReactiveLabel';
 import { TechSudokuModal } from './techsudoku/TechSudokuModal';
 import { archaeologyStore } from '@/lib/archaeology/store';
 import { civilizationStore } from '@/lib/civilization/store';
+import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
 import { decipherStore } from '@/lib/decipher/store';
 import { escapeRoomStore } from '@/lib/escaperoom/store';
 import { profile } from '@/lib/profile/store';
@@ -75,6 +76,8 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   void decVersion;
   const escVersion = useSyncExternalStore(escapeRoomStore.subscribe, escapeRoomStore.getVersion, () => 0);
   void escVersion;
+  const alienVersion = useSyncExternalStore(alienArchaeologyStore.subscribe, alienArchaeologyStore.getVersion, () => 0);
+  void alienVersion;
   const [sudokuOpen, setSudokuOpen] = useState(false);
 
   const p = profile.get();
@@ -86,17 +89,20 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const archMode = getMode('archaeology');
   const decMode = getMode('decipher');
   const escMode = getMode('escape-room');
+  const alienMode = getMode('alien-archaeology');
   const visit = p.modes['main-evolution'];
   const survivalVisit = p.modes['survival'];
   const civVisit = p.modes['civilization'];
   const archVisit = p.modes['archaeology'];
   const decVisit = p.modes['decipher'];
   const escVisit = p.modes['escape-room'];
+  const alienVisit = p.modes['alien-archaeology'];
   const survival = survivalStore.get();
   const civilization = civilizationStore.get();
   const archaeology = archaeologyStore.get();
   const decipher = decipherStore.get();
   const escapeRoom = escapeRoomStore.get();
+  const alien = alienArchaeologyStore.get();
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-hub" role="tabpanel" aria-label="Mode Hub">
@@ -184,6 +190,19 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
             { label: 'Episodes completed', value: escapeRoom.memories.length },
             { label: 'In progress', value: escapeRoom.activeState ? `${escapeRoom.activeState.solvedPuzzleIds.length} stations solved` : 'None' },
             { label: 'First entered', value: escVisit ? dateFmt.format(escVisit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
+
+        <ExhibitCard
+          kicker={alienMode?.subtitle ?? 'Unknown Worlds'}
+          title={alienMode?.title ?? 'Alien Archaeology'}
+          description={alienMode?.description ?? ''}
+          ctaLabel={alien.active ? 'Continue' : 'Enter'}
+          onLaunch={() => onLaunchMode?.('alien-archaeology')}
+          stats={[
+            { label: 'Field reports filed', value: alien.reports.length },
+            { label: 'Active site', value: alien.active ? 'In progress' : 'None' },
+            { label: 'First entered', value: alienVisit ? dateFmt.format(alienVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
 
