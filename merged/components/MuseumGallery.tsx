@@ -8,6 +8,9 @@ import { dioramaExhibit } from '@/lib/civilization/memory';
 import { civilizationStore } from '@/lib/civilization/store';
 import { decipherExhibit } from '@/lib/decipher/memory';
 import { decipherStore } from '@/lib/decipher/store';
+import { episodeExhibit } from '@/lib/escaperoom/memory';
+import { getEpisode } from '@/lib/escaperoom/registry';
+import { escapeRoomStore } from '@/lib/escaperoom/store';
 import { autoExhibits } from '@/lib/museum/registry';
 import type { MuseumExhibit } from '@/lib/museum/types';
 import { memoryExhibit } from '@/lib/survival/memory';
@@ -47,13 +50,18 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
   void archVersion;
   const decVersion = useSyncExternalStore(decipherStore.subscribe, decipherStore.getVersion, () => 0);
   void decVersion;
+  const escVersion = useSyncExternalStore(escapeRoomStore.subscribe, escapeRoomStore.getVersion, () => 0);
+  void escVersion;
 
   const mainExhibits = active ? autoExhibits(engine) : [];
   const campExhibits: MuseumExhibit[] = active ? survivalStore.get().memories.map(memoryExhibit) : [];
   const dioramaExhibits: MuseumExhibit[] = active ? civilizationStore.get().dioramas.map(dioramaExhibit) : [];
   const siteExhibits: MuseumExhibit[] = active ? archaeologyStore.get().reports.map(siteExhibit) : [];
   const decipherExhibits: MuseumExhibit[] = active ? decipherStore.get().memories.map(decipherExhibit) : [];
-  const staticExhibits = [...campExhibits, ...dioramaExhibits, ...siteExhibits, ...decipherExhibits];
+  const escapeExhibits: MuseumExhibit[] = active
+    ? escapeRoomStore.get().memories.map(m => episodeExhibit(m, getEpisode(m.episodeId)?.title ?? 'Unknown episode'))
+    : [];
+  const staticExhibits = [...campExhibits, ...dioramaExhibits, ...siteExhibits, ...decipherExhibits, ...escapeExhibits];
   const exhibits = [...mainExhibits, ...staticExhibits];
 
   return (
@@ -64,14 +72,14 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
           <h1 className="museum-title">Museum</h1>
           <p className="museum-sub">
             Every major invention you have reached, every camp your Survival runs left behind, every
-            settlement your Civilization runs grew, every report your Archaeologist digs filed, and
-            every tablet set your Decipher runs read — reconstructed and labelled, never claimed as
-            the object or event itself.
+            settlement your Civilization runs grew, every report your Archaeologist digs filed, every
+            tablet set your Decipher runs read, and every Escape Room episode you have opened —
+            reconstructed and labelled, never claimed as the object or event itself.
           </p>
         </header>
 
         {exhibits.length === 0 ? (
-          <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival, Civilization, Archaeologist or Decipher run, and it will appear here.</p>
+          <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival, Civilization, Archaeologist, Decipher or Escape Room run, and it will appear here.</p>
         ) : (
           <div className="museum-grid">
             {mainExhibits.map(ex => {

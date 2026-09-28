@@ -6,6 +6,7 @@ import { TechSudokuModal } from './techsudoku/TechSudokuModal';
 import { archaeologyStore } from '@/lib/archaeology/store';
 import { civilizationStore } from '@/lib/civilization/store';
 import { decipherStore } from '@/lib/decipher/store';
+import { escapeRoomStore } from '@/lib/escaperoom/store';
 import { profile } from '@/lib/profile/store';
 import { getMode } from '@/lib/modes/registry';
 import { survivalStore } from '@/lib/survival/store';
@@ -72,6 +73,8 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   void archVersion;
   const decVersion = useSyncExternalStore(decipherStore.subscribe, decipherStore.getVersion, () => 0);
   void decVersion;
+  const escVersion = useSyncExternalStore(escapeRoomStore.subscribe, escapeRoomStore.getVersion, () => 0);
+  void escVersion;
   const [sudokuOpen, setSudokuOpen] = useState(false);
 
   const p = profile.get();
@@ -82,15 +85,18 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const civMode = getMode('civilization');
   const archMode = getMode('archaeology');
   const decMode = getMode('decipher');
+  const escMode = getMode('escape-room');
   const visit = p.modes['main-evolution'];
   const survivalVisit = p.modes['survival'];
   const civVisit = p.modes['civilization'];
   const archVisit = p.modes['archaeology'];
   const decVisit = p.modes['decipher'];
+  const escVisit = p.modes['escape-room'];
   const survival = survivalStore.get();
   const civilization = civilizationStore.get();
   const archaeology = archaeologyStore.get();
   const decipher = decipherStore.get();
+  const escapeRoom = escapeRoomStore.get();
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-hub" role="tabpanel" aria-label="Mode Hub">
@@ -165,6 +171,19 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
             { label: 'Tablets read', value: decipher.memories.length },
             { label: 'Tutorial', value: decipher.tutorialCompleted ? 'Completed' : 'Not yet' },
             { label: 'First entered', value: decVisit ? dateFmt.format(decVisit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
+
+        <ExhibitCard
+          kicker={escMode?.subtitle ?? 'Enter the Past'}
+          title={escMode?.title ?? 'Historical Escape Room'}
+          description={escMode?.description ?? ''}
+          ctaLabel={escapeRoom.activeState ? 'Continue' : 'Enter'}
+          onLaunch={() => onLaunchMode?.('escape-room')}
+          stats={[
+            { label: 'Episodes completed', value: escapeRoom.memories.length },
+            { label: 'In progress', value: escapeRoom.activeState ? `${escapeRoom.activeState.solvedPuzzleIds.length} stations solved` : 'None' },
+            { label: 'First entered', value: escVisit ? dateFmt.format(escVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
 

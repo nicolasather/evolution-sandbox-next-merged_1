@@ -43,7 +43,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Historical Escape Room',
     subtitle: 'Enter the Past',
     description: 'Reason through how a historical mechanism actually worked to open the next space.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.escaperoom.v1',
   },
   {

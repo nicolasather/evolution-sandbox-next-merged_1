@@ -8,6 +8,7 @@ import { playDb } from './processing';
 import { archaeologyStore } from './archaeology/store';
 import { civilizationStore } from './civilization/store';
 import { decipherStore } from './decipher/store';
+import { escapeRoomStore } from './escaperoom/store';
 import { profile } from './profile/store';
 import { survivalStore } from './survival/store';
 import { regionGateFor } from './trade/gate';
@@ -65,6 +66,8 @@ export function useSandbox() {
   useEffect(() => { archaeologyStore.load(); }, []);
   // Same for Decipher's.
   useEffect(() => { decipherStore.load(); }, []);
+  // Same for the Escape Room's.
+  useEffect(() => { escapeRoomStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);

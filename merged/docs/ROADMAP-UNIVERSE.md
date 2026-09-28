@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Phase 9)
+## Status (28 September 2026, updated same day through Phase 10)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -43,7 +43,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 7. Civilization vertical slice | **Built — a second genuinely different game, allocation-based rather than spatial/task-based like Survival** | See below. |
 | 8. Archaeologist vertical slice | **Built — a third genuinely different game, and the first real consumer of lib/notebook's Hypothesis/Evidence methods** | See below. |
 | 9. Decipher (authored tutorial + beginner procedural generator) | **Built — a fourth genuinely different game, and a real solvability-validated logic puzzle, not a guessing game** | See below. |
-| 10. One authored Historical Escape Room episode | **Not started** | |
+| 10. One authored Historical Escape Room episode | **Built — a fifth genuinely different game, and the first with no procedural generation at all** | See below. |
 | 11. Alien Archaeology | **Not started** — correctly gated behind 8–10 (shares their evidence/procedural-generation architecture). | |
 | Reverse Evolution, Minimum Path variants | Can proceed in parallel with 6–11 once phase 5's graph-edge validation exists. | |
 
@@ -563,6 +563,73 @@ same discipline Tech Sudoku (Phase 5) established.
   tutorial; no glyph-drawing/tracing input, only a word-assignment
   palette.
 
+## Phase 10 — what actually built (Historical Escape Room)
+
+A fifth genuinely different interaction language, and the first mode
+with **no procedural generation at all** — every other mode's content
+is generated from a seed; this one is entirely hand-authored, because an
+escape room's puzzles depend on specific, curated real historical facts
+that don't generalise well to procedural generation. The brief's own
+requirement — "a real puzzle-authoring schema, not a bespoke React
+component per puzzle" — is the actual architectural contribution here.
+
+- **The schema, not the episode, is the deliverable.**
+  `lib/escaperoom/types.ts` defines four generic `PuzzleKind`s —
+  `ratio` (a measured quantity, checked within a real tolerance),
+  `sequence` (the real order a historical process happened in),
+  `match` (real tools to their real functions), and `code` (assembling
+  what the other stations revealed) — and
+  `components/escaperoom/EscapeRoomMode.tsx` renders every puzzle
+  through exactly one reusable station component per kind
+  (`RatioStation`/`SequenceStation`/`MatchStation`/`CodeStation`), never
+  a bespoke component per puzzle instance. `lib/escaperoom/registry.ts`
+  lists episodes by id; adding a second episode is authoring a new data
+  file, not writing new UI.
+- **"The Founder's Workshop"** (`lib/escaperoom/episodes/
+  bronzeWorkshop.ts`) is one complete, real episode: a Late Bronze Age
+  bronze-casting workshop. Every answer is real, checkable history —
+  bronze's working tin ratio (~10%, the alloy-bench station), the real
+  order of lost-wax casting (carve wax → mould in clay → melt the wax
+  out → pour the bronze → break the mould, the founder's-bench
+  station), and a crucible's and a tuyere's real functions (melting the
+  alloy; forcing air into the fire hot enough to melt it — the tool-wall
+  station) — not arbitrary lock combinations. The three stations can be
+  solved in any order (a real escape room lets you explore freely); the
+  exit door's code station is gated until all three are solved and
+  simply assembles what they revealed.
+- **A real content bug found by the room's own test suite, before any
+  UI existed**: the casting-sequence puzzle's steps were first authored
+  in their own correct chronological order for readability — which
+  meant the station's default on-screen arrangement (steps shown in
+  their own array order) would already BE the solution, making the
+  puzzle trivial. `lib/escaperoom/__tests__/bronzeWorkshop.test.ts` now
+  asserts the authored step order is never equal to `correctOrder`,
+  guarding against this regressing; the data was reordered to a real
+  scramble, narrative text unchanged.
+- **Never punitive, matching the brief and every other mode's
+  discipline**: a wrong submission only ever says "Not quite — look
+  again", never reveals the answer, never penalises; hints are opt-in
+  per station and logged honestly (a finished run's Museum exhibit
+  reports hints used and attempts made as a plain record, not a score).
+- **Cross-mode Museum output, with its own honest provenance kind**:
+  unlike every procedurally generated mode's `procedural-fictional`
+  exhibits, a finished episode's exhibit
+  (`lib/escaperoom/memory.ts`) is tagged `reference-reconstruction` —
+  the historical process really happened; only the sealed-workshop
+  framing around it is staging.
+- **Verified live by actually solving the room through the real UI**:
+  the Playwright smoke test reorders the sequence station via its real
+  up/down buttons (not by injecting state), matches tools via the real
+  choice buttons, and types the assembled code into the real exit
+  input — reaching "The door opens" and confirming the Hub and Museum
+  both reflect the completed run afterward.
+- **Not built**: only one episode (a second is a data-authoring task,
+  not a new architecture, per the schema above); no timer or
+  fail-state (deliberately — matching the "no engagement mechanics
+  built on... manipulative" non-negotiable); no branching/multi-room
+  layout, only parallel stations feeding one exit; no drag-and-drop
+  (the sequence station uses accessible up/down buttons instead).
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -576,7 +643,7 @@ same discipline Tech Sudoku (Phase 5) established.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution. ✅ see "Phase 7 — what actually built" above.
 8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into. ✅ see "Phase 8 — what actually built" above. The evidence backend is real and reusable but not yet wired to a second consumer.
 9. Decipher: authored tutorial chapters, then a beginner procedural script generator with a solvability validator, before advanced grammar. ✅ see "Phase 9 — what actually built" above. One tutorial chapter (a fixed-seed instance of the validated generator, not an independently hand-typed corpus) plus the validated beginner generator; advanced grammar (role itself deducible, not given) remains future work.
-10. One authored Historical Escape Room episode using a real puzzle-authoring schema (not a bespoke React component per puzzle).
+10. One authored Historical Escape Room episode using a real puzzle-authoring schema (not a bespoke React component per puzzle). ✅ see "Phase 10 — what actually built" above.
 11. Alien Archaeology, only once 8–10's evidence/procedural-generation architecture is proven.
 
 Reverse Evolution and Minimum Path's challenge variants (no-backtracking,
