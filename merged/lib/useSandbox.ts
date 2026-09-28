@@ -3,11 +3,33 @@
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
+import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
-import type { ActionId, CombineResult, Db, Discovery, ProcessResult, ViewId } from './types';
+import { alienArchaeologyStore } from './alienarchaeology/store';
+import { archaeologyStore } from './archaeology/store';
+import { civilizationStore } from './civilization/store';
+import { decipherStore } from './decipher/store';
+import { escapeRoomStore } from './escaperoom/store';
+import { profile } from './profile/store';
+import { reverseEvolutionStore } from './reverseevolution/store';
+import { survivalStore } from './survival/store';
+import { regionGateFor } from './trade/gate';
+import { tradeStore } from './trade/store';
+import type { ActionId, CombineResult, Db, Discovery, ProcessResult, RegionLockInfo, ViewId } from './types';
 import { afterWorld } from './world/bus';
 
 export const db: Db = playDb;
+
+/** Reads live trade-routes state on every call (never a stale snapshot), so
+ *  turning the 'trade-routes' flag on/off or establishing a route takes
+ *  effect on the very next combine without reconstructing the Engine. With
+ *  the flag off (the default) this always returns null — byte-for-byte the
+ *  game's behaviour before lib/trade/ existed. */
+function liveRegionGate(node: Discovery): RegionLockInfo | null {
+  if (!isTradeRoutesEnabled()) return null;
+  const { homeRegion, routes } = tradeStore.get();
+  return regionGateFor(node.id, node.n, homeRegion, routes);
+}
 
 export type ToastKind = 'new' | 'rare' | 'hidden' | 'route' | 'tier' | 'solved' | 'reopen' | 'state' | 'world';
 export interface Toast { key: number; kind: ToastKind; title: string; sub: string; node?: Discovery }
@@ -25,12 +47,33 @@ const SETTLE_MS = 520;
  * useSyncExternalStore, which is also what keeps hydration honest.
  */
 export function useSandbox() {
-  const [engine] = useState(() => new Engine(db));
+  const [engine] = useState(() => new Engine(db, { regionGate: liveRegionGate }));
   const version = useSyncExternalStore(engine.subscribe, engine.getVersion, SERVER_VERSION);
 
   // Saved progress lives in localStorage, which the server cannot see. Loading
   // it after mount lets hydration match; the engine then announces the change.
   useEffect(() => { engine.load(); }, [engine]);
+  // The shared cross-mode profile is independent of the Main Evolution save
+  // above — loading it (or not finding one) never affects this engine.
+  useEffect(() => { profile.load(); }, []);
+  // Trade-routes state (home region, established routes) is also independent
+  // — see liveRegionGate above, which reads it fresh on every combine.
+  useEffect(() => { tradeStore.load(); }, []);
+  // Survival's own save — loaded here too so the Mode Hub's Survival card
+  // shows real resume state even before the player ever opens that mode.
+  useEffect(() => { survivalStore.load(); }, []);
+  // Same for Civilization's.
+  useEffect(() => { civilizationStore.load(); }, []);
+  // Same for Archaeology's.
+  useEffect(() => { archaeologyStore.load(); }, []);
+  // Same for Decipher's.
+  useEffect(() => { decipherStore.load(); }, []);
+  // Same for the Escape Room's.
+  useEffect(() => { escapeRoomStore.load(); }, []);
+  // Same for Alien Archaeology's.
+  useEffect(() => { alienArchaeologyStore.load(); }, []);
+  // Same for Reverse Evolution's.
+  useEffect(() => { reverseEvolutionStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);
@@ -172,7 +215,10 @@ export function useSandbox() {
     engine.reset(); clearSlots(); setFocusId(null); setEnding(null); setResult(null); setHintError(null);
   }, [engine, clearSlots]);
 
-  const enter = useCallback(() => setEntered(true), []);
+  const enter = useCallback(() => {
+    setEntered(true);
+    profile.recordModeVisit('main-evolution');
+  }, []);
 
   const requestHint = useCallback((targetId?: string) => {
     const r = engine.requestHint(targetId);

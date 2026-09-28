@@ -5,11 +5,40 @@ import { Glyph } from './Glyph';
 import { Plate3D } from './Plate3D';
 import { cn } from '@/lib/utils';
 import { routePaths } from '@/lib/routes';
+import { scoreResilience } from '@/lib/knowledge/resilience';
+import { isTradeRoutesEnabled } from '@/lib/modes/flags';
 import { revealedPhysics } from '@/lib/processing/reveal';
+import { tradeStore } from '@/lib/trade/store';
 import { requestReplay } from '@/lib/world/bus';
 import { LOCK_MESSAGE } from '@/lib/world/progress';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, Source } from '@/lib/types';
+
+const RESILIENCE_LABEL: Record<string, string> = {
+  stable: 'Stable', fragile: 'Fragile', 'at-risk': 'At risk',
+};
+
+/** Read-only: what would put this discovery at risk, if this game ever
+ *  models loss (see lib/knowledge/). Nothing here removes or hides
+ *  anything — a warning, never a countdown. Primitives and states are
+ *  foundational/always-available, so they never show this. */
+function ResilienceSection({ engine, node }: { engine: Engine; node: Discovery }) {
+  if (!engine.has(node.id) || node.primitive || node.state) return null;
+  const trade = isTradeRoutesEnabled() ? tradeStore.get() : null;
+  const r = scoreResilience(node, id => engine.get(id), { homeRegion: trade?.homeRegion, routes: trade?.routes });
+  if (r.state === 'stable') return null;
+  return (
+    <section className="sec sec-resilience">
+      <h3>Knowledge resilience</h3>
+      <p className="lead">
+        <span className="rarity-tag" style={r.state === 'at-risk' ? { color: 'var(--ochre)' } : undefined}>
+          {RESILIENCE_LABEL[r.state]}
+        </span>
+      </p>
+      {r.factors.map(f => <p key={f.cause}>{f.note}</p>)}
+    </section>
+  );
+}
 
 const MATERIAL_WORD: Record<string, string> = {
   mineral: 'stone-like', wood: 'woody', bone: 'bony', fibre: 'stringy', earth: 'earthy', liquid: 'runny',
@@ -233,6 +262,8 @@ export function ExhibitPanel({
             </section>
           );
         })()}
+
+        <ResilienceSection engine={engine} node={node} />
 
         <section className="sec">
           <h3>What it&rsquo;s like</h3>

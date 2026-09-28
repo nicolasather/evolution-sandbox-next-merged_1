@@ -559,13 +559,14 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       const mx = c.reduce((s, b) => s + b.x, 0) / c.length, my = c.reduce((s, b) => s + b.y, 0) / c.length;
       if (c.length === 2) world.repel(c[0], c[1], 320);
       else for (const b of c) { const dx = b.x - mx, dy = b.y - my, d = Math.hypot(dx, dy) || 1; b.vx += (dx / d) * 230 / b.mass; b.vy += (dy / d) * 230 / b.mass; b.q = Math.max(b.q, 0.16); }
-      const early = res.status === 'tier_locked' || res.status === 'era_locked';
+      const early = res.status === 'tier_locked' || res.status === 'era_locked' || res.status === 'region_locked';
       fx.sound(early ? 'chime' : 'tick', { vol: 0.5, rate: early ? 0.7 : 0.8 });
       fx.shake(early ? 1 : 2.4);
       fx.burst(mx, my, { n: 5, color: 'bone3', speed: 40, life: 0.3 });
       cool = 0.35;
       if (res.status === 'era_locked') say_(res.message, 'warn', 'Complete all major world inventions from this era to advance.');
       else if (res.status === 'tier_locked') say_(res.message, 'warn');
+      else if (res.status === 'region_locked') say_(res.message, 'warn', `Documented origin: ${res.region.originLabel}.`);
       else {
         const f = res as Extract<CombineResult, { status: 'fail' }>;
         const near = f.nudge ? null : (f.items.length === 2 ? nearLine(eng, f.a.id, f.b.id) : null);
@@ -1000,9 +1001,10 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         wake();
         return;
       }
-      if (res.status === 'tier_locked' || res.status === 'era_locked') {
+      if (res.status === 'tier_locked' || res.status === 'era_locked' || res.status === 'region_locked') {
         fx.sound('chime', { vol: 0.5, rate: 0.7 });
-        say_(res.message, 'warn', res.status === 'era_locked' ? 'Complete all major world inventions from this era to advance.' : undefined);
+        say_(res.message, 'warn', res.status === 'era_locked' ? 'Complete all major world inventions from this era to advance.'
+          : res.status === 'region_locked' ? `Documented origin: ${res.region.originLabel}.` : undefined);
         wake();
         return;
       }

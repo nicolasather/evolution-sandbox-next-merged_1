@@ -1,0 +1,21 @@
+/* ============================================================================
+   TRADE — the regional trade panel. Same dialog shell as World Progress
+   (.confirm/.confirm-box, app/_design-system.css); only the content inside
+   .trade-box is new.
+   ========================================================================== */
+.trade-box{width:min(560px,100%);max-height:min(85vh,760px);overflow:auto;text-align:left;overscroll-behavior:contain}
+
+.trade-regions{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}
+
+.trade-frontier{margin:0 0 20px}
+.trade-edges{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.trade-edges li{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:8px 10px;border:1px solid var(--line);font-size:13px;color:var(--bone-2)}
+.trade-edges .chip{padding:6px 12px;font-size:10px}
+
+.trade-locked{margin:0 0 4px}
+.trade-locked-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.trade-locked-list li{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  padding:6px 2px;border-bottom:1px solid var(--line);font-size:13px}
+.trade-locked-name{color:var(--bone-2)}
+.trade-locked-origin{color:var(--bone-4);font-size:10.5px}

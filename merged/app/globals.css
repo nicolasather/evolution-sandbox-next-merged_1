@@ -55,6 +55,48 @@
 /* The globe reveal, the world panel and the world marks (timeline, graph, archive). */
 @import "./_world.css" layer(components);
 
+/* The Mode Hub — the switcher between Main Evolution and future modes. */
+@import "./_mode-hub.css" layer(components);
+
+/* The Museum's automatic-exhibit gallery. */
+@import "./_museum-gallery.css" layer(components);
+
+/* The Minimum Path challenge. */
+@import "./_minpath.css" layer(components);
+
+/* Tech Sudoku — a small optional puzzle, reached from the Mode Hub. */
+@import "./_techsudoku.css" layer(components);
+
+/* Survival — its own earthy, spatial visual language (components/survival/). */
+@import "./_survival.css" layer(components);
+
+/* Civilization — its own structured, ledger/map visual language (components/civilization/). */
+@import "./_civilization.css" layer(components);
+
+/* Archaeologist — its own warm field-notebook visual language (components/archaeology/). */
+@import "./_archaeology.css" layer(components);
+
+/* Decipher — its own cool epigrapher's-desk visual language (components/decipher/). */
+@import "./_decipher.css" layer(components);
+
+/* Historical Escape Room — its own sealed-vault visual language (components/escaperoom/). */
+@import "./_escaperoom.css" layer(components);
+
+/* Alien Archaeology — its own violet xenoarchaeology-lab visual language (components/alienarchaeology/). */
+@import "./_alienarchaeology.css" layer(components);
+
+/* Reverse Evolution — its own blueprint/exploded-diagram visual language (components/reverseevolution/). */
+@import "./_reverseevolution.css" layer(components);
+
+/* Weekly Mega Challenge — a small optional modal, reached from the Mode Hub, reusing the shared .confirm shell. */
+@import "./_weekly.css" layer(components);
+
+/* The Trade panel — Main Evolution's optional regional trade-routes layer. */
+@import "./_trade.css" layer(components);
+
+/* The Experiment Workspace (Laboratory) and its Research Notebook logging. */
+@import "./_experiments.css" layer(components);
+
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and
    `var(--bone-2)` in the stylesheet are the same colour in either theme. */

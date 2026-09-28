@@ -1,0 +1,18 @@
+/* ============================================================================
+   EXPERIMENT WORKSPACE — same dialog shell as Trade/World Progress
+   (.confirm/.confirm-box); only .ew-box's content is new.
+   ========================================================================== */
+.ew-box{width:min(520px,100%);max-height:min(85vh,720px);overflow:auto;text-align:left;overscroll-behavior:contain}
+
+.ew-controls{display:flex;flex-direction:column;gap:16px;margin:18px 0 16px}
+.ew-slider{display:flex;flex-direction:column;gap:6px}
+.ew-slider span{color:var(--bone-3)}
+.ew-slider input[type="range"]{width:100%;accent-color:var(--ochre)}
+
+.ew-outcome{border:1px solid var(--line-2);padding:12px 14px;margin-bottom:16px}
+.ew-outcome-tag{color:var(--ochre);margin:0 0 6px}
+.ew-outcome p:not(.ew-outcome-tag){margin:0;color:var(--bone-2);font-size:13px;line-height:1.55}
+
+.ew-log{margin:0 0 4px}
+.ew-log-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.ew-log-list li{padding:6px 2px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--bone-3)}

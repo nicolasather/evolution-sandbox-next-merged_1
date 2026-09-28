@@ -29,7 +29,7 @@ import { buildWorldModel, type WorldModel } from './world/registry';
 import type { EraGate, EraProgress, Major, WorldEvent, WorldSave, WorldSummary } from './world/types';
 import type {
   ActionId, CombineResult, Db, Discovery, Era, EraId, FailInfo, HintLevel, HintView, Potential, ProcessResult,
-  ProcessRoute, Stats, StoneAgeTier, TierGate, TierProgress,
+  ProcessRoute, RegionLockInfo, Stats, StoneAgeTier, TierGate, TierProgress,
 } from './types';
 
 const SAVE_KEY = 'evo.sandbox.v1';
@@ -131,6 +131,12 @@ export class Engine {
   private worldEvents: WorldEvent[] = [];
   private eraOpenCache: boolean[] = [];
   private eraOpenSize = -1;
+  /** Optional Main Evolution trade-routes check (see lib/trade/) — never
+   *  consulted for anything already found. Absent (the default) means
+   *  "never blocked": this Engine behaves exactly as it did before this
+   *  hook existed. Only lib/useSandbox.ts ever passes a real one, and only
+   *  when the 'trade-routes' flag is on (lib/modes/flags.ts). */
+  private readonly regionGate: (node: Discovery) => RegionLockInfo | null;
 
   /** Discoveries held (counted, numbered, shown in the archive). */
   found: Set<string>;
@@ -190,8 +196,9 @@ export class Engine {
     this.listeners.forEach(fn => fn());
   }
 
-  constructor(db: Db) {
+  constructor(db: Db, opts?: { regionGate?: (node: Discovery) => RegionLockInfo | null }) {
     this.db = db;
+    this.regionGate = opts?.regionGate ?? (() => null);
     this.proc = db.proc;
     this.primitives = new Set(db.primitives);
     db.nodes.forEach(n => { this.byId[n.id] = n; });
@@ -641,6 +648,16 @@ export class Engine {
       };
     }
 
+    if (!this.found.has(rid)) {
+      const rg = this.regionGate(node);
+      if (rg) {
+        this.lockedPairs.add(pk);
+        this.streak = 0; // a right answer, just not where the player is yet: never counts as being stuck
+        this.save(); this.emit();
+        return { status: 'region_locked', a: A, b: B, items, region: rg, message: `${rg.message} Remember this pair.` };
+      }
+    }
+
     this.lockedPairs.delete(pk);
     const [a, b, ...x] = ids;
     const made = this.commit(rid, ids, setKey(rid, ids), x.length ? { a, b, r: rid, x } : { a, b, r: rid });
@@ -778,15 +795,24 @@ export class Engine {
     if (t.needs && !this.hasCap(t.needs)) return nothing('tool', this.bareHands(action, from), capabilityNote(t.needs));
     if (!this.knows(action)) return nothing('locked', 'You have not learned how to do that yet.');
 
-    // outputs the tier still holds back
+    // outputs the tier still holds back — a brand-new output additionally has to
+    // clear the region gate (lib/trade/, off unless a regionGate was passed)
     const outs = t.out.map(o => this.byId[o]).filter(Boolean);
-    const open = outs.filter(o => o.state || this.found.has(o.id) || this.isRecipeUnlocked(o.id));
+    const open = outs.filter(o => o.state || this.found.has(o.id)
+      || (this.isRecipeUnlocked(o.id) && !this.regionGate(o)));
     if (!open.length) {
       const eg = outs.map(o => this.eraGate(o.era)).find((x): x is EraGate => !!x);
       if (eg) {
         this.streak = 0;
         this.save(); this.emit();
         return { status: 'era_locked', action, from, gate: eg, message: eg.message };
+      }
+      const rg = outs.filter(o => this.isRecipeUnlocked(o.id)).map(o => this.regionGate(o))
+        .find((x): x is RegionLockInfo => !!x);
+      if (rg) {
+        this.streak = 0;
+        this.save(); this.emit();
+        return { status: 'region_locked', action, from, region: rg, message: rg.message };
       }
       const g = this.gate(outs[0].stone_age_tier!);
       this.streak = 0;
@@ -1061,6 +1087,10 @@ export class Engine {
   /* ── queries ────────────────────────────────────────────────────────── */
   has(id: string) { return this.found.has(id); }
   get(id: string): Discovery | undefined { return this.byId[id]; }
+  /** When a held discovery was first found (epoch ms), or null if it isn't
+   *  held or predates this being tracked (an old save's primitives). Read-
+   *  only — for Museum auto-exhibits (lib/museum/) to date what they show. */
+  whenFound(id: string): number | null { return this.when[id] ?? null; }
   recipeFor(a: string, b: string) { return this.pairIndex.get(pairKey(a, b)) ?? null; }
   recipeOf(ids: string[]) { return this.pairIndex.get(multiKey(ids)) ?? null; }
   triedPair(a: string, b: string) { return this.failedPairs.has(pairKey(a, b)); }

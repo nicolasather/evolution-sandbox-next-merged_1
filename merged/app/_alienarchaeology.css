@@ -1,0 +1,64 @@
+/* ============================================================================
+   ALIEN ARCHAEOLOGY — a cool, violet "xenoarchaeology lab" visual language,
+   distinct from every other mode. Scoped entirely under #alienarchaeology-mode.
+   ========================================================================== */
+#alienarchaeology-mode{
+  --xa-bg:#edeaf4; --xa-ink:#241f30; --xa-ink-2:#564d68; --xa-ink-3:#847a98;
+  --xa-line:rgba(36,31,48,.14); --xa-line-2:rgba(36,31,48,.26);
+  --xa-accent:#6b46a8;
+  position:fixed;inset:0;z-index:40;overflow-y:auto;background:var(--xa-bg);color:var(--xa-ink);padding:0 0 40px;
+}
+@media (prefers-color-scheme:dark){
+  #alienarchaeology-mode:not([data-theme="light"]){
+    --xa-bg:#181420; --xa-ink:#e9e4f2; --xa-ink-2:#b0a4c8; --xa-ink-3:#7e7396;
+    --xa-line:rgba(233,228,242,.12); --xa-line-2:rgba(233,228,242,.22);
+    --xa-accent:#a480e0;
+  }
+}
+
+.xa-top{display:flex;align-items:center;gap:18px;padding:18px 22px;border-bottom:1px solid var(--xa-line)}
+.xa-exit{border:1px solid var(--xa-line-2);color:var(--xa-ink-2);padding:6px 12px;font-size:11px}
+.xa-eyebrow{color:var(--xa-accent);letter-spacing:.08em;font-size:12px}
+.xa-progress{margin-left:auto;font-size:11.5px;color:var(--xa-ink-2)}
+
+.xa-h{color:var(--xa-ink-3);margin:0 0 8px;text-transform:uppercase;letter-spacing:.06em;font-size:11px}
+
+.xa-body{max-width:880px;margin:0 auto;padding:22px;display:flex;flex-direction:column;gap:24px}
+.xa-intro{color:var(--xa-ink-2);font-size:13.5px;line-height:1.7;margin:0;font-style:italic}
+
+.xa-specimens{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.xa-specimen{border:1px solid var(--xa-line);padding:12px 14px;display:flex;flex-direction:column;gap:10px;justify-content:space-between;min-height:76px}
+.xa-specimen.xa-revealed{border-color:var(--xa-accent);background:rgba(107,70,168,.06)}
+.xa-specimen-desc{font-size:12px;line-height:1.55;color:var(--xa-ink);margin:0}
+.xa-specimen-desc.xa-unrevealed{color:var(--xa-ink-3);font-style:italic}
+.xa-specimen .chip{align-self:flex-start;border:1px solid var(--xa-line-2);padding:6px 12px;font-size:10.5px}
+
+.xa-log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--xa-ink-2);line-height:1.5}
+
+.xa-hypothesis{max-width:880px;margin:0 auto;padding:20px 22px 0;border-top:1px solid var(--xa-line);display:flex;flex-direction:column;gap:18px}
+.xa-axis-row{display:flex;flex-direction:column;gap:10px;border:1px solid var(--xa-line);padding:14px 16px}
+.xa-axis-label{color:var(--xa-ink-2);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.xa-choice-group{display:flex;flex-wrap:wrap;gap:7px}
+.xa-choice-group .chip{border:1px solid var(--xa-line-2);padding:7px 13px;font-size:11.5px}
+.xa-choice-group .chip.xa-chosen{border-color:var(--xa-accent);background:rgba(107,70,168,.14);color:var(--xa-ink)}
+.xa-confidence-row{display:flex;flex-direction:column;gap:5px;max-width:320px}
+.xa-confidence-row span{color:var(--xa-ink-3);font-size:10.5px}
+.xa-confidence-row input[type="range"]{width:100%;accent-color:var(--xa-accent)}
+
+.xa-report-row{display:flex;justify-content:flex-end}
+.xa-report-btn{border:1px solid var(--xa-accent);color:var(--xa-ink);padding:10px 20px;font-size:12px}
+.xa-report-btn:hover{background:rgba(107,70,168,.12)}
+.xa-report-btn:disabled{opacity:.4}
+
+.xa-ending{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:var(--xa-bg);color:var(--xa-ink);padding:20px;overflow-y:auto}
+.xa-ending-box{max-width:600px;width:100%;padding:20px 0}
+.xa-ending-title{font-family:var(--fs-display,inherit);font-size:clamp(30px,5vw,44px);margin:10px 0 12px;color:var(--xa-accent)}
+.xa-ending-line{color:var(--xa-ink-2);margin:0 0 20px;font-size:14px;line-height:1.7}
+.xa-ending-axes{display:flex;flex-direction:column;gap:10px;margin:0 0 20px}
+.xa-axis-result{border:1px solid var(--xa-line);padding:12px 14px}
+.xa-axis-result.xa-matched{border-color:var(--xa-accent)}
+.xa-axis-result dt{color:var(--xa-accent);font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 6px}
+.xa-axis-result dd{margin:0 0 3px;font-size:12.5px;color:var(--xa-ink)}
+.xa-truth-line{color:var(--xa-ink-3) !important;font-style:italic}
+.xa-ending-actions{display:flex;gap:10px;margin-top:10px}
+.xa-ending-actions .chip{border:1px solid var(--xa-line-2);padding:9px 16px;font-size:12px}

@@ -1,4 +1,4 @@
-import { Sandbox } from '@/components/Sandbox';
+import { AppRoot } from '@/components/AppRoot';
 
 // Static, no user input — describes the game itself for search engines.
 const GAME_JSON_LD = {
@@ -20,7 +20,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(GAME_JSON_LD).replace(/</g, '\\u003c') }}
       />
-      <Sandbox />
+      <AppRoot />
     </>
   );
 }

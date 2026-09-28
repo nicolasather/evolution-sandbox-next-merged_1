@@ -41,7 +41,7 @@ function SoundButton() {
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum, onMinPath,
 }: {
   engine: Engine;
   view: ViewId;
@@ -51,6 +51,11 @@ export function TopBar({
   onShortcuts: () => void;
   onJournal: () => void;
   onWorld: () => void;
+  onHub: () => void;
+  onTrade: () => void;
+  onLab: () => void;
+  onMuseum: () => void;
+  onMinPath: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -179,6 +184,66 @@ export function TopBar({
       </div>
 
       <div className="top-slot top-actions">
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="minpath-open"
+          aria-label="Minimum Path challenge"
+          aria-pressed={view === 'minpath'}
+          title="Minimum Path — reach a target discovery in as few clicks as possible"
+          onClick={onMinPath}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <circle cx="2.5" cy="13.5" r="1.5" /><circle cx="13.5" cy="2.5" r="1.5" />
+            <path d="M4 12.2 8 8.2M9.5 6.7l2-2" />
+          </svg>
+        </button>
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="museum-open"
+          aria-label="Museum"
+          aria-pressed={view === 'museum'}
+          title="Museum — every major invention you have reached"
+          onClick={onMuseum}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M1.5 5.5 8 2l6.5 3.5M2.5 5.5v8M13.5 5.5v8M1 13.5h14" />
+          </svg>
+        </button>
+        <button
+          className="icon-btn"
+          id="hub-open"
+          aria-label="Mode Hub"
+          aria-pressed={view === 'hub'}
+          title="The Mode Hub — switch between Evolution Sandbox's experiences"
+          onClick={onHub}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M8 1.5 14.5 5 8 8.5 1.5 5Z" /><path d="M1.5 8.5 8 12l6.5-3.5M1.5 12 8 15.5 14.5 12" />
+          </svg>
+        </button>
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="trade-open"
+          aria-label="Trade"
+          title="Trade — an optional regional layer on top of Main Evolution"
+          onClick={onTrade}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M2 5.5h5M2 5.5l2-2.5M2 5.5l2 2.5M14 10.5H9M14 10.5l-2-2.5M14 10.5l-2 2.5" />
+          </svg>
+        </button>
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="lab-open"
+          aria-label="Laboratory"
+          title="Laboratory — try a variable before you commit to a recipe"
+          onClick={onLab}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M6.5 2h3M6.5 2v4.2L3.4 12a1.4 1.4 0 0 0 1.24 2.06h6.72A1.4 1.4 0 0 0 12.6 12L9.5 6.2V2" />
+            <path d="M4.8 9.8h6.4" />
+          </svg>
+        </button>
         <button
           className="icon-btn max-[900px]:hidden"
           id="journal-open"

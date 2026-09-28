@@ -1,0 +1,45 @@
+/* ============================================================================
+   MUSEUM GALLERY — the automatic-exhibit view. Same engraved-plate language
+   as Archive/the Mode Hub (square corners, hairline rule, mono labels).
+   ========================================================================== */
+#v-museum{overflow-y:auto;padding:0 0 70px}   /* display is set only by .view / .view.on, see _design-system.css */
+
+.museum-wrap{max-width:1080px;margin:0 auto;padding:clamp(40px,7vw,90px) clamp(18px,4vw,44px) 0}
+
+.museum-head{padding-bottom:26px;border-bottom:1px solid var(--line);margin-bottom:clamp(28px,5vw,46px)}
+.museum-eyebrow{color:var(--ochre);margin:0 0 10px}
+.museum-title{font-family:var(--fs-display);font-size:clamp(34px,5vw,56px);line-height:1;margin:0 0 14px;text-wrap:balance}
+.museum-sub{color:var(--bone-3);max-width:56ch;margin:0;font-size:14px;line-height:1.55}
+
+.museum-empty{color:var(--bone-4);font-size:13px}
+
+/* Curator layout: one section per wing, only ever rendered when it has
+   something in it — see components/MuseumGallery.tsx's own doc comment. */
+.museum-wings{display:flex;flex-direction:column;gap:clamp(36px,6vw,56px)}
+.museum-wing-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
+.museum-wing-mark{width:8px;height:8px;border-radius:50%;background:var(--case-accent,var(--ochre));margin-top:8px;flex:none}
+.museum-wing-title{font-family:var(--fs-display);font-size:clamp(20px,2.6vw,26px);margin:0 0 4px;font-weight:400;color:var(--bone)}
+.museum-wing-blurb{color:var(--bone-3);font-size:12.5px;line-height:1.5;margin:0;max-width:52ch}
+.museum-wing-count{color:var(--bone-4);margin-left:auto;padding-top:4px;flex:none}
+
+.museum-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--line)}
+.museum-card{
+  background:var(--ink-2);padding:18px 16px 16px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;
+  text-align:left;transition:background-color .18s;
+}
+.museum-card:hover,.museum-card:focus-visible{background:var(--ink-3)}
+.museum-card-plate{width:100%;height:120px;display:grid;place-items:center;margin-bottom:6px}
+.museum-card-title{font-family:var(--fs-display);font-size:17px;color:var(--bone)}
+.museum-card-tags{color:var(--bone-4);font-size:9.5px}
+.museum-card-note{color:var(--bone-4);font-size:11px;line-height:1.5;margin-top:4px}
+
+/* Museum-case treatment for every non-Main-Evolution exhibit: a coloured
+   top edge in that wing's own established mode colour, standing in for a
+   real display case until actual diorama scenes exist (still not built —
+   see docs/ROADMAP-UNIVERSE.md). */
+.museum-case{
+  background:var(--ink-2);padding:16px 16px 15px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;
+  border-top:3px solid var(--case-accent,var(--ochre));
+}
+.museum-case-kind{color:var(--case-accent,var(--ochre));font-size:9.5px;text-transform:uppercase;letter-spacing:.04em}
+.museum-case-title{font-family:var(--fs-display);font-size:17px;color:var(--bone)}
