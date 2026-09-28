@@ -27,6 +27,7 @@ describe('TopBar', () => {
         onShortcuts={() => {}}
         onJournal={() => {}}
         onWorld={() => {}}
+        onHub={() => {}}
       />
     );
     // the label's characters are split into their own spans for the spatial
@@ -47,6 +48,7 @@ describe('TopBar', () => {
         onShortcuts={() => {}}
         onJournal={() => {}}
         onWorld={onWorld}
+        onHub={() => {}}
       />
     );
     const chip = screen.getByRole('button', { name: /World progress: 1 of 3 required inventions in Era1/ });
@@ -65,6 +67,7 @@ describe('TopBar', () => {
         onShortcuts={() => {}}
         onJournal={() => {}}
         onWorld={() => {}}
+        onHub={() => {}}
       />
     );
     const input = screen.getByPlaceholderText('Search');

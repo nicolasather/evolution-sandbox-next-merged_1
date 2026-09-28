@@ -12,6 +12,7 @@ import { Ending } from './Ending';
 import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
 import { JournalPanel } from './JournalPanel';
+import { ModeHub } from './ModeHub';
 import { WorldLayer } from './world/WorldLayer';
 import { WorldProgressPanel } from './world/WorldProgressPanel';
 import { SceneBackdrop } from './SceneBackdrop';
@@ -289,6 +290,7 @@ export function Sandbox() {
           onShortcuts={() => setShortcutsOpen(true)}
           onJournal={() => setJournalOpen(true)}
           onWorld={() => setWorldOpen(true)}
+          onHub={() => showView('hub')}
         />
 
         <div id="views" data-current={view}>
@@ -332,6 +334,7 @@ export function Sandbox() {
           />
           <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
           <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
+          <ModeHub engine={engine} active={view === 'hub'} onLaunch={() => showView('work')} />
 
           {/* outside the three views: a column beside the bench, a drawer over the
               graph and the archive, a bottom sheet on a phone */}

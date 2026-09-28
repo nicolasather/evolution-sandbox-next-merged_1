@@ -77,6 +77,52 @@ export interface Discovery {
   /** A worked state of a resource (Cracked Stone, Stick, Clay…): held and used like a
    *  discovery, but never counted, numbered or drawn in the archive, graph or timeline. */
   state?: true;
+
+  /* ── Shared cross-mode architecture ──────────────────────────────────────
+     Fully additive and optional: no existing data/nodes/*.json entry sets
+     any of these, and none has to for the game to build or play exactly as
+     before. They exist so a future mode (Archaeology, Civilization's trade
+     layer, Reverse Evolution, …) can read richer context off the SAME
+     canonical Discovery instead of maintaining its own duplicate item
+     table. See docs/ROADMAP-UNIVERSE.md. */
+
+  /** Broad, historically defensible geographic/cultural region ids this
+   *  discovery is associated with (data/majors.json's `regions`, when it
+   *  applies) — never modern political borders, and never asserted for a
+   *  discovery whose origin is genuinely uncertain or plausibly
+   *  independent in more than one region. */
+  regions?: string[];
+  /** How settled the date/account above is — separate from `caution`
+   *  (prose) so a mode can filter or badge by it without parsing text. */
+  confidence?: { level: 'established' | 'debated' | 'uncertain'; note?: string };
+  /** For discoveries that are physical objects: a coarse artifact category
+   *  (e.g. "container", "cutting-tool", "structure") a Museum exhibit or an
+   *  Archaeologist assemblage template can key off. */
+  artifactType?: string;
+  /** Coarse, comparable-across-materials physical properties (0–1 scales
+   *  or short labels) — the same vocabulary lib/processing/physics.ts
+   *  already derives for crafting, exposed here for modes that reason
+   *  about materials without running the crafting engine (reverse
+   *  engineering, alien material analysis). */
+  physicalProperties?: Record<string, number | string>;
+  /** How much this discovery plausibly moved between regions before local
+   *  production was possible — the seed for Main Evolution's Trade Routes
+   *  layer; never set for anything whose reach was essentially universal
+   *  once known. */
+  tradeImportance?: 'low' | 'medium' | 'high';
+  /** Component/prerequisite discovery ids one level down, for Reverse
+   *  Evolution's decomposition view. Defaults to the graph's own upstream
+   *  edges (`rec`) when absent — set this only where the honest
+   *  decomposition differs from "whatever this was crafted from" (e.g. an
+   *  enabling technology that is not a physical part). */
+  decomposition?: string[];
+  /** How the Museum should frame an exhibit of this discovery when one is
+   *  auto-generated. Absent means "no automatic exhibit yet". */
+  museum?: { reconstructionStatus: 'reference' | 'procedural-fictional'; label?: string };
+  /** Free-form, per-mode extension bag, keyed by ModeId (lib/modes/types.ts).
+   *  A mode may stash anything it needs here without this file, or any
+   *  other mode, having to know its shape. Never read by Main Evolution. */
+  modeMeta?: Record<string, Record<string, unknown>>;
 }
 
 export interface Source {
@@ -248,7 +294,10 @@ export interface TierProgress {
   late: { unlocked: number; total: number };
 }
 
-export type ViewId = 'work' | 'graph' | 'arch' | 'time';
+/** 'hub' is the Mode Hub — the switcher between Main Evolution and any other
+ *  mode; see components/ModeHub.tsx. It is a peer of the other three, not a
+ *  child of 'work': switching to it never touches bench/slot state. */
+export type ViewId = 'work' | 'graph' | 'arch' | 'time' | 'hub';
 
 /** What the hint line shows. Five levels, and the last is the only one that names a piece (never both):
  *  1 vague · 2 material (what the pieces are like) · 3 the kind of work · 4 a ghost hand, or how many pieces · 5 direct. */

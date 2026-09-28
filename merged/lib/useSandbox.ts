@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore
 import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
 import { playDb } from './processing';
+import { profile } from './profile/store';
 import type { ActionId, CombineResult, Db, Discovery, ProcessResult, ViewId } from './types';
 import { afterWorld } from './world/bus';
 
@@ -31,6 +32,9 @@ export function useSandbox() {
   // Saved progress lives in localStorage, which the server cannot see. Loading
   // it after mount lets hydration match; the engine then announces the change.
   useEffect(() => { engine.load(); }, [engine]);
+  // The shared cross-mode profile is independent of the Main Evolution save
+  // above — loading it (or not finding one) never affects this engine.
+  useEffect(() => { profile.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);
@@ -172,7 +176,10 @@ export function useSandbox() {
     engine.reset(); clearSlots(); setFocusId(null); setEnding(null); setResult(null); setHintError(null);
   }, [engine, clearSlots]);
 
-  const enter = useCallback(() => setEntered(true), []);
+  const enter = useCallback(() => {
+    setEntered(true);
+    profile.recordModeVisit('main-evolution');
+  }, []);
 
   const requestHint = useCallback((targetId?: string) => {
     const r = engine.requestHint(targetId);

@@ -41,7 +41,7 @@ function SoundButton() {
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub,
 }: {
   engine: Engine;
   view: ViewId;
@@ -51,6 +51,7 @@ export function TopBar({
   onShortcuts: () => void;
   onJournal: () => void;
   onWorld: () => void;
+  onHub: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -179,6 +180,18 @@ export function TopBar({
       </div>
 
       <div className="top-slot top-actions">
+        <button
+          className="icon-btn"
+          id="hub-open"
+          aria-label="Mode Hub"
+          aria-pressed={view === 'hub'}
+          title="The Mode Hub — switch between Evolution Sandbox's experiences"
+          onClick={onHub}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M8 1.5 14.5 5 8 8.5 1.5 5Z" /><path d="M1.5 8.5 8 12l6.5-3.5M1.5 12 8 15.5 14.5 12" />
+          </svg>
+        </button>
         <button
           className="icon-btn max-[900px]:hidden"
           id="journal-open"
