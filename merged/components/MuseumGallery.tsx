@@ -1,6 +1,6 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
+import { useSyncExternalStore, type ReactNode } from 'react';
 import { Plate3D } from './Plate3D';
 import { alienExhibit } from '@/lib/alienarchaeology/memory';
 import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
@@ -17,28 +17,66 @@ import { autoExhibits } from '@/lib/museum/registry';
 import { playDb } from '@/lib/processing';
 import { reverseExhibit as reverseTraceExhibit } from '@/lib/reverseevolution/memory';
 import { reverseEvolutionStore } from '@/lib/reverseevolution/store';
-import type { MuseumExhibit } from '@/lib/museum/types';
+import type { MuseumExhibit, ProvenanceKind } from '@/lib/museum/types';
 import { memoryExhibit } from '@/lib/survival/memory';
 import { survivalStore } from '@/lib/survival/store';
 import type { Engine } from '@/lib/engine';
 
 /* ============================================================================
-   MUSEUM — the automatic-exhibit gallery: one wing, always on, needing no
-   separate mode of its own. Three exhibit sources feed it today: Main
-   Evolution's own majors (lib/museum/registry.ts's autoExhibits, reusing
-   Plate3D — no new rendering pipeline), Survival's Camp Memories
-   (lib/survival/memory.ts) and Civilization's Dioramas
-   (lib/civilization/memory.ts) — the brief's cross-mode "the world
-   remembers" requirement, working end to end rather than only planned.
-   Clicking a Main Evolution card opens the same ExhibitPanel every other
-   view uses; a Camp Memory or Diorama has no canonical discovery to open,
-   so its card just carries its own honest label and note.
+   MUSEUM — the automatic-exhibit gallery: always on, needing no separate mode
+   of its own. Eight exhibit sources feed it: Main Evolution's own majors
+   (lib/museum/registry.ts's autoExhibits, reusing Plate3D — no new
+   rendering pipeline) plus one memory source per other mode.
 
-   Deliberately plain: this is one honest wing, not the finished museum
-   from the brief (curator layout, cases, dioramas as 3D scenes). Every
-   exhibit here already carries its own honest provenance note — see
-   lib/museum/types.ts.
+   Curator layout: exhibits are grouped into named WINGS (one per source
+   mode) rather than one undifferentiated grid — a wing only ever renders
+   when it actually has something in it, same "never a grid of placeholders"
+   discipline as lib/modes/registry.ts. Every non-Main-Evolution card gets a
+   museum-case treatment: an accent bar in that wing's own established
+   mode colour, and a provenance-kind badge, so provenance reads at a glance
+   instead of only in the note line underneath.
+
+   Still deliberately short of the brief's full curator vision — actual 3D
+   diorama scenes and a walkable case layout remain future work; see this
+   file's own "Not built" note in docs/ROADMAP-UNIVERSE.md.
    ========================================================================== */
+
+const KIND_LABEL: Record<ProvenanceKind, string> = {
+  'historical-fact': 'Historical fact',
+  'reference-reconstruction': 'Reconstruction',
+  'procedural-fictional': 'Procedural',
+  'speculative': 'Speculative',
+};
+
+function CaseCard({ ex, accent }: { ex: MuseumExhibit; accent: string }) {
+  return (
+    <div className="museum-case" style={{ ['--case-accent' as string]: accent }}>
+      <p className="mono museum-case-kind">{KIND_LABEL[ex.provenance.kind]}</p>
+      <span className="museum-case-title">{ex.title}</span>
+      {ex.tags && ex.tags.length > 0 && <span className="museum-card-tags mono">{ex.tags.join(' · ')}</span>}
+      <span className="museum-card-note">{ex.provenance.note}</span>
+    </div>
+  );
+}
+
+function Wing({ id, label, blurb, accent, exhibits, children }: {
+  id: string; label: string; blurb: string; accent: string; exhibits: MuseumExhibit[]; children: ReactNode;
+}) {
+  if (exhibits.length === 0) return null;
+  return (
+    <section className="museum-wing" aria-label={label}>
+      <header className="museum-wing-head">
+        <span className="museum-wing-mark" style={{ ['--case-accent' as string]: accent }} aria-hidden="true" />
+        <div>
+          <h2 className="museum-wing-title">{label}</h2>
+          <p className="museum-wing-blurb">{blurb}</p>
+        </div>
+        <span className="mono museum-wing-count">{exhibits.length}</span>
+      </header>
+      <div className="museum-grid" id={id}>{children}</div>
+    </section>
+  );
+}
 
 export function MuseumGallery({ engine, version, active, onOpen }: {
   engine: Engine;
@@ -74,8 +112,10 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
   const reverseExhibits: MuseumExhibit[] = active
     ? reverseEvolutionStore.get().runs.map(m => reverseTraceExhibit(m, playDb.nodes.find(n => n.id === m.targetId)?.n ?? m.targetId))
     : [];
-  const staticExhibits = [...campExhibits, ...dioramaExhibits, ...siteExhibits, ...decipherExhibits, ...escapeExhibits, ...alienExhibits, ...reverseExhibits];
-  const exhibits = [...mainExhibits, ...staticExhibits];
+  const exhibits = [
+    ...mainExhibits, ...campExhibits, ...dioramaExhibits, ...siteExhibits,
+    ...decipherExhibits, ...escapeExhibits, ...alienExhibits, ...reverseExhibits,
+  ];
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-museum" role="tabpanel" aria-label="Museum">
@@ -96,27 +136,50 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
         {exhibits.length === 0 ? (
           <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival, Civilization, Archaeologist, Decipher, Escape Room, Alien Archaeology or Reverse Evolution run, and it will appear here.</p>
         ) : (
-          <div className="museum-grid">
-            {mainExhibits.map(ex => {
-              const discoveryId = ex.discoveryId;
-              const node = discoveryId ? engine.get(discoveryId) : undefined;
-              if (!node || !discoveryId) return null;
-              return (
-                <button key={ex.id} className="museum-card" onClick={() => onOpen(discoveryId)}>
-                  <div className="museum-card-plate"><Plate3D node={node} variant="card" label={ex.title} /></div>
-                  <span className="museum-card-title">{ex.title}</span>
-                  {ex.tags && ex.tags.length > 0 && <span className="museum-card-tags mono">{ex.tags.join(' · ')}</span>}
-                  <span className="museum-card-note">{ex.provenance.note}</span>
-                </button>
-              );
-            })}
-            {staticExhibits.map(ex => (
-              <div key={ex.id} className="museum-card museum-card-static">
-                <span className="museum-card-title">{ex.title}</span>
-                {ex.tags && ex.tags.length > 0 && <span className="museum-card-tags mono">{ex.tags.join(' · ')}</span>}
-                <span className="museum-card-note">{ex.provenance.note}</span>
-              </div>
-            ))}
+          <div className="museum-wings">
+            <Wing id="wing-timeline" label="The Timeline" blurb="Main Evolution's own majors, reached in this collection." accent="var(--ochre)" exhibits={mainExhibits}>
+              {mainExhibits.map(ex => {
+                const discoveryId = ex.discoveryId;
+                const node = discoveryId ? engine.get(discoveryId) : undefined;
+                if (!node || !discoveryId) return null;
+                return (
+                  <button key={ex.id} className="museum-card" onClick={() => onOpen(discoveryId)}>
+                    <div className="museum-card-plate"><Plate3D node={node} variant="card" label={ex.title} /></div>
+                    <span className="museum-card-title">{ex.title}</span>
+                    {ex.tags && ex.tags.length > 0 && <span className="museum-card-tags mono">{ex.tags.join(' · ')}</span>}
+                    <span className="museum-card-note">{ex.provenance.note}</span>
+                  </button>
+                );
+              })}
+            </Wing>
+
+            <Wing id="wing-survival" label="Survival Camps" blurb="What your Survival runs left behind." accent="#d9a256" exhibits={campExhibits}>
+              {campExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#d9a256" />)}
+            </Wing>
+
+            <Wing id="wing-civilization" label="Settlements" blurb="Dioramas of the settlements your Civilization runs grew." accent="#2f6b52" exhibits={dioramaExhibits}>
+              {dioramaExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#2f6b52" />)}
+            </Wing>
+
+            <Wing id="wing-archaeology" label="Archaeological Reports" blurb="Filed reports from your Archaeologist digs." accent="#a15a2a" exhibits={siteExhibits}>
+              {siteExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#a15a2a" />)}
+            </Wing>
+
+            <Wing id="wing-decipher" label="Decipherment Archive" blurb="Tablet sets your Decipher runs read." accent="#3a5a9c" exhibits={decipherExhibits}>
+              {decipherExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#3a5a9c" />)}
+            </Wing>
+
+            <Wing id="wing-escaperoom" label="Escape Room Episodes" blurb="Episodes you have opened." accent="#a15a2a" exhibits={escapeExhibits}>
+              {escapeExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#a15a2a" />)}
+            </Wing>
+
+            <Wing id="wing-alien" label="Alien Ruins" blurb="Field reports your Alien Archaeology sites produced." accent="#6b46a8" exhibits={alienExhibits}>
+              {alienExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#6b46a8" />)}
+            </Wing>
+
+            <Wing id="wing-reverse" label="Reverse-Traced Objects" blurb="Discoveries your Reverse Evolution runs traced back to their origins." accent="#2f7d6b" exhibits={reverseExhibits}>
+              {reverseExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#2f7d6b" />)}
+            </Wing>
           </div>
         )}
       </div>

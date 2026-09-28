@@ -30,14 +30,14 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through the Weekly Mega Challenge)
+## Status (28 September 2026, updated same day through the Museum deepening)
 
 | Phase | State | Notes |
 |---|---|---|
 | **1. Shared architecture + Mode Hub** | **Built** | See below. Main Evolution's own save, engine and UI are untouched. |
 | 2. Research Notebook + Museum data model | **Notebook has a real store + one screen now; Museum is still types only** | `lib/notebook/store.ts` (versioned, tested) went in as part of Phase 3, driven by the Heat Treatment Experiment Workspace. `lib/museum/types.ts` remains unused — no exhibit screen yet. |
 | 3. Main Evolution integrations (Trade Routes, Lost Knowledge, Experimentation) | **Built, narrower than first sketched — see below** | Region-gating on new discoveries (not a graduated Knowledge Transfer state), a resilience scorer (warnings only, no removal), one Experiment Workspace slice. All behind opt-in, off by default; verified not to change default behaviour (full existing test suite + a fresh `Engine` with no options passed still behaves identically). |
-| 4. Museum shell + automatic artifact pipeline | **Built** | See below. |
+| 4. Museum shell + automatic artifact pipeline | **Built, and deepened later — see below** | Curator layout (named wings) and a museum-case treatment for every non-Main-Evolution exhibit were added after every mode's exhibit source existed — see "Museum deepening — what actually built" further down. Full diorama scenes remain not built. |
 | 5. Minimum Path, Daily framework, Tech Sudoku | **Built — Minimum Path, Tech Sudoku, `lib/daily.ts` migrated onto `lib/seed.ts`, and a real Weekly Mega Challenge scaffold** | See below. |
 | 6. Survival vertical slice | **Built — first mode that is a genuinely different game, not Main Evolution with new restrictions** | See below. `components/AppRoot.tsx` is the real top-level mode switch this required. |
 | 7. Civilization vertical slice | **Built — a second genuinely different game, allocation-based rather than spatial/task-based like Survival** | See below. |
@@ -48,6 +48,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | Reverse Evolution | **Built — an eighth genuinely different game, and the first mode that reads Main Evolution's own real 322-node database directly rather than an authored/procedural catalog of its own** | See below. |
 | Minimum Path challenge-modifier variants (no-backtracking, chronological-only, exactly-N-clicks, visit-an-era) | **Built — the ninth piece of work, layered on the existing Minimum Path mechanic rather than a new mode** | See below. Two real generator bugs found and fixed (a hub-avoidance gap and a trivially-already-satisfied `visit-an-era`). |
 | Daily/Weekly Mega Challenge framework | **Built — the tenth piece of work: `lib/daily.ts` migrated onto `lib/seed.ts`, plus a real multi-stage Weekly Mega Challenge** | See below. A real UI bug (a disappearing "Check" button) found and fixed via live smoke testing. |
+| Museum deepening (curator layout, cases) | **Built — the eleventh piece of work: named wings replace the flat grid, non-Main-Evolution exhibits get a museum-case treatment** | See below. Full diorama scenes remain not built. |
 
 ### What "Phase 1" actually built
 
@@ -195,10 +196,12 @@ Laboratory/resilience UI only ever show real, current game state.
   rendering pipeline, no duplicate detail view. New `'museum'` `ViewId` +
   top-bar button. `lib/engine.ts` gained one small, additive, read-only
   method (`whenFound(id)`) so exhibits can date themselves.
-  **Not built**: curator layout/cases/dioramas, and exhibits from any
-  source other than Main Evolution's own majors (Archaeologist finds,
-  Decipher tablets, Survival camp memories, …) — those arrive with their
-  respective modes.
+  **Not built at the time**: curator layout/cases/dioramas, and exhibits
+  from any source other than Main Evolution's own majors. Every other
+  mode now feeds its own exhibits (see each phase's own section above),
+  and curator layout/cases were built later — see "Museum deepening —
+  what actually built" further down. Full diorama scenes are still not
+  built.
 
 ## Phase 5 — what actually built
 
@@ -948,12 +951,55 @@ deterministic seed service, and a real Weekly Mega Challenge scaffold.
 
 ---
 
+## Museum deepening — what actually built
+
+The Museum's own "Not built: curator layout/cases/dioramas" note, carried
+unchanged since Phase 4 through every later phase's exhibit source, is
+partly closed. `components/MuseumGallery.tsx` was a single flat grid
+mixing all eight exhibit sources together, with every non-Main-Evolution
+exhibit rendered as a plain text card (`museum-card-static`) — the roadmap
+called this out honestly as "one wing," and it was one, undifferentiated.
+
+- **Curator layout**: exhibits are now grouped into eight named wings
+  (The Timeline, Survival Camps, Settlements, Archaeological Reports,
+  Decipherment Archive, Escape Room Episodes, Alien Ruins, Reverse-Traced
+  Objects), each with its own heading, one-line blurb and count. A wing
+  only ever renders when it actually has something in it — the same
+  "never a grid of placeholders" rule `lib/modes/registry.ts` already
+  follows for the Mode Hub, applied here too. None of the underlying
+  exhibit-fetching logic changed (still each store's own `get().x.map(
+  xExhibit)`); this is a presentational regrouping of real data, not new
+  data.
+- **Case treatment**: every non-Main-Evolution card gets a coloured top
+  edge in that wing's own established mode colour (reusing each mode's
+  real accent — Survival's camp orange, Civilization's ledger green,
+  Archaeology's terracotta, Decipher's cool blue, Alien Archaeology's
+  violet, Reverse Evolution's blueprint teal) and a provenance-kind badge
+  (`Procedural`, `Reconstruction`, `Historical fact`, `Speculative`) shown
+  above the title, so an exhibit's honesty label reads at a glance
+  instead of only in the note line underneath. The Timeline wing's own
+  `Plate3D` cards are untouched — same rendering, same click-to-open
+  `ExhibitPanel` behaviour, just moved inside the new wing wrapper.
+- **Verified live**: a Playwright smoke test confirmed the empty state
+  still renders correctly with zero wings, then played a real
+  Archaeologist dig to a filed report and confirmed the Museum showed
+  exactly one wing ("Archaeological Reports") with one case card
+  carrying the correct accent colour and a "Procedural" badge.
+- **Not built**: actual diorama scenes (a settlement or a dig site
+  rendered as a real visual scene rather than a labelled case) and a
+  walkable/spatial curator layout remain the full brief's ask, not this
+  pass's. The wing accent colours and kind badges are a real, honest step
+  toward "this looks like a museum, not a database dump," not a
+  substitute for the brief's original 3D-scene vision.
+
+---
+
 ## Development order (do not reorder without a reason)
 
 1. Shared data/save architecture + Mode Hub, Main Evolution unchanged. ✅
 2. Research Notebook + Museum data model foundations. ✅ Notebook has a real store now; Museum is still types only.
 3. Trade Routes/Lost Knowledge/Experimentation in Main Evolution, behind flags, validated against existing saves. ✅ see "what Phase 3 actually built" above. Full graduated Knowledge Transfer (observed/possessed/understood/mastered) was not built — region-gating covers a narrower, real slice of it.
-4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this). ✅ `lib/museum/registry.ts`'s `autoExhibits` + `components/MuseumGallery.tsx` — one exhibit per found major invention, reusing `Plate3D`/`ExhibitPanel` rather than a new rendering pipeline. Curator layout, cases, dioramas and non-Main-Evolution exhibit sources (Archaeologist finds, Decipher tablets, …) remain future work — this is one honest wing, not the finished museum.
+4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this). ✅ `lib/museum/registry.ts`'s `autoExhibits` + `components/MuseumGallery.tsx` — one exhibit per found major invention, reusing `Plate3D`/`ExhibitPanel` rather than a new rendering pipeline. Every later mode now feeds its own exhibits, and curator layout (named wings) plus a museum-case treatment were added later — see "Museum deepening — what actually built" further down. Full diorama scenes remain future work.
 5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content. ✅ Minimum Path + Tech Sudoku, see "Phase 5 — what actually built" above. Daily/Weekly framework beyond `lib/seed.ts` itself is built too — see "Daily/Weekly Mega Challenge framework — what actually built" further down.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun. ✅ see "Phase 6 — what actually built" above.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution. ✅ see "Phase 7 — what actually built" above.
