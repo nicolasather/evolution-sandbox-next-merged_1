@@ -97,15 +97,28 @@ export const NEUTRAL: LatLon = { lat: 18, lon: 12 };
 /** Below this central angle (~1,300 km) a move is a short regional shift, not a journey. */
 export const NEAR_ANGLE = 0.2;
 
+// P0's globe ceremony (P0.23/24), taken at roughly 2.2x the numbers this
+// table shipped with — Tier A's median moves from ~4s to ~9s, solidly in
+// the major-event tier (5–12s, see _cinematic-motion.css) for what is, in
+// story terms, the single biggest moment in the game: a major invention
+// revealed on the world itself. `skipAfter` is scaled with everything
+// else on purpose — it is the grace period before a click can end the
+// ceremony early, and a much longer ceremony deserves a matching grace
+// period so an impatient early tap doesn't cut it off almost immediately.
+// Segment proportions are untouched (this is still the same shape:
+// enter → linger → travel → zoom → reveal/hold → exit), and reduced
+// motion (`reduced ? … : k.…` below, and the fixed 2200ms hold further
+// down) is deliberately left at its own numbers — that path exists to
+// skip ceremony, not receive more of it.
 const T = {
-  A: { enter: 350, linger: 150, travelMin: 650, travelMax: 1600, zoomMin: 700, zoomMax: 1100, hold: 1500, exit: 350, skipAfter: 1500 },
-  B: { enter: 250, linger: 0, travelMin: 450, travelMax: 1050, zoomMin: 500, zoomMax: 800, hold: 1150, exit: 300, skipAfter: 1200 },
+  A: { enter: 770, linger: 330, travelMin: 1430, travelMax: 3520, zoomMin: 1540, zoomMax: 2420, hold: 3300, exit: 770, skipAfter: 3300 },
+  B: { enter: 550, linger: 0, travelMin: 990, travelMax: 2310, zoomMin: 1100, zoomMax: 1760, hold: 2530, exit: 660, skipAfter: 2640 },
 } as const;
 
 /** The seconds a moment is held before the camera takes off, i.e. the pause after the craft. */
 export function startDelay(quality: Quality, reduced: boolean): number {
   if (reduced) return 200;
-  return quality === 'low' ? 250 : 350;
+  return quality === 'low' ? 400 : 550;
 }
 
 const shiftFor = (narrow?: boolean) => (narrow ? 0.13 : 0.07);
@@ -180,18 +193,22 @@ function eraPlan(inp: EraPlanInput): Plan {
   const reduced = inp.motion === 'reduced';
   const centre = centroid(inp.points) ?? NEUTRAL;
   const n = Math.max(1, inp.points.length);
-  const lightEach = reduced ? 0 : Math.round(clamp(1500 / n, 60, 160));
+  // same ~2.2x stretch as the major-invention table above, for the same
+  // reason: this is the era-completion ceremony on the globe, not a status
+  // update, and reduced motion (lightEach: 0 here, plus era_title's own
+  // fixed 2600ms) is left at its own numbers on purpose.
+  const lightEach = reduced ? 0 : Math.round(clamp(3300 / n, 130, 350));
   const segs: Segment[] = [];
   let at = 0;
   const push = (name: PhaseName, d: number) => { if (d > 0) { segs.push({ name, start: at, end: at + d }); at += d; } };
-  push('enter', reduced ? 250 : 400);
-  push('era_zoomout', reduced ? 0 : 800);
-  push('era_light', reduced ? 0 : lightEach * n + 300);
-  push('era_title', reduced ? 2600 : 2100);
-  push('exit', reduced ? 250 : 450);
+  push('enter', reduced ? 250 : 880);
+  push('era_zoomout', reduced ? 0 : 1760);
+  push('era_light', reduced ? 0 : lightEach * n + 660);
+  push('era_title', reduced ? 2600 : 4620);
+  push('exit', reduced ? 250 : 990);
   const view: LatLon = { lat: clamp(centre.lat * 0.6 + 8, -30, 45), lon: centre.lon };
   return {
-    kind: 'era', input: inp, segments: segs, total: at, skipAfter: 1500,
+    kind: 'era', input: inp, segments: segs, total: at, skipAfter: 3300,
     camStart: { lat: view.lat, lon: view.lon, zoom: reduced ? ZOOM_WORLD : 1.15, shift: 0 },
     camMid: { lat: view.lat, lon: view.lon, zoom: ZOOM_WORLD, shift: shiftFor(inp.narrow) },
     camEnd: { lat: view.lat, lon: view.lon, zoom: ZOOM_WORLD, shift: shiftFor(inp.narrow) },

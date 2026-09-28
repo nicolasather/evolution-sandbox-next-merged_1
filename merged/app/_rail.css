@@ -70,7 +70,10 @@
 .tech-reveal{position:absolute;z-index:530;right:96px;bottom:calc(var(--wb-pb,0px) + 20px);width:min(300px,calc(100% - 120px));
   padding:10px 30px 10px 12px;color:var(--bone);background:color-mix(in srgb,var(--ink-0) 82%,transparent);
   border:1px solid var(--ochre);backdrop-filter:blur(4px);pointer-events:auto;
-  animation:techIn .5s cubic-bezier(.2,.9,.3,1.1)}
+  /* `_cinematic-motion.css`'s own tier comment names "new technique" an
+     important-reveal (2–4s), not interface-reveal (600–1400ms) — moved up
+     a tier so the materialize has room to read as an occasion, not a panel */
+  animation:techIn var(--dur-important-reveal,2800ms) var(--ease-materialize,cubic-bezier(.16,.02,.13,1))}
 .tech-reveal p{margin:4px 0 0;font-size:12.5px;line-height:1.4;color:var(--bone-2)}
 .tech-reveal-k{font-size:9px;letter-spacing:.22em;color:var(--ochre)}
 .tech-reveal-row{display:flex;align-items:center;gap:8px;margin-top:4px;color:var(--bone)}
@@ -79,7 +82,7 @@
 .tech-reveal-x{position:absolute;top:2px;right:4px;width:24px;height:24px;font-size:16px;line-height:1;color:var(--bone-3);
   background:none;border:0;cursor:pointer}
 .tech-reveal-x:hover{color:var(--bone)}
-@keyframes techIn{from{opacity:0;transform:translateX(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes techIn{from{opacity:0;filter:blur(5px);transform:translateX(18px) scale(.97)}to{opacity:1;filter:blur(0);transform:none}}
 @media (max-width:900px){
   .tech-reveal{right:8px;left:8px;width:auto;bottom:calc(var(--wb-pb,0px) + 70px)}
 }

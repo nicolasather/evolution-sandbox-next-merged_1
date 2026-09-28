@@ -134,7 +134,12 @@
 
 .intro-arrive{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:2;
   opacity:0;visibility:hidden}
-#landing[data-phase="arrive"] .intro-arrive,
+/* was keyed to a "arrive" phase that no longer exists in Landing.tsx's Phase
+   union (renamed to "slow" at some point without updating this file) — the
+   stone and the line below it never actually appeared, on any tier, before
+   this fix. Corrected below rather than left quiet, since P0's "cinematic
+   text at the bottom" ask is exactly what was broken. */
+#landing[data-phase="slow"] .intro-arrive,
 #landing[data-phase="fall"] .intro-arrive,
 #landing[data-phase="exit"] .intro-arrive{visibility:visible;opacity:1}
 .intro-stone{
@@ -144,10 +149,15 @@
   opacity:0;will-change:transform,opacity;transition:color .5s ease
 }
 .intro-stone svg{width:100%;height:100%;overflow:visible;animation:stoneSpin 48s linear infinite}
-#landing[data-phase="arrive"] .intro-stone{animation:stoneIn 1.1s .15s cubic-bezier(.2,.7,.2,1) both}
+/* materialises across most of the "slow" beat — see `lib/perf.ts`'s
+   `tunnelDuration`; timed to comfortably finish inside even the shortest
+   (low/phone) tier's window, `data-q` (set once by Landing.tsx from
+   `getQuality()`) giving the two longer tiers the fuller version */
+#landing[data-phase="slow"] .intro-stone{animation:stoneIn 1.5s .2s var(--ease-materialize,cubic-bezier(.16,.02,.13,1)) both}
+#landing[data-q="low"][data-phase="slow"] .intro-stone{animation-duration:.8s;animation-delay:.1s}
 #landing[data-phase="fall"] .intro-stone,#landing[data-phase="exit"] .intro-stone{opacity:1}
 #landing[data-phase="exit"] .intro-stone{opacity:0;transition:opacity .25s}
-@keyframes stoneIn{from{opacity:0;transform:scale(.86)}to{opacity:1;transform:none}}
+@keyframes stoneIn{from{opacity:0;filter:blur(9px);transform:scale(.82)}to{opacity:1;filter:blur(0);transform:none}}
 @keyframes stoneSpin{to{transform:rotate(360deg)}}
 
 .intro-line{position:absolute;left:0;right:0;bottom:clamp(90px,21vh,220px);margin:0;text-align:center;
@@ -155,8 +165,15 @@
 .intro-line span{display:block;opacity:0}
 .intro-line span:first-child{font-size:clamp(13px,1.6vw,20px);letter-spacing:.5em;margin-right:-.5em;color:var(--bone-3);margin-bottom:8px}
 .intro-line span:last-child{font-size:clamp(26px,5.2vw,68px);letter-spacing:.04em}
-#landing[data-phase="arrive"] .intro-line span:first-child{animation:mIn .9s .95s ease-out both}
-#landing[data-phase="arrive"] .intro-line span:last-child{animation:mIn 1.1s 1.35s ease-out both}
+/* P0's cinematic caption at the bottom of the film: a slow materialize
+   (blur + rise, the same language as every other reveal this round), not
+   the flat fade `mIn` gives the rest of this page's idle-screen text —
+   this line is the one moment of the intro meant to read as a title card. */
+#landing[data-phase="slow"] .intro-line span:first-child{animation:introLineIn 1.1s .35s var(--ease-materialize,cubic-bezier(.16,.02,.13,1)) both}
+#landing[data-phase="slow"] .intro-line span:last-child{animation:introLineIn 1.3s .75s var(--ease-materialize,cubic-bezier(.16,.02,.13,1)) both}
+#landing[data-q="low"][data-phase="slow"] .intro-line span:first-child{animation-duration:.55s;animation-delay:.12s}
+#landing[data-q="low"][data-phase="slow"] .intro-line span:last-child{animation-duration:.65s;animation-delay:.38s}
+@keyframes introLineIn{from{opacity:0;filter:blur(10px);transform:translateY(14px)}to{opacity:1;filter:blur(0);transform:none}}
 #landing[data-phase="fall"] .intro-line span,#landing[data-phase="exit"] .intro-line span{opacity:0;transition:opacity .3s}
 
 /* falling: the curtain opens onto the workbench, which loads in beneath */
@@ -188,7 +205,7 @@
   .landing-actions,.landing-foot,.landing-kicker,.landing-return{animation:none!important;opacity:1;clip-path:none}
   .landing-q .q-mark{animation:none}
   .intro-stone svg{animation:none}
-  #landing[data-phase="arrive"] .intro-stone,#landing[data-phase="arrive"] .intro-line span{animation:none!important;opacity:1}
+  #landing[data-phase="slow"] .intro-stone,#landing[data-phase="slow"] .intro-line span{animation:none!important;opacity:1}
   .landing-stage{transition:opacity .3s}
   #landing:not([data-phase="idle"]) .landing-stage{transform:none;filter:none}
 }
@@ -198,7 +215,9 @@
    the bench, the other materials, the navigation, the inventory, the
    counters — then it becomes interactive. Stages are set by Sandbox as
    data-reveal="0…6" on #app; 6 (or no attribute) is the finished state. */
-#app[data-reveal]{--rv:.7s}
+/* --rv stretched from .7s alongside Sandbox.tsx's stage() timings for the
+   `onLanded` (full-film) path — see the comment at that call site */
+#app[data-reveal]{--rv:1s}
 #app[data-reveal] #top,
 #app[data-reveal] #rail,
 #app[data-reveal] #bench-bar,
@@ -469,19 +488,28 @@
 #sound-toggle[aria-pressed="true"]{color:var(--bone-2)}
 @media (max-width:1180px){#slot-routes{display:none}}
 
-/* ERA SHIFT */
+/* ERA SHIFT — P0's "era-transition ceremony": stretched from a 1.7s sting to
+   the major-event tier (`lib/motion.ts` / `_cinematic-motion.css`), so a
+   forward step reads as a real occasion rather than a blip. Kept one notch
+   below the full 12–25s era-transition tier on purpose: `.era-shift` is
+   `pointer-events:none` and never blocks the workbench, but a full-opacity
+   radial wash held that long, this many times a playthrough, would read as
+   the screen sticking rather than a ceremony. All percentages below are of
+   the animation's own length, so the shape (fade in ~22%, hold, fade out
+   from ~72%) stretches with the duration for free. `EraShift.tsx`'s own
+   setTimeout that unmounts the banner is kept in step with this by hand. */
 .era-shift{position:fixed;inset:0;z-index:60;pointer-events:none;display:grid;place-items:center;text-align:center}
 .es-wash{position:absolute;inset:0;
   background:radial-gradient(90% 70% at 50% 50%,rgba(var(--tint),.92),rgba(var(--tint),.55) 60%,transparent);
-  opacity:0;animation:esWash 1.7s ease both}
+  opacity:0;animation:esWash var(--dur-major-event,7000ms) ease both}
 @keyframes esWash{0%{opacity:0}22%{opacity:1}72%{opacity:1}100%{opacity:0}}
 .es-body{position:relative;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 24px}
-.es-k{margin:0;color:var(--ochre);letter-spacing:.42em;font-size:10.5px;text-transform:uppercase;opacity:0;animation:esUp 1.7s ease both .1s}
+.es-k{margin:0;color:var(--ochre);letter-spacing:.42em;font-size:10.5px;text-transform:uppercase;opacity:0;animation:esUp var(--dur-major-event,7000ms) ease both .1s}
 .es-name{margin:12px 0 0;font-family:var(--fs-display);font-weight:400;font-size:clamp(44px,9vw,104px);line-height:1;
-  letter-spacing:-.015em;color:var(--bone);opacity:0;animation:esUp 1.7s cubic-bezier(.2,.7,.2,1) both .18s}
+  letter-spacing:-.015em;color:var(--bone);opacity:0;animation:esUp var(--dur-major-event,7000ms) cubic-bezier(.2,.7,.2,1) both .18s}
 .es-rule{display:block;height:1px;width:min(420px,60vw);margin:18px 0 14px;background:var(--ochre);transform-origin:50% 50%;
-  transform:scaleX(0);animation:esRule 1.7s cubic-bezier(.3,.7,.2,1) both .2s}
-.es-blurb{margin:0;color:var(--bone-3);font-size:11px;letter-spacing:.1em;max-width:520px;text-transform:none;opacity:0;animation:esUp 1.7s ease both .32s}
+  transform:scaleX(0);animation:esRule var(--dur-major-event,7000ms) cubic-bezier(.3,.7,.2,1) both .2s}
+.es-blurb{margin:0;color:var(--bone-3);font-size:11px;letter-spacing:.1em;max-width:520px;text-transform:none;opacity:0;animation:esUp var(--dur-major-event,7000ms) ease both .32s}
 @keyframes esUp{0%{opacity:0;transform:translateY(10px)}24%{opacity:1;transform:none}72%{opacity:1}100%{opacity:0;transform:translateY(-4px)}}
 @keyframes esRule{0%{transform:scaleX(0);opacity:1}30%{transform:scaleX(1)}72%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
 @media (prefers-reduced-motion:reduce){

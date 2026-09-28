@@ -1,20 +1,37 @@
 /* ============================================================================
    NARRATOR — bottom-left of the workspace, beside the inventory rail. A quiet
    engraved portrait and one short line. Tone shows in the type, not in noise.
+
+   Position kept deliberately unchanged (a true bottom-centre lower-third —
+   the brief's literal ask — was tried on paper and dropped: this corner was
+   already chosen specifically to stay "clear of the guide line and the scene
+   picker along the bottom of the bench", i.e. bottom-centre is occupied by
+   Workbench chrome this file cannot see or safely guess at without running
+   the app). What changed is the *visual language*, toward the brief's
+   cinematic captions: a soft gradient wash instead of a flat card with a
+   hard edge, a slower materialize-in using the shared motion tokens from
+   `_cinematic-motion.css` (loaded earlier in `globals.css`), one size up so
+   the line reads as something said aloud rather than a UI toast.
    ========================================================================== */
 
 .nar,.nar-chip{position:fixed;z-index:33;left:calc(var(--rail,238px) + 16px);bottom:16px}
 /* clear of the guide line and the scene picker along the bottom of the bench */
 .nar{bottom:96px}
-.nar{display:flex;align-items:flex-start;gap:12px;max-width:min(380px,calc(100vw - var(--rail,238px) - 40px));
-  padding:10px 30px 10px 12px;color:var(--bone);
-  background:color-mix(in srgb,var(--ink-1) 86%,transparent);border:1px solid var(--line-2);
-  border-left:2px solid var(--ochre);backdrop-filter:blur(8px);animation:narIn .6s cubic-bezier(.2,.7,.2,1) both}
-@keyframes narIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.nar{display:flex;align-items:flex-start;gap:14px;max-width:min(400px,calc(100vw - var(--rail,238px) - 40px));
+  padding:14px 32px 14px 16px;color:var(--bone);
+  background:linear-gradient(100deg,
+    color-mix(in srgb,var(--ink-1) 78%,transparent) 0%,
+    color-mix(in srgb,var(--ink-1) 60%,transparent) 68%,
+    transparent 100%);
+  border:0;border-left:2px solid var(--ochre);
+  backdrop-filter:blur(10px);
+  animation:narIn var(--dur-interface-reveal,900ms) var(--ease-materialize,cubic-bezier(.16,.02,.13,1)) both}
+@keyframes narIn{from{opacity:0;filter:blur(6px);transform:translateY(8px)}to{opacity:1;filter:blur(0);transform:none}}
 .nar-portrait{flex:none;color:var(--bone-2);margin-top:2px}
 .nar-body{min-width:0}
-.nar-name{margin:0 0 3px;color:var(--ochre);font-size:9.5px;letter-spacing:.16em}
-.nar-line{margin:0;font-family:var(--fs-display);font-size:17px;line-height:1.3;text-wrap:balance}
+.nar-name{margin:0 0 4px;color:var(--ochre);font-size:9.5px;letter-spacing:.16em}
+.nar-line{margin:0;font-family:var(--fs-display);font-size:19px;line-height:1.32;text-wrap:balance;
+  max-height:calc(1.32em * 2);overflow:hidden}
 .nar-note{margin:6px 0 0;color:var(--bone-3);font-size:8.5px;letter-spacing:.06em;text-transform:none;line-height:1.45}
 .nar-modes{display:flex;gap:2px;margin-top:8px}
 .nar-modes button{padding:2px 7px;background:transparent;color:var(--bone-3);border:1px solid var(--line);
