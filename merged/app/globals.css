@@ -61,6 +61,12 @@
 /* The Museum's automatic-exhibit gallery. */
 @import "./_museum-gallery.css" layer(components);
 
+/* The Minimum Path challenge. */
+@import "./_minpath.css" layer(components);
+
+/* Tech Sudoku — a small optional puzzle, reached from the Mode Hub. */
+@import "./_techsudoku.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

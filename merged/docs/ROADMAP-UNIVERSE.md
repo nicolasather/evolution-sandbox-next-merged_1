@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day after Phase 3)
+## Status (28 September 2026, updated same day through Phase 5)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -38,7 +38,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 2. Research Notebook + Museum data model | **Notebook has a real store + one screen now; Museum is still types only** | `lib/notebook/store.ts` (versioned, tested) went in as part of Phase 3, driven by the Heat Treatment Experiment Workspace. `lib/museum/types.ts` remains unused — no exhibit screen yet. |
 | 3. Main Evolution integrations (Trade Routes, Lost Knowledge, Experimentation) | **Built, narrower than first sketched — see below** | Region-gating on new discoveries (not a graduated Knowledge Transfer state), a resilience scorer (warnings only, no removal), one Experiment Workspace slice. All behind opt-in, off by default; verified not to change default behaviour (full existing test suite + a fresh `Engine` with no options passed still behaves identically). |
 | 4. Museum shell + automatic artifact pipeline | **Built** | See below. |
-| 5. Minimum Path, Daily framework, Tech Sudoku | **Partially started** | `lib/seed.ts` (Phase 1) is the reusable seed service these need. `lib/daily.ts` already exists (Main Evolution's "Today's find") and should be migrated onto `lib/seed.ts` rather than duplicated when this phase starts. |
+| 5. Minimum Path, Daily framework, Tech Sudoku | **Minimum Path and Tech Sudoku built; Daily/Weekly framework still just `lib/daily.ts`** | See below. `lib/daily.ts` ("Today's find") was not migrated onto `lib/seed.ts` this pass — still open, low-risk work. No Weekly Mega Challenge scaffold yet. |
 | 6. Survival vertical slice | **Not started** | |
 | 7. Civilization vertical slice | **Not started** | |
 | 8. Archaeologist vertical slice | **Not started** | |
@@ -181,6 +181,67 @@ none of it is reachable by a player who never opens the Trade or
 Laboratory panels — the `trade-routes` flag defaults off, and the
 Laboratory/resilience UI only ever show real, current game state.
 
+## Phase 4 — what actually built
+
+- **`lib/museum/registry.ts`'s `autoExhibits`** joins `engine.majorsFound()`
+  (already used by the World Progress panel) to each node's own citations
+  (`node.src`, the `'source_required'` sentinel filtered out) and produces
+  a certainty-aware, honest provenance note per exhibit — never a specific
+  surviving object, never a fabricated accession number.
+  **`components/MuseumGallery.tsx`** reuses `Plate3D` for every card's
+  drawing and opens the existing `ExhibitPanel` on click — no second
+  rendering pipeline, no duplicate detail view. New `'museum'` `ViewId` +
+  top-bar button. `lib/engine.ts` gained one small, additive, read-only
+  method (`whenFound(id)`) so exhibits can date themselves.
+  **Not built**: curator layout/cases/dioramas, and exhibits from any
+  source other than Main Evolution's own majors (Archaeologist finds,
+  Decipher tablets, Survival camp memories, …) — those arrive with their
+  respective modes.
+
+## Phase 5 — what actually built
+
+- **Minimum Path** (`lib/minpath/`). `graph.ts` builds one well-defined,
+  undirected edge type (a discovery ↔ each of its own recipe ingredients)
+  from the real database — the brief's "use one well-defined edge type so
+  scoring is fair." `pathfind.ts` is a plain BFS shortest path.
+  `validate.ts` adapts the brief's "a category like Technology cannot act
+  as a universal bridge" concern to this graph's real shape: it has no
+  literal category nodes, so `hubIds` flags widely-reused base
+  materials/techniques instead, and `pathLeansOnHub` rejects a candidate
+  pair whose apparent difficulty is really just a hub shortcut.
+  `daily.ts`'s `dailyChallenge` picks a deterministic, hub-free,
+  3–8-hop pair via `lib/seed.ts` — proven against the real 322-node
+  database in `lib/minpath/__tests__/daily.test.ts`, not just asserted.
+  `session.ts` is the click-through state machine (no teleporting — only
+  real graph neighbours are ever offered). UI:
+  `components/minpath/MinimumPathChallenge.tsx`, a new `'minpath'`
+  `ViewId` + top-bar button; the optimal length is never shown until the
+  target is reached. **Not built**: practice-run history, curated
+  "strange pairs" (Pottery → Smartphone), and the challenge-modifier
+  variants (no-backtracking, chronological-only, exactly-N-clicks,
+  visit-an-era) — all listed as intentional follow-ups, not oversights.
+- **Tech Sudoku** (`lib/techsudoku/`). Deliberately small, and deliberately
+  *not* given a top-bar entry — reached from a single small link in the
+  Mode Hub, per the brief's own "do not put Tech Sudoku in primary
+  navigation as equal to giant modes." `generate.ts` picks 5 real
+  discoveries with distinct real dates and derives exactly `n − 1`
+  "predates" clues — provably sufficient for a unique solution by a graph
+  fact (the transitive reduction of a total order is exactly its adjacent
+  chain), not by running a general constraint solver; the uniqueness claim
+  is checked exhaustively (all 120 permutations) in
+  `lib/techsudoku/__tests__/generate.test.ts` rather than merely assumed.
+  Seeded daily via `lib/seed.ts`. UI: `components/techsudoku/
+  TechSudokuModal.tsx` — reorder with up/down controls, "Check" reveals
+  only how many are correctly placed (never which), solving reveals the
+  real dates.
+- **Daily/Weekly framework**: still just `lib/seed.ts` (Phase 1) as the
+  shared primitive, now proven out by two real consumers (Minimum Path,
+  Tech Sudoku). `lib/daily.ts` ("Today's find") was deliberately left
+  unmigrated — no reason yet to touch a working, unrelated system. No
+  Weekly Mega Challenge scaffold exists yet; that's real, separate work
+  (multi-stage, authored scenario identity, mid-week persistence) rather
+  than an extension of the daily-seed pattern.
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -189,7 +250,7 @@ Laboratory/resilience UI only ever show real, current game state.
 2. Research Notebook + Museum data model foundations. ✅ Notebook has a real store now; Museum is still types only.
 3. Trade Routes/Lost Knowledge/Experimentation in Main Evolution, behind flags, validated against existing saves. ✅ see "what Phase 3 actually built" above. Full graduated Knowledge Transfer (observed/possessed/understood/mastered) was not built — region-gating covers a narrower, real slice of it.
 4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this). ✅ `lib/museum/registry.ts`'s `autoExhibits` + `components/MuseumGallery.tsx` — one exhibit per found major invention, reusing `Plate3D`/`ExhibitPanel` rather than a new rendering pipeline. Curator layout, cases, dioramas and non-Main-Evolution exhibit sources (Archaeologist finds, Decipher tablets, …) remain future work — this is one honest wing, not the finished museum.
-5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content.
+5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content. ✅ Minimum Path + Tech Sudoku, see "Phase 5 — what actually built" above. Daily/Weekly framework beyond `lib/seed.ts` itself still open.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution.
 8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into.

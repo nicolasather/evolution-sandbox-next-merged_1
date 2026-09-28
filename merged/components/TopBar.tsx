@@ -41,7 +41,7 @@ function SoundButton() {
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum, onMinPath,
 }: {
   engine: Engine;
   view: ViewId;
@@ -55,6 +55,7 @@ export function TopBar({
   onTrade: () => void;
   onLab: () => void;
   onMuseum: () => void;
+  onMinPath: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -183,6 +184,19 @@ export function TopBar({
       </div>
 
       <div className="top-slot top-actions">
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="minpath-open"
+          aria-label="Minimum Path challenge"
+          aria-pressed={view === 'minpath'}
+          title="Minimum Path — reach a target discovery in as few clicks as possible"
+          onClick={onMinPath}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <circle cx="2.5" cy="13.5" r="1.5" /><circle cx="13.5" cy="2.5" r="1.5" />
+            <path d="M4 12.2 8 8.2M9.5 6.7l2-2" />
+          </svg>
+        </button>
         <button
           className="icon-btn max-[900px]:hidden"
           id="museum-open"

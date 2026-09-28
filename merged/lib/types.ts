@@ -314,10 +314,11 @@ export interface TierProgress {
 
 /** 'hub' is the Mode Hub — the switcher between Main Evolution and any other
  *  mode; see components/ModeHub.tsx. 'museum' is the automatic-exhibit
- *  gallery (components/MuseumGallery.tsx). Both are peers of the other
- *  views, not children of 'work': switching to either never touches
- *  bench/slot state. */
-export type ViewId = 'work' | 'graph' | 'arch' | 'time' | 'hub' | 'museum';
+ *  gallery (components/MuseumGallery.tsx). 'minpath' is the Minimum Path
+ *  challenge (components/minpath/MinimumPathChallenge.tsx). All three are
+ *  peers of the other views, not children of 'work': switching to any of
+ *  them never touches bench/slot state. */
+export type ViewId = 'work' | 'graph' | 'arch' | 'time' | 'hub' | 'museum' | 'minpath';
 
 /** What the hint line shows. Five levels, and the last is the only one that names a piece (never both):
  *  1 vague · 2 material (what the pieces are like) · 3 the kind of work · 4 a ghost hand, or how many pieces · 5 direct. */

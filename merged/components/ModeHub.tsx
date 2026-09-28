@@ -1,7 +1,8 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { ReactiveLabel } from './fx/ReactiveLabel';
+import { TechSudokuModal } from './techsudoku/TechSudokuModal';
 import { profile } from '@/lib/profile/store';
 import { getMode } from '@/lib/modes/registry';
 import type { Engine } from '@/lib/engine';
@@ -30,6 +31,7 @@ export function ModeHub({ engine, active, onLaunch }: {
   // re-render when the shared profile changes (e.g. a visit recorded elsewhere this session)
   const profileVersion = useSyncExternalStore(profile.subscribe, profile.getVersion, () => 0);
   void profileVersion;
+  const [sudokuOpen, setSudokuOpen] = useState(false);
   const p = profile.get();
   const stats = engine.stats();
   const era = engine.currentEra();
@@ -71,7 +73,13 @@ export function ModeHub({ engine, active, onLaunch }: {
           Other wings of this museum — Archaeology, Survival, Civilization, Decipher and more — are in
           active development. They will open here, alongside Main Evolution, as each is finished.
         </p>
+
+        <p className="hub-extra-link">
+          <button type="button" onClick={() => setSudokuOpen(true)}>Today&rsquo;s Tech Sudoku — a five-minute puzzle</button>
+        </p>
       </div>
+
+      <TechSudokuModal open={sudokuOpen} engine={engine} onClose={() => setSudokuOpen(false)} />
     </section>
   );
 }

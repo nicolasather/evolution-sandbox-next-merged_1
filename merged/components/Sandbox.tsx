@@ -14,6 +14,7 @@ import { ConfirmDialog } from './ConfirmDialog';
 import { JournalPanel } from './JournalPanel';
 import { ModeHub } from './ModeHub';
 import { MuseumGallery } from './MuseumGallery';
+import { MinimumPathChallenge } from './minpath/MinimumPathChallenge';
 import { TradePanel } from './trade/TradePanel';
 import { ExperimentWorkspace } from './experiments/ExperimentWorkspace';
 import { WorldLayer } from './world/WorldLayer';
@@ -299,6 +300,7 @@ export function Sandbox() {
           onTrade={() => setTradeOpen(true)}
           onLab={() => setLabOpen(true)}
           onMuseum={() => showView('museum')}
+          onMinPath={() => showView('minpath')}
         />
 
         <div id="views" data-current={view}>
@@ -344,6 +346,7 @@ export function Sandbox() {
           <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
           <ModeHub engine={engine} active={view === 'hub'} onLaunch={() => showView('work')} />
           <MuseumGallery engine={engine} version={version} active={view === 'museum'} onOpen={openExhibit} />
+          <MinimumPathChallenge engine={engine} active={view === 'minpath'} />
 
           {/* outside the three views: a column beside the bench, a drawer over the
               graph and the archive, a bottom sheet on a phone */}
