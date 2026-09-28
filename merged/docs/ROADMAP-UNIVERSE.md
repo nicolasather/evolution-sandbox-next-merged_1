@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Reverse Evolution)
+## Status (28 September 2026, updated same day through Minimum Path challenge-modifier variants)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -46,7 +46,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 10. One authored Historical Escape Room episode | **Built — a fifth genuinely different game, and the first with no procedural generation at all** | See below. |
 | 11. Alien Archaeology | **Built — a sixth genuinely different game, and the only mode graded on calibration rather than correctness** | See below. |
 | Reverse Evolution | **Built — an eighth genuinely different game, and the first mode that reads Main Evolution's own real 322-node database directly rather than an authored/procedural catalog of its own** | See below. |
-| Minimum Path challenge-modifier variants (no-backtracking, chronological-only, exactly-N-clicks, visit-an-era) | Not started. | |
+| Minimum Path challenge-modifier variants (no-backtracking, chronological-only, exactly-N-clicks, visit-an-era) | **Built — the ninth piece of work, layered on the existing Minimum Path mechanic rather than a new mode** | See below. Two real generator bugs found and fixed (a hub-avoidance gap and a trivially-already-satisfied `visit-an-era`). |
 
 ### What "Phase 1" actually built
 
@@ -217,10 +217,11 @@ Laboratory/resilience UI only ever show real, current game state.
   real graph neighbours are ever offered). UI:
   `components/minpath/MinimumPathChallenge.tsx`, a new `'minpath'`
   `ViewId` + top-bar button; the optimal length is never shown until the
-  target is reached. **Not built**: practice-run history, curated
-  "strange pairs" (Pottery → Smartphone), and the challenge-modifier
-  variants (no-backtracking, chronological-only, exactly-N-clicks,
-  visit-an-era) — all listed as intentional follow-ups, not oversights.
+  target is reached. Challenge-modifier variants (no-backtracking,
+  chronological-only, exactly-N-clicks, visit-an-era) were built later,
+  see "Minimum Path challenge-modifier variants — what actually built"
+  below. **Not built**: practice-run history, curated "strange pairs"
+  (Pottery → Smartphone).
 - **Tech Sudoku** (`lib/techsudoku/`). Deliberately small, and deliberately
   *not* given a top-bar entry — reached from a single small link in the
   Mode Hub, per the brief's own "do not put Tech Sudoku in primary
@@ -778,10 +779,87 @@ database itself, so the whole mode stays testable against a fixture).
 - **Not built**: no way to browse or search all 322 discoveries as
   targets (curated shortlist only); no partial-credit scoring beyond a
   correct/revealed count; the node budget (14) is fixed, not
-  difficulty-adjustable; Minimum Path's own challenge-modifier variants
-  (no-backtracking, chronological-only, exactly-N-clicks, visit-an-era)
-  remain unbuilt, a separate, smaller piece of work against Minimum
-  Path's existing graph, not this mode's.
+  difficulty-adjustable.
+
+---
+
+## Minimum Path challenge-modifier variants — what actually built
+
+The brief's own four modifiers layered on top of the existing Minimum
+Path mechanic, not a new mode: `lib/minpath/modifiers.ts` defines
+`PathModifier` (`no-backtracking`, `chronological-only`,
+`exactly-n-clicks`, `visit-an-era`) and two pure functions,
+`legalNeighbors` and `isComplete`, that only ever *narrow* which of the
+graph's real edges are legal to click next or add a further win
+condition on top of "reached the target" — never a new edge, never a
+shortcut. `lib/minpath/session.ts` (the base daily/practice mode) is
+untouched; `components/minpath/MinimumPathChallenge.tsx` now routes
+both the base modes (modifier `undefined`) and the new variant mode
+through these same two functions, so there is one stepping path, not
+two parallel ones.
+
+- **Generate, then prove solvable, same discipline as Tech Sudoku and
+  Decipher** — `lib/minpath/variantChallenge.ts`'s `pickVariantChallenge`
+  picks a fair start/target pair (reusing `lib/minpath/daily.ts`'s own
+  hub-avoidance and hop-count discipline), then for the three modifiers
+  whose legality actually changes what's reachable
+  (chronological-only, exactly-n-clicks, visit-an-era) proves a real
+  completing path exists via `findCompletingPath` — a bounded
+  breadth-first search over legal `(node, path-so-far)` states — before
+  ever handing the challenge to a player. `no-backtracking` never needs
+  this: a shortest path never revisits a node, so it already satisfies
+  that modifier for free.
+- **A real generator bug found by the test suite itself, not smoke
+  testing**: the hub-avoidance check only ever ran against the
+  *unmodified* shortest path (`basePath`), but a modifier can force the
+  actual solving route onto a detour `basePath` never took — and that
+  detour could still lean on a hub shortcut even when `basePath` didn't,
+  defeating the whole point of hub-avoidance. Caught by
+  `lib/minpath/__tests__/variantChallenge.test.ts`'s own "never hands
+  out a start/target pair that leans on a hub shortcut" test failing
+  outright (not a flaky or edge-case failure — reproducible on the
+  first run). Fixed by additionally checking `pathLeansOnHub` against
+  the actual `solved` path returned by `findCompletingPath`, after the
+  modifier is fully resolved, not just the base path before it.
+- **A second, subtler generator bug found via the live Playwright smoke
+  test**: `visit-an-era` challenges very frequently named the *start
+  node's own era* as the era to "visit" — because the fallback path
+  (taken whenever a randomly-picked era had no provably-completing
+  route) grabbed the first era found by mapping over `basePath`, and
+  `basePath[0]` is always the start node itself. The result: the
+  modifier's "(visited)" tag was already true at zero clicks, before the
+  player had done anything — a screenshot from the smoke test showed
+  this happening on two separate challenge pulls in a row. This is the
+  same class of bug as the hub-shortcut one (a constraint that's
+  supposed to force a real detour, but doesn't) and was invisible to the
+  original test suite because the existing solvability test only
+  checked that *some* node on the found path had the required era,
+  which the start node itself always trivially satisfies. Fixed by
+  requiring the era to be a genuine waypoint — never equal to the
+  start's or the target's own era, since either would let the
+  constraint be satisfied for free (immediately, or automatically on
+  arrival with no detour needed) — with a bounded random-then-on-path
+  search for a qualifying era, and a new regression test asserting the
+  chosen era is never the start's or target's own.
+- **UI**: a third mode alongside "Today's pair"/"New practice pair" —
+  "Challenge modifier" — with a chip row to pick one of the four
+  modifiers (`MODIFIER_LABEL`) and a one-line explanation of what it
+  changes (`MODIFIER_BLURB`), plus a "New pair" reroll. During play, a
+  modifier tag shows the active modifier and, for `exactly-n-clicks`,
+  the live click count against the target (`3 / 6`), and for
+  `visit-an-era`, the named era and whether it's been visited yet.
+- **Verified live**: a Playwright smoke test switched into variant
+  mode, cycled all four modifier chips confirming the blurb and tag
+  text for each, played `no-backtracking` and `exactly-n-clicks`
+  through real neighbor clicks confirming the click counter updates
+  correctly, and confirmed — after the era-waypoint fix — that
+  `visit-an-era`'s "(visited)" tag no longer appears before the first
+  click.
+- **Not built**: no UI affordance to combine two modifiers at once (the
+  brief's own four are each standalone); no separate daily/leaderboard
+  identity for variant challenges (they're practice-only, reusing the
+  practice seed-reroll pattern); no difficulty rating shown before
+  picking a modifier.
 
 ---
 
@@ -806,7 +884,11 @@ category node like "Technology" acting as a universal bridge). ✅ Reverse
 Evolution built — see "Reverse Evolution — what actually built" above;
 it sidesteps the "cheat node" concern by fixing one canonical recipe
 (`rec[0]`) per question rather than pathfinding across the whole graph.
-Minimum Path's own challenge-modifier variants remain unbuilt.
+Minimum Path's own challenge-modifier variants are built too — see
+"Minimum Path challenge-modifier variants — what actually built" above;
+they reuse Minimum Path's existing `hubIds`/`pathLeansOnHub` cheat-node
+guard, now checked against the actual modifier-solving path rather than
+just the unmodified shortest path.
 
 ## Non-negotiables carried over from the full brief
 

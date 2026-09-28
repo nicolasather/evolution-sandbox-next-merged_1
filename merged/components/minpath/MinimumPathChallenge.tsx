@@ -3,7 +3,11 @@
 import { useMemo, useState } from 'react';
 import { buildGraph } from '@/lib/minpath/graph';
 import { dailyChallenge, pickChallenge, type MinPathChallenge } from '@/lib/minpath/daily';
-import { clicksOf, neighborsOf, startSession, step, type MinPathSession } from '@/lib/minpath/session';
+import {
+  isComplete, legalNeighbors, MODIFIER_BLURB, MODIFIER_LABEL, type ModifierKind, type PathModifier,
+} from '@/lib/minpath/modifiers';
+import { clicksOf, startSession, type MinPathSession } from '@/lib/minpath/session';
+import { pickVariantChallenge, type VariantChallenge } from '@/lib/minpath/variantChallenge';
 import { createRng } from '@/lib/seed';
 import type { Engine } from '@/lib/engine';
 
@@ -14,28 +18,45 @@ import type { Engine } from '@/lib/engine';
    so every player's count is comparable. The optimal length is never shown
    until the target is reached — see lib/minpath/daily.ts's doc comments for
    how the daily pair is chosen (deterministic, and never a hub shortcut).
+
+   The 'variant' mode layers one of lib/minpath/modifiers.ts's four rule
+   changes (no-backtracking, chronological-only, exactly-n-clicks,
+   visit-an-era) on top of the exact same click-through-real-edges mechanic —
+   legalNeighbors/isComplete only ever narrow which real edge is legal next
+   or add a further win condition, so daily/practice (modifier undefined)
+   and variant share one stepping path below rather than two parallel ones.
    ========================================================================== */
 
-type Mode = 'daily' | 'practice';
+type Mode = 'daily' | 'practice' | 'variant';
+
+const MODIFIER_KINDS: ModifierKind[] = ['no-backtracking', 'chronological-only', 'exactly-n-clicks', 'visit-an-era'];
 
 export function MinimumPathChallenge({ engine, active }: { engine: Engine; active: boolean }) {
   const graph = useMemo(() => buildGraph(engine.db), [engine.db]);
   const [mode, setMode] = useState<Mode>('daily');
   const [practiceSeed, setPracticeSeed] = useState(() => Date.now());
+  const [variantKind, setVariantKind] = useState<ModifierKind>('no-backtracking');
+  const [variantSeed, setVariantSeed] = useState(() => Date.now());
 
   // Both dailyChallenge and pickChallenge are pure and deterministic given
   // their inputs — a plain memo, no effect needed to "compute" a challenge.
-  const challenge = useMemo<MinPathChallenge | null>(
-    () => (mode === 'daily' ? dailyChallenge(engine.db) : pickChallenge(engine.db, createRng(practiceSeed))),
-    [engine.db, mode, practiceSeed],
+  const variant = useMemo<VariantChallenge | null>(
+    () => (mode === 'variant' ? pickVariantChallenge(engine.db, createRng(variantSeed), variantKind) : null),
+    [engine.db, mode, variantSeed, variantKind],
   );
+  const challenge = useMemo<MinPathChallenge | null>(() => {
+    if (mode === 'daily') return dailyChallenge(engine.db);
+    if (mode === 'practice') return pickChallenge(engine.db, createRng(practiceSeed));
+    return variant ? { startId: variant.startId, targetId: variant.targetId, optimalLength: variant.optimalLength } : null;
+  }, [engine.db, mode, practiceSeed, variant]);
+  const modifier: PathModifier | undefined = mode === 'variant' ? variant?.modifier : undefined;
 
   const [session, setSession] = useState<MinPathSession | null>(
     () => (challenge ? startSession(challenge.startId, challenge.targetId) : null),
   );
-  // When `challenge` changes identity (a new mode or a fresh practice pull),
-  // reset the session — adjusted during render, per React's guidance for
-  // resetting state when a computed value changes, rather than in an effect.
+  // When `challenge` changes identity (a new mode or a fresh practice/variant
+  // pull), reset the session — adjusted during render, per React's guidance
+  // for resetting state when a computed value changes, rather than in an effect.
   const [sessionChallenge, setSessionChallenge] = useState(challenge);
   if (challenge !== sessionChallenge) {
     setSessionChallenge(challenge);
@@ -47,15 +68,18 @@ export function MinimumPathChallenge({ engine, active }: { engine: Engine; activ
   const startNode = challenge ? engine.get(challenge.startId) : undefined;
   const targetNode = challenge ? engine.get(challenge.targetId) : undefined;
   const curNode = session ? engine.get(session.path[session.path.length - 1]) : undefined;
-  const neighbors = session && !session.done ? neighborsOf(graph, session) : [];
+  const neighbors = session && !session.done ? legalNeighbors(engine.db, graph, session, modifier) : [];
 
   const clickNeighbor = (id: string) => {
-    if (!session) return;
-    const r = step(graph, session, id);
-    if (r.ok) setSession(r.session);
+    if (!session || !neighbors.includes(id)) return;
+    const path = [...session.path, id];
+    const next: MinPathSession = { ...session, path, done: isComplete(engine.db, { ...session, path }, modifier) };
+    setSession(next);
   };
 
   const newPractice = () => { setMode('practice'); setPracticeSeed(Date.now()); };
+  const newVariant = () => { setMode('variant'); setVariantSeed(Date.now()); };
+  const eraVisited = modifier?.kind === 'visit-an-era' && !!session?.path.some(id => engine.get(id)?.era === modifier.era);
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-minpath" role="tabpanel" aria-label="Minimum Path">
@@ -67,7 +91,26 @@ export function MinimumPathChallenge({ engine, active }: { engine: Engine; activ
           <div className="mp-modes">
             <button className="chip" aria-pressed={mode === 'daily'} onClick={() => setMode('daily')}>Today&rsquo;s pair</button>
             <button className="chip" aria-pressed={mode === 'practice'} onClick={newPractice}>New practice pair</button>
+            <button className="chip" aria-pressed={mode === 'variant'} onClick={newVariant}>Challenge modifier</button>
           </div>
+          {mode === 'variant' && (
+            <div className="mp-variant-bar">
+              <div className="mp-modes">
+                {MODIFIER_KINDS.map(k => (
+                  <button
+                    key={k}
+                    className="chip"
+                    aria-pressed={variantKind === k}
+                    onClick={() => { setVariantKind(k); setVariantSeed(Date.now()); }}
+                  >
+                    {MODIFIER_LABEL[k]}
+                  </button>
+                ))}
+                <button className="chip" onClick={() => setVariantSeed(Date.now())}>New pair</button>
+              </div>
+              <p className="mp-variant-blurb">{MODIFIER_BLURB[variantKind]}</p>
+            </div>
+          )}
         </header>
 
         {!challenge || !session ? (
@@ -77,8 +120,20 @@ export function MinimumPathChallenge({ engine, active }: { engine: Engine; activ
             <div className="mp-endpoints">
               <div className="mp-endpoint"><span className="mono">Start</span><b>{startNode?.n}</b></div>
               <div className="mp-endpoint"><span className="mono">Target</span><b>{targetNode?.n}</b></div>
-              <div className="mp-clicks"><span className="mono">Clicks</span><b>{clicksOf(session)}</b></div>
+              <div className="mp-clicks">
+                <span className="mono">Clicks</span>
+                <b>{modifier?.kind === 'exactly-n-clicks' ? `${clicksOf(session)} / ${modifier.n}` : clicksOf(session)}</b>
+              </div>
             </div>
+
+            {modifier && (
+              <p className="mp-modifier-tag mono">
+                {MODIFIER_LABEL[modifier.kind]}
+                {modifier.kind === 'visit-an-era' && (
+                  <> — visit {engine.world.eraName(modifier.era)}{eraVisited ? ' (visited)' : ''}</>
+                )}
+              </p>
+            )}
 
             {!session.done ? (
               <>
