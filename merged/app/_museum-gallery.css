@@ -19,6 +19,8 @@
   text-align:left;transition:background-color .18s;
 }
 .museum-card:hover,.museum-card:focus-visible{background:var(--ink-3)}
+.museum-card-static{cursor:default}
+.museum-card-static:hover{background:var(--ink-2)}
 .museum-card-plate{width:100%;height:120px;display:grid;place-items:center;margin-bottom:6px}
 .museum-card-title{font-family:var(--fs-display);font-size:17px;color:var(--bone)}
 .museum-card-tags{color:var(--bone-4);font-size:9.5px}

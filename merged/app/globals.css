@@ -67,6 +67,9 @@
 /* Tech Sudoku — a small optional puzzle, reached from the Mode Hub. */
 @import "./_techsudoku.css" layer(components);
 
+/* Survival — its own earthy, spatial visual language (components/survival/). */
+@import "./_survival.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

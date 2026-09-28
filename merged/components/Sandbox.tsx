@@ -36,12 +36,13 @@ import { sound } from '@/lib/sound';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { cn } from '@/lib/utils';
 import type { ViewId } from '@/lib/types';
+import type { ModeId } from '@/lib/modes/types';
 
 const GraphView = dynamic(() => import('./GraphView').then(mod => mod.GraphView), { ssr: false });
 const TimelineView = dynamic(() => import('./TimelineView').then(mod => mod.TimelineView), { ssr: false });
 const ArchiveView = dynamic(() => import('./ArchiveView').then(mod => mod.ArchiveView), { ssr: false });
 
-export function Sandbox() {
+export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => void } = {}) {
   const [panelOpen, setPanelOpen] = useState(false);
   const s = useSandbox();
   const { engine, version, view, setView, open, clearSlots, setEnding, reset } = s;
@@ -344,7 +345,7 @@ export function Sandbox() {
           />
           <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
           <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
-          <ModeHub engine={engine} active={view === 'hub'} onLaunch={() => showView('work')} />
+          <ModeHub engine={engine} active={view === 'hub'} onLaunch={() => showView('work')} onLaunchMode={onLaunchMode} />
           <MuseumGallery engine={engine} version={version} active={view === 'museum'} onOpen={openExhibit} />
           <MinimumPathChallenge engine={engine} active={view === 'minpath'} />
 

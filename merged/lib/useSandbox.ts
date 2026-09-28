@@ -6,6 +6,7 @@ import { Engine } from './engine';
 import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
 import { profile } from './profile/store';
+import { survivalStore } from './survival/store';
 import { regionGateFor } from './trade/gate';
 import { tradeStore } from './trade/store';
 import type { ActionId, CombineResult, Db, Discovery, ProcessResult, RegionLockInfo, ViewId } from './types';
@@ -52,6 +53,9 @@ export function useSandbox() {
   // Trade-routes state (home region, established routes) is also independent
   // — see liveRegionGate above, which reads it fresh on every combine.
   useEffect(() => { tradeStore.load(); }, []);
+  // Survival's own save — loaded here too so the Mode Hub's Survival card
+  // shows real resume state even before the player ever opens that mode.
+  useEffect(() => { survivalStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);

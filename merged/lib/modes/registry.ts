@@ -19,7 +19,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Survival',
     subtitle: 'Adapt',
     description: 'Keep a small prehistoric group alive in a procedurally generated landscape.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.survival.v1',
   },
   {

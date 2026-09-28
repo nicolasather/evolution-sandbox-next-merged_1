@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Phase 5)
+## Status (28 September 2026, updated same day through Phase 6)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -39,7 +39,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 3. Main Evolution integrations (Trade Routes, Lost Knowledge, Experimentation) | **Built, narrower than first sketched — see below** | Region-gating on new discoveries (not a graduated Knowledge Transfer state), a resilience scorer (warnings only, no removal), one Experiment Workspace slice. All behind opt-in, off by default; verified not to change default behaviour (full existing test suite + a fresh `Engine` with no options passed still behaves identically). |
 | 4. Museum shell + automatic artifact pipeline | **Built** | See below. |
 | 5. Minimum Path, Daily framework, Tech Sudoku | **Minimum Path and Tech Sudoku built; Daily/Weekly framework still just `lib/daily.ts`** | See below. `lib/daily.ts` ("Today's find") was not migrated onto `lib/seed.ts` this pass — still open, low-risk work. No Weekly Mega Challenge scaffold yet. |
-| 6. Survival vertical slice | **Not started** | |
+| 6. Survival vertical slice | **Built — first mode that is a genuinely different game, not Main Evolution with new restrictions** | See below. `components/AppRoot.tsx` is the real top-level mode switch this required. |
 | 7. Civilization vertical slice | **Not started** | |
 | 8. Archaeologist vertical slice | **Not started** | |
 | 9. Decipher (authored tutorial + beginner procedural generator) | **Not started** | |
@@ -242,6 +242,79 @@ Laboratory/resilience UI only ever show real, current game state.
   (multi-stage, authored scenario identity, mid-week persistence) rather
   than an extension of the daily-seed pattern.
 
+## Phase 6 — what actually built (Survival)
+
+This is the first mode built against the brief's hardest requirement:
+~70–80% of its moment-to-moment gameplay had to be genuinely unfamiliar
+from Main Evolution, not the crafting loop with new restrictions. It
+shares data conventions (the same save/migration pattern, the same
+provenance discipline for its Museum output) and nothing else — no
+Workbench, no recipe engine, no top bar.
+
+- **A real top-level mode switch** (`components/AppRoot.tsx`) had to be
+  built for this — until now every "mode" lived inside Sandbox.tsx's own
+  `ViewId` system. `app/page.tsx` now mounts `AppRoot`, which renders
+  Main Evolution (`Sandbox`) by default, unchanged, so the protected
+  intro/landing sequence is never touched by this change, and swaps to a
+  fully separate, lazily-loaded (`next/dynamic`, `ssr: false`) component
+  tree only once the player launches another mode from the Hub. Entering
+  Main Evolution alone still never downloads Survival's code.
+  **Known limitation, honestly logged rather than hidden**: returning
+  from Survival to the Hub remounts Sandbox, so the player sees a brief
+  "Continue timeline" landing prompt again (Main Evolution's own resumed-
+  player state, not the full first-visit cinematic — `Engine.resumed` is
+  true) before reaching the Hub — one extra click, no state lost. Fixing
+  this properly means either keeping Sandbox persistently mounted (and
+  pausing its background work when hidden) or giving it a way to restore
+  `view: 'hub'`/`entered: true` on remount; both are real, scoped follow-
+  ups, not done this pass because Sandbox's intro state machine is
+  explicitly the highest-risk file in this codebase to touch casually.
+- **The loop is SCOUT → ASSESS → PRIORITIZE → ASSIGN → ADAPT, not
+  drag-item crafting**, over a small, bounded, spatial grid
+  (`lib/survival/generate.ts`, seeded, and validated so a run is never
+  unwinnable outright — at least one water and two woodland tiles are
+  placed before anything else is randomised). `lib/survival/simulate.ts`'s
+  `advanceTick` is the entire pure, deterministic simulation core (no
+  `Math.random` — a future pass adding variation should reach for
+  `lib/seed.ts`): task resolution, universal need decay, fire fuel burn,
+  daily food/water consumption, win/loss checks. The UI
+  (`components/survival/SurvivalMode.tsx`) holds no simulation logic of
+  its own — it only calls `advanceTick` and renders the result.
+- **Individual member state is words, not seven progress bars** —
+  `lib/survival/read.ts` collapses energy/warmth/morale into
+  rested/tired/exhausted/collapsing-style qualitative reads, per the
+  brief's explicit instruction. Three members, generated names
+  (syllable-combination, never real historical names for an unnamed
+  prehistoric group), five simple non-stereotyped traits with real
+  mechanical effect (`TRAIT_BONUS` in simulate.ts).
+- **Balance was tested empirically, not assumed**: `lib/survival/
+  __tests__/simulate.test.ts` includes a deterministic greedy "keep the
+  essentials topped up, rest whoever is tired" policy — a stand-in for
+  the brief's "run automated simulation tests where simple AI policies
+  run scenarios ... to find impossible seeds" — proven to reach the
+  objective on three different seeds, and a neglect policy proven to
+  fail. The first version of this balance was too harsh (a naive "assign
+  fixed roles, never rotate rest" policy could not survive); the numbers
+  were tuned against the adaptive-policy test until they could, rather
+  than loosening the test to match whatever the numbers happened to do.
+- **Failure is an after-action reconstruction, never a bare "GAME
+  OVER"** — the ending screen shows the real causal log leading to
+  collapse (food/water shortages, then each member's exhaustion), per
+  the brief. Both endings offer "start a new run" with zero punishment
+  framing.
+- **Cross-mode Museum output works, not just types**: a finished run
+  becomes a `CampMemory` (`lib/survival/memory.ts`) rendered as a Museum
+  exhibit tagged `procedural-fictional` with the run's own seed —
+  verified rendering in the real gallery alongside Main Evolution's own
+  exhibits in a live browser smoke test, fulfilling the brief's "the
+  world remembers" cross-mode requirement end to end for the first time.
+- **Not built**: multiple scenario types (only one "survive N days"
+  objective exists), weather/season variation, tool wear, hunting,
+  teaching/knowledge-continuity mechanics, the fog-of-uncertainty
+  exploration layer, and any visual/2.5D rendering beyond a CSS tile
+  grid — all real, scoped future work matching what a "vertical slice"
+  is supposed to leave out, per this document's own Phase 6 entry above.
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -251,7 +324,7 @@ Laboratory/resilience UI only ever show real, current game state.
 3. Trade Routes/Lost Knowledge/Experimentation in Main Evolution, behind flags, validated against existing saves. ✅ see "what Phase 3 actually built" above. Full graduated Knowledge Transfer (observed/possessed/understood/mastered) was not built — region-gating covers a narrower, real slice of it.
 4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this). ✅ `lib/museum/registry.ts`'s `autoExhibits` + `components/MuseumGallery.tsx` — one exhibit per found major invention, reusing `Plate3D`/`ExhibitPanel` rather than a new rendering pipeline. Curator layout, cases, dioramas and non-Main-Evolution exhibit sources (Archaeologist finds, Decipher tablets, …) remain future work — this is one honest wing, not the finished museum.
 5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content. ✅ Minimum Path + Tech Sudoku, see "Phase 5 — what actually built" above. Daily/Weekly framework beyond `lib/seed.ts` itself still open.
-6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun.
+6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun. ✅ see "Phase 6 — what actually built" above.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution.
 8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into.
 9. Decipher: authored tutorial chapters, then a beginner procedural script generator with a solvability validator, before advanced grammar.
