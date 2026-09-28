@@ -9,6 +9,7 @@ import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
 import { decipherStore } from '@/lib/decipher/store';
 import { escapeRoomStore } from '@/lib/escaperoom/store';
 import { profile } from '@/lib/profile/store';
+import { reverseEvolutionStore } from '@/lib/reverseevolution/store';
 import { getMode } from '@/lib/modes/registry';
 import { survivalStore } from '@/lib/survival/store';
 import type { Engine } from '@/lib/engine';
@@ -78,6 +79,8 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   void escVersion;
   const alienVersion = useSyncExternalStore(alienArchaeologyStore.subscribe, alienArchaeologyStore.getVersion, () => 0);
   void alienVersion;
+  const revVersion = useSyncExternalStore(reverseEvolutionStore.subscribe, reverseEvolutionStore.getVersion, () => 0);
+  void revVersion;
   const [sudokuOpen, setSudokuOpen] = useState(false);
 
   const p = profile.get();
@@ -90,6 +93,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const decMode = getMode('decipher');
   const escMode = getMode('escape-room');
   const alienMode = getMode('alien-archaeology');
+  const revMode = getMode('reverse-evolution');
   const visit = p.modes['main-evolution'];
   const survivalVisit = p.modes['survival'];
   const civVisit = p.modes['civilization'];
@@ -97,12 +101,14 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const decVisit = p.modes['decipher'];
   const escVisit = p.modes['escape-room'];
   const alienVisit = p.modes['alien-archaeology'];
+  const revVisit = p.modes['reverse-evolution'];
   const survival = survivalStore.get();
   const civilization = civilizationStore.get();
   const archaeology = archaeologyStore.get();
   const decipher = decipherStore.get();
   const escapeRoom = escapeRoomStore.get();
   const alien = alienArchaeologyStore.get();
+  const reverseEvo = reverseEvolutionStore.get();
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-hub" role="tabpanel" aria-label="Mode Hub">
@@ -203,6 +209,19 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
             { label: 'Field reports filed', value: alien.reports.length },
             { label: 'Active site', value: alien.active ? 'In progress' : 'None' },
             { label: 'First entered', value: alienVisit ? dateFmt.format(alienVisit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
+
+        <ExhibitCard
+          kicker={revMode?.subtitle ?? 'From Smartphone to Stone'}
+          title={revMode?.title ?? 'Reverse Evolution'}
+          description={revMode?.description ?? ''}
+          ctaLabel={reverseEvo.active ? 'Continue' : 'Enter'}
+          onLaunch={() => onLaunchMode?.('reverse-evolution')}
+          stats={[
+            { label: 'Discoveries traced', value: reverseEvo.runs.length },
+            { label: 'Active trace', value: reverseEvo.active ? 'In progress' : 'None' },
+            { label: 'First entered', value: revVisit ? dateFmt.format(revVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
 

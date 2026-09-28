@@ -85,6 +85,9 @@
 /* Alien Archaeology — its own violet xenoarchaeology-lab visual language (components/alienarchaeology/). */
 @import "./_alienarchaeology.css" layer(components);
 
+/* Reverse Evolution — its own blueprint/exploded-diagram visual language (components/reverseevolution/). */
+@import "./_reverseevolution.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

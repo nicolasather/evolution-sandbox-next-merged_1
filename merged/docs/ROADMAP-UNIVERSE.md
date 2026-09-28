@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Phase 11)
+## Status (28 September 2026, updated same day through Reverse Evolution)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -45,7 +45,8 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 9. Decipher (authored tutorial + beginner procedural generator) | **Built — a fourth genuinely different game, and a real solvability-validated logic puzzle, not a guessing game** | See below. |
 | 10. One authored Historical Escape Room episode | **Built — a fifth genuinely different game, and the first with no procedural generation at all** | See below. |
 | 11. Alien Archaeology | **Built — a sixth genuinely different game, and the only mode graded on calibration rather than correctness** | See below. |
-| Reverse Evolution, Minimum Path variants | Can proceed in parallel with 6–11 once phase 5's graph-edge validation exists. | |
+| Reverse Evolution | **Built — an eighth genuinely different game, and the first mode that reads Main Evolution's own real 322-node database directly rather than an authored/procedural catalog of its own** | See below. |
+| Minimum Path challenge-modifier variants (no-backtracking, chronological-only, exactly-N-clicks, visit-an-era) | Not started. | |
 
 ### What "Phase 1" actually built
 
@@ -703,6 +704,85 @@ right they actually turned out to be.
   reliable vs. actively misleading, rather than merely noisy) is real,
   scoped future work.
 
+## Reverse Evolution — what actually built
+
+An eighth genuinely different interaction language, and the first mode
+built after the numbered Phase 1–11 sequence — the roadmap's own
+"Reverse Evolution and Minimum Path's challenge variants... can proceed
+in parallel" note meant this was always intended, not an afterthought.
+It is also the first mode to read Main Evolution's own real 322-node
+database directly (`lib/processing`'s `playDb`) rather than an
+authored or procedural catalog of its own, following the same
+dependency-injection discipline `lib/minpath/*.ts` established (every
+function takes `db` as an explicit parameter, never imports the play
+database itself, so the whole mode stays testable against a fixture).
+
+- **The loop is guess → reveal → descend, a multiple-choice tree quiz,
+  not crafting or a single shortest path** — `lib/reverseevolution/
+  generate.ts` starts one question at a real, curated, recognisably deep
+  discovery (`lib/reverseevolution/catalog.ts`'s seven targets — smartphone,
+  personal computer, microprocessor, web browser, video game, game
+  console, and the game's own deepest node, Grand Theft Auto VI — each
+  verified at authoring time to have real depth and a real recipe).
+  Answering it, right or wrong, always reveals the real recipe
+  (`lib/types.ts`'s own `rec[0]`) and expands into new questions for
+  each real ingredient, exactly one question live at a time however many
+  branches the tree has grown (`pendingQueue[0]`) — this mode's whole
+  point is teaching the real chain, so it never gatekeeps progress
+  behind a correct guess, unlike Archaeologist's budgets or Decipher's
+  bijection.
+- **Distractors are real discoveries, never invented** —
+  `generateOptions` draws wrong options from two hops out in the same
+  undirected prerequisite graph `lib/minpath/graph.ts`'s `buildGraph`
+  already builds for Minimum Path (reused, not duplicated), so a wrong
+  answer is always a plausible, real, nearby technology, not a random
+  or nonsensical one.
+- **A real data edge case found and fixed via testing**: recipes that
+  repeat an ingredient ("Stone + Stone" — a real, common pattern in the
+  database, confirmed to affect dozens of nodes) would otherwise produce
+  two identical option buttons sharing one id. Fixed by having both
+  `generateOptions` and the child-expansion logic work off the
+  deduplicated ingredient set — the quiz asks which *distinct*
+  discoveries something took, not how many of each — with a regression
+  test (`lib/reverseevolution/__tests__/simulate.test.ts`) asserting a
+  repeated-ingredient recipe never produces duplicate option ids.
+- **A real honesty bug found via the live Playwright smoke test, not
+  unit tests**: the run-completion screen unconditionally said "Traced
+  to raw materials," but for every one of the catalog's seven deep
+  targets the run actually stops because a bounded node budget (14) is
+  exhausted, not because the tree genuinely bottomed out at primitives —
+  the smoke test's own screenshot showed the claim next to a tree that
+  still ended in abstract prerequisites like Mathematics and Physics,
+  nowhere near a raw material. Fixed by adding `isBudgetCapped`
+  (`nodesUsed >= nodeBudget`) and making both the completion log message
+  and the ending screen's title/copy conditional on it — "Traced as far
+  as this session goes... the real chain goes deeper than this session
+  followed it" for every practical run, reserving "Traced all the way to
+  raw materials" for the genuinely shallow case, verified with tests for
+  both.
+- **Cross-mode Museum output, honestly the strongest provenance kind
+  in the whole universe**: a finished run's exhibit
+  (`lib/reverseevolution/memory.ts`) is tagged `historical-fact`, not
+  `procedural-fictional` like every other mode's — the entire content is
+  Main Evolution's own already-cited data. `sourceIds` are real,
+  aggregated from every node the run actually touched
+  (`Discovery.src`), computed once at archive time and stored on the
+  memory itself, since the full run tree (needed to aggregate them) is
+  discarded on archive like every other mode's active-run state.
+- **Verified live**: a Playwright smoke test picked a target from the
+  real picker, answered a mix of correct and revealed questions through
+  the real multiple-choice buttons, drove the run to completion, and
+  confirmed the corrected, honest ending copy, the Hub's updated stats,
+  and the Museum exhibit — all from a real, rendered decomposition tree
+  with real distractors, not a mocked one.
+- **Not built**: no way to browse or search all 322 discoveries as
+  targets (curated shortlist only); no partial-credit scoring beyond a
+  correct/revealed count; the node budget (14) is fixed, not
+  difficulty-adjustable; Minimum Path's own challenge-modifier variants
+  (no-backtracking, chronological-only, exactly-N-clicks, visit-an-era)
+  remain unbuilt, a separate, smaller piece of work against Minimum
+  Path's existing graph, not this mode's.
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -722,7 +802,11 @@ right they actually turned out to be.
 Reverse Evolution and Minimum Path's challenge variants (no-backtracking,
 chronological-only, etc.) can proceed in parallel with 6–11 once the
 underlying graph has been validated for high-degree "cheat nodes" (a
-category node like "Technology" acting as a universal bridge).
+category node like "Technology" acting as a universal bridge). ✅ Reverse
+Evolution built — see "Reverse Evolution — what actually built" above;
+it sidesteps the "cheat node" concern by fixing one canonical recipe
+(`rec[0]`) per question rather than pathfinding across the whole graph.
+Minimum Path's own challenge-modifier variants remain unbuilt.
 
 ## Non-negotiables carried over from the full brief
 

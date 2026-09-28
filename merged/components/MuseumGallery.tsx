@@ -14,6 +14,9 @@ import { episodeExhibit } from '@/lib/escaperoom/memory';
 import { getEpisode } from '@/lib/escaperoom/registry';
 import { escapeRoomStore } from '@/lib/escaperoom/store';
 import { autoExhibits } from '@/lib/museum/registry';
+import { playDb } from '@/lib/processing';
+import { reverseExhibit as reverseTraceExhibit } from '@/lib/reverseevolution/memory';
+import { reverseEvolutionStore } from '@/lib/reverseevolution/store';
 import type { MuseumExhibit } from '@/lib/museum/types';
 import { memoryExhibit } from '@/lib/survival/memory';
 import { survivalStore } from '@/lib/survival/store';
@@ -56,6 +59,8 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
   void escVersion;
   const alienVersion = useSyncExternalStore(alienArchaeologyStore.subscribe, alienArchaeologyStore.getVersion, () => 0);
   void alienVersion;
+  const revVersion = useSyncExternalStore(reverseEvolutionStore.subscribe, reverseEvolutionStore.getVersion, () => 0);
+  void revVersion;
 
   const mainExhibits = active ? autoExhibits(engine) : [];
   const campExhibits: MuseumExhibit[] = active ? survivalStore.get().memories.map(memoryExhibit) : [];
@@ -66,7 +71,10 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
     ? escapeRoomStore.get().memories.map(m => episodeExhibit(m, getEpisode(m.episodeId)?.title ?? 'Unknown episode'))
     : [];
   const alienExhibits: MuseumExhibit[] = active ? alienArchaeologyStore.get().reports.map(alienExhibit) : [];
-  const staticExhibits = [...campExhibits, ...dioramaExhibits, ...siteExhibits, ...decipherExhibits, ...escapeExhibits, ...alienExhibits];
+  const reverseExhibits: MuseumExhibit[] = active
+    ? reverseEvolutionStore.get().runs.map(m => reverseTraceExhibit(m, playDb.nodes.find(n => n.id === m.targetId)?.n ?? m.targetId))
+    : [];
+  const staticExhibits = [...campExhibits, ...dioramaExhibits, ...siteExhibits, ...decipherExhibits, ...escapeExhibits, ...alienExhibits, ...reverseExhibits];
   const exhibits = [...mainExhibits, ...staticExhibits];
 
   return (
@@ -78,14 +86,15 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
           <p className="museum-sub">
             Every major invention you have reached, every camp your Survival runs left behind, every
             settlement your Civilization runs grew, every report your Archaeologist digs filed, every
-            tablet set your Decipher runs read, every Escape Room episode you have opened, and every
-            field report your Alien Archaeology sites produced — reconstructed and labelled, never
-            claimed as the object or event itself.
+            tablet set your Decipher runs read, every Escape Room episode you have opened, every field
+            report your Alien Archaeology sites produced, and every discovery your Reverse Evolution
+            runs traced back to its origins — reconstructed and labelled, never claimed as the object
+            or event itself.
           </p>
         </header>
 
         {exhibits.length === 0 ? (
-          <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival, Civilization, Archaeologist, Decipher, Escape Room or Alien Archaeology run, and it will appear here.</p>
+          <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival, Civilization, Archaeologist, Decipher, Escape Room, Alien Archaeology or Reverse Evolution run, and it will appear here.</p>
         ) : (
           <div className="museum-grid">
             {mainExhibits.map(ex => {

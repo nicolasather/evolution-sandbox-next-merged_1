@@ -11,6 +11,7 @@ import { civilizationStore } from './civilization/store';
 import { decipherStore } from './decipher/store';
 import { escapeRoomStore } from './escaperoom/store';
 import { profile } from './profile/store';
+import { reverseEvolutionStore } from './reverseevolution/store';
 import { survivalStore } from './survival/store';
 import { regionGateFor } from './trade/gate';
 import { tradeStore } from './trade/store';
@@ -71,6 +72,8 @@ export function useSandbox() {
   useEffect(() => { escapeRoomStore.load(); }, []);
   // Same for Alien Archaeology's.
   useEffect(() => { alienArchaeologyStore.load(); }, []);
+  // Same for Reverse Evolution's.
+  useEffect(() => { reverseEvolutionStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);

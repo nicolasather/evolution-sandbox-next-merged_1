@@ -67,7 +67,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Reverse Evolution',
     subtitle: 'From Smartphone to Stone',
     description: 'Start from a complex object and descend through its dependencies to the raw materials behind it.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.reverseevolution.v1',
   },
   {
