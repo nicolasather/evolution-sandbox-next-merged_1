@@ -1087,6 +1087,10 @@ export class Engine {
   /* ── queries ────────────────────────────────────────────────────────── */
   has(id: string) { return this.found.has(id); }
   get(id: string): Discovery | undefined { return this.byId[id]; }
+  /** When a held discovery was first found (epoch ms), or null if it isn't
+   *  held or predates this being tracked (an old save's primitives). Read-
+   *  only — for Museum auto-exhibits (lib/museum/) to date what they show. */
+  whenFound(id: string): number | null { return this.when[id] ?? null; }
   recipeFor(a: string, b: string) { return this.pairIndex.get(pairKey(a, b)) ?? null; }
   recipeOf(ids: string[]) { return this.pairIndex.get(multiKey(ids)) ?? null; }
   triedPair(a: string, b: string) { return this.failedPairs.has(pairKey(a, b)); }

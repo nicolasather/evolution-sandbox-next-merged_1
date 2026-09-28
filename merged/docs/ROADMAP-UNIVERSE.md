@@ -37,7 +37,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | **1. Shared architecture + Mode Hub** | **Built** | See below. Main Evolution's own save, engine and UI are untouched. |
 | 2. Research Notebook + Museum data model | **Notebook has a real store + one screen now; Museum is still types only** | `lib/notebook/store.ts` (versioned, tested) went in as part of Phase 3, driven by the Heat Treatment Experiment Workspace. `lib/museum/types.ts` remains unused — no exhibit screen yet. |
 | 3. Main Evolution integrations (Trade Routes, Lost Knowledge, Experimentation) | **Built, narrower than first sketched — see below** | Region-gating on new discoveries (not a graduated Knowledge Transfer state), a resilience scorer (warnings only, no removal), one Experiment Workspace slice. All behind opt-in, off by default; verified not to change default behaviour (full existing test suite + a fresh `Engine` with no options passed still behaves identically). |
-| 4. Museum shell + automatic artifact pipeline | **Not started** | |
+| 4. Museum shell + automatic artifact pipeline | **Built** | See below. |
 | 5. Minimum Path, Daily framework, Tech Sudoku | **Partially started** | `lib/seed.ts` (Phase 1) is the reusable seed service these need. `lib/daily.ts` already exists (Main Evolution's "Today's find") and should be migrated onto `lib/seed.ts` rather than duplicated when this phase starts. |
 | 6. Survival vertical slice | **Not started** | |
 | 7. Civilization vertical slice | **Not started** | |
@@ -188,7 +188,7 @@ Laboratory/resilience UI only ever show real, current game state.
 1. Shared data/save architecture + Mode Hub, Main Evolution unchanged. ✅
 2. Research Notebook + Museum data model foundations. ✅ Notebook has a real store now; Museum is still types only.
 3. Trade Routes/Lost Knowledge/Experimentation in Main Evolution, behind flags, validated against existing saves. ✅ see "what Phase 3 actually built" above. Full graduated Knowledge Transfer (observed/possessed/understood/mastered) was not built — region-gating covers a narrower, real slice of it.
-4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this).
+4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this). ✅ `lib/museum/registry.ts`'s `autoExhibits` + `components/MuseumGallery.tsx` — one exhibit per found major invention, reusing `Plate3D`/`ExhibitPanel` rather than a new rendering pipeline. Curator layout, cases, dioramas and non-Main-Evolution exhibit sources (Archaeologist finds, Decipher tablets, …) remain future work — this is one honest wing, not the finished museum.
 5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution.

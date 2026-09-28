@@ -41,7 +41,7 @@ function SoundButton() {
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum,
 }: {
   engine: Engine;
   view: ViewId;
@@ -54,6 +54,7 @@ export function TopBar({
   onHub: () => void;
   onTrade: () => void;
   onLab: () => void;
+  onMuseum: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -182,6 +183,18 @@ export function TopBar({
       </div>
 
       <div className="top-slot top-actions">
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="museum-open"
+          aria-label="Museum"
+          aria-pressed={view === 'museum'}
+          title="Museum — every major invention you have reached"
+          onClick={onMuseum}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M1.5 5.5 8 2l6.5 3.5M2.5 5.5v8M13.5 5.5v8M1 13.5h14" />
+          </svg>
+        </button>
         <button
           className="icon-btn"
           id="hub-open"

@@ -58,6 +58,9 @@
 /* The Mode Hub — the switcher between Main Evolution and future modes. */
 @import "./_mode-hub.css" layer(components);
 
+/* The Museum's automatic-exhibit gallery. */
+@import "./_museum-gallery.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

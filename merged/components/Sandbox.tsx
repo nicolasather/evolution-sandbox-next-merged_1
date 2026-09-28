@@ -13,6 +13,7 @@ import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
 import { JournalPanel } from './JournalPanel';
 import { ModeHub } from './ModeHub';
+import { MuseumGallery } from './MuseumGallery';
 import { TradePanel } from './trade/TradePanel';
 import { ExperimentWorkspace } from './experiments/ExperimentWorkspace';
 import { WorldLayer } from './world/WorldLayer';
@@ -297,6 +298,7 @@ export function Sandbox() {
           onHub={() => showView('hub')}
           onTrade={() => setTradeOpen(true)}
           onLab={() => setLabOpen(true)}
+          onMuseum={() => showView('museum')}
         />
 
         <div id="views" data-current={view}>
@@ -341,6 +343,7 @@ export function Sandbox() {
           <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
           <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
           <ModeHub engine={engine} active={view === 'hub'} onLaunch={() => showView('work')} />
+          <MuseumGallery engine={engine} version={version} active={view === 'museum'} onOpen={openExhibit} />
 
           {/* outside the three views: a column beside the bench, a drawer over the
               graph and the archive, a bottom sheet on a phone */}
