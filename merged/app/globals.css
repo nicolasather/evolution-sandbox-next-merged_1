@@ -76,6 +76,9 @@
 /* Archaeologist — its own warm field-notebook visual language (components/archaeology/). */
 @import "./_archaeology.css" layer(components);
 
+/* Decipher — its own cool epigrapher's-desk visual language (components/decipher/). */
+@import "./_decipher.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

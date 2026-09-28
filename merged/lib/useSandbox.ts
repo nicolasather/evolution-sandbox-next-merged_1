@@ -7,6 +7,7 @@ import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
 import { archaeologyStore } from './archaeology/store';
 import { civilizationStore } from './civilization/store';
+import { decipherStore } from './decipher/store';
 import { profile } from './profile/store';
 import { survivalStore } from './survival/store';
 import { regionGateFor } from './trade/gate';
@@ -62,6 +63,8 @@ export function useSandbox() {
   useEffect(() => { civilizationStore.load(); }, []);
   // Same for Archaeology's.
   useEffect(() => { archaeologyStore.load(); }, []);
+  // Same for Decipher's.
+  useEffect(() => { decipherStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);

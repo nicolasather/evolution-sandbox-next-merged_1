@@ -1,0 +1,76 @@
+/* ============================================================================
+   DECIPHER — a cool, clinical "epigrapher's desk" visual language, distinct
+   from Survival's earthy camp, Civilization's structured ledger and
+   Archaeologist's warm field notebook. Scoped entirely under #decipher-mode.
+   ========================================================================== */
+#decipher-mode{
+  --dph-bg:#eceef2; --dph-ink:#1e2530; --dph-ink-2:#4c5568; --dph-ink-3:#7c8598;
+  --dph-line:rgba(30,37,48,.14); --dph-line-2:rgba(30,37,48,.26);
+  --dph-accent:#3a5a9c;
+  position:fixed;inset:0;z-index:40;overflow-y:auto;background:var(--dph-bg);color:var(--dph-ink);padding:0 0 40px;
+}
+@media (prefers-color-scheme:dark){
+  #decipher-mode:not([data-theme="light"]){
+    --dph-bg:#171a20; --dph-ink:#e6e9f0; --dph-ink-2:#aab0c0; --dph-ink-3:#7a8093;
+    --dph-line:rgba(230,233,240,.12); --dph-line-2:rgba(230,233,240,.22);
+    --dph-accent:#7fa0e0;
+  }
+}
+
+.dph-top{display:flex;align-items:center;gap:18px;padding:18px 22px;border-bottom:1px solid var(--dph-line)}
+.dph-exit{border:1px solid var(--dph-line-2);color:var(--dph-ink-2);padding:6px 12px;font-size:11px}
+.dph-eyebrow{color:var(--dph-accent);letter-spacing:.1em}
+.dph-checks{margin-left:auto;font-size:11.5px;color:var(--dph-ink-2)}
+
+.dph-h{color:var(--dph-ink-3);margin:0 0 8px;text-transform:uppercase;letter-spacing:.06em;font-size:11px}
+
+.dph-body{max-width:820px;margin:0 auto;padding:22px;display:flex;flex-direction:column;gap:24px}
+
+.dph-tutorial{border:1px solid var(--dph-accent);background:rgba(58,90,156,.06);padding:16px 18px}
+.dph-tutorial-steps{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:var(--dph-ink-2);line-height:1.6}
+
+.dph-intro{color:var(--dph-ink-2);font-size:13px;line-height:1.6;margin:0}
+
+.dph-anchor-row{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--dph-line);padding:12px 14px}
+.dph-anchor-word{margin:0 0 4px;font-size:14px;text-transform:capitalize}
+.dph-anchor-note{margin:0;color:var(--dph-ink-3);font-size:11.5px;line-height:1.5}
+
+.dph-inscriptions{display:flex;flex-direction:column;gap:8px}
+.dph-inscription{
+  display:flex;gap:14px;align-items:center;flex-wrap:wrap;
+  border:1px solid var(--dph-line);padding:10px 14px;background:rgba(30,37,48,.02);
+}
+.dph-token{display:flex;flex-direction:column;align-items:center;gap:3px}
+.dph-token-label{font-size:10px;color:var(--dph-ink-2);text-transform:capitalize}
+.dph-token-label-empty{color:var(--dph-ink-3);opacity:.5}
+
+.dph-glyph-svg line{stroke:var(--dph-ink);stroke-width:.5;stroke-linecap:round}
+.dph-glyph-number{display:flex;align-items:center;justify-content:center;gap:3px}
+.dph-dot{width:6px;height:6px;border-radius:50%;background:var(--dph-ink-2)}
+
+.dph-legend-note{color:var(--dph-ink-3);font-size:11.5px;line-height:1.5;margin:0 0 12px}
+.dph-legend-rows{display:flex;flex-direction:column;gap:14px}
+.dph-legend-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;border:1px solid var(--dph-line);padding:12px 14px}
+.dph-legend-options{display:flex;flex-wrap:wrap;gap:6px}
+.dph-legend-options .chip{border:1px solid var(--dph-line-2);padding:6px 12px;font-size:11px;text-transform:capitalize}
+.dph-legend-options .chip.dph-chosen{border-color:var(--dph-accent);background:rgba(58,90,156,.14);color:var(--dph-ink)}
+.dph-legend-options .chip.dph-used-elsewhere{opacity:.5}
+
+.dph-check-result{font-size:13px;color:var(--dph-ink-2);margin:0}
+
+.dph-actions-row{display:flex;gap:10px;justify-content:flex-end}
+.dph-check-btn{border:1px solid var(--dph-accent);color:var(--dph-ink);padding:10px 20px;font-size:12px}
+.dph-check-btn:hover{background:rgba(58,90,156,.12)}
+.dph-reveal-btn{border:1px solid var(--dph-line-2);color:var(--dph-ink-3);padding:10px 18px;font-size:11.5px}
+
+.dph-ending{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:var(--dph-bg);color:var(--dph-ink);padding:20px;overflow-y:auto}
+.dph-ending-box{max-width:560px;width:100%;padding:20px 0}
+.dph-ending-title{font-family:var(--fs-display,inherit);font-size:clamp(24px,4vw,36px);margin:10px 0 12px}
+.dph-ending-line{color:var(--dph-ink-2);margin:0 0 18px;font-size:14px;line-height:1.6}
+.dph-ending-answer{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 20px}
+.dph-ending-answer div{display:flex;flex-direction:column;align-items:center;gap:6px}
+.dph-ending-answer dd{margin:0;font-size:11px;color:var(--dph-ink-2);text-transform:capitalize}
+.dph-ending-actions{display:flex;gap:10px;margin-top:10px}
+.dph-ending-actions .chip{border:1px solid var(--dph-line-2);padding:9px 16px;font-size:12px}
+.dph-revealed .dph-ending-title{color:var(--dph-ink-2)}
+.dph-solved .dph-ending-title{color:var(--dph-accent)}

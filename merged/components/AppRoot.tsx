@@ -17,6 +17,7 @@ import type { ModeId } from '@/lib/modes/types';
 const SurvivalMode = dynamic(() => import('./survival/SurvivalMode').then(m => m.SurvivalMode), { ssr: false });
 const CivilizationMode = dynamic(() => import('./civilization/CivilizationMode').then(m => m.CivilizationMode), { ssr: false });
 const ArchaeologyMode = dynamic(() => import('./archaeology/ArchaeologyMode').then(m => m.ArchaeologyMode), { ssr: false });
+const DecipherMode = dynamic(() => import('./decipher/DecipherMode').then(m => m.DecipherMode), { ssr: false });
 
 export function AppRoot() {
   const [mode, setMode] = useState<ModeId>('main-evolution');
@@ -25,5 +26,6 @@ export function AppRoot() {
   if (mode === 'survival') return <SurvivalMode onExit={exitToHub} />;
   if (mode === 'civilization') return <CivilizationMode onExit={exitToHub} />;
   if (mode === 'archaeology') return <ArchaeologyMode onExit={exitToHub} />;
+  if (mode === 'decipher') return <DecipherMode onExit={exitToHub} />;
   return <Sandbox onLaunchMode={setMode} />;
 }

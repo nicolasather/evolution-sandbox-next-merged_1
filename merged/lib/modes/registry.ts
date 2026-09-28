@@ -51,7 +51,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Decipher',
     subtitle: 'Read the Lost',
     description: 'Reconstruct meaning in a procedurally generated, never-seen-before writing system from evidence alone.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.decipher.v1',
   },
   {

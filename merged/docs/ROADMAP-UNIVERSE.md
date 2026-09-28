@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Phase 8)
+## Status (28 September 2026, updated same day through Phase 9)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -42,7 +42,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 6. Survival vertical slice | **Built — first mode that is a genuinely different game, not Main Evolution with new restrictions** | See below. `components/AppRoot.tsx` is the real top-level mode switch this required. |
 | 7. Civilization vertical slice | **Built — a second genuinely different game, allocation-based rather than spatial/task-based like Survival** | See below. |
 | 8. Archaeologist vertical slice | **Built — a third genuinely different game, and the first real consumer of lib/notebook's Hypothesis/Evidence methods** | See below. |
-| 9. Decipher (authored tutorial + beginner procedural generator) | **Not started** | |
+| 9. Decipher (authored tutorial + beginner procedural generator) | **Built — a fourth genuinely different game, and a real solvability-validated logic puzzle, not a guessing game** | See below. |
 | 10. One authored Historical Escape Room episode | **Not started** | |
 | 11. Alien Archaeology | **Not started** — correctly gated behind 8–10 (shares their evidence/procedural-generation architecture). | |
 | Reverse Evolution, Minimum Path variants | Can proceed in parallel with 6–11 once phase 5's graph-edge validation exists. | |
@@ -472,6 +472,97 @@ a hypothesis-board mode existed.
   reusable, has not yet been wired to a second consumer — that
   wiring is Phase 9/11's job, not this one's.
 
+## Phase 9 — what actually built (Decipher)
+
+A fourth genuinely different interaction language: no crafting, no
+allocation, no spatial grid, no excavation budgets. The player is given a
+fixed corpus of short inscriptions in an invented writing system and has
+to work out which glyph means which concept, using exactly the kind of
+evidence real epigraphy actually uses — not a guessing game with a
+hidden answer key, but a logic puzzle whose solvability is proven, the
+same discipline Tech Sudoku (Phase 5) established.
+
+- **The evidence is real epigraphic method, not a hidden rule**:
+  `lib/decipher/types.ts`'s `NOUN_FREQUENCY_RANK` fixes, once and for
+  all, that grain/water/house/cattle/king/mountain occur with
+  strictly decreasing frequency in every generated inventory-tablet
+  corpus — the same reasoning Kober and Ventris actually used on
+  Linear B (common stored commodities dominate an inventory text; a
+  named ruler or a one-off geographic reference appears rarely).
+  `lib/decipher/generate.ts`'s `buildCorpus` *constructs* the corpus to
+  hit each concept's target count exactly, and a single directly-given
+  context anchor lets the player confirm the method works before
+  trusting it for the rest. Numbers (dot-tallies) and the grammatical
+  particle "of" (always drawn shorter than a content word — a real,
+  cross-linguistic tendency) are given, never part of the mystery —
+  only the six nouns are.
+- **Solvability is proven exhaustively, not assumed** —
+  `validateSolvable` brute-forces all 720 permutations of the six noun
+  concepts against the six mystery glyphs and confirms exactly one
+  satisfies both the frequency evidence and the anchor; `generatePuzzle`
+  retries generation if it ever doesn't (it always does, by
+  construction, but the check runs for real, every time, not just in a
+  test). `lib/decipher/__tests__/generate.test.ts` re-proves this
+  exhaustively across 25 seeds, the same discipline as Tech Sudoku's own
+  120-permutation check.
+- **The loop is count → hypothesize → check → read, a
+  cryptogram, not a crafting or allocation decision** —
+  `lib/decipher/simulate.ts`'s `assignGlyph` enforces a real bijection
+  (assigning a word to a second glyph clears it from wherever it was
+  placed first, exactly like a paper cryptogram); `checkAttempt` reports
+  only a correct-count, never which glyphs are right, so the player
+  keeps reasoning from frequency rather than trial-and-error — the
+  same "Check reveals how many, never which" discipline Tech Sudoku
+  established.
+- **One hand-authored tutorial chapter, scoped honestly** —
+  `lib/decipher/tutorial.ts` pins one specific, always-solvable seed as
+  every player's first puzzle and overlays hand-written, step-by-step
+  explanatory text teaching the frequency+anchor method explicitly. This
+  is a real, working, validated teaching sequence, not a placeholder —
+  but it is honestly a fixed instance of the same validated generator
+  rather than an independently hand-typed corpus; a fuller Decipher
+  would eventually author several distinct chapters with bespoke,
+  especially-clear teaching examples, which this pass does not attempt.
+- **Cross-mode Museum output and Research Notebook integration both
+  work here too**: a finished puzzle becomes a `DecipherMemory`
+  (`lib/decipher/memory.ts`), tagged `procedural-fictional`, alongside
+  every other mode's exhibits; `components/decipher/DecipherMode.tsx`
+  also calls `lib/notebook`'s `logEvidence`/`addHypothesis` on every
+  analysis-equivalent action, a second real consumer of the Notebook
+  system Phase 3 built and Phase 8 first activated.
+- **A real bug found and fixed via the Playwright smoke test, not just
+  unit tests**: the first pass of `app/_decipher.css` used a `dc-`
+  class prefix (for "Decipher") that collided outright with `dc-body`/
+  `dc-seed`/`dc-ring`/`dc-name` — pre-existing classes in
+  `app/_reactive-fx.css` for the unrelated "Discovery Ceremony" reveal
+  animation, which default those elements to `opacity:0` until a
+  `.show` class is toggled. The entire mode rendered as a genuinely
+  blank screen in a live browser despite every DOM node, click handler
+  and piece of text being present and correct — Jest's jsdom tests
+  never touch real CSS cascade, so this was invisible to the full
+  605-test suite and only surfaced by actually looking at a rendered
+  page. Fixed by renaming the whole prefix to `dph-`, verified by
+  re-running the same live smoke test.
+- **Verified live, end to end, by actually solving the puzzle honestly**:
+  the Playwright smoke test does not cheat by reading internal game
+  state — it fingerprints each glyph's rendered SVG content, counts
+  real on-screen occurrences to derive the frequency ranking, reads the
+  anchor's given word, assigns all six mystery glyphs through the real
+  palette buttons, and confirms "The tablets are read" with 1 check
+  used — proving the frequency+anchor method the tutorial teaches is
+  actually sufficient, not just theoretically provable. It also
+  confirmed the tutorial-then-procedural sequencing (a second visit
+  skips the tutorial and gets a fresh corpus) and the Hub/Museum
+  integration.
+- **Not built**: only "beginner" difficulty (role is always visually
+  obvious — numbers as dots, the particle as the shortest glyph); the
+  brief's planned "advanced grammar" tier, where role itself must also
+  be deduced, is explicitly deferred, matching the roadmap's own
+  "beginner generator... before advanced grammar" ordering; only one
+  genre (administrative inventory tablets); no multi-chapter authored
+  tutorial; no glyph-drawing/tracing input, only a word-assignment
+  palette.
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -484,7 +575,7 @@ a hypothesis-board mode existed.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun. ✅ see "Phase 6 — what actually built" above.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution. ✅ see "Phase 7 — what actually built" above.
 8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into. ✅ see "Phase 8 — what actually built" above. The evidence backend is real and reusable but not yet wired to a second consumer.
-9. Decipher: authored tutorial chapters, then a beginner procedural script generator with a solvability validator, before advanced grammar.
+9. Decipher: authored tutorial chapters, then a beginner procedural script generator with a solvability validator, before advanced grammar. ✅ see "Phase 9 — what actually built" above. One tutorial chapter (a fixed-seed instance of the validated generator, not an independently hand-typed corpus) plus the validated beginner generator; advanced grammar (role itself deducible, not given) remains future work.
 10. One authored Historical Escape Room episode using a real puzzle-authoring schema (not a bespoke React component per puzzle).
 11. Alien Archaeology, only once 8–10's evidence/procedural-generation architecture is proven.
 

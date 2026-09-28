@@ -5,6 +5,7 @@ import { ReactiveLabel } from './fx/ReactiveLabel';
 import { TechSudokuModal } from './techsudoku/TechSudokuModal';
 import { archaeologyStore } from '@/lib/archaeology/store';
 import { civilizationStore } from '@/lib/civilization/store';
+import { decipherStore } from '@/lib/decipher/store';
 import { profile } from '@/lib/profile/store';
 import { getMode } from '@/lib/modes/registry';
 import { survivalStore } from '@/lib/survival/store';
@@ -69,6 +70,8 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   void civVersion;
   const archVersion = useSyncExternalStore(archaeologyStore.subscribe, archaeologyStore.getVersion, () => 0);
   void archVersion;
+  const decVersion = useSyncExternalStore(decipherStore.subscribe, decipherStore.getVersion, () => 0);
+  void decVersion;
   const [sudokuOpen, setSudokuOpen] = useState(false);
 
   const p = profile.get();
@@ -78,13 +81,16 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const survivalMode = getMode('survival');
   const civMode = getMode('civilization');
   const archMode = getMode('archaeology');
+  const decMode = getMode('decipher');
   const visit = p.modes['main-evolution'];
   const survivalVisit = p.modes['survival'];
   const civVisit = p.modes['civilization'];
   const archVisit = p.modes['archaeology'];
+  const decVisit = p.modes['decipher'];
   const survival = survivalStore.get();
   const civilization = civilizationStore.get();
   const archaeology = archaeologyStore.get();
+  const decipher = decipherStore.get();
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-hub" role="tabpanel" aria-label="Mode Hub">
@@ -149,9 +155,22 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
           ]}
         />
 
+        <ExhibitCard
+          kicker={decMode?.subtitle ?? 'Read the Lost'}
+          title={decMode?.title ?? 'Decipher'}
+          description={decMode?.description ?? ''}
+          ctaLabel={decipher.activePuzzle ? 'Continue' : decipher.tutorialCompleted ? 'Enter' : 'Start the tutorial'}
+          onLaunch={() => onLaunchMode?.('decipher')}
+          stats={[
+            { label: 'Tablets read', value: decipher.memories.length },
+            { label: 'Tutorial', value: decipher.tutorialCompleted ? 'Completed' : 'Not yet' },
+            { label: 'First entered', value: decVisit ? dateFmt.format(decVisit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
+
         <p className="hub-note">
-          Other wings of this museum — Decipher and more — are in active development. They
-          will open here, alongside these, as each is finished.
+          Other wings of this museum are in active development. They will open here, alongside
+          these, as each is finished.
         </p>
 
         <p className="hub-extra-link">
