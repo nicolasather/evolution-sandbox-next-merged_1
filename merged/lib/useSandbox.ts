@@ -5,6 +5,7 @@ import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
 import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
+import { archaeologyStore } from './archaeology/store';
 import { civilizationStore } from './civilization/store';
 import { profile } from './profile/store';
 import { survivalStore } from './survival/store';
@@ -59,6 +60,8 @@ export function useSandbox() {
   useEffect(() => { survivalStore.load(); }, []);
   // Same for Civilization's.
   useEffect(() => { civilizationStore.load(); }, []);
+  // Same for Archaeology's.
+  useEffect(() => { archaeologyStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);

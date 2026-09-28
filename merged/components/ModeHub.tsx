@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { TechSudokuModal } from './techsudoku/TechSudokuModal';
+import { archaeologyStore } from '@/lib/archaeology/store';
 import { civilizationStore } from '@/lib/civilization/store';
 import { profile } from '@/lib/profile/store';
 import { getMode } from '@/lib/modes/registry';
@@ -66,6 +67,8 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   void survivalVersion;
   const civVersion = useSyncExternalStore(civilizationStore.subscribe, civilizationStore.getVersion, () => 0);
   void civVersion;
+  const archVersion = useSyncExternalStore(archaeologyStore.subscribe, archaeologyStore.getVersion, () => 0);
+  void archVersion;
   const [sudokuOpen, setSudokuOpen] = useState(false);
 
   const p = profile.get();
@@ -74,11 +77,14 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const mainEvo = getMode('main-evolution');
   const survivalMode = getMode('survival');
   const civMode = getMode('civilization');
+  const archMode = getMode('archaeology');
   const visit = p.modes['main-evolution'];
   const survivalVisit = p.modes['survival'];
   const civVisit = p.modes['civilization'];
+  const archVisit = p.modes['archaeology'];
   const survival = survivalStore.get();
   const civilization = civilizationStore.get();
+  const archaeology = archaeologyStore.get();
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-hub" role="tabpanel" aria-label="Mode Hub">
@@ -130,8 +136,21 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
           ]}
         />
 
+        <ExhibitCard
+          kicker={archMode?.subtitle ?? 'Recover'}
+          title={archMode?.title ?? 'Archaeologist'}
+          description={archMode?.description ?? ''}
+          ctaLabel={archaeology.active ? 'Continue' : 'Enter'}
+          onLaunch={() => onLaunchMode?.('archaeology')}
+          stats={[
+            { label: 'Reports filed', value: archaeology.reports.length },
+            { label: 'Active dig', value: archaeology.active ? 'In progress' : 'None' },
+            { label: 'First entered', value: archVisit ? dateFmt.format(archVisit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
+
         <p className="hub-note">
-          Other wings of this museum — Archaeology, Decipher and more — are in active development. They
+          Other wings of this museum — Decipher and more — are in active development. They
           will open here, alongside these, as each is finished.
         </p>
 

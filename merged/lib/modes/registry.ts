@@ -35,7 +35,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Archaeologist',
     subtitle: 'Recover',
     description: 'Excavate a site, document context, and justify an interpretation from incomplete evidence.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.archaeology.v1',
   },
   {

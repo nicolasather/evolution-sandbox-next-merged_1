@@ -2,6 +2,8 @@
 
 import { useSyncExternalStore } from 'react';
 import { Plate3D } from './Plate3D';
+import { siteExhibit } from '@/lib/archaeology/memory';
+import { archaeologyStore } from '@/lib/archaeology/store';
 import { dioramaExhibit } from '@/lib/civilization/memory';
 import { civilizationStore } from '@/lib/civilization/store';
 import { autoExhibits } from '@/lib/museum/registry';
@@ -39,11 +41,14 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
   void survivalVersion;
   const civVersion = useSyncExternalStore(civilizationStore.subscribe, civilizationStore.getVersion, () => 0);
   void civVersion;
+  const archVersion = useSyncExternalStore(archaeologyStore.subscribe, archaeologyStore.getVersion, () => 0);
+  void archVersion;
 
   const mainExhibits = active ? autoExhibits(engine) : [];
   const campExhibits: MuseumExhibit[] = active ? survivalStore.get().memories.map(memoryExhibit) : [];
   const dioramaExhibits: MuseumExhibit[] = active ? civilizationStore.get().dioramas.map(dioramaExhibit) : [];
-  const staticExhibits = [...campExhibits, ...dioramaExhibits];
+  const siteExhibits: MuseumExhibit[] = active ? archaeologyStore.get().reports.map(siteExhibit) : [];
+  const staticExhibits = [...campExhibits, ...dioramaExhibits, ...siteExhibits];
   const exhibits = [...mainExhibits, ...staticExhibits];
 
   return (
@@ -53,14 +58,14 @@ export function MuseumGallery({ engine, version, active, onOpen }: {
           <p className="mono museum-eyebrow">Evolution Sandbox</p>
           <h1 className="museum-title">Museum</h1>
           <p className="museum-sub">
-            Every major invention you have reached, every camp your Survival runs left behind, and every
-            settlement your Civilization runs grew — reconstructed and labelled, never claimed as the
-            object or event itself.
+            Every major invention you have reached, every camp your Survival runs left behind, every
+            settlement your Civilization runs grew, and every report your Archaeologist digs filed —
+            reconstructed and labelled, never claimed as the object or event itself.
           </p>
         </header>
 
         {exhibits.length === 0 ? (
-          <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival or Civilization run, and it will appear here.</p>
+          <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival, Civilization or Archaeologist run, and it will appear here.</p>
         ) : (
           <div className="museum-grid">
             {mainExhibits.map(ex => {

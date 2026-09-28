@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Phase 7)
+## Status (28 September 2026, updated same day through Phase 8)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -41,7 +41,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 5. Minimum Path, Daily framework, Tech Sudoku | **Minimum Path and Tech Sudoku built; Daily/Weekly framework still just `lib/daily.ts`** | See below. `lib/daily.ts` ("Today's find") was not migrated onto `lib/seed.ts` this pass — still open, low-risk work. No Weekly Mega Challenge scaffold yet. |
 | 6. Survival vertical slice | **Built — first mode that is a genuinely different game, not Main Evolution with new restrictions** | See below. `components/AppRoot.tsx` is the real top-level mode switch this required. |
 | 7. Civilization vertical slice | **Built — a second genuinely different game, allocation-based rather than spatial/task-based like Survival** | See below. |
-| 8. Archaeologist vertical slice | **Not started** | |
+| 8. Archaeologist vertical slice | **Built — a third genuinely different game, and the first real consumer of lib/notebook's Hypothesis/Evidence methods** | See below. |
 | 9. Decipher (authored tutorial + beginner procedural generator) | **Not started** | |
 | 10. One authored Historical Escape Room episode | **Not started** | |
 | 11. Alien Archaeology | **Not started** — correctly gated behind 8–10 (shares their evidence/procedural-generation architecture). | |
@@ -388,6 +388,90 @@ decision per turn, watching consequences unfold over years.
   map or era-scale transitions. All real, scoped future work, matching
   what a vertical slice is supposed to leave out.
 
+## Phase 8 — what actually built (Archaeologist)
+
+A third genuinely different interaction language: no crafting (Main
+Evolution), no per-member spatial tasks (Survival), no allocation sliders
+(Civilization). The player spends three independent, scarce action
+budgets — survey, excavate, analyze — across a small fixed grid, then has
+to argue an interpretation from only the evidence they actually
+recovered. This is also the first mode to build the "shared evidence
+backend" the brief asks Decipher and Alien Archaeology to plug into
+later, and the first real caller of `lib/notebook`'s `logEvidence`/
+`addHypothesis` methods, which Phase 3 built and flagged as unused until
+a hypothesis-board mode existed.
+
+- **The loop is survey → excavate → analyze → hypothesize →
+  report, built as one coherent state machine, not seven screens.**
+  `lib/archaeology/generate.ts` seeds a 4×4 grid (`generateSite`); every
+  square gets the same three fixed stratigraphic depths (late/peak/early
+  occupation, law-of-superposition order, never randomised) so a
+  thorough dig always has real evidence to read regardless of seed —
+  what varies is where finds actually are and which `SiteFunction` the
+  evidence leans toward. `lib/archaeology/simulate.ts`'s `applyAction` is
+  the entire pure, deterministic core: one action in, one new state and
+  an event log out, no `Math.random` (all randomness lives in
+  generation). The UI (`components/archaeology/ArchaeologyMode.tsx`)
+  holds no simulation logic — it only calls `applyAction` and renders
+  the result.
+- **A find is not evidence until it is excavated AND analyzed** —
+  `isFindRevealed` derives visibility from the square's own dig depth
+  (never a separately stored flag, so it can't drift out of sync); an
+  analyzed find's function-affinity is muted toward uncertainty for
+  poorly preserved finds, a real, deliberate mechanic (preservation
+  quality genuinely affects how much an artifact can argue for an
+  interpretation, not just flavour text).
+- **`lib/archaeology/catalog.ts`** is a small, authored vocabulary of 12
+  real archaeological find categories (hearths, storage pits, pottery
+  classes, lithic debris vs. finished tools, ornament, a deliberate
+  ritual deposit), each carrying a real, defensible functional-
+  interpretation weight (`affinity`) — kept separate from the main
+  Discovery graph, which has no `artifactType`/`physicalProperties` data
+  populated yet (Phase 1's own note). Every site is entirely fictional;
+  see `lib/museum/types.ts`'s `ExhibitProvenance` — there is no claim
+  here about a real place or excavation.
+- **The report is a case, not a right/wrong answer** — filing a report
+  scores how well the *actually analyzed* evidence supports the chosen
+  interpretation against the alternatives (`well-supported` /
+  `plausible` / `weak`), then separately, non-punitively, reveals
+  whether the site's own hidden ground truth agrees — a thin dig can
+  produce a reasonable case that still turns out wrong, which is the
+  real epistemic point, not a bug.
+- **Balance was tuned against an oracle test, and the ambiguity is
+  deliberate**: `lib/archaeology/__tests__/simulate.test.ts` includes an
+  oracle policy (spends the excavate/analyze budgets on exactly the
+  squares/finds that argue most strongly for the site's own true
+  function — the ceiling of "spent as well as possible") checked across
+  40 seeds: well-supported is reached the large majority of the time and
+  weak almost never. `ceremonial-site` truths score lower on average than
+  the others because their markers are deliberately the rarest in the
+  catalog — real ceremonial sites are genuinely harder to argue for than
+  a settlement with obvious storage pits and postholes, so this was kept
+  as honest realism rather than "fixed" by making rare markers
+  artificially reliable.
+- **Cross-mode Museum output works here too**: a filed report becomes a
+  `SiteMemory` (`lib/archaeology/memory.ts`) rendered as a
+  `procedural-fictional` exhibit, verified alongside Main Evolution's
+  majors, Survival's Camp Memories and Civilization's Dioramas in the
+  same live gallery.
+- **The Mode Hub now shows four real exhibits**, reusing the
+  `ExhibitCard` component Phase 7 extracted rather than writing a fourth
+  bespoke card.
+- **Verified live**: a Playwright smoke test launched a dig from the Hub,
+  surveyed and excavated real squares, analyzed real finds (confirming
+  the detail panel and field-notes log render real causal text), chose a
+  hypothesis different from the generated ground truth on purpose, filed
+  the report, and confirmed the honest "plausible, contested by ground
+  truth" outcome rendered correctly both in the ending screen and as a
+  Museum exhibit afterward.
+- **Not built**: only one grid size/scenario shape (no multi-site
+  campaigns or a curated "famous site" mode); the phase hypothesis is
+  captured but only lightly scored (secondary to the function verdict,
+  not yet its own full evidentiary system); no visual/2.5D excavation
+  rendering beyond the CSS grid; and the evidence backend, while real and
+  reusable, has not yet been wired to a second consumer — that
+  wiring is Phase 9/11's job, not this one's.
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -399,7 +483,7 @@ decision per turn, watching consequences unfold over years.
 5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content. ✅ Minimum Path + Tech Sudoku, see "Phase 5 — what actually built" above. Daily/Weekly framework beyond `lib/seed.ts` itself still open.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun. ✅ see "Phase 6 — what actually built" above.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution. ✅ see "Phase 7 — what actually built" above.
-8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into.
+8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into. ✅ see "Phase 8 — what actually built" above. The evidence backend is real and reusable but not yet wired to a second consumer.
 9. Decipher: authored tutorial chapters, then a beginner procedural script generator with a solvability validator, before advanced grammar.
 10. One authored Historical Escape Room episode using a real puzzle-authoring schema (not a bespoke React component per puzzle).
 11. Alien Archaeology, only once 8–10's evidence/procedural-generation architecture is proven.

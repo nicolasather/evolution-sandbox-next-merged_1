@@ -73,6 +73,9 @@
 /* Civilization — its own structured, ledger/map visual language (components/civilization/). */
 @import "./_civilization.css" layer(components);
 
+/* Archaeologist — its own warm field-notebook visual language (components/archaeology/). */
+@import "./_archaeology.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 
