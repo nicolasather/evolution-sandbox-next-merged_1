@@ -27,7 +27,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Civilization',
     subtitle: 'Build',
     description: 'Grow a settlement whose own success creates the next problem it has to solve.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.civilization.v1',
   },
   {

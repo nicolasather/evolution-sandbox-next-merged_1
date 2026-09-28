@@ -14,7 +14,7 @@
 
 .hub-exhibit{
   position:relative;border:1px solid var(--line-2);padding:clamp(22px,4vw,36px);
-  display:grid;gap:4px;
+  display:grid;gap:4px;margin-bottom:16px;
 }
 .hub-exhibit-plate{position:absolute;top:0;left:0;width:34px;height:3px;background:var(--ochre)}
 .hub-exhibit-kicker{color:var(--bone-4);margin:0 0 8px}

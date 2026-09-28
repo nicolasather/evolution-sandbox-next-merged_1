@@ -1,0 +1,59 @@
+/* ============================================================================
+   CIVILIZATION — its own structured, cooler "ledger/map" visual language,
+   distinct from both Main Evolution's engraved plate and Survival's earthy
+   camp. Scoped entirely under #civilization-mode.
+   ========================================================================== */
+#civilization-mode{
+  --cv-bg:#eef1ee; --cv-ink:#1c2420; --cv-ink-2:#4d5850; --cv-ink-3:#7c877e;
+  --cv-line:rgba(28,36,32,.14); --cv-line-2:rgba(28,36,32,.26);
+  --cv-accent:#2f6b52;
+  position:fixed;inset:0;z-index:40;overflow-y:auto;background:var(--cv-bg);color:var(--cv-ink);padding:0 0 40px;
+}
+@media (prefers-color-scheme:dark){
+  #civilization-mode:not([data-theme="light"]){
+    --cv-bg:#161c19; --cv-ink:#e7ece8; --cv-ink-2:#a6b1a9; --cv-ink-3:#748076;
+    --cv-line:rgba(231,236,232,.12); --cv-line-2:rgba(231,236,232,.22);
+    --cv-accent:#5fae8c;
+  }
+}
+
+.cv-top{display:flex;align-items:center;gap:18px;padding:18px 22px;border-bottom:1px solid var(--cv-line)}
+.cv-exit{border:1px solid var(--cv-line-2);color:var(--cv-ink-2);padding:6px 12px;font-size:11px}
+.cv-eyebrow{color:var(--cv-accent);letter-spacing:.1em}
+.cv-yearcount{margin-left:auto;font-size:13px;color:var(--cv-ink-2)}
+
+.cv-body{max-width:760px;margin:0 auto;padding:22px}
+
+.cv-headline{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid var(--cv-line);margin-bottom:20px}
+.cv-pop{display:flex;flex-direction:column;gap:4px}
+.cv-pop span{color:var(--cv-ink-3);font-size:11px}
+.cv-pop b{font-size:44px;font-weight:400;line-height:1;color:var(--cv-accent)}
+.cv-stats{display:grid;grid-template-columns:repeat(2,auto);gap:10px 28px;flex:1}
+.cv-stats div{display:flex;flex-direction:column;gap:3px}
+.cv-stats span{color:var(--cv-ink-3);font-size:10px}
+.cv-stats b{font-size:15px;font-weight:400}
+
+.cv-h{color:var(--cv-ink-3);margin:0 0 8px;text-transform:uppercase;letter-spacing:.06em}
+
+.cv-problems{margin-bottom:20px}
+.cv-problems ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.cv-problems li{padding:9px 12px;border-left:2px solid var(--cv-accent);background:rgba(47,107,82,.07);font-size:12.5px;color:var(--cv-ink-2)}
+
+.cv-log-section{margin-bottom:8px}
+.cv-log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--cv-ink-2);line-height:1.5}
+
+.cv-allocation{max-width:760px;margin:0 auto;padding:20px 22px 0;border-top:1px solid var(--cv-line)}
+.cv-slider{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.cv-slider span{color:var(--cv-ink-2);font-size:11px}
+.cv-slider input[type="range"]{width:100%;accent-color:var(--cv-accent)}
+.cv-advance-row{display:flex;justify-content:flex-end;margin-top:8px}
+.cv-advance{border:1px solid var(--cv-accent);color:var(--cv-ink);padding:10px 20px;font-size:12px}
+.cv-advance:hover{background:rgba(47,107,82,.12)}
+
+.cv-ending{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:var(--cv-bg);color:var(--cv-ink);padding:20px}
+.cv-ending-box{max-width:520px;width:100%}
+.cv-ending-title{font-family:var(--fs-display,inherit);font-size:clamp(26px,4vw,38px);margin:10px 0 12px}
+.cv-ending-line{color:var(--cv-ink-2);margin:0 0 20px;font-size:14px;line-height:1.6}
+.cv-ending-actions{display:flex;gap:10px;margin-top:20px}
+.cv-ending-actions .chip{border:1px solid var(--cv-line-2);padding:9px 16px;font-size:12px}
+.cv-collapsed .cv-ending-title{color:#a4462f}

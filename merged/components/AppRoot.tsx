@@ -15,11 +15,13 @@ import type { ModeId } from '@/lib/modes/types';
    ========================================================================== */
 
 const SurvivalMode = dynamic(() => import('./survival/SurvivalMode').then(m => m.SurvivalMode), { ssr: false });
+const CivilizationMode = dynamic(() => import('./civilization/CivilizationMode').then(m => m.CivilizationMode), { ssr: false });
 
 export function AppRoot() {
   const [mode, setMode] = useState<ModeId>('main-evolution');
   const exitToHub = useCallback(() => setMode('main-evolution'), []);
 
   if (mode === 'survival') return <SurvivalMode onExit={exitToHub} />;
+  if (mode === 'civilization') return <CivilizationMode onExit={exitToHub} />;
   return <Sandbox onLaunchMode={setMode} />;
 }

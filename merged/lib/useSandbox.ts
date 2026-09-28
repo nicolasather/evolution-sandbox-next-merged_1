@@ -5,6 +5,7 @@ import { benchSpawn } from './craft/bus';
 import { Engine } from './engine';
 import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
+import { civilizationStore } from './civilization/store';
 import { profile } from './profile/store';
 import { survivalStore } from './survival/store';
 import { regionGateFor } from './trade/gate';
@@ -56,6 +57,8 @@ export function useSandbox() {
   // Survival's own save — loaded here too so the Mode Hub's Survival card
   // shows real resume state even before the player ever opens that mode.
   useEffect(() => { survivalStore.load(); }, []);
+  // Same for Civilization's.
+  useEffect(() => { civilizationStore.load(); }, []);
 
   const [view, setView] = useState<ViewId>('work');
   const [slotA, setSlotA] = useState<string | null>(null);

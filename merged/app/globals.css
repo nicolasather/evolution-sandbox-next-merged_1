@@ -70,6 +70,9 @@
 /* Survival — its own earthy, spatial visual language (components/survival/). */
 @import "./_survival.css" layer(components);
 
+/* Civilization — its own structured, ledger/map visual language (components/civilization/). */
+@import "./_civilization.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

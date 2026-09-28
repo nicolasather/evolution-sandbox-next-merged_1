@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Phase 6)
+## Status (28 September 2026, updated same day through Phase 7)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -40,7 +40,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 4. Museum shell + automatic artifact pipeline | **Built** | See below. |
 | 5. Minimum Path, Daily framework, Tech Sudoku | **Minimum Path and Tech Sudoku built; Daily/Weekly framework still just `lib/daily.ts`** | See below. `lib/daily.ts` ("Today's find") was not migrated onto `lib/seed.ts` this pass — still open, low-risk work. No Weekly Mega Challenge scaffold yet. |
 | 6. Survival vertical slice | **Built — first mode that is a genuinely different game, not Main Evolution with new restrictions** | See below. `components/AppRoot.tsx` is the real top-level mode switch this required. |
-| 7. Civilization vertical slice | **Not started** | |
+| 7. Civilization vertical slice | **Built — a second genuinely different game, allocation-based rather than spatial/task-based like Survival** | See below. |
 | 8. Archaeologist vertical slice | **Not started** | |
 | 9. Decipher (authored tutorial + beginner procedural generator) | **Not started** | |
 | 10. One authored Historical Escape Room episode | **Not started** | |
@@ -315,6 +315,79 @@ Workbench, no recipe engine, no top bar.
   grid — all real, scoped future work matching what a "vertical slice"
   is supposed to leave out, per this document's own Phase 6 entry above.
 
+## Phase 7 — what actually built (Civilization)
+
+The second mode built against the brief's ~70–80%-different requirement,
+and deliberately a different *shape* of game from Survival rather than a
+reskin of it: Survival is spatial and task-based (SCOUT → ASSESS →
+PRIORITIZE → ASSIGN → ADAPT over a tile grid); Civilization is a turn-based
+resource-allocation game with no spatial layer at all — three sliders, one
+decision per turn, watching consequences unfold over years.
+
+- **The loop is allocate → advance → read the consequences, not
+  crafting or task-assignment.** `lib/civilization/generate.ts` seeds one
+  settlement (population, starting farmland, storage) beside a river.
+  `lib/civilization/simulate.ts`'s `advanceTurn` is the entire pure,
+  deterministic simulation core: the player sets one `Allocation` (food /
+  construction / knowledge, normalised to sum to 1) per 5-year turn, and
+  the core resolves food production against farmland capacity and
+  population, storage growth, irrigation progress, population growth or
+  famine decline, and problem detection (water-labor pressure, land
+  shortage, storage shortage) — no `Math.random`, same discipline as
+  Survival. The UI (`components/civilization/CivilizationMode.tsx`) holds
+  no simulation logic — it only calls `advanceTurn` and renders the
+  result, same pattern as `SurvivalMode.tsx`.
+- **Problems are named causes, not stat bars going red** —
+  `PROBLEM_TEXT` in the UI turns each detected `ProblemKind` into real
+  written cause-and-effect text (e.g. water-labor pressure explains *why*
+  labor is being diverted from other work), matching the brief's
+  preference for legible causality over abstract meters. Famine is
+  deliberately not a `ProblemKind` of its own — it is reported as log
+  text at the moment it happens, since it is an event, not an ongoing
+  condition the way land or storage shortage are.
+- **Balance was tuned against failing tests, not assumed** —
+  `lib/civilization/__tests__/simulate.test.ts` includes both a reasonable
+  adaptive allocation policy (shift toward food when land is tight or
+  stock is low, otherwise invest in knowledge/construction toward
+  irrigation) proven to reach the `'resilient'` ending on three different
+  seeds, and a neglected all-food-zero policy proven to collapse. The
+  first version of this balance was unwinnable even under the adaptive
+  policy: irrigation accumulated over ~100 turns against a 14-turn game,
+  storage capacity barely grew (a stray `*0.05` dampener left the
+  knowledge/construction stockpile accumulation nearly inert), population
+  growth was computed from the wrong quantity (carried-over stock instead
+  of this turn's actual production surplus), and the food-production rate
+  made breakeven require an unrealistic ~89% food allocation, guaranteeing
+  chronic famine under any balanced-looking policy. All four were found
+  by writing a temporary turn-by-turn debug trace (deleted once diagnosis
+  was complete — it is not part of the committed code), and the constants
+  were tuned against the adaptive-policy test until it could pass, rather
+  than loosening the test to match whatever the numbers happened to do —
+  the same discipline Phase 6's Survival balance work used.
+- **Cross-mode Museum output works here too**: a finished run becomes a
+  `SettlementMemory` (`lib/civilization/memory.ts`) rendered as a
+  `procedural-fictional` Diorama exhibit carrying the run's own seed,
+  alongside Main Evolution's majors and Survival's Camp Memories in the
+  same gallery — verified in a live browser smoke test showing all three
+  exhibit sources together.
+- **The Mode Hub now shows three real exhibits**, not one — pulling
+  `ModeHub.tsx`'s single-card markup out into a reusable `ExhibitCard`
+  presentational component rather than duplicating the card three times.
+- **Verified live, not just by unit tests**: a Playwright smoke test
+  launched the settlement from the Hub, confirmed the three sliders and
+  real settlement stats render, then deliberately drove a *non-adaptive*
+  fixed 45/30/25 allocation for 12 turns — population correctly declined
+  (31 → 9) from chronic pre-irrigation food deficit, which is intended
+  difficulty (the same underlying simulation reliably reaches
+  `'resilient'` under the Jest adaptive-policy test), not a balance bug.
+- **Not built**: only one scenario type (river settlement, growth vs.
+  collapse) — no droughts, disasters, or multi-settlement play; no
+  district- or infrastructure-network complexity beyond the single
+  irrigation milestone; no population-class or labor-specialization
+  allocation beyond the three-way food/construction/knowledge split; no
+  map or era-scale transitions. All real, scoped future work, matching
+  what a vertical slice is supposed to leave out.
+
 ---
 
 ## Development order (do not reorder without a reason)
@@ -325,7 +398,7 @@ Workbench, no recipe engine, no top bar.
 4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this). ✅ `lib/museum/registry.ts`'s `autoExhibits` + `components/MuseumGallery.tsx` — one exhibit per found major invention, reusing `Plate3D`/`ExhibitPanel` rather than a new rendering pipeline. Curator layout, cases, dioramas and non-Main-Evolution exhibit sources (Archaeologist finds, Decipher tablets, …) remain future work — this is one honest wing, not the finished museum.
 5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content. ✅ Minimum Path + Tech Sudoku, see "Phase 5 — what actually built" above. Daily/Weekly framework beyond `lib/seed.ts` itself still open.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun. ✅ see "Phase 6 — what actually built" above.
-7. Civilization vertical slice: one settlement problem, one infrastructure evolution.
+7. Civilization vertical slice: one settlement problem, one infrastructure evolution. ✅ see "Phase 7 — what actually built" above.
 8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into.
 9. Decipher: authored tutorial chapters, then a beginner procedural script generator with a solvability validator, before advanced grammar.
 10. One authored Historical Escape Room episode using a real puzzle-authoring schema (not a bespoke React component per puzzle).

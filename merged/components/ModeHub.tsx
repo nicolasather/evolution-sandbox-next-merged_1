@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useSyncExternalStore } from 'react';
+import { useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { TechSudokuModal } from './techsudoku/TechSudokuModal';
+import { civilizationStore } from '@/lib/civilization/store';
 import { profile } from '@/lib/profile/store';
 import { getMode } from '@/lib/modes/registry';
 import { survivalStore } from '@/lib/survival/store';
@@ -16,13 +17,39 @@ import type { ModeId } from '@/lib/modes/types';
    Sandbox.tsx's 'hub' ViewId).
 
    Only ever renders a launchable card for a mode whose lib/modes/registry.ts
-   entry is `status: 'available'` — today that's Main Evolution and Survival.
-   Every other mode stays out of this screen entirely until it is real; see
-   lib/modes/registry.ts's own comment on why that list must never become a
-   grid of locked "coming soon" placeholders.
+   entry is `status: 'available'` — today that's Main Evolution, Survival
+   and Civilization. Every other mode stays out of this screen entirely
+   until it is real; see lib/modes/registry.ts's own comment on why that
+   list must never become a grid of locked "coming soon" placeholders.
    ========================================================================== */
 
 const dateFmt = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+
+function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch }: {
+  kicker: string;
+  title: string;
+  description: string;
+  stats: { label: string; value: ReactNode }[];
+  ctaLabel: string;
+  onLaunch: () => void;
+}) {
+  return (
+    <div className="hub-exhibit">
+      <div className="hub-exhibit-plate" aria-hidden="true" />
+      <div className="hub-exhibit-body">
+        <p className="mono hub-exhibit-kicker">{kicker}</p>
+        <h2 className="hub-exhibit-title">{title}</h2>
+        <p className="hub-exhibit-desc">{description}</p>
+        <dl className="hub-exhibit-stats">
+          {stats.map(s => <div key={s.label}><dt className="mono">{s.label}</dt><dd>{s.value}</dd></div>)}
+        </dl>
+        <button className="hub-continue" onClick={onLaunch}>
+          <ReactiveLabel text={ctaLabel} className="mono" />
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   engine: Engine;
@@ -32,20 +59,26 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   /** Launches any other available mode — provided by components/AppRoot.tsx. */
   onLaunchMode?: (mode: ModeId) => void;
 }) {
-  // re-render when the shared profile changes (e.g. a visit recorded elsewhere this session)
+  // re-render when any store this screen reads from changes
   const profileVersion = useSyncExternalStore(profile.subscribe, profile.getVersion, () => 0);
   void profileVersion;
   const survivalVersion = useSyncExternalStore(survivalStore.subscribe, survivalStore.getVersion, () => 0);
   void survivalVersion;
+  const civVersion = useSyncExternalStore(civilizationStore.subscribe, civilizationStore.getVersion, () => 0);
+  void civVersion;
   const [sudokuOpen, setSudokuOpen] = useState(false);
+
   const p = profile.get();
   const stats = engine.stats();
   const era = engine.currentEra();
   const mainEvo = getMode('main-evolution');
   const survivalMode = getMode('survival');
+  const civMode = getMode('civilization');
   const visit = p.modes['main-evolution'];
   const survivalVisit = p.modes['survival'];
+  const civVisit = p.modes['civilization'];
   const survival = survivalStore.get();
+  const civilization = civilizationStore.get();
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-hub" role="tabpanel" aria-label="Mode Hub">
@@ -58,52 +91,48 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
           </p>
         </header>
 
-        <div className="hub-exhibit">
-          <div className="hub-exhibit-plate" aria-hidden="true" />
-          <div className="hub-exhibit-body">
-            <p className="mono hub-exhibit-kicker">{mainEvo?.subtitle ?? 'The Timeline'}</p>
-            <h2 className="hub-exhibit-title">{mainEvo?.title ?? 'Main Evolution'}</h2>
-            <p className="hub-exhibit-desc">{mainEvo?.description}</p>
-            <dl className="hub-exhibit-stats">
-              <div><dt className="mono">Discovered</dt><dd>{stats.core} / {stats.coreTotal}</dd></div>
-              <div><dt className="mono">Era reached</dt><dd>{era.name}</dd></div>
-              <div>
-                <dt className="mono">First entered</dt>
-                <dd>{visit ? dateFmt.format(visit.firstVisitedAt) : 'Not yet'}</dd>
-              </div>
-            </dl>
-            <button className="hub-continue" onClick={onLaunch}>
-              <ReactiveLabel text={visit ? 'Continue' : 'Enter'} className="mono" />
-            </button>
-          </div>
-        </div>
+        <ExhibitCard
+          kicker={mainEvo?.subtitle ?? 'The Timeline'}
+          title={mainEvo?.title ?? 'Main Evolution'}
+          description={mainEvo?.description ?? ''}
+          ctaLabel={visit ? 'Continue' : 'Enter'}
+          onLaunch={onLaunch}
+          stats={[
+            { label: 'Discovered', value: `${stats.core} / ${stats.coreTotal}` },
+            { label: 'Era reached', value: era.name },
+            { label: 'First entered', value: visit ? dateFmt.format(visit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
 
-        <div className="hub-exhibit">
-          <div className="hub-exhibit-plate" aria-hidden="true" />
-          <div className="hub-exhibit-body">
-            <p className="mono hub-exhibit-kicker">{survivalMode?.subtitle ?? 'Adapt'}</p>
-            <h2 className="hub-exhibit-title">{survivalMode?.title ?? 'Survival'}</h2>
-            <p className="hub-exhibit-desc">{survivalMode?.description}</p>
-            <dl className="hub-exhibit-stats">
-              <div><dt className="mono">Runs completed</dt><dd>{survival.memories.length}</dd></div>
-              <div>
-                <dt className="mono">Active run</dt>
-                <dd>{survival.active ? `Day ${survival.active.day}` : 'None'}</dd>
-              </div>
-              <div>
-                <dt className="mono">First entered</dt>
-                <dd>{survivalVisit ? dateFmt.format(survivalVisit.firstVisitedAt) : 'Not yet'}</dd>
-              </div>
-            </dl>
-            <button className="hub-continue" onClick={() => onLaunchMode?.('survival')}>
-              <ReactiveLabel text={survival.active ? 'Continue' : 'Enter'} className="mono" />
-            </button>
-          </div>
-        </div>
+        <ExhibitCard
+          kicker={survivalMode?.subtitle ?? 'Adapt'}
+          title={survivalMode?.title ?? 'Survival'}
+          description={survivalMode?.description ?? ''}
+          ctaLabel={survival.active ? 'Continue' : 'Enter'}
+          onLaunch={() => onLaunchMode?.('survival')}
+          stats={[
+            { label: 'Runs completed', value: survival.memories.length },
+            { label: 'Active run', value: survival.active ? `Day ${survival.active.day}` : 'None' },
+            { label: 'First entered', value: survivalVisit ? dateFmt.format(survivalVisit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
+
+        <ExhibitCard
+          kicker={civMode?.subtitle ?? 'Build'}
+          title={civMode?.title ?? 'Civilization'}
+          description={civMode?.description ?? ''}
+          ctaLabel={civilization.active ? 'Continue' : 'Enter'}
+          onLaunch={() => onLaunchMode?.('civilization')}
+          stats={[
+            { label: 'Settlements founded', value: civilization.dioramas.length },
+            { label: 'Active settlement', value: civilization.active ? `Year ${civilization.active.year}` : 'None' },
+            { label: 'First entered', value: civVisit ? dateFmt.format(civVisit.firstVisitedAt) : 'Not yet' },
+          ]}
+        />
 
         <p className="hub-note">
-          Other wings of this museum — Archaeology, Civilization, Decipher and more — are in active
-          development. They will open here, alongside Main Evolution and Survival, as each is finished.
+          Other wings of this museum — Archaeology, Decipher and more — are in active development. They
+          will open here, alongside these, as each is finished.
         </p>
 
         <p className="hub-extra-link">
