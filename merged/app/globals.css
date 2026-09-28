@@ -88,6 +88,9 @@
 /* Reverse Evolution — its own blueprint/exploded-diagram visual language (components/reverseevolution/). */
 @import "./_reverseevolution.css" layer(components);
 
+/* Weekly Mega Challenge — a small optional modal, reached from the Mode Hub, reusing the shared .confirm shell. */
+@import "./_weekly.css" layer(components);
+
 /* The Trade panel — Main Evolution's optional regional trade-routes layer. */
 @import "./_trade.css" layer(components);
 

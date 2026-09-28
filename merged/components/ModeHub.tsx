@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { TechSudokuModal } from './techsudoku/TechSudokuModal';
+import { WeeklyChallengeModal } from './weekly/WeeklyChallengeModal';
 import { archaeologyStore } from '@/lib/archaeology/store';
 import { civilizationStore } from '@/lib/civilization/store';
 import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
@@ -82,6 +83,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const revVersion = useSyncExternalStore(reverseEvolutionStore.subscribe, reverseEvolutionStore.getVersion, () => 0);
   void revVersion;
   const [sudokuOpen, setSudokuOpen] = useState(false);
+  const [weeklyOpen, setWeeklyOpen] = useState(false);
 
   const p = profile.get();
   const stats = engine.stats();
@@ -233,9 +235,13 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
         <p className="hub-extra-link">
           <button type="button" onClick={() => setSudokuOpen(true)}>Today&rsquo;s Tech Sudoku — a five-minute puzzle</button>
         </p>
+        <p className="hub-extra-link">
+          <button type="button" onClick={() => setWeeklyOpen(true)}>This week&rsquo;s Mega Challenge — three stages</button>
+        </p>
       </div>
 
       <TechSudokuModal open={sudokuOpen} engine={engine} onClose={() => setSudokuOpen(false)} />
+      <WeeklyChallengeModal open={weeklyOpen} engine={engine} onClose={() => setWeeklyOpen(false)} />
     </section>
   );
 }

@@ -30,7 +30,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026, updated same day through Minimum Path challenge-modifier variants)
+## Status (28 September 2026, updated same day through the Weekly Mega Challenge)
 
 | Phase | State | Notes |
 |---|---|---|
@@ -38,7 +38,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 2. Research Notebook + Museum data model | **Notebook has a real store + one screen now; Museum is still types only** | `lib/notebook/store.ts` (versioned, tested) went in as part of Phase 3, driven by the Heat Treatment Experiment Workspace. `lib/museum/types.ts` remains unused — no exhibit screen yet. |
 | 3. Main Evolution integrations (Trade Routes, Lost Knowledge, Experimentation) | **Built, narrower than first sketched — see below** | Region-gating on new discoveries (not a graduated Knowledge Transfer state), a resilience scorer (warnings only, no removal), one Experiment Workspace slice. All behind opt-in, off by default; verified not to change default behaviour (full existing test suite + a fresh `Engine` with no options passed still behaves identically). |
 | 4. Museum shell + automatic artifact pipeline | **Built** | See below. |
-| 5. Minimum Path, Daily framework, Tech Sudoku | **Minimum Path and Tech Sudoku built; Daily/Weekly framework still just `lib/daily.ts`** | See below. `lib/daily.ts` ("Today's find") was not migrated onto `lib/seed.ts` this pass — still open, low-risk work. No Weekly Mega Challenge scaffold yet. |
+| 5. Minimum Path, Daily framework, Tech Sudoku | **Built — Minimum Path, Tech Sudoku, `lib/daily.ts` migrated onto `lib/seed.ts`, and a real Weekly Mega Challenge scaffold** | See below. |
 | 6. Survival vertical slice | **Built — first mode that is a genuinely different game, not Main Evolution with new restrictions** | See below. `components/AppRoot.tsx` is the real top-level mode switch this required. |
 | 7. Civilization vertical slice | **Built — a second genuinely different game, allocation-based rather than spatial/task-based like Survival** | See below. |
 | 8. Archaeologist vertical slice | **Built — a third genuinely different game, and the first real consumer of lib/notebook's Hypothesis/Evidence methods** | See below. |
@@ -47,6 +47,7 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 | 11. Alien Archaeology | **Built — a sixth genuinely different game, and the only mode graded on calibration rather than correctness** | See below. |
 | Reverse Evolution | **Built — an eighth genuinely different game, and the first mode that reads Main Evolution's own real 322-node database directly rather than an authored/procedural catalog of its own** | See below. |
 | Minimum Path challenge-modifier variants (no-backtracking, chronological-only, exactly-N-clicks, visit-an-era) | **Built — the ninth piece of work, layered on the existing Minimum Path mechanic rather than a new mode** | See below. Two real generator bugs found and fixed (a hub-avoidance gap and a trivially-already-satisfied `visit-an-era`). |
+| Daily/Weekly Mega Challenge framework | **Built — the tenth piece of work: `lib/daily.ts` migrated onto `lib/seed.ts`, plus a real multi-stage Weekly Mega Challenge** | See below. A real UI bug (a disappearing "Check" button) found and fixed via live smoke testing. |
 
 ### What "Phase 1" actually built
 
@@ -59,9 +60,9 @@ the one new Hub button.
   procedural generator (archaeological sites, alien ruins, decipherment
   scripts) should derive its randomness from this, never from scattered
   `Math.random()` calls in UI code. `lib/daily.ts`'s existing "Today's
-  find" pre-dates this and still uses its own scheme; migrating it is part
-  of Phase 5, not this pass — don't duplicate that migration ad hoc
-  elsewhere first.
+  find" pre-dated this and used its own scheme at the time this section
+  was written; it was migrated later — see "Daily/Weekly Mega Challenge
+  framework — what actually built" further down.
 - **`lib/save/`** — a generic, tested, versioned migration runner
   (`runMigrations`) for *new* persisted stores. It deliberately does **not**
   replace `lib/engine.ts`'s existing save/load — that save already has a
@@ -236,13 +237,11 @@ Laboratory/resilience UI only ever show real, current game state.
   TechSudokuModal.tsx` — reorder with up/down controls, "Check" reveals
   only how many are correctly placed (never which), solving reveals the
   real dates.
-- **Daily/Weekly framework**: still just `lib/seed.ts` (Phase 1) as the
-  shared primitive, now proven out by two real consumers (Minimum Path,
-  Tech Sudoku). `lib/daily.ts` ("Today's find") was deliberately left
-  unmigrated — no reason yet to touch a working, unrelated system. No
-  Weekly Mega Challenge scaffold exists yet; that's real, separate work
-  (multi-stage, authored scenario identity, mid-week persistence) rather
-  than an extension of the daily-seed pattern.
+- **Daily/Weekly framework**: `lib/seed.ts` (Phase 1) as the shared
+  primitive, proven out by four real consumers now (Minimum Path, Tech
+  Sudoku, and — built later, see "Daily/Weekly Mega Challenge framework
+  — what actually built" below — `lib/daily.ts` and the Weekly Mega
+  Challenge itself).
 
 ## Phase 6 — what actually built (Survival)
 
@@ -863,13 +862,99 @@ two parallel ones.
 
 ---
 
+## Daily/Weekly Mega Challenge framework — what actually built
+
+Two pieces, both closing out the "still open" note that followed every
+prior status table: `lib/daily.ts` ("Today's find," Main Evolution's own
+small collection-screen widget) migrated onto `lib/seed.ts`'s shared
+deterministic seed service, and a real Weekly Mega Challenge scaffold.
+
+- **`lib/daily.ts` migration**: replaced its own ad hoc `hash()` (borrowed
+  from `lib/glyphs.ts`, a function meant for glyph-shape seeding, not
+  date logic) with `lib/seed.ts`'s `createRng`/`dailyKey`, under the
+  `todays-find` family — the same canonical seed system every other
+  daily/weekly feature already uses. `dayKey` is now a direct alias for
+  `dailyKey`, so there is exactly one UTC-day-key algorithm in the
+  codebase, not two that happen to agree. A real, if small, behaviour
+  change: which discovery is "today's find" on a given day is now
+  different from before (a different hash function), which is a one-time
+  cosmetic change with no save-breaking implications — nothing persists
+  the old pick. New test file `lib/__tests__/daily.test.ts` (determinism,
+  variety across days, pool constraints, the empty-pool edge case).
+- **Weekly Mega Challenge**: a real multi-stage weekly event, not a
+  restyled daily. `lib/weekly/` generates three stages in a fixed order —
+  **trace** (a Minimum Path variant challenge, reusing
+  `pickVariantChallenge` from the work above), **reconstruct** (a Tech
+  Sudoku puzzle, reusing `generatePuzzle`), and **name the discovery** (a
+  new three-riddle multiple-choice gauntlet) — wrapped in one authored
+  scenario identity (`lib/weekly/scenarios.ts`'s eight titles/blurbs,
+  e.g. "Chain of Custody," "The Long Road") that changes with the real
+  ISO week (`lib/seed.ts`'s `weeklyKey`/`weeklyRng`). Every stage is
+  namespaced under its own `weekly-*` seed family, so a week's content
+  is stable across reloads and independent of the daily/practice
+  versions of the same underlying systems.
+  - **The gauntlet's riddles** reuse `Engine.riddle`'s own
+    name-blanking algorithm, reimplemented as a standalone pure function
+    (`lib/weekly/riddle.ts`'s `riddleOf`) so generation never needs a
+    full `Engine` instance — tested against the entire real 322-node
+    database to confirm no riddle ever leaks the answer's own name.
+  - **A stage can only be completed in order** —
+    `lib/weekly/simulate.ts`'s three reducers (`completeTrace` →
+    `completeSudoku` → `completeGauntlet`) are no-ops when called out of
+    turn, so "multi-stage" is a real sequencing constraint enforced in
+    the data, not just three panels a player could jump between.
+  - **Real mid-week persistence**: `lib/weekly/store.ts`
+    (`evo.weekly.v1`, the same versioned-migration framework every other
+    mode's save uses) persists only which stage a player has reached and
+    each completed stage's result — never an in-progress stage's own
+    clicks/order/answers, matching how every other mode here only ever
+    persists what's been filed, not an active run. Reloading mid-week
+    resumes exactly at the next stage; reloading after finishing shows
+    the completion summary immediately, without replaying anything.
+    Verified live: a Playwright smoke test injected a post-trace save
+    into `localStorage` before load and confirmed the modal opened
+    straight into the sudoku stage, then injected a fully-completed save
+    and confirmed the modal opened straight into the completion summary.
+  - **A real bug found via that same live smoke test**: the sudoku
+    stage's "Check" button was rendered conditionally on the *board*
+    already matching the solution (`{!solved && <button>Check</button>}`,
+    copied from Tech Sudoku's own standalone modal, where that's
+    harmless). Here it wasn't harmless — if the player's up/down
+    reordering happened to land on the correct order by itself, the
+    button needed to actually call `onDone` and advance the stage
+    disappeared at exactly that moment, before it was ever clicked,
+    leaving no way to confirm and move on. Caught when the smoke test's
+    own selection-sort loop (reconstructing the true order purely by
+    parsing the rendered "X predates Y" clue text, the same way a real
+    player would reason it out) finished sorting and then found no
+    "Check" button left to click. Fixed by making the button
+    unconditional — always present, only ever hidden once the stage has
+    actually advanced.
+  - **UI**: reached from the same secondary-link spot as Tech Sudoku
+    (`components/ModeHub.tsx`'s `hub-extra-link` list, not the top bar or
+    a Mode Hub card), a modal reusing the shared `.confirm`/`.confirm-box`
+    shell at a wider size, consistent with `TechSudokuModal`'s own
+    treatment.
+  - **Not built**: no separate weekly leaderboard or friends comparison;
+    the three stage *types* are fixed (trace/sudoku/gauntlet in that
+    order) — only their content varies week to week, not the roster of
+    stage kinds itself; no partial-credit or streak system across weeks
+    beyond the capped history list; the modal's stage views are
+    deliberately compact re-implementations of Minimum Path's/Tech
+    Sudoku's own interaction patterns rather than the full standalone
+    screens (e.g. no live "optimal length" comparison shown on the trace
+    stage, matching how a bonus mini-game inside a bigger event is
+    usually smaller than the full mode it borrows from).
+
+---
+
 ## Development order (do not reorder without a reason)
 
 1. Shared data/save architecture + Mode Hub, Main Evolution unchanged. ✅
 2. Research Notebook + Museum data model foundations. ✅ Notebook has a real store now; Museum is still types only.
 3. Trade Routes/Lost Knowledge/Experimentation in Main Evolution, behind flags, validated against existing saves. ✅ see "what Phase 3 actually built" above. Full graduated Knowledge Transfer (observed/possessed/understood/mastered) was not built — region-gating covers a narrower, real slice of it.
 4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this). ✅ `lib/museum/registry.ts`'s `autoExhibits` + `components/MuseumGallery.tsx` — one exhibit per found major invention, reusing `Plate3D`/`ExhibitPanel` rather than a new rendering pipeline. Curator layout, cases, dioramas and non-Main-Evolution exhibit sources (Archaeologist finds, Decipher tablets, …) remain future work — this is one honest wing, not the finished museum.
-5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content. ✅ Minimum Path + Tech Sudoku, see "Phase 5 — what actually built" above. Daily/Weekly framework beyond `lib/seed.ts` itself still open.
+5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content. ✅ Minimum Path + Tech Sudoku, see "Phase 5 — what actually built" above. Daily/Weekly framework beyond `lib/seed.ts` itself is built too — see "Daily/Weekly Mega Challenge framework — what actually built" further down.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun. ✅ see "Phase 6 — what actually built" above.
 7. Civilization vertical slice: one settlement problem, one infrastructure evolution. ✅ see "Phase 7 — what actually built" above.
 8. Archaeologist vertical slice: one small procedural site end to end (survey → trench → context → lab → hypothesis board → report → museum export). This becomes the shared evidence backend Decipher and Alien Archaeology both plug into. ✅ see "Phase 8 — what actually built" above. The evidence backend is real and reusable but not yet wired to a second consumer.
