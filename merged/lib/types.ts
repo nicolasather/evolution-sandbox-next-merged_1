@@ -1,5 +1,5 @@
 /** Shapes of the discovery database. Mirrors data/sources.json + data/nodes/*.json. */
-import type { EraGate } from './world/types';
+import type { EraGate, GeoId } from './world/types';
 
 export type EraId =
   | 'origins' | 'fire' | 'settlement' | 'agriculture' | 'civilization' | 'trade'
@@ -209,6 +209,19 @@ export interface FailInfo {
   action: ActionId | null;
 }
 
+/** Why a brand-new discovery is blocked until a trade route reaches where it
+ *  is documented to have first appeared — see lib/trade/gate.ts, the only
+ *  place that constructs one. Shaped like EraGate/TierGate on purpose so the
+ *  UI renders it the same way. Never produced for a discovery already held —
+ *  once found, always found, exactly as era/tier gates already behave. */
+export interface RegionLockInfo {
+  homeRegion: GeoId;
+  originRegion: GeoId;
+  originLabel: string;
+  civ: string | null;
+  message: string;
+}
+
 interface Made {
   node: Discovery;
   /** Everything that went into it (a single piece for a process). */
@@ -240,6 +253,10 @@ export type CombineResult =
   | { status: 'tier_locked'; message: string; a: Discovery; b: Discovery; items: Discovery[]; requiredTier: StoneAgeTier; gate: TierGate }
   /** Right idea, but its era is still closed: the world has to finish the era before it first. */
   | { status: 'era_locked'; message: string; a: Discovery; b: Discovery; items: Discovery[]; gate: EraGate }
+  /** Right idea, but no trade route reaches where it's documented to have first
+   *  appeared — only ever produced when a regionGate was passed to the Engine
+   *  (lib/trade/, off by default). See RegionLockInfo. */
+  | { status: 'region_locked'; message: string; a: Discovery; b: Discovery; items: Discovery[]; region: RegionLockInfo }
   | { status: 'error' };
 
 /** The answer to working one resource with one action. */
@@ -276,6 +293,7 @@ export type ProcessResult =
     }
   | { status: 'tier_locked'; action: ActionId; from: Discovery; message: string; gate: TierGate }
   | { status: 'era_locked'; action: ActionId; from: Discovery; message: string; gate: EraGate }
+  | { status: 'region_locked'; action: ActionId; from: Discovery; message: string; region: RegionLockInfo }
   | { status: 'error' };
 
 export interface Stats {

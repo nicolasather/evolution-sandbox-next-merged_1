@@ -24,7 +24,7 @@ function OutcomeCard({
   if (result.status === 'error') return null;
   // The workbench answers a refusal where it happens (a quiet note by the things themselves);
   // only finds get a card. The old boxed cards stay below for callers without a workbench.
-  if (SPEAK_IN_PLACE && (result.status === 'fail' || result.status === 'tier_locked' || result.status === 'era_locked')) return null;
+  if (SPEAK_IN_PLACE && (result.status === 'fail' || result.status === 'tier_locked' || result.status === 'era_locked' || result.status === 'region_locked')) return null;
 
   if (result.status === 'fail') {
     return (
@@ -78,6 +78,22 @@ function OutcomeCard({
           <span className="gate-bar"><i style={{ width: `${pct}%` }} /></span>
           <span className="mono">{g.have}/{g.need}</span>
         </div>
+      </motion.div>
+    );
+  }
+
+  if (result.status === 'region_locked') {
+    const r = result.region;
+    return (
+      <motion.div
+        key={result.key}
+        className="oc oc-locked"
+        role="status"
+        initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <p className="oc-msg">{result.message}</p>
+        <p className="oc-nudge mono">Documented origin: {r.originLabel}</p>
       </motion.div>
     );
   }

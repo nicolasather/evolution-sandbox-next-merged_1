@@ -30,15 +30,15 @@ card — either it's real enough to play, or it isn't in the Hub yet.
 
 ---
 
-## Status (28 September 2026)
+## Status (28 September 2026, updated same day after Phase 3)
 
 | Phase | State | Notes |
 |---|---|---|
-| **1. Shared architecture + Mode Hub** | **Built this pass** | See below. Main Evolution's own save, engine and UI are untouched. |
-| 2. Research Notebook + Museum data model | **Types only, this pass** | `lib/notebook/types.ts`, `lib/museum/types.ts` — no UI yet. Real notebook/museum screens are still future work. |
-| 3. Main Evolution integrations (Trade Routes, Knowledge Transfer, Lost Knowledge, Experimentation) | **Not started** | See "Main Evolution integrations" below for the design this phase should follow when it begins — it extends `lib/world/` (regions/majors already exist there) rather than adding a parallel system. |
+| **1. Shared architecture + Mode Hub** | **Built** | See below. Main Evolution's own save, engine and UI are untouched. |
+| 2. Research Notebook + Museum data model | **Notebook has a real store + one screen now; Museum is still types only** | `lib/notebook/store.ts` (versioned, tested) went in as part of Phase 3, driven by the Heat Treatment Experiment Workspace. `lib/museum/types.ts` remains unused — no exhibit screen yet. |
+| 3. Main Evolution integrations (Trade Routes, Lost Knowledge, Experimentation) | **Built, narrower than first sketched — see below** | Region-gating on new discoveries (not a graduated Knowledge Transfer state), a resilience scorer (warnings only, no removal), one Experiment Workspace slice. All behind opt-in, off by default; verified not to change default behaviour (full existing test suite + a fresh `Engine` with no options passed still behaves identically). |
 | 4. Museum shell + automatic artifact pipeline | **Not started** | |
-| 5. Minimum Path, Daily framework, Tech Sudoku | **Partially started** | `lib/seed.ts` (this pass) is the reusable seed service these need. `lib/daily.ts` already exists (Main Evolution's "Today's find") and should be migrated onto `lib/seed.ts` rather than duplicated when this phase starts. |
+| 5. Minimum Path, Daily framework, Tech Sudoku | **Partially started** | `lib/seed.ts` (Phase 1) is the reusable seed service these need. `lib/daily.ts` already exists (Main Evolution's "Today's find") and should be migrated onto `lib/seed.ts` rather than duplicated when this phase starts. |
 | 6. Survival vertical slice | **Not started** | |
 | 7. Civilization vertical slice | **Not started** | |
 | 8. Archaeologist vertical slice | **Not started** | |
@@ -103,44 +103,91 @@ the one new Hub button.
 
 ---
 
-## Main Evolution integrations (Phase 3 design, for when it starts)
+## Main Evolution integrations — what Phase 3 actually built
 
-These extend Main Evolution itself — per the brief, they are a *world
-layer*, not a separate mode — and should be designed against systems that
-already exist rather than added in parallel:
+Two explicit product decisions were made before this phase started (asked
+and answered, not guessed): Trade Routes would **really gate crafting**
+(not ship as a read-only visualization first), and Lost Knowledge would
+ship as **resilience scoring + warnings only**, architected so real
+dormancy is a later, localized addition rather than a rewrite.
 
-- **Trade Routes / regional knowledge distribution.** `lib/world/` already
-  models regions (`data/majors.json`'s `regions`), geo-placed major
-  inventions, and era-gating (`lib/world/registry.ts`'s `WorldModel`). A
-  discovery's new `regions?: string[]` field (this pass) is the seed for
-  "which regions plausibly have this already" — a route/diffusion layer
-  should read that, not invent a second geography system. Keep the
-  abstraction at the level `lib/world/` already uses (broad regions, not a
-  logistics grid).
-- **Knowledge Transfer.** Needs a state finer than "found" —
-  observed/exposed vs. materially possessed vs. understood vs. mastered.
-  This does not exist yet at any layer; it's the one genuinely new piece of
-  state Phase 3 has to add, and it should live beside `Engine.found`/`bag`
-  in a way that an old save (which has neither) upgrades into cleanly —
-  everyone already fully "knows" what they've already discovered.
-- **Lost Knowledge.** A resilience model over the same graph — practicing
-  regions, documentation (writing), dependency availability. Reuse the
-  `Discovery.confidence`/`regions` fields added this pass as inputs rather
-  than inventing a parallel scoring table.
-  **Experimentation / Research Notebook.** `lib/notebook/types.ts` (this
-  pass) is the shape; the actual Experiment Workspace UI and the rule that
-  decides which discoveries get a variable-tuning interaction (vs. staying
-  a normal recipe) is unbuilt. Keep the existing rule from
-  `docs/ROADMAP.md`'s P4 in mind: only where the variable itself teaches
-  something, not on every recipe.
+- **Trade Routes** (`lib/trade/`). Origins are derived at runtime by
+  joining `data/majors.json` (`regions.ts`) — never authored twice, and
+  only for `certainty: 'firm'|'regional'` entries; `'multiple'`/`'debated'`
+  origins (independently invented in more than one place, per the record)
+  are deliberately never pinned to one region. `adjacency.ts` is a small,
+  documented, coarse 7-region corridor graph (the Americas have no
+  corridor yet — a named, deliberate simplification, not a bug).
+  `gate.ts`'s `regionGateFor` is the actual gate; `store.ts` persists a
+  home region and established routes (`evo.trade.v1`, independent of every
+  other save). **`lib/engine.ts` gained one new, optional constructor
+  option** (`regionGate?: (node) => RegionLockInfo | null`) and one new
+  `CombineResult`/`ProcessResult` status, `'region_locked'`, inserted
+  exactly where `era_locked`/`tier_locked` already are — same shape, same
+  precedence, same "only ever blocks a discovery not yet found" rule. With
+  no option passed (every existing call site except `lib/useSandbox.ts`),
+  behaviour is byte-for-byte unchanged — proven by the full pre-existing
+  test suite passing untouched, plus new tests in
+  `lib/__tests__/engine.regionGate.test.ts` exercising the real integration
+  (not a stub). `lib/useSandbox.ts` wires a *live* regionGate (reads
+  `lib/modes/flags.ts`'s `trade-routes` flag and the trade store fresh on
+  every call, never a stale closure), so enabling the flag takes effect
+  immediately without reconstructing the Engine. UI: `components/trade/
+  TradePanel.tsx` (opt-in explanation → home-region picker → network view:
+  established routes, the corridor "frontier" that can be founded next,
+  and which not-yet-made discoveries are waiting on a route, with their
+  real documented origin). `Bench.tsx`/`Workbench.tsx` render
+  `region_locked` the same way they already render `era_locked`.
+  **Not built**: recipe-level material *consumption* — this game was never
+  consumption-based (discoveries are held forever once found), so gating
+  is on the new discovery's own origin, not on "spending" a resource; a
+  future pass could still add scarcity, but that's a bigger, separate
+  design question.
+- **Lost Knowledge** (`lib/knowledge/`). `resilience.ts`'s `scoreResilience`
+  is a deterministic, explainable, tested function: single-documented-
+  origin + oral/practice-only category (`cat` in knowledge/culture/society)
+  + only one recipe route + depending on a rare ingredient each add a named
+  `FragilityCause`; a discovery reachable through an established trade
+  route, or independently attested in multiple regions, is more resilient
+  — so Trade Routes and Lost Knowledge are systemically linked exactly as
+  the brief asks. Surfaced read-only in `ExhibitPanel.tsx` ("Knowledge
+  resilience") for already-found, non-primitive discoveries only, and only
+  when not fully stable. `lib/knowledge/store.ts` (`evo.knowledge.v1`)
+  persists `DormantRecord`s and has working, tested `markDormant`/`relearn`
+  methods — **neither is called anywhere in the game yet**; wiring a real
+  loss trigger later is "call this method somewhere real," not "invent a
+  save format."
+- **Experimentation / Research Notebook** (`lib/notebook/`,
+  `lib/experiments/`). One real vertical slice, not a generic system:
+  Heat Treatment, anchored to the actual `heat_treatment` discovery already
+  in `data/db.json` (its own text already describes a heat/duration
+  relationship with a real failure mode — thermal shock). Two variables,
+  four deterministic physically-described outcomes
+  (`lib/experiments/heatTreatment.ts`), every run logged as `Evidence` to
+  `lib/notebook/store.ts` (`evo.notebook.v1`, organized by Investigation,
+  not timestamp) whether or not it "succeeds." `components/experiments/
+  ExperimentWorkspace.tsx` is the Laboratory panel, gated on holding a
+  heat source and a stone-like material (mirrors the crafting loop's own
+  prerequisites — never a separate resource-check invented for this).
+  **Deliberately not wired**: a successful experiment does not auto-grant
+  `heat_treatment` — it teaches the relationship; making the actual
+  discovery still goes through the normal, unmodified crafting loop. The
+  Notebook's `logObservation`/`addHypothesis` methods are real and tested
+  but have no caller yet — the next mode with a hypothesis board
+  (Archaeologist, Decipher) is the first real consumer.
+
+None of the above required touching `lib/engine.ts`'s save format, and
+none of it is reachable by a player who never opens the Trade or
+Laboratory panels — the `trade-routes` flag defaults off, and the
+Laboratory/resilience UI only ever show real, current game state.
 
 ---
 
 ## Development order (do not reorder without a reason)
 
-1. Shared data/save architecture + Mode Hub, Main Evolution unchanged. ✅ this pass.
-2. Research Notebook + Museum data model foundations. ✅ types only, this pass.
-3. Trade/Knowledge Transfer/Lost Knowledge/Experimentation in Main Evolution, behind flags, validated against existing saves.
+1. Shared data/save architecture + Mode Hub, Main Evolution unchanged. ✅
+2. Research Notebook + Museum data model foundations. ✅ Notebook has a real store now; Museum is still types only.
+3. Trade Routes/Lost Knowledge/Experimentation in Main Evolution, behind flags, validated against existing saves. ✅ see "what Phase 3 actually built" above. Full graduated Knowledge Transfer (observed/possessed/understood/mastered) was not built — region-gating covers a narrower, real slice of it.
 4. Museum shell + automatic representative-artifact pipeline (every later mode outputs into this).
 5. Minimum Path, Daily framework, Tech Sudoku — validates the shared seed/challenge services against real content.
 6. Survival vertical slice: one environment, one objective, shelter/fire/food, contextual discovery, one Museum output. Don't expand content until this loop is fun.

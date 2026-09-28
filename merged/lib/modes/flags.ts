@@ -39,3 +39,11 @@ export function subscribeFlags(cb: () => void): () => void {
  *  default everywhere, including local dev, until explicitly switched on. */
 export const isDevToolsEnabled = () => getFlag('dev-tools', false);
 export const setDevToolsEnabled = (v: boolean) => setFlag('dev-tools', v);
+
+/** Gates Main Evolution's Trade Routes / regional origin-gating layer
+ *  (lib/trade/). Off by default: with it off, lib/useSandbox.ts constructs
+ *  the Engine with no regionGate at all, which is byte-for-byte the game's
+ *  existing behaviour (see lib/engine.ts's combineMany/process — an absent
+ *  regionGate never blocks anything). */
+export const isTradeRoutesEnabled = () => getFlag('trade-routes', false);
+export const setTradeRoutesEnabled = (v: boolean) => setFlag('trade-routes', v);

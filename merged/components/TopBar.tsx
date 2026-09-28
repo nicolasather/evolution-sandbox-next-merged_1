@@ -41,7 +41,7 @@ function SoundButton() {
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab,
 }: {
   engine: Engine;
   view: ViewId;
@@ -52,6 +52,8 @@ export function TopBar({
   onJournal: () => void;
   onWorld: () => void;
   onHub: () => void;
+  onTrade: () => void;
+  onLab: () => void;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -190,6 +192,29 @@ export function TopBar({
         >
           <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
             <path d="M8 1.5 14.5 5 8 8.5 1.5 5Z" /><path d="M1.5 8.5 8 12l6.5-3.5M1.5 12 8 15.5 14.5 12" />
+          </svg>
+        </button>
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="trade-open"
+          aria-label="Trade"
+          title="Trade — an optional regional layer on top of Main Evolution"
+          onClick={onTrade}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M2 5.5h5M2 5.5l2-2.5M2 5.5l2 2.5M14 10.5H9M14 10.5l-2-2.5M14 10.5l-2 2.5" />
+          </svg>
+        </button>
+        <button
+          className="icon-btn max-[900px]:hidden"
+          id="lab-open"
+          aria-label="Laboratory"
+          title="Laboratory — try a variable before you commit to a recipe"
+          onClick={onLab}
+        >
+          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
+            <path d="M6.5 2h3M6.5 2v4.2L3.4 12a1.4 1.4 0 0 0 1.24 2.06h6.72A1.4 1.4 0 0 0 12.6 12L9.5 6.2V2" />
+            <path d="M4.8 9.8h6.4" />
           </svg>
         </button>
         <button

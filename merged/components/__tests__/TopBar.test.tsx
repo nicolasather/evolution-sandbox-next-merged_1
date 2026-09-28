@@ -28,6 +28,8 @@ describe('TopBar', () => {
         onJournal={() => {}}
         onWorld={() => {}}
         onHub={() => {}}
+        onTrade={() => {}}
+        onLab={() => {}}
       />
     );
     // the label's characters are split into their own spans for the spatial
@@ -49,6 +51,8 @@ describe('TopBar', () => {
         onJournal={() => {}}
         onWorld={onWorld}
         onHub={() => {}}
+        onTrade={() => {}}
+        onLab={() => {}}
       />
     );
     const chip = screen.getByRole('button', { name: /World progress: 1 of 3 required inventions in Era1/ });
@@ -68,6 +72,8 @@ describe('TopBar', () => {
         onJournal={() => {}}
         onWorld={() => {}}
         onHub={() => {}}
+        onTrade={() => {}}
+        onLab={() => {}}
       />
     );
     const input = screen.getByPlaceholderText('Search');

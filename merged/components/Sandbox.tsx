@@ -13,6 +13,8 @@ import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
 import { JournalPanel } from './JournalPanel';
 import { ModeHub } from './ModeHub';
+import { TradePanel } from './trade/TradePanel';
+import { ExperimentWorkspace } from './experiments/ExperimentWorkspace';
 import { WorldLayer } from './world/WorldLayer';
 import { WorldProgressPanel } from './world/WorldProgressPanel';
 import { SceneBackdrop } from './SceneBackdrop';
@@ -48,6 +50,8 @@ export function Sandbox() {
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [journalOpen, setJournalOpen] = useState(false);
   const [worldOpen, setWorldOpen] = useState(false);
+  const [tradeOpen, setTradeOpen] = useState(false);
+  const [labOpen, setLabOpen] = useState(false);
   const [replay, setReplay] = useState(0);
   const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
   const panelReturn = useRef<HTMLElement | null>(null);
@@ -291,6 +295,8 @@ export function Sandbox() {
           onJournal={() => setJournalOpen(true)}
           onWorld={() => setWorldOpen(true)}
           onHub={() => showView('hub')}
+          onTrade={() => setTradeOpen(true)}
+          onLab={() => setLabOpen(true)}
         />
 
         <div id="views" data-current={view}>
@@ -404,6 +410,8 @@ export function Sandbox() {
 
       <JournalPanel open={journalOpen} engine={engine} onClose={() => setJournalOpen(false)} />
       <WorldProgressPanel open={worldOpen} engine={engine} onClose={() => setWorldOpen(false)} />
+      <TradePanel open={tradeOpen} engine={engine} onClose={() => setTradeOpen(false)} />
+      <ExperimentWorkspace open={labOpen} engine={engine} onClose={() => setLabOpen(false)} />
       <WorldLayer engine={engine} version={version} active={s.entered && reveal >= 6} />
 
       <ContextMenu
@@ -427,7 +435,7 @@ export function Sandbox() {
         <QuestionCard
           tutor={tutor}
           engine={engine}
-          busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || worldOpen || view !== 'work'}
+          busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || worldOpen || tradeOpen || labOpen || view !== 'work'}
         />
       )}
 
