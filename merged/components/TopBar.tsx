@@ -40,6 +40,89 @@ function SoundButton() {
   );
 }
 
+type Tone = 'minpath' | 'museum' | 'hub' | 'trade' | 'lab' | 'journal';
+
+/** The drawn face of a corner tile: a small, lit, layered picture — not an icon glyph.
+ *  Fills come from the tile's own --a1…--a4 (see the .tile block in app/_cinematic.css). */
+function TileArt({ tone }: { tone: Tone }) {
+  switch (tone) {
+    case 'minpath':
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path className="s1" d="M14 50C26 50 18 32 32 32S40 16 50 14" />
+          <circle className="a1" cx="14" cy="50" r="8" /><circle className="a3" cx="14" cy="50" r="3.5" />
+          <circle className="a2 float" cx="32" cy="32" r="5" />
+          <circle className="a4" cx="50" cy="14" r="9" /><circle className="a3" cx="50" cy="14" r="3.5" />
+        </svg>
+      );
+    case 'museum':
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path className="a1" d="M6 24 32 8l26 16z" />
+          <rect className="a2" x="10" y="27" width="8" height="22" rx="1.5" /><rect className="a2" x="21" y="27" width="8" height="22" rx="1.5" />
+          <rect className="a2" x="35" y="27" width="8" height="22" rx="1.5" /><rect className="a2" x="46" y="27" width="8" height="22" rx="1.5" />
+          <rect className="a1" x="5" y="51" width="54" height="7" rx="2" />
+          <circle className="a4 float" cx="32" cy="19" r="3" />
+        </svg>
+      );
+    case 'hub':
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path className="a3" d="M32 52 6 40l26-12 26 12z" transform="translate(0 6)" />
+          <path className="a2" d="M32 46 6 34l26-12 26 12z" transform="translate(0 2)" />
+          <path className="a1" d="M32 36 6 24 32 12l26 12z" />
+          <circle className="a4 float" cx="32" cy="24" r="4" />
+        </svg>
+      );
+    case 'trade':
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <circle className="a4" cx="32" cy="32" r="10" /><circle className="a3" cx="32" cy="32" r="4" />
+          <path className="s1" d="M8 20h40M40 12l8 8-8 8" />
+          <path className="s1" d="M56 44H16M24 36l-8 8 8 8" />
+        </svg>
+      );
+    case 'lab':
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path className="a1" d="M26 6h12v4h-3v16l15 26a5 5 0 0 1-4.4 7.5H18.4A5 5 0 0 1 14 52l15-26V10h-3z" />
+          <path className="a4" d="M19 46h26l5.4 9.4a3 3 0 0 1-2.6 4.6H16.2a3 3 0 0 1-2.6-4.6z" />
+          <circle className="a1 float" cx="30" cy="40" r="3" /><circle className="a2 float" cx="37" cy="34" r="2.2" />
+        </svg>
+      );
+    case 'journal':
+      return (
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path className="a3" d="M8 14c8-4 16-4 24 2v38c-8-6-16-6-24-2z" />
+          <path className="a2" d="M56 14c-8-4-16-4-24 2v38c8-6 16-6 24-2z" />
+          <path className="s4" d="M14 25c4-1 8-1 12 1M14 34c4-1 8-1 12 1M38 26c4-2 8-2 12-1M38 35c4-2 8-2 12-1" />
+          <path className="a4" d="M44 4h8v22l-4-3.5L44 26z" />
+        </svg>
+      );
+  }
+}
+
+function Tile({
+  id, tone, cap, label, pressed, className, onClick,
+}: {
+  id: string; tone: Tone; cap: string; label: string; pressed?: boolean; className?: string; onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className={'tile' + (className ? ' ' + className : '')}
+      id={id}
+      data-tone={tone}
+      data-cap={cap}
+      aria-label={label}
+      aria-pressed={pressed}
+      onClick={onClick}
+    >
+      <span className="tile-art"><TileArt tone={tone} /></span>
+    </button>
+  );
+}
+
 export function TopBar({
   engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum, onMinPath,
 }: {
@@ -184,95 +267,40 @@ export function TopBar({
       </div>
 
       <div className="top-slot top-actions">
-        <button
-          className="icon-btn max-[900px]:hidden"
-          id="minpath-open"
-          aria-label="Minimum Path challenge"
-          aria-pressed={view === 'minpath'}
-          title="Minimum Path — reach a target discovery in as few clicks as possible"
-          onClick={onMinPath}
-        >
-          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
-            <circle cx="2.5" cy="13.5" r="1.5" /><circle cx="13.5" cy="2.5" r="1.5" />
-            <path d="M4 12.2 8 8.2M9.5 6.7l2-2" />
-          </svg>
-        </button>
-        <button
-          className="icon-btn max-[900px]:hidden"
-          id="museum-open"
-          aria-label="Museum"
-          aria-pressed={view === 'museum'}
-          title="Museum — every major invention you have reached"
-          onClick={onMuseum}
-        >
-          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
-            <path d="M1.5 5.5 8 2l6.5 3.5M2.5 5.5v8M13.5 5.5v8M1 13.5h14" />
-          </svg>
-        </button>
-        <button
-          className="icon-btn"
-          id="hub-open"
-          aria-label="Mode Hub"
-          aria-pressed={view === 'hub'}
-          title="The Mode Hub — switch between Evolution Sandbox's experiences"
-          onClick={onHub}
-        >
-          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
-            <path d="M8 1.5 14.5 5 8 8.5 1.5 5Z" /><path d="M1.5 8.5 8 12l6.5-3.5M1.5 12 8 15.5 14.5 12" />
-          </svg>
-        </button>
-        <button
-          className="icon-btn max-[900px]:hidden"
-          id="trade-open"
-          aria-label="Trade"
-          title="Trade — an optional regional layer on top of Main Evolution"
-          onClick={onTrade}
-        >
-          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
-            <path d="M2 5.5h5M2 5.5l2-2.5M2 5.5l2 2.5M14 10.5H9M14 10.5l-2-2.5M14 10.5l-2 2.5" />
-          </svg>
-        </button>
-        <button
-          className="icon-btn max-[900px]:hidden"
-          id="lab-open"
-          aria-label="Laboratory"
-          title="Laboratory — try a variable before you commit to a recipe"
-          onClick={onLab}
-        >
-          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
-            <path d="M6.5 2h3M6.5 2v4.2L3.4 12a1.4 1.4 0 0 0 1.24 2.06h6.72A1.4 1.4 0 0 0 12.6 12L9.5 6.2V2" />
-            <path d="M4.8 9.8h6.4" />
-          </svg>
-        </button>
-        <button
-          className="icon-btn max-[900px]:hidden"
-          id="journal-open"
-          aria-label="Your journal"
-          title="Your journal — a personal recap"
-          onClick={onJournal}
-        >
-          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
-            <path d="M3 2.5h8a1 1 0 0 1 1 1V14l-2.2-1.4L8 14l-1.8-1.4L4 14V3.5a1 1 0 0 1 1-1Z" />
-          </svg>
-        </button>
-        <button
-          className="icon-btn max-[900px]:hidden"
-          id="shortcuts"
-          aria-label="Keyboard shortcuts"
-          aria-keyshortcuts="?"
-          title="Keyboard shortcuts (?)"
-          onClick={onShortcuts}
-        >
-          <span className="mono" aria-hidden="true">?</span>
-        </button>
-        <SoundButton />
-        <ThemeToggle />
-        <FullscreenButton />
-        <button className="icon-btn" id="reset" aria-label="Start over (Reset progress)" title="Start over" onClick={onReset}>
-          <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" fill="none" aria-hidden="true">
-            <path d="M14 8A6 6 0 1 1 8 2c2 0 3.7 1 4.7 2.5" /><path d="M13 1v4h-4" />
-          </svg>
-        </button>
+        <div className="dock">
+          <Tile id="minpath-open" tone="minpath" cap="Minimum Path" label="Minimum Path challenge"
+            pressed={view === 'minpath'} className="max-[900px]:hidden" onClick={onMinPath} />
+          <Tile id="museum-open" tone="museum" cap="Museum" label="Museum"
+            pressed={view === 'museum'} className="max-[900px]:hidden" onClick={onMuseum} />
+          <Tile id="hub-open" tone="hub" cap="Modes" label="Mode Hub"
+            pressed={view === 'hub'} onClick={onHub} />
+          <Tile id="trade-open" tone="trade" cap="Trade" label="Trade"
+            className="max-[900px]:hidden" onClick={onTrade} />
+          <Tile id="lab-open" tone="lab" cap="Laboratory" label="Laboratory"
+            className="max-[900px]:hidden" onClick={onLab} />
+          <Tile id="journal-open" tone="journal" cap="Journal" label="Your journal"
+            className="max-[900px]:hidden" onClick={onJournal} />
+        </div>
+        <div className="util">
+          <button
+            className="icon-btn max-[900px]:hidden"
+            id="shortcuts"
+            aria-label="Keyboard shortcuts"
+            aria-keyshortcuts="?"
+            title="Keyboard shortcuts (?)"
+            onClick={onShortcuts}
+          >
+            <span className="mono" aria-hidden="true">?</span>
+          </button>
+          <SoundButton />
+          <ThemeToggle />
+          <FullscreenButton />
+          <button className="icon-btn" id="reset" aria-label="Start over (Reset progress)" title="Start over" onClick={onReset}>
+            <svg width="14" height="14" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" fill="none" aria-hidden="true">
+              <path d="M14 8A6 6 0 1 1 8 2c2 0 3.7 1 4.7 2.5" /><path d="M13 1v4h-4" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   );

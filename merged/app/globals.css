@@ -97,6 +97,10 @@
 /* The Experiment Workspace (Laboratory) and its Research Notebook logging. */
 @import "./_experiments.css" layer(components);
 
+/* 2.5D: the cinematic gate and slides, 12 colours per theme, the extruded
+   lettering, the big corner tiles. Last on purpose — it restyles what came before. */
+@import "./_cinematic.css" layer(components);
+
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and
    `var(--bone-2)` in the stylesheet are the same colour in either theme. */
@@ -136,6 +140,7 @@
   --font-ui: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-sans: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-3d: var(--font-bungee), "Bungee", "Archivo Black", Impact, sans-serif;
 }
 
 /* The design system names its families directly; here they come from next/font,
@@ -144,6 +149,8 @@
   --fs-display: var(--font-instrument-serif), "Instrument Serif", "Times New Roman", Georgia, serif;
   --fs-ui: var(--font-archivo), "Archivo", "Helvetica Neue", Arial, sans-serif;
   --fs-mono: var(--font-jetbrains-mono), "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* the 2.5D display face: a chunky, shaded-looking caps face that extrudes well */
+  --fs-3d: var(--font-bungee), "Bungee", "Archivo Black", Impact, sans-serif;
 }
 
 /* The Glyph component wraps its SVG in a span; make that span transparent to

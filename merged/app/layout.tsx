@@ -2,7 +2,7 @@ import Script from 'next/script';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from 'next';
-import { Archivo, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import { Archivo, Bungee, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { siteUrl } from '@/lib/site';
 import { THEME_BOOT } from '@/lib/theme';
 import { GlobalFX } from '@/components/fx/GlobalFX';
@@ -19,6 +19,11 @@ const instrumentSerif = Instrument_Serif({
 });
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'], weight: ['400', '500'], variable: '--font-jetbrains-mono', display: 'swap',
+});
+
+/* the 2.5D display face — titles, plates and the big numbers (see app/_cinematic.css) */
+const bungee = Bungee({
+  subsets: ['latin'], weight: '400', variable: '--font-bungee', display: 'swap',
 });
 
 const SITE = siteUrl();
@@ -82,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     // data-theme is set by THEME_BOOT before React hydrates, so the server's
     // markup cannot know it — suppressHydrationWarning covers that one attribute
     <html lang="en" data-theme="dark" suppressHydrationWarning
-      className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
+      className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${bungee.variable}`}>
       <head>
         {/* first thing to run: pick the stored theme — light, dark, or one of the
             six accent skins (lib/theme.ts THEMES) — before anything paints */}

@@ -146,11 +146,13 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     let W = window.innerWidth, H = window.innerHeight;
     cv.width = W * dpr; cv.height = H * dpr;
-    const count = Math.round((major ? 130 : 90) * PARTICLE_SCALE[getQuality()]);
-    const tone = node.hidden ? '216,98,63' : '212,160,90';
+    const count = Math.round((major ? 150 : 110) * PARTICLE_SCALE[getQuality()]);
+    const tones = node.hidden
+      ? ['255,90,60', '255,60,140', '255,150,40', '200,60,255']
+      : ['255,205,60', '80,225,160', '70,170,255', '255,120,190', '255,150,50', '190,120,255'];
     const P = Array.from({ length: count }, () => ({
-      x: Math.random() * W, y: H * (0.55 + Math.random() * 0.6), s: 0.6 + Math.random() * 1.8,
-      v: 10 + Math.random() * 34, sw: Math.random() * Math.PI * 2, a: 0.15 + Math.random() * 0.5,
+      x: Math.random() * W, y: H * (0.55 + Math.random() * 0.6), s: 1 + Math.random() * 3.4,
+      v: 14 + Math.random() * 60, sw: Math.random() * Math.PI * 2, a: 0.3 + Math.random() * 0.6, c: tones[Math.floor(Math.random() * tones.length)],
     }));
     let raf = 0, last = performance.now(), t = 0;
     const frame = (now: number) => {
@@ -162,7 +164,7 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
         p.y -= p.v * dt; p.x += Math.sin(t * 0.7 + p.sw) * 6 * dt;
         if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
         const edge = Math.min(1, Math.max(0, (p.y / H) * 2.2)); // fades toward the top
-        g.fillStyle = `rgba(${tone},${(p.a * edge * fadeIn).toFixed(3)})`;
+        g.fillStyle = `rgba(${p.c},${(p.a * edge * fadeIn).toFixed(3)})`;
         g.beginPath(); g.arc(p.x, p.y, p.s, 0, Math.PI * 2); g.fill();
       }
       raf = requestAnimationFrame(frame);

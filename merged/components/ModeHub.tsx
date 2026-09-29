@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useSyncExternalStore, type ReactNode } from 'react';
+import { Children, useCallback, useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ReactiveLabel } from './fx/ReactiveLabel';
 import { TechSudokuModal } from './techsudoku/TechSudokuModal';
 import { WeeklyChallengeModal } from './weekly/WeeklyChallengeModal';
@@ -54,6 +54,59 @@ function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch }: 
         </button>
       </div>
     </div>
+  );
+}
+
+/** Every wing as one slide of a horizontal track, with a bar to slide along it
+ *  (drag the bar, press the arrows, swipe, or use ← → on the track). */
+function ModeTrack({ children }: { children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const items = Children.toArray(children);
+  const n = items.length;
+  const [pos, setPos] = useState(0);   // 0…1000
+  const [at, setAt] = useState(0);     // current card index
+
+  const sync = useCallback(() => {
+    const el = ref.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    const f = max > 0 ? el.scrollLeft / max : 0;
+    setPos(Math.round(f * 1000));
+    setAt(Math.round(f * (n - 1)));
+  }, [n]);
+
+  useEffect(() => { sync(); }, [sync]);
+
+  const scrubTo = (v: number) => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.scrollBehavior = 'auto';
+    el.scrollLeft = (v / 1000) * (el.scrollWidth - el.clientWidth);
+    el.style.scrollBehavior = '';
+  };
+  const go = (i: number) => {
+    const el = ref.current;
+    const card = el?.children[Math.max(0, Math.min(n - 1, i))] as HTMLElement | undefined;
+    card?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  };
+
+  return (
+    <>
+      <div className="hub-track" ref={ref} onScroll={sync} tabIndex={0} aria-label="Modes, scroll sideways"
+        onKeyDown={e => {
+          if (e.key === 'ArrowRight') { e.preventDefault(); go(at + 1); }
+          if (e.key === 'ArrowLeft') { e.preventDefault(); go(at - 1); }
+        }}>
+        {items}
+      </div>
+      <p className="hub-count" aria-live="polite">{at + 1} / {n}</p>
+      <div className="hub-bar">
+        <button type="button" aria-label="Previous mode" disabled={at <= 0} onClick={() => go(at - 1)}>‹</button>
+        <input className="hub-range" type="range" min={0} max={1000} step={1} value={pos} aria-label="Slide between modes"
+          onChange={e => scrubTo(Number(e.target.value))} />
+        <button type="button" aria-label="Next mode" disabled={at >= n - 1} onClick={() => go(at + 1)}>›</button>
+      </div>
+    </>
   );
 }
 
@@ -123,6 +176,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
           </p>
         </header>
 
+        <ModeTrack>
         <ExhibitCard
           kicker={mainEvo?.subtitle ?? 'The Timeline'}
           title={mainEvo?.title ?? 'Main Evolution'}
@@ -226,6 +280,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
             { label: 'First entered', value: revVisit ? dateFmt.format(revVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        </ModeTrack>
 
         <p className="hub-note">
           Other wings of this museum are in active development. They will open here, alongside

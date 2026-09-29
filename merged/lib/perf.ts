@@ -14,7 +14,7 @@ const KEY = 'evo.quality';
 const EVENT = 'evo:quality';
 
 /** Multiplier applied to every decorative particle count. */
-export const PARTICLE_SCALE: Record<Quality, number> = { high: 1, medium: 0.55, low: 0.25 };
+export const PARTICLE_SCALE: Record<Quality, number> = { high: 2.4, medium: 1.3, low: 0.45 };
 
 const isBrowser = () => typeof window !== 'undefined';
 

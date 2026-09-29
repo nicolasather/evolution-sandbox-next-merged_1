@@ -26,6 +26,8 @@ import { ViewVeil } from './fx/ViewVeil';
 import { EraShift } from './fx/EraShift';
 import { QuestionCard } from './QuestionCard';
 import { NarratorView } from './Narrator';
+import { CinematicGate } from './cinematic/CinematicGate';
+import { VIEW_SCENE, type SceneId } from '@/lib/cinematic/scenes';
 import { Narrator } from '@/lib/narrator/narrator';
 import { Tutor } from '@/lib/learn/tutor';
 import { ContextMenu, type ContextMenuTarget } from './fx/ContextMenu';
@@ -56,6 +58,15 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   const [tradeOpen, setTradeOpen] = useState(false);
   const [labOpen, setLabOpen] = useState(false);
   const [replay, setReplay] = useState(0);
+  /** The cinematic opening currently playing over whatever the player just opened. */
+  const [gate, setGate] = useState<SceneId | null>(null);
+  /** True for ~1.6 s after a gate closes: the screen behind it plays its entrance (see .rv in _cinematic.css). */
+  const [rv, setRv] = useState(false);
+  const closeGate = useCallback(() => {
+    setGate(null);
+    setRv(true);
+    window.setTimeout(() => setRv(false), 1700);
+  }, []);
   const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
   const panelReturn = useRef<HTMLElement | null>(null);
   /** The corner questions: when one appears, which one, and what it opens. */
@@ -98,13 +109,22 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
     id: e.id, y: 100 - (i + 1) * (100 / eraTotal), h: 100 / eraTotal, op: 0.05 + (i / eraTotal) * 0.07,
   }));
 
+  /** Everything the player opens plays its ~10 s opening first (title, 1–3
+   *  cinematic lines, then Space). Not before the landing film has finished. */
+  const playGate = useCallback((id: SceneId) => {
+    if (s.entered && reveal >= 6) setGate(id);
+  }, [s.entered, reveal]);
+  const openWorld = useCallback(() => { setWorldOpen(true); playGate('world'); }, [playGate]);
+
   /** Switching view closes any drawer: an exhibit never follows you between views. */
   const showView = useCallback((v: ViewId) => {
     sound.sfx(v === 'graph' ? 'graph' : v === 'arch' || v === 'time' ? 'archive' : 'tab', 0.6);
+    const scene = VIEW_SCENE[v];
+    if (scene && v !== view) playGate(scene);
     setView(v);
     setPanelOpen(false);
     panelReturn.current = null;
-  }, [setView]);
+  }, [setView, view, playGate]);
 
   /** Inspect. The exhibit is closed until the player asks for it — pressing
    *  Inspect, the "i" on an inventory item, the I key, the context menu or a
@@ -166,9 +186,9 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   }, [engine, setHintError, showView]);
 
   // one keyboard listener for the page; it reads the latest state through a ref
-  const keys = useRef({ showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered });
+  const keys = useRef({ showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered, openWorld });
   useEffect(() => {
-    keys.current = { showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered };
+    keys.current = { showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered, openWorld };
   });
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
@@ -199,7 +219,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       }
       // M: the world progress panel
       if ((ev.key === 'm' || ev.key === 'M') && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
-        ev.preventDefault(); setWorldOpen(true); return;
+        ev.preventDefault(); k.openWorld(); return;
       }
       // W G A T: go to a view — only when nothing modal is up and no key combo is held
       if (!typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
@@ -295,16 +315,16 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           onOpen={openExhibit}
           onReset={() => setConfirmOpen(true)}
           onShortcuts={() => setShortcutsOpen(true)}
-          onJournal={() => setJournalOpen(true)}
-          onWorld={() => setWorldOpen(true)}
+          onJournal={() => { setJournalOpen(true); playGate('journal'); }}
+          onWorld={openWorld}
           onHub={() => showView('hub')}
-          onTrade={() => setTradeOpen(true)}
-          onLab={() => setLabOpen(true)}
+          onTrade={() => { setTradeOpen(true); playGate('trade'); }}
+          onLab={() => { setLabOpen(true); playGate('lab'); }}
           onMuseum={() => showView('museum')}
           onMinPath={() => showView('minpath')}
         />
 
-        <div id="views" data-current={view}>
+        <div id="views" data-current={view} className={rv ? 'rv' : undefined}>
           <section className={'view' + (view === 'work' ? ' on' : '')} id="v-work" role="tabpanel" aria-label="Workspace">
             <Bench
               engine={engine}
@@ -447,6 +467,9 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       )}
 
       <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
+
+      {/* the opening that plays over whatever was just opened: title, 1–3 lines, Space */}
+      <CinematicGate scene={gate} onClose={closeGate} />
 
       <div id="toasts" aria-live="polite">
         {s.toasts.map(t => (

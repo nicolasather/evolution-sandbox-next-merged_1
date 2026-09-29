@@ -35,6 +35,9 @@ export interface IntroFxOptions { quality: Quality; lite: boolean }
 
 const BONE = '233,229,221';
 const OCHRE = '196,100,44';
+/** Maximalist spectrum: 12 saturated colours the whole intro cycles through. */
+const SPECTRUM = ['255,84,112','255,140,50','255,205,60','170,235,70','60,225,140','40,220,220','70,160,255','130,110,255','200,90,255','255,80,200','255,255,255','255,170,120'] as const;
+const spec = (i: number) => SPECTRUM[((Math.floor(i) % 12) + 12) % 12];
 const LAYER_SPEED = [0.55, 1.1, 2.4] as const;
 const LAYER_WIDTH = [0.8, 1.3, 2.1] as const;
 const LAYER_ALPHA = [0.42, 0.62, 0.9] as const;
@@ -312,8 +315,8 @@ export class IntroFx {
       }
       const tw = 0.62 + 0.38 * Math.sin(T * 0.0009 * d.ph + d.ph * 9);
       const a = clamp(d.a * tw + boost * 0.55, 0, 0.95) * (collapseK > 0 ? 1 - collapseK * 0.55 : 1);
-      g.fillStyle = `rgba(${BONE},${a.toFixed(3)})`;
-      g.fillRect(x, y, d.w, d.h);
+      g.fillStyle = `rgba(${spec(d.ph * 40 + T * 0.0004)},${Math.min(1, a * 1.5).toFixed(3)})`;
+      g.fillRect(x, y, d.w * 1.5, d.h * 1.5);
     }
 
     // a lens: barely there, only while the pointer is over the page
@@ -346,21 +349,21 @@ export class IntroFx {
     const g = this.g, cx = this.w / 2, cy = this.h / 2;
     const s = Math.min(this.w, this.h) / 900 + 0.55;
     const ring = (r: number, a: number, lw = 1) => {
-      g.strokeStyle = `rgba(${BONE},${a})`; g.lineWidth = lw;
+      g.strokeStyle = `rgba(${spec(r * 0.6 + k * 30)},${a})`; g.lineWidth = lw + 1.5;
       g.beginPath(); g.arc(cx, cy, r * s, 0, Math.PI * 2); g.stroke();
     };
     if (k > 0.12 && k <= 0.32) {
-      g.fillStyle = `rgba(${BONE},0.9)`;
-      g.beginPath(); g.arc(cx, cy, 1.7 * s, 0, Math.PI * 2); g.fill();
+      g.fillStyle = `rgba(${spec(k * 40)},1)`;
+      g.beginPath(); g.arc(cx, cy, 3.2 * s, 0, Math.PI * 2); g.fill();
     } else if (k > 0.32 && k <= 0.55) {
       ring(7, 0.85);
     } else if (k > 0.55 && k <= 0.78) {
       ring(6, 0.9); ring(13, 0.6);
     } else if (k > 0.78) {
       const p = clamp((k - 0.78) / 0.22, 0, 1);
-      g.fillStyle = `rgba(${BONE},${0.95 - p * 0.1})`;
+      g.fillStyle = `rgba(${spec(k * 60)},${0.95 - p * 0.1})`;
       g.beginPath(); g.arc(cx, cy, 9 * s, 0, Math.PI * 2); g.fill();
-      ring(18, 0.7); ring(28 + p * 6, 0.35);
+      ring(18, 0.8); ring(28 + p * 6, 0.5); ring(44 + p * 14, 0.3); ring(64 + p * 26, 0.16);
     }
   }
 
@@ -446,8 +449,8 @@ export class IntroFx {
       const rr = this.holeR + Math.pow(ph, 2.1) * (R - this.holeR);
       const a = Math.sin(Math.PI * ph) * 0.2 * (0.25 + v) * gain;
       if (a < 0.004) continue;
-      g.strokeStyle = `rgba(${BONE},${a.toFixed(3)})`;
-      g.lineWidth = 0.6 + ph * 2.2;
+      g.strokeStyle = `rgba(${spec(i * 1.7 + this.t * 0.004)},${Math.min(1, a * 2.6).toFixed(3)})`;
+      g.lineWidth = 1 + ph * 4.2;
       g.beginPath(); g.arc(cx, cy, rr, 0, Math.PI * 2); g.stroke();
     }
   }
@@ -478,8 +481,8 @@ export class IntroFx {
       const hx = cx + p.cos * rr, hy = cy + p.sin * rr;
       const tx = hx - p.cos * Math.max(len, 0.6), ty = hy - p.sin * Math.max(len, 0.6);
       const a = clamp(p.r * 5, 0, 1) * LAYER_ALPHA[p.layer] * (0.4 + 0.6 * Math.max(v, 0.15)) * gain;
-      g.strokeStyle = `rgba(${p.warm ? OCHRE : BONE},${a.toFixed(3)})`;
-      g.lineWidth = LAYER_WIDTH[p.layer] * (0.7 + p.r);
+      g.strokeStyle = `rgba(${spec(p.ang * 1.9 + p.layer * 3 + this.t * 0.003)},${Math.min(1, a * 1.6).toFixed(3)})`;
+      g.lineWidth = LAYER_WIDTH[p.layer] * (1.1 + p.r * 1.4);
       g.beginPath(); g.moveTo(tx, ty); g.lineTo(hx, hy); g.stroke();
     }
   }
@@ -530,7 +533,7 @@ export class IntroFx {
     gr.addColorStop(1, 'rgba(6,6,7,0)');
     g.fillStyle = gr;
     g.beginPath(); g.arc(cx, cy, r * 2.4, 0, Math.PI * 2); g.fill();
-    g.strokeStyle = `rgba(${BONE},${(0.55 * gain).toFixed(3)})`;
+    g.strokeStyle = `rgba(${spec(this.t * 0.006)},${Math.min(1,0.9 * gain).toFixed(3)})`;
     g.lineWidth = 1.2;
     g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.stroke();
     g.strokeStyle = `rgba(${BONE},${(0.16 * gain).toFixed(3)})`;
