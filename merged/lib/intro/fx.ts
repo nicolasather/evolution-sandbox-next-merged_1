@@ -34,7 +34,6 @@ interface Bokeh { ang: number; cos: number; sin: number; r: number; size: number
 export interface IntroFxOptions { quality: Quality; lite: boolean }
 
 const BONE = '233,229,221';
-const OCHRE = '196,100,44';
 /** Maximalist spectrum: 12 saturated colours the whole intro cycles through. */
 const SPECTRUM = ['255,84,112','255,140,50','255,205,60','170,235,70','60,225,140','40,220,220','70,160,255','130,110,255','200,90,255','255,80,200','255,255,255','255,170,120'] as const;
 const spec = (i: number) => SPECTRUM[((Math.floor(i) % 12) + 12) % 12];
