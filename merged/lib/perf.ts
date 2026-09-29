@@ -78,14 +78,23 @@ export function subscribeQuality(cb: () => void): () => void {
 }
 
 /** How long each beat of the time journey lasts, in ms. The whole film — from
- *  pressing Start to the world being yours — runs 4 to 6 seconds:
- *  collapse + tunnel + slow + fall + exit. Phones and low-power devices get the short one. */
+ *  pressing Start to the world being yours — runs toward the brief's P0.3
+ *  "30-second cinematic intro" on capable devices: collapse + tunnel + slow +
+ *  fall + exit. Phones and low-power devices still get a shorter one on
+ *  purpose (a 30 s unskippable-feeling open is a much bigger ask on a phone,
+ *  and this module's whole job is deciding what a device can afford) — just
+ *  a much longer "shorter one" than before. Every consumer of these numbers
+ *  (`lib/intro/fx.ts`'s `IntroFx`, `TUNNEL_OBJECTS`' `at`/`life` fractions,
+ *  `lib/craft/audio.ts`'s `tunnelRise`) works entirely in proportions of the
+ *  duration passed in, so raising these four numbers is the whole change —
+ *  nothing downstream has a hardcoded length to also update. Skip remains
+ *  instant regardless of how long the film is set to run. */
 export interface FilmTiming { collapse: number; tunnel: number; slow: number; fall: number; exit: number }
 
 export function tunnelDuration(q: Quality = getQuality()): FilmTiming {
-  if (isPhone() || q === 'low') return { collapse: 450, tunnel: 2300, slow: 650, fall: 560, exit: 420 };   // ≈ 4.4 s
-  if (q === 'medium') return { collapse: 500, tunnel: 2700, slow: 750, fall: 600, exit: 440 };           // ≈ 5.0 s
-  return { collapse: 550, tunnel: 3000, slow: 850, fall: 650, exit: 460 };                                // ≈ 5.5 s
+  if (isPhone() || q === 'low') return { collapse: 650, tunnel: 13000, slow: 1300, fall: 850, exit: 550 };   // ≈ 16.4 s
+  if (q === 'medium') return { collapse: 800, tunnel: 19000, slow: 1800, fall: 1150, exit: 750 };            // ≈ 23.5 s
+  return { collapse: 900, tunnel: 24000, slow: 2200, fall: 1400, exit: 900 };                                 // ≈ 29.4 s
 }
 
 /** Total film length in ms for a tier. */

@@ -199,7 +199,8 @@ export function Bench({
       <div id="bench-stage">
         <SceneFx ref={sceneFx} active={active} />
         <Workbench engine={engine} active={active} onCombine={onCombine} onProcess={onProcess} onBegin={onBegin} onInspect={onOpen} hintAction={hint.action} hintGhost={hint.ghost}
-          onScenery={(x, y) => { sceneFx.current?.click(x, y); }} />
+          onScenery={(x, y) => { sceneFx.current?.click(x, y); }}
+          onSceneryHover={(x, y) => { sceneFx.current?.hover(x, y); }} />
 
         <div id="outcome" aria-live="polite">
           <AnimatePresence mode="popLayout" initial={false}>
