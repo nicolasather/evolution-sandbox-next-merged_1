@@ -22,6 +22,7 @@ const BEGIN_SEL = '#begin, .begin, .begin-alt';
 
 export function Cursor() {
   const ref = useRef<HTMLDivElement>(null);
+  const trailRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const fine = window.matchMedia?.('(hover: hover) and (pointer: fine)').matches;
@@ -34,6 +35,48 @@ export function Cursor() {
 
     let x = window.innerWidth / 2, y = window.innerHeight / 2;
     let raf = 0;
+
+    // ── the comet: a tapering line behind the pointer that fades out in ~0.55 s ──
+    const cv = trailRef.current;
+    const tg = cv?.getContext('2d') ?? null;
+    const pts: { x: number; y: number; t: number }[] = [];
+    let trailRaf = 0;
+    let ink = '#c4642c';
+    const sizeTrail = () => { if (cv) { cv.width = window.innerWidth; cv.height = window.innerHeight; } };
+    sizeTrail();
+    const drawTrail = (now: number) => {
+      trailRaf = 0;
+      if (!cv || !tg) return;
+      tg.clearRect(0, 0, cv.width, cv.height);
+      while (pts.length && now - pts[0].t > 550) pts.shift();
+      tg.lineCap = 'round';
+      tg.strokeStyle = ink;
+      for (let i = 1; i < pts.length; i++) {
+        const life = 1 - (now - pts[i].t) / 550;
+        if (life <= 0) continue;
+        tg.globalAlpha = life * 0.55;
+        tg.lineWidth = 0.8 + life * 3;
+        tg.beginPath(); tg.moveTo(pts[i - 1].x, pts[i - 1].y); tg.lineTo(pts[i].x, pts[i].y); tg.stroke();
+      }
+      tg.globalAlpha = 1;
+      if (pts.length) trailRaf = requestAnimationFrame(drawTrail);
+    };
+    const pushTrail = (px: number, py: number) => {
+      const c = getComputedStyle(document.documentElement).getPropertyValue('--ochre').trim();
+      if (c) ink = c;
+      pts.push({ x: px, y: py, t: performance.now() });
+      if (pts.length > 40) pts.shift();
+      if (!trailRaf) trailRaf = requestAnimationFrame(drawTrail);
+    };
+    window.addEventListener('resize', sizeTrail);
+    // pointer position for CSS parallax (−1…1), written once per frame
+    const root = document.documentElement;
+    let pRaf = 0;
+    const setP = () => {
+      pRaf = 0;
+      root.style.setProperty('--mx', ((x / window.innerWidth) * 2 - 1).toFixed(3));
+      root.style.setProperty('--my', ((y / window.innerHeight) * 2 - 1).toFixed(3));
+    };
     let state = '';
     let dragging = false;
 
@@ -51,6 +94,8 @@ export function Cursor() {
     const onMove = (e: PointerEvent) => {
       x = e.clientX; y = e.clientY;
       el.classList.add('on');
+      pushTrail(x, y);
+      if (!pRaf) pRaf = requestAnimationFrame(setP);
       if (!raf) raf = requestAnimationFrame(() => { raf = 0; paint(); });
 
       const t = e.target as Element | null;
@@ -81,8 +126,19 @@ export function Cursor() {
       window.removeEventListener('dragstart', onDragStart);
       window.removeEventListener('dragend', onDragEnd);
       if (raf) cancelAnimationFrame(raf);
+      if (trailRaf) cancelAnimationFrame(trailRaf);
+      if (pRaf) cancelAnimationFrame(pRaf);
+      window.removeEventListener('resize', sizeTrail);
     };
   }, []);
 
-  return <div id="rcursor" ref={ref} aria-hidden="true" />;
+  return (
+    <>
+      <canvas
+        ref={trailRef} aria-hidden="true"
+        style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', pointerEvents: 'none', zIndex: 9990 }}
+      />
+      <div id="rcursor" ref={ref} aria-hidden="true" />
+    </>
+  );
 }

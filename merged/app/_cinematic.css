@@ -753,7 +753,8 @@ html.mode-enter body>:not(script):not(.cg):not(#toasts){animation:modeIn 1.1s cu
 @keyframes modeIn{from{opacity:0}to{opacity:1}}
 
 /* ── discovery ceremony & era shift: light, depth and one warm accent ──── */
-.cer-plate{animation:mxFloat 6s ease-in-out infinite}
+.cer-plate{animation:mxFloatT 6s ease-in-out infinite}
+@keyframes mxFloatT{0%,100%{translate:0 0}50%{translate:0 -10px}}
 .cer-plate::before{content:"";position:absolute;inset:-18%;z-index:-1;pointer-events:none;
   background:radial-gradient(closest-side,color-mix(in srgb,var(--ochre) 32%,transparent),transparent);
   animation:mxBreathe 4.5s ease-in-out infinite}
@@ -863,4 +864,51 @@ button:not(:disabled):active{transform:translateY(1px)}
 
 @media (prefers-reduced-motion:reduce){
   [class$="-body"]::before,[class$="-body"]::after,[class$="-ending-box"],.tech-reveal,.intro-stone{animation:none!important}
+}
+
+/* ============================================================================
+   13. DEPTH — everything arrives from far away and comes into focus; light and
+       frames lean with the pointer. (--mx/--my are set by components/fx/Cursor.)
+   ========================================================================== */
+
+/* era shift: the colour wash rushes in like an iris, the name flies out of the dark and past the lens */
+.es-wash{animation:esWash 1.7s ease both,esIris 1.7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes esIris{from{transform:scale(2.4)}to{transform:scale(1)}}
+.es-name{animation:esFly 1.7s cubic-bezier(.2,.7,.2,1) both .18s}
+@keyframes esFly{
+  0%{opacity:0;transform:perspective(800px) translateZ(-720px);filter:blur(14px);letter-spacing:.22em}
+  26%{opacity:1;transform:perspective(800px) translateZ(0);filter:blur(0);letter-spacing:-.015em}
+  72%{opacity:1;transform:perspective(800px) translateZ(0);filter:blur(0)}
+  100%{opacity:0;transform:perspective(800px) translateZ(320px);filter:blur(10px)}}
+
+/* discovery ceremony: the plate and the name travel in from depth and settle into focus */
+.cer-plate{transform:perspective(900px) translateZ(-460px) scale(.92);transition:opacity 1s cubic-bezier(.16,.7,.2,1),transform 1.5s cubic-bezier(.16,.7,.2,1),filter 1.1s ease}
+.cer-name,.cer-tag,.cer-no,.cer-meta{transform:perspective(700px) translateZ(-240px);filter:blur(8px);
+  transition:opacity .8s ease,transform 1.1s cubic-bezier(.2,.7,.2,1),filter .9s ease}
+.cer[data-step="2"] .cer-tag,.cer[data-step="3"] .cer-tag,.cer[data-step="4"] .cer-tag,.cer[data-step="5"] .cer-tag,.cer[data-step="6"] .cer-tag,.cer[data-step="7"] .cer-tag,
+.cer[data-step="3"] .cer-no,.cer[data-step="4"] .cer-no,.cer[data-step="5"] .cer-no,.cer[data-step="6"] .cer-no,.cer[data-step="7"] .cer-no,
+.cer[data-step="4"] .cer-name,.cer[data-step="5"] .cer-name,.cer[data-step="6"] .cer-name,.cer[data-step="7"] .cer-name,
+.cer[data-step="5"] .cer-meta,.cer[data-step="6"] .cer-meta,.cer[data-step="7"] .cer-meta{filter:none;transform:none}
+
+/* game modes: the whole frame dollies in from depth; its contents rise into place one after another */
+.sv-body,.cv-body,.ar-body,.dph-body,.er-body,.xa-body,.rev-body{animation:mxDolly 1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes mxDolly{from{opacity:0;transform:perspective(1100px) translateZ(-260px) rotateX(6deg);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+.sv-body>*,.cv-body>*,.ar-body>*,.dph-body>*,.er-body>*,.xa-body>*,.rev-body>*{animation:mxRise .7s cubic-bezier(.2,.8,.2,1) both}
+.sv-body>*:nth-child(1),.cv-body>*:nth-child(1),.ar-body>*:nth-child(1),.dph-body>*:nth-child(1),.er-body>*:nth-child(1),.xa-body>*:nth-child(1),.rev-body>*:nth-child(1){animation-delay:0.18s}
+.sv-body>*:nth-child(2),.cv-body>*:nth-child(2),.ar-body>*:nth-child(2),.dph-body>*:nth-child(2),.er-body>*:nth-child(2),.xa-body>*:nth-child(2),.rev-body>*:nth-child(2){animation-delay:0.24s}
+.sv-body>*:nth-child(3),.cv-body>*:nth-child(3),.ar-body>*:nth-child(3),.dph-body>*:nth-child(3),.er-body>*:nth-child(3),.xa-body>*:nth-child(3),.rev-body>*:nth-child(3){animation-delay:0.30s}
+.sv-body>*:nth-child(4),.cv-body>*:nth-child(4),.ar-body>*:nth-child(4),.dph-body>*:nth-child(4),.er-body>*:nth-child(4),.xa-body>*:nth-child(4),.rev-body>*:nth-child(4){animation-delay:0.36s}
+.sv-body>*:nth-child(5),.cv-body>*:nth-child(5),.ar-body>*:nth-child(5),.dph-body>*:nth-child(5),.er-body>*:nth-child(5),.xa-body>*:nth-child(5),.rev-body>*:nth-child(5){animation-delay:0.42s}
+.sv-body>*:nth-child(6),.cv-body>*:nth-child(6),.ar-body>*:nth-child(6),.dph-body>*:nth-child(6),.er-body>*:nth-child(6),.xa-body>*:nth-child(6),.rev-body>*:nth-child(6){animation-delay:0.48s}
+.sv-body>*:nth-child(7),.cv-body>*:nth-child(7),.ar-body>*:nth-child(7),.dph-body>*:nth-child(7),.er-body>*:nth-child(7),.xa-body>*:nth-child(7),.rev-body>*:nth-child(7){animation-delay:0.54s}
+.sv-body>*:nth-child(8),.cv-body>*:nth-child(8),.ar-body>*:nth-child(8),.dph-body>*:nth-child(8),.er-body>*:nth-child(8),.xa-body>*:nth-child(8),.rev-body>*:nth-child(8){animation-delay:0.60s}
+@keyframes mxRise{from{opacity:0;transform:translate3d(0,26px,0);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+
+/* light and frames lean with the pointer */
+.sv-body::before,.cv-body::before,.ar-body::before,.dph-body::before,.er-body::before,.xa-body::before,.rev-body::before{translate:calc(var(--mx,0) * -26px) calc(var(--my,0) * -16px)}
+#ground::before,#ground::after{translate:calc(var(--mx,0) * -16px) calc(var(--my,0) * -9px)}
+
+@media (prefers-reduced-motion:reduce){
+  .es-wash,.es-name,.sv-body,.cv-body,.ar-body,.dph-body,.er-body,.xa-body,.rev-body,.sv-body>*,.cv-body>*,.ar-body>*,.dph-body>*,.er-body>*,.xa-body>*,.rev-body>*{animation:none!important}
+  .cer-plate,.cer-name,.cer-tag,.cer-no,.cer-meta{transition:none!important;filter:none!important}
 }

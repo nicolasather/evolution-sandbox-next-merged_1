@@ -34,12 +34,13 @@ export function ViewVeil({ view }: { view: string }) {
         aria-hidden="true"
         style={{
           position: 'absolute', inset: 0, zIndex: 10, pointerEvents: 'none',
-          background: 'var(--ink-0)',
+          // an iris: the dark closes in from the edges and rushes past the camera
+          background: 'radial-gradient(ellipse at 50% 50%, transparent 0%, var(--ink-0) 62%)',
         }}
-        initial={{ opacity: 0.6, backdropFilter: 'blur(7px)' }}
-        animate={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+        initial={{ opacity: 0.9, scale: 1.5, backdropFilter: 'blur(9px)' }}
+        animate={{ opacity: 0, scale: 1, backdropFilter: 'blur(0px)' }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.46, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
       />
     </AnimatePresence>
   );

@@ -42,7 +42,12 @@
 :root[data-theme="neon"] #scene{color:var(--plate-line)}
 .scene-layer{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s ease}
 .scene-layer.front{opacity:1}
-.scene-layer g[data-depth]{will-change:transform}
+.scene-layer g[data-depth]{will-change:transform,scale;--d:.5;transform-origin:800px 560px;
+  opacity:min(1,calc(.55 + var(--d)*.45));
+  animation:scDolly calc(44s - var(--d)*16s) ease-in-out infinite alternate}
+/* a slow drive forward toward the vanishing point: near layers travel further than far ones */
+@keyframes scDolly{from{translate:0 0;scale:1}to{translate:calc(var(--d)*-14px) calc(var(--d)*6px);scale:calc(1 + var(--d)*.07)}}
+@media (prefers-reduced-motion:reduce){.scene-layer g[data-depth]{animation:none}}
 #scene:not(.on) .scene-layer *,.scene-layer:not(.front) *{animation-play-state:paused!important}
 
 .scene-layer .drift{animation:scDrift 46s ease-in-out infinite alternate}

@@ -80,6 +80,7 @@ export function GlobeSequence({ director, onSkip }: GlobeSequenceProps) {
   const scene = useRef<{ id: number; scene: OverlayScene } | null>(null);
   const size = useRef({ w: 0, h: 0, scale: 1, cap: 0, quality: getQuality() });
   const perf = useRef({ last: 0, avg: 16, frames: 0 });
+  const fly = useRef({ lon: NaN, lat: NaN, t: 0, roll: 0, pitch: 0 });
 
   /**
    * Make the WebGL globe once, when the first moment is queued, so shader compilation hides in the pause
@@ -200,6 +201,29 @@ export function GlobeSequence({ director, onSkip }: GlobeSequenceProps) {
     }
 
     if (glowRef.current) glowRef.current.style.opacity = String(p.kind === 'era' ? lift * 0.55 : 0);
+
+    // fly-through: bank into the turn, push in as the veil lifts, drift with the pointer.
+    // Both canvases share one transform so the markers stay locked to the globe.
+    const fl = fly.current;
+    const dtS = Math.max(0.001, Math.min(0.1, (now - fl.t) / 1000));
+    let vLon = 0, vLat = 0;
+    if (!Number.isNaN(fl.lon) && fl.t) {
+      let d = f.cam.lon - fl.lon;
+      if (d > 180) d -= 360; else if (d < -180) d += 360;
+      vLon = d / dtS; vLat = (f.cam.lat - fl.lat) / dtS;
+    }
+    fl.lon = f.cam.lon; fl.lat = f.cam.lat; fl.t = now;
+    const k = 1 - Math.exp(-dtS * 5);
+    fl.roll += (Math.max(-1, Math.min(1, vLon / 60)) * 4.5 - fl.roll) * k;
+    fl.pitch += (Math.max(-1, Math.min(1, vLat / 40)) * 1.6 - fl.pitch) * k;
+    const still = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const cs = typeof document !== 'undefined' ? getComputedStyle(document.documentElement) : null;
+    const mx = still || !cs ? 0 : parseFloat(cs.getPropertyValue('--mx')) || 0;
+    const my = still || !cs ? 0 : parseFloat(cs.getPropertyValue('--my')) || 0;
+    const dolly = still ? 1 : 1 + (1 - f.veil) * 0.22;
+    const tf = still ? '' : `translate3d(${(mx * -10).toFixed(1)}px, ${(my * -7 + fl.pitch * 3).toFixed(1)}px, 0) rotate(${fl.roll.toFixed(2)}deg) scale(${dolly.toFixed(4)})`;
+    if (glCanvas.current) glCanvas.current.style.transform = tf;
+    if (ovCanvas.current) ovCanvas.current.style.transform = tf;
   }, [fit]);
 
   // the clock

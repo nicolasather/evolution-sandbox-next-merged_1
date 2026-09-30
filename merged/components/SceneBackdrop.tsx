@@ -111,6 +111,11 @@ export function SceneBackdrop({ era, active, discovered }: { era: EraId; active:
     const host = hostRef.current;
     if (!host) return;
     host.querySelectorAll('.scene-layer').forEach(el => stagger(el, el.getAttribute('data-scene') || ''));
+    // depth layers: each gets its own travel speed (near = faster, far = slower + hazier)
+    host.querySelectorAll<SVGGElement>('g[data-depth]').forEach(g => {
+      const d = Math.max(0, Math.min(1.5, parseFloat(g.getAttribute('data-depth') || '0') || 0));
+      g.style.setProperty('--d', d.toFixed(2));
+    });
   }, [shown]);
 
   // mouse parallax — layers slide by their depth, eased every frame
@@ -131,7 +136,9 @@ export function SceneBackdrop({ era, active, discovered }: { era: EraId; active:
       sceneState.px = x; sceneState.py = y;
       host.querySelectorAll<SVGGElement>('g[data-depth]').forEach(g => {
         const d = parseFloat(g.getAttribute('data-depth') || '0');
-        g.style.transform = `translate(${(-x * d * 26).toFixed(2)}px, ${(-y * d * 12).toFixed(2)}px)`;
+        // moving the pointer up pushes the camera forward: near layers rush past, far ones barely move
+        const push = 1 + d * 0.05 * Math.max(0, -y) + d * 0.02 * Math.abs(x);
+        g.style.transform = `translate(${(-x * d * 26).toFixed(2)}px, ${(-y * d * 12).toFixed(2)}px) scale(${push.toFixed(4)})`;
       });
       if (Math.abs(tx - x) > 0.002 || Math.abs(ty - y) > 0.002) raf = requestAnimationFrame(tick);
     };
