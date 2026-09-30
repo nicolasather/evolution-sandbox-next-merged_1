@@ -40,10 +40,10 @@ const STATIC: Partial<Record<SceneId, string[]>> = {
     'Other wings of this museum are in active development. They will open here, alongside these, as each is finished.',
   ],
   museum: [
-    'Every major invention you have reached, every camp your Survival runs left behind, every settlement your Civilization runs grew.',
-    'Every report your Archaeologist digs filed, every tablet set your Decipher runs read, every Escape Room episode you have opened.',
-    'Every field report your Alien Archaeology sites produced, and every discovery your Reverse Evolution runs traced back to its origins.',
-    'All of it reconstructed and labelled — never claimed as the object or event itself.',
+    'Three wings under one roof: humanity\u2019s achievements, your own discoveries, and the records your other runs produced.',
+    'Humanity\u2019s galleries open with the timeline, not with your inventory. What humanity had achieved by this point in history is on display — whether or not you have made it yourself.',
+    'Beyond the light at the end of the hall, history is still sealed.',
+    'Walk with the wheel, drag or the arrow keys. Choose anything to see where it happened, what made it possible, and what grew from it.',
   ],
   trade: [
     'Discoveries no longer exist everywhere at once. Each one first appears where the record actually places it.',

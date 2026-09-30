@@ -19,23 +19,24 @@ const era = (n = 5, o: Partial<EraPlanInput> = {}): EraPlanInput => ({
 
 describe('startDelay', () => {
   it('is the beat after the craft: short, shorter for reduced motion, a little less on weak devices', () => {
-    expect(startDelay('high', false)).toBe(350);
-    expect(startDelay('low', false)).toBe(250);
+    expect(startDelay('high', false)).toBe(550);
+    expect(startDelay('low', false)).toBe(400);
     expect(startDelay('high', true)).toBe(200);
     for (const q of ['high', 'medium', 'low'] as const) {
       for (const r of [false, true]) {
         expect(startDelay(q, r)).toBeGreaterThanOrEqual(200);
-        expect(startDelay(q, r)).toBeLessThanOrEqual(500);
+        expect(startDelay(q, r)).toBeLessThanOrEqual(600);
       }
     }
   });
 });
 
 describe('a major invention (tier A)', () => {
-  it('runs about 3–5 s in total, with the phases in order', () => {
+  // 1.14: the globe ceremony was stretched ~2.2x on purpose (major-event tier, 5–12 s)
+  it('runs about 6.5–12 s in total, with the phases in order', () => {
     const p = buildPlan(major());
-    expect(p.total).toBeGreaterThanOrEqual(3000);
-    expect(p.total).toBeLessThanOrEqual(5000);
+    expect(p.total).toBeGreaterThanOrEqual(6500);
+    expect(p.total).toBeLessThanOrEqual(12000);
     expect(p.segments.map(s => s.name)).toEqual(['enter', 'linger', 'travel', 'zoom', 'reveal', 'exit']);
     // contiguous, no gaps
     p.segments.forEach((s, i) => { if (i) expect(s.start).toBe(p.segments[i - 1].end); });
@@ -43,11 +44,11 @@ describe('a major invention (tier A)', () => {
     expect(p.segments[p.segments.length - 1].end).toBe(p.total);
   });
 
-  it('keeps the spin and the zoom inside the brief (spin 1–2 s at most, zoom 0.7–1.1 s)', () => {
+  it('keeps the spin and the zoom inside the stretched brief (spin 1.4–3.5 s, zoom 1.5–2.4 s)', () => {
     const p = buildPlan(major({ to: site(-33.9, 151.2) }));
     const dur = (n: string) => { const s = p.segments.find(x => x.name === n)!; return s.end - s.start; };
-    expect(dur('travel')).toBeGreaterThanOrEqual(650); expect(dur('travel')).toBeLessThanOrEqual(2000);
-    expect(dur('zoom')).toBeGreaterThanOrEqual(700); expect(dur('zoom')).toBeLessThanOrEqual(1100);
+    expect(dur('travel')).toBeGreaterThanOrEqual(1430); expect(dur('travel')).toBeLessThanOrEqual(3520);
+    expect(dur('zoom')).toBeGreaterThanOrEqual(1540); expect(dur('zoom')).toBeLessThanOrEqual(2420);
   });
 
   it('opens the skip window after 1.5 s (never earlier than the brief allows)', () => {
@@ -242,8 +243,8 @@ describe('an era completing', () => {
     const p = buildPlan(era());
     expect(p.kind).toBe('era');
     expect(p.segments.map(s => s.name)).toEqual(['enter', 'era_zoomout', 'era_light', 'era_title', 'exit']);
-    expect(p.total).toBeGreaterThanOrEqual(3000);
-    expect(p.total).toBeLessThanOrEqual(6000);
+    expect(p.total).toBeGreaterThanOrEqual(6500);
+    expect(p.total).toBeLessThanOrEqual(13000);
   });
 
   it('lights the markers one by one and has them all lit when the title arrives', () => {

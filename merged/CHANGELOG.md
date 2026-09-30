@@ -3,6 +3,76 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## 1.15.0 — 30 September 2026 (unreleased)
+
+### The Museum, redesigned: a living museum of human civilisation
+The Museum no longer displays the player's own crafted items. It is now one
+building with three deliberately separate wings (see `lib/museum/README.md`):
+
+- **The Humanity Museum** — humanity's real achievements, opened **only by the
+  canonical timeline**, never by inventory. `lib/museum/history/timeline.ts`
+  maps Main Evolution's era progression onto real years (`data/museum/calendar.json`),
+  continuously and on a log scale, so exhibits appear a few at a time (≈1 per
+  discovery on average, never more than a handful at once) instead of in
+  per-era bursts. Crafting something out of order does not unlock future history.
+- **Your Own History** — the player's personal discoveries, in their own order,
+  with an optional, carefully worded comparison against the canonical exhibit
+  ("earlier / around / later"; approximate by design).
+- **Records** — the extra modes' outputs (expedition records, settlements,
+  excavation reports, tablets, episode records, alien field reports, dependency
+  maps), shelved in their own archive wing, never mixed with history.
+
+**Curated database** (`data/museum/`): 324 exhibits across 18 galleries from
+Sahelanthropus (c. 7 Ma) to the James Webb Space Telescope; 49 regions; a
+52-chapter Human Story route. Every exhibit carries an approximate date or range
+with precision and basis, plural regions with roles (independent origins are
+explicit — 20+ multi-origin entries), culture where honest, categories, a
+four-level importance (supporting · milestone · breakthrough · civilisation-
+defining), a one-line change, context, significance, uncertainty, relations
+(`enabledBy`; the inverse is derived), sources (existing verified ids only,
+otherwise `source_required` — no URL is ever invented) and display
+configuration. `lib/museum/__tests__/catalog.test.ts` validates all of it.
+
+**Spatial, cinematic UI** (`components/museum/`): an atrium with three
+doorways, a dome (world history), a floor path (the Human Story), a ledger, and
+the building's own floor plan lit as far as history has reached. The Humanity
+hall is a walkable corridor (wheel, drag, arrows, a gallery rail): rooms change
+material and light with history (cave → stone → earth → mudbrick → bronze →
+marble → timber → glass → iron → light → grid); displays stand in space as wall
+cases, plinths, suspended objects and monumental bays sized by importance, and
+draw themselves in as you approach; portals of sealed galleries stay shut, with
+a seam of light as history nears them; beyond the "edge of history" line only
+anonymous silhouettes remain. Focusing a display opens a layered plaque
+(title, date, places, what changed, a small globe; then on request the full
+account, what came before, what it made possible — with a count of later
+developments "still ahead in history", never named — uncertainty, evidence,
+"around the world at this time", and the player's own path) while curved lines
+in the hall trace its ancestry and descendants. A globe room replays how the
+world filled with achievements and connections; the Human Story tour glides
+through the great turning points with letterboxed captions.
+
+**Timeline synchronisation and reveals**: `evo.museum.v1` stores eligible,
+revealed, visited and detail-opened separately. Newly opened galleries and newly
+available civilisation-defining achievements get one slow, restrained cinematic
+on entering the Museum (≤3 in a row, skippable); during play only a quiet mark
+on the Museum tile and, for those major moments, a letterboxed line at the
+bottom of the screen that never interrupts a discovery ceremony.
+
+### Fixes
+- **Test suite green again (739 / 739).** Eleven tests in three suites
+  (`components/__tests__/World.test.tsx`, `lib/__tests__/museum.test.ts`,
+  `lib/world/__tests__/choreography.test.ts`) still asserted the timings from
+  before 1.14 stretched the globe ceremony ~2.2× and lengthened the intro film
+  toward 30 s. The code was right; the expectations were brought up to the
+  new numbers (ceremony 6.5–12 s, skip window 3.3 s, start beat 400/550 ms,
+  film 15–30 s and never shorter on a stronger tier).
+- **Phones: no more horizontal overflow.** `#app` is a one-column grid whose
+  column sized itself to the rail's widest row, so `#views` was 434 px wide on
+  a 390 px screen and the right edge of every view was cut off. The column is
+  now `minmax(0,1fr)` (`app/_design-system.css`). The top bar's last button was
+  also clipped by 5 px on narrow phones; the gaps tighten at ≤ 420 px
+  (`app/_cinematic.css`).
+
 ## 1.14.0 — 28 September 2026 (unreleased)
 
 ### The shared cinematic motion language, and a "maximal" colour correction — first slice of a third, much larger visual brief

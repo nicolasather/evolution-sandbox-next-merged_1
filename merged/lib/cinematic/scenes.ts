@@ -53,7 +53,7 @@ export const SCENES: Record<SceneId, Scene> = {
   },
   museum: {
     id: 'museum', title: 'Museum', hue: 12, shape: 'prism',
-    lines: ['The great inventions stand in the light.', 'Each one was once impossible.'],
+    lines: ['Everything humanity learned, gathered in one building.', 'It grows as you move through time.'],
   },
   minpath: {
     id: 'minpath', title: 'Minimum Path', hue: 160, shape: 'ring',

@@ -1,0 +1,266 @@
+{
+  "_note": "The curated 'Human Story' route: the largest turning points, in chronological order, one line each. Only chapters whose exhibit the canonical timeline has already reached are ever shown; the route simply ends where the player's timeline stands.",
+  "title": "The Human Story",
+  "chapters": [
+    {
+      "id": "ch-upright",
+      "exhibit": "bipedalism",
+      "line": "It begins with a body learning to stand."
+    },
+    {
+      "id": "ch-edge",
+      "exhibit": "lomekwi",
+      "line": "A stone struck on purpose. An edge that did not exist before."
+    },
+    {
+      "id": "ch-tools",
+      "exhibit": "oldowan",
+      "line": "Toolmaking becomes a habit — and it will never stop."
+    },
+    {
+      "id": "ch-walkers",
+      "exhibit": "homo-erectus",
+      "line": "Long legs, bigger brains, and the first walks out of Africa."
+    },
+    {
+      "id": "ch-handaxe",
+      "exhibit": "handaxe",
+      "line": "A shape held in the mind, then found in the stone."
+    },
+    {
+      "id": "ch-fire",
+      "exhibit": "controlled-fire",
+      "line": "Fire kept alive. The night pushed back."
+    },
+    {
+      "id": "ch-sapiens",
+      "exhibit": "homo-sapiens",
+      "line": "Our species appears — across Africa, not in a single place."
+    },
+    {
+      "id": "ch-language",
+      "exhibit": "language",
+      "line": "Words. Knowledge can now outlive the one who found it."
+    },
+    {
+      "id": "ch-beads",
+      "exhibit": "shell-beads",
+      "line": "Shells strung to be worn: objects that carry meaning."
+    },
+    {
+      "id": "ch-dispersal",
+      "exhibit": "great-dispersal",
+      "line": "One species spreads across a planet."
+    },
+    {
+      "id": "ch-sea",
+      "exhibit": "sahul-crossing",
+      "line": "Out of sight of land, people cross the sea."
+    },
+    {
+      "id": "ch-art",
+      "exhibit": "cave-painting",
+      "line": "Animals appear on stone, lit by firelight."
+    },
+    {
+      "id": "ch-americas",
+      "exhibit": "peopling-americas",
+      "line": "The last great continents are reached."
+    },
+    {
+      "id": "ch-pottery",
+      "exhibit": "pottery",
+      "line": "Clay, transformed by fire, holds water."
+    },
+    {
+      "id": "ch-farming",
+      "exhibit": "agriculture",
+      "line": "In several places at once, people begin to plant."
+    },
+    {
+      "id": "ch-herding",
+      "exhibit": "herding",
+      "line": "Animals are kept, not hunted."
+    },
+    {
+      "id": "ch-metal",
+      "exhibit": "smelting",
+      "line": "Fire pulls metal out of rock."
+    },
+    {
+      "id": "ch-cities",
+      "exhibit": "first-cities",
+      "line": "Tens of thousands of strangers, living together."
+    },
+    {
+      "id": "ch-wheel",
+      "exhibit": "wheel",
+      "line": "A disc on an axle. Loads begin to roll."
+    },
+    {
+      "id": "ch-writing",
+      "exhibit": "writing",
+      "line": "Speech becomes visible. Memory moves outside the body."
+    },
+    {
+      "id": "ch-bronze",
+      "exhibit": "bronze",
+      "line": "An alloy worth crossing continents for."
+    },
+    {
+      "id": "ch-alphabet",
+      "exhibit": "alphabet",
+      "line": "A few dozen signs, one for each sound."
+    },
+    {
+      "id": "ch-iron",
+      "exhibit": "iron",
+      "line": "The common metal, in every farmer's hand."
+    },
+    {
+      "id": "ch-coins",
+      "exhibit": "coinage",
+      "line": "Value, stamped and counted."
+    },
+    {
+      "id": "ch-proof",
+      "exhibit": "deductive-geometry",
+      "line": "From a few axioms, everything else — by proof."
+    },
+    {
+      "id": "ch-paper",
+      "exhibit": "paper",
+      "line": "Cheap sheets from plant fibre. Knowledge becomes light."
+    },
+    {
+      "id": "ch-silk",
+      "exhibit": "silk-roads",
+      "line": "Eurasia becomes one conversation."
+    },
+    {
+      "id": "ch-zero",
+      "exhibit": "zero",
+      "line": "Nothing becomes a number."
+    },
+    {
+      "id": "ch-ocean",
+      "exhibit": "polynesian-wayfinding",
+      "line": "Stars, swells and birds guide voyagers across the widest ocean."
+    },
+    {
+      "id": "ch-compass",
+      "exhibit": "compass",
+      "line": "A needle points north, whatever the sky."
+    },
+    {
+      "id": "ch-print",
+      "exhibit": "printing-press",
+      "line": "A thousand identical copies. Knowledge escapes."
+    },
+    {
+      "id": "ch-crossings",
+      "exhibit": "ocean-crossings",
+      "line": "Every inhabited continent, joined by sea — at terrible cost."
+    },
+    {
+      "id": "ch-science",
+      "exhibit": "scientific-revolution",
+      "line": "Look closer. Measure. Publish. Be proved wrong."
+    },
+    {
+      "id": "ch-newton",
+      "exhibit": "principia",
+      "line": "One law for the falling apple and the orbiting Moon."
+    },
+    {
+      "id": "ch-industry",
+      "exhibit": "industrial-revolution",
+      "line": "Machines begin to do the work of muscle."
+    },
+    {
+      "id": "ch-steam",
+      "exhibit": "steam-power",
+      "line": "Heat becomes motion, anywhere."
+    },
+    {
+      "id": "ch-vaccine",
+      "exhibit": "vaccination",
+      "line": "A mild infection protects against a deadly one."
+    },
+    {
+      "id": "ch-telegraph",
+      "exhibit": "telegraph",
+      "line": "Messages at the speed of electricity."
+    },
+    {
+      "id": "ch-evolution",
+      "exhibit": "evolution",
+      "line": "All life, one family tree."
+    },
+    {
+      "id": "ch-electric",
+      "exhibit": "electrification",
+      "line": "The night is switched on."
+    },
+    {
+      "id": "ch-flight",
+      "exhibit": "powered-flight",
+      "line": "Fifty-nine seconds in the air. The sky becomes a road."
+    },
+    {
+      "id": "ch-relativity",
+      "exhibit": "relativity",
+      "line": "Space and time bend."
+    },
+    {
+      "id": "ch-antibiotics",
+      "exhibit": "antibiotics",
+      "line": "Infections that killed for all of history become curable."
+    },
+    {
+      "id": "ch-computer",
+      "exhibit": "programmable-computer",
+      "line": "A machine that can become any machine."
+    },
+    {
+      "id": "ch-transistor",
+      "exhibit": "transistor",
+      "line": "A switch smaller than a grain of rice — soon, smaller than dust."
+    },
+    {
+      "id": "ch-dna",
+      "exhibit": "dna-structure",
+      "line": "Life's instructions, written in four letters."
+    },
+    {
+      "id": "ch-space",
+      "exhibit": "space-age",
+      "line": "Something made by people circles the Earth."
+    },
+    {
+      "id": "ch-moon",
+      "exhibit": "moon-landing",
+      "line": "Footsteps on another world."
+    },
+    {
+      "id": "ch-internet",
+      "exhibit": "internet",
+      "line": "Networks join into one network."
+    },
+    {
+      "id": "ch-web",
+      "exhibit": "world-wide-web",
+      "line": "Anyone can publish; anyone can read."
+    },
+    {
+      "id": "ch-phone",
+      "exhibit": "smartphone",
+      "line": "The accumulated knowledge of humanity, in a pocket."
+    },
+    {
+      "id": "ch-learning",
+      "exhibit": "deep-learning",
+      "line": "Machines begin to learn from what we have written."
+    }
+  ]
+}

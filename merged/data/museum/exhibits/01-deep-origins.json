@@ -1,0 +1,133 @@
+{
+  "gallery": "deep-origins",
+  "exhibits": [
+    {
+      "id": "sahelanthropus",
+      "title": "Toumaï",
+      "when": { "from": -7000000, "to": -6000000, "anchor": -7000000, "display": "c. 7–6 million years ago", "precision": "deep-time", "basis": "estimate" },
+      "regions": [{ "region": "sahara", "role": "site", "site": { "label": "Toros-Menalla, northern Chad", "lat": 16.2, "lon": 17.5 } }],
+      "categories": ["human-evolution"],
+      "importance": "milestone",
+      "change": "A skull from the Djurab desert pushed the human lineage back toward the split from chimpanzees.",
+      "context": "Sahelanthropus tchadensis, nicknamed Toumaï, is known from a crushed cranium and a few other fossils found in Chad in 2001. Its small canine teeth and the position of the skull opening have been read as signs of an early hominin that may have walked upright. It lived far west of the Rift Valley, showing that early relatives of humans were not confined to East Africa.",
+      "significance": "It marks the deep end of the human story — the period when our lineage and the chimpanzee lineage were separating.",
+      "uncertainty": { "level": "contested", "note": "Whether Sahelanthropus was habitually bipedal, or a hominin at all rather than an ape close to the split, is actively debated; a thigh bone attributed to it has divided researchers." },
+      "relations": { "related": ["bipedalism", "ardipithecus"] },
+      "sources": { "status": "source_required", "note": "Brunet et al. 2002 (Nature) description of the TM 266 cranium." },
+      "display": { "motif": "skull", "choreography": "stratum" }
+    },
+    {
+      "id": "bipedalism",
+      "title": "Walking Upright",
+      "when": { "from": -7000000, "to": -4000000, "anchor": -6000000, "display": "emerging c. 7–4 million years ago", "precision": "deep-time", "basis": "range-of-emergence" },
+      "regions": [
+        { "region": "east-africa", "role": "early-centre" },
+        { "region": "ethiopia", "role": "early-centre" },
+        { "region": "sahara", "role": "early-centre", "note": "If Sahelanthropus was bipedal." }
+      ],
+      "categories": ["human-evolution"],
+      "importance": "defining",
+      "change": "Our ancestors began to move on two legs, freeing the hands.",
+      "context": "The skeleton was gradually reshaped for upright walking — the pelvis, the angle of the thigh, the arch of the foot and the position of the skull on the spine. Early forms mixed walking with climbing for millions of years; fully committed long-distance walking came much later with Homo erectus.",
+      "significance": "Every later human technology was made by hands that no longer had to carry the body. Upright walking came millions of years before large brains or stone tools.",
+      "uncertainty": { "level": "debated", "note": "Why bipedalism evolved (energy efficiency, carrying, heat, changing woodland) and exactly when it became habitual remain open questions." },
+      "relations": { "related": ["sahelanthropus", "ardipithecus", "laetoli-footprints"] },
+      "sources": { "ids": ["si_milestones"], "status": "cited" },
+      "display": { "motif": "footprints", "choreography": "stratum" }
+    },
+    {
+      "id": "ardipithecus",
+      "title": "Ardi",
+      "when": { "from": -4400000, "display": "c. 4.4 million years ago", "precision": "deep-time", "basis": "earliest-evidence" },
+      "regions": [{ "region": "ethiopia", "role": "site", "site": { "label": "Aramis, Middle Awash, Ethiopia", "lat": 10.5, "lon": 40.4 } }],
+      "categories": ["human-evolution"],
+      "importance": "milestone",
+      "change": "A partial skeleton showed a creature that both climbed trees and walked upright.",
+      "context": "Ardipithecus ramidus is known from a remarkably complete female skeleton published in 2009 after years of reconstruction. It had a grasping big toe for climbing but a pelvis already adapted to upright walking, and lived in a wooded environment rather than open grassland.",
+      "significance": "It challenged the idea that walking upright began on the open savanna.",
+      "uncertainty": { "level": "debated", "note": "Its exact place in the family tree and how efficiently it walked are debated." },
+      "relations": { "enabledBy": ["bipedalism"], "related": ["australopiths"] },
+      "sources": { "status": "source_required", "note": "White et al. 2009, special issue of Science on Ardipithecus ramidus." },
+      "display": { "motif": "skull", "choreography": "stratum" }
+    },
+    {
+      "id": "australopiths",
+      "title": "The Australopiths",
+      "when": { "from": -4200000, "to": -2000000, "display": "c. 4.2–2 million years ago", "precision": "deep-time", "basis": "range-of-emergence" },
+      "regions": [
+        { "region": "east-africa", "role": "early-centre" },
+        { "region": "ethiopia", "role": "early-centre" },
+        { "region": "southern-africa", "role": "early-centre" },
+        { "region": "sahara", "role": "site", "note": "Australopithecus bahrelghazali, Chad." }
+      ],
+      "categories": ["human-evolution"],
+      "importance": "supporting",
+      "change": "Upright-walking apes with small brains spread across Africa for two million years.",
+      "context": "Australopithecus includes several species — anamensis, afarensis, africanus, sediba and others — found from Ethiopia to South Africa and Chad. They walked upright on the ground but kept long arms suited to climbing, with brains little larger than a chimpanzee's.",
+      "significance": "They show that human evolution was a bush of coexisting species, not a single line of ancestors.",
+      "uncertainty": { "level": "debated", "note": "Which australopith species, if any, gave rise to Homo is unresolved." },
+      "relations": { "enabledBy": ["bipedalism"], "related": ["lucy", "laetoli-footprints"] },
+      "sources": { "status": "source_required" },
+      "display": { "motif": "skull", "choreography": "stratum" }
+    },
+    {
+      "id": "laetoli-footprints",
+      "title": "Laetoli Footprints",
+      "when": { "from": -3660000, "display": "c. 3.66 million years ago", "precision": "deep-time", "basis": "dated-event" },
+      "regions": [{ "region": "east-africa", "role": "site", "site": { "label": "Laetoli, Tanzania", "lat": -3.2, "lon": 35.2 } }],
+      "categories": ["human-evolution"],
+      "importance": "milestone",
+      "change": "A trail pressed into wet volcanic ash preserved a walk, step by step.",
+      "context": "In 1978 a team led by Mary Leakey uncovered trails of footprints left in ash from an eruption, later hardened. The prints show a humanlike heel strike and a big toe in line with the others, most likely made by Australopithecus afarensis.",
+      "significance": "Direct, datable evidence that upright walking was well established more than three and a half million years ago.",
+      "relations": { "enabledBy": ["bipedalism"], "related": ["lucy", "australopiths"] },
+      "sources": { "status": "source_required", "note": "Leakey & Hay 1979, Nature." },
+      "display": { "motif": "footprints", "choreography": "stratum" }
+    },
+    {
+      "id": "dikika-cutmarks",
+      "title": "Marks on Bone at Dikika",
+      "when": { "from": -3390000, "display": "c. 3.4 million years ago (claimed)", "precision": "deep-time", "basis": "earliest-evidence" },
+      "regions": [{ "region": "ethiopia", "role": "site", "site": { "label": "Dikika, Afar, Ethiopia", "lat": 11.1, "lon": 40.8 } }],
+      "categories": ["survival", "human-evolution"],
+      "importance": "supporting",
+      "change": "Scratches on two animal bones may be the oldest traces of stone-tool butchery.",
+      "context": "Researchers reported in 2010 that bones from Dikika carried cut and percussion marks, which would push meat-cutting with stone back before any known stone tools. No tools were found with them.",
+      "significance": "A test case for how archaeologists argue from indirect traces — and how carefully such claims must be checked.",
+      "uncertainty": { "level": "contested", "note": "Other researchers argue the marks could have been made by trampling or crocodiles; the claim is not generally accepted as proof." },
+      "relations": { "related": ["lomekwi"] },
+      "sources": { "status": "source_required", "note": "McPherron et al. 2010, Nature; critiques by Domínguez-Rodrigo et al." },
+      "display": { "motif": "pebble-tool", "choreography": "scan" }
+    },
+    {
+      "id": "lomekwi",
+      "title": "The First Knapped Stones",
+      "when": { "from": -3300000, "display": "c. 3.3 million years ago", "precision": "deep-time", "basis": "earliest-evidence" },
+      "regions": [{ "region": "east-africa", "role": "site", "site": { "label": "Lomekwi 3, West Turkana, Kenya", "lat": 3.9, "lon": 35.7 } }],
+      "categories": ["survival", "materials"],
+      "importance": "breakthrough",
+      "change": "Someone struck one stone against another on purpose, to make an edge.",
+      "context": "At Lomekwi 3, reported in 2015, large cores, anvils and flakes were found in sediments dated to about 3.3 million years ago — some 700,000 years before the Oldowan. The knapping is cruder than later tool traditions, and it predates the earliest known fossils of the genus Homo.",
+      "significance": "If the dating holds, stone toolmaking began before our own genus, among australopiths or their relatives.",
+      "uncertainty": { "level": "debated", "note": "The makers are unknown, and some researchers have questioned whether the artifacts truly come from the dated layer." },
+      "relations": { "enabledBy": ["bipedalism"], "related": ["dikika-cutmarks"] },
+      "sources": { "ids": ["si_ho_tools"], "status": "cited", "note": "Harmand et al. 2015, Nature." },
+      "display": { "motif": "pebble-tool", "choreography": "assemble" },
+      "discoveryIds": ["sharp_stone", "stone_flake"]
+    },
+    {
+      "id": "lucy",
+      "title": "Lucy",
+      "when": { "from": -3200000, "display": "c. 3.2 million years ago", "precision": "deep-time", "basis": "dated-event" },
+      "regions": [{ "region": "ethiopia", "role": "site", "site": { "label": "Hadar, Afar, Ethiopia", "lat": 11.1, "lon": 40.6 } }],
+      "categories": ["human-evolution"],
+      "importance": "milestone",
+      "change": "Forty percent of one individual: a small, upright-walking ancestor with an ape-sized brain.",
+      "context": "The skeleton AL 288-1, found in 1974, belongs to Australopithecus afarensis. Its pelvis and knee show upright walking, while its long arms and curved fingers suggest it still climbed. She stood a little over a metre tall.",
+      "significance": "Lucy made it clear that upright walking evolved long before large brains — overturning an old assumption that intelligence came first.",
+      "relations": { "enabledBy": ["bipedalism"], "related": ["australopiths", "laetoli-footprints"] },
+      "sources": { "status": "source_required", "note": "Johanson & Taieb 1976; Johanson et al. 1982." },
+      "display": { "motif": "skull", "choreography": "stratum" }
+    }
+  ]
+}

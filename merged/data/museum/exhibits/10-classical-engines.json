@@ -1,0 +1,957 @@
+{
+  "gallery": "classical-engines",
+  "exhibits": [
+    {
+      "id": "roman-concrete",
+      "title": "Roman Concrete",
+      "when": {
+        "from": -200,
+        "to": 126,
+        "anchor": -150,
+        "display": "from c. 2nd century BCE; Pantheon dome 126 CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "origin",
+          "site": {
+            "label": "Rome and the Bay of Naples (pozzolana)",
+            "lat": 40.83,
+            "lon": 14.12
+          }
+        }
+      ],
+      "categories": [
+        "materials",
+        "architecture",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "Lime and volcanic ash set into artificial stone — even underwater.",
+      "context": "Roman builders mixed lime with volcanic ash (pozzolana) and rubble, creating concrete for vaults, harbours and domes. The unreinforced dome of the Pantheon is still the largest of its kind.",
+      "significance": "Freed architecture from post-and-lintel limits; modern concrete is its descendant.",
+      "relations": {
+        "enabledBy": [
+          "pottery-kiln"
+        ],
+        "related": [
+          "aqueducts",
+          "hagia-sophia"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "dome",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "mortar",
+        "lime",
+        "construction"
+      ]
+    },
+    {
+      "id": "water-wheel",
+      "title": "The Water Wheel",
+      "when": {
+        "from": -250,
+        "to": 100,
+        "anchor": -250,
+        "display": "c. 3rd century BCE (Greek world); water-powered trip-hammers in Han China by the 1st century CE",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "greece",
+          "role": "independent",
+          "note": "Described by Philo of Byzantium."
+        },
+        {
+          "region": "china",
+          "role": "independent",
+          "note": "Water-powered bellows and trip-hammers."
+        }
+      ],
+      "categories": [
+        "energy",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "Falling water turned a wheel — the first machine power not from muscle.",
+      "context": "Water wheels drove mills for grinding grain in the Hellenistic and Roman world; in Han China they powered trip-hammers and furnace bellows. Medieval Europe's Domesday Book (1086) recorded over 5,000 mills in England.",
+      "significance": "Mechanical power at a fixed site — the model for mills, factories and turbines.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "The place and date of the first water wheel are uncertain."
+      },
+      "relations": {
+        "enabledBy": [
+          "wheel",
+          "irrigation"
+        ],
+        "related": [
+          "windmills"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "wheel",
+        "choreography": "mechanism"
+      },
+      "discoveryIds": [
+        "water_power",
+        "mechanical_power"
+      ]
+    },
+    {
+      "id": "antikythera",
+      "title": "The Antikythera Mechanism",
+      "when": {
+        "from": -150,
+        "to": -60,
+        "anchor": -100,
+        "display": "c. 150–60 BCE (debated)",
+        "precision": "decades",
+        "basis": "estimate"
+      },
+      "regions": [
+        {
+          "region": "greece",
+          "role": "site",
+          "site": {
+            "label": "Antikythera shipwreck",
+            "lat": 35.87,
+            "lon": 23.3
+          }
+        }
+      ],
+      "categories": [
+        "engineering",
+        "astronomy",
+        "computing"
+      ],
+      "importance": "breakthrough",
+      "change": "A hand-cranked bronze gearbox that modelled the heavens.",
+      "context": "Recovered from a shipwreck in 1901, the mechanism's thirty-plus surviving gears computed the positions of the sun and moon, lunar phases, eclipse cycles and the timing of games. Nothing of comparable complexity survives for over a thousand years.",
+      "significance": "Evidence of sophisticated Hellenistic gearing — an analogue computer two thousand years old.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Its date of construction and exact functions are still researched with X-ray tomography."
+      },
+      "relations": {
+        "enabledBy": [
+          "archimedes",
+          "babylonian-astronomy"
+        ],
+        "related": [
+          "mechanical-clock"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Freeth et al. 2006, Nature; 2021, Scientific Reports."
+      },
+      "display": {
+        "motif": "gear",
+        "choreography": "mechanism"
+      },
+      "discoveryIds": [
+        "mechanism",
+        "gear"
+      ]
+    },
+    {
+      "id": "paper",
+      "title": "Paper",
+      "when": {
+        "from": -150,
+        "to": 105,
+        "anchor": -150,
+        "display": "earliest fragments c. 2nd century BCE; improved by Cai Lun in 105 CE",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "central-asia",
+          "role": "spread",
+          "note": "Samarkand, 8th century."
+        },
+        {
+          "region": "mesopotamia",
+          "role": "spread",
+          "note": "Baghdad paper mill, 794."
+        },
+        {
+          "region": "iberia",
+          "role": "spread",
+          "note": "Europe, from the 11th–12th centuries."
+        }
+      ],
+      "categories": [
+        "writing",
+        "materials",
+        "communication"
+      ],
+      "importance": "breakthrough",
+      "change": "Plant fibre pulp dried into cheap, light sheets for writing.",
+      "context": "Archaeological paper from western China predates the traditional credit to the court official Cai Lun, who standardised papermaking in 105 CE. Paper reached the Islamic world in the 8th century and Europe later, via Spain and Italy.",
+      "significance": "Cheap writing surfaces made books, bureaucracies, printing and mass literacy possible.",
+      "relations": {
+        "enabledBy": [
+          "woven-textiles",
+          "writing"
+        ],
+        "related": [
+          "papyrus",
+          "woodblock-printing",
+          "printing-press"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_paper"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "scroll",
+        "choreography": "unfold"
+      },
+      "discoveryIds": [
+        "paper",
+        "pulp"
+      ]
+    },
+    {
+      "id": "silk-roads",
+      "title": "The Silk Roads",
+      "when": {
+        "from": -130,
+        "to": 1450,
+        "anchor": -130,
+        "display": "from c. 130 BCE (Han missions westward) to the 15th century",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "early-centre"
+        },
+        {
+          "region": "central-asia",
+          "role": "early-centre"
+        },
+        {
+          "region": "iran",
+          "role": "early-centre"
+        },
+        {
+          "region": "levant",
+          "role": "spread"
+        },
+        {
+          "region": "italy",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "trade",
+        "transportation",
+        "communication"
+      ],
+      "importance": "breakthrough",
+      "change": "A web of overland and sea routes linked China, Central Asia, India, Persia and the Mediterranean.",
+      "context": "After the Han envoy Zhang Qian's missions, exchange across Central Asia intensified. Silk, paper, horses, glass, spices, religions, technologies and diseases moved along these routes, mostly in relay rather than by single long journeys. The name 'Silk Road' was coined in the 19th century.",
+      "significance": "Knowledge increasingly travelled between societies; Eurasia became one connected system.",
+      "relations": {
+        "enabledBy": [
+          "royal-road",
+          "silk",
+          "horse-riding"
+        ],
+        "related": [
+          "monsoon-trade",
+          "paper"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "bm_silkroads"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "road",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "caravan_routes",
+        "trade"
+      ]
+    },
+    {
+      "id": "monsoon-trade",
+      "title": "Riding the Monsoon",
+      "when": {
+        "from": -100,
+        "to": 100,
+        "display": "by the 1st century BCE–1st century CE",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "nile",
+          "role": "early-centre",
+          "note": "Red Sea ports such as Berenike."
+        },
+        {
+          "region": "arabia",
+          "role": "early-centre"
+        },
+        {
+          "region": "south-india",
+          "role": "early-centre",
+          "site": {
+            "label": "Muziris (Kerala)",
+            "lat": 10.16,
+            "lon": 76.21
+          }
+        },
+        {
+          "region": "east-africa",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "trade",
+        "navigation"
+      ],
+      "importance": "milestone",
+      "change": "Sailors timed voyages to seasonal winds and crossed the Arabian Sea directly.",
+      "context": "The Periplus of the Erythraean Sea, a 1st-century merchant's guide, describes ports from Egypt to India. Pepper, textiles and gems flowed west; gold and wine flowed east. Arab, Indian and African sailors had long used the monsoon.",
+      "significance": "The Indian Ocean became the busiest long-distance trading world of its time.",
+      "relations": {
+        "enabledBy": [
+          "sailing",
+          "gulf-trade"
+        ],
+        "related": [
+          "silk-roads"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "sail",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "navigation",
+        "trade"
+      ]
+    },
+    {
+      "id": "teotihuacan",
+      "title": "Teotihuacan",
+      "when": {
+        "from": -100,
+        "to": 550,
+        "display": "c. 100 BCE – 550 CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "mesoamerica",
+          "role": "site",
+          "site": {
+            "label": "Teotihuacan, Valley of Mexico",
+            "lat": 19.69,
+            "lon": -98.84
+          }
+        }
+      ],
+      "categories": [
+        "architecture",
+        "governance"
+      ],
+      "importance": "milestone",
+      "change": "A planned city of perhaps 100,000 people, laid out on a grid.",
+      "context": "At its height Teotihuacan was one of the largest cities in the world, with the Pyramids of the Sun and Moon, a broad central avenue, and multi-family apartment compounds housing migrants from across Mesoamerica.",
+      "significance": "Urban planning and cosmopolitan city life in the Americas.",
+      "relations": {
+        "enabledBy": [
+          "maize",
+          "olmec"
+        ],
+        "related": [
+          "first-cities",
+          "tenochtitlan"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "ziggurat",
+        "choreography": "grow"
+      },
+      "discoveryIds": [
+        "urban_planning",
+        "city"
+      ]
+    },
+    {
+      "id": "glassblowing",
+      "title": "Glassblowing",
+      "when": {
+        "from": -50,
+        "display": "c. 1st century BCE",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "levant",
+          "role": "origin"
+        },
+        {
+          "region": "italy",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "manufacturing",
+        "materials"
+      ],
+      "importance": "supporting",
+      "change": "Breath through a tube shaped molten glass into vessels in minutes.",
+      "context": "Glassblowing, invented in the Syro-Palestinian region, made glass cheap and common across the Roman world — for bottles, cups and window panes.",
+      "significance": "Everyday glass — and later the flasks, lenses and tubes of science.",
+      "relations": {
+        "enabledBy": [
+          "glass"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "cmog_glass"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "vial",
+        "choreography": "ignite"
+      },
+      "discoveryIds": [
+        "glass"
+      ]
+    },
+    {
+      "id": "maya-long-count",
+      "title": "The Long Count and Zero",
+      "when": {
+        "from": -36,
+        "to": 400,
+        "anchor": -36,
+        "display": "earliest Long Count dates 1st century BCE; zero as a placeholder by the early centuries CE",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "mesoamerica",
+          "role": "independent",
+          "site": {
+            "label": "Chiapa de Corzo and Tres Zapotes",
+            "lat": 16.7,
+            "lon": -93.0
+          }
+        }
+      ],
+      "categories": [
+        "mathematics",
+        "astronomy"
+      ],
+      "importance": "milestone",
+      "change": "A day count from a fixed starting point, with a sign for zero.",
+      "context": "Mesoamerican calendars counted days in a positional, mostly base-20 system from a mythical starting date in 3114 BCE. The Maya used a zero sign in this system — one of the independent inventions of zero.",
+      "significance": "Precise long-term chronology and an independent concept of zero.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Whether the Long Count originated with the Maya or earlier epi-Olmec peoples is debated."
+      },
+      "relations": {
+        "enabledBy": [
+          "zapotec-writing"
+        ],
+        "related": [
+          "zero"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "calendar",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "calendar",
+        "number_system"
+      ]
+    },
+    {
+      "id": "codex",
+      "title": "The Book",
+      "when": {
+        "from": 100,
+        "to": 400,
+        "display": "c. 1st–4th century CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "early-centre"
+        },
+        {
+          "region": "nile",
+          "role": "early-centre"
+        }
+      ],
+      "categories": [
+        "communication",
+        "knowledge"
+      ],
+      "importance": "supporting",
+      "change": "Folded pages bound at one edge replaced the scroll.",
+      "context": "The codex, of parchment or papyrus, let readers jump between pages, write on both sides and carry long texts compactly. By the 4th century it had largely replaced the roll in the Mediterranean.",
+      "significance": "The form of the book we still use — and the page metaphor of the web.",
+      "relations": {
+        "enabledBy": [
+          "papyrus"
+        ],
+        "related": [
+          "printing-press"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "book",
+        "choreography": "unfold"
+      }
+    },
+    {
+      "id": "aksum",
+      "title": "Aksum",
+      "when": {
+        "from": 100,
+        "to": 940,
+        "display": "c. 100–940 CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "ethiopia",
+          "role": "site",
+          "site": {
+            "label": "Aksum, northern Ethiopia",
+            "lat": 14.13,
+            "lon": 38.72
+          }
+        }
+      ],
+      "culture": "Kingdom of Aksum",
+      "categories": [
+        "trade",
+        "governance",
+        "architecture"
+      ],
+      "importance": "milestone",
+      "change": "An African trading power with its own coins, script and towering stelae.",
+      "context": "Aksum controlled Red Sea trade between the Roman world and India, minted gold, silver and bronze coins from the late 3rd century, used the Ge'ez script, and raised monolithic stelae over 20 metres tall.",
+      "significance": "A major Late Antique power linking Africa, Arabia, the Mediterranean and India.",
+      "relations": {
+        "enabledBy": [
+          "monsoon-trade",
+          "coinage"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "UNESCO World Heritage Site."
+      },
+      "display": {
+        "motif": "stele",
+        "choreography": "grow"
+      },
+      "discoveryIds": [
+        "money",
+        "trade"
+      ]
+    },
+    {
+      "id": "seismoscope",
+      "title": "Zhang Heng's Seismoscope",
+      "when": {
+        "from": 132,
+        "display": "132 CE",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin",
+          "site": {
+            "label": "Luoyang",
+            "lat": 34.62,
+            "lon": 112.45
+          }
+        }
+      ],
+      "categories": [
+        "engineering",
+        "physics"
+      ],
+      "importance": "supporting",
+      "change": "A bronze vessel that dropped a ball in the direction of a distant earthquake.",
+      "context": "Historical texts describe Zhang Heng's instrument detecting a quake hundreds of kilometres away. Its internal mechanism is unknown and reconstructions differ.",
+      "significance": "An early scientific instrument for detecting a natural phenomenon at a distance.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Known only from written descriptions."
+      },
+      "relations": {
+        "enabledBy": [
+          "shang-bronze"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "pot",
+        "choreography": "mechanism"
+      }
+    },
+    {
+      "id": "ptolemy",
+      "title": "Ptolemy's Almagest",
+      "when": {
+        "from": 150,
+        "display": "c. 150 CE",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "nile",
+          "role": "site",
+          "site": {
+            "label": "Alexandria",
+            "lat": 31.2,
+            "lon": 29.92
+          }
+        }
+      ],
+      "categories": [
+        "astronomy",
+        "mathematics",
+        "navigation"
+      ],
+      "importance": "milestone",
+      "change": "A mathematical model of the heavens that predicted planetary positions for 1,400 years.",
+      "context": "Ptolemy's Almagest used epicycles and a star catalogue drawing on Babylonian and Greek observations; his Geography placed thousands of places by latitude and longitude. Both were translated and refined in the Islamic world before returning to Europe.",
+      "significance": "The standard astronomy of Europe and the Islamic world until Copernicus and Kepler.",
+      "relations": {
+        "enabledBy": [
+          "babylonian-astronomy",
+          "eratosthenes"
+        ],
+        "related": [
+          "heliocentrism"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "astrolabe",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "astronomy",
+        "cartography",
+        "maps"
+      ]
+    },
+    {
+      "id": "galen",
+      "title": "Galen",
+      "when": {
+        "from": 160,
+        "to": 210,
+        "display": "c. 160–210 CE",
+        "precision": "decades",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "anatolia",
+          "role": "origin",
+          "site": {
+            "label": "Pergamon",
+            "lat": 39.13,
+            "lon": 27.18
+          }
+        },
+        {
+          "region": "italy",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "medicine",
+        "biology"
+      ],
+      "importance": "supporting",
+      "change": "Experiments on animals built a system of medicine that dominated for 1,300 years.",
+      "context": "Galen showed that arteries carry blood and that nerves from the spinal cord control muscles, but his human anatomy relied on animal dissection, and some errors persisted until Vesalius.",
+      "significance": "Both a foundation and, later, an authority that had to be overturned.",
+      "relations": {
+        "enabledBy": [
+          "hippocratic-medicine"
+        ],
+        "related": [
+          "vesalius"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "scroll",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "anatomy",
+        "medicine"
+      ]
+    },
+    {
+      "id": "stirrup",
+      "title": "The Stirrup",
+      "when": {
+        "from": 300,
+        "display": "early 4th century CE",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "korea",
+          "role": "spread"
+        },
+        {
+          "region": "steppe",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "transportation",
+        "warfare"
+      ],
+      "importance": "supporting",
+      "change": "A foot-loop on each side made the rider far more stable.",
+      "context": "Paired stirrups appear in Chinese tomb finds and figurines of the early 4th century CE and spread across Eurasia over the next centuries.",
+      "significance": "Changed horsemanship and mounted warfare across Eurasia.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Earlier single mounting stirrups and toe-loops (e.g. in India) complicate the story."
+      },
+      "relations": {
+        "enabledBy": [
+          "horse-riding"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "horse",
+        "choreography": "mechanism"
+      }
+    },
+    {
+      "id": "iron-pillar",
+      "title": "The Iron Pillar of Delhi",
+      "when": {
+        "from": 400,
+        "display": "c. 400 CE",
+        "precision": "centuries",
+        "basis": "estimate"
+      },
+      "regions": [
+        {
+          "region": "gangetic",
+          "role": "site",
+          "site": {
+            "label": "Mehrauli, Delhi",
+            "lat": 28.52,
+            "lon": 77.18
+          }
+        }
+      ],
+      "culture": "Gupta Empire",
+      "categories": [
+        "materials",
+        "engineering"
+      ],
+      "importance": "supporting",
+      "change": "Six tonnes of forged iron that has resisted rust for 1,600 years.",
+      "context": "The pillar, over 7 metres tall, was forge-welded from wrought iron. Its high phosphorus content helps form a protective surface layer.",
+      "significance": "A demonstration of the scale and quality of ancient Indian iron-working.",
+      "relations": {
+        "enabledBy": [
+          "iron"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Balasubramaniam 2000, Corrosion Science."
+      },
+      "display": {
+        "motif": "pillar",
+        "choreography": "ignite"
+      },
+      "discoveryIds": [
+        "forging",
+        "ironworking"
+      ]
+    },
+    {
+      "id": "place-value-decimal",
+      "title": "Decimal Place Value",
+      "when": {
+        "from": 400,
+        "to": 600,
+        "anchor": 500,
+        "display": "established in India by c. 5th–6th century CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "gangetic",
+          "role": "origin"
+        },
+        {
+          "region": "mesopotamia",
+          "role": "spread",
+          "note": "Adopted in the Islamic world from the 8th–9th centuries."
+        }
+      ],
+      "categories": [
+        "mathematics"
+      ],
+      "importance": "breakthrough",
+      "change": "Ten digits, where position gives value: any number, written compactly.",
+      "context": "Indian mathematicians such as Aryabhata (499 CE) worked with a decimal place-value system. The earliest dated inscription with a place-value numeral is debated; the Bakhshali manuscript's dating is also contested.",
+      "significance": "The numerals used worldwide today — 'Arabic numerals' because Europe learned them from the Islamic world.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Precise dating of the earliest place-value numerals is uncertain."
+      },
+      "relations": {
+        "enabledBy": [
+          "sexagesimal"
+        ],
+        "related": [
+          "zero",
+          "algebra"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "numerals",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "number_system",
+        "mathematics"
+      ]
+    },
+    {
+      "id": "hagia-sophia",
+      "title": "Hagia Sophia",
+      "when": {
+        "from": 537,
+        "display": "537 CE",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "anatolia",
+          "role": "site",
+          "site": {
+            "label": "Constantinople (Istanbul)",
+            "lat": 41.01,
+            "lon": 28.98
+          }
+        }
+      ],
+      "categories": [
+        "architecture",
+        "engineering"
+      ],
+      "importance": "supporting",
+      "change": "A vast dome seemed to float on a ring of light.",
+      "context": "Designed by the mathematicians Anthemius of Tralles and Isidore of Miletus and built in under six years, its dome rests on pendentives that turn a square plan into a circle.",
+      "significance": "A structural solution that influenced Byzantine and Ottoman architecture for a thousand years.",
+      "relations": {
+        "enabledBy": [
+          "roman-concrete",
+          "deductive-geometry"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "dome",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "architecture"
+      ]
+    }
+  ]
+}

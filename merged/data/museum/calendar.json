@@ -1,0 +1,22 @@
+{
+  "_note": "How Main Evolution's era progression maps onto the canonical historical axis. The game's eras are gameplay chapters, not strict historical periods (their discoveries overlap in real time), so each era is assigned one monotone span here: `from` is where the timeline stands when the era is entered, `to` where it stands when every REQUIRED major invention of that era has been found. Within an era the timeline advances continuously (interpolated on a logarithmic years-before-present scale) as required majors and ordinary discoveries of that era are found. Crafting a single item out of its usual order moves the timeline only as much as any other discovery of the era — it never jumps it to that item's date. Reviewable in one place; lib/museum/history/timeline.ts reads it.",
+  "start": -3300000,
+  "present": 2026,
+  "weights": { "required": 0.6, "all": 0.4 },
+  "eras": [
+    { "era": "origins", "from": -3300000, "to": -1000000, "note": "Stone tools from Lomekwi and the Oldowan to the handaxe." },
+    { "era": "fire", "from": -1000000, "to": -120000, "note": "Fire, hafting, the emergence of Homo sapiens." },
+    { "era": "settlement", "from": -120000, "to": -12000, "note": "Symbols, sea crossings, the Ice Age world, first settled villages." },
+    { "era": "agriculture", "from": -12000, "to": -5000, "note": "The independent origins of farming and herding." },
+    { "era": "civilization", "from": -5000, "to": -1800, "note": "Cities, writing, law." },
+    { "era": "trade", "from": -1800, "to": -600, "note": "Bronze Age exchange, alphabets, the first coins." },
+    { "era": "metallurgy", "from": -600, "to": 400, "note": "Iron, classical engineering, the Antikythera mechanism." },
+    { "era": "science", "from": 400, "to": 1760, "note": "From place-value numerals to the Scientific Revolution." },
+    { "era": "industry", "from": 1760, "to": 1870, "note": "Steam, factories, railways." },
+    { "era": "electric", "from": 1870, "to": 1914, "note": "Electrification, the telephone, powered flight." },
+    { "era": "computing", "from": 1914, "to": 1975, "note": "Radio to the microprocessor." },
+    { "era": "network", "from": 1975, "to": 2000, "note": "The internet and the web." },
+    { "era": "games", "from": 2000, "to": 2012, "note": "Interactive media at scale." },
+    { "era": "simulation", "from": 2012, "to": 2026, "note": "The present." }
+  ]
+}

@@ -75,7 +75,8 @@
 /* The Mode Hub — the switcher between Main Evolution and future modes. */
 @import "./_mode-hub.css" layer(components);
 
-/* The Museum's automatic-exhibit gallery. */
+/* The Museum: atrium, the Humanity hall, plaques, story tour, globe room,
+   milestone reveals, the Personal and Records wings, and the in-game signal. */
 @import "./_museum-gallery.css" layer(components);
 
 /* The Minimum Path challenge. */

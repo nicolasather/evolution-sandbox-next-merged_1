@@ -13,7 +13,7 @@ import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
 import { JournalPanel } from './JournalPanel';
 import { ModeHub } from './ModeHub';
-import { MuseumGallery } from './MuseumGallery';
+import { MuseumSignal, useMuseumSync } from './museum/MuseumSignal';
 import { MinimumPathChallenge } from './minpath/MinimumPathChallenge';
 import { TradePanel } from './trade/TradePanel';
 import { ExperimentWorkspace } from './experiments/ExperimentWorkspace';
@@ -44,11 +44,15 @@ import type { ModeId } from '@/lib/modes/types';
 const GraphView = dynamic(() => import('./GraphView').then(mod => mod.GraphView), { ssr: false });
 const TimelineView = dynamic(() => import('./TimelineView').then(mod => mod.TimelineView), { ssr: false });
 const ArchiveView = dynamic(() => import('./ArchiveView').then(mod => mod.ArchiveView), { ssr: false });
+/* The Museum carries the whole Humanity exhibit database: loaded only when first opened. */
+const MuseumGallery = dynamic(() => import('./MuseumGallery').then(mod => mod.MuseumGallery), { ssr: false });
 
 export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => void } = {}) {
   const [panelOpen, setPanelOpen] = useState(false);
   const s = useSandbox();
   const { engine, version, view, setView, open, clearSlots, setEnding, reset } = s;
+  // the Humanity Museum follows the canonical timeline even while the player is elsewhere
+  useMuseumSync(engine, version, s.entered);
 
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [onlyPath, setOnlyPath] = useState(false);
@@ -69,6 +73,9 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
     window.setTimeout(() => setRv(false), 1700);
   }, []);
   const [ctxMenu, setCtxMenu] = useState<ContextMenuTarget | null>(null);
+  /** Once opened, the Museum stays mounted so returning to it is instant. */
+  const [museumMounted, setMuseumMounted] = useState(false);
+  if (view === 'museum' && !museumMounted) setMuseumMounted(true);
   const panelReturn = useRef<HTMLElement | null>(null);
   /** The corner questions: when one appears, which one, and what it opens. */
   const [tutor] = useState(() => new Tutor(Math.random, Date.now()));
@@ -374,7 +381,9 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
           <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
           <ModeHub engine={engine} active={view === 'hub'} onLaunch={() => showView('work')} onLaunchMode={onLaunchMode} />
-          <MuseumGallery engine={engine} version={version} active={view === 'museum'} onOpen={openExhibit} />
+          {(view === 'museum' || museumMounted) && (
+            <MuseumGallery engine={engine} version={version} active={view === 'museum'} onOpen={openExhibit} blocked={gate !== null} />
+          )}
           <MinimumPathChallenge engine={engine} active={view === 'minpath'} />
 
           {/* outside the three views: a column beside the bench, a drawer over the
@@ -473,6 +482,10 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || worldOpen || tradeOpen || labOpen || view !== 'work'}
         />
       )}
+
+      {/* the restrained in-game moment when history opens a new gallery */}
+      <MuseumSignal onVisit={() => showView('museum')}
+        suppressed={!s.entered || reveal < 6 || view === 'museum' || !!s.ending || gate !== null} />
 
       <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
 

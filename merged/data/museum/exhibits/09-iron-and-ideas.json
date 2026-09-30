@@ -1,0 +1,1020 @@
+{
+  "gallery": "iron-and-ideas",
+  "exhibits": [
+    {
+      "id": "nok",
+      "title": "Nok",
+      "when": {
+        "from": -900,
+        "to": 0,
+        "display": "c. 900 BCE – 1st century CE; iron smelting by c. 500 BCE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "west-africa",
+          "role": "site",
+          "site": {
+            "label": "Nok, central Nigeria",
+            "lat": 9.5,
+            "lon": 8.0
+          }
+        }
+      ],
+      "culture": "Nok",
+      "categories": [
+        "culture",
+        "materials"
+      ],
+      "importance": "milestone",
+      "change": "Striking terracotta sculptures, and some of West Africa's earliest iron smelting.",
+      "context": "The Nok culture produced life-size terracotta heads and figures with elaborate hairstyles. Furnaces associated with Nok show iron smelting by the mid-first millennium BCE.",
+      "significance": "Early sophisticated art and metallurgy in sub-Saharan Africa.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Looting has destroyed much context; chronology is still being refined."
+      },
+      "relations": {
+        "related": [
+          "iron"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Goethe University Frankfurt Nok project."
+      },
+      "display": {
+        "motif": "mask",
+        "choreography": "ignite"
+      },
+      "discoveryIds": [
+        "ironworking"
+      ]
+    },
+    {
+      "id": "greek-vowels",
+      "title": "Vowels Written Down",
+      "when": {
+        "from": -800,
+        "to": -750,
+        "display": "c. 800–750 BCE",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "greece",
+          "role": "origin"
+        },
+        {
+          "region": "italy",
+          "role": "spread",
+          "note": "Via Etruscan to the Latin alphabet."
+        }
+      ],
+      "categories": [
+        "writing"
+      ],
+      "importance": "supporting",
+      "change": "Greeks reused Phoenician letters for vowels — a fully phonetic alphabet.",
+      "context": "The Greek alphabet added letters for vowel sounds, and passed through Etruscan to become the Latin alphabet now used by most of the world's languages.",
+      "significance": "The script of this Museum's labels descends directly from it.",
+      "relations": {
+        "enabledBy": [
+          "alphabet"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "alphabet",
+        "choreography": "unfold"
+      }
+    },
+    {
+      "id": "qanat",
+      "title": "Qanats",
+      "when": {
+        "from": -800,
+        "to": -500,
+        "display": "early 1st millennium BCE (debated)",
+        "precision": "centuries",
+        "basis": "estimate"
+      },
+      "regions": [
+        {
+          "region": "iran",
+          "role": "early-centre"
+        },
+        {
+          "region": "arabia",
+          "role": "independent",
+          "note": "The aflaj of Oman may be an independent development."
+        }
+      ],
+      "categories": [
+        "engineering",
+        "agriculture"
+      ],
+      "importance": "milestone",
+      "change": "Gently sloping tunnels carried groundwater for kilometres without pumps.",
+      "context": "A qanat taps an aquifer at the foot of hills and leads water by gravity through a tunnel, with vertical shafts for access. The technique spread from Iran across the Middle East, North Africa and Spain.",
+      "significance": "Sustainable irrigation that supported desert settlements for over two thousand years.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Origins and dating are uncertain."
+      },
+      "relations": {
+        "enabledBy": [
+          "irrigation"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "UNESCO World Heritage: The Persian Qanat (2016)."
+      },
+      "display": {
+        "motif": "aqueduct",
+        "choreography": "grow"
+      },
+      "discoveryIds": [
+        "irrigation",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "coinage",
+      "title": "Coinage",
+      "when": {
+        "from": -630,
+        "to": -400,
+        "anchor": -630,
+        "display": "c. 630 BCE (Lydia); independently in China and India",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "anatolia",
+          "role": "independent",
+          "site": {
+            "label": "Lydia (Sardis)",
+            "lat": 38.49,
+            "lon": 28.04
+          }
+        },
+        {
+          "region": "china",
+          "role": "independent",
+          "note": "Bronze spade and knife money."
+        },
+        {
+          "region": "gangetic",
+          "role": "independent",
+          "note": "Punch-marked silver coins."
+        }
+      ],
+      "categories": [
+        "trade",
+        "governance"
+      ],
+      "importance": "breakthrough",
+      "change": "Metal of guaranteed weight, stamped by an authority — money you could count.",
+      "context": "The earliest coins, of electrum, come from Lydia in western Anatolia. Metal money in standard shapes also emerged independently in China, and punch-marked coins in India. Earlier societies used weighed silver, grain and other media of exchange.",
+      "significance": "Coins made markets, taxes and wages easier to run — the ancestors of every currency.",
+      "relations": {
+        "enabledBy": [
+          "bronze",
+          "iron"
+        ],
+        "related": [
+          "royal-road",
+          "indus-cities"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_money"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "coin",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "money",
+        "economy",
+        "taxation"
+      ]
+    },
+    {
+      "id": "natural-philosophy",
+      "title": "Explaining Nature",
+      "when": {
+        "from": -600,
+        "to": -300,
+        "display": "c. 600–300 BCE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "greece",
+          "role": "independent",
+          "note": "Ionian philosophers such as Thales and Anaximander."
+        },
+        {
+          "region": "china",
+          "role": "independent",
+          "note": "The Mohist canons on optics and mechanics."
+        },
+        {
+          "region": "gangetic",
+          "role": "independent",
+          "note": "Early atomist schools of thought."
+        }
+      ],
+      "categories": [
+        "knowledge"
+      ],
+      "importance": "milestone",
+      "change": "Thinkers in several traditions sought natural causes and argued about them in public.",
+      "context": "In Ionia, philosophers proposed natural explanations for the cosmos and debated them openly. Around the same centuries, Mohist writers in China described optics and mechanics, and Indian schools developed theories of atoms and logic.",
+      "significance": "Critical debate about nature — a root of later science in several civilisations.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Much of what early thinkers said survives only in later reports; traditional dates are approximate."
+      },
+      "relations": {
+        "enabledBy": [
+          "writing"
+        ],
+        "related": [
+          "deductive-geometry",
+          "hippocratic-medicine"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "scroll",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "observation",
+        "teaching"
+      ]
+    },
+    {
+      "id": "zapotec-writing",
+      "title": "Writing in Mesoamerica",
+      "when": {
+        "from": -600,
+        "to": -300,
+        "display": "by c. 600–300 BCE (earliest examples debated)",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "mesoamerica",
+          "role": "independent",
+          "site": {
+            "label": "San José Mogote and Monte Albán, Oaxaca",
+            "lat": 17.04,
+            "lon": -96.77
+          }
+        }
+      ],
+      "culture": "Zapotec",
+      "categories": [
+        "writing",
+        "astronomy"
+      ],
+      "importance": "milestone",
+      "change": "Glyphs and calendar dates carved in stone — writing invented again, independently.",
+      "context": "Carved monuments from the Valley of Oaxaca combine glyphs with dates in the 260-day ritual calendar. Later Maya script became the most fully developed Mesoamerican writing system.",
+      "significance": "One of the few independent inventions of writing in human history.",
+      "uncertainty": {
+        "level": "contested",
+        "note": "The dating of the earliest examples (and the Olmec Cascajal block) is disputed."
+      },
+      "relations": {
+        "enabledBy": [
+          "olmec"
+        ],
+        "related": [
+          "writing",
+          "maya-long-count"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "glyph",
+        "choreography": "unfold"
+      },
+      "discoveryIds": [
+        "writing",
+        "calendar"
+      ]
+    },
+    {
+      "id": "athenian-democracy",
+      "title": "Athenian Democracy",
+      "when": {
+        "from": -508,
+        "display": "508/507 BCE",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "greece",
+          "role": "origin",
+          "site": {
+            "label": "Athens",
+            "lat": 37.97,
+            "lon": 23.72
+          }
+        }
+      ],
+      "categories": [
+        "governance"
+      ],
+      "importance": "milestone",
+      "change": "Citizens voted directly on laws in an assembly.",
+      "context": "The reforms of Cleisthenes created a system in which adult male citizens debated and voted in the assembly, and officials were often chosen by lot. Women, enslaved people and foreigners were excluded.",
+      "significance": "A model — flawed and limited — that later democracies looked back to. Collective decision-making existed in many other societies too.",
+      "uncertainty": {
+        "level": "settled",
+        "note": "Other forms of assembly-based and consensual governance existed elsewhere; 'first democracy' claims depend on definitions."
+      },
+      "relations": {
+        "enabledBy": [
+          "law-code",
+          "greek-vowels"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "column",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "government"
+      ]
+    },
+    {
+      "id": "cast-iron",
+      "title": "Cast Iron",
+      "when": {
+        "from": -500,
+        "display": "c. 5th century BCE",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        }
+      ],
+      "categories": [
+        "materials",
+        "manufacturing"
+      ],
+      "importance": "breakthrough",
+      "change": "Furnaces hot enough to melt iron and pour it into moulds.",
+      "context": "Chinese metalworkers, experienced in bronze casting and with efficient bellows and furnaces, produced liquid iron for cast tools on a large scale by the Warring States period. Europe did not cast iron widely until the late Middle Ages.",
+      "significance": "Mass-produced iron tools for farmers, and later cast-iron structures and machines.",
+      "relations": {
+        "enabledBy": [
+          "shang-bronze",
+          "iron"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Wagner, Iron and Steel in Ancient China."
+      },
+      "display": {
+        "motif": "furnace",
+        "choreography": "ignite"
+      },
+      "discoveryIds": [
+        "iron",
+        "casting"
+      ]
+    },
+    {
+      "id": "royal-road",
+      "title": "The Royal Road",
+      "when": {
+        "from": -500,
+        "display": "c. 500 BCE",
+        "precision": "centuries",
+        "basis": "estimate"
+      },
+      "regions": [
+        {
+          "region": "iran",
+          "role": "origin",
+          "site": {
+            "label": "Susa",
+            "lat": 32.19,
+            "lon": 48.25
+          }
+        },
+        {
+          "region": "anatolia",
+          "role": "spread",
+          "site": {
+            "label": "Sardis",
+            "lat": 38.49,
+            "lon": 28.04
+          }
+        }
+      ],
+      "culture": "Achaemenid Persia",
+      "categories": [
+        "transportation",
+        "communication",
+        "governance"
+      ],
+      "importance": "milestone",
+      "change": "A road of about 2,700 km with relay stations: messages crossed an empire in days.",
+      "context": "Herodotus described the road from Sardis to Susa and its mounted couriers. Achaemenid administration used roads, relay horses and written orders to govern the largest empire yet seen.",
+      "significance": "Infrastructure as a tool of communication and state power.",
+      "relations": {
+        "enabledBy": [
+          "horse-riding",
+          "writing"
+        ],
+        "related": [
+          "roman-roads",
+          "silk-roads"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "road",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "roads",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "crossbow",
+      "title": "The Crossbow",
+      "when": {
+        "from": -450,
+        "display": "by the 5th–4th century BCE",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "greece",
+          "role": "independent",
+          "note": "The Greek gastraphetes, c. 400 BCE."
+        }
+      ],
+      "categories": [
+        "warfare",
+        "engineering"
+      ],
+      "importance": "supporting",
+      "change": "A mechanical trigger held a drawn bow until release.",
+      "context": "Bronze trigger mechanisms from Warring States China were precisely cast and interchangeable. Similar mechanical bows appeared in the Greek world.",
+      "significance": "Precision-made mechanical parts, mass-produced by a state.",
+      "relations": {
+        "enabledBy": [
+          "bow-and-arrow",
+          "shang-bronze"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "bow",
+        "choreography": "mechanism"
+      }
+    },
+    {
+      "id": "hippocratic-medicine",
+      "title": "Hippocratic Medicine",
+      "when": {
+        "from": -420,
+        "to": -350,
+        "display": "c. 5th–4th century BCE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "greece",
+          "role": "origin",
+          "site": {
+            "label": "Kos",
+            "lat": 36.89,
+            "lon": 27.29
+          }
+        }
+      ],
+      "categories": [
+        "medicine"
+      ],
+      "importance": "milestone",
+      "change": "Illness treated as having natural causes, observed and recorded.",
+      "context": "The Hippocratic Corpus, written by many authors, stressed careful observation, prognosis and the influence of environment and diet. Its ethical ideals survive in the modern physician's oath.",
+      "significance": "A lasting framework for clinical observation in Mediterranean and Islamic medicine.",
+      "relations": {
+        "enabledBy": [
+          "edwin-smith-papyrus",
+          "natural-philosophy"
+        ],
+        "related": [
+          "galen",
+          "sushruta"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "scroll",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "medicine"
+      ]
+    },
+    {
+      "id": "panini",
+      "title": "Pāṇini's Grammar",
+      "when": {
+        "from": -400,
+        "display": "c. 4th century BCE (dates debated)",
+        "precision": "centuries",
+        "basis": "estimate"
+      },
+      "regions": [
+        {
+          "region": "indus",
+          "role": "origin",
+          "note": "Gandhāra, in the northwest of the subcontinent."
+        }
+      ],
+      "categories": [
+        "knowledge",
+        "communication"
+      ],
+      "importance": "milestone",
+      "change": "About 4,000 compact rules that generate the forms of a language.",
+      "context": "Pāṇini's Aṣṭādhyāyī describes Sanskrit with a formal system of rules, meta-rules and abbreviations. Linguists and computer scientists have compared its method to formal grammars used in programming languages.",
+      "significance": "A remarkably early formal system — language described like a machine.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Pāṇini's dates range from the 6th to the 4th century BCE in different estimates."
+      },
+      "relations": {
+        "enabledBy": [
+          "writing"
+        ],
+        "related": [
+          "computation-defined"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "book",
+        "choreography": "network"
+      }
+    },
+    {
+      "id": "aqueducts",
+      "title": "Aqueducts",
+      "when": {
+        "from": -312,
+        "display": "312 BCE (Aqua Appia); earlier Assyrian aqueducts c. 690 BCE",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "early-centre",
+          "site": {
+            "label": "Rome",
+            "lat": 41.9,
+            "lon": 12.5
+          }
+        },
+        {
+          "region": "mesopotamia",
+          "role": "early-centre",
+          "note": "Sennacherib's aqueduct at Jerwan."
+        }
+      ],
+      "categories": [
+        "engineering",
+        "architecture"
+      ],
+      "importance": "milestone",
+      "change": "Water carried by gravity over valleys and through hills to feed a city.",
+      "context": "Rome's aqueducts eventually supplied an estimated hundreds of thousands of cubic metres a day to baths, fountains and homes. Most of their length ran underground; the famous arches carried them across valleys.",
+      "significance": "Public water supply on a scale that supported a million-person city.",
+      "relations": {
+        "enabledBy": [
+          "qanat"
+        ],
+        "related": [
+          "roman-concrete",
+          "deductive-geometry"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "aqueduct",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "infrastructure",
+        "engineering"
+      ]
+    },
+    {
+      "id": "roman-roads",
+      "title": "Roman Roads",
+      "when": {
+        "from": -312,
+        "display": "from 312 BCE (Via Appia)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "origin"
+        },
+        {
+          "region": "western-europe",
+          "role": "spread"
+        },
+        {
+          "region": "north-africa",
+          "role": "spread"
+        },
+        {
+          "region": "anatolia",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "transportation",
+        "engineering"
+      ],
+      "importance": "supporting",
+      "change": "Layered, paved roads ran straight across an empire.",
+      "context": "Beginning with the Via Appia, the Roman state built tens of thousands of kilometres of engineered roads with foundations, drainage and milestones, moving armies, goods, messages and ideas.",
+      "significance": "Many European routes still follow them.",
+      "relations": {
+        "enabledBy": [
+          "royal-road"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "road",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "roads"
+      ]
+    },
+    {
+      "id": "deductive-geometry",
+      "title": "Proof",
+      "when": {
+        "from": -300,
+        "display": "c. 300 BCE (Euclid's Elements)",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "nile",
+          "role": "site",
+          "site": {
+            "label": "Alexandria",
+            "lat": 31.2,
+            "lon": 29.92
+          }
+        },
+        {
+          "region": "greece",
+          "role": "early-centre"
+        }
+      ],
+      "categories": [
+        "mathematics",
+        "knowledge"
+      ],
+      "importance": "breakthrough",
+      "change": "From a few axioms, step-by-step proof of everything else.",
+      "context": "Euclid's Elements organised earlier Greek geometry and number theory into a chain of definitions, postulates and proven propositions. It remained a standard textbook into the 20th century.",
+      "significance": "The model of deductive reasoning used in mathematics, logic and science ever since.",
+      "relations": {
+        "enabledBy": [
+          "babylonian-mathematics",
+          "natural-philosophy"
+        ],
+        "related": [
+          "eratosthenes",
+          "archimedes"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "numerals",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "geometry",
+        "mathematics"
+      ]
+    },
+    {
+      "id": "library-alexandria",
+      "title": "The Library of Alexandria",
+      "when": {
+        "from": -285,
+        "display": "early 3rd century BCE",
+        "precision": "decades",
+        "basis": "traditional"
+      },
+      "regions": [
+        {
+          "region": "nile",
+          "role": "site",
+          "site": {
+            "label": "Alexandria",
+            "lat": 31.2,
+            "lon": 29.92
+          }
+        }
+      ],
+      "categories": [
+        "knowledge"
+      ],
+      "importance": "milestone",
+      "change": "An attempt to collect all written knowledge in one place.",
+      "context": "Founded under the early Ptolemies with the Mouseion, the Library gathered scholars who edited texts, compiled catalogues and did research. Its decline was gradual, not a single fire.",
+      "significance": "A prototype of the research institution and the universal library.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Its size and the story of its destruction are heavily mythologised."
+      },
+      "relations": {
+        "enabledBy": [
+          "papyrus",
+          "greek-vowels"
+        ],
+        "related": [
+          "house-of-wisdom"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "book",
+        "choreography": "unfold"
+      },
+      "discoveryIds": [
+        "written_knowledge",
+        "collective_knowledge"
+      ]
+    },
+    {
+      "id": "ashoka-edicts",
+      "title": "The Edicts of Ashoka",
+      "when": {
+        "from": -260,
+        "to": -232,
+        "display": "c. 260–232 BCE",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "gangetic",
+          "role": "origin"
+        },
+        {
+          "region": "south-india",
+          "role": "spread"
+        },
+        {
+          "region": "indus",
+          "role": "spread"
+        }
+      ],
+      "culture": "Maurya Empire",
+      "categories": [
+        "governance",
+        "writing"
+      ],
+      "importance": "supporting",
+      "change": "A ruler's messages carved on rocks and pillars across the subcontinent.",
+      "context": "The Mauryan emperor Ashoka had edicts inscribed in Prakrit, Greek and Aramaic, mostly in the Brahmi script — among the earliest deciphered writing in South Asia.",
+      "significance": "Public writing as a tool of state across a vast, multilingual empire.",
+      "relations": {
+        "enabledBy": [
+          "writing"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "pillar",
+        "choreography": "unfold"
+      }
+    },
+    {
+      "id": "archimedes",
+      "title": "Archimedes",
+      "when": {
+        "from": -250,
+        "display": "c. 250 BCE",
+        "precision": "decades",
+        "basis": "traditional"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "site",
+          "site": {
+            "label": "Syracuse, Sicily",
+            "lat": 37.08,
+            "lon": 15.29
+          }
+        }
+      ],
+      "categories": [
+        "mathematics",
+        "physics",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "Levers, buoyancy and π — mathematics applied to the physical world.",
+      "context": "Archimedes proved the law of the lever, the principle of buoyancy, and bounds for π, and used methods close to integral calculus. A palimpsest recovered in the 20th century revealed some of his lost work.",
+      "significance": "A model of mathematical physics for later scientists from Galileo onward.",
+      "relations": {
+        "enabledBy": [
+          "deductive-geometry"
+        ],
+        "related": [
+          "antikythera"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "gear",
+        "choreography": "mechanism"
+      },
+      "discoveryIds": [
+        "lever",
+        "mechanical_advantage",
+        "pulley",
+        "physics"
+      ]
+    },
+    {
+      "id": "eratosthenes",
+      "title": "Measuring the Earth",
+      "when": {
+        "from": -240,
+        "display": "c. 240 BCE",
+        "precision": "decades",
+        "basis": "traditional"
+      },
+      "regions": [
+        {
+          "region": "nile",
+          "role": "site",
+          "site": {
+            "label": "Alexandria and Syene (Aswan)",
+            "lat": 24.09,
+            "lon": 32.9
+          }
+        }
+      ],
+      "categories": [
+        "astronomy",
+        "mathematics",
+        "navigation"
+      ],
+      "importance": "milestone",
+      "change": "Shadows in two cities gave the size of the planet.",
+      "context": "Eratosthenes compared the sun's angle at Syene and Alexandria at midsummer and, with the distance between them, estimated Earth's circumference. Depending on the length of his unit, the result was remarkably close.",
+      "significance": "The Earth measured as a sphere — foundational for geography and navigation.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "The accuracy depends on the uncertain length of the stadion he used."
+      },
+      "relations": {
+        "enabledBy": [
+          "deductive-geometry",
+          "library-alexandria"
+        ],
+        "related": [
+          "ptolemy"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "globe",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "cartography",
+        "geometry"
+      ]
+    },
+    {
+      "id": "sushruta",
+      "title": "The Suśruta Saṃhitā",
+      "when": {
+        "from": -300,
+        "to": 500,
+        "anchor": -200,
+        "display": "compiled over centuries, roughly late 1st millennium BCE to mid-1st millennium CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "gangetic",
+          "role": "origin"
+        }
+      ],
+      "categories": [
+        "medicine"
+      ],
+      "importance": "supporting",
+      "change": "A South Asian medical treatise describing surgery, including reconstructing noses.",
+      "context": "The text details surgical instruments, training on models, and procedures including a flap technique for nasal reconstruction that influenced plastic surgery in Europe in the late 18th century.",
+      "significance": "A major independent tradition of surgical knowledge.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "The text's dating and layers of authorship are uncertain."
+      },
+      "relations": {
+        "related": [
+          "hippocratic-medicine"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "book",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "medicine"
+      ]
+    }
+  ]
+}

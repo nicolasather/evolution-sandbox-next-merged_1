@@ -1,188 +1,249 @@
 'use client';
 
-import { useSyncExternalStore, type ReactNode } from 'react';
-import { Plate3D } from './Plate3D';
-import { alienExhibit } from '@/lib/alienarchaeology/memory';
-import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
-import { siteExhibit } from '@/lib/archaeology/memory';
-import { archaeologyStore } from '@/lib/archaeology/store';
-import { dioramaExhibit } from '@/lib/civilization/memory';
-import { civilizationStore } from '@/lib/civilization/store';
-import { decipherExhibit } from '@/lib/decipher/memory';
-import { decipherStore } from '@/lib/decipher/store';
-import { episodeExhibit } from '@/lib/escaperoom/memory';
-import { getEpisode } from '@/lib/escaperoom/registry';
-import { escapeRoomStore } from '@/lib/escaperoom/store';
-import { autoExhibits } from '@/lib/museum/registry';
-import { playDb } from '@/lib/processing';
-import { reverseExhibit as reverseTraceExhibit } from '@/lib/reverseevolution/memory';
-import { reverseEvolutionStore } from '@/lib/reverseevolution/store';
-import type { MuseumExhibit, ProvenanceKind } from '@/lib/museum/types';
-import { memoryExhibit } from '@/lib/survival/memory';
-import { survivalStore } from '@/lib/survival/store';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, type CSSProperties } from 'react';
 import type { Engine } from '@/lib/engine';
+import { ARCHIVE_STORES, archiveSections } from '@/lib/museum/archive';
+import { catalog } from '@/lib/museum/history/data';
+import { storyChapters } from '@/lib/museum/history/selectors';
+import { museumStore } from '@/lib/museum/history/store';
+import { engineTimeline, formatYear } from '@/lib/museum/history/timeline';
+import { unlockOf } from '@/lib/museum/history/util';
+import { personalDiscoveries } from '@/lib/museum/personal';
+import { sound } from '@/lib/sound';
+import { ExhibitFocus } from './museum/ExhibitFocus';
+import { HumanityHall, type HallTarget } from './museum/HumanityHall';
+import { hallLayout } from './museum/layout';
+import { ModeArchiveWing } from './museum/ModeArchiveWing';
+import { MuseumAtrium, type Place } from './museum/MuseumAtrium';
+import { MuseumLedger } from './museum/MuseumLedger';
+import { MuseumReveal } from './museum/MuseumReveal';
+import { PersonalWing } from './museum/PersonalWing';
+import { WorldHistory } from './museum/WorldHistory';
 
 /* ============================================================================
-   MUSEUM — the automatic-exhibit gallery: always on, needing no separate mode
-   of its own. Eight exhibit sources feed it: Main Evolution's own majors
-   (lib/museum/registry.ts's autoExhibits, reusing Plate3D — no new
-   rendering pipeline) plus one memory source per other mode.
+   THE MUSEUM — one building, three separate kinds of knowledge:
 
-   Curator layout: exhibits are grouped into named WINGS (one per source
-   mode) rather than one undifferentiated grid — a wing only ever renders
-   when it actually has something in it, same "never a grid of placeholders"
-   discipline as lib/modes/registry.ts. Every non-Main-Evolution card gets a
-   museum-case treatment: an accent bar in that wing's own established
-   mode colour, and a provenance-kind badge, so provenance reads at a glance
-   instead of only in the note line underneath.
+     HUMANITY MUSEUM  canonical real-world achievements, opened ONLY by the
+                      canonical timeline (lib/museum/history/). The centre
+                      of the building: a walkable hall through history.
+     YOUR OWN HISTORY the player's own discoveries (lib/museum/personal/).
+     RECORDS          what the extra modes produced (lib/museum/archive/).
 
-   Still deliberately short of the brief's full curator vision — actual 3D
-   diorama scenes and a walkable case layout remain future work; see this
-   file's own "Not built" note in docs/ROADMAP-UNIVERSE.md.
+   Nothing here is a grid of cards: the atrium's doorways lead into distinct
+   wings; the Humanity hall is a spatial corridor whose rooms open as history
+   advances. This file only orchestrates places, focus, the story tour and the
+   one-time reveals; every wing lives in components/museum/.
+   (The file keeps its historical name so existing imports stay valid.)
    ========================================================================== */
 
-const KIND_LABEL: Record<ProvenanceKind, string> = {
-  'historical-fact': 'Historical fact',
-  'reference-reconstruction': 'Reconstruction',
-  'procedural-fictional': 'Procedural',
-  'speculative': 'Speculative',
+const PLACE_LABEL: Record<Place, string> = {
+  atrium: 'Atrium', humanity: 'The Humanity Museum', personal: 'Your Own History',
+  records: 'Records', world: 'World History', ledger: 'Curator’s Ledger',
 };
 
-function CaseCard({ ex, accent }: { ex: MuseumExhibit; accent: string }) {
-  return (
-    <div className="museum-case" style={{ ['--case-accent' as string]: accent }}>
-      <p className="mono museum-case-kind">{KIND_LABEL[ex.provenance.kind]}</p>
-      <span className="museum-case-title">{ex.title}</span>
-      {ex.tags && ex.tags.length > 0 && <span className="museum-card-tags mono">{ex.tags.join(' · ')}</span>}
-      <span className="museum-card-note">{ex.provenance.note}</span>
-    </div>
-  );
-}
+const STORY_STEP_MS = 9000;
 
-function Wing({ id, label, blurb, accent, exhibits, children }: {
-  id: string; label: string; blurb: string; accent: string; exhibits: MuseumExhibit[]; children: ReactNode;
-}) {
-  if (exhibits.length === 0) return null;
-  return (
-    <section className="museum-wing" aria-label={label}>
-      <header className="museum-wing-head">
-        <span className="museum-wing-mark" style={{ ['--case-accent' as string]: accent }} aria-hidden="true" />
-        <div>
-          <h2 className="museum-wing-title">{label}</h2>
-          <p className="museum-wing-blurb">{blurb}</p>
-        </div>
-        <span className="mono museum-wing-count">{exhibits.length}</span>
-      </header>
-      <div className="museum-grid" id={id}>{children}</div>
-    </section>
-  );
-}
-
-export function MuseumGallery({ engine, version, active, onOpen }: {
+export function MuseumGallery({ engine, version, active, onOpen, blocked = false }: {
   engine: Engine;
   version: number;
   active: boolean;
+  /** Opens a Main Evolution discovery in the game's own exhibit drawer. */
   onOpen: (id: string) => void;
+  /** Something (the cinematic gate) is covering the screen: hold reveals until it clears. */
+  blocked?: boolean;
 }) {
-  void version; // re-render when the engine's version changes (new finds)
-  const survivalVersion = useSyncExternalStore(survivalStore.subscribe, survivalStore.getVersion, () => 0);
-  void survivalVersion;
-  const civVersion = useSyncExternalStore(civilizationStore.subscribe, civilizationStore.getVersion, () => 0);
-  void civVersion;
-  const archVersion = useSyncExternalStore(archaeologyStore.subscribe, archaeologyStore.getVersion, () => 0);
-  void archVersion;
-  const decVersion = useSyncExternalStore(decipherStore.subscribe, decipherStore.getVersion, () => 0);
-  void decVersion;
-  const escVersion = useSyncExternalStore(escapeRoomStore.subscribe, escapeRoomStore.getVersion, () => 0);
-  void escVersion;
-  const alienVersion = useSyncExternalStore(alienArchaeologyStore.subscribe, alienArchaeologyStore.getVersion, () => 0);
-  void alienVersion;
-  const revVersion = useSyncExternalStore(reverseEvolutionStore.subscribe, reverseEvolutionStore.getVersion, () => 0);
-  void revVersion;
+  const cat = catalog();
+  const pos = engineTimeline(engine);
+  const year = pos.year;
+  void version;
+  const storeVersion = useSyncExternalStore(museumStore.subscribe, museumStore.getVersion, () => 0);
+  const archiveVersion = ARCHIVE_STORES.map(s =>
+    // eslint-disable-next-line react-hooks/rules-of-hooks -- fixed-length list, stable order
+    useSyncExternalStore(s.subscribe, s.getVersion, () => 0)).reduce((a, b) => a + b, 0);
 
-  const mainExhibits = active ? autoExhibits(engine) : [];
-  const campExhibits: MuseumExhibit[] = active ? survivalStore.get().memories.map(memoryExhibit) : [];
-  const dioramaExhibits: MuseumExhibit[] = active ? civilizationStore.get().dioramas.map(dioramaExhibit) : [];
-  const siteExhibits: MuseumExhibit[] = active ? archaeologyStore.get().reports.map(siteExhibit) : [];
-  const decipherExhibits: MuseumExhibit[] = active ? decipherStore.get().memories.map(decipherExhibit) : [];
-  const escapeExhibits: MuseumExhibit[] = active
-    ? escapeRoomStore.get().memories.map(m => episodeExhibit(m, getEpisode(m.episodeId)?.title ?? 'Unknown episode'))
-    : [];
-  const alienExhibits: MuseumExhibit[] = active ? alienArchaeologyStore.get().reports.map(alienExhibit) : [];
-  const reverseExhibits: MuseumExhibit[] = active
-    ? reverseEvolutionStore.get().runs.map(m => reverseTraceExhibit(m, playDb.nodes.find(n => n.id === m.targetId)?.n ?? m.targetId))
-    : [];
-  const exhibits = [
-    ...mainExhibits, ...campExhibits, ...dioramaExhibits, ...siteExhibits,
-    ...decipherExhibits, ...escapeExhibits, ...alienExhibits, ...reverseExhibits,
-  ];
+  // keep the Humanity Museum in step with the canonical timeline (idempotent)
+  useEffect(() => { museumStore.load(); museumStore.sync(year, cat); }, [year, cat]);
+
+  const layout = useMemo(() => hallLayout(cat, year), [cat, year]);
+  const [place, setPlace] = useState<Place>('atrium');
+  const [focusId, setFocusId] = useState<string | null>(null);
+  const [target, setTarget] = useState<HallTarget | null>(null);
+  const [worldFocus, setWorldFocus] = useState<string | null>(null);
+  const [tour, setTour] = useState<number | null>(null);
+  const [tourEnd, setTourEnd] = useState(false);
+  const [revealing, setRevealing] = useState(false);
+  const keyN = useRef(0);
+  const jump = useCallback((t: Omit<HallTarget, 'key'>) => setTarget({ ...t, key: ++keyN.current }), []);
+
+  const go = useCallback((p: Place) => {
+    sound.sfx('tab', 0.5);
+    setPlace(p);
+    if (p !== 'humanity') { setTour(null); setTourEnd(false); }
+  }, []);
+
+  // one-time reveals, on entering — after the opening gate has cleared
+  useEffect(() => {
+    if (!active || blocked || revealing) return;
+    const t = window.setTimeout(() => { if (museumStore.peekReveal()) setRevealing(true); }, 400);
+    return () => window.clearTimeout(t);
+  }, [active, blocked, revealing, storeVersion]);
+
+  const onArrive = useCallback((to: { galleryId?: string; exhibitId?: string }) => {
+    setPlace('humanity');
+    setTour(null);
+    if (to.exhibitId) { setFocusId(to.exhibitId); jump({ id: to.exhibitId, instant: true }); }
+    else if (to.galleryId) {
+      const g = layout.galleries.find(x => x.gallery.id === to.galleryId);
+      if (g) { setFocusId(null); jump({ x: g.x0 - 60, instant: true }); }
+    }
+  }, [layout, jump]);
+
+  // the Human Story tour
+  const chapters = useMemo(() => storyChapters(cat, year), [cat, year]);
+  const startStory = useCallback(() => {
+    if (!chapters.length) return;
+    setPlace('humanity');
+    setTourEnd(false);
+    setTour(0);
+  }, [chapters.length]);
+  const tourRef = useRef<number | null>(null);
+  useEffect(() => { tourRef.current = tour; }, [tour]);
+  const stepTour = useCallback((d: number) => {
+    const t = tourRef.current;
+    if (t === null) return;
+    const n = Math.max(0, t + d);
+    if (n >= chapters.length) {
+      setTour(null);
+      setTourEnd(true);
+      setFocusId(null);
+      jump({ x: layout.frontierX - 500 });
+      return;
+    }
+    setTour(n);
+  }, [chapters.length, jump, layout.frontierX]);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (tour === null || paused || !active) return;
+    const t = window.setTimeout(() => stepTour(1), STORY_STEP_MS);
+    return () => window.clearTimeout(t);
+  }, [tour, paused, active, stepTour]);
+
+  // keys: Escape steps back out (focus → hall → atrium); Space drives the tour
+  useEffect(() => {
+    if (!active) return;
+    const key = (e: KeyboardEvent) => {
+      if (revealing || document.querySelector('.cg')) return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      if (e.key === 'Escape') {
+        if (tour !== null) { setTour(null); return; }
+        if (focusId) { setFocusId(null); return; }
+        if (place !== 'atrium') { setPlace('atrium'); setTourEnd(false); }
+        return;
+      }
+      if (tour !== null && (e.key === ' ' || e.key === 'ArrowRight')) { e.preventDefault(); e.stopPropagation(); stepTour(1); }
+      if (tour !== null && e.key === 'ArrowLeft') { e.preventDefault(); e.stopPropagation(); stepTour(-1); }
+    };
+    window.addEventListener('keydown', key, true);
+    return () => window.removeEventListener('keydown', key, true);
+  }, [active, revealing, tour, focusId, place, stepTour]);
+
+  // during the story tour, the chapter's exhibit is the one in focus
+  const shownFocus = tour !== null ? chapters[tour]?.exhibit.id ?? null : focusId;
+  const focus = shownFocus ? cat.byId.get(shownFocus) : undefined;
+  const unseen = museumStore.unseenCount();
+  const headline = useMemo(() => {
+    const list = cat.exhibits.filter(e => e.importance === 'defining' && unlockOf(e) <= year);
+    return list[list.length - 1] ?? null;
+  }, [cat, year]);
+  const personalCount = active ? personalDiscoveries(engine).length : 0;
+  const recordCount = useMemo(() => archiveSections().reduce((n, s) => n + s.records.length, 0), [archiveVersion]); // eslint-disable-line react-hooks/exhaustive-deps
+  const currentGallery = layout.galleries.filter(g => g.status === 'open').slice(-1)[0];
 
   return (
-    <section className={'view' + (active ? ' on' : '')} id="v-museum" role="tabpanel" aria-label="Museum">
-      <div className="museum-wrap">
-        <header className="museum-head">
-          <p className="mono museum-eyebrow">Evolution Sandbox</p>
-          <h1 className="museum-title">Museum</h1>
-          <p className="museum-sub">
-            Every major invention you have reached, every camp your Survival runs left behind, every
-            settlement your Civilization runs grew, every report your Archaeologist digs filed, every
-            tablet set your Decipher runs read, every Escape Room episode you have opened, every field
-            report your Alien Archaeology sites produced, and every discovery your Reverse Evolution
-            runs traced back to its origins — reconstructed and labelled, never claimed as the object
-            or event itself.
-          </p>
-        </header>
-
-        {exhibits.length === 0 ? (
-          <p className="museum-empty">Nothing on display yet. Reach a major invention, or finish a Survival, Civilization, Archaeologist, Decipher, Escape Room, Alien Archaeology or Reverse Evolution run, and it will appear here.</p>
-        ) : (
-          <div className="museum-wings">
-            <Wing id="wing-timeline" label="The Timeline" blurb="Main Evolution's own majors, reached in this collection." accent="var(--ochre)" exhibits={mainExhibits}>
-              {mainExhibits.map(ex => {
-                const discoveryId = ex.discoveryId;
-                const node = discoveryId ? engine.get(discoveryId) : undefined;
-                if (!node || !discoveryId) return null;
-                return (
-                  <button key={ex.id} className="museum-card" onClick={() => onOpen(discoveryId)}>
-                    <div className="museum-card-plate"><Plate3D node={node} variant="card" label={ex.title} /></div>
-                    <span className="museum-card-title">{ex.title}</span>
-                    {ex.tags && ex.tags.length > 0 && <span className="museum-card-tags mono">{ex.tags.join(' · ')}</span>}
-                    <span className="museum-card-note">{ex.provenance.note}</span>
+    <section className={'view' + (active ? ' on' : '')} id="v-museum" role="tabpanel" aria-label="Museum"
+      data-place={place} style={{ ['--room-hue' as string]: currentGallery?.gallery.hue ?? 30 } as CSSProperties}>
+      {active && (
+        <div className={`mu mu-${place}`} key={place === 'atrium' ? 'a' : 'b'}>
+          {place !== 'atrium' && (
+            <header className="mu-bar">
+              <button type="button" className="mu-btn" onClick={() => { setTour(null); setFocusId(null); setPlace('atrium'); }}>
+                <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M8 1L3 6l5 5" stroke="currentColor" strokeWidth="1.5" fill="none" /></svg>
+                Atrium
+              </button>
+              <p className="mu-where">
+                <span className="mono">{PLACE_LABEL[place]}</span>
+                {place === 'humanity' && <span className="mu-year">timeline · {formatYear(year)}</span>}
+              </p>
+              {place === 'humanity' && (
+                <div className="mu-actions">
+                  <button type="button" className="mu-btn" aria-pressed={tour !== null} onClick={() => (tour === null ? startStory() : setTour(null))}>
+                    {tour === null ? 'The Human Story' : 'Leave the story'}
                   </button>
-                );
-              })}
-            </Wing>
+                  <button type="button" className="mu-btn" onClick={() => { setWorldFocus(focusId); go('world'); }}>World</button>
+                  <button type="button" className="mu-btn" onClick={() => { setFocusId(null); jump({ x: layout.frontierX - 700 }); }}>Latest history</button>
+                </div>
+              )}
+            </header>
+          )}
 
-            <Wing id="wing-survival" label="Survival Camps" blurb="What your Survival runs left behind." accent="#d9a256" exhibits={campExhibits}>
-              {campExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#d9a256" />)}
-            </Wing>
+          {place === 'atrium' && (
+            <MuseumAtrium cat={cat} year={year} layout={layout} unseen={unseen} headline={headline}
+              personalCount={personalCount} recordCount={recordCount} onGo={go} onStory={startStory} />
+          )}
 
-            <Wing id="wing-civilization" label="Settlements" blurb="Dioramas of the settlements your Civilization runs grew." accent="#2f6b52" exhibits={dioramaExhibits}>
-              {dioramaExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#2f6b52" />)}
-            </Wing>
+          {place === 'humanity' && (
+            <>
+              <HumanityHall cat={cat} year={year} layout={layout} focusId={shownFocus} active={active && place === 'humanity'}
+                onFocus={id => { if (tour !== null) setTour(null); setFocusId(id); if (id) sound.sfx('select', 0.4); }}
+                target={target} storeVersion={storeVersion} story={tour !== null} />
+              {focus && tour === null && (
+                <ExhibitFocus key={focus.id} cat={cat} year={year} exhibit={focus} engine={engine}
+                  storyLine={tour !== null ? chapters[tour]?.chapter.line : undefined}
+                  onClose={() => { setFocusId(null); setTour(null); }}
+                  onGo={id => { setTour(null); setFocusId(id); jump({ id }); }}
+                  onShowWorld={id => { setWorldFocus(id); go('world'); }} />
+              )}
+              {tour !== null && chapters[tour] && (
+                <div className="mst" role="region" aria-label="The Human Story">
+                  <p className="mono mst-count">{String(tour + 1).padStart(2, '0')} / {String(chapters.length).padStart(2, '0')}</p>
+                  <p className="mst-line" key={tour}>{chapters[tour].chapter.line}</p>
+                  <p className="mono mst-meta">{chapters[tour].exhibit.title} · {chapters[tour].exhibit.when.display}</p>
+                  <div className="mst-ctl">
+                    <button type="button" className="mu-btn" onClick={() => stepTour(-1)} disabled={tour === 0} aria-label="Previous chapter">←</button>
+                    <button type="button" className="mu-btn" onClick={() => setPaused(p => !p)}>{paused ? 'Play' : 'Pause'}</button>
+                    <button type="button" className="mu-btn" onClick={() => stepTour(1)} aria-label="Next chapter">→</button>
+                  </div>
+                  <span className="mst-progress" style={{ ['--p' as string]: (tour + 1) / chapters.length, ['--dur' as string]: `${STORY_STEP_MS}ms` } as CSSProperties}
+                    key={`p${tour}${paused}`} data-paused={paused || undefined} />
+                </div>
+              )}
+              {tourEnd && (
+                <div className="mst mst-end" role="status">
+                  <p className="mst-line">Your timeline stands here.</p>
+                  <p className="mono mst-meta">{formatYear(year)} · beyond this light, history is still sealed</p>
+                  <div className="mst-ctl"><button type="button" className="mu-btn" onClick={() => setTourEnd(false)}>Stay in the hall</button></div>
+                </div>
+              )}
+            </>
+          )}
 
-            <Wing id="wing-archaeology" label="Archaeological Reports" blurb="Filed reports from your Archaeologist digs." accent="#a15a2a" exhibits={siteExhibits}>
-              {siteExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#a15a2a" />)}
-            </Wing>
+          {place === 'world' && (
+            <WorldHistory key={worldFocus ?? 'world'} cat={cat} year={year} focusExhibit={worldFocus}
+              onOpenInHall={id => { setPlace('humanity'); setFocusId(id); jump({ id, instant: true }); }} />
+          )}
+          {place === 'personal' && (
+            <PersonalWing cat={cat} year={year} engine={engine} version={version} onOpenDiscovery={onOpen}
+              onOpenExhibit={id => { setPlace('humanity'); setFocusId(id); jump({ id, instant: true }); }} />
+          )}
+          {place === 'records' && <ModeArchiveWing />}
+          {place === 'ledger' && <MuseumLedger cat={cat} year={year} />}
 
-            <Wing id="wing-decipher" label="Decipherment Archive" blurb="Tablet sets your Decipher runs read." accent="#3a5a9c" exhibits={decipherExhibits}>
-              {decipherExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#3a5a9c" />)}
-            </Wing>
-
-            <Wing id="wing-escaperoom" label="Escape Room Episodes" blurb="Episodes you have opened." accent="#a15a2a" exhibits={escapeExhibits}>
-              {escapeExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#a15a2a" />)}
-            </Wing>
-
-            <Wing id="wing-alien" label="Alien Ruins" blurb="Field reports your Alien Archaeology sites produced." accent="#6b46a8" exhibits={alienExhibits}>
-              {alienExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#6b46a8" />)}
-            </Wing>
-
-            <Wing id="wing-reverse" label="Reverse-Traced Objects" blurb="Discoveries your Reverse Evolution runs traced back to their origins." accent="#2f7d6b" exhibits={reverseExhibits}>
-              {reverseExhibits.map(ex => <CaseCard key={ex.id} ex={ex} accent="#2f7d6b" />)}
-            </Wing>
-          </div>
-        )}
-      </div>
+          {revealing && (
+            <MuseumReveal cat={cat} onArrive={onArrive} onDone={() => setRevealing(false)} />
+          )}
+        </div>
+      )}
     </section>
   );
 }

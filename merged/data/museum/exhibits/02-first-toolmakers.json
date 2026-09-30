@@ -1,0 +1,486 @@
+{
+  "gallery": "first-toolmakers",
+  "exhibits": [
+    {
+      "id": "early-homo",
+      "title": "The Genus Homo",
+      "when": {
+        "from": -2800000,
+        "display": "c. 2.8 million years ago",
+        "precision": "deep-time",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "ethiopia",
+          "role": "site",
+          "site": {
+            "label": "Ledi-Geraru, Afar, Ethiopia",
+            "lat": 11.3,
+            "lon": 40.8
+          }
+        },
+        {
+          "region": "east-africa",
+          "role": "early-centre"
+        }
+      ],
+      "categories": [
+        "human-evolution"
+      ],
+      "importance": "milestone",
+      "change": "A jaw from Ledi-Geraru shows the first features of our own genus.",
+      "context": "The LD 350-1 mandible, reported in 2015, combines primitive australopith traits with the smaller teeth typical of Homo. Later early Homo fossils (often grouped as Homo habilis and Homo rudolfensis) show gradually larger brains.",
+      "significance": "It places the origin of our genus close in time to the first widespread stone tools.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "How to define the genus Homo, and which early fossils belong in it, is disputed."
+      },
+      "relations": {
+        "enabledBy": [
+          "australopiths"
+        ],
+        "related": [
+          "oldowan"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Villmoare et al. 2015, Science."
+      },
+      "display": {
+        "motif": "skull",
+        "choreography": "stratum"
+      }
+    },
+    {
+      "id": "paranthropus",
+      "title": "Robust Cousins",
+      "when": {
+        "from": -2700000,
+        "to": -1200000,
+        "display": "c. 2.7–1.2 million years ago",
+        "precision": "deep-time",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "east-africa",
+          "role": "early-centre"
+        },
+        {
+          "region": "southern-africa",
+          "role": "early-centre"
+        }
+      ],
+      "categories": [
+        "human-evolution"
+      ],
+      "importance": "supporting",
+      "change": "Heavy-jawed relatives lived beside early Homo for more than a million years.",
+      "context": "Paranthropus species had huge molars and powerful chewing muscles, suited to tough plant foods. They shared landscapes with early Homo, and some researchers think they too may have used stone tools.",
+      "significance": "A reminder that for most of prehistory several kinds of humans coexisted.",
+      "relations": {
+        "enabledBy": [
+          "australopiths"
+        ],
+        "related": [
+          "early-homo",
+          "bone-digging-tools"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "skull",
+        "choreography": "stratum"
+      }
+    },
+    {
+      "id": "oldowan",
+      "title": "Stone Toolmaking",
+      "when": {
+        "from": -2600000,
+        "display": "c. 2.6 million years ago (possibly earlier)",
+        "precision": "deep-time",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "ethiopia",
+          "role": "site",
+          "site": {
+            "label": "Gona and Ledi-Geraru, Ethiopia",
+            "lat": 11.1,
+            "lon": 40.4
+          }
+        },
+        {
+          "region": "east-africa",
+          "role": "site",
+          "site": {
+            "label": "Nyayanga, Kenya",
+            "lat": -0.5,
+            "lon": 34.3
+          }
+        }
+      ],
+      "categories": [
+        "survival",
+        "materials",
+        "manufacturing"
+      ],
+      "importance": "defining",
+      "change": "Sharp flakes became a routine part of life — technology had begun, and it would never stop.",
+      "context": "Oldowan tools are simple flakes and cores produced by striking one stone with another. The earliest well-dated examples come from Ethiopia at about 2.6 million years ago; finds at Nyayanga, Kenya, may be slightly older and were found with Paranthropus teeth. Toolmakers selected good rock and carried it across the landscape.",
+      "significance": "Cutting meat, cracking bone for marrow and working plants with stone opened new foods and set up the feedback between tools, diet and the brain that runs through the rest of human evolution.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Which species made the first Oldowan tools is unknown — early Homo, Paranthropus, or both."
+      },
+      "relations": {
+        "enabledBy": [
+          "lomekwi"
+        ],
+        "related": [
+          "early-homo",
+          "butchery"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "si_ho_tools",
+          "si_milestones"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "pebble-tool",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "stone_tool",
+        "stone_flake",
+        "sharp_stone",
+        "cutting"
+      ]
+    },
+    {
+      "id": "butchery",
+      "title": "Meat and Marrow",
+      "when": {
+        "from": -2600000,
+        "to": -2000000,
+        "display": "c. 2.6–2 million years ago",
+        "precision": "deep-time",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "east-africa",
+          "role": "site",
+          "site": {
+            "label": "Kanjera South, Kenya",
+            "lat": -0.3,
+            "lon": 34.5
+          }
+        },
+        {
+          "region": "ethiopia",
+          "role": "early-centre"
+        }
+      ],
+      "categories": [
+        "survival"
+      ],
+      "importance": "supporting",
+      "change": "Stone flakes turned carcasses into food that teeth alone could not reach.",
+      "context": "Cut-marked and hammer-broken bones show early toolmakers stripping meat and cracking long bones for marrow. At Kanjera South, about 2 million years ago, hominins repeatedly processed small antelopes and plant foods.",
+      "significance": "Energy-rich food from animals is widely thought to have helped sustain larger bodies and brains.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Whether early Homo hunted or mostly scavenged is debated."
+      },
+      "relations": {
+        "enabledBy": [
+          "oldowan"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "si_ho_food"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "pebble-tool",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "meat_processing",
+        "cooked_marrow"
+      ]
+    },
+    {
+      "id": "homo-erectus",
+      "title": "Homo erectus",
+      "when": {
+        "from": -2000000,
+        "to": -110000,
+        "anchor": -1900000,
+        "display": "c. 2 million – c. 110,000 years ago",
+        "precision": "deep-time",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "southern-africa",
+          "role": "site",
+          "site": {
+            "label": "Drimolen, South Africa",
+            "lat": -25.97,
+            "lon": 27.75
+          }
+        },
+        {
+          "region": "east-africa",
+          "role": "early-centre"
+        },
+        {
+          "region": "island-southeast-asia",
+          "role": "spread",
+          "note": "Java, until perhaps 110,000 years ago."
+        },
+        {
+          "region": "china",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "human-evolution"
+      ],
+      "importance": "breakthrough",
+      "change": "A tall, long-legged human with a bigger brain — built to walk far.",
+      "context": "Homo erectus had body proportions close to ours and a brain that grew over time. It is the first human species found far outside Africa, and it survived in Java until geologically recent times — the longest-lived human species known.",
+      "significance": "Long-distance walking, heavier reliance on tools and wider ranges set the pattern of a mobile, tool-dependent human.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Whether African and Asian fossils belong to one species (erectus) or several (e.g. ergaster) is debated."
+      },
+      "relations": {
+        "enabledBy": [
+          "early-homo",
+          "oldowan"
+        ],
+        "related": [
+          "first-dispersal",
+          "handaxe"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "skull",
+        "choreography": "stratum"
+      }
+    },
+    {
+      "id": "first-dispersal",
+      "title": "First Journeys out of Africa",
+      "when": {
+        "from": -2100000,
+        "to": -1600000,
+        "anchor": -1800000,
+        "display": "c. 2.1–1.8 million years ago",
+        "precision": "deep-time",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "east-africa",
+          "role": "origin"
+        },
+        {
+          "region": "caucasus",
+          "role": "site",
+          "site": {
+            "label": "Dmanisi, Georgia",
+            "lat": 41.33,
+            "lon": 44.34
+          }
+        },
+        {
+          "region": "china",
+          "role": "site",
+          "site": {
+            "label": "Shangchen, Loess Plateau, China",
+            "lat": 34.0,
+            "lon": 109.4
+          }
+        },
+        {
+          "region": "island-southeast-asia",
+          "role": "spread",
+          "note": "Java by c. 1.5 million years ago."
+        }
+      ],
+      "categories": [
+        "human-evolution",
+        "survival"
+      ],
+      "importance": "breakthrough",
+      "change": "Humans walked out of Africa and reached the Caucasus and China.",
+      "context": "Skulls and tools at Dmanisi, Georgia, date to about 1.8 million years ago; stone tools at Shangchen in China have been dated to about 2.1 million years ago. These early travellers carried simple Oldowan-style tools, not handaxes.",
+      "significance": "Humans became an Old World species long before modern humans evolved.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Who made the oldest tools outside Africa, and whether dispersal happened once or several times, is unresolved."
+      },
+      "relations": {
+        "enabledBy": [
+          "early-homo",
+          "oldowan"
+        ],
+        "related": [
+          "homo-erectus"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Lordkipanidze et al. 2013 (Dmanisi); Zhu et al. 2018 (Shangchen), Nature."
+      },
+      "display": {
+        "motif": "footprints",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "migration"
+      ]
+    },
+    {
+      "id": "bone-digging-tools",
+      "title": "Bones for Digging",
+      "when": {
+        "from": -1800000,
+        "to": -1000000,
+        "display": "c. 1.8–1 million years ago",
+        "precision": "deep-time",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "southern-africa",
+          "role": "site",
+          "site": {
+            "label": "Swartkrans, South Africa",
+            "lat": -26.02,
+            "lon": 27.73
+          }
+        }
+      ],
+      "categories": [
+        "survival",
+        "materials"
+      ],
+      "importance": "supporting",
+      "change": "Worn bone fragments show early humans probing termite mounds.",
+      "context": "Wear patterns on bone tools from Swartkrans match experimental digging into termite mounds. Termites are a rich protein source still eaten today.",
+      "significance": "Early technology was not only stone — other materials and foods were exploited too.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Paranthropus and early Homo both lived at Swartkrans; the toolmakers are unknown."
+      },
+      "relations": {
+        "related": [
+          "paranthropus",
+          "oldowan"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Backwell & d'Errico 2001, PNAS."
+      },
+      "display": {
+        "motif": "needle",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "bone"
+      ]
+    },
+    {
+      "id": "handaxe",
+      "title": "The Handaxe",
+      "when": {
+        "from": -1760000,
+        "to": -130000,
+        "anchor": -1760000,
+        "display": "c. 1.76 million – c. 130,000 years ago",
+        "precision": "deep-time",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "east-africa",
+          "role": "site",
+          "site": {
+            "label": "Kokiselei, West Turkana, Kenya",
+            "lat": 3.9,
+            "lon": 35.8
+          }
+        },
+        {
+          "region": "ethiopia",
+          "role": "site",
+          "note": "Konso, c. 1.75 million years ago."
+        },
+        {
+          "region": "levant",
+          "role": "spread"
+        },
+        {
+          "region": "south-india",
+          "role": "spread"
+        },
+        {
+          "region": "western-europe",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "survival",
+        "materials",
+        "manufacturing"
+      ],
+      "importance": "breakthrough",
+      "change": "A tool shaped to a plan: symmetrical, two-faced, and made for a million and a half years.",
+      "context": "Acheulean handaxes were shaped on both faces toward a teardrop outline, which requires holding a target form in mind through many blows. The tradition spread across Africa, western Asia, India and Europe and lasted longer than any other tool design in history.",
+      "significance": "Planning, standardisation and teaching are all implied — a step toward the cumulative culture that defines humans.",
+      "relations": {
+        "enabledBy": [
+          "oldowan",
+          "homo-erectus"
+        ],
+        "related": [
+          "levallois"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "si_ho_tools"
+        ],
+        "status": "cited",
+        "note": "Lepre et al. 2011, Nature (Kokiselei dating)."
+      },
+      "display": {
+        "motif": "handaxe",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "handaxe"
+      ]
+    }
+  ]
+}

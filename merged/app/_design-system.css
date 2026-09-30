@@ -197,6 +197,9 @@ input{font:inherit;color:inherit}
 
 /* ══ APP SHELL ═════════════════════════════════════════════════════════ */
 #app{position:relative;z-index:2;height:100%;display:grid;
+  /* minmax(0,1fr): the single column must never grow to a child's min-content
+     width (the rail's tool row made #views 434px wide on a 390px phone) */
+  grid-template-columns:minmax(0,1fr);
   grid-template-rows:var(--top) 1fr;opacity:0;transition:opacity .7s .25s}
 #app.on{opacity:1}
 

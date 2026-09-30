@@ -912,3 +912,10 @@ button:not(:disabled):active{transform:translateY(1px)}
   .es-wash,.es-name,.sv-body,.cv-body,.ar-body,.dph-body,.er-body,.xa-body,.rev-body,.sv-body>*,.cv-body>*,.ar-body>*,.dph-body>*,.er-body>*,.xa-body>*,.rev-body>*{animation:none!important}
   .cer-plate,.cer-name,.cer-tag,.cer-no,.cer-meta{transition:none!important;filter:none!important}
 }
+
+/* narrow phones (≤ 420px): the dock + the three utility buttons were ~5px wider
+   than a 390px screen, which clipped the last button; tighten the gap only */
+@media (max-width:420px){
+  .top-actions{gap:8px}
+  .util{gap:3px}
+}

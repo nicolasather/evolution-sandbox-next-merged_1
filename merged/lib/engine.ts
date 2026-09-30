@@ -458,6 +458,9 @@ export class Engine {
   }
 
   eraProgress(era: EraId): EraProgress { return this.world.eraProgress(era, this.found, this.eraFloor); }
+  /** Era indices up to this one are open regardless of required majors (older saves, waived locks).
+   *  Read-only: the Humanity Museum's canonical timeline (lib/museum/history/timeline.ts) needs it. */
+  eraFloorIndex(): number { return this.eraFloor; }
   /**
    * Treat every era as open from now on. This is the same waiver an older save gets for the ground
    * it already stands on — exposed so a teaching mode, or a test about something other than the

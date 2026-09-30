@@ -3,8 +3,10 @@ import type { Certainty } from '../world/types';
 import type { MuseumExhibit } from './types';
 
 /* ============================================================================
-   AUTO-EXHIBIT PIPELINE — the Museum's simplest, always-on wing: one exhibit
-   per major invention the player has already found (lib/world/'s
+   AUTO-EXHIBIT PIPELINE — kept for compatibility. Since the Museum redesign
+   the player's own finds are shown by the Personal Discovery wing
+   (lib/museum/personal/), never among humanity's canonical exhibits.
+   One exhibit per major invention the player has already found (lib/world/'s
    `engine.majorsFound()`), needing no separate mode. Every exhibit is
    explicitly labelled a reconstruction (never a specific surviving object,
    never a real accession number) and carries the discovery's own citations

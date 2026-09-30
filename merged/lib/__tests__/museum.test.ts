@@ -80,12 +80,16 @@ describe('perf tiers', () => {
 });
 
 describe('time journey length', () => {
-  it('runs 4 to 6 seconds on every tier', async () => {
+  // the film was lengthened toward the brief's "30-second cinematic intro":
+  // ≈16 s on phones / low tier, ≈30 s on capable devices, never longer
+  it('runs about 15 to 30 seconds, longer on stronger tiers', async () => {
     const { filmLength } = await import('@/lib/perf');
-    for (const q of ['low', 'medium', 'high'] as const) {
-      const ms = filmLength(q);
-      expect(ms).toBeGreaterThanOrEqual(4000);
-      expect(ms).toBeLessThanOrEqual(6000);
+    const len = (['low', 'medium', 'high'] as const).map(q => filmLength(q));
+    for (const ms of len) {
+      expect(ms).toBeGreaterThanOrEqual(15000);
+      expect(ms).toBeLessThanOrEqual(30000);
     }
+    expect(len[0]).toBeLessThanOrEqual(len[1]);
+    expect(len[1]).toBeLessThanOrEqual(len[2]);
   });
 });

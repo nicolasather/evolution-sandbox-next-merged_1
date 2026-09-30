@@ -1,0 +1,690 @@
+{
+  "gallery": "atomic-century",
+  "exhibits": [
+    {
+      "id": "insulin",
+      "title": "Insulin",
+      "when": {
+        "from": 1921,
+        "to": 1922,
+        "display": "1921–1922",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "north-america-east",
+          "role": "origin",
+          "site": {
+            "label": "University of Toronto",
+            "lat": 43.66,
+            "lon": -79.39
+          }
+        }
+      ],
+      "categories": [
+        "medicine",
+        "biology"
+      ],
+      "importance": "milestone",
+      "change": "A hormone extract turned a fatal disease into a manageable one.",
+      "context": "Frederick Banting, Charles Best, James Collip and John Macleod isolated and purified insulin; a 14-year-old was the first person successfully treated in January 1922. The patent was sold for a nominal sum to keep it widely available.",
+      "significance": "Millions of people with type 1 diabetes live because of it.",
+      "relations": {
+        "enabledBy": [
+          "germ-theory",
+          "modern-chemistry"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "vial",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "medicine"
+      ]
+    },
+    {
+      "id": "quantum-mechanics",
+      "title": "Quantum Mechanics",
+      "when": {
+        "from": 1925,
+        "to": 1927,
+        "display": "1925–1927",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "central-europe",
+          "role": "early-centre",
+          "note": "Göttingen, Zürich, Copenhagen."
+        },
+        {
+          "region": "britain",
+          "role": "early-centre",
+          "note": "Dirac, Cambridge."
+        },
+        {
+          "region": "northern-europe",
+          "role": "early-centre",
+          "site": {
+            "label": "Copenhagen",
+            "lat": 55.68,
+            "lon": 12.57
+          }
+        }
+      ],
+      "categories": [
+        "physics",
+        "chemistry"
+      ],
+      "importance": "breakthrough",
+      "change": "A strange but precise theory of the atomic world.",
+      "context": "Heisenberg's matrix mechanics, Schrödinger's wave equation, Born's probability interpretation and Dirac's formulation gave physics a theory that explains atoms, chemical bonds and solids.",
+      "significance": "The physics behind transistors, lasers, MRI and modern chemistry.",
+      "relations": {
+        "enabledBy": [
+          "quantum",
+          "electron"
+        ],
+        "related": [
+          "transistor",
+          "laser"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "atom",
+        "choreography": "orbit"
+      }
+    },
+    {
+      "id": "liquid-rocket",
+      "title": "The Liquid-Fuel Rocket",
+      "when": {
+        "from": 1926,
+        "display": "16 March 1926",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "north-america-east",
+          "role": "origin",
+          "site": {
+            "label": "Auburn, Massachusetts",
+            "lat": 42.2,
+            "lon": -71.84
+          }
+        }
+      ],
+      "categories": [
+        "space",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "A rocket burning petrol and liquid oxygen flew for 2.5 seconds.",
+      "context": "Robert Goddard's first liquid-fuelled rocket rose about 12 metres. Rocketry advanced rapidly in the 1930s–40s, including wartime missile programmes whose engineers later built space launchers.",
+      "significance": "The engine type that would carry satellites and people into space.",
+      "relations": {
+        "enabledBy": [
+          "rocket-equation",
+          "gunpowder"
+        ],
+        "related": [
+          "space-age"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "rocket",
+        "choreography": "ascend"
+      }
+    },
+    {
+      "id": "television",
+      "title": "Television",
+      "when": {
+        "from": 1926,
+        "to": 1936,
+        "anchor": 1927,
+        "display": "1926–1927 (first demonstrations); regular broadcasts from 1936",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "britain",
+          "role": "independent",
+          "note": "John Logie Baird, mechanical television, 1926."
+        },
+        {
+          "region": "north-america-west",
+          "role": "independent",
+          "site": {
+            "label": "San Francisco (Philo Farnsworth, 1927)",
+            "lat": 37.77,
+            "lon": -122.42
+          }
+        },
+        {
+          "region": "japan",
+          "role": "independent",
+          "note": "Kenjiro Takayanagi's electronic display, 1926."
+        }
+      ],
+      "categories": [
+        "communication",
+        "culture"
+      ],
+      "importance": "milestone",
+      "change": "Moving images broadcast into homes.",
+      "context": "Mechanical and electronic television were developed in parallel in several countries. The BBC began a regular high-definition service in 1936.",
+      "significance": "The dominant mass medium of the late 20th century.",
+      "relations": {
+        "enabledBy": [
+          "radio",
+          "cinema",
+          "vacuum-tube"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "computer",
+        "choreography": "wave"
+      }
+    },
+    {
+      "id": "expanding-universe",
+      "title": "The Expanding Universe",
+      "when": {
+        "from": 1927,
+        "to": 1929,
+        "display": "1927 (Lemaître); 1929 (Hubble)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "western-europe",
+          "role": "origin",
+          "note": "Georges Lemaître, Leuven."
+        },
+        {
+          "region": "north-america-west",
+          "role": "origin",
+          "site": {
+            "label": "Mount Wilson Observatory",
+            "lat": 34.22,
+            "lon": -118.06
+          }
+        }
+      ],
+      "categories": [
+        "astronomy",
+        "physics"
+      ],
+      "importance": "milestone",
+      "change": "Galaxies are rushing apart: the universe has a history.",
+      "context": "Lemaître derived expansion from general relativity; Hubble's observations of galaxy distances and redshifts confirmed it. Henrietta Leavitt's period–luminosity law made the distances measurable.",
+      "significance": "The basis of Big Bang cosmology.",
+      "relations": {
+        "enabledBy": [
+          "relativity",
+          "telescope"
+        ],
+        "related": [
+          "hubble-telescope",
+          "jwst"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "orbit",
+        "choreography": "orbit"
+      }
+    },
+    {
+      "id": "antibiotics",
+      "title": "Antibiotics",
+      "when": {
+        "from": 1928,
+        "to": 1945,
+        "anchor": 1928,
+        "display": "1928 (penicillin observed); mass production 1943–1945",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "britain",
+          "role": "origin",
+          "site": {
+            "label": "St Mary's Hospital, London",
+            "lat": 51.52,
+            "lon": -0.17
+          }
+        },
+        {
+          "region": "britain",
+          "role": "site",
+          "site": {
+            "label": "Oxford (Florey and Chain, 1940)",
+            "lat": 51.75,
+            "lon": -1.26
+          }
+        },
+        {
+          "region": "north-america-east",
+          "role": "spread",
+          "note": "Industrial production during the Second World War."
+        }
+      ],
+      "categories": [
+        "medicine",
+        "biology",
+        "chemistry"
+      ],
+      "importance": "defining",
+      "change": "Bacterial infections that had killed for all of history became curable.",
+      "context": "Alexander Fleming noticed in 1928 that a mould killed bacteria. A decade later Howard Florey, Ernst Chain and Norman Heatley purified penicillin and proved it in patients; American industry scaled production. Sulfonamide drugs (1935) and streptomycin (1943) broadened the arsenal.",
+      "significance": "Surgery, childbirth and minor wounds became far safer, and life expectancy rose worldwide. Overuse has since driven antibiotic resistance, now a global threat.",
+      "relations": {
+        "enabledBy": [
+          "germ-theory",
+          "microscope"
+        ],
+        "related": [
+          "polio-vaccine"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "nobel_med1945",
+          "nobel_fleming_lecture"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "vial",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "antibiotics"
+      ]
+    },
+    {
+      "id": "radar",
+      "title": "Radar",
+      "when": {
+        "from": 1935,
+        "to": 1940,
+        "anchor": 1935,
+        "display": "1935 onward, developed in several countries; cavity magnetron 1940",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "britain",
+          "role": "independent",
+          "site": {
+            "label": "Daventry experiment, 1935",
+            "lat": 52.26,
+            "lon": -1.16
+          }
+        },
+        {
+          "region": "central-europe",
+          "role": "independent"
+        },
+        {
+          "region": "north-america-east",
+          "role": "independent"
+        },
+        {
+          "region": "eastern-europe",
+          "role": "independent"
+        },
+        {
+          "region": "japan",
+          "role": "independent"
+        }
+      ],
+      "categories": [
+        "physics",
+        "warfare",
+        "navigation"
+      ],
+      "importance": "milestone",
+      "change": "Radio echoes revealed aircraft and ships beyond sight.",
+      "context": "Radar was developed in secret, largely independently, in at least six countries in the 1930s. The British cavity magnetron (1940) made compact, high-power microwave radar possible.",
+      "significance": "Air traffic control, weather forecasting — and the microwave oven.",
+      "relations": {
+        "enabledBy": [
+          "radio",
+          "vacuum-tube"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "ethw_magnetron"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "wave",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "radar"
+      ]
+    },
+    {
+      "id": "computation-defined",
+      "title": "Computation Defined",
+      "when": {
+        "from": 1936,
+        "display": "1936",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "britain",
+          "role": "independent",
+          "site": {
+            "label": "Cambridge (Alan Turing)",
+            "lat": 52.2,
+            "lon": 0.12
+          }
+        },
+        {
+          "region": "north-america-east",
+          "role": "independent",
+          "note": "Alonzo Church, Princeton."
+        }
+      ],
+      "categories": [
+        "computing",
+        "mathematics"
+      ],
+      "importance": "milestone",
+      "change": "A precise answer to 'what can be computed?' — and a universal machine.",
+      "context": "Alan Turing described an abstract machine that could simulate any other; Alonzo Church reached an equivalent result with lambda calculus. Both showed some problems can never be solved by algorithm.",
+      "significance": "The theoretical foundation of every computer and programming language.",
+      "relations": {
+        "enabledBy": [
+          "algebra",
+          "analytical-engine"
+        ],
+        "related": [
+          "programmable-computer",
+          "panini"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "chip",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "programming",
+        "software"
+      ]
+    },
+    {
+      "id": "jet-engine",
+      "title": "The Jet Engine",
+      "when": {
+        "from": 1937,
+        "to": 1939,
+        "display": "1937 (Whittle's engine runs); 1939 (first jet flight, He 178)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "britain",
+          "role": "independent",
+          "note": "Frank Whittle."
+        },
+        {
+          "region": "central-europe",
+          "role": "independent",
+          "note": "Hans von Ohain."
+        }
+      ],
+      "categories": [
+        "aviation",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "A gas turbine pushed aircraft faster and higher than propellers could.",
+      "context": "Frank Whittle and Hans von Ohain developed turbojet engines independently. Jet airliners in the 1950s made intercontinental air travel routine.",
+      "significance": "Mass global air travel.",
+      "relations": {
+        "enabledBy": [
+          "powered-flight",
+          "thermodynamics"
+        ],
+        "related": [
+          "jet-airliners"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "plane",
+        "choreography": "ascend"
+      }
+    },
+    {
+      "id": "fission",
+      "title": "Nuclear Fission",
+      "when": {
+        "from": 1938,
+        "to": 1939,
+        "display": "December 1938 – early 1939",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "central-europe",
+          "role": "origin",
+          "site": {
+            "label": "Berlin (Hahn and Strassmann)",
+            "lat": 52.45,
+            "lon": 13.28
+          }
+        },
+        {
+          "region": "northern-europe",
+          "role": "early-centre",
+          "note": "Lise Meitner and Otto Frisch explained it."
+        }
+      ],
+      "categories": [
+        "physics",
+        "energy"
+      ],
+      "importance": "breakthrough",
+      "change": "A uranium nucleus split in two, releasing enormous energy.",
+      "context": "Otto Hahn and Fritz Strassmann detected barium after bombarding uranium with neutrons; Lise Meitner and Otto Frisch explained it as fission. The potential for a chain reaction was recognised within months.",
+      "significance": "Nuclear power and nuclear weapons followed.",
+      "relations": {
+        "enabledBy": [
+          "radioactivity",
+          "quantum-mechanics"
+        ],
+        "related": [
+          "chain-reaction"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "atom",
+        "choreography": "ignite"
+      }
+    },
+    {
+      "id": "programmable-computer",
+      "title": "The Programmable Computer",
+      "when": {
+        "from": 1941,
+        "to": 1949,
+        "anchor": 1945,
+        "display": "1941–1949 (Z3, Colossus, ENIAC, Manchester Baby, EDSAC)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "unlockAt": 1941,
+      "regions": [
+        {
+          "region": "central-europe",
+          "role": "independent",
+          "site": {
+            "label": "Berlin (Z3, 1941)",
+            "lat": 52.52,
+            "lon": 13.4
+          }
+        },
+        {
+          "region": "britain",
+          "role": "independent",
+          "site": {
+            "label": "Bletchley Park (Colossus, 1944); Manchester (1948)",
+            "lat": 51.99,
+            "lon": -0.74
+          }
+        },
+        {
+          "region": "north-america-east",
+          "role": "independent",
+          "site": {
+            "label": "Philadelphia (ENIAC, 1945)",
+            "lat": 39.95,
+            "lon": -75.19
+          }
+        }
+      ],
+      "categories": [
+        "computing"
+      ],
+      "importance": "defining",
+      "change": "Machines that followed changeable instructions at electronic speed.",
+      "context": "Konrad Zuse's electromechanical Z3 (1941) was programmable; Colossus (1944) broke codes electronically; ENIAC (1945) was a general-purpose electronic computer programmed largely by women such as Jean Bartik and Kathleen McNulty. The Manchester Baby (1948) ran the first program stored in electronic memory.",
+      "significance": "The universal machine became real — and every field of human activity began to change around it.",
+      "relations": {
+        "enabledBy": [
+          "computation-defined",
+          "vacuum-tube",
+          "analytical-engine",
+          "electrification"
+        ],
+        "related": [
+          "transistor",
+          "information-theory"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "chm_birth_computer"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "computer",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "computer",
+        "programming",
+        "data"
+      ]
+    },
+    {
+      "id": "chain-reaction",
+      "title": "The Nuclear Age",
+      "when": {
+        "from": 1942,
+        "to": 1945,
+        "anchor": 1942,
+        "display": "1942 (first chain reaction); 1945 (Hiroshima and Nagasaki)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "north-america-central",
+          "role": "origin",
+          "site": {
+            "label": "Chicago Pile-1",
+            "lat": 41.79,
+            "lon": -87.6
+          }
+        },
+        {
+          "region": "north-america-west",
+          "role": "site",
+          "site": {
+            "label": "Trinity test, New Mexico",
+            "lat": 33.68,
+            "lon": -106.48
+          }
+        },
+        {
+          "region": "japan",
+          "role": "site",
+          "site": {
+            "label": "Hiroshima and Nagasaki",
+            "lat": 34.39,
+            "lon": 132.45
+          }
+        }
+      ],
+      "categories": [
+        "energy",
+        "warfare",
+        "physics"
+      ],
+      "importance": "breakthrough",
+      "change": "Humans could release the energy of the atom — and destroy cities with a single weapon.",
+      "context": "Enrico Fermi's team achieved the first self-sustaining chain reaction in December 1942 under the Manhattan Project. In August 1945 atomic bombs destroyed Hiroshima and Nagasaki, killing well over 100,000 people, many of them civilians.",
+      "significance": "It changed warfare, international politics and humanity's capacity for self-destruction; the same physics later generated electricity.",
+      "relations": {
+        "enabledBy": [
+          "fission"
+        ],
+        "related": [
+          "nuclear-power"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "atom",
+        "choreography": "ignite"
+      }
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "gallery": "print-and-oceans",
+  "exhibits": [
+    {
+      "id": "printing-press",
+      "title": "The Printing Press",
+      "when": { "from": 1450, "to": 1455, "anchor": 1450, "display": "c. 1440–1455 (the Gutenberg Bible, c. 1455)", "precision": "decades", "basis": "dated-event" },
+      "regions": [
+        { "region": "central-europe", "role": "origin", "site": { "label": "Mainz", "lat": 50.0, "lon": 8.27 } },
+        { "region": "italy", "role": "spread", "note": "Venice became a printing capital by 1500." },
+        { "region": "western-europe", "role": "spread" }
+      ],
+      "categories": ["communication", "manufacturing", "knowledge"],
+      "importance": "defining",
+      "change": "Books could be made by the thousand, identical — knowledge escaped the scriptorium.",
+      "context": "Johannes Gutenberg combined cast metal type made with a hand mould, an oil-based ink and a screw press. By 1500 presses in over 250 European towns had printed perhaps 10 million or more copies. East Asia had printed with woodblocks and movable type for centuries; no direct influence on Gutenberg has been demonstrated.",
+      "significance": "Printing fed the Reformation, the Scientific Revolution, standardised languages, maps and mass literacy: identical copies let scholars check, correct and build on each other's work.",
+      "uncertainty": { "level": "debated", "note": "Whether knowledge of East Asian printing reached Europe is unknown." },
+      "relations": { "enabledBy": ["paper", "movable-type", "codex"], "related": ["woodblock-printing", "scientific-revolution"] },
+      "sources": { "ids": ["brit_printing"], "status": "cited" },
+      "display": { "motif": "press", "choreography": "mechanism" },
+      "discoveryIds": ["printing"]
+    },
+    {
+      "id": "ocean-crossings",
+      "title": "Ocean Crossings",
+      "when": { "from": 1492, "to": 1498, "display": "1492 (Atlantic); 1498 (Europe–India by sea)", "precision": "year", "basis": "dated-event" },
+      "regions": [
+        { "region": "iberia", "role": "origin" },
+        { "region": "isthmus", "role": "spread", "site": { "label": "Caribbean landfall, 1492", "lat": 24.0, "lon": -74.5 } },
+        { "region": "south-india", "role": "spread", "site": { "label": "Calicut, 1498", "lat": 11.25, "lon": 75.78 } }
+      ],
+      "categories": ["navigation", "transportation"],
+      "importance": "breakthrough",
+      "change": "Regular sea routes began to connect every inhabited continent.",
+      "context": "Columbus's 1492 voyage reached the Caribbean; Vasco da Gama sailed around Africa to India in 1498, guided in the Indian Ocean by a local pilot. These voyages opened lasting connections that were quickly followed by conquest and colonisation.",
+      "significance": "The beginning of a truly global world — with catastrophic consequences for the peoples of the Americas and for millions of Africans later forced across the Atlantic.",
+      "relations": { "enabledBy": ["compass", "sailing", "ptolemy"], "related": ["columbian-exchange", "circumnavigation", "polynesian-wayfinding", "vinland"] },
+      "sources": { "status": "source_required" },
+      "display": { "motif": "sail", "choreography": "network" },
+      "discoveryIds": ["navigation", "maps"]
+    },
+    {
+      "id": "columbian-exchange",
+      "title": "The Columbian Exchange",
+      "when": { "from": 1492, "to": 1650, "anchor": 1500, "display": "from 1492 onward", "precision": "decades", "basis": "range-of-emergence" },
+      "regions": [
+        { "region": "mesoamerica", "role": "early-centre" },
+        { "region": "andes", "role": "early-centre" },
+        { "region": "iberia", "role": "early-centre" },
+        { "region": "west-africa", "role": "spread" },
+        { "region": "china", "role": "spread" },
+        { "region": "global", "role": "spread" }
+      ],
+      "categories": ["agriculture", "biology", "trade"],
+      "importance": "breakthrough",
+      "change": "Crops, animals and diseases crossed between hemispheres for the first time in over 10,000 years.",
+      "context": "Maize, potatoes, cassava, tomatoes and chillies spread to Afro-Eurasia; wheat, cattle, horses and sugar cane went to the Americas. Smallpox, measles and other diseases, together with conquest and forced labour, caused a demographic catastrophe among Indigenous Americans. Plantation economies drove the transatlantic trade in enslaved Africans.",
+      "significance": "It reshaped diets, populations and landscapes worldwide — for good and terrible ends.",
+      "relations": { "enabledBy": ["ocean-crossings", "maize"], "related": ["green-revolution"] },
+      "sources": { "status": "source_required", "note": "Crosby 1972, The Columbian Exchange." },
+      "display": { "motif": "seed", "choreography": "network" },
+      "discoveryIds": ["trade", "plant"]
+    },
+    {
+      "id": "heliocentrism",
+      "title": "The Sun at the Centre",
+      "when": { "from": 1543, "display": "1543", "precision": "year", "basis": "dated-event" },
+      "regions": [{ "region": "central-europe", "role": "origin", "site": { "label": "Frombork", "lat": 54.36, "lon": 19.68 } }],
+      "categories": ["astronomy"],
+      "importance": "breakthrough",
+      "change": "Earth became one planet among others, circling the Sun.",
+      "context": "Nicolaus Copernicus published De revolutionibus in 1543. Aristarchus had proposed a sun-centred system in antiquity, and Copernicus' mathematical devices closely resemble those of Maragheh astronomers such as Ibn al-Shatir.",
+      "significance": "A shift in humanity's place in the cosmos, and a starting point for Kepler, Galileo and Newton.",
+      "uncertainty": { "level": "debated", "note": "Whether Copernicus knew the Maragheh models directly is debated." },
+      "relations": { "enabledBy": ["ptolemy", "observatories", "printing-press"], "related": ["kepler", "telescope"] },
+      "sources": { "status": "source_required" },
+      "display": { "motif": "orbit", "choreography": "orbit" },
+      "discoveryIds": ["astronomy"]
+    },
+    {
+      "id": "vesalius",
+      "title": "The Fabric of the Body",
+      "when": { "from": 1543, "display": "1543", "precision": "year", "basis": "dated-event" },
+      "regions": [{ "region": "italy", "role": "origin", "site": { "label": "Padua", "lat": 45.41, "lon": 11.88 } }, { "region": "western-europe", "role": "spread", "note": "Printed in Basel." }],
+      "categories": ["medicine", "biology"],
+      "importance": "milestone",
+      "change": "Anatomy learned from human dissection, shown in precise printed woodcuts.",
+      "context": "Andreas Vesalius's De humani corporis fabrica corrected many of Galen's errors that came from animal anatomy. Its illustrations, reproduced exactly by print, set a new standard.",
+      "significance": "Observation over authority — a model for the new science.",
+      "relations": { "enabledBy": ["galen", "printing-press"], "related": ["circulation"] },
+      "sources": { "status": "source_required" },
+      "display": { "motif": "book", "choreography": "scan" },
+      "discoveryIds": ["anatomy"]
+    },
+    {
+      "id": "variolation",
+      "title": "Variolation",
+      "when": { "from": 1549, "to": 1721, "anchor": 1549, "display": "documented in China by the 16th century; adopted in Britain and America from 1721", "precision": "decades", "basis": "earliest-evidence" },
+      "regions": [
+        { "region": "china", "role": "early-centre" },
+        { "region": "gangetic", "role": "early-centre" },
+        { "region": "anatolia", "role": "early-centre", "note": "Observed in Istanbul by Lady Mary Wortley Montagu." },
+        { "region": "west-africa", "role": "early-centre", "note": "Described in Boston by Onesimus, an enslaved West African man." },
+        { "region": "britain", "role": "spread" }
+      ],
+      "categories": ["medicine"],
+      "importance": "milestone",
+      "change": "Deliberate mild infection with smallpox material protected against the full disease.",
+      "context": "Variolation was practised in China (nasal insufflation), India, the Ottoman Empire and West Africa. It entered British and colonial American medicine in 1721. It carried real risk but greatly lowered death rates.",
+      "significance": "The direct predecessor of vaccination — knowledge that travelled from Asia and Africa to Europe.",
+      "relations": { "related": ["vaccination"] },
+      "sources": { "ids": ["who_vaccination"], "status": "cited" },
+      "display": { "motif": "vial", "choreography": "scan" },
+      "discoveryIds": ["medicine"]
+    },
+    {
+      "id": "circumnavigation",
+      "title": "Around the World",
+      "when": { "from": 1519, "to": 1522, "display": "1519–1522", "precision": "year", "basis": "dated-event" },
+      "regions": [{ "region": "iberia", "role": "origin", "site": { "label": "Sanlúcar de Barrameda", "lat": 36.78, "lon": -6.35 } }, { "region": "island-southeast-asia", "role": "spread" }, { "region": "global", "role": "spread" }],
+      "categories": ["navigation"],
+      "importance": "milestone",
+      "change": "One ship completed a voyage around the globe.",
+      "context": "The expedition led by Ferdinand Magellan, who was killed in the Philippines, was completed by Juan Sebastián Elcano; one of five ships and about eighteen of some 270 crew returned.",
+      "significance": "Proved the world's oceans connect, and revealed the Pacific's immense size.",
+      "relations": { "enabledBy": ["ocean-crossings"], "related": ["mercator"] },
+      "sources": { "status": "source_required" },
+      "display": { "motif": "globe", "choreography": "orbit" },
+      "discoveryIds": ["navigation"]
+    },
+    {
+      "id": "mercator",
+      "title": "The Mercator Projection",
+      "when": { "from": 1569, "display": "1569", "precision": "year", "basis": "dated-event" },
+      "regions": [{ "region": "western-europe", "role": "origin", "site": { "label": "Duisburg", "lat": 51.43, "lon": 6.76 } }],
+      "categories": ["navigation", "mathematics"],
+      "importance": "supporting",
+      "change": "A map on which a constant compass bearing is a straight line.",
+      "context": "Gerardus Mercator's world map made navigation by bearing simpler, at the cost of exaggerating areas near the poles.",
+      "significance": "Still the basis of most web maps — and of distorted mental images of continent sizes.",
+      "relations": { "enabledBy": ["ptolemy", "circumnavigation", "printing-press"] },
+      "sources": { "status": "source_required" },
+      "display": { "motif": "map", "choreography": "unfold" },
+      "discoveryIds": ["maps", "cartography"]
+    },
+    {
+      "id": "tycho",
+      "title": "Precision Astronomy",
+      "when": { "from": 1576, "to": 1597, "display": "1576–1597 (Uraniborg)", "precision": "year", "basis": "dated-event" },
+      "regions": [{ "region": "northern-europe", "role": "origin", "site": { "label": "Hven island", "lat": 55.9, "lon": 12.7 } }],
+      "categories": ["astronomy"],
+      "importance": "supporting",
+      "change": "Naked-eye measurements accurate to about an arcminute.",
+      "context": "Tycho Brahe's observatory produced two decades of planetary positions far more precise than earlier records. Kepler used Tycho's Mars data to find elliptical orbits.",
+      "significance": "Better data forced better theory.",
+      "relations": { "enabledBy": ["observatories", "heliocentrism"], "related": ["kepler"] },
+      "sources": { "status": "source_required" },
+      "display": { "motif": "astrolabe", "choreography": "orbit" },
+      "discoveryIds": ["observation", "measurement"]
+    }
+  ]
+}

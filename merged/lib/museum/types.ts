@@ -1,12 +1,13 @@
 /* ============================================================================
-   MUSEUM DATA MODEL — foundation only. No screen reads this yet; it exists so
-   every mode that will eventually feed the Museum (Archaeologist, Historical
-   Escape Room, Decipher, Alien Archaeology, Survival camp memories,
-   Civilization dioramas, and Main Evolution's own automatic showcases) writes
-   into one shared shape from the start, instead of each mode inventing its
-   own exhibit format later.
+   MODE ARCHIVE RECORD SHAPE — the shared shape every extra mode (Survival,
+   Civilization, Archaeologist, Decipher, Historical Escape Room, Alien
+   Archaeology, Reverse Evolution) writes its finished runs into. Since the
+   Museum redesign these records live ONLY in the Museum's Records wing
+   (lib/museum/archive/ calls this `ModeArchiveRecord`). They are the player's
+   records and are never shown among humanity's canonical achievements, which
+   have their own schema in lib/museum/history/types.ts. See lib/museum/README.md.
 
-   The one rule every exhibit must obey: never let generated or speculative
+   The one rule every record must obey: never let generated or speculative
    content read as verified historical fact. `provenance.kind` is mandatory
    and drives the label the Museum shows — see ExhibitProvenance below.
    ========================================================================== */

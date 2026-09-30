@@ -1,0 +1,1685 @@
+{
+  "gallery": "connected-worlds",
+  "exhibits": [
+    {
+      "id": "porcelain",
+      "title": "Porcelain",
+      "when": {
+        "from": 600,
+        "to": 900,
+        "display": "true porcelain by the Tang dynasty (7th–9th century)",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "arabia",
+          "role": "spread"
+        },
+        {
+          "region": "east-africa",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "materials",
+        "trade"
+      ],
+      "importance": "supporting",
+      "change": "Kaolin clay fired at very high temperature became thin, white and translucent.",
+      "context": "Chinese potters developed high-fired white wares from proto-porcelain traditions. Porcelain became a major export by land and sea; Europeans could not make true porcelain until 1708–1709 at Meissen.",
+      "significance": "A high-temperature material science that shaped global trade — and the English word 'china'.",
+      "relations": {
+        "enabledBy": [
+          "pottery-kiln"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "pot",
+        "choreography": "ignite"
+      },
+      "discoveryIds": [
+        "kiln",
+        "pottery"
+      ]
+    },
+    {
+      "id": "grand-canal",
+      "title": "The Grand Canal",
+      "when": {
+        "from": 605,
+        "to": 609,
+        "display": "605–609 CE (linked into one system)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        }
+      ],
+      "categories": [
+        "engineering",
+        "transportation"
+      ],
+      "importance": "milestone",
+      "change": "A waterway of well over 1,000 km joined China's north and south.",
+      "context": "The Sui dynasty connected older canals into a single system linking the Yangtze and Yellow River basins, later extended to Beijing. Pound locks were used on Chinese canals by the 10th century.",
+      "significance": "The world's longest artificial waterway, moving grain and people for over 1,300 years.",
+      "relations": {
+        "enabledBy": [
+          "irrigation",
+          "liangzhu"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "UNESCO World Heritage Site."
+      },
+      "display": {
+        "motif": "dam",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "zero",
+      "title": "Zero as a Number",
+      "when": {
+        "from": 628,
+        "display": "628 CE (Brahmagupta)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "gangetic",
+          "role": "origin",
+          "site": {
+            "label": "Bhillamala (Bhinmal), Rajasthan",
+            "lat": 25.0,
+            "lon": 72.27
+          }
+        }
+      ],
+      "categories": [
+        "mathematics"
+      ],
+      "importance": "breakthrough",
+      "change": "Nothing became a number you could add, subtract and multiply.",
+      "context": "In the Brāhmasphuṭasiddhānta, Brahmagupta gave rules for arithmetic with zero and negative numbers. Zero as a placeholder had appeared earlier in Babylonian and Maya systems, but treating it as a number was new.",
+      "significance": "Algebra, calculus and binary computing all depend on it.",
+      "relations": {
+        "enabledBy": [
+          "place-value-decimal"
+        ],
+        "related": [
+          "maya-long-count",
+          "algebra"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "numerals",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "number_system",
+        "mathematics"
+      ]
+    },
+    {
+      "id": "woodblock-printing",
+      "title": "Woodblock Printing",
+      "when": {
+        "from": 650,
+        "to": 868,
+        "anchor": 700,
+        "display": "by the 7th–8th century; oldest dated printed book 868 CE",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "korea",
+          "role": "early-centre"
+        },
+        {
+          "region": "japan",
+          "role": "early-centre"
+        }
+      ],
+      "categories": [
+        "communication",
+        "manufacturing"
+      ],
+      "importance": "milestone",
+      "change": "A carved block could print the same page hundreds of times.",
+      "context": "Printed charms survive from 8th-century Korea and Japan; the Diamond Sutra from Dunhuang, dated 868, is the oldest dated printed book. Printing spread calendars, religious texts and government documents across East Asia.",
+      "significance": "The first mechanical reproduction of text and image.",
+      "relations": {
+        "enabledBy": [
+          "paper"
+        ],
+        "related": [
+          "movable-type",
+          "printing-press"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_printing"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "press",
+        "choreography": "unfold"
+      },
+      "discoveryIds": [
+        "printing"
+      ]
+    },
+    {
+      "id": "khipu",
+      "title": "Khipu",
+      "when": {
+        "from": 650,
+        "to": 1532,
+        "anchor": 1450,
+        "display": "Wari examples from c. 7th century; central to Inca administration",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "andes",
+          "role": "origin"
+        }
+      ],
+      "categories": [
+        "mathematics",
+        "governance",
+        "writing"
+      ],
+      "importance": "milestone",
+      "change": "Knotted cords recorded numbers — and perhaps more — without writing.",
+      "context": "Khipu used knots on cords in a base-10 positional system to record census, tribute and storehouse accounts across the Inca state. Whether some khipu recorded narrative is an open research question.",
+      "significance": "A complete administrative information system built on a completely different medium from writing.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Non-numerical content of khipu remains undeciphered."
+      },
+      "relations": {
+        "related": [
+          "inca-roads",
+          "writing"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Urton, Harvard Khipu Database."
+      },
+      "display": {
+        "motif": "textile",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "record_keeping",
+        "tallies"
+      ]
+    },
+    {
+      "id": "house-of-wisdom",
+      "title": "The House of Wisdom",
+      "when": {
+        "from": 800,
+        "to": 900,
+        "display": "9th century CE",
+        "precision": "centuries",
+        "basis": "traditional"
+      },
+      "regions": [
+        {
+          "region": "mesopotamia",
+          "role": "site",
+          "site": {
+            "label": "Baghdad",
+            "lat": 33.31,
+            "lon": 44.36
+          }
+        }
+      ],
+      "culture": "Abbasid Caliphate",
+      "categories": [
+        "knowledge"
+      ],
+      "importance": "milestone",
+      "change": "Greek, Persian and Indian science translated into Arabic — and extended.",
+      "context": "Abbasid Baghdad supported a translation movement that rendered Aristotle, Euclid, Ptolemy, Galen and Indian astronomy into Arabic, alongside original work in mathematics, astronomy and medicine.",
+      "significance": "Preserved and advanced ancient knowledge; much of it reached Europe through Arabic.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Whether the 'House of Wisdom' was a formal academy or a palace library is debated; the translation movement itself is well documented."
+      },
+      "relations": {
+        "enabledBy": [
+          "library-alexandria",
+          "paper",
+          "place-value-decimal"
+        ],
+        "related": [
+          "algebra",
+          "book-of-optics"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "book",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "written_knowledge",
+        "collective_knowledge",
+        "scientific_community"
+      ]
+    },
+    {
+      "id": "angkor",
+      "title": "Angkor",
+      "when": {
+        "from": 802,
+        "to": 1431,
+        "anchor": 1113,
+        "display": "9th–15th century; Angkor Wat early 12th century",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "southeast-asia",
+          "role": "site",
+          "site": {
+            "label": "Angkor, Cambodia",
+            "lat": 13.41,
+            "lon": 103.87
+          }
+        }
+      ],
+      "culture": "Khmer Empire",
+      "categories": [
+        "architecture",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "Temple-cities and vast reservoirs covering hundreds of square kilometres.",
+      "context": "Lidar surveys revealed that greater Angkor was a sprawling, low-density urban landscape with canals and huge rectangular reservoirs (barays). Angkor Wat is the largest religious monument in the world.",
+      "significance": "One of the largest pre-industrial urban complexes, sustained by water engineering.",
+      "relations": {
+        "enabledBy": [
+          "rice",
+          "irrigation"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Evans et al. 2013, PNAS (lidar)."
+      },
+      "display": {
+        "motif": "tower",
+        "choreography": "grow"
+      },
+      "discoveryIds": [
+        "architecture",
+        "urban_planning"
+      ]
+    },
+    {
+      "id": "algebra",
+      "title": "Algebra",
+      "when": {
+        "from": 820,
+        "display": "c. 820 CE",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "mesopotamia",
+          "role": "origin",
+          "site": {
+            "label": "Baghdad",
+            "lat": 33.31,
+            "lon": 44.36
+          }
+        }
+      ],
+      "categories": [
+        "mathematics"
+      ],
+      "importance": "breakthrough",
+      "change": "General methods for solving equations — balancing and restoring.",
+      "context": "Muhammad ibn Musa al-Khwarizmi's book on 'al-jabr' presented systematic solutions of linear and quadratic equations for inheritance, trade and surveying. His name gave us the word 'algorithm'.",
+      "significance": "Mathematics of unknowns — the language of modern science and computing.",
+      "relations": {
+        "enabledBy": [
+          "babylonian-mathematics",
+          "zero",
+          "deductive-geometry"
+        ],
+        "related": [
+          "house-of-wisdom"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "numerals",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "gunpowder",
+      "title": "Gunpowder",
+      "when": {
+        "from": 850,
+        "to": 1044,
+        "anchor": 900,
+        "display": "9th century CE (earliest mention); military formulas 1044",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "mesopotamia",
+          "role": "spread"
+        },
+        {
+          "region": "western-europe",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "chemistry",
+        "warfare"
+      ],
+      "importance": "breakthrough",
+      "change": "Saltpetre, sulphur and charcoal — a mixture that burns without air.",
+      "context": "Chinese alchemical texts describe the flammable mixture; the Wujing Zongyao (1044) records military formulas. Gunpowder weapons spread across Eurasia by the 13th–14th centuries.",
+      "significance": "Transformed warfare and states — and prepared the ground for mining explosives and rockets.",
+      "relations": {
+        "enabledBy": [
+          "controlled-fire"
+        ],
+        "related": [
+          "first-guns",
+          "liquid-rocket"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_gunpowder"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "flask",
+        "choreography": "ignite"
+      },
+      "discoveryIds": [
+        "gunpowder",
+        "slow_match"
+      ]
+    },
+    {
+      "id": "windmills",
+      "title": "Windmills",
+      "when": {
+        "from": 900,
+        "to": 1185,
+        "anchor": 900,
+        "display": "Persia c. 9th century; European post mills from the 1180s",
+        "precision": "centuries",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "iran",
+          "role": "independent",
+          "site": {
+            "label": "Sistan",
+            "lat": 31.0,
+            "lon": 61.5
+          }
+        },
+        {
+          "region": "britain",
+          "role": "independent",
+          "note": "Post mills, 1180s."
+        }
+      ],
+      "categories": [
+        "energy",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "Wind turned millstones and pumped water.",
+      "context": "Vertical-axis windmills in Sistan are described by 10th-century geographers. Horizontal-axis post mills appeared in northwestern Europe in the late 12th century, apparently independently.",
+      "significance": "A renewable mechanical power source — the ancestor of wind turbines.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Whether European windmills were inspired by Persian designs is unresolved."
+      },
+      "relations": {
+        "enabledBy": [
+          "sailing",
+          "wheel"
+        ],
+        "related": [
+          "water-wheel"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "gear",
+        "choreography": "mechanism"
+      },
+      "discoveryIds": [
+        "wind_power",
+        "mechanical_power"
+      ]
+    },
+    {
+      "id": "polynesian-wayfinding",
+      "title": "Wayfinding Across the Pacific",
+      "when": {
+        "from": 900,
+        "to": 1300,
+        "anchor": 1000,
+        "display": "East Polynesia settled c. 900–1300 CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "remote-oceania",
+          "role": "origin",
+          "note": "Society Islands and central East Polynesia."
+        },
+        {
+          "region": "remote-oceania",
+          "role": "site",
+          "site": {
+            "label": "Hawaiʻi",
+            "lat": 20.8,
+            "lon": -156.3
+          }
+        },
+        {
+          "region": "remote-oceania",
+          "role": "site",
+          "site": {
+            "label": "Rapa Nui",
+            "lat": -27.12,
+            "lon": -109.35
+          }
+        },
+        {
+          "region": "remote-oceania",
+          "role": "site",
+          "site": {
+            "label": "Aotearoa (New Zealand), c. 1250–1300",
+            "lat": -41.0,
+            "lon": 174.0
+          }
+        },
+        {
+          "region": "andes",
+          "role": "spread",
+          "note": "Sweet potato and genetic evidence indicate contact with South America."
+        }
+      ],
+      "categories": [
+        "navigation",
+        "transportation"
+      ],
+      "importance": "defining",
+      "change": "Voyagers read stars, swells and birds to find specks of land across thousands of kilometres of open ocean.",
+      "context": "Building on Lapita and West Polynesian foundations, Polynesians in double-hulled canoes settled the islands of the vast Polynesian triangle, from Hawaiʻi to Rapa Nui to Aotearoa, in a few centuries, carrying crops and animals. Sweet potato, a South American plant, reached Polynesia before Europeans.",
+      "significance": "The most extensive human migration by sea before the modern age, achieved without instruments — long-distance navigation as a knowledge system passed down orally.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Settlement dates have been revised later by radiocarbon; the nature of contact with the Americas is still studied."
+      },
+      "relations": {
+        "enabledBy": [
+          "lapita",
+          "sailing"
+        ],
+        "related": [
+          "ocean-crossings",
+          "compass"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Wilmshurst et al. 2011, PNAS; Ioannidis et al. 2020, Nature."
+      },
+      "display": {
+        "motif": "star-path",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "navigation",
+        "boat",
+        "migration"
+      ]
+    },
+    {
+      "id": "universities",
+      "title": "Institutions of Learning",
+      "when": {
+        "from": 427,
+        "to": 1088,
+        "anchor": 1088,
+        "display": "Nalanda from the 5th century; al-Qarawiyyin 859; Bologna 1088",
+        "precision": "centuries",
+        "basis": "dated-event"
+      },
+      "unlockAt": 859,
+      "regions": [
+        {
+          "region": "gangetic",
+          "role": "early-centre",
+          "site": {
+            "label": "Nalanda, Bihar",
+            "lat": 25.14,
+            "lon": 85.44
+          }
+        },
+        {
+          "region": "north-africa",
+          "role": "early-centre",
+          "site": {
+            "label": "al-Qarawiyyin, Fez",
+            "lat": 34.06,
+            "lon": -4.97
+          }
+        },
+        {
+          "region": "italy",
+          "role": "early-centre",
+          "site": {
+            "label": "Bologna",
+            "lat": 44.49,
+            "lon": 11.34
+          }
+        }
+      ],
+      "categories": [
+        "knowledge"
+      ],
+      "importance": "milestone",
+      "change": "Communities of teachers and students that outlived any single master.",
+      "context": "Nalanda was a great Buddhist monastic centre of learning; al-Qarawiyyin in Fez began as a mosque with a school in 859; Bologna's university, a corporation of students, is dated to 1088. Each became a model in its own world.",
+      "significance": "Durable institutions for preserving, teaching and extending knowledge.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Which institution counts as the 'first university' depends on definitions."
+      },
+      "relations": {
+        "enabledBy": [
+          "library-alexandria",
+          "codex"
+        ],
+        "related": [
+          "house-of-wisdom",
+          "scientific-societies"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "arch",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "teaching",
+        "collective_knowledge"
+      ]
+    },
+    {
+      "id": "book-of-optics",
+      "title": "The Book of Optics",
+      "when": {
+        "from": 1011,
+        "to": 1021,
+        "display": "1011–1021 CE",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "nile",
+          "role": "origin",
+          "site": {
+            "label": "Cairo",
+            "lat": 30.04,
+            "lon": 31.24
+          }
+        }
+      ],
+      "categories": [
+        "physics",
+        "knowledge"
+      ],
+      "importance": "breakthrough",
+      "change": "Vision explained by light entering the eye — tested by experiment.",
+      "context": "Ibn al-Haytham (Alhazen) used controlled experiments with dark chambers and lenses to argue that light travels in straight lines from objects to the eye. His work, translated into Latin, shaped European optics for centuries.",
+      "significance": "A landmark of experimental method, and the foundation for lenses, cameras and telescopes.",
+      "relations": {
+        "enabledBy": [
+          "house-of-wisdom",
+          "ptolemy"
+        ],
+        "related": [
+          "eyeglasses",
+          "telescope"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "eye",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "optics",
+        "experiment"
+      ]
+    },
+    {
+      "id": "vinland",
+      "title": "Norse in North America",
+      "when": {
+        "from": 1021,
+        "display": "1021 CE",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "north-america-east",
+          "role": "site",
+          "site": {
+            "label": "L'Anse aux Meadows, Newfoundland",
+            "lat": 51.6,
+            "lon": -55.53
+          }
+        },
+        {
+          "region": "northern-europe",
+          "role": "origin"
+        }
+      ],
+      "categories": [
+        "navigation"
+      ],
+      "importance": "supporting",
+      "change": "Europeans reached the Americas five centuries before Columbus — briefly.",
+      "context": "Wood cut with metal tools at L'Anse aux Meadows was dated precisely to 1021 using a known cosmic-ray event recorded in tree rings. The Norse settlement was short-lived.",
+      "significance": "The first known crossing of the Atlantic, with no lasting connection.",
+      "relations": {
+        "enabledBy": [
+          "sailing"
+        ],
+        "related": [
+          "ocean-crossings"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "Kuitems et al. 2021, Nature."
+      },
+      "display": {
+        "motif": "boat",
+        "choreography": "unfold"
+      }
+    },
+    {
+      "id": "compass",
+      "title": "The Magnetic Compass",
+      "when": {
+        "from": 1040,
+        "to": 1190,
+        "anchor": 1088,
+        "display": "described in China in the 1040s–1088; at sea by c. 1100; in Europe by c. 1190",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "western-europe",
+          "role": "spread",
+          "note": "Independent invention or transmission is debated."
+        }
+      ],
+      "categories": [
+        "navigation",
+        "physics"
+      ],
+      "importance": "breakthrough",
+      "change": "A magnetised needle pointed north, whatever the weather.",
+      "context": "Chinese texts describe magnetised iron fish and needles in the 11th century; Shen Kuo's Dream Pool Essays (1088) note magnetic declination. Compass use at sea is recorded by 1117. European descriptions appear in the 1190s.",
+      "significance": "Navigation no longer depended on clear skies — essential for the oceanic voyages to come.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "How the compass reached Europe is unknown."
+      },
+      "relations": {
+        "enabledBy": [
+          "iron"
+        ],
+        "related": [
+          "ocean-crossings",
+          "zheng-he"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_compass"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "compass",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "compass",
+        "navigation"
+      ]
+    },
+    {
+      "id": "movable-type",
+      "title": "Movable Type",
+      "when": {
+        "from": 1040,
+        "to": 1377,
+        "anchor": 1040,
+        "display": "ceramic type c. 1040 (Bi Sheng); metal type in Korea by the 13th century",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "korea",
+          "role": "early-centre",
+          "note": "Jikji (1377) is the oldest surviving book printed with metal type."
+        }
+      ],
+      "categories": [
+        "communication",
+        "manufacturing"
+      ],
+      "importance": "milestone",
+      "change": "Individual characters that could be rearranged for every new page.",
+      "context": "Shen Kuo described Bi Sheng's baked-clay type. Korean printers under the Goryeo dynasty cast metal type; Jikji, printed in 1377, survives in Paris. With thousands of characters, movable type was less transformative in East Asia than woodblocks.",
+      "significance": "The core idea behind the European printing revolution — invented first in East Asia.",
+      "relations": {
+        "enabledBy": [
+          "woodblock-printing"
+        ],
+        "related": [
+          "printing-press"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_printing"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "press",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "printing"
+      ]
+    },
+    {
+      "id": "cahokia",
+      "title": "Cahokia",
+      "when": {
+        "from": 1050,
+        "to": 1350,
+        "display": "c. 1050–1350 CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "north-america-central",
+          "role": "site",
+          "site": {
+            "label": "Cahokia, Illinois",
+            "lat": 38.66,
+            "lon": -90.06
+          }
+        }
+      ],
+      "culture": "Mississippian",
+      "categories": [
+        "architecture",
+        "governance"
+      ],
+      "importance": "supporting",
+      "change": "A city of earthen pyramids on the Mississippi.",
+      "context": "At its peak Cahokia may have housed 10,000–20,000 people. Monks Mound is the largest earthwork in the Americas north of Mexico.",
+      "significance": "Urbanism in North America, built on maize farming.",
+      "relations": {
+        "enabledBy": [
+          "maize"
+        ],
+        "related": [
+          "poverty-point"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "UNESCO World Heritage Site."
+      },
+      "display": {
+        "motif": "ziggurat",
+        "choreography": "grow"
+      }
+    },
+    {
+      "id": "mechanical-clock",
+      "title": "The Mechanical Clock",
+      "when": {
+        "from": 1088,
+        "to": 1300,
+        "anchor": 1280,
+        "display": "Su Song's clock tower 1088; weight-driven escapement clocks in Europe c. 1280–1300",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "independent",
+          "site": {
+            "label": "Kaifeng",
+            "lat": 34.8,
+            "lon": 114.3
+          }
+        },
+        {
+          "region": "western-europe",
+          "role": "independent"
+        },
+        {
+          "region": "italy",
+          "role": "independent"
+        }
+      ],
+      "categories": [
+        "engineering",
+        "astronomy"
+      ],
+      "importance": "milestone",
+      "change": "An escapement divided time into steady mechanical beats.",
+      "context": "Su Song's water-driven astronomical clock tower used a hydromechanical escapement. In Europe, weight-driven clocks with a verge-and-foliot escapement appeared in the late 13th century and spread to town towers.",
+      "significance": "Clock time organised work and cities; clockwork became the model for machines and for a mechanical universe.",
+      "relations": {
+        "enabledBy": [
+          "antikythera",
+          "water-wheel"
+        ],
+        "related": [
+          "pendulum-clock"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "clock",
+        "choreography": "mechanism"
+      },
+      "discoveryIds": [
+        "clock",
+        "mechanism"
+      ]
+    },
+    {
+      "id": "great-zimbabwe",
+      "title": "Great Zimbabwe",
+      "when": {
+        "from": 1100,
+        "to": 1450,
+        "display": "c. 1100–1450 CE",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "southern-africa",
+          "role": "site",
+          "site": {
+            "label": "Great Zimbabwe, Masvingo",
+            "lat": -20.27,
+            "lon": 30.93
+          }
+        },
+        {
+          "region": "east-africa",
+          "role": "spread",
+          "note": "Trade via the Swahili coast."
+        }
+      ],
+      "culture": "Shona ancestors",
+      "categories": [
+        "architecture",
+        "trade"
+      ],
+      "importance": "milestone",
+      "change": "Towering walls of fitted granite without mortar, at the heart of a gold-trading state.",
+      "context": "The Great Enclosure's walls reach 11 metres. Finds of Chinese porcelain and Persian glass show links to the Indian Ocean trade through Swahili ports. Colonial-era claims that it was not built by Africans were false and politically motivated.",
+      "significance": "A major African city and trading power of the medieval world.",
+      "relations": {
+        "enabledBy": [
+          "monsoon-trade"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "UNESCO World Heritage Site."
+      },
+      "display": {
+        "motif": "wall",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "architecture",
+        "trade"
+      ]
+    },
+    {
+      "id": "fibonacci",
+      "title": "Numerals Reach Europe",
+      "when": {
+        "from": 1202,
+        "display": "1202 CE (Liber Abaci)",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "spread",
+          "site": {
+            "label": "Pisa",
+            "lat": 43.72,
+            "lon": 10.4
+          }
+        },
+        {
+          "region": "north-africa",
+          "role": "early-centre",
+          "note": "Leonardo of Pisa learned the numerals in Béjaïa."
+        }
+      ],
+      "categories": [
+        "mathematics",
+        "trade"
+      ],
+      "importance": "supporting",
+      "change": "A merchant's handbook taught Europe the Hindu–Arabic numerals.",
+      "context": "Leonardo of Pisa (Fibonacci) learned Indian numerals in North Africa and showed their advantages for commerce. Adoption was slow; some cities banned them in official records for a time.",
+      "significance": "The numerals that made European bookkeeping, science and engineering easier.",
+      "relations": {
+        "enabledBy": [
+          "place-value-decimal",
+          "algebra"
+        ],
+        "related": [
+          "double-entry"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "numerals",
+        "choreography": "unfold"
+      },
+      "discoveryIds": [
+        "number_system"
+      ]
+    },
+    {
+      "id": "observatories",
+      "title": "Great Observatories",
+      "when": {
+        "from": 1259,
+        "to": 1449,
+        "display": "Maragheh 1259; Samarkand 1420s",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "iran",
+          "role": "site",
+          "site": {
+            "label": "Maragheh",
+            "lat": 37.39,
+            "lon": 46.24
+          }
+        },
+        {
+          "region": "central-asia",
+          "role": "site",
+          "site": {
+            "label": "Samarkand (Ulugh Beg)",
+            "lat": 39.67,
+            "lon": 66.98
+          }
+        }
+      ],
+      "categories": [
+        "astronomy",
+        "knowledge"
+      ],
+      "importance": "supporting",
+      "change": "Research institutions with giant instruments and teams of astronomers.",
+      "context": "Nasir al-Din al-Tusi directed the Maragheh observatory, whose planetary models influenced later astronomy. Ulugh Beg's observatory in Samarkand produced a star catalogue of unprecedented precision.",
+      "significance": "Organised, instrument-based science centuries before European observatories.",
+      "relations": {
+        "enabledBy": [
+          "ptolemy",
+          "house-of-wisdom"
+        ],
+        "related": [
+          "heliocentrism",
+          "jantar-mantar"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "astrolabe",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "astronomy",
+        "observation"
+      ]
+    },
+    {
+      "id": "eyeglasses",
+      "title": "Eyeglasses",
+      "when": {
+        "from": 1286,
+        "display": "c. 1286 CE",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "origin",
+          "site": {
+            "label": "Pisa",
+            "lat": 43.72,
+            "lon": 10.4
+          }
+        }
+      ],
+      "categories": [
+        "medicine",
+        "physics"
+      ],
+      "importance": "supporting",
+      "change": "Ground glass lenses on the nose extended working lives.",
+      "context": "A 1306 sermon in Pisa referred to spectacles invented about twenty years earlier. Reading glasses spread quickly in Europe, and lens-grinding skill led, three centuries later, to telescopes and microscopes.",
+      "significance": "The first widely used optical instrument.",
+      "relations": {
+        "enabledBy": [
+          "book-of-optics",
+          "glass"
+        ],
+        "related": [
+          "telescope",
+          "microscope"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_eyeglasses"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "lens",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "lens",
+        "magnification"
+      ]
+    },
+    {
+      "id": "first-guns",
+      "title": "The First Guns",
+      "when": {
+        "from": 1288,
+        "display": "fire lances from the 10th century; metal hand cannon by 1288",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin",
+          "site": {
+            "label": "Heilongjiang hand cannon",
+            "lat": 45.8,
+            "lon": 126.5
+          }
+        },
+        {
+          "region": "western-europe",
+          "role": "spread",
+          "note": "Cannon depicted by 1326."
+        }
+      ],
+      "categories": [
+        "warfare",
+        "chemistry"
+      ],
+      "importance": "supporting",
+      "change": "Gunpowder in a metal tube fired a projectile.",
+      "context": "Fire lances evolved into metal-barrelled guns in China; a bronze hand cannon from Heilongjiang is dated around 1288. Gunpowder artillery reached Europe and the Islamic world within decades.",
+      "significance": "Reshaped fortification, warfare and empires across the world.",
+      "relations": {
+        "enabledBy": [
+          "gunpowder",
+          "cast-iron"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "brit_gunpowder"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "sword",
+        "choreography": "ignite"
+      }
+    },
+    {
+      "id": "tenochtitlan",
+      "title": "Tenochtitlan",
+      "when": {
+        "from": 1325,
+        "to": 1521,
+        "display": "founded 1325 CE",
+        "precision": "year",
+        "basis": "traditional"
+      },
+      "regions": [
+        {
+          "region": "mesoamerica",
+          "role": "site",
+          "site": {
+            "label": "Lake Texcoco (Mexico City)",
+            "lat": 19.43,
+            "lon": -99.13
+          }
+        }
+      ],
+      "culture": "Mexica (Aztec)",
+      "categories": [
+        "architecture",
+        "agriculture",
+        "engineering"
+      ],
+      "importance": "milestone",
+      "change": "An island city of perhaps 200,000, fed by floating-garden fields.",
+      "context": "The Mexica built causeways, aqueducts and dikes across a lake, and farmed highly productive chinampas — raised fields built from lake mud, a technique older than the city itself. Spanish conquest destroyed the city in 1521.",
+      "significance": "One of the largest cities in the world in its time, sustained by ingenious wetland agriculture.",
+      "relations": {
+        "enabledBy": [
+          "maize",
+          "teotihuacan"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "grid-city",
+        "choreography": "grow"
+      },
+      "discoveryIds": [
+        "city",
+        "land_management"
+      ]
+    },
+    {
+      "id": "timbuktu",
+      "title": "The Scholars of Timbuktu",
+      "when": {
+        "from": 1325,
+        "to": 1591,
+        "display": "flourished c. 14th–16th centuries",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "west-africa",
+          "role": "site",
+          "site": {
+            "label": "Timbuktu, Mali",
+            "lat": 16.77,
+            "lon": -3.0
+          }
+        }
+      ],
+      "culture": "Mali and Songhai empires",
+      "categories": [
+        "knowledge",
+        "trade"
+      ],
+      "importance": "supporting",
+      "change": "A trans-Saharan trading city became a centre of manuscripts and scholarship.",
+      "context": "Under the Mali and Songhai empires, Timbuktu's mosques and private libraries collected manuscripts on law, astronomy, mathematics and medicine. Hundreds of thousands of manuscripts survive in family collections.",
+      "significance": "A major African tradition of written scholarship.",
+      "relations": {
+        "enabledBy": [
+          "paper",
+          "universities"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "UNESCO World Heritage Site."
+      },
+      "display": {
+        "motif": "book",
+        "choreography": "unfold"
+      },
+      "discoveryIds": [
+        "written_knowledge"
+      ]
+    },
+    {
+      "id": "double-entry",
+      "title": "Double-Entry Bookkeeping",
+      "when": {
+        "from": 1340,
+        "to": 1494,
+        "anchor": 1340,
+        "display": "in Italian merchant practice by the 14th century; codified by Pacioli in 1494",
+        "precision": "decades",
+        "basis": "earliest-evidence"
+      },
+      "regions": [
+        {
+          "region": "italy",
+          "role": "origin",
+          "site": {
+            "label": "Genoa, Florence and Venice",
+            "lat": 44.41,
+            "lon": 8.93
+          }
+        }
+      ],
+      "categories": [
+        "trade",
+        "mathematics",
+        "governance"
+      ],
+      "importance": "milestone",
+      "change": "Every transaction recorded twice, as debit and credit, so the books must balance.",
+      "context": "Genoese city accounts of 1340 are among the earliest complete double-entry records. Luca Pacioli's printed Summa (1494) spread the 'Venetian method' across Europe.",
+      "significance": "The accounting system behind modern companies, banks and the state.",
+      "relations": {
+        "enabledBy": [
+          "fibonacci",
+          "coinage"
+        ],
+        "related": [
+          "printing-press"
+        ]
+      },
+      "sources": {
+        "ids": [
+          "icaew_pacioli"
+        ],
+        "status": "cited"
+      },
+      "display": {
+        "motif": "book",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "bookkeeping",
+        "accounting",
+        "banking"
+      ]
+    },
+    {
+      "id": "zheng-he",
+      "title": "The Treasure Fleets",
+      "when": {
+        "from": 1405,
+        "to": 1433,
+        "display": "1405–1433 CE",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "china",
+          "role": "origin"
+        },
+        {
+          "region": "south-india",
+          "role": "spread"
+        },
+        {
+          "region": "arabia",
+          "role": "spread"
+        },
+        {
+          "region": "east-africa",
+          "role": "spread",
+          "site": {
+            "label": "Malindi, Kenya",
+            "lat": -3.22,
+            "lon": 40.12
+          }
+        }
+      ],
+      "culture": "Ming dynasty",
+      "categories": [
+        "navigation",
+        "trade"
+      ],
+      "importance": "milestone",
+      "change": "Seven voyages of huge fleets reached India, Arabia and East Africa.",
+      "context": "Admiral Zheng He commanded fleets of large ships and thousands of crew. After 1433 the Ming court ended the voyages.",
+      "significance": "Chinese naval power at its height — and a turning point when it withdrew.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "The size of the largest 'treasure ships' is debated."
+      },
+      "relations": {
+        "enabledBy": [
+          "compass",
+          "monsoon-trade"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "sail",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "navigation"
+      ]
+    },
+    {
+      "id": "kerala-series",
+      "title": "Infinite Series in Kerala",
+      "when": {
+        "from": 1400,
+        "to": 1530,
+        "anchor": 1400,
+        "display": "c. 14th–16th centuries (Madhava and his school)",
+        "precision": "centuries",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "south-india",
+          "role": "origin",
+          "site": {
+            "label": "Sangamagrama and Tirur, Kerala",
+            "lat": 10.9,
+            "lon": 75.9
+          }
+        }
+      ],
+      "categories": [
+        "mathematics",
+        "astronomy"
+      ],
+      "importance": "milestone",
+      "change": "Endless sums of fractions gave exact values for π and sine.",
+      "context": "Madhava of Sangamagrama and later Kerala astronomer-mathematicians such as Nilakantha and Jyeṣṭhadeva derived infinite series for π, sine and cosine, anticipating results found in Europe two centuries later.",
+      "significance": "Key ideas of calculus arose independently in South India.",
+      "uncertainty": {
+        "level": "debated",
+        "note": "Whether this work reached Europe is unproven and debated."
+      },
+      "relations": {
+        "enabledBy": [
+          "place-value-decimal",
+          "zero"
+        ],
+        "related": [
+          "calculus"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "numerals",
+        "choreography": "orbit"
+      },
+      "discoveryIds": [
+        "mathematics"
+      ]
+    },
+    {
+      "id": "decimal-fractions",
+      "title": "Decimal Fractions",
+      "when": {
+        "from": 1427,
+        "to": 1585,
+        "anchor": 1427,
+        "display": "al-Kashi 1427; popularised in Europe by Stevin 1585",
+        "precision": "decades",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "central-asia",
+          "role": "origin",
+          "site": {
+            "label": "Samarkand",
+            "lat": 39.67,
+            "lon": 66.98
+          }
+        },
+        {
+          "region": "western-europe",
+          "role": "spread"
+        }
+      ],
+      "categories": [
+        "mathematics"
+      ],
+      "importance": "supporting",
+      "change": "Fractions written as digits after a point.",
+      "context": "Jamshid al-Kashi used decimal fractions systematically and computed π to 16 digits. Simon Stevin's pamphlet 'De Thiende' (1585) made the method popular in Europe.",
+      "significance": "The notation of measurement, money and science today.",
+      "relations": {
+        "enabledBy": [
+          "place-value-decimal"
+        ],
+        "related": [
+          "observatories"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "numerals",
+        "choreography": "scan"
+      },
+      "discoveryIds": [
+        "measurement"
+      ]
+    },
+    {
+      "id": "inca-roads",
+      "title": "Qhapaq Ñan",
+      "when": {
+        "from": 1438,
+        "to": 1533,
+        "display": "mainly 15th century, incorporating older roads",
+        "precision": "decades",
+        "basis": "range-of-emergence"
+      },
+      "regions": [
+        {
+          "region": "andes",
+          "role": "origin",
+          "site": {
+            "label": "Cusco",
+            "lat": -13.53,
+            "lon": -71.97
+          }
+        }
+      ],
+      "culture": "Inca",
+      "categories": [
+        "transportation",
+        "engineering",
+        "governance"
+      ],
+      "importance": "milestone",
+      "change": "About 30,000 km of roads, bridges and waystations through the Andes.",
+      "context": "The Inca road network crossed mountains and deserts with stairways, causeways and rope suspension bridges. Relay runners carried messages and khipu across the empire.",
+      "significance": "An integrated transport and communication system without wheeled vehicles or writing.",
+      "relations": {
+        "enabledBy": [
+          "khipu"
+        ],
+        "related": [
+          "roman-roads"
+        ]
+      },
+      "sources": {
+        "status": "source_required",
+        "note": "UNESCO World Heritage Site (2014)."
+      },
+      "display": {
+        "motif": "road",
+        "choreography": "network"
+      },
+      "discoveryIds": [
+        "roads",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "hangul",
+      "title": "Hangul",
+      "when": {
+        "from": 1443,
+        "to": 1446,
+        "display": "created 1443, promulgated 1446",
+        "precision": "year",
+        "basis": "dated-event"
+      },
+      "regions": [
+        {
+          "region": "korea",
+          "role": "origin",
+          "site": {
+            "label": "Hanyang (Seoul)",
+            "lat": 37.57,
+            "lon": 126.98
+          }
+        }
+      ],
+      "categories": [
+        "writing",
+        "communication"
+      ],
+      "importance": "milestone",
+      "change": "An alphabet designed from scratch, its letter shapes reflecting how sounds are made.",
+      "context": "Created under King Sejong, Hangul was intended to let ordinary people read and write Korean. Its consonant shapes represent the positions of the tongue and lips.",
+      "significance": "A deliberately engineered writing system aimed at mass literacy.",
+      "relations": {
+        "enabledBy": [
+          "writing",
+          "alphabet"
+        ]
+      },
+      "sources": {
+        "status": "source_required"
+      },
+      "display": {
+        "motif": "glyph",
+        "choreography": "assemble"
+      },
+      "discoveryIds": [
+        "writing"
+      ]
+    }
+  ]
+}

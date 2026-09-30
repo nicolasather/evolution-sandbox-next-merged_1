@@ -279,11 +279,11 @@ describe('GlobeSequence', () => {
     fireEvent.keyDown(window, { key: ' ' });
     expect(d.sample(performance.now())!.skipping).toBe(false);
     expect(onSkip).not.toHaveBeenCalled();
-    run(1500);                                                          // the skip window is open now
+    run(3200);                                                          // the skip window (3.3 s since 1.14) is open now
     fireEvent.keyDown(window, { key: ' ' });
     expect(d.sample(performance.now())!.skipping).toBe(true);
     expect(onSkip).toHaveBeenCalledWith(false);
-    run(400);                                                           // the fade is over
+    run(900);                                                           // the fade is over
     expect(d.busy).toBe(false);
     expect(screen.queryByRole('heading', { level: 2 })).toBeNull();
   });
@@ -291,12 +291,12 @@ describe('GlobeSequence', () => {
   it('skips with a click on the layer, and with its Skip button', () => {
     const { d, m, onSkip, container } = setup();
     act(() => { d.enqueue(m, performance.now()); });
-    run(2300);
+    run(3800);
     fireEvent.click(container.querySelector('.wg')!);
     expect(onSkip).toHaveBeenCalledTimes(1);
-    run(400);
+    run(900);
     act(() => { d.enqueue(m, performance.now()); });
-    run(2300);
+    run(3800);
     fireEvent.click(screen.getByRole('button', { name: 'Skip this scene', hidden: true }));
     expect(onSkip).toHaveBeenCalledTimes(2);
   });
@@ -327,12 +327,12 @@ describe('GlobeSequence', () => {
     const [ev2] = e.takeWorldEvents();
     if (ev2.kind !== 'major') throw new Error();
     act(() => { d.enqueue(m, performance.now()); d.enqueue(majorMoment(e, ev2, env)!, performance.now()); });
-    run(2300);
+    run(3800);
     expect(d.backlog).toBe(1);
     fireEvent.keyDown(window, { key: 'Escape' });
     expect(d.backlog).toBe(0);
     expect(onSkip).toHaveBeenCalledWith(true);
-    run(400);
+    run(900);
     expect(d.busy).toBe(false);
   });
 
@@ -377,7 +377,7 @@ describe('GlobeSequence', () => {
 
   it('still lands the moment where there is no canvas at all (nothing to draw on, nothing thrown)', () => {
     const { d, m } = setup();
-    expect(() => { act(() => { d.enqueue(m, performance.now()); }); run(5000); }).not.toThrow();
+    expect(() => { act(() => { d.enqueue(m, performance.now()); }); run(14000); }).not.toThrow();
     expect(d.busy).toBe(false);
   });
 });
@@ -400,7 +400,7 @@ describe('WorldLayer', () => {
     run(700);
     expect(e.hasSeenMajor('sharp_stone')).toBe(true);
     expect(screen.getByRole('heading', { level: 2, name: e.world.get('sharp_stone')!.name })).toBeInTheDocument();
-    run(6000);
+    run(12000);                                             // the whole (stretched, ≤ 12 s) ceremony
     expect(isWorldBusy()).toBe(false);
     expect(worldPings()).toBe(1);                           // the top-bar chip is told a place was registered
     expect(screen.queryByRole('heading', { level: 2 })).toBeNull();
@@ -426,7 +426,7 @@ describe('WorldLayer', () => {
     rerender(<WorldLayer engine={e} version={1} active />);
     run(700);
     expect(screen.getByRole('heading', { level: 2, name: e.world.get('sharp_stone')!.name })).toBeInTheDocument();
-    run(5200);
+    run(11500);
     run(700);
     expect(screen.getByRole('heading', { level: 2, name: e.world.get('stone_flake')!.name })).toBeInTheDocument();
     expect(e.hasSeenMajor('stone_flake')).toBe(true);

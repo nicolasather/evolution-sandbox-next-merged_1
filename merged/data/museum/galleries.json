@@ -1,0 +1,23 @@
+{
+  "_note": "The Humanity Museum's rooms, in walking order. `span` is the historical range a gallery covers (galleries may overlap slightly — history does). A gallery opens when the canonical timeline reaches its earliest exhibit. Titles and epigraphs are never shown while a gallery is still sealed.",
+  "galleries": [
+    { "id": "deep-origins", "title": "Deep Origins", "epigraph": "Before tools, before fire — a body learning to stand.", "span": { "from": -7000000, "to": -3000000 }, "architecture": "cave", "hue": 28 },
+    { "id": "first-toolmakers", "title": "The First Toolmakers", "epigraph": "A struck stone keeps its edge for three million years.", "span": { "from": -3000000, "to": -1000000 }, "architecture": "stone", "hue": 34 },
+    { "id": "fire-and-hearth", "title": "Fire and the Hearth", "epigraph": "Light that stays after the sun has gone.", "span": { "from": -1000000, "to": -300000 }, "architecture": "stone", "hue": 18 },
+    { "id": "modern-minds", "title": "Modern Minds", "epigraph": "Beads, pigment, graves — the first signs of meaning.", "span": { "from": -300000, "to": -50000 }, "architecture": "cave", "hue": 12 },
+    { "id": "ice-age-worlds", "title": "Ice Age Worlds", "epigraph": "Painted walls, sewn clothes, whole continents crossed.", "span": { "from": -50000, "to": -12500 }, "architecture": "cave", "hue": 200 },
+    { "id": "first-farmers", "title": "First Farmers", "epigraph": "In several places at once, people began to stay.", "span": { "from": -12500, "to": -5000 }, "architecture": "earth", "hue": 46 },
+    { "id": "cities-and-signs", "title": "Cities and Signs", "epigraph": "Crowds, walls, and marks that could speak for the dead.", "span": { "from": -5000, "to": -2000 }, "architecture": "mudbrick", "hue": 38 },
+    { "id": "bronze-and-exchange", "title": "Bronze, Horses and Letters", "epigraph": "Metal moved by sea; sound was split into letters.", "span": { "from": -2000, "to": -900 }, "architecture": "bronze", "hue": 30 },
+    { "id": "iron-and-ideas", "title": "Iron and Ideas", "epigraph": "Coins, roads, proofs — and arguments written down.", "span": { "from": -900, "to": -200 }, "architecture": "marble", "hue": 205 },
+    { "id": "classical-engines", "title": "Engines of the Classical World", "epigraph": "Gears in a shipwreck, paper in a river town.", "span": { "from": -200, "to": 600 }, "architecture": "marble", "hue": 44 },
+    { "id": "connected-worlds", "title": "Connected Worlds", "epigraph": "Zero travelled west; the compass pointed everywhere.", "span": { "from": 600, "to": 1450 }, "architecture": "timber", "hue": 160 },
+    { "id": "print-and-oceans", "title": "Print and Oceans", "epigraph": "Every copy identical; every ocean joined.", "span": { "from": 1450, "to": 1600 }, "architecture": "timber", "hue": 196 },
+    { "id": "scientific-revolution", "title": "The Scientific Revolution", "epigraph": "Look closer. Measure. Publish. Be proved wrong.", "span": { "from": 1600, "to": 1760 }, "architecture": "glass", "hue": 222 },
+    { "id": "steam-and-industry", "title": "Steam and Industry", "epigraph": "Coal became motion, and motion became a city.", "span": { "from": 1760, "to": 1870 }, "architecture": "iron", "hue": 20 },
+    { "id": "electric-age", "title": "The Electric Age", "epigraph": "The night was switched on.", "span": { "from": 1870, "to": 1914 }, "architecture": "iron", "hue": 48 },
+    { "id": "atomic-century", "title": "Waves, Atoms and Wings", "epigraph": "Invisible forces, suddenly in human hands.", "span": { "from": 1914, "to": 1947 }, "architecture": "light", "hue": 190 },
+    { "id": "information-age", "title": "The Information Age", "epigraph": "Switches smaller than dust, orbits within reach.", "span": { "from": 1947, "to": 1989 }, "architecture": "grid", "hue": 168 },
+    { "id": "networked-planet", "title": "The Networked Planet", "epigraph": "Everyone, everywhere, at once.", "span": { "from": 1989, "to": 2026 }, "architecture": "grid", "hue": 186 }
+  ]
+}

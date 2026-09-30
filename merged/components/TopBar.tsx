@@ -10,6 +10,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { FullscreenButton } from './FullscreenButton';
 import { WorldChip } from './world/WorldChip';
 import { sound } from '@/lib/sound';
+import { museumStore } from '@/lib/museum/history/store';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, ViewId } from '@/lib/types';
 
@@ -96,9 +97,11 @@ function TileArt({ tone }: { tone: Tone }) {
 }
 
 function Tile({
-  id, tone, cap, label, pressed, className, onClick,
+  id, tone, cap, label, pressed, className, onClick, alert,
 }: {
   id: string; tone: Tone; cap: string; label: string; pressed?: boolean; className?: string; onClick: () => void;
+  /** A quiet mark: something new is waiting (never a number, never a badge). */
+  alert?: boolean;
 }) {
   return (
     <button
@@ -107,11 +110,13 @@ function Tile({
       id={id}
       data-tone={tone}
       data-cap={cap}
-      aria-label={label}
+      data-alert={alert || undefined}
+      aria-label={alert ? `${label} — something new has come into history` : label}
       aria-pressed={pressed}
       onClick={onClick}
     >
       <span className="tile-art"><TileArt tone={tone} /></span>
+      {alert && <span className="tile-alert" aria-hidden="true" />}
     </button>
   );
 }
@@ -140,6 +145,9 @@ export function TopBar({
   const results = found.hits;
   const showList = open && q.trim().length > 0;
   const reached = new Set(engine.erasReached().map(e => e.id));
+  // the Museum's quiet mark: eligible history not yet seen in the halls
+  const museumV = useSyncExternalStore(museumStore.subscribe, museumStore.getVersion, () => 0);
+  const museumNew = museumV >= 0 && museumStore.unseenCount() > 0;
 
   return (
     <header id="top">
@@ -263,7 +271,7 @@ export function TopBar({
         <div className="dock">
           <Tile id="minpath-open" tone="minpath" cap="Minimum Path" label="Minimum Path challenge"
             pressed={view === 'minpath'} className="max-[900px]:hidden" onClick={onMinPath} />
-          <Tile id="museum-open" tone="museum" cap="Museum" label="Museum"
+          <Tile id="museum-open" tone="museum" cap="Museum" label="Museum" alert={museumNew && view !== 'museum'}
             pressed={view === 'museum'} className="max-[900px]:hidden" onClick={onMuseum} />
           <Tile id="hub-open" tone="hub" cap="Modes" label="Mode Hub"
             pressed={view === 'hub'} onClick={onHub} />
