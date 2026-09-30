@@ -34,9 +34,7 @@ interface Bokeh { ang: number; cos: number; sin: number; r: number; size: number
 export interface IntroFxOptions { quality: Quality; lite: boolean }
 
 const BONE = '233,229,221';
-/** Maximalist spectrum: 12 saturated colours the whole intro cycles through. */
-const SPECTRUM = ['255,84,112','255,140,50','255,205,60','170,235,70','60,225,140','40,220,220','70,160,255','130,110,255','200,90,255','255,80,200','255,255,255','255,170,120'] as const;
-const spec = (i: number) => SPECTRUM[((Math.floor(i) % 12) + 12) % 12];
+const OCHRE = '196,100,44';
 const LAYER_SPEED = [0.55, 1.1, 2.4] as const;
 const LAYER_WIDTH = [0.8, 1.3, 2.1] as const;
 const LAYER_ALPHA = [0.42, 0.62, 0.9] as const;
@@ -73,6 +71,10 @@ export class IntroFx {
   private holeR = 0;
   private fade = 1;
   private frozenSpeed = 0;
+  private travel = 0; private ramp = 0; private ramp0 = 1; private bx = 0; private by = 0;
+  private hx = 0; private hy = 0; private lookX = 0; private lookY = 0; private glowK = 0;
+  /** Recent pointer positions: the fading comet tail behind the cursor. */
+  private trail: { x: number; y: number; t: number }[] = [];
   private rings: number[] = [0, 0.13, 0.27, 0.41, 0.55, 0.68, 0.82, 0.93];
   /** Fires when collapse, tunnel or slow finish on their own. */
   onModeEnd: ((m: FxMode) => void) | null = null;
@@ -163,6 +165,7 @@ export class IntroFx {
   /** Begin the tunnel. `objects` are scheduled across `ms`; lifetimes scale with the length. */
   tunnel(ms: number, objects: TunnelObject[]) {
     this.setMode('tunnel', ms);
+    this.travel = 0; this.ramp = 0; this.lookX = 0; this.lookY = 0; this.bx = 0; this.by = 0;
     const scale = ms / 3600;
     this.flies = [];
     // history passes beside the viewer: pieces alternate left and right of the
@@ -216,7 +219,7 @@ export class IntroFx {
     this.disc = c;
   }
 
-  slow(ms: number) { this.frozenSpeed = this.speed; this.setMode('slow', ms); }
+  slow(ms: number) { this.frozenSpeed = this.speed; this.ramp0 = this.ramp; this.setMode('slow', ms); }
   still() { this.setMode('still', 0); }
   /** Fade the whole canvas to nothing over `ms`. */
   fadeOut(ms: number) {
@@ -228,7 +231,7 @@ export class IntroFx {
     };
     step();
   }
-  reset() { this.fade = 1; this.flies = []; this.warp = []; this.bokeh = []; this.setMode('idle', 0); }
+  reset() { this.trail = []; this.travel = 0; this.ramp = 0; this.bx = 0; this.by = 0; this.fade = 1; this.flies = []; this.warp = []; this.bokeh = []; this.setMode('idle', 0); }
 
   private setMode(m: FxMode, ms: number) { this.mode = m; this.t = 0; this.modeMs = ms; }
 
@@ -244,20 +247,47 @@ export class IntroFx {
     this.t += dt;
     const g = this.g;
     g.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
-    g.clearRect(0, 0, this.w, this.h);
+    if ((this.mode === 'tunnel' || this.mode === 'slow') && this.quality !== 'low') {
+      // persistence: the last frame is not wiped, it fades — streaks leave real motion trails
+      g.globalCompositeOperation = 'destination-out';
+      g.globalAlpha = this.mode === 'slow' ? 0.4 : 0.26;
+      g.fillStyle = '#000';
+      g.fillRect(0, 0, this.w, this.h);
+      g.globalCompositeOperation = 'source-over';
+    } else {
+      g.clearRect(0, 0, this.w, this.h);
+    }
     g.globalAlpha = this.fade;
     if (this.hasPointer) { this.sx += (this.mx - this.sx) * 0.12; this.sy += (this.my - this.sy) * 0.12; }
     this.attS += ((this.att ? 1 : 0) - this.attS) * 0.08;
 
     switch (this.mode) {
-      case 'idle': this.drawDust(dt, 0); break;
+      case 'idle': this.drawDust(dt, 0); this.drawTrail(); break;
       case 'collapse': this.drawCollapse(dt); break;
       case 'tunnel': this.drawTunnel(dt); break;
       case 'slow': this.drawSlow(dt); break;
-      case 'still': this.drawWarp(0, 0.6); this.drawHole(1); break;
+      case 'still': this.hx = this.w / 2; this.hy = this.h / 2; this.bx = 0; this.by = 0; this.drawWarp(0, 0.6); this.drawHole(1); break;
     }
     g.globalAlpha = 1;
   };
+
+  /** A tapering comet behind the pointer that fades out over ~0.6 s. */
+  private drawTrail() {
+    if (this.quality === 'low' || !this.hasPointer) { this.trail.length = 0; return; }
+    const g = this.g, now = this.clock;
+    const last = this.trail[this.trail.length - 1];
+    if (!last || Math.hypot(last.x - this.sx, last.y - this.sy) > 3) this.trail.push({ x: this.sx, y: this.sy, t: now });
+    while (this.trail.length && now - this.trail[0].t > 620) this.trail.shift();
+    g.lineCap = 'round';
+    for (let i = 1; i < this.trail.length; i++) {
+      const a = this.trail[i - 1], b = this.trail[i];
+      const life = 1 - (now - b.t) / 620;
+      if (life <= 0) continue;
+      g.strokeStyle = `rgba(${i % 7 === 0 ? OCHRE : BONE},${(life * 0.42).toFixed(3)})`;
+      g.lineWidth = 0.6 + life * 2.6;
+      g.beginPath(); g.moveTo(a.x, a.y); g.lineTo(b.x, b.y); g.stroke();
+    }
+  }
 
   /* ── idle dust ───────────────────────────────────────────────────── */
 
@@ -314,8 +344,8 @@ export class IntroFx {
       }
       const tw = 0.62 + 0.38 * Math.sin(T * 0.0009 * d.ph + d.ph * 9);
       const a = clamp(d.a * tw + boost * 0.55, 0, 0.95) * (collapseK > 0 ? 1 - collapseK * 0.55 : 1);
-      g.fillStyle = `rgba(${spec(d.ph * 40 + T * 0.0004)},${Math.min(1, a * 1.5).toFixed(3)})`;
-      g.fillRect(x, y, d.w * 1.5, d.h * 1.5);
+      g.fillStyle = `rgba(${d.ph > 1.85 ? OCHRE : BONE},${a.toFixed(3)})`;
+      g.fillRect(x, y, d.w, d.h);
     }
 
     // a lens: barely there, only while the pointer is over the page
@@ -348,11 +378,11 @@ export class IntroFx {
     const g = this.g, cx = this.w / 2, cy = this.h / 2;
     const s = Math.min(this.w, this.h) / 900 + 0.55;
     const ring = (r: number, a: number, lw = 1) => {
-      g.strokeStyle = `rgba(${spec(r * 0.6 + k * 30)},${a})`; g.lineWidth = lw + 1.5;
+      g.strokeStyle = `rgba(${BONE},${a})`; g.lineWidth = lw + 0.5;
       g.beginPath(); g.arc(cx, cy, r * s, 0, Math.PI * 2); g.stroke();
     };
     if (k > 0.12 && k <= 0.32) {
-      g.fillStyle = `rgba(${spec(k * 40)},1)`;
+      g.fillStyle = `rgba(${BONE},1)`;
       g.beginPath(); g.arc(cx, cy, 3.2 * s, 0, Math.PI * 2); g.fill();
     } else if (k > 0.32 && k <= 0.55) {
       ring(7, 0.85);
@@ -360,7 +390,7 @@ export class IntroFx {
       ring(6, 0.9); ring(13, 0.6);
     } else if (k > 0.78) {
       const p = clamp((k - 0.78) / 0.22, 0, 1);
-      g.fillStyle = `rgba(${spec(k * 60)},${0.95 - p * 0.1})`;
+      g.fillStyle = `rgba(${BONE},${0.95 - p * 0.1})`;
       g.beginPath(); g.arc(cx, cy, 9 * s, 0, Math.PI * 2); g.fill();
       ring(18, 0.8); ring(28 + p * 6, 0.5); ring(44 + p * 14, 0.3); ring(64 + p * 26, 0.16);
     }
@@ -368,17 +398,43 @@ export class IntroFx {
 
   /* ── tunnel ──────────────────────────────────────────────────────── */
 
+  /** Where the tunnel is heading: the axis bends left/right and up/down as the
+   *  camera travels, and the pointer steers it. Far things follow the bend
+   *  most, the screen edge not at all — so the tube reads as a curved road. */
+  private steer(u: number, dt: number) {
+    const w = this.w, h = this.h;
+    this.travel += this.speed * (dt / 1000) * 1.6;
+    const ramp = this.ramp;
+    // pointer → where the camera wants to look (−1…1), eased so it never jerks
+    const tx = this.hasPointer ? clamp((this.sx - w / 2) / (w / 2), -1, 1) : 0;
+    const ty = this.hasPointer ? clamp((this.sy - h / 2) / (h / 2), -1, 1) : 0;
+    this.lookX += (tx - this.lookX) * 0.05;
+    this.lookY += (ty - this.lookY) * 0.05;
+    const T = this.travel;
+    this.bx = (Math.sin(T * 1.15) * 0.9 + Math.sin(T * 0.47 + 1.3) * 0.5) * w * 0.22 * ramp + this.lookX * w * 0.2 * (0.35 + 0.65 * ramp);
+    this.by = (Math.cos(T * 0.9 + 0.4) * 0.55 + Math.sin(T * 0.31) * 0.25) * h * 0.13 * ramp + this.lookY * h * 0.14 * (0.35 + 0.65 * ramp);
+    this.hx = w / 2 + this.bx; this.hy = h / 2 + this.by;
+    void u;
+  }
+  /** Axis offset at radius fraction r (0 = far end of the tunnel, 1 = the screen edge). */
+  private ax(r: number) { const k = 1 - clamp(r, 0, 1); return this.bx * k * k; }
+  private ay(r: number) { const k = 1 - clamp(r, 0, 1); return this.by * k * k; }
+
   private drawTunnel(dt: number) {
     const u = clamp(this.t / this.modeMs, 0, 1);
     // slow → medium → fast → very fast: the camera accelerates all the way in
     this.speed = 0.08 + 0.92 * Math.pow(u, 2.2);
+    this.ramp = clamp(u * 2.6, 0, 1);
     this.holeR = Math.min(this.w, this.h) * (0.05 + 0.02 * u);
+    this.steer(u, dt);
+    this.glowK = 0.15 + 0.85 * u;
     const g = this.g;
     g.save();
-    // the camera leans a little as it picks up speed
+    // the camera banks into every bend, like a car leaning through a curve
     g.translate(this.w / 2, this.h / 2);
-    g.rotate(Math.sin(u * 5.2) * 0.022 * u);
+    g.rotate((this.bx / this.w) * 0.55 + Math.sin(u * 5.2) * 0.012 * u);
     g.translate(-this.w / 2, -this.h / 2);
+    this.drawWalls(1);
     this.drawRings(dt, 1);
     this.drawBokeh(dt, 1);
     this.drawWarp(dt, 1);
@@ -392,6 +448,27 @@ export class IntroFx {
       this.g.globalAlpha = this.fade;
     }
     if (u >= 1) this.onModeEnd?.('tunnel');
+  }
+
+  /** Long curved rails along the tube: they show the bend even before anything moves. */
+  private drawWalls(gain: number) {
+    const g = this.g, cx = this.w / 2, cy = this.h / 2;
+    const R = Math.hypot(this.w, this.h) / 2;
+    const N = 14, SEG = 16;
+    g.lineWidth = 1;
+    for (let i = 0; i < N; i++) {
+      const a = (i / N) * Math.PI * 2 + this.travel * 0.03;
+      const ca = Math.cos(a), sa = Math.sin(a);
+      g.beginPath();
+      for (let k = 0; k <= SEG; k++) {
+        const r = 0.04 + (k / SEG) * 0.96;
+        const rr = this.holeR + Math.pow(r, 2.1) * (R - this.holeR);
+        const x = cx + this.ax(rr / R) + ca * rr, y = cy + this.ay(rr / R) + sa * rr;
+        if (k === 0) g.moveTo(x, y); else g.lineTo(x, y);
+      }
+      g.strokeStyle = `rgba(${i % 5 === 0 ? OCHRE : BONE},${(0.07 * gain * (0.4 + this.speed)).toFixed(3)})`;
+      g.stroke();
+    }
   }
 
   /** Soft discs drifting outward from the vanishing point, growing as they come. */
@@ -410,10 +487,11 @@ export class IntroFx {
       const size = b.size * (0.25 + b.r * 1.7);
       const a = b.a * clamp(b.r * 4, 0, 1) * clamp((1.1 - b.r) * 6, 0, 1) * (0.35 + 0.65 * v) * gain;
       if (a < 0.004) continue;
+      const px = cx + this.ax(b.r) + b.cos * rr, py = cy + this.ay(b.r) + b.sin * rr;
       g.globalAlpha = a * this.fade;
       g.globalCompositeOperation = 'lighter';
-      g.drawImage(this.disc, cx + b.cos * rr - size / 2, cy + b.sin * rr - size / 2, size, size);
-      if (b.warm) { g.globalAlpha = a * 0.5 * this.fade; g.drawImage(this.disc, cx + b.cos * rr - size * 0.3, cy + b.sin * rr - size * 0.3, size * 0.6, size * 0.6); }
+      g.drawImage(this.disc, px - size / 2, py - size / 2, size, size);
+      if (b.warm) { g.globalAlpha = a * 0.5 * this.fade; g.drawImage(this.disc, px - size * 0.3, py - size * 0.3, size * 0.6, size * 0.6); }
     }
     g.globalCompositeOperation = 'source-over';
     g.globalAlpha = this.fade;
@@ -422,10 +500,21 @@ export class IntroFx {
   private drawSlow(dt: number) {
     const k = clamp(this.t / this.modeMs, 0, 1);
     this.speed = this.frozenSpeed * (1 - easeOut3(k));
+    // the road straightens out as the camera comes to rest
+    this.ramp = this.ramp0 * (1 - easeOut3(k));
+    this.steer(k, dt);
+    this.glowK = 1 - 0.6 * k;
+    const g = this.g;
+    g.save();
+    g.translate(this.w / 2, this.h / 2);
+    g.rotate((this.bx / this.w) * 0.55);
+    g.translate(-this.w / 2, -this.h / 2);
+    this.drawWalls(1 - k);
     this.drawRings(dt, 1 - k);
     this.drawBokeh(dt, 1 - k);
     this.drawWarp(dt, 1 - k * 0.25);
     this.drawWarpNear(dt, 1 - k * 0.25);
+    g.restore();
     this.drawHole(1 - k * 0.4);
     // objects vanish at once: they are not part of the stopped world
     if (this.vignette) {
@@ -436,7 +525,7 @@ export class IntroFx {
     if (k >= 1) this.onModeEnd?.('slow');
   }
 
-  /** Faint rings racing outward — the walls of the tunnel. */
+  /** Rings racing outward — the cross-sections of the tube, each centred on the bent axis. */
   private drawRings(dt: number, gain: number) {
     const g = this.g, cx = this.w / 2, cy = this.h / 2;
     const R = Math.hypot(this.w, this.h) / 2;
@@ -448,9 +537,9 @@ export class IntroFx {
       const rr = this.holeR + Math.pow(ph, 2.1) * (R - this.holeR);
       const a = Math.sin(Math.PI * ph) * 0.2 * (0.25 + v) * gain;
       if (a < 0.004) continue;
-      g.strokeStyle = `rgba(${spec(i * 1.7 + this.t * 0.004)},${Math.min(1, a * 2.6).toFixed(3)})`;
-      g.lineWidth = 1 + ph * 4.2;
-      g.beginPath(); g.arc(cx, cy, rr, 0, Math.PI * 2); g.stroke();
+      g.strokeStyle = `rgba(${i % 4 === 0 ? OCHRE : BONE},${a.toFixed(3)})`;
+      g.lineWidth = 0.6 + ph * 2.2;
+      g.beginPath(); g.arc(cx + this.ax(rr / R), cy + this.ay(rr / R), rr, 0, Math.PI * 2); g.stroke();
     }
   }
 
@@ -477,11 +566,13 @@ export class IntroFx {
       const rr = p.r * R;
       if (rr < this.holeR * 0.9) continue;
       const len = Math.min(rr - this.holeR * 0.8, v * LAYER_SPEED[p.layer] * (0.012 + p.r * 0.16) * R);
-      const hx = cx + p.cos * rr, hy = cy + p.sin * rr;
-      const tx = hx - p.cos * Math.max(len, 0.6), ty = hy - p.sin * Math.max(len, 0.6);
+      const r2 = Math.max(0, (rr - Math.max(len, 0.6)) / R);
+      // head and tail both follow the bent axis, so every streak curves with the tube
+      const hx = cx + this.ax(p.r) + p.cos * rr, hy = cy + this.ay(p.r) + p.sin * rr;
+      const tx = cx + this.ax(r2) + p.cos * r2 * R, ty = cy + this.ay(r2) + p.sin * r2 * R;
       const a = clamp(p.r * 5, 0, 1) * LAYER_ALPHA[p.layer] * (0.4 + 0.6 * Math.max(v, 0.15)) * gain;
-      g.strokeStyle = `rgba(${spec(p.ang * 1.9 + p.layer * 3 + this.t * 0.003)},${Math.min(1, a * 1.6).toFixed(3)})`;
-      g.lineWidth = LAYER_WIDTH[p.layer] * (1.1 + p.r * 1.4);
+      g.strokeStyle = `rgba(${p.warm ? OCHRE : BONE},${a.toFixed(3)})`;
+      g.lineWidth = LAYER_WIDTH[p.layer] * (0.7 + p.r);
       g.beginPath(); g.moveTo(tx, ty); g.lineTo(hx, hy); g.stroke();
     }
   }
@@ -500,7 +591,7 @@ export class IntroFx {
         if (q <= 0) continue;
         const r = Math.pow(q, 1.8) * 0.85 * (f.far ? 0.55 : 1) * R;
         const ang = f.ang + q * 0.16 * (f.spin > 0 ? 1 : -1);
-        const x = cx + Math.cos(ang) * r, y = cy + Math.sin(ang) * r;
+        const x = cx + this.ax(r / R) + Math.cos(ang) * r, y = cy + this.ay(r / R) + Math.sin(ang) * r;
         const size = f.size * (0.05 + (f.near ? 3.4 : f.far ? 0.9 : 1.7) * Math.pow(q, 2));
         const env = clamp(q / 0.12, 0, 1) * clamp((1 - q) / 0.18, 0, 1);
         const alpha = env * (f.far ? 0.5 : 0.92) * (i === 0 ? 1 : 0.3 / i) * (0.6 + 0.4 * Math.min(1, u * 2));
@@ -516,23 +607,30 @@ export class IntroFx {
           g.fillStyle = `rgb(${BONE})`;
           g.font = '500 10px ui-monospace, SFMono-Regular, Menlo, monospace';
           g.textAlign = 'center';
-          g.fillText(f.label.split('').join(' '), x, y + size / 2 + 16);
+          g.fillText(f.label.split('').join(' '), x, y + size / 2 + 16);
         }
       }
     }
     g.globalAlpha = this.fade;
   }
 
-  /** The vanishing point: a dark disc with a bright rim. */
+  /** The vanishing point, at the far end of the bend: a dark mouth with a warm light beyond it. */
   private drawHole(gain: number) {
-    const g = this.g, cx = this.w / 2, cy = this.h / 2, r = this.holeR;
+    const g = this.g, r = this.holeR;
+    const cx = this.hx || this.w / 2, cy = this.hy || this.h / 2;
+    // the light at the end of the tunnel grows as the camera closes on it
+    const lg = g.createRadialGradient(cx, cy, 0, cx, cy, r * 5);
+    lg.addColorStop(0, `rgba(${OCHRE},${(0.5 * this.glowK * gain).toFixed(3)})`);
+    lg.addColorStop(1, `rgba(${OCHRE},0)`);
+    g.fillStyle = lg;
+    g.beginPath(); g.arc(cx, cy, r * 5, 0, Math.PI * 2); g.fill();
     const gr = g.createRadialGradient(cx, cy, r * 0.2, cx, cy, r * 2.4);
     gr.addColorStop(0, 'rgba(6,6,7,1)');
     gr.addColorStop(0.42, 'rgba(6,6,7,0.92)');
     gr.addColorStop(1, 'rgba(6,6,7,0)');
     g.fillStyle = gr;
     g.beginPath(); g.arc(cx, cy, r * 2.4, 0, Math.PI * 2); g.fill();
-    g.strokeStyle = `rgba(${spec(this.t * 0.006)},${Math.min(1,0.9 * gain).toFixed(3)})`;
+    g.strokeStyle = `rgba(${OCHRE},${Math.min(1, 0.85 * gain).toFixed(3)})`;
     g.lineWidth = 1.2;
     g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.stroke();
     g.strokeStyle = `rgba(${BONE},${(0.16 * gain).toFixed(3)})`;

@@ -70,6 +70,13 @@ interface Props {
 
 const SKIPPABLE: Phase[] = ['collapse', 'tunnel', 'slow', 'reduced'];
 
+/** Spoken by the camera while it falls: [share of the tunnel's length, words]. */
+const TUNNEL_LINES: [number, string][] = [
+  [0.03, 'Ten thousand years.'],
+  [0.36, 'Every tool was once a guess.'],
+  [0.70, 'Hold on.'],
+];
+
 /** Set on <html> while the film runs: the scenery behind it is blurred, then comes into focus. */
 function setFilm(v: 'tunnel' | 'clear' | null) {
   const el = document.documentElement;
@@ -84,6 +91,8 @@ export function Landing({
 }: Props) {
   const routes = db.nodes.reduce((a, n) => a + (n.rec?.length || 0), 0);
   const [phase, setPhase] = useState<Phase>('idle');
+  /** The line of text riding the tunnel right now (one at a time). */
+  const [cap, setCap] = useState<{ n: number; text: string } | null>(null);
   const phaseRef = useRef<Phase>('idle');
   const rootRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -194,6 +203,7 @@ export function Landing({
     const fx = fxRef.current;
     const t = tunnelDuration(getQuality());
     stopSound.current();
+    setCap(null);
     go('slow');
     setFilm('clear');
     if (fx) {
@@ -214,8 +224,10 @@ export function Landing({
     setFilm('tunnel');
     enterWorld();
     fx.tunnel(tunnel, TUNNEL_OBJECTS.filter(o => !lite || o.lite));
+    TUNNEL_LINES.forEach(([at, text], n) => later(() => setCap({ n, text }), Math.round(tunnel * at)));
+    later(() => setCap(null), Math.round(tunnel * 0.97));
     stopSound.current = sound.tunnel(tunnel / 1000);
-  }, [settle, go, enterWorld]);
+  }, [settle, go, enterWorld, later]);
 
   const begin = useCallback((journey: boolean, again = false) => {
     if (phaseRef.current !== 'idle') return;
@@ -253,6 +265,7 @@ export function Landing({
     if (!SKIPPABLE.includes(phaseRef.current)) return;
     clearTimers();
     stopSound.current();
+    setCap(null);
     const fx = fxRef.current;
     if (fx) { fx.onModeEnd = null; fx.still(); fx.fadeOut(120); }
     const t = tunnelDuration(getQuality());
@@ -433,6 +446,7 @@ export function Landing({
           <span>almost nothing.</span>
         </p>
       </div>
+      {cap && <p key={cap.n} className="tunnel-line" aria-live="polite">{cap.text}</p>}
       <button
         type="button" className="intro-skip mono"
         tabIndex={SKIPPABLE.includes(phase) ? 0 : -1}

@@ -42,64 +42,57 @@ function SoundButton() {
 
 type Tone = 'minpath' | 'museum' | 'hub' | 'trade' | 'lab' | 'journal';
 
-/** The drawn face of a corner tile: a small, lit, layered picture — not an icon glyph.
- *  Fills come from the tile's own --a1…--a4 (see the .tile block in app/_cinematic.css). */
+/** The face of a corner tile: one square, hairline, single-colour line drawing.
+ *  Strokes use currentColor (see the .tile block in app/_cinematic.css) and every
+ *  shape has pathLength=1 so it can draw itself in on hover. */
 function TileArt({ tone }: { tone: Tone }) {
-  switch (tone) {
-    case 'minpath':
-      return (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path className="s1" d="M14 50C26 50 18 32 32 32S40 16 50 14" />
-          <circle className="a1" cx="14" cy="50" r="8" /><circle className="a3" cx="14" cy="50" r="3.5" />
-          <circle className="a2 float" cx="32" cy="32" r="5" />
-          <circle className="a4" cx="50" cy="14" r="9" /><circle className="a3" cx="50" cy="14" r="3.5" />
-        </svg>
-      );
-    case 'museum':
-      return (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path className="a1" d="M6 24 32 8l26 16z" />
-          <rect className="a2" x="10" y="27" width="8" height="22" rx="1.5" /><rect className="a2" x="21" y="27" width="8" height="22" rx="1.5" />
-          <rect className="a2" x="35" y="27" width="8" height="22" rx="1.5" /><rect className="a2" x="46" y="27" width="8" height="22" rx="1.5" />
-          <rect className="a1" x="5" y="51" width="54" height="7" rx="2" />
-          <circle className="a4 float" cx="32" cy="19" r="3" />
-        </svg>
-      );
-    case 'hub':
-      return (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path className="a3" d="M32 52 6 40l26-12 26 12z" transform="translate(0 6)" />
-          <path className="a2" d="M32 46 6 34l26-12 26 12z" transform="translate(0 2)" />
-          <path className="a1" d="M32 36 6 24 32 12l26 12z" />
-          <circle className="a4 float" cx="32" cy="24" r="4" />
-        </svg>
-      );
-    case 'trade':
-      return (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <circle className="a4" cx="32" cy="32" r="10" /><circle className="a3" cx="32" cy="32" r="4" />
-          <path className="s1" d="M8 20h40M40 12l8 8-8 8" />
-          <path className="s1" d="M56 44H16M24 36l-8 8 8 8" />
-        </svg>
-      );
-    case 'lab':
-      return (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path className="a1" d="M26 6h12v4h-3v16l15 26a5 5 0 0 1-4.4 7.5H18.4A5 5 0 0 1 14 52l15-26V10h-3z" />
-          <path className="a4" d="M19 46h26l5.4 9.4a3 3 0 0 1-2.6 4.6H16.2a3 3 0 0 1-2.6-4.6z" />
-          <circle className="a1 float" cx="30" cy="40" r="3" /><circle className="a2 float" cx="37" cy="34" r="2.2" />
-        </svg>
-      );
-    case 'journal':
-      return (
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path className="a3" d="M8 14c8-4 16-4 24 2v38c-8-6-16-6-24-2z" />
-          <path className="a2" d="M56 14c-8-4-16-4-24 2v38c8-6 16-6 24-2z" />
-          <path className="s4" d="M14 25c4-1 8-1 12 1M14 34c4-1 8-1 12 1M38 26c4-2 8-2 12-1M38 35c4-2 8-2 12-1" />
-          <path className="a4" d="M44 4h8v22l-4-3.5L44 26z" />
-        </svg>
-      );
-  }
+  const P = { pathLength: 1 } as const;
+  return (
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+      {tone === 'minpath' && (
+        <>
+          <path {...P} d="M12 38h10V24h14V12" />
+          <rect {...P} x="4" y="34" width="8" height="8" />
+          <rect {...P} x="32" y="4" width="8" height="8" />
+          <rect className="fill" x="20" y="22" width="4" height="4" />
+        </>
+      )}
+      {tone === 'museum' && (
+        <>
+          <path {...P} d="M5 18 24 6l19 12z" />
+          <path {...P} d="M11 22v14M19 22v14M29 22v14M37 22v14" />
+          <path {...P} d="M5 41h38" />
+        </>
+      )}
+      {tone === 'hub' && (
+        <>
+          <rect {...P} x="6" y="6" width="15" height="15" />
+          <rect {...P} x="27" y="6" width="15" height="15" />
+          <rect {...P} x="6" y="27" width="15" height="15" />
+          <rect className="fill" x="30" y="30" width="9" height="9" />
+        </>
+      )}
+      {tone === 'trade' && (
+        <>
+          <path {...P} d="M6 15h34M33 8l7 7-7 7" />
+          <path {...P} d="M42 33H8M15 26l-7 7 7 7" />
+        </>
+      )}
+      {tone === 'lab' && (
+        <>
+          <path {...P} d="M17 5h14M20 5v15L7 41h34L28 20V5" />
+          <path {...P} d="M12 32h24" />
+          <rect className="fill" x="21" y="26" width="3" height="3" />
+        </>
+      )}
+      {tone === 'journal' && (
+        <>
+          <path {...P} d="M5 9h16a3 3 0 0 1 3 3v29a4 4 0 0 0-4-4H5z" />
+          <path {...P} d="M43 9H27a3 3 0 0 0-3 3v29a4 4 0 0 1 4-4h15z" />
+        </>
+      )}
+    </svg>
+  );
 }
 
 function Tile({

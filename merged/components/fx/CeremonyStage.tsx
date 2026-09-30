@@ -40,10 +40,6 @@ export function evidenceLine(n: Pick<Discovery, 'src'>): { text: string; verifie
 
 const pad = (v: number) => String(Math.round(v)).padStart(3, '0');
 
-// see the "sequence" effect below for the full reasoning; also read by
-// `advance()`'s own skip-ahead timing so the two stay in step.
-const CINEMATIC_STRETCH = 1.5;
-
 export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () => void }) {
   const mounted = typeof document !== 'undefined';
   const [step, setStep] = useState(0);            // 0 dark · 1 plate · 2 tag · 3 number · 4 name · 5 meta · 6 ready
@@ -68,17 +64,7 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
     const reduced = prefersReducedMotion();
     let seen = false;
     try { seen = window.localStorage.getItem('evo.ceremony.seen') === '1'; } catch { /* storage blocked */ }
-    // the "new craft/discovery" ceremony, lengthened by CINEMATIC_STRETCH as
-    // one uniform multiplier rather than touching every `at()` call below —
-    // it scales the countUp/letter-resolve durations too, since both read
-    // `k` as well, so the internal proportions this sequence was tuned
-    // around (pause → plate → tag → count → name → meta → ready) survive
-    // untouched. Lands an ordinary first discovery at ~7.4s, a repeat at
-    // ~5.3s, a rare/major one at ~12s — the major-event tier (5–12s, see
-    // `_cinematic-motion.css`) rather than the full era-transition tier:
-    // this fires every discovery, often several times a session, so it
-    // needed real weight without becoming a wait.
-    const k = reduced ? 0.01 : (seen ? 0.72 : 1) * (major ? 1.25 : 1) * CINEMATIC_STRETCH;
+    const k = reduced ? 0.01 : (seen ? 0.72 : 1) * (major ? 1.25 : 1);
     const at = (ms: number, fn: () => void) => { timers.current.push(window.setTimeout(fn, ms * k)); };
     const go = (s: number) => { stepRef.current = s; setStep(s); };
 
@@ -136,7 +122,7 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
       setName(node.n);
       stepRef.current = 6; setStep(6);
       // a finished page stays until the player has read it
-      timers.current.push(window.setTimeout(() => finish.current(), (major ? 7000 : 5200) * CINEMATIC_STRETCH));
+      timers.current.push(window.setTimeout(() => finish.current(), major ? 7000 : 5200));
     } else finish.current();
   }; });
 
@@ -161,9 +147,7 @@ export function CeremonyStage({ node, onDone }: { node: Discovery; onDone: () =>
     let W = window.innerWidth, H = window.innerHeight;
     cv.width = W * dpr; cv.height = H * dpr;
     const count = Math.round((major ? 150 : 110) * PARTICLE_SCALE[getQuality()]);
-    const tones = node.hidden
-      ? ['255,90,60', '255,60,140', '255,150,40', '200,60,255']
-      : ['255,205,60', '80,225,160', '70,170,255', '255,120,190', '255,150,50', '190,120,255'];
+    const tones = node.hidden ? ['216,98,63', '236,140,90'] : ['212,160,90', '236,208,150'];
     const P = Array.from({ length: count }, () => ({
       x: Math.random() * W, y: H * (0.55 + Math.random() * 0.6), s: 1 + Math.random() * 3.4,
       v: 14 + Math.random() * 60, sw: Math.random() * Math.PI * 2, a: 0.3 + Math.random() * 0.6, c: tones[Math.floor(Math.random() * tones.length)],

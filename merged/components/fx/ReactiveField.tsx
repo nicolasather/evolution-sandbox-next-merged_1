@@ -40,7 +40,6 @@ const VERT = /* glsl */ `
   uniform vec4 uRipple[8];
   uniform float uTime;
   varying float vBright;
-  varying float vHue;
 
   void main() {
     vec2 p = position;
@@ -68,27 +67,24 @@ const VERT = /* glsl */ `
 
     bright = clamp(bright, 0.0, 1.0) * (1.0 - uQuiet * 0.55);
     vBright = bright;
-    vHue = fract(position.x / uResolution.x * 0.9 + position.y / uResolution.y * 0.6 + uTime * 0.05 + bright * 0.4);
 
     vec2 clip = (p / uResolution) * 2.0 - 1.0;
     clip.y *= -1.0;
     gl_Position = vec4(clip, 0.0, 1.0);
-    gl_PointSize = 2.4 + bright * 5.2;
+    gl_PointSize = 1.8 + bright * 3.6;
   }
 `;
 
 const FRAG = /* glsl */ `
   precision mediump float;
   varying float vBright;
-  varying float vHue;
   uniform float uBase;
   void main() {
     vec2 uv = gl_PointCoord - 0.5;
     float d = length(uv);
     float a = smoothstep(0.5, 0.0, d);
-    vec3 rgb = clamp(abs(mod(vHue * 6.0 + vec3(0.0, 4.0, 2.0), 6.0) - 3.0) - 1.0, 0.0, 1.0);
-    rgb = mix(vec3(1.0), rgb, 0.85 - vBright * 0.35);
-    gl_FragColor = vec4(rgb, a * (uBase * 1.9 + vBright * 0.85));
+    vec3 rgb = mix(vec3(0.93, 0.90, 0.85), vec3(0.85, 0.47, 0.20), vBright * 0.85);
+    gl_FragColor = vec4(rgb, a * (uBase * 1.4 + vBright * 0.7));
   }
 `;
 
@@ -141,7 +137,7 @@ export function ReactiveField({ active }: { active: boolean }) {
       const area = window.innerWidth * window.innerHeight;
       const coarse = window.matchMedia?.('(pointer: coarse)').matches;
       const density = coarse ? 1 / 20000 : 1 / 11000;
-      const count = Math.max(120, Math.min(3200, Math.round(area * density * 2)));
+      const count = Math.max(120, Math.min(2000, Math.round(area * density * 1.4)));
       const cols = Math.round(Math.sqrt(count * (window.innerWidth / window.innerHeight)));
       const rows = Math.max(1, Math.round(count / cols));
 
