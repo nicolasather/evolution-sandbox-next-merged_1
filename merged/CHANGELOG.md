@@ -5,6 +5,18 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### Stone Age raw materials and preparations: 500 more placeholder discoveries (918 total, 902 core)
+`data/nodes/g10.json` adds 500 early-game items (animal parts, minerals, preparations, containers,
+places, techniques, tool blanks). They were first committed straight into the repo-root
+`data/db.json`, which the app does not read, so they never appeared on the site; they are now
+real node files. Changes made on the way in: catalogue numbers 419-918 (the old 323-418 clashed
+with the stone tools), categories re-derived from the item name (the source ones were arbitrary),
+repeated names get a Roman numeral, recipes rewritten as ingredient pairs and joined to the
+existing graph (every item has two recipes and is reachable), `ds` derived from the earliest
+recipe instead of the placeholder ~3 million years ago, and rarity `very_rare`/`legendary`
+folded into `rare`. Every entry is `source_required` with a "placeholder" caution; names, dates
+and recipes have not been checked against any source. Plates are procedural, one per item.
+
 ### Stone Age toolkit: 96 new discoveries (418 total, 402 core)
 `data/nodes/g9.json` adds 96 specialised stone tools (hammerstones, handaxes, blades,
 microliths, axes, querns, lamps, sinkers and more). Every entry has its own recipe pairs

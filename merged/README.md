@@ -1,7 +1,7 @@
 # Evolution Sandbox
 
 An explorable discovery graph. You start with four raw materials — stone, wood,
-bone, fibre — and combine them into 418 discoveries (402 core, 16 hidden), most of
+bone, fibre — and combine them into 918 discoveries (902 core, 16 hidden), most of
 them reachable by more than one route. See CHANGELOG 1.4.0 for the hint system,
 route collection, themes and the mobile layout. Each carries a short
 definition, an argument for why it mattered, an account of how we know, and

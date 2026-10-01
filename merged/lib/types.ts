@@ -33,7 +33,7 @@ export interface ProcessRoute { from: string; action: ActionId }
 
 export interface Discovery {
   id: string;
-  /** Catalogue number, 1–418. Stable; used as the plate number in the exhibit. */
+  /** Catalogue number, 1–918. Stable; used as the plate number in the exhibit. */
   no: number;
   /** Display name. */
   n: string;

@@ -10,7 +10,7 @@ export const MODES: ModeDefinition[] = [
     id: 'main-evolution',
     title: 'Main Evolution',
     subtitle: 'The Timeline',
-    description: 'Combine raw materials into 418 discoveries, in the order humanity actually reached them.',
+    description: 'Combine raw materials into 918 discoveries, in the order humanity actually reached them.',
     status: 'available',
     saveKey: 'evo.sandbox.v1',
   },
