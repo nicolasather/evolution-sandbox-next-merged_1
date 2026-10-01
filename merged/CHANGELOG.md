@@ -5,6 +5,17 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### Stone Age toolkit: 96 new discoveries (418 total, 402 core)
+`data/nodes/g9.json` adds 96 specialised stone tools (hammerstones, handaxes, blades,
+microliths, axes, querns, lamps, sinkers and more). Every entry has its own recipe pairs
+(no pair is shared with any other discovery), a valid `stone_age_tier`, an
+honest `source_required` flag and the standard gameplay caution, and a plate in
+`data/art.json`. `data/db.json` was rebuilt with `tools/build_db.py`, so `dataHash`, `counts`,
+`depth`, `need` and `uses` are correct; the two hand-added three-ingredient recipes
+(`shelter`, `spear`) that exist only in `db.json` were kept. Checked with
+`tools/validate.py` (0 errors), `tools/chronology_audit.py` (no new findings) and the full
+jest suite (739/739).
+
 ### The Museum, redesigned: a living museum of human civilisation
 The Museum no longer displays the player's own crafted items. It is now one
 building with three deliberately separate wings (see `lib/museum/README.md`):

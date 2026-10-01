@@ -1,0 +1,3266 @@
+[
+  {
+    "id": "hammerstone",
+    "no": 323,
+    "n": "Hammerstone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 2.6 million years ago onward",
+    "ds": -2600000,
+    "rar": "common",
+    "vis": "hammerstone",
+    "l1": "A hand-sized cobble used to strike other stone.",
+    "l2": "A hammerstone is a hard, rounded rock held in the hand and used to knock flakes off a core. Battered ends and pitted surfaces are the sign that a cobble was used this way.",
+    "l3": "Every stone knapper since has needed one, which makes it one of the longest-running tools in the record.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hammering",
+        "stone_tool"
+      ],
+      [
+        "hammering",
+        "meat_processing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "olduvai",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "oldowan_handaxe",
+    "no": 324,
+    "n": "Oldowan Handaxe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 2.6 million years ago (Oldowan tradition)",
+    "ds": -2600000,
+    "rar": "common",
+    "vis": "handaxe",
+    "l1": "A crude, roughly shaped stone core with a working edge.",
+    "l2": "Strictly speaking, the earliest Oldowan tools were choppers, cores and flakes; the shaped teardrop handaxe belongs to the later Acheulean. The game groups the earliest heavy-duty cores under this name.",
+    "l3": "It marks the step from picking up a lucky sharp rock to deliberately making one.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "sharp_stone",
+        "cutting"
+      ],
+      [
+        "stone_tool",
+        "cutting"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "olduvai",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "acheulean_handaxe",
+    "no": 325,
+    "n": "Acheulean Handaxe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 1.7 million years ago onward",
+    "ds": -1700000,
+    "rar": "common",
+    "vis": "handaxe",
+    "l1": "A stone worked on both faces into a symmetrical teardrop.",
+    "l2": "Acheulean handaxes were made across Africa, Europe and Asia for well over a million years. The regular outline suggests their makers held a target shape in mind while they worked.",
+    "l3": "Piles of them at some sites show they were made in numbers, not one at a time.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "handaxe",
+        "hammering"
+      ],
+      [
+        "handaxe",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flake_tool",
+    "no": 326,
+    "n": "Flake Tool",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 2.6 million years ago onward",
+    "ds": -2600000,
+    "rar": "common",
+    "vis": "flake",
+    "l1": "A sharp sliver struck from a stone and used as it fell.",
+    "l2": "A flake needs no further shaping: the freshly broken edge is sharper than most metal. Flake tools were used for cutting meat, hide and plant material.",
+    "l3": "Flakes are the most common find on early sites, far outnumbering the cores they came from.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_flake",
+        "cutting"
+      ],
+      [
+        "stone_flake",
+        "meat_processing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "olduvai",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "round_headed_hammerstone",
+    "no": 327,
+    "n": "Round-headed Hammerstone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -2600000,
+    "rar": "common",
+    "vis": "hammerstone",
+    "l1": "A rounded cobble chosen for its shape as a striking tool.",
+    "l2": "A well-rounded cobble spreads the blow and resists chipping, so it makes a better percussor than a lumpy one. Repeated use leaves a battered, faceted surface.",
+    "l3": "It is a gameplay label for a refined hammerstone rather than a named archaeological type.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_tool",
+        "stone_tool"
+      ],
+      [
+        "hammering",
+        "flint"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "olduvai",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "heavy_flint_chopper",
+    "no": 328,
+    "n": "Heavy Flint Chopper",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 2 million years ago onward",
+    "ds": -2000000,
+    "rar": "common",
+    "vis": "chopper",
+    "l1": "A heavy cobble with a few flakes removed to form a chopping edge.",
+    "l2": "Choppers are core tools with one edge flaked to a rough blade. They were used for heavy work such as breaking bone to reach marrow and trimming wood.",
+    "l3": "Choppers are among the most characteristic finds of early stone-tool sites such as Olduvai.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_tool",
+        "meat_processing"
+      ],
+      [
+        "sharp_stone",
+        "meat_processing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "olduvai",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_burin",
+    "no": 329,
+    "n": "Stone Burin",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 40,000 years ago onward",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "burin",
+    "l1": "A flint tool with a chisel-like edge for grooving bone and antler.",
+    "l2": "A burin is made by striking a flake so that a narrow, sturdy edge is left at one corner. It is used to cut grooves in bone, antler and ivory, which could then be split into rods and points.",
+    "l3": "Burins are one of the marker tools of the Upper Palaeolithic.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "engraver",
+        "stone"
+      ],
+      [
+        "engraver",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_point",
+    "no": 330,
+    "n": "Stone Point",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 300,000 years ago onward",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "point",
+    "l1": "A sharpened stone shaped to be fixed to the end of a shaft.",
+    "l2": "Stone points were hafted onto spear shafts, which made a spear far more lethal than a fire-hardened stick. Damage on some points suggests they were thrown or thrust.",
+    "l3": "Hafting a point takes a handle, a binding and a glue or resin, so each point stands for several skills at once.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "sharp_stone",
+        "spear"
+      ],
+      [
+        "stone_flake",
+        "hunting"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_blade",
+    "no": 331,
+    "n": "Stone Blade",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 50,000 years ago onward (earlier in some regions)",
+    "ds": -50000,
+    "rar": "uncommon",
+    "vis": "blade",
+    "l1": "A long, narrow flake with parallel edges, struck from a prepared core.",
+    "l2": "A blade is at least twice as long as it is wide. Striking many blades from one prepared core gives far more cutting edge from the same lump of stone.",
+    "l3": "Blade technology spread widely in the Upper Palaeolithic and is used to mark that period.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_flake",
+        "carving_knife"
+      ],
+      [
+        "flint",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "polished_stone_axe",
+    "no": 332,
+    "n": "Polished Stone Axe",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago onward",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "polished-axe",
+    "l1": "A stone axe head ground smooth so it holds an edge and resists cracking.",
+    "l2": "Grinding and polishing a stone axe takes hours, but it produces a tougher, sharper edge than flaking alone. Polished axes were used to clear trees and shape timber.",
+    "l3": "The effort involved made some polished axes prized objects, traded over long distances.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "axe",
+        "grindstone_quern"
+      ],
+      [
+        "adze",
+        "grindstone_quern"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "hafted_stone_axe",
+    "no": 333,
+    "n": "Hafted Stone Axe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 30,000 years ago onward",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "axe",
+    "l1": "A stone axe head bound into a wooden handle.",
+    "l2": "Fixing the head into a handle turns a hand-held stone into a lever, which multiplies the force of a blow. The binding, and sometimes a resin glue, is what keeps the head on.",
+    "l3": "Ground-edge axe heads are known from Australia and Japan from around this period.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "axe",
+        "stone"
+      ],
+      [
+        "axe",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_hoe",
+    "no": 334,
+    "n": "Stone Hoe",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago onward",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "hoe",
+    "l1": "A stone blade set at an angle on a handle for breaking soil.",
+    "l2": "A hoe scrapes and chops the ground rather than turning it, which suits small garden plots. Stone hoes were among the first farming tools.",
+    "l3": "Polish on the working edge of some hoe blades comes from soil, not deliberate grinding.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hoe",
+        "stone_flake"
+      ],
+      [
+        "farming_tools",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_sickle",
+    "no": 335,
+    "n": "Stone Sickle",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 12,000 years ago onward",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "sickle",
+    "l1": "A harvesting knife with stone teeth set along a curved handle.",
+    "l2": "Sickle blades were set in a wooden or bone handle and used to cut the stalks of wild and early domesticated cereals. A characteristic gloss on the blade edge comes from silica in the plant stems.",
+    "l3": "Sickle gloss is one of the clues archaeologists use to tell that cereals were being cut.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "composite_tool",
+        "microblade"
+      ],
+      [
+        "scythe",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_pestle",
+    "no": 336,
+    "n": "Stone Pestle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "pestle",
+    "l1": "A heavy stone held in the hand for crushing and grinding.",
+    "l2": "A pestle works with a mortar or a flat stone to pound seeds, roots, pigment or nuts into pulp or powder. The ends of stone pestles show wear where they were used.",
+    "l3": "Pounding turns tough or toxic plants into food that is easier to eat.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "pestle",
+        "stone_tool"
+      ],
+      [
+        "pestle",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_mortar",
+    "no": 337,
+    "n": "Stone Mortar",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "mortar",
+    "l1": "A stone with a hollow worn or cut into it for pounding material.",
+    "l2": "The hollow holds the seed, nut or pigment while it is pounded with a pestle. Deep mortars, cut into bedrock or boulders, were used at the same place year after year.",
+    "l3": "Rows of mortar holes in bedrock mark places where groups returned to process food.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "mortar",
+        "stone_tool"
+      ],
+      [
+        "mortar",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "grindstone_quern",
+    "no": 338,
+    "n": "Grindstone / Quern",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 30,000 years ago onward",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "quern",
+    "l1": "A flat or dished stone used with a hand stone to grind seeds and grain.",
+    "l2": "Grinding stones crush seeds, roots and pigments. Starch grains found on some show that people were preparing wild plant foods for flour long before farming.",
+    "l3": "Grinding grain into flour is slow work, and querns are among the commonest finds on early farming sites.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "plant_processing",
+        "stone"
+      ],
+      [
+        "stone",
+        "mortar"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "hafted_stone_hammer",
+    "no": 339,
+    "n": "Hafted Stone Hammer",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "hammer",
+    "l1": "A stone hammer head fixed to a handle.",
+    "l2": "A handle lengthens the swing, so the head strikes harder than it can by hand alone. The head is usually bound or wedged into a split or drilled handle.",
+    "l3": "The same hafting idea was later applied to axes, adzes and picks.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hafted_tool",
+        "stone_tool"
+      ],
+      [
+        "hafted_tool",
+        "cutting"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flint_arrowhead",
+    "no": 340,
+    "n": "Flint Arrowhead",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Tens of thousands of years ago",
+    "ds": -60000,
+    "rar": "uncommon",
+    "vis": "arrowhead",
+    "l1": "A small, sharp flint point fixed to an arrow.",
+    "l2": "An arrowhead must be light, symmetrical and tough enough to punch through hide. Flint's predictable fracture lets a skilled knapper flake it to a fine point and barbs.",
+    "l3": "Because they are small and durable, arrowheads survive in enormous numbers.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bow",
+        "flint"
+      ],
+      [
+        "flint",
+        "spear"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_spearhead",
+    "no": 341,
+    "n": "Stone Spearhead",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 300,000 years ago onward",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "spearhead",
+    "l1": "A flaked stone point set into the tip of a spear.",
+    "l2": "A stone spearhead cuts far deeper than a sharpened stick. It is usually socketed or lashed to the shaft and sometimes glued with resin.",
+    "l3": "Wear and impact fractures on the tips show how some were used.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_spear",
+        "stone"
+      ],
+      [
+        "stone_spear",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "obsidian_knife",
+    "no": 342,
+    "n": "Obsidian Knife",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -500000,
+    "rar": "uncommon",
+    "vis": "obsidian",
+    "l1": "A blade of volcanic glass with an edge finer than steel.",
+    "l2": "Obsidian fractures into extremely sharp edges, sharper than most metal blades. It is brittle, so it is used for cutting rather than chopping.",
+    "l3": "Obsidian was traded far from the volcanoes that produced it, and its chemical signature can be matched to the source.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_tool",
+        "flint"
+      ],
+      [
+        "cutting",
+        "flint"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "obsidian_bladelet",
+    "no": 343,
+    "n": "Obsidian Bladelet",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "bladelet",
+    "l1": "A tiny, razor-sharp blade struck from an obsidian core.",
+    "l2": "Bladelets are small blades struck in series from a carefully prepared core. Their size makes them easy to set into handles, and a broken one can be replaced.",
+    "l3": "A single obsidian core could yield dozens of usable edges.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microblade",
+        "flint"
+      ],
+      [
+        "microblade",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "throwing_stone",
+    "no": 344,
+    "n": "Throwing Stone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "throwing-stone",
+    "l1": "A rounded stone chosen to be thrown at prey or rivals.",
+    "l2": "Throwing needs no tool beyond a well-shaped rock and a practised arm. Well-rounded stones found in bulk at some sites may have been kept for this.",
+    "l3": "It is very hard to prove that any particular stone was thrown, so dates here are uncertain.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hunting",
+        "stone"
+      ],
+      [
+        "hunting",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "sling_stone",
+    "no": 345,
+    "n": "Sling Stone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "sling-stone",
+    "l1": "A smooth stone or clay pellet shaped to fly true from a sling.",
+    "l2": "Sling stones are made to an even size and weight. Thrown from a sling, they can travel much faster than a stone thrown by hand.",
+    "l3": "Caches of them have been found beside ancient fortifications.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "slingshot",
+        "stone"
+      ],
+      [
+        "slingshot",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_bola",
+    "no": 346,
+    "n": "Stone Bola",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "bola",
+    "l1": "A grooved or pierced stone with a cord, used as a weighted throwing tool.",
+    "l2": "Two or three weighted cords, thrown together, tangle the legs of an animal or the wings of a bird. The stones are grooved or pierced so the cord can be tied on.",
+    "l3": "Bola stones are found in the Old World and the Americas.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bolas",
+        "stone"
+      ],
+      [
+        "bolas",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_drill_awl",
+    "no": 347,
+    "n": "Stone Drill / Awl",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -60000,
+    "rar": "uncommon",
+    "vis": "awl",
+    "l1": "A pointed stone used to bore holes in hide, wood or bone.",
+    "l2": "A stone drill or awl is twisted or turned into the material. Holes for cord and needles were a first step toward tailored clothing and lashed frames.",
+    "l3": "Wear along the point shows whether it was turned in the hand or pushed.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "awl",
+        "stone_flake"
+      ],
+      [
+        "awl",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_lever",
+    "no": 348,
+    "n": "Stone Lever",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "lever",
+    "l1": "A stone wedged under a load to prise it up or shift it.",
+    "l2": "A lever multiplies force, whether it is a pole or a flat stone shoved under a block. Moving heavy stones and logs was part of building shelters and traps.",
+    "l3": "Nothing about a lever needs metal or complex tools, only a fulcrum and some patience.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "lever",
+        "stone_tool"
+      ],
+      [
+        "lever",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_trap_weight",
+    "no": 349,
+    "n": "Stone Trap Weight",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "trap-weight",
+    "l1": "A heavy stone used to drop a deadfall or hold a snare down.",
+    "l2": "Weights make traps work without a hunter present. A stone that is dropped or dragged by an animal does the killing or holding.",
+    "l3": "Trapping saves effort and lets small groups collect meat while they do other work.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "snares",
+        "stone"
+      ],
+      [
+        "weight",
+        "snares"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "digging_stick_weight",
+    "no": 350,
+    "n": "Digging Stick Weight",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "digging-weight",
+    "l1": "A perforated stone that adds weight to a digging stick.",
+    "l2": "A stone threaded onto a wooden digging stick adds weight and momentum to each stroke. Digging sticks are used to lift roots, tubers and burrowing animals.",
+    "l3": "Weighted digging sticks are known from ethnographic records, and stones like this are found on archaeological sites.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "wood",
+        "weight"
+      ],
+      [
+        "hafted_tool",
+        "weight"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_oil_lamp",
+    "no": 351,
+    "n": "Stone Oil Lamp",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 40,000 years ago onward (Upper Palaeolithic)",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "lamp",
+    "l1": "A hollowed stone holding fat and a wick to give light.",
+    "l2": "A shallow stone hollow, animal fat and a plant or moss wick make a lamp that burns for hours. Such lamps let people work and paint deep inside caves.",
+    "l3": "Stone lamps are known from painted caves in Europe.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fire",
+        "stone_tool"
+      ],
+      [
+        "cooked_marrow",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_tray",
+    "no": 352,
+    "n": "Stone Tray",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "tray",
+    "l1": "A shallow stone dish for holding, sorting or serving.",
+    "l2": "Stone trays hold seeds, pigment or food while it is sorted or prepared. Cutting and smoothing the hollow takes patience and hard tools.",
+    "l3": "Trays turn up on Neolithic settlements alongside grinding stones.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "chisel",
+        "stone"
+      ],
+      [
+        "stone_tool",
+        "chisel"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_bowl",
+    "no": 353,
+    "n": "Stone Bowl",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "stone-bowl",
+    "l1": "A bowl pecked and ground out of solid stone.",
+    "l2": "A stone bowl is made by hammering away the inside and then grinding it smooth. It is heavy but does not break easily, and it does not need a kiln.",
+    "l3": "Stone vessels were made before pottery in some regions and alongside it in others.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hammering",
+        "chisel"
+      ],
+      [
+        "stone",
+        "wooden_bowl"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_plate",
+    "no": 354,
+    "n": "Stone Plate",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "plate",
+    "l1": "A flat dish of dressed stone for serving or working on.",
+    "l2": "A stone plate is cut, pecked and ground to a flat, level face. It gives a hard surface for cutting up food or grinding pigment.",
+    "l3": "It is a gameplay label for a flat working or serving stone.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "chisel",
+        "stone_flake"
+      ],
+      [
+        "chisel",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "steatite_soapstone_cooking_pot",
+    "no": 355,
+    "n": "Steatite / Soapstone Cooking Pot",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "soapstone-pot",
+    "l1": "A pot carved from soft, heat-resistant soapstone.",
+    "l2": "Soapstone is soft enough to carve with stone tools and holds heat well. A soapstone pot can be set on or near a fire without cracking the way many clays would.",
+    "l3": "Soapstone vessels were made in several parts of the world, at different times.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "chisel",
+        "boiling_stone"
+      ],
+      [
+        "carving_knife",
+        "boiling_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flint_and_pyrite_strike",
+    "no": 356,
+    "n": "Flint and Pyrite Strike",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "strike-a-light",
+    "l1": "A flint striker and a lump of pyrite that throw sparks.",
+    "l2": "Striking flint against iron pyrite shears off tiny hot fragments that can catch on tinder. Wear marks on some Palaeolithic handaxes have been read as evidence of this use.",
+    "l3": "It is far easier than friction fire to start in wet weather.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "flint_spark",
+        "stone_flake"
+      ],
+      [
+        "flint_spark",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "pressure_flaker",
+    "no": 357,
+    "n": "Pressure Flaker",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "flaker",
+    "l1": "A pointed bone or antler tool for pressing small flakes off a stone edge.",
+    "l2": "Pressing rather than striking lets a knapper control where each tiny flake comes off. That control produces fine, regular retouch on points and knives.",
+    "l3": "Pressure flaking is associated with delicate late Palaeolithic and Neolithic tools.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "flint"
+      ],
+      [
+        "bone",
+        "scraper"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_saw",
+    "no": 358,
+    "n": "Stone Saw",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "saw",
+    "l1": "A flint flake with a toothed edge used for sawing.",
+    "l2": "Small notches along a flint edge make a saw that bites into wood, bone and antler. Some serrated flints show polish from cutting plant stems.",
+    "l3": "Toothed edges are made by careful notching or by leaving a series of small flakes.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_flake",
+        "bone_saw"
+      ],
+      [
+        "cutting",
+        "microblade"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_bark_stripper",
+    "no": 359,
+    "n": "Stone Bark Stripper",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "stripper",
+    "l1": "A stone blade with a scraping edge for peeling bark from wood.",
+    "l2": "Bark is peeled off to get to bast fibre, to make a canoe or to prepare a shaft. A scraping edge lifts the bark away without splitting the wood underneath.",
+    "l3": "Bark and bast fibre were raw material for cord, containers and clothing.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "scraper",
+        "plant"
+      ],
+      [
+        "scraper",
+        "plant_thread"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_leather_burnisher",
+    "no": 360,
+    "n": "Stone Leather Burnisher",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "burnisher",
+    "l1": "A smooth stone rubbed over hide to soften and finish it.",
+    "l2": "A burnisher works oil and fat into a hide and flattens the surface. Smooth pebbles with polished faces are sometimes interpreted this way.",
+    "l3": "Hide working is a central craft in every cold-climate culture.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "scraper",
+        "clothing"
+      ],
+      [
+        "scraping",
+        "clothing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_adze",
+    "no": 361,
+    "n": "Stone Adze",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago onward",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "adze",
+    "l1": "A stone blade set across the end of a handle, like a hoe, for shaping wood.",
+    "l2": "An adze is swung with the blade at right angles to the handle, which lets it shave a surface rather than cut through it. Adzes were used to hollow logs and dress planks.",
+    "l3": "The dugout canoe was made with tools like this.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "adze",
+        "stone"
+      ],
+      [
+        "adze",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "rock_chisel",
+    "no": 362,
+    "n": "Rock Chisel",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "chisel",
+    "l1": "A stone tool with a cutting bit, struck with a mallet to cut stone or wood.",
+    "l2": "A chisel is driven by a blow to the top rather than swung. It allows careful control of the depth and direction of the cut.",
+    "l3": "It can be used on stone, wood, bone and antler.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "chisel",
+        "cutting"
+      ],
+      [
+        "chisel",
+        "scraping"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "quartz_point",
+    "no": 363,
+    "n": "Quartz Point",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "point",
+    "l1": "A point flaked from quartz, a hard, glassy stone.",
+    "l2": "Quartz is tough and breaks unpredictably, so a quartz point takes more care to make than one of flint. It is common where better stone is scarce.",
+    "l3": "Local materials shaped what people made: quartz points appear where quartz was the stone at hand.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_point",
+        "stone"
+      ],
+      [
+        "stone_point",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "quartzite_cleaver",
+    "no": 364,
+    "n": "Quartzite Cleaver",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 1.5 million years ago onward",
+    "ds": -1500000,
+    "rar": "uncommon",
+    "vis": "cleaver",
+    "l1": "A heavy flake with a straight, axe-like cutting edge.",
+    "l2": "Cleavers have a broad, unshaped edge at one end and were made by striking a large flake off a boulder. They were probably used for butchery and woodworking.",
+    "l3": "Cleavers are a signature of Acheulean sites in Africa and western Asia.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "handaxe",
+        "scraping"
+      ],
+      [
+        "meat_processing",
+        "handaxe"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_groover",
+    "no": 365,
+    "n": "Stone Groover",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "groover",
+    "l1": "A stone tool for cutting grooves into bone, antler or softer stone.",
+    "l2": "Grooving separates a rod of bone or antler from a larger piece, or cuts channels for slotted points. It works by drawing the edge again and again along one line.",
+    "l3": "Grooving and splintering is how antler points were made.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_burin",
+        "bone"
+      ],
+      [
+        "stone_burin",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_pestle_handle",
+    "no": 366,
+    "n": "Stone Pestle Handle",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "pestle-handle",
+    "l1": "A wooden or bone grip fitted to a stone pestle.",
+    "l2": "A handle gives leverage and protects the hand while pounding. Long pestles used with a deep mortar are often used two-handed.",
+    "l3": "It is a gameplay label for a hafted pestle.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_pestle",
+        "wood"
+      ],
+      [
+        "pestle",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "ochre_grinding_stone",
+    "no": 367,
+    "n": "Ochre Grinding Stone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 100,000 years ago onward",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "ochre-stone",
+    "l1": "A stone used to grind red ochre into pigment.",
+    "l2": "Ochre is ground into powder and mixed with fat or water. Ochre-grinding kits found in southern African caves are among the oldest signs of symbolic behaviour.",
+    "l3": "Pigment is used for skin, hide and cave painting, and probably also as an adhesive.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "art",
+        "stone"
+      ],
+      [
+        "ritual",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_fish_scaler",
+    "no": 368,
+    "n": "Stone Fish Scaler",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "scaler",
+    "l1": "A stone edge for scraping scales from a catch.",
+    "l2": "A serrated or scraping edge removes scales in a few strokes. Fish are easier to gut, dry or smoke when they have been scaled.",
+    "l3": "It is a gameplay label for a scraper used on fish.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fishing",
+        "scraper"
+      ],
+      [
+        "fishing",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "micro_serrated_stone_knife",
+    "no": 369,
+    "n": "Micro-serrated Stone Knife",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "serrated-knife",
+    "l1": "A stone knife with a saw-like, finely toothed edge.",
+    "l2": "Tiny teeth along the edge grip as they cut, which makes the knife better on tough hide, sinew or plant fibre than a smooth edge.",
+    "l3": "Serrations can be made by pressure flaking or by setting several bladelets side by side.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microblade",
+        "carving_knife"
+      ],
+      [
+        "microblade",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "microlith",
+    "no": 370,
+    "n": "Microlith",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 30,000 years ago onward",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "microlith",
+    "l1": "A small, sharp piece of stone, made to be set into a handle or shaft.",
+    "l2": "Microliths are tiny flakes or blades, often shaped to a geometric outline. Set in rows in a handle they form knives, sickles and the barbs of arrows.",
+    "l3": "A damaged microlith can be replaced without remaking the whole tool.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microblade",
+        "stone"
+      ],
+      [
+        "microblade",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "geometric_microlith_triangle",
+    "no": 371,
+    "n": "Geometric Microlith - Triangle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 12,000 years ago (earlier in parts of southern Africa)",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "microlith-triangle",
+    "l1": "A tiny stone shaped to a triangle, for mounting in a shaft.",
+    "l2": "Triangular microliths were fixed to shafts as barbs and tips. Their standard shapes suggest that the tools they were used in were well planned.",
+    "l3": "Geometric microliths are a signature of later hunter-gatherer toolkits.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microlith",
+        "stone_flake"
+      ],
+      [
+        "microlith",
+        "microblade"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "crescent_microlith",
+    "no": 372,
+    "n": "Crescent Microlith",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 12,000 years ago (earlier in some regions)",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "microlith-crescent",
+    "l1": "A small stone shaped to a curved crescent.",
+    "l2": "Crescent-shaped microliths were backed on the curved side so that the sharp straight edge could cut. They were mounted in sickles, knives and arrows.",
+    "l3": "The crescent is the standard microlith shape in several regions.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microlith",
+        "stone_tool"
+      ],
+      [
+        "microlith",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "trapezoid_microlith",
+    "no": 373,
+    "n": "Trapezoid Microlith",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 12,000 years ago (Mesolithic)",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "microlith-trapeze",
+    "l1": "A small stone shaped to a four-sided trapezoid.",
+    "l2": "Trapezoid microliths were used as transverse arrowheads, with the cutting edge across the front of the shaft. The wide, flat tip cuts a wound rather than piercing.",
+    "l3": "Trapezes are typical of Mesolithic sites in Europe.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microlith",
+        "engraver"
+      ],
+      [
+        "microlith",
+        "scraping"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "composite_blade",
+    "no": 374,
+    "n": "Composite Blade",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "composite-blade",
+    "l1": "A blade made of several small stones set in a single handle.",
+    "l2": "Setting several microliths in a slot makes a long cutting edge from short pieces. A worn or broken piece can be replaced without remaking the tool.",
+    "l3": "Composite tools waste less stone and are easier to repair than one-piece blades.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "microblade",
+        "cordage"
+      ],
+      [
+        "microlith",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "composite_sickle",
+    "no": 375,
+    "n": "Composite Sickle",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 12,000 years ago onward",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "composite-sickle",
+    "l1": "A sickle with several microlith blades set along its edge.",
+    "l2": "A row of small blades along a curved handle makes a cutting edge that can be replaced piece by piece. Early cereal harvesting used tools of this kind.",
+    "l3": "Gloss on blade edges shows that they were used on plant stems.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "composite_tool",
+        "microlith"
+      ],
+      [
+        "microlith",
+        "hafted_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "cleaver_axe",
+    "no": 376,
+    "n": "Cleaver Axe",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -1000000,
+    "rar": "uncommon",
+    "vis": "cleaver-axe",
+    "l1": "A heavy stone with a broad, straight, axe-like edge.",
+    "l2": "A gameplay label for a cleaver-type biface: a big stone tool with a wide chopping edge, made by trimming a large flake or core.",
+    "l3": "It is used for chopping wood and butchery, tasks that need weight behind the edge.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "handaxe",
+        "sharp_stone"
+      ],
+      [
+        "handaxe",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "greenstone_polished_axe",
+    "no": 377,
+    "n": "Greenstone Polished Axe",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 6,000 years ago onward",
+    "ds": -6000,
+    "rar": "uncommon",
+    "vis": "greenstone-axe",
+    "l1": "An axe of tough, fine-grained greenstone, ground to a polished edge.",
+    "l2": "Greenstone is a general term for dense, fine-grained rocks that grind to a strong, sharp edge. Axes made from particular outcrops were carried far from their source.",
+    "l3": "The distribution of such axes maps out ancient trade routes.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "polished_stone_axe",
+        "stone"
+      ],
+      [
+        "polished_stone_axe",
+        "lashing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_ploughshare",
+    "no": 378,
+    "n": "Stone Ploughshare",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "ploughshare",
+    "l1": "A stone point on a wooden frame, drawn through soil to break it.",
+    "l2": "Simple ards scratched the soil rather than turning it, and were pulled by people or animals. Stone tips wear down and need replacing often.",
+    "l3": "Animal traction turned farming from a garden task into a field-scale one.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hoe",
+        "farming_tools"
+      ],
+      [
+        "agriculture",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_scriber",
+    "no": 379,
+    "n": "Stone Scriber",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "scriber",
+    "l1": "A fine stone point for scratching lines on bone, wood or stone.",
+    "l2": "A scriber leaves a thin line by drawing a hard point over a softer surface. It is used to mark out cuts and to make decoration.",
+    "l3": "Marks made with such tools include some of the oldest patterned engravings.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "engraver",
+        "scraper"
+      ],
+      [
+        "engraver",
+        "flint"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_sharpening_block",
+    "no": 380,
+    "n": "Stone Sharpening Block",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "whetstone",
+    "l1": "A stone with a flat or grooved face for sharpening tools.",
+    "l2": "Rubbing a bone point or an edge across a gritty stone wears it to a new sharp shape. Grooved blocks were used to make needles, points and awls.",
+    "l3": "Grooves on some blocks match the shape of the tools they were used to sharpen.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone",
+        "cutting"
+      ],
+      [
+        "stone",
+        "scraping"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "leather_wrapped_axe_handle",
+    "no": 381,
+    "n": "Leather-wrapped Axe Handle",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "wrapped-handle",
+    "l1": "An axe handle wrapped in rawhide that shrinks tight as it dries.",
+    "l2": "Wet rawhide shrinks as it dries, gripping the head and the handle far more tightly than a knotted cord. It is also a comfortable grip.",
+    "l3": "Rawhide lashings are an old and effective way of fixing heads to handles.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "axe",
+        "clothing"
+      ],
+      [
+        "hafted_tool",
+        "clothing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "grooved_stone_sink",
+    "no": 382,
+    "n": "Grooved Stone Sink",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "grooved-sinker",
+    "l1": "A stone with a groove cut around it so a cord can be tied on as a weight.",
+    "l2": "A groove holds the cord in place so the stone does not slip. Sinkers weigh down lines, nets and traps.",
+    "l3": "A gameplay label for a grooved weight used with fishing gear.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "weight",
+        "engraver"
+      ],
+      [
+        "weight",
+        "chisel"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_net_sinker",
+    "no": 383,
+    "n": "Stone Net Sinker",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "net-sinker",
+    "l1": "A small stone tied to the edge of a net to hold it down in water.",
+    "l2": "Nets need weights along their lower edge, and floats along their upper edge, so that they hang open. Notched or pierced pebbles are common finds on riverside and lakeside sites.",
+    "l3": "Net sinkers show that netting was used even where the nets themselves have rotted away.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "net",
+        "engraver"
+      ],
+      [
+        "net",
+        "chisel"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_oil_press_slab",
+    "no": 384,
+    "n": "Stone Oil Press Slab",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -6000,
+    "rar": "uncommon",
+    "vis": "press-slab",
+    "l1": "A flat stone with a channel, used with a weight to press oil from seeds or fruit.",
+    "l2": "Crushed seeds or fruit are pressed under a weighted beam or lever, and the oil runs out along a channel cut into the stone.",
+    "l3": "Pressed oil served as food, fuel for lamps and a base for ointments.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "lever",
+        "stone"
+      ],
+      [
+        "food_processing",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_pipe_cleaner",
+    "no": 385,
+    "n": "Stone Pipe Cleaner",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "pipe-cleaner",
+    "l1": "A small rasp for scraping out the bore of a bone tube.",
+    "l2": "A gameplay label for a fine-toothed stone rasp, used to clean and enlarge the drilled hole in bone tubes such as whistles and flutes.",
+    "l3": "The insides of bone pipes have to be smooth for them to sound.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "flute",
+        "scraper"
+      ],
+      [
+        "flute",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_plane",
+    "no": 386,
+    "n": "Stone Plane",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "plane",
+    "l1": "A flat stone blade fixed to a block to shave wood smooth.",
+    "l2": "A gameplay label for a scraper-plane: a stone edge held at a fixed angle so it takes off a thin, even shaving from a plank or shaft.",
+    "l3": "Smoothing wood lets planks fit together and shafts fly straight.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "adze",
+        "scraper"
+      ],
+      [
+        "lumber",
+        "scraper"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_throwing_wedge",
+    "no": 387,
+    "n": "Stone Throwing Wedge",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "common",
+    "vis": "throwing-wedge",
+    "l1": "A wedge-shaped stone thrown so that its edge strikes first.",
+    "l2": "A gameplay label for a thrown stone with a sharpened, wedge-shaped edge. Any edge that lands first does more damage than a rounded stone.",
+    "l3": "It is not a standard archaeological type.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hunting",
+        "handaxe"
+      ],
+      [
+        "hunting",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flaky_flint_dagger",
+    "no": 388,
+    "n": "Flaky Flint Dagger",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 4,500 years ago onward (northern Europe)",
+    "ds": -4500,
+    "rar": "uncommon",
+    "vis": "flint-dagger",
+    "l1": "A long, finely flaked flint blade used as a dagger.",
+    "l2": "Flint daggers from Neolithic and Bronze Age northern Europe imitate metal daggers in stone. Their careful flaking is prestige work.",
+    "l3": "Some were traded far and buried with their owners.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "flint",
+        "carving_knife"
+      ],
+      [
+        "flint",
+        "hafted_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "large_flint_cutlass",
+    "no": 389,
+    "n": "Large Flint Cutlass",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -4500,
+    "rar": "uncommon",
+    "vis": "flint-cutlass",
+    "l1": "A long, heavy, curved flint blade.",
+    "l2": "A gameplay label for a large flint blade with a curved edge, made from a big nodule and used for cutting and chopping.",
+    "l3": "Few flints are big enough for a blade this long.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "flint",
+        "axe"
+      ],
+      [
+        "flint",
+        "handaxe"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "double_headed_stone_axe",
+    "no": 390,
+    "n": "Double-headed Stone Axe",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -6000,
+    "rar": "uncommon",
+    "vis": "double-axe",
+    "l1": "An axe with a blade at each end of the head.",
+    "l2": "A pierced stone head with a blade at each end is balanced on its handle. Many of the finest examples were probably for display rather than daily use.",
+    "l3": "Double axes are found in several regions and periods.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "axe",
+        "stone_tool"
+      ],
+      [
+        "axe",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "bone_marrow_scraper_stone",
+    "no": 391,
+    "n": "Bone Marrow Scraper Stone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "marrow-scraper",
+    "l1": "A stone edge used to scrape marrow from broken bones.",
+    "l2": "Marrow is rich in fat and was a valued food. After a bone is cracked open, a scraping edge cleans out what is left.",
+    "l3": "Cut marks and hammer scars on bones show that marrow was being processed.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cooked_marrow",
+        "scraper"
+      ],
+      [
+        "cooked_marrow",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_mold",
+    "no": 392,
+    "n": "Stone Mold",
+    "era": "metallurgy",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -4000,
+    "rar": "uncommon",
+    "vis": "mold",
+    "l1": "A block of stone with a shape cut into it, for casting molten metal.",
+    "l2": "Molten copper poured into a cut hollow cools into the shape of it. Stone moulds can be reused many times.",
+    "l3": "Casting let smiths make many identical tools from a single mould.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "casting",
+        "stone"
+      ],
+      [
+        "casting",
+        "chisel"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "saddle_quern",
+    "no": 393,
+    "n": "Saddle Quern",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 12,000 years ago onward",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "saddle-quern",
+    "l1": "A large stone with a dished top, rubbed with a hand stone to grind grain.",
+    "l2": "The grinder pushes a smaller stone back and forth across the dish, crushing grain to flour. It is slow, tiring work.",
+    "l3": "Saddle querns are the standard grain grinder of early farming villages.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "grindstone_quern",
+        "stone"
+      ],
+      [
+        "grindstone_quern",
+        "plant"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "nutcracking_stone",
+    "no": 394,
+    "n": "Nutcracking Stone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "common",
+    "vis": "nut-cracker",
+    "l1": "A stone anvil and hammer for cracking hard nuts.",
+    "l2": "A nut is set on a flat stone and struck with a hammerstone. The pitted hollows on an anvil show where nuts were cracked.",
+    "l3": "Chimpanzees crack nuts in the same way, so the technique is old.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hammerstone",
+        "plant"
+      ],
+      [
+        "hammerstone",
+        "plant_processing"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "rotary_quern_prototype",
+    "no": 395,
+    "n": "Rotary Quern Prototype",
+    "era": "civilization",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -2500,
+    "rar": "uncommon",
+    "vis": "rotary-quern",
+    "l1": "A quern in which the upper stone turns instead of sliding back and forth.",
+    "l2": "Turning a round upper stone with a handle is faster than a back-and-forth stroke. The change needs a central pivot and a way to feed grain in.",
+    "l3": "It needs the idea of rotation, which the wheel had already made familiar.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "saddle_quern",
+        "wheel"
+      ],
+      [
+        "saddle_quern",
+        "axle"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_wood_spokeshave",
+    "no": 396,
+    "n": "Stone Wood Spokeshave",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "spokeshave",
+    "l1": "A stone blade with a handle at each end, for shaping round wooden shafts.",
+    "l2": "A gameplay label for a scraper drawn along a shaft to round it. The two-handed pull steadies the blade.",
+    "l3": "Straight, round shafts are needed for arrows and spears.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_plane",
+        "wood"
+      ],
+      [
+        "stone_plane",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "pumice_abrader",
+    "no": 397,
+    "n": "Pumice Abrader",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "pumice",
+    "l1": "A piece of light volcanic rock used to smooth wood, bone and hide.",
+    "l2": "Pumice is full of tiny holes, so its surface is rough enough to abrade. It floats, and lumps of it wash up on far-off beaches.",
+    "l3": "Abrasive stones smooth bone needles, shaft wood and finished hide.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "sharp_stone",
+        "scraper"
+      ],
+      [
+        "stone",
+        "scraper"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "gouge_stone",
+    "no": 398,
+    "n": "Gouge Stone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "gouge",
+    "l1": "A stone tool with a curved, hollow cutting edge.",
+    "l2": "A gouge scoops out material, so it is used to hollow out bowls, canoes and troughs. Its curved edge is made by grinding.",
+    "l3": "Gouges from north-west Europe show that woodworking was well advanced by the Mesolithic.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "chisel",
+        "carving_knife"
+      ],
+      [
+        "adze",
+        "chisel"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "cave_wall_awl",
+    "no": 399,
+    "n": "Cave Wall Awl",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "cave-awl",
+    "l1": "A pointed stone used to incise lines on a cave wall.",
+    "l2": "A gameplay label for a hard stone point used to scratch outlines in cave walls. Incised lines survive where painted pigment has faded.",
+    "l3": "Scratched engravings appear in cave art alongside paintings.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cave_art",
+        "awl"
+      ],
+      [
+        "cave_art",
+        "engraver"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "fiber_cutting_flint",
+    "no": 400,
+    "n": "Fiber Cutting Flint",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -50000,
+    "rar": "uncommon",
+    "vis": "fibre-flint",
+    "l1": "A flint flake used to cut and split plant fibre.",
+    "l2": "Plant stems have to be cut, split and scraped before they can be twisted into cord. A fresh flint edge does all three.",
+    "l3": "Plant fibre wears down edges quickly, so flint edges were replaced often.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "flint",
+        "fiber"
+      ],
+      [
+        "flint",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "marked_stone_rod",
+    "no": 401,
+    "n": "Marked Stone Rod",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "marked-rod",
+    "l1": "A stone rod with a row of notches cut into its surface.",
+    "l2": "Notches cut in rows might have been tallies, calendars or decoration; the meaning is not known. Notched bones from Africa and Europe raise the same question.",
+    "l3": "Counting marks are among the earliest hints of record-keeping.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "tallies",
+        "stone"
+      ],
+      [
+        "tallies",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_shoulder_yoke",
+    "no": 402,
+    "n": "Stone Shoulder Yoke",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "yoke",
+    "l1": "A wooden yoke with stone fittings, for carrying loads or drawing a plough.",
+    "l2": "A gameplay label for a yoke. A yoke spreads a load across the shoulders or across a pair of animals, so more weight can be moved.",
+    "l3": "Draught animals pulling ploughs and carts changed how farming and transport worked.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "domestication",
+        "lumber"
+      ],
+      [
+        "herding",
+        "lumber"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flint_and_hematite",
+    "no": 403,
+    "n": "Flint and Hematite",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "flint-hematite",
+    "l1": "Flint and red hematite, ground and used together in early craft.",
+    "l2": "Red hematite is an iron ore that gives a red pigment. It is often found with flint and grinding stones on sites with early symbolic activity.",
+    "l3": "It is a gameplay pairing rather than a single tool.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "flint",
+        "art"
+      ],
+      [
+        "flint",
+        "symbolic_thought"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_latch",
+    "no": 404,
+    "n": "Stone Latch",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -7000,
+    "rar": "uncommon",
+    "vis": "latch",
+    "l1": "A stone block that holds a door or gate shut.",
+    "l2": "A gameplay label for a simple stone bar or block used to fasten a door. Permanent homes with doors need something to keep them closed.",
+    "l3": "It is not a standard archaeological type.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "village",
+        "stone"
+      ],
+      [
+        "permanent_shelter",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_trap_clamp",
+    "no": 405,
+    "n": "Stone Trap Clamp",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "trap-clamp",
+    "l1": "A stone fitting that holds a snare or trap in place.",
+    "l2": "A gameplay label for a heavy stone used to anchor a trap. A snare pulled tight against a stone cannot be dragged away.",
+    "l3": "Traps work without a hunter present.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "spike_trap",
+        "stone"
+      ],
+      [
+        "snares",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_lamp_pedestal",
+    "no": 406,
+    "n": "Stone Lamp Pedestal",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "lamp-pedestal",
+    "l1": "A stone stand that holds a lamp at a useful height.",
+    "l2": "A gameplay label for a stand carved to hold a stone lamp. A raised lamp lights a larger area and is less likely to be knocked over.",
+    "l3": "Lamps let people work after dark and light deep interiors.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_oil_lamp",
+        "stone"
+      ],
+      [
+        "stone_oil_lamp",
+        "chisel"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_sting_point",
+    "no": 407,
+    "n": "Stone Sting Point",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "sting-point",
+    "l1": "A small, barbed stone tip for a spear or arrow.",
+    "l2": "A gameplay label for a barbed stone tip. Barbs keep a point from working out of the wound.",
+    "l3": "Barbed points are known from bone as well as from stone.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "barbed_spear",
+        "stone"
+      ],
+      [
+        "barbed_spear",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "hand_stone_plow",
+    "no": 408,
+    "n": "Hand Stone Plow",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -6000,
+    "rar": "uncommon",
+    "vis": "hand-plough",
+    "l1": "A stone-tipped ard pushed or pulled by hand.",
+    "l2": "A gameplay label for a light, hand-drawn ard. A stone point drawn through soil opens a furrow for seed.",
+    "l3": "Ards preceded the plough proper.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hoe",
+        "stone"
+      ],
+      [
+        "hoe",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "flat_axe_stone",
+    "no": 409,
+    "n": "Flat Axe Stone",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -8000,
+    "rar": "uncommon",
+    "vis": "flat-axe",
+    "l1": "A flat, wide axe head with a straight cutting edge.",
+    "l2": "A flat axe head is easier to make than a shaped one and is easy to re-sharpen. The same form was later cast in copper.",
+    "l3": "Stone flat axes are the direct model for early copper axes.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "axe",
+        "scraper"
+      ],
+      [
+        "adze",
+        "axe"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_butchering_slab",
+    "no": 410,
+    "n": "Stone Butchering Slab",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "butchering-slab",
+    "l1": "A flat stone used as a surface for butchering.",
+    "l2": "A gameplay label for a working surface. A flat stone gives a stable, hard surface to cut on, and it does not soak up blood.",
+    "l3": "Cut marks on animal bone show butchery going back a very long way.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "meat_processing",
+        "stone"
+      ],
+      [
+        "meat_processing",
+        "flint"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_wedge",
+    "no": 411,
+    "n": "Stone Wedge",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "wedge",
+    "l1": "A stone wedge driven in to split wood or rock.",
+    "l2": "A wedge turns a hammer blow into a sideways splitting force. Wedges are used to split logs, planks and slabs of rock.",
+    "l3": "Splitting a log with wedges is how early planks were made.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "lumber",
+        "stone_flake"
+      ],
+      [
+        "quarry",
+        "hammering"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_hearth_guard",
+    "no": 412,
+    "n": "Stone Hearth Guard",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "hearth-guard",
+    "l1": "A ring of stones set round a fire.",
+    "l2": "Stones round a fire keep embers in and can hold pots or spits. Hearth rings mark where people cooked and gathered.",
+    "l3": "The hearth is one of the oldest signs of a home.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hearth",
+        "stone_tool"
+      ],
+      [
+        "hearth",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "rotary_stone_drill_head",
+    "no": 413,
+    "n": "Rotary Stone Drill Head",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "drill-head",
+    "l1": "A stone bit set in a bow drill to bore holes.",
+    "l2": "A bow drill turns a bit back and forth at speed. With a stone bit it can bore beads, stone bowls and bone.",
+    "l3": "Beads with drilled holes show the drill's precision.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bow_drill",
+        "stone"
+      ],
+      [
+        "bow_drill",
+        "stone_flake"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_soil_roller",
+    "no": 414,
+    "n": "Stone Soil Roller",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -5000,
+    "rar": "uncommon",
+    "vis": "soil-roller",
+    "l1": "A heavy stone cylinder rolled over a field to break clods.",
+    "l2": "A gameplay label for a stone roller. Rolling breaks lumps and firms the seedbed.",
+    "l3": "It is not a standard archaeological type.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "cultivation",
+        "stone"
+      ],
+      [
+        "agriculture",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_socket",
+    "no": 415,
+    "n": "Stone Socket",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "socket",
+    "l1": "A stone with a hole cut in it to hold a post or a pivot.",
+    "l2": "A socket holds a post upright or lets a door pivot. Pivot stones from ancient doorways are worn smooth by use.",
+    "l3": "Sockets and pivots are the basis of doors, gates and turning mechanisms.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "peg",
+        "stone"
+      ],
+      [
+        "peg",
+        "stone_tool"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "stone_bone_smoother",
+    "no": 416,
+    "n": "Stone Bone Smoother",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -30000,
+    "rar": "uncommon",
+    "vis": "bone-smoother",
+    "l1": "A gritty stone used to smooth and polish bone.",
+    "l2": "Rubbing a piece of bone against a gritty stone removes the rough surface and shapes it. Bone needles and awls are finished in this way.",
+    "l3": "Polish on bone tools often comes from this step.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "bone",
+        "grindstone_quern"
+      ],
+      [
+        "bone",
+        "pumice_abrader"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "middle",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "leaf_shaped_stone_tray",
+    "no": 417,
+    "n": "Leaf-shaped Stone Tray",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "leaf-tray",
+    "l1": "A shallow stone dish in the shape of a leaf.",
+    "l2": "A gameplay label for a leaf-shaped dish. A pointed spout at one end makes it easy to pour from.",
+    "l3": "It is not a standard archaeological type.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_tray",
+        "plant"
+      ],
+      [
+        "stone_tray",
+        "grass"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  },
+  {
+    "id": "crescent_stone_sickle",
+    "no": 418,
+    "n": "Crescent Stone Sickle",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "Date not yet sourced",
+    "ds": -12000,
+    "rar": "uncommon",
+    "vis": "crescent-sickle",
+    "l1": "A sickle with a curved stone blade.",
+    "l2": "A single curved stone blade fixed into a handle cuts a crescent-shaped swath through grain stalks.",
+    "l3": "Curved sickles are known from Neolithic sites.",
+    "ev": "Not yet sourced",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "stone_sickle",
+        "stone"
+      ],
+      [
+        "stone_sickle",
+        "crescent_microlith"
+      ]
+    ],
+    "tags": [
+      "stone age",
+      "crafted"
+    ],
+    "stone_age_tier": "late",
+    "caution": "Gameplay entry. The recipe is a simplification, and the date and evidence for this entry have not yet been checked against a subject-level source."
+  }
+]

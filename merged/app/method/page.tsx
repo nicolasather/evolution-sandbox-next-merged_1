@@ -8,7 +8,7 @@ const DB = playDb;
 export const metadata: Metadata = {
   title: 'How this was built',
   description:
-    'The sourcing rules, the graph validation, and the scientific hedges behind the 322 discoveries in Evolution Sandbox.',
+    'The sourcing rules, the graph validation, and the scientific hedges behind the 418 discoveries in Evolution Sandbox.',
   alternates: { canonical: '/method' },
 };
 
