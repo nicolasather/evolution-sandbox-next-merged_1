@@ -2,6 +2,7 @@ import { alienExhibit } from '../../alienarchaeology/memory';
 import { alienArchaeologyStore } from '../../alienarchaeology/store';
 import { siteExhibit } from '../../archaeology/memory';
 import { archaeologyStore } from '../../archaeology/store';
+import { lifelinesArchiveStore, lifelinesRecords } from '../../civilization/lifelines/archiveRecords';
 import { dioramaExhibit } from '../../civilization/memory';
 import { civilizationStore } from '../../civilization/store';
 import { decipherExhibit } from '../../decipher/memory';
@@ -49,6 +50,7 @@ export function archiveSections(): ArchiveSection[] {
   return [
     { id: 'survival', mode: 'survival', label: 'Expedition Records', blurb: 'What your Survival runs endured — and what they left behind.', accent: '#d9a256', records: survivalStore.get().memories.map(memoryExhibit) },
     { id: 'civilization', mode: 'civilization', label: 'Preserved Settlements', blurb: 'Dioramas of the settlements your Civilization runs grew.', accent: '#4f8f6f', records: civilizationStore.get().dioramas.map(dioramaExhibit) },
+    { id: 'civilization-lifelines', mode: 'civilization', label: 'Lifelines Chronicle', blurb: 'Simulated settlements you tended in Lifelines — generated scenarios, never historical records.', accent: '#5fd0b0', records: lifelinesRecords() },
     { id: 'archaeology', mode: 'archaeology', label: 'Excavation Reports', blurb: 'Filed reports from your Archaeologist digs.', accent: '#b8743a', records: archaeologyStore.get().reports.map(siteExhibit) },
     { id: 'decipher', mode: 'decipher', label: 'Translated Tablets', blurb: 'Tablet sets your Decipher runs read.', accent: '#5a7cc0', records: decipherStore.get().memories.map(decipherExhibit) },
     { id: 'escape-room', mode: 'escape-room', label: 'Episode Records', blurb: 'Historical Escape Room episodes you completed.', accent: '#c0603a', records: escapeRoomStore.get().memories.map(m => episodeExhibit(m, getEpisode(m.episodeId)?.title ?? 'Unknown episode')) },
@@ -59,6 +61,6 @@ export function archiveSections(): ArchiveSection[] {
 
 /** Subscribe to every mode store the archive reads. */
 export const ARCHIVE_STORES = [
-  survivalStore, civilizationStore, archaeologyStore, decipherStore,
+  survivalStore, civilizationStore, lifelinesArchiveStore, archaeologyStore, decipherStore,
   escapeRoomStore, alienArchaeologyStore, reverseEvolutionStore,
 ] as const;

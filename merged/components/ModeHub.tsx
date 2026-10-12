@@ -5,7 +5,7 @@ import { ReactiveLabel } from './fx/ReactiveLabel';
 import { TechSudokuModal } from './techsudoku/TechSudokuModal';
 import { WeeklyChallengeModal } from './weekly/WeeklyChallengeModal';
 import { archaeologyStore } from '@/lib/archaeology/store';
-import { civilizationStore } from '@/lib/civilization/store';
+import { hubSummaryServerSnapshot, hubSummarySnapshot, subscribeHubSummary, type HubSummary } from '@/lib/civilization/lifelines/hubSummary';
 import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
 import { decipherStore } from '@/lib/decipher/store';
 import { escapeRoomStore } from '@/lib/escaperoom/store';
@@ -123,8 +123,8 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   void profileVersion;
   const survivalVersion = useSyncExternalStore(survivalStore.subscribe, survivalStore.getVersion, () => 0);
   void survivalVersion;
-  const civVersion = useSyncExternalStore(civilizationStore.subscribe, civilizationStore.getVersion, () => 0);
-  void civVersion;
+  // Civilization (Lifelines + the earlier saves): a content-free summary, safe to read on the hub.
+  const civ: HubSummary = JSON.parse(useSyncExternalStore(subscribeHubSummary, hubSummarySnapshot, hubSummaryServerSnapshot));
   const archVersion = useSyncExternalStore(archaeologyStore.subscribe, archaeologyStore.getVersion, () => 0);
   void archVersion;
   const decVersion = useSyncExternalStore(decipherStore.subscribe, decipherStore.getVersion, () => 0);
@@ -158,7 +158,6 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const alienVisit = p.modes['alien-archaeology'];
   const revVisit = p.modes['reverse-evolution'];
   const survival = survivalStore.get();
-  const civilization = civilizationStore.get();
   const archaeology = archaeologyStore.get();
   const decipher = decipherStore.get();
   const escapeRoom = escapeRoomStore.get();
@@ -207,11 +206,11 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
           kicker={civMode?.subtitle ?? 'Build'}
           title={civMode?.title ?? 'Civilization'}
           description={civMode?.description ?? ''}
-          ctaLabel={civilization.active ? 'Continue' : 'Enter'}
+          ctaLabel={civ.kind !== 'none' ? 'Continue' : 'Enter'}
           onLaunch={() => onLaunchMode?.('civilization')}
           stats={[
-            { label: 'Settlements founded', value: civilization.dioramas.length },
-            { label: 'Active settlement', value: civilization.active ? `Year ${civilization.active.year}` : 'None' },
+            { label: 'Chapters completed', value: `${civ.completed} / 24` },
+            { label: 'Current settlement', value: civ.kind === 'none' ? 'None' : civ.line },
             { label: 'First entered', value: civVisit ? dateFmt.format(civVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />

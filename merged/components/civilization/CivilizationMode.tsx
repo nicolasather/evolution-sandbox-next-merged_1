@@ -1,146 +1,70 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { generateSettlement } from '@/lib/civilization/generate';
-import { dioramaExhibit, summarizeSettlement } from '@/lib/civilization/memory';
-import { advanceTurn } from '@/lib/civilization/simulate';
-import { civilizationStore } from '@/lib/civilization/store';
 import { profile } from '@/lib/profile/store';
-import type { Allocation, SettlementState } from '@/lib/civilization/types';
+import { ChapterSelect } from './lifelines/ChapterSelect';
+import { EntryChoice } from './lifelines/EntryChoice';
+import { EntryCinematic } from './lifelines/EntryCinematic';
+import { Play } from './lifelines/Play';
+import { useLifelines, useReducedMotion } from './lifelines/ui';
+import { LegacyCivilization } from './LegacyCivilization';
 
 /* ============================================================================
-   CIVILIZATION — "Build". A third, genuinely different interaction language:
-   the player never controls an individual (Survival) or an object
-   (Main Evolution) — only population-wide allocation policy, each turn,
-   watching the settlement's own growth generate the next pressure. See
-   docs/ROADMAP-UNIVERSE.md's Phase 7 section for what this slice does and
-   does not attempt.
+   CIVILIZATION — Extra Mode `civilization`, now "Lifelines".
+   Controller only: entry choice (legacy vs Lifelines) -> cinematic -> chapter
+   list / play. The earlier mode stays intact in LegacyCivilization and its own
+   `evo.civilization.v1` save is never read for writing here.
    ========================================================================== */
 
-const PROBLEM_TEXT: Record<string, string> = {
-  'water-labor': 'Without irrigation, hauling water from the river costs real labor every harvest.',
-  'land-shortage': 'The population is close to what the farmed land can support.',
-  'storage-shortage': 'Storage cannot hold the full surplus — some of it spoils.',
-};
-
-function pct(n: number): string { return `${Math.round(n * 100)}%`; }
+type View = 'boot' | 'choice' | 'cinematic' | 'chapters' | 'play' | 'legacy';
 
 export function CivilizationMode({ onExit }: { onExit: () => void }) {
-  const [settlement, setSettlement] = useState<SettlementState | null>(() => {
-    civilizationStore.load();
-    return civilizationStore.get().active ?? generateSettlement(`civ-${Date.now()}`);
-  });
-  const [sliders, setSliders] = useState<Allocation>({ food: 50, construction: 30, knowledge: 20 });
+  const { store, snap } = useLifelines();
+  const [forced, setForced] = useState<View | null>(null);
+  const reduced = useReducedMotion(snap.manifest.settings.motionSpeed);
 
   useEffect(() => {
-    if (!settlement) return;
-    if (!civilizationStore.get().active) civilizationStore.setActive(settlement);
+    void store.reopen();
     profile.recordModeVisit('civilization');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return () => { store.detach(); };
+  }, [store]);
 
-  if (!settlement) return null;
+  // The screen is derived from saved state plus the player's explicit choices; no effect sets it.
+  const hasLifelines = !!snap.run || Object.keys(snap.manifest.completions).length > 0;
+  let view: View;
+  if (snap.phase !== 'ready') view = 'boot';
+  else if (forced === 'play' && !snap.run) view = 'chapters'; // a finished/archived run returns to the list
+  else if (forced) view = forced;
+  else if (snap.legacyPresent && !snap.manifest.legacyPromptAnswered && !hasLifelines) view = 'choice';
+  else view = 'cinematic';
+  const setView = setForced;
 
-  const total = sliders.food + sliders.construction + sliders.knowledge || 1;
-
-  const advance = () => {
-    const allocation: Allocation = { food: sliders.food / total, construction: sliders.construction / total, knowledge: sliders.knowledge / total };
-    const { state } = advanceTurn(settlement, allocation);
-    setSettlement(state);
-    if (state.ending !== 'ongoing') {
-      const memory = summarizeSettlement(state);
-      civilizationStore.archiveActive(memory);
-      const exhibit = dioramaExhibit(memory);
-      profile.unlockExhibit({ exhibitId: exhibit.id, sourceMode: 'civilization', unlockedAt: Date.now() });
-    } else {
-      civilizationStore.setActive(state);
-    }
+  const afterCinematic = () => {
+    store.markEntrySeen();
+    setForced(store.getSnapshot().run ? 'play' : 'chapters');
   };
 
-  const startNew = () => {
-    const fresh = generateSettlement(`civ-${Date.now()}`);
-    setSettlement(fresh);
-    civilizationStore.setActive(fresh);
-  };
+  if (view === 'legacy') return <LegacyCivilization onExit={onExit} />;
 
-  if (settlement.ending !== 'ongoing') {
-    const memory = summarizeSettlement(settlement);
-    return (
-      <div id="civilization-mode" className={`cv-ending cv-${memory.ending}`}>
-        <div className="cv-ending-box">
-          <p className="mono cv-eyebrow">Civilization — Build</p>
-          <h1 className="cv-ending-title">{memory.ending === 'resilient' ? 'The settlement held.' : 'The settlement declined.'}</h1>
-          <p className="cv-ending-line">{memory.headline}</p>
-          <ol className="cv-log">
-            {settlement.log.slice(-8).map((e, i) => <li key={i}>Year {e.year} — {e.text}</li>)}
-          </ol>
-          <div className="cv-ending-actions">
-            <button className="chip" onClick={startNew}>Found a new settlement</button>
-            <button className="chip" onClick={onExit}>Return to the Hub</button>
-          </div>
-        </div>
+  let body;
+  if (snap.phase === 'failed') {
+    body = (
+      <div className="ll-screen ll-center">
+        <h1 className="ll-h1">Lifelines could not load</h1>
+        <p className="ll-lede">The content database failed validation ({snap.loadError}). Your saves were not touched.</p>
+        <button type="button" className="ll-btn" onClick={onExit}>← Hub</button>
       </div>
     );
+  } else if (snap.phase !== 'ready' || view === 'boot') {
+    body = <div className="ll-screen ll-center"><p className="ll-eyebrow" role="status">Loading Lifelines…</p></div>;
+  } else if (view === 'choice') {
+    body = <EntryChoice onExit={onExit} onLegacy={() => { store.markLegacyPromptAnswered(); setView('legacy'); }} onLifelines={() => { store.markLegacyPromptAnswered(); setView('cinematic'); }} />;
+  } else if (view === 'cinematic') {
+    body = <EntryCinematic first={!snap.manifest.entrySeen} reduced={reduced} onDone={afterCinematic} />;
+  } else if (view === 'play' && snap.run) {
+    body = <Play key={snap.run.runId} onChapters={() => setView('chapters')} />;
+  } else {
+    body = <ChapterSelect onPlay={() => setView('play')} onExit={onExit} onLegacy={snap.legacyPresent ? () => setView('legacy') : null} />;
   }
-
-  const capacity = settlement.farmland.base + settlement.farmland.irrigated;
-
-  return (
-    <div id="civilization-mode">
-      <header className="cv-top">
-        <button className="chip cv-exit" onClick={onExit}>← Hub</button>
-        <p className="mono cv-eyebrow">Civilization — Build</p>
-        <p className="cv-yearcount">Year {settlement.year} · Turn {settlement.turn} of {settlement.maxTurns}</p>
-      </header>
-
-      <div className="cv-body">
-        <section className="cv-headline">
-          <div className="cv-pop">
-            <span className="mono">Population</span>
-            <b>{Math.round(settlement.population)}</b>
-          </div>
-          <div className="cv-stats">
-            <div><span className="mono">Farmland capacity</span><b>{capacity.toFixed(0)}</b></div>
-            <div><span className="mono">Food stock</span><b>{settlement.foodStock.toFixed(1)} / {settlement.storageCapacity}</b></div>
-            <div><span className="mono">Knowledge</span><b>{settlement.knowledgeStock.toFixed(0)}</b></div>
-            {!settlement.milestones.irrigationComplete && (
-              <div><span className="mono">Irrigation</span><b>{pct(settlement.irrigationProgress)}</b></div>
-            )}
-          </div>
-        </section>
-
-        {settlement.problems.length > 0 && (
-          <section className="cv-problems">
-            <p className="mono cv-h">What the settlement is telling you</p>
-            <ul>
-              {settlement.problems.map(p => <li key={p.kind}>{PROBLEM_TEXT[p.kind]}</li>)}
-            </ul>
-          </section>
-        )}
-
-        <section className="cv-log-section">
-          <p className="mono cv-h">Recent years</p>
-          <ol className="cv-log">
-            {settlement.log.slice(-4).map((e, i) => <li key={i}>{e.text}</li>)}
-          </ol>
-        </section>
-      </div>
-
-      <section className="cv-allocation">
-        <p className="mono cv-h">Allocate the settlement&rsquo;s effort — normalised to {pct(1)} when you advance</p>
-        {(['food', 'construction', 'knowledge'] as const).map(key => (
-          <label key={key} className="cv-slider">
-            <span className="mono">{key === 'food' ? 'Food' : key === 'construction' ? 'Construction' : 'Knowledge'} — {pct(sliders[key] / total)}</span>
-            <input
-              type="range" min={0} max={100} value={sliders[key]}
-              onChange={e => setSliders(s => ({ ...s, [key]: Number(e.target.value) }))}
-            />
-          </label>
-        ))}
-        <div className="cv-advance-row">
-          <button className="chip cv-advance" onClick={advance}>Advance 5 years</button>
-        </div>
-      </section>
-    </div>
-  );
+  return <div id="lifelines-mode" className={'ll-root' + (reduced ? ' reduced' : '') + (snap.manifest.settings.motionSpeed === 'slow' ? ' slow' : '')}>{body}</div>;
 }
