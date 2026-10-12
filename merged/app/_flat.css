@@ -1,0 +1,49 @@
+/* ============================================================================
+   FLAT — the last word on look. No glow, no coloured light, no soft blobs, no
+   trail behind the pointer: hairlines, flat greys and the single ochre accent.
+   Imported last in globals.css so it overrides every earlier layer rule.
+   ========================================================================== */
+
+/* ── no glowing drop-shadows on pieces, icons, ghosts ───────────────────── */
+.wb-art,.wb-fly .wb-art,.wb-held .wb-art,
+.wb-body[data-hold] .wb-art,.wb-body[data-eager] .wb-art,.wb-body[data-work] .wb-art,
+.wb-body[data-fail="close"] .wb-art,.wb-body[data-warm] .wb-art,.wb-body[data-wet] .wb-art,
+#bench .wb-art,#outcome .oc-art,#rail .g,#rail .item .g,#rail .item.picked .g,#rail .item.hinted .g,
+.fx-ghost,.drag-ghost,.oc-art,.slot-g{filter:none!important}
+/* the one physical cue worth keeping: scorched things go dark */
+.wb-body[data-scorch] .wb-art{filter:brightness(calc(1 - .5 * var(--scorch,0)))!important}
+#rail .item.hinted .g{animation:none!important}
+
+/* ── no soft light blobs on the bench ───────────────────────────────────── */
+.wb-aura,.wb-shadow{display:none!important}
+#bench .wb-zone,.wb-zone,#bench .wb-zone.on,#bench .wb-zone.lit,
+.wb-zone[data-z].on,.wb-zone[data-z].lit,#bench .wb-zone[data-z].on,#bench .wb-zone[data-z].lit,
+.wb-patch,.wb-patch.lit,.wb[data-mode]:not([data-mode=""]) .wb-patch[data-p="processing"]{
+  background:none!important;box-shadow:none!important}
+#bench .wb-zone.lit,.wb-zone.lit,.wb-patch.lit{outline:1px dashed var(--line-3);outline-offset:-1px}
+#bench .wb.wb-over{box-shadow:none!important}
+.wb-body[data-wet] .wb-aura{display:none!important}
+
+/* ── no glowing ring, pulse or sweep on controls ────────────────────────── */
+.slots.charged .slot-link{box-shadow:none!important}
+.slots.charged .slot-op,.slots .slot.over,.slot.over.compatible{box-shadow:none!important}
+.chip:hover:not(:disabled),.icon-btn:hover,.panel-close:hover{box-shadow:none!important;transform:none}
+.item::after{display:none}
+@keyframes opFlash{45%{transform:scale(1.25)}100%{transform:scale(1)}}
+@keyframes railNew{0%,100%{box-shadow:none}50%{box-shadow:none}}
+@keyframes invReturn{0%{transform:scale(1)}28%{transform:scale(1.08)}100%{transform:scale(1)}}
+.wb-rail .wb-act[data-new]:not([aria-pressed="true"]){box-shadow:none!important}
+#rcursor.craft{box-shadow:none;border-width:1px}
+
+/* ── no soft light behind ceremonies, banners, the globe ────────────────── */
+.cer-vig,.cer.is-hidden .cer-vig{background:none!important}
+.cer-plate::after{display:none}
+.dc-seed{display:none}
+.es-wash{background:radial-gradient(90% 70% at 50% 50%,rgba(8,8,10,.92),rgba(8,8,10,.55) 60%,transparent)!important}
+.wg-glow{display:none}
+.wg-rule{background:var(--line-3)!important}
+
+/* ── the museum: no beams, no portal glow, no fog of colour ─────────────── */
+.at-beam,.xd-light,.xd-shaft,.hh-portal-glow{display:none!important}
+.hh-trim{box-shadow:none!important}
+.at-headline{color:var(--bone)!important}
