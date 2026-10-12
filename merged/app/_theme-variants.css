@@ -276,33 +276,7 @@
 :root[data-theme="dusk"] #ground{background:
   radial-gradient(120% 85% at 50% 0%, rgba(150,110,230,.16) 0%, rgba(35,20,60,.10) 38%, var(--ink-0) 70%);}
 
-/* ── glow, shared by all six accent themes — same rules _theme-neon.css uses,
-   scoped to every data-theme value in the family instead of just "neon" ──── */
-:root[data-theme="ember"] .tab[aria-selected="true"],
-:root[data-theme="verdant"] .tab[aria-selected="true"],
-:root[data-theme="glacier"] .tab[aria-selected="true"],
-:root[data-theme="bronze"] .tab[aria-selected="true"],
-:root[data-theme="dusk"] .tab[aria-selected="true"]{text-shadow:0 0 10px var(--ochre-mid)}
-
-:root[data-theme="ember"] .oc-art, :root[data-theme="ember"] .slot-g,
-:root[data-theme="verdant"] .oc-art, :root[data-theme="verdant"] .slot-g,
-:root[data-theme="glacier"] .oc-art, :root[data-theme="glacier"] .slot-g,
-:root[data-theme="bronze"] .oc-art, :root[data-theme="bronze"] .slot-g,
-:root[data-theme="dusk"] .oc-art, :root[data-theme="dusk"] .slot-g{filter:drop-shadow(0 0 4px var(--ochre-mid))}
-
-:root[data-theme="ember"] .exh-name, :root[data-theme="ember"] .oc-name,
-:root[data-theme="verdant"] .exh-name, :root[data-theme="verdant"] .oc-name,
-:root[data-theme="glacier"] .exh-name, :root[data-theme="glacier"] .oc-name,
-:root[data-theme="bronze"] .exh-name, :root[data-theme="bronze"] .oc-name,
-:root[data-theme="dusk"] .exh-name, :root[data-theme="dusk"] .oc-name{text-shadow:0 0 18px var(--ochre-lo)}
-
-:root[data-theme="ember"] .chip:hover, :root[data-theme="ember"] .icon-btn:hover,
-:root[data-theme="verdant"] .chip:hover, :root[data-theme="verdant"] .icon-btn:hover,
-:root[data-theme="glacier"] .chip:hover, :root[data-theme="glacier"] .icon-btn:hover,
-:root[data-theme="bronze"] .chip:hover, :root[data-theme="bronze"] .icon-btn:hover,
-:root[data-theme="dusk"] .chip:hover, :root[data-theme="dusk"] .icon-btn:hover{
-  box-shadow:0 0 0 1px var(--ochre-mid),0 0 14px var(--ochre-lo)}
-
+/* no glow on any accent theme: flat accent colour only */
 :root[data-theme="ember"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}
 :root[data-theme="verdant"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}
 :root[data-theme="glacier"] ::selection{background:var(--ochre-mid);color:var(--on-ochre)}

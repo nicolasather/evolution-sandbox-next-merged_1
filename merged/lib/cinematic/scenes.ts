@@ -7,9 +7,8 @@
      • a palette of 12 colours (k0–k11) that drives the 2.5D stage, the
        extruded lettering and the panel skin while the scene is open.
 
-   The palette is generated, not hand-typed, so every scene gets a genuinely
-   different set of 12 distinct colours (3 deep grounds, 6 accents spread round
-   the wheel, 2 light tints, 1 glow) without 12 × 16 hex codes to maintain.
+   The palette is generated, not hand-typed: near-black grounds, neutral grey
+   hairlines and one accent — the same quiet blueprint look as the workbench.
    ========================================================================== */
 
 export type SceneId =
@@ -112,22 +111,25 @@ export const VIEW_SCENE: Record<string, SceneId | undefined> = {
 
 const wrap = (h: number) => ((h % 360) + 360) % 360;
 
-/** 12 distinct colours (k0–k11) from one base hue. */
+/** 12 colours (k0–k11) for a scene — a quiet blueprint palette, not a rainbow.
+ *  k0–k2 are near-black grounds (tinted only a few percent by the scene hue),
+ *  k3–k8 are six steps of neutral grey for hairlines and outlines, k9–k10 are
+ *  the two text tones, and k11 is the single accent (the site's own ochre). */
 export function paletteOf(hue: number): string[] {
-  const h = hue;
+  const h = wrap(hue);
   return [
-    `hsl(${wrap(h + 8)} 55% 4%)`,     // k0  deepest ground
-    `hsl(${wrap(h + 4)} 50% 8%)`,     // k1  ground
-    `hsl(${wrap(h)} 46% 13%)`,        // k2  raised ground
-    `hsl(${wrap(h)} 90% 58%)`,        // k3  primary accent
-    `hsl(${wrap(h + 32)} 92% 62%)`,   // k4  warm neighbour
-    `hsl(${wrap(h - 32)} 88% 60%)`,   // k5  cool neighbour
-    `hsl(${wrap(h + 64)} 85% 66%)`,   // k6  far warm
-    `hsl(${wrap(h - 64)} 82% 62%)`,   // k7  far cool
-    `hsl(${wrap(h + 180)} 78% 64%)`,  // k8  complement
-    `hsl(${wrap(h + 12)} 100% 88%)`,  // k9  bright tint
-    `hsl(${wrap(h - 12)} 60% 96%)`,   // k10 paper white
-    `hsl(${wrap(h + 150)} 95% 70%)`,  // k11 glow
+    `hsl(${h} 6% 4%)`,     // k0  deepest ground
+    `hsl(${h} 5% 7%)`,     // k1  ground
+    `hsl(${h} 4% 11%)`,    // k2  raised ground
+    'hsl(0 0% 64%)',       // k3  line, brightest
+    'hsl(0 0% 56%)',       // k4
+    'hsl(0 0% 49%)',       // k5
+    'hsl(0 0% 42%)',       // k6
+    'hsl(0 0% 36%)',       // k7
+    'hsl(0 0% 30%)',       // k8  line, faintest
+    'hsl(40 6% 76%)',      // k9  secondary text
+    'hsl(40 10% 90%)',     // k10 primary text
+    'var(--ochre)',        // k11 the one accent
   ];
 }
 

@@ -71,14 +71,7 @@
 :root[data-theme="neon"] #ground{background:
   radial-gradient(110% 80% at 50% 0%, rgba(0,120,255,.20) 0%, rgba(0,40,90,.10) 38%, var(--ink-0) 70%);}
 
-/* glow, used sparingly: the accent rules, the active tab, discovery marks */
-:root[data-theme="neon"] .tab[aria-selected="true"]{text-shadow:0 0 10px rgba(0,212,255,.55)}
-:root[data-theme="neon"] .oc-art,
-:root[data-theme="neon"] .slot-g{filter:drop-shadow(0 0 4px rgba(0,212,255,.55))}
-:root[data-theme="neon"] .exh-name,
-:root[data-theme="neon"] .oc-name{text-shadow:0 0 18px rgba(0,212,255,.35)}
-:root[data-theme="neon"] .chip:hover,
-:root[data-theme="neon"] .icon-btn:hover{box-shadow:0 0 0 1px rgba(0,212,255,.35),0 0 14px rgba(0,212,255,.25)}
+/* no glow: the accent is a flat colour, like every other theme */
 :root[data-theme="neon"] ::selection{background:rgba(0,212,255,.35);color:#fff}
 
 /* ── 3D exhibit plate ─────────────────────────────────────────────────── */
@@ -98,5 +91,5 @@
 .exh-art .p3d{grid-area:1/1}
 .oc-art .p3d .p3d-flat .g{width:100%;height:100%}
 .oc-art .p3d canvas{cursor:grab}
-:root[data-theme="neon"] .exh-art{box-shadow:inset 0 0 40px rgba(0,140,255,.10)}
+
 @media (prefers-reduced-motion:reduce){.p3d-hint{transition:none}}

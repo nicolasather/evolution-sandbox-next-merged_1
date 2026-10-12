@@ -857,3 +857,101 @@ button:not(:disabled):hover,button:not(:disabled):active{transform:none}
 .hub-track>.hub-exhibit{background:transparent;transform:none;border-radius:0;border-color:var(--line-2);box-shadow:none}
 .hub-track>.hub-exhibit:hover{transform:none}
 .tile,.tile::after,.util .icon-btn{border-radius:0;box-shadow:none}
+
+/* ============================================================================
+   15. BLUEPRINT — one quiet look everywhere. The opening gate and the Minimum
+   Path deck now share the workbench's language: near-black ground, hairline grey
+   line-art, mono labels, one ochre accent. No colour wheel, no blur, no glow.
+   (Palette itself: lib/cinematic/scenes.ts paletteOf. Everything below only
+   draws the set in outline instead of in light.)
+   ========================================================================== */
+
+/* the six accent colours of the 2.5D layer fall back to neutral greys in every theme */
+:root,:root[data-theme]{
+  --t3:var(--bone-3);--t4:var(--bone-3);--t5:var(--bone-4);
+  --t6:var(--bone-4);--t7:var(--line-3);--t8:var(--bone-4);--t11:var(--ochre);
+}
+
+/* ── the stage: a dark ground, a faint wash in each corner, a hairline floor ── */
+.st{background:var(--k0)}
+.st-sky,.cg .st-sky,.dk .st-sky{
+  background:
+    radial-gradient(55% 45% at 10% 6%,rgba(70,84,120,.10),transparent 70%),
+    radial-gradient(50% 45% at 92% 4%,rgba(96,74,128,.09),transparent 70%),
+    radial-gradient(60% 40% at 28% 100%,rgba(150,92,60,.08),transparent 70%),
+    var(--k0);
+  filter:none;animation:none;translate:none}
+/* the sun becomes a drawn circle, like the one in the industrial scene */
+.st-sun{background:none;border:1px solid var(--line-2);filter:none;opacity:.7;animation:none}
+.st-sun::after{content:"";position:absolute;inset:14%;border-radius:50%;border:1px dashed var(--line)}
+.st-floor{background:
+    repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 96px),
+    repeating-linear-gradient(0deg,var(--line) 0 1px,transparent 1px 96px)}
+.st-floor i{display:none}
+.st-orbs{display:none}
+.st-rings i{border:1px solid var(--line-3)}
+.st-cube .st-face{background:transparent;border:1px solid var(--line-2);opacity:.75}
+.st-dust u{width:2px;height:2px;background:var(--bone-4)}
+.st-vignette{background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.6) 100%)}
+
+/* ── the gate: mono caps, thin and wide ──────────────────────────────────── */
+.cg-title{font-weight:500;text-transform:uppercase;letter-spacing:.12em;
+  font-size:clamp(26px,calc(80vw / var(--n) * 1.15),120px)}
+.cg[data-phase="slides"] .cg-title{font-size:clamp(18px,calc(36vw / var(--n) * 1.15),56px)}
+.cg-line,.cg-slide{font-style:normal;font-weight:400;letter-spacing:.02em}
+.cg-curtain{background:radial-gradient(circle at 50% 44%,rgba(255,255,255,.10),transparent 62%)}
+.dk-wipe,.cg-wipe{background:linear-gradient(100deg,transparent 46%,var(--line-3) 49.6%,var(--line-3) 50.4%,transparent 54%)}
+.dk-plate,.dk-pick-name,.dk-count,.dk-big,.dk-best,.dk-empty,.dk-mini,.hub-title,.hub-exhibit-title{
+  font-weight:500;text-transform:uppercase;letter-spacing:.1em}
+.dk-plate{font-size:clamp(16px,2.4vw,32px)}
+.dk-big{letter-spacing:.02em;font-weight:400}
+.cg-dots i,.dk-trail i,.dk-chain i{background:transparent;border:1px solid var(--bone-4);box-shadow:none}
+.cg-dots i.past{background:var(--bone-4)}
+.cg-dots i.on,.dk-trail i:last-child,.dk-chain i:last-child{background:var(--ochre);border-color:var(--ochre);box-shadow:none}
+.dk-chain b{height:1px;background:var(--line-3)}
+.dk-desc .mono{color:var(--ochre)}
+
+/* ── the one-per-scene animations: outline only, no light ───────────────── */
+.sg{mix-blend-mode:normal;opacity:.55}
+.sg-work .a,.sg-work .b{background:none;border:1px solid var(--bone-3)}
+.sg-work .ring,.sg-work .r2{border-width:1px;border-color:var(--line-3)}
+.sg-graph line{stroke:var(--bone-4);stroke-width:.16}
+.sg-graph circle{fill:var(--k0);stroke:var(--bone-3);stroke-width:.2}
+.sg-arch b{background:none;border-top:1px solid var(--line-3);border-bottom:1px solid var(--line-2);opacity:.6}
+.sg-time .line{height:1px;background:var(--line-3)}
+.sg-time b{background:var(--k0);border:1px solid var(--bone-3)}
+.sg-hub .orbit b{background:none;border:1px solid var(--line-3);opacity:1}
+.sg-museum .cone{background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 80%)}
+.sg-minpath path{stroke:var(--bone-3);stroke-width:.3}
+.sg-minpath circle{fill:var(--k0);stroke:var(--bone-3);stroke-width:.3}
+.sg-minpath .end{fill:var(--k0);stroke:var(--ochre)}
+.sg-minpath .dot{fill:var(--ochre);stroke:none}
+.sg-journal b{height:1px;background:var(--line-3)}
+.sg-world .globe{border-width:1px;border-color:var(--line-3)}
+.sg-world .globe i{border-width:1px;border-color:var(--line-2)}
+.sg-world .globe u{height:1px;background:var(--line-2)}
+.sg-trade b,.sg-trade b:nth-child(even){background:var(--line-3)}
+.sg-lab b{background:none;border:1px solid var(--line-3)}
+.sg-survival b{background:var(--bone-4)}
+.sg-survival .fire{background:none;border:1px solid var(--line-2)}
+.sg-civilization b{background:none;border:1px solid var(--line-2);border-bottom:0}
+.sg-archaeology b{background:none;border-top:1px solid var(--line-3);opacity:.7}
+.sg-archaeology .brush{display:none}
+.sg-escape-room .door{background:var(--k1);border:1px solid var(--line-3)}
+.sg-escape-room .light{filter:none;width:1px;margin-left:0;background:var(--line-3)}
+.sg-escape-room .hole{background:none;border:1px solid var(--ochre)}
+.sg-decipher svg{stroke:var(--bone-3);stroke-width:1}
+.sg-alien-archaeology i{border-width:1px;border-color:var(--line-3)}
+.sg-alien-archaeology .scan{height:1px;background:var(--line-3)}
+.sg-reverse-evolution i{border-width:1px;border-color:var(--line-2)}
+.sg-reverse-evolution b{background:none;border:1px solid var(--bone-4)}
+
+/* ── the ground behind every view: the era wash only, edge to edge, no grid ── */
+#ground::before{inset:0;left:0;right:0;bottom:0;height:auto;transform:none;
+  -webkit-mask-image:none;mask-image:none;animation:none;opacity:.55}
+#ground::after{background:radial-gradient(70% 55% at 50% 100%,
+    color-mix(in srgb,var(--ochre) calc(var(--era-glow,0) * 16%),transparent) 0%,transparent 70%);
+  animation:none}
+@media (min-width:901px){
+  #top{background:var(--glass-top);border-bottom:1px solid var(--line-2)}
+}

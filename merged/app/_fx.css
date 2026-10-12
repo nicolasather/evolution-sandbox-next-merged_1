@@ -140,7 +140,7 @@
   background-size:24px 1px;opacity:.45;animation:linkFlow 1.4s linear infinite;transition:opacity .3s}
 .slots.armed .slot-link{opacity:.8}
 .slots.charged .slot-link{background:repeating-linear-gradient(90deg,var(--ochre) 0 8px,transparent 8px 12px);
-  background-size:24px 1px;animation-duration:.45s;opacity:1;box-shadow:0 0 10px var(--ochre-mid)}
+  background-size:24px 1px;animation-duration:.45s;opacity:1}
 @keyframes linkFlow{to{background-position:24px 0}}
 .slots .slot-op{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
   border:1px solid var(--line-2);background:var(--ink-1);font-size:26px;line-height:1;
@@ -150,7 +150,7 @@
 .slots.charged .slot-op{border-color:var(--ochre);color:var(--ochre);box-shadow:0 0 0 6px var(--ochre-lo)}
 .slots.charged .slot-op span{transform:translateY(-1px) rotate(180deg)}
 .slots.merging .slot-op{animation:opFlash .55s cubic-bezier(.2,.8,.2,1)}
-@keyframes opFlash{45%{transform:scale(1.7);box-shadow:0 0 0 20px var(--ochre-lo),0 0 44px var(--ochre)}100%{transform:scale(1)}}
+@keyframes opFlash{45%{transform:scale(1.7);box-shadow:0 0 0 12px var(--ochre-lo)}100%{transform:scale(1)}}
 
 /* ── hover / press on controls and resources ──────────────────────────── */
 .item{position:relative;overflow:hidden;
@@ -196,9 +196,7 @@
   opacity:0;animation:fxSpark .62s cubic-bezier(.15,.7,.3,1) forwards}
 @keyframes fxRing{from{transform:scale(.2);opacity:.95}to{transform:scale(2.3);opacity:0}}
 @keyframes fxSpark{0%{transform:translate(0,0) scale(1.2);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(.2);opacity:0}}
-:root[data-theme="neon"] .fx-burst .ring{box-shadow:0 0 12px var(--ochre),inset 0 0 8px var(--ochre-mid)}
-:root[data-theme="neon"] .fx-burst .sp{box-shadow:0 0 6px var(--ochre)}
-.fx-ghost{color:var(--bone);filter:drop-shadow(0 0 6px var(--ochre-mid))}
+.fx-ghost{color:var(--bone)}
 
 /* ── phone ────────────────────────────────────────────────────────────── */
 @media (max-width:900px){
