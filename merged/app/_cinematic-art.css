@@ -1,0 +1,106 @@
+/* ============================================================================
+   CINEMATIC ART — the openings drawn like the workspace picture: dense
+   engraved line-art, fine hatching, depth layers, and a glowing ochre line
+   layer on top. Replaces the sparse rings / cubes / single-line network the
+   gate used before (components/cinematic/GateArt.tsx).
+   Imported after _flat.css on purpose: the openings are the one place the
+   glow is wanted, so nothing earlier may switch it off.
+   ========================================================================== */
+
+.cg{--ga-glow:color-mix(in srgb,var(--ochre) 62%,transparent);--ga-glow-soft:color-mix(in srgb,var(--ochre) 28%,transparent)}
+
+.ga{position:absolute;inset:0;overflow:hidden;pointer-events:none;background:var(--k0)}
+
+/* ── light: a warm halo behind the title and a low glow along the horizon ── */
+.ga-halo{position:absolute;left:50%;top:44%;width:min(120vmin,1100px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--ochre) 24%,transparent) 0%,color-mix(in srgb,var(--ochre) 9%,transparent) 34%,transparent 66%);
+  animation:gaBreathe 7s ease-in-out infinite alternate}
+.ga-horizon{position:absolute;left:-10%;right:-10%;bottom:-6%;height:46%;
+  background:radial-gradient(60% 100% at 50% 100%,color-mix(in srgb,var(--ochre) 20%,transparent),transparent 72%);
+  animation:gaBreathe 9s ease-in-out -3s infinite alternate}
+@keyframes gaBreathe{from{opacity:.55;scale:.96}to{opacity:1;scale:1.05}}
+
+/* ── the engraving ─────────────────────────────────────────────────────── */
+.ga-art{position:absolute;inset:0;width:100%;height:100%;color:var(--k9);opacity:.74;
+  animation:gaFade 1.6s ease both}
+@keyframes gaFade{from{opacity:0}to{opacity:.74}}
+.ga-art g[data-depth]{transform:translate(calc(var(--px,0) * var(--d,.5) * -30px),calc(var(--py,0) * var(--d,.5) * -14px));
+  transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes gaDraw{to{stroke-dashoffset:0}}
+/* things that burn or twinkle in the picture take the ochre and glow */
+.ga-art .flicker,.ga-art .blink{stroke:var(--ochre);filter:drop-shadow(0 0 5px var(--ga-glow))}
+.ga-art .twinkle{stroke:color-mix(in srgb,var(--ochre) 55%,var(--k9))}
+
+/* ── the glowing line layer ────────────────────────────────────────────── */
+.ga-glow{position:absolute;inset:0;width:100%;height:100%;color:var(--ochre);
+  transform:translate(calc(var(--px,0) * -10px),calc(var(--py,0) * -6px));transition:transform .35s ease-out;
+  filter:drop-shadow(0 0 4px var(--ga-glow)) drop-shadow(0 0 14px var(--ga-glow-soft))}
+.ga-orbit{opacity:.55}
+.ga-orbit circle,.ga-orbit path,.ga-orbit line{vector-effect:non-scaling-stroke}
+.ga-r1{animation:gaFade 2.4s ease .3s both}
+.ga-r2{transform-origin:0 0;animation:gaSpin 90s linear infinite}
+.ga-r3{transform-origin:0 0;animation:gaSpin 140s linear infinite reverse}
+.ga-r4{transform-origin:0 0;animation:gaSpin 200s linear infinite;opacity:.6}
+.ga-ticks{transform-origin:0 0;animation:gaSpin 240s linear infinite reverse;opacity:.7}
+.ga-arc{transform-origin:0 0;animation:gaSpin 18s linear infinite}
+.ga-arc2{animation-duration:27s;animation-direction:reverse}
+@keyframes gaSpin{to{transform:rotate(360deg)}}
+
+.ga-edge{stroke-dasharray:1 1;opacity:.6;stroke:currentColor;
+  animation:gaEdge 1.8s cubic-bezier(.45,0,.2,1) both,gaPulse 6s ease-in-out infinite alternate;
+  animation-delay:calc(.6s + var(--i) * .18s),calc(2.4s + var(--i) * .3s)}
+.ga-node{opacity:0;animation:gaNode .9s ease both,gaPulse 5s ease-in-out infinite alternate;
+  animation-delay:calc(.4s + var(--i) * .16s),calc(2s + var(--i) * .4s)}
+.ga-node circle:not(.ga-core){fill:color-mix(in srgb,var(--k0) 70%,transparent)}
+.ga-core{animation:gaCore 2.8s ease-in-out infinite;animation-delay:calc(var(--i) * -.45s);transform-box:fill-box;transform-origin:center}
+@keyframes gaEdge{from{stroke-dasharray:0 1000}to{stroke-dasharray:1000 0}}
+@keyframes gaNode{from{opacity:0}to{opacity:.9}}
+@keyframes gaPulse{from{opacity:.45}to{opacity:.95}}
+@keyframes gaCore{0%,100%{scale:1;opacity:1}50%{scale:2.2;opacity:.35}}
+
+/* ── embers drifting up through the light ──────────────────────────────── */
+.ga-embers{position:absolute;inset:0;overflow:hidden}
+.ga-embers u{position:absolute;left:var(--x);bottom:-2%;width:var(--s);height:var(--s);border-radius:50%;
+  background:var(--ochre);box-shadow:0 0 8px 2px var(--ga-glow);opacity:0;
+  animation:gaEmber var(--t) linear infinite;animation-delay:var(--d)}
+@keyframes gaEmber{0%{transform:translate(0,0);opacity:0}12%{opacity:.9}100%{transform:translate(calc(var(--px,0) * -30px + 24px),-105vh);opacity:0}}
+
+/* ── readability: a soft dark pool behind the lettering, a vignette at the edges ── */
+.ga-veil{position:absolute;inset:0;
+  background:radial-gradient(ellipse 46% 24% at 50% 46%,rgba(6,6,7,.78),rgba(6,6,7,.42) 60%,transparent 100%)}
+.cg[data-phase="slides"] .ga-veil{background:radial-gradient(ellipse 62% 30% at 50% 52%,rgba(6,6,7,.8),rgba(6,6,7,.46) 62%,transparent 100%)}
+.ga-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 48%,rgba(0,0,0,.72) 100%)}
+
+/* ── the lettering and key pick up the same light ──────────────────────── */
+.cg .cg-title{text-shadow:0 0 22px color-mix(in srgb,var(--ochre) 38%,transparent),0 0 2px rgba(0,0,0,.6)}
+.cg-dots i.on{box-shadow:0 0 10px 2px var(--ga-glow)}
+
+/* ── the one-per-scene signatures: same line language, now glowing ochre ── */
+.cg .sg{opacity:.9;mix-blend-mode:screen}
+.cg .sg svg{filter:drop-shadow(0 0 4px var(--ga-glow))}
+.cg .sg-graph line{stroke:var(--ochre);stroke-width:.24}
+.cg .sg-graph circle{fill:color-mix(in srgb,var(--ochre) 30%,var(--k0));stroke:var(--ochre);stroke-width:.3}
+.cg .sg-minpath path{stroke:var(--ochre);stroke-width:.4}
+.cg .sg-minpath circle{stroke:var(--ochre)}
+.cg .sg-decipher svg{stroke:var(--ochre);stroke-width:1.2}
+.cg .sg b,.cg .sg i{border-color:color-mix(in srgb,var(--ochre) 65%,transparent)}
+.cg .sg-work .a,.cg .sg-work .b,.cg .sg-work .ring,.cg .sg-work .r2,
+.cg .sg-hub .orbit b,.cg .sg-lab b,.cg .sg-world .globe,.cg .sg-world .globe i,
+.cg .sg-civilization b,.cg .sg-alien-archaeology i,.cg .sg-reverse-evolution i,.cg .sg-reverse-evolution b,
+.cg .sg-time b,.cg .sg-escape-room .hole{box-shadow:0 0 12px color-mix(in srgb,var(--ochre) 40%,transparent),inset 0 0 10px color-mix(in srgb,var(--ochre) 18%,transparent)}
+.cg .sg-time .line,.cg .sg-journal b,.cg .sg-alien-archaeology .scan,.cg .sg-world .globe u,
+.cg .sg-escape-room .light{background:var(--ochre);box-shadow:0 0 10px var(--ga-glow)}
+.cg .sg-trade b,.cg .sg-trade b:nth-child(even){background:color-mix(in srgb,var(--ochre) 70%,transparent);box-shadow:0 0 8px var(--ga-glow)}
+.cg .sg-survival b{background:var(--ochre);box-shadow:0 0 6px var(--ga-glow)}
+.cg .sg-survival .fire{border-color:var(--ochre);box-shadow:0 0 28px var(--ga-glow)}
+.cg .sg-arch b,.cg .sg-archaeology b{border-top-color:var(--ochre);border-bottom-color:color-mix(in srgb,var(--ochre) 45%,transparent)}
+
+@media (max-width:700px){
+  .ga-orbit{opacity:.4}
+  .ga-r4,.ga-ticks{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .ga-halo,.ga-horizon,.ga-r2,.ga-r3,.ga-r4,.ga-ticks,.ga-arc,.ga-edge,.ga-node,.ga-core,.ga-embers u{animation:none!important}
+  .ga-node{opacity:.9}
+  .ga-embers{display:none}
+}

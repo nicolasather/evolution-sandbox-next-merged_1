@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type PointerEvent } from 'react';
-import { Stage } from './CinematicStage';
+import { GateArt } from './GateArt';
 import { Signature } from './CinematicSignature';
 import { slidesOf } from '@/lib/cinematic/slides';
 import { INTRO_MS, SCENES, paletteVars, type SceneId } from '@/lib/cinematic/scenes';
@@ -11,7 +11,8 @@ import { INTRO_MS, SCENES, paletteVars, type SceneId } from '@/lib/cinematic/sce
    something (a view, a panel, a mode).
 
    What is on screen:
-     0.0 – 3.0 s   the title assembles, letter by letter, out of a 2.5D scene
+     0.0 – 3.0 s   the title assembles, letter by letter, over an engraved line-art picture
+                 (components/cinematic/GateArt.tsx) that traces itself in, with glowing ochre line-work
      3.0 – 8.6 s   1–3 cinematic sentences, one after another
      8.6 – 10  s   the sentences are gone; only the title remains
      10 s          a spacebar glyph (no words) pulses. Space — or a tap — steps
@@ -128,7 +129,7 @@ function Gate({ scene, onClose }: { scene: SceneId; onClose: () => void }) {
       onPointerDown={advance}
     >
       {/* ── the 2.5D stage ─────────────────────────────────────────────── */}
-      <Stage shape={def.shape} />
+      <GateArt id={scene} />
       <Signature id={scene} />
 
       {/* ── the only words on screen ───────────────────────────────────── */}
