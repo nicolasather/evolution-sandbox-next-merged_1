@@ -107,7 +107,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   }, [era.id, eraProgress]);
 
   // press bursts everywhere; on a desktop the top bar tucks away until the
-  // pointer reaches the top edge
+  // pointer reaches the top edge — now optimized for lower FPS drop
   useEffect(() => installPressFx(), []);
   useEffect(() => installImmersiveTop(), []);
 
