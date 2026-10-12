@@ -22,6 +22,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
+    "data:lifelines": "node tools/py.mjs tools/build_lifelines_content.py",
     "data:recipes": "node tools/py.mjs tools/rework_recipes.py --check"
   },
   "dependencies": {

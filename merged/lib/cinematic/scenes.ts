@@ -80,7 +80,7 @@ export const SCENES: Record<SceneId, Scene> = {
   },
   civilization: {
     id: 'civilization', title: 'Civilization', hue: 38, shape: 'prism',
-    lines: ['Every solution plants the next problem.', 'Build anyway.'],
+    lines: ['A settlement is more than the things it builds.', 'Keep its lifelines working.'],
   },
   archaeology: {
     id: 'archaeology', title: 'Archaeologist', hue: 30, shape: 'cube',

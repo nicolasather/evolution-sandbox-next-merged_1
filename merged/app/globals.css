@@ -90,6 +90,8 @@
 
 /* Civilization — its own structured, ledger/map visual language (components/civilization/). */
 @import "./_civilization.css" layer(components);
+/* Civilization: Lifelines — cinematic district-network mode (components/civilization/lifelines/). */
+@import "./_lifelines.css" layer(components);
 
 /* Archaeologist — its own warm field-notebook visual language (components/archaeology/). */
 @import "./_archaeology.css" layer(components);
