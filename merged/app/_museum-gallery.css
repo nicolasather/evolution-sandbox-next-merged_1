@@ -70,7 +70,7 @@
 .at-head{text-align:center;max-width:760px;animation:atRise 1.4s var(--ease-materialize,ease) both}
 .at-eyebrow{color:var(--m-acc);margin:0 0 10px}
 .at-title{font-family:var(--m-serif);font-weight:400;font-size:clamp(40px,5.2vw,72px);line-height:.95;margin:0;letter-spacing:-.01em;
-  text-shadow:0 0 60px hsl(var(--room-hue) 70% 50% / .35)}
+  text-shadow:none}
 .at-now{margin:14px 0 0;color:var(--m-text-2);font-size:15px}
 .at-now b{font-family:var(--m-serif);font-weight:400;font-size:21px;color:var(--m-text)}
 .at-new{margin:10px 0 0;color:var(--m-acc)}
@@ -101,12 +101,12 @@
 .at-beam{position:absolute;top:0;bottom:0;left:50%;width:36%;translate:-50% 0;
   background:linear-gradient(to bottom,hsl(var(--room-hue) 80% 70% / .35),transparent 80%);filter:blur(12px);animation:beam 6s ease-in-out infinite alternate}
 @keyframes beam{from{opacity:.55;width:30%}to{opacity:1;width:42%}}
-.at-headline{width:58%;max-width:260px;color:hsl(var(--room-hue) 70% 82%);filter:drop-shadow(0 0 18px hsl(var(--room-hue) 80% 60% / .6))}
+.at-headline{width:58%;max-width:260px;color:hsl(var(--room-hue) 70% 82%);filter:none}
 .at-headline .ms{animation:draw 2.8s .7s var(--ease-materialize,ease) both;animation-delay:calc(.7s + var(--i) * .12s)}
 .at-trail{position:relative;width:70%;height:60%}
 .at-trail i{position:absolute;width:10px;height:10px;border:1px solid hsl(36 80% 70% / .8);
   left:calc(8% + var(--i) * 10%);top:calc(50% + sin(var(--i) * 1.1rad) * 30%);opacity:0;animation:atDot .6s calc(.8s + var(--i) * .12s) ease forwards}
-.at-trail i:last-child{background:hsl(36 80% 60%);box-shadow:0 0 14px hsl(36 90% 60%)}
+.at-trail i:last-child{background:hsl(36 80% 60%);box-shadow:none}
 @keyframes atDot{to{opacity:1}}
 .at-shelves{display:grid;gap:14px;width:64%}
 .at-shelves i{display:block;height:22px;border-bottom:1px solid hsl(196 40% 70% / .5);
@@ -116,7 +116,7 @@
 .at-portal-label b{font-family:var(--m-serif);font-weight:400;font-size:clamp(20px,2.3vw,30px)}
 .at-portal.main .at-portal-label b{font-size:clamp(24px,3vw,40px)}
 .at-portal-label span:last-child{color:var(--m-text-2);font-size:12.5px;max-width:34ch}
-.at-portal:hover .at-arch,.at-portal:focus-visible .at-arch{border-color:var(--m-acc);box-shadow:0 0 60px -10px var(--m-acc),inset 0 0 80px -30px var(--m-acc)}
+.at-portal:hover .at-arch,.at-portal:focus-visible .at-arch{border-color:var(--m-acc);box-shadow:none}
 .at-portal:hover .at-portal-inner{filter:brightness(1.35)}
 .at-portal:hover{transform:translateY(-4px)}
 .at-portal{transition:transform .5s var(--ease-reveal,ease)}
@@ -126,7 +126,7 @@
 .at-path-line{width:1px;height:38px;background:linear-gradient(to bottom,transparent,var(--m-acc));margin-bottom:6px}
 .at-path .mono{color:var(--m-acc);font-size:11px}
 .at-path-sub{color:var(--m-text-3);font-size:12px}
-.at-path:hover .at-path-line{box-shadow:0 0 16px var(--m-acc)}
+.at-path:hover .at-path-line{box-shadow:none}
 
 .at-plan{display:flex;gap:3px;width:min(1080px,100%);height:12px;margin-top:22px}
 .at-room{display:block;min-width:4px;border:1px solid var(--m-line);transition:background-color 1s}
@@ -222,7 +222,7 @@
 .arch-light .hh-wall{background:
   repeating-linear-gradient(90deg,transparent 0 60px,hsl(var(--hue) 70% 70% / .1) 60px 120px,transparent 120px 130px),
   linear-gradient(to bottom,hsl(var(--hue) 40% 16%),hsl(var(--hue) 40% 7%))}
-.arch-light .hh-ceiling{background:linear-gradient(to bottom,hsl(var(--hue) 70% 60% / .35),transparent);box-shadow:0 0 40px hsl(var(--hue) 80% 60% / .3)}
+.arch-light .hh-ceiling{background:linear-gradient(to bottom,hsl(var(--hue) 70% 60% / .35),transparent);box-shadow:none}
 .arch-grid .hh-wall{background:
   repeating-linear-gradient(90deg,transparent 0 39px,hsl(var(--hue) 80% 65% / .12) 39px 40px),
   repeating-linear-gradient(0deg,transparent 0 39px,hsl(var(--hue) 80% 65% / .1) 39px 40px),
@@ -233,7 +233,7 @@
 /* portals: open, approaching (doors shut, a seam of light), sealed (distant, dark) */
 .hh-portal{position:absolute;top:5%;bottom:30%;pointer-events:none}
 .hh-portal-frame{position:absolute;left:12%;right:12%;top:0;bottom:0;border:1px solid hsl(var(--hue,30) 30% 70% / .28);
-  box-shadow:inset 0 0 0 10px rgba(0,0,0,.25),inset 0 0 0 11px rgba(236,230,218,.07)}
+  box-shadow:inset 0 0 0 10px rgba(0,0,0,.25), inset 0 0 0 11px rgba(236,230,218,.07)}
 .hh-portal-frame::before{content:"";position:absolute;left:-18px;right:-18px;top:-14px;height:12px;border:1px solid rgba(236,230,218,.14);border-bottom:0}
 .hh-portal-door{position:absolute;top:0;bottom:0;width:38%;background:linear-gradient(90deg,#0b0b0d,#131316);border:1px solid rgba(236,230,218,.07);
   transition:transform 3.2s var(--ease-cinematic-in,ease),opacity 3.2s}
@@ -248,7 +248,7 @@
   animation:portalText 2.4s .6s var(--ease-materialize,ease) both}
 @keyframes portalText{from{opacity:0;filter:blur(12px);transform:translateY(12px)}to{opacity:1;filter:none;transform:none}}
 .hh-portal-num{color:var(--m-acc)}
-.hh-portal-title{font-family:var(--m-serif);font-size:clamp(26px,3.2vw,40px);line-height:1;color:var(--m-text);text-shadow:0 0 40px rgba(0,0,0,.9)}
+.hh-portal-title{font-family:var(--m-serif);font-size:clamp(26px,3.2vw,40px);line-height:1;color:var(--m-text);text-shadow:none}
 .hh-portal-epi{font-family:var(--m-serif);font-style:italic;font-size:15px;color:var(--m-text-2);max-width:26ch}
 .hh-portal-span{color:var(--m-text-3)}
 
@@ -286,9 +286,9 @@
   animation:beam 7s ease-in-out infinite alternate}
 .xd-base{position:absolute;pointer-events:none}
 .f-vitrine .xd-base{inset:0;border:1px solid rgba(236,230,218,.16);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01) 40%,rgba(0,0,0,.2));
-  box-shadow:inset 0 0 20px rgba(0,0,0,.4)}
+  box-shadow:none}
 .f-pedestal .xd-base{left:20%;right:20%;top:68%;bottom:0;background:linear-gradient(to bottom,hsl(var(--hue) 12% 22%),hsl(var(--hue) 12% 9%));
-  border-top:1px solid rgba(236,230,218,.25);box-shadow:0 30px 40px -10px rgba(0,0,0,.8)}
+  border-top:1px solid rgba(236,230,218,.25);box-shadow:none}
 .f-suspended .xd-base{left:30%;right:30%;bottom:-38%;height:5%;background:radial-gradient(50% 50% at 50% 50%,hsl(var(--hue) 60% 50% / .35),transparent 70%)}
 .f-monument .xd-base,.f-scene .xd-base{left:6%;right:6%;bottom:0;height:14%;
   background:linear-gradient(to bottom,hsl(var(--hue) 14% 20%),hsl(var(--hue) 14% 8%));border-top:1px solid rgba(236,230,218,.3);
@@ -304,17 +304,17 @@
 .f-monument .xd-plaque b,.f-scene .xd-plaque b{font-size:30px}
 .f-suspended .xd-plaque b{font-size:19px}
 .xd:hover .xd-light,.xd:focus-visible .xd-light{opacity:1}
-.xd:hover .xd-obj{filter:drop-shadow(0 0 14px hsl(var(--hue) 80% 65% / .55)) brightness(1.15)}
+.xd:hover .xd-obj{filter:brightness(1.15)}
 .xd:focus-visible{outline:none}
 .xd:focus-visible .xd-plaque b{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--m-acc)}
-.xd-new{position:absolute;left:50%;bottom:-3%;width:26px;height:2px;translate:-50% 0;background:var(--m-acc);box-shadow:0 0 12px var(--m-acc);animation:newMark 2.6s ease-in-out infinite}
+.xd-new{position:absolute;left:50%;bottom:-3%;width:26px;height:2px;translate:-50% 0;background:var(--m-acc);box-shadow:none;animation:newMark 2.6s ease-in-out infinite}
 .f-vitrine .xd-new{bottom:auto;top:-8px}
 @keyframes newMark{50%{opacity:.35}}
 
 .hh.is-focus .xd.is-dim{opacity:.14;filter:saturate(.2)}
 .xd.is-focused{z-index:6;transform:translateX(-50%) scale(1.14)}
 .xd.is-focused .xd-light{opacity:1}
-.xd.is-focused .xd-obj{filter:drop-shadow(0 0 22px hsl(var(--hue) 80% 65% / .6))}
+.xd.is-focused .xd-obj{filter:none}
 
 /* locked history: anonymous silhouettes, brightening only as the timeline approaches */
 .xd.is-locked{cursor:default;opacity:calc(.08 + var(--near) * .45)}
@@ -328,7 +328,7 @@
 
 /* choreography — how major displays perform when in focus */
 .xd.ch-ignite.is-focused .xd-obj{animation:ignite 3.2s ease-in-out infinite}
-@keyframes ignite{0%,100%{filter:drop-shadow(0 0 10px hsl(var(--hue) 90% 60% / .5))}50%{filter:drop-shadow(0 0 34px hsl(var(--hue) 95% 65% / .9)) brightness(1.3)}}
+@keyframes ignite{0%,100%{filter:none}50%{filter:brightness(1.3)}}
 .xd.ch-mechanism.is-focused .ms:nth-child(3n+1){transform-box:fill-box;transform-origin:center;animation:mech 4s ease-in-out infinite}
 @keyframes mech{50%{transform:rotate(12deg)}}
 .xd.ch-ascend.is-focused .xd-obj{animation:ascend 5s var(--ease-cinematic-in,ease) infinite alternate}
@@ -343,7 +343,7 @@
   border-top-color:hsl(var(--hue) 90% 75%)}
 @keyframes orbitRing{to{transform:rotate(360deg)}}
 .xd.ch-scan.is-focused .xd-obj::after{left:-10%;right:-10%;height:2px;top:0;background:linear-gradient(90deg,transparent,hsl(var(--hue) 90% 75%),transparent);
-  box-shadow:0 0 14px hsl(var(--hue) 90% 70%);animation:scan 3.4s ease-in-out infinite}
+  box-shadow:none;animation:scan 3.4s ease-in-out infinite}
 @keyframes scan{0%{top:0}50%{top:100%}100%{top:0}}
 .xd.ch-wave.is-focused .xd-obj::after{inset:10%;border:1px solid hsl(var(--hue) 80% 70% / .6);border-radius:50%;animation:ripple 3s ease-out infinite}
 @keyframes ripple{from{transform:scale(.6);opacity:1}to{transform:scale(1.8);opacity:0}}
@@ -366,7 +366,7 @@
 /* the edge of history */
 .hh-frontier{position:absolute;top:0;bottom:0;width:0;z-index:3;pointer-events:none}
 .hh-frontier-line{position:absolute;top:3%;bottom:18%;left:0;width:2px;background:linear-gradient(to bottom,transparent,var(--m-acc) 30%,var(--m-acc) 70%,transparent);
-  box-shadow:0 0 40px 6px color-mix(in srgb,var(--m-acc) 45%,transparent);animation:frontier 4s ease-in-out infinite alternate}
+  box-shadow:none;animation:frontier 4s ease-in-out infinite alternate}
 @keyframes frontier{from{opacity:.55}to{opacity:1}}
 .hh-frontier-text{position:absolute;left:18px;top:14%;display:grid;gap:6px;width:240px}
 .hh-frontier-text .mono{color:var(--m-acc)}
@@ -393,7 +393,7 @@
 .hh-rail-seg.is-sealed span{background:#101013}
 .hh-rail-seg:disabled{cursor:default}
 .hh-rail-view{position:absolute;top:2px;bottom:2px;border:1px solid rgba(236,230,218,.75);pointer-events:none}
-.hh-rail-now{position:absolute;top:0;bottom:0;width:2px;background:var(--m-acc);box-shadow:0 0 10px var(--m-acc)}
+.hh-rail-now{position:absolute;top:0;bottom:0;width:2px;background:var(--m-acc);box-shadow:none}
 
 .hh.is-story::before,.hh.is-story::after{content:"";position:absolute;left:0;right:0;height:8vh;background:#000;z-index:20;animation:letterbox 1.2s var(--ease-cinematic-in,ease) both}
 .hh.is-story::before{top:0}.hh.is-story::after{bottom:0}
@@ -467,7 +467,7 @@
 .hh.is-story .xd.is-dim{opacity:.08}
 .mst-count{color:var(--m-text-3);margin:0}
 .mst-line{font-family:var(--m-serif);font-size:clamp(24px,3.4vw,44px);line-height:1.12;margin:0;text-wrap:balance;
-  text-shadow:0 0 40px rgba(0,0,0,.95);animation:mstLine 1.6s var(--ease-materialize,ease) both}
+  text-shadow:none;animation:mstLine 1.6s var(--ease-materialize,ease) both}
 @keyframes mstLine{from{opacity:0;filter:blur(14px);letter-spacing:.04em}to{opacity:1;filter:none;letter-spacing:normal}}
 .mst-meta{color:var(--m-acc);margin:0}
 .mst-ctl{display:flex;gap:6px}
@@ -510,7 +510,7 @@
 .mr-dark{position:absolute;inset:0;background:#020203;animation:mrFade 1.2s ease both}
 @keyframes mrFade{from{opacity:0}to{opacity:1}}
 .mr-seam{position:absolute;left:50%;top:6%;bottom:6%;width:2px;translate:-50% 0;background:hsl(var(--hue) 80% 80%);
-  box-shadow:0 0 40px 10px hsl(var(--hue) 80% 60% / .6);transform:scaleY(0);animation:mrSeam 2s 1s var(--ease-cinematic-in,ease) both,mrSeamOut 2s 4.4s ease forwards}
+  box-shadow:none;transform:scaleY(0);animation:mrSeam 2s 1s var(--ease-cinematic-in,ease) both,mrSeamOut 2s 4.4s ease forwards}
 @keyframes mrSeam{to{transform:scaleY(1)}}
 @keyframes mrSeamOut{to{opacity:0;width:60%;filter:blur(30px)}}
 .mr-doors span{position:absolute;top:0;bottom:0;width:50%;background:linear-gradient(90deg,#060607,#0d0d10);animation:mrDoors 3s 2.6s var(--ease-cinematic-in,ease) both}
@@ -522,7 +522,7 @@
   radial-gradient(90% 80% at 50% 100%,hsl(var(--hue) 50% 30% / .4),transparent 70%);opacity:0;animation:mrFade 3s 2.8s ease both;z-index:-1}
 .mr-overlay>.mr-light{z-index:0}.mr-doors{position:absolute;inset:0;z-index:2}
 .mr-object{position:absolute;left:50%;top:14%;width:min(34vh,340px);aspect-ratio:1;translate:-50% 0;z-index:1;--obj:hsl(var(--hue) 50% 88%);--hue:inherit;
-  filter:drop-shadow(0 0 30px hsl(var(--hue) 80% 60% / .7));animation:mrObj 5s 3s var(--ease-materialize,ease) both}
+  filter:none;animation:mrObj 5s 3s var(--ease-materialize,ease) both}
 @keyframes mrObj{from{transform:scale(.86);opacity:0}to{transform:none;opacity:1}}
 .mr-object .ms{stroke-width:2;stroke-dashoffset:1;animation:draw 3s var(--ease-materialize,ease) forwards;animation-delay:calc(3.2s + var(--i) * .16s)}
 .mr-object .mf{opacity:0;animation:mrFade 2s 5.4s both}
@@ -560,7 +560,7 @@
 .pw-no{color:var(--m-text-4);padding-top:12px;text-align:right}
 .pw-glyph{width:40px;height:40px;display:grid;place-items:center;border:1px solid hsl(36 50% 60% / .4);background:#0c0a08;cursor:pointer;padding:6px;position:relative;z-index:1}
 .pw-glyph:hover{border-color:hsl(36 80% 65%)}
-.pw-item.major .pw-glyph{border-color:hsl(36 80% 60%);box-shadow:0 0 16px hsl(36 80% 50% / .45)}
+.pw-item.major .pw-glyph{border-color:hsl(36 80% 60%);box-shadow:none}
 .pw-body{display:grid;gap:2px;padding-top:4px}
 .pw-name{background:none;border:0;padding:0;color:var(--m-text);font-family:var(--m-serif);font-size:19px;text-align:left;cursor:pointer;width:fit-content}
 .pw-item.major .pw-name{font-size:23px;font-style:italic}
@@ -639,7 +639,7 @@
 
 /* the Museum tile's quiet mark (components/TopBar.tsx) */
 .tile-alert{position:absolute;right:-3px;top:-3px;width:10px;height:10px;z-index:6;background:var(--ochre);
-  box-shadow:0 0 0 2px var(--ink-0),0 0 14px var(--ochre);animation:newMark 2.8s ease-in-out infinite}
+  box-shadow:0 0 0 2px var(--ink-0);animation:newMark 2.8s ease-in-out infinite}
 
 /* ════════════════════════ SMALL SCREENS ═════════════════════════════════ */
 @media (max-width:900px){

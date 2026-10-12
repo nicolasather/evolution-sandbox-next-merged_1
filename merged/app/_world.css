@@ -22,9 +22,9 @@
   background:linear-gradient(180deg,rgba(15,17,23,.66),rgba(7,8,12,.86));
   border:1px solid rgba(233,229,221,.13);border-top:1px solid rgba(226,163,94,.7);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-  box-shadow:0 24px 70px rgba(0,0,0,.55)}
+  box-shadow:none}
 .wg-kicker{display:flex;align-items:center;gap:8px;margin:0 0 8px;color:rgb(226,163,94);letter-spacing:.2em}
-.wg-pip{width:6px;height:6px;border-radius:50%;background:rgb(226,163,94);box-shadow:0 0 10px rgba(226,163,94,.9);animation:wgPip 1.8s ease-in-out infinite}
+.wg-pip{width:6px;height:6px;border-radius:50%;background:rgb(226,163,94);box-shadow:none;animation:wgPip 1.8s ease-in-out infinite}
 .wg-name{margin:0;font-family:var(--fs-display);font-weight:400;font-size:clamp(34px,5.2vw,46px);line-height:1;letter-spacing:-.01em;color:#f3efe6}
 .wg-where{margin:10px 0 0;color:rgba(233,229,221,.86);letter-spacing:.1em;line-height:1.5}
 .wg-when{margin:3px 0 0;color:rgba(233,229,221,.55);letter-spacing:.1em;line-height:1.5}

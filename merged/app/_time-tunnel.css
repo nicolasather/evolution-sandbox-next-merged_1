@@ -31,8 +31,8 @@
 #landing[data-phase="reduced"] .intro-stone,#landing[data-phase="reduced"] .intro-line span{opacity:0}
 
 /* legible over any scenery, dark or light */
-.intro-stone{filter:drop-shadow(0 3px 8px rgba(0,0,0,.5))}
-.intro-line{text-shadow:0 0 22px rgba(8,8,10,.75),0 0 4px rgba(8,8,10,.6)}
+.intro-stone{filter:none}
+.intro-line{text-shadow:none}
 
 /* the curtain lifts quickly */
 #landing[data-phase="exit"]{transition:opacity .45s ease,background .5s ease}
