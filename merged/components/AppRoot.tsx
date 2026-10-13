@@ -24,13 +24,16 @@ const EscapeRoomMode = dynamic(() => import('./escaperoom/EscapeRoomMode').then(
 const AlienArchaeologyMode = dynamic(() => import('./alienarchaeology/AlienArchaeologyMode').then(m => m.AlienArchaeologyMode), { ssr: false });
 const ReverseEvolutionMode = dynamic(() => import('./reverseevolution/ReverseEvolutionMode').then(m => m.ReverseEvolutionMode), { ssr: false });
 
+const MinimumPathMode = dynamic(() => import('./minimumpath/MinimumPathMode').then(m => m.MinimumPathMode), { ssr: false });
+
 export function AppRoot() {
   const [mode, setModeRaw] = useState<ModeId>('main-evolution');
   /** Every mode opens with its own cinematic (title, 1–3 lines, Space). */
   const [gate, setGate] = useState<SceneId | null>(null);
   const setMode = useCallback((m: ModeId) => {
     setModeRaw(m);
-    if (m in SCENES) setGate(m as SceneId);
+    if (m === 'minimum-path') setGate('minpath');
+    else if (m in SCENES) setGate(m as SceneId);
   }, []);
   /** The mode behind the gate plays its own entrance once the door has opened. */
   const closeGate = useCallback(() => {
@@ -49,6 +52,7 @@ export function AppRoot() {
   else if (mode === 'escape-room') body = <EscapeRoomMode onExit={exitToHub} />;
   else if (mode === 'alien-archaeology') body = <AlienArchaeologyMode onExit={exitToHub} />;
   else if (mode === 'reverse-evolution') body = <ReverseEvolutionMode onExit={exitToHub} />;
+  else if (mode === 'minimum-path') body = <MinimumPathMode onExit={exitToHub} />;
   else body = <Sandbox onLaunchMode={setMode} />;
 
   return (

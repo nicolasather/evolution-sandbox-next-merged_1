@@ -279,6 +279,14 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
             { label: 'First entered', value: revVisit ? dateFmt.format(revVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        {getMode('minimum-path')?.status === 'available' && <ExhibitCard
+          kicker="Atlas"
+          title={getMode('minimum-path')?.title ?? 'Minimum Path'}
+          description="Find the shortest route through the game's recipe network, with checkpoints and blocked paths."
+          ctaLabel="Enter"
+          onLaunch={() => onLaunchMode?.('minimum-path')}
+          stats={[]}
+        />}
         </ModeTrack>
 
         <p className="hub-note">

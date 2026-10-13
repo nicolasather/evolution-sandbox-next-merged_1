@@ -77,7 +77,7 @@ export const MODES: ModeDefinition[] = [
     title: 'Minimum Path',
     subtitle: 'Shortest Route',
     description: 'Reach a target discovery from a starting one in as few connected steps as possible.',
-    status: 'in-development',
+    status: 'available',
     saveKey: 'evo.minimumpath.v1',
   },
 ];
