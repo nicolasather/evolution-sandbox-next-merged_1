@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { MINPATH_MODE, MP_TARGET, minimumPathGuide } from '@/lib/guide/minimumpath';
 import { content, graph } from '@/lib/minimumpath/content';
 import { evidence, isComplete, move, neighbors, recordResult, shortest, startRun } from '@/lib/minimumpath/engine';
 import { decode, fresh, load, SAVE_KEY, write } from '@/lib/minimumpath/save';
@@ -29,6 +31,8 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
   const options = mission && !done ? neighbors(graph, mission, current) : [];
   const visible = options.filter(id => `${name(id)} ${id}`.toLowerCase().includes(query.toLowerCase()));
   const solution = showSolution && mission ? shortest(graph, mission) : null;
+  const mg = minimumPathGuide({ opened, hasRun: Boolean(mission && run), done, steps: run ? run.path.length - 1 : 0, otherCompletions: save.records.filter(r => r.missionId !== run?.missionId).length });
+  const guide = useGuideController({ mode: MINPATH_MODE, eligible: mg.eligible, step: mg.step, finished: mg.finished });
   function open() {
     let result;
     try { result = load(window.localStorage, content, graph); }
@@ -86,14 +90,15 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
     if (active) { setSelected(active.id); setChapterId(active.chapter); }
     void commit(imported);
   }
-  return <main className={styles.root} data-motion={save.settings.motion} style={{ fontSize: `${save.settings.textScale}em` }}>
+  return <GuideScope value={guide}><main className={styles.root} data-motion={save.settings.motion} style={{ fontSize: `${save.settings.textScale}em` }}>
     <header className={styles.header}>
       <div><p className={styles.eyebrow}>EXTRA MODE / ATLAS</p><h1>Minimum Path</h1></div>
       <button type="button" disabled={busy} onClick={onExit}>Thoát mode</button>
     </header>
+    <GuideHint />
     {!opened ? <section className={styles.intro}>
       <h2>Mỗi ý tưởng mở một lối đi.</h2><p>Tìm đường ngắn nhất giữa hai phát minh qua mạng công thức trong game.</p>
-      <p>{content.source.note}</p><button type="button" onClick={open}>Bắt đầu / Tiếp tục</button>
+      <p>{content.source.note}</p><button type="button" className={guide.glow(MP_TARGET.open)} onClick={open}>Bắt đầu / Tiếp tục</button>
     </section> : <>
       <p role="status" className={styles.status}>{busy ? 'Đang lưu…' : status}</p>
       <fieldset disabled={busy} className={styles.controls}>
@@ -105,7 +110,7 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
         <label>Màn<select value={selected} onChange={event => setSelected(event.target.value)}>
           {content.missions.filter(m => m.chapter === chapterId).map(m => <option value={m.id} key={m.id}>{completedIds.has(m.id) ? '✓ ' : ''}{m.id} · {m.title}</option>)}
         </select></label>
-        <button type="button" onClick={begin}>{run ? 'Bắt đầu màn đã chọn · thay lượt hiện tại' : 'Bắt đầu màn đã chọn'}</button>
+        <button type="button" className={guide.glow(MP_TARGET.begin)} onClick={begin}>{run ? 'Bắt đầu màn đã chọn · thay lượt hiện tại' : 'Bắt đầu màn đã chọn'}</button>
         <p>{content.chapters.find(chapter => chapter.id === chapterId)?.lesson}</p>
       </fieldset>
       {mission && run && <section className={styles.board} aria-label="Bàn chơi">
@@ -117,7 +122,7 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
         <ol className={styles.path} aria-label="Đường đã đi">{run.path.map((id, i) => <li key={`${i}:${id}`}>{name(id)}</li>)}</ol>
         {!done && <>
           <label>Tìm bước tiếp theo<input value={query} onChange={event => setQuery(event.target.value)} placeholder="Tên phát minh" /></label>
-          <div className={styles.neighbors}>{visible.map(id => <article key={id}>
+          <div className={`${styles.neighbors} ${guide.glow(MP_TARGET.neighbors)}`.trim()}>{visible.map(id => <article key={id}>
             <button disabled={busy || run.path.length >= content.limits.maxPath} type="button" onClick={() => step(id)} aria-label={`Đi tới ${name(id)}`}>
               <span aria-hidden="true">↗</span> {save.settings.showNames ? name(id) : id}
             </button>
@@ -160,5 +165,5 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
         <p>{content.source.note}</p><p>Snapshot: <code>{content.source.commit}</code></p>
       </section>}
     </>}
-  </main>;
+  </main></GuideScope>;
 }

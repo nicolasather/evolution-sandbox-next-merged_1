@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState, type CSSProperties, type PointerEvent } from 'react';
 import { GateArt } from './GateArt';
 import { Signature } from './CinematicSignature';
+import { useCoarsePointer } from '@/lib/useCoarsePointer';
 import { slidesOf } from '@/lib/cinematic/slides';
 import { INTRO_MS, SCENES, paletteVars, type SceneId } from '@/lib/cinematic/scenes';
 
@@ -15,8 +16,8 @@ import { INTRO_MS, SCENES, paletteVars, type SceneId } from '@/lib/cinematic/sce
                  (components/cinematic/GateArt.tsx) that traces itself in, with glowing ochre line-work
      3.0 – 8.6 s   1–3 cinematic sentences, one after another
      8.6 – 10  s   the sentences are gone; only the title remains
-     10 s          a spacebar glyph (no words) pulses. Space — or a tap — steps
-                   through the door into the real content.
+     10 s          small breathing text — PRESS SPACE TO CONTINUE (TAP TO CONTINUE on touch).
+                   Space — or a tap — steps through the door into the real content.
 
    Space (or Enter / tap) before the 10 s are up jumps straight to that final
    still, so nobody is ever trapped in the animation; Escape leaves at once.
@@ -39,6 +40,8 @@ function Gate({ scene, onClose }: { scene: SceneId; onClose: () => void }) {
   const idxRef = useRef(0);
   useEffect(() => { idxRef.current = idx; }, [idx]);
   const rootRef = useRef<HTMLDivElement>(null);
+  /** Touch screens have no Space key: the prompt says TAP instead (a tap advances, as it always did). */
+  const touch = useCoarsePointer();
   const phaseRef = useRef<Phase>('play');
   useEffect(() => { phaseRef.current = phase; }, [phase]);
 
@@ -150,7 +153,7 @@ function Gate({ scene, onClose }: { scene: SceneId; onClose: () => void }) {
           ))}
         </div>
 
-        <div className="cg-key" aria-hidden="true"><i /></div>
+        <div className="cg-key" aria-hidden="true">{touch ? 'TAP TO CONTINUE' : 'PRESS SPACE TO CONTINUE'}</div>
 
         {phase === 'slides' && (
           <div className="cg-slides">

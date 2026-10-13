@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
+import { REV_TARGET, REVERSE_MODE, reverseGuide } from '@/lib/guide/reverse';
 import { TARGETS } from '@/lib/reverseevolution/catalog';
 import { generateRun } from '@/lib/reverseevolution/generate';
 import { reverseExhibit, summarizeRun } from '@/lib/reverseevolution/memory';
@@ -21,32 +23,31 @@ import type { ReverseRunState } from '@/lib/reverseevolution/types';
 
 function nameOf(id: string): string { return playDb.nodes.find(n => n.id === id)?.n ?? id; }
 
-function QuestionPanel({ optionIds, onSubmit, onReveal }: {
-  optionIds: string[]; onSubmit: (ids: string[]) => void; onReveal: () => void;
+function QuestionPanel({ optionIds, selected, onToggle, onSubmit, onReveal }: {
+  optionIds: string[]; selected: string[]; onToggle: (id: string) => void; onSubmit: (ids: string[]) => void; onReveal: () => void;
 }) {
-  const [selected, setSelected] = useState<string[]>([]);
-  const toggle = (id: string) => setSelected(s => s.includes(id) ? s.filter(x => x !== id) : [...s, id]);
+  const glow = useGuideGlow();
   return (
     <div className="rev-question">
       <div className="rev-options">
         {optionIds.map(id => (
           <button
             key={id}
-            className={'chip' + (selected.includes(id) ? ' rev-chosen' : '')}
-            onClick={() => toggle(id)}
+            className={'chip' + (selected.includes(id) ? ' rev-chosen' : '') + ' ' + glow(REV_TARGET.option)}
+            onClick={() => onToggle(id)}
           >{nameOf(id)}</button>
         ))}
       </div>
       <div className="rev-question-actions">
-        <button className="chip rev-submit" disabled={selected.length === 0} onClick={() => onSubmit(selected)}>Submit</button>
+        <button className={'chip rev-submit ' + glow(REV_TARGET.submit)} disabled={selected.length === 0} onClick={() => onSubmit(selected)}>Submit</button>
         <button className="chip rev-reveal" onClick={onReveal}>Just show me</button>
       </div>
     </div>
   );
 }
 
-function TreeNodeView({ state, nodeKey, onSubmit, onReveal }: {
-  state: ReverseRunState; nodeKey: string; onSubmit: (ids: string[]) => void; onReveal: () => void;
+function TreeNodeView({ state, nodeKey, selected, onToggle, onSubmit, onReveal }: {
+  state: ReverseRunState; nodeKey: string; selected: string[]; onToggle: (id: string) => void; onSubmit: (ids: string[]) => void; onReveal: () => void;
 }) {
   const node = state.nodes[nodeKey];
   const isCurrent = state.pendingQueue[0] === nodeKey;
@@ -58,10 +59,10 @@ function TreeNodeView({ state, nodeKey, onSubmit, onReveal }: {
         {node.status === 'revealed' && <span className="rev-badge rev-badge-muted">revealed</span>}
         {node.status === 'primitive' && <span className="rev-badge rev-badge-muted">raw material</span>}
       </div>
-      {isCurrent && <QuestionPanel optionIds={node.optionIds!} onSubmit={onSubmit} onReveal={onReveal} />}
+      {isCurrent && <QuestionPanel optionIds={node.optionIds!} selected={selected} onToggle={onToggle} onSubmit={onSubmit} onReveal={onReveal} />}
       {node.childKeys.length > 0 && (
         <div className="rev-children">
-          {node.childKeys.map(k => <TreeNodeView key={k} state={state} nodeKey={k} onSubmit={onSubmit} onReveal={onReveal} />)}
+          {node.childKeys.map(k => <TreeNodeView key={k} state={state} nodeKey={k} selected={selected} onToggle={onToggle} onSubmit={onSubmit} onReveal={onReveal} />)}
         </div>
       )}
     </div>
@@ -74,12 +75,18 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
     return reverseEvolutionStore.get().active;
   });
 
+  const [selected, setSelected] = useState<string[]>([]);
+  const toggle = (id: string) => setSelected(x => x.includes(id) ? x.filter(i => i !== id) : [...x, id]);
+  const rg = reverseGuide(state, selected.length);
+  const guide = useGuideController({ mode: REVERSE_MODE, eligible: rg.eligible, step: rg.step, finished: rg.finished });
+
   // Takes the timestamp as a parameter, computed by the caller's own
   // inline arrow (`onClick={() => start(t.id, Date.now())}`) rather than
   // calling Date.now() itself — keeps the one impure call directly
   // inside the event-handler arrow, not nested through a named function.
   const start = (targetId: string, now: number) => {
     const run = generateRun(playDb, `rev-${now}`, targetId);
+    setSelected([]);
     setState(run);
     reverseEvolutionStore.setActive(run);
     profile.recordModeVisit('reverse-evolution');
@@ -88,6 +95,7 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
   const submit = (selectedIds: string[]) => {
     if (!state) return;
     const { state: next } = applyAction(playDb, state, { kind: 'submit', selectedIds });
+    setSelected([]);
     setState(next);
     reverseEvolutionStore.setActive(next);
   };
@@ -95,6 +103,7 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
   const reveal = () => {
     if (!state) return;
     const { state: next } = applyAction(playDb, state, { kind: 'reveal' });
+    setSelected([]);
     setState(next);
     reverseEvolutionStore.setActive(next);
   };
@@ -123,23 +132,24 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
 
   if (!state) {
     return (
-      <div id="reverseevolution-mode">
+      <GuideScope value={guide}><div id="reverseevolution-mode">
         <header className="rev-top">
           <button className="chip rev-exit" onClick={onExit}>← Hub</button>
           <p className="mono rev-eyebrow">Reverse Evolution — From Smartphone to Stone</p>
         </header>
         <div className="rev-body">
+          <GuideHint />
           <p className="rev-intro">Pick a real, complex discovery. Trace what it was actually made from, step by step, back toward raw materials — every question and every answer is real Main Evolution data, not invented for this mode.</p>
           <div className="rev-targets">
             {TARGETS.map(t => (
-              <button key={t.id} className="rev-target-card" onClick={() => start(t.id, Date.now())}>
+              <button key={t.id} className={'rev-target-card ' + guide.glow(REV_TARGET.card)} onClick={() => start(t.id, Date.now())}>
                 <span className="rev-target-name">{nameOf(t.id)}</span>
                 <span className="rev-target-blurb">{t.blurb}</span>
               </button>
             ))}
           </div>
         </div>
-      </div>
+      </div></GuideScope>
     );
   }
 
@@ -155,7 +165,7 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
             {capped && ' The real chain goes deeper than this session followed it — every step shown is still real, verified data.'}
           </p>
           <div className="rev-ending-tree">
-            <TreeNodeView state={state} nodeKey="n0" onSubmit={submit} onReveal={reveal} />
+            <TreeNodeView state={state} nodeKey="n0" selected={selected} onToggle={toggle} onSubmit={submit} onReveal={reveal} />
           </div>
           <div className="rev-ending-actions">
             <button className="chip" onClick={finishAndStartNew}>Trace another discovery</button>
@@ -167,15 +177,16 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
   }
 
   return (
-    <div id="reverseevolution-mode">
+    <GuideScope value={guide}><div id="reverseevolution-mode">
       <header className="rev-top">
         <button className="chip rev-exit" onClick={onExit}>← Hub</button>
         <p className="mono rev-eyebrow">Reverse Evolution — From Smartphone to Stone</p>
         <p className="rev-progress mono">{state.correctCount + state.revealedCount} of {state.nodesUsed - 1} steps answered</p>
       </header>
       <div className="rev-body">
-        <TreeNodeView state={state} nodeKey="n0" onSubmit={submit} onReveal={reveal} />
+        <GuideHint />
+        <TreeNodeView state={state} nodeKey="n0" selected={selected} onToggle={toggle} onSubmit={submit} onReveal={reveal} />
       </div>
-    </div>
+    </div></GuideScope>
   );
 }

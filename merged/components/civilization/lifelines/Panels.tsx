@@ -10,6 +10,8 @@ import {
 import {
   RESOURCE_IDS, type Command, type ContentIndex, type LifelinesState, type MilliQuantities, type PolicyChoice, type ResourceId,
 } from '@/lib/civilization/lifelines/schema';
+import { useGuideGlow } from '@/components/guide/GuideProvider';
+import { GUIDE_TARGET } from '@/lib/guide/civilization';
 import { RES_GLYPH, resColor } from './ui';
 
 export type Dispatch = (c: Command) => { ok: boolean; code?: string };
@@ -195,6 +197,7 @@ export function ProgrammeDrawer({ index, run, districtId, dispatch, onClose, onP
 }) {
   const [all, setAll] = useState(false);
   const [pick, setPick] = useState<string | null>(null);
+  const glow = useGuideGlow();
   const options = useMemo(() => visibleProgrammes(index, run, all), [index, run, all]);
   const sel = options.find(o => o.project.id === pick) ?? null;
   const here = sel && districtId ? sel.districts.find(d => d.id === districtId) : null;
@@ -208,7 +211,7 @@ export function ProgrammeDrawer({ index, run, districtId, dispatch, onClose, onP
       <ul className="ll-proglist">
         {options.map(o => (
           <li key={o.project.id}>
-            <button type="button" className={'ll-prog' + (pick === o.project.id ? ' sel' : '') + (o.reason ? ' blocked' : '')} aria-pressed={pick === o.project.id} onClick={() => choose(o.project.id)}>
+            <button type="button" className={'ll-prog' + (pick === o.project.id ? ' sel' : '') + (o.reason ? ' blocked' : '') + (o.reason ? '' : ' ' + glow(GUIDE_TARGET.programme(o.project.id)))} aria-pressed={pick === o.project.id} onClick={() => choose(o.project.id)}>
               <b>{o.project.name}</b>
               <span>{costText(quantitiesOf(o.project.cost))} · ~{o.seasons} season{o.seasons === 1 ? '' : 's'}</span>
               {o.reasonText && <em>{o.reasonText}</em>}
@@ -226,7 +229,7 @@ export function ProgrammeDrawer({ index, run, districtId, dispatch, onClose, onP
           {sel.missingPrerequisites.length > 0 && <p className="warn-text">Needs first: {sel.missingPrerequisites.map(id => index.projects.get(id)?.name).join(', ')}</p>}
           {Object.keys(sel.shortfall).length > 0 && <p className="warn-text">Reserve is short by {costText(sel.shortfall)}.</p>}
           {districtId && <><h4 className="ll-h4">Forecast once established here</h4><DiffView diff={after} run={run} /></>}
-          <button type="button" className="ll-btn primary" disabled={!districtId || !!here?.reason}
+          <button type="button" className={'ll-btn primary ' + (!districtId || here?.reason ? '' : glow(GUIDE_TARGET.plan))} disabled={!districtId || !!here?.reason}
             onClick={() => { if (districtId && dispatch({ type: 'queue-programme', projectId: sel.project.id, districtId }).ok) { onPreview(null); setPick(null); } }}>
             {!districtId ? 'Select a district' : here?.reason ? blockReasonText(here.reason) : 'Plan it (1 action, cost reserved once)'}
           </button>

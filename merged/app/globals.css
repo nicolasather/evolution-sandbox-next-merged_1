@@ -129,6 +129,9 @@
    ochre layer. After _flat.css on purpose — it is the one place the glow is wanted. */
 @import "./_cinematic-art.css" layer(components);
 
+/* The follow-the-glow guide: after _flat.css, because the glow on the one real control to press is wanted. */
+@import "./_guide.css" layer(components);
+
 /* One palette, two names: these Tailwind theme tokens point at the design
    system's custom properties, so `text-bone-2` in a component and
    `var(--bone-2)` in the stylesheet are the same colour in either theme. */

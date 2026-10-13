@@ -34,10 +34,12 @@ export interface SceneProps {
   overlay: ResourceId | 'none';
   reduced: boolean;
   highlightIds?: string[];
+  /** Districts the follow-the-glow guide is pointing at right now. */
+  glowIds?: string[];
   highlightProgramme?: { districtId: string; name: string } | null;
 }
 
-export function SettlementScene({ index, run, selectedId, onSelect, overlay, reduced, highlightIds = [], highlightProgramme = null }: SceneProps) {
+export function SettlementScene({ index, run, selectedId, onSelect, overlay, reduced, highlightIds = [], glowIds = [], highlightProgramme = null }: SceneProps) {
   const { districts, links, potentialLinks } = run.layout;
   const flowByLink = useMemo(() => {
     const m = new Map<string, number>();
@@ -97,12 +99,13 @@ export function SettlementScene({ index, run, selectedId, onSelect, overlay, red
         const view = districtView(index, run, d.id, run.report);
         const sel = selectedId === d.id;
         const hl = highlightIds.includes(d.id);
+        const glowing = glowIds.includes(d.id);
         const needs = needsBy.get(d.id) ?? 0;
         const ov = overlayAmount(d.id);
         const building = view?.queue ?? [];
         const aria = `${d.name}${d.storage ? ', shared reserve' : ''}. ${view?.built.length ?? 0} established, ${building.length} in progress.${needs ? ` ${needs} unmet need${needs > 1 ? 's' : ''}.` : ''}`;
         return (
-          <g key={d.id} className={'ll-district' + (sel ? ' sel' : '') + (needs ? ' stress' : '') + (hl ? ' hl' : '')}
+          <g key={d.id} className={'ll-district' + (sel ? ' sel' : '') + (needs ? ' stress' : '') + (hl ? ' hl' : '') + (glowing ? ' guide-glow-svg' : '')}
             data-district={d.id} tabIndex={0} role="button" aria-pressed={sel} aria-label={aria}
             onClick={() => onSelect(d.id)} onKeyDown={e => onKey(e, d.id)}>
             <polygon points={hex(d.anchor.x, d.anchor.y)} style={overlay !== 'none' && ov > 0 ? { fill: resColor(overlay), fillOpacity: Math.min(0.55, 0.12 + ov / 20000) } : undefined} />

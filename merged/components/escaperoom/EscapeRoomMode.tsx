@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
+import { ER_TARGET, ESCAPE_MODE, escapeRoomGuide } from '@/lib/guide/escaperoom';
 import { episodeExhibit, summarizeEpisode } from '@/lib/escaperoom/memory';
 import { DEFAULT_EPISODE_ID, getEpisode } from '@/lib/escaperoom/registry';
 import { applyAction, blankState } from '@/lib/escaperoom/simulate';
@@ -25,8 +27,9 @@ function RatioStation({ puzzle, solved, hint, onSubmit, onHint }: {
   onSubmit: (value: number) => void; onHint: () => void;
 }) {
   const [draft, setDraft] = useState('');
+  const glow = useGuideGlow();
   return (
-    <div className={'er-station' + (solved ? ' er-solved' : '')}>
+    <div className={'er-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {solved ? (
@@ -61,8 +64,9 @@ function SequenceStation({ puzzle, solved, hint, onSubmit, onHint }: {
     setOrder(next);
   };
   const textOf = (id: string) => puzzle.steps.find(s => s.id === id)!.text;
+  const glow = useGuideGlow();
   return (
-    <div className={'er-station' + (solved ? ' er-solved' : '')}>
+    <div className={'er-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {solved ? (
@@ -97,8 +101,9 @@ function MatchStation({ puzzle, solved, hint, onSubmit, onHint }: {
 }) {
   const [matches, setMatches] = useState<Record<string, string>>({});
   const allChosen = puzzle.items.every(it => matches[it.id]);
+  const glow = useGuideGlow();
   return (
-    <div className={'er-station' + (solved ? ' er-solved' : '')}>
+    <div className={'er-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {solved ? (
@@ -137,8 +142,9 @@ function CodeStation({ puzzle, solved, hint, unlocked, onSubmit, onHint }: {
   onSubmit: (code: string) => void; onHint: () => void;
 }) {
   const [draft, setDraft] = useState('');
+  const glow = useGuideGlow();
   return (
-    <div className={'er-station er-exit-station' + (solved ? ' er-solved' : '')}>
+    <div className={'er-station er-exit-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {!unlocked && !solved && <p className="er-locked-note">Solve the other stations to fill the tray.</p>}
@@ -173,6 +179,9 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
     profile.recordModeVisit('escape-room');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const eg = escapeRoomGuide(episode, state, escapeRoomStore.get().memories.length > 0);
+  const guide = useGuideController({ mode: ESCAPE_MODE, eligible: eg.eligible, step: eg.step, finished: eg.finished });
 
   const run = (action: Parameters<typeof applyAction>[2]) => {
     const { state: next } = applyAction(episode, state, action);
@@ -223,7 +232,7 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
   const exitUnlocked = exitPuzzle.requires.every(id => state.solvedPuzzleIds.includes(id));
 
   return (
-    <div id="escaperoom-mode">
+    <GuideScope value={guide}><div id="escaperoom-mode">
       <header className="er-top">
         <button className="chip er-exit" onClick={onExit}>← Hub</button>
         <p className="mono er-eyebrow">{episode.title}</p>
@@ -232,6 +241,7 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
 
       <div className="er-body">
         <p className="er-intro">{episode.introText}</p>
+        <GuideHint />
 
         <div className="er-stations">
           {episode.puzzles.map((puzzle: Puzzle) => {
@@ -262,6 +272,6 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
           </ol>
         </section>
       </div>
-    </div>
+    </div></GuideScope>
   );
 }

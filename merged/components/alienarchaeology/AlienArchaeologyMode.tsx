@@ -7,6 +7,8 @@ import { ALL_AXES, generateSite } from '@/lib/alienarchaeology/generate';
 import { applyAction } from '@/lib/alienarchaeology/simulate';
 import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
 import type { AlienSiteState, AxisId, AxisValue } from '@/lib/alienarchaeology/types';
+import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ALIEN_MODE, XA_TARGET, alienGuide } from '@/lib/guide/alien';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
 
@@ -35,6 +37,10 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
     profile.recordModeVisit('alien-archaeology');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const ag = alienGuide(site, alienArchaeologyStore.get().reports.length > 0);
+  const guide = useGuideController({ mode: ALIEN_MODE, eligible: ag.eligible, step: ag.step, finished: ag.finished });
+  const g = guide.glow;
 
   if (!site) return null;
 
@@ -96,7 +102,7 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
   const allAxesSet = ALL_AXES.every(a => site.hypotheses[a] != null && site.confidences[a] != null);
 
   return (
-    <div id="alienarchaeology-mode">
+    <GuideScope value={guide}><div id="alienarchaeology-mode">
       <header className="xa-top">
         <button className="chip xa-exit" onClick={onExit}>← Hub</button>
         <p className="mono xa-eyebrow">Alien Archaeology — Unknown Worlds</p>
@@ -104,6 +110,7 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="xa-body">
+        <GuideHint />
         <p className="xa-intro">{site.truth.setting}</p>
 
         <section className="xa-specimens-section">
@@ -118,7 +125,7 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
                   ) : (
                     <>
                       <p className="xa-specimen-desc xa-unrevealed">An unstudied specimen, still crated.</p>
-                      <button className="chip" onClick={() => run({ kind: 'reveal', specimenId: spec.id })}>Study it</button>
+                      <button className={'chip ' + g(XA_TARGET.study(spec.id))} onClick={() => run({ kind: 'reveal', specimenId: spec.id })}>Study it</button>
                     </>
                   )}
                 </div>
@@ -148,12 +155,12 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
                 {options.map((opt: AxisValue) => (
                   <button
                     key={opt}
-                    className={'chip' + (current === opt ? ' xa-chosen' : '')}
+                    className={'chip' + (current === opt ? ' xa-chosen' : '') + ' ' + g(XA_TARGET.reading(axis))}
                     onClick={() => run({ kind: 'setHypothesis', axis, value: opt })}
                   >{VALUE_LABEL[axis][opt as string]}</button>
                 ))}
               </div>
-              <label className="xa-confidence-row">
+              <label className={'xa-confidence-row ' + g(XA_TARGET.confidence(axis))}>
                 <span className="mono">Confidence: {Math.round(confidence * 100)}%</span>
                 <input
                   type="range" min={0} max={100} value={Math.round(confidence * 100)}
@@ -164,9 +171,9 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
           );
         })}
         <div className="xa-report-row">
-          <button className="chip xa-report-btn" disabled={!allAxesSet} onClick={fileReport}>File field report</button>
+          <button className={'chip xa-report-btn ' + g(XA_TARGET.report)} disabled={!allAxesSet} onClick={fileReport}>File field report</button>
         </div>
       </section>
-    </div>
+    </div></GuideScope>
   );
 }

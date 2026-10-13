@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { SURVIVAL_MODE, SV_TARGET, survivalGuide } from '@/lib/guide/survival';
 import { generateCamp } from '@/lib/survival/generate';
 import { memoryExhibit, summarizeCamp } from '@/lib/survival/memory';
 import { energyWord, moraleWord, warmthWord } from '@/lib/survival/read';
@@ -59,6 +61,9 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const sg = survivalGuide(camp, pending, survivalStore.get().memories.length > 0);
+  const guide = useGuideController({ mode: SURVIVAL_MODE, eligible: sg.eligible, step: sg.step, finished: sg.finished });
+
   if (!camp) return null;
 
   const advance = () => {
@@ -108,7 +113,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
   }
 
   return (
-    <div id="survival-mode">
+    <GuideScope value={guide}><div id="survival-mode">
       <header className="sv-top">
         <button className="chip sv-exit" onClick={onExit}>← Hub</button>
         <p className="mono sv-eyebrow">Survival — Adapt</p>
@@ -116,6 +121,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="sv-body">
+        <GuideHint />
         <section className="sv-map" aria-label="Camp surroundings">
           {camp.terrain.tiles.map((row, y) => (
             <div className="sv-row" key={y}>
@@ -161,7 +167,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
             ) : (
               <>
                 <p className="sv-member-states mono">{energyWord(m.energy)} · {warmthWord(m.warmth)} · {moraleWord(m.morale)}</p>
-                <div className="sv-tasks">
+                <div className={'sv-tasks ' + guide.glow(SV_TARGET.member(m.id))}>
                   {ASSIGNABLE.map(t => (
                     <button
                       key={t.kind}
@@ -183,8 +189,8 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
         <p className="sv-advance-hint mono">
           {camp.members.filter(m => !m.injured && !pending[m.id]).length > 0 ? 'Unassigned members will idle this period.' : ` `}
         </p>
-        <button className="chip sv-advance" onClick={advance}>Advance to {camp.period === 'night' ? 'morning' : ({ morning: 'day', day: 'evening', evening: 'night' } as Record<string, string>)[camp.period]}</button>
+        <button className={'chip sv-advance ' + guide.glow(SV_TARGET.advance)} onClick={advance}>Advance to {camp.period === 'night' ? 'morning' : ({ morning: 'day', day: 'evening', evening: 'night' } as Record<string, string>)[camp.period]}</button>
       </div>
-    </div>
+    </div></GuideScope>
   );
 }

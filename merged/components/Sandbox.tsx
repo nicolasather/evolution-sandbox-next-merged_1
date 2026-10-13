@@ -28,6 +28,7 @@ import { EraShift } from './fx/EraShift';
 import { QuestionCard } from './QuestionCard';
 import { NarratorView } from './Narrator';
 import { CinematicGate } from './cinematic/CinematicGate';
+import { useIntroVisit } from './cinematic/IntroVisit';
 import { VIEW_SCENE, type SceneId } from '@/lib/cinematic/scenes';
 import { Narrator } from '@/lib/narrator/narrator';
 import { Tutor } from '@/lib/learn/tutor';
@@ -117,11 +118,16 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
     id: e.id, y: 100 - (i + 1) * (100 / eraTotal), h: 100 / eraTotal, op: 0.05 + (i / eraTotal) * 0.07,
   }));
 
-  /** Everything the player opens plays its ~10 s opening first (title, 1–3
-   *  cinematic lines, then Space). Not before the landing film has finished. */
+  /** Everything the player opens plays its ~10 s opening the FIRST time it is opened in a visit
+   *  (title, 1–3 cinematic lines, then Space). Not before the landing film has finished. */
+  const visit = useIntroVisit();
   const playGate = useCallback((id: SceneId) => {
-    if (s.entered && reveal >= 6) setGate(id);
-  }, [s.entered, reveal]);
+    if (!(s.entered && reveal >= 6)) return;
+    // each opening plays once per website visit: reopening a view or panel goes straight in
+    if (visit.hasSeen(id)) return;
+    visit.markSeen(id);
+    setGate(id);
+  }, [s.entered, reveal, visit]);
   const openWorld = useCallback(() => { setWorldOpen(true); playGate('world'); }, [playGate]);
 
   /** Switching view closes any drawer: an exhibit never follows you between views. */

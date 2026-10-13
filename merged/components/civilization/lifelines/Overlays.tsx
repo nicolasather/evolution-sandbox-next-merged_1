@@ -7,6 +7,8 @@ import { districtName } from '@/lib/civilization/lifelines/network';
 import type { VoiceInfo } from '@/lib/civilization/lifelines/narration';
 import { voiceHint } from '@/lib/civilization/lifelines/narration';
 import type { Chapter, ContentIndex, LifelinesState, ResourceId } from '@/lib/civilization/lifelines/schema';
+import { GuideHint, useGuideGlow } from '@/components/guide/GuideProvider';
+import { GUIDE_TARGET } from '@/lib/guide/civilization';
 import type { Dispatch } from './Panels';
 import { useRestoreFocus } from './ui';
 
@@ -24,6 +26,7 @@ export function EventDecision({ index, run, dispatch }: { index: ContentIndex; r
   const ev = run.pendingEventId ? index.events.get(run.pendingEventId) : null;
   const sent = useRef(false);
   const first = useRef<HTMLButtonElement | null>(null);
+  const glow = useGuideGlow();
   useRestoreFocus();
   useEffect(() => { first.current?.focus(); }, [ev?.id]);
   useEffect(() => { sent.current = false; }, [run.revision]);
@@ -48,7 +51,7 @@ export function EventDecision({ index, run, dispatch }: { index: ContentIndex; r
             const short = shortText(run, c.cost);
             return (
               <li key={c.id}>
-                <button type="button" ref={i === firstAffordable ? first : undefined} className="ll-choice" disabled={!ok} onClick={() => choose(c.id)}>
+                <button type="button" ref={i === firstAffordable ? first : undefined} className={'ll-choice ' + (ok ? glow(GUIDE_TARGET.event) : '')} disabled={!ok} onClick={() => choose(c.id)}>
                   <b>{c.label}</b>
                   <span>{Object.keys(c.cost).length ? `Costs ${costLine(c.cost)}` : 'No cost'}{Object.keys(c.delta).length ? ` · Effect ${costLine(c.delta, true)}` : ''}</span>
                   <em>{c.consequence}</em>
@@ -58,6 +61,7 @@ export function EventDecision({ index, run, dispatch }: { index: ContentIndex; r
             );
           })}
         </ul>
+        <GuideHint />
       </div>
     </div>
   );

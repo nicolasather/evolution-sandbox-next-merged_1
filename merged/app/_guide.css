@@ -1,0 +1,54 @@
+/* ============================================================================
+   GUIDE — the "follow the glow" micro-guide (components/guide, lib/guide).
+   One quiet instruction + a soft breathing glow on the REAL control. No
+   overlay, no fake button, no layout shift: only box-shadow/filter/outline on
+   the element itself. Colours come from each mode's own accent tokens.
+   ========================================================================== */
+:root{--guide-glow:var(--ll-accent,var(--ochre,#d9b26a));--guide-glow-rgb:217,178,106}
+#lifelines-mode{--guide-glow-rgb:95,208,176}
+
+.guide-hint{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:center;margin:0;padding:8px clamp(12px,3vw,32px);
+  font-family:var(--font-mono,ui-monospace,monospace);text-transform:uppercase;letter-spacing:.22em;font-size:clamp(12px,1.3vw,15px);
+  color:var(--guide-glow);background:none;border:0;pointer-events:none;text-align:center}
+.guide-hint>*{pointer-events:auto}
+.guide-text{margin:0;font-weight:600;animation:guideIn .5s ease both}
+.guide-hint.ready{display:block;animation:guideIn .5s ease both}
+.guide-tools{display:inline-flex;gap:14px;opacity:.7}
+.guide-link{background:none;border:0;padding:4px 0;font:inherit;font-size:.78em;letter-spacing:.18em;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-transform:uppercase}
+.guide-link:hover,.guide-link:focus-visible{opacity:1;color:#fff}
+.guide-detail{flex-basis:100%;margin:0;max-width:64ch;text-transform:none;letter-spacing:.02em;font-size:13px;line-height:1.5;color:inherit;opacity:.85;font-family:inherit}
+.guide-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes guideIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* the real control glows: inside the shape (so angular clip-paths do not cut it off) and softly outside it where clipping allows */
+.guide-glow{animation:guideBreathe 2.4s ease-in-out infinite;border-color:var(--guide-glow)!important;position:relative}
+@keyframes guideBreathe{
+  0%,100%{box-shadow:inset 0 0 6px 0 rgba(var(--guide-glow-rgb),.28),0 0 0 0 rgba(var(--guide-glow-rgb),.0);background-color:rgba(var(--guide-glow-rgb),.06)}
+  50%{box-shadow:inset 0 0 16px 2px rgba(var(--guide-glow-rgb),.55),0 0 14px 1px rgba(var(--guide-glow-rgb),.32);background-color:rgba(var(--guide-glow-rgb),.16)}}
+
+/* targets inside an SVG scene: a scoped stroke + drop-shadow, never a replacement button */
+.guide-glow-svg polygon,.guide-glow-svg path,.guide-glow-svg rect.guide-shape{stroke:var(--guide-glow);stroke-width:2.5;animation:guideBreatheSvg 2.4s ease-in-out infinite}
+.guide-glow-svg{filter:drop-shadow(0 0 6px rgba(var(--guide-glow-rgb),.55))}
+@keyframes guideBreatheSvg{0%,100%{stroke-opacity:.55}50%{stroke-opacity:1}}
+
+/* reduced motion: no breathing — a steady, clearly visible ring instead */
+@media (prefers-reduced-motion:reduce){
+  .guide-glow{animation:none;box-shadow:inset 0 0 14px 2px rgba(var(--guide-glow-rgb),.5),0 0 10px 1px rgba(var(--guide-glow-rgb),.3);background-color:rgba(var(--guide-glow-rgb),.12)}
+  .guide-glow-svg polygon,.guide-glow-svg path,.guide-glow-svg rect.guide-shape{animation:none;stroke-opacity:1}
+  .guide-text,.guide-hint.ready{animation:none}
+}
+
+/* inside Lifelines the district polygons carry their own stroke rules; the guide wins while it points at one */
+#lifelines-mode .ll-district.guide-glow-svg polygon{stroke:var(--guide-glow);stroke-width:3;stroke-dasharray:none;animation:guideBreatheSvg 2.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){#lifelines-mode .ll-district.guide-glow-svg polygon{animation:none;stroke-opacity:1}}
+#lifelines-mode.reduced .guide-glow{animation:none}
+
+/* MODE HELP — the small "?" that holds Guide on/off and Replay intro in every extra mode */
+.mh{position:fixed;left:max(10px,env(safe-area-inset-left));bottom:max(10px,env(safe-area-inset-bottom));z-index:9000;font-family:var(--font-mono,ui-monospace,monospace)}
+.mh-btn{width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(232,238,240,.28);background:rgba(8,8,10,.55);color:rgba(232,238,240,.7);font:inherit;font-size:14px;cursor:pointer;border-radius:0;opacity:.55;transition:opacity .2s}
+.mh-btn:hover,.mh-btn:focus-visible,.mh[data-open] .mh-btn{opacity:1;color:#fff}
+.mh-btn:focus-visible,.mh-item:focus-visible{outline:2px solid var(--guide-glow);outline-offset:2px}
+.mh-menu{position:absolute;left:0;bottom:40px;display:grid;min-width:150px;border:1px solid rgba(232,238,240,.28);background:rgba(8,8,10,.94)}
+.mh-item{appearance:none;background:none;border:0;border-bottom:1px solid rgba(232,238,240,.12);color:rgba(232,238,240,.85);font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:11px 14px;cursor:pointer;border-radius:0}
+.mh-item:last-child{border-bottom:0}.mh-item:hover{background:rgba(232,238,240,.08);color:#fff}
+@media (max-width:640px){.mh-btn{width:40px;height:40px}.mh-item{padding:14px}}

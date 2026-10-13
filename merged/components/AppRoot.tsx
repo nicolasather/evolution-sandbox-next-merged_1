@@ -4,7 +4,9 @@ import { useCallback, useState, type ReactNode } from 'react';
 import dynamic from 'next/dynamic';
 import { Sandbox } from './Sandbox';
 import { CinematicGate } from './cinematic/CinematicGate';
-import { SCENES, type SceneId } from '@/lib/cinematic/scenes';
+import { IntroVisitProvider } from './cinematic/IntroVisit';
+import { useModeGate } from './cinematic/useModeGate';
+import { ModeHelp } from './guide/ModeHelp';
 import type { ModeId } from '@/lib/modes/types';
 
 /* ============================================================================
@@ -27,21 +29,30 @@ const ReverseEvolutionMode = dynamic(() => import('./reverseevolution/ReverseEvo
 const MinimumPathMode = dynamic(() => import('./minimumpath/MinimumPathMode').then(m => m.MinimumPathMode), { ssr: false });
 
 export function AppRoot() {
+  /* The "which openings have played" record lives above the mode switch, so it survives every
+     mode unmounting and remounting, and starts empty again on a fresh page load (a new visit). */
+  return (
+    <IntroVisitProvider>
+      <AppRootBody />
+    </IntroVisitProvider>
+  );
+}
+
+function AppRootBody() {
   const [mode, setModeRaw] = useState<ModeId>('main-evolution');
-  /** Every mode opens with its own cinematic (title, 1–3 lines, Space). */
-  const [gate, setGate] = useState<SceneId | null>(null);
+  /** Each mode's cinematic (title, 1–3 lines, Space) plays the first time it is opened in a visit. */
+  const { gate, enter, replay, close } = useModeGate();
   const setMode = useCallback((m: ModeId) => {
     setModeRaw(m);
-    if (m === 'minimum-path') setGate('minpath');
-    else if (m in SCENES) setGate(m as SceneId);
-  }, []);
+    enter(m); // already seen this visit: goes straight in
+  }, [enter]);
   /** The mode behind the gate plays its own entrance once the door has opened. */
   const closeGate = useCallback(() => {
-    setGate(null);
+    close();
     const el = document.documentElement;
     el.classList.add('mode-enter');
     window.setTimeout(() => el.classList.remove('mode-enter'), 1600);
-  }, []);
+  }, [close]);
   const exitToHub = useCallback(() => setModeRaw('main-evolution'), []);
 
   let body: ReactNode;
@@ -58,6 +69,7 @@ export function AppRoot() {
   return (
     <>
       {body}
+      {mode !== 'main-evolution' && !gate && <ModeHelp mode={mode} onReplayIntro={() => replay(mode)} />}
       <CinematicGate scene={gate} onClose={closeGate} />
     </>
   );

@@ -1,5 +1,6 @@
 'use client';
 
+import { useCoarsePointer } from '@/lib/useCoarsePointer';
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type ReactNode } from 'react';
 import { buildGraph } from '@/lib/minpath/graph';
 import { dailyChallenge, pickChallenge, type MinPathChallenge } from '@/lib/minpath/daily';
@@ -71,6 +72,7 @@ function Icon({ kind, className }: { kind: string; className?: string }): ReactN
 }
 
 export function MinimumPathChallenge({ engine, active }: { engine: Engine; active: boolean }) {
+  const touch = useCoarsePointer();
   const graph = useMemo(() => buildGraph(engine.db), [engine.db]);
   const [mode, setMode] = useState<Mode>('daily');
   const [practiceSeed, setPracticeSeed] = useState(() => Date.now());
@@ -313,7 +315,7 @@ export function MinimumPathChallenge({ engine, active }: { engine: Engine; activ
 
         <div className="dk-wipe" key={'w' + cur + mode} aria-hidden="true" />
         <p className="dk-line" key={'l' + cur + mode} role="status">{caption}</p>
-        {showKey && <div className="dk-key" aria-hidden="true"><i /></div>}
+        {showKey && <div className="dk-key" aria-hidden="true">{touch ? 'TAP TO CONTINUE' : 'PRESS SPACE TO CONTINUE'}</div>}
       </div>
     </section>
   );

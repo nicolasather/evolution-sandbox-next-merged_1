@@ -132,18 +132,13 @@
   100%{opacity:0;transform:translate3d(0,-20px,70px);filter:blur(8px)}}
 .cg:not([data-phase="play"]) .cg-line{display:none}
 
-/* the spacebar glyph: a physical key, no words */
-.cg-key{position:absolute;left:50%;bottom:10vh;width:min(48vw,320px);height:56px;translate:-50% 0;opacity:0;
-  animation:cgKeyIn .9s ease 9s both}
-@keyframes cgKeyIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.cg:not([data-phase="play"]) .cg-key{animation:none;opacity:1}
-.cg-key i{position:absolute;inset:0;border-radius:0;
-  background:linear-gradient(180deg,var(--k10),var(--k9));
-  box-shadow:inset 0 2px 0 rgba(255,255,255,.7);
-  animation:cgPress 1.8s ease-in-out infinite}
-@keyframes cgPress{
-  0%,55%,100%{transform:translateY(0)}
-  70%{transform:translateY(6px);box-shadow:inset 0 2px 0 rgba(255,255,255,.7)}}
+/* the continue prompt: small breathing text, no key graphic, no box */
+.cg-key{position:absolute;left:50%;bottom:7vh;translate:-50% 0;opacity:0;white-space:nowrap;pointer-events:none;
+  font-family:var(--font-mono,ui-monospace,monospace);font-size:clamp(11px,1.2vw,14px);letter-spacing:.32em;color:var(--k10);
+  animation:cgKeyIn .9s ease 9s both,cgBreathe 2.6s ease-in-out 9.9s infinite}
+@keyframes cgKeyIn{from{opacity:0;transform:translateY(14px)}to{opacity:.85;transform:none}}
+@keyframes cgBreathe{0%,100%{opacity:.4}50%{opacity:.95}}
+.cg:not([data-phase="play"]) .cg-key{animation:cgBreathe 2.6s ease-in-out infinite;opacity:.9}
 
 .cg-curtain{position:absolute;inset:0;pointer-events:none;opacity:0;
   background:radial-gradient(circle at 50% 44%,var(--k9),transparent 62%)}
@@ -154,7 +149,7 @@
   .st-sky,.st-floor,.st-orbs b,.st-rings i,.st-cube,.st-dust u,.st-sun{animation:none!important}
   .cg-ch{animation:cgChR .8s ease both!important;animation-delay:calc(.2s + var(--i) * .1s)!important}
   @keyframes cgChR{from{opacity:0}to{opacity:1}}
-  .cg-key i{animation:none}
+  .cg-key,.cg:not([data-phase="play"]) .cg-key{animation:none;opacity:.85}
 }
 
 /* ═════════════ 3. TWELVE COLOURS PER THEME ═════════════
@@ -317,11 +312,10 @@ h1,h2,h3,.exh-name,.era-now,.counter .big{text-shadow:none}
   text-shadow:none;
   animation:cgLine 5.2s cubic-bezier(.3,.7,.2,1) .5s both}
 
-.dk-key{position:absolute;left:50%;bottom:4.5vh;width:min(40vw,240px);height:44px;translate:-50% 0;z-index:5;pointer-events:none;
-  opacity:0;animation:cgKeyIn .8s ease 1.4s both}
-.dk-key i{position:absolute;inset:0;border-radius:0;background:linear-gradient(180deg,var(--k10),var(--k9));
-  box-shadow:inset 0 2px 0 rgba(255,255,255,.7);
-  animation:cgPress 1.8s ease-in-out infinite}
+.dk-key{position:absolute;left:50%;bottom:4.5vh;translate:-50% 0;z-index:5;pointer-events:none;white-space:nowrap;
+  font-family:var(--font-mono,ui-monospace,monospace);font-size:clamp(11px,1.2vw,14px);letter-spacing:.32em;color:var(--k10);
+  opacity:0;animation:cgKeyIn .8s ease 1.4s both,cgBreathe 2.6s ease-in-out 2.2s infinite}
+@media (prefers-reduced-motion:reduce){.dk-key{animation:none;opacity:.85}}
 
 /* 3D plates: the big names */
 .dk-plate{--pc:var(--k3);--pd:var(--k7);position:relative;min-width:min(34vw,340px);max-width:44vw;padding:clamp(22px,4vh,42px) clamp(22px,3vw,44px);
@@ -848,7 +842,6 @@ button:not(:disabled):hover,button:not(:disabled):active{transform:none}
 .dk-plate{background:transparent;color:var(--bone);border:1px solid var(--line-3);border-radius:0;box-shadow:none;transform:none;animation:none}
 .dk-plate::before{display:none}
 .dk-now{animation:none}
-.dk-key i,.cg-key i{background:transparent;border:1px solid var(--line-3);border-radius:0;box-shadow:none;animation:none}
 .dk-road{background:var(--line-3);height:2px}
 .dk-road::after{border-left-color:var(--line-3)}
 .hub-range{background:var(--line-2);height:4px;border-radius:0}

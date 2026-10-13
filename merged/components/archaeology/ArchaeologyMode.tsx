@@ -8,6 +8,8 @@ import { FUNCTION_LABEL, PHASE_LABEL, SURVEY_HINT_LABEL } from '@/lib/archaeolog
 import { applyAction, isFindRevealed, type SiteAction } from '@/lib/archaeology/simulate';
 import { archaeologyStore } from '@/lib/archaeology/store';
 import type { SiteFunction, SitePhase, SiteState } from '@/lib/archaeology/types';
+import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ARCH_MODE, ARCH_TARGET, archaeologyGuide } from '@/lib/guide/archaeology';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
 
@@ -42,6 +44,10 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
     profile.recordModeVisit('archaeology');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const ag = archaeologyGuide(site, archaeologyStore.get().reports.length > 0);
+  const guide = useGuideController({ mode: ARCH_MODE, eligible: ag.eligible, step: ag.step, finished: ag.finished });
+  const g = guide.glow;
 
   if (!site) return null;
 
@@ -126,7 +132,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
   const active = selectedFind ? site.finds.find(f => f.id === selectedFind) ?? null : null;
 
   return (
-    <div id="archaeology-mode">
+    <GuideScope value={guide}><div id="archaeology-mode">
       <header className="ar-top">
         <button className="chip ar-exit" onClick={onExit}>← Hub</button>
         <p className="mono ar-eyebrow">Archaeologist — Recover</p>
@@ -138,6 +144,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="ar-body">
+        <GuideHint />
         <section className="ar-grid-section">
           <p className="mono ar-h">Site grid — {site.gridSize}×{site.gridSize}</p>
           <div className="ar-grid" style={{ gridTemplateColumns: `repeat(${site.gridSize}, 1fr)` }}>
@@ -152,12 +159,12 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
                   {findsHere > 0 && <span className="ar-square-finds mono">{findsHere} find{findsHere > 1 ? 's' : ''}</span>}
                   <div className="ar-square-actions">
                     <button
-                      className="chip"
+                      className={'chip ' + g(ARCH_TARGET.survey(sq.x, sq.y))}
                       disabled={sq.surveyHint !== 'unsurveyed' || site.spent.survey >= site.budgets.survey}
                       onClick={() => run({ kind: 'survey', x: sq.x, y: sq.y })}
                     >Survey</button>
                     <button
-                      className="chip"
+                      className={'chip ' + g(ARCH_TARGET.dig(sq.x, sq.y))}
                       disabled={sterile || site.spent.excavate >= site.budgets.excavate}
                       onClick={() => run({ kind: 'excavate', x: sq.x, y: sq.y })}
                     >Dig</button>
@@ -176,7 +183,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
               <li key={f.id} className="ar-find ar-find-unanalyzed">
                 <span>An unidentified find, square ({f.squareX}, {f.squareY})</span>
                 <button
-                  className="chip"
+                  className={'chip ' + g(ARCH_TARGET.analyze(f.id))}
                   disabled={site.spent.analyze >= site.budgets.analyze}
                   onClick={() => run({ kind: 'analyze', findId: f.id })}
                 >Analyze</button>
@@ -214,7 +221,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
             {FUNCTIONS.map(fn => (
               <button
                 key={fn}
-                className={'chip' + (site.hypotheses.function === fn ? ' ar-chosen' : '')}
+                className={'chip' + (site.hypotheses.function === fn ? ' ar-chosen' : '') + ' ' + g(ARCH_TARGET.fn)}
                 onClick={() => run({ kind: 'hypothesize', field: 'function', value: fn })}
               >{FUNCTION_LABEL[fn]}</button>
             ))}
@@ -234,12 +241,12 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
         </div>
         <div className="ar-report-row">
           <button
-            className="chip ar-report-btn"
+            className={'chip ar-report-btn ' + g(ARCH_TARGET.report)}
             disabled={!site.hypotheses.function}
             onClick={fileReport}
           >File report</button>
         </div>
       </section>
-    </div>
+    </div></GuideScope>
   );
 }

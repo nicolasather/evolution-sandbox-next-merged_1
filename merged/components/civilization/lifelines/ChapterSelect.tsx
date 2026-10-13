@@ -8,7 +8,7 @@ import { useLifelines } from './ui';
 
 type Tab = 'campaign' | 'replay' | 'sandbox' | 'chronicle';
 
-export function ChapterSelect({ onPlay, onExit, onLegacy }: { onPlay: () => void; onExit: () => void; onLegacy: (() => void) | null }) {
+export function ChapterSelect({ onPlay, onExit, onLegacy, onReplayIntro }: { onPlay: () => void; onExit: () => void; onLegacy: (() => void) | null; onReplayIntro?: () => void }) {
   const { store, snap } = useLifelines();
   const { index, manifest, run } = snap;
   const [tab, setTab] = useState<Tab>('campaign');
@@ -78,6 +78,7 @@ export function ChapterSelect({ onPlay, onExit, onLegacy }: { onPlay: () => void
         <button type="button" className="ll-btn ghost" onClick={onExit}>← Hub</button>
         <div><p className="ll-eyebrow">Civilization</p><h1 className="ll-h1">Lifelines</h1></div>
         {onLegacy && <button type="button" className="ll-btn ghost" onClick={onLegacy}>Legacy settlements</button>}
+        {onReplayIntro && <button type="button" className="ll-btn ghost" onClick={onReplayIntro}>Replay Lifelines intro</button>}
       </header>
       <Banners store={store} snap={snap} />
       {hasRun && run && (

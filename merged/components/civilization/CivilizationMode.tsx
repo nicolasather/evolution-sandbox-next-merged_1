@@ -11,9 +11,12 @@ import { LegacyCivilization } from './LegacyCivilization';
 
 /* ============================================================================
    CIVILIZATION — Extra Mode `civilization`, now "Lifelines".
-   Controller only: entry choice (legacy vs Lifelines) -> cinematic -> chapter
-   list / play. The earlier mode stays intact in LegacyCivilization and its own
-   `evo.civilization.v1` save is never read for writing here.
+   Controller only: entry choice (legacy vs Lifelines) -> chapter list / play.
+   The opening cinematic is the app's shared mode gate (components/AppRoot.tsx,
+   once per website visit); EntryCinematic below is kept intact and plays only
+   on an explicit "Replay intro". The earlier mode stays intact in
+   LegacyCivilization and its own `evo.civilization.v1` save is never read for
+   writing here.
    ========================================================================== */
 
 type View = 'boot' | 'choice' | 'cinematic' | 'chapters' | 'play' | 'legacy';
@@ -36,8 +39,17 @@ export function CivilizationMode({ onExit }: { onExit: () => void }) {
   else if (forced === 'play' && !snap.run) view = 'chapters'; // a finished/archived run returns to the list
   else if (forced) view = forced;
   else if (snap.legacyPresent && !snap.manifest.legacyPromptAnswered && !hasLifelines) view = 'choice';
-  else view = 'cinematic';
+  // Normal entry goes straight to where the player left off: the opening already played in the shared gate
+  // (or was skipped earlier this visit). It never replays a second, internal cinematic by itself.
+  else view = snap.run ? 'play' : 'chapters';
   const setView = setForced;
+
+  // The player has now been through the opening (the shared gate, or an earlier visit): remember that,
+  // exactly as the old internal cinematic did when it ended. Existing saves keep their value.
+  const entrySeen = snap.manifest.entrySeen;
+  useEffect(() => {
+    if (snap.phase === 'ready' && !entrySeen && view !== 'choice' && view !== 'boot') store.markEntrySeen();
+  }, [snap.phase, entrySeen, view, store]);
 
   const afterCinematic = () => {
     store.markEntrySeen();
@@ -58,13 +70,14 @@ export function CivilizationMode({ onExit }: { onExit: () => void }) {
   } else if (snap.phase !== 'ready' || view === 'boot') {
     body = <div className="ll-screen ll-center"><p className="ll-eyebrow" role="status">Loading Lifelines…</p></div>;
   } else if (view === 'choice') {
-    body = <EntryChoice onExit={onExit} onLegacy={() => { store.markLegacyPromptAnswered(); setView('legacy'); }} onLifelines={() => { store.markLegacyPromptAnswered(); setView('cinematic'); }} />;
+    body = <EntryChoice onExit={onExit} onLegacy={() => { store.markLegacyPromptAnswered(); setView('legacy'); }} onLifelines={() => { store.markLegacyPromptAnswered(); setView(null); }} />;
   } else if (view === 'cinematic') {
-    body = <EntryCinematic first={!snap.manifest.entrySeen} reduced={reduced} onDone={afterCinematic} />;
+    // only reached through "Replay intro": the full original version, whatever the saved entrySeen says
+    body = <EntryCinematic first reduced={reduced} onDone={afterCinematic} />;
   } else if (view === 'play' && snap.run) {
     body = <Play key={snap.run.runId} onChapters={() => setView('chapters')} />;
   } else {
-    body = <ChapterSelect onPlay={() => setView('play')} onExit={onExit} onLegacy={snap.legacyPresent ? () => setView('legacy') : null} />;
+    body = <ChapterSelect onPlay={() => setView('play')} onExit={onExit} onLegacy={snap.legacyPresent ? () => setView('legacy') : null} onReplayIntro={() => setView('cinematic')} />;
   }
   return <div id="lifelines-mode" className={'ll-root' + (reduced ? ' reduced' : '') + (snap.manifest.settings.motionSpeed === 'slow' ? ' slow' : '')}>{body}</div>;
 }

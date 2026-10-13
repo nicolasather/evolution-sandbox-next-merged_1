@@ -7,8 +7,8 @@ import { CAMPAIGN_KEY, SAVE_KEY } from '@/lib/civilization/lifelines/schema';
 const LEGACY = JSON.stringify({ v: 1, active: generateSettlement('legacy-seed'), dioramas: [] });
 
 async function openChapters(onExit = jest.fn()) {
+  // The opening is the app's shared gate (once per visit); the mode itself lands straight on the chapter list.
   const view = render(<CivilizationMode onExit={onExit} />);
-  fireEvent.click(await screen.findByRole('button', { name: 'Skip' }));
   await screen.findByRole('heading', { name: 'Lifelines' });
   return { ...view, onExit };
 }
@@ -28,7 +28,7 @@ beforeEach(() => { window.localStorage.clear(); resetSharedStore(); });
 afterEach(() => { cleanup(); resetSharedStore(); });
 
 describe('Civilization: Lifelines UI', () => {
-  it('opens with the entry cinematic (skippable) and lands on the chapter list with chapter 1 open and the rest locked', async () => {
+  it('lands straight on the chapter list (no second internal cinematic) with chapter 1 open and the rest locked', async () => {
     await openChapters();
     expect(screen.getByRole('button', { name: /First Light/ })).toBeEnabled();
     expect(screen.getByRole('button', { name: /Shorter Walk/ })).toBeDisabled();
@@ -40,7 +40,8 @@ describe('Civilization: Lifelines UI', () => {
     await openChapters();
     fireEvent.click(screen.getByRole('button', { name: 'Begin' }));
     await screen.findByRole('heading', { name: 'First Light' });
-    expect(screen.getByRole('note')).toHaveTextContent(/Start a dependable food programme/);
+    // the follow-the-glow guide: one short instruction, the long text stays one tap away (WHY?)
+    expect(await screen.findByText('CHOOSE A DISTRICT')).toBeInTheDocument();
 
     // select a district on the map, open programmes, plan the target programme
     const district = document.querySelector('[data-district]') as SVGGElement;
@@ -108,7 +109,6 @@ describe('Civilization: Lifelines UI', () => {
     const turn = JSON.parse(window.localStorage.getItem(SAVE_KEY)!).state.turn;
     first.unmount(); resetSharedStore();
     render(<CivilizationMode onExit={() => undefined} />);
-    fireEvent.click(await screen.findByRole('button', { name: 'Skip' }));
     // the previous run is resumed directly in play
     await screen.findByRole('heading', { name: 'First Light' });
     expect(screen.getByText(new RegExp(`Season ${turn}`))).toBeInTheDocument();
@@ -125,7 +125,6 @@ describe('Civilization: Lifelines UI', () => {
     cleanup(); resetSharedStore();
     render(<CivilizationMode onExit={onExit} />);
     // the answer is remembered; the legacy mode stays reachable from the chapter list
-    fireEvent.click(await screen.findByRole('button', { name: 'Skip' }));
     expect(await screen.findByRole('button', { name: 'Legacy settlements' })).toBeInTheDocument();
   });
 

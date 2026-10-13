@@ -8,6 +8,8 @@ import { assignGlyph, blankAttempt, checkAttempt, revealAnswer, type CheckResult
 import { decipherStore } from '@/lib/decipher/store';
 import { generateTutorial } from '@/lib/decipher/tutorial';
 import type { DecipherAttempt, DecipherPuzzle, Glyph, NounConceptId, NumberConceptId } from '@/lib/decipher/types';
+import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { DECIPHER_MODE, DEC_TARGET, decipherGuide } from '@/lib/guide/decipher';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
 
@@ -66,6 +68,9 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
     profile.recordModeVisit('decipher');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const dg = decipherGuide(game.puzzle, game.attempt, !!checkResult && checkResult.correctCount < checkResult.total);
+  const guide = useGuideController({ mode: DECIPHER_MODE, eligible: dg.eligible, step: dg.step, finished: dg.finished });
 
   const finishPuzzle = (puzzle: DecipherPuzzle, attempt: DecipherAttempt) => {
     const memory = summarizeAttempt(puzzle, attempt);
@@ -137,7 +142,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
   const usedConcepts = new Set(Object.values(attempt.assignments).filter((v): v is NounConceptId => !!v));
 
   return (
-    <div id="decipher-mode">
+    <GuideScope value={guide}><div id="decipher-mode">
       <header className="dph-top">
         <button className="chip dph-exit" onClick={onExit}>← Hub</button>
         <p className="mono dph-eyebrow">Decipher — Read the Lost</p>
@@ -145,6 +150,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="dph-body">
+        <GuideHint />
         {puzzle.tutorialSteps && (
           <section className="dph-tutorial">
             <p className="mono dph-h">How to read this</p>
@@ -199,7 +205,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
             {nounGlyphs.map(g => {
               const current = attempt.assignments[g.id];
               return (
-                <div key={g.id} className="dph-legend-row">
+                <div key={g.id} className={'dph-legend-row ' + guide.glow(DEC_TARGET.row(g.id))}>
                   <GlyphIcon glyph={g} size={40} />
                   <div className="dph-legend-options">
                     {NOUN_CONCEPTS.map(c => (
@@ -223,10 +229,10 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
         )}
 
         <div className="dph-actions-row">
-          <button className="chip dph-check-btn" onClick={check}>Check</button>
+          <button className={'chip dph-check-btn ' + guide.glow(DEC_TARGET.check)} onClick={check}>Check</button>
           <button className="chip dph-reveal-btn" onClick={reveal}>Reveal the reading</button>
         </div>
       </div>
-    </div>
+    </div></GuideScope>
   );
 }
