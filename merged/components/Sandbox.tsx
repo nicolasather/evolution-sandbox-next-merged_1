@@ -27,6 +27,10 @@ import { ViewVeil } from './fx/ViewVeil';
 import { EraShift } from './fx/EraShift';
 import { QuestionCard } from './QuestionCard';
 import { NarratorView } from './Narrator';
+import { UnlockNotice } from './UnlockNotice';
+import { useUnlocks } from '@/lib/unlocks/useUnlocks';
+import { unlockMemory } from '@/lib/unlocks/store';
+import type { FeatureId } from '@/lib/unlocks/registry';
 import { CinematicGate } from './cinematic/CinematicGate';
 import { useIntroVisit } from './cinematic/IntroVisit';
 import { VIEW_SCENE, type SceneId } from '@/lib/cinematic/scenes';
@@ -47,6 +51,11 @@ const TimelineView = dynamic(() => import('./TimelineView').then(mod => mod.Time
 const ArchiveView = dynamic(() => import('./ArchiveView').then(mod => mod.ArchiveView), { ssr: false });
 /* The Museum carries the whole Humanity exhibit database: loaded only when first opened. */
 const MuseumGallery = dynamic(() => import('./MuseumGallery').then(mod => mod.MuseumGallery), { ssr: false });
+
+/** The unlock that opens each view (the Workspace is always open). */
+const VIEW_FEATURE: Partial<Record<ViewId, FeatureId>> = {
+  graph: 'graph', arch: 'archive', time: 'timeline', hub: 'hub', museum: 'museum', minpath: 'minpath',
+};
 
 export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => void } = {}) {
   const [panelOpen, setPanelOpen] = useState(false);
@@ -94,6 +103,10 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   }, []);
   useEffect(() => () => revealTimers.current.forEach(t => window.clearTimeout(t)), []);
 
+  /* What has opened so far. A new visitor sees the workbench and nothing else; every other view,
+     corner button, the questions and every other mode open as history is reached (lib/unlocks). */
+  const unlocks = useUnlocks(engine, version, s.entered && reveal >= 6);
+
   // The world tint follows the furthest era reached — subtle, not a light show.
   // --era-glow is the second, slower half of the same idea: it only grows, so
   // it reads as the world *widening* over the whole game rather than
@@ -128,17 +141,26 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
     visit.markSeen(id);
     setGate(id);
   }, [s.entered, reveal, visit]);
-  const openWorld = useCallback(() => { setWorldOpen(true); playGate('world'); }, [playGate]);
+  const openWorld = useCallback(() => {
+    if (!unlocks.has('world')) return;
+    unlocks.opened('world');
+    setWorldOpen(true); playGate('world');
+  }, [playGate, unlocks]);
 
   /** Switching view closes any drawer: an exhibit never follows you between views. */
   const showView = useCallback((v: ViewId) => {
+    const need = VIEW_FEATURE[v];
+    if (need) {
+      if (!unlocks.has(need)) return; // not unlocked yet: no such door (a shortcut key lands here too)
+      unlocks.opened(need);
+    }
     sound.sfx(v === 'graph' ? 'graph' : v === 'arch' || v === 'time' ? 'archive' : 'tab', 0.6);
     const scene = VIEW_SCENE[v];
     if (scene && v !== view) playGate(scene);
     setView(v);
     setPanelOpen(false);
     panelReturn.current = null;
-  }, [setView, view, playGate]);
+  }, [setView, view, playGate, unlocks]);
 
   /** Inspect. The exhibit is closed until the player asks for it — pressing
    *  Inspect, the "i" on an inventory item, the I key, the context menu or a
@@ -166,10 +188,12 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
    *  already focused, regardless of which view the menu was opened from. */
   const findInGraph = useCallback((id: string) => {
     open(id);
+    if (!unlocks.has('graph')) { setPanelOpen(true); return; } // no graph yet: just show the exhibit
+    unlocks.opened('graph');
     setView('graph');
     setPanelOpen(true);
     panelReturn.current = null;
-  }, [open, setView]);
+  }, [open, setView, unlocks]);
 
   /** Play the journey through time again, over the running game. */
   const replayJourney = useCallback(() => {
@@ -182,6 +206,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   const confirmReset = useCallback(() => {
     setConfirmOpen(false);
     narrator.reset(Date.now());
+    unlockMemory.reset(); // everything is locked again, so everything is new again
     reset();
     tutor.reset(Date.now());
     setPanelOpen(false);
@@ -336,6 +361,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           onOpen={openExhibit}
           onReset={() => setConfirmOpen(true)}
           onShortcuts={() => setShortcutsOpen(true)}
+          unlocks={unlocks}
           onJournal={() => { setJournalOpen(true); playGate('journal'); }}
           onWorld={openWorld}
           onHub={() => showView('hub')}
@@ -386,7 +412,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           />
           <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
           <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
-          <ModeHub engine={engine} active={view === 'hub'} onLaunch={() => showView('work')} onLaunchMode={onLaunchMode} />
+          <ModeHub engine={engine} active={view === 'hub'} unlocks={unlocks} onLaunch={() => showView('work')} onLaunchMode={onLaunchMode} />
           {(view === 'museum' || museumMounted) && (
             <MuseumGallery engine={engine} version={version} active={view === 'museum'} onOpen={openExhibit} blocked={gate !== null} />
           )}
@@ -421,8 +447,9 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       <nav id="mtabs" aria-label="Views">
         {([
           ['work', 'Workspace'], ['graph', 'Graph'], ['arch', 'Archive'], ['time', 'Timeline'],
-        ] as [ViewId, string][]).map(([id, label]) => (
-          <button key={id} aria-pressed={view === id} onClick={() => showView(id)}>
+        ] as [ViewId, string][]).filter(([id]) => !VIEW_FEATURE[id] || unlocks.has(VIEW_FEATURE[id] as FeatureId)).map(([id, label]) => (
+          <button key={id} aria-pressed={view === id} onClick={() => showView(id)}
+            className={VIEW_FEATURE[id] && unlocks.fresh(VIEW_FEATURE[id] as FeatureId) ? 'unlock-fresh' : undefined}>
             <svg width="18" height="18" viewBox="0 0 20 20" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
               {id === 'work' && <><rect x="2" y="6" width="7" height="8" /><rect x="11" y="6" width="7" height="8" /></>}
               {id === 'graph' && <><circle cx="4" cy="10" r="2" /><circle cx="16" cy="5" r="2" /><circle cx="16" cy="15" r="2" /><path d="M6 9l8-3M6 11l8 3" /></>}
@@ -481,7 +508,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
         result={s.result}
       />
 
-      {s.entered && reveal >= 6 && (
+      {s.entered && reveal >= 6 && unlocks.has('quiz') && (
         <QuestionCard
           tutor={tutor}
           engine={engine}
@@ -494,6 +521,9 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
         suppressed={!s.entered || reveal < 6 || view === 'museum' || !!s.ending || gate !== null} />
 
       <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
+
+      {/* the quiet moment when a new part of the game opens */}
+      <UnlockNotice feature={unlocks.notice} onDone={unlocks.dismissNotice} hidden={gate !== null || !!s.ending || confirmOpen} />
 
       {/* the opening that plays over whatever was just opened: title, 1–3 lines, Space */}
       <CinematicGate scene={gate} onClose={closeGate} />

@@ -89,6 +89,36 @@ export class World {
   private touch = new Map<string, number>();
   private latched = new Set<string>();
   private wasIn = new Map<number, ZoneId | null>();
+  /** IDLE FLOAT — a purely visual drift for pieces that are just sitting on the bench.
+   *  `idleOn` switches it, `idleT` is the clock (seconds) set by the caller each frame.
+   *  It only changes how a piece is DRAWN (see paint); positions, hit-tests and
+   *  physics never see it, so nothing about crafting changes. */
+  idleOn = true;
+  idleT = 0;
+
+  /** True when at least one piece is drifting, so the render loop must keep running. */
+  get floating(): boolean {
+    if (!this.idleOn) return false;
+    for (const b of this.bodies) if (this.canFloat(b)) return true;
+    return false;
+  }
+  private canFloat(b: Body): boolean {
+    return !b.temp && !b.held && !b.locked && !b.outside && b.age >= 1;
+  }
+  /** Smoothly-varying drift for one piece: lift, sideways sway, a slow tilt and a faint breath.
+   *  Each piece has its own phase and speed (from its uid) so a pile never moves in lock-step. */
+  private idleOffset(b: Body): { dx: number; dy: number; rot: number; sc: number } {
+    const p = b.uid * 2.399963;                 // golden-angle phase spread
+    const sp = 0.85 + ((b.uid * 37) % 11) / 22; // 0.85 … 1.3 rad/s
+    const t = this.idleT * sp;
+    const k = Math.min(1, b.r / 34) * 0.5 + 0.5; // bigger pieces drift a little less
+    return {
+      dy: Math.sin(t + p) * 4.2 * k - 2.4,
+      dx: Math.sin(t * 0.63 + p * 1.7) * 2.2 * k,
+      rot: Math.sin(t * 0.71 + p * 0.6) * 0.045,
+      sc: 1 + Math.sin(t * 1.3 + p) * 0.012,
+    };
+  }
 
   constructor(host: HTMLElement, hooks: WorldHooks) {
     this.host = host;
@@ -599,10 +629,16 @@ export class World {
   paint(b: Body) {
     const pop = b.age < 1 ? 0.55 + 0.45 * easeOutBack(b.age) : 1;
     const lift = b.z;
-    const s = pop * (1 + lift * 0.0035);
-    const x = b.x + b.ox, y = b.y + b.oy - lift;
+    let s = pop * (1 + lift * 0.0035);
+    let x = b.x + b.ox, y = b.y + b.oy - lift;
+    let angle = b.angle;
+    // idle float: drawn only — never written back into b.x / b.y / b.angle
+    if (this.idleOn && this.canFloat(b)) {
+      const f = this.idleOffset(b);
+      x += f.dx; y += f.dy; angle += f.rot; s *= f.sc;
+    }
     const st = b.el.style;
-    st.transform = `translate3d(${(x - b.r).toFixed(2)}px, ${(y - b.r).toFixed(2)}px, 0) rotate(${b.angle.toFixed(4)}rad) scale(${(s * b.sx).toFixed(3)}, ${(s * b.sy).toFixed(3)})`;
+    st.transform = `translate3d(${(x - b.r).toFixed(2)}px, ${(y - b.r).toFixed(2)}px, 0) rotate(${angle.toFixed(4)}rad) scale(${(s * b.sx).toFixed(3)}, ${(s * b.sy).toFixed(3)})`;
     st.zIndex = String(10 + b.layer + (b.held ? 50 : 0) + (b.temp ? 20 : 0));
     st.setProperty('--z', lift.toFixed(2));
     st.setProperty('--heat', b.heat.toFixed(3));
@@ -625,7 +661,9 @@ export class World {
       else if (b.wear >= 0.35) b.el.setAttribute('data-damage', 'cracked');
     }
     if (b.lbl) {
-      b.lbl.style.transform = `translate3d(${(b.x + b.ox).toFixed(1)}px, ${(b.y + b.oy + b.r * 0.92).toFixed(1)}px, 0) translateX(-50%)`;
+      // the name tag drifts with its piece (same vertical bob, none of the tilt)
+      const ly = this.idleOn && this.canFloat(b) ? this.idleOffset(b) : null;
+      b.lbl.style.transform = `translate3d(${(b.x + b.ox + (ly?.dx ?? 0)).toFixed(1)}px, ${(b.y + b.oy + (ly?.dy ?? 0) + b.r * 0.92).toFixed(1)}px, 0) translateX(-50%)`;
       b.lbl.style.zIndex = st.zIndex;
     }
   }

@@ -15,6 +15,8 @@ import { getMode } from '@/lib/modes/registry';
 import { survivalStore } from '@/lib/survival/store';
 import type { Engine } from '@/lib/engine';
 import type { ModeId } from '@/lib/modes/types';
+import { featureOfMode, type FeatureId } from '@/lib/unlocks/registry';
+import { NO_LOCKS, type Unlocks } from '@/lib/unlocks/useUnlocks';
 
 /* ============================================================================
    MODE HUB — the switcher between Main Evolution and every other experience
@@ -31,25 +33,27 @@ import type { ModeId } from '@/lib/modes/types';
 
 const dateFmt = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
 
-function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch }: {
+function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fresh }: {
   kicker: string;
   title: string;
   description: string;
   stats: { label: string; value: ReactNode }[];
   ctaLabel: string;
   onLaunch: () => void;
+  /** Just unlocked and never entered: the Enter button glows and the card says NEW. */
+  fresh?: boolean;
 }) {
   return (
-    <div className="hub-exhibit">
+    <div className={'hub-exhibit' + (fresh ? ' is-new' : '')} data-new={fresh || undefined}>
       <div className="hub-exhibit-plate" aria-hidden="true" />
       <div className="hub-exhibit-body">
-        <p className="mono hub-exhibit-kicker">{kicker}</p>
+        <p className="mono hub-exhibit-kicker">{kicker}{fresh && <b className="hub-new"> · New</b>}</p>
         <h2 className="hub-exhibit-title">{title}</h2>
         <p className="hub-exhibit-desc">{description}</p>
         <dl className="hub-exhibit-stats">
           {stats.map(s => <div key={s.label}><dt className="mono">{s.label}</dt><dd>{s.value}</dd></div>)}
         </dl>
-        <button className="hub-continue" onClick={onLaunch}>
+        <button className={'hub-continue' + (fresh ? ' guide-glow' : '')} onClick={onLaunch}>
           <ReactiveLabel text={ctaLabel} className="mono" />
         </button>
       </div>
@@ -110,9 +114,11 @@ function ModeTrack({ children }: { children: ReactNode }) {
   );
 }
 
-export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
+export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_LOCKS }: {
   engine: Engine;
   active: boolean;
+  /** What has opened so far. Left out, every wing is open. */
+  unlocks?: Pick<Unlocks, 'has' | 'fresh' | 'opened'>;
   /** Launches Main Evolution itself (switches Sandbox's own view). */
   onLaunch: () => void;
   /** Launches any other available mode — provided by components/AppRoot.tsx. */
@@ -164,6 +170,15 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
   const alien = alienArchaeologyStore.get();
   const reverseEvo = reverseEvolutionStore.get();
 
+  /** A wing's card exists only once it is unlocked; entering it ends its glow for good. */
+  const open = (m: ModeId) => () => {
+    const f = featureOfMode(m);
+    if (f) unlocks.opened(f);
+    onLaunchMode?.(m);
+  };
+  const shown = (m: ModeId) => { const f = featureOfMode(m); return !f || unlocks.has(f); };
+  const isNew = (m: ModeId) => { const f = featureOfMode(m); return !!f && unlocks.fresh(f as FeatureId); };
+
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-hub" role="tabpanel" aria-label="Mode Hub">
       <div className="hub-wrap">
@@ -189,117 +204,145 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode }: {
           ]}
         />
 
+        {shown('survival') && (
         <ExhibitCard
           kicker={survivalMode?.subtitle ?? 'Adapt'}
           title={survivalMode?.title ?? 'Survival'}
           description={survivalMode?.description ?? ''}
           ctaLabel={survival.active ? 'Continue' : 'Enter'}
-          onLaunch={() => onLaunchMode?.('survival')}
+          onLaunch={open('survival')}
+          fresh={isNew('survival')}
           stats={[
             { label: 'Runs completed', value: survival.memories.length },
             { label: 'Active run', value: survival.active ? `Day ${survival.active.day}` : 'None' },
             { label: 'First entered', value: survivalVisit ? dateFmt.format(survivalVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        )}
 
+        {shown('civilization') && (
         <ExhibitCard
           kicker={civMode?.subtitle ?? 'Build'}
           title={civMode?.title ?? 'Civilization'}
           description={civMode?.description ?? ''}
           ctaLabel={civ.kind !== 'none' ? 'Continue' : 'Enter'}
-          onLaunch={() => onLaunchMode?.('civilization')}
+          onLaunch={open('civilization')}
+          fresh={isNew('civilization')}
           stats={[
             { label: 'Chapters completed', value: `${civ.completed} / 24` },
             { label: 'Current settlement', value: civ.kind === 'none' ? 'None' : civ.line },
             { label: 'First entered', value: civVisit ? dateFmt.format(civVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        )}
 
+        {shown('archaeology') && (
         <ExhibitCard
           kicker={archMode?.subtitle ?? 'Recover'}
           title={archMode?.title ?? 'Archaeologist'}
           description={archMode?.description ?? ''}
           ctaLabel={archaeology.active ? 'Continue' : 'Enter'}
-          onLaunch={() => onLaunchMode?.('archaeology')}
+          onLaunch={open('archaeology')}
+          fresh={isNew('archaeology')}
           stats={[
             { label: 'Reports filed', value: archaeology.reports.length },
             { label: 'Active dig', value: archaeology.active ? 'In progress' : 'None' },
             { label: 'First entered', value: archVisit ? dateFmt.format(archVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        )}
 
+        {shown('decipher') && (
         <ExhibitCard
           kicker={decMode?.subtitle ?? 'Read the Lost'}
           title={decMode?.title ?? 'Decipher'}
           description={decMode?.description ?? ''}
           ctaLabel={decipher.activePuzzle ? 'Continue' : decipher.tutorialCompleted ? 'Enter' : 'Start the tutorial'}
-          onLaunch={() => onLaunchMode?.('decipher')}
+          onLaunch={open('decipher')}
+          fresh={isNew('decipher')}
           stats={[
             { label: 'Tablets read', value: decipher.memories.length },
             { label: 'Tutorial', value: decipher.tutorialCompleted ? 'Completed' : 'Not yet' },
             { label: 'First entered', value: decVisit ? dateFmt.format(decVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        )}
 
+        {shown('escape-room') && (
         <ExhibitCard
           kicker={escMode?.subtitle ?? 'Enter the Past'}
           title={escMode?.title ?? 'Historical Escape Room'}
           description={escMode?.description ?? ''}
           ctaLabel={escapeRoom.activeState ? 'Continue' : 'Enter'}
-          onLaunch={() => onLaunchMode?.('escape-room')}
+          onLaunch={open('escape-room')}
+          fresh={isNew('escape-room')}
           stats={[
             { label: 'Episodes completed', value: escapeRoom.memories.length },
             { label: 'In progress', value: escapeRoom.activeState ? `${escapeRoom.activeState.solvedPuzzleIds.length} stations solved` : 'None' },
             { label: 'First entered', value: escVisit ? dateFmt.format(escVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        )}
 
+        {shown('alien-archaeology') && (
         <ExhibitCard
           kicker={alienMode?.subtitle ?? 'Unknown Worlds'}
           title={alienMode?.title ?? 'Alien Archaeology'}
           description={alienMode?.description ?? ''}
           ctaLabel={alien.active ? 'Continue' : 'Enter'}
-          onLaunch={() => onLaunchMode?.('alien-archaeology')}
+          onLaunch={open('alien-archaeology')}
+          fresh={isNew('alien-archaeology')}
           stats={[
             { label: 'Field reports filed', value: alien.reports.length },
             { label: 'Active site', value: alien.active ? 'In progress' : 'None' },
             { label: 'First entered', value: alienVisit ? dateFmt.format(alienVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
+        )}
 
+        {shown('reverse-evolution') && (
         <ExhibitCard
           kicker={revMode?.subtitle ?? 'From Smartphone to Stone'}
           title={revMode?.title ?? 'Reverse Evolution'}
           description={revMode?.description ?? ''}
           ctaLabel={reverseEvo.active ? 'Continue' : 'Enter'}
-          onLaunch={() => onLaunchMode?.('reverse-evolution')}
+          onLaunch={open('reverse-evolution')}
+          fresh={isNew('reverse-evolution')}
           stats={[
             { label: 'Discoveries traced', value: reverseEvo.runs.length },
             { label: 'Active trace', value: reverseEvo.active ? 'In progress' : 'None' },
             { label: 'First entered', value: revVisit ? dateFmt.format(revVisit.firstVisitedAt) : 'Not yet' },
           ]}
         />
-        {getMode('minimum-path')?.status === 'available' && <ExhibitCard
+        )}
+        {getMode('minimum-path')?.status === 'available' && shown('minimum-path') && <ExhibitCard
           kicker="Atlas"
           title={getMode('minimum-path')?.title ?? 'Minimum Path'}
           description="Find the shortest route through the game's recipe network, with checkpoints and blocked paths."
           ctaLabel="Enter"
-          onLaunch={() => onLaunchMode?.('minimum-path')}
+          onLaunch={open('minimum-path')}
+          fresh={isNew('minimum-path')}
           stats={[]}
         />}
         </ModeTrack>
 
         <p className="hub-note">
-          Other wings of this museum are in active development. They will open here, alongside
-          these, as each is finished.
+          More wings open here as you move through history.
+          Other wings of this museum are in active development; they will join these as each is finished.
         </p>
 
-        <p className="hub-extra-link">
-          <button type="button" onClick={() => setSudokuOpen(true)}>Today&rsquo;s Tech Sudoku — a five-minute puzzle</button>
-        </p>
-        <p className="hub-extra-link">
-          <button type="button" onClick={() => setWeeklyOpen(true)}>This week&rsquo;s Mega Challenge — three stages</button>
-        </p>
+        {unlocks.has('puzzles') && (
+          <>
+            <p className="hub-extra-link">
+              <button type="button" className={unlocks.fresh('puzzles') ? 'guide-glow' : undefined}
+                onClick={() => { unlocks.opened('puzzles'); setSudokuOpen(true); }}>Today&rsquo;s Tech Sudoku — a five-minute puzzle</button>
+            </p>
+            <p className="hub-extra-link">
+              <button type="button" className={unlocks.fresh('puzzles') ? 'guide-glow' : undefined}
+                onClick={() => { unlocks.opened('puzzles'); setWeeklyOpen(true); }}>This week&rsquo;s Mega Challenge — three stages</button>
+            </p>
+          </>
+        )}
       </div>
 
       <TechSudokuModal open={sudokuOpen} engine={engine} onClose={() => setSudokuOpen(false)} />

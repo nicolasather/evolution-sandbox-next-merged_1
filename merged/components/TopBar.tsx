@@ -13,12 +13,15 @@ import { sound } from '@/lib/sound';
 import { museumStore } from '@/lib/museum/history/store';
 import type { Engine } from '@/lib/engine';
 import type { Discovery, ViewId } from '@/lib/types';
+import type { FeatureId } from '@/lib/unlocks/registry';
+import { NO_LOCKS, type Unlocks } from '@/lib/unlocks/useUnlocks';
 
-const VIEWS: { id: ViewId; label: string }[] = [
+/** `feature` is the unlock that opens the tab; the Workspace is always there. */
+const VIEWS: { id: ViewId; label: string; feature?: FeatureId }[] = [
   { id: 'work', label: 'Workspace' },
-  { id: 'graph', label: 'Graph' },
-  { id: 'arch', label: 'Archive' },
-  { id: 'time', label: 'Timeline' },
+  { id: 'graph', label: 'Graph', feature: 'graph' },
+  { id: 'arch', label: 'Archive', feature: 'archive' },
+  { id: 'time', label: 'Timeline', feature: 'timeline' },
 ];
 
 /** SOUND ON / OFF — the one switch for every sound in the game. */
@@ -97,20 +100,23 @@ function TileArt({ tone }: { tone: Tone }) {
 }
 
 function Tile({
-  id, tone, cap, label, pressed, className, onClick, alert,
+  id, tone, cap, label, pressed, className, onClick, alert, fresh,
 }: {
   id: string; tone: Tone; cap: string; label: string; pressed?: boolean; className?: string; onClick: () => void;
   /** A quiet mark: something new is waiting (never a number, never a badge). */
   alert?: boolean;
+  /** Just unlocked and never opened: it glows until the player presses it once. */
+  fresh?: boolean;
 }) {
   return (
     <button
       type="button"
-      className={'tile' + (className ? ' ' + className : '')}
+      className={'tile' + (className ? ' ' + className : '') + (fresh ? ' unlock-fresh' : '')}
       id={id}
       data-tone={tone}
       data-cap={cap}
       data-alert={alert || undefined}
+      data-new={fresh || undefined}
       aria-label={alert ? `${label} — something new has come into history` : label}
       aria-pressed={pressed}
       onClick={onClick}
@@ -123,6 +129,7 @@ function Tile({
 
 export function TopBar({
   engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum, onMinPath,
+  unlocks = NO_LOCKS,
 }: {
   engine: Engine;
   view: ViewId;
@@ -137,6 +144,8 @@ export function TopBar({
   onLab: () => void;
   onMuseum: () => void;
   onMinPath: () => void;
+  /** What has opened so far. Left out, everything is open (tests, embedded uses). */
+  unlocks?: Pick<Unlocks, 'has' | 'fresh' | 'opened'>;
 }) {
   const s = engine.stats();
   const [q, setQ] = useState('');
@@ -148,6 +157,9 @@ export function TopBar({
   // the Museum's quiet mark: eligible history not yet seen in the halls
   const museumV = useSyncExternalStore(museumStore.subscribe, museumStore.getVersion, () => 0);
   const museumNew = museumV >= 0 && museumStore.unseenCount() > 0;
+  const { has, fresh } = unlocks;
+  /** Press a corner button: the player has now seen what it is, so its glow ends. */
+  const go = (f: FeatureId, fn: () => void) => () => { unlocks.opened(f); fn(); };
 
   return (
     <header id="top">
@@ -173,31 +185,40 @@ export function TopBar({
         </div>
       </div>
 
-      <div className="top-slot" id="slot-routes" title="Routes you have walked">
-        <span className="mono" style={{ color: 'var(--bone-4)' }} aria-hidden="true">ROUTES</span>
-        <AnimatedCount value={s.routesFound} className="num" />
-      </div>
+      {has('graph') && (
+        <div className="top-slot" id="slot-routes" title="Routes you have walked">
+          <span className="mono" style={{ color: 'var(--bone-4)' }} aria-hidden="true">ROUTES</span>
+          <AnimatedCount value={s.routesFound} className="num" />
+        </div>
+      )}
 
       <div className="top-slot" id="slot-era" aria-live="polite">
         <span className="mono" style={{ color: 'var(--bone-4)' }}>ERA</span>
         <span className="era-now">{engine.currentEra().name}</span>
       </div>
 
-      <WorldChip engine={engine} onOpen={onWorld} />
+      {has('world') && (
+        <span className={fresh('world') ? 'unlock-fresh-wrap' : undefined} data-new={fresh('world') || undefined}>
+          <WorldChip engine={engine} onOpen={go('world', onWorld)} />
+        </span>
+      )}
 
-      <div className="top-slot" id="slot-hidden" title="Hidden discoveries">
-        <span className="mono" style={{ color: 'var(--bone-4)' }} aria-hidden="true">HIDDEN</span>
-        <span className="num" style={{ fontSize: 12 }} aria-label={`${s.hidden} hidden items found out of ${s.hiddenTotal}`}>{s.hidden}/{s.hiddenTotal}</span>
-      </div>
+      {has('archive') && (
+        <div className="top-slot" id="slot-hidden" title="Hidden discoveries">
+          <span className="mono" style={{ color: 'var(--bone-4)' }} aria-hidden="true">HIDDEN</span>
+          <span className="num" style={{ fontSize: 12 }} aria-label={`${s.hidden} hidden items found out of ${s.hiddenTotal}`}>{s.hidden}/{s.hiddenTotal}</span>
+        </div>
+      )}
 
       <nav className="tabs top-spacer" id="tabs" role="tablist" aria-label="Views">
-        {VIEWS.map(v => (
+        {VIEWS.filter(v => !v.feature || has(v.feature)).map(v => (
           <button
             key={v.id}
-            className="tab"
+            className={'tab' + (v.feature && fresh(v.feature) ? ' unlock-fresh' : '')}
+            data-new={(v.feature && fresh(v.feature)) || undefined}
             role="tab"
             aria-selected={view === v.id}
-            onClick={() => onView(v.id)}
+            onClick={() => { if (v.feature) unlocks.opened(v.feature); onView(v.id); }}
             aria-controls={`${v.id}-view`}
           >
             <ReactiveLabel text={v.label} />
@@ -213,7 +234,7 @@ export function TopBar({
         ))}
       </nav>
 
-      <div className="top-slot" id="slot-search" style={{ position: 'relative' }}>
+      {has('archive') && <div className="top-slot" id="slot-search" style={{ position: 'relative' }}>
         <svg width="13" height="13" viewBox="0 0 16 16" stroke="currentColor" strokeWidth="1.5" fill="none"
           style={{ color: 'var(--bone-4)', flex: 'none' }} aria-hidden="true">
           <circle cx="7" cy="7" r="5" /><path d="M11 11l4 4" />
@@ -265,22 +286,22 @@ export function TopBar({
             )}
           </div>
         )}
-      </div>
+      </div>}
 
       <div className="top-slot top-actions">
         <div className="dock">
-          <Tile id="minpath-open" tone="minpath" cap="Minimum Path" label="Minimum Path challenge"
-            pressed={view === 'minpath'} className="max-[900px]:hidden" onClick={onMinPath} />
-          <Tile id="museum-open" tone="museum" cap="Museum" label="Museum" alert={museumNew && view !== 'museum'}
-            pressed={view === 'museum'} className="max-[900px]:hidden" onClick={onMuseum} />
-          <Tile id="hub-open" tone="hub" cap="Modes" label="Mode Hub"
-            pressed={view === 'hub'} onClick={onHub} />
-          <Tile id="trade-open" tone="trade" cap="Trade" label="Trade"
-            className="max-[900px]:hidden" onClick={onTrade} />
-          <Tile id="lab-open" tone="lab" cap="Laboratory" label="Laboratory"
-            className="max-[900px]:hidden" onClick={onLab} />
-          <Tile id="journal-open" tone="journal" cap="Journal" label="Your journal"
-            className="max-[900px]:hidden" onClick={onJournal} />
+          {has('minpath') && <Tile id="minpath-open" tone="minpath" cap="Minimum Path" label="Minimum Path challenge" fresh={fresh('minpath')}
+            pressed={view === 'minpath'} className="max-[900px]:hidden" onClick={go('minpath', onMinPath)} />}
+          {has('museum') && <Tile id="museum-open" tone="museum" cap="Museum" label="Museum" alert={museumNew && view !== 'museum'} fresh={fresh('museum')}
+            pressed={view === 'museum'} className="max-[900px]:hidden" onClick={go('museum', onMuseum)} />}
+          {has('hub') && <Tile id="hub-open" tone="hub" cap="Modes" label="Mode Hub" fresh={fresh('hub')}
+            pressed={view === 'hub'} onClick={go('hub', onHub)} />}
+          {has('trade') && <Tile id="trade-open" tone="trade" cap="Trade" label="Trade" fresh={fresh('trade')}
+            className="max-[900px]:hidden" onClick={go('trade', onTrade)} />}
+          {has('lab') && <Tile id="lab-open" tone="lab" cap="Laboratory" label="Laboratory" fresh={fresh('lab')}
+            className="max-[900px]:hidden" onClick={go('lab', onLab)} />}
+          {has('journal') && <Tile id="journal-open" tone="journal" cap="Journal" label="Your journal" fresh={fresh('journal')}
+            className="max-[900px]:hidden" onClick={go('journal', onJournal)} />}
         </div>
         <div className="util">
           <button

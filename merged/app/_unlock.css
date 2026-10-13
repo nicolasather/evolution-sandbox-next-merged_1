@@ -1,0 +1,101 @@
+/* ============================================================================
+   UNLOCKS + 3D OPENINGS  (loaded after _cinematic.css and _guide.css)
+
+   1. The glow of something just unlocked / a control the guide points at.
+   2. The "unlocked" notice.
+   3. Hub cards that are new.
+   4. A calmer, more readable guide line.
+   5. The opening of every mode and view: title, lines and slides are set in real
+      extruded 3D type that leans toward the pointer and catches a slow sheen.
+   Everything is square-cornered and uses the site's one accent. Motion is
+   switched off for people who ask for reduced motion.
+   ========================================================================== */
+
+/* ── 1. THE GLOW ───────────────────────────────────────────────────────── */
+.guide-glow,.unlock-fresh{
+  animation:unBreathe 2.6s ease-in-out infinite;
+  border-color:var(--guide-glow,var(--ochre,#d9b26a))!important;position:relative}
+@keyframes unBreathe{
+  0%,100%{box-shadow:inset 0 0 6px 0 rgba(var(--guide-glow-rgb,217,178,106),.28),0 0 0 0 rgba(var(--guide-glow-rgb,217,178,106),.0),0 0 0 0 rgba(var(--guide-glow-rgb,217,178,106),.0);
+          background-color:rgba(var(--guide-glow-rgb,217,178,106),.06)}
+  50%{box-shadow:inset 0 0 18px 2px rgba(var(--guide-glow-rgb,217,178,106),.55),0 0 18px 2px rgba(var(--guide-glow-rgb,217,178,106),.38),0 0 0 7px rgba(var(--guide-glow-rgb,217,178,106),.10);
+          background-color:rgba(var(--guide-glow-rgb,217,178,106),.17)}}
+.unlock-fresh-wrap{display:contents}
+.unlock-fresh-wrap[data-new] .top-slot,.unlock-fresh-wrap[data-new]>*{animation:unBreathe 2.6s ease-in-out infinite}
+/* a fresh tile in the corner dock keeps its picture clear: the ring is outside, the wash is faint */
+.tile.unlock-fresh{background-color:transparent}
+.tab.unlock-fresh{background-color:transparent}
+
+/* ── 2. THE "UNLOCKED" NOTICE ─────────────────────────────────────────── */
+.un{position:fixed;left:0;right:0;bottom:max(28px,env(safe-area-inset-bottom));z-index:9400;display:flex;justify-content:center;
+  pointer-events:none;perspective:900px}
+.un-card{pointer-events:auto;position:relative;display:grid;gap:6px;justify-items:center;text-align:center;cursor:pointer;
+  min-width:min(420px,88vw);max-width:min(560px,92vw);padding:18px 30px 22px;border-radius:0;
+  border:1px solid rgba(var(--guide-glow-rgb,217,178,106),.55);
+  background:linear-gradient(180deg,rgba(var(--guide-glow-rgb,217,178,106),.12),rgba(8,8,10,.86) 55%);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--bone,#e8e4dc);font:inherit;
+  box-shadow:0 22px 50px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.08);
+  transform-origin:50% 100%;animation:unIn .9s cubic-bezier(.2,.85,.2,1) both,unFloat 5s ease-in-out .9s infinite alternate}
+.un-card::before,.un-card::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--guide-glow,var(--ochre,#d9b26a));pointer-events:none}
+.un-card::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
+.un-card::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.un-kick{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--guide-glow,var(--ochre,#d9b26a));animation:unSheen 3s ease-in-out infinite}
+.un-name{font-family:var(--fs-3d,inherit);font-size:clamp(28px,4.4vw,46px);line-height:1.05;text-transform:uppercase;letter-spacing:.1em;color:var(--bone,#e8e4dc);
+  text-shadow:0 -1px 0 rgba(255,255,255,.5),0 1px 0 #8a8a8a,0 2px 0 #777,0 3px 0 #646464,0 4px 0 #515151,0 5px 0 #3e3e3e,0 6px 0 #2e2e2e,0 14px 16px rgba(0,0,0,.6)}
+.un-line{max-width:46ch;font-size:clamp(13px,1.5vw,16px);line-height:1.5;color:rgba(232,228,220,.82)}
+.un-where{margin-top:2px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--guide-glow,var(--ochre,#d9b26a));opacity:.9}
+.un-bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--guide-glow,var(--ochre,#d9b26a));opacity:.7;transform-origin:0 50%;animation:unBar linear both}
+@keyframes unIn{from{opacity:0;transform:translate3d(0,40px,-260px) rotateX(24deg);filter:blur(10px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes unFloat{from{transform:translateY(0) rotateX(0)}to{transform:translateY(-6px) rotateX(1.5deg)}}
+@keyframes unSheen{0%,100%{opacity:.65}50%{opacity:1}}
+@keyframes unBar{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+
+/* ── 3. NEW WINGS IN THE HUB ──────────────────────────────────────────── */
+.hub-new{font-weight:600;color:var(--guide-glow,var(--ochre,#d9b26a));letter-spacing:.3em}
+.hub-exhibit.is-new{outline:1px solid rgba(var(--guide-glow-rgb,217,178,106),.55);outline-offset:-1px}
+
+/* ── 4. THE GUIDE LINE ────────────────────────────────────────────────── */
+.guide-hint:not(.ready){width:fit-content;max-width:min(92vw,900px);margin:8px auto;padding:10px clamp(16px,3vw,34px);border-radius:0;
+  border:1px solid rgba(var(--guide-glow-rgb,217,178,106),.4);position:relative;
+  background:linear-gradient(180deg,rgba(var(--guide-glow-rgb,217,178,106),.12),rgba(8,8,10,.6));
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 12px 28px rgba(0,0,0,.4)}
+.guide-hint:not(.ready) .guide-text{color:var(--bone,#e8e4dc);
+  text-shadow:0 1px 0 #7d7d7d,0 2px 0 #5d5d5d,0 3px 0 #3c3c3c,0 8px 12px rgba(0,0,0,.55)}
+.guide-hint:not(.ready) .guide-text::before{content:"";display:inline-block;width:8px;height:8px;margin-right:12px;vertical-align:middle;
+  background:var(--guide-glow,var(--ochre,#d9b26a));animation:unSheen 1.6s ease-in-out infinite}
+.guide-hint.ready{color:var(--bone,#e8e4dc);text-shadow:0 1px 0 #7d7d7d,0 2px 0 #5d5d5d,0 3px 0 #3c3c3c,0 10px 14px rgba(0,0,0,.55)}
+
+/* ── 5. THE OPENINGS, IN 3D TYPE ──────────────────────────────────────── */
+.cg-front{perspective:1000px;perspective-origin:calc(50% + var(--px,0) * 6%) calc(50% + var(--py,0) * 6%)}
+.cg-title{transform-style:preserve-3d;
+  transform:translateY(-50%) rotateX(calc(var(--py,0) * -7deg)) rotateY(calc(var(--px,0) * 10deg));
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
+  font-weight:700;letter-spacing:.1em;
+  text-shadow:0 -1px 0 rgba(255,255,255,.55),calc(var(--px,0) * -0.55px) calc(1.00px + var(--py,0) * -0.30px) 0 rgb(140,140,140),calc(var(--px,0) * -1.10px) calc(2.00px + var(--py,0) * -0.60px) 0 rgb(131,131,131),calc(var(--px,0) * -1.65px) calc(3.00px + var(--py,0) * -0.90px) 0 rgb(122,122,122),calc(var(--px,0) * -2.20px) calc(4.00px + var(--py,0) * -1.20px) 0 rgb(112,112,112),calc(var(--px,0) * -2.75px) calc(5.00px + var(--py,0) * -1.50px) 0 rgb(103,103,103),calc(var(--px,0) * -3.30px) calc(6.00px + var(--py,0) * -1.80px) 0 rgb(94,94,94),calc(var(--px,0) * -3.85px) calc(7.00px + var(--py,0) * -2.10px) 0 rgb(84,84,84),calc(var(--px,0) * -4.40px) calc(8.00px + var(--py,0) * -2.40px) 0 rgb(75,75,75),calc(var(--px,0) * -4.95px) calc(9.00px + var(--py,0) * -2.70px) 0 rgb(66,66,66),calc(var(--px,0) * -5.50px) calc(10.00px + var(--py,0) * -3.00px) 0 rgb(56,56,56),calc(var(--px,0) * -6.05px) calc(11.00px + var(--py,0) * -3.30px) 0 rgb(47,47,47),calc(var(--px,0) * -6.60px) calc(12.00px + var(--py,0) * -3.60px) 0 rgb(38,38,38),calc(var(--px,0) * -14px) 26px 28px rgba(0,0,0,.65),0 0 46px rgba(0,0,0,.55)}
+.cg-ch{transform-style:preserve-3d;will-change:transform}
+/* a slow sheen sweeps the lettering once the title has settled */
+.cg-title::after{content:"";position:absolute;inset:-6% -2%;pointer-events:none;mix-blend-mode:soft-light;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);
+  transform:translateX(-120%);animation:unSweep 5.5s ease-in-out 3.2s infinite}
+@keyframes unSweep{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.cg-line{transform-style:preserve-3d;font-weight:500;
+  text-shadow:0 -1px 0 rgba(255,255,255,.3),calc(var(--px,0) * -0.55px) calc(0.90px + var(--py,0) * -0.30px) 0 rgb(92,92,92),calc(var(--px,0) * -1.10px) calc(1.80px + var(--py,0) * -0.60px) 0 rgb(75,75,75),calc(var(--px,0) * -1.65px) calc(2.70px + var(--py,0) * -0.90px) 0 rgb(57,57,57),calc(var(--px,0) * -2.20px) calc(3.60px + var(--py,0) * -1.20px) 0 rgb(40,40,40),0 10px 16px rgba(0,0,0,.5)}
+.cg[data-phase="slides"] .cg-title{transform:translateY(-50%) rotateX(calc(var(--py,0) * -4deg)) rotateY(calc(var(--px,0) * 6deg))}
+.cg-slide{transform-style:preserve-3d;font-weight:600;
+  transform:rotateX(calc(var(--py,0) * -3deg)) rotateY(calc(var(--px,0) * 5deg));
+  text-shadow:0 -1px 0 rgba(255,255,255,.35),calc(var(--px,0) * -0.55px) calc(0.90px + var(--py,0) * -0.30px) 0 rgb(104,104,104),calc(var(--px,0) * -1.10px) calc(1.80px + var(--py,0) * -0.60px) 0 rgb(88,88,88),calc(var(--px,0) * -1.65px) calc(2.70px + var(--py,0) * -0.90px) 0 rgb(72,72,72),calc(var(--px,0) * -2.20px) calc(3.60px + var(--py,0) * -1.20px) 0 rgb(56,56,56),calc(var(--px,0) * -2.75px) calc(4.50px + var(--py,0) * -1.50px) 0 rgb(40,40,40),calc(var(--px,0) * -8px) 14px 20px rgba(0,0,0,.55)}
+.hub-title,.hub-exhibit-title{text-shadow:0 -1px 0 rgba(255,255,255,.3),0 1px 0 #7d7d7d,0 2px 0 #686868,0 3px 0 #535353,0 4px 0 #3e3e3e,0 10px 14px rgba(0,0,0,.5)}
+
+@media (prefers-reduced-motion:reduce){
+  .guide-glow,.unlock-fresh,.unlock-fresh-wrap[data-new] .top-slot,.unlock-fresh-wrap[data-new]>*{animation:none;
+    box-shadow:inset 0 0 14px 2px rgba(var(--guide-glow-rgb,217,178,106),.5),0 0 10px 1px rgba(var(--guide-glow-rgb,217,178,106),.3);
+    background-color:rgba(var(--guide-glow-rgb,217,178,106),.12)}
+  .un-card,.un-kick,.un-bar,.guide-hint:not(.ready) .guide-text::before,.cg-title::after{animation:none}
+  .un-bar{display:none}
+  .cg-title,.cg-slide,.cg[data-phase="slides"] .cg-title{transition:none;transform:translateY(-50%)}
+  .cg-slide{transform:none}
+}
+@media (max-width:640px){
+  .cg-title{text-shadow:0 -1px 0 rgba(255,255,255,.55),calc(var(--px,0) * -0.55px) calc(1.00px + var(--py,0) * -0.30px) 0 rgb(134,134,134),calc(var(--px,0) * -1.10px) calc(2.00px + var(--py,0) * -0.60px) 0 rgb(118,118,118),calc(var(--px,0) * -1.65px) calc(3.00px + var(--py,0) * -0.90px) 0 rgb(102,102,102),calc(var(--px,0) * -2.20px) calc(4.00px + var(--py,0) * -1.20px) 0 rgb(86,86,86),calc(var(--px,0) * -2.75px) calc(5.00px + var(--py,0) * -1.50px) 0 rgb(70,70,70),calc(var(--px,0) * -3.30px) calc(6.00px + var(--py,0) * -1.80px) 0 rgb(54,54,54),calc(var(--px,0) * -3.85px) calc(7.00px + var(--py,0) * -2.10px) 0 rgb(38,38,38),0 16px 18px rgba(0,0,0,.6)}
+}

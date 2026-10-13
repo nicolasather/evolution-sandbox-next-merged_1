@@ -381,7 +381,8 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     const handWanted = () => !!mode && (ptr.inside && (!ptr.touch || ptr.down) || !!demo);
     const needFrame = () =>
       world.busy || !!session || !!resolving || !!pull || fx.alive || cool > 0 || !!drag || hits.size > 0 || world.touching().length > 0
-      || !!act || !!trial || !!demo || handA > 0.02 || handWanted() || feel.size > 0 || ghostBody() !== null;
+      || !!act || !!trial || !!demo || handA > 0.02 || handWanted() || feel.size > 0 || ghostBody() !== null
+      || (!mq.matches && world.floating); // pieces at rest keep drifting, so the loop never sleeps while any sit here
 
     function frame(now: number) {
       raf = 0;
@@ -1066,6 +1067,9 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       g.setTransform(dpr, 0, 0, dpr, 0, 0);
       g.clearRect(0, 0, world.w, world.h);
       g.save();
+      // idle float: pieces resting on the bench drift gently (off for reduced motion)
+      world.idleOn = !mq.matches;
+      world.idleT = now / 1000;
       world.paintAll();
       // the chosen piece is lit by a soft shadow that follows its outline (CSS), not a ring
       const chosen = sel && world.bodies.includes(sel) && !session ? sel : null;

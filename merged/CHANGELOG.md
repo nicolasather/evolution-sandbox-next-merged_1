@@ -5,6 +5,31 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 13 October 2026 — everything now unlocks as you move through history
+A new visitor sees the workbench and nothing else. Every other part of the game opens in the order
+humanity reached it (`lib/unlocks/registry.ts` — the one place to tune it; the rules are derived from
+real progress, so a "Start over" locks everything again by itself):
+Archive (3 discoveries) → Graph (6) → the corner questions (8) → Journal (12) → Modes hub + Survival (20)
+→ Timeline (Settlement) → Museum and World (Agriculture) → Archaeologist and Civilization (Civilisation)
+→ Trade and Decipher (Trade & Currency) → Escape Room (Metal & Machine) → Laboratory and the daily/weekly
+puzzles (Knowledge) → Reverse Evolution (Industry) → Minimum Path (Electrification) → Alien Archaeology
+(Computing). Top-bar tabs, the corner buttons, the ROUTES / HIDDEN / search slots, the World chip, the mobile
+tab bar, the keyboard shortcuts (G A T M), "Find in graph" and every Hub card respect it.
+Something just unlocked announces itself once (`components/UnlockNotice.tsx`) and its button glows until it
+is pressed for the first time; a Hub card that is new says NEW and its Enter button glows. A save loaded with
+many unlocks at once is shown nothing (no flood of notices). Only the memory of "told / opened" is stored
+(`evo.unlocks.v1`), never an unlock itself.
+- New: `lib/unlocks/{registry,store,useUnlocks}.ts`, `components/UnlockNotice.tsx`, `app/_unlock.css`,
+  `lib/unlocks/__tests__/registry.test.ts`, `components/__tests__/Unlocks.test.tsx`.
+- Changed: `components/{Sandbox,TopBar,ModeHub}.tsx`, `app/globals.css`.
+- The glow of the guide (`.guide-glow`) is now a breathing double ring; the guide line is a square plate with
+  raised lettering. The first-time guide of each mode already existed (`lib/guide`) and is unchanged.
+- The opening of every view and mode (title, lines, slides) is set in extruded 3D type that leans toward the
+  pointer and catches a slow sheen (`app/_unlock.css`, section 5). Switched off for reduced motion.
+- Crafting: pieces resting on the bench now float and drift on their own (a slow bob, sway, tilt and breath, a
+  different phase for each piece). Drawing only: positions, hit-tests and physics are untouched, and it is off
+  for reduced motion (`lib/craft/world.ts` `idleOffset`, `components/Workbench.tsx`).
+
 ### Stone Age raw materials and preparations: 500 more placeholder discoveries (918 total, 902 core)
 `data/nodes/g10.json` adds 500 early-game items (animal parts, minerals, preparations, containers,
 places, techniques, tool blanks). They were first committed straight into the repo-root
