@@ -31,7 +31,14 @@
     "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js -c jest.db.config.js --runInBand",
     "release:compile": "tsx tools/release/compile.ts",
     "release:check": "tsx tools/release/compile.ts --check",
-    "db:migrate": "tsx tools/db/migrate.ts"
+    "db:migrate": "tsx tools/db/migrate.ts",
+    "lab:test": "jest lib/devlab",
+    "lab:check": "tsx tools/devlab/check-ollama.ts",
+    "lab:generate": "tsx tools/devlab/generate.ts",
+    "lab:fixtures": "tsx tools/devlab/seed-fixtures.ts",
+    "lab:sheet": "tsx tools/devlab/contact-sheet.ts",
+    "lab:report": "tsx tools/devlab/report.ts",
+    "lab:schema": "tsx tools/devlab/schema-doc.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

@@ -1,0 +1,8 @@
+# Visual Lab is a local development prototype. Keep it out of CLI uploads to Vercel.
+# (Git-connected deploys include the files but the lab is inert there: see lib/devlab/gate.ts.)
+dev-data
+lib/devlab
+components/devlab
+tools/devlab
+app/admin/visual-lab
+app/api/dev/visual-lab
