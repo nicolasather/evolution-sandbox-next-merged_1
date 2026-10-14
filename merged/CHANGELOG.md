@@ -1047,3 +1047,9 @@ Tailwind compiled by a local Tailwind 3 — 13 scenarios, including the
 returning-player hydration case that fails on the 1.0 code. Run
 `npm install && npm run typecheck && npm run lint && npm run build` once on a
 machine with network access to confirm.
+
+## 14/10/2026 (continued) — Logic-First V3 Phase 1, gap closure
+- Added `lib/visual3d/lods.ts` (quality tiers, SVG fallback), `lib/craft/motionPrefs.ts` (reduced motion / audio), `lib/content/altScoring.ts` (hard_reject / needs_review / feasible; no confidence input), `lib/content/candidates.ts` (bounded pool), `lib/server/modelAudit.ts` (hash-only provenance, redaction).
+- `Reconstruction3D` now chooses its tier from the device; `Workbench` applies `resolveMotion` for pipeline items only.
+- Tests: lods, motionPrefs, triage/candidates, modelAudit, museum isolation (065), release certification (068, golden digest of all 1896 known recipes in `lib/content/__tests__/fixtures/known_recipes.golden.json`).
+- `npm run release:certify` runs the gate.

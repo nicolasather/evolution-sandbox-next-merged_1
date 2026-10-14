@@ -6,6 +6,7 @@ import { silhouette } from '@/lib/visual3d/silhouette';
 import { MATERIAL_LOOK } from '@/lib/visual3d/materials';
 import { MeshCache } from '@/lib/visual3d/cache';
 import { webglAvailable, mountMesh, type RenderHandle } from '@/lib/visual3d/renderer';
+import { chooseQuality, detectEnv } from '@/lib/visual3d/lods';
 import type { Mesh } from '@/lib/visual3d/types';
 
 /* A small, labelled, procedural reconstruction for items published by the verified-content pipeline.
@@ -20,19 +21,23 @@ export function Reconstruction3D({ itemId, archetype, family, name }: {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [gl, setGl] = useState(false);
 
+  /* Quality tier is decided once per mount from the real device (reduced motion, data saver, low memory,
+     no WebGL all mean: flat SVG and the 3D code is never loaded). */
+  const quality = useMemo(() => chooseQuality(detectEnv(webglAvailable())), []);
+
   const { mesh, spec } = useMemo(() => {
     const sp = planFor({ itemId, archetype, family });
-    const k = `${itemId}:${sp.archetype}:${sp.material}`;
+    const k = `${itemId}:${sp.archetype}:${sp.material}:${quality.lod}`;
     let m = cache.get(k);
-    if (!m) { m = meshFor(sp, 0); cache.set(k, m); }
+    if (!m) { m = meshFor(sp, quality.lod); cache.set(k, m); }
     return { mesh: m, spec: sp };
-  }, [itemId, archetype, family]);
+  }, [itemId, archetype, family, quality.lod]);
 
   const flat = useMemo(() => silhouette(mesh).svg, [mesh]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || !webglAvailable()) return;
+    if (!canvas || quality.render !== 'webgl') return;
     let handle: RenderHandle | null = null;
     let dead = false;
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
@@ -40,7 +45,7 @@ export function Reconstruction3D({ itemId, archetype, family, name }: {
       .then(h => { if (dead) h?.dispose(); else { handle = h; setGl(!!h); } })
       .catch(() => setGl(false));
     return () => { dead = true; handle?.dispose(); setGl(false); };
-  }, [mesh, spec.material]);
+  }, [mesh, spec.material, quality.render]);
 
   return (
     <figure className="recon3d" style={{ margin: '0 0 14px', textAlign: 'center' }}>

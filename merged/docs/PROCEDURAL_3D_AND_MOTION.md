@@ -13,7 +13,7 @@
 
 **What is verified:** geometry validity, determinism, silhouette difference between all 16 families, LODs, spec rejection,
 cache identity — by Jest (no GPU). **What is not:** the OGL renderer has not been looked at in a browser in this
-session; nothing in the game imports it yet, and the existing hand-drawn glyphs (`lib/glyphs.ts`) are unchanged.
+session; `components/Reconstruction3D.tsx` shows it in the exhibit panel ONLY for items that carry a `visualArchetype` (none of the original 918 do, so their authored plates are untouched). `lib/visual3d/lods.ts` picks high/medium/low or a flat SVG (no WebGL, reduced motion, data saver, ≤1 GB), and the 3D code is not loaded in the SVG case.
 Visuals are labelled reconstructions (`stylized: true`), not claims about the real object’s shape.
 
 ## Motion (`lib/craft/motionPlan.ts`)
@@ -21,5 +21,4 @@ A `MotionPlan` is chosen from the materials of the ingredients and the step kind
 `percussive`, `binding`, `abrasive`, `thermal`, `fluid`, `carving`, `assembly`, `signal`, `insight`, `organic`, `gentle`.
 Phases (approach, contact, work, settle, reveal), easing, particles (≤ 48), sounds and shake come from data;
 `reduced` is a still, < 0.5 s variant with no particles or shake. `stone + stone` is percussive, `fibre + wood` is
-binding (tested). A new item needs no new JSX; **the plan is not yet consumed by the Workbench** (the existing
-engine still decides what a craft makes and how it plays).
+binding (tested). A new item needs no new JSX; `lib/craft/motionPrefs.ts` applies reduced-motion/audio choices. The Workbench uses the plan for the finish of items that carry a `visualArchetype` only; the original items keep their hand-tuned finish (the engine alone decides what a craft makes).

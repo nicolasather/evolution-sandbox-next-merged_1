@@ -40,6 +40,7 @@ export function WorldLayer({ engine, version, active }: { engine: Engine; versio
   const attentionRelease = useRef<(() => void) | null>(null);
   const releaseAttention = () => { attentionRelease.current?.(); attentionRelease.current = null; };
 
+  // eslint-disable-next-line react-hooks/refs -- the callbacks only run later from the director (never during render)
   const [director] = useState(() => new WorldDirector<WorldPayload>({
     delay: () => startDelay(getQuality(), playback().motion === 'reduced'),
     open: active,

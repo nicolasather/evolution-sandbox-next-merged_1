@@ -26,7 +26,8 @@
     "data:recipes": "node tools/py.mjs tools/rework_recipes.py --check",
     "content:audit": "node tools/py.mjs tools/verified_content.py audit",
     "content:run": "node tools/py.mjs tools/verified_content.py run",
-    "content:test": "node tools/py.mjs -m unittest discover -s tools/tests"
+    "content:test": "node tools/py.mjs -m unittest discover -s tools/tests",
+    "release:certify": "npm run typecheck && npm run data:validate && npm run content:test && jest lib/content lib/modeAdapters lib/museum lib/guide components/guide components/__tests__"
   },
   "dependencies": {
     "@sentry/nextjs": "^11.0.0",

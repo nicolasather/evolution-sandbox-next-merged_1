@@ -13,6 +13,7 @@ import { FreeformTrial } from '@/lib/craft/freeform';
 import { CraftSession } from '@/lib/craft/session';
 import { deriveSpec, tierOf } from '@/lib/craft/specs';
 import { planFromMaterials } from '@/lib/craft/motionPlan';
+import { resolveMotion } from '@/lib/craft/motionPrefs';
 import { stepHint } from '@/lib/craft/steps';
 import type { Body, StepKind, Tier, ZoneId } from '@/lib/craft/types';
 import { World } from '@/lib/craft/world';
@@ -665,11 +666,10 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
          describes motion; what was made is already decided by the engine. */
       if (res.node.visualArchetype) {
         const mp = planFromMaterials(bs.map(b => b.material), []);
-        if (!mq.matches) {
-          fx.burst(mx, my, { n: mp.particles.count, color: mp.particles.dust, speed: 60 + mp.particles.spread * 90, life: 0.6, size: 2.2, gravity: mp.particles.gravity * 120 });
-          if (mp.shake > 0) fx.shake(mp.shake * 2);
-        }
-        if (mp.sounds[0]) fx.sound(mp.sounds[0], { vol: 0.6 });
+        const rm = resolveMotion(mp, { reducedMotion: mq.matches, audio: soundEnabled() });
+        if (rm.particles > 0) fx.burst(mx, my, { n: rm.particles, color: mp.particles.dust, speed: 60 + mp.particles.spread * 90, life: 0.6, size: 2.2, gravity: mp.particles.gravity * 120 });
+        if (rm.shake > 0) fx.shake(rm.shake * 2);
+        if (rm.sounds[0]) fx.sound(rm.sounds[0], { vol: 0.6 });
       }
       if (fresh && tier !== 'quick') { fx.shake(tier === 'major' ? 4 : 2); fx.spark(mx, my, { n: tier === 'major' ? 14 : 8, color: 'ochre', speed: 200, life: 0.5 }); }
       if (fresh && tier === 'major') fx.flash(0.9);
