@@ -5,6 +5,13 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 14 October 2026 — Resource Visual Lab (development prototype; NOT shipped)
+Local-only workbench that has a local Ollama `qwen3:14b` design JSON "plate specs" for 100 resources that are not in the catalogue, compiles them with a closed library of 38 procedural
+components into the existing plate SVG grammar, and renders them through the real `Plate3D`. Dev-gated (`VISUAL_LAB` + `ENABLE_DEV_TOOLS`, never Vercel/production, loopback host); Ollama must be loopback;
+model output is validated data, never executed. New: `lib/devlab/**`, `components/devlab/**`, `app/admin/visual-lab`, `app/api/dev/visual-lab`, `tools/devlab/**`, `dev-data/visual-lab/dataset.json`,
+`.vercelignore`, `npm run lab:*` scripts, `docs/RESOURCE_VISUAL_SYSTEM_AUDIT.md`, `docs/RESOURCE_VISUAL_LAB*.md`. No change to recipes, unlock/chronology logic, existing art, catalogue data or renderers.
+Model generation results come from the owner's local run (`npm run lab:generate`); until then `docs/RESOURCE_VISUAL_LAB_REPORT.md` reports zero generated.
+
 ### 14 October 2026 — Logic-First V3, Phase 2 (live discovery sidecar; everything OFF by default)
 A server sidecar (`lib/server/creative/*`, `db/migrations/001–004`) that can ONLY propose an alternative route to an
 already-verified item. Order of gates: release pin → canonical recipe first → deterministic impossibility filter →

@@ -42,3 +42,9 @@ yarn-error.log*
 # Python bytecode (tools/)
 __pycache__/
 *.pyc
+
+# Resource Visual Lab: local generation output (dataset.json stays tracked)
+dev-data/visual-lab/results/
+dev-data/visual-lab/previews/
+dev-data/visual-lab/reviews.json
+dev-data/visual-lab/contact-sheet.svg
