@@ -5,6 +5,19 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 14 October 2026 — Logic-First V3, Phase 2 (live discovery sidecar; everything OFF by default)
+A server sidecar (`lib/server/creative/*`, `db/migrations/001–004`) that can ONLY propose an alternative route to an
+already-verified item. Order of gates: release pin → canonical recipe first → deterministic impossibility filter →
+bounded verified target pool → feature flags → negative cache → per-actor quota → global compute dedup → atomic budget
+reservation (default cap 0 USD) → one model call → strict parse → judge → independent validator → PRIVATE proposal.
+Nothing is live until the owner approves it, exports an immutable release (SHA-256 manifest) and activates it; rollback
+is a pointer swap. New: asset pipeline (leases, GLB validation, human review, manifest), mode packets for 8 modes
+(model supplies item ids from a server pool + flavour text only; server derives seeds and independent solvers certify 20
+seeds; human publishes; the Humanity Museum is never AI-published), owner-only admin routes, kill switch, UTC-day budget
+ledger, `docs/PHASE2_STATUS.md`, `docs/LIVE_DISCOVERY_RUNBOOK.md`, `docs/PHASE2_OWNER_STEPS_VI.md`.
+Item onboarding: a new verified item is queued for a 3D draft and swept once for up to 3 alternative routes (private proposals; `/admin/recipes` panel, `/api/admin/creative/onboard`, optional cron `/api/internal/onboard/tick`); see docs/ITEM_ONBOARDING.md.
+Real LLM / Neon / Blob / Meshy / staging proofs are BLOCKED until the owner provides credentials.
+
 ### 14 October 2026 — Phase 1 completion (integration)
 - Exhibit panel shows a labelled stylised 3D reconstruction (`components/Reconstruction3D.tsx`) for items published by the pipeline only;
   WebGL when available (max 6 live contexts, only while on screen), flat silhouette otherwise. Workbench finish uses the MotionPlan for those items only.
@@ -1054,3 +1067,9 @@ Tailwind compiled by a local Tailwind 3 — 13 scenarios, including the
 returning-player hydration case that fails on the 1.0 code. Run
 `npm install && npm run typecheck && npm run lint && npm run build` once on a
 machine with network access to confirm.
+
+## 14/10/2026 (continued) — Logic-First V3 Phase 1, gap closure
+- Added `lib/visual3d/lods.ts` (quality tiers, SVG fallback), `lib/craft/motionPrefs.ts` (reduced motion / audio), `lib/content/altScoring.ts` (hard_reject / needs_review / feasible; no confidence input), `lib/content/candidates.ts` (bounded pool), `lib/server/modelAudit.ts` (hash-only provenance, redaction).
+- `Reconstruction3D` now chooses its tier from the device; `Workbench` applies `resolveMotion` for pipeline items only.
+- Tests: lods, motionPrefs, triage/candidates, modelAudit, museum isolation (065), release certification (068, golden digest of all 1896 known recipes in `lib/content/__tests__/fixtures/known_recipes.golden.json`).
+- `npm run release:certify` runs the gate.

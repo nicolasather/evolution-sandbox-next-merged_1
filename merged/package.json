@@ -26,27 +26,38 @@
     "data:recipes": "node tools/py.mjs tools/rework_recipes.py --check",
     "content:audit": "node tools/py.mjs tools/verified_content.py audit",
     "content:run": "node tools/py.mjs tools/verified_content.py run",
-    "content:test": "node tools/py.mjs -m unittest discover -s tools/tests"
+    "content:test": "node tools/py.mjs -m unittest discover -s tools/tests",
+    "release:certify": "npm run typecheck && npm run data:validate && npm run content:test && jest lib/content lib/modeAdapters lib/museum lib/guide components/guide components/__tests__",
+    "test:db": "node --experimental-vm-modules node_modules/jest/bin/jest.js -c jest.db.config.js --runInBand",
+    "release:compile": "tsx tools/release/compile.ts",
+    "release:check": "tsx tools/release/compile.ts --check",
+    "db:migrate": "tsx tools/db/migrate.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
     "@sentry/nextjs": "^11.0.0",
     "@vercel/analytics": "^2.0.1",
+    "@vercel/blob": "^2.8.1",
     "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^13.4.3",
     "next": "^16.3.6",
     "ogl": "^1.0.11",
+    "pg": "^8.23.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "tailwind-merge": "^3.7.0"
+    "tailwind-merge": "^3.7.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.9",
     "@next/bundle-analyzer": "^16.3.6",
     "@tailwindcss/postcss": "^4.3.3",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^26.6.2",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "cross-env": "^10.1.0",
@@ -60,6 +71,7 @@
     "prettier": "^3.9.9",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3"
   },
   "engines": {

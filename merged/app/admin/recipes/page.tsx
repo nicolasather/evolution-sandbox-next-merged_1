@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { playDb } from '@/lib/processing';
 import { gateOpen } from '@/lib/server/ownerAuth';
 import { RecipeReview } from '@/components/admin/RecipeReview';
+import { OnboardPanel } from '@/components/admin/OnboardPanel';
 
 /* Owner-only review page. It does not exist (404) unless the developer gate is open,
    and never on production. The API behind it additionally needs the owner token. */
@@ -14,5 +15,5 @@ export default function Page() {
   const targets = playDb.nodes.filter(n => n.visualArchetype).map(n => ({ id: n.id, name: n.n, recipe: (n.rec ?? [])[0] ?? [] }));
   const names: Record<string, string> = {};
   for (const n of playDb.nodes) names[n.id] = n.n;
-  return <RecipeReview targets={targets} names={names} />;
+  return <><RecipeReview targets={targets} names={names} /><OnboardPanel /></>;
 }
