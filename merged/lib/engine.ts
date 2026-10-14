@@ -106,6 +106,16 @@ export interface RecipeView {
 }
 const NO_HINT: HintState = { target: null, level: 0, tries: 0, custom: false };
 
+/** Developer Beta hooks (lib/dev/overrides.ts). Never passed in production; when absent every
+ *  `dev*` path below is inert and the Engine behaves exactly as it always has. The chronology
+ *  override only changes what is REACHABLE — it is never written into a save. */
+export interface EngineDevHooks {
+  /** The beta is active and the server confirmed it. */
+  enabled(): boolean;
+  /** Era and Stone-Age tier gates are ignored. */
+  chronology(): boolean;
+}
+
 export class Engine {
   readonly db: Db;
   readonly byId: Record<string, Discovery> = Object.create(null);
@@ -137,6 +147,9 @@ export class Engine {
    *  hook existed. Only lib/useSandbox.ts ever passes a real one, and only
    *  when the 'trade-routes' flag is on (lib/modes/flags.ts). */
   private readonly regionGate: (node: Discovery) => RegionLockInfo | null;
+  /** Developer Beta only — see EngineDevHooks. Undefined everywhere else. */
+  private readonly dev: EngineDevHooks | undefined;
+  private readonly allErasOpen: boolean[];
 
   /** Discoveries held (counted, numbered, shown in the archive). */
   found: Set<string>;
@@ -196,9 +209,11 @@ export class Engine {
     this.listeners.forEach(fn => fn());
   }
 
-  constructor(db: Db, opts?: { regionGate?: (node: Discovery) => RegionLockInfo | null }) {
+  constructor(db: Db, opts?: { regionGate?: (node: Discovery) => RegionLockInfo | null; dev?: EngineDevHooks }) {
     this.db = db;
     this.regionGate = opts?.regionGate ?? (() => null);
+    this.dev = opts?.dev;
+    this.allErasOpen = db.eras.map(() => true);
     this.proc = db.proc;
     this.primitives = new Set(db.primitives);
     db.nodes.forEach(n => { this.byId[n.id] = n; });
@@ -398,6 +413,10 @@ export class Engine {
 
   /** Whether recipes producing entries of `tier` fire yet, and what it takes to open it. */
   gate(tier: StoneAgeTier): TierGate {
+    if (this.devChronology()) {
+      const prevTier: StoneAgeTier | null = tier === 'olduvai' ? null : tier === 'middle' ? 'olduvai' : 'middle';
+      return { tier, name: this.tierName(tier), open: true, have: 0, need: 0, prevTier, prevName: prevTier ? this.tierName(prevTier) : '' };
+    }
     // `found` only grows between resets, so its size is a sound cache key
     if (this.gateCacheSize !== this.found.size) { this.gateCache.clear(); this.gateCacheSize = this.found.size; }
     const hit = this.gateCache.get(tier);
@@ -426,8 +445,70 @@ export class Engine {
     return !t || this.gate(t).open;
   }
 
+  /* ── Developer Beta (inert unless the hooks say the beta is active) ──────── */
+  private devChronology(): boolean { const d = this.dev; return !!d && d.enabled() && d.chronology(); }
+
+  /** The override switches changed: forget cached gate answers and tell the interface. */
+  refreshGates(): void {
+    this.gateCacheSize = -1;
+    this.eraOpenSize = -1;
+    this.emit();
+  }
+
+  /** Beta: hold these discoveries as if found (no recipe steps are recorded for them).
+   *  Returns how many were new. No-op outside an active beta. */
+  devGrant(ids: readonly string[]): number {
+    if (!this.dev?.enabled()) return 0;
+    let n = 0;
+    for (const id of ids) {
+      const node = this.byId[id];
+      if (!node) continue;
+      if (node.state) { if (this.addState(id)) n++; continue; } // a worked material (Soil, Cracked Stone…)
+      if (this.found.has(id)) continue;
+      this.found.add(id); this.order.push(id);
+      if (!this.bag.includes(id)) this.bag.push(id);
+      this.when[id] = Date.now();
+      if (this.world.isMajor(id)) this.worldSeen.add(id);
+      n++;
+    }
+    if (n === 0) return 0;
+    this.coached = 2;
+    this.gateCacheSize = -1; this.eraOpenSize = -1;
+    this.runUnlocks();
+    this.syncTechniques(true);
+    this.save(); this.emit();
+    return n;
+  }
+
+  /** Beta: after a scenario fast-forward, mark everything held as seen and every major as already
+   *  celebrated, so nothing replays for ground that was crossed in one step. No-op outside an active beta. */
+  devSettle(): void {
+    if (!this.dev?.enabled()) return;
+    for (const id of this.found) {
+      this.seen.add(id);
+      if (this.world.isMajor(id)) this.worldSeen.add(id);
+    }
+    this.fresh = new Set();
+    this.worldEvents = [];
+    this.celebrated = new Set(
+      this.db.eras.map(e => e.id).filter(e => (this.world.required.get(e)?.length ?? 0) > 0 && this.world.eraComplete(e, this.found)),
+    );
+    this.syncTechniques(true);
+    this.save(); this.emit();
+  }
+
+  /** Beta: know this technique right now, silently. No-op outside an active beta. */
+  devGrantTechnique(a: ActionId): boolean {
+    if (!this.dev?.enabled() || !TECH_BY_ID[a]) return false;
+    const fresh = this.learn(a, 'found', true);
+    this.pendingKnowledge.delete(a);
+    if (fresh) { this.save(); this.emit(); }
+    return fresh;
+  }
+
   /* ── era gate — a hard lock: an era opens once every REQUIRED major invention of the era before it is found ── */
   private openEras(): boolean[] {
+    if (this.devChronology()) return this.allErasOpen;
     // `found` only grows between resets, so its size is a sound cache key (load() and reset() clear it)
     if (this.eraOpenSize !== this.found.size) {
       this.eraOpenCache = this.db.eras.map((_, i) => this.world.isOpen(i, this.found, this.eraFloor));

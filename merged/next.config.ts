@@ -25,6 +25,14 @@ const SECURITY_HEADERS = [
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // The deploy environment, recorded at build time so the browser bundle can tell a production
+  // deploy from a preview (lib/dev/env.ts). A production deploy always refuses developer tools.
+  // NEXT_PUBLIC_ENABLE_DEV_TOOLS is always defined (empty when unset) so the bundler inlines it as a
+  // constant and drops the developer console from any build that does not enable it.
+  env: {
+    NEXT_PUBLIC_DEPLOY_ENV: process.env.VERCEL_ENV ?? '',
+    NEXT_PUBLIC_ENABLE_DEV_TOOLS: process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS ?? '',
+  },
   poweredByHeader: false,
   compress: true,
   generateEtags: true,

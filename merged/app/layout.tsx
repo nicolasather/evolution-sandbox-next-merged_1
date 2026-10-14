@@ -5,6 +5,8 @@ import type { Metadata, Viewport } from 'next';
 import { Archivo, Bungee, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { siteUrl } from '@/lib/site';
 import { THEME_BOOT } from '@/lib/theme';
+import { clientDevToolsEnabled } from '@/lib/dev/env';
+import { DEV_STORAGE_BOOT } from '@/lib/dev/storageBoot';
 import { GlobalFX } from '@/components/fx/GlobalFX';
 import './globals.css';
 
@@ -30,7 +32,10 @@ const SITE = siteUrl();
 const DESCRIPTION =
   'Start with a stone, a stick, a bone and a length of fibre. Combine them into 918 discoveries — each with its evidence, and an honest flag wherever a source is still missing.';
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+/* Developer Beta build (never true in production — see lib/dev/env.ts). It must not feed the
+   production analytics, and it must not be indexed. */
+const DEV_BUILD = clientDevToolsEnabled();
+const GA_ID = DEV_BUILD ? undefined : process.env.NEXT_PUBLIC_GA_ID;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -59,7 +64,7 @@ export const metadata: Metadata = {
     title: 'Evolution Sandbox',
     description: 'Combine four raw materials into 918 discoveries, from a knapped stone to a virtual world.',
   },
-  robots: { index: true, follow: true },
+  robots: DEV_BUILD ? { index: false, follow: false } : { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -89,6 +94,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-theme="dark" suppressHydrationWarning
       className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${bungee.variable}`}>
       <head>
+        {/* Developer Beta only: re-point localStorage at the beta's own keys before any app code runs */}
+        {DEV_BUILD && <script dangerouslySetInnerHTML={{ __html: DEV_STORAGE_BOOT }} />}
         {/* first thing to run: pick the stored theme — light, dark, or one of the
             six accent skins (lib/theme.ts THEMES) — before anything paints */}
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
@@ -111,8 +118,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
         {children}
         <GlobalFX />
-        <Analytics />
-        <SpeedInsights />
+        {!DEV_BUILD && <Analytics />}
+        {!DEV_BUILD && <SpeedInsights />}
       </body>
     </html>
   );

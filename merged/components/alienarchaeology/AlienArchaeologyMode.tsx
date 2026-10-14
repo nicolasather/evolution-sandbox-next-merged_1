@@ -11,6 +11,7 @@ import { GuideHint, GuideScope, useGuideController } from '@/components/guide/Gu
 import { ALIEN_MODE, XA_TARGET, alienGuide } from '@/lib/guide/alien';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
+import { freshSeed } from '@/lib/dev/seed';
 
 /* ============================================================================
    ALIEN ARCHAEOLOGY — "Unknown Worlds". A sixth genuinely different
@@ -27,7 +28,7 @@ function investigationId(seed: string): string { return `alien-${seed}`; }
 export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
   const [site, setSite] = useState<AlienSiteState | null>(() => {
     alienArchaeologyStore.load();
-    return alienArchaeologyStore.get().active ?? generateSite(`alien-${Date.now()}`);
+    return alienArchaeologyStore.get().active ?? generateSite(freshSeed('alien'));
   });
 
   useEffect(() => {
@@ -67,7 +68,7 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
   };
 
   const startNew = () => {
-    const fresh = generateSite(`alien-${Date.now()}`);
+    const fresh = generateSite(freshSeed('alien'));
     setSite(fresh);
     alienArchaeologyStore.setActive(fresh);
   };

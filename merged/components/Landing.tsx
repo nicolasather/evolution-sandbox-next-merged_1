@@ -66,6 +66,8 @@ interface Props {
   getBenchTarget?: () => { x: number; y: number } | null;
   /** Bumped by the player (shortcuts list) to play the journey again over the running game. */
   replay?: number;
+  /** Developer Beta only: drop the film the moment it starts (the same effect as pressing Skip). */
+  autoSkip?: boolean;
 }
 
 const SKIPPABLE: Phase[] = ['collapse', 'tunnel', 'slow', 'reduced'];
@@ -87,7 +89,7 @@ function setFilm(v: 'tunnel' | 'clear' | null) {
 }
 
 export function Landing({
-  db, gone, resumedCount, onBegin, returning, onEnter, onLanded, onDone, getBenchTarget, replay = 0,
+  db, gone, resumedCount, onBegin, returning, onEnter, onLanded, onDone, getBenchTarget, replay = 0, autoSkip = false,
 }: Props) {
   const routes = db.nodes.reduce((a, n) => a + (n.rec?.length || 0), 0);
   const [phase, setPhase] = useState<Phase>('idle');
@@ -276,6 +278,11 @@ export function Landing({
     // the stone is already where it belongs; the curtain just lifts
     land(to.x, to.y, Math.min(t.exit, 320));
   }, [clearTimers, enterWorld, finish, land, target]);
+
+  /* Developer Beta: "skip intros" presses Skip for the tester as soon as the film is skippable. */
+  useEffect(() => {
+    if (autoSkip && SKIPPABLE.includes(phase)) skip();
+  }, [autoSkip, phase, skip]);
 
   /** The player asked to see it again, from inside the game. */
   const lastReplay = useRef(replay);

@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { benchSpawn } from './craft/bus';
+import { devBridge } from './dev/bridge';
+import { devOverrides, engineDevHooks } from './dev/overrides';
 import { Engine } from './engine';
 import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
@@ -47,8 +49,13 @@ const SETTLE_MS = 520;
  * useSyncExternalStore, which is also what keeps hydration honest.
  */
 export function useSandbox() {
-  const [engine] = useState(() => new Engine(db, { regionGate: liveRegionGate }));
+  const [engine] = useState(() => new Engine(db, { regionGate: liveRegionGate, dev: engineDevHooks }));
   const version = useSyncExternalStore(engine.subscribe, engine.getVersion, SERVER_VERSION);
+
+  // Developer Beta only: a changed override re-derives the era/tier gates, and the console can reach this engine.
+  // Outside an authorised beta nothing ever changes the overrides and the console does not exist, so both are idle.
+  useEffect(() => devOverrides.subscribe(() => engine.refreshGates()), [engine]);
+  useEffect(() => { devBridge.registerEngine(engine); return () => devBridge.unregisterEngine(engine); }, [engine]);
 
   // Saved progress lives in localStorage, which the server cannot see. Loading
   // it after mount lets hydration match; the engine then announces the change.

@@ -11,6 +11,7 @@ import { profile } from '@/lib/profile/store';
 import { applyAction, isBudgetCapped } from '@/lib/reverseevolution/simulate';
 import { reverseEvolutionStore } from '@/lib/reverseevolution/store';
 import type { ReverseRunState } from '@/lib/reverseevolution/types';
+import { freshSeed } from '@/lib/dev/seed';
 
 /* ============================================================================
    REVERSE EVOLUTION — "From Smartphone to Stone". A seventh genuinely
@@ -85,7 +86,7 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
   // calling Date.now() itself — keeps the one impure call directly
   // inside the event-handler arrow, not nested through a named function.
   const start = (targetId: string, now: number) => {
-    const run = generateRun(playDb, `rev-${now}`, targetId);
+    const run = generateRun(playDb, freshSeed('rev', now), targetId);
     setSelected([]);
     setState(run);
     reverseEvolutionStore.setActive(run);

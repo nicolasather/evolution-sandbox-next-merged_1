@@ -29,6 +29,7 @@ import { QuestionCard } from './QuestionCard';
 import { NarratorView } from './Narrator';
 import { UnlockNotice } from './UnlockNotice';
 import { useUnlocks } from '@/lib/unlocks/useUnlocks';
+import { useDevOverrides } from '@/lib/dev/overrides';
 import { unlockMemory } from '@/lib/unlocks/store';
 import type { FeatureId } from '@/lib/unlocks/registry';
 import { CinematicGate } from './cinematic/CinematicGate';
@@ -106,6 +107,8 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   /* What has opened so far. A new visitor sees the workbench and nothing else; every other view,
      corner button, the questions and every other mode open as history is reached (lib/unlocks). */
   const unlocks = useUnlocks(engine, version, s.entered && reveal >= 6);
+  /** Developer Beta only (always false elsewhere): drop the landing film as soon as it starts. */
+  const skipFilm = useDevOverrides().skipIntros;
 
   // The world tint follows the furthest era reached — subtle, not a light show.
   // --era-glow is the second, slower half of the same idea: it only grows, so
@@ -341,6 +344,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
         }}
         onDone={() => setIntroDone(true)}
         replay={replay}
+        autoSkip={skipFilm}
         getBenchTarget={() => {
           const el = benchElement();
           const r = el?.getBoundingClientRect();

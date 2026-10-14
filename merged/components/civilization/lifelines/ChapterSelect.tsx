@@ -2,6 +2,7 @@
 import { useMemo, useState } from 'react';
 import { chapterStatuses, feasibleMastery, nextChapter, sandboxTiers } from '@/lib/civilization/lifelines/campaign';
 import { generateLayout } from '@/lib/civilization/lifelines/layout';
+import { useDevOverrides } from '@/lib/dev/overrides';
 import type { Chapter } from '@/lib/civilization/lifelines/schema';
 import { Banners, exportNow } from './Banners';
 import { useLifelines } from './ui';
@@ -18,7 +19,9 @@ export function ChapterSelect({ onPlay, onExit, onLegacy, onReplayIntro }: { onP
   const [confirmReplace, setConfirmReplace] = useState(false);
   const [error, setError] = useState('');
 
-  const statuses = useMemo(() => (index ? chapterStatuses(index, manifest) : []), [index, manifest]);
+  // Developer Beta only: with the chronology override on, every chapter can be entered. Always false otherwise.
+  const openAll = useDevOverrides().chronology;
+  const statuses = useMemo(() => (index ? chapterStatuses(index, manifest, { openAll }) : []), [index, manifest, openAll]);
   const next = index ? nextChapter(index, manifest) : null;
   const chapter: Chapter | null = index ? index.chapters.get(pickId ?? next?.id ?? '') ?? null : null;
   const hasRun = !!run && run.completion.status !== 'archived';
@@ -106,7 +109,7 @@ export function ChapterSelect({ onPlay, onExit, onLegacy, onReplayIntro }: { onP
               {statuses.map(s => (
                 <li key={s.chapter.id}>
                   <button type="button" disabled={!selectable(s)} aria-pressed={chapter?.id === s.chapter.id} className={'ll-chap' + (chapter?.id === s.chapter.id ? ' sel' : '') + (s.completed ? ' done' : '')} onClick={() => choose(s.chapter.id)}>
-                    <i>{s.chapter.order}</i><b>{s.chapter.title}</b><small>{s.completed ? 'Completed' : s.unlocked ? (s.chapter.id === next?.id ? 'Next' : 'Open') : 'Locked'}</small>
+                    <i>{s.chapter.order}</i><b>{s.chapter.title}</b><small>{s.completed ? 'Completed' : s.viaOverride ? 'Open (dev)' : s.unlocked ? (s.chapter.id === next?.id ? 'Next' : 'Open') : 'Locked'}</small>
                   </button>
                 </li>
               ))}
@@ -119,19 +122,19 @@ export function ChapterSelect({ onPlay, onExit, onLegacy, onReplayIntro }: { onP
       {tab === 'replay' && (
         <div className="ll-split">
           <ul className="ll-chapters">
-            {statuses.filter(s => s.completed).length === 0 && <li className="ll-dim">Complete a chapter to replay it in another environment.</li>}
-            {statuses.filter(s => s.completed).map(s => (
+            {statuses.filter(s => s.completed || openAll).length === 0 && <li className="ll-dim">Complete a chapter to replay it in another environment.</li>}
+            {statuses.filter(s => s.completed || openAll).map(s => (
               <li key={s.chapter.id}><button type="button" className={'ll-chap' + (chapter?.id === s.chapter.id ? ' sel' : '')} onClick={() => choose(s.chapter.id)}><i>{s.chapter.order}</i><b>{s.chapter.title}</b></button></li>
             ))}
           </ul>
-          {statuses.some(s => s.completed) && detail}
+          {statuses.some(s => s.completed || openAll) && detail}
         </div>
       )}
 
       {tab === 'sandbox' && (
         <div className="ll-split">
           <ul className="ll-chapters">
-            {sandboxTiers(index, manifest).map(t => (
+            {sandboxTiers(index, manifest, { openAll }).map(t => (
               <li key={t.era.id}><button type="button" disabled={!t.unlocked || !t.firstChapter} className={'ll-chap' + (chapter?.id === t.firstChapter?.id ? ' sel' : '')} onClick={() => t.firstChapter && choose(t.firstChapter.id)}>
                 <i>{t.era.index + 1}</i><b>{t.era.name}</b><small>{t.unlocked ? 'Open' : 'Locked'}</small></button></li>
             ))}
