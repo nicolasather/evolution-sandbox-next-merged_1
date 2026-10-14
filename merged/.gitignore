@@ -38,3 +38,7 @@ yarn-error.log*
 
 # Ignore global redundant git folder (if any)
 .git/
+
+# Python bytecode (tools/)
+__pycache__/
+*.pyc

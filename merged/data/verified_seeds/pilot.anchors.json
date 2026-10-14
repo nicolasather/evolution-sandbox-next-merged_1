@@ -1,0 +1,155 @@
+{
+  "decisions": [
+    {
+      "status": "proposed",
+      "targetId": "fx_lashed_flake_knife",
+      "ingredientIds": [
+        "stone_flake",
+        "wood",
+        "fiber"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "haft",
+        "binding"
+      ],
+      "mechanism": "A sharp stone flake is held against a wooden handle and lashed in place with plant fibre, so the flake edge cuts while the stick gives grip.",
+      "requiredConditions": [],
+      "chronologyExplanation": "Flaked stone, sticks and plant cord all exist in the Origins era, before this item.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": [],
+      "missingPrerequisites": []
+    },
+    {
+      "status": "anchor_blocked",
+      "targetId": "fx_fired_clay_bowl",
+      "reasonCodes": [
+        "MISSING_REQUIRED_COMPONENT"
+      ],
+      "missingPrerequisites": [
+        "a clay catalogue item (clay exists only as a processing state, so no plastic-body node is available)"
+      ]
+    },
+    {
+      "status": "proposed",
+      "targetId": "fx_ground_pebble",
+      "ingredientIds": [
+        "stone",
+        "stone",
+        "stone"
+      ],
+      "action": "grind",
+      "inputRoles": [
+        "workpiece",
+        "abrasive",
+        "abrasive"
+      ],
+      "mechanism": "A pebble is rubbed between two coarser stones, so abrasion wears its surface smooth and rounded.",
+      "requiredConditions": [],
+      "chronologyExplanation": "Rubbing stone on stone needs nothing beyond stones, available from the start of Origins.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": [],
+      "missingPrerequisites": []
+    },
+    {
+      "status": "proposed",
+      "targetId": "fx_twisted_fibre_loop",
+      "ingredientIds": [
+        "fiber",
+        "fiber",
+        "fiber"
+      ],
+      "action": "twist",
+      "inputRoles": [
+        "fibre_stock",
+        "fibre_stock",
+        "binding"
+      ],
+      "mechanism": "Three lengths of plant fibre are twisted together so friction between them locks them into one stronger cord that can be closed into a loop.",
+      "requiredConditions": [],
+      "chronologyExplanation": "Plant fibre and strands exist in the Origins era.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": [],
+      "missingPrerequisites": []
+    },
+    {
+      "status": "proposed",
+      "targetId": "fx_ground_bone_point",
+      "ingredientIds": [
+        "bone",
+        "stone",
+        "stone"
+      ],
+      "action": "grind",
+      "inputRoles": [
+        "workpiece",
+        "abrasive",
+        "abrasive"
+      ],
+      "mechanism": "A bone is ground against coarse stone, which wears the bone away at one end until it narrows into a point.",
+      "requiredConditions": [],
+      "chronologyExplanation": "Bone and stone are primitives available from the start.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": [],
+      "missingPrerequisites": []
+    },
+    {
+      "status": "anchor_blocked",
+      "targetId": "fx_sun_dried_block",
+      "reasonCodes": [
+        "MISSING_REQUIRED_COMPONENT"
+      ],
+      "missingPrerequisites": [
+        "a mold-capable item (e.g. a wooden brick frame) that exists before pottery in the catalogue"
+      ]
+    },
+    {
+      "status": "proposed",
+      "targetId": "fx_hafted_bone_awl",
+      "ingredientIds": [
+        "fx_ground_bone_point",
+        "wood",
+        "fiber"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "haft",
+        "binding"
+      ],
+      "mechanism": "A ground bone point is lashed to a wooden handle with plant fibre, giving a grip for piercing hide and fibre.",
+      "requiredConditions": [],
+      "chronologyExplanation": "Depends on the ground bone point from the same batch, plus sticks and strands from Origins.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": [],
+      "missingPrerequisites": []
+    },
+    {
+      "status": "anchor_blocked",
+      "targetId": "fx_early_copper_ingot",
+      "reasonCodes": [
+        "MISSING_REQUIRED_COMPONENT",
+        "PROCESS_UNAVAILABLE"
+      ],
+      "missingPrerequisites": [
+        "copper ore",
+        "crucible or kiln able to melt copper",
+        "mold for casting"
+      ]
+    },
+    {
+      "status": "anchor_blocked",
+      "targetId": "fx_stone_age_microchip",
+      "reasonCodes": [
+        "MATERIAL_IMPOSSIBLE",
+        "ERA_CONFLICT"
+      ],
+      "missingPrerequisites": [
+        "semiconductor",
+        "photolithography",
+        "electricity"
+      ]
+    }
+  ]
+}

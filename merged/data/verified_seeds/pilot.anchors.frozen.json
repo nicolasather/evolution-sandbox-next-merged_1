@@ -1,0 +1,203 @@
+{
+  "anchors": {
+    "fx_ground_bone_point": {
+      "action": "grind",
+      "anchorHash": "4301fccad6c999fa6bd860f7df36553da779693d44c8cb007d5c928b48ce077a",
+      "author": "claude_build",
+      "chronologyExplanation": "Bone and stone are primitives available from the start.",
+      "compilerVersion": "anchor-compiler-1",
+      "evidenceClass": "plausible_reconstruction",
+      "ingredientIds": [
+        "bone",
+        "stone",
+        "stone"
+      ],
+      "inputRoles": [
+        "workpiece",
+        "abrasive",
+        "abrasive"
+      ],
+      "legacyKey": "bone stone stone",
+      "mechanism": "A bone is ground against coarse stone, which wears the bone away at one end until it narrows into a point.",
+      "recipeKey": "recipe-v2:3:4:bone5:stone5:stone",
+      "requiredConditions": [],
+      "review": [],
+      "reviewStatus": "auto_valid",
+      "rulesVersion": "craft-rules-1",
+      "seedHash": "636b6c7f61c7f84f61d28f99005eaaee6b30a32977a88ba0c81078c303aad022",
+      "sourceSupportIds": [],
+      "targetId": "fx_ground_bone_point",
+      "warnings": []
+    },
+    "fx_ground_pebble": {
+      "action": "grind",
+      "anchorHash": "934f8f392c7c49909d6623d4ffc951ab2d7f3400731fb433c99eaf2ba3e530bb",
+      "author": "claude_build",
+      "chronologyExplanation": "Rubbing stone on stone needs nothing beyond stones, available from the start of Origins.",
+      "compilerVersion": "anchor-compiler-1",
+      "evidenceClass": "plausible_reconstruction",
+      "ingredientIds": [
+        "stone",
+        "stone",
+        "stone"
+      ],
+      "inputRoles": [
+        "workpiece",
+        "abrasive",
+        "abrasive"
+      ],
+      "legacyKey": "stone stone stone",
+      "mechanism": "A pebble is rubbed between two coarser stones, so abrasion wears its surface smooth and rounded.",
+      "recipeKey": "recipe-v2:3:5:stone5:stone5:stone",
+      "requiredConditions": [],
+      "review": [],
+      "reviewStatus": "auto_valid",
+      "rulesVersion": "craft-rules-1",
+      "seedHash": "25e26a9e3ee33d1180421b52f68341b1a80ed346b11c8993bf13aef46f343a49",
+      "sourceSupportIds": [],
+      "targetId": "fx_ground_pebble",
+      "warnings": []
+    },
+    "fx_hafted_bone_awl": {
+      "action": "tie",
+      "anchorHash": "b307197ce95782f898ee3eb95045a7c6a2c45677e1ccb4f295f7ad2615adeb6e",
+      "author": "claude_build",
+      "chronologyExplanation": "Depends on the ground bone point from the same batch, plus sticks and strands from Origins.",
+      "compilerVersion": "anchor-compiler-1",
+      "evidenceClass": "plausible_reconstruction",
+      "ingredientIds": [
+        "fiber",
+        "fx_ground_bone_point",
+        "wood"
+      ],
+      "inputRoles": [
+        "binding",
+        "head",
+        "haft"
+      ],
+      "legacyKey": "fiber fx_ground_bone_point wood",
+      "mechanism": "A ground bone point is lashed to a wooden handle with plant fibre, giving a grip for piercing hide and fibre.",
+      "recipeKey": "recipe-v2:3:5:fiber20:fx_ground_bone_point4:wood",
+      "requiredConditions": [],
+      "review": [],
+      "reviewStatus": "auto_valid",
+      "rulesVersion": "craft-rules-1",
+      "seedHash": "fb70a09017215b74dd23d6ecd63ed68fa67a39d6f071f09c7b37131fb32aaba9",
+      "sourceSupportIds": [],
+      "targetId": "fx_hafted_bone_awl",
+      "warnings": [
+        "ingredient_evidence_pending:fiber"
+      ]
+    },
+    "fx_lashed_flake_knife": {
+      "action": "tie",
+      "anchorHash": "2268577b24e789b68888907503ded0a49264d4fe6835910509a18c19d45d9efd",
+      "author": "claude_build",
+      "chronologyExplanation": "Flaked stone, sticks and plant cord all exist in the Origins era, before this item.",
+      "compilerVersion": "anchor-compiler-1",
+      "evidenceClass": "plausible_reconstruction",
+      "ingredientIds": [
+        "fiber",
+        "stone_flake",
+        "wood"
+      ],
+      "inputRoles": [
+        "binding",
+        "head",
+        "haft"
+      ],
+      "legacyKey": "fiber stone_flake wood",
+      "mechanism": "A sharp stone flake is held against a wooden handle and lashed in place with plant fibre, so the flake edge cuts while the stick gives grip.",
+      "recipeKey": "recipe-v2:3:5:fiber11:stone_flake4:wood",
+      "requiredConditions": [],
+      "review": [],
+      "reviewStatus": "auto_valid",
+      "rulesVersion": "craft-rules-1",
+      "seedHash": "9a029ce7031c3737ffa452547d824a1781acc007ee5a26049ae961e918289b9b",
+      "sourceSupportIds": [],
+      "targetId": "fx_lashed_flake_knife",
+      "warnings": [
+        "ingredient_evidence_pending:fiber"
+      ]
+    },
+    "fx_twisted_fibre_loop": {
+      "action": "twist",
+      "anchorHash": "b8b2a06a52b9722882c605c3bb05e01924dc7435daabc02cfbd9c1c87f956964",
+      "author": "claude_build",
+      "chronologyExplanation": "Plant fibre and strands exist in the Origins era.",
+      "compilerVersion": "anchor-compiler-1",
+      "evidenceClass": "plausible_reconstruction",
+      "ingredientIds": [
+        "fiber",
+        "fiber",
+        "fiber"
+      ],
+      "inputRoles": [
+        "fibre_stock",
+        "fibre_stock",
+        "binding"
+      ],
+      "legacyKey": "fiber fiber fiber",
+      "mechanism": "Three lengths of plant fibre are twisted together so friction between them locks them into one stronger cord that can be closed into a loop.",
+      "recipeKey": "recipe-v2:3:5:fiber5:fiber5:fiber",
+      "requiredConditions": [],
+      "review": [],
+      "reviewStatus": "auto_valid",
+      "rulesVersion": "craft-rules-1",
+      "seedHash": "1a0abd660204cd2dd8cbe7af7668ea47daba1c7496c59b2265801e8d0af7c73b",
+      "sourceSupportIds": [],
+      "targetId": "fx_twisted_fibre_loop",
+      "warnings": [
+        "ingredient_evidence_pending:fiber"
+      ]
+    }
+  },
+  "batch": "pilot",
+  "blocked": {
+    "fx_early_copper_ingot": {
+      "missingPrerequisites": [
+        "copper ore",
+        "crucible or kiln able to melt copper",
+        "mold for casting"
+      ],
+      "reasonCodes": [
+        "MISSING_REQUIRED_COMPONENT",
+        "PROCESS_UNAVAILABLE"
+      ],
+      "seedHash": "6ddcdb340cd01d32e2f287624e639c0e2493b2d25e236b9955c13e5ae07a4c02"
+    },
+    "fx_fired_clay_bowl": {
+      "missingPrerequisites": [
+        "a clay catalogue item (clay exists only as a processing state, so no plastic-body node is available)"
+      ],
+      "reasonCodes": [
+        "MISSING_REQUIRED_COMPONENT"
+      ],
+      "seedHash": "f46efba481ca0d7901cdcc201d8eafe39866e4b752ba12961ccbdc71286b5ee7"
+    },
+    "fx_stone_age_microchip": {
+      "missingPrerequisites": [
+        "electricity",
+        "photolithography",
+        "semiconductor"
+      ],
+      "reasonCodes": [
+        "ERA_CONFLICT",
+        "MATERIAL_IMPOSSIBLE"
+      ],
+      "seedHash": "8ac04d4971663445f4d38446622cedb51d532465ef212d048583e7f3589648a8"
+    },
+    "fx_sun_dried_block": {
+      "missingPrerequisites": [
+        "a mold-capable item (e.g. a wooden brick frame) that exists before pottery in the catalogue"
+      ],
+      "reasonCodes": [
+        "MISSING_REQUIRED_COMPONENT"
+      ],
+      "seedHash": "f719191730d751ea125bdcf324b2cb2e8a9c9334eded38b600c413908ce5e227"
+    }
+  },
+  "compilerVersion": "anchor-compiler-1",
+  "rulesVersion": "craft-rules-1",
+  "schemaVersion": 1
+}

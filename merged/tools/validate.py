@@ -22,6 +22,8 @@ E9  rarity 'hidden' and the hidden flag disagree
 E10 node cites only general references but does not say 'source_required'
 E11 malformed source registry entry (tier, https url, scope, checked date)
 E12 'source_required' listed more than once
+E13 recipe has fewer than 2 or more than 5 ingredient slots
+E14 recipe ingredient id is not a well-formed id (ASCII snake_case)
 W1  node has only one recipe (no alternative path) while marked important
 W2  era/rarity value outside the declared vocabulary
 W3  node produces nothing and is not a designated endpoint
@@ -32,11 +34,15 @@ W5  registered source that no node cites
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from content.keys import ITEM_ID_RE, MAX_SLOTS, MIN_SLOTS, legacy_key  # noqa: E402
+
+ROOT = Path(os.environ.get("EVO_ROOT") or Path(__file__).resolve().parents[1])
 NODE_DIR = ROOT / "data" / "nodes"
 SOURCES = ROOT / "data" / "sources.json"
 
@@ -78,34 +84,25 @@ def load_sources() -> dict[str, dict]:
 
 
 def reachable(by_id: dict[str, dict]) -> set[str]:
-    """Forward closure: what can actually be built starting from the primitives."""
-    have = set(PRIMITIVES)
-    index: dict[frozenset, str] = {}
-    for node in by_id.values():
-        for pair in node.get("rec", []):
-            index[frozenset(pair)] = node["id"]
+    """Forward closure: what can actually be built starting from the primitives.
 
+    A recipe of 2-5 slots fires once every distinct ingredient is held (an item
+    can be used more than once, as in the engine). No pair cartesian product.
+    """
+    have = set(PRIMITIVES)
+    recipes = [(node["id"], list(r)) for node in by_id.values() for r in node.get("rec", [])]
     changed = True
     while changed:
         changed = False
-        items = sorted(have)
-        for i, a in enumerate(items):
-            for b in items[i:]:
-                result = index.get(frozenset((a, b)))
-                if result and result not in have:
-                    have.add(result)
-                    changed = True
+        for owner, ings in recipes:
+            if owner not in have and all(i in have for i in ings):
+                have.add(owner)
+                changed = True
     return have
 
 
-def main() -> int:
-    # the report uses ✗ and —; a Windows console code page cannot always print them
-    if hasattr(sys.stdout, "reconfigure"):
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    as_json = "--json" in sys.argv
-    nodes = load_nodes()
-    registry = load_sources()
-
+def check(nodes: list[dict], registry: dict[str, dict]) -> tuple[list[str], list[str], dict]:
+    """Run every check on in-memory data. Returns (errors, warnings, stats)."""
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -131,26 +128,29 @@ def main() -> int:
                     continue  # primitives legitimately have no recipe
                 errors.append(f"E5 '{node.get('id')}' missing/empty required field '{field}'")
 
-    # E2 / E6 / E3 — recipes
-    pair_owner: dict[frozenset, str] = {}
+    # E13 / E14 / E2 / E6 / E3 — recipes (2-5 slots; repeated ingredients are kept)
+    pair_owner: dict[str, str] = {}
     for node in nodes:
         nid = node["id"]
         for pair in node.get("rec", []):
-            if len(pair) != 2:
-                errors.append(f"E2 '{nid}' recipe is not a pair: {pair}")
+            if not isinstance(pair, list) or not MIN_SLOTS <= len(pair) <= MAX_SLOTS:
+                errors.append(f"E13 '{nid}' recipe must have {MIN_SLOTS}-{MAX_SLOTS} ingredients: {pair}")
                 continue
             for ing in pair:
+                if not isinstance(ing, str) or not ITEM_ID_RE.fullmatch(ing):
+                    errors.append(f"E14 '{nid}' recipe has a malformed ingredient id {ing!r}")
+                    continue
                 if ing not in by_id:
                     errors.append(f"E2 '{nid}' recipe references unknown node '{ing}'")
                 if ing == nid:
                     errors.append(f"E6 '{nid}' lists itself as an ingredient")
-            key = frozenset(pair)
+            key = legacy_key(pair)      # sorted, repeats preserved — NOT a frozenset
             if key in pair_owner and pair_owner[key] != nid:
                 errors.append(
-                    f"E3 pair {sorted(pair)} produces both "
+                    f"E3 recipe {sorted(pair)} produces both "
                     f"'{pair_owner[key]}' and '{nid}' — engine cannot disambiguate"
                 )
-            pair_owner[key] = nid
+            pair_owner.setdefault(key, nid)
 
     # E11 — the source registry itself
     for sid, s in registry.items():
@@ -250,6 +250,16 @@ def main() -> int:
         "errors": len(errors),
         "warnings": len(warnings),
     }
+
+    return errors, warnings, stats
+
+
+def main() -> int:
+    # the report uses ✗ and —; a Windows console code page cannot always print them
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    as_json = "--json" in sys.argv
+    errors, warnings, stats = check(load_nodes(), load_sources())
 
     if as_json:
         print(json.dumps({"stats": stats, "errors": errors, "warnings": warnings}, indent=2))
