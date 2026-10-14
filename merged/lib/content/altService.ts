@@ -1,10 +1,10 @@
 import type { Db } from '../types';
-import type { AltProvider } from '../server/aiRecipeProvider';
+import type { AltProvider, ProviderStatus } from '../server/aiRecipeProvider';
 import { validateAltResponse, type AltOutcome } from './altValidation';
 import { buildRecipeIndex } from './strictCraft';
 import { ACTIONS_LIST } from './actionList';
 
-export interface AltServiceResult extends AltOutcome { provider: string; error?: 'unknown_target' }
+export interface AltServiceResult extends AltOutcome { provider: string; providerStatus?: ProviderStatus; error?: 'unknown_target' }
 
 /** Pool offered to the provider: items that exist no later than the target's era (never the target itself). */
 export function allowlistFor(db: Db, targetId: string): string[] {
@@ -29,5 +29,5 @@ export async function suggestAlternatives(db: Db, targetId: string, provider: Al
     db, allowlist: new Set(allow), actions: new Set(ACTIONS_LIST),
     knownSourceIds: new Set(Object.keys(db.sources ?? {})), index: buildRecipeIndex(db),
   });
-  return { ...res, provider: provider.name };
+  return { ...res, provider: provider.name, providerStatus: provider.status?.() };
 }

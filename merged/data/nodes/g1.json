@@ -558,6 +558,11 @@
       [
         "lumber",
         "thatch"
+      ],
+      [
+        "wood",
+        "binding",
+        "sewing"
       ]
     ],
     "tags": [
@@ -594,6 +599,11 @@
         "sharp_stone"
       ],
       [
+        "wood",
+        "bone"
+      ],
+      [
+        "composite_tool",
         "wood",
         "bone"
       ]

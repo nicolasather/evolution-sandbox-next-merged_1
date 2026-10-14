@@ -4,6 +4,7 @@ import { findCompletingPath, type ModifierKind, type PathModifier } from './modi
 import { shortestPath } from './pathfind';
 import { hubIds, pathLeansOnHub } from './validate';
 import type { Rng } from '../seed';
+import { adapterGate } from '../modeAdapters/runtime';
 
 /* ============================================================================
    VARIANT CHALLENGE GENERATION — picks a start/target pair (same
@@ -34,7 +35,7 @@ const ERAS: EraId[] = [
 export function pickVariantChallenge(db: Pick<Db, 'nodes'>, rng: Rng, kind: ModifierKind): VariantChallenge | null {
   const graph = buildGraph(db);
   const hubs = hubIds(graph);
-  const candidates = db.nodes.filter(n => !n.primitive && !n.hidden && graph.neighbors.has(n.id));
+  const candidates = db.nodes.filter(n => !n.primitive && !n.hidden && graph.neighbors.has(n.id) && adapterGate('minimum-path', n, db));
   if (candidates.length < 2) return null;
 
   for (let attempt = 0; attempt < 60; attempt++) {

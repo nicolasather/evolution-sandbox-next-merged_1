@@ -97,7 +97,7 @@ function cataloguePacketAdapter(modeId: ModeId, accepts: (n: Discovery, db: D) =
     modeId, policy: 'opt_in',
     eligibility: (n, db) => {
       if (isPlaceholder(n)) return { eligible: false, reason: 'placeholder entries never feed generated content' };
-      if (maxEra && eraIndex(db, n.era) > eraIndex(db, maxEra)) return { eligible: false, reason: `later than ${maxEra}` };
+      if (maxEra && (eraIndex(db, maxEra) < 0 || eraIndex(db, n.era) < 0 || eraIndex(db, n.era) > eraIndex(db, maxEra))) return { eligible: false, reason: `not known to be no later than ${maxEra}` };
       return accepts(n, db) ? { eligible: true, reason: why } : { eligible: false, reason: `not ${why}` };
     },
     validatePacket(raw, db) {
@@ -137,8 +137,8 @@ export const ADAPTERS: Record<ModeId, ModeAdapter<unknown>> = {
   'main-evolution': cataloguePacketAdapter('main-evolution', n => !!n.rec?.length || !!n.primitive, 'a catalogue item with a canonical route'),
   'reverse-evolution': reverseEvolution as ModeAdapter<unknown>,
   'minimum-path': minimumPath as ModeAdapter<unknown>,
-  survival: cataloguePacketAdapter('survival', n => n.cat === 'technology' || n.cat === 'material' || n.cat === 'technique', 'a prehistoric material or tool', 'origins'),
-  archaeology: cataloguePacketAdapter('archaeology', n => n.cat === 'material' || n.cat === 'technology' || n.cat === 'culture', 'a material find or artefact class', 'civilization'),
+  survival: excluded('survival', 'Survival builds camps from its own authored traits, terrain and members; it takes no catalogue items, so there is nothing for a generated item to feed.'),
+  archaeology: excluded('archaeology', 'Archaeologist draws finds from its own authored artifact-type vocabulary on purpose (never the discovery graph), so generated items have no entry point.'),
   civilization: excluded('civilization', 'Lifelines uses authored districts and its own simulator; catalogue items do not map to its mechanics.'),
   decipher: excluded('decipher', 'Decipher generates invented writing systems on purpose; real items would be a spoiler and a factual risk.'),
   'alien-archaeology': excluded('alien-archaeology', 'Fictional nonhuman civilizations must not be seeded with human historical items.'),
