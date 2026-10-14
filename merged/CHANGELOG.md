@@ -5,12 +5,18 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
-### 14 October 2026 — Phase 1 completion (integration)
-- Exhibit panel shows a labelled stylised 3D reconstruction (`components/Reconstruction3D.tsx`) for items published by the pipeline only;
-  WebGL when available (max 6 live contexts, only while on screen), flat silhouette otherwise. Workbench finish uses the MotionPlan for those items only.
-- Mode adapters are consumed by Minimum Path and Reverse Evolution; Survival and Archaeologist recorded as excluded (no item entry point).
-- Owner-only: `/admin/recipes` (review AI alternatives), `/admin/visual3d` (render preview), AI route rate limit + logging. All 404 unless the dev gate is open.
-- Data fix (demonstrable drift, documented): `data/nodes/g1.json` lacked two 3-slot recipes (`shelter`, `spear`) that `data/db.json` already shipped; added so a rebuild reproduces db.json. Gameplay unchanged; only `dataHash` changed.
+### 14 October 2026 — Logic-First V3, Phase 2 (live discovery sidecar; everything OFF by default)
+A server sidecar (`lib/server/creative/*`, `db/migrations/001–004`) that can ONLY propose an alternative route to an
+already-verified item. Order of gates: release pin → canonical recipe first → deterministic impossibility filter →
+bounded verified target pool → feature flags → negative cache → per-actor quota → global compute dedup → atomic budget
+reservation (default cap 0 USD) → one model call → strict parse → judge → independent validator → PRIVATE proposal.
+Nothing is live until the owner approves it, exports an immutable release (SHA-256 manifest) and activates it; rollback
+is a pointer swap. New: asset pipeline (leases, GLB validation, human review, manifest), mode packets for 8 modes
+(model supplies item ids from a server pool + flavour text only; server derives seeds and independent solvers certify 20
+seeds; human publishes; the Humanity Museum is never AI-published), owner-only admin routes, kill switch, UTC-day budget
+ledger, `docs/PHASE2_STATUS.md`, `docs/LIVE_DISCOVERY_RUNBOOK.md`, `docs/PHASE2_OWNER_STEPS_VI.md`.
+Item onboarding: a new verified item is queued for a 3D draft and swept once for up to 3 alternative routes (private proposals; `/admin/recipes` panel, `/api/admin/creative/onboard`, optional cron `/api/internal/onboard/tick`); see docs/ITEM_ONBOARDING.md.
+Real LLM / Neon / Blob / Meshy / staging proofs are BLOCKED until the owner provides credentials.
 
 ### 14 October 2026 — Logic-First V3, Phase 1 (verified-seed content pipeline)
 New `tools/verified_content.py` (+ `tools/content/`): recipe-free verified seeds → one frozen, rule-checked anchor

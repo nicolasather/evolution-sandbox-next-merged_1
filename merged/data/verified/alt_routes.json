@@ -1,1 +1,5 @@
-{"schemaVersion": 1, "routes": []}
+{
+  "schemaVersion": 1,
+  "manifestSha256": "86604a742645f62df85c8b23fb3a8ede69e88073a9a7e2fc1ab0faabd99cb9ed",
+  "routes": []
+}

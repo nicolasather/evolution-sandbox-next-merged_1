@@ -1,5 +1,6 @@
 'use client';
 
+import { creativeUiEnabled, tryRecipeOnServer, REVIEW_NOTICE } from '@/lib/creative/client';
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { registerBench, type SpawnOptions } from '@/lib/craft/bus';
 import { getVolume, play, setSoundEnabled, setVolume, soundEnabled, subscribeSound, unlockAudio } from '@/lib/craft/audio';
@@ -583,6 +584,12 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         const near = f.nudge ? null : (f.items.length === 2 ? nearLine(eng, f.a.id, f.b.id) : null);
         say_(f.message, f.info.kind === 'irrelevant' || f.info.kind === 'wrong_state' || f.info.kind === 'needs_processing' ? 'good' : 'info',
           f.nudge ?? near?.text ?? undefined);
+        // Phase 2 (off by default): a combination the book does not know may be sent for private review. Fire-and-forget:
+        // it never delays, changes or replaces the line above, and any failure is silent.
+        if (creativeUiEnabled() && (f.info.kind === 'none' || f.info.kind === 'related')) {
+          const ids = c.map(b => b.itemId);
+          void tryRecipeOnServer(ids, null).then(o => { if (o === 'pending_review') say_(REVIEW_NOTICE, 'info'); });
+        }
       }
       wake();
     }

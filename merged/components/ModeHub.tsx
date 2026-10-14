@@ -11,6 +11,7 @@ import { decipherStore } from '@/lib/decipher/store';
 import { escapeRoomStore } from '@/lib/escaperoom/store';
 import { profile } from '@/lib/profile/store';
 import { reverseEvolutionStore } from '@/lib/reverseevolution/store';
+import { noteFrom, verifiedPacket, packetsFeatureOn } from '@/lib/modes/packets';
 import { getMode } from '@/lib/modes/registry';
 import { survivalStore } from '@/lib/survival/store';
 import type { Engine } from '@/lib/engine';
@@ -33,7 +34,7 @@ import { NO_LOCKS, type Unlocks } from '@/lib/unlocks/useUnlocks';
 
 const dateFmt = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
 
-function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fresh }: {
+function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fresh, modeId }: {
   kicker: string;
   title: string;
   description: string;
@@ -42,7 +43,16 @@ function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fr
   onLaunch: () => void;
   /** Just unlocked and never entered: the Enter button glows and the card says NEW. */
   fresh?: boolean;
+  /** Phase 2 (off by default): reviewed, certified flavour for this mode, shown under the description. */
+  modeId?: ModeId;
 }) {
+  const [note, setNote] = useState<{ text: string; disclosure: string | null } | null>(null);
+  useEffect(() => {
+    if (!modeId || !packetsFeatureOn()) return;
+    let live = true;
+    verifiedPacket(modeId).then(e => { if (live) setNote(noteFrom(e)); });
+    return () => { live = false; };
+  }, [modeId]);
   return (
     <div className={'hub-exhibit' + (fresh ? ' is-new' : '')} data-new={fresh || undefined}>
       <div className="hub-exhibit-plate" aria-hidden="true" />
@@ -50,6 +60,7 @@ function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fr
         <p className="mono hub-exhibit-kicker">{kicker}{fresh && <b className="hub-new"> · New</b>}</p>
         <h2 className="hub-exhibit-title">{title}</h2>
         <p className="hub-exhibit-desc">{description}</p>
+        {note && <p className="hub-exhibit-desc mono" data-testid="packet-note" style={{ opacity: 0.8, fontSize: 12 }}>{note.text}{note.disclosure ? ` — ${note.disclosure}` : ''}</p>}
         <dl className="hub-exhibit-stats">
           {stats.map(s => <div key={s.label}><dt className="mono">{s.label}</dt><dd>{s.value}</dd></div>)}
         </dl>
@@ -211,6 +222,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description={survivalMode?.description ?? ''}
           ctaLabel={survival.active ? 'Continue' : 'Enter'}
           onLaunch={open('survival')}
+          modeId="survival"
           fresh={isNew('survival')}
           stats={[
             { label: 'Runs completed', value: survival.memories.length },
@@ -227,6 +239,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description={civMode?.description ?? ''}
           ctaLabel={civ.kind !== 'none' ? 'Continue' : 'Enter'}
           onLaunch={open('civilization')}
+          modeId="civilization"
           fresh={isNew('civilization')}
           stats={[
             { label: 'Chapters completed', value: `${civ.completed} / 24` },
@@ -243,6 +256,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description={archMode?.description ?? ''}
           ctaLabel={archaeology.active ? 'Continue' : 'Enter'}
           onLaunch={open('archaeology')}
+          modeId="archaeology"
           fresh={isNew('archaeology')}
           stats={[
             { label: 'Reports filed', value: archaeology.reports.length },
@@ -259,6 +273,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description={decMode?.description ?? ''}
           ctaLabel={decipher.activePuzzle ? 'Continue' : decipher.tutorialCompleted ? 'Enter' : 'Start the tutorial'}
           onLaunch={open('decipher')}
+          modeId="decipher"
           fresh={isNew('decipher')}
           stats={[
             { label: 'Tablets read', value: decipher.memories.length },
@@ -275,6 +290,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description={escMode?.description ?? ''}
           ctaLabel={escapeRoom.activeState ? 'Continue' : 'Enter'}
           onLaunch={open('escape-room')}
+          modeId="escape-room"
           fresh={isNew('escape-room')}
           stats={[
             { label: 'Episodes completed', value: escapeRoom.memories.length },
@@ -291,6 +307,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description={alienMode?.description ?? ''}
           ctaLabel={alien.active ? 'Continue' : 'Enter'}
           onLaunch={open('alien-archaeology')}
+          modeId="alien-archaeology"
           fresh={isNew('alien-archaeology')}
           stats={[
             { label: 'Field reports filed', value: alien.reports.length },
@@ -307,6 +324,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description={revMode?.description ?? ''}
           ctaLabel={reverseEvo.active ? 'Continue' : 'Enter'}
           onLaunch={open('reverse-evolution')}
+          modeId="reverse-evolution"
           fresh={isNew('reverse-evolution')}
           stats={[
             { label: 'Discoveries traced', value: reverseEvo.runs.length },
@@ -321,6 +339,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           description="Find the shortest route through the game's recipe network, with checkpoints and blocked paths."
           ctaLabel="Enter"
           onLaunch={open('minimum-path')}
+          modeId="minimum-path"
           fresh={isNew('minimum-path')}
           stats={[]}
         />}
