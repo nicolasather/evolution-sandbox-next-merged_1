@@ -12,6 +12,7 @@ import { CUE_LIMIT, instantEnabled, markStepSeen, seenSteps, setInstant, subscri
 import { FreeformTrial } from '@/lib/craft/freeform';
 import { CraftSession } from '@/lib/craft/session';
 import { deriveSpec, tierOf } from '@/lib/craft/specs';
+import { planFromMaterials } from '@/lib/craft/motionPlan';
 import { stepHint } from '@/lib/craft/steps';
 import type { Body, StepKind, Tier, ZoneId } from '@/lib/craft/types';
 import { World } from '@/lib/craft/world';
@@ -659,6 +660,17 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       fx.ring(mx, my, world.unit * (fresh ? 2.6 : 1.8), { color: 'ochre', life: fresh ? 0.8 : 0.5, width: fresh ? 2 : 1.4 });
       fx.burst(mx, my, { n: fresh ? 16 : 8, color: 'ochre', speed: fresh ? 150 : 90, life: 0.6, size: 2.4 });
       fx.sound(fresh ? 'chime' : 'pop', { vol: fresh ? 0.9 : 0.6 });
+      /* Items from the verified-content pipeline get their finish from a MotionPlan (material family -> particles,
+         dust, shake, sound). The original items keep their hand-tuned finish exactly as before. The plan only
+         describes motion; what was made is already decided by the engine. */
+      if (res.node.visualArchetype) {
+        const mp = planFromMaterials(bs.map(b => b.material), []);
+        if (!mq.matches) {
+          fx.burst(mx, my, { n: mp.particles.count, color: mp.particles.dust, speed: 60 + mp.particles.spread * 90, life: 0.6, size: 2.2, gravity: mp.particles.gravity * 120 });
+          if (mp.shake > 0) fx.shake(mp.shake * 2);
+        }
+        if (mp.sounds[0]) fx.sound(mp.sounds[0], { vol: 0.6 });
+      }
       if (fresh && tier !== 'quick') { fx.shake(tier === 'major' ? 4 : 2); fx.spark(mx, my, { n: tier === 'major' ? 14 : 8, color: 'ochre', speed: 200, life: 0.5 }); }
       if (fresh && tier === 'major') fx.flash(0.9);
       if (res.unlocked.length) say_(`${res.unlocked.map(u => u.n).join(', ')} appears.`, 'good', latest.current.engine.unlockNote(res.unlocked[0].id) ?? undefined);
