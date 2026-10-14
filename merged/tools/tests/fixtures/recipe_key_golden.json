@@ -1,0 +1,58 @@
+[
+  {
+    "items": [
+      "stone",
+      "wood"
+    ],
+    "expected": "recipe-v2:2:5:stone4:wood"
+  },
+  {
+    "items": [
+      "wood",
+      "stone"
+    ],
+    "expected": "recipe-v2:2:5:stone4:wood"
+  },
+  {
+    "items": [
+      "stone",
+      "stone"
+    ],
+    "expected": "recipe-v2:2:5:stone5:stone"
+  },
+  {
+    "items": [
+      "stone",
+      "wood",
+      "fiber"
+    ],
+    "expected": "recipe-v2:3:5:fiber5:stone4:wood"
+  },
+  {
+    "items": [
+      "wood",
+      "fiber",
+      "stone"
+    ],
+    "expected": "recipe-v2:3:5:fiber5:stone4:wood"
+  },
+  {
+    "items": [
+      "stone",
+      "wood",
+      "fiber",
+      "bone"
+    ],
+    "expected": "recipe-v2:4:4:bone5:fiber5:stone4:wood"
+  },
+  {
+    "items": [
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "a5"
+    ],
+    "expected": "recipe-v2:5:2:a12:a22:a32:a42:a5"
+  }
+]

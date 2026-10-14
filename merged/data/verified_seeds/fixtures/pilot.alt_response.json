@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "targetId": "fx_lashed_flake_knife",
+  "proposals": [
+    {
+      "ingredientIds": [
+        "sharp_stone",
+        "wood",
+        "fiber"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "haft",
+        "binding"
+      ],
+      "mechanism": "A sharp stone is set against a wooden handle and bound on with plant fibre, so the lashing holds the edge firm while the handle is swung.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": []
+    },
+    {
+      "ingredientIds": [
+        "stone_flake",
+        "bone",
+        "fiber"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "haft",
+        "binding"
+      ],
+      "mechanism": "A sharp stone flake is lashed to a long bone with plant fibre, so the flake edge cuts while the bone gives grip.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": []
+    },
+    {
+      "ingredientIds": [
+        "fiber",
+        "fiber",
+        "fiber"
+      ],
+      "action": "twist",
+      "inputRoles": [
+        "fibre_stock",
+        "fibre_stock",
+        "binding"
+      ],
+      "mechanism": "The soft fibre symbolically represents the spirit of a knife, somehow related to cutting in theme.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": []
+    },
+    {
+      "ingredientIds": [
+        "stone_flake",
+        "stone_flake",
+        "wood"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "head",
+        "haft"
+      ],
+      "mechanism": "Two flakes are set against a wooden handle and held in place so that they cut when the handle is swung.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": []
+    },
+    {
+      "ingredientIds": [
+        "stone",
+        "wood",
+        "fiber",
+        "fx_ground_pebble",
+        "bone",
+        "bark"
+      ],
+      "action": "tie",
+      "inputRoles": [],
+      "mechanism": "Six items are tied together into a bundle of materials and then used to cut with a lot of effort.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": []
+    },
+    {
+      "ingredientIds": [
+        "fx_lashed_flake_knife",
+        "wood"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "haft"
+      ],
+      "mechanism": "The finished knife is tied back onto a wooden handle, which makes the target out of itself.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": []
+    },
+    {
+      "ingredientIds": [
+        "stone_flake",
+        "wood",
+        "microchip_not_real"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "haft",
+        "binding"
+      ],
+      "mechanism": "A flake is tied to a handle with a part that does not exist anywhere in the catalogue at all.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": []
+    },
+    {
+      "ingredientIds": [
+        "stone_flake",
+        "wood",
+        "fiber"
+      ],
+      "action": "tie",
+      "inputRoles": [
+        "head",
+        "haft",
+        "binding"
+      ],
+      "mechanism": "A sharp stone flake is held against a wooden handle and lashed in place with plant fibre so it cuts.",
+      "evidenceClass": "plausible_reconstruction",
+      "sourceSupportIds": [],
+      "newItemName": "Super Knife"
+    }
+  ]
+}

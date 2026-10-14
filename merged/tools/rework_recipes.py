@@ -28,11 +28,12 @@ It is idempotent: running it twice changes nothing the second time. After it,
 from __future__ import annotations
 
 import json
+import os
 import sys
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get("EVO_ROOT") or Path(__file__).resolve().parents[1])
 NODE_DIR = ROOT / "data" / "nodes"
 PRIMITIVES = ["stone", "wood", "bone", "fiber"]
 
@@ -172,17 +173,18 @@ def load() -> tuple[list[tuple[Path, list[dict]]], dict[str, dict]]:
 
 
 def audit(by_id: dict[str, dict]) -> list[str]:
+    """Pair-free: works for 2-5 slot recipes and keeps repeated ingredients."""
     problems: list[str] = []
-    pairs: dict[tuple[str, str], list[str]] = defaultdict(list)
+    recipes: dict[tuple[str, ...], list[str]] = defaultdict(list)
     for n in by_id.values():
-        for a, b in n.get("rec", []):
-            for x in (a, b):
+        for ings in n.get("rec", []):
+            for x in ings:
                 if x not in by_id:
                     problems.append(f"unknown ingredient {x!r} in {n['id']}")
-            pairs[tuple(sorted((a, b)))].append(n["id"])
-    for k, v in pairs.items():
+            recipes[tuple(sorted(ings))].append(n["id"])
+    for k, v in recipes.items():
         if len(set(v)) > 1:
-            problems.append(f"pair {k[0]} + {k[1]} → {', '.join(v)}")
+            problems.append(f"recipe {' + '.join(k)} \u2192 {', '.join(v)}")
     found = set(PRIMITIVES)
     changed = True
     while changed:
@@ -190,7 +192,7 @@ def audit(by_id: dict[str, dict]) -> list[str]:
         for n in by_id.values():
             if n["id"] in found:
                 continue
-            if any(a in found and b in found for a, b in n.get("rec", [])):
+            if any(all(i in found for i in ings) for ings in n.get("rec", [])):
                 found.add(n["id"])
                 changed = True
     for nid in by_id:

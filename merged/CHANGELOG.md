@@ -5,6 +5,17 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 14 October 2026 — Logic-First V3, Phase 1 (verified-seed content pipeline)
+New `tools/verified_content.py` (+ `tools/content/`): recipe-free verified seeds → one frozen, rule-checked anchor
+recipe per item, or `anchor_blocked` with missing prerequisites; batch import split by era; all-or-nothing publish
+with backup/rollback; optional alternative routes (0..N, never new items). `validate.py`, `build_db.py`,
+`rework_recipes.py` now treat recipes as 2–5-slot multisets (output on the existing 918 is unchanged).
+TypeScript: `lib/content/*` (recipe key v2, strict preflight, alternative validation), `lib/server/*` (owner gate,
+provider adapter, default NONE), `app/api/admin/recipe-suggestions` (404 unless configured), `lib/visual3d/*`
+(16 procedural families), `lib/craft/motionPlan.ts`, `lib/modeAdapters/*`; `lib/processing/index.ts` folds
+approved alternatives (`data/verified/alt_routes.json`, shipped empty). No new game content is published; the
+`fx_*` pilot items are fixtures. See docs/VERIFIED_CONTENT_PIPELINE.md.
+
 ### 13 October 2026 — everything now unlocks as you move through history
 A new visitor sees the workbench and nothing else. Every other part of the game opens in the order
 humanity reached it (`lib/unlocks/registry.ts` — the one place to tune it; the rules are derived from

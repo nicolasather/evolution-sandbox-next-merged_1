@@ -23,7 +23,10 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "data:lifelines": "node tools/py.mjs tools/build_lifelines_content.py",
-    "data:recipes": "node tools/py.mjs tools/rework_recipes.py --check"
+    "data:recipes": "node tools/py.mjs tools/rework_recipes.py --check",
+    "content:audit": "node tools/py.mjs tools/verified_content.py audit",
+    "content:run": "node tools/py.mjs tools/verified_content.py run",
+    "content:test": "node tools/py.mjs -m unittest discover -s tools/tests"
   },
   "dependencies": {
     "@sentry/nextjs": "^11.0.0",

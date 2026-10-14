@@ -19,9 +19,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(os.environ.get("EVO_ROOT") or Path(__file__).resolve().parents[1])
 NODE_DIR = ROOT / "data" / "nodes"
 BUILD = ROOT / "build"
 PRIMITIVES = ["stone", "wood", "bone", "fiber"]
@@ -87,9 +88,9 @@ def main() -> None:
         changed = False
         for n in nodes:
             best = depth[n["id"]]
-            for a, b in n.get("rec", []):
-                if depth[a] < INF and depth[b] < INF:
-                    cand = 1 + max(depth[a], depth[b])
+            for ings in n.get("rec", []):          # 2-5 ingredients, repeats allowed
+                if all(depth[i] < INF for i in ings):
+                    cand = 1 + max(depth[i] for i in ings)
                     if cand < best:
                         best = cand
             if best != depth[n["id"]]:
@@ -111,10 +112,10 @@ def main() -> None:
             nid = n["id"]
             if nid in PRIMITIVES:
                 continue
-            for a, b in n.get("rec", []):
-                if a not in memo or b not in memo:
+            for ings in n.get("rec", []):
+                if any(i not in memo for i in ings):
                     continue  # ingredient not yet derivable — skip this round
-                cand = memo[a] | memo[b] | {nid}
+                cand = frozenset().union(*(memo[i] for i in ings)) | {nid}
                 if nid not in memo or len(cand) < len(memo[nid]):
                     memo[nid] = frozenset(cand)
                     changed = True
@@ -126,16 +127,16 @@ def main() -> None:
         nid = n["id"]
         if nid in PRIMITIVES or nid not in memo:
             continue
-        for a, b in n.get("rec", []):
-            if a in memo and b in memo and memo[a] | memo[b] | {nid} == memo[nid]:
-                assert memo[a] <= memo[nid] and memo[b] <= memo[nid], f"derivation invariant broken at {nid}"
+        for ings in n.get("rec", []):
+            if all(i in memo for i in ings) and frozenset().union(*(memo[i] for i in ings)) | {nid} == memo[nid]:
+                assert all(memo[i] <= memo[nid] for i in ings), f"derivation invariant broken at {nid}"
                 break
 
     # ---- reverse index: what each node feeds into -----------------------
     uses: dict[str, list[str]] = {n["id"]: [] for n in nodes}
     for n in nodes:
-        for a, b in n.get("rec", []):
-            for ing in {a, b}:
+        for ings in n.get("rec", []):
+            for ing in set(ings):
                 uses[ing].append(n["id"])
 
     for n in nodes:

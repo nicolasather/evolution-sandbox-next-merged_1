@@ -1,0 +1,846 @@
+{
+  "batch": "pilot",
+  "era": "origins",
+  "fixture": true,
+  "schemaVersion": 3,
+  "seeds": [
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Lashed Flake Knife",
+      "category": "technology",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -200000,
+        "rangeStart": -300000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_lashed_flake_knife_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A small cutting tool: a sharp stone flake held in a wooden handle with fibre binding. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_lashed_flake_knife_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "The handle gives grip and leverage that a bare flake lacks, and the binding keeps the edge fixed in line."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_lashed_flake_knife_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test that a three-part route is generated, validated and frozen."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_lashed_flake_knife",
+      "materialProperties": {
+        "family": "composite",
+        "properties": [
+          "hard",
+          "sharp"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "tool",
+        "sharp"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "hafted_tool",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "composite",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Fired Clay Bowl",
+      "category": "technology",
+      "chronology": {
+        "anchorYear": -8000,
+        "display": "Fixture year (no real date)",
+        "era": "civilization",
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_fired_clay_bowl_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A hand-shaped bowl of clay hardened in fire so that it holds water. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_fired_clay_bowl_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Heat turns soft clay into a rigid ceramic body."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_fired_clay_bowl_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test a heat-driven material transformation."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_fired_clay_bowl",
+      "materialProperties": {
+        "family": "ceramic",
+        "properties": [
+          "hard",
+          "brittle"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "vessel",
+        "ceramic"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "vessel",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "ceramic",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Ground Pebble",
+      "category": "technique",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -80000,
+        "rangeStart": -120000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_ground_pebble_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A pebble ground smooth against grit and water. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_ground_pebble_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Wet grit wears the surface of a hard stone down evenly."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_ground_pebble_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test an abrasion route."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_ground_pebble",
+      "materialProperties": {
+        "family": "stone",
+        "properties": [
+          "hard"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "stone",
+        "smooth"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "polished_stone",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "stone",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Twisted Fibre Loop",
+      "category": "technology",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -40000,
+        "rangeStart": -60000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_twisted_fibre_loop_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A short loop of plant fibre strands twisted together into a stronger cord. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_twisted_fibre_loop_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Twisting makes separate strands grip one another."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_twisted_fibre_loop_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test a fibre route."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_twisted_fibre_loop",
+      "materialProperties": {
+        "family": "fibre",
+        "properties": [
+          "flexible"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "fibre",
+        "cord"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "woven_fibre",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "fibre",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Ground Bone Point",
+      "category": "technology",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -60000,
+        "rangeStart": -90000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_ground_bone_point_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A bone splinter ground to a point on stone. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_ground_bone_point_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Grinding on a hard stone shapes a bone edge or point."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_ground_bone_point_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test a bone-working route."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_ground_bone_point",
+      "materialProperties": {
+        "family": "bone",
+        "properties": [
+          "hard",
+          "sharp"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "bone",
+        "pointed"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "bone_tool",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "bone",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Moulded Clay Block",
+      "category": "material",
+      "chronology": {
+        "anchorYear": -7000,
+        "display": "Fixture year (no real date)",
+        "era": "civilization",
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_sun_dried_block_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A block of wet clay pressed into a mould and left to harden. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_sun_dried_block_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A mould gives clay a regular shape before it stiffens."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_sun_dried_block_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test a moulding route."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_sun_dried_block",
+      "materialProperties": {
+        "family": "earth",
+        "properties": [
+          "hard",
+          "heavy"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "building",
+        "clay"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "brick",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "ceramic",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Hafted Bone Awl",
+      "category": "technology",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -30000,
+        "rangeStart": -50000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_hafted_bone_awl_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A pointed bone head bound into a wooden handle. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_hafted_bone_awl_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "The handle lets the user push the point with the whole hand."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_hafted_bone_awl_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test that a seed can depend on an earlier seed in the same batch."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_hafted_bone_awl",
+      "materialProperties": {
+        "family": "composite",
+        "properties": [
+          "hard",
+          "sharp"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "tool",
+        "piercing"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "hafted_tool",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "composite",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Early Copper Ingot",
+      "category": "material",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -40000,
+        "rangeStart": -50000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_early_copper_ingot_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A cast bar of copper from smelted ore. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_early_copper_ingot_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Smelting needs ore, reducing heat and a way to collect the metal."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_early_copper_ingot_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test that an item whose prerequisites do not exist yet is BLOCKED, not faked."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_early_copper_ingot",
+      "materialProperties": {
+        "family": "metal",
+        "properties": [
+          "heavy"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "metal"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "metal_ingot",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "metal",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Stone Age Microchip",
+      "category": "technology",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -20000,
+        "rangeStart": -30000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_stone_age_microchip_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "A deliberately impossible item for its era. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_stone_age_microchip_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "An integrated circuit needs semiconductor manufacturing."
+        },
+        {
+          "checkNote": "Fixture only: the reference is a stand-in used by tests, not a real source.",
+          "claimId": "fx_stone_age_microchip_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_reference"
+          ],
+          "text": "Used here only to test that an anachronistic item is BLOCKED and reports its missing prerequisites."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_stone_age_microchip",
+      "materialProperties": {
+        "family": "composite",
+        "properties": [
+          "hard"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "circuit"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "circuit",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "composite",
+        "stylized": true
+      }
+    },
+    {
+      "aliases": [],
+      "canonicalName": "Fixture: Unsourced Charm",
+      "category": "culture",
+      "chronology": {
+        "anchorYear": null,
+        "display": "Fixture range (no real date)",
+        "era": "origins",
+        "rangeEnd": -10000,
+        "rangeStart": -20000,
+        "uncertainty": "Test fixture: no real date is asserted."
+      },
+      "claims": [
+        {
+          "checkNote": "",
+          "claimId": "fx_unsourced_charm_l1",
+          "layer": "l1",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_general"
+          ],
+          "text": "A small ornament. (Test fixture: illustrative, not a historical claim.)"
+        },
+        {
+          "checkNote": "",
+          "claimId": "fx_unsourced_charm_l2",
+          "layer": "l2",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_general"
+          ],
+          "text": "No source has been checked for this claim."
+        },
+        {
+          "checkNote": "",
+          "claimId": "fx_unsourced_charm_l3",
+          "layer": "l3",
+          "reviewDate": "2026-10-14",
+          "reviewedBy": "fixture_editor",
+          "sourceIds": [
+            "fixture_general"
+          ],
+          "text": "Used here only to test that an unchecked claim keeps the item out of the game."
+        }
+      ],
+      "editorApproval": {
+        "approved": true,
+        "editorId": "fixture_editor",
+        "reviewVersion": 1
+      },
+      "evidenceLabel": "Pipeline test fixture (not evidence)",
+      "fixture": true,
+      "itemId": "fx_unsourced_charm",
+      "materialProperties": {
+        "family": "stone",
+        "properties": [
+          "hard"
+        ]
+      },
+      "modeEligibility": [
+        "main-evolution",
+        "survival",
+        "reverse-evolution",
+        "minimum-path"
+      ],
+      "rarity": "uncommon",
+      "schemaVersion": 3,
+      "tags": [
+        "fixture",
+        "ornament"
+      ],
+      "truthStatus": "reviewed_with_uncertainty",
+      "visualBrief": {
+        "archetype": "bead",
+        "factualShapeNote": "Illustrative fixture shape.",
+        "material": "stone",
+        "stylized": true
+      }
+    }
+  ],
+  "sources": {
+    "fixture_general": {
+      "checked": "2026-10-14",
+      "org": "Evolution Sandbox test fixtures",
+      "scope": "general",
+      "t": "B",
+      "title": "Pipeline test portal (not a real source)",
+      "type": "fixture",
+      "url": "https://example.org/"
+    },
+    "fixture_reference": {
+      "checked": "2026-10-14",
+      "org": "Evolution Sandbox test fixtures",
+      "scope": "topic",
+      "t": "B",
+      "title": "Pipeline test reference (not a real source)",
+      "type": "fixture",
+      "url": "https://example.org/evolution-sandbox-fixture"
+    }
+  }
+}
