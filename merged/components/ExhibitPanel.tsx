@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Glyph } from './Glyph';
 import { Plate3D } from './Plate3D';
+import { Reconstruction3D } from './Reconstruction3D';
 import { cn } from '@/lib/utils';
 import { routePaths } from '@/lib/routes';
 import { scoreResilience } from '@/lib/knowledge/resilience';
@@ -222,6 +223,10 @@ export function ExhibitPanel({
         <div className="exh-art">
           <Plate3D node={node} locked={!known} label={known ? node.n : 'Undiscovered entry'} />
         </div>
+        {known && node.visualArchetype && (
+          <Reconstruction3D itemId={node.id} archetype={node.visualArchetype}
+            family={String(node.physicalProperties?.family ?? 'stone')} name={node.n} />
+        )}
         <h2 className="exh-name">{known ? node.n : 'Undiscovered'}</h2>
         <div className="exh-meta mono">
           {known ? (

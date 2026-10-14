@@ -99,6 +99,9 @@ export interface Discovery {
    *  (e.g. "container", "cutting-tool", "structure") a Museum exhibit or an
    *  Archaeologist assemblage template can key off. */
   artifactType?: string;
+  /** Set only on items published by the verified-content pipeline: which procedural-3D archetype
+   *  (lib/visual3d) draws the stylised reconstruction in the exhibit. Absent on the original items. */
+  visualArchetype?: string;
   /** Coarse, comparable-across-materials physical properties (0–1 scales
    *  or short labels) — the same vocabulary lib/processing/physics.ts
    *  already derives for crafting, exposed here for modes that reason

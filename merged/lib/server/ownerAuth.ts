@@ -1,5 +1,4 @@
 import { timingSafeEqual } from 'node:crypto';
-import { serverDevToolsEnabled } from '../dev/env';
 
 /* Owner-only gate for the content studio. Closed unless ALL hold:
    - the developer gate is open (never on a production deployment),
@@ -9,11 +8,17 @@ import { serverDevToolsEnabled } from '../dev/env';
 
 type EnvLike = Record<string, string | undefined>;
 
+/* Self-contained on purpose: this file must not import the beta-only lib/dev/*, so the same code
+   builds on the public `main` branch. Same rule as lib/dev/env.ts: flag on AND never production. */
+export function gateOpen(env: EnvLike): boolean {
+  return env.ENABLE_DEV_TOOLS === 'true' && env.VERCEL_ENV !== 'production';
+}
+
 export type OwnerCheck = { ok: true } | { ok: false; status: 401 | 404; reason: 'closed' | 'missing_token' | 'bad_token' };
 
 export function checkOwner(headers: Pick<Headers, 'get'>, env: EnvLike = process.env): OwnerCheck {
   // Behave as if the route does not exist whenever the surface is closed.
-  if (!serverDevToolsEnabled(env) || !env.OWNER_REVIEW_TOKEN) return { ok: false, status: 404, reason: 'closed' };
+  if (!gateOpen(env) || !env.OWNER_REVIEW_TOKEN) return { ok: false, status: 404, reason: 'closed' };
   const h = headers.get('authorization') ?? '';
   const m = /^Bearer (.+)$/.exec(h);
   if (!m) return { ok: false, status: 401, reason: 'missing_token' };

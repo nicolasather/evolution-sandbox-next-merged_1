@@ -78,6 +78,7 @@ def compile_node(seed: dict, entry: dict, no: int, cat: Catalogue, known_vis: se
         "confidence": {"level": "debated" if seed["chronology"].get("disputed") else CONF_LEVEL[seed["truthStatus"]],
                        "note": seed["chronology"]["uncertainty"]},
         "artifactType": ARTIFACT_TYPE.get(arch, arch),
+        "visualArchetype": arch,
         "physicalProperties": {"family": seed["materialProperties"]["family"]},
     }
     if seed["truthStatus"] == "reviewed_with_uncertainty" or seed["chronology"].get("disputed"):
