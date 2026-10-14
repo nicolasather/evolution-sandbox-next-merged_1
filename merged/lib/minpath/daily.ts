@@ -3,6 +3,7 @@ import { buildGraph } from './graph';
 import { shortestPath } from './pathfind';
 import { hubIds, pathLeansOnHub } from './validate';
 import type { Db } from '../types';
+import { adapterGate, generatedPackets } from '../modeAdapters/runtime';
 import type { Rng } from '../seed';
 
 export interface MinPathChallenge {
@@ -24,8 +25,16 @@ export function pickChallenge(
 ): MinPathChallenge | null {
   const graph = buildGraph(db);
   const hubs = hubIds(graph);
-  const candidates = db.nodes.filter(n => !n.primitive && !n.hidden && graph.neighbors.has(n.id));
+  const candidates = db.nodes.filter(n => !n.primitive && !n.hidden && graph.neighbors.has(n.id) && adapterGate('minimum-path', n, db));
   if (candidates.length < 2) return null;
+  // A reviewed, solvable packet from the pipeline (none ship today) is offered before random pairs.
+  const packets = generatedPackets('minimum-path', db) as { start: string; target: string }[];
+  // only touch the rng when a packet exists: with none (today) the daily sequence is byte-for-byte unchanged
+  const packet = packets.length ? rng.pick(packets) : undefined;
+  if (packet) {
+    const path = shortestPath(graph, packet.start, packet.target);
+    if (path) return { startId: packet.start, targetId: packet.target, optimalLength: path.length - 1 };
+  }
   const minHops = opts.minHops ?? 3;
   const maxHops = opts.maxHops ?? 8;
   let fallback: MinPathChallenge | null = null;

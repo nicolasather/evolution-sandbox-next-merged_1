@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
 import { REV_TARGET, REVERSE_MODE, reverseGuide } from '@/lib/guide/reverse';
-import { TARGETS } from '@/lib/reverseevolution/catalog';
+import { reverseTargets } from '@/lib/reverseevolution/catalog';
 import { generateRun } from '@/lib/reverseevolution/generate';
 import { reverseExhibit, summarizeRun } from '@/lib/reverseevolution/memory';
 import { playDb } from '@/lib/processing';
@@ -141,7 +141,7 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
           <GuideHint />
           <p className="rev-intro">Pick a real, complex discovery. Trace what it was actually made from, step by step, back toward raw materials — every question and every answer is real Main Evolution data, not invented for this mode.</p>
           <div className="rev-targets">
-            {TARGETS.map(t => (
+            {reverseTargets(playDb).map(t => (
               <button key={t.id} className={'rev-target-card ' + guide.glow(REV_TARGET.card)} onClick={() => start(t.id, Date.now())}>
                 <span className="rev-target-name">{nameOf(t.id)}</span>
                 <span className="rev-target-blurb">{t.blurb}</span>

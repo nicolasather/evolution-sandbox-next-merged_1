@@ -5,6 +5,13 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 14 October 2026 — Phase 1 completion (integration)
+- Exhibit panel shows a labelled stylised 3D reconstruction (`components/Reconstruction3D.tsx`) for items published by the pipeline only;
+  WebGL when available (max 6 live contexts, only while on screen), flat silhouette otherwise. Workbench finish uses the MotionPlan for those items only.
+- Mode adapters are consumed by Minimum Path and Reverse Evolution; Survival and Archaeologist recorded as excluded (no item entry point).
+- Owner-only: `/admin/recipes` (review AI alternatives), `/admin/visual3d` (render preview), AI route rate limit + logging. All 404 unless the dev gate is open.
+- Data fix (demonstrable drift, documented): `data/nodes/g1.json` lacked two 3-slot recipes (`shelter`, `spear`) that `data/db.json` already shipped; added so a rebuild reproduces db.json. Gameplay unchanged; only `dataHash` changed.
+
 ### 14 October 2026 — Logic-First V3, Phase 1 (verified-seed content pipeline)
 New `tools/verified_content.py` (+ `tools/content/`): recipe-free verified seeds → one frozen, rule-checked anchor
 recipe per item, or `anchor_blocked` with missing prerequisites; batch import split by era; all-or-nothing publish

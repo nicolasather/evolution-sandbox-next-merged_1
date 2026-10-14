@@ -6,6 +6,9 @@
    for a satisfying decomposition run.
    ========================================================================== */
 
+import type { Db } from '../types';
+import { generatedPackets } from '../modeAdapters/runtime';
+
 export interface ReverseTarget { id: string; blurb: string }
 
 export const TARGETS: ReverseTarget[] = [
@@ -17,3 +20,17 @@ export const TARGETS: ReverseTarget[] = [
   { id: 'game_console', blurb: 'A video game and a personal computer, fused into one real object — then further back still.' },
   { id: 'grand_theft_auto_vi', blurb: 'The game’s own deepest discovery. Reaching it forward took the longest path in the whole timeline — this traces the same path back down.' },
 ];
+
+/** The curated list plus any pipeline items whose reviewed `reverse-evolution` packet validates and is solvable.
+ *  With no packets (today) this is exactly TARGETS. Curated order and entries are never changed. */
+export function reverseTargets(db: Pick<Db, 'nodes'> & { eras?: Db['eras'] }): ReverseTarget[] {
+  const have = new Set(TARGETS.map(t => t.id));
+  const extra: ReverseTarget[] = [];
+  for (const p of generatedPackets('reverse-evolution', db) as { targetId: string }[]) {
+    const n = db.nodes.find(x => x.id === p.targetId);
+    if (!n || have.has(n.id)) continue;
+    have.add(n.id);
+    extra.push({ id: n.id, blurb: n.l1 });
+  }
+  return [...TARGETS, ...extra];
+}

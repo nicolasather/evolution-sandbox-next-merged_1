@@ -102,13 +102,13 @@ describe('provider adapters', () => {
   });
 
   it('http provider turns outages, rate limits and bad bodies into NONE (mock fetch only)', async () => {
-    const mkP = (f: typeof fetch) => new HttpProvider({ url: 'https://example.invalid', apiKey: 'k', model: 'm', fetchImpl: f, timeoutMs: 50 });
+    const mkP = (f: typeof fetch) => new HttpProvider({ url: 'https://example.invalid', apiKey: 'k', model: 'm', fetchImpl: f, timeoutMs: 50, maxRetries: 0 });
     const input = { targetId: 'axe', targetName: 'Axe', verifiedFacts: [], allowlist: [], existingRoutes: [], actions: [] };
     const noneStr = JSON.stringify({ schemaVersion: 1, targetId: 'axe', proposals: [] });
     expect(await mkP((async () => resp('x', 429)) as typeof fetch).propose(input)).toBe(noneStr);
     expect(await mkP((async () => { throw new Error('offline'); }) as typeof fetch).propose(input)).toBe(noneStr);
     expect(await mkP((async () => resp('y'.repeat(40_000))) as typeof fetch).propose(input)).toBe(noneStr);
-    expect(await mkP((async () => resp('{"ok":1}')) as typeof fetch).propose(input)).toBe('{"ok":1}');
+    expect(await mkP((async () => resp(JSON.stringify({ content: [{ type: 'text', text: '{"ok":1}' }] }))) as typeof fetch).propose(input)).toBe('{"ok":1}');
   });
 
   it('the prompt keeps its rejection-first rules', () => {

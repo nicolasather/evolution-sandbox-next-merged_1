@@ -4,8 +4,8 @@ import { ADAPTERS, resolvePacket } from '..';
 import type { ModeId } from '../../modes/types';
 
 const db = playDb;
-const OPT_IN: ModeId[] = ['main-evolution', 'reverse-evolution', 'minimum-path', 'survival', 'archaeology'];
-const EXCLUDED: ModeId[] = ['civilization', 'decipher', 'alien-archaeology', 'escape-room'];
+const OPT_IN: ModeId[] = ['main-evolution', 'reverse-evolution', 'minimum-path'];
+const EXCLUDED: ModeId[] = ['civilization', 'decipher', 'alien-archaeology', 'escape-room', 'survival', 'archaeology'];
 
 describe('mode compatibility table', () => {
   it('every registered mode is either opt-in or explicitly excluded with a reason', () => {
@@ -83,15 +83,16 @@ describe('solvability proofs', () => {
   });
 
   it('a validator that throws still falls back', () => {
-    const spy = jest.spyOn(ADAPTERS.survival, 'validatePacket').mockImplementation(() => { throw new Error('boom'); });
-    const r = resolvePacket('survival', { schemaVersion: 1 }, 's', db);
+    const spy = jest.spyOn(ADAPTERS['minimum-path'], 'validatePacket').mockImplementation(() => { throw new Error('boom'); });
+    const r = resolvePacket('minimum-path', { schemaVersion: 1 }, 's', db);
     expect(r.source).toBe('fallback');
     expect(r.errors.join()).toMatch(/boom/);
     spy.mockRestore();
   });
 
-  it('survival only accepts prehistoric items', () => {
-    const late = db.nodes.find(n => n.era === 'computing')!;
-    expect(ADAPTERS.survival.eligibility(late, db).eligible).toBe(false);
+  it('survival and archaeology are excluded: they use authored vocabularies and have no item entry point', () => {
+    expect(ADAPTERS.survival.policy).toBe('excluded');
+    expect(ADAPTERS.archaeology.policy).toBe('excluded');
+    expect(resolvePacket('survival', { schemaVersion: 1 }, 's', db).source).toBe('none');
   });
 });
