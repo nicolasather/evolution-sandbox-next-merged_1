@@ -1,0 +1,43 @@
+# Applied BEFORE subjects.RULES. (substring of lowercase item name, slug of a fetched page). Used where the first-choice page is absent
+# or a closer fetched page exists. Only topic-level relation is claimed.
+PRE = [
+ ('pharmacist','Apothecary'),('draining basket','Cheese'),('bilge','Bilge'),('mine drainage','Mining'),('headgate','Irrigation'),('water gate','Irrigation'),('field gate','Irrigation'),
+ ('boundary wall','City_wall'),('boundary dispute','Cadastre'),('spade money','Coin'),('cash coin','Coin'),('mayan hieroglyphic','Stele'),
+ ('footpath bridge','Footbridge'),('iron wheel rim','Wheel'),('bronze wheel hub','Wheel'),('iron reheating','Blacksmith'),('iron mining','Mining'),('bronze mining','Mining'),
+ ('iron medical forceps','Forceps'),('iron mortise','Iron_Age'),('bronze pump','Pump'),('bronze surgical','Surgical_instrument'),('bronze wound needle','Sewing_needle'),
+ ('bronze sewing needle','Sewing_needle'),('bronze balance','Balance_(instrument)'),('bronze ritual bell','Bell'),('bronze chime','Bell'),('bronze bit','Horse_harness'),
+ ('bronze astronomical','Dioptra'),('counting board','Abacus'),('standard grain measure','Dry_measure'),('standard stone weight','Weights_and_measures'),
+]
+NONE = {'wound irrigation vessel','public wash basin','roof smoke vent','grain rodent barrier','village council assembly','wheel retaining pin','metal cautery iron',
+        'road drainage ditch','earthen floor drain','bronze catheter tube','bronze signal trumpet','chinese bronze inscription','crannog lake dwelling',
+        'granary watchtower','ship bilge drainage'}
+OVERRIDES = [
+ ('copper reduction furnace','Smelting'),('copper casting crucible','Crucible'),('copper mould','Lost-wax_casting'),('open copper casting','Lost-wax_casting'),('open pit copper','Mining'),
+ ('copper','Copper'),
+ ('wooden cattle yoke','Yoke'),('oxen neck yoke','Yoke'),('double oxen yoke','Yoke'),('water carrying yoke','Yoke'),('swivelling wagon yoke','Yoke'),('draft team neck yoke','Yoke'),('draft team hitch','Yoke'),
+ ('oxen harness trace','Horse_harness'),('chariot reins','Chariot'),('pack donkey harness','Donkey'),('camel carrying frame','Camel'),('mule pack string','Mule'),('caravan camel saddle','Camel'),
+ ('milk straining','Cheese'),('sour milk','Yogurt'),('raised field agriculture','Chinampa'),('flood recession','Basin_irrigation'),('drainage field ditch','Canal'),
+ ('composite harvest blade','Sickle'),('harvesting hook','Sickle'),('crop sheaf','Threshing'),
+ ('temple grain store','Granary'),('fortified grain store','Granary'),('clay sealed grain pit','Granary'),('dry grain basket','Granary'),('stone lined storehouse','Granary'),('house grain loft','Granary'),
+ ('clay baking mould','Bread'),('grain grinding slab','Quern-stone'),('cereal pounding','Mortar_and_pestle'),('bread kneading','Dough'),
+ ('fish drying','Dried_fish'),('drying rack','Food_preservation'),('village watering hole','Well'),('neighborhood water point','Well'),('bucket chain','Chain_pump'),('stone water basin','Water_tank'),
+ ('water powered','Water_wheel'),('trip hammer water','Water_wheel'),('water driven','Water_wheel'),('screw pump','Archimedes%27_screw'),
+ ('drain','Sewerage'),('sewage','Sewerage'),('wastewater','Sewerage'),('catch basin','Sewerage'),
+ ('seabed','Sounding_line'),('sounding','Sounding_line'),('currents chart','Ocean_current'),('hub bearing','Bearing_(mechanical)'),
+ ('star compass','Polynesian_navigation'),('double canoe','Outrigger_boat'),('towboat','Barge'),('scow','Barge'),('riverboat','Barge'),('cargo boat','Barge'),
+ ('timber trestle','Trestle_bridge'),('timber pile bridge','Footbridge'),('mountain cable','Rope_bridge'),('stone step mountain','Inca_road_system'),('switchback','Hairpin_turn'),
+ ('desert waystation','Caravanserai'),('roadside shelter','Caravanserai'),('provincial road station','Cursus_publicus'),('state messenger','Cursus_publicus'),
+ ('red sea port','Periplus_of_the_Erythraean_Sea'),('niger river','Trans-Saharan_trade'),('aegean pottery','Pottery'),
+ ('measuring chain','Rope_stretcher'),('alignment stake','Groma_(surveying)'),('surveyor','Groma_(surveying)'),
+ ('accounting token','Proto-cuneiform'),('token envelope','Proto-cuneiform'),('trade seal','Cylinder_seal'),('grain ration','Proto-cuneiform'),
+ ('distribution ledger','Cuneiform'),('goods receipt','Cuneiform'),('debt obligation','Cuneiform'),('interest accounting','Cuneiform'),('credit letter','Cuneiform'),
+ ('copyist','Scribe'),('royal archive','Library_of_Ashurbanipal'),
+ ('magistrate court','Aedile'),('market regulation','Aedile'),('tax bureau','Census'),
+ ('contract','Code_of_Hammurabi'),('loan guarantee','Code_of_Hammurabi'),('irrigation allocation','Code_of_Hammurabi'),('witness','Code_of_Hammurabi'),
+ ('wound dressing','Poultice'),('pharmacist','Apothecary'),
+ ('sidereal','Star_catalogue'),('zenith','Archaeoastronomy'),('water clock','Water_clock'),('ox powered rotary','Gristmill'),
+ ('offering basket','Votive_offering'),('ritual calendar','Solar_calendar'),('dedication inscription','Stele'),('conch','Shell_trumpet'),
+ ('puquio','Cantalloc_Aqueducts'),('obelisk','Kingdom_of_Aksum'),
+ ('reduction fired','Pottery'),('black polished','Pottery'),('heckling','Flax'),('wool shearing','Sheep_shearing'),('seam joining','Sewing_needle'),('quilted','Quilting'),
+ ('ore washing','Ore_dressing'),('wash basin','Thermae'),
+]

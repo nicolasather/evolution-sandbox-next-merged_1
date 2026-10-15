@@ -9,12 +9,17 @@ names = {}
 for f in glob.glob(os.path.join(ROOT, 'data/nodes/*.json')):
     for x in json.load(open(f)): names[x['id']] = x['n']
 nodes = [x for x in json.load(open(os.path.join(ROOT, 'data/nodes/g11.json')))]
+_g12 = os.path.join(ROOT, 'data/nodes/g12.json')
+if os.path.exists(_g12):
+    nodes += [x for x in json.load(open(_g12)) if x.get('modeMeta', {}).get('escape-room', {}).get('candidate')]
 topics = collections.OrderedDict()
 for x in sorted(nodes, key=lambda x: x['no']): topics.setdefault(x['tags'][1], []).append(x)
 
 def pretty(t): return t.replace('_', ' ').title()
 eps = []
-for t, items in topics.items():
+for t, items in list(topics.items()):
+    if len(items) < 6 or len({it['rec'][0][0] for it in items}) < 5:  # too small a family for a fair 5-step order and a 4-way match
+        topics.pop(t); continue
     items = sorted(items, key=lambda x: (x['ds'], x['no']))
     # sequence: 5 items spread across the family, shown scrambled, correct = (ds, no) order
     idx = [round(i * (len(items) - 1) / 4) for i in range(5)]

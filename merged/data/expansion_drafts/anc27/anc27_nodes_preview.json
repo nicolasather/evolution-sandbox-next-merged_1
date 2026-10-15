@@ -6965,6 +6965,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -7000
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Field drainage manages agricultural soil water while a generic trench need not.",
+      "actionSequence": [
+        "dig",
+        "press"
+      ]
     }
   },
   {
@@ -9310,6 +9318,15 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -3100
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Bronze alloy edge and casting/working differ materially from a stone ploughshare.",
+      "actionSequence": [
+        "pour",
+        "hammer",
+        "polish"
+      ]
     }
   },
   {
@@ -9377,6 +9394,15 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -1000
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Forged iron edge has distinct strength, repair, and manufacture relative to stone.",
+      "actionSequence": [
+        "heat",
+        "hammer",
+        "polish"
+      ]
     }
   },
   {
@@ -9511,6 +9537,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5000
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "A composite cutting blade is a component whereas a sickle includes a haft and fastening.",
+      "actionSequence": [
+        "cut",
+        "tie"
+      ]
     }
   },
   {
@@ -9846,6 +9880,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5000
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Stone-paved work surface differs from earthen threshing areas by material and wear.",
+      "actionSequence": [
+        "hammer",
+        "press"
+      ]
     }
   },
   {
@@ -10050,35 +10092,30 @@
     }
   },
   {
-    "id": "anc27_winnowing_fan_basket",
+    "id": "anc27_threshing_flail_flexible_joint",
     "no": 2070,
-    "n": "Winnowing Fan Basket",
+    "n": "Threshing Flail Flexible Joint",
     "era": "agriculture",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -5000,
     "rar": "common",
     "vis": "spiral",
-    "l1": "Winnowing Fan Basket is an ancient-world subject for studying harvest, threshing and separation. It illustrates how communities could develop reducing postharvest grain losses.",
-    "l2": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Multiple crop domestication zones.",
-    "l3": "Historical verification pending: identify a documented example of Winnowing Fan Basket, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "Flexible link joining two arms of a threshing flail.",
+    "l2": "The flexible link transmits force from the moving handle to the freely swinging beater.",
+    "l3": "A working joint must be strong and allow rotation, unlike a fixed wooden shaft.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_winnowing_shovel",
-        "grain_storage"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "harvest_processing",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. It is for threshing grain, not for blowing chaff with a winnowing fan. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -10087,14 +10124,14 @@
     "visualArchetype": "mixed or contextual",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Winnowing Fan Basket — educational reconstruction; evidence review pending"
+      "label": "Threshing Flail Flexible Joint — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Multiple crop domestication zones",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "harvest_processing",
-      "researchQuery": "archaeological evidence Winnowing Fan Basket",
+      "researchQuery": "archaeological evidence Threshing Flail Flexible Joint",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -10105,16 +10142,48 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_winnowing_shovel",
-        "grain_storage"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5000
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "wood",
+        "cordage"
+      ],
+      "steps": [
+        {
+          "action": "cut",
+          "requiresCompletion": true
+        },
+        {
+          "action": "tie",
+          "requiresCompletion": true
+        },
+        {
+          "action": "pull",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Requires two shaped arms and abrasion-resistant flexible binding.",
+      "outputId": "anc27_threshing_flail_flexible_joint",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Threshing Flail Flexible Joint showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_winnowing_fan_basket"
   },
   {
     "id": "anc27_grain_sifting_sieve",
@@ -10449,6 +10518,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5000
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "A prepared windy work area is different from a hand-carried winnowing fan.",
+      "actionSequence": [
+        "press",
+        "brush"
+      ]
     }
   },
   {
@@ -10918,6 +10995,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5200
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "A flat grinding surface is one component rather than a whole grinding set.",
+      "actionSequence": [
+        "grind",
+        "polish"
+      ]
     }
   },
   {
@@ -14000,6 +14085,15 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -4300
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "A purpose-made ceramic fermenting vessel differs from food fermented inside it.",
+      "actionSequence": [
+        "shape",
+        "dry",
+        "heat"
+      ]
     }
   },
   {
@@ -15139,6 +15233,15 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -3300
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Alcoholic fermentation apparatus differs from a vinegar-producing acetic vessel.",
+      "actionSequence": [
+        "shape",
+        "dry",
+        "heat"
+      ]
     }
   },
   {
@@ -16144,6 +16247,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -6500
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "A water-catchment roof collects rainfall while a jar only stores the collected water.",
+      "actionSequence": [
+        "shape",
+        "assemble"
+      ]
     }
   },
   {
@@ -16479,6 +16590,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -6500
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "An open braced bucket differs from a flexible, closable drinking-water bag.",
+      "actionSequence": [
+        "cut",
+        "tie"
+      ]
     }
   },
   {
@@ -19363,35 +19482,30 @@
     }
   },
   {
-    "id": "anc27_reciprocating_force_pump",
+    "id": "anc27_bronze_pump_check_valve",
     "no": 2209,
-    "n": "Reciprocating Force Pump",
+    "n": "Bronze Pump Check Valve",
     "era": "metallurgy",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -800,
     "rar": "common",
     "vis": "cobble",
-    "l1": "Reciprocating Force Pump is an ancient-world subject for studying lifting and using flowing water. It illustrates how communities could develop extended irrigated acreage and machine power.",
-    "l2": "Game design: reconstruct its metal components or social prerequisites; compare the artefact with other solutions used across Near East, Mediterranean, China, India.",
-    "l3": "Historical verification pending: identify a documented example of Reciprocating Force Pump, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "One-way valve within an ancient force pump.",
+    "l2": "It opens under forward pressure and closes against reverse flow to direct the water.",
+    "l3": "Roman double-action bronze pump remains and their one-way valves are described by the British Museum.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_treadwheel_water_lift",
-        "copper"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "hydraulic_machines_ancient",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. Source documents pump mechanism, not necessarily this standalone reconstructed component. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -19400,14 +19514,14 @@
     "visualArchetype": "metal",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Reciprocating Force Pump — educational reconstruction; evidence review pending"
+      "label": "Bronze Pump Check Valve — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Near East, Mediterranean, China, India",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "hydraulic_machines_ancient",
-      "researchQuery": "archaeological evidence Reciprocating Force Pump",
+      "researchQuery": "archaeological evidence Bronze Pump Check Valve",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -19418,16 +19532,54 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_treadwheel_water_lift",
-        "copper"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -800
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "bronze",
+        "mechanism"
+      ],
+      "steps": [
+        {
+          "action": "hammer",
+          "requiresCompletion": true
+        },
+        {
+          "action": "carve",
+          "requiresCompletion": true
+        },
+        {
+          "action": "press",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Requires fitted valve seat, moving stopper and durable pressure seals.",
+      "outputId": "anc27_bronze_pump_check_valve",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Bronze Pump Check Valve showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [
+      {
+        "url": "https://www.britishmuseum.org/collection/object/G_1892-0517-2-a",
+        "supports": "Roman double-action bronze pump used one-way valves",
+        "itemSpecificDetachedArtifact": false
+      }
+    ],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_reciprocating_force_pump"
   },
   {
     "id": "anc27_ctesibian_piston_pump",
@@ -19448,7 +19600,7 @@
     ],
     "rec": [
       [
-        "anc27_reciprocating_force_pump",
+        "anc27_bronze_pump_check_valve",
         "irrigation"
       ]
     ],
@@ -19486,7 +19638,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_reciprocating_force_pump",
+        "anc27_bronze_pump_check_valve",
         "irrigation"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -26063,35 +26215,30 @@
     }
   },
   {
-    "id": "anc27_workshop_quarter",
+    "id": "anc27_potters_wheel_pivot_bearing",
     "no": 2309,
-    "n": "Workshop Quarter",
+    "n": "Potters Wheel Pivot Bearing",
     "era": "civilization",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -2800,
     "rar": "common",
     "vis": "spiral",
-    "l1": "Workshop Quarter is an ancient-world subject for studying urban planning and public works. It illustrates how communities could develop larger coordinated populations and commerce.",
-    "l2": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Mesopotamia, Mediterranean, South Asia and Americas.",
-    "l3": "Historical verification pending: identify a documented example of Workshop Quarter, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "Low-friction support bearing for a rotating potter's wheel.",
+    "l2": "It supports the turntable's load while allowing relatively smooth controlled rotation.",
+    "l3": "Rotational steadiness helps a potter form concentric, symmetric vessel walls.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_city_granary_district",
-        "city"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
-      "city_infrastructure",
+      "pottery_kilns",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. It is a machine component, not a workshop quarter. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -26100,14 +26247,14 @@
     "visualArchetype": "mixed or contextual",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Workshop Quarter — educational reconstruction; evidence review pending"
+      "label": "Potters Wheel Pivot Bearing — educational reconstruction; evidence review pending"
     },
     "historical": {
-      "proposedRegion": "Mesopotamia, Mediterranean, South Asia and Americas",
+      "proposedRegion": "Africa, Asia and Americas",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
-      "designTradition": "city_infrastructure",
-      "researchQuery": "archaeological evidence Workshop Quarter",
+      "designTradition": "pottery_kilns",
+      "researchQuery": "archaeological evidence Potters Wheel Pivot Bearing",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -26118,16 +26265,48 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_city_granary_district",
-        "city"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -2800
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "wood",
+        "stone"
+      ],
+      "steps": [
+        {
+          "action": "carve",
+          "requiresCompletion": true
+        },
+        {
+          "action": "grind",
+          "requiresCompletion": true
+        },
+        {
+          "action": "assemble",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Requires proper axle, socket, work surface, and compatible hard bearing surfaces.",
+      "outputId": "anc27_potters_wheel_pivot_bearing",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Potters Wheel Pivot Bearing showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_workshop_quarter"
   },
   {
     "id": "anc27_processional_avenue",
@@ -26148,7 +26327,7 @@
     ],
     "rec": [
       [
-        "anc27_workshop_quarter",
+        "anc27_potters_wheel_pivot_bearing",
         "city"
       ]
     ],
@@ -26186,7 +26365,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_workshop_quarter",
+        "anc27_potters_wheel_pivot_bearing",
         "city"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -27668,6 +27847,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -2400
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Roadside drainage shape and slope are specialized compared to a generic excavation.",
+      "actionSequence": [
+        "dig",
+        "press"
+      ]
     }
   },
   {
@@ -28207,35 +28394,30 @@
     }
   },
   {
-    "id": "anc27_rope_suspension_footbridge",
+    "id": "anc27_timber_bridge_diagonal_brace",
     "no": 2341,
-    "n": "Rope Suspension Footbridge",
+    "n": "Timber Bridge Diagonal Brace",
     "era": "civilization",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -1700,
     "rar": "common",
     "vis": "spiral",
-    "l1": "Rope Suspension Footbridge is an ancient-world subject for studying bridging rivers, valleys and wetlands. It illustrates how communities could develop more reliable transport networks.",
-    "l2": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Africa, Americas and Eurasia.",
-    "l3": "Historical verification pending: identify a documented example of Rope Suspension Footbridge, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "Diagonal timber member that braces a bridge support frame.",
+    "l2": "Diagonal bracing makes rectangular timber frames resist sideways racking.",
+    "l3": "A brace works only with correctly joined and supported frame elements.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_timber_pile_bridge",
-        "rope"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "bridges_water_crossings",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. This supports bridges but is not itself a suspension bridge. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -28244,14 +28426,14 @@
     "visualArchetype": "mixed or contextual",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Rope Suspension Footbridge — educational reconstruction; evidence review pending"
+      "label": "Timber Bridge Diagonal Brace — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Africa, Americas and Eurasia",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "bridges_water_crossings",
-      "researchQuery": "archaeological evidence Rope Suspension Footbridge",
+      "researchQuery": "archaeological evidence Timber Bridge Diagonal Brace",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -28262,16 +28444,48 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_timber_pile_bridge",
-        "rope"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -1700
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "wood",
+        "cordage"
+      ],
+      "steps": [
+        {
+          "action": "cut",
+          "requiresCompletion": true
+        },
+        {
+          "action": "carve",
+          "requiresCompletion": true
+        },
+        {
+          "action": "tie",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Needs support-frame sockets, tensile tie or pegs, and load-path checks.",
+      "outputId": "anc27_timber_bridge_diagonal_brace",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Timber Bridge Diagonal Brace showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_rope_suspension_footbridge"
   },
   {
     "id": "anc27_woven_grass_suspension_bridge",
@@ -28292,7 +28506,7 @@
     ],
     "rec": [
       [
-        "anc27_rope_suspension_footbridge",
+        "anc27_timber_bridge_diagonal_brace",
         "wood"
       ]
     ],
@@ -28330,7 +28544,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_rope_suspension_footbridge",
+        "anc27_timber_bridge_diagonal_brace",
         "wood"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -28408,35 +28622,30 @@
     }
   },
   {
-    "id": "anc27_stone_slab_ford_bridge",
+    "id": "anc27_stone_ford_bank_retaining_apron",
     "no": 2344,
-    "n": "Stone Slab Ford Bridge",
+    "n": "Stone Ford Bank Retaining Apron",
     "era": "civilization",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -1700,
     "rar": "common",
     "vis": "cobble",
-    "l1": "Stone Slab Ford Bridge is an ancient-world subject for studying bridging rivers, valleys and wetlands. It illustrates how communities could develop more reliable transport networks.",
-    "l2": "Game design: reconstruct its stone components or social prerequisites; compare the artefact with other solutions used across Africa, Americas and Eurasia.",
-    "l3": "Historical verification pending: identify a documented example of Stone Slab Ford Bridge, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "Laid stone protection at a shallow crossing approach.",
+    "l2": "A resistant stone apron can limit erosion under footsteps, cart wheels and flowing water.",
+    "l3": "Stone size, bed preparation and flow conditions determine resistance to washout.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_cantilevered_log_bridge",
-        "stone"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "bridges_water_crossings",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. The apron stabilizes a ford, not a separate stone-slab bridge. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -28445,14 +28654,14 @@
     "visualArchetype": "stone",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Stone Slab Ford Bridge — educational reconstruction; evidence review pending"
+      "label": "Stone Ford Bank Retaining Apron — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Africa, Americas and Eurasia",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "bridges_water_crossings",
-      "researchQuery": "archaeological evidence Stone Slab Ford Bridge",
+      "researchQuery": "archaeological evidence Stone Ford Bank Retaining Apron",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -28463,16 +28672,48 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_cantilevered_log_bridge",
-        "stone"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -1700
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "stone",
+        "construction"
+      ],
+      "steps": [
+        {
+          "action": "dig",
+          "requiresCompletion": true
+        },
+        {
+          "action": "hammer",
+          "requiresCompletion": true
+        },
+        {
+          "action": "press",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Needs prepared bed, suitable grading and flood-compatible geometry.",
+      "outputId": "anc27_stone_ford_bank_retaining_apron",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Stone Ford Bank Retaining Apron showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_stone_slab_ford_bridge"
   },
   {
     "id": "anc27_corbel_stone_bridge",
@@ -28493,7 +28734,7 @@
     ],
     "rec": [
       [
-        "anc27_stone_slab_ford_bridge",
+        "anc27_stone_ford_bank_retaining_apron",
         "stone"
       ]
     ],
@@ -28531,7 +28772,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_stone_slab_ford_bridge",
+        "anc27_stone_ford_bank_retaining_apron",
         "stone"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -28874,6 +29115,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -1700
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Barge hulls acting as bridge floats are more specific than generic pontoon rafts.",
+      "actionSequence": [
+        "tie",
+        "assemble"
+      ]
     }
   },
   {
@@ -29230,7 +29479,7 @@
     ],
     "rec": [
       [
-        "anc27_rope_suspension_footbridge",
+        "anc27_timber_bridge_diagonal_brace",
         "roads"
       ]
     ],
@@ -29268,7 +29517,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_rope_suspension_footbridge",
+        "anc27_timber_bridge_diagonal_brace",
         "roads"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -29547,35 +29796,30 @@
     }
   },
   {
-    "id": "anc27_bundle_reed_canoe",
+    "id": "anc27_pitch_sealed_hull_seam",
     "no": 2361,
-    "n": "Bundle Reed Canoe",
+    "n": "Pitch-Sealed Hull Seam",
     "era": "settlement",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -5200,
     "rar": "common",
     "vis": "spiral",
-    "l1": "Bundle Reed Canoe is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways.",
-    "l2": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Nile, Tigris-Euphrates, Indus, Yangtze, Americas.",
-    "l3": "Historical verification pending: identify a documented example of Bundle Reed Canoe, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "Waterproof joint between fitted hull planks.",
+    "l2": "Waterproofing allows a plank boat to resist seepage and retain buoyancy.",
+    "l3": "Joints may be packed with plant fibre and sealant; exact mixtures differ across regions and times.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_papyrus_reed_raft",
-        "boat"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "river_boats",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. Vessel caulking is a physical process, not a second reed canoe. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -29584,14 +29828,14 @@
     "visualArchetype": "mixed or contextual",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Bundle Reed Canoe — educational reconstruction; evidence review pending"
+      "label": "Pitch-Sealed Hull Seam — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Nile, Tigris-Euphrates, Indus, Yangtze, Americas",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "river_boats",
-      "researchQuery": "archaeological evidence Bundle Reed Canoe",
+      "researchQuery": "archaeological evidence Pitch-Sealed Hull Seam",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -29602,47 +29846,74 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_papyrus_reed_raft",
-        "boat"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5200
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "exp26_planked_boat_hull",
+        "wrapping_resin"
+      ],
+      "steps": [
+        {
+          "action": "scrape",
+          "requiresCompletion": true
+        },
+        {
+          "action": "heat",
+          "requiresCompletion": true
+        },
+        {
+          "action": "press",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Needs plant caulking material, a workable seam and region-specific historical evidence.",
+      "outputId": "anc27_pitch_sealed_hull_seam",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Pitch-Sealed Hull Seam showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_bundle_reed_canoe"
   },
   {
-    "id": "anc27_dugout_river_canoe",
+    "id": "anc27_fire_hollowed_canoe_blank",
     "no": 2362,
-    "n": "Dugout River Canoe",
+    "n": "Fire-Hollowed Canoe Blank",
     "era": "settlement",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -5200,
     "rar": "common",
     "vis": "spiral",
-    "l1": "Dugout River Canoe is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways.",
-    "l2": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Nile, Tigris-Euphrates, Indus, Yangtze, Americas.",
-    "l3": "Historical verification pending: identify a documented example of Dugout River Canoe, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "A log hollowed partly by controlled charring before final canoe finishing.",
+    "l2": "Charred interior wood can be scraped away to deepen the hull without cutting all the wood by force.",
+    "l3": "Fire-assisted hollowing is a plausible technique but not proof all historical dugouts were made this way.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_bundle_reed_canoe",
-        "boat"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "river_boats",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. A boat blank is intermediate material, not a second dugout canoe. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -29651,14 +29922,14 @@
     "visualArchetype": "mixed or contextual",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Dugout River Canoe — educational reconstruction; evidence review pending"
+      "label": "Fire-Hollowed Canoe Blank — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Nile, Tigris-Euphrates, Indus, Yangtze, Americas",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "river_boats",
-      "researchQuery": "archaeological evidence Dugout River Canoe",
+      "researchQuery": "archaeological evidence Fire-Hollowed Canoe Blank",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -29669,16 +29940,48 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_bundle_reed_canoe",
-        "boat"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5200
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "wood",
+        "controlled_fire"
+      ],
+      "steps": [
+        {
+          "action": "burn",
+          "requiresCompletion": true
+        },
+        {
+          "action": "scrape",
+          "requiresCompletion": true
+        },
+        {
+          "action": "carve",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Requires a correctly sized log, protection of outer walls, water to control burning, and scraper.",
+      "outputId": "anc27_fire_hollowed_canoe_blank",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Fire-Hollowed Canoe Blank showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_dugout_river_canoe"
   },
   {
     "id": "anc27_twin_hull_river_raft",
@@ -29699,7 +30002,7 @@
     ],
     "rec": [
       [
-        "anc27_dugout_river_canoe",
+        "anc27_fire_hollowed_canoe_blank",
         "boat"
       ]
     ],
@@ -29737,7 +30040,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_dugout_river_canoe",
+        "anc27_fire_hollowed_canoe_blank",
         "boat"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -30302,7 +30605,7 @@
     ],
     "rec": [
       [
-        "anc27_bundle_reed_canoe",
+        "anc27_pitch_sealed_hull_seam",
         "wood"
       ]
     ],
@@ -30340,7 +30643,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_bundle_reed_canoe",
+        "anc27_pitch_sealed_hull_seam",
         "wood"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -30348,6 +30651,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -5200
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Short broad coracle-shaped hull differs from an elongated reed bundle canoe.",
+      "actionSequence": [
+        "tie",
+        "shape"
+      ]
     }
   },
   {
@@ -32830,35 +33141,30 @@
     }
   },
   {
-    "id": "anc27_sea_depth_sounding_line",
+    "id": "anc27_seabed_tallow_sampler",
     "no": 2410,
-    "n": "Sea Depth Sounding Line",
+    "n": "Seabed Tallow Sampler",
     "era": "civilization",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -1500,
     "rar": "common",
     "vis": "spiral",
-    "l1": "Sea Depth Sounding Line is an ancient-world subject for studying observational navigation and pilotage. It illustrates how communities could develop safer regional exchange and open-water passage.",
-    "l2": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Mediterranean, Indian Ocean and Pacific.",
-    "l3": "Historical verification pending: identify a documented example of Sea Depth Sounding Line, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "Sampling attachment for seabed sediment.",
+    "l2": "Sediment adhering to a soft surface on a weighted line can inform a sailor about the bottom.",
+    "l3": "The procedure uses a weighted sampler and a suitable adhering medium; particular ancient use must be verified.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_celestial_horizon_sight",
-        "navigation"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "ancient_navigation",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. This is not another sounding line. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -32867,14 +33173,14 @@
     "visualArchetype": "mixed or contextual",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Sea Depth Sounding Line — educational reconstruction; evidence review pending"
+      "label": "Seabed Tallow Sampler — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Mediterranean, Indian Ocean and Pacific",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "ancient_navigation",
-      "researchQuery": "archaeological evidence Sea Depth Sounding Line",
+      "researchQuery": "archaeological evidence Seabed Tallow Sampler",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -32885,16 +33191,50 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_celestial_horizon_sight",
-        "navigation"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -1500
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "exp26_depth_sounding_line",
+        "NEEDS:animal_tallow"
+      ],
+      "steps": [
+        {
+          "action": "shape",
+          "requiresCompletion": true
+        },
+        {
+          "action": "press",
+          "requiresCompletion": true
+        },
+        {
+          "action": "pull",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [
+        "animal_tallow"
+      ],
+      "requirements": "Requires a separate tallow input and sample-holding recess; date of introduction remains unverified.",
+      "outputId": "anc27_seabed_tallow_sampler",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Seabed Tallow Sampler showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_sea_depth_sounding_line"
   },
   {
     "id": "anc27_sounding_lead_weight",
@@ -32915,7 +33255,7 @@
     ],
     "rec": [
       [
-        "anc27_sea_depth_sounding_line",
+        "anc27_seabed_tallow_sampler",
         "navigation"
       ]
     ],
@@ -32953,7 +33293,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_sea_depth_sounding_line",
+        "anc27_seabed_tallow_sampler",
         "navigation"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -43215,35 +43555,30 @@
     }
   },
   {
-    "id": "anc27_hand_spun_flax_yarn",
+    "id": "anc27_flax_retting_stone_weight",
     "no": 2565,
-    "n": "Hand Spun Flax Yarn",
+    "n": "Flax Retting Stone Weight",
     "era": "civilization",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -3600,
     "rar": "common",
     "vis": "spiral",
-    "l1": "Hand Spun Flax Yarn is an ancient-world subject for studying fibre preparation and spinning. It illustrates how communities could develop durable sail, clothing and exchange textiles.",
-    "l2": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Near East, Mediterranean and Asia.",
-    "l3": "Historical verification pending: identify a documented example of Hand Spun Flax Yarn, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "A weight used to keep flax stems submerged in a retting pool.",
+    "l2": "Submersion exposes plant bast to retting conditions before fibre separation.",
+    "l3": "Retting weakens the bond between bast fibres and woody plant tissues; region-specific evidence is pending.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_flax_heckling_comb",
-        "agriculture"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
       "fiber_flax_silk",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. This is a tool used before spinning, not another linen yarn. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -43252,14 +43587,14 @@
     "visualArchetype": "mixed or contextual",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Hand Spun Flax Yarn — educational reconstruction; evidence review pending"
+      "label": "Flax Retting Stone Weight — educational reconstruction; evidence review pending"
     },
     "historical": {
       "proposedRegion": "Near East, Mediterranean and Asia",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
       "designTradition": "fiber_flax_silk",
-      "researchQuery": "archaeological evidence Hand Spun Flax Yarn",
+      "researchQuery": "archaeological evidence Flax Retting Stone Weight",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -43270,16 +43605,50 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_flax_heckling_comb",
-        "agriculture"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -3600
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "stone",
+        "NEEDS:unprocessed_flax_stems"
+      ],
+      "steps": [
+        {
+          "action": "shape",
+          "requiresCompletion": true
+        },
+        {
+          "action": "tie",
+          "requiresCompletion": true
+        },
+        {
+          "action": "press",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [
+        "unprocessed_flax_stems"
+      ],
+      "requirements": "Must be applied before tow preparation, with unprocessed flax stems and safe retting conditions.",
+      "outputId": "anc27_flax_retting_stone_weight",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Flax Retting Stone Weight showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_hand_spun_flax_yarn"
   },
   {
     "id": "anc27_warp_weighted_loom",
@@ -43300,7 +43669,7 @@
     ],
     "rec": [
       [
-        "anc27_hand_spun_flax_yarn",
+        "anc27_flax_retting_stone_weight",
         "fiber"
       ]
     ],
@@ -43338,7 +43707,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_hand_spun_flax_yarn",
+        "anc27_flax_retting_stone_weight",
         "fiber"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -43836,7 +44205,7 @@
     ],
     "rec": [
       [
-        "anc27_hand_spun_flax_yarn",
+        "anc27_flax_retting_stone_weight",
         "agriculture"
       ]
     ],
@@ -43874,7 +44243,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_hand_spun_flax_yarn",
+        "anc27_flax_retting_stone_weight",
         "agriculture"
       ],
       "recipeKind": "pedagogical-prerequisite",
@@ -44351,6 +44720,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -3200
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "Twisted yarn can be unbalanced single yarn, unlike specially twist-balanced product.",
+      "actionSequence": [
+        "pull",
+        "twist"
+      ]
     }
   },
   {
@@ -45825,6 +46202,14 @@
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -2200
+    },
+    "preservedDistinct": {
+      "decision": "KEEP_AS_DISTINCT",
+      "technicalDifference": "A dyed thread is an altered fibre product requiring separate colorant and setting.",
+      "actionSequence": [
+        "mix",
+        "dry"
+      ]
     }
   },
   {
@@ -66464,35 +66849,30 @@
     }
   },
   {
-    "id": "anc27_nubian_water_wheel",
+    "id": "anc27_saqiya_pot_chain_guide_wheel",
     "no": 2912,
-    "n": "Nubian Water Wheel",
+    "n": "Saqiya Pot-Chain Guide Wheel",
     "era": "civilization",
     "cat": "technology",
     "date": "Provisional game chronology; subject-specific invention date unverified",
     "ds": -200,
     "rar": "common",
     "vis": "cobble",
-    "l1": "Nubian Water Wheel is an ancient-world subject for studying regional settlement, craft and environmental knowledge. It illustrates how communities could develop multiple independent contributions to human technology.",
-    "l2": "Game design: reconstruct its stone components or social prerequisites; compare the artefact with other solutions used across Americas, Africa, South, East and Southeast Asia.",
-    "l3": "Historical verification pending: identify a documented example of Nubian Water Wheel, its date, region, material, manufacturing sequence and at least one institutionally catalogued source.",
+    "l1": "A guide wheel used to align the chain of lifting water pots.",
+    "l2": "It prevents a pot chain from swinging off its required mechanical path.",
+    "l3": "Chain-of-pots lifts require correctly guided motion; exact regional constructions need sources.",
     "ev": "Research pending: no item-specific verified archaeological source",
     "src": [
       "source_required"
     ],
-    "rec": [
-      [
-        "anc27_ethiopian_highland_terrace",
-        "irrigation"
-      ]
-    ],
+    "rec": [],
     "tags": [
       "anc27_ancient_1000",
-      "american_african_asian",
+      "hydraulic_machines_ancient",
       "research_pending",
       "educational_reconstruction"
     ],
-    "caution": "DRAFT, NOT SOURCE-VERIFIED. Timeline year is a gameplay gate, not a claimed invention date. Recipe is an educational prerequisite, not necessarily a literal chemical transformation. Review before publishing.",
+    "caution": "DRAFT, NOT SOURCE-VERIFIED. A guide wheel is a distinct component, not a duplicate complete water lift. Provisional year is a gameplay gate, not an invention date.",
     "confidence": {
       "level": "uncertain",
       "note": "Item-level evidence, chronology and crafting causality require review"
@@ -66501,14 +66881,14 @@
     "visualArchetype": "stone",
     "museum": {
       "reconstructionStatus": "procedural-fictional",
-      "label": "Nubian Water Wheel — educational reconstruction; evidence review pending"
+      "label": "Saqiya Pot-Chain Guide Wheel — educational reconstruction; evidence review pending"
     },
     "historical": {
-      "proposedRegion": "Americas, Africa, South, East and Southeast Asia",
+      "proposedRegion": "Near East, Mediterranean, China, India",
       "firstKnownDate": null,
       "provenance": "unknown / research pending",
-      "designTradition": "american_african_asian",
-      "researchQuery": "archaeological evidence Nubian Water Wheel",
+      "designTradition": "hydraulic_machines_ancient",
+      "researchQuery": "archaeological evidence Saqiya Pot-Chain Guide Wheel",
       "topicContextSources": [
         "https://www.metmuseum.org/toah/hd/ubai/hd_ubai.htm",
         "https://www.metmuseum.org/toah/ht/02/eac.html",
@@ -66519,16 +66899,48 @@
       "itemSpecificEvidenceVerified": false
     },
     "craftPolicy": {
-      "primaryRouteProposed": [
-        "anc27_ethiopian_highland_terrace",
-        "irrigation"
-      ],
-      "recipeKind": "pedagogical-prerequisite",
+      "primaryRouteProposed": null,
+      "recipeKind": "action-sequence-review",
       "adminApproved": false,
       "alternativeRoutes": [],
       "maxApprovedPermanentRecipes": 5,
       "chronologyGateYearProvisional": -200
-    }
+    },
+    "physicalRoute": {
+      "kind": "ACTION_SEQUENCE_WITH_MATERIALS",
+      "inputs": [
+        "wood",
+        "exp26_chain_of_pots_lift"
+      ],
+      "steps": [
+        {
+          "action": "cut",
+          "requiresCompletion": true
+        },
+        {
+          "action": "carve",
+          "requiresCompletion": true
+        },
+        {
+          "action": "assemble",
+          "requiresCompletion": true
+        }
+      ],
+      "missingPrerequisites": [],
+      "requirements": "Requires shaft bearings and pot-chain interface sized for load and motion.",
+      "outputId": "anc27_saqiya_pot_chain_guide_wheel",
+      "reviewRequired": true
+    },
+    "visualBrief": {
+      "kind": "procedural-geometry-suggested",
+      "style": "Create physically recognizable ancient Saqiya Pot-Chain Guide Wheel showing joint/component, material interfaces and use, with distinct silhouette; test 2D and spinable 3D",
+      "requiresManualReview": true
+    },
+    "sourceRefs": [],
+    "researchStatus": "NEEDS_ITEM_SPECIFIC_HISTORICAL_VERIFICATION",
+    "adminApproved": false,
+    "publish": false,
+    "replaces": "anc27_nubian_water_wheel"
   },
   {
     "id": "anc27_meroitic_iron_smelting_furnace",
@@ -66549,7 +66961,7 @@
     ],
     "rec": [
       [
-        "anc27_nubian_water_wheel",
+        "anc27_saqiya_pot_chain_guide_wheel",
         "iron"
       ]
     ],
@@ -66587,7 +66999,7 @@
     },
     "craftPolicy": {
       "primaryRouteProposed": [
-        "anc27_nubian_water_wheel",
+        "anc27_saqiya_pot_chain_guide_wheel",
         "iron"
       ],
       "recipeKind": "pedagogical-prerequisite",

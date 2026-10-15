@@ -12600,85 +12600,85 @@
     }
   },
   {
-    "id": "anc27_winnowing_fan_basket",
+    "id": "anc27_threshing_flail_flexible_joint",
     "topic": "harvest_processing",
     "museum": {
       "status": "draft_only",
-      "title": "Winnowing Fan Basket",
+      "title": "Threshing Flail Flexible Joint",
       "era": "agriculture",
-      "intro": "Winnowing Fan Basket is an ancient-world subject for studying harvest, threshing and separation. It illustrates how communities could develop reducing postharvest grain losses.",
+      "intro": "Flexible link joining two arms of a threshing flail.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_winnowing_fan_basket",
-        "hint": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Multiple crop domestication zones."
+        "targetId": "anc27_threshing_flail_flexible_joint",
+        "hint": "The flexible link transmits force from the moving handle to the freely swinging beater."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_winnowing_fan_basket",
-        "hint": "Trace the earliest playable prerequisites for Winnowing Fan Basket."
+        "targetId": "anc27_threshing_flail_flexible_joint",
+        "hint": "Trace the earliest playable prerequisites for Threshing Flail Flexible Joint."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_winnowing_fan_basket",
-        "hint": "Which techniques preceded Winnowing Fan Basket?"
+        "targetId": "anc27_threshing_flail_flexible_joint",
+        "hint": "Which techniques preceded Threshing Flail Flexible Joint?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_winnowing_fan_basket",
-        "findLabel": "Winnowing Fan Basket",
+        "itemId": "anc27_threshing_flail_flexible_joint",
+        "findLabel": "Threshing Flail Flexible Joint",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_winnowing_fan_basket"
+        "itemId": "anc27_threshing_flail_flexible_joint"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_winnowing_fan_basket",
+        "unlockId": "anc27_threshing_flail_flexible_joint",
         "resourcePressure": "harvest_processing",
-        "projectBrief": "Winnowing Fan Basket is an ancient-world subject for studying harvest, threshing and separation. It illustrates how communities could develop reducing postharvest grain losses.",
+        "projectBrief": "Flexible link joining two arms of a threshing flail.",
         "societalEffect": "reducing postharvest grain losses"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_winnowing_fan_basket",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Winnowing Fan Basket."
+        "subjectId": "anc27_threshing_flail_flexible_joint",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Threshing Flail Flexible Joint."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_winnowing_fan_basket"
+        "subjectId": "anc27_threshing_flail_flexible_joint"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_winnowing_fan_basket",
-        "prompt": "Infer function of a reconstructed Winnowing Fan Basket from material and shape."
+        "itemId": "anc27_threshing_flail_flexible_joint",
+        "prompt": "Infer function of a reconstructed Threshing Flail Flexible Joint from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
@@ -24276,85 +24276,85 @@
     }
   },
   {
-    "id": "anc27_reciprocating_force_pump",
+    "id": "anc27_bronze_pump_check_valve",
     "topic": "hydraulic_machines_ancient",
     "museum": {
       "status": "draft_only",
-      "title": "Reciprocating Force Pump",
+      "title": "Bronze Pump Check Valve",
       "era": "metallurgy",
-      "intro": "Reciprocating Force Pump is an ancient-world subject for studying lifting and using flowing water. It illustrates how communities could develop extended irrigated acreage and machine power.",
+      "intro": "One-way valve within an ancient force pump.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_reciprocating_force_pump",
-        "hint": "Game design: reconstruct its metal components or social prerequisites; compare the artefact with other solutions used across Near East, Mediterranean, China, India."
+        "targetId": "anc27_bronze_pump_check_valve",
+        "hint": "It opens under forward pressure and closes against reverse flow to direct the water."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_reciprocating_force_pump",
-        "hint": "Trace the earliest playable prerequisites for Reciprocating Force Pump."
+        "targetId": "anc27_bronze_pump_check_valve",
+        "hint": "Trace the earliest playable prerequisites for Bronze Pump Check Valve."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_reciprocating_force_pump",
-        "hint": "Which techniques preceded Reciprocating Force Pump?"
+        "targetId": "anc27_bronze_pump_check_valve",
+        "hint": "Which techniques preceded Bronze Pump Check Valve?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_reciprocating_force_pump",
-        "findLabel": "Reciprocating Force Pump",
+        "itemId": "anc27_bronze_pump_check_valve",
+        "findLabel": "Bronze Pump Check Valve",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_reciprocating_force_pump"
+        "itemId": "anc27_bronze_pump_check_valve"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_reciprocating_force_pump",
+        "unlockId": "anc27_bronze_pump_check_valve",
         "resourcePressure": "hydraulic_machines_ancient",
-        "projectBrief": "Reciprocating Force Pump is an ancient-world subject for studying lifting and using flowing water. It illustrates how communities could develop extended irrigated acreage and machine power.",
+        "projectBrief": "One-way valve within an ancient force pump.",
         "societalEffect": "extended irrigated acreage and machine power"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_reciprocating_force_pump",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Reciprocating Force Pump."
+        "subjectId": "anc27_bronze_pump_check_valve",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Bronze Pump Check Valve."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_reciprocating_force_pump"
+        "subjectId": "anc27_bronze_pump_check_valve"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_reciprocating_force_pump",
-        "prompt": "Infer function of a reconstructed Reciprocating Force Pump from material and shape."
+        "itemId": "anc27_bronze_pump_check_valve",
+        "prompt": "Infer function of a reconstructed Bronze Pump Check Valve from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
@@ -32676,85 +32676,85 @@
     }
   },
   {
-    "id": "anc27_workshop_quarter",
-    "topic": "city_infrastructure",
+    "id": "anc27_potters_wheel_pivot_bearing",
+    "topic": "pottery_kilns",
     "museum": {
       "status": "draft_only",
-      "title": "Workshop Quarter",
+      "title": "Potters Wheel Pivot Bearing",
       "era": "civilization",
-      "intro": "Workshop Quarter is an ancient-world subject for studying urban planning and public works. It illustrates how communities could develop larger coordinated populations and commerce.",
+      "intro": "Low-friction support bearing for a rotating potter's wheel.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_workshop_quarter",
-        "hint": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Mesopotamia, Mediterranean, South Asia and Americas."
+        "targetId": "anc27_potters_wheel_pivot_bearing",
+        "hint": "It supports the turntable's load while allowing relatively smooth controlled rotation."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_workshop_quarter",
-        "hint": "Trace the earliest playable prerequisites for Workshop Quarter."
+        "targetId": "anc27_potters_wheel_pivot_bearing",
+        "hint": "Trace the earliest playable prerequisites for Potters Wheel Pivot Bearing."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_workshop_quarter",
-        "hint": "Which techniques preceded Workshop Quarter?"
+        "targetId": "anc27_potters_wheel_pivot_bearing",
+        "hint": "Which techniques preceded Potters Wheel Pivot Bearing?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_workshop_quarter",
-        "findLabel": "Workshop Quarter",
+        "itemId": "anc27_potters_wheel_pivot_bearing",
+        "findLabel": "Potters Wheel Pivot Bearing",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_workshop_quarter"
+        "itemId": "anc27_potters_wheel_pivot_bearing"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_workshop_quarter",
-        "resourcePressure": "city_infrastructure",
-        "projectBrief": "Workshop Quarter is an ancient-world subject for studying urban planning and public works. It illustrates how communities could develop larger coordinated populations and commerce.",
+        "unlockId": "anc27_potters_wheel_pivot_bearing",
+        "resourcePressure": "pottery_kilns",
+        "projectBrief": "Low-friction support bearing for a rotating potter's wheel.",
         "societalEffect": "larger coordinated populations and commerce"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_workshop_quarter",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Workshop Quarter."
+        "subjectId": "anc27_potters_wheel_pivot_bearing",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Potters Wheel Pivot Bearing."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_workshop_quarter"
+        "subjectId": "anc27_potters_wheel_pivot_bearing"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_workshop_quarter",
-        "prompt": "Infer function of a reconstructed Workshop Quarter from material and shape."
+        "itemId": "anc27_potters_wheel_pivot_bearing",
+        "prompt": "Infer function of a reconstructed Potters Wheel Pivot Bearing from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
@@ -35364,85 +35364,85 @@
     }
   },
   {
-    "id": "anc27_rope_suspension_footbridge",
+    "id": "anc27_timber_bridge_diagonal_brace",
     "topic": "bridges_water_crossings",
     "museum": {
       "status": "draft_only",
-      "title": "Rope Suspension Footbridge",
+      "title": "Timber Bridge Diagonal Brace",
       "era": "civilization",
-      "intro": "Rope Suspension Footbridge is an ancient-world subject for studying bridging rivers, valleys and wetlands. It illustrates how communities could develop more reliable transport networks.",
+      "intro": "Diagonal timber member that braces a bridge support frame.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_rope_suspension_footbridge",
-        "hint": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Africa, Americas and Eurasia."
+        "targetId": "anc27_timber_bridge_diagonal_brace",
+        "hint": "Diagonal bracing makes rectangular timber frames resist sideways racking."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_rope_suspension_footbridge",
-        "hint": "Trace the earliest playable prerequisites for Rope Suspension Footbridge."
+        "targetId": "anc27_timber_bridge_diagonal_brace",
+        "hint": "Trace the earliest playable prerequisites for Timber Bridge Diagonal Brace."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_rope_suspension_footbridge",
-        "hint": "Which techniques preceded Rope Suspension Footbridge?"
+        "targetId": "anc27_timber_bridge_diagonal_brace",
+        "hint": "Which techniques preceded Timber Bridge Diagonal Brace?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_rope_suspension_footbridge",
-        "findLabel": "Rope Suspension Footbridge",
+        "itemId": "anc27_timber_bridge_diagonal_brace",
+        "findLabel": "Timber Bridge Diagonal Brace",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_rope_suspension_footbridge"
+        "itemId": "anc27_timber_bridge_diagonal_brace"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_rope_suspension_footbridge",
+        "unlockId": "anc27_timber_bridge_diagonal_brace",
         "resourcePressure": "bridges_water_crossings",
-        "projectBrief": "Rope Suspension Footbridge is an ancient-world subject for studying bridging rivers, valleys and wetlands. It illustrates how communities could develop more reliable transport networks.",
+        "projectBrief": "Diagonal timber member that braces a bridge support frame.",
         "societalEffect": "more reliable transport networks"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_rope_suspension_footbridge",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Rope Suspension Footbridge."
+        "subjectId": "anc27_timber_bridge_diagonal_brace",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Timber Bridge Diagonal Brace."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_rope_suspension_footbridge"
+        "subjectId": "anc27_timber_bridge_diagonal_brace"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_rope_suspension_footbridge",
-        "prompt": "Infer function of a reconstructed Rope Suspension Footbridge from material and shape."
+        "itemId": "anc27_timber_bridge_diagonal_brace",
+        "prompt": "Infer function of a reconstructed Timber Bridge Diagonal Brace from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
@@ -35616,85 +35616,85 @@
     }
   },
   {
-    "id": "anc27_stone_slab_ford_bridge",
+    "id": "anc27_stone_ford_bank_retaining_apron",
     "topic": "bridges_water_crossings",
     "museum": {
       "status": "draft_only",
-      "title": "Stone Slab Ford Bridge",
+      "title": "Stone Ford Bank Retaining Apron",
       "era": "civilization",
-      "intro": "Stone Slab Ford Bridge is an ancient-world subject for studying bridging rivers, valleys and wetlands. It illustrates how communities could develop more reliable transport networks.",
+      "intro": "Laid stone protection at a shallow crossing approach.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_stone_slab_ford_bridge",
-        "hint": "Game design: reconstruct its stone components or social prerequisites; compare the artefact with other solutions used across Africa, Americas and Eurasia."
+        "targetId": "anc27_stone_ford_bank_retaining_apron",
+        "hint": "A resistant stone apron can limit erosion under footsteps, cart wheels and flowing water."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_stone_slab_ford_bridge",
-        "hint": "Trace the earliest playable prerequisites for Stone Slab Ford Bridge."
+        "targetId": "anc27_stone_ford_bank_retaining_apron",
+        "hint": "Trace the earliest playable prerequisites for Stone Ford Bank Retaining Apron."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_stone_slab_ford_bridge",
-        "hint": "Which techniques preceded Stone Slab Ford Bridge?"
+        "targetId": "anc27_stone_ford_bank_retaining_apron",
+        "hint": "Which techniques preceded Stone Ford Bank Retaining Apron?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_stone_slab_ford_bridge",
-        "findLabel": "Stone Slab Ford Bridge",
+        "itemId": "anc27_stone_ford_bank_retaining_apron",
+        "findLabel": "Stone Ford Bank Retaining Apron",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_stone_slab_ford_bridge"
+        "itemId": "anc27_stone_ford_bank_retaining_apron"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_stone_slab_ford_bridge",
+        "unlockId": "anc27_stone_ford_bank_retaining_apron",
         "resourcePressure": "bridges_water_crossings",
-        "projectBrief": "Stone Slab Ford Bridge is an ancient-world subject for studying bridging rivers, valleys and wetlands. It illustrates how communities could develop more reliable transport networks.",
+        "projectBrief": "Laid stone protection at a shallow crossing approach.",
         "societalEffect": "more reliable transport networks"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_stone_slab_ford_bridge",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Stone Slab Ford Bridge."
+        "subjectId": "anc27_stone_ford_bank_retaining_apron",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Stone Ford Bank Retaining Apron."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_stone_slab_ford_bridge"
+        "subjectId": "anc27_stone_ford_bank_retaining_apron"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_stone_slab_ford_bridge",
-        "prompt": "Infer function of a reconstructed Stone Slab Ford Bridge from material and shape."
+        "itemId": "anc27_stone_ford_bank_retaining_apron",
+        "prompt": "Infer function of a reconstructed Stone Ford Bank Retaining Apron from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
@@ -37044,79 +37044,76 @@
     }
   },
   {
-    "id": "anc27_bundle_reed_canoe",
+    "id": "anc27_pitch_sealed_hull_seam",
     "topic": "river_boats",
     "museum": {
       "status": "draft_only",
-      "title": "Bundle Reed Canoe",
+      "title": "Pitch-Sealed Hull Seam",
       "era": "settlement",
-      "intro": "Bundle Reed Canoe is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways.",
+      "intro": "Waterproof joint between fitted hull planks.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_bundle_reed_canoe",
-        "hint": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Nile, Tigris-Euphrates, Indus, Yangtze, Americas."
+        "targetId": "anc27_pitch_sealed_hull_seam",
+        "hint": "Waterproofing allows a plank boat to resist seepage and retain buoyancy."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_bundle_reed_canoe",
-        "hint": "Trace the earliest playable prerequisites for Bundle Reed Canoe."
+        "targetId": "anc27_pitch_sealed_hull_seam",
+        "hint": "Trace the earliest playable prerequisites for Pitch-Sealed Hull Seam."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_bundle_reed_canoe",
-        "hint": "Which techniques preceded Bundle Reed Canoe?"
+        "targetId": "anc27_pitch_sealed_hull_seam",
+        "hint": "Which techniques preceded Pitch-Sealed Hull Seam?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_bundle_reed_canoe",
-        "findLabel": "Bundle Reed Canoe",
+        "itemId": "anc27_pitch_sealed_hull_seam",
+        "findLabel": "Pitch-Sealed Hull Seam",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": true,
         "role": "foraging or built object",
-        "itemId": "anc27_bundle_reed_canoe"
+        "itemId": "anc27_pitch_sealed_hull_seam"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_bundle_reed_canoe",
+        "unlockId": "anc27_pitch_sealed_hull_seam",
         "resourcePressure": "river_boats",
-        "projectBrief": "Bundle Reed Canoe is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways.",
+        "projectBrief": "Waterproof joint between fitted hull planks.",
         "societalEffect": "bulk transport and exchange along waterways"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_bundle_reed_canoe",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Bundle Reed Canoe."
+        "subjectId": "anc27_pitch_sealed_hull_seam",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Pitch-Sealed Hull Seam."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_bundle_reed_canoe"
+        "subjectId": "anc27_pitch_sealed_hull_seam"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_bundle_reed_canoe",
-        "prompt": "Infer function of a reconstructed Bundle Reed Canoe from material and shape."
+        "itemId": "anc27_pitch_sealed_hull_seam",
+        "prompt": "Infer function of a reconstructed Pitch-Sealed Hull Seam from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "survival",
       "civilization",
@@ -37124,83 +37121,83 @@
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
   },
   {
-    "id": "anc27_dugout_river_canoe",
+    "id": "anc27_fire_hollowed_canoe_blank",
     "topic": "river_boats",
     "museum": {
       "status": "draft_only",
-      "title": "Dugout River Canoe",
+      "title": "Fire-Hollowed Canoe Blank",
       "era": "settlement",
-      "intro": "Dugout River Canoe is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways.",
+      "intro": "A log hollowed partly by controlled charring before final canoe finishing.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_dugout_river_canoe",
-        "hint": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Nile, Tigris-Euphrates, Indus, Yangtze, Americas."
+        "targetId": "anc27_fire_hollowed_canoe_blank",
+        "hint": "Charred interior wood can be scraped away to deepen the hull without cutting all the wood by force."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_dugout_river_canoe",
-        "hint": "Trace the earliest playable prerequisites for Dugout River Canoe."
+        "targetId": "anc27_fire_hollowed_canoe_blank",
+        "hint": "Trace the earliest playable prerequisites for Fire-Hollowed Canoe Blank."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_dugout_river_canoe",
-        "hint": "Which techniques preceded Dugout River Canoe?"
+        "targetId": "anc27_fire_hollowed_canoe_blank",
+        "hint": "Which techniques preceded Fire-Hollowed Canoe Blank?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_dugout_river_canoe",
-        "findLabel": "Dugout River Canoe",
+        "itemId": "anc27_fire_hollowed_canoe_blank",
+        "findLabel": "Fire-Hollowed Canoe Blank",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": true,
         "role": "foraging or built object",
-        "itemId": "anc27_dugout_river_canoe"
+        "itemId": "anc27_fire_hollowed_canoe_blank"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_dugout_river_canoe",
+        "unlockId": "anc27_fire_hollowed_canoe_blank",
         "resourcePressure": "river_boats",
-        "projectBrief": "Dugout River Canoe is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways.",
+        "projectBrief": "A log hollowed partly by controlled charring before final canoe finishing.",
         "societalEffect": "bulk transport and exchange along waterways"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_dugout_river_canoe",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Dugout River Canoe."
+        "subjectId": "anc27_fire_hollowed_canoe_blank",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Fire-Hollowed Canoe Blank."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_dugout_river_canoe"
+        "subjectId": "anc27_fire_hollowed_canoe_blank"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_dugout_river_canoe",
-        "prompt": "Infer function of a reconstructed Dugout River Canoe from material and shape."
+        "itemId": "anc27_fire_hollowed_canoe_blank",
+        "prompt": "Infer function of a reconstructed Fire-Hollowed Canoe Blank from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "survival",
       "civilization",
@@ -37208,6 +37205,9 @@
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
   },
@@ -41160,85 +41160,85 @@
     }
   },
   {
-    "id": "anc27_sea_depth_sounding_line",
+    "id": "anc27_seabed_tallow_sampler",
     "topic": "ancient_navigation",
     "museum": {
       "status": "draft_only",
-      "title": "Sea Depth Sounding Line",
+      "title": "Seabed Tallow Sampler",
       "era": "civilization",
-      "intro": "Sea Depth Sounding Line is an ancient-world subject for studying observational navigation and pilotage. It illustrates how communities could develop safer regional exchange and open-water passage.",
+      "intro": "Sampling attachment for seabed sediment.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_sea_depth_sounding_line",
-        "hint": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Mediterranean, Indian Ocean and Pacific."
+        "targetId": "anc27_seabed_tallow_sampler",
+        "hint": "Sediment adhering to a soft surface on a weighted line can inform a sailor about the bottom."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_sea_depth_sounding_line",
-        "hint": "Trace the earliest playable prerequisites for Sea Depth Sounding Line."
+        "targetId": "anc27_seabed_tallow_sampler",
+        "hint": "Trace the earliest playable prerequisites for Seabed Tallow Sampler."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_sea_depth_sounding_line",
-        "hint": "Which techniques preceded Sea Depth Sounding Line?"
+        "targetId": "anc27_seabed_tallow_sampler",
+        "hint": "Which techniques preceded Seabed Tallow Sampler?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_sea_depth_sounding_line",
-        "findLabel": "Sea Depth Sounding Line",
+        "itemId": "anc27_seabed_tallow_sampler",
+        "findLabel": "Seabed Tallow Sampler",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_sea_depth_sounding_line"
+        "itemId": "anc27_seabed_tallow_sampler"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_sea_depth_sounding_line",
+        "unlockId": "anc27_seabed_tallow_sampler",
         "resourcePressure": "ancient_navigation",
-        "projectBrief": "Sea Depth Sounding Line is an ancient-world subject for studying observational navigation and pilotage. It illustrates how communities could develop safer regional exchange and open-water passage.",
+        "projectBrief": "Sampling attachment for seabed sediment.",
         "societalEffect": "safer regional exchange and open-water passage"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_sea_depth_sounding_line",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Sea Depth Sounding Line."
+        "subjectId": "anc27_seabed_tallow_sampler",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Seabed Tallow Sampler."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_sea_depth_sounding_line"
+        "subjectId": "anc27_seabed_tallow_sampler"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_sea_depth_sounding_line",
-        "prompt": "Infer function of a reconstructed Sea Depth Sounding Line from material and shape."
+        "itemId": "anc27_seabed_tallow_sampler",
+        "prompt": "Infer function of a reconstructed Seabed Tallow Sampler from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
@@ -54180,85 +54180,85 @@
     }
   },
   {
-    "id": "anc27_hand_spun_flax_yarn",
+    "id": "anc27_flax_retting_stone_weight",
     "topic": "fiber_flax_silk",
     "museum": {
       "status": "draft_only",
-      "title": "Hand Spun Flax Yarn",
+      "title": "Flax Retting Stone Weight",
       "era": "civilization",
-      "intro": "Hand Spun Flax Yarn is an ancient-world subject for studying fibre preparation and spinning. It illustrates how communities could develop durable sail, clothing and exchange textiles.",
+      "intro": "A weight used to keep flax stems submerged in a retting pool.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_hand_spun_flax_yarn",
-        "hint": "Game design: reconstruct its mixed or contextual components or social prerequisites; compare the artefact with other solutions used across Near East, Mediterranean and Asia."
+        "targetId": "anc27_flax_retting_stone_weight",
+        "hint": "Submersion exposes plant bast to retting conditions before fibre separation."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_hand_spun_flax_yarn",
-        "hint": "Trace the earliest playable prerequisites for Hand Spun Flax Yarn."
+        "targetId": "anc27_flax_retting_stone_weight",
+        "hint": "Trace the earliest playable prerequisites for Flax Retting Stone Weight."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_hand_spun_flax_yarn",
-        "hint": "Which techniques preceded Hand Spun Flax Yarn?"
+        "targetId": "anc27_flax_retting_stone_weight",
+        "hint": "Which techniques preceded Flax Retting Stone Weight?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_hand_spun_flax_yarn",
-        "findLabel": "Hand Spun Flax Yarn",
+        "itemId": "anc27_flax_retting_stone_weight",
+        "findLabel": "Flax Retting Stone Weight",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_hand_spun_flax_yarn"
+        "itemId": "anc27_flax_retting_stone_weight"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_hand_spun_flax_yarn",
+        "unlockId": "anc27_flax_retting_stone_weight",
         "resourcePressure": "fiber_flax_silk",
-        "projectBrief": "Hand Spun Flax Yarn is an ancient-world subject for studying fibre preparation and spinning. It illustrates how communities could develop durable sail, clothing and exchange textiles.",
+        "projectBrief": "A weight used to keep flax stems submerged in a retting pool.",
         "societalEffect": "durable sail, clothing and exchange textiles"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_hand_spun_flax_yarn",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Hand Spun Flax Yarn."
+        "subjectId": "anc27_flax_retting_stone_weight",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Flax Retting Stone Weight."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_hand_spun_flax_yarn"
+        "subjectId": "anc27_flax_retting_stone_weight"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_hand_spun_flax_yarn",
-        "prompt": "Infer function of a reconstructed Hand Spun Flax Yarn from material and shape."
+        "itemId": "anc27_flax_retting_stone_weight",
+        "prompt": "Infer function of a reconstructed Flax Retting Stone Weight from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }
@@ -83328,85 +83328,85 @@
     }
   },
   {
-    "id": "anc27_nubian_water_wheel",
-    "topic": "american_african_asian",
+    "id": "anc27_saqiya_pot_chain_guide_wheel",
+    "topic": "hydraulic_machines_ancient",
     "museum": {
       "status": "draft_only",
-      "title": "Nubian Water Wheel",
+      "title": "Saqiya Pot-Chain Guide Wheel",
       "era": "civilization",
-      "intro": "Nubian Water Wheel is an ancient-world subject for studying regional settlement, craft and environmental knowledge. It illustrates how communities could develop multiple independent contributions to human technology.",
+      "intro": "A guide wheel used to align the chain of lifting water pots.",
       "provenance": "PROPOSED reconstruction; no accession number",
       "historicalEvidenceVerified": false
     },
     "modes": {
       "main-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "chronology-gated discovery",
-        "targetId": "anc27_nubian_water_wheel",
-        "hint": "Game design: reconstruct its stone components or social prerequisites; compare the artefact with other solutions used across Americas, Africa, South, East and Southeast Asia."
+        "targetId": "anc27_saqiya_pot_chain_guide_wheel",
+        "hint": "It prevents a pot chain from swinging off its required mechanical path."
       },
       "minimum-path": {
-        "eligible": true,
+        "eligible": false,
         "role": "craft graph waypoint",
-        "targetId": "anc27_nubian_water_wheel",
-        "hint": "Trace the earliest playable prerequisites for Nubian Water Wheel."
+        "targetId": "anc27_saqiya_pot_chain_guide_wheel",
+        "hint": "Trace the earliest playable prerequisites for Saqiya Pot-Chain Guide Wheel."
       },
       "reverse-evolution": {
-        "eligible": true,
+        "eligible": false,
         "role": "reconstruct prerequisite chain",
-        "targetId": "anc27_nubian_water_wheel",
-        "hint": "Which techniques preceded Nubian Water Wheel?"
+        "targetId": "anc27_saqiya_pot_chain_guide_wheel",
+        "hint": "Which techniques preceded Saqiya Pot-Chain Guide Wheel?"
       },
       "archaeology": {
         "eligible": true,
         "role": "hypothetical excavation find",
-        "itemId": "anc27_nubian_water_wheel",
-        "findLabel": "Nubian Water Wheel",
+        "itemId": "anc27_saqiya_pot_chain_guide_wheel",
+        "findLabel": "Saqiya Pot-Chain Guide Wheel",
         "siteType": "workshop",
         "evidence": "fictional reconstruction; do not claim genuine excavated specimen"
       },
       "survival": {
         "eligible": false,
         "role": "foraging or built object",
-        "itemId": "anc27_nubian_water_wheel"
+        "itemId": "anc27_saqiya_pot_chain_guide_wheel"
       },
       "civilization": {
         "eligible": true,
         "role": "technology/land-use/workshop unlock",
-        "unlockId": "anc27_nubian_water_wheel",
-        "resourcePressure": "american_african_asian",
-        "projectBrief": "Nubian Water Wheel is an ancient-world subject for studying regional settlement, craft and environmental knowledge. It illustrates how communities could develop multiple independent contributions to human technology.",
+        "unlockId": "anc27_saqiya_pot_chain_guide_wheel",
+        "resourcePressure": "hydraulic_machines_ancient",
+        "projectBrief": "A guide wheel used to align the chain of lifting water pots.",
         "societalEffect": "multiple independent contributions to human technology"
       },
       "escape-room": {
         "eligible": true,
         "role": "recipe reasoning riddle",
-        "subjectId": "anc27_nubian_water_wheel",
-        "puzzlePrompt": "Identify the prerequisite and period caveat for Nubian Water Wheel."
+        "subjectId": "anc27_saqiya_pot_chain_guide_wheel",
+        "puzzlePrompt": "Identify the prerequisite and period caveat for Saqiya Pot-Chain Guide Wheel."
       },
       "decipher": {
         "eligible": false,
         "role": "source interpretation",
         "inscription": "No invented historical text; use verified transliterations only",
-        "subjectId": "anc27_nubian_water_wheel"
+        "subjectId": "anc27_saqiya_pot_chain_guide_wheel"
       },
       "alien-archaeology": {
         "eligible": true,
         "role": "material/function deduction",
-        "itemId": "anc27_nubian_water_wheel",
-        "prompt": "Infer function of a reconstructed Nubian Water Wheel from material and shape."
+        "itemId": "anc27_saqiya_pot_chain_guide_wheel",
+        "prompt": "Infer function of a reconstructed Saqiya Pot-Chain Guide Wheel from material and shape."
       }
     },
     "eligibleModes": [
-      "main-evolution",
-      "minimum-path",
-      "reverse-evolution",
       "archaeology",
       "civilization",
       "escape-room",
       "alien-archaeology"
     ],
     "excludedModes": {
+      "main-evolution": "Not meaningful for this subject or time period",
+      "minimum-path": "Not meaningful for this subject or time period",
+      "reverse-evolution": "Not meaningful for this subject or time period",
       "survival": "Not meaningful for this subject or time period",
       "decipher": "Not meaningful for this subject or time period"
     }

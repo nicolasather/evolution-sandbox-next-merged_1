@@ -11,17 +11,20 @@ import build_art  # noqa: E402
 
 DB = json.loads((ROOT / "data" / "db.json").read_text(encoding="utf-8"))
 G11 = json.loads((ROOT / "data" / "nodes" / "g11.json").read_text(encoding="utf-8"))
+G12_PATH = ROOT / "data" / "nodes" / "g12.json"
+G12 = json.loads(G12_PATH.read_text(encoding="utf-8")) if G12_PATH.exists() else []
 ART = json.loads((ROOT / "data" / "art.json").read_text(encoding="utf-8"))
 NEW = {n["id"] for n in G11}
+LATER = {n["id"] for n in G12}  # g12 = Ancient individual-recipe expansion (see test_expansion_anc27.py)
 
 
 class Exp26InGame(unittest.TestCase):
     def test_counts(self):
         self.assertEqual(len(G11), 999)
-        self.assertEqual(len(DB["nodes"]), 918 + 999)
+        self.assertEqual(len(DB["nodes"]), 918 + 999 + len(G12))
 
     def test_original_918_untouched(self):
-        old = [n for n in DB["nodes"] if n["id"] not in NEW]
+        old = [n for n in DB["nodes"] if n["id"] not in NEW and n["id"] not in LATER]
         self.assertEqual(len(old), 918)
         self.assertEqual(sorted(n["no"] for n in old), list(range(1, 919)))
 
