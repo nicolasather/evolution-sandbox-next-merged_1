@@ -134,6 +134,12 @@ KEEP = ["id", "no", "n", "era", "cat", "date", "rar", "vis", "l1", "l2", "l3", "
         "artifactType", "visualArchetype", "museum", "historical"]
 
 
+def load_facts():
+    """data/expansion/anc27_facts.json (tools/expansion/anc27/facts/build_facts.py): topic-context pages per item."""
+    fp = os.path.join(ROOT, "data", "expansion", "anc27_facts.json")
+    return json.load(open(fp, encoding="utf-8"))["items"] if os.path.exists(fp) else {}
+
+
 def main() -> int:
     R, D = load_specs()
     ALT = load_alts()
@@ -144,10 +150,21 @@ def main() -> int:
     rec = resolve(R)
     alts = resolve_alts(ALT)
     out = []
+    FACTS = load_facts()
     for n in A:
         i = n["id"]
         if i not in rec: continue
         o = {k: n[k] for k in KEEP if k in n}
+        f = FACTS.get(i)
+        if f:  # topic-level context only: the item itself stays unverified
+            o["src"] = [f["source"]]
+            o["ev"] = (f"Topic context only (not item-specific): {f['page']} - {f['what']} Earliest dated evidence stated on that page: "
+                       f"{f['earliestOnPage']} The game year {f['gameYear']} is a gameplay gate and this item's exact recipe is not verified.")
+            h = dict(o["historical"])
+            h["topicContextSources"] = [f["url"]]
+            h["factCheck"] = {"status": f["status"], "page": f["page"], "url": f["url"], "checked": "2026-10-15",
+                              "earliestOnPage": f["earliestOnPage"], "itemSpecificEvidenceVerified": False}
+            o["historical"] = h
         o["ds"] = ds.get(i, n["ds"])
         o["rec"] = [rec[i]] + alts.get(i, [])
         o["tags"] = list(dict.fromkeys(o["tags"] + ["anc27_individual_recipe"] + (["anc27_multi_route"] if i in alts else [])))

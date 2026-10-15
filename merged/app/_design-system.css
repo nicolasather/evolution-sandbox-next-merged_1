@@ -461,6 +461,7 @@ input{font:inherit;color:inherit}
   font-family:var(--fs-mono);font-size:8.5px;color:var(--bone-3)}
 .tier.S{border-color:var(--r-rare);color:var(--r-rare)}
 .tier.A{border-color:var(--r-uncommon);color:var(--r-uncommon)}
+.tier.C{border-style:dashed}
 .src-req{border-top:1px solid var(--line);border-left:2px solid var(--ochre);
   padding:10px 0 10px 12px;background:var(--ochre-lo);margin-bottom:4px}
 .src-req .src-o{color:var(--ochre)}

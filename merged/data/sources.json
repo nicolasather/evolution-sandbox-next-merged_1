@@ -3,7 +3,8 @@
   "tiers": {
     "S": "Primary institutional and peer-reviewed: national museums, university institutes, scientific and engineering societies, the Nobel Foundation, peer-reviewed journals.",
     "A": "Major data, standards and public bodies, and primary announcements: Our World in Data, Internet Society, UN family (UNESCO, WHO), NASA, GPS.gov, publisher and company statements.",
-    "B": "Established reference and educational publishers."
+    "B": "Established reference and educational publishers.",
+    "C": "Crowd-edited encyclopedia pages read for topic context only (Wikipedia). Never counted as item-specific evidence."
   },
   "sources": {
     "si_ho": {
@@ -644,6 +645,3624 @@
       "type": "exhibition",
       "scope": "topic",
       "checked": "2026-09-12"
+    },
+    "wp_abacus": {
+      "t": "C",
+      "title": "Abacus",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Abacus",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_abutment": {
+      "t": "C",
+      "title": "Abutment",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Abutment",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_adobe": {
+      "t": "C",
+      "title": "Adobe",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Adobe",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_aedile": {
+      "t": "C",
+      "title": "Aedile",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aedile",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_agora": {
+      "t": "C",
+      "title": "Agora",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Agora",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_akkadian_language": {
+      "t": "C",
+      "title": "Akkadian language",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Akkadian_language",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_amber_road": {
+      "t": "C",
+      "title": "Amber Road",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Amber_Road",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_amphora": {
+      "t": "C",
+      "title": "Amphora",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Amphora",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ancestral_tablet": {
+      "t": "C",
+      "title": "Spirit tablet",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ancestral_tablet",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_anchor": {
+      "t": "C",
+      "title": "Anchor",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Anchor",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_annona": {
+      "t": "C",
+      "title": "Cura annonae",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Annona",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_apothecary": {
+      "t": "C",
+      "title": "Apothecary",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Apothecary",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_aqueduct_water_supply": {
+      "t": "C",
+      "title": "Aqueduct (water supply)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aqueduct_(water_supply)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_arch_bridge": {
+      "t": "C",
+      "title": "Arch bridge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Arch_bridge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_archaeoastronomy": {
+      "t": "C",
+      "title": "Archaeoastronomy",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Archaeoastronomy",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_archimedes": {
+      "t": "C",
+      "title": "Archimedes",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Archimedes",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_archimedes_screw": {
+      "t": "C",
+      "title": "Archimedes' screw",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Archimedes%27_screw",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ard_plough": {
+      "t": "C",
+      "title": "Ard (plough)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ard_(plough)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_armillary_sphere": {
+      "t": "C",
+      "title": "Armillary sphere",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Armillary_sphere",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_aryabhatiya": {
+      "t": "C",
+      "title": "Aryabhatiya",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aryabhatiya",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_asclepeion": {
+      "t": "C",
+      "title": "Asclepieion",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Asclepeion",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ashlar": {
+      "t": "C",
+      "title": "Ashlar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ashlar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_aulos": {
+      "t": "C",
+      "title": "Aulos",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Aulos",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_automaton": {
+      "t": "C",
+      "title": "Automaton",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Automaton",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_axle": {
+      "t": "C",
+      "title": "Axle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Axle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ayurveda": {
+      "t": "C",
+      "title": "Ayurveda",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ayurveda",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_babylonian_astronomy": {
+      "t": "C",
+      "title": "Babylonian astronomy",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Babylonian_astronomy",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_babylonian_mathematics": {
+      "t": "C",
+      "title": "Babylonian mathematics",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Babylonian_mathematics",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_baking_stone": {
+      "t": "C",
+      "title": "Baking stone",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Baking_stone",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_balance_instrument": {
+      "t": "C",
+      "title": "Weighing scale",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Balance_(instrument)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bamboo_and_wooden_slips": {
+      "t": "C",
+      "title": "Bamboo and wooden slips",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bamboo_and_wooden_slips",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bandage": {
+      "t": "C",
+      "title": "Bandage",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bandage",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_barge": {
+      "t": "C",
+      "title": "Barge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Barge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_basin_irrigation": {
+      "t": "C",
+      "title": "Surface irrigation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Basin_irrigation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bastion": {
+      "t": "C",
+      "title": "Bastion",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bastion",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bathing": {
+      "t": "C",
+      "title": "Bathing",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bathing",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_battlement": {
+      "t": "C",
+      "title": "Battlement",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Battlement",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_beacon": {
+      "t": "C",
+      "title": "Beacon",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Beacon",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bearing_mechanical": {
+      "t": "C",
+      "title": "Bearing (mechanical)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bearing_(mechanical)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_beer": {
+      "t": "C",
+      "title": "Beer",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Beer",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bell": {
+      "t": "C",
+      "title": "Bell",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bell",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_birthing_chair": {
+      "t": "C",
+      "title": "Birthing chair",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Birthing_chair",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_blacksmith": {
+      "t": "C",
+      "title": "Blacksmith",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Blacksmith",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bloomery": {
+      "t": "C",
+      "title": "Bloomery",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bloomery",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_boundary_marker": {
+      "t": "C",
+      "title": "Boundary marker",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Boundary_marker",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_brahmi_script": {
+      "t": "C",
+      "title": "Brahmi",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brahmi_script",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bread": {
+      "t": "C",
+      "title": "Bread",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bread",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_brick": {
+      "t": "C",
+      "title": "Brick",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brick",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_brine": {
+      "t": "C",
+      "title": "Brine",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Brine",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bronze_age": {
+      "t": "C",
+      "title": "Bronze Age",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bronze_Age",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_bronze_mirror": {
+      "t": "C",
+      "title": "Bronze mirror",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Bronze_mirror",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_burnishing_pottery": {
+      "t": "C",
+      "title": "Burnishing (pottery)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Burnishing_(pottery)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_buttress": {
+      "t": "C",
+      "title": "Buttress",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Buttress",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cadastre": {
+      "t": "C",
+      "title": "Cadastre",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cadastre",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_camel": {
+      "t": "C",
+      "title": "Camel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Camel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_camshaft": {
+      "t": "C",
+      "title": "Camshaft",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Camshaft",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_canal": {
+      "t": "C",
+      "title": "Canal",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Canal",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cantalloc_aqueducts": {
+      "t": "C",
+      "title": "Cantalloc Aqueducts",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cantalloc_Aqueducts",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cantilever_bridge": {
+      "t": "C",
+      "title": "Cantilever bridge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cantilever_bridge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_capital_architecture": {
+      "t": "C",
+      "title": "Capital (architecture)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Capital_(architecture)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_capstan_nautical": {
+      "t": "C",
+      "title": "Capstan (nautical)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Capstan_(nautical)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_caravan_travellers": {
+      "t": "C",
+      "title": "Caravan (travellers)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caravan_(travellers)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_caravanserai": {
+      "t": "C",
+      "title": "Caravanserai",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caravanserai",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_carding": {
+      "t": "C",
+      "title": "Carding",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Carding",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cart": {
+      "t": "C",
+      "title": "Cart",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cart",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_castra": {
+      "t": "C",
+      "title": "Castra",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Castra",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_catamaran": {
+      "t": "C",
+      "title": "Catamaran",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Catamaran",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_caulking": {
+      "t": "C",
+      "title": "Caulk",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Caulking",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_causeway": {
+      "t": "C",
+      "title": "Causeway",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Causeway",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cedar_of_lebanon": {
+      "t": "C",
+      "title": "Cedrus libani (Cedar of Lebanon)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cedar_of_Lebanon",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_celestial_globe": {
+      "t": "C",
+      "title": "Celestial globe",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Celestial_globe",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_celestial_navigation": {
+      "t": "C",
+      "title": "Celestial navigation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Celestial_navigation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_celestial_sphere": {
+      "t": "C",
+      "title": "Celestial sphere",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Celestial_sphere",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_census": {
+      "t": "C",
+      "title": "Census",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Census",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ceramic_glaze": {
+      "t": "C",
+      "title": "Ceramic glaze",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ceramic_glaze",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_chain_pump": {
+      "t": "C",
+      "title": "Chain pump",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chain_pump",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_chariot": {
+      "t": "C",
+      "title": "Chariot",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chariot",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cheese": {
+      "t": "C",
+      "title": "Cheese",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cheese",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_chinampa": {
+      "t": "C",
+      "title": "Chinampa",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Chinampa",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cistern": {
+      "t": "C",
+      "title": "Cistern",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cistern",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_citadel": {
+      "t": "C",
+      "title": "Citadel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Citadel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_city_gate": {
+      "t": "C",
+      "title": "City gate",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/City_gate",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_city_wall": {
+      "t": "C",
+      "title": "Defensive wall",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/City_wall",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_clamp_kiln": {
+      "t": "C",
+      "title": "Brick clamp",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Clamp_kiln",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cliff_dwelling": {
+      "t": "C",
+      "title": "Cliff dwelling",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cliff_dwelling",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_clinker_boat_building": {
+      "t": "C",
+      "title": "Clinker-built (lapstrake)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Clinker_(boat_building)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cob_material": {
+      "t": "C",
+      "title": "Cob (material)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cob_(material)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cobblestone": {
+      "t": "C",
+      "title": "Cobblestone",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cobblestone",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_code_of_hammurabi": {
+      "t": "C",
+      "title": "Code of Hammurabi",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Code_of_Hammurabi",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_code_of_ur_nammu": {
+      "t": "C",
+      "title": "Code of Ur-Nammu",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Code_of_Ur-Nammu",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_codex": {
+      "t": "C",
+      "title": "Codex",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Codex",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_coin": {
+      "t": "C",
+      "title": "Coin",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Coin",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_compass_and_straightedge_construction": {
+      "t": "C",
+      "title": "Straightedge and compass construction",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Compass-and-straightedge_construction",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_contour_plowing": {
+      "t": "C",
+      "title": "Contour plowing",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Contour_plowing",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_copper": {
+      "t": "C",
+      "title": "Copper",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Copper",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_coracle": {
+      "t": "C",
+      "title": "Coracle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Coracle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_corbel_arch": {
+      "t": "C",
+      "title": "Corbel arch",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Corbel_arch",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cord_marked_pottery": {
+      "t": "C",
+      "title": "Cord-marked pottery",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cord-marked_pottery",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_corv_e": {
+      "t": "C",
+      "title": "Corvée",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Corvée",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_counterweight": {
+      "t": "C",
+      "title": "Counterweight",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Counterweight",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_counting_rods": {
+      "t": "C",
+      "title": "Counting rods",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Counting_rods",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_crane_machine": {
+      "t": "C",
+      "title": "Crane (machine)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Crane_(machine)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_crop_rotation": {
+      "t": "C",
+      "title": "Crop rotation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Crop_rotation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_crucible": {
+      "t": "C",
+      "title": "Crucible",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Crucible",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cubit": {
+      "t": "C",
+      "title": "Cubit",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cubit",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cuneiform": {
+      "t": "C",
+      "title": "Cuneiform",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cuneiform",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cupping_therapy": {
+      "t": "C",
+      "title": "Cupping therapy",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cupping_therapy",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_curb": {
+      "t": "C",
+      "title": "Curb",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Curb",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cursus_publicus": {
+      "t": "C",
+      "title": "Cursus publicus",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cursus_publicus",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cyclopean_masonry": {
+      "t": "C",
+      "title": "Cyclopean masonry",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cyclopean_masonry",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_cylinder_seal": {
+      "t": "C",
+      "title": "Cylinder seal",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Cylinder_seal",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dead_reckoning": {
+      "t": "C",
+      "title": "Dead reckoning",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dead_reckoning",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_decan": {
+      "t": "C",
+      "title": "Decan",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Decan",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dentistry": {
+      "t": "C",
+      "title": "Dentistry",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dentistry",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dhow": {
+      "t": "C",
+      "title": "Dhow",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dhow",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dibber": {
+      "t": "C",
+      "title": "Dibber",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dibber",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_digging_stick": {
+      "t": "C",
+      "title": "Digging stick",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Digging_stick",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_diolkos": {
+      "t": "C",
+      "title": "Diolkos",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Diolkos",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dioptra": {
+      "t": "C",
+      "title": "Dioptra",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dioptra",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dong_son_drum": {
+      "t": "C",
+      "title": "Dong Son drum",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dong_Son_drum",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_donkey": {
+      "t": "C",
+      "title": "Donkey",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Donkey",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_doric_order": {
+      "t": "C",
+      "title": "Doric order",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Doric_order",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dough": {
+      "t": "C",
+      "title": "Dough",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dough",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dried_fish": {
+      "t": "C",
+      "title": "Dried fish",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dried_fish",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dried_fruit": {
+      "t": "C",
+      "title": "Dried fruit",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dried_fruit",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_drum": {
+      "t": "C",
+      "title": "Drum",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Drum",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dry_measure": {
+      "t": "C",
+      "title": "Dry measure",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dry_measure",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dugout_canoe": {
+      "t": "C",
+      "title": "Dugout canoe",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dugout_canoe",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_dye": {
+      "t": "C",
+      "title": "Dye",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Dye",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_earth_oven": {
+      "t": "C",
+      "title": "Earth oven",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Earth_oven",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_eclipse": {
+      "t": "C",
+      "title": "Eclipse",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Eclipse",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_edubba": {
+      "t": "C",
+      "title": "Eduba",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Edubba",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_egyptian_faience": {
+      "t": "C",
+      "title": "Egyptian faience",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Egyptian_faience",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_egyptian_fraction": {
+      "t": "C",
+      "title": "Egyptian fraction",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Egyptian_fraction",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_egyptian_hieroglyphs": {
+      "t": "C",
+      "title": "Egyptian hieroglyphs",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Egyptian_hieroglyphs",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_embroidery": {
+      "t": "C",
+      "title": "Embroidery",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Embroidery",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_equinox": {
+      "t": "C",
+      "title": "Equinox",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Equinox",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_falaj": {
+      "t": "C",
+      "title": "Aflaj Irrigation Systems of Oman",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Falaj",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_fallow": {
+      "t": "C",
+      "title": "Fallow",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fallow",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_felt": {
+      "t": "C",
+      "title": "Felt",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Felt",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ferry": {
+      "t": "C",
+      "title": "Ferry",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ferry",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_fibula_brooch": {
+      "t": "C",
+      "title": "Fibula (brooch)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fibula_(brooch)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_fire_setting": {
+      "t": "C",
+      "title": "Fire-setting",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fire-setting",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_fish_sauce": {
+      "t": "C",
+      "title": "Fish sauce",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fish_sauce",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_flatboat": {
+      "t": "C",
+      "title": "Flatboat",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Flatboat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_flax": {
+      "t": "C",
+      "title": "Flax",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Flax",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_flute": {
+      "t": "C",
+      "title": "Flute",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Flute",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_food_preservation": {
+      "t": "C",
+      "title": "Food preservation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Food_preservation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_footbridge": {
+      "t": "C",
+      "title": "Footbridge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Footbridge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_forceps": {
+      "t": "C",
+      "title": "Forceps",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Forceps",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ford_crossing": {
+      "t": "C",
+      "title": "Ford (crossing)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ford_(crossing)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_forest_gardening": {
+      "t": "C",
+      "title": "Agroforestry",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Forest_gardening",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_forging": {
+      "t": "C",
+      "title": "Forging",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Forging",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_fountain": {
+      "t": "C",
+      "title": "Fountain",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Fountain",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_funnel": {
+      "t": "C",
+      "title": "Funnel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Funnel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_galley": {
+      "t": "C",
+      "title": "Galley",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Galley",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_garum": {
+      "t": "C",
+      "title": "Garum",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Garum",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_gear": {
+      "t": "C",
+      "title": "Gear",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gear",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_gnomon": {
+      "t": "C",
+      "title": "Gnomon",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gnomon",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_granary": {
+      "t": "C",
+      "title": "Granary",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Granary",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_grave_goods": {
+      "t": "C",
+      "title": "Grave goods",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Grave_goods",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_greek_alphabet": {
+      "t": "C",
+      "title": "Greek alphabet",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Greek_alphabet",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_griddle": {
+      "t": "C",
+      "title": "Griddle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Griddle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_gristmill": {
+      "t": "C",
+      "title": "Gristmill",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gristmill",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_groma_surveying": {
+      "t": "C",
+      "title": "Groma (surveying)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Groma_(surveying)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_guqin": {
+      "t": "C",
+      "title": "Guqin",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Guqin",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_gypsum_plaster": {
+      "t": "C",
+      "title": "Plaster",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Gypsum_plaster",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hairpin_turn": {
+      "t": "C",
+      "title": "Hairpin turn",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hairpin_turn",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_halter": {
+      "t": "C",
+      "title": "Halter",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Halter",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_handbarrow": {
+      "t": "C",
+      "title": "Handbarrow",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Handbarrow",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_harbour_chain": {
+      "t": "C",
+      "title": "Boom (navigational barrier)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Harbour_chain",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_harp": {
+      "t": "C",
+      "title": "Harp",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Harp",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_harrow_tool": {
+      "t": "C",
+      "title": "Harrow (tool)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Harrow_(tool)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hearth": {
+      "t": "C",
+      "title": "Hearth",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hearth",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hematite": {
+      "t": "C",
+      "title": "Hematite",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hematite",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_herb_garden": {
+      "t": "C",
+      "title": "Kitchen garden",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Herb_garden",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hindu_arabic_numeral_system": {
+      "t": "C",
+      "title": "Hindu-Arabic numeral system",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hindu-Arabic_numeral_system",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hipparchus": {
+      "t": "C",
+      "title": "Hipparchus",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hipparchus",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hippodamian_plan": {
+      "t": "C",
+      "title": "Hippodamus of Miletus",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hippodamian_plan",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hittite_language": {
+      "t": "C",
+      "title": "Hittite language",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hittite_language",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hoe_tool": {
+      "t": "C",
+      "title": "Hoe (tool)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hoe_(tool)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_horse_collar": {
+      "t": "C",
+      "title": "Horse collar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Horse_collar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_horse_harness": {
+      "t": "C",
+      "title": "Horse harness",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Horse_harness",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hypogeum": {
+      "t": "C",
+      "title": "Hypogeum",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hypogeum",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_hypostyle": {
+      "t": "C",
+      "title": "Hypostyle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Hypostyle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_inca_road_system": {
+      "t": "C",
+      "title": "Inca road system",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Inca_road_system",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_inclined_plane": {
+      "t": "C",
+      "title": "Inclined plane",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Inclined_plane",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_indigo_dye": {
+      "t": "C",
+      "title": "Indigo dye",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Indigo_dye",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_insula_building": {
+      "t": "C",
+      "title": "Insula (building)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Insula_(building)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_intercropping": {
+      "t": "C",
+      "title": "Intercropping",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Intercropping",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ionic_order": {
+      "t": "C",
+      "title": "Ionic order",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ionic_order",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_iron_age": {
+      "t": "C",
+      "title": "Iron Age",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Iron_Age",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_irrigation": {
+      "t": "C",
+      "title": "Irrigation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Irrigation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_keystone_architecture": {
+      "t": "C",
+      "title": "Keystone (architecture)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Keystone_(architecture)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_kiln": {
+      "t": "C",
+      "title": "Kiln",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kiln",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_kingdom_of_aksum": {
+      "t": "C",
+      "title": "Kingdom of Aksum",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_kithara": {
+      "t": "C",
+      "title": "Kithara",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Kithara",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_knife_money": {
+      "t": "C",
+      "title": "Knife money",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Knife_money",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_latin_script": {
+      "t": "C",
+      "title": "Latin script",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Latin_script",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_latrine": {
+      "t": "C",
+      "title": "Latrine",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Latrine",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_leavening_agent": {
+      "t": "C",
+      "title": "Leavening agent",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Leavening_agent",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_libation": {
+      "t": "C",
+      "title": "Libation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Libation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_library_of_ashurbanipal": {
+      "t": "C",
+      "title": "Library of Ashurbanipal",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Library_of_Ashurbanipal",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_lighthouse": {
+      "t": "C",
+      "title": "Lighthouse",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lighthouse",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_lime_plaster": {
+      "t": "C",
+      "title": "Lime plaster",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lime_plaster",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_linen": {
+      "t": "C",
+      "title": "Linen",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Linen",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_llama": {
+      "t": "C",
+      "title": "Llama",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Llama",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_longhouse": {
+      "t": "C",
+      "title": "Longhouse",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Longhouse",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_loom": {
+      "t": "C",
+      "title": "Loom",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Loom",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_lost_wax_casting": {
+      "t": "C",
+      "title": "Lost-wax casting",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lost-wax_casting",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_lunar_calendar": {
+      "t": "C",
+      "title": "Lunar calendar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lunar_calendar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_lunisolar_calendar": {
+      "t": "C",
+      "title": "Lunisolar calendar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lunisolar_calendar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_lute": {
+      "t": "C",
+      "title": "Lute",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lute",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_lyre": {
+      "t": "C",
+      "title": "Lyre",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Lyre",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_malachite": {
+      "t": "C",
+      "title": "Malachite",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Malachite",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mantlet": {
+      "t": "C",
+      "title": "Mantlet",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mantlet",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_manure": {
+      "t": "C",
+      "title": "Manure",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Manure",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_marshall_islands_stick_chart": {
+      "t": "C",
+      "title": "Marshall Islands stick chart",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Marshall_Islands_stick_chart",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mead": {
+      "t": "C",
+      "title": "Mead",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mead",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_metate": {
+      "t": "C",
+      "title": "Metate (mealing stone)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Metate",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_midwifery": {
+      "t": "C",
+      "title": "Midwifery",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Midwifery",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_milestone": {
+      "t": "C",
+      "title": "Milestone",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Milestone",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_milking": {
+      "t": "C",
+      "title": "Milking",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Milking",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mine_ventilation": {
+      "t": "C",
+      "title": "Underground mine ventilation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mine_ventilation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mining": {
+      "t": "C",
+      "title": "Mining",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mining",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_moat": {
+      "t": "C",
+      "title": "Moat",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Moat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_monsoon": {
+      "t": "C",
+      "title": "Monsoon",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Monsoon",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mortar_and_pestle": {
+      "t": "C",
+      "title": "Mortar and pestle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mortar_and_pestle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mortise_and_tenon": {
+      "t": "C",
+      "title": "Mortise and tenon",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mortise_and_tenon",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mudbrick": {
+      "t": "C",
+      "title": "Mudbrick",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mudbrick",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mulch": {
+      "t": "C",
+      "title": "Mulch",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mulch",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_mule": {
+      "t": "C",
+      "title": "Mule",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mule",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_multiplication_table": {
+      "t": "C",
+      "title": "Multiplication table",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Multiplication_table",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_noria": {
+      "t": "C",
+      "title": "Noria",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Noria",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_noseband": {
+      "t": "C",
+      "title": "Noseband",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Noseband",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_nubia": {
+      "t": "C",
+      "title": "Nubia",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Nubia",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ocean_current": {
+      "t": "C",
+      "title": "Ocean current",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ocean_current",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_olmec_colossal_heads": {
+      "t": "C",
+      "title": "Olmec colossal heads",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Olmec_colossal_heads",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_oracle_bone_script": {
+      "t": "C",
+      "title": "Oracle bone script",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Oracle_bone_script",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ore_dressing": {
+      "t": "C",
+      "title": "Mineral processing",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ore_dressing",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_orthostat": {
+      "t": "C",
+      "title": "Megalithic architectural elements",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Orthostat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_outrigger_boat": {
+      "t": "C",
+      "title": "Outrigger boat",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Outrigger_boat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_oven": {
+      "t": "C",
+      "title": "Oven",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Oven",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_packsaddle": {
+      "t": "C",
+      "title": "Pack saddle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Packsaddle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_paddle": {
+      "t": "C",
+      "title": "Paddle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Paddle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_palisade": {
+      "t": "C",
+      "title": "Palisade",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Palisade",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pan_flute": {
+      "t": "C",
+      "title": "Pan flute",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pan_flute",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_papyrus": {
+      "t": "C",
+      "title": "Papyrus",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Papyrus",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_parchment": {
+      "t": "C",
+      "title": "Parchment",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Parchment",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_passage_grave": {
+      "t": "C",
+      "title": "Passage grave",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Passage_grave",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_periplus_of_the_erythraean_sea": {
+      "t": "C",
+      "title": "Periplus of the Erythraean Sea",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Periplus_of_the_Erythraean_Sea",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pickling": {
+      "t": "C",
+      "title": "Pickling",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pickling",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pier_architecture": {
+      "t": "C",
+      "title": "Pier (architecture)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pier_(architecture)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pilgrimage": {
+      "t": "C",
+      "title": "Pilgrimage",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pilgrimage",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pilotage": {
+      "t": "C",
+      "title": "Piloting",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pilotage",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pit_house": {
+      "t": "C",
+      "title": "Pit-house",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pit-house",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_plaster": {
+      "t": "C",
+      "title": "Plaster",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Plaster",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_plimpton_322": {
+      "t": "C",
+      "title": "Plimpton 322",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Plimpton_322",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_plough": {
+      "t": "C",
+      "title": "Plough",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Plough",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_plumb_bob": {
+      "t": "C",
+      "title": "Plumb bob",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Plumb_bob",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_polynesian_navigation": {
+      "t": "C",
+      "title": "Polynesian navigation",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Polynesian_navigation",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pontoon_bridge": {
+      "t": "C",
+      "title": "Pontoon bridge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pontoon_bridge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_post_and_lintel": {
+      "t": "C",
+      "title": "Post and lintel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Post_and_lintel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_potter_s_wheel": {
+      "t": "C",
+      "title": "Potter's wheel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Potter%27s_wheel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pottery": {
+      "t": "C",
+      "title": "Pottery",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pottery",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_poultice": {
+      "t": "C",
+      "title": "Poultice",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Poultice",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_proto_cuneiform": {
+      "t": "C",
+      "title": "Proto-cuneiform",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Proto-cuneiform",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_provinces_of_the_roman_empire": {
+      "t": "C",
+      "title": "Roman province",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Provinces_of_the_Roman_Empire",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pulley": {
+      "t": "C",
+      "title": "Pulley",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pulley",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pump": {
+      "t": "C",
+      "title": "Pump",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pump",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_pylon_architecture": {
+      "t": "C",
+      "title": "Pylon (architecture)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Pylon_(architecture)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_qanat": {
+      "t": "C",
+      "title": "Qanat",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Qanat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_quarry": {
+      "t": "C",
+      "title": "Quarry",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Quarry",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_quern_stone": {
+      "t": "C",
+      "title": "Quern-stone",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Quern-stone",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_quilting": {
+      "t": "C",
+      "title": "Quilting",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Quilting",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_quipu": {
+      "t": "C",
+      "title": "Quipu",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Quipu",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_rain_gutter": {
+      "t": "C",
+      "title": "Rain gutter",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rain_gutter",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_rainwater_harvesting": {
+      "t": "C",
+      "title": "Rainwater harvesting",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rainwater_harvesting",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_rammed_earth": {
+      "t": "C",
+      "title": "Rammed earth",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rammed_earth",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_rampart_fortification": {
+      "t": "C",
+      "title": "Rampart (fortification)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rampart_(fortification)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ratchet_device": {
+      "t": "C",
+      "title": "Ratchet (device)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ratchet_(device)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_reaping": {
+      "t": "C",
+      "title": "Harvest",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Reaping",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_redistribution_economics": {
+      "t": "C",
+      "title": "Distribution (economics)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Redistribution_(economics)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_reed_boat": {
+      "t": "C",
+      "title": "Reed boat",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Reed_boat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_reed_pen": {
+      "t": "C",
+      "title": "Reed pen",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Reed_pen",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_reservoir": {
+      "t": "C",
+      "title": "Reservoir",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Reservoir",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_resist_dyeing": {
+      "t": "C",
+      "title": "Resist dyeing",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Resist_dyeing",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_retaining_wall": {
+      "t": "C",
+      "title": "Retaining wall",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Retaining_wall",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_retting": {
+      "t": "C",
+      "title": "Retting",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Retting",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_rock_cut_architecture": {
+      "t": "C",
+      "title": "Rock-cut architecture",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rock-cut_architecture",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_roman_forum": {
+      "t": "C",
+      "title": "Roman Forum",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Roman_Forum",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_roman_roads": {
+      "t": "C",
+      "title": "Roman roads",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Roman_roads",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_root_cellar": {
+      "t": "C",
+      "title": "Root cellar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Root_cellar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_rope_bridge": {
+      "t": "C",
+      "title": "Simple suspension bridge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rope_bridge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_rope_stretcher": {
+      "t": "C",
+      "title": "Rope stretcher",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rope_stretcher",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_roundhouse_dwelling": {
+      "t": "C",
+      "title": "Roundhouse (dwelling)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Roundhouse_(dwelling)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_royal_road": {
+      "t": "C",
+      "title": "The Royal Road",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Royal_Road",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sacbe": {
+      "t": "C",
+      "title": "Sacbe",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sacbe",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_saddle": {
+      "t": "C",
+      "title": "Saddle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Saddle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sakia": {
+      "t": "C",
+      "title": "Saqiyah",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sakia",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_salt_lick": {
+      "t": "C",
+      "title": "Mineral lick (salt lick)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Salt_lick",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_salting_food": {
+      "t": "C",
+      "title": "Salting (food)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Salting_(food)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sarcophagus": {
+      "t": "C",
+      "title": "Sarcophagus",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sarcophagus",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_scalpel": {
+      "t": "C",
+      "title": "Scalpel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scalpel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_scribe": {
+      "t": "C",
+      "title": "Scribe",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scribe",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_scroll": {
+      "t": "C",
+      "title": "Scroll",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Scroll",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_settling_basin": {
+      "t": "C",
+      "title": "Settling basin",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Settling_basin",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sewerage": {
+      "t": "C",
+      "title": "Sewerage",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sewerage",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sewing_needle": {
+      "t": "C",
+      "title": "Sewing needle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sewing_needle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sewn_boat": {
+      "t": "C",
+      "title": "Sewn boat",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sewn_boat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sexagesimal": {
+      "t": "C",
+      "title": "Sexagesimal",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sexagesimal",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shadoof": {
+      "t": "C",
+      "title": "Shadoof",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shadoof",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sheep_shearing": {
+      "t": "C",
+      "title": "Sheep shearing",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sheep_shearing",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sheepfold": {
+      "t": "C",
+      "title": "Pen (enclosure)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sheepfold",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shell_money": {
+      "t": "C",
+      "title": "Shell money",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shell_money",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shell_trumpet": {
+      "t": "C",
+      "title": "Conch (instrument)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shell_trumpet",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shepherd": {
+      "t": "C",
+      "title": "Shepherd",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shepherd",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shield_wall": {
+      "t": "C",
+      "title": "Shield wall",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shield_wall",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shofar": {
+      "t": "C",
+      "title": "Shofar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shofar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shrine": {
+      "t": "C",
+      "title": "Shrine",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shrine",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_shuttle_weaving": {
+      "t": "C",
+      "title": "Shuttle (weaving)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Shuttle_(weaving)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sickle": {
+      "t": "C",
+      "title": "Sickle",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sickle",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sieve": {
+      "t": "C",
+      "title": "Sieve",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sieve",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_silo": {
+      "t": "C",
+      "title": "Silo",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Silo",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_slag": {
+      "t": "C",
+      "title": "Slag",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Slag",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_slash_and_burn": {
+      "t": "C",
+      "title": "Slash-and-burn",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Slash-and-burn",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sling_weapon": {
+      "t": "C",
+      "title": "Sling (weapon)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sling_(weapon)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_slip_ceramics": {
+      "t": "C",
+      "title": "Slip (ceramics)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Slip_(ceramics)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_smelting": {
+      "t": "C",
+      "title": "Smelting",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Smelting",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_smoking_cooking": {
+      "t": "C",
+      "title": "Smoking (cooking)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Smoking_(cooking)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_soakaway": {
+      "t": "C",
+      "title": "Dry well",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Soakaway",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sod_roof": {
+      "t": "C",
+      "title": "Sod roof",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sod_roof",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_solar_calendar": {
+      "t": "C",
+      "title": "Solar calendar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Solar_calendar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_solstice": {
+      "t": "C",
+      "title": "Solstice",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Solstice",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sounding_line": {
+      "t": "C",
+      "title": "Depth sounding",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sounding_line",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_spade": {
+      "t": "C",
+      "title": "Spade",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spade",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_spatula": {
+      "t": "C",
+      "title": "Spatula",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spatula",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_spillway": {
+      "t": "C",
+      "title": "Spillway",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spillway",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_spindle_textiles": {
+      "t": "C",
+      "title": "Spindle (textiles)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spindle_(textiles)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_spindle_whorl": {
+      "t": "C",
+      "title": "Spindle whorl",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spindle_whorl",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_splint_medicine": {
+      "t": "C",
+      "title": "Splint (medicine)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Splint_(medicine)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_spoke": {
+      "t": "C",
+      "title": "Spoke",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spoke",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_spring_hydrology": {
+      "t": "C",
+      "title": "Spring (hydrology)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Spring_(hydrology)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_square_root": {
+      "t": "C",
+      "title": "Square root",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Square_root",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_star_catalogue": {
+      "t": "C",
+      "title": "Star catalogue",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Star_catalogue",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_steel": {
+      "t": "C",
+      "title": "Steel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Steel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_stele": {
+      "t": "C",
+      "title": "Stele (Stela)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stele",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_step_pyramid": {
+      "t": "C",
+      "title": "Step pyramid",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Step_pyramid",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_stilt_house": {
+      "t": "C",
+      "title": "Stilt house",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stilt_house",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_stirrup": {
+      "t": "C",
+      "title": "Stirrup",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stirrup",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_stoa": {
+      "t": "C",
+      "title": "Stoa",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stoa",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_stoneware": {
+      "t": "C",
+      "title": "Stoneware",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stoneware",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_stylus": {
+      "t": "C",
+      "title": "Stylus",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Stylus",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sumerian_language": {
+      "t": "C",
+      "title": "Sumerian language",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sumerian_language",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sunken_garden": {
+      "t": "C",
+      "title": "Agroforestry",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sunken_garden",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_surgical_instrument": {
+      "t": "C",
+      "title": "Surgical instrument",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Surgical_instrument",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_sweet_track": {
+      "t": "C",
+      "title": "Sweet Track",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Sweet_Track",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_tandoor": {
+      "t": "C",
+      "title": "Tandoor",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tandoor",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_tannin": {
+      "t": "C",
+      "title": "Tannin",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tannin",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_terrace_agriculture": {
+      "t": "C",
+      "title": "Terrace (earthworks)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Terrace_(agriculture)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_the_nine_chapters_on_the_mathematical_art": {
+      "t": "C",
+      "title": "The Nine Chapters on the Mathematical Art",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/The_Nine_Chapters_on_the_Mathematical_Art",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_thermae": {
+      "t": "C",
+      "title": "Thermae",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Thermae",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_tholos_tomb": {
+      "t": "C",
+      "title": "Beehive tomb",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tholos_tomb",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_three_sisters_agriculture": {
+      "t": "C",
+      "title": "The Three Sisters (agriculture)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Three_Sisters_(agriculture)",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_threshing": {
+      "t": "C",
+      "title": "Threshing",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Threshing",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_tide": {
+      "t": "C",
+      "title": "Tide",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tide",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_tie_dye": {
+      "t": "C",
+      "title": "Tie-dye",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tie-dye",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_traditional_chinese_medicine": {
+      "t": "C",
+      "title": "Traditional Chinese medicine",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Traditional_Chinese_medicine",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_trans_saharan_trade": {
+      "t": "C",
+      "title": "Trans-Saharan trade",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Trans-Saharan_trade",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_treadwheel_crane": {
+      "t": "C",
+      "title": "Treadwheel crane",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Treadwheel_crane",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_trepanning": {
+      "t": "C",
+      "title": "Trepanning",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Trepanning",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_trestle_bridge": {
+      "t": "C",
+      "title": "Trestle bridge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Trestle_bridge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_trilithon": {
+      "t": "C",
+      "title": "Trilithon",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Trilithon",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_truss_bridge": {
+      "t": "C",
+      "title": "Truss bridge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Truss_bridge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ugaritic": {
+      "t": "C",
+      "title": "Ugaritic",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ugaritic",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_urn": {
+      "t": "C",
+      "title": "Urn",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Urn",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_via_sacra": {
+      "t": "C",
+      "title": "Via Sacra",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Via_sacra",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_viaduct": {
+      "t": "C",
+      "title": "Viaduct",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Viaduct",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_vinegar": {
+      "t": "C",
+      "title": "Vinegar",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Vinegar",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_votive_offering": {
+      "t": "C",
+      "title": "Votive offering",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Votive_offering",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_wagon": {
+      "t": "C",
+      "title": "Wagon",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wagon",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_warehouse": {
+      "t": "C",
+      "title": "Warehouse",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Warehouse",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_warp_weighted_loom": {
+      "t": "C",
+      "title": "Warp-weighted loom",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Warp-weighted_loom",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_waru_waru": {
+      "t": "C",
+      "title": "Waru Waru",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Waru_Waru",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_water_clock": {
+      "t": "C",
+      "title": "Water clock (clepsydra)",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Water_clock",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_water_tank": {
+      "t": "C",
+      "title": "Water tank",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Water_tank",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_water_wheel": {
+      "t": "C",
+      "title": "Water wheel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Water_wheel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_wattle_and_daub": {
+      "t": "C",
+      "title": "Wattle and daub",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wattle_and_daub",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_wedge": {
+      "t": "C",
+      "title": "Wedge",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wedge",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_weights_and_measures": {
+      "t": "C",
+      "title": "Unit of measurement",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Weights_and_measures",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_weir": {
+      "t": "C",
+      "title": "Weir",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Weir",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_well": {
+      "t": "C",
+      "title": "Well",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Well",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_wharf": {
+      "t": "C",
+      "title": "Wharf",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wharf",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_wheel": {
+      "t": "C",
+      "title": "Wheel",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wheel",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_windlass": {
+      "t": "C",
+      "title": "Windlass",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Windlass",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_winnowing": {
+      "t": "C",
+      "title": "Winnowing",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Winnowing",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_wool": {
+      "t": "C",
+      "title": "Wool",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Wool",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_yogurt": {
+      "t": "C",
+      "title": "Yogurt",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Yogurt",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_yoke": {
+      "t": "C",
+      "title": "Yoke",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Yoke",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_yurt": {
+      "t": "C",
+      "title": "Yurt",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Yurt",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_zapotec_script": {
+      "t": "C",
+      "title": "Zapotec script",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Zapotec_script",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
+    },
+    "wp_ziggurat": {
+      "t": "C",
+      "title": "Ziggurat",
+      "org": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ziggurat",
+      "type": "encyclopedia",
+      "scope": "topic",
+      "checked": "2026-10-15"
     }
   }
 }

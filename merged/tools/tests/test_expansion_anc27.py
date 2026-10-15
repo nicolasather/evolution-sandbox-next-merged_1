@@ -61,10 +61,28 @@ class Anc27InGame(unittest.TestCase):
         self.assertEqual(len({n["n"].lower() for n in DB["nodes"]}), len(DB["nodes"]))
 
     def test_nothing_claims_verified_history(self):
+        facts = json.loads((ROOT / "data" / "expansion" / "anc27_facts.json").read_text(encoding="utf-8"))["items"]
+        reg = json.loads((ROOT / "data" / "sources.json").read_text(encoding="utf-8"))["sources"]
         for n in G12:
-            self.assertEqual(n["src"], ["source_required"], n["id"])
             self.assertIn("anc27_individual_recipe", n["tags"])
             self.assertFalse(n["historical"]["itemSpecificEvidenceVerified"], n["id"])
+            if n["id"] in facts:  # topic context only, from a tier-C encyclopedia page, and said so
+                f = facts[n["id"]]
+                self.assertEqual(n["src"], [f["source"]], n["id"])
+                self.assertEqual(reg[f["source"]]["t"], "C", n["id"])
+                self.assertEqual(reg[f["source"]]["scope"], "topic", n["id"])
+                self.assertEqual(n["historical"]["factCheck"]["status"], "topic_context_only", n["id"])
+                self.assertIn("not item-specific", n["ev"], n["id"])
+                self.assertFalse(f["itemSpecificEvidenceVerified"], n["id"])
+            else:
+                self.assertEqual(n["src"], ["source_required"], n["id"])
+
+    def test_fact_check_covers_most_items_and_lists_the_rest(self):
+        d = json.loads((ROOT / "data" / "expansion" / "anc27_facts.json").read_text(encoding="utf-8"))
+        self.assertEqual(d["covered"] + d["uncovered"], len(G12))
+        self.assertEqual(len(d["items"]), d["covered"])
+        self.assertEqual(len(d["uncoveredIds"]), d["uncovered"])
+        self.assertGreaterEqual(d["covered"], 700)
 
     def test_independent_lineages_and_no_bronze_from_iron(self):
         # Only anc27/exp26-authored lineage is checked; legacy base-graph quirks (e.g. metallurgy > ironworking) are out of scope.
