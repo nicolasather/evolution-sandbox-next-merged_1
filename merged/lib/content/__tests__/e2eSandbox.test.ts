@@ -155,7 +155,7 @@ describe('pilot fixture → sandbox → engine → 3D → motion → modes → r
   describe('modes', () => {
     it('pipeline items pass the gate only in opt-in modes whose rules they meet; excluded modes say no', () => {
       for (const n of db.nodes.filter(x => x.id.startsWith('fx_'))) {
-        for (const m of ['civilization', 'decipher', 'alien-archaeology', 'escape-room'] as const) expect(adapterGate(m, n, db)).toBe(false);
+        for (const m of ['civilization', 'decipher', 'alien-archaeology'] as const) expect(adapterGate(m, n, db)).toBe(false);
         expect(adapterGate('minimum-path', n, db)).toBe(true);
         expect(adapterGate('reverse-evolution', n, db)).toBe(true);
       }
@@ -175,7 +175,7 @@ describe('pilot fixture → sandbox → engine → 3D → motion → modes → r
       expect(pickChallenge(db, createRng('e2e'))).not.toBeNull();
     });
     it('excluded modes never produce a packet', () => {
-      for (const m of ['civilization', 'decipher', 'alien-archaeology', 'escape-room'] as const) {
+      for (const m of ['civilization', 'decipher', 'alien-archaeology'] as const) {
         expect(ADAPTERS[m].policy).toBe('excluded');
         expect(resolvePacket(m, { schemaVersion: 1 }, 's', db).packet).toBeNull();
       }

@@ -30,7 +30,7 @@ const bungee = Bungee({
 
 const SITE = siteUrl();
 const DESCRIPTION =
-  'Start with a stone, a stick, a bone and a length of fibre. Combine them into 918 discoveries — each with its evidence, and an honest flag wherever a source is still missing.';
+  'Start with a stone, a stick, a bone and a length of fibre. Combine them into 1,917 discoveries — each with its evidence, and an honest flag wherever a source is still missing.';
 
 /* Developer Beta build (never true in production — see lib/dev/env.ts). It must not feed the
    production analytics, and it must not be indexed. */
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
     siteName: 'Evolution Sandbox',
     title: 'Evolution Sandbox',
     description:
-      'How did we get here? Combine four raw materials into 918 discoveries, from a knapped stone to a virtual world.',
+      'How did we get here? Combine four raw materials into 1,917 discoveries, from a knapped stone to a virtual world.',
     url: SITE,
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Evolution Sandbox',
-    description: 'Combine four raw materials into 918 discoveries, from a knapped stone to a virtual world.',
+    description: 'Combine four raw materials into 1,917 discoveries, from a knapped stone to a virtual world.',
   },
   robots: DEV_BUILD ? { index: false, follow: false } : { index: true, follow: true },
 };

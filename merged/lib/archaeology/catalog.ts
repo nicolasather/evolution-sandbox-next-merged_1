@@ -1,4 +1,5 @@
 import type { ArtifactTemplate } from './types';
+import extraTemplates from '@/data/expansion/archaeology_templates.json';
 
 /* ============================================================================
    ARTIFACT-TYPE CATALOG — a small, authored vocabulary of real archaeological
@@ -19,7 +20,12 @@ import type { ArtifactTemplate } from './types';
    make one interpretation far better supported than the alternatives.
    ========================================================================== */
 
-export const CATALOG: ArtifactTemplate[] = [
+/** Finds drawn from the expansion items (data/expansion/archaeology_templates.json, built by tools/expansion/gen_archaeology.py).
+ *  A site draws a small deterministic sample of them (EXTRA_PER_SITE) so the hand-authored vocabulary above stays dominant. */
+export const EXTRA_TEMPLATES = extraTemplates as unknown as ArtifactTemplate[];
+export const EXTRA_PER_SITE = 24;
+
+const BASE_CATALOG: ArtifactTemplate[] = [
   {
     id: 'hearth-ash-lens',
     label: 'Ash lens with fire-cracked stone',
@@ -129,6 +135,8 @@ export const CATALOG: ArtifactTemplate[] = [
     rarity: 1,
   },
 ];
+
+export const CATALOG: ArtifactTemplate[] = [...BASE_CATALOG, ...EXTRA_TEMPLATES];
 
 export function template(id: string): ArtifactTemplate {
   const t = CATALOG.find(c => c.id === id);

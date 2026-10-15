@@ -91,6 +91,8 @@ export interface CampState {
    *  reuses real canonical discovery text for flavour (see
    *  lib/survival/narrate.ts) without touching Main Evolution's Engine. */
   milestones: Partial<Record<'fire' | 'shelter', true>>;
+  /** Ids of the expansion items the group has turned up while gathering (older saves have none). */
+  finds?: string[];
   log: CampEvent[];
 }
 

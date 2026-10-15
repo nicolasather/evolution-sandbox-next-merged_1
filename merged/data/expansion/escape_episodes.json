@@ -1,0 +1,4842 @@
+[
+ {
+  "id": "x-clay_vessels",
+  "title": "The Clay Vessels Workshop",
+  "setting": "A sealed workshop wall chart of the clay vessels family of the Discovery Journal.",
+  "introText": "A workshop of clay vessels stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Prepared Vessel Clay; Pinch Pot; Coil Pot; Clay Cup; Clay Bowl; Clay Lamp; Clay Lid; Burnished Pinch Pot; Coil Jar; Handled Drinking Cup; Footed Bowl; Double Wick Lamp; Fitted Pot Lid; Slip Decorated Pot; Collared Storage Jar; Spouted Cup; Glazed Serving Bowl; Hanging Oil Lamp; Sealing Jar Lid; Painted Storage Pot; Lidded Storage Jar; Pouring Jug; Stackable Table Bowl; Multi Nozzle Oil Lamp; Reusable Storage Seal. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_sealing_jar_lid",
+      "text": "Sealing Jar Lid"
+     },
+     {
+      "id": "exp26_prepared_vessel_clay",
+      "text": "Prepared Vessel Clay"
+     },
+     {
+      "id": "exp26_reusable_storage_seal",
+      "text": "Reusable Storage Seal"
+     },
+     {
+      "id": "exp26_fitted_pot_lid",
+      "text": "Fitted Pot Lid"
+     },
+     {
+      "id": "exp26_clay_lid",
+      "text": "Clay Lid"
+     }
+    ],
+    "correctOrder": [
+     "exp26_prepared_vessel_clay",
+     "exp26_clay_lid",
+     "exp26_fitted_pot_lid",
+     "exp26_sealing_jar_lid",
+     "exp26_reusable_storage_seal"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_clay_cup",
+      "label": "Clay Cup"
+     },
+     {
+      "id": "exp26_prepared_vessel_clay",
+      "label": "Prepared Vessel Clay"
+     },
+     {
+      "id": "exp26_clay_bowl",
+      "label": "Clay Bowl"
+     },
+     {
+      "id": "exp26_pinch_pot",
+      "label": "Pinch Pot"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_prepared_vessel_clay",
+      "label": "Prepared Vessel Clay"
+     },
+     {
+      "id": "exp26_clay_cup",
+      "label": "Clay Cup"
+     },
+     {
+      "id": "pottery",
+      "label": "Pottery"
+     },
+     {
+      "id": "exp26_coil_pot",
+      "label": "Coil Pot"
+     }
+    ],
+    "correctMatch": {
+     "exp26_prepared_vessel_clay": "pottery",
+     "exp26_pinch_pot": "exp26_prepared_vessel_clay",
+     "exp26_clay_cup": "exp26_coil_pot",
+     "exp26_clay_bowl": "exp26_clay_cup"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CPCP"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-CPCP",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-architectural_ceramics",
+  "title": "The Architectural Ceramics Workshop",
+  "setting": "A sealed workshop wall chart of the architectural ceramics family of the Discovery Journal.",
+  "introText": "A workshop of architectural ceramics stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Architectural Clay Batch; Sun Dried Brick; Roof Tile Blank; Terracotta Drain; Floor Paver; Decorative Tile; Refractory Brick; Fired Building Brick; Flat Roof Tile; Socketed Drain Pipe; Patterned Paver; Relief Wall Tile; Firebox Lining Brick; Perforated Building Brick; Interlocking Roof Tile; Curved Drain Elbow; Glazed Floor Paver; Colored Mosaic Tile; Insulated Furnace Brick; Hollow Structural Brick; Ridge Roof Tile; Buried Drain Junction; Non Slip Ceramic Paver; Geometric Tile Panel; High Alumina Furnace Brick. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_insulated_furnace_brick",
+      "text": "Insulated Furnace Brick"
+     },
+     {
+      "id": "exp26_architectural_clay_batch",
+      "text": "Architectural Clay Batch"
+     },
+     {
+      "id": "exp26_high_alumina_furnace_brick",
+      "text": "High Alumina Furnace Brick"
+     },
+     {
+      "id": "exp26_firebox_lining_brick",
+      "text": "Firebox Lining Brick"
+     },
+     {
+      "id": "exp26_refractory_brick",
+      "text": "Refractory Brick"
+     }
+    ],
+    "correctOrder": [
+     "exp26_architectural_clay_batch",
+     "exp26_refractory_brick",
+     "exp26_firebox_lining_brick",
+     "exp26_insulated_furnace_brick",
+     "exp26_high_alumina_furnace_brick"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_terracotta_drain",
+      "label": "Terracotta Drain"
+     },
+     {
+      "id": "exp26_architectural_clay_batch",
+      "label": "Architectural Clay Batch"
+     },
+     {
+      "id": "exp26_floor_paver",
+      "label": "Floor Paver"
+     },
+     {
+      "id": "exp26_sun_dried_brick",
+      "label": "Sun Dried Brick"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_architectural_clay_batch",
+      "label": "Architectural Clay Batch"
+     },
+     {
+      "id": "exp26_terracotta_drain",
+      "label": "Terracotta Drain"
+     },
+     {
+      "id": "brick",
+      "label": "Brick"
+     },
+     {
+      "id": "exp26_roof_tile_blank",
+      "label": "Roof Tile Blank"
+     }
+    ],
+    "correctMatch": {
+     "exp26_architectural_clay_batch": "brick",
+     "exp26_sun_dried_brick": "exp26_architectural_clay_batch",
+     "exp26_terracotta_drain": "exp26_roof_tile_blank",
+     "exp26_floor_paver": "exp26_terracotta_drain"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "TAFS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-TAFS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-stone_construction",
+  "title": "The Stone Construction Workshop",
+  "setting": "A sealed workshop wall chart of the stone construction family of the Discovery Journal.",
+  "introText": "A workshop of stone construction stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Dressed Building Stone; Rough Ashlar; Stone Lintel; Stone Column Drum; Stone Voussoir; Stone Foundation Block; Stone Stair Tread; Dressed Ashlar; Relieved Stone Lintel; Stacked Column Shaft; Keyed Stone Arch; Stepped Foundation; Stone Stair Flight; Jointed Ashlar Course; Trabeated Stone Portal; Fluted Column Shaft; Barrel Vault; Stone Retaining Wall; Spiral Stone Staircase; Rusticated Stone Facade; Monumental Stone Portal; Stone Colonnade; Groin Vault; Buttressed Retaining Wall; Cantilevered Stone Stair. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_spiral_stone_staircase",
+      "text": "Spiral Stone Staircase"
+     },
+     {
+      "id": "exp26_dressed_building_stone",
+      "text": "Dressed Building Stone"
+     },
+     {
+      "id": "exp26_cantilevered_stone_stair",
+      "text": "Cantilevered Stone Stair"
+     },
+     {
+      "id": "exp26_stone_stair_flight",
+      "text": "Stone Stair Flight"
+     },
+     {
+      "id": "exp26_stone_stair_tread",
+      "text": "Stone Stair Tread"
+     }
+    ],
+    "correctOrder": [
+     "exp26_dressed_building_stone",
+     "exp26_stone_stair_tread",
+     "exp26_stone_stair_flight",
+     "exp26_spiral_stone_staircase",
+     "exp26_cantilevered_stone_stair"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_stone_column_drum",
+      "label": "Stone Column Drum"
+     },
+     {
+      "id": "exp26_dressed_building_stone",
+      "label": "Dressed Building Stone"
+     },
+     {
+      "id": "exp26_stone_voussoir",
+      "label": "Stone Voussoir"
+     },
+     {
+      "id": "exp26_rough_ashlar",
+      "label": "Rough Ashlar"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_dressed_building_stone",
+      "label": "Dressed Building Stone"
+     },
+     {
+      "id": "exp26_stone_column_drum",
+      "label": "Stone Column Drum"
+     },
+     {
+      "id": "chisel",
+      "label": "Chisel"
+     },
+     {
+      "id": "exp26_stone_lintel",
+      "label": "Stone Lintel"
+     }
+    ],
+    "correctMatch": {
+     "exp26_dressed_building_stone": "chisel",
+     "exp26_rough_ashlar": "exp26_dressed_building_stone",
+     "exp26_stone_column_drum": "exp26_stone_lintel",
+     "exp26_stone_voussoir": "exp26_stone_column_drum"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "SDSR"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-SDSR",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-timber_joinery",
+  "title": "The Timber Joinery Workshop",
+  "setting": "A sealed workshop wall chart of the timber joinery family of the Discovery Journal.",
+  "introText": "A workshop of timber joinery stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Seasoned Construction Timber; Timber Peg; Mortise Cut; Wooden Dowel; Lapped Beam; Shaped Rafter; Split Wooden Plank; Pegged Butt Joint; Mortise And Tenon Joint; Cross Dowel Joint; Half Lap Joint; Rafter Pair; Edge Joined Board; Pegged Frame Joint; Drawbored Tenon; Knockdown Dowel Assembly; Scarf Joined Beam; Collar Tie Roof; Planked Wall Panel; Pegged Timber Truss; Wedged Tenon Frame; Demountable Timber Frame; Long Span Scarf Beam; King Post Roof Truss; Weatherboard Cladding. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_planked_wall_panel",
+      "text": "Planked Wall Panel"
+     },
+     {
+      "id": "exp26_seasoned_construction_timber",
+      "text": "Seasoned Construction Timber"
+     },
+     {
+      "id": "exp26_weatherboard_cladding",
+      "text": "Weatherboard Cladding"
+     },
+     {
+      "id": "exp26_edge_joined_board",
+      "text": "Edge Joined Board"
+     },
+     {
+      "id": "exp26_split_wooden_plank",
+      "text": "Split Wooden Plank"
+     }
+    ],
+    "correctOrder": [
+     "exp26_seasoned_construction_timber",
+     "exp26_split_wooden_plank",
+     "exp26_edge_joined_board",
+     "exp26_planked_wall_panel",
+     "exp26_weatherboard_cladding"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_wooden_dowel",
+      "label": "Wooden Dowel"
+     },
+     {
+      "id": "exp26_seasoned_construction_timber",
+      "label": "Seasoned Construction Timber"
+     },
+     {
+      "id": "exp26_lapped_beam",
+      "label": "Lapped Beam"
+     },
+     {
+      "id": "exp26_timber_peg",
+      "label": "Timber Peg"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_seasoned_construction_timber",
+      "label": "Seasoned Construction Timber"
+     },
+     {
+      "id": "exp26_wooden_dowel",
+      "label": "Wooden Dowel"
+     },
+     {
+      "id": "cutting",
+      "label": "Cutting"
+     },
+     {
+      "id": "exp26_mortise_cut",
+      "label": "Mortise Cut"
+     }
+    ],
+    "correctMatch": {
+     "exp26_seasoned_construction_timber": "cutting",
+     "exp26_timber_peg": "exp26_seasoned_construction_timber",
+     "exp26_wooden_dowel": "exp26_mortise_cut",
+     "exp26_lapped_beam": "exp26_wooden_dowel"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "WSLT"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-WSLT",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-cordage_and_rope",
+  "title": "The Cordage And Rope Workshop",
+  "setting": "A sealed workshop wall chart of the cordage and rope family of the Discovery Journal.",
+  "introText": "A workshop of cordage and rope stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Prepared Plant Bast; Twisted Bast Strand; Braided Plant Cord; Fiber Fishing Line; Plant Binding Strip; Fiber Carry Loop; Cord Net Mesh; Two Ply Cord; Flat Plaited Cord; Twined Fishing Leader; Wrapped Lash; Simple Sling; Knotted Fishing Mesh; Three Ply Cord; Round Braided Cord; Knotted Net Cord; Cross Lash; Woven Carry Strap; Square Net Panel; Hawser Laid Rope; Eight Strand Braid; Net Repair Cord; Diagonal Lash; Adjustable Carry Strap; Large Seine Net. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_square_net_panel",
+      "text": "Square Net Panel"
+     },
+     {
+      "id": "exp26_prepared_plant_bast",
+      "text": "Prepared Plant Bast"
+     },
+     {
+      "id": "exp26_large_seine_net",
+      "text": "Large Seine Net"
+     },
+     {
+      "id": "exp26_knotted_fishing_mesh",
+      "text": "Knotted Fishing Mesh"
+     },
+     {
+      "id": "exp26_cord_net_mesh",
+      "text": "Cord Net Mesh"
+     }
+    ],
+    "correctOrder": [
+     "exp26_prepared_plant_bast",
+     "exp26_cord_net_mesh",
+     "exp26_knotted_fishing_mesh",
+     "exp26_square_net_panel",
+     "exp26_large_seine_net"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_fiber_fishing_line",
+      "label": "Fiber Fishing Line"
+     },
+     {
+      "id": "exp26_prepared_plant_bast",
+      "label": "Prepared Plant Bast"
+     },
+     {
+      "id": "exp26_plant_binding_strip",
+      "label": "Plant Binding Strip"
+     },
+     {
+      "id": "exp26_twisted_bast_strand",
+      "label": "Twisted Bast Strand"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_prepared_plant_bast",
+      "label": "Prepared Plant Bast"
+     },
+     {
+      "id": "exp26_fiber_fishing_line",
+      "label": "Fiber Fishing Line"
+     },
+     {
+      "id": "fiber",
+      "label": "Fibre"
+     },
+     {
+      "id": "exp26_braided_plant_cord",
+      "label": "Braided Plant Cord"
+     }
+    ],
+    "correctMatch": {
+     "exp26_prepared_plant_bast": "fiber",
+     "exp26_twisted_bast_strand": "exp26_prepared_plant_bast",
+     "exp26_fiber_fishing_line": "exp26_braided_plant_cord",
+     "exp26_plant_binding_strip": "exp26_fiber_fishing_line"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "FPPT"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-FPPT",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-linen_textile",
+  "title": "The Linen Textile Workshop",
+  "setting": "A sealed workshop wall chart of the linen textile family of the Discovery Journal.",
+  "introText": "A workshop of linen textile stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Prepared Flax Tow; Flax Sliver; Plain Linen Cloth; Linen Thread; Warped Linen Frame; Linen Bandage; Linen Sailcloth; Hand Spun Linen Yarn; Fine Plain Linen; Running Stitch Seam; Plain Weave Linen; Folded Linen Dressing; Reinforced Sailcloth; Two Ply Linen Yarn; Bleached Linen Cloth; Flat Felled Linen Seam; Basket Weave Linen; Sewn Linen Dressing; Paneled Linen Sail; Mercerized Linen Yarn; Damask Linen Cloth; Tailored Linen Garment; Herringbone Linen; Reusable Linen Dressing; Reefable Linen Sail. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_paneled_linen_sail",
+      "text": "Paneled Linen Sail"
+     },
+     {
+      "id": "exp26_prepared_flax_tow",
+      "text": "Prepared Flax Tow"
+     },
+     {
+      "id": "exp26_reefable_linen_sail",
+      "text": "Reefable Linen Sail"
+     },
+     {
+      "id": "exp26_reinforced_sailcloth",
+      "text": "Reinforced Sailcloth"
+     },
+     {
+      "id": "exp26_linen_sailcloth",
+      "text": "Linen Sailcloth"
+     }
+    ],
+    "correctOrder": [
+     "exp26_prepared_flax_tow",
+     "exp26_linen_sailcloth",
+     "exp26_reinforced_sailcloth",
+     "exp26_paneled_linen_sail",
+     "exp26_reefable_linen_sail"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_linen_thread",
+      "label": "Linen Thread"
+     },
+     {
+      "id": "exp26_prepared_flax_tow",
+      "label": "Prepared Flax Tow"
+     },
+     {
+      "id": "exp26_warped_linen_frame",
+      "label": "Warped Linen Frame"
+     },
+     {
+      "id": "exp26_flax_sliver",
+      "label": "Flax Sliver"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_prepared_flax_tow",
+      "label": "Prepared Flax Tow"
+     },
+     {
+      "id": "exp26_linen_thread",
+      "label": "Linen Thread"
+     },
+     {
+      "id": "flax_fiber",
+      "label": "Flax Fiber"
+     },
+     {
+      "id": "exp26_plain_linen_cloth",
+      "label": "Plain Linen Cloth"
+     }
+    ],
+    "correctMatch": {
+     "exp26_prepared_flax_tow": "flax_fiber",
+     "exp26_flax_sliver": "exp26_prepared_flax_tow",
+     "exp26_linen_thread": "exp26_plain_linen_cloth",
+     "exp26_warped_linen_frame": "exp26_linen_thread"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "LPWF"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-LPWF",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-wool_manufacture",
+  "title": "The Wool Manufacture Workshop",
+  "setting": "A sealed workshop wall chart of the wool manufacture family of the Discovery Journal.",
+  "introText": "A workshop of wool manufacture stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Carded Animal Wool; Wool Roving; Felt Sheet; Wool Cloth; Wool Rib Knit; Woven Wool Blanket; Wool Twill; Woolen Yarn; Thick Felt Mat; Fulled Wool Cloth; Knitted Wool Tube; Bound Edge Blanket; Herringbone Twill; Worsted Yarn; Layered Felt Panel; Raised Wool Nap; Knitted Wool Sock; Patterned Wool Blanket; Checked Wool Twill; Twist Balanced Wool Yarn; Stiffened Felt Hat; Sheared Broadcloth; Ribbed Wool Cuff; Double Weave Blanket; Tailored Wool Coat. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_checked_wool_twill",
+      "text": "Checked Wool Twill"
+     },
+     {
+      "id": "exp26_carded_animal_wool",
+      "text": "Carded Animal Wool"
+     },
+     {
+      "id": "exp26_tailored_wool_coat",
+      "text": "Tailored Wool Coat"
+     },
+     {
+      "id": "exp26_herringbone_twill",
+      "text": "Herringbone Twill"
+     },
+     {
+      "id": "exp26_wool_twill",
+      "text": "Wool Twill"
+     }
+    ],
+    "correctOrder": [
+     "exp26_carded_animal_wool",
+     "exp26_wool_twill",
+     "exp26_herringbone_twill",
+     "exp26_checked_wool_twill",
+     "exp26_tailored_wool_coat"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_wool_cloth",
+      "label": "Wool Cloth"
+     },
+     {
+      "id": "exp26_carded_animal_wool",
+      "label": "Carded Animal Wool"
+     },
+     {
+      "id": "exp26_wool_rib_knit",
+      "label": "Wool Rib Knit"
+     },
+     {
+      "id": "exp26_wool_roving",
+      "label": "Wool Roving"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_carded_animal_wool",
+      "label": "Carded Animal Wool"
+     },
+     {
+      "id": "exp26_wool_cloth",
+      "label": "Wool Cloth"
+     },
+     {
+      "id": "fiber",
+      "label": "Fibre"
+     },
+     {
+      "id": "exp26_felt_sheet",
+      "label": "Felt Sheet"
+     }
+    ],
+    "correctMatch": {
+     "exp26_carded_animal_wool": "fiber",
+     "exp26_wool_roving": "exp26_carded_animal_wool",
+     "exp26_wool_cloth": "exp26_felt_sheet",
+     "exp26_wool_rib_knit": "exp26_wool_cloth"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "WCWW"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-WCWW",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-natural_colorants",
+  "title": "The Natural Colorants Workshop",
+  "setting": "A sealed workshop wall chart of the natural colorants family of the Discovery Journal.",
+  "introText": "A workshop of natural colorants stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Prepared Natural Pigment; Ground Red Ochre; Charcoal Black Pigment; Plant Yellow Dye; Indigo Leaf Paste; Iron Tannin Ink; Egg Tempera Medium; Ochre Paint Paste; Carbon Ink Paste; Concentrated Yellow Bath; Reduced Indigo Vat; Filtered Iron Gall Ink; Tempera Paint; Ochre Wash; Carbon Drawing Ink; Yellow Dyed Thread; Indigo Dyed Yarn; Thickened Writing Ink; Layered Tempera Panel; Ochre Wall Painting; Water Resistant Carbon Ink; Pattern Dyed Textile; Indigo Resist Cloth; Bound Ink Recipe; Gilded Tempera Panel. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_layered_tempera_panel",
+      "text": "Layered Tempera Panel"
+     },
+     {
+      "id": "exp26_prepared_natural_pigment",
+      "text": "Prepared Natural Pigment"
+     },
+     {
+      "id": "exp26_gilded_tempera_panel",
+      "text": "Gilded Tempera Panel"
+     },
+     {
+      "id": "exp26_tempera_paint",
+      "text": "Tempera Paint"
+     },
+     {
+      "id": "exp26_egg_tempera_medium",
+      "text": "Egg Tempera Medium"
+     }
+    ],
+    "correctOrder": [
+     "exp26_prepared_natural_pigment",
+     "exp26_egg_tempera_medium",
+     "exp26_tempera_paint",
+     "exp26_layered_tempera_panel",
+     "exp26_gilded_tempera_panel"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_plant_yellow_dye",
+      "label": "Plant Yellow Dye"
+     },
+     {
+      "id": "exp26_prepared_natural_pigment",
+      "label": "Prepared Natural Pigment"
+     },
+     {
+      "id": "exp26_indigo_leaf_paste",
+      "label": "Indigo Leaf Paste"
+     },
+     {
+      "id": "exp26_ground_red_ochre",
+      "label": "Ground Red Ochre"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_prepared_natural_pigment",
+      "label": "Prepared Natural Pigment"
+     },
+     {
+      "id": "exp26_plant_yellow_dye",
+      "label": "Plant Yellow Dye"
+     },
+     {
+      "id": "art",
+      "label": "Art"
+     },
+     {
+      "id": "exp26_charcoal_black_pigment",
+      "label": "Charcoal Black Pigment"
+     }
+    ],
+    "correctMatch": {
+     "exp26_prepared_natural_pigment": "art",
+     "exp26_ground_red_ochre": "exp26_prepared_natural_pigment",
+     "exp26_plant_yellow_dye": "exp26_charcoal_black_pigment",
+     "exp26_indigo_leaf_paste": "exp26_plant_yellow_dye"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "PPIG"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-PPIG",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-leather_crafting",
+  "title": "The Leather Crafting Workshop",
+  "setting": "A sealed workshop wall chart of the leather crafting family of the Discovery Journal.",
+  "introText": "A workshop of leather crafting stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Prepared Animal Hide; Scraped Hide; Cut Leather Strip; Leather Pouch; Rawhide Sheet; Leather Sole Blank; Leather Water Bag; Softened Hide; Leather Lace; Drawstring Pouch; Rawhide Binding; Stitched Sandal Sole; Pitch Sealed Water Bag; Oiled Hide; Stitched Leather Seam; Flap Closure Pouch; Rawhide Shield Cover; Multi Layer Sandal; Stitched Water Skin; Supple Garment Leather; Reinforced Leather Seam; Belt Mounted Pouch; Layered Rawhide Shield; Sewn Leather Shoe; Carried Water Skin. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_stitched_water_skin",
+      "text": "Stitched Water Skin"
+     },
+     {
+      "id": "exp26_prepared_animal_hide",
+      "text": "Prepared Animal Hide"
+     },
+     {
+      "id": "exp26_carried_water_skin",
+      "text": "Carried Water Skin"
+     },
+     {
+      "id": "exp26_pitch_sealed_water_bag",
+      "text": "Pitch Sealed Water Bag"
+     },
+     {
+      "id": "exp26_leather_water_bag",
+      "text": "Leather Water Bag"
+     }
+    ],
+    "correctOrder": [
+     "exp26_prepared_animal_hide",
+     "exp26_leather_water_bag",
+     "exp26_pitch_sealed_water_bag",
+     "exp26_stitched_water_skin",
+     "exp26_carried_water_skin"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_leather_pouch",
+      "label": "Leather Pouch"
+     },
+     {
+      "id": "exp26_prepared_animal_hide",
+      "label": "Prepared Animal Hide"
+     },
+     {
+      "id": "exp26_rawhide_sheet",
+      "label": "Rawhide Sheet"
+     },
+     {
+      "id": "exp26_scraped_hide",
+      "label": "Scraped Hide"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_prepared_animal_hide",
+      "label": "Prepared Animal Hide"
+     },
+     {
+      "id": "exp26_leather_pouch",
+      "label": "Leather Pouch"
+     },
+     {
+      "id": "clothing",
+      "label": "Clothing"
+     },
+     {
+      "id": "exp26_cut_leather_strip",
+      "label": "Cut Leather Strip"
+     }
+    ],
+    "correctMatch": {
+     "exp26_prepared_animal_hide": "clothing",
+     "exp26_scraped_hide": "exp26_prepared_animal_hide",
+     "exp26_leather_pouch": "exp26_cut_leather_strip",
+     "exp26_rawhide_sheet": "exp26_leather_pouch"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "LPRS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-LPRS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-basket_and_reedwork",
+  "title": "The Basket And Reedwork Workshop",
+  "setting": "A sealed workshop wall chart of the basket and reedwork family of the Discovery Journal.",
+  "introText": "A workshop of basket and reedwork stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Sorted Weaving Reeds; Reed Bundle; Splint Basket Base; Reed Floor Mat; Fish Basket Frame; Reed Floating Bundle; Woven Storage Tray; Twined Reed Panel; Over Under Basket; Joined Reed Mat; Open Fish Trap Basket; Bound Reed Float; Shallow Harvest Basket; Coiled Reed Basket; Wicker Carry Basket; Rolled Reed Screen; Conical Fish Trap; Reed Raft Mat; Deep Harvest Basket; Lidded Reed Basket; Reinforced Wicker Hamper; Freestanding Reed Partition; Double Funnel Fish Trap; Reed Pontoon Float; Handled Harvest Basket. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_deep_harvest_basket",
+      "text": "Deep Harvest Basket"
+     },
+     {
+      "id": "exp26_sorted_weaving_reeds",
+      "text": "Sorted Weaving Reeds"
+     },
+     {
+      "id": "exp26_handled_harvest_basket",
+      "text": "Handled Harvest Basket"
+     },
+     {
+      "id": "exp26_shallow_harvest_basket",
+      "text": "Shallow Harvest Basket"
+     },
+     {
+      "id": "exp26_woven_storage_tray",
+      "text": "Woven Storage Tray"
+     }
+    ],
+    "correctOrder": [
+     "exp26_sorted_weaving_reeds",
+     "exp26_woven_storage_tray",
+     "exp26_shallow_harvest_basket",
+     "exp26_deep_harvest_basket",
+     "exp26_handled_harvest_basket"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_reed_floor_mat",
+      "label": "Reed Floor Mat"
+     },
+     {
+      "id": "exp26_sorted_weaving_reeds",
+      "label": "Sorted Weaving Reeds"
+     },
+     {
+      "id": "exp26_fish_basket_frame",
+      "label": "Fish Basket Frame"
+     },
+     {
+      "id": "exp26_reed_bundle",
+      "label": "Reed Bundle"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_sorted_weaving_reeds",
+      "label": "Sorted Weaving Reeds"
+     },
+     {
+      "id": "exp26_reed_floor_mat",
+      "label": "Reed Floor Mat"
+     },
+     {
+      "id": "fiber",
+      "label": "Fibre"
+     },
+     {
+      "id": "exp26_splint_basket_base",
+      "label": "Splint Basket Base"
+     }
+    ],
+    "correctMatch": {
+     "exp26_sorted_weaving_reeds": "fiber",
+     "exp26_reed_bundle": "exp26_sorted_weaving_reeds",
+     "exp26_reed_floor_mat": "exp26_splint_basket_base",
+     "exp26_fish_basket_frame": "exp26_reed_floor_mat"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "RSFR"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-RSFR",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-cereal_cultivation",
+  "title": "The Cereal Cultivation Workshop",
+  "setting": "A sealed workshop wall chart of the cereal cultivation family of the Discovery Journal.",
+  "introText": "A workshop of cereal cultivation stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Selected Cereal Seed; Seed Bed Furrow; Threshing Floor; Grain Winnowing Fan; Straw Stack; Grain Drying Tray; Harvest Sickle Blade; Hand Sown Cereal Row; Hand Flail Threshing; Screened Grain; Thatched Straw Bundle; Raised Grain Dryer; Composite Harvest Sickle; Seed Drill Row; Winnowing Basket; Graded Seed Grain; Compressed Straw Bale; Ventilated Grain Bin; Cradle Scythe; Mechanical Grain Thresher; Certified Seed Lot; Bound Straw Bale; Reaper Cutter Bar; Mechanized Row Seeding; Temperature Managed Grain Bin. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_cradle_scythe",
+      "text": "Cradle Scythe"
+     },
+     {
+      "id": "exp26_selected_cereal_seed",
+      "text": "Selected Cereal Seed"
+     },
+     {
+      "id": "exp26_temperature_managed_grain_bin",
+      "text": "Temperature Managed Grain Bin"
+     },
+     {
+      "id": "exp26_composite_harvest_sickle",
+      "text": "Composite Harvest Sickle"
+     },
+     {
+      "id": "exp26_harvest_sickle_blade",
+      "text": "Harvest Sickle Blade"
+     }
+    ],
+    "correctOrder": [
+     "exp26_selected_cereal_seed",
+     "exp26_harvest_sickle_blade",
+     "exp26_composite_harvest_sickle",
+     "exp26_cradle_scythe",
+     "exp26_temperature_managed_grain_bin"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_grain_winnowing_fan",
+      "label": "Grain Winnowing Fan"
+     },
+     {
+      "id": "exp26_selected_cereal_seed",
+      "label": "Selected Cereal Seed"
+     },
+     {
+      "id": "exp26_straw_stack",
+      "label": "Straw Stack"
+     },
+     {
+      "id": "exp26_seed_bed_furrow",
+      "label": "Seed Bed Furrow"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_selected_cereal_seed",
+      "label": "Selected Cereal Seed"
+     },
+     {
+      "id": "exp26_grain_winnowing_fan",
+      "label": "Grain Winnowing Fan"
+     },
+     {
+      "id": "agriculture",
+      "label": "Agriculture"
+     },
+     {
+      "id": "exp26_threshing_floor",
+      "label": "Threshing Floor"
+     }
+    ],
+    "correctMatch": {
+     "exp26_selected_cereal_seed": "agriculture",
+     "exp26_seed_bed_furrow": "exp26_selected_cereal_seed",
+     "exp26_grain_winnowing_fan": "exp26_threshing_floor",
+     "exp26_straw_stack": "exp26_grain_winnowing_fan"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "GSSS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-GSSS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-irrigation_works",
+  "title": "The Irrigation Works Workshop",
+  "setting": "A sealed workshop wall chart of the irrigation works family of the Discovery Journal.",
+  "introText": "A workshop of irrigation works stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Lined Irrigation Channel; Field Water Furrow; Earthen Check Dam; Water Lift Bucket; Channel Gate Board; Settling Pond; Clay Drainage Tile; Branching Field Furrow; Stone Check Weir; Counterpoise Water Lift; Sliding Sluice Board; Desilting Basin; Field Tile Drain; Contour Furrow Grid; Adjustable Diversion Weir; Chain Water Lift; Screw Operated Sluice; Graded Sediment Trap; Collector Drain; Level Basin Irrigation; Gated Diversion Weir; Automated Sluice Gate; Multi Chamber Sediment Trap; Controlled Drainage Outlet; Animal Powered Water Lift. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_collector_drain",
+      "text": "Collector Drain"
+     },
+     {
+      "id": "exp26_lined_irrigation_channel",
+      "text": "Lined Irrigation Channel"
+     },
+     {
+      "id": "exp26_animal_powered_water_lift",
+      "text": "Animal Powered Water Lift"
+     },
+     {
+      "id": "exp26_field_tile_drain",
+      "text": "Field Tile Drain"
+     },
+     {
+      "id": "exp26_clay_drainage_tile",
+      "text": "Clay Drainage Tile"
+     }
+    ],
+    "correctOrder": [
+     "exp26_lined_irrigation_channel",
+     "exp26_clay_drainage_tile",
+     "exp26_field_tile_drain",
+     "exp26_collector_drain",
+     "exp26_animal_powered_water_lift"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_water_lift_bucket",
+      "label": "Water Lift Bucket"
+     },
+     {
+      "id": "exp26_lined_irrigation_channel",
+      "label": "Lined Irrigation Channel"
+     },
+     {
+      "id": "exp26_channel_gate_board",
+      "label": "Channel Gate Board"
+     },
+     {
+      "id": "exp26_field_water_furrow",
+      "label": "Field Water Furrow"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_lined_irrigation_channel",
+      "label": "Lined Irrigation Channel"
+     },
+     {
+      "id": "exp26_water_lift_bucket",
+      "label": "Water Lift Bucket"
+     },
+     {
+      "id": "irrigation",
+      "label": "Irrigation"
+     },
+     {
+      "id": "exp26_earthen_check_dam",
+      "label": "Earthen Check Dam"
+     }
+    ],
+    "correctMatch": {
+     "exp26_lined_irrigation_channel": "irrigation",
+     "exp26_field_water_furrow": "exp26_lined_irrigation_channel",
+     "exp26_water_lift_bucket": "exp26_earthen_check_dam",
+     "exp26_channel_gate_board": "exp26_water_lift_bucket"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "WLCF"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-WLCF",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-food_drying",
+  "title": "The Food Drying Workshop",
+  "setting": "A sealed workshop wall chart of the food drying family of the Discovery Journal.",
+  "introText": "A workshop of food drying stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Food Drying Rack; Sun Dried Fruit; Air Dried Herbs; Dried Fish Fillet; Dried Meat Strips; Toasted Grain; Sun Dried Vegetables; Layered Fruit Leather; Bundled Dry Herbs; Salt Cured Fish; Smoke Dried Meat; Parched Grain Meal; Blanched Dried Vegetables; Rolled Fruit Leather; Powdered Dried Herbs; Smoked Salt Fish; Pressed Dried Meat; Ground Parched Meal; Dehydrated Vegetable Flakes; Sealed Fruit Leather; Stored Herb Sachet; Sealed Dried Fish Pack; Instant Grain Mix; Vacuum Packed Dried Meat; Freeze Dried Vegetable Pieces. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_dehydrated_vegetable_flakes",
+      "text": "Dehydrated Vegetable Flakes"
+     },
+     {
+      "id": "exp26_food_drying_rack",
+      "text": "Food Drying Rack"
+     },
+     {
+      "id": "exp26_freeze_dried_vegetable_pieces",
+      "text": "Freeze Dried Vegetable Pieces"
+     },
+     {
+      "id": "exp26_blanched_dried_vegetables",
+      "text": "Blanched Dried Vegetables"
+     },
+     {
+      "id": "exp26_sun_dried_vegetables",
+      "text": "Sun Dried Vegetables"
+     }
+    ],
+    "correctOrder": [
+     "exp26_food_drying_rack",
+     "exp26_sun_dried_vegetables",
+     "exp26_blanched_dried_vegetables",
+     "exp26_dehydrated_vegetable_flakes",
+     "exp26_freeze_dried_vegetable_pieces"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_dried_fish_fillet",
+      "label": "Dried Fish Fillet"
+     },
+     {
+      "id": "exp26_food_drying_rack",
+      "label": "Food Drying Rack"
+     },
+     {
+      "id": "exp26_dried_meat_strips",
+      "label": "Dried Meat Strips"
+     },
+     {
+      "id": "exp26_sun_dried_fruit",
+      "label": "Sun Dried Fruit"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_food_drying_rack",
+      "label": "Food Drying Rack"
+     },
+     {
+      "id": "exp26_dried_fish_fillet",
+      "label": "Dried Fish Fillet"
+     },
+     {
+      "id": "cooking",
+      "label": "Cooking"
+     },
+     {
+      "id": "exp26_air_dried_herbs",
+      "label": "Air Dried Herbs"
+     }
+    ],
+    "correctMatch": {
+     "exp26_food_drying_rack": "cooking",
+     "exp26_sun_dried_fruit": "exp26_food_drying_rack",
+     "exp26_dried_fish_fillet": "exp26_air_dried_herbs",
+     "exp26_dried_meat_strips": "exp26_dried_fish_fillet"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "DFDS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-DFDS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-fermented_foods",
+  "title": "The Fermented Foods Workshop",
+  "setting": "A sealed workshop wall chart of the fermented foods family of the Discovery Journal.",
+  "introText": "A workshop of fermented foods stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Food Fermentation Vessel; Soured Grain Mash; Fermented Milk Curds; Fermented Cabbage; Fruit Must; Malted Grain Mash; Vinegar Mother; Natural Sourdough Starter; Drained Soft Cheese; Salted Vegetable Ferment; Primary Fruit Ferment; Fermenting Grain Wort; Acetic Fermentation Jar; Refreshed Sourdough Starter; Pressed Cheese Wheel; Weighted Fermentation Crock; Clarified Fruit Ferment; Conditioned Grain Beverage; Filtered Vinegar; Stable Bread Starter; Aged Hard Cheese; Sealed Vegetable Ferment; Bottled Fruit Ferment; Filtered Malt Beverage; Stored Vinegar Bottle. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_filtered_vinegar",
+      "text": "Filtered Vinegar"
+     },
+     {
+      "id": "exp26_food_fermentation_vessel",
+      "text": "Food Fermentation Vessel"
+     },
+     {
+      "id": "exp26_stored_vinegar_bottle",
+      "text": "Stored Vinegar Bottle"
+     },
+     {
+      "id": "exp26_acetic_fermentation_jar",
+      "text": "Acetic Fermentation Jar"
+     },
+     {
+      "id": "exp26_vinegar_mother",
+      "text": "Vinegar Mother"
+     }
+    ],
+    "correctOrder": [
+     "exp26_food_fermentation_vessel",
+     "exp26_vinegar_mother",
+     "exp26_acetic_fermentation_jar",
+     "exp26_filtered_vinegar",
+     "exp26_stored_vinegar_bottle"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_fermented_cabbage",
+      "label": "Fermented Cabbage"
+     },
+     {
+      "id": "exp26_food_fermentation_vessel",
+      "label": "Food Fermentation Vessel"
+     },
+     {
+      "id": "exp26_fruit_must",
+      "label": "Fruit Must"
+     },
+     {
+      "id": "exp26_soured_grain_mash",
+      "label": "Soured Grain Mash"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_food_fermentation_vessel",
+      "label": "Food Fermentation Vessel"
+     },
+     {
+      "id": "exp26_fermented_cabbage",
+      "label": "Fermented Cabbage"
+     },
+     {
+      "id": "cooking",
+      "label": "Cooking"
+     },
+     {
+      "id": "exp26_fermented_milk_curds",
+      "label": "Fermented Milk Curds"
+     }
+    ],
+    "correctMatch": {
+     "exp26_food_fermentation_vessel": "cooking",
+     "exp26_soured_grain_mash": "exp26_food_fermentation_vessel",
+     "exp26_fermented_cabbage": "exp26_fermented_milk_curds",
+     "exp26_fruit_must": "exp26_fermented_cabbage"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "FFFS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-FFFS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-cooking_equipment",
+  "title": "The Cooking Equipment Workshop",
+  "setting": "A sealed workshop wall chart of the cooking equipment family of the Discovery Journal.",
+  "introText": "A workshop of cooking equipment stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 24,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Portable Cooking Hearth; Clay Griddle; Cooking Spit; Cooking Pot Stand; Lidded Stew Pot; Fireplace Hood; Flat Baking Griddle; Rotating Cooking Spit; Three Leg Pot Stand; Sealed Slow Cooker Pot; Grain Grinding Set; Smoke Flue Hood; Handled Baking Griddle; Geared Roasting Spit; Adjustable Pot Trivet; Insulated Cooking Pot; Rotary Hand Mill; Ventilated Chimney Hood; Multi Zone Cooktop; Folding Pot Stand; Thermal Retention Cooker; Geared Grain Mill; Forced Draft Kitchen Hood; Motor Driven Rotisserie. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "24"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_ventilated_chimney_hood",
+      "text": "Ventilated Chimney Hood"
+     },
+     {
+      "id": "exp26_portable_cooking_hearth",
+      "text": "Portable Cooking Hearth"
+     },
+     {
+      "id": "exp26_motor_driven_rotisserie",
+      "text": "Motor Driven Rotisserie"
+     },
+     {
+      "id": "exp26_handled_baking_griddle",
+      "text": "Handled Baking Griddle"
+     },
+     {
+      "id": "exp26_flat_baking_griddle",
+      "text": "Flat Baking Griddle"
+     }
+    ],
+    "correctOrder": [
+     "exp26_portable_cooking_hearth",
+     "exp26_flat_baking_griddle",
+     "exp26_handled_baking_griddle",
+     "exp26_ventilated_chimney_hood",
+     "exp26_motor_driven_rotisserie"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_cooking_pot_stand",
+      "label": "Cooking Pot Stand"
+     },
+     {
+      "id": "exp26_portable_cooking_hearth",
+      "label": "Portable Cooking Hearth"
+     },
+     {
+      "id": "exp26_lidded_stew_pot",
+      "label": "Lidded Stew Pot"
+     },
+     {
+      "id": "exp26_clay_griddle",
+      "label": "Clay Griddle"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_portable_cooking_hearth",
+      "label": "Portable Cooking Hearth"
+     },
+     {
+      "id": "exp26_cooking_pot_stand",
+      "label": "Cooking Pot Stand"
+     },
+     {
+      "id": "hearth",
+      "label": "Hearth"
+     },
+     {
+      "id": "exp26_cooking_spit",
+      "label": "Cooking Spit"
+     }
+    ],
+    "correctMatch": {
+     "exp26_portable_cooking_hearth": "hearth",
+     "exp26_clay_griddle": "exp26_portable_cooking_hearth",
+     "exp26_cooking_pot_stand": "exp26_cooking_spit",
+     "exp26_lidded_stew_pot": "exp26_cooking_pot_stand"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CPLC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "24-5-CPLC",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-sail_technology",
+  "title": "The Sail Technology Workshop",
+  "setting": "A sealed workshop wall chart of the sail technology family of the Discovery Journal.",
+  "introText": "A workshop of sail technology stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Sailing Rig Components; Square Sail Panel; Lateen Sail Panel; Sail Cleat; Wooden Mast Section; Standing Rigging Rope; Sail Steering Oar; Square Rig Sail; Lateen Yard Rig; Rigging Cleat; Stayed Mast; Shrouded Mast Rig; Sternpost Rudder; Reefed Square Sail; Adjustable Lateen Rig; Deck Mounted Cleat; Multi Spreader Mast; Turnbuckle Rigging; Wheel Driven Rudder; Multi Mast Square Rig; Balanced Lateen Rig; Self Tailing Sail Winch; Rod Rigging Assembly; Hydraulic Steering Gear; Carbon Composite Mast. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_wheel_driven_rudder",
+      "text": "Wheel Driven Rudder"
+     },
+     {
+      "id": "exp26_sailing_rig_components",
+      "text": "Sailing Rig Components"
+     },
+     {
+      "id": "exp26_carbon_composite_mast",
+      "text": "Carbon Composite Mast"
+     },
+     {
+      "id": "exp26_sternpost_rudder",
+      "text": "Sternpost Rudder"
+     },
+     {
+      "id": "exp26_sail_steering_oar",
+      "text": "Sail Steering Oar"
+     }
+    ],
+    "correctOrder": [
+     "exp26_sailing_rig_components",
+     "exp26_sail_steering_oar",
+     "exp26_sternpost_rudder",
+     "exp26_wheel_driven_rudder",
+     "exp26_carbon_composite_mast"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_sail_cleat",
+      "label": "Sail Cleat"
+     },
+     {
+      "id": "exp26_sailing_rig_components",
+      "label": "Sailing Rig Components"
+     },
+     {
+      "id": "exp26_wooden_mast_section",
+      "label": "Wooden Mast Section"
+     },
+     {
+      "id": "exp26_square_sail_panel",
+      "label": "Square Sail Panel"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_sailing_rig_components",
+      "label": "Sailing Rig Components"
+     },
+     {
+      "id": "exp26_sail_cleat",
+      "label": "Sail Cleat"
+     },
+     {
+      "id": "boat",
+      "label": "Boat"
+     },
+     {
+      "id": "exp26_lateen_sail_panel",
+      "label": "Lateen Sail Panel"
+     }
+    ],
+    "correctMatch": {
+     "exp26_sailing_rig_components": "boat",
+     "exp26_square_sail_panel": "exp26_sailing_rig_components",
+     "exp26_sail_cleat": "exp26_lateen_sail_panel",
+     "exp26_wooden_mast_section": "exp26_sail_cleat"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "SSWS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-SSWS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-watercraft_hulls",
+  "title": "The Watercraft Hulls Workshop",
+  "setting": "A sealed workshop wall chart of the watercraft hulls family of the Discovery Journal.",
+  "introText": "A workshop of watercraft hulls stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Carved Watercraft Hull; Dugout Canoe Hull; Planked Boat Hull; Flat Bottom Skiff; Skin Covered Frame; Reed Bundle Hull; Wooden Keel Timber; Outrigger Canoe Hull; Clinker Built Hull; Punt Boat; Skin Boat; Reed Bundle Canoe; Keel And Stem Assembly; Double Outrigger Canoe; Carvel Built Hull; Canal Barge; Decked Skin Boat; Large Reed Boat; Keelson Reinforced Hull; Decked Outrigger Canoe; Frame First Ship Hull; Motorized Canal Barge; Sealed Kayak Hull; Rigged Reed Watercraft; Ballasted Keel Hull. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_keelson_reinforced_hull",
+      "text": "Keelson Reinforced Hull"
+     },
+     {
+      "id": "exp26_carved_watercraft_hull",
+      "text": "Carved Watercraft Hull"
+     },
+     {
+      "id": "exp26_ballasted_keel_hull",
+      "text": "Ballasted Keel Hull"
+     },
+     {
+      "id": "exp26_keel_and_stem_assembly",
+      "text": "Keel And Stem Assembly"
+     },
+     {
+      "id": "exp26_wooden_keel_timber",
+      "text": "Wooden Keel Timber"
+     }
+    ],
+    "correctOrder": [
+     "exp26_carved_watercraft_hull",
+     "exp26_wooden_keel_timber",
+     "exp26_keel_and_stem_assembly",
+     "exp26_keelson_reinforced_hull",
+     "exp26_ballasted_keel_hull"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_flat_bottom_skiff",
+      "label": "Flat Bottom Skiff"
+     },
+     {
+      "id": "exp26_carved_watercraft_hull",
+      "label": "Carved Watercraft Hull"
+     },
+     {
+      "id": "exp26_skin_covered_frame",
+      "label": "Skin Covered Frame"
+     },
+     {
+      "id": "exp26_dugout_canoe_hull",
+      "label": "Dugout Canoe Hull"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_carved_watercraft_hull",
+      "label": "Carved Watercraft Hull"
+     },
+     {
+      "id": "exp26_flat_bottom_skiff",
+      "label": "Flat Bottom Skiff"
+     },
+     {
+      "id": "raft",
+      "label": "Raft"
+     },
+     {
+      "id": "exp26_planked_boat_hull",
+      "label": "Planked Boat Hull"
+     }
+    ],
+    "correctMatch": {
+     "exp26_carved_watercraft_hull": "raft",
+     "exp26_dugout_canoe_hull": "exp26_carved_watercraft_hull",
+     "exp26_flat_bottom_skiff": "exp26_planked_boat_hull",
+     "exp26_skin_covered_frame": "exp26_flat_bottom_skiff"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "FCSD"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-FCSD",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-navigation_instruments",
+  "title": "The Navigation Instruments Workshop",
+  "setting": "A sealed workshop wall chart of the navigation instruments family of the Discovery Journal.",
+  "introText": "A workshop of navigation instruments stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Navigation Observation Kit; Shadow Measuring Rod; Magnetized Compass Needle; Sighted Measuring Staff; Star Position Table; Depth Sounding Line; Course Plotting Board; Portable Gnomon; Floating Compass; Cross Staff; Hand Drawn Star Chart; Marked Lead Line; Parallel Ruler Set; Latitude Gnomon Board; Gimballed Compass Bowl; Backstaff; Navigation Almanac; Mechanical Depth Sounder; Chart Plotter Table; Calibrated Sundial; Liquid Damped Compass; Vernier Sextant; Electronic Depth Sounder; Electronic Chart Display; Digital Nautical Almanac. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_chart_plotter_table",
+      "text": "Chart Plotter Table"
+     },
+     {
+      "id": "exp26_navigation_observation_kit",
+      "text": "Navigation Observation Kit"
+     },
+     {
+      "id": "exp26_digital_nautical_almanac",
+      "text": "Digital Nautical Almanac"
+     },
+     {
+      "id": "exp26_parallel_ruler_set",
+      "text": "Parallel Ruler Set"
+     },
+     {
+      "id": "exp26_course_plotting_board",
+      "text": "Course Plotting Board"
+     }
+    ],
+    "correctOrder": [
+     "exp26_navigation_observation_kit",
+     "exp26_course_plotting_board",
+     "exp26_parallel_ruler_set",
+     "exp26_chart_plotter_table",
+     "exp26_digital_nautical_almanac"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_sighted_measuring_staff",
+      "label": "Sighted Measuring Staff"
+     },
+     {
+      "id": "exp26_navigation_observation_kit",
+      "label": "Navigation Observation Kit"
+     },
+     {
+      "id": "exp26_star_position_table",
+      "label": "Star Position Table"
+     },
+     {
+      "id": "exp26_shadow_measuring_rod",
+      "label": "Shadow Measuring Rod"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_navigation_observation_kit",
+      "label": "Navigation Observation Kit"
+     },
+     {
+      "id": "exp26_sighted_measuring_staff",
+      "label": "Sighted Measuring Staff"
+     },
+     {
+      "id": "navigation",
+      "label": "Navigation"
+     },
+     {
+      "id": "exp26_magnetized_compass_needle",
+      "label": "Magnetized Compass Needle"
+     }
+    ],
+    "correctMatch": {
+     "exp26_navigation_observation_kit": "navigation",
+     "exp26_shadow_measuring_rod": "exp26_navigation_observation_kit",
+     "exp26_sighted_measuring_staff": "exp26_magnetized_compass_needle",
+     "exp26_star_position_table": "exp26_sighted_measuring_staff"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "SNSS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-SNSS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-bridges_and_spans",
+  "title": "The Bridges And Spans Workshop",
+  "setting": "A sealed workshop wall chart of the bridges and spans family of the Discovery Journal.",
+  "introText": "A workshop of bridges and spans stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Bridge Construction Kit; Log Footbridge; Stone Stepping Crossing; Rope Suspension Crossing; Timber Pile Support; Cantilever Timber Beam; Pontoon Float; Timber Beam Footbridge; Stone Slab Bridge; Simple Rope Bridge; Bridge Trestle Pier; Cantilever Bridge Arm; Linked Pontoon Bridge; Timber Truss Footbridge; Stone Arch Span; Suspension Footbridge; Braced Bridge Pier; Balanced Cantilever Span; Anchored Floating Bridge; Covered Timber Bridge; Multi Span Stone Arch Bridge; Cable Stayed Footbridge; Reinforced Concrete Bridge Pier; Modular Military Pontoon Bridge; Steel Cantilever Bridge. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_anchored_floating_bridge",
+      "text": "Anchored Floating Bridge"
+     },
+     {
+      "id": "exp26_bridge_construction_kit",
+      "text": "Bridge Construction Kit"
+     },
+     {
+      "id": "exp26_steel_cantilever_bridge",
+      "text": "Steel Cantilever Bridge"
+     },
+     {
+      "id": "exp26_linked_pontoon_bridge",
+      "text": "Linked Pontoon Bridge"
+     },
+     {
+      "id": "exp26_pontoon_float",
+      "text": "Pontoon Float"
+     }
+    ],
+    "correctOrder": [
+     "exp26_bridge_construction_kit",
+     "exp26_pontoon_float",
+     "exp26_linked_pontoon_bridge",
+     "exp26_anchored_floating_bridge",
+     "exp26_steel_cantilever_bridge"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_rope_suspension_crossing",
+      "label": "Rope Suspension Crossing"
+     },
+     {
+      "id": "exp26_bridge_construction_kit",
+      "label": "Bridge Construction Kit"
+     },
+     {
+      "id": "exp26_timber_pile_support",
+      "label": "Timber Pile Support"
+     },
+     {
+      "id": "exp26_log_footbridge",
+      "label": "Log Footbridge"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_bridge_construction_kit",
+      "label": "Bridge Construction Kit"
+     },
+     {
+      "id": "exp26_rope_suspension_crossing",
+      "label": "Rope Suspension Crossing"
+     },
+     {
+      "id": "architecture",
+      "label": "Architecture"
+     },
+     {
+      "id": "exp26_stone_stepping_crossing",
+      "label": "Stone Stepping Crossing"
+     }
+    ],
+    "correctMatch": {
+     "exp26_bridge_construction_kit": "architecture",
+     "exp26_log_footbridge": "exp26_bridge_construction_kit",
+     "exp26_rope_suspension_crossing": "exp26_stone_stepping_crossing",
+     "exp26_timber_pile_support": "exp26_rope_suspension_crossing"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "RBTL"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-RBTL",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-road_making",
+  "title": "The Road Making Workshop",
+  "setting": "A sealed workshop wall chart of the road making family of the Discovery Journal.",
+  "introText": "A workshop of road making stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Road Construction Materials; Compacted Earth Track; Timber Road Plank; Stone Curb Block; Road Marker Stone; Wheel Rut Filling; Stone Culvert Slab; Gravel Road Bed; Plank Road; Laid Road Kerb; Mile Marker Post; Graded Road Crown; Box Culvert; Macadam Road Course; Log Corduroy Road; Kerbed Road Drain; Reflective Road Marker; Cambered Road Surface; Pipe Culvert; Asphalt Road Surface; Elevated Boardwalk Road; Continuous Road Gutter; Superelevated Road Curve; Precast Drain Culvert; Electronic Variable Road Sign. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_pipe_culvert",
+      "text": "Pipe Culvert"
+     },
+     {
+      "id": "exp26_road_construction_materials",
+      "text": "Road Construction Materials"
+     },
+     {
+      "id": "exp26_electronic_variable_road_sign",
+      "text": "Electronic Variable Road Sign"
+     },
+     {
+      "id": "exp26_box_culvert",
+      "text": "Box Culvert"
+     },
+     {
+      "id": "exp26_stone_culvert_slab",
+      "text": "Stone Culvert Slab"
+     }
+    ],
+    "correctOrder": [
+     "exp26_road_construction_materials",
+     "exp26_stone_culvert_slab",
+     "exp26_box_culvert",
+     "exp26_pipe_culvert",
+     "exp26_electronic_variable_road_sign"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_stone_curb_block",
+      "label": "Stone Curb Block"
+     },
+     {
+      "id": "exp26_road_construction_materials",
+      "label": "Road Construction Materials"
+     },
+     {
+      "id": "exp26_road_marker_stone",
+      "label": "Road Marker Stone"
+     },
+     {
+      "id": "exp26_compacted_earth_track",
+      "label": "Compacted Earth Track"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_road_construction_materials",
+      "label": "Road Construction Materials"
+     },
+     {
+      "id": "exp26_stone_curb_block",
+      "label": "Stone Curb Block"
+     },
+     {
+      "id": "roads",
+      "label": "Roads"
+     },
+     {
+      "id": "exp26_timber_road_plank",
+      "label": "Timber Road Plank"
+     }
+    ],
+    "correctMatch": {
+     "exp26_road_construction_materials": "roads",
+     "exp26_compacted_earth_track": "exp26_road_construction_materials",
+     "exp26_stone_curb_block": "exp26_timber_road_plank",
+     "exp26_road_marker_stone": "exp26_stone_curb_block"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "SRRC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-SRRC",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-copper_fabrication",
+  "title": "The Copper Fabrication Workshop",
+  "setting": "A sealed workshop wall chart of the copper fabrication family of the Discovery Journal.",
+  "introText": "A workshop of copper fabrication stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Worked Copper Stock; Copper Sheet Blank; Copper Rod Blank; Copper Nail Blank; Copper Bowl Blank; Copper Tube Blank; Copper Foil Sheet; Hammered Copper Sheet; Drawn Copper Rod; Hammered Copper Nail; Raised Copper Bowl; Rolled Copper Tube; Thin Copper Foil; Annealed Copper Sheet; Copper Wire Coil; Copper Rivet Set; Planished Copper Bowl; Brazed Copper Tube; Patterned Copper Foil; Repousse Copper Panel; Insulated Copper Winding; Flush Copper Rivet; Spun Copper Vessel; Seamless Copper Tube; Printed Circuit Copper Trace. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_patterned_copper_foil",
+      "text": "Patterned Copper Foil"
+     },
+     {
+      "id": "exp26_worked_copper_stock",
+      "text": "Worked Copper Stock"
+     },
+     {
+      "id": "exp26_printed_circuit_copper_trace",
+      "text": "Printed Circuit Copper Trace"
+     },
+     {
+      "id": "exp26_thin_copper_foil",
+      "text": "Thin Copper Foil"
+     },
+     {
+      "id": "exp26_copper_foil_sheet",
+      "text": "Copper Foil Sheet"
+     }
+    ],
+    "correctOrder": [
+     "exp26_worked_copper_stock",
+     "exp26_copper_foil_sheet",
+     "exp26_thin_copper_foil",
+     "exp26_patterned_copper_foil",
+     "exp26_printed_circuit_copper_trace"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_copper_nail_blank",
+      "label": "Copper Nail Blank"
+     },
+     {
+      "id": "exp26_worked_copper_stock",
+      "label": "Worked Copper Stock"
+     },
+     {
+      "id": "exp26_copper_bowl_blank",
+      "label": "Copper Bowl Blank"
+     },
+     {
+      "id": "exp26_copper_sheet_blank",
+      "label": "Copper Sheet Blank"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_worked_copper_stock",
+      "label": "Worked Copper Stock"
+     },
+     {
+      "id": "exp26_copper_nail_blank",
+      "label": "Copper Nail Blank"
+     },
+     {
+      "id": "copper",
+      "label": "Copper"
+     },
+     {
+      "id": "exp26_copper_rod_blank",
+      "label": "Copper Rod Blank"
+     }
+    ],
+    "correctMatch": {
+     "exp26_worked_copper_stock": "copper",
+     "exp26_copper_sheet_blank": "exp26_worked_copper_stock",
+     "exp26_copper_nail_blank": "exp26_copper_rod_blank",
+     "exp26_copper_bowl_blank": "exp26_copper_nail_blank"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CWCC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-CWCC",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-iron_blacksmithing",
+  "title": "The Iron Blacksmithing Workshop",
+  "setting": "A sealed workshop wall chart of the iron blacksmithing family of the Discovery Journal.",
+  "introText": "A workshop of iron blacksmithing stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Wrought Iron Stock; Iron Bar Blank; Iron Chisel Blank; Iron Hinge Strap; Iron Chain Link; Iron Hook Blank; Iron Horseshoe Blank; Forge Drawn Iron Bar; Forged Cold Chisel; Strap Hinge; Linked Iron Chain; Forged S Hook; Forged Horseshoe; Square Iron Bar; Tempered Cold Chisel; Pin Hinged Gate; Welded Link Chain; Forged J Hook; Nailless Horseshoe; Threaded Iron Rod; Set Of Cold Chisels; Adjustable Iron Hinge; Calibrated Hoist Chain; Load Rated Lifting Hook; Orthopedic Horseshoe. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_nailless_horseshoe",
+      "text": "Nailless Horseshoe"
+     },
+     {
+      "id": "exp26_wrought_iron_stock",
+      "text": "Wrought Iron Stock"
+     },
+     {
+      "id": "exp26_orthopedic_horseshoe",
+      "text": "Orthopedic Horseshoe"
+     },
+     {
+      "id": "exp26_forged_horseshoe",
+      "text": "Forged Horseshoe"
+     },
+     {
+      "id": "exp26_iron_horseshoe_blank",
+      "text": "Iron Horseshoe Blank"
+     }
+    ],
+    "correctOrder": [
+     "exp26_wrought_iron_stock",
+     "exp26_iron_horseshoe_blank",
+     "exp26_forged_horseshoe",
+     "exp26_nailless_horseshoe",
+     "exp26_orthopedic_horseshoe"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_iron_hinge_strap",
+      "label": "Iron Hinge Strap"
+     },
+     {
+      "id": "exp26_wrought_iron_stock",
+      "label": "Wrought Iron Stock"
+     },
+     {
+      "id": "exp26_iron_chain_link",
+      "label": "Iron Chain Link"
+     },
+     {
+      "id": "exp26_iron_bar_blank",
+      "label": "Iron Bar Blank"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_wrought_iron_stock",
+      "label": "Wrought Iron Stock"
+     },
+     {
+      "id": "exp26_iron_hinge_strap",
+      "label": "Iron Hinge Strap"
+     },
+     {
+      "id": "forging",
+      "label": "Forging"
+     },
+     {
+      "id": "exp26_iron_chisel_blank",
+      "label": "Iron Chisel Blank"
+     }
+    ],
+    "correctMatch": {
+     "exp26_wrought_iron_stock": "forging",
+     "exp26_iron_bar_blank": "exp26_wrought_iron_stock",
+     "exp26_iron_hinge_strap": "exp26_iron_chisel_blank",
+     "exp26_iron_chain_link": "exp26_iron_hinge_strap"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "IWII"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-IWII",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-glass_vessels",
+  "title": "The Glass Vessels Workshop",
+  "setting": "A sealed workshop wall chart of the glass vessels family of the Discovery Journal.",
+  "introText": "A workshop of glass vessels stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Molten Glass Batch; Glass Bead Blank; Glass Cup Blank; Glass Bottle Blank; Glass Window Pane; Glass Tube Blank; Glass Sphere Blank; Drawn Glass Bead; Blown Glass Cup; Long Neck Glass Bottle; Flattened Glass Pane; Drawn Glass Tube; Hollow Glass Sphere; Multicolor Glass Bead; Handled Glass Tankard; Stoppered Glass Bottle; Lead Came Window; Graduated Glass Tube; Silvered Glass Ornament; Decorated Millefiori Bead; Heat Resistant Glass Beaker; Pressure Rated Glass Bottle; Double Glazed Window; Calibrated Glass Pipette; Vacuum Insulated Glass Vessel. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_silvered_glass_ornament",
+      "text": "Silvered Glass Ornament"
+     },
+     {
+      "id": "exp26_molten_glass_batch",
+      "text": "Molten Glass Batch"
+     },
+     {
+      "id": "exp26_vacuum_insulated_glass_vessel",
+      "text": "Vacuum Insulated Glass Vessel"
+     },
+     {
+      "id": "exp26_hollow_glass_sphere",
+      "text": "Hollow Glass Sphere"
+     },
+     {
+      "id": "exp26_glass_sphere_blank",
+      "text": "Glass Sphere Blank"
+     }
+    ],
+    "correctOrder": [
+     "exp26_molten_glass_batch",
+     "exp26_glass_sphere_blank",
+     "exp26_hollow_glass_sphere",
+     "exp26_silvered_glass_ornament",
+     "exp26_vacuum_insulated_glass_vessel"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_glass_bottle_blank",
+      "label": "Glass Bottle Blank"
+     },
+     {
+      "id": "exp26_molten_glass_batch",
+      "label": "Molten Glass Batch"
+     },
+     {
+      "id": "exp26_glass_window_pane",
+      "label": "Glass Window Pane"
+     },
+     {
+      "id": "exp26_glass_bead_blank",
+      "label": "Glass Bead Blank"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_molten_glass_batch",
+      "label": "Molten Glass Batch"
+     },
+     {
+      "id": "exp26_glass_bottle_blank",
+      "label": "Glass Bottle Blank"
+     },
+     {
+      "id": "glass",
+      "label": "Glass"
+     },
+     {
+      "id": "exp26_glass_cup_blank",
+      "label": "Glass Cup Blank"
+     }
+    ],
+    "correctMatch": {
+     "exp26_molten_glass_batch": "glass",
+     "exp26_glass_bead_blank": "exp26_molten_glass_batch",
+     "exp26_glass_bottle_blank": "exp26_glass_cup_blank",
+     "exp26_glass_window_pane": "exp26_glass_bottle_blank"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "GMGG"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-GMGG",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-optical_apparatus",
+  "title": "The Optical Apparatus Workshop",
+  "setting": "A sealed workshop wall chart of the optical apparatus family of the Discovery Journal.",
+  "introText": "A workshop of optical apparatus stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Polished Optical Glass; Single Magnifying Lens; Convex Lens Pair; Concave Mirror Blank; Ground Lens Blank; Glass Prism Blank; Glass Reticle Blank; Mounted Magnifier; Simple Refracting Telescope; Polished Concave Mirror; Triangular Optical Prism; Etched Optical Reticle; Folding Pocket Magnifier; Achromatic Refractor; Newtonian Reflector; Direct Vision Spectroscope; Crosshair Eyepiece; Illuminated Inspection Magnifier; Apochromatic Telescope; Compound Reflecting Telescope; Prism Spectrometer; Rangefinding Optical Sight; Microscope Objective; Compound Microscope; Binocular Laboratory Microscope. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_apoc_hromatic_telescope",
+      "text": "Apochromatic Telescope"
+     },
+     {
+      "id": "exp26_polished_optical_glass",
+      "text": "Polished Optical Glass"
+     },
+     {
+      "id": "exp26_binocular_laboratory_microscope",
+      "text": "Binocular Laboratory Microscope"
+     },
+     {
+      "id": "exp26_folding_pocket_magnifier",
+      "text": "Folding Pocket Magnifier"
+     },
+     {
+      "id": "exp26_glass_reticle_blank",
+      "text": "Glass Reticle Blank"
+     }
+    ],
+    "correctOrder": [
+     "exp26_polished_optical_glass",
+     "exp26_glass_reticle_blank",
+     "exp26_folding_pocket_magnifier",
+     "exp26_apoc_hromatic_telescope",
+     "exp26_binocular_laboratory_microscope"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_concave_mirror_blank",
+      "label": "Concave Mirror Blank"
+     },
+     {
+      "id": "exp26_polished_optical_glass",
+      "label": "Polished Optical Glass"
+     },
+     {
+      "id": "exp26_ground_lens_blank",
+      "label": "Ground Lens Blank"
+     },
+     {
+      "id": "exp26_single_magnifying_lens",
+      "label": "Single Magnifying Lens"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_polished_optical_glass",
+      "label": "Polished Optical Glass"
+     },
+     {
+      "id": "exp26_concave_mirror_blank",
+      "label": "Concave Mirror Blank"
+     },
+     {
+      "id": "lens",
+      "label": "Lens"
+     },
+     {
+      "id": "exp26_convex_lens_pair",
+      "label": "Convex Lens Pair"
+     }
+    ],
+    "correctMatch": {
+     "exp26_polished_optical_glass": "lens",
+     "exp26_single_magnifying_lens": "exp26_polished_optical_glass",
+     "exp26_concave_mirror_blank": "exp26_convex_lens_pair",
+     "exp26_ground_lens_blank": "exp26_concave_mirror_blank"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CPGS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-CPGS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-writing_and_binding",
+  "title": "The Writing And Binding Workshop",
+  "setting": "A sealed workshop wall chart of the writing and binding family of the Discovery Journal.",
+  "introText": "A workshop of writing and binding stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Bookmaking Materials; Hand Cut Paper Sheet; Writing Quill; Wax Writing Tablet; Parchment Sheet; Book Cover Board; Handwritten Index Slip; Folded Paper Quire; Cut Quill Nib; Hinged Wax Diptych; Ruled Manuscript Page; Cloth Book Case; Alphabetical Card Index; Gathered Paper Signatures; Metal Dip Pen; Reusable Writing Tablet; Illuminated Manuscript Leaf; Case Bound Book; Printed Library Catalogue; Bound Paper Codex; Reservoir Fountain Pen; Portable Note Tablet; Bound Manuscript Volume; Library Binding Book; Online Library Catalogue. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_printed_library_catalogue",
+      "text": "Printed Library Catalogue"
+     },
+     {
+      "id": "exp26_bookmaking_materials",
+      "text": "Bookmaking Materials"
+     },
+     {
+      "id": "exp26_online_library_catalogue",
+      "text": "Online Library Catalogue"
+     },
+     {
+      "id": "exp26_alphabetical_card_index",
+      "text": "Alphabetical Card Index"
+     },
+     {
+      "id": "exp26_handwritten_index_slip",
+      "text": "Handwritten Index Slip"
+     }
+    ],
+    "correctOrder": [
+     "exp26_bookmaking_materials",
+     "exp26_handwritten_index_slip",
+     "exp26_alphabetical_card_index",
+     "exp26_printed_library_catalogue",
+     "exp26_online_library_catalogue"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_wax_writing_tablet",
+      "label": "Wax Writing Tablet"
+     },
+     {
+      "id": "exp26_bookmaking_materials",
+      "label": "Bookmaking Materials"
+     },
+     {
+      "id": "exp26_parchment_sheet",
+      "label": "Parchment Sheet"
+     },
+     {
+      "id": "exp26_hand_cut_paper_sheet",
+      "label": "Hand Cut Paper Sheet"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_bookmaking_materials",
+      "label": "Bookmaking Materials"
+     },
+     {
+      "id": "exp26_wax_writing_tablet",
+      "label": "Wax Writing Tablet"
+     },
+     {
+      "id": "paper",
+      "label": "Paper"
+     },
+     {
+      "id": "exp26_writing_quill",
+      "label": "Writing Quill"
+     }
+    ],
+    "correctMatch": {
+     "exp26_bookmaking_materials": "paper",
+     "exp26_hand_cut_paper_sheet": "exp26_bookmaking_materials",
+     "exp26_wax_writing_tablet": "exp26_writing_quill",
+     "exp26_parchment_sheet": "exp26_wax_writing_tablet"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "WBPH"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-WBPH",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-printing_processes",
+  "title": "The Printing Processes Workshop",
+  "setting": "A sealed workshop wall chart of the printing processes family of the Discovery Journal.",
+  "introText": "A workshop of printing processes stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Ink Transfer Matrix; Woodblock Printing Plate; Carved Metal Type; Printing Press Screw; Lithographic Limestone; Stencil Sheet; Photographic Print Plate; Relief Woodblock Print; Punch Cut Type; Hand Screw Press; Greased Lithography Stone; Hand Cut Stencil; Halftone Printing Plate; Multicolor Woodblock Print; Cast Movable Type; Iron Hand Press; Planographic Lithograph; Silk Screen Stencil; Four Color Printing Plate; Registered Color Woodblock; Composed Letterpress Form; Offset Lithographic Plate; Multi Color Screen Print; Steam Driven Printing Press; Digital Printing Plate. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_four_color_printing_plate",
+      "text": "Four Color Printing Plate"
+     },
+     {
+      "id": "exp26_ink_transfer_matrix",
+      "text": "Ink Transfer Matrix"
+     },
+     {
+      "id": "exp26_digital_printing_plate",
+      "text": "Digital Printing Plate"
+     },
+     {
+      "id": "exp26_halftone_printing_plate",
+      "text": "Halftone Printing Plate"
+     },
+     {
+      "id": "exp26_photographic_print_plate",
+      "text": "Photographic Print Plate"
+     }
+    ],
+    "correctOrder": [
+     "exp26_ink_transfer_matrix",
+     "exp26_photographic_print_plate",
+     "exp26_halftone_printing_plate",
+     "exp26_four_color_printing_plate",
+     "exp26_digital_printing_plate"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_printing_press_screw",
+      "label": "Printing Press Screw"
+     },
+     {
+      "id": "exp26_ink_transfer_matrix",
+      "label": "Ink Transfer Matrix"
+     },
+     {
+      "id": "exp26_lithographic_limestone",
+      "label": "Lithographic Limestone"
+     },
+     {
+      "id": "exp26_woodblock_printing_plate",
+      "label": "Woodblock Printing Plate"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_ink_transfer_matrix",
+      "label": "Ink Transfer Matrix"
+     },
+     {
+      "id": "exp26_printing_press_screw",
+      "label": "Printing Press Screw"
+     },
+     {
+      "id": "printing",
+      "label": "Printing"
+     },
+     {
+      "id": "exp26_carved_metal_type",
+      "label": "Carved Metal Type"
+     }
+    ],
+    "correctMatch": {
+     "exp26_ink_transfer_matrix": "printing",
+     "exp26_woodblock_printing_plate": "exp26_ink_transfer_matrix",
+     "exp26_printing_press_screw": "exp26_carved_metal_type",
+     "exp26_lithographic_limestone": "exp26_printing_press_screw"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "PILW"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-PILW",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-timekeeping_devices",
+  "title": "The Timekeeping Devices Workshop",
+  "setting": "A sealed workshop wall chart of the timekeeping devices family of the Discovery Journal.",
+  "introText": "A workshop of timekeeping devices stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Measured Timekeeping Parts; Water Clock Bowl; Sundial Gnomon; Clock Weight; Watch Mainspring; Quartz Crystal Blank; Clock Dial Blank; Overflow Water Clock; Horizontal Sundial; Weight Driven Clock; Spring Driven Watch; Quartz Oscillator Module; Numbered Clock Face; Regulated Water Clock; Equatorial Sundial; Escapement Clock; Balance Wheel Watch; Quartz Wristwatch; Three Hand Clock Face; Automated Water Clock; Adjustable Portable Sundial; Pendulum Regulated Clock; Lever Escapement Watch; Chronograph Watch Dial; Radio Controlled Quartz Watch. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_three_hand_clock_face",
+      "text": "Three Hand Clock Face"
+     },
+     {
+      "id": "exp26_measured_timekeeping_parts",
+      "text": "Measured Timekeeping Parts"
+     },
+     {
+      "id": "exp26_radio_controlled_quartz_watch",
+      "text": "Radio Controlled Quartz Watch"
+     },
+     {
+      "id": "exp26_numbered_clock_face",
+      "text": "Numbered Clock Face"
+     },
+     {
+      "id": "exp26_clock_dial_blank",
+      "text": "Clock Dial Blank"
+     }
+    ],
+    "correctOrder": [
+     "exp26_measured_timekeeping_parts",
+     "exp26_clock_dial_blank",
+     "exp26_numbered_clock_face",
+     "exp26_three_hand_clock_face",
+     "exp26_radio_controlled_quartz_watch"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_clock_weight",
+      "label": "Clock Weight"
+     },
+     {
+      "id": "exp26_measured_timekeeping_parts",
+      "label": "Measured Timekeeping Parts"
+     },
+     {
+      "id": "exp26_watch_mainspring",
+      "label": "Watch Mainspring"
+     },
+     {
+      "id": "exp26_water_clock_bowl",
+      "label": "Water Clock Bowl"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_measured_timekeeping_parts",
+      "label": "Measured Timekeeping Parts"
+     },
+     {
+      "id": "exp26_clock_weight",
+      "label": "Clock Weight"
+     },
+     {
+      "id": "clock",
+      "label": "Clock"
+     },
+     {
+      "id": "exp26_sundial_gnomon",
+      "label": "Sundial Gnomon"
+     }
+    ],
+    "correctMatch": {
+     "exp26_measured_timekeeping_parts": "clock",
+     "exp26_water_clock_bowl": "exp26_measured_timekeeping_parts",
+     "exp26_clock_weight": "exp26_sundial_gnomon",
+     "exp26_watch_mainspring": "exp26_clock_weight"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CMWW"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-CMWW",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-water_machinery",
+  "title": "The Water Machinery Workshop",
+  "setting": "A sealed workshop wall chart of the water machinery family of the Discovery Journal.",
+  "introText": "A workshop of water machinery stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Hydraulic Mill Components; Paddle Waterwheel; Millstone Runner; Wooden Pump Piston; Water Turbine Runner; Water Ram Chamber; Irrigation Scoop Wheel; Undershot Waterwheel; Water Driven Millstone; Reciprocating Water Pump; Impulse Turbine; Hydraulic Ram Pump; Sakia Water Wheel; Overshot Waterwheel; Adjustable Grain Mill; Double Acting Water Pump; Francis Turbine; Multi Impulse Ram Pump; Chain Of Pots Lift; Breastshot Waterwheel; Automatic Roller Mill; Multi Stage Piston Pump; Adjustable Kaplan Turbine; High Head Ram Pump; Mechanized Water Lift. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_chain_of_pots_lift",
+      "text": "Chain Of Pots Lift"
+     },
+     {
+      "id": "exp26_hydraulic_mill_components",
+      "text": "Hydraulic Mill Components"
+     },
+     {
+      "id": "exp26_mechanized_water_lift",
+      "text": "Mechanized Water Lift"
+     },
+     {
+      "id": "exp26_sakia_water_wheel",
+      "text": "Sakia Water Wheel"
+     },
+     {
+      "id": "exp26_irrigation_scoop_wheel",
+      "text": "Irrigation Scoop Wheel"
+     }
+    ],
+    "correctOrder": [
+     "exp26_hydraulic_mill_components",
+     "exp26_irrigation_scoop_wheel",
+     "exp26_sakia_water_wheel",
+     "exp26_chain_of_pots_lift",
+     "exp26_mechanized_water_lift"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_wooden_pump_piston",
+      "label": "Wooden Pump Piston"
+     },
+     {
+      "id": "exp26_hydraulic_mill_components",
+      "label": "Hydraulic Mill Components"
+     },
+     {
+      "id": "exp26_water_turbine_runner",
+      "label": "Water Turbine Runner"
+     },
+     {
+      "id": "exp26_paddle_waterwheel",
+      "label": "Paddle Waterwheel"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_hydraulic_mill_components",
+      "label": "Hydraulic Mill Components"
+     },
+     {
+      "id": "exp26_wooden_pump_piston",
+      "label": "Wooden Pump Piston"
+     },
+     {
+      "id": "water_power",
+      "label": "Water Power"
+     },
+     {
+      "id": "exp26_millstone_runner",
+      "label": "Millstone Runner"
+     }
+    ],
+    "correctMatch": {
+     "exp26_hydraulic_mill_components": "water_power",
+     "exp26_paddle_waterwheel": "exp26_hydraulic_mill_components",
+     "exp26_wooden_pump_piston": "exp26_millstone_runner",
+     "exp26_water_turbine_runner": "exp26_wooden_pump_piston"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "WHWP"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-WHWP",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-steam_engineering",
+  "title": "The Steam Engineering Workshop",
+  "setting": "A sealed workshop wall chart of the steam engineering family of the Discovery Journal.",
+  "introText": "A workshop of steam engineering stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Pressure Vessel Parts; Boiler Firebox; Steam Piston; Piston Connecting Rod; Slide Valve Blank; Steam Condenser Coil; Steam Whistle Valve; Shell Steam Boiler; Single Acting Steam Cylinder; Crank And Rod Drive; Slide Valve Gear; Surface Steam Condenser; Steam Whistle; Water Tube Boiler; Double Acting Steam Engine; Flywheel Crank Drive; Stephenson Valve Gear; Jet Condenser Assembly; Multi Tone Steam Whistle; Superheated Steam Boiler; Compound Steam Engine; Rotary Steam Engine; Walschaerts Valve Gear; Vacuum Condenser System; Air Operated Warning Horn. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_multi_tone_steam_whistle",
+      "text": "Multi Tone Steam Whistle"
+     },
+     {
+      "id": "exp26_pressure_vessel_parts",
+      "text": "Pressure Vessel Parts"
+     },
+     {
+      "id": "exp26_air_operated_warning_horn",
+      "text": "Air Operated Warning Horn"
+     },
+     {
+      "id": "exp26_steam_whistle",
+      "text": "Steam Whistle"
+     },
+     {
+      "id": "exp26_steam_whistle_valve",
+      "text": "Steam Whistle Valve"
+     }
+    ],
+    "correctOrder": [
+     "exp26_pressure_vessel_parts",
+     "exp26_steam_whistle_valve",
+     "exp26_steam_whistle",
+     "exp26_multi_tone_steam_whistle",
+     "exp26_air_operated_warning_horn"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_piston_connecting_rod",
+      "label": "Piston Connecting Rod"
+     },
+     {
+      "id": "exp26_pressure_vessel_parts",
+      "label": "Pressure Vessel Parts"
+     },
+     {
+      "id": "exp26_slide_valve_blank",
+      "label": "Slide Valve Blank"
+     },
+     {
+      "id": "exp26_boiler_firebox",
+      "label": "Boiler Firebox"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_pressure_vessel_parts",
+      "label": "Pressure Vessel Parts"
+     },
+     {
+      "id": "exp26_piston_connecting_rod",
+      "label": "Piston Connecting Rod"
+     },
+     {
+      "id": "steam",
+      "label": "Steam"
+     },
+     {
+      "id": "exp26_steam_piston",
+      "label": "Steam Piston"
+     }
+    ],
+    "correctMatch": {
+     "exp26_pressure_vessel_parts": "steam",
+     "exp26_boiler_firebox": "exp26_pressure_vessel_parts",
+     "exp26_piston_connecting_rod": "exp26_steam_piston",
+     "exp26_slide_valve_blank": "exp26_piston_connecting_rod"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "PPSB"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-PPSB",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-railway_mechanics",
+  "title": "The Railway Mechanics Workshop",
+  "setting": "A sealed workshop wall chart of the railway mechanics family of the Discovery Journal.",
+  "introText": "A workshop of railway mechanics stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Railway Mechanical Stock; Iron Rail Section; Wooden Sleeper; Rail Wagon Wheel; Hand Operated Track Switch; Mechanical Rail Signal; Rail Brake Shoe; Fishplate Rail Joint; Ballasted Track Sleeper; Flanged Rail Wheel; Lever Track Switch; Semaphore Signal; Vacuum Train Brake; Continuous Welded Rail; Concrete Rail Sleeper; Rail Wheelset; Interlocked Railway Switch; Color Light Railway Signal; Air Train Brake; Slab Track Rail; Resilient Rail Fastener; Self Steering Rail Bogie; Power Operated Track Switch; Cab Signalling Display; Electronically Controlled Train Brake. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_air_train_brake",
+      "text": "Air Train Brake"
+     },
+     {
+      "id": "exp26_railway_mechanical_stock",
+      "text": "Railway Mechanical Stock"
+     },
+     {
+      "id": "exp26_electronically_controlled_train_brake",
+      "text": "Electronically Controlled Train Brake"
+     },
+     {
+      "id": "exp26_vacuum_train_brake",
+      "text": "Vacuum Train Brake"
+     },
+     {
+      "id": "exp26_rail_brake_shoe",
+      "text": "Rail Brake Shoe"
+     }
+    ],
+    "correctOrder": [
+     "exp26_railway_mechanical_stock",
+     "exp26_rail_brake_shoe",
+     "exp26_vacuum_train_brake",
+     "exp26_air_train_brake",
+     "exp26_electronically_controlled_train_brake"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_rail_wagon_wheel",
+      "label": "Rail Wagon Wheel"
+     },
+     {
+      "id": "exp26_railway_mechanical_stock",
+      "label": "Railway Mechanical Stock"
+     },
+     {
+      "id": "exp26_hand_operated_track_switch",
+      "label": "Hand Operated Track Switch"
+     },
+     {
+      "id": "exp26_iron_rail_section",
+      "label": "Iron Rail Section"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_railway_mechanical_stock",
+      "label": "Railway Mechanical Stock"
+     },
+     {
+      "id": "exp26_rail_wagon_wheel",
+      "label": "Rail Wagon Wheel"
+     },
+     {
+      "id": "railway",
+      "label": "Railway"
+     },
+     {
+      "id": "exp26_wooden_sleeper",
+      "label": "Wooden Sleeper"
+     }
+    ],
+    "correctMatch": {
+     "exp26_railway_mechanical_stock": "railway",
+     "exp26_iron_rail_section": "exp26_railway_mechanical_stock",
+     "exp26_rail_wagon_wheel": "exp26_wooden_sleeper",
+     "exp26_hand_operated_track_switch": "exp26_rail_wagon_wheel"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "RRHI"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-RRHI",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-public_water_systems",
+  "title": "The Public Water Systems Workshop",
+  "setting": "A sealed workshop wall chart of the public water systems family of the Discovery Journal.",
+  "introText": "A workshop of public water systems stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Settlement Water Network; Stone Lined Well; Pottery Water Pipe; Rainwater Catchment Jar; Sand Filter Bed; Open Wastewater Ditch; Public Fountain Basin; Covered Village Well; Socketed Water Pipe; Covered Cistern; Slow Sand Water Filter; Covered Wastewater Drain; Gravity Fed Fountain; Lift Equipped Well; Branch Water Junction; Underground Storage Cistern; Rapid Sand Water Filter; Combined Sewer Channel; Valved Public Fountain; Sanitary Wellhead; Pressure Water Main; Rainwater Harvesting Tank; Multi Media Filter; Separated Sewer Network; Timed Drinking Fountain. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_valved_public_fountain",
+      "text": "Valved Public Fountain"
+     },
+     {
+      "id": "exp26_settlement_water_network",
+      "text": "Settlement Water Network"
+     },
+     {
+      "id": "exp26_timed_drinking_fountain",
+      "text": "Timed Drinking Fountain"
+     },
+     {
+      "id": "exp26_gravity_fed_fountain",
+      "text": "Gravity Fed Fountain"
+     },
+     {
+      "id": "exp26_public_fountain_basin",
+      "text": "Public Fountain Basin"
+     }
+    ],
+    "correctOrder": [
+     "exp26_settlement_water_network",
+     "exp26_public_fountain_basin",
+     "exp26_gravity_fed_fountain",
+     "exp26_valved_public_fountain",
+     "exp26_timed_drinking_fountain"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_rainwater_catchment_jar",
+      "label": "Rainwater Catchment Jar"
+     },
+     {
+      "id": "exp26_settlement_water_network",
+      "label": "Settlement Water Network"
+     },
+     {
+      "id": "exp26_sand_filter_bed",
+      "label": "Sand Filter Bed"
+     },
+     {
+      "id": "exp26_stone_lined_well",
+      "label": "Stone Lined Well"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_settlement_water_network",
+      "label": "Settlement Water Network"
+     },
+     {
+      "id": "exp26_rainwater_catchment_jar",
+      "label": "Rainwater Catchment Jar"
+     },
+     {
+      "id": "irrigation",
+      "label": "Irrigation"
+     },
+     {
+      "id": "exp26_pottery_water_pipe",
+      "label": "Pottery Water Pipe"
+     }
+    ],
+    "correctMatch": {
+     "exp26_settlement_water_network": "irrigation",
+     "exp26_stone_lined_well": "exp26_settlement_water_network",
+     "exp26_rainwater_catchment_jar": "exp26_pottery_water_pipe",
+     "exp26_sand_filter_bed": "exp26_rainwater_catchment_jar"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "RSSS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-RSSS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-electrical_machines",
+  "title": "The Electrical Machines Workshop",
+  "setting": "A sealed workshop wall chart of the electrical machines family of the Discovery Journal.",
+  "introText": "A workshop of electrical machines stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Electrical Workshop Stock; Copper Coil Winding; Laminated Iron Core; Commutator Segment; Generator Rotor Blank; Electrical Contact Blank; Copper Bus Strip; Field Coil Assembly; Electromagnet Core; Segmented Commutator; Wound Generator Rotor; Spring Electrical Contact; Electrical Busbar; Wound Motor Stator; Transformer Core; Brush Motor Armature; Alternating Current Generator; Snap Action Switch; Insulated Busbar Assembly; High Frequency Ferrite Transformer; DC Traction Motor; Permanent Magnet Alternator; Sealed Limit Switch; High Current Switchgear; Brushless Motor Stator. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_insulated_busbar_assembly",
+      "text": "Insulated Busbar Assembly"
+     },
+     {
+      "id": "exp26_electrical_workshop_stock",
+      "text": "Electrical Workshop Stock"
+     },
+     {
+      "id": "exp26_brushless_motor_stator",
+      "text": "Brushless Motor Stator"
+     },
+     {
+      "id": "exp26_electrical_busbar",
+      "text": "Electrical Busbar"
+     },
+     {
+      "id": "exp26_copper_bus_strip",
+      "text": "Copper Bus Strip"
+     }
+    ],
+    "correctOrder": [
+     "exp26_electrical_workshop_stock",
+     "exp26_copper_bus_strip",
+     "exp26_electrical_busbar",
+     "exp26_insulated_busbar_assembly",
+     "exp26_brushless_motor_stator"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_commutator_segment",
+      "label": "Commutator Segment"
+     },
+     {
+      "id": "exp26_electrical_workshop_stock",
+      "label": "Electrical Workshop Stock"
+     },
+     {
+      "id": "exp26_generator_rotor_blank",
+      "label": "Generator Rotor Blank"
+     },
+     {
+      "id": "exp26_copper_coil_winding",
+      "label": "Copper Coil Winding"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_electrical_workshop_stock",
+      "label": "Electrical Workshop Stock"
+     },
+     {
+      "id": "exp26_commutator_segment",
+      "label": "Commutator Segment"
+     },
+     {
+      "id": "electricity",
+      "label": "Electricity"
+     },
+     {
+      "id": "exp26_laminated_iron_core",
+      "label": "Laminated Iron Core"
+     }
+    ],
+    "correctMatch": {
+     "exp26_electrical_workshop_stock": "electricity",
+     "exp26_copper_coil_winding": "exp26_electrical_workshop_stock",
+     "exp26_commutator_segment": "exp26_laminated_iron_core",
+     "exp26_generator_rotor_blank": "exp26_commutator_segment"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CEGC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-CEGC",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-wired_communications",
+  "title": "The Wired Communications Workshop",
+  "setting": "A sealed workshop wall chart of the wired communications family of the Discovery Journal.",
+  "introText": "A workshop of wired communications stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Wired Signal Components; Telegraph Key Contact; Telephone Carbon Granule; Insulated Signal Wire; Mechanical Telephone Dial; Cable Plug Contact; Signal Relay Coil; Manual Telegraph Key; Twisted Wire Pair; Rotary Telephone Dial; Two Pin Cable Connector; Electromagnetic Signal Relay; Sounder Telegraph Circuit; Multi Pair Cable; Push Button Dial; Modular Signal Connector; Telephone Switching Relay; Duplex Telegraph Circuit; Shielded Data Cable; Shielded Network Connector; Electronic Switching Matrix; Digital Telephone Keypad; Carbon Microphone Capsule; Handset Telephone; Desk Telephone Exchange. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_shielded_data_cable",
+      "text": "Shielded Data Cable"
+     },
+     {
+      "id": "exp26_wired_signal_components",
+      "text": "Wired Signal Components"
+     },
+     {
+      "id": "exp26_desk_telephone_exchange",
+      "text": "Desk Telephone Exchange"
+     },
+     {
+      "id": "exp26_sounder_telegraph_circuit",
+      "text": "Sounder Telegraph Circuit"
+     },
+     {
+      "id": "exp26_signal_relay_coil",
+      "text": "Signal Relay Coil"
+     }
+    ],
+    "correctOrder": [
+     "exp26_wired_signal_components",
+     "exp26_signal_relay_coil",
+     "exp26_sounder_telegraph_circuit",
+     "exp26_shielded_data_cable",
+     "exp26_desk_telephone_exchange"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_insulated_signal_wire",
+      "label": "Insulated Signal Wire"
+     },
+     {
+      "id": "exp26_wired_signal_components",
+      "label": "Wired Signal Components"
+     },
+     {
+      "id": "exp26_cable_plug_contact",
+      "label": "Cable Plug Contact"
+     },
+     {
+      "id": "exp26_telegraph_key_contact",
+      "label": "Telegraph Key Contact"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_wired_signal_components",
+      "label": "Wired Signal Components"
+     },
+     {
+      "id": "exp26_mechanical_telephone_dial",
+      "label": "Mechanical Telephone Dial"
+     },
+     {
+      "id": "telegraph",
+      "label": "Telegraph"
+     },
+     {
+      "id": "exp26_telephone_carbon_granule",
+      "label": "Telephone Carbon Granule"
+     }
+    ],
+    "correctMatch": {
+     "exp26_wired_signal_components": "telegraph",
+     "exp26_telegraph_key_contact": "exp26_wired_signal_components",
+     "exp26_insulated_signal_wire": "exp26_telephone_carbon_granule",
+     "exp26_cable_plug_contact": "exp26_mechanical_telephone_dial"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "IWCT"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-IWCT",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-radio_technologies",
+  "title": "The Radio Technologies Workshop",
+  "setting": "A sealed workshop wall chart of the radio technologies family of the Discovery Journal.",
+  "introText": "A workshop of radio technologies stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Radio Circuit Materials; Wire Loop Antenna; Crystal Detector Contact; Variable Capacitor Plate; Copper Radio Coil; Radio Oscillator Circuit; Radio Speaker Cone; Tuned Loop Antenna; Crystal Radio Receiver; Air Variable Capacitor; Solenoid Inductor; Vacuum Tube Oscillator; Moving Coil Speaker; Ferrite Rod Antenna; Vacuum Tube Radio Receiver; Resonant Tuning Circuit; RF Transformer Coil; Transistor RF Oscillator; Enclosed Radio Loudspeaker; Active Loop Antenna; Transistor Radio Receiver; Frequency Synthesizer Module; Shielded RF Inductor; Phase Locked Loop Oscillator; Powered Monitor Speaker. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_enclosed_radio_loudspeaker",
+      "text": "Enclosed Radio Loudspeaker"
+     },
+     {
+      "id": "exp26_radio_circuit_materials",
+      "text": "Radio Circuit Materials"
+     },
+     {
+      "id": "exp26_powered_monitor_speaker",
+      "text": "Powered Monitor Speaker"
+     },
+     {
+      "id": "exp26_moving_coil_speaker",
+      "text": "Moving Coil Speaker"
+     },
+     {
+      "id": "exp26_radio_speaker_cone",
+      "text": "Radio Speaker Cone"
+     }
+    ],
+    "correctOrder": [
+     "exp26_radio_circuit_materials",
+     "exp26_radio_speaker_cone",
+     "exp26_moving_coil_speaker",
+     "exp26_enclosed_radio_loudspeaker",
+     "exp26_powered_monitor_speaker"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_variable_capacitor_plate",
+      "label": "Variable Capacitor Plate"
+     },
+     {
+      "id": "exp26_radio_circuit_materials",
+      "label": "Radio Circuit Materials"
+     },
+     {
+      "id": "exp26_copper_radio_coil",
+      "label": "Copper Radio Coil"
+     },
+     {
+      "id": "exp26_wire_loop_antenna",
+      "label": "Wire Loop Antenna"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_radio_circuit_materials",
+      "label": "Radio Circuit Materials"
+     },
+     {
+      "id": "exp26_variable_capacitor_plate",
+      "label": "Variable Capacitor Plate"
+     },
+     {
+      "id": "radio",
+      "label": "Radio"
+     },
+     {
+      "id": "exp26_crystal_detector_contact",
+      "label": "Crystal Detector Contact"
+     }
+    ],
+    "correctMatch": {
+     "exp26_radio_circuit_materials": "radio",
+     "exp26_wire_loop_antenna": "exp26_radio_circuit_materials",
+     "exp26_variable_capacitor_plate": "exp26_crystal_detector_contact",
+     "exp26_copper_radio_coil": "exp26_variable_capacitor_plate"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "VRCW"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-VRCW",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-photography_technology",
+  "title": "The Photography Technology Workshop",
+  "setting": "A sealed workshop wall chart of the photography technology family of the Discovery Journal.",
+  "introText": "A workshop of photography technology stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Photographic Materials; Coated Glass Plate; Pinhole Camera Box; Darkroom Chemical Tray; Photo Shutter Blade; Camera Film Spool; Camera Lens Barrel; Silver Gelatin Plate; Single Lens Camera; Contact Print Frame; Mechanical Leaf Shutter; Roll Film Cartridge; Mounted Camera Lens; Dry Plate Negative; Folding Bellows Camera; Photographic Enlarger; Focal Plane Shutter; 35mm Film Cassette; Interchangeable Camera Lens; Large Format Film Negative; View Camera; Color Enlarger; Reusable Film Magazine; Optically Stabilized Camera Lens; Electronic Camera Shutter. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_interchangeable_camera_lens",
+      "text": "Interchangeable Camera Lens"
+     },
+     {
+      "id": "exp26_photographic_materials",
+      "text": "Photographic Materials"
+     },
+     {
+      "id": "exp26_electronic_camera_shutter",
+      "text": "Electronic Camera Shutter"
+     },
+     {
+      "id": "exp26_mounted_camera_lens",
+      "text": "Mounted Camera Lens"
+     },
+     {
+      "id": "exp26_camera_lens_barrel",
+      "text": "Camera Lens Barrel"
+     }
+    ],
+    "correctOrder": [
+     "exp26_photographic_materials",
+     "exp26_camera_lens_barrel",
+     "exp26_mounted_camera_lens",
+     "exp26_interchangeable_camera_lens",
+     "exp26_electronic_camera_shutter"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_darkroom_chemical_tray",
+      "label": "Darkroom Chemical Tray"
+     },
+     {
+      "id": "exp26_photographic_materials",
+      "label": "Photographic Materials"
+     },
+     {
+      "id": "exp26_photo_shutter_blade",
+      "label": "Photo Shutter Blade"
+     },
+     {
+      "id": "exp26_coated_glass_plate",
+      "label": "Coated Glass Plate"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_photographic_materials",
+      "label": "Photographic Materials"
+     },
+     {
+      "id": "exp26_darkroom_chemical_tray",
+      "label": "Darkroom Chemical Tray"
+     },
+     {
+      "id": "photography",
+      "label": "Photography"
+     },
+     {
+      "id": "exp26_pinhole_camera_box",
+      "label": "Pinhole Camera Box"
+     }
+    ],
+    "correctMatch": {
+     "exp26_photographic_materials": "photography",
+     "exp26_coated_glass_plate": "exp26_photographic_materials",
+     "exp26_darkroom_chemical_tray": "exp26_pinhole_camera_box",
+     "exp26_photo_shutter_blade": "exp26_darkroom_chemical_tray"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "DPPC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-DPPC",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-medical_instruments",
+  "title": "The Medical Instruments Workshop",
+  "setting": "A sealed workshop wall chart of the medical instruments family of the Discovery Journal.",
+  "introText": "A workshop of medical instruments stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Clinical Examination Toolkit; Wooden Stethoscope; Mercury Thermometer Tube; Bandage Roll; Surgical Forceps Blank; Hand Washing Station; Glass Medicine Syringe; Flexible Tube Stethoscope; Clinical Mercury Thermometer; Wound Dressing Pad; Nonlocking Forceps; Clinical Scrub Sink; Reusable Glass Syringe; Dual Head Stethoscope; Sterile Gauze Dressing; Locking Hemostat; Hands Free Scrub Sink; Adhesive Sterile Dressing; Disposable Plastic Syringe; Safety Retractable Syringe; Electronic Stethoscope; Digital Thermometer; Sensor Operated Scrub Sink; Infrared Tympanic Thermometer; Micro Surgical Forceps. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_disposable_plastic_syringe",
+      "text": "Disposable Plastic Syringe"
+     },
+     {
+      "id": "exp26_clinical_examination_toolkit",
+      "text": "Clinical Examination Toolkit"
+     },
+     {
+      "id": "exp26_micro_surgical_forceps",
+      "text": "Micro Surgical Forceps"
+     },
+     {
+      "id": "exp26_reusable_glass_syringe",
+      "text": "Reusable Glass Syringe"
+     },
+     {
+      "id": "exp26_glass_medicine_syringe",
+      "text": "Glass Medicine Syringe"
+     }
+    ],
+    "correctOrder": [
+     "exp26_clinical_examination_toolkit",
+     "exp26_glass_medicine_syringe",
+     "exp26_reusable_glass_syringe",
+     "exp26_disposable_plastic_syringe",
+     "exp26_micro_surgical_forceps"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_bandage_roll",
+      "label": "Bandage Roll"
+     },
+     {
+      "id": "exp26_clinical_examination_toolkit",
+      "label": "Clinical Examination Toolkit"
+     },
+     {
+      "id": "exp26_surgical_forceps_blank",
+      "label": "Surgical Forceps Blank"
+     },
+     {
+      "id": "exp26_wooden_stethoscope",
+      "label": "Wooden Stethoscope"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_clinical_examination_toolkit",
+      "label": "Clinical Examination Toolkit"
+     },
+     {
+      "id": "exp26_bandage_roll",
+      "label": "Bandage Roll"
+     },
+     {
+      "id": "medicine",
+      "label": "Medicine"
+     },
+     {
+      "id": "exp26_mercury_thermometer_tube",
+      "label": "Mercury Thermometer Tube"
+     }
+    ],
+    "correctMatch": {
+     "exp26_clinical_examination_toolkit": "medicine",
+     "exp26_wooden_stethoscope": "exp26_clinical_examination_toolkit",
+     "exp26_bandage_roll": "exp26_mercury_thermometer_tube",
+     "exp26_surgical_forceps_blank": "exp26_bandage_roll"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "BCSW"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-BCSW",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-chemistry_instruments",
+  "title": "The Chemistry Instruments Workshop",
+  "setting": "A sealed workshop wall chart of the chemistry instruments family of the Discovery Journal.",
+  "introText": "A workshop of chemistry instruments stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Laboratory Glassware Batch; Glass Test Tube; Glass Flask Blank; Simple Condenser Tube; Clay Crucible; Graduated Pipette Tube; Laboratory Burner Stand; Graduated Test Tube; Conical Laboratory Flask; Liebig Condenser; Porcelain Crucible; Volumetric Pipette; Spirit Burner; Culture Test Tube; Vacuum Filter Flask; Allihn Condenser; Quartz Crucible; Sealed Reaction Tube; Round Bottom Reaction Flask; Fractionating Condenser; High Alumina Crucible; Bunsen Burner; Gas Controlled Laboratory Burner; Micropipette; Adjustable Volume Micropipette. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_round_bottom_reaction_flask",
+      "text": "Round Bottom Reaction Flask"
+     },
+     {
+      "id": "exp26_laboratory_glassware_batch",
+      "text": "Laboratory Glassware Batch"
+     },
+     {
+      "id": "exp26_adjustable_volume_micropipette",
+      "text": "Adjustable Volume Micropipette"
+     },
+     {
+      "id": "exp26_spirit_burner",
+      "text": "Spirit Burner"
+     },
+     {
+      "id": "exp26_laboratory_burner_stand",
+      "text": "Laboratory Burner Stand"
+     }
+    ],
+    "correctOrder": [
+     "exp26_laboratory_glassware_batch",
+     "exp26_laboratory_burner_stand",
+     "exp26_spirit_burner",
+     "exp26_round_bottom_reaction_flask",
+     "exp26_adjustable_volume_micropipette"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_simple_condenser_tube",
+      "label": "Simple Condenser Tube"
+     },
+     {
+      "id": "exp26_laboratory_glassware_batch",
+      "label": "Laboratory Glassware Batch"
+     },
+     {
+      "id": "exp26_clay_crucible",
+      "label": "Clay Crucible"
+     },
+     {
+      "id": "exp26_glass_test_tube",
+      "label": "Glass Test Tube"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_laboratory_glassware_batch",
+      "label": "Laboratory Glassware Batch"
+     },
+     {
+      "id": "exp26_simple_condenser_tube",
+      "label": "Simple Condenser Tube"
+     },
+     {
+      "id": "chemistry",
+      "label": "Chemistry"
+     },
+     {
+      "id": "exp26_glass_flask_blank",
+      "label": "Glass Flask Blank"
+     }
+    ],
+    "correctMatch": {
+     "exp26_laboratory_glassware_batch": "chemistry",
+     "exp26_glass_test_tube": "exp26_laboratory_glassware_batch",
+     "exp26_simple_condenser_tube": "exp26_glass_flask_blank",
+     "exp26_clay_crucible": "exp26_simple_condenser_tube"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "SLCG"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-SLCG",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-semiconductor_devices",
+  "title": "The Semiconductor Devices Workshop",
+  "setting": "A sealed workshop wall chart of the semiconductor devices family of the Discovery Journal.",
+  "introText": "A workshop of semiconductor devices stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Semiconductor Fabrication Stock; Doped Silicon Wafer; Silicon Diode Junction; Bipolar Transistor Die; MOS Gate Oxide; Silicon Logic Gate; Photodiode Junction; Photolithography Wafer; Rectifier Diode; Packaged Bipolar Transistor; MOSFET Transistor Cell; CMOS Inverter; Photodiode Package; Etched Silicon Wafer; Fast Recovery Diode; Darlington Transistor Pair; Power MOSFET Package; CMOS NAND Gate; Phototransistor; Multilayer Device Wafer; Schottky Rectifier Diode; Integrated Darlington Array; Integrated Power MOSFET Module; Complex CMOS Logic Cell; Imaging Sensor Pixel. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_phototransistor",
+      "text": "Phototransistor"
+     },
+     {
+      "id": "exp26_semiconductor_fabrication_stock",
+      "text": "Semiconductor Fabrication Stock"
+     },
+     {
+      "id": "exp26_imaging_sensor_pixel",
+      "text": "Imaging Sensor Pixel"
+     },
+     {
+      "id": "exp26_photodiode_package",
+      "text": "Photodiode Package"
+     },
+     {
+      "id": "exp26_photodiode_junction",
+      "text": "Photodiode Junction"
+     }
+    ],
+    "correctOrder": [
+     "exp26_semiconductor_fabrication_stock",
+     "exp26_photodiode_junction",
+     "exp26_photodiode_package",
+     "exp26_phototransistor",
+     "exp26_imaging_sensor_pixel"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_bipolar_transistor_die",
+      "label": "Bipolar Transistor Die"
+     },
+     {
+      "id": "exp26_semiconductor_fabrication_stock",
+      "label": "Semiconductor Fabrication Stock"
+     },
+     {
+      "id": "exp26_mos_gate_oxide",
+      "label": "MOS Gate Oxide"
+     },
+     {
+      "id": "exp26_doped_silicon_wafer",
+      "label": "Doped Silicon Wafer"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_semiconductor_fabrication_stock",
+      "label": "Semiconductor Fabrication Stock"
+     },
+     {
+      "id": "exp26_bipolar_transistor_die",
+      "label": "Bipolar Transistor Die"
+     },
+     {
+      "id": "transistor",
+      "label": "Transistor"
+     },
+     {
+      "id": "exp26_silicon_diode_junction",
+      "label": "Silicon Diode Junction"
+     }
+    ],
+    "correctMatch": {
+     "exp26_semiconductor_fabrication_stock": "transistor",
+     "exp26_doped_silicon_wafer": "exp26_semiconductor_fabrication_stock",
+     "exp26_bipolar_transistor_die": "exp26_silicon_diode_junction",
+     "exp26_mos_gate_oxide": "exp26_bipolar_transistor_die"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "BSMD"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-BSMD",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-computing_infrastructure",
+  "title": "The Computing Infrastructure Workshop",
+  "setting": "A sealed workshop wall chart of the computing infrastructure family of the Discovery Journal.",
+  "introText": "A workshop of computing infrastructure stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Computer System Components; Printed Circuit Board Blank; Magnetic Storage Platter; Computer Bus Connector; Network Packet Buffer; Processor Package; Computer Memory Cell; Through Hole Circuit Board; Hard Disk Platter Stack; Peripheral Expansion Bus; Network Interface Card; Single Core Processor; Memory Integrated Circuit; Surface Mount Circuit Board; Hard Disk Drive; PCI Expansion Interface; Ethernet Switch; Memory Module; Multilayer Printed Circuit Board; Network Attached Storage Array; PCI Express Interface; Managed Network Switch; ECC Server Memory Module; Multicore Processor; System On Chip Package. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_multilayer_printed_circuit_board",
+      "text": "Multilayer Printed Circuit Board"
+     },
+     {
+      "id": "exp26_computer_system_components",
+      "text": "Computer System Components"
+     },
+     {
+      "id": "exp26_system_on_chip_package",
+      "text": "System On Chip Package"
+     },
+     {
+      "id": "exp26_memory_integrated_circuit",
+      "text": "Memory Integrated Circuit"
+     },
+     {
+      "id": "exp26_computer_memory_cell",
+      "text": "Computer Memory Cell"
+     }
+    ],
+    "correctOrder": [
+     "exp26_computer_system_components",
+     "exp26_computer_memory_cell",
+     "exp26_memory_integrated_circuit",
+     "exp26_multilayer_printed_circuit_board",
+     "exp26_system_on_chip_package"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_computer_bus_connector",
+      "label": "Computer Bus Connector"
+     },
+     {
+      "id": "exp26_computer_system_components",
+      "label": "Computer System Components"
+     },
+     {
+      "id": "exp26_network_packet_buffer",
+      "label": "Network Packet Buffer"
+     },
+     {
+      "id": "exp26_printed_circuit_board_blank",
+      "label": "Printed Circuit Board Blank"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_computer_system_components",
+      "label": "Computer System Components"
+     },
+     {
+      "id": "exp26_computer_bus_connector",
+      "label": "Computer Bus Connector"
+     },
+     {
+      "id": "computer",
+      "label": "Computer"
+     },
+     {
+      "id": "exp26_magnetic_storage_platter",
+      "label": "Magnetic Storage Platter"
+     }
+    ],
+    "correctMatch": {
+     "exp26_computer_system_components": "computer",
+     "exp26_printed_circuit_board_blank": "exp26_computer_system_components",
+     "exp26_computer_bus_connector": "exp26_magnetic_storage_platter",
+     "exp26_network_packet_buffer": "exp26_computer_bus_connector"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CCNP"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-CCNP",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-software_and_interfaces",
+  "title": "The Software And Interfaces Workshop",
+  "setting": "A sealed workshop wall chart of the software and interfaces family of the Discovery Journal.",
+  "introText": "A workshop of software and interfaces stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 25,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Software Development Toolkit; Command Interpreter; Bitmap Drawing Routine; Simple Data File; Character Display Routine; Rule Based Agent; Frame Animation Loop; Command Line Shell; Raster Graphics Editor; Indexed Data File; Text User Interface; Finite State Game Agent; Sprite Animation System; Scriptable Command Shell; Layered Image Editor; Relational Data Table; Windowed User Interface; Behavior Tree Game Agent; Skeleton Animation System; Integrated Developer Terminal; Non Destructive Graphics Editor; Transactional Data Store; Accessible Graphical Interface; Utility Driven Game Agent; Real Time Scene Animation. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "25"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp26_skeleton_animation_system",
+      "text": "Skeleton Animation System"
+     },
+     {
+      "id": "exp26_software_development_toolkit",
+      "text": "Software Development Toolkit"
+     },
+     {
+      "id": "exp26_real_time_scene_animation",
+      "text": "Real Time Scene Animation"
+     },
+     {
+      "id": "exp26_sprite_animation_system",
+      "text": "Sprite Animation System"
+     },
+     {
+      "id": "exp26_frame_animation_loop",
+      "text": "Frame Animation Loop"
+     }
+    ],
+    "correctOrder": [
+     "exp26_software_development_toolkit",
+     "exp26_frame_animation_loop",
+     "exp26_sprite_animation_system",
+     "exp26_skeleton_animation_system",
+     "exp26_real_time_scene_animation"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp26_simple_data_file",
+      "label": "Simple Data File"
+     },
+     {
+      "id": "exp26_software_development_toolkit",
+      "label": "Software Development Toolkit"
+     },
+     {
+      "id": "exp26_character_display_routine",
+      "label": "Character Display Routine"
+     },
+     {
+      "id": "exp26_command_interpreter",
+      "label": "Command Interpreter"
+     }
+    ],
+    "targets": [
+     {
+      "id": "exp26_software_development_toolkit",
+      "label": "Software Development Toolkit"
+     },
+     {
+      "id": "exp26_simple_data_file",
+      "label": "Simple Data File"
+     },
+     {
+      "id": "software",
+      "label": "Software"
+     },
+     {
+      "id": "exp26_bitmap_drawing_routine",
+      "label": "Bitmap Drawing Routine"
+     }
+    ],
+    "correctMatch": {
+     "exp26_software_development_toolkit": "software",
+     "exp26_command_interpreter": "exp26_software_development_toolkit",
+     "exp26_simple_data_file": "exp26_bitmap_drawing_routine",
+     "exp26_character_display_routine": "exp26_simple_data_file"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "SSCC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "25-5-SSCC",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ }
+]

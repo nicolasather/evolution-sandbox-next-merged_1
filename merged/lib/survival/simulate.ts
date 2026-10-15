@@ -1,4 +1,6 @@
 import type { CampState, CampEvent, Member, Task, TaskKind, Trait } from './types';
+import { createRng } from '../seed';
+import findsJson from '@/data/expansion/survival_finds.json';
 
 /* ============================================================================
    SURVIVAL SIMULATION CORE — pure, deterministic (no Math.random; any
@@ -9,6 +11,7 @@ import type { CampState, CampEvent, Member, Task, TaskKind, Trait } from './type
    and re-renders — it holds no simulation logic of its own.
    ========================================================================== */
 
+const FINDS = findsJson as { id: string; n: string; l1: string }[];
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 
 const TRAIT_BONUS: Partial<Record<Trait, Partial<Record<TaskKind, number>>>> = {
@@ -31,6 +34,21 @@ function pushLog(events: CampEvent[], state: Pick<CampState, 'day' | 'period'>, 
   events.push({ day: state.day, period: state.period, text });
 }
 
+/** Gathering sometimes turns up something worth keeping: one of the early (origins..settlement) expansion items.
+ *  Deterministic per seed/day/period/member, so a run replays identically. The group only keeps the first of each kind. */
+function maybeFind(state: CampState, member: Member, events: CampEvent[]) {
+  if (!FINDS.length) return;
+  const rng = createRng(`${state.seed}|find|${state.day}|${state.period}|${member.id}`);
+  if (!rng.chance(0.15)) return;
+  const found = state.finds ?? (state.finds = []);
+  const fresh = FINDS.filter(f => !found.includes(f.id));
+  if (!fresh.length) return;
+  const item = rng.pick(fresh);
+  found.push(item.id);
+  member.morale = clamp01(member.morale + 0.03);
+  pushLog(events, state, `${member.name} turns up ${item.n.toLowerCase()} while working: ${item.l1}`);
+}
+
 function resolveTask(state: CampState, member: Member, events: CampEvent[]) {
   const task: Task = member.task ?? { kind: 'idle', x: state.terrain.campX, y: state.terrain.campY };
   const bonus = traitBonus(member.trait, task.kind);
@@ -41,6 +59,7 @@ function resolveTask(state: CampState, member: Member, events: CampEvent[]) {
       const amount = 0.4 + bonus;
       state.resources.wood += amount;
       member.energy = clamp01(member.energy - 0.12);
+      maybeFind(state, member, events);
       break;
     }
     case 'gather-food': {
@@ -49,6 +68,7 @@ function resolveTask(state: CampState, member: Member, events: CampEvent[]) {
       const amount = 0.45 + bonus;
       state.resources.food += amount;
       member.energy = clamp01(member.energy - 0.12);
+      maybeFind(state, member, events);
       break;
     }
     case 'fetch-water': {

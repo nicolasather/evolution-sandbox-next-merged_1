@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
 import { ER_TARGET, ESCAPE_MODE, escapeRoomGuide } from '@/lib/guide/escaperoom';
 import { episodeExhibit, summarizeEpisode } from '@/lib/escaperoom/memory';
-import { DEFAULT_EPISODE_ID, getEpisode } from '@/lib/escaperoom/registry';
+import { DEFAULT_EPISODE_ID, EPISODES, getEpisode } from '@/lib/escaperoom/registry';
 import { applyAction, blankState } from '@/lib/escaperoom/simulate';
 import { escapeRoomStore } from '@/lib/escaperoom/store';
 import type {
@@ -167,12 +167,20 @@ function CodeStation({ puzzle, solved, hint, unlocked, onSubmit, onHint }: {
 }
 
 export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
-  const episode: EscapeRoomEpisode = getEpisode(DEFAULT_EPISODE_ID)!;
   const [state, setState] = useState<EpisodeState>(() => {
     escapeRoomStore.load();
     const saved = escapeRoomStore.get();
-    return saved.activeState && saved.activeState.episodeId === episode.id ? saved.activeState : blankState(episode);
+    if (saved.activeState && getEpisode(saved.activeState.episodeId)) return saved.activeState;
+    return blankState(getEpisode(DEFAULT_EPISODE_ID)!);
   });
+  const episode: EscapeRoomEpisode = getEpisode(state.episodeId) ?? getEpisode(DEFAULT_EPISODE_ID)!;
+  const pickEpisode = (id: string) => {
+    const ep = getEpisode(id);
+    if (!ep) return;
+    const fresh = blankState(ep);
+    setState(fresh);
+    escapeRoomStore.setActive(fresh);
+  };
 
   useEffect(() => {
     if (!escapeRoomStore.get().activeState) escapeRoomStore.setActive(state);
@@ -220,7 +228,7 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
           <p className="er-ending-line">{episode.successText}</p>
           <p className="er-ending-stats">{Object.values(state.attempts).reduce((a, b) => a + b, 0)} attempts across the room · {Object.values(state.hintsRevealed).filter(Boolean).length} hints used.</p>
           <div className="er-ending-actions">
-            <button className="chip" onClick={finishAndRestart}>Reopen the workshop</button>
+            <button className="chip" onClick={finishAndRestart}>Another room (or reopen this one)</button>
             <button className="chip" onClick={finishAndExit}>Return to the Hub</button>
           </div>
         </div>
@@ -236,6 +244,9 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
       <header className="er-top">
         <button className="chip er-exit" onClick={onExit}>← Hub</button>
         <p className="mono er-eyebrow">{episode.title}</p>
+        <select className="chip" aria-label="Choose a room" value={episode.id} onChange={e => pickEpisode(e.target.value)}>
+          {EPISODES.map(e => <option key={e.id} value={e.id}>{e.title}</option>)}
+        </select>
         <p className="er-progress mono">{state.solvedPuzzleIds.length} of {episode.puzzles.length} stations solved</p>
       </header>
 

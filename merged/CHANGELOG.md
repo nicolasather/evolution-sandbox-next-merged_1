@@ -5,6 +5,9 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 15 October 2026 — Expansion items wired into the modes
+Minimum Path (+144 missions, 1917-item atlas), Archaeology (588 templates), Survival (171 finds), Escape Room (40 generated rooms + picker); adapter policies opened for those modes; public item counts updated to 1,917. One command for future items: `python3 tools/expansion/sync_modes.py` (guarded by `modeCoverage.test.ts`).
+
 ### 15 October 2026 — Expansion 1,000 (branch `expansion-1000-beta`; drafts only, NOT shipped)
 999 loader-ignored draft nodes (1 quarantined duplicate), a hand-drawn plate for each (`tools/expansion/art/**`, `data/expansion/art_exp26.json`), a preview-only overlay tool (`tools/expansion/preview_install.py`, refuses main/production) and regression tests (`tools/tests/test_expansion_exp26.py`). Nothing is approved, merged into `data/db.json`, or wired into a mode; the 918 shipped nodes are untouched. Counts: `docs/EXPANSION_1000_STATUS.md`.
 

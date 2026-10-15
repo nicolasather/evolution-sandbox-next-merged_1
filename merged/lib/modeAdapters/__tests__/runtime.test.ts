@@ -16,7 +16,7 @@ describe('adapterGate: the original catalogue is never filtered', () => {
   });
   it('pipeline items need their adapter: excluded modes always say no', () => {
     const n = mk('zz_a');
-    for (const mode of ['civilization', 'decipher', 'alien-archaeology', 'escape-room'] as const) expect(adapterGate(mode, n, playDb)).toBe(false);
+    for (const mode of ['civilization', 'decipher', 'alien-archaeology'] as const) expect(adapterGate(mode, n, playDb)).toBe(false);
     expect(adapterGate('minimum-path', n, playDb)).toBe(true);
   });
   it('a placeholder pipeline item is never offered', () => {
