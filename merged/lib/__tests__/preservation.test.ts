@@ -7,11 +7,11 @@ import { MODES } from '@/lib/modes/registry';
    was removed or the crafting graph was touched, which that work must never do. */
 describe('preservation baseline', () => {
   it('keeps every discovery, era, category and source', () => {
-    expect(db.nodes.length).toBe(918);
+    expect(db.nodes.length).toBe(1917);
     expect(db.eras.length).toBe(14);
     expect(db.categories.length).toBe(13);
     expect(Object.keys(db.sources).length).toBe(71);
-    expect(db.counts).toEqual({ total: 918, core: 902, hidden: 16, sourceRequired: 764 });
+    expect(db.counts).toEqual({ total: 1917, core: 1901, hidden: 16, sourceRequired: 1763 });
   });
 
   it('keeps every recipe', () => {
@@ -32,5 +32,5 @@ describe('preservation baseline', () => {
   });
 });
 
-const BASELINE_RECIPES = 1858;
+const BASELINE_RECIPES = 3856;
 const BASELINE_TECHNIQUES = 25;

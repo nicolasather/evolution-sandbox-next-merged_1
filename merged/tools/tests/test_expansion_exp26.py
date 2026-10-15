@@ -1,4 +1,4 @@
-"""Regression tests for the exp26 expansion drafts, their art and the preview-only overlay."""
+"""Regression tests for the exp26 items installed in the game (data/nodes/g11.json) and their plate art."""
 import json
 import subprocess
 import sys
@@ -7,52 +7,39 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "expansion"))
-
 import build_art  # noqa: E402
-import preview_install  # noqa: E402
 
 DB = json.loads((ROOT / "data" / "db.json").read_text(encoding="utf-8"))
-DRAFTS = json.loads((ROOT / "data" / "expansion_drafts" / "exp26_1000.json").read_text(encoding="utf-8"))
-ART = json.loads((ROOT / "data" / "expansion" / "art_exp26.json").read_text(encoding="utf-8"))
+G11 = json.loads((ROOT / "data" / "nodes" / "g11.json").read_text(encoding="utf-8"))
+ART = json.loads((ROOT / "data" / "art.json").read_text(encoding="utf-8"))
+NEW = {n["id"] for n in G11}
 
 
-class Exp26(unittest.TestCase):
-    def test_918_shipped_nodes_preserved(self):
-        self.assertEqual(len(DB["nodes"]), 918)
+class Exp26InGame(unittest.TestCase):
+    def test_counts(self):
+        self.assertEqual(len(G11), 999)
+        self.assertEqual(len(DB["nodes"]), 918 + 999)
 
-    def test_no_collisions_with_shipped(self):
-        ids = {n["id"] for n in DB["nodes"]}
-        names = {n["n"].lower() for n in DB["nodes"]}
-        for d in DRAFTS:
-            self.assertNotIn(d["id"], ids)
-            self.assertNotIn(d["n"].lower(), names)
-        self.assertEqual(len({d["id"] for d in DRAFTS}), len(DRAFTS))
-        self.assertEqual(len({d["n"].lower() for d in DRAFTS}), len(DRAFTS))
+    def test_original_918_untouched(self):
+        old = [n for n in DB["nodes"] if n["id"] not in NEW]
+        self.assertEqual(len(old), 918)
+        self.assertEqual(sorted(n["no"] for n in old), list(range(1, 919)))
 
-    def test_drafts_stay_unverified(self):
-        for d in DRAFTS:
-            self.assertIn("DRAFT", d["caution"])
-            self.assertEqual(d["src"], ["source_required"])
+    def test_unique_ids_names_and_recipe_keys(self):
+        self.assertEqual(len({n["id"] for n in DB["nodes"]}), len(DB["nodes"]))
+        self.assertEqual(len({n["n"].lower() for n in DB["nodes"]}), len(DB["nodes"]))
+        keys = [tuple(sorted(r)) for n in DB["nodes"] for r in n["rec"]]
+        self.assertEqual(len(keys), len(set(keys)))
 
-    def test_every_draft_has_distinct_lint_clean_art(self):
-        self.assertEqual(set(ART), {d["id"] for d in DRAFTS})
-        self.assertEqual(len(set(ART.values())), len(ART))
-        for k, v in ART.items():
-            self.assertEqual(build_art.lint(v), [], k)
+    def test_every_new_item_has_pair_recipes_and_art(self):
+        for n in G11:
+            self.assertGreaterEqual(len(n["rec"]), 2, n["id"])
+            self.assertTrue(all(len(r) == 2 for r in n["rec"]), n["id"])
+            self.assertIn(n["id"], ART)
+            self.assertEqual(build_art.lint(ART[n["id"]]), [], n["id"])
 
-    def test_art_file_matches_registry(self):
+    def test_art_registry_in_sync(self):
         self.assertEqual(subprocess.run([sys.executable, str(ROOT / "tools" / "expansion" / "build_art.py"), "--check"], capture_output=True).returncode, 0)
-
-    def test_preview_overlay_invariants(self):
-        db, art, problems = preview_install.build()
-        self.assertEqual(problems, [])
-        self.assertEqual(db["nodes"][:918], DB["nodes"])
-        self.assertTrue(all(n["preview"] and not n["verified"] for n in db["nodes"][918:]))
-        self.assertEqual(db["draftNodeCount"], len(DRAFTS))
-
-    def test_preview_refuses_data_dir(self):
-        with self.assertRaises(SystemExit):
-            preview_install.refuse_if_unsafe(ROOT / "data" / "x")
 
 
 if __name__ == "__main__":

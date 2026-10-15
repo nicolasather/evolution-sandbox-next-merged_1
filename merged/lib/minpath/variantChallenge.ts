@@ -38,7 +38,7 @@ export function pickVariantChallenge(db: Pick<Db, 'nodes'>, rng: Rng, kind: Modi
   const candidates = db.nodes.filter(n => !n.primitive && !n.hidden && graph.neighbors.has(n.id) && adapterGate('minimum-path', n, db));
   if (candidates.length < 2) return null;
 
-  for (let attempt = 0; attempt < 60; attempt++) {
+  for (let attempt = 0; attempt < 600; attempt++) {  // the graph grew to ~1,900 items, so a valid pair is rarer per draw
     const a = rng.pick(candidates);
     const b = rng.pick(candidates);
     if (a.id === b.id) continue;

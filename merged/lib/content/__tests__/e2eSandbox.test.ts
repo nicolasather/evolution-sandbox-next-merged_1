@@ -59,13 +59,13 @@ describe('pilot fixture → sandbox → engine → 3D → motion → modes → r
     for (const blocked of ['fx_stone_age_microchip', 'fx_early_copper_ingot', 'fx_fired_clay_bowl', 'fx_sun_dried_block', 'fx_unsourced_charm']) expect(fx(blocked)).toBeUndefined();
   });
 
-  it('the original 918 items keep their ids, numbers and recipes; new ones continue the numbering', () => {
-    expect(db.nodes.length).toBe(923);
+  it('the original items keep their ids, numbers and recipes; new ones continue the numbering', () => {
+    expect(db.nodes.length).toBe(1922);
     for (const o of playDb.nodes) {
       const n = db.nodes.find(x => x.id === o.id)!;
       expect(n).toBeDefined(); expect(n.no).toBe(o.no); expect(n.rec).toEqual(o.rec);
     }
-    expect(db.nodes.filter(n => n.id.startsWith('fx_')).map(n => n.no).sort()).toEqual([919, 920, 921, 922, 923]);
+    expect(db.nodes.filter(n => n.id.startsWith('fx_')).map(n => n.no).sort()).toEqual([1919, 1920, 1921, 1922, 1923]);
   });
 
   it('the real game data was not touched', () => {

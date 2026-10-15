@@ -79,7 +79,7 @@ class CatalogueTests(unittest.TestCase):
         cls.actions = allowed_actions(ROOT)
 
     def test_counts(self):
-        self.assertEqual(len([p for p in self.cat.profiles.values() if not p.is_state]), 918)
+        self.assertEqual(len([p for p in self.cat.profiles.values() if not p.is_state]), 1917)
         statuses = {}
         for p in self.cat.profiles.values():
             statuses[p.status] = statuses.get(p.status, 0) + 1
