@@ -1,0 +1,46 @@
+{
+  "checkedDate": "2026-10-15",
+  "note": "Pilot evidence records. Only items with an item-specific source are listed. Nothing here is published to the game yet.",
+  "records": [
+    {
+      "id": "anc27_lydia_electrum_coin",
+      "status": "evidenced-partial",
+      "item": "Lydian electrum coin (twenty-fourth stater, lion's paw type)",
+      "type": "historical artefact",
+      "source": {
+        "title": "Electrum twenty-fourth stater, lion's paw (Sardis Expedition artifact LATW 23)",
+        "url": "https://sardisexpedition.org/en/artifacts/latw-23",
+        "kind": "excavation project catalogue",
+        "accession": "Ephesus Museum inv. 99/43/94; Ephesus Excavations ART 94/K277",
+        "site": "Artemision at Ephesus, sacrificial deposit (deepest layers)",
+        "dateStated": "ca. 630-615 BC (terminus ante quem ca. 615 BC from stratigraphy)",
+        "region": "Lydia (Sardis mint) / Ephesus find spot"
+      },
+      "secondary": {
+        "title": "The Earliest Coins at Ephesus (Macquarie University ACANS)",
+        "url": "https://www.mq.edu.au/faculty-of-arts/schools/school-of-humanities/our-research/australian-centre-for-ancient-numismatic-studies/digital-exhibitions/the-coinage-of-ephesus/a-history-of-ephesus-from-coins-the-greek-state/the-earliest-coins-at-ephesus",
+        "caveat": "Page notes scholarly debate on whether the Artemision electrum is circulating money or temple dedication, and on the weight standard's origin. The page's own date line has a CE/BCE typo; do not rely on it for numbers."
+      },
+      "reliability": "medium-high for dating of this coin type; origin of coinage as a whole remains debated",
+      "gameplay": {"suggestedDs": -630, "craftable": "needs hand-authored recipe (electrum alloy + die striking); pack route 'coin_striking_die + money' is unreviewed"}
+    },
+    {
+      "id": "anc27_qanat_vertical_shaft",
+      "status": "evidenced-technique-only-date-unverified",
+      "item": "Qanat (gently sloping tunnel with vertical access shafts)",
+      "type": "technique / water-engineering system",
+      "source": {
+        "title": "Persian Qanat, UNESCO World Heritage List 1506",
+        "url": "https://whc.unesco.org/en/list/1506",
+        "kind": "UNESCO inscription (11 qanats, inscribed 2016, criteria iii and iv)",
+        "dateStated": "none given (described as ancient, used for centuries or millennia)",
+        "region": "Iranian plateau"
+      },
+      "reliability": "high for technique description; NO date. The pack's provisional ds of -4800 is unsupported by this source and must not be used.",
+      "gameplay": {"suggestedDs": null, "action": "find a dated scholarly source before publishing; keep as draft"}
+    }
+  ],
+  "notSupported": [
+    "Antikythera mechanism: only search-result titles retrieved, no page read yet; not recorded as verified."
+  ]
+}
