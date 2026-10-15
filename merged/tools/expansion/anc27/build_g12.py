@@ -49,12 +49,32 @@ def load_specs():
     return R, D
 
 
+def load_alts():
+    """alts/*.py each define  ALT = {item_id_without_prefix: [[ingredients], [ingredients], ...]}  (extra routes after the primary one)."""
+    ALT = {}
+    for f in sorted(glob.glob(os.path.join(os.path.dirname(__file__), "alts", "*.py"))):
+        ns: dict = {}
+        exec(open(f, encoding="utf-8").read(), ns)
+        for k, v in ns["ALT"].items():
+            assert k not in ALT, f"duplicate alt spec {k}"
+            ALT[k] = v
+    return ALT
+
+
+def resolve_alts(ALT):
+    def one(x):  # '@name' or a bare name that is an anc27 item and not a catalogue id
+        if x.startswith("@"): return PREFIX + x[1:]
+        return PREFIX + x if x not in BASE and (PREFIX + x) in ANC else x
+    return {PREFIX + k: [[one(x) for x in r] for r in v] for k, v in ALT.items()}
+
+
 def resolve(R):
     return {PREFIX + k: [(PREFIX + x[1:]) if x.startswith("@") else x for x in v] for k, v in R.items()}
 
 
-def check(R):
+def check(R, ALT=None):
     rec, errs, taken, seen = resolve(R), [], {}, {}
+    alt = resolve_alts(ALT or {})
     for i, n in BASE.items():
         for r in n["rec"]:
             taken.setdefault(tuple(sorted(r)), []).append(i)
@@ -80,6 +100,33 @@ def check(R):
         return ds[i]
 
     for i in rec: dsof(i)
+
+    # extra routes: same rules, plus every ingredient must already exist by the item's own date and must not descend from the item
+    def ingredients_of(i):
+        return list(rec.get(i, [])) + [x for r in alt.get(i, []) for x in r] if i in rec else [x for r in (BASE[i]["rec"] if i in BASE else []) for x in r]
+
+    def descends(x, target, seen_=None):
+        seen_ = seen_ if seen_ is not None else set()
+        if x == target: return True
+        if x in seen_ or x not in rec and x not in BASE: return False
+        seen_.add(x)
+        return any(descends(y, target, seen_) for y in ingredients_of(x))
+
+    for i, routes in alt.items():
+        if i not in rec:
+            errs.append(f"alt for unauthored item {i}"); continue
+        for r in routes:
+            if not 2 <= len(r) <= 5: errs.append(f"{i}: alt slots {len(r)}")
+            for x in r:
+                if x == i: errs.append(f"{i}: alt self"); continue
+                if x not in BASE and x not in rec: errs.append(f"{i}: alt ingredient {x} unknown"); continue
+                if dsof(x) > ds[i]: errs.append(f"{i}: alt ingredient {x} (ds {dsof(x)}) later than item (ds {ds[i]})")
+                if descends(x, i): errs.append(f"{i}: alt ingredient {x} descends from the item (cycle)")
+            k = tuple(sorted(r))
+            if len(set(r)) != len(r): errs.append(f"{i}: alt repeats an ingredient")
+            if k in taken: errs.append(f"{i}: alt key collides with existing {taken[k][:2]}")
+            if k in seen: errs.append(f"{i}: alt key collides with authored {seen[k]}")
+            seen[k] = i
     return errs, ds
 
 
@@ -89,19 +136,21 @@ KEEP = ["id", "no", "n", "era", "cat", "date", "rar", "vis", "l1", "l2", "l3", "
 
 def main() -> int:
     R, D = load_specs()
-    errs, ds = check(R)
-    print(f"authored {len(R)}  deferred(listed) {len(D)}  errors {len(errs)}")
+    ALT = load_alts()
+    errs, ds = check(R, ALT)
+    print(f"authored {len(R)}  extra routes {sum(len(v) for v in ALT.values())} on {len(ALT)} items  deferred(listed) {len(D)}  errors {len(errs)}")
     for e in errs[:40]: print("  ", e)
     if errs: return 1
     rec = resolve(R)
+    alts = resolve_alts(ALT)
     out = []
     for n in A:
         i = n["id"]
         if i not in rec: continue
         o = {k: n[k] for k in KEEP if k in n}
         o["ds"] = ds.get(i, n["ds"])
-        o["rec"] = [rec[i]]
-        o["tags"] = list(dict.fromkeys(o["tags"] + ["anc27_individual_recipe"]))
+        o["rec"] = [rec[i]] + alts.get(i, [])
+        o["tags"] = list(dict.fromkeys(o["tags"] + ["anc27_individual_recipe"] + (["anc27_multi_route"] if i in alts else [])))
         o["modeMeta"] = {k: {"candidate": bool(v.get("eligible")), "review": "pending",
                              "automatic_ingestion": bool(v.get("eligible")) and k in ("main-evolution", "reverse-evolution", "minimum-path")}
                          for k, v in MODES.get(i, DEFAULT_MODES).items()}

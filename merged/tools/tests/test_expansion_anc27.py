@@ -29,15 +29,28 @@ class Anc27InGame(unittest.TestCase):
         older = [n for n in DB["nodes"] if n["id"] not in NEW and not n["id"].startswith("exp26_")]
         self.assertEqual(sorted(n["no"] for n in older), list(range(1, 919)))
 
-    def test_every_item_has_one_authored_pair_recipe_over_real_ingredients(self):
+    def test_every_item_has_at_least_two_distinct_routes_over_real_ingredients(self):
         for n in G12:
-            self.assertEqual(len(n["rec"]), 1, n["id"])
-            r = n["rec"][0]
-            self.assertTrue(2 <= len(r) <= 5, n["id"])
-            self.assertNotIn(n["id"], r)
-            for x in r:
-                self.assertIn(x, BY_ID, f"{n['id']} uses unknown {x}")
-                self.assertLessEqual(BY_ID[x]["ds"], n["ds"], f"{n['id']} is placed before its ingredient {x}")
+            self.assertGreaterEqual(len(n["rec"]), 2, n["id"])
+            self.assertEqual(len({KEY(r) for r in n["rec"]}), len(n["rec"]), n["id"])
+            for r in n["rec"]:
+                self.assertTrue(2 <= len(r) <= 5, n["id"])
+                self.assertNotIn(n["id"], r)
+                self.assertEqual(len(set(r)), len(r), f"{n['id']} repeats an ingredient")
+                for x in r:
+                    self.assertIn(x, BY_ID, f"{n['id']} uses unknown {x}")
+                    self.assertLessEqual(BY_ID[x]["ds"], n["ds"], f"{n['id']} is placed before its ingredient {x}")
+
+    def test_routes_never_depend_on_the_item_itself(self):
+        def reaches(src, target, seen):
+            if src == target: return True
+            if src in seen or src not in BY_ID: return False
+            seen.add(src)
+            return any(reaches(x, target, seen) for r in BY_ID[src]["rec"] for x in r)
+        for n in G12:
+            for r in n["rec"]:
+                for x in r:
+                    self.assertFalse(reaches(x, n["id"], set()), f"{n['id']} <- {x} is circular")
 
     def test_no_recipe_key_is_shared_in_the_whole_game(self):
         keys = [KEY(r) for n in DB["nodes"] for r in n["rec"]]

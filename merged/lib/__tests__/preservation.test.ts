@@ -32,5 +32,5 @@ describe('preservation baseline', () => {
   });
 });
 
-const BASELINE_RECIPES = 4697; // 3856 + 841 (one authored recipe per anc27 item)
+const BASELINE_RECIPES = 5538; // 3856 + 1682 (two authored routes per anc27 item)
 const BASELINE_TECHNIQUES = 25;
