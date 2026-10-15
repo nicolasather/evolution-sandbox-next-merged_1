@@ -1,0 +1,224 @@
+{
+  "summary": {
+    "generated": 1000,
+    "existing_nodes": 1917,
+    "numbering": {
+      "first": 1920,
+      "last": 2919,
+      "collisions_with_existing": 0
+    },
+    "near_duplicates_of_existing": 26,
+    "chronology_violations_within_pack": 0,
+    "logic_flags": 4,
+    "lexically_linked_recipes": 712,
+    "source_verified": 0,
+    "admin_approved": 0
+  },
+  "near_duplicates": [
+    {
+      "new_id": "anc27_bundle_reed_canoe",
+      "new_name": "Bundle Reed Canoe",
+      "existing_id": "exp26_reed_bundle_canoe",
+      "existing_name": "Reed Bundle Canoe",
+      "similarity": 1.0
+    },
+    {
+      "new_id": "anc27_sea_depth_sounding_line",
+      "new_name": "Sea Depth Sounding Line",
+      "existing_id": "exp26_depth_sounding_line",
+      "existing_name": "Depth Sounding Line",
+      "similarity": 0.9
+    },
+    {
+      "new_id": "anc27_winnowing_fan_basket",
+      "new_name": "Winnowing Fan Basket",
+      "existing_id": "exp26_winnowing_basket",
+      "existing_name": "Winnowing Basket",
+      "similarity": 0.89
+    },
+    {
+      "new_id": "anc27_rainwater_catchment_roof",
+      "new_name": "Rainwater Catchment Roof",
+      "existing_id": "exp26_rainwater_catchment_jar",
+      "existing_name": "Rainwater Catchment Jar",
+      "similarity": 0.89
+    },
+    {
+      "new_id": "anc27_rope_suspension_footbridge",
+      "new_name": "Rope Suspension Footbridge",
+      "existing_id": "exp26_suspension_footbridge",
+      "existing_name": "Suspension Footbridge",
+      "similarity": 0.89
+    },
+    {
+      "new_id": "anc27_grain_winnowing_yard",
+      "new_name": "Grain Winnowing Yard",
+      "existing_id": "exp26_grain_winnowing_fan",
+      "existing_name": "Grain Winnowing Fan",
+      "similarity": 0.87
+    },
+    {
+      "new_id": "anc27_stone_slab_ford_bridge",
+      "new_name": "Stone Slab Ford Bridge",
+      "existing_id": "exp26_stone_slab_bridge",
+      "existing_name": "Stone Slab Bridge",
+      "similarity": 0.87
+    },
+    {
+      "new_id": "anc27_bronze_ploughshare",
+      "new_name": "Bronze Ploughshare",
+      "existing_id": "stone_ploughshare",
+      "existing_name": "Stone Ploughshare",
+      "similarity": 0.86
+    },
+    {
+      "new_id": "anc27_grain_grinding_slab",
+      "new_name": "Grain Grinding Slab",
+      "existing_id": "exp26_grain_grinding_set",
+      "existing_name": "Grain Grinding Set",
+      "similarity": 0.86
+    },
+    {
+      "new_id": "anc27_iron_ploughshare",
+      "new_name": "Iron Ploughshare",
+      "existing_id": "stone_ploughshare",
+      "existing_name": "Stone Ploughshare",
+      "similarity": 0.85
+    },
+    {
+      "new_id": "anc27_composite_harvest_blade",
+      "new_name": "Composite Harvest Blade",
+      "existing_id": "exp26_composite_harvest_sickle",
+      "existing_name": "Composite Harvest Sickle",
+      "similarity": 0.85
+    },
+    {
+      "new_id": "anc27_fermented_cabbage_crock",
+      "new_name": "Fermented Cabbage Crock",
+      "existing_id": "exp26_fermented_cabbage",
+      "existing_name": "Fermented Cabbage",
+      "similarity": 0.85
+    },
+    {
+      "new_id": "anc27_road_drainage_ditch",
+      "new_name": "Road Drainage Ditch",
+      "existing_id": "trench",
+      "existing_name": "Drainage Ditch",
+      "similarity": 0.85
+    },
+    {
+      "new_id": "anc27_stone_threshing_floor",
+      "new_name": "Stone Threshing Floor",
+      "existing_id": "exp26_threshing_floor",
+      "existing_name": "Threshing Floor",
+      "similarity": 0.83
+    },
+    {
+      "new_id": "anc27_reciprocating_force_pump",
+      "new_name": "Reciprocating Force Pump",
+      "existing_id": "exp26_reciprocating_water_pump",
+      "existing_name": "Reciprocating Water Pump",
+      "similarity": 0.83
+    },
+    {
+      "new_id": "anc27_workshop_quarter",
+      "new_name": "Workshop Quarter",
+      "existing_id": "workshop_area",
+      "existing_name": "Workshop Area",
+      "similarity": 0.83
+    },
+    {
+      "new_id": "anc27_reed_bundle_coracle",
+      "new_name": "Reed Bundle Coracle",
+      "existing_id": "exp26_reed_bundle_canoe",
+      "existing_name": "Reed Bundle Canoe",
+      "similarity": 0.83
+    },
+    {
+      "new_id": "anc27_twisted_wool_yarn",
+      "new_name": "Twisted Wool Yarn",
+      "existing_id": "exp26_twist_balanced_wool_yarn",
+      "existing_name": "Twist Balanced Wool Yarn",
+      "similarity": 0.83
+    },
+    {
+      "new_id": "anc27_plant_dyed_thread",
+      "new_name": "Plant Dyed Thread",
+      "existing_id": "plant_thread",
+      "existing_name": "Plant Thread",
+      "similarity": 0.83
+    },
+    {
+      "new_id": "anc27_drainage_field_ditch",
+      "new_name": "Drainage Field Ditch",
+      "existing_id": "trench",
+      "existing_name": "Drainage Ditch",
+      "similarity": 0.82
+    },
+    {
+      "new_id": "anc27_date_wine_fermentation_jar",
+      "new_name": "Date Wine Fermentation Jar",
+      "existing_id": "exp26_acetic_fermentation_jar",
+      "existing_name": "Acetic Fermentation Jar",
+      "similarity": 0.82
+    },
+    {
+      "new_id": "anc27_hand_spun_flax_yarn",
+      "new_name": "Hand Spun Flax Yarn",
+      "existing_id": "exp26_hand_spun_linen_yarn",
+      "existing_name": "Hand Spun Linen Yarn",
+      "similarity": 0.82
+    },
+    {
+      "new_id": "anc27_leather_water_bucket",
+      "new_name": "Leather Water Bucket",
+      "existing_id": "exp26_leather_water_bag",
+      "existing_name": "Leather Water Bag",
+      "similarity": 0.81
+    },
+    {
+      "new_id": "anc27_anchored_barge_bridge",
+      "new_name": "Anchored Barge Bridge",
+      "existing_id": "exp26_anchored_floating_bridge",
+      "existing_name": "Anchored Floating Bridge",
+      "similarity": 0.8
+    },
+    {
+      "new_id": "anc27_dugout_river_canoe",
+      "new_name": "Dugout River Canoe",
+      "existing_id": "dugout_canoe",
+      "existing_name": "Dugout Canoe",
+      "similarity": 0.8
+    },
+    {
+      "new_id": "anc27_nubian_water_wheel",
+      "new_name": "Nubian Water Wheel",
+      "existing_id": "exp26_sakia_water_wheel",
+      "existing_name": "Sakia Water Wheel",
+      "similarity": 0.8
+    }
+  ],
+  "chronology": [],
+  "logic_flags": [
+    {
+      "id": "anc27_domesticated_chickpea",
+      "name": "Domesticated Chickpea",
+      "why": "Old World crop derived from other crop (domestication is not a merge)"
+    },
+    {
+      "id": "anc27_egyptian_hieroglyphic_inscription",
+      "name": "Egyptian Hieroglyphic Inscription",
+      "why": "script derived from another civilisation's script"
+    },
+    {
+      "id": "anc27_phoenician_alphabet_inscription",
+      "name": "Phoenician Alphabet Inscription",
+      "why": "script derived from another civilisation's script"
+    },
+    {
+      "id": "anc27_bronze_surgical_probe",
+      "name": "Bronze Surgical Probe",
+      "why": "bronze item built from iron ingredient"
+    }
+  ]
+}
