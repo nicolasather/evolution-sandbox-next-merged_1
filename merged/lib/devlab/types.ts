@@ -36,6 +36,11 @@ export interface AttemptLog {
   error?: { kind: string; message: string; details?: string[] };
   promptTokens?: number;
   outputTokens?: number;
+  /** Ollama's own timings, in ms (prompt processing / token generation / model load / total) */
+  promptEvalMs?: number;
+  evalMs?: number;
+  loadMs?: number;
+  totalMs?: number;
 }
 
 export interface AutoMetrics {

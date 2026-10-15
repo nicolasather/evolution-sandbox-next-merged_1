@@ -1,4 +1,5 @@
 /** @jest-environment node */
+import { systemPrompt } from '../prompt';
 import http from 'http';
 import type { AddressInfo } from 'net';
 import { FIXTURES } from '../fixtures';
@@ -112,9 +113,47 @@ describe('OllamaClient against a fake local server', () => {
     const s = await fake([good()]);
     await new OllamaClient({ baseUrl: s.url }).chat([{ role: 'user', content: 'x' }], 7);
     const b = s.seen[0].body as unknown as Record<string, unknown>;
-    expect(b).toMatchObject({ model: 'qwen3:14b', stream: false, format: 'json', think: false });
+    expect(b).toMatchObject({ model: 'qwen3:14b', stream: true, think: false });
     expect((b.options as Record<string, unknown>).seed).toBe(7);
     await s.close();
+  });
+
+  it('puts context / output limits, keep_alive and the structured-output schema into the real payload', () => {
+    const c = new OllamaClient({ numCtx: 8192, numPredict: 3500, keepAlive: '60m' });
+    const p = c.buildPayload([{ role: 'user', content: 'x' }], 3) as { options: Record<string, number>; format: { properties: { layers: unknown } }; keep_alive: string; think: boolean };
+    expect(p.options).toMatchObject({ num_ctx: 8192, num_predict: 3500, seed: 3 });
+    expect(p.keep_alive).toBe('60m');
+    expect(p.think).toBe(false);
+    expect(p.format.properties.layers).toBeTruthy();
+    expect((new OllamaClient({ structured: false }).buildPayload([]) as { format: unknown }).format).toBe('json');
+  });
+
+  it('the compact prompt is far smaller than the full prompt', () => {
+    expect(systemPrompt('compact').length).toBeLessThan(systemPrompt('full').length / 2);
+  });
+});
+
+describe('streaming', () => {
+  it('assembles an NDJSON stream, reports progress and takes the timings from the final line', async () => {
+    const srv = http.createServer((req, res) => {
+      if (req.url === '/api/chat') {
+        req.resume();
+        res.writeHead(200, { 'content-type': 'application/x-ndjson' });
+        res.write(JSON.stringify({ message: { content: '{"lay' }, done: false }) + '\n');
+        setTimeout(() => {
+          res.write(JSON.stringify({ message: { content: 'ers":[]}' }, done: false }) + '\n');
+          res.end(JSON.stringify({ message: { content: '' }, done: true, prompt_eval_count: 11, eval_count: 5, prompt_eval_duration: 2e9, eval_duration: 3e9 }) + '\n');
+        }, 30);
+      } else { res.writeHead(404); res.end(); }
+    });
+    await new Promise<void>(r => srv.listen(0, '127.0.0.1', r));
+    const url = `http://127.0.0.1:${(srv.address() as AddressInfo).port}`;
+    let ticks = 0;
+    const r = await new OllamaClient({ baseUrl: url }).chat([{ role: 'user', content: 'x' }], 1, () => { ticks++; });
+    expect(r.content).toBe('{"layers":[]}');
+    expect(r).toMatchObject({ promptTokens: 11, outputTokens: 5, promptEvalMs: 2000, evalMs: 3000 });
+    expect(ticks).toBeGreaterThan(0);
+    await new Promise(r2 => srv.close(r2));
   });
 });
 

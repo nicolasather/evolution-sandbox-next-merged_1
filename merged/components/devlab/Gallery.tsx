@@ -81,6 +81,12 @@ export function Gallery() {
     catch (e) { setError((e as Error).message); }
   }, []);
   useEffect(() => { void load(); }, [load]);
+  // deep link: /admin/visual-lab?focus=vl_pagoda opens that resource straight away
+  useEffect(() => {
+    if (!data) return;
+    const f = new URLSearchParams(window.location.search).get('focus');
+    if (f && data.dataset.resources.some(r => r.id === f)) setSel(s => s ?? f);
+  }, [data]);
 
   const recById = useMemo(() => new Map((data?.records ?? []).map(r => [r.id, r])), [data]);
 
@@ -283,8 +289,8 @@ function Detail({ r, rec, rv, existing, busy, onClose, onRegenerate, onReview }:
             <div>Status: <b className={rec.status === 'failed' ? css.err : ''}>{rec.status.toUpperCase()}</b> · source: {rec.source} · model: {rec.model} · version {rec.version} · {rec.generatedAt}</div>
             {rec.failure && <p className={css.err}><b>{rec.failure.kind}</b>: {rec.failure.message}{rec.failure.details?.length ? <ul>{rec.failure.details.map((d, i) => <li key={i}>{d}</li>)}</ul> : null}</p>}
             {!!rec.validationWarnings?.length && <div className={css.warn}><b>Warnings (values were clamped / ignored):</b><ul>{rec.validationWarnings.map((w, i) => <li key={i}>{w}</li>)}</ul></div>}
-            {rec.attempts.length > 0 && <table className={css.tbl}><thead><tr><th>#</th><th>model time</th><th>tokens in/out</th><th>result</th></tr></thead><tbody>
-              {rec.attempts.map(a => <tr key={a.n}><td>{a.n}</td><td>{(a.ms / 1000).toFixed(1)} s</td><td>{a.promptTokens ?? '–'} / {a.outputTokens ?? '–'}</td><td className={a.error ? css.err : ''}>{a.error ? `${a.error.kind}: ${a.error.message}` : 'accepted'}</td></tr>)}
+            {rec.attempts.length > 0 && <table className={css.tbl}><thead><tr><th>#</th><th>wall time</th><th>prompt processing</th><th>generation</th><th>tokens in/out</th><th>result</th></tr></thead><tbody>
+              {rec.attempts.map(a => <tr key={a.n}><td>{a.n}</td><td>{(a.ms / 1000).toFixed(1)} s</td><td>{a.promptEvalMs !== undefined ? `${(a.promptEvalMs / 1000).toFixed(1)} s` : '–'}</td><td>{a.evalMs !== undefined ? `${(a.evalMs / 1000).toFixed(1)} s` : '–'}</td><td>{a.promptTokens ?? '–'} / {a.outputTokens ?? '–'}</td><td className={a.error ? css.err : ''}>{a.error ? `${a.error.kind}: ${a.error.message}` : 'accepted'}</td></tr>)}
             </tbody></table>}
             {rec.lastRaw && <details><summary>Last raw model reply (data only, never executed)</summary><pre className={css.pre}>{rec.lastRaw}</pre></details>}
           </>}

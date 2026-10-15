@@ -12,7 +12,7 @@
 
 import { compileSpec } from './compile';
 import { measure, qualityGate, type StyleRef } from './metrics';
-import { feedbackPrompt, systemPrompt, userPrompt } from './prompt';
+import { feedbackPrompt, specJsonSchema, systemPrompt, userPrompt, userPromptCompact } from './prompt';
 import { validateSpec } from './schema';
 import { isLoopbackHostname } from './gate';
 import type { AttemptLog, GenRecord, ResourceEntry } from './types';
@@ -36,19 +36,27 @@ export interface OllamaConfig {
   numCtx: number;
   numPredict: number;
   temperature: number;
+  /** 'compact' (default, CPU friendly) or 'full' */
+  promptMode: 'compact' | 'full';
+  /** send a JSON schema as Ollama's `format` (structured output) instead of the bare 'json' mode */
+  structured: boolean;
+  keepAlive: string;
   fetchImpl?: typeof fetch;
 }
 
 export const DEFAULT_CONFIG: OllamaConfig = {
   baseUrl: 'http://127.0.0.1:11434',
   model: 'qwen3:14b',
-  timeoutMs: 240_000,
+  timeoutMs: 900_000,
   maxConcurrent: 1,
   maxAttempts: 3,
   transportRetries: 1,
-  numCtx: 16384,
-  numPredict: 6144,
+  numCtx: 8192,
+  numPredict: 3500,
   temperature: 0.5,
+  promptMode: 'compact',
+  structured: true,
+  keepAlive: '60m',
 };
 
 export function configFromEnv(env: Record<string, string | undefined> = process.env): OllamaConfig {
@@ -63,6 +71,9 @@ export function configFromEnv(env: Record<string, string | undefined> = process.
     numCtx: num(env.OLLAMA_NUM_CTX, DEFAULT_CONFIG.numCtx),
     numPredict: num(env.OLLAMA_NUM_PREDICT, DEFAULT_CONFIG.numPredict),
     temperature: num(env.OLLAMA_TEMPERATURE, DEFAULT_CONFIG.temperature),
+    promptMode: env.OLLAMA_PROMPT === 'full' ? 'full' : 'compact',
+    structured: env.OLLAMA_STRUCTURED !== 'false',
+    keepAlive: env.OLLAMA_KEEP_ALIVE || DEFAULT_CONFIG.keepAlive,
   };
 }
 
@@ -86,7 +97,7 @@ class Semaphore {
 }
 
 export interface ChatMessage { role: 'system' | 'user' | 'assistant'; content: string }
-export interface ChatResult { content: string; ms: number; promptTokens?: number; outputTokens?: number }
+export interface ChatResult { content: string; ms: number; promptTokens?: number; outputTokens?: number; promptEvalMs?: number; evalMs?: number; loadMs?: number; totalMs?: number }
 
 /** Pull the JSON object out of a reply: drops <think> blocks and code fences, balances braces string-aware. */
 export function extractJson(text: string): unknown {
@@ -147,32 +158,79 @@ export class OllamaClient {
     }
   }
 
-  /** One chat completion with bounded time, bounded concurrency and transport retries. */
-  chat(messages: ChatMessage[], seed?: number): Promise<ChatResult> {
+  /** The EXACT JSON body sent to /api/chat — exported so it can be printed (--dry-run) and tested. */
+  buildPayload(messages: ChatMessage[], seed?: number): Record<string, unknown> {
+    return {
+      model: this.cfg.model, messages, stream: true,
+      format: this.cfg.structured ? specJsonSchema() : 'json',
+      think: false, keep_alive: this.cfg.keepAlive,
+      options: { temperature: this.cfg.temperature, num_ctx: this.cfg.numCtx, num_predict: this.cfg.numPredict, ...(seed !== undefined ? { seed } : {}) },
+    };
+  }
+
+  /** One chat completion with bounded time, bounded concurrency and transport retries.
+      The reply is STREAMED (stream:true). A non-streamed request sends no HTTP headers until the whole answer is
+      finished, and Node's fetch gives up after 300 s of that silence — which killed slow CPU generations at 5m06s.
+      The overall `timeoutMs` still bounds the whole call, body included. */
+  chat(messages: ChatMessage[], seed?: number, onProgress?: (p: { outputChars: number; elapsedMs: number }) => void): Promise<ChatResult> {
     return this.sem.run(async () => {
       let lastErr: OllamaError | undefined;
       for (let a = 0; a <= this.cfg.transportRetries; a++) {
         if (a > 0) await new Promise(r => setTimeout(r, 750 * a));
         const t0 = Date.now();
+        const ctl = new AbortController();
+        const timer = setTimeout(() => ctl.abort(), this.cfg.timeoutMs);
         try {
-          const res = await this.http('/api/chat', {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({
-              model: this.cfg.model, messages, stream: false, format: 'json', think: false,
-              options: { temperature: this.cfg.temperature, num_ctx: this.cfg.numCtx, num_predict: this.cfg.numPredict, ...(seed !== undefined ? { seed } : {}) },
-            }),
-          }, this.cfg.timeoutMs);
+          const f = this.cfg.fetchImpl ?? fetch;
+          let res: Response;
+          try {
+            res = await f(new URL('/api/chat', this.base).toString(), {
+              method: 'POST', headers: { 'content-type': 'application/json' }, signal: ctl.signal,
+              body: JSON.stringify(this.buildPayload(messages, seed)),
+            });
+          } catch (e) {
+            if (ctl.signal.aborted) throw new OllamaError('timeout', `Ollama did not answer within ${Math.round(this.cfg.timeoutMs / 1000)}s`);
+            throw new OllamaError('unreachable', `cannot reach Ollama at ${this.base.origin}: ${(e as Error).message}`);
+          }
           if (res.status === 404) throw new OllamaError('model_missing', `Ollama says model "${this.cfg.model}" was not found (ollama pull ${this.cfg.model})`);
           if (!res.ok) throw new OllamaError('http', `Ollama returned HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
-          const j = (await res.json()) as { message?: { content?: string }; prompt_eval_count?: number; eval_count?: number };
-          const content = j.message?.content ?? '';
+
+          type Line = { message?: { content?: string }; error?: string; done?: boolean; prompt_eval_count?: number; eval_count?: number; prompt_eval_duration?: number; eval_duration?: number; load_duration?: number; total_duration?: number };
+          let content = '';
+          let last: Line = {};
+          const take = (raw: string) => {
+            if (!raw.trim()) return;
+            let j: Line;
+            try { j = JSON.parse(raw) as Line; } catch { throw new OllamaError('http', `Ollama sent an unreadable line: ${raw.slice(0, 120)}`); }
+            if (j.error) throw new OllamaError('http', `Ollama error: ${j.error}`);
+            content += j.message?.content ?? '';
+            if (j.done) last = j;
+          };
+          try {
+            const reader = res.body!.getReader();
+            const dec = new TextDecoder();
+            let buf = '';
+            for (;;) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              buf += dec.decode(value, { stream: true });
+              let nl: number;
+              while ((nl = buf.indexOf('\n')) >= 0) { take(buf.slice(0, nl)); buf = buf.slice(nl + 1); }
+              onProgress?.({ outputChars: content.length, elapsedMs: Date.now() - t0 });
+            }
+            take(buf + dec.decode());
+          } catch (e) {
+            if (e instanceof OllamaError) throw e;
+            if (ctl.signal.aborted) throw new OllamaError('timeout', `Ollama did not finish within ${Math.round(this.cfg.timeoutMs / 1000)}s`);
+            throw new OllamaError('unreachable', `connection to Ollama broke while the reply was streaming: ${(e as Error).message}`);
+          }
           if (!content.trim()) throw new OllamaError('empty', 'Ollama returned an empty reply');
-          return { content, ms: Date.now() - t0, promptTokens: j.prompt_eval_count, outputTokens: j.eval_count };
+          const msOf = (ns?: number) => (typeof ns === 'number' ? Math.round(ns / 1e6) : undefined);
+          return { content, ms: Date.now() - t0, promptTokens: last.prompt_eval_count, outputTokens: last.eval_count, promptEvalMs: msOf(last.prompt_eval_duration), evalMs: msOf(last.eval_duration), loadMs: msOf(last.load_duration), totalMs: msOf(last.total_duration) };
         } catch (e) {
           lastErr = e instanceof OllamaError ? e : new OllamaError('unreachable', (e as Error).message);
-          if (lastErr.kind === 'model_missing' || lastErr.kind === 'http') throw lastErr; // retrying will not help
-        }
+          if (lastErr.kind === 'model_missing' || lastErr.kind === 'http' || lastErr.kind === 'timeout' || lastErr.kind === 'empty') throw lastErr; // retrying will not help
+        } finally { clearTimeout(timer); }
       }
       throw lastErr!;
     });
@@ -185,6 +243,7 @@ export interface GenerateContext {
   others: ReadonlyArray<{ id: string; grid: readonly number[] }>;
   version: number;
   now?: () => Date;
+  onProgress?: (p: { outputChars: number; elapsedMs: number }) => void;
 }
 
 /** Full pipeline for one resource: prompt → model → JSON → validate → compile → measure → quality gate.
@@ -192,7 +251,7 @@ export interface GenerateContext {
 export async function generateResource(r: ResourceEntry, ctx: GenerateContext): Promise<GenRecord> {
   const { client } = ctx;
   const attempts: AttemptLog[] = [];
-  const messages: ChatMessage[] = [{ role: 'system', content: systemPrompt() }, { role: 'user', content: userPrompt(r) }];
+  const messages: ChatMessage[] = [{ role: 'system', content: systemPrompt(client.cfg.promptMode) }, { role: 'user', content: client.cfg.promptMode === 'full' ? userPrompt(r) : userPromptCompact(r) }];
   const base = { id: r.id, version: ctx.version, model: client.cfg.model, generatedAt: (ctx.now ?? (() => new Date()))().toISOString(), source: 'qwen' as const };
   let failure: GenRecord['failure'];
   let lastRaw: string | undefined;
@@ -201,7 +260,7 @@ export async function generateResource(r: ResourceEntry, ctx: GenerateContext): 
     const t0 = Date.now();
     let reply: ChatResult;
     try {
-      reply = await client.chat(messages, 1000 + n);
+      reply = await client.chat(messages, 1000 + n, ctx.onProgress);
     } catch (e) {
       const err = e as OllamaError;
       attempts.push({ n, ms: Date.now() - t0, error: { kind: err.kind, message: err.message } });
@@ -210,7 +269,7 @@ export async function generateResource(r: ResourceEntry, ctx: GenerateContext): 
       break;
     }
     lastRaw = reply.content;
-    const log: AttemptLog = { n, ms: reply.ms, promptTokens: reply.promptTokens, outputTokens: reply.outputTokens };
+    const log: AttemptLog = { n, ms: reply.ms, promptTokens: reply.promptTokens, outputTokens: reply.outputTokens, promptEvalMs: reply.promptEvalMs, evalMs: reply.evalMs, loadMs: reply.loadMs, totalMs: reply.totalMs };
     attempts.push(log);
 
     let problems: string[] = [];

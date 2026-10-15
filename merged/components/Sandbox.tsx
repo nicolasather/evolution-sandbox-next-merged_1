@@ -12,6 +12,7 @@ import { Ending } from './Ending';
 import { Glyph } from './Glyph';
 import { ConfirmDialog } from './ConfirmDialog';
 import { JournalPanel } from './JournalPanel';
+import { MilestonesPanel } from './MilestonesPanel';
 import { ModeHub } from './ModeHub';
 import { MuseumSignal, useMuseumSync } from './museum/MuseumSignal';
 import { MinimumPathChallenge } from './minpath/MinimumPathChallenge';
@@ -69,6 +70,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   const [fitSignal, setFitSignal] = useState(0);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [journalOpen, setJournalOpen] = useState(false);
+  const [milestonesOpen, setMilestonesOpen] = useState(false);
   const [worldOpen, setWorldOpen] = useState(false);
   const [tradeOpen, setTradeOpen] = useState(false);
   const [labOpen, setLabOpen] = useState(false);
@@ -225,9 +227,10 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   }, [engine, setHintError, showView]);
 
   // one keyboard listener for the page; it reads the latest state through a ref
-  const keys = useRef({ showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered, openWorld });
+  const canMilestones = unlocks.has('archive');
+  const keys = useRef({ showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered, openWorld, canMilestones });
   useEffect(() => {
-    keys.current = { showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered, openWorld };
+    keys.current = { showView, confirmOpen, closePanel, clearSlots, setEnding, shortcutsOpen, result: s.result, place: s.place, replay: replayJourney, entered: s.entered, openWorld, canMilestones };
   });
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
@@ -259,6 +262,10 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       // M: the world progress panel
       if ((ev.key === 'm' || ev.key === 'M') && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
         ev.preventDefault(); k.openWorld(); return;
+      }
+      // P: the milestones page (only once the Archive is open, like its button)
+      if ((ev.key === 'p' || ev.key === 'P') && k.entered && k.canMilestones && !typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
+        ev.preventDefault(); setMilestonesOpen(true); return;
       }
       // W G A T: go to a view — only when nothing modal is up and no key combo is held
       if (!typing && !ev.metaKey && !ev.ctrlKey && !ev.altKey && !document.querySelector('[aria-modal="true"]:not([hidden])')) {
@@ -369,6 +376,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           onLab={() => { setLabOpen(true); playGate('lab'); }}
           onMuseum={() => showView('museum')}
           onMinPath={() => showView('minpath')}
+          onMilestones={() => setMilestonesOpen(true)}
         />
 
         <div id="views" data-current={view} className={rv ? 'rv' : undefined}>
@@ -486,6 +494,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       />
 
       <JournalPanel open={journalOpen} engine={engine} onClose={() => setJournalOpen(false)} />
+      <MilestonesPanel open={milestonesOpen} engine={engine} unlocks={unlocks} onClose={() => setMilestonesOpen(false)} />
       <WorldProgressPanel open={worldOpen} engine={engine} onClose={() => setWorldOpen(false)} />
       <TradePanel open={tradeOpen} engine={engine} onClose={() => setTradeOpen(false)} />
       <ExperimentWorkspace open={labOpen} engine={engine} onClose={() => setLabOpen(false)} />
@@ -512,7 +521,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
         <QuestionCard
           tutor={tutor}
           engine={engine}
-          busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || worldOpen || tradeOpen || labOpen || view !== 'work'}
+          busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || milestonesOpen || worldOpen || tradeOpen || labOpen || view !== 'work'}
         />
       )}
 

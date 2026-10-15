@@ -69,6 +69,8 @@
 @import "./_learn.css" layer(components);
 @import "./_narrator.css" layer(components);
 @import "./_journal.css" layer(components);
+/* Milestones: how far the player has come and which doors are open. */
+@import "./_milestones.css" layer(components);
 /* The globe reveal, the world panel and the world marks (timeline, graph, archive). */
 @import "./_world.css" layer(components);
 
