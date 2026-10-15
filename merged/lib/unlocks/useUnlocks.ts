@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import type { Engine } from '@/lib/engine';
-import { FEATURES, featureOf, unlockedFor, type Feature, type FeatureId, type Progress } from './registry';
+import { useDevOverrides } from '@/lib/dev/overrides';
+import { ALL_UNLOCKED, FEATURES, featureOf, unlockedFor, type Feature, type FeatureId, type Progress } from './registry';
 import { unlockMemory } from './store';
 
 /** What the player has done, read straight from the engine. */
@@ -38,18 +39,23 @@ const BULK = 3;
  */
 export function useUnlocks(engine: Engine, version: number, enabled: boolean): Unlocks {
   const memory = useSyncExternalStore(unlockMemory.subscribe, unlockMemory.get, unlockMemory.getServer);
-  const unlocked = useMemo(() => {
+  // What the player has REALLY earned: drives notices and "new" glows, and is never touched by a developer override.
+  const earned = useMemo(() => {
     void version; // the engine is mutable: its version is what says "re-derive"
     return unlockedFor(progressOf(engine));
   }, [engine, version]);
+  // Developer Beta only: the override widens what is OPEN, never what is earned. Outside an
+  // authorised beta `dev.unlockAll` is always false, so `open === earned`.
+  const dev = useDevOverrides();
+  const open: ReadonlySet<FeatureId> = dev.unlockAll ? ALL_UNLOCKED : earned;
 
   const [queue, setQueue] = useState<FeatureId[]>([]);
   const prev = useRef<Set<FeatureId>>(new Set());
   useEffect(() => {
     if (!enabled) return;
     const before = prev.current;
-    const fresh = FEATURES.map(f => f.id).filter(id => unlocked.has(id) && !before.has(id));
-    prev.current = unlocked;
+    const fresh = FEATURES.map(f => f.id).filter(id => earned.has(id) && !before.has(id));
+    prev.current = earned;
     if (fresh.length === 0) return;
     const toTell = fresh.filter(id => !memory.told.includes(id));
     if (toTell.length === 0) return;
@@ -60,10 +66,10 @@ export function useUnlocks(engine: Engine, version: number, enabled: boolean): U
     }
     unlockMemory.markTold(toTell);
     setQueue(q => [...q, ...toTell]);
-  }, [unlocked, enabled, memory.told]);
+  }, [earned, enabled, memory.told]);
 
-  const has = useCallback((id: FeatureId) => unlocked.has(id), [unlocked]);
-  const fresh = useCallback((id: FeatureId) => unlocked.has(id) && !memory.opened.includes(id), [unlocked, memory.opened]);
+  const has = useCallback((id: FeatureId) => open.has(id), [open]);
+  const fresh = useCallback((id: FeatureId) => earned.has(id) && !memory.opened.includes(id), [earned, memory.opened]);
   const opened = useCallback((id: FeatureId) => unlockMemory.markOpened(id), []);
   const dismissNotice = useCallback(() => setQueue(q => q.slice(1)), []);
   const notice = queue.length ? featureOf(queue[0]) : null;

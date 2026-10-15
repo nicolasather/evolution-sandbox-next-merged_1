@@ -14,6 +14,7 @@ import {
   type Command, type ContentIndex, type DomainEvent, type LifelinesState, type RunMode,
 } from './schema';
 import { refreshHubSummary } from './hubSummary';
+import { devOverrides } from '@/lib/dev/overrides';
 
 /* ============================================================================
    LIFELINES STORE — the one external store the UI reads.
@@ -467,6 +468,46 @@ export class LifelinesStore {
   }
 
   completionKey(chapterId: string): string { return completionKeyFor(chapterId, RULES_VERSION); }
+
+  /* ------------------------- Developer Beta only ------------------------- */
+
+  /**
+   * Beta scenarios: record campaign completions for these chapters. Each record is marked
+   * `firstRunId: 'dev-scenario'`, so it can always be told apart from a completion the tester
+   * earned by playing. Does nothing outside an active, server-authorised beta (and in a
+   * read-only tab). Returns how many completions were new.
+   */
+  devSeedCompletions(chapterIds: readonly string[]): number {
+    const { index } = this.snap;
+    if (!devOverrides.isActive() || !index || this.snap.readOnly) return 0;
+    let m = this.snap.manifest;
+    let n = 0;
+    for (const id of chapterIds) {
+      if (!index.chapters.has(id)) continue;
+      const key = completionKeyFor(id, RULES_VERSION);
+      if (m.completions[key]) continue;
+      m = recordCompletion(m, { key, chapterId: id, runId: 'dev-scenario', turn: 0, at: this.deps.now(), mastery: [] });
+      n++;
+    }
+    if (n > 0) this.persistManifest(m);
+    return n;
+  }
+
+  /**
+   * Beta: begin a campaign run of `chapterId` right now (replacing any run in progress; the old one
+   * is kept in the backup key like any other replacement). Inert outside an active beta.
+   */
+  devStartChapter(chapterId: string): { ok: true } | { ok: false; code: string } {
+    const { index } = this.snap;
+    if (!devOverrides.isActive()) return { ok: false, code: 'dev-inactive' };
+    if (!index) return { ok: false, code: 'no-content' };
+    const chapter = index.chapters.get(chapterId);
+    if (!chapter) return { ok: false, code: 'unknown-chapter' };
+    const variants = index.db.variants.filter(v => v.chapterId === chapterId);
+    const variant = variants.find(v => v.biomeId === chapter.recommendedBiome) ?? variants[0];
+    if (!variant) return { ok: false, code: 'no-variant' };
+    return this.startRun(variant.id, 'campaign', [], true);
+  }
 }
 
 function announceFor(events: DomainEvent[]): string {

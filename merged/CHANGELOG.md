@@ -5,6 +5,9 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 15 October 2026 — Expansion 1,000 (branch `expansion-1000-beta`; drafts only, NOT shipped)
+999 loader-ignored draft nodes (1 quarantined duplicate), a hand-drawn plate for each (`tools/expansion/art/**`, `data/expansion/art_exp26.json`), a preview-only overlay tool (`tools/expansion/preview_install.py`, refuses main/production) and regression tests (`tools/tests/test_expansion_exp26.py`). Nothing is approved, merged into `data/db.json`, or wired into a mode; the 918 shipped nodes are untouched. Counts: `docs/EXPANSION_1000_STATUS.md`.
+
 ### 14 October 2026 — Resource Visual Lab (development prototype; NOT shipped)
 Local-only workbench that has a local Ollama `qwen3:14b` design JSON "plate specs" for 100 resources that are not in the catalogue, compiles them with a closed library of 38 procedural
 components into the existing plate SVG grammar, and renders them through the real `Plate3D`. Dev-gated (`VISUAL_LAB` + `ENABLE_DEV_TOOLS`, never Vercel/production, loopback host); Ollama must be loopback;
@@ -24,6 +27,13 @@ seeds; human publishes; the Humanity Museum is never AI-published), owner-only a
 ledger, `docs/PHASE2_STATUS.md`, `docs/LIVE_DISCOVERY_RUNBOOK.md`, `docs/PHASE2_OWNER_STEPS_VI.md`.
 Item onboarding: a new verified item is queued for a 3D draft and swept once for up to 3 alternative routes (private proposals; `/admin/recipes` panel, `/api/admin/creative/onboard`, optional cron `/api/internal/onboard/tick`); see docs/ITEM_ONBOARDING.md.
 Real LLM / Neon / Blob / Meshy / staging proofs are BLOCKED until the owner provides credentials.
+
+### 14 October 2026 — Phase 1 completion (integration)
+- Exhibit panel shows a labelled stylised 3D reconstruction (`components/Reconstruction3D.tsx`) for items published by the pipeline only;
+  WebGL when available (max 6 live contexts, only while on screen), flat silhouette otherwise. Workbench finish uses the MotionPlan for those items only.
+- Mode adapters are consumed by Minimum Path and Reverse Evolution; Survival and Archaeologist recorded as excluded (no item entry point).
+- Owner-only: `/admin/recipes` (review AI alternatives), `/admin/visual3d` (render preview), AI route rate limit + logging. All 404 unless the dev gate is open.
+- Data fix (demonstrable drift, documented): `data/nodes/g1.json` lacked two 3-slot recipes (`shelter`, `spear`) that `data/db.json` already shipped; added so a rebuild reproduces db.json. Gameplay unchanged; only `dataHash` changed.
 
 ### 14 October 2026 — Logic-First V3, Phase 1 (verified-seed content pipeline)
 New `tools/verified_content.py` (+ `tools/content/`): recipe-free verified seeds → one frozen, rule-checked anchor

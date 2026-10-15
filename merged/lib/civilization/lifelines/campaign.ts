@@ -98,27 +98,36 @@ export function completionKeyFor(chapterId: string, rulesVersion: string): strin
 export function isChapterCompleted(m: CampaignManifest, chapterId: string): boolean {
   return Object.values(m.completions).some(c => c.chapterId === chapterId);
 }
+/** Options that only the Developer Beta ever passes. `openAll` ignores the chapter order; it never records a completion. */
+export interface UnlockOptions { openAll?: boolean }
+
 /** Chapter 1 is open; every other chapter opens when the chapter named by its previousChapterId is completed. */
-export function isChapterUnlocked(_index: ContentIndex, m: CampaignManifest, chapter: Chapter): boolean {
+export function isChapterUnlocked(_index: ContentIndex, m: CampaignManifest, chapter: Chapter, opts?: UnlockOptions): boolean {
+  if (opts?.openAll) return true;
   return chapter.previousChapterId === null || isChapterCompleted(m, chapter.previousChapterId);
 }
-export function chapterStatuses(index: ContentIndex, m: CampaignManifest) {
-  return index.chaptersByOrder.map(chapter => ({
-    chapter,
-    unlocked: isChapterUnlocked(index, m, chapter),
-    completed: isChapterCompleted(m, chapter.id),
-    stage: index.eras.get(chapter.era)?.name ?? `Tier ${chapter.era + 1}`,
-  }));
+export function chapterStatuses(index: ContentIndex, m: CampaignManifest, opts?: UnlockOptions) {
+  return index.chaptersByOrder.map(chapter => {
+    const earned = isChapterUnlocked(index, m, chapter);
+    return {
+      chapter,
+      unlocked: earned || !!opts?.openAll,
+      /** Open only because a developer override is on (the real order would still lock it). */
+      viaOverride: !earned && !!opts?.openAll,
+      completed: isChapterCompleted(m, chapter.id),
+      stage: index.eras.get(chapter.era)?.name ?? `Tier ${chapter.era + 1}`,
+    };
+  });
 }
 /** The next chapter's situation may be previewed (its brief), never its solution. */
 export function nextChapter(index: ContentIndex, m: CampaignManifest): Chapter | null {
   return index.chaptersByOrder.find(c => !isChapterCompleted(m, c.id)) ?? null;
 }
 /** Sandbox can offer any tier whose first chapter is unlocked — clearly fictional, no campaign reward. */
-export function sandboxTiers(index: ContentIndex, m: CampaignManifest) {
+export function sandboxTiers(index: ContentIndex, m: CampaignManifest, opts?: UnlockOptions) {
   return [...index.eras.values()].sort((a, b) => a.index - b.index).map(era => {
     const first = index.chaptersByOrder.find(c => c.era === era.index);
-    return { era, firstChapter: first ?? null, unlocked: first ? isChapterUnlocked(index, m, first) : false };
+    return { era, firstChapter: first ?? null, unlocked: first ? isChapterUnlocked(index, m, first, opts) : false };
   });
 }
 

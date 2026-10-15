@@ -1,0 +1,30 @@
+# Expansion 1,000 — status (branch `expansion-1000-beta`)
+
+Honest counts as of 15 October 2026. **No expansion item is approved or production-ready.**
+
+| Measure | Count |
+|---|---|
+| Existing shipped nodes (preserved, unchanged) | 918 |
+| Catalogue items in the pack | 1,000 |
+| Draft nodes imported as loader-ignored drafts | 999 (10 batches of ~100) |
+| Quarantined | 1 — `exp26_stone_pestle` (duplicate of shipped `stone_pestle`; dependants re-pointed) |
+| **Approved (verified pipeline, sourced, editor-approved)** | **0** |
+| Pending verification (draft, `source_required`) | 999 |
+| Blocked by hard-reject rules | not evaluated — the verified pipeline has not been run on the drafts, because no real sourced seeds exist (see below) |
+| Plate art drawn (hand-composed line art, same grammar as `data/art.json`) | 999 / 999, all distinct, all lint-clean |
+| 3D | plate art extrudes through the existing `Plate3D` pipeline; the low-poly `visual3d` fallback was not used |
+| Preview-only installable | 999 (overlay tool; **not wired into the runtime**) |
+| Production-ready | 0 |
+| Wired into game modes (main-evolution, reverse-evolution, minimum-path) | 0 |
+
+## What was done
+- `data/expansion_drafts/` — 999 corrected draft nodes + `QUARANTINE.json`. Ignored by the loader; never merged into `data/db.json` or `data/nodes/`.
+- `tools/expansion/art/` + `build_art.py` — 40 topic modules; one hand-composed drawing per item; lint: whitelisted elements only, no script/href/text/style/url, 2+ depth layers, a hairline detail, ≤6.5 KB, 6–140 elements, coordinates in-plate, unique markup. Output: `data/expansion/art_exp26.json`.
+- `tools/expansion/preview_install.py` — builds `build/preview/db.expansion-preview.json` (918 + 999 flagged `UNVERIFIED DRAFT - preview only`) and the art overlay. Refuses on `main`, on a production deploy, and for any output inside `data/`.
+- `tools/tests/test_expansion_exp26.py` — 7 regression tests (918 preserved, no id/name collisions, drafts stay unverified, art coverage/lint/uniqueness, overlay invariants, refusal rules).
+
+## Why nothing is approved
+The pack's drafts carry placeholder recipes and `source_required`. Approving an item needs a real, checkable source and an editor sign-off; sources were not fabricated. Many vessel/brick recipes would also fail the pipeline's hard rules (ERA_CONFLICT, MATERIAL_IMPOSSIBLE, MISSING_REQUIRED_COMPONENT). Next step is owner-led: supply sourced seeds per batch, run `content:run`, review, then `publish --dry-run`.
+
+## Checks run
+`data:validate` (0 errors, 918 nodes), `data:build` (no diff), `content:audit`, `content:test` (36 + 7 tests), `typecheck`, jest (40 suites / 300 tests: content, modeAdapters, museum, guide, components, art). Browser check: total stroke length of the new art (median 538, p95 970, max 1,902) is in the same range as the shipped art (median 588, max 2,300), so `Plate3D`'s point budget is not exceeded. Not run: `next build`, `release:certify` end-to-end, visual check of the plates inside the running app, and the Vercel sites (the beta is behind a Vercel login that needs the owner's own sign-in).

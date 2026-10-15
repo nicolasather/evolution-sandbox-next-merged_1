@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useState, type ReactNode } from 'react';
 import dynamic from 'next/dynamic';
 import { Sandbox } from './Sandbox';
 import { CinematicGate } from './cinematic/CinematicGate';
@@ -8,6 +8,7 @@ import { IntroVisitProvider } from './cinematic/IntroVisit';
 import { useModeGate } from './cinematic/useModeGate';
 import { ModeHelp } from './guide/ModeHelp';
 import type { ModeId } from '@/lib/modes/types';
+import { devBridge } from '@/lib/dev/bridge';
 
 /* ============================================================================
    APP ROOT — the real top-level mode switch. Main Evolution (Sandbox.tsx)
@@ -27,6 +28,14 @@ const AlienArchaeologyMode = dynamic(() => import('./alienarchaeology/AlienArcha
 const ReverseEvolutionMode = dynamic(() => import('./reverseevolution/ReverseEvolutionMode').then(m => m.ReverseEvolutionMode), { ssr: false });
 
 const MinimumPathMode = dynamic(() => import('./minimumpath/MinimumPathMode').then(m => m.MinimumPathMode), { ssr: false });
+
+/* Developer Beta console. NEXT_PUBLIC_* values are inlined at build time, so in a production build the
+   test below is the literal `false`, the lazy import is dead code and the console's chunk is never
+   emitted or requested. The condition is written inline (a literal test is folded; one hidden behind a
+   const is not) and uses next/dynamic with ssr:false (it also carries the console's CSS, which React.lazy does not). The console additionally refuses
+   to act until the server answers OK. */
+const DEV_UI = process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === 'true' && process.env.NEXT_PUBLIC_DEPLOY_ENV !== 'production';
+const DevConsole = (process.env.NEXT_PUBLIC_ENABLE_DEV_TOOLS === 'true' && process.env.NEXT_PUBLIC_DEPLOY_ENV !== 'production') ? dynamic(() => import('./dev/DevConsole'), { ssr: false }) : null;
 
 export function AppRoot() {
   /* The "which openings have played" record lives above the mode switch, so it survives every
@@ -55,6 +64,14 @@ function AppRootBody() {
   }, [close]);
   const exitToHub = useCallback(() => setModeRaw('main-evolution'), []);
 
+  /* Beta only: lets the console open any mode directly. The handler just calls the same setMode the
+     Mode Hub uses; the console itself refuses to run unless the server authorised the beta. */
+  useEffect(() => {
+    if (!DEV_UI) return;
+    devBridge.setLaunchHandler(req => setMode(req.mode));
+    return () => devBridge.setLaunchHandler(null);
+  }, [setMode]);
+
   let body: ReactNode;
   if (mode === 'survival') body = <SurvivalMode onExit={exitToHub} />;
   else if (mode === 'civilization') body = <CivilizationMode onExit={exitToHub} />;
@@ -71,6 +88,7 @@ function AppRootBody() {
       {body}
       {mode !== 'main-evolution' && !gate && <ModeHelp mode={mode} onReplayIntro={() => replay(mode)} />}
       <CinematicGate scene={gate} onClose={closeGate} />
+      {DevConsole && <DevConsole mode={mode} />}
     </>
   );
 }

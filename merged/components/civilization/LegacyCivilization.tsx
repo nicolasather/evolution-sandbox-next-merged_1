@@ -7,6 +7,7 @@ import { advanceTurn } from '@/lib/civilization/simulate';
 import { civilizationStore } from '@/lib/civilization/store';
 import { profile } from '@/lib/profile/store';
 import type { Allocation, SettlementState } from '@/lib/civilization/types';
+import { freshSeed } from '@/lib/dev/seed';
 
 /* ============================================================================
    CIVILIZATION — "Build". A third, genuinely different interaction language:
@@ -28,7 +29,7 @@ function pct(n: number): string { return `${Math.round(n * 100)}%`; }
 export function LegacyCivilization({ onExit }: { onExit: () => void }) {
   const [settlement, setSettlement] = useState<SettlementState | null>(() => {
     civilizationStore.load();
-    return civilizationStore.get().active ?? generateSettlement(`civ-${Date.now()}`);
+    return civilizationStore.get().active ?? generateSettlement(freshSeed('civ'));
   });
   const [sliders, setSliders] = useState<Allocation>({ food: 50, construction: 30, knowledge: 20 });
 
@@ -58,7 +59,7 @@ export function LegacyCivilization({ onExit }: { onExit: () => void }) {
   };
 
   const startNew = () => {
-    const fresh = generateSettlement(`civ-${Date.now()}`);
+    const fresh = generateSettlement(freshSeed('civ'));
     setSettlement(fresh);
     civilizationStore.setActive(fresh);
   };
