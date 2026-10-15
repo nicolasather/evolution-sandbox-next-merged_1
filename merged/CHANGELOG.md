@@ -5,6 +5,9 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 15 October 2026 — Expansion 1,000 (branch `expansion-1000-beta`; drafts only, NOT shipped)
+999 loader-ignored draft nodes (1 quarantined duplicate), a hand-drawn plate for each (`tools/expansion/art/**`, `data/expansion/art_exp26.json`), a preview-only overlay tool (`tools/expansion/preview_install.py`, refuses main/production) and regression tests (`tools/tests/test_expansion_exp26.py`). Nothing is approved, merged into `data/db.json`, or wired into a mode; the 918 shipped nodes are untouched. Counts: `docs/EXPANSION_1000_STATUS.md`.
+
 ### 14 October 2026 — Resource Visual Lab (development prototype; NOT shipped)
 Local-only workbench that has a local Ollama `qwen3:14b` design JSON "plate specs" for 100 resources that are not in the catalogue, compiles them with a closed library of 38 procedural
 components into the existing plate SVG grammar, and renders them through the real `Plate3D`. Dev-gated (`VISUAL_LAB` + `ENABLE_DEV_TOOLS`, never Vercel/production, loopback host); Ollama must be loopback;
