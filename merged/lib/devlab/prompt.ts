@@ -1,6 +1,7 @@
 /* Prompt builder for the plate-spec generator (development only). Built from the live component tables. */
 
-import { catalogueText, LIMITS } from './schema';
+import { COMPONENTS } from './components/index';
+import { catalogueCompact, catalogueText, LIMITS } from './schema';
 import type { ResourceEntry } from './types';
 
 export const SPEC_EXAMPLE = {
@@ -20,7 +21,7 @@ export const SPEC_EXAMPLE = {
   ],
 };
 
-export function systemPrompt(): string {
+export function systemPromptFull(): string {
   return `You design wireframe line-art "plates" for an archaeology / history game. Each plate is a thin glowing line drawing of ONE object on a dark background, in the style of an engraved technical illustration: confident silhouette, intricate secondary curves, fine detail lines, a few tiny glowing dots.
 
 You never write code and never write SVG. You answer with ONE JSON object only (no prose, no markdown) built from the component catalogue below.
@@ -66,4 +67,63 @@ Reply with the JSON object only.`;
 export function feedbackPrompt(errors: string[]): string {
   const list = errors.slice(0, 14).map(e => `- ${e}`).join('\n');
   return `That JSON was rejected by the validator:\n${list}\n\nFix every problem and reply with the complete corrected JSON object only.`;
+}
+
+/* ── compact prompt (default) — sized for CPU-only inference ─────────────── */
+
+const COMPACT_EXAMPLE = '{"layers":[{"z":0,"parts":[{"c":"ellipse","x":50,"y":40,"p":{"rx":26,"ry":7},"w":"main"},{"c":"stick","x":30,"y":46,"p":{"x1":0,"y1":0,"x2":-6,"y2":36,"t":4}}]}]}';
+
+export function systemPromptCompact(): string {
+  return `You draw one object as thin glowing engraved wireframe line art, as JSON built from the components below. JSON only, no prose, no text/numerals in the drawing.
+Shape: {"layers":[{"z":number,"parts":[{"c":id,"x":n,"y":n,"rot":deg,"s":scale,"flip":bool,"w":"bold|main|fine|hair","o":0.15-1,"p":{params}}]}]}
+Plate = 100x100 box, y DOWN, centre (50,50); keep the object within 10..90. x,y = the part's origin (middle for * components). Params use plate units; "!" = required, "=n" default, "?" = bool. Out-of-range values are clamped.
+Draw well: true side-view silhouette first (w "main"), then fine/hair detail and a few dots. Use 2-4 layers (z -6, 0, 6: back, body, front) for depth. ${LIMITS.maxParts > 24 ? 8 : 6}-${LIMITS.maxParts} parts total, max ${LIMITS.maxLayers} layers, ${LIMITS.maxPartsPerLayer} parts per layer. Use only these ids and parameter names:
+${catalogueCompact()}
+Example shape (not a drawing): ${COMPACT_EXAMPLE}`;
+}
+
+export function userPromptCompact(r: ResourceEntry): string {
+  const parts = r.complexity >= 4 ? '22-36' : r.complexity === 3 ? '14-26' : '8-18';
+  return `${r.name} — ${r.description}
+Shape family: ${r.shapeFamily}. Include: ${r.features.join('; ')}. About ${parts} parts.`;
+}
+
+/** Structured-output schema sent as Ollama's `format`: it forces the reply shape and the component ids (parameter VALUES are still checked by validateSpec). */
+export function specJsonSchema(): Record<string, unknown> {
+  return {
+    type: 'object',
+    properties: {
+      layers: {
+        type: 'array', minItems: 1, maxItems: LIMITS.maxLayers,
+        items: {
+          type: 'object',
+          properties: {
+            z: { type: 'number' },
+            parts: {
+              type: 'array', minItems: 1, maxItems: LIMITS.maxPartsPerLayer,
+              items: {
+                type: 'object',
+                properties: {
+                  c: { type: 'string', enum: COMPONENTS.map(c => c.id) },
+                  x: { type: 'number' }, y: { type: 'number' },
+                  rot: { type: 'number' }, s: { type: 'number' }, flip: { type: 'boolean' },
+                  w: { type: 'string', enum: ['bold', 'main', 'fine', 'hair'] },
+                  o: { type: 'number' },
+                  p: { type: 'object' },
+                },
+                required: ['c', 'x', 'y', 'p'],
+              },
+            },
+          },
+          required: ['z', 'parts'],
+        },
+      },
+    },
+    required: ['layers'],
+  };
+}
+
+/** The default prompt is the compact one; the full prompt stays available (OLLAMA_PROMPT=full). */
+export function systemPrompt(mode: 'compact' | 'full' = 'compact'): string {
+  return mode === 'full' ? systemPromptFull() : systemPromptCompact();
 }

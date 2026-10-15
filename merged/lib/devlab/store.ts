@@ -33,7 +33,18 @@ export function readResult(id: string, dir = labDir()): GenRecord | null {
   return existsSync(f) ? (JSON.parse(readFileSync(f, 'utf8')) as GenRecord) : null;
 }
 
-export function writeResult(rec: GenRecord, dir = labDir()): void { writeJsonAtomic(resultPath(rec.id, dir), rec); }
+/** Writes a record. An existing record is never lost: it is first copied to results/_archive/<id>.v<version>.<n>.json. */
+export function writeResult(rec: GenRecord, dir = labDir()): void {
+  const f = resultPath(rec.id, dir);
+  if (existsSync(f)) {
+    const prev = JSON.parse(readFileSync(f, 'utf8')) as GenRecord;
+    const arch = ensure(path.join(dir, 'results', '_archive'));
+    let n = 0;
+    while (existsSync(path.join(arch, `${rec.id}.v${prev.version}.${n}.json`))) n++;
+    writeFileSync(path.join(arch, `${rec.id}.v${prev.version}.${n}.json`), JSON.stringify(prev, null, 1));
+  }
+  writeJsonAtomic(f, rec);
+}
 
 export function listResults(dir = labDir()): GenRecord[] {
   const d = path.join(dir, 'results');

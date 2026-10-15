@@ -44,7 +44,7 @@ function SoundButton() {
   );
 }
 
-type Tone = 'minpath' | 'museum' | 'hub' | 'trade' | 'lab' | 'journal';
+type Tone = 'minpath' | 'museum' | 'hub' | 'trade' | 'lab' | 'journal' | 'milestones';
 
 /** The face of a corner tile: one square, hairline, single-colour line drawing.
  *  Strokes use currentColor (see the .tile block in app/_cinematic.css) and every
@@ -95,6 +95,13 @@ function TileArt({ tone }: { tone: Tone }) {
           <path {...P} d="M43 9H27a3 3 0 0 0-3 3v29a4 4 0 0 1 4-4h15z" />
         </>
       )}
+      {tone === 'milestones' && (
+        <>
+          <path {...P} d="M6 40V8M6 9h26l-5 7 5 7H6" />
+          <path {...P} d="M14 40h28" />
+          <rect className="fill" x="38" y="36" width="4" height="4" />
+        </>
+      )}
     </svg>
   );
 }
@@ -129,7 +136,7 @@ function Tile({
 
 export function TopBar({
   engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum, onMinPath,
-  unlocks = NO_LOCKS,
+  onMilestones, unlocks = NO_LOCKS,
 }: {
   engine: Engine;
   view: ViewId;
@@ -144,6 +151,8 @@ export function TopBar({
   onLab: () => void;
   onMuseum: () => void;
   onMinPath: () => void;
+  /** Opens the Milestones page (how far the player has come, which doors are open). Optional: no button without it. */
+  onMilestones?: () => void;
   /** What has opened so far. Left out, everything is open (tests, embedded uses). */
   unlocks?: Pick<Unlocks, 'has' | 'fresh' | 'opened'>;
 }) {
@@ -300,6 +309,8 @@ export function TopBar({
             className="max-[900px]:hidden" onClick={go('trade', onTrade)} />}
           {has('lab') && <Tile id="lab-open" tone="lab" cap="Laboratory" label="Laboratory" fresh={fresh('lab')}
             className="max-[900px]:hidden" onClick={go('lab', onLab)} />}
+          {onMilestones && has('archive') && <Tile id="milestones-open" tone="milestones" cap="Milestones" label="Milestones — how far you have come"
+            onClick={onMilestones} />}
           {has('journal') && <Tile id="journal-open" tone="journal" cap="Journal" label="Your journal" fresh={fresh('journal')}
             className="max-[900px]:hidden" onClick={go('journal', onJournal)} />}
         </div>

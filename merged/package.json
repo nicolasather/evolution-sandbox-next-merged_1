@@ -34,6 +34,7 @@
     "db:migrate": "tsx tools/db/migrate.ts",
     "lab:test": "jest lib/devlab",
     "lab:check": "tsx tools/devlab/check-ollama.ts",
+    "lab:one": "tsx tools/devlab/one.ts",
     "lab:generate": "tsx tools/devlab/generate.ts",
     "lab:fixtures": "tsx tools/devlab/seed-fixtures.ts",
     "lab:sheet": "tsx tools/devlab/contact-sheet.ts",

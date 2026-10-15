@@ -201,6 +201,21 @@ export function catalogueText(): string {
   return lines.join('\n');
 }
 
+
+/** Very compact catalogue for CPU-only inference: id, one-line doc, parameter names with defaults (ranges are clamped by the validator, so they are not sent). */
+export function catalogueCompact(): string {
+  const short = (d: ParamDef): string => {
+    switch (d.t) {
+      case 'num': return d.req ? '!' : d.def !== undefined ? `=${d.def}` : '';
+      case 'bool': return '?';
+      case 'enum': return `:${d.values.join('|')}`;
+      case 'pts': return ':pts!';
+      case 'nums': return ':[n]';
+    }
+  };
+  return COMPONENTS.map(c => `${c.id}${c.center ? '*' : ''} ${Object.entries(c.params).map(([k, d]) => k + short(d)).join(' ')} — ${c.doc.split(/[.;]/)[0].slice(0, 60)}`).join('\n');
+}
+
 /** Markdown schema reference written to docs by the report tool. */
 export function schemaMarkdown(): string {
   const out = ['| component | group | parameters | description |', '|---|---|---|---|'];
