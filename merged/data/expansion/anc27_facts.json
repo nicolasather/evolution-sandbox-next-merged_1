@@ -1,5 +1,5 @@
 {
- "_note": "Topic-context fact check. Each entry names the Wikipedia page about the KIND of thing the item represents (fetched and read 2026-10-15). It is NOT proof that the exact item, recipe, region or game year is historical; gameYear is a gameplay gate. Wikipedia is crowd-edited (tier C); where the page itself flags a claim as unsourced this is stated in earliestOnPage.",
+ "_note": "Topic-context fact check. Each entry names the Wikipedia page about the KIND of thing the item represents (fetched and read 2026-10-15). It is NOT proof that the exact item, recipe, region or game year is historical; gameYear is a gameplay gate. Wikipedia is crowd-edited, so it is never listed in data/sources.json; where the page itself flags a claim as unsourced this is stated in earliestOnPage.",
  "checked": "2026-10-15",
  "covered": 778,
  "uncovered": 63,

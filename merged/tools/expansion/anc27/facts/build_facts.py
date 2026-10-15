@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Build data/expansion/anc27_facts.json and register Wikipedia topic pages in data/sources.json.
+"""Build data/expansion/anc27_facts.json (topic-context pages per anc27 item). data/sources.json is deliberately NOT touched:
+items keep src ['source_required'] because the creative gateway treats any real src as 'verified' truth.
 
 Facts come from tools/expansion/anc27/facts/raw_*.py (fetched 2026-10-15 from en.wikipedia.org; one-line reader summaries). Every anc27 item
 is matched to ONE topic page via overrides.PRE -> NONE -> overrides.OVERRIDES -> subjects.RULES. A match means 'this page is about the kind of thing the item is';
@@ -35,17 +36,9 @@ for n in items:
                       "status": "topic_context_only", "itemSpecificEvidenceVerified": False}
 out = {"_note": "Topic-context fact check. Each entry names the Wikipedia page about the KIND of thing the item represents (fetched and read "
                 + CHECKED + "). It is NOT proof that the exact item, recipe, region or game year is historical; gameYear is a gameplay gate. "
-                "Wikipedia is crowd-edited (tier C); where the page itself flags a claim as unsourced this is stated in earliestOnPage.",
+                "Wikipedia is crowd-edited, so it is never listed in data/sources.json; where the page itself flags a claim as unsourced this is stated in earliestOnPage.",
        "checked": CHECKED, "covered": len(facts), "uncovered": len(uncovered), "uncoveredIds": uncovered, "pages": len(used), "items": facts}
 os.makedirs(os.path.join(ROOT, "data", "expansion"), exist_ok=True)
 json.dump(out, open(os.path.join(ROOT, "data", "expansion", "anc27_facts.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-sp = os.path.join(ROOT, "data", "sources.json")
-S = json.load(open(sp, encoding="utf-8"))
-S["tiers"]["C"] = "Crowd-edited encyclopedia pages read for topic context only (Wikipedia). Never counted as item-specific evidence."
-S["sources"] = {k: v for k, v in S["sources"].items() if not k.startswith("wp_")}
-for slug in sorted(used):
-    title = raw[slug][0]
-    S["sources"][sid(slug)] = {"t": "C", "title": title, "org": "Wikipedia", "url": url(slug), "type": "encyclopedia", "scope": "topic", "checked": CHECKED}
-json.dump(S, open(sp, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 print(f"covered {len(facts)} / {len(items)} items with {len(used)} topic pages; uncovered {len(uncovered)}")

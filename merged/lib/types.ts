@@ -130,7 +130,7 @@ export interface Discovery {
 
 export interface Source {
   /** Tier S = primary institutional / peer-reviewed, A = major data or public body, B = reference. */
-  t: 'S' | 'A' | 'B' | 'C';
+  t: 'S' | 'A' | 'B';
   title: string;
   org: string;
   url: string;

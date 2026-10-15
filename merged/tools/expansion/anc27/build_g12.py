@@ -157,8 +157,7 @@ def main() -> int:
         o = {k: n[k] for k in KEEP if k in n}
         f = FACTS.get(i)
         if f:  # topic-level context only: the item itself stays unverified
-            o["src"] = [f["source"]]
-            o["ev"] = (f"Topic context only (not item-specific): {f['page']} - {f['what']} Earliest dated evidence stated on that page: "
+            o["ev"] = (f"Topic context only, not item-specific evidence (source stays required): {f['page']} - {f['what']} Earliest dated evidence stated on that page: "
                        f"{f['earliestOnPage']} The game year {f['gameYear']} is a gameplay gate and this item's exact recipe is not verified.")
             h = dict(o["historical"])
             h["topicContextSources"] = [f["url"]]

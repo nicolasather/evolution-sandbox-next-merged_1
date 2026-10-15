@@ -62,20 +62,17 @@ class Anc27InGame(unittest.TestCase):
 
     def test_nothing_claims_verified_history(self):
         facts = json.loads((ROOT / "data" / "expansion" / "anc27_facts.json").read_text(encoding="utf-8"))["items"]
-        reg = json.loads((ROOT / "data" / "sources.json").read_text(encoding="utf-8"))["sources"]
         for n in G12:
+            # a topic-context page never upgrades an item to "sourced": the creative gateway treats any real src as verified truth
+            self.assertEqual(n["src"], ["source_required"], n["id"])
             self.assertIn("anc27_individual_recipe", n["tags"])
             self.assertFalse(n["historical"]["itemSpecificEvidenceVerified"], n["id"])
-            if n["id"] in facts:  # topic context only, from a tier-C encyclopedia page, and said so
+            if n["id"] in facts:
                 f = facts[n["id"]]
-                self.assertEqual(n["src"], [f["source"]], n["id"])
-                self.assertEqual(reg[f["source"]]["t"], "C", n["id"])
-                self.assertEqual(reg[f["source"]]["scope"], "topic", n["id"])
                 self.assertEqual(n["historical"]["factCheck"]["status"], "topic_context_only", n["id"])
+                self.assertEqual(n["historical"]["factCheck"]["url"], f["url"], n["id"])
                 self.assertIn("not item-specific", n["ev"], n["id"])
                 self.assertFalse(f["itemSpecificEvidenceVerified"], n["id"])
-            else:
-                self.assertEqual(n["src"], ["source_required"], n["id"])
 
     def test_fact_check_covers_most_items_and_lists_the_rest(self):
         d = json.loads((ROOT / "data" / "expansion" / "anc27_facts.json").read_text(encoding="utf-8"))

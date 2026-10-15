@@ -10,8 +10,8 @@ describe('preservation baseline', () => {
     expect(db.nodes.length).toBe(2758); // 918 base + 999 exp26 (g11) + 841 anc27 individual-recipe items (g12)
     expect(db.eras.length).toBe(14);
     expect(db.categories.length).toBe(13);
-    expect(Object.keys(db.sources).length).toBe(473); // 71 original + 402 Wikipedia topic-context pages (tier C)
-    expect(db.counts).toEqual({ total: 2758, core: 2742, hidden: 16, sourceRequired: 1826 });
+    expect(Object.keys(db.sources).length).toBe(71);
+    expect(db.counts).toEqual({ total: 2758, core: 2742, hidden: 16, sourceRequired: 2604 });
   });
 
   it('keeps every recipe', () => {

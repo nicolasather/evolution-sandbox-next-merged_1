@@ -54,7 +54,7 @@ ERAS = {
     "network", "games", "simulation",
 }
 RARITIES = {"common", "uncommon", "rare", "hidden"}
-TIERS = {"S", "A", "B", "C"}
+TIERS = {"S", "A", "B"}
 SCOPES = {"general", "topic"}
 REQUIRED = ("id", "n", "era", "cat", "date", "rar", "l1", "l2", "l3", "ev", "src", "rec", "vis")
 SOURCE_REQUIRED = "source_required"
