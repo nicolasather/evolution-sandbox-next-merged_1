@@ -38,15 +38,13 @@ export function pickVariantChallenge(db: Pick<Db, 'nodes'>, rng: Rng, kind: Modi
   const candidates = db.nodes.filter(n => !n.primitive && !n.hidden && graph.neighbors.has(n.id) && adapterGate('minimum-path', n, db));
   if (candidates.length < 2) return null;
 
-  for (let attempt = 0; attempt < 600; attempt++) {  // the graph grew to ~1,900 items, so a valid pair is rarer per draw
-    const a = rng.pick(candidates);
-    const b = rng.pick(candidates);
-    if (a.id === b.id) continue;
+  const tryPair = (a: (typeof candidates)[number], b: (typeof candidates)[number]): VariantChallenge | null => {
+    if (a.id === b.id) return null;
     const basePath = shortestPath(graph, a.id, b.id);
-    if (!basePath) continue;
+    if (!basePath) return null;
     const hops = basePath.length - 1;
-    if (hops < 3 || hops > 8) continue;
-    if (pathLeansOnHub(basePath, hubs)) continue;
+    if (hops < 3 || hops > 8) return null;
+    if (pathLeansOnHub(basePath, hubs)) return null;
 
     const searchBound = hops + 6;
     let modifier: PathModifier;
@@ -77,17 +75,41 @@ export function pickVariantChallenge(db: Pick<Db, 'nodes'>, rng: Rng, kind: Modi
       if (!era) {
         era = basePath.slice(1, -1).map(id => db.nodes.find(n => n.id === id)?.era).find(isWaypointEra);
       }
-      if (!era) continue;
+      if (!era) return null;
       modifier = { kind, era };
     }
 
     const solved = findCompletingPath(db, graph, a.id, b.id, modifier, searchBound);
-    if (!solved) continue;
+    if (!solved) return null;
     // The modifier can force a detour off basePath (already hub-checked
     // above) onto a different route — that actual solving route needs the
     // same hub-avoidance guarantee, or the challenge would be cheatable.
-    if (pathLeansOnHub(solved, hubs)) continue;
+    if (pathLeansOnHub(solved, hubs)) return null;
     return { startId: a.id, targetId: b.id, modifier, optimalLength: solved.length - 1 };
+  };
+
+  // Phase 1: random pairs. The catalogue now holds ~2,800 items, so most random pairs are either too far apart or lean on a hub.
+  for (let attempt = 0; attempt < 600; attempt++) {
+    const found = tryPair(rng.pick(candidates), rng.pick(candidates));
+    if (found) return found;
+  }
+
+  // Phase 2 (only reached when phase 1 found nothing): walk out 3..8 hops from a random start and draw the target from there,
+  // so every attempt is already inside the allowed hop range. Same proof of solvability and hub avoidance as above.
+  const inRange = new Set(candidates.map(c => c.id));
+  for (let attempt = 0; attempt < 400; attempt++) {
+    const a = rng.pick(candidates);
+    const dist = new Map<string, number>([[a.id, 0]]);
+    let frontier = [a.id];
+    for (let d = 1; d <= 8 && frontier.length; d++) {
+      const next: string[] = [];
+      for (const id of frontier) for (const nb of graph.neighbors.get(id) ?? []) if (!dist.has(nb)) { dist.set(nb, d); next.push(nb); }
+      frontier = next;
+    }
+    const targets = candidates.filter(c => inRange.has(c.id) && (dist.get(c.id) ?? 0) >= 3);
+    if (!targets.length) continue;
+    const found = tryPair(a, rng.pick(targets));
+    if (found) return found;
   }
   return null;
 }

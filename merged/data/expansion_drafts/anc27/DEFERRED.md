@@ -1,0 +1,163 @@
+# Ancient 1000 items NOT yet in the game (159 of 1000)
+
+Each needs a mechanic or material the game does not have yet. Nothing here is faked with a generic recipe.
+
+- `anc27_domesticated_einkorn_wheat` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_emmer_wheat` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_barley` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_rye` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_millet` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_broomcorn_millet_farming` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_foxtail_millet_farming` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_sorghum` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_pearl_millet` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_teff` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_quinoa` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_amaranth` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_maize` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_common_bean` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_chickpea` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_lentil` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_pea` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_fava_bean` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domesticated_cowpea` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_early_rice_paddy` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_seed_potato_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_sweet_potato_propagation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_cassava_cutting_plantation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_taro_corm_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_yam_mound_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_arrowroot_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_jerusalem_artichoke_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_oca_tuber_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_ulluco_tuber_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_mashua_tuber_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_malanga_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_water_chestnut_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_lotus_rhizome_farming` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_ginger_rhizome_propagation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_turmeric_rhizome_propagation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_garlic_clove_propagation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_onion_bulb_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_shallot_bulb_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_radish_root_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_turnip_root_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_olive_grove_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_date_palm_oasis_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_fig_orchard_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_grape_vineyard_training` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_pomegranate_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_apple_orchard_grafting` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_pear_orchard_grafting` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_peach_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_apricot_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_plum_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_cherry_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_almond_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_walnut_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_pistachio_orchard` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_hazelnut_coppice` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_citrus_bud_grafting` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_banana_sucker_propagation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_plantain_grove_cultivation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_breadfruit_grove` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_coconut_palm_plantation` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_sheep_breeding_flock` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_goat_herd_management` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_cattle_herd_management` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_water_buffalo_husbandry` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_yak_herd_management` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_zebu_cattle_breeding` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domestic_pig_herd` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_chicken_breeding_flock` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_duck_husbandry` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_goose_husbandry` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domestic_turkey_flock` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_guinea_fowl_husbandry` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_llama_pack_herd` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_alpaca_fibre_herd` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_bactrian_camel_herd` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_dromedary_camel_herd` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domestic_horse_herd` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_donkey_herd_management` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domestic_dog_breeding` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_domestic_cat_management` - domestication / cultivation: needs a species-specific wild input (wild-species state mechanic)
+- `anc27_fermented_cabbage_crock` - species:cabbage
+- `anc27_dried_seaweed_sheet` - species:seaweed
+- `anc27_pressed_dried_date_cake` - species:date_palm
+- `anc27_dried_fig_garland` - species:fig
+- `anc27_dried_grape_raisins` - species:grape
+- `anc27_dried_mushroom_rack` - species:mushroom
+- `anc27_sun_dried_tomato_mat` - species:tomato
+- `anc27_freeze_dried_andean_chuno` - species:andean_potato
+- `anc27_fermented_shrimp_paste_pot` - species:shrimp
+- `anc27_dried_millet_cake` - species:millet
+- `anc27_millet_beer_brewing_jar` - species:millet
+- `anc27_sorghum_beer_pot` - species:sorghum
+- `anc27_date_wine_fermentation_jar` - species:date_palm
+- `anc27_grape_wine_pressing_vat` - species:grape
+- `anc27_wine_aging_amphora` - species:grape
+- `anc27_palm_wine_collection_pot` - species:palm
+- `anc27_rice_wine_fermentation_jar` - species:rice
+- `anc27_apple_cider_fermenter` - species:apple
+- `anc27_soybean_miso_fermentation_tub` - species:soybean
+- `anc27_terraced_rice_irrigation` - species:rice
+- `anc27_bamboo_reinforced_mud_wall` - species:bamboo
+- `anc27_lead_stock_sea_anchor` - material:lead
+- `anc27_arsenical_bronze_casting` - material:arsenic
+- `anc27_gold_panning_tray` - material:gold
+- `anc27_alluvial_tin_washing` - material:tin
+- `anc27_salt_evaporation_pond` - material:salt
+- `anc27_underground_salt_mine` - material:salt
+- `anc27_flax_retting_pool` - species_or_material
+- `anc27_nettle_fibre_yarn` - species_or_material
+- `anc27_hemp_fibre_retting` - species_or_material
+- `anc27_hemp_cord_spinning` - species_or_material
+- `anc27_silk_cocoon_reeling` - species_or_material
+- `anc27_natural_cotton_ginning` - species_or_material
+- `anc27_cotton_seed_removal_bow` - species_or_material
+- `anc27_cotton_spinning_whorl` - species_or_material
+- `anc27_cotton_yarn_ball` - species_or_material
+- `anc27_plain_weave_cotton_cloth` - species_or_material
+- `anc27_dyed_cotton_textile` - species_or_material
+- `anc27_cotton_fishing_net_twine` - species_or_material
+- `anc27_camel_hair_fabric` - species_or_material
+- `anc27_alpaca_wool_weaving` - species_or_material
+- `anc27_madder_red_dye_bath` - species_or_material
+- `anc27_woad_blue_dye_bath` - species_or_material
+- `anc27_murex_purple_dye_workshop` - species_or_material
+- `anc27_alum_mordanting_vessel` - species_or_material
+- `anc27_wax_resist_textile` - species_or_material
+- `anc27_mesoamerican_cacao_market` - species_or_material
+- `anc27_phoenician_purple_dye_trade` - species_or_material
+- `anc27_surveyor_wax_tablet` - species_or_material
+- `anc27_tax_receipt_papyrus` - species_or_material
+- `anc27_lydia_electrum_coin` - species_or_material
+- `anc27_silver_tetradrachm_coin` - species_or_material
+- `anc27_roman_denarius_coin` - species_or_material
+- `anc27_kharosthi_birch_bark_scroll` - species_or_material
+- `anc27_egyptian_hieratic_papyrus` - species_or_material
+- `anc27_egyptian_demotic_document` - species_or_material
+- `anc27_chinese_bamboo_strip_manuscript` - species_or_material
+- `anc27_papyrus_scroll_roll` - species_or_material
+- `anc27_wax_tablet_notebook` - species_or_material
+- `anc27_bamboo_slip_book` - species_or_material
+- `anc27_silk_manuscript_roll` - species_or_material
+- `anc27_birch_bark_manuscript` - species_or_material
+- `anc27_palm_leaf_manuscript` - species_or_material
+- `anc27_alexandria_scholarly_scroll` - species_or_material
+- `anc27_marriage_contract_papyrus` - species_or_material
+- `anc27_inheritance_record_scroll` - species_or_material
+- `anc27_legal_petition_papyrus` - species_or_material
+- `anc27_aloe_leaf_preparation` - species_or_material
+- `anc27_willow_bark_decoction` - species_or_material
+- `anc27_medicinal_wine_infusion` - species_or_material
+- `anc27_herbal_identification_scroll` - species_or_material
+- `anc27_egyptian_medical_papyrus` - species_or_material
+- `anc27_hellenistic_herbarium_roll` - species_or_material
+- `anc27_egyptian_rhind_problem_scroll` - species_or_material
+- `anc27_greek_geometric_proof_scroll` - species_or_material
+- `anc27_bamboo_mouth_organ_sheng` - species_or_material
+- `anc27_andean_freeze_dried_potato_store` - species_or_material
+- `anc27_mesoamerican_rubber_ball` - species_or_material
+- `anc27_southeast_asian_stilted_rice_granary` - species_or_material

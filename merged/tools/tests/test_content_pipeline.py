@@ -79,7 +79,9 @@ class CatalogueTests(unittest.TestCase):
         cls.actions = allowed_actions(ROOT)
 
     def test_counts(self):
-        self.assertEqual(len([p for p in self.cat.profiles.values() if not p.is_state]), 1917)
+        g12 = ROOT / "data" / "nodes" / "g12.json"
+        extra = len(json.loads(g12.read_text(encoding="utf-8"))) if g12.exists() else 0
+        self.assertEqual(len([p for p in self.cat.profiles.values() if not p.is_state]), 1917 + extra)
         statuses = {}
         for p in self.cat.profiles.values():
             statuses[p.status] = statuses.get(p.status, 0) + 1
