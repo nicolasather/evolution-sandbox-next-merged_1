@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Stone heart">
+<g data-z="0" opacity=".45"><path d="M24 74l8 -4M30 80l8 -4M60 82l8 -4M66 76l8 -4"/><path data-extra="1" d="M38 44l5 -4M38 50l5 -4"/></g>
+<g data-z="1"><path d="M50 84l-28 -28c-10 -12 -2 -32 14 -32c8 0 12 4 14 8c2 -4 6 -8 14 -8c16 0 24 20 14 32z"/></g>
+<g data-z="2"><path d="M30 38l8 4l-2 10l10 4M62 32l-6 10l8 6l-6 12" opacity=".8"/><path d="M34 32q4 -4 8 -2" /><circle cx="70" cy="40" r="1.2"/><path d="M82 18l3 -4M88 28l5 -2"/></g>
+</svg>

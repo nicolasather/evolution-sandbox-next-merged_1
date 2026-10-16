@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Eratosthenes — stylized interpretation, not a likeness">
+<g data-z="0" opacity="0.4"><path d="M33 42l-1 8M32 44l-1 8M31 46l-1 8M30 48l-1 8M67 42l1 8M68 44l1 8M69 46l1 8M70 48l1 8"/><path d="M16 84l6 10M21 84l6 10M26 84l6 10M31 84l6 10M36 84l6 10M41 84l6 10"/><path d="M40 60l10 2M41 63l10 2M42 66l10 2"/><path data-extra="1" d="M36 18l3 5M40 18l3 5M44 18l3 5M48 18l3 5M52 18l3 5M56 18l3 5M60 18l3 5M38 27l9 0.5M38 30l9 0.5M33 46l2 6M32 48l2 6M31 50l2 6M67 46l-2 6M68 48l-2 6M69 50l-2 6M40 66l14 1M40 68l14 1M40 70l14 1M20 88l5 9M26 88l5 9M32 88l5 9M38 88l5 9M64 88l5 9M70 88l5 9M76 88l5 9"/></g>
+<g data-z="1"><path d="M33 36C32 48 36 58 44 62L50 63L56 62C64 58 68 48 67 36"/><path d="M32 35C32 22 40 14 50 14C60 14 68 22 68 35"/><path d="M34 26q3 -4 6 -1q3 -5 7 -1q3 -5 7 0q4 -5 7 0q4 -3 6 3"/><path d="M36 22q4 -2 6 1M52 18q4 -1 6 2"/><path d="M32 35L28 42L31 50M68 35L72 42L69 50"/><path d="M44 62L42 70M56 62L58 70"/><path d="M45 66q5 3 10 0"/></g>
+<g data-z="2"><path d="M37 37L46 35M54 35L63 37"/><path d="M38 41q4 -3 8 0M54 41q4 -3 8 0"/><path d="M50 39L48 49L52 50"/><path d="M45 55q5 3 10 0"/><path d="M35 48q2 3 5 3M65 48q-2 3 -5 3"/></g>
+<g data-z="3" opacity="0.65"><path d="M42 70L24 78L16 100M58 70L78 78L84 100"/><path d="M30 86L46 100M22 94L32 100M62 86L58 100M70 92L74 100"/><path d="M46 74L50 84L54 74"/></g>
+<g data-z="4"><path d="M64 86a14 14 0 1 0 0.1 0z"/><path d="M50 86h28M52 80h24M52 92h24"/><path d="M64 72v28"/></g>
+<g data-z="5" opacity="0.9" data-accent="ochre"><path d="M52 80a14 14 0 0 1 4 -10"/><path d="M76 80a14 14 0 0 0 -4 -10"/></g>
+</svg>

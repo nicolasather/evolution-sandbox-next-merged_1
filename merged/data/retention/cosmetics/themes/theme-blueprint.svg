@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Drafting grid and gear">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 20h92M4 40h92M4 60h92M4 80h92M20 4v92M40 4v92M60 4v92M80 4v92"/></g>
+<g data-z="2" opacity="0.9"><path d="M50 50m-18 0a18 18 0 1 0 36 0a18 18 0 1 0 -36 0"/><path d="M50 50m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0"/><path d="M50 28v-8M50 72v8M28 50h-8M72 50h8"/></g>
+<g data-z="3" opacity="0.4"><path d="M20 20L80 80"/></g>
+</svg>

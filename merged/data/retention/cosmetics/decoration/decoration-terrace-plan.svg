@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Terrace plan">
+<g data-z="0" opacity="0.4"><path d="M12 90h76"/></g>
+<g data-z="1"><path d="M16 84h68v-10h-8v-10h-10v-10h-10v-10h-10v-10h-10v-10h-8v10h-6v10h-6z"/></g>
+<g data-z="2" opacity="0.8"><path d="M16 74h68M24 64h52M34 54h40M44 44h28M54 34h18"/></g>
+<g data-z="3" opacity="0.5"><path d="M20 78l2 4M40 78l2 4M60 78l2 4M80 78l2 4"/><path d="M30 66l2 4M50 56l2 4"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Copper bowl">
+<g data-z="0" opacity="0.4"><path d="M14 90h72M22 94h56"/></g>
+<g data-z="1"><path d="M14 44h72"/><path d="M16 44c2 28 16 40 34 40s32 -12 34 -40"/></g>
+<g data-z="2" opacity="0.8"><path d="M22 56c20 6 36 6 56 0M28 68c14 6 30 6 44 0"/></g>
+<g data-z="3" opacity="0.5"><path d="M30 36q20 -10 40 0"/><path d="M40 78l4 4M56 78l4 4M48 84l4 4"/></g>
+</svg>

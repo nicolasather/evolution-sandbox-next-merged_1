@@ -19,6 +19,8 @@ import { MuseumLedger } from './museum/MuseumLedger';
 import { MuseumReveal } from './museum/MuseumReveal';
 import { PersonalWing } from './museum/PersonalWing';
 import { WorldHistory } from './museum/WorldHistory';
+import { profile } from '@/lib/profile/store';
+import { retentionBus } from '@/lib/retention/bus';
 
 /* ============================================================================
    THE MUSEUM — one building, three separate kinds of knowledge:
@@ -67,6 +69,10 @@ export function MuseumGallery({ engine, version, active, onOpen, blocked = false
   const layout = useMemo(() => hallLayout(cat, year), [cat, year]);
   const [place, setPlace] = useState<Place>('atrium');
   const [focusId, setFocusId] = useState<string | null>(null);
+  // the optional layer hears that an exhibit the player has unlocked was opened
+  useEffect(() => {
+    if (focusId && active && profile.get().museum.some(m => m.exhibitId === focusId)) retentionBus.emit({ t: 'museum', exhibitId: focusId });
+  }, [focusId, active]);
   const [target, setTarget] = useState<HallTarget | null>(null);
   const [worldFocus, setWorldFocus] = useState<string | null>(null);
   const [tour, setTour] = useState<number | null>(null);

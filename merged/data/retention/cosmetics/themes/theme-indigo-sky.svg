@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Stars over hills">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 78c14 -12 24 -12 36 -2c10 -12 28 -14 56 2"/><path d="M4 90h92"/></g>
+<g data-z="2" opacity="0.8"><path d="M20 20l2 6l6 2l-6 2l-2 6l-2 -6l-6 -2l6 -2z"/><path d="M62 14l1.5 4l4 1.5l-4 1.5l-1.5 4l-1.5 -4l-4 -1.5l4 -1.5z"/><path d="M84 34l1 3l3 1l-3 1l-1 3l-1 -3l-3 -1l3 -1z"/><path d="M40 40v0M72 52v0M14 52v0"/></g>
+<g data-z="3" opacity="0.4"><path d="M50 28q20 4 30 24"/></g>
+</svg>

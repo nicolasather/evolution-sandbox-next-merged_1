@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Wireframe sun and grid">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M26 52a24 24 0 0 1 48 0"/><path d="M4 52h92"/></g>
+<g data-z="2" opacity="0.8"><path d="M12 62L2 90M30 62L26 90M50 62V90M70 62L74 90M88 62L98 90"/><path d="M8 66h84M2 74h96M-2 84h104"/></g>
+<g data-z="3" opacity="0.5"><path d="M34 40h32M38 46h24"/></g>
+</svg>

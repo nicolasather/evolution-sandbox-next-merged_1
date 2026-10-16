@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="River mark with a stumble">
+<g data-z="0" opacity=".45"><path d="M30 20c8 14 -8 24 0 38s-6 22 -2 30M38 20c8 14 -8 24 0 38s-6 22 -2 30"/><path data-extra="1" d="M26 64l2 5M26 68l2 5M26 72l2 5M74 24l2 5M74 29l2 5"/></g>
+<g data-z="1"><path d="M52 12c14 14 -14 24 -2 40c10 12 -6 22 4 38"/><path d="M68 12c14 14 -14 24 -2 40c10 12 -6 22 4 38"/></g>
+<g data-z="2"><path d="M22 62l16 8l-6 12" /><path d="M78 40c6 2 10 6 10 12M82 56c4 0 6 2 8 6" opacity=".8"/><circle cx="20" cy="30" r="3"/><circle cx="80" cy="76" r="2"/></g>
+</svg>

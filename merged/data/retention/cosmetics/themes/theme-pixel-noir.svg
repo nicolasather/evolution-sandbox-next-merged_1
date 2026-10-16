@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pixel skyline">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M6 90V60h10V44h12V70h8V30h14V52h10V40h12V66h8V50h8V90z"/></g>
+<g data-z="2" opacity="0.8"><path d="M10 66h4M20 50h4M40 38h4M44 58h4M62 46h4M78 56h4"/><path d="M56 20h8v8h-8z"/></g>
+<g data-z="3" opacity="0.45"><path d="M10 12h6v6h-6zM30 18h6v6h-6zM80 12h6v6h-6z"/></g>
+</svg>

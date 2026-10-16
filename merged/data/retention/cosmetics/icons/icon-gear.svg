@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Gear">
+<g data-z="0" opacity="0.4"><path d="M24 92h52"/></g>
+<g data-z="1"><path d="M42 10h16l2 10l10 4l8 -6l12 12l-6 8l4 10l10 2v16l-10 2l-4 10l6 8l-12 12l-8 -6l-10 4l-2 10h-16l-2 -10l-10 -4l-8 6l-12 -12l6 -8l-4 -10l-10 -2v-16l10 -2l4 -10l-6 -8l12 -12l8 6l10 -4z"/><path d="M50 34a16 16 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 44a6 6 0 1 0 0.1 0z"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Bronze">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M8 8h84v84h-84z"/><path d="M14 14h72v72h-72z"/></g>
+<g data-z="2" opacity="0.8"><path d="M10 10a2 2 0 1 0 0.1 0zM90 10a2 2 0 1 0 0.1 0zM10 90a2 2 0 1 0 0.1 0zM90 90a2 2 0 1 0 0.1 0z"/></g>
+<g data-z="3" opacity="0.5"><path d="M24 28a5 3 0 1 0 0.1 0zM46 30a5 3 0 1 0 0.1 0zM68 26a5 3 0 1 0 0.1 0zM30 50a5 3 0 1 0 0.1 0zM56 52a5 3 0 1 0 0.1 0zM76 48a5 3 0 1 0 0.1 0zM22 72a5 3 0 1 0 0.1 0zM48 74a5 3 0 1 0 0.1 0zM70 70a5 3 0 1 0 0.1 0z"/></g>
+</svg>

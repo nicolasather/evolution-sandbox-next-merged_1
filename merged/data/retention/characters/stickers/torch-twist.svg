@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Torch twisting out">
+<g data-z="0" opacity=".45"><path d="M42 54l-14 34M48 56l-14 32"/><path data-extra="1" d="M40 70l2 8M45 70l2 8M50 70l2 8"/></g>
+<g data-z="1"><path d="M42 52l10 -2l12 -12l8 8l-12 14l-4 6z" transform="rotate(-20 55 55)"/><path d="M60 52l-22 38l-6 -3l20 -40" /></g>
+<g data-z="2"><path d="M70 36c6 -8 -2 -14 4 -22c8 6 14 16 4 26c-2 2 -6 0 -8 -4z"/><path d="M38 24c-8 -4 -6 -10 -10 -14M26 34c-10 -2 -12 -8 -18 -8M52 22c-2 -6 2 -8 0 -14" opacity=".7"/><path d="M22 20q6 4 2 10" opacity=".6"/></g>
+</svg>

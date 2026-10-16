@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Companion delighted — upper plates lifted apart">
+<g data-z="0" opacity=".4"><path d="M24 94h52M30 97h40"/><path d="M28 44l-8 -6M26 54l-10 -2M72 44l8 -6M74 54l10 -2"/></g>
+<g data-z="1"><path d="M34 28l6 -14h20l6 14z" transform="translate(0 -4)"/><path d="M32 36l-2 6h40l-2 -6z"/><path d="M30 46l-4 32l10 6h28l10 -6l-4 -32z" transform="translate(0 4)"/><path d="M30 86h10v5h-10zM60 86h10v5h-10z" transform="translate(0 2)"/></g>
+<g data-z="2"><path d="M36 62q6 -9 12 0M52 62q6 -9 12 0"/><path d="M42 72q8 6 16 0"/><path d="M44 56h2M56 56h2" opacity=".7"/></g>
+<g data-z="3" opacity=".7"><path d="M42 22h16M45 26h10M50 8v-4M38 12l-4 -4M62 12l4 -4"/><path d="M32 76h36M34 81h32" stroke-dasharray="3 2"/></g>
+<g data-z="4" opacity=".4"><path d="M31 52l-1 8M69 52l1 8M31 66l-1 8" stroke-width=".8"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Coal">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M10 24l14 -10l16 6l6 14l-12 12l-16 -4z"/><path d="M52 16l18 -4l14 10l-4 16l-18 4l-10 -12z"/><path d="M18 62l16 -6l14 10l-2 16l-16 6l-12 -12z"/><path d="M58 60l18 -4l12 12l-6 16l-18 2l-8 -14z"/></g>
+<g data-z="2" opacity="0.6"><path d="M20 30l8 -2M60 24l8 2M26 68l8 2M66 68l8 -2"/></g>
+<g data-z="3" opacity="0.4"><path d="M40 40v0M90 40v0M44 90v0M8 50v0"/></g>
+</svg>

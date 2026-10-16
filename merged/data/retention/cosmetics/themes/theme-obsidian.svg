@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Obsidian shards">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M20 86L34 30L48 80z"/><path d="M48 80L62 18L76 84z"/><path d="M70 84L82 46L92 86z"/></g>
+<g data-z="2" opacity="0.7"><path d="M34 30L30 62M62 18L58 60M82 46L80 70"/><path d="M26 74l10 -6M56 72l12 -6"/></g>
+<g data-z="3" opacity="0.45"><path d="M10 20l12 -6M70 12l16 6"/></g>
+</svg>

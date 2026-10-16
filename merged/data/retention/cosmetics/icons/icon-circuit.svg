@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Circuit">
+<g data-z="0" opacity="0.4"><path d="M10 20h6M84 80h6"/></g>
+<g data-z="1"><path d="M14 50h22l8 -16h20l8 16h14"/><path d="M14 66h14l10 14h24l8 -14h18"/><path d="M30 20v20h14"/><path d="M70 20v14"/><path d="M50 34v-14"/></g>
+<g data-z="2" opacity="0.85"><path d="M36 50a4 4 0 1 0 0.1 0zM64 66a4 4 0 1 0 0.1 0zM30 20a3 3 0 1 0 0.1 0zM70 20a3 3 0 1 0 0.1 0zM50 20a3 3 0 1 0 0.1 0z"/><path d="M44 34h20v0M44 34l0 -4"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Cog with a wink">
+<g data-z="0" opacity=".45"><path d="M26 82h48M34 88h32"/><path data-extra="1" d="M24 48l3 -3M24 52l3 -3M24 56l3 -3M70 48l3 3M70 52l3 3M70 56l3 3M40 70l20 0"/></g>
+<g data-z="1"><path d="M44 12h12l2 8l8 3l7 -4l8 8l-4 7l3 8l8 2v12l-8 2l-3 8l4 7l-8 8l-7 -4l-8 3l-2 8h-12l-2 -8l-8 -3l-7 4l-8 -8l4 -7l-3 -8l-8 -2v-12l8 -2l3 -8l-4 -7l8 -8l7 4l8 -3z" transform="translate(0 -4) scale(1 .98)"/></g>
+<g data-z="2"><circle cx="50" cy="48" r="26" opacity=".6"/><path d="M36 42h10" /><circle cx="62" cy="42" r="4"/><circle cx="62" cy="42" r="1.2"/><path d="M38 58q12 12 24 0"/></g>
+</svg>

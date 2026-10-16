@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Tiny antenna">
+<g data-z="0" opacity="0.4"><path d="M24 90h52"/></g>
+<g data-z="1"><path d="M50 88V28"/><path d="M50 88L36 90M50 88L64 90"/><path d="M50 28L30 40M50 28L70 40"/><path d="M50 48L36 58M50 48L64 58"/><path d="M50 68L40 76M50 68L60 76"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 20a4 4 0 1 0 0.1 0z"/><path d="M32 12a28 28 0 0 1 36 0M24 6a40 40 0 0 1 52 0"/></g>
+<g data-z="3" opacity="0.5"><path d="M30 44v0M70 44v0"/></g>
+</svg>

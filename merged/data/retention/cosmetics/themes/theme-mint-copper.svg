@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Verdigris roofs">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M10 60L34 34L58 60z"/><path d="M44 74L68 44L92 74z"/><path d="M8 60v26h50V60M44 74v14h46V74"/></g>
+<g data-z="2" opacity="0.8"><path d="M34 34v-8"/><path d="M22 72h8v14M68 80h8v8"/><path d="M20 50l8 8M42 46l8 10M58 58l8 12M78 62l8 10"/></g>
+<g data-z="3" opacity="0.45"><path d="M30 22l8 -4M66 36l8 -4"/></g>
+</svg>

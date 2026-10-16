@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Woven mat">
+<g data-z="0" opacity="0.4"><path d="M10 78h80M16 84h68"/></g>
+<g data-z="1"><path d="M16 28h68l6 44h-80z"/></g>
+<g data-z="2" opacity="0.8"><path d="M22 36v32M30 36v32M38 36v32M46 36v32M54 36v32M62 36v32M70 36v32M78 36v32"/><path d="M20 42h60M18 52h64M18 62h64"/></g>
+<g data-z="3" opacity="0.5"><path d="M10 72l-4 6M90 72l4 6M16 76l-2 8M84 76l2 8"/></g>
+</svg>

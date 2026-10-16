@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Dawn over standing stones">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 74h92"/><path d="M18 74V48h10v26M44 74V38h12v36M72 74V52h10v22"/><path d="M16 48h14M42 38h16M70 52h14"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 30a16 16 0 0 1 0 0"/><path d="M24 74a26 26 0 0 1 52 0"/><path d="M50 14v6M30 22l4 4M70 22l-4 4M16 34l5 2M84 34l-5 2"/></g>
+<g data-z="3" opacity="0.4"><path d="M10 84h80M20 90h60"/></g>
+</svg>

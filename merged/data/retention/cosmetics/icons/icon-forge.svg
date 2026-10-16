@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Forge">
+<g data-z="0" opacity="0.4"><path d="M12 88h76M20 94h60"/></g>
+<g data-z="1"><path d="M18 88V44l14 -8h36l14 8v44"/><path d="M30 88V58h40v30"/><path d="M44 36V20h12v16"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 80c-8 0 -10 -8 -8 -14c4 -4 6 -8 8 -14c4 6 8 10 8 14c2 6 0 14 -8 14z"/><path d="M46 14q4 -6 8 0M44 8q6 -6 12 0"/></g>
+</svg>

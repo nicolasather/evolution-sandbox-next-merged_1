@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Etched compass">
+<g data-z="0" opacity="0.4"><path d="M14 90h72M22 94h56"/></g>
+<g data-z="1"><path d="M50 12a38 38 0 1 0 0.1 0z"/><path d="M50 20a30 30 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.85"><path d="M50 26L58 50L50 74L42 50z"/><path d="M50 26L50 50"/><path d="M50 50a3 3 0 1 0 0.1 0z"/><path d="M50 8v6M50 86v6M8 50h6M86 50h6"/></g>
+<g data-z="3" opacity="0.5"><path d="M24 24l4 4M76 24l-4 4M24 76l4 -4M76 76l-4 -4"/></g>
+</svg>

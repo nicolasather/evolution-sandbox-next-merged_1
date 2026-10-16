@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Clay thumbs-up">
+<g data-z="0" opacity=".45"><path d="M30 86h46M32 80h42M52 38l-4 12M58 40l-4 12"/></g>
+<g data-z="1"><path d="M26 52h14v32h-14z"/><path d="M40 56c10 -4 14 -14 14 -26c0 -6 8 -6 8 2c0 8 -2 14 -4 18h20c6 0 8 8 2 10c4 2 4 8 -2 10c3 3 1 8 -3 8c2 4 -1 8 -6 8H40"/></g>
+<g data-z="2"><path d="M30 60h6M30 66h6" opacity=".7"/><path d="M62 50h14M62 60h14M62 70h10" opacity=".55"/><path d="M80 24l6 -6M86 32l8 -2M76 18l-2 -8" /></g>
+</svg>

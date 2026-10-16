@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Vessel">
+<g data-z="0" opacity="0.4"><path d="M32 88h36M36 92h28M28 56c-2 12 2 22 8 28"/></g>
+<g data-z="1"><path d="M38 18h24v10c16 6 22 20 18 36c-3 12 -10 20 -30 20s-27 -8 -30 -20c-4 -16 2 -30 18 -36z"/><path d="M34 16h32"/></g>
+<g data-z="2" opacity="0.75"><path d="M26 52c10 6 22 2 28 8s14 4 20 -2"/><path d="M28 64c8 6 16 2 22 8s14 4 20 -2"/><path d="M42 30c-4 6 -6 14 -4 22"/></g>
+</svg>

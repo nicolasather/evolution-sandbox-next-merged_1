@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Sun disc wondering">
+<g data-z="0" opacity=".45"><path d="M50 12v8M50 80v8M12 50h8M80 50h8M23 23l6 6M71 71l6 6M77 23l-6 6M29 71l-6 6"/></g>
+<g data-z="1"><circle cx="50" cy="50" r="22"/><circle cx="50" cy="50" r="30" opacity=".5" stroke-dasharray="1 5"/></g>
+<g data-z="2"><path d="M38 44q5 -6 10 0M54 44q5 -6 10 0"/><circle cx="43" cy="45" r="1.2"/><circle cx="59" cy="45" r="1.2"/><circle cx="52" cy="58" r="3.4"/><path d="M70 28q8 -2 8 6" opacity=".8"/><path d="M64 22q-2 -4 0 -8" opacity=".7"/></g>
+</svg>

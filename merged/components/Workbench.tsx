@@ -2,7 +2,13 @@
 
 import { creativeUiEnabled, tryRecipeOnServer, REVIEW_NOTICE } from '@/lib/creative/client';
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { TactileDirector } from '@/lib/retention/tactile';
+import { retention } from '@/lib/retention/store';
+import { retentionBus, arbiter } from '@/lib/retention/bus';
+import { FailureDirector } from '@/lib/retention/failure';
+import { playSuccess, selectSuccess, SIGNATURES } from '@/lib/retention/finish';
 import { registerBench, type SpawnOptions } from '@/lib/craft/bus';
+import { registerProbe } from '@/lib/retention/probe';
 import { getVolume, play, setSoundEnabled, setVolume, soundEnabled, subscribeSound, unlockAudio } from '@/lib/craft/audio';
 import { Fx, readPalette } from '@/lib/craft/fx';
 import { Gesture, segDist } from '@/lib/craft/gesture';
@@ -152,7 +158,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     mq.addEventListener?.('change', onMq);
     // colours follow the theme (light / dark / neon) live
     const themeWatch = new MutationObserver(() => { fx.pal = readPalette(); wake(); });
-    themeWatch.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'class'] });
+    themeWatch.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme', 'data-rtheme', 'class'] });
 
     /** Latest impacts between two loose bodies, by pair. A hit counts as an attempt. */
     const hits = new Map<string, { force: number; speed: number }>();
@@ -203,6 +209,22 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     const clusterAge = new Map<string, number>();
     const clusterDone = new Set<string>();
 
+    /* Retention: tactile answers to the hand. Cosmetic only — it never touches pointer capture, recipes or
+       positions, and it stays silent while a craft session or a resolve is running (see lib/retention/tactile.ts). */
+    const tactile = new TactileDirector(fx, {
+      enabled: () => retention.get().prefs.tactile,
+      canAct: () => latest.current.active && !session && !resolving && !mode,
+      reduced: () => mq.matches,
+      onGesture: (g, b) => retentionBus.emit({ t: 'tactile', gesture: g, material: b.material, itemId: b.itemId }),
+    });
+
+    const failures = new FailureDirector(fx, {
+      enabled: () => retention.get().prefs.failGags && latest.current.active && !session && !resolving && !mode,
+      reduced: () => mq.matches,
+      quake: bs => tactile.quake(bs),
+      shrug: b => tactile.shrug(b),
+    });
+
     const say_ = (text: string, tone: Note['tone'] = 'info', sub?: string, ms = 5200, noticed?: string) => {
       setNote({ key: performance.now(), text, sub, tone, noticed });
       window.clearTimeout(noteTimer);
@@ -230,10 +252,17 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         if (a.props.hard + b.props.hard > 1.1 && speed > 220) fx.spark(mx, my, { n: 4, color: 'ochre' });
         fx.shake(Math.min(2.4, force * 3));
         hits.set(world.pairKeyOf(a, b), { force, speed });
+        tactile.impact(info);
         wake();
       },
-      onWall: (b, speed) => { if (!session && speed > 140) fx.sound('thud', { vol: clamp(speed / 900, 0.08, 0.45), rate: 1.1 - b.mass * 0.05 }); },
-      onLand: (_b, speed) => { if (!session && speed > 160) fx.sound('thud', { vol: clamp(speed / 1600, 0.06, 0.4), rate: 1.3 }); },
+      onWall: (b, speed) => {
+        if (!session && speed > 140) fx.sound('thud', { vol: clamp(speed / 900, 0.08, 0.45), rate: 1.1 - b.mass * 0.05 });
+        if (!b.temp) tactile.wall(b, speed);
+      },
+      onLand: (_b, speed) => {
+        if (!session && speed > 160) fx.sound('thud', { vol: clamp(speed / 1600, 0.06, 0.4), rate: 1.3 });
+        if (!_b.temp) tactile.land(_b, speed);
+      },
       onZone: () => {},
       onKnockOut: (b, vx, vy) => { sendHome(b, 'knock', { x: vx, y: vy }); },
       onEvict: b => { sendHome(b, 'quick'); },
@@ -410,6 +439,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       updateDemo(dt);
       if (!session && !resolving && !pull && cool <= 0 && !mode) checkClusters(dt);
       hits.clear();
+      tactile.frame(dt, world.bodies, ptr);
       fx.update(dt);
       syncChrome();
       if (dirty && !saveTimer) saveTimer = window.setTimeout(() => { saveTimer = 0; flushSave(); }, 700);
@@ -581,6 +611,9 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       else if (res.status === 'region_locked') say_(res.message, 'warn', `Documented origin: ${res.region.originLabel}.`);
       else {
         const f = res as Extract<CombineResult, { status: 'fail' }>;
+        // a plain "that makes nothing" may rarely earn a tiny gag; informative lines never do
+        if (f.info.kind === 'none' && !f.nudge && !(f.items.length === 2 && nearLine(eng, f.a.id, f.b.id))) failures.attempt(c, world.bodies);
+        retentionBus.emit({ t: 'attempt-fail', kind: f.info.kind });
         const near = f.nudge ? null : (f.items.length === 2 ? nearLine(eng, f.a.id, f.b.id) : null);
         say_(f.message, f.info.kind === 'irrelevant' || f.info.kind === 'wrong_state' || f.info.kind === 'needs_processing' ? 'good' : 'info',
           f.nudge ?? near?.text ?? undefined);
@@ -595,6 +628,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
     }
 
     function beginResolve(bs: Body[], tier: Tier, dur: number) {
+      tactile.cancelAll();
       latest.current.onBegin();
       snap();
       const mx = bs.reduce((s, b) => s + b.x, 0) / bs.length, my = bs.reduce((s, b) => s + b.y, 0) / bs.length;
@@ -680,6 +714,17 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       }
       if (fresh && tier !== 'quick') { fx.shake(tier === 'major' ? 4 : 2); fx.spark(mx, my, { n: tier === 'major' ? 14 : 8, color: 'ochre', speed: 200, life: 0.5 }); }
       if (fresh && tier === 'major') fx.flash(0.9);
+      /* Retention: a fresh discovery gets one of 48 authored finishes (plus the equipped effect's signature);
+         known results stay quiet. Cosmetic only; skipped under reduced motion or when switched off. */
+      if (fresh && retention.get().prefs.successFx && !mq.matches) {
+        arbiter.request('success', 1800); arbiter.hush(1600);
+        const def = selectSuccess(res.node.id, res.node.era, bs[0].material);
+        const rs = res.node.rar === 'hidden' ? 1.35 : res.node.rar === 'rare' ? 1.2 : res.node.rar === 'uncommon' ? 1.08 : 1;
+        playSuccess(fx, def.id, mx, my, rs * (tier === 'major' ? 1.2 : 1));
+        const sig = SIGNATURES[retention.get().equipped.effect ?? ''];
+        if (sig) sig(fx, mx, my - world.unit * 0.2, rs);
+      }
+      if (res.status === 'new' || res.status === 'known') retentionBus.emit({ t: 'discovery', id: res.node.id, status: res.status, newRoute: res.status === 'known' && !!res.newRoute, era: res.node.era, rar: res.node.rar, hidden: res.node.rar === 'hidden' });
       if (res.unlocked.length) say_(`${res.unlocked.map(u => u.n).join(', ')} appears.`, 'good', latest.current.engine.unlockNote(res.unlocked[0].id) ?? undefined);
       lastTap = null;
       sel = null;
@@ -706,6 +751,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       const eng = latest.current.engine;
       const A = eng.get(a.itemId), B = eng.get(b.itemId), R = eng.get(rid);
       if (!A || !B || !R) return;
+      tactile.cancelAll();
       latest.current.onBegin();
       snap();
       const eraIndex = Math.max(0, eng.db.eras.findIndex(e => e.id === R.era));
@@ -797,6 +843,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (!world.bodies.includes(b)) return;
       if (kind === 'quick' && (b.temp || (session && (session.a === b || session.b === b)))) return;
       if (kind === 'quick') snap();
+      retentionBus.emit({ t: 'signal', name: 'home', id: b.itemId });
       const pos = toViewport(b.x, b.y - b.z);
       const art = b.el.querySelector('.wb-art')?.innerHTML ?? '';
       const id = b.itemId, size = b.r * 2 * zoom, angle = b.angle;
@@ -1264,6 +1311,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         }
       }
       world.grab(b, p.x, p.y);
+      tactile.grab(b, p.x, p.y);
       drag = { body: b, t0: performance.now(), x0: e.clientX, y0: e.clientY, moved: false, lx: p.x, ly: p.y, lt: performance.now(), vx: 0, vy: 0 };
       fx.sound(b.props.sound, { vol: 0.12, rate: 1.4 });
       world.unlatchAll();
@@ -1312,6 +1360,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       drag.lx = p.x; drag.ly = p.y; drag.lt = now;
       if (Math.hypot(e.clientX - drag.x0, e.clientY - drag.y0) > 6) drag.moved = true;
       world.dragTo(drag.body, p.x, p.y);
+      tactile.moveHeld(drag.body, p.x, p.y);
       if (trial && trial.body === drag.body) trial.sim.move(p.x, p.y);
       wake();
     };
@@ -1344,8 +1393,9 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       // a flick that ended a while ago is not a throw
       const fresh = performance.now() - d.lt < 90;
       world.release(d.body, fresh ? d.vx : 0, fresh ? d.vy : 0);
+      tactile.release(d.body, fresh ? d.vx : 0, fresh ? d.vy : 0);
       dirty = true;
-      if (!d.moved && performance.now() - d.t0 < 380) tap(d.body);
+      if (!d.moved && performance.now() - d.t0 < 380) { tap(d.body); tactile.tap(d.body); }
       wake();
     };
 
@@ -1374,7 +1424,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       e.preventDefault();
       if (session) { session.wheel(e.deltaY); wake(); return; }
       const target = drag?.body ?? hover ?? sel;
-      if (target) { world.rotate(target, Math.sign(e.deltaY) * Math.min(0.35, Math.abs(e.deltaY) * 0.0024)); wake(); return; }
+      if (target) { world.rotate(target, Math.sign(e.deltaY) * Math.min(0.35, Math.abs(e.deltaY) * 0.0024)); tactile.spin(target, Math.sign(e.deltaY)); wake(); return; }
       zoom = clamp(zoom * (e.deltaY < 0 ? 1.08 : 1 / 1.08), 1, 1.6);
       wake();
     };
@@ -1435,7 +1485,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       }
       if (!session && (k === 'r' || k === 'R')) {
         const t = drag?.body ?? hover ?? sel;
-        if (t) { world.rotate(t, e.shiftKey ? -Math.PI / 12 : Math.PI / 12); wake(); }
+        if (t) { world.rotate(t, e.shiftKey ? -Math.PI / 12 : Math.PI / 12); tactile.spin(t, e.shiftKey ? -1 : 1); wake(); }
       }
     };
     const onKeyUp = (e: KeyboardEvent) => { session?.keyUp(e.key); };
@@ -1507,6 +1557,17 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       element: () => host,
     });
 
+    const unprobe = registerProbe(() => {
+      const r = host.getBoundingClientRect();
+      return {
+        busy: !!session || !!resolving || !!mode, w: r.width, h: r.height, left: r.left, top: r.top,
+        bodies: world.bodies.map(b => {
+          const p = toViewport(b.x, b.y - b.z);
+          return { uid: b.uid, itemId: b.itemId, material: b.material, x: p.x, y: p.y, vx: b.vx, vy: b.vy, angle: b.angle, av: b.av, held: b.held, r: b.r * zoom, temp: b.temp };
+        }),
+      };
+    });
+
     api.current = {
       clear: () => {
         if (session) { session.cancel(); endSession(false); }
@@ -1535,6 +1596,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       api.current = null;
       onHide();
       unregister();
+      unprobe();
       unsub();
       ro?.disconnect();
       if (!ro) window.removeEventListener('resize', resize);
@@ -1559,6 +1621,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (longPress) window.clearTimeout(longPress.timer);
       if (raf) cancelAnimationFrame(raf);
       session?.cancel();
+      tactile.dispose();
       world.clear();
     };
     // the world is built once; props are read through `latest`

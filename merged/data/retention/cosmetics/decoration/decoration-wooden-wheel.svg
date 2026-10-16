@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Wooden wheel">
+<g data-z="0" opacity="0.4"><path d="M10 92h80"/></g>
+<g data-z="1"><path d="M50 12a38 38 0 1 0 0.1 0z"/><path d="M50 22a28 28 0 1 0 0.1 0z"/><path d="M50 44a6 6 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 22v22M50 56v22M22 50h22M56 50h22M30 30l14 14M56 56l14 14M70 30l-14 14M44 56l-14 14"/></g>
+<g data-z="3" opacity="0.5"><path d="M18 40l4 2M78 58l4 2M40 16l2 4"/></g>
+</svg>

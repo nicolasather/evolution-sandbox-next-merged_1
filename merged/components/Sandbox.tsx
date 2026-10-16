@@ -43,6 +43,8 @@ import { ShortcutsOverlay } from './fx/ShortcutsOverlay';
 import { enterFullscreen, installImmersiveTop, installPressFx } from '@/lib/fx';
 import { benchElement, benchSpawn } from '@/lib/craft/bus';
 import { sound } from '@/lib/sound';
+import { retentionBus } from '@/lib/retention/bus';
+import { RetentionLayer } from './retention/RetentionLayer';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { cn } from '@/lib/utils';
 import type { ViewId } from '@/lib/types';
@@ -159,6 +161,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       if (!unlocks.has(need)) return; // not unlocked yet: no such door (a shortcut key lands here too)
       unlocks.opened(need);
     }
+    retentionBus.emit({ t: 'view', view: v });
     sound.sfx(v === 'graph' ? 'graph' : v === 'arch' || v === 'time' ? 'archive' : 'tab', 0.6);
     const scene = VIEW_SCENE[v];
     if (scene && v !== view) playGate(scene);
@@ -180,6 +183,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   }, [open, panelOpen]);
 
   const closePanel = useCallback(() => {
+    retentionBus.emit({ t: 'signal', name: 'panel-close' });
     setPanelOpen(false);
     const back = panelReturn.current;
     panelReturn.current = null;
@@ -532,6 +536,14 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       {/* the restrained in-game moment when history opens a new gallery */}
       <MuseumSignal onVisit={() => showView('museum')}
         suppressed={!s.entered || reveal < 6 || view === 'museum' || !!s.ending || gate !== null} />
+
+      <RetentionLayer
+        engine={engine}
+        version={version}
+        entered={s.entered && reveal >= 6}
+        view={view}
+        busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || gate !== null}
+      />
 
       <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
 

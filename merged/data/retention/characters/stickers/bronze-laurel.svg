@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Bronze laurel wreath">
+<g data-z="0" opacity=".45"><path d="M30 80c-12 -8 -18 -22 -16 -38M70 80c12 -8 18 -22 16 -38"/></g>
+<g data-z="1"><path d="M50 84c-22 -2 -36 -18 -36 -40"/><path d="M50 84c22 -2 36 -18 36 -40"/><path d="M18 62c-6 -2 -8 -6 -8 -10c6 0 10 4 8 10zM24 72c-6 0 -10 -4 -10 -8c6 -2 10 2 10 8zM16 48c-6 -4 -6 -10 -4 -14c6 2 8 8 4 14zM20 36c-4 -6 -2 -12 2 -14c4 4 4 10 -2 14z"/><path d="M82 62c6 -2 8 -6 8 -10c-6 0 -10 4 -8 10zM76 72c6 0 10 -4 10 -8c-6 -2 -10 2 -10 8zM84 48c6 -4 6 -10 4 -14c-6 2 -8 8 -4 14zM80 36c4 -6 2 -12 -2 -14c-4 4 -4 10 2 14z"/></g>
+<g data-z="2"><path d="M44 78q6 4 12 0M44 84q6 3 12 0"/><path d="M42 40l8 -10l8 10l-8 10z" opacity=".85"/><circle cx="50" cy="40" r="1.6"/></g>
+</svg>

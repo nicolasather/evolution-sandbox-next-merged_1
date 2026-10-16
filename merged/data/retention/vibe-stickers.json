@@ -1,0 +1,542 @@
+[
+  {
+    "id": "flint-spark",
+    "title": "Flint Spark",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "hello",
+    "motif": "flint",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "tiny-moon",
+    "title": "Tiny Moon",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "wow",
+    "motif": "tiny",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "clay-thumb",
+    "title": "Clay Thumb",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "thanks",
+    "motif": "clay",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "archivist-eye",
+    "title": "Archivist Eye",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "oops",
+    "motif": "archivist",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "carved-smile",
+    "title": "Carved Smile",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "curious",
+    "motif": "carved",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "bent-arrow",
+    "title": "Bent Arrow",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "celebrate",
+    "motif": "bent",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "seed-sprout",
+    "title": "Seed Sprout",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "hello",
+    "motif": "seed",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "quiet-wave",
+    "title": "Quiet Wave",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "wow",
+    "motif": "quiet",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "stone-heart",
+    "title": "Stone Heart",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "thanks",
+    "motif": "stone",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "torch-twist",
+    "title": "Torch Twist",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "oops",
+    "motif": "torch",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "moth-of-ink",
+    "title": "Moth Of Ink",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "curious",
+    "motif": "moth",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "copper-loop",
+    "title": "Copper Loop",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "celebrate",
+    "motif": "copper",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "lucky-geode",
+    "title": "Lucky Geode",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "hello",
+    "motif": "lucky",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "ancient-star",
+    "title": "Ancient Star",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "wow",
+    "motif": "ancient",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "branch-wave",
+    "title": "Branch Wave",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "thanks",
+    "motif": "branch",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "river-mark",
+    "title": "River Mark",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "oops",
+    "motif": "river",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "little-owl",
+    "title": "Little Owl",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "curious",
+    "motif": "little",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "glazed-pot",
+    "title": "Glazed Pot",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "celebrate",
+    "motif": "glazed",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "cog-wink",
+    "title": "Cog Wink",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "hello",
+    "motif": "cog",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "map-pin",
+    "title": "Map Pin",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "wow",
+    "motif": "map",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "comet-trail",
+    "title": "Comet Trail",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "thanks",
+    "motif": "comet",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "reed-flower",
+    "title": "Reed Flower",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "oops",
+    "motif": "reed",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "sun-disc",
+    "title": "Sun Disc",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "curious",
+    "motif": "sun",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "rope-knot",
+    "title": "Rope Knot",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "celebrate",
+    "motif": "rope",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "bronze-laurel",
+    "title": "Bronze Laurel",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "hello",
+    "motif": "bronze",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "ink-droplet",
+    "title": "Ink Droplet",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "wow",
+    "motif": "ink",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "gear-grin",
+    "title": "Gear Grin",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "thanks",
+    "motif": "gear",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "signal-pulse",
+    "title": "Signal Pulse",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "oops",
+    "motif": "signal",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "mini-planet",
+    "title": "Mini Planet",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "curious",
+    "motif": "mini",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "fossil-shell",
+    "title": "Fossil Shell",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "celebrate",
+    "motif": "fossil",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "paper-plane",
+    "title": "Paper Plane",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "hello",
+    "motif": "paper",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "bead-chain",
+    "title": "Bead Chain",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "wow",
+    "motif": "bead",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "leaf-flutter",
+    "title": "Leaf Flutter",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "thanks",
+    "motif": "leaf",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "pixel-spark",
+    "title": "Pixel Spark",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "oops",
+    "motif": "pixel",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "little-hourglass",
+    "title": "Little Hourglass",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "curious",
+    "motif": "little",
+    "noEmoji": true,
+    "needsCommunity": false
+  },
+  {
+    "id": "archive-seal",
+    "title": "Archive Seal",
+    "art": "etched_glyph",
+    "drawStyle": "thin engraved strokes + small ochre/ivory highlight",
+    "palette": [
+      "bone",
+      "ink",
+      "ochre"
+    ],
+    "emotion": "celebrate",
+    "motif": "archive",
+    "noEmoji": true,
+    "needsCommunity": false
+  }
+]

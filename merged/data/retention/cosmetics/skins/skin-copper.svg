@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Copper">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M30 30a14 14 0 1 0 0.1 0z"/><path d="M70 30a14 14 0 1 0 0.1 0z"/><path d="M30 70a14 14 0 1 0 0.1 0z"/><path d="M70 70a14 14 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.7"><path d="M30 30a8 8 0 1 0 0.1 0z"/><path d="M70 30a8 8 0 1 0 0.1 0z"/><path d="M30 70a8 8 0 1 0 0.1 0z"/><path d="M70 70a8 8 0 1 0 0.1 0z"/></g>
+<g data-z="3" opacity="0.4"><path d="M6 50h14M80 50h14M50 6v14M50 80v14"/><path d="M46 46l8 8M54 46l-8 8"/></g>
+</svg>
