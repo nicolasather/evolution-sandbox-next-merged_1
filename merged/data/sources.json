@@ -717,6 +717,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_lathe_wp": {
+   "t": "B",
+   "title": "Lathe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Lathe",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_ballista_wp": {
    "t": "B",
    "title": "Ballista",
@@ -1230,6 +1239,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_newcomen_wp": {
+   "t": "B",
+   "title": "Newcomen atmospheric engine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Newcomen_atmospheric_engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_grass_wp": {
    "t": "B",
    "title": "Grasshopper escapement",
@@ -1329,6 +1347,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_propeller_wp": {
+   "t": "B",
+   "title": "Propeller",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Propeller",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_mule_wp": {
    "t": "B",
    "title": "Spinning mule",
@@ -1352,6 +1379,15 @@
    "title": "Hygrometer",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Hygrometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_balloon_wp": {
+   "t": "B",
+   "title": "Hot air balloon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hot_air_balloon",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1401,11 +1437,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_parachute_wp": {
+   "t": "B",
+   "title": "Parachute",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Parachute",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_scythe_wp": {
    "t": "B",
    "title": "Scythe",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Scythe",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pile_wp": {
+   "t": "B",
+   "title": "Voltaic pile",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Voltaic_pile",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1464,6 +1518,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_dandy_wp": {
+   "t": "B",
+   "title": "Dandy horse",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Dandy_horse",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_arithmometer_wp": {
    "t": "B",
    "title": "Arithmometer",
@@ -1491,6 +1554,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_fresnel_wp": {
+   "t": "B",
+   "title": "Fresnel lens",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fresnel_lens",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_gasometer_wp2": {
    "t": "B",
    "title": "Gasometer",
@@ -1509,11 +1581,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_sewing_wp": {
+   "t": "B",
+   "title": "Sewing machine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sewing_machine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_phena_wp": {
    "t": "B",
    "title": "Phenakistiscope",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Phenakistiscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_dynamo_wp": {
+   "t": "B",
+   "title": "Dynamo",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Dynamo",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1590,11 +1680,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_tyre_wp": {
+   "t": "B",
+   "title": "Pneumatic tire",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pneumatic_tire",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_subcable_wp": {
    "t": "B",
    "title": "Submarine communications cable",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Submarine_communications_cable",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pin_wp": {
+   "t": "B",
+   "title": "Safety pin",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Safety_pin",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1626,6 +1734,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_bessemer_wp": {
+   "t": "B",
+   "title": "Bessemer process",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bessemer_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stick_wp": {
    "t": "B",
    "title": "Marshall Islands stick chart",
@@ -1644,11 +1761,47 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_barbedwire_wp": {
+   "t": "B",
+   "title": "Barbed wire",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Barbed_wire",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_typewriter_wp": {
+   "t": "B",
+   "title": "Typewriter",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Typewriter",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_helio_wp": {
    "t": "B",
    "title": "Heliograph",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Heliograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_phonograph_wp": {
+   "t": "B",
+   "title": "Phonograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Phonograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bulb_wp": {
+   "t": "B",
+   "title": "Incandescent light bulb",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1659,6 +1812,15 @@
    "org": "National High Magnetic Field Laboratory, Magnet Academy",
    "url": "https://nationalmaglab.org/magnet-academy/history-of-electricity-magnetism/museum/wimshurst-machine-1880/",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_turbine_wp": {
+   "t": "B",
+   "title": "Steam turbine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Steam_turbine",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -1748,6 +1910,15 @@
    "title": "Triode",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Triode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_zipper_wp": {
+   "t": "B",
+   "title": "Zipper",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Zipper",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
