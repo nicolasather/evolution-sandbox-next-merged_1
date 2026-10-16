@@ -1302,6 +1302,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_forceps_wp": {
+   "t": "B",
+   "title": "Obstetrical forceps",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Obstetrical_forceps",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stepped_wp": {
    "t": "B",
    "title": "Stepped reckoner",
@@ -1442,6 +1451,15 @@
    "title": "Octant (instrument)",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Octant_(instrument)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flyingshuttle_wp": {
+   "t": "B",
+   "title": "Flying shuttle",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flying_shuttle",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1622,6 +1640,15 @@
    "title": "Puddling (metallurgy)",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Puddling_(metallurgy)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_powerloom_wp": {
+   "t": "B",
+   "title": "Power loom",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Power_loom",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1833,6 +1860,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_cement_wp": {
+   "t": "B",
+   "title": "Portland cement",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Portland_cement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_gasometer_wp2": {
    "t": "B",
    "title": "Gasometer",
@@ -1856,6 +1892,15 @@
    "title": "Match",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Match",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_reaper_wp": {
+   "t": "B",
+   "title": "Reaper",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Reaper",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1905,6 +1950,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_plough_wp": {
+   "t": "B",
+   "title": "Plough",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Plough",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stereo_wp": {
    "t": "B",
    "title": "Stereoscope",
@@ -1919,6 +1973,15 @@
    "title": "Daguerreotype",
    "org": "Wikipedia (citing Lowry 2000; Buerger 1989; Eder 1978)",
    "url": "https://en.wikipedia.org/wiki/Daguerreotype",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_vulcan_wp": {
+   "t": "B",
+   "title": "Vulcanization",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Vulcanization",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1968,6 +2031,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_anesthesia_wp": {
+   "t": "B",
+   "title": "Anesthesia",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Anesthesia",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_subcable_wp": {
    "t": "B",
    "title": "Submarine communications cable",
@@ -1991,6 +2063,15 @@
    "title": "Safety pin",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Safety_pin",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ophthalmoscope_wp": {
+   "t": "B",
+   "title": "Ophthalmoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ophthalmoscope",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -2058,6 +2139,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_pasteur_wp": {
+   "t": "B",
+   "title": "Pasteurization",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pasteurization",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stevenson_wp": {
    "t": "B",
    "title": "Stevenson screen",
@@ -2085,6 +2175,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_antiseptic_wp": {
+   "t": "B",
+   "title": "Antiseptic",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Antiseptic",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_typewriter_wp": {
    "t": "B",
    "title": "Typewriter",
@@ -2099,6 +2198,15 @@
    "title": "Heliograph",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Heliograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_periodic_wp": {
+   "t": "B",
+   "title": "Periodic table",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Periodic_table",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -2135,6 +2243,15 @@
    "title": "Steam turbine",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Steam_turbine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hallheroult_wp": {
+   "t": "B",
+   "title": "Hall%E2%80%93H%C3%A9roult process",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -2220,6 +2337,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_ecg_wp": {
+   "t": "B",
+   "title": "Electrocardiography",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Electrocardiography",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_sparkplug_wp": {
    "t": "B",
    "title": "Spark plug",
@@ -2252,6 +2378,15 @@
    "title": "Triode",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Triode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_haber_wp": {
+   "t": "B",
+   "title": "Haber process",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Haber_process",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -2297,6 +2432,51 @@
    "title": "Differential analyser",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Differential_analyser",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_nylon_wp": {
+   "t": "B",
+   "title": "Nylon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Nylon",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_transistor_wp": {
+   "t": "B",
+   "title": "Transistor",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Transistor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_floatglass_wp": {
+   "t": "B",
+   "title": "Float glass",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Float_glass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_mouse_wp": {
+   "t": "B",
+   "title": "Computer mouse",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Computer_mouse",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_floppy_wp": {
+   "t": "B",
+   "title": "Floppy disk",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Floppy_disk",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"

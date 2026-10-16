@@ -10900,11 +10900,11 @@
     "kind": "ratio",
     "title": "The Tally Board",
     "unit": "entries",
-    "correctValue": 10,
+    "correctValue": 12,
     "tolerance": 0,
-    "prompt": "The tally board lists every entry of this family: Spindle Spinning Wheel; Water-Powered Fulling Mill; Bobbin Lace Pillow; Lewis Paul's Carding Machine; Spinning Jenny; Water Frame; Spinning Mule; Whitney Cotton Gin; Jacquard Punched Card Chain; Lockstitch Sewing Machine. How many entries are there?",
+    "prompt": "The tally board lists every entry of this family: Spindle Spinning Wheel; Water-Powered Fulling Mill; Bobbin Lace Pillow; Kay's Flying Shuttle; Lewis Paul's Carding Machine; Spinning Jenny; Water Frame; Spinning Mule; Power Loom; Whitney Cotton Gin; Jacquard Punched Card Chain; Lockstitch Sewing Machine. How many entries are there?",
     "hint": "Count the names on the board one by one.",
-    "unlockFragment": "10"
+    "unlockFragment": "12"
    },
    {
     "id": "sequence",
@@ -10913,8 +10913,8 @@
     "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
     "steps": [
      {
-      "id": "exp28_cotton_gin",
-      "text": "Whitney Cotton Gin"
+      "id": "exp28_cartwright_power_loom",
+      "text": "Power Loom"
      },
      {
       "id": "exp28_spinning_wheel",
@@ -10925,19 +10925,19 @@
       "text": "Lockstitch Sewing Machine"
      },
      {
-      "id": "exp28_spinning_jenny",
-      "text": "Spinning Jenny"
+      "id": "exp28_water_frame",
+      "text": "Water Frame"
      },
      {
-      "id": "exp28_bobbin_lace_pillow",
-      "text": "Bobbin Lace Pillow"
+      "id": "exp28_kay_flying_shuttle",
+      "text": "Kay's Flying Shuttle"
      }
     ],
     "correctOrder": [
      "exp28_spinning_wheel",
-     "exp28_bobbin_lace_pillow",
-     "exp28_spinning_jenny",
-     "exp28_cotton_gin",
+     "exp28_kay_flying_shuttle",
+     "exp28_water_frame",
+     "exp28_cartwright_power_loom",
      "exp28_lockstitch_sewing_machine"
     ],
     "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
@@ -10958,8 +10958,8 @@
       "label": "Spindle Spinning Wheel"
      },
      {
-      "id": "exp28_paul_carding_machine",
-      "label": "Lewis Paul's Carding Machine"
+      "id": "exp28_kay_flying_shuttle",
+      "label": "Kay's Flying Shuttle"
      },
      {
       "id": "exp28_water_fulling_mill",
@@ -10972,8 +10972,8 @@
       "label": "Water Power"
      },
      {
-      "id": "cloth",
-      "label": "Cloth"
+      "id": "weaving_shuttle",
+      "label": "Weaving Shuttle"
      },
      {
       "id": "wheel",
@@ -10988,17 +10988,17 @@
      "exp28_spinning_wheel": "wheel",
      "exp28_water_fulling_mill": "water_power",
      "exp28_bobbin_lace_pillow": "fiber",
-     "exp28_paul_carding_machine": "cloth"
+     "exp28_kay_flying_shuttle": "weaving_shuttle"
     },
     "hint": "Open each item in the Discovery Journal and read its first recipe.",
-    "unlockFragment": "BSLW"
+    "unlockFragment": "BSKW"
    },
    {
     "id": "exit",
     "kind": "code",
     "title": "The Workshop Door",
     "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
-    "correctCode": "10-5-BSLW",
+    "correctCode": "12-5-BSKW",
     "requires": [
      "ratio",
      "sequence",
@@ -11120,6 +11120,127 @@
     "title": "The Workshop Door",
     "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
     "correctCode": "6-5-CSAS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-medicine_exp28",
+  "title": "The Medicine Exp28 Workshop",
+  "setting": "A sealed workshop wall chart of the medicine exp28 family of the Discovery Journal.",
+  "introText": "A workshop of medicine exp28 stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 7,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Trephine; Chamberlen Obstetric Forceps; Trocar and Cannula; Ether Anaesthesia Inhaler; Helmholtz Ophthalmoscope; Lister's Carbolic Spray; Einthoven String Galvanometer ECG. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "7"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp28_ophthalmoscope",
+      "text": "Helmholtz Ophthalmoscope"
+     },
+     {
+      "id": "exp28_trephine",
+      "text": "Trephine"
+     },
+     {
+      "id": "exp28_einthoven_string_galvanometer",
+      "text": "Einthoven String Galvanometer ECG"
+     },
+     {
+      "id": "exp28_ether_anaesthesia",
+      "text": "Ether Anaesthesia Inhaler"
+     },
+     {
+      "id": "exp28_trocar_cannula",
+      "text": "Trocar and Cannula"
+     }
+    ],
+    "correctOrder": [
+     "exp28_trephine",
+     "exp28_trocar_cannula",
+     "exp28_ether_anaesthesia",
+     "exp28_ophthalmoscope",
+     "exp28_einthoven_string_galvanometer"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp28_trocar_cannula",
+      "label": "Trocar and Cannula"
+     },
+     {
+      "id": "exp28_trephine",
+      "label": "Trephine"
+     },
+     {
+      "id": "exp28_ether_anaesthesia",
+      "label": "Ether Anaesthesia Inhaler"
+     },
+     {
+      "id": "exp28_chamberlen_forceps",
+      "label": "Chamberlen Obstetric Forceps"
+     }
+    ],
+    "targets": [
+     {
+      "id": "iron",
+      "label": "Iron"
+     },
+     {
+      "id": "glass",
+      "label": "Glass"
+     },
+     {
+      "id": "bone",
+      "label": "Bone"
+     },
+     {
+      "id": "metallurgy",
+      "label": "Metallurgy"
+     }
+    ],
+    "correctMatch": {
+     "exp28_trephine": "bone",
+     "exp28_chamberlen_forceps": "iron",
+     "exp28_trocar_cannula": "metallurgy",
+     "exp28_ether_anaesthesia": "glass"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "TTEC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "7-5-TTEC",
     "requires": [
      "ratio",
      "sequence",

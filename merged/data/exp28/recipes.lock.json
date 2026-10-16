@@ -2155,5 +2155,245 @@
    "exp26_vernier_sextant",
    "measurement"
   ]
+ ],
+ "exp28_chamberlen_forceps": [
+  [
+   "iron",
+   "medicine",
+   "anc27_iron_medical_forceps"
+  ],
+  [
+   "iron",
+   "medicine",
+   "exp28_trephine"
+  ]
+ ],
+ "exp28_kay_flying_shuttle": [
+  [
+   "weaving_shuttle",
+   "wood",
+   "lever"
+  ],
+  [
+   "weaving_shuttle",
+   "wood",
+   "cloth"
+  ]
+ ],
+ "exp28_cartwright_power_loom": [
+  [
+   "weaving_shuttle",
+   "steam_engine",
+   "water_power"
+  ],
+  [
+   "weaving_shuttle",
+   "steam_engine",
+   "gear"
+  ]
+ ],
+ "exp28_portland_cement_kiln": [
+  [
+   "lime",
+   "kiln",
+   "mortar"
+  ],
+  [
+   "lime",
+   "kiln",
+   "chemistry"
+  ]
+ ],
+ "exp28_bell_reaper": [
+  [
+   "farming_tools",
+   "wheel",
+   "axle"
+  ],
+  [
+   "farming_tools",
+   "axle",
+   "wood"
+  ]
+ ],
+ "exp28_deere_steel_plough": [
+  [
+   "iron",
+   "wood",
+   "farming_tools"
+  ],
+  [
+   "iron",
+   "wood",
+   "stone_ploughshare"
+  ]
+ ],
+ "exp28_vulcanized_rubber": [
+  [
+   "chemistry",
+   "fire",
+   "observation"
+  ],
+  [
+   "chemistry",
+   "experiment",
+   "observation"
+  ]
+ ],
+ "exp28_ether_anaesthesia": [
+  [
+   "glass",
+   "exp26_graduated_glass_tube",
+   "medicine"
+  ],
+  [
+   "glass",
+   "medicine",
+   "exp28_alembic"
+  ]
+ ],
+ "exp28_ophthalmoscope": [
+  [
+   "lens",
+   "observation",
+   "exp28_camera_lucida"
+  ],
+  [
+   "lens",
+   "observation",
+   "exp28_difference_engine"
+  ]
+ ],
+ "exp28_pasteurization_vat": [
+  [
+   "fire",
+   "chemistry",
+   "exp26_mercury_thermometer_tube"
+  ],
+  [
+   "fire",
+   "chemistry",
+   "exp28_tin_can"
+  ]
+ ],
+ "exp28_lister_carbolic_spray": [
+  [
+   "medicine",
+   "exp28_ether_anaesthesia",
+   "glass"
+  ],
+  [
+   "medicine",
+   "exp28_ether_anaesthesia",
+   "exp26_gas_controlled_laboratory_burner"
+  ]
+ ],
+ "exp28_hall_heroult_cell": [
+  [
+   "electricity",
+   "exp28_pixii_dynamo",
+   "chemistry"
+  ],
+  [
+   "electricity",
+   "exp28_pixii_dynamo",
+   "metallurgy"
+  ]
+ ],
+ "exp28_einthoven_string_galvanometer": [
+  [
+   "exp28_galvanometer",
+   "electricity",
+   "photography"
+  ],
+  [
+   "exp28_galvanometer",
+   "electricity",
+   "exp28_daguerreotype_plate"
+  ]
+ ],
+ "exp28_nylon_66": [
+  [
+   "chemistry",
+   "exp28_vulcanized_rubber",
+   "fiber"
+  ],
+  [
+   "chemistry",
+   "exp28_vulcanized_rubber",
+   "coal"
+  ]
+ ],
+ "exp28_float_glass_line": [
+  [
+   "glass",
+   "kiln",
+   "engineering"
+  ],
+  [
+   "glass",
+   "kiln",
+   "exp28_bessemer_converter"
+  ]
+ ],
+ "exp28_engelbart_mouse": [
+  [
+   "computer",
+   "electronics",
+   "wheel"
+  ],
+  [
+   "computer",
+   "electronics",
+   "wood"
+  ]
+ ],
+ "exp28_floppy_disk": [
+  [
+   "memory",
+   "storage",
+   "electronics"
+  ],
+  [
+   "memory",
+   "storage",
+   "computer"
+  ]
+ ],
+ "exp28_mendeleev_periodic_table": [
+  [
+   "chemistry",
+   "mathematics",
+   "paper"
+  ],
+  [
+   "chemistry",
+   "observation",
+   "paper"
+  ]
+ ],
+ "exp28_haber_bosch_reactor": [
+  [
+   "chemistry",
+   "steel",
+   "iron"
+  ],
+  [
+   "chemistry",
+   "steel",
+   "electricity"
+  ]
+ ],
+ "exp28_point_contact_transistor": [
+  [
+   "vacuum_tube",
+   "semiconductor",
+   "experiment"
+  ],
+  [
+   "vacuum_tube",
+   "semiconductor",
+   "chemistry"
+  ]
  ]
 }
