@@ -1802,6 +1802,27 @@
    "period": "Information age",
    "certainty": "firm",
    "fact": "Rockstar North in Edinburgh built Grand Theft Auto V (2013), a detailed city simulated around the player."
+  },
+  {
+   "id": "exp28_leyden_jar",
+   "required": false,
+   "tier": "B",
+   "lat": 53.97,
+   "lon": 14.77,
+   "precision": "site",
+   "geo": "europe",
+   "region": "Cammin (Kamień Pomorski), Pomerania",
+   "civ": "Ewald von Kleist",
+   "period": "Enlightenment",
+   "certainty": "multiple",
+   "fact": "In 1745 the cathedral dean Ewald von Kleist at Cammin, and almost at once Musschenbroek at Leiden, found that a jar could store electric charge.",
+   "alsoAt": [
+    {
+     "lat": 52.16,
+     "lon": 4.49,
+     "label": "Leiden, Netherlands"
+    }
+   ]
   }
  ]
 }

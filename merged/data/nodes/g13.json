@@ -1,0 +1,1871 @@
+[
+ {
+  "id": "exp28_camera_obscura",
+  "no": 2920,
+  "n": "Camera Obscura",
+  "era": "metallurgy",
+  "cat": "science",
+  "date": "Mozi (c. 470 – c. 391 BC) gives the earliest documented explanation; Ibn al-Haytham (c. 965–1040) describes it quantitatively",
+  "ds": -400,
+  "rar": "uncommon",
+  "vis": "pinhole-chamber",
+  "l1": "A dark room with a small hole: the outside world appears upside down on the opposite wall.",
+  "l2": "Light travels in straight lines, so rays from the top of a scene cross at the hole and land at the bottom of the screen. Mozi explained the inverted image for exactly this reason. The same box later became the drawing aid and the ancestor of the photographic camera.",
+  "l3": "Mozi is described as the earliest documented explanation; Ibn al-Haytham used a darkened room with a small opening and is credited with the first geometrical, quantitative description. Wikipedia's account notes Joseph Needham (Science and Civilisation in China IV.1, pp. 98–99) on Shen Kuo and the pinhole's focal relation.",
+  "ev": "Mozi's explanation of the inverted image; Ibn al-Haytham's experiments in a darkened room (Needham, SCC IV.1)",
+  "src": [
+   "x28_camera_hist_wp"
+  ],
+  "rec": [
+   [
+    "shelter",
+    "awl",
+    "observation"
+   ],
+   [
+    "awl",
+    "observation",
+    "stone"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "optics_exp28",
+   "optics",
+   "multi_origin"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Several traditions describe the effect; the page gives Mozi's dates both as c. 470–391 BC and as 5th century BC."
+  },
+  "artifactType": "optical apparatus",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Camera Obscura — Warring States China; Classical Greece; the medieval Islamic world"
+  },
+  "historical": {
+   "region": "Warring States China; Classical Greece; the medieval Islamic world",
+   "firstKnownDate": "5th–4th century BC (Mozi)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_camera_hist_wp",
+     "supports": "Mozi earliest documented explanation of the inverted pinhole image; Ibn al-Haytham's darkened-room experiments, first geometrical and quantitative description."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "east_asia",
+   "west_central_asia",
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_clay_movable_type",
+  "no": 2921,
+  "n": "Bi Sheng's Clay Movable Type",
+  "era": "science",
+  "cat": "technology",
+  "date": "Between 1039 and 1048 (Qingli era 1041–1048), Song-dynasty China",
+  "ds": 1041,
+  "rar": "rare",
+  "vis": "clay-type-block",
+  "l1": "A separate fired-clay block for every character, set in an iron frame and printed from — movable type centuries before Gutenberg.",
+  "l2": "Bi Sheng cut each character in a thin clay tile and fired it hard. The tiles were set in an iron frame on an iron plate coated with pine resin, wax and paper ash, warmed so the paste gripped them, and levelled with a flat board. Two frames alternated: one was printed while the other was set, and common characters were cut twenty or more times.",
+  "l3": "The only account is Shen Kuo's Dream Pool Essays (c. 1090s), which credits Bi Sheng; no type of his survives. Shen Kuo says Bi Sheng also tried wood type and gave it up because grain and ink-soaking made it uneven. A Western Xia-period Buddhist text found at Wuwei, Gansu shows broken and hollow strokes that scholars link to clay movable type.",
+  "ev": "Shen Kuo, Dream Pool Essays (c. 1090s); Western Xia print from Wuwei, Gansu with traits of clay type",
+  "src": [
+   "x28_bisheng_wp"
+  ],
+  "rec": [
+   [
+    "pottery",
+    "writing",
+    "kiln"
+   ],
+   [
+    "pottery",
+    "writing",
+    "casting"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "printing_exp28",
+   "printing",
+   "east_asia"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Dated by Shen Kuo's description; Bi Sheng's own place of work is not stated in the source."
+  },
+  "artifactType": "printing type",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Bi Sheng's Clay Movable Type — Song-dynasty China"
+  },
+  "historical": {
+   "region": "Song-dynasty China",
+   "firstKnownDate": "1039–1048",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_bisheng_wp",
+     "supports": "Clay type made between 1039 and 1048; iron plate, resin/wax/paper-ash paste; two alternating formes; Shen Kuo is the only record; no Bi Sheng type survives."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "east_asia"
+  ],
+  "tradeImportance": "medium"
+ },
+ {
+  "id": "exp28_verge_escapement",
+  "no": 2922,
+  "n": "Verge Escapement",
+  "era": "science",
+  "cat": "engineering",
+  "date": "Late 13th century (uncertain; Dunstable Priory, 1283, is one candidate)",
+  "ds": 1300,
+  "rar": "rare",
+  "vis": "crown-wheel",
+  "l1": "A toothed crown wheel and a swinging bar that lets a weight drive a clock one tick at a time.",
+  "l2": "A crown wheel's teeth catch two angled pallets on a vertical rod, the verge. Each push swings a weighted bar, the foliot, the other way, and releasing one tooth at a time turns steady rotation into regulated beats. It was the only escapement for about the first 200 years of mechanical clocks.",
+  "l3": "The date is not settled: the verge is believed to appear in late-13th-century tower clocks, but early 'horologe' could mean a water clock. Richard of Wallingford's 1327 account describes a related 'strob' escapement, not a true verge. The pendulum (1656) and balance spring (1658) exposed its inaccuracy; the anchor escapement spread from about 1680.",
+  "ev": "Early tower clocks; Richard of Wallingford's 1327 description (strob escapement)",
+  "src": [
+   "x28_verge_wp"
+  ],
+  "rec": [
+   [
+    "gear",
+    "lever",
+    "iron"
+   ],
+   [
+    "gear",
+    "lever",
+    "forging"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "timekeeping_exp28",
+   "timekeeping",
+   "mechanism"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "'The sources are unclear' on first use; the date is a documentary window, not a proven first."
+  },
+  "artifactType": "mechanism",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Verge Escapement — Europe"
+  },
+  "historical": {
+   "region": "Europe",
+   "firstKnownDate": "late 13th century (uncertain)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_verge_wp",
+     "supports": "Earliest known mechanical escapement, believed in late-13th-century tower clocks, sources unclear; parts and action; dominant ~350 years until anchor escapement c. 1660."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_hourglass",
+  "no": 2923,
+  "n": "Hourglass",
+  "era": "science",
+  "cat": "technology",
+  "date": "First documented in Ambrogio Lorenzetti's fresco of 1338; marine sandglass receipt c. 1345",
+  "ds": 1338,
+  "rar": "uncommon",
+  "vis": "sandglass",
+  "l1": "Two glass bulbs joined by a narrow neck: sand runs through at a steady rate and measures an hour or a watch.",
+  "l2": "Unlike a water clock, a sandglass is hardly affected by a ship's motion or by condensation, so it became the sailor's timer. Used with a chip log it let a navigator turn the log line into speed. Magellan's fleet carried 18 of them and a ship's boy turned them on the hour.",
+  "l3": "The first documented example is in Ambrogio Lorenzetti's 1338 Allegory of Good Government; the earliest reference taken as certainly a marine sandglass is a c. 1345 receipt for the ship La George of Edward III. The early glasses were two bulbs bound with cord and wax; one-piece blowing came about 1760. Fill ranged from sand to powdered marble and burnt eggshell.",
+  "ev": "Lorenzetti fresco (1338); c. 1345 receipt of Thomas de Stetesham for the king's ship La George",
+  "src": [
+   "x28_hourglass_wp"
+  ],
+  "rec": [
+   [
+    "glass",
+    "clock",
+    "wood"
+   ],
+   [
+    "glass",
+    "clock",
+    "lever"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "timekeeping_exp28",
+   "timekeeping",
+   "maritime"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "First documentation, not necessarily first invention."
+  },
+  "artifactType": "timekeeper",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Hourglass — Late medieval Europe (Italy; English royal ships)"
+  },
+  "historical": {
+   "region": "Late medieval Europe (Italy; English royal ships)",
+   "firstKnownDate": "1338",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_hourglass_wp",
+     "supports": "First documented in Lorenzetti's 1338 fresco; c. 1345 La George receipt; marine use with a chip log; Magellan carried 18 glasses; bulbs blown as one piece c. 1760."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_mariners_astrolabe",
+  "no": 2924,
+  "n": "Mariner's Astrolabe",
+  "era": "science",
+  "cat": "technology",
+  "date": "Oldest surviving example dated 1496–1501 (Sodré astrolabe, found 2014)",
+  "ds": 1496,
+  "rar": "rare",
+  "vis": "open-wheel-astrolabe",
+  "l1": "A heavy open ring with a sighting arm: the sailor's tool for reading the sun's height to find latitude.",
+  "l2": "South of the equator the Pole Star disappears. Portuguese pilots on north–south Atlantic voyages instead measured the sun's altitude at noon and used declination tables in a regimento to work out latitude. An open-wheel ring in heavy brass hung steady on a ship and could be read with an alidade.",
+  "l3": "The Sodré astrolabe, found in 2014 on the Esmeralda wreck (sunk off Oman in 1503), is dated 1496–1501 and is the oldest mariner's astrolabe known. The earliest surviving regimento was printed in Lisbon c. 1509, and similar books were probably in use in the 1480s. Heavier brass mariner's astrolabes appear about two decades later.",
+  "ev": "Sodré astrolabe (1496–1501) from the Esmeralda wreck; regimento printed Lisbon c. 1509",
+  "src": [
+   "x28_astrolabe_ox"
+  ],
+  "rec": [
+   [
+    "casting",
+    "astronomy",
+    "navigation"
+   ],
+   [
+    "casting",
+    "navigation",
+    "measurement"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "navigation",
+   "maritime"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Dating is of the surviving object; earlier use is inferred from regimentos of the 1480s."
+  },
+  "artifactType": "navigation instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Mariner's Astrolabe — Portugal and the Atlantic; surviving specimen from the wreck of the Esmeralda off Oman (1503)"
+  },
+  "historical": {
+   "region": "Portugal and the Atlantic; surviving specimen from the wreck of the Esmeralda off Oman (1503)",
+   "firstKnownDate": "1496–1501 (oldest surviving)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_astrolabe_ox",
+     "supports": "Sodré astrolabe oldest known mariner's astrolabe, found 2014, dated 1496–1501; Esmeralda sank off Oman 1503; sun altitude + declination tables; regimento printed c. 1509."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ],
+  "tradeImportance": "high"
+ },
+ {
+  "id": "exp28_napiers_bones",
+  "no": 2925,
+  "n": "Napier's Bones",
+  "era": "science",
+  "cat": "knowledge",
+  "date": "Published in Rabdologiae, 1617 (name popularised 1667)",
+  "ds": 1617,
+  "rar": "uncommon",
+  "vis": "multiplication-rods",
+  "l1": "A set of numbered rods that turns multiplication into reading a row and adding along the diagonals.",
+  "l2": "Each rod shows the multiples of one digit, every two-digit product split by a diagonal. Set the rods for the number to multiply side by side, read the row for each digit of the multiplier, and add the digits along each diagonal strip; only addition is needed.",
+  "l3": "Napier published the method as Rabdologiae in 1617. William Leybourne's 1667 book The art of numbering by speaking rods gave them the name 'Napier's bones'. A surviving set of 1679 comes in a box with interest tables and a calendar for 1679–1693.",
+  "ev": "Rabdologiae (1617); surviving 1679 set in its box",
+  "src": [
+   "x28_napier_mt"
+  ],
+  "rec": [
+   [
+    "mathematics",
+    "wood",
+    "number_system"
+   ],
+   [
+    "mathematics",
+    "number_system",
+    "measurement"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "mathematics"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Printed first publication."
+  },
+  "artifactType": "calculating aid",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Napier's Bones — Scotland (John Napier)"
+  },
+  "historical": {
+   "region": "Scotland (John Napier)",
+   "firstKnownDate": "1617",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_napier_mt",
+     "supports": "Rabdologia published 1617; 10 rods with four faces; diagonal-split squares; only addition needed; 'Napier's bones' name from Leybourne 1667; 1679 boxed set."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_gunters_chain",
+  "no": 2926,
+  "n": "Gunter's Chain",
+  "era": "science",
+  "cat": "technology",
+  "date": "Introduced by Edmund Gunter in 1620",
+  "ds": 1620,
+  "rar": "common",
+  "vis": "survey-chain",
+  "l1": "A chain of 100 iron links, 66 feet long, laid end over end to measure land.",
+  "l2": "The chain has 98 full links of 7.92 inches plus two shorter end links, with brass tags marking every tenth link, so a surveyor can read distance from either end. Ten square chains make an acre, which tied field measurement to the area the land would be taxed on.",
+  "l3": "Edmund Gunter, an English clergyman and mathematician, introduced it in 1620. Links stretched with use, so chains were checked against a standard; Edinburgh surveyors calibrated theirs against brass plates set in the steps of the National Gallery of Scotland. Its use declined in the first half of the 20th century.",
+  "ev": "Heriot-Watt ICE Museum chain no. 1977/003 (c. 1900)",
+  "src": [
+   "x28_gunter_ice"
+  ],
+  "rec": [
+   [
+    "iron",
+    "measurement",
+    "geometry"
+   ],
+   [
+    "iron",
+    "geometry",
+    "cordage"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "surveying_exp28",
+   "surveying",
+   "measurement"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Introduction date as stated by the museum record; the ten-chains-to-an-acre relation is general knowledge not in the page."
+  },
+  "artifactType": "surveying instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Gunter's Chain — England (Edmund Gunter)"
+  },
+  "historical": {
+   "region": "England (Edmund Gunter)",
+   "firstKnownDate": "1620",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_gunter_ice",
+     "supports": "66-foot, 100-link iron chain with brass handles; Edmund Gunter introduced it in 1620; 98 full links of 7.92 in; tags every tenth link; calibration in Edinburgh."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_pascaline",
+  "no": 2927,
+  "n": "Pascaline",
+  "era": "science",
+  "cat": "computing",
+  "date": "Designed 1642; presented 1645 after about fifty prototypes",
+  "ds": 1642,
+  "rar": "rare",
+  "vis": "dial-calculator",
+  "l1": "A box of dials that adds and subtracts by turning wheels — the first mechanical calculator Pascal sold.",
+  "l2": "Pascal began at 18 to help his father, a tax supervisor in Rouen. Each digit has a spoked dial turned with a stylus, a window shows the result, and a falling part, the sautoir, passes the carry to the next wheel so carries ripple down the machine. Subtraction uses nines' complement.",
+  "l3": "After about fifty prototypes Pascal presented the machine in 1645, dedicated to Chancellor Pierre Séguier. About twenty were built or sold by 1654 and nine survive, mostly in European museums.",
+  "ev": "Pascal, La Machine d'arithmétique (1645); nine surviving machines",
+  "src": [
+   "x28_pascaline_wp"
+  ],
+  "rec": [
+   [
+    "gear",
+    "mechanism",
+    "number_system"
+   ],
+   [
+    "gear",
+    "mechanism",
+    "copper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "mechanism"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Dating from Pascal's own dedication; the workshop is not named in the source."
+  },
+  "artifactType": "calculating machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Pascaline — France (Blaise Pascal)"
+  },
+  "historical": {
+   "region": "France (Blaise Pascal)",
+   "firstKnownDate": "1642–1645",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_pascaline_wp",
+     "supports": "Designed 1642 by Blaise Pascal aged 18; presented 1645 after 50 prototypes; sautoir carry; about twenty built; nine survive."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_stepped_reckoner",
+  "no": 2928,
+  "n": "Leibniz Stepped Reckoner",
+  "era": "science",
+  "cat": "computing",
+  "date": "Idea 1672; wooden model shown to the Royal Society 1 February 1673; surviving machine 1690–1720",
+  "ds": 1673,
+  "rar": "rare",
+  "vis": "stepped-drum",
+  "l1": "A hand-cranked calculator whose key part, the stepped drum, lets one turn of a crank multiply a digit.",
+  "l2": "Leibniz's stepped drum (Staffelwalze) is a cylinder with nine teeth of increasing length. A sliding gear meets as many teeth as the digit set, so a turn adds that digit several times. The machine multiplied by repeated addition and divided by repeated subtraction.",
+  "l3": "Two prototypes were built, and only one survives, in Hanover. Precision gearwork was beyond the fabrication of the time and a design flaw in the carry kept the machines from working reliably. The stepped drum itself lived on for about 200 years, until the Curta hand calculator in the 1970s.",
+  "ev": "Surviving machine in Hanover; wooden model presented to the Royal Society (1673)",
+  "src": [
+   "x28_stepped_wp"
+  ],
+  "rec": [
+   [
+    "gear",
+    "mathematics",
+    "number_system"
+   ],
+   [
+    "gear",
+    "mathematics",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "mechanism"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Design date and prototypes are documented; reliable operation was not achieved."
+  },
+  "artifactType": "calculating machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Leibniz Stepped Reckoner — Paris and Hanover (Leibniz)"
+  },
+  "historical": {
+   "region": "Paris and Hanover (Leibniz)",
+   "firstKnownDate": "1673",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_stepped_wp",
+     "supports": "Idea 1672 in Paris; wooden model to the Royal Society 1 Feb 1673; stepped drum mechanism; two prototypes, one survives in Hanover; carry flaw."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_tuning_fork",
+  "no": 2929,
+  "n": "Tuning Fork",
+  "era": "science",
+  "cat": "science",
+  "date": "1711 (John Shore, trumpeter to the English Royal Court)",
+  "ds": 1711,
+  "rar": "uncommon",
+  "vis": "u-fork",
+  "l1": "A two-pronged steel fork that rings one pure pitch, used to give a musician the note.",
+  "l2": "Before it, musicians relied on wooden pitch pipes, which temperature and humidity made unreliable. The fork holds its pitch across a wide range of conditions and produces a very pure tone, so it became a standard: in the 1830s Johann Scheibler used a set of 56 forks to measure concert A in Vienna.",
+  "l3": "The Whipple Museum's note credits John Shore (d. 1752), musician, instrument maker and trumpeter at the English Royal Court, with inventing the tuning fork in 1711. Ernst Chladni first studied forks systematically with his powder patterns, and Jules Lissajous made a standard fork of 335 Hz.",
+  "ev": "Whipple Museum acoustics collection note",
+  "src": [
+   "x28_fork_whipple"
+  ],
+  "rec": [
+   [
+    "iron",
+    "physics",
+    "music"
+   ],
+   [
+    "iron",
+    "music",
+    "mathematics"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "acoustics_exp28",
+   "acoustics",
+   "music"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Attribution to Shore as stated by the museum note."
+  },
+  "artifactType": "acoustic standard",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Tuning Fork — England (John Shore)"
+  },
+  "historical": {
+   "region": "England (John Shore)",
+   "firstKnownDate": "1711",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_fork_whipple",
+     "supports": "John Shore invented the tuning fork in 1711; pure tone; Scheibler 56 forks 1830s; Chladni; Lissajous 335 Hz."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_hadley_octant",
+  "no": 2930,
+  "n": "Hadley Octant",
+  "era": "science",
+  "cat": "technology",
+  "date": "1730 (invented independently by Thomas Godfrey of Philadelphia)",
+  "ds": 1730,
+  "rar": "rare",
+  "vis": "octant-frame",
+  "l1": "A wooden sector with two mirrors that lets a sailor bring the sun and the horizon together in one view.",
+  "l2": "Two reflections do the work: a mirror on a swinging arm and a fixed horizon glass bring the image of the sun down to the horizon, and the arm's position on the arc gives its altitude. Because both images sit in one view, the instrument stays accurate on a pitching deck, a great step over the back-staff.",
+  "l3": "Britannica credits John Hadley with the double-reflecting octant in 1730 and notes he invented it independently of Thomas Godfrey of Philadelphia. Hadley also added a spirit level to take a meridian altitude when the horizon was invisible. Its design later evolved into the sextant.",
+  "ev": "Hadley's reflecting instrument of 1730; independent invention by Godfrey",
+  "src": [
+   "x28_hadley_brit"
+  ],
+  "rec": [
+   [
+    "glass",
+    "navigation",
+    "wood"
+   ],
+   [
+    "optics",
+    "navigation",
+    "wood"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "navigation",
+   "maritime"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Britannica gives 1730; no Royal Society date is stated in the page used."
+  },
+  "artifactType": "navigation instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Hadley Octant — England (John Hadley); Philadelphia (Thomas Godfrey)"
+  },
+  "historical": {
+   "region": "England (John Hadley); Philadelphia (Thomas Godfrey)",
+   "firstKnownDate": "1730",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_hadley_brit",
+     "supports": "Hadley invented the double-reflecting octant in 1730, independently of Thomas Godfrey of Philadelphia; later evolved into the sextant."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
+  "id": "exp28_leyden_jar",
+  "no": 2931,
+  "n": "Leyden Jar",
+  "era": "science",
+  "cat": "science",
+  "date": "Kleist at Cammin, autumn 1745 (11 October per Wikipedia, 4 November per ETHW); Musschenbroek at Leiden, letter of 20 January 1746",
+  "ds": 1745,
+  "rar": "rare",
+  "vis": "charged-jar",
+  "l1": "A glass jar lined inside and out with metal that stores an electric charge.",
+  "l2": "Two people found it independently. Ewald von Kleist, dean of the cathedral at Cammin, charged a bottle through a nail; at Leiden Pieter van Musschenbroek and Andreas Cunaeus did it with water in a glass jar. Later makers coated the glass inside and out with foil and dropped the water.",
+  "l3": "A glass jar with foil inside and out, stopping short of the neck, a metal rod through a stopper joined to the inner foil by a hanging chain. Franklin showed in 1749 that the charge lay in the glass of his dissectible jar; later work attributed residual charge to corona and moisture in soda glass. Today it would be called a capacitor.",
+  "ev": "Kleist (1745); Musschenbroek's letter of 20 January 1746; Franklin's letter of 29 April 1749",
+  "src": [
+   "x28_leyden_wp",
+   "x28_leyden_ethw"
+  ],
+  "rec": [
+   [
+    "glass",
+    "iron",
+    "physics"
+   ],
+   [
+    "glass",
+    "iron",
+    "experiment"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "electrostatics_exp28",
+   "electricity",
+   "multi_origin"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Two independent discoveries; the exact day of Kleist's trial differs between the two sources."
+  },
+  "artifactType": "electrical apparatus",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Leyden Jar — Cammin, Pomerania and Leiden, Netherlands"
+  },
+  "historical": {
+   "region": "Cammin, Pomerania and Leiden, Netherlands",
+   "firstKnownDate": "1745",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_leyden_wp",
+     "supports": "Kleist, dean at Cammin in Pomerania, 11 Oct 1745; Musschenbroek and Cunaeus at Leiden, letter 20 Jan 1746; construction; Franklin 1749."
+    },
+    {
+     "source": "x28_leyden_ethw",
+     "supports": "Von Kleist, 4 November 1745; Musschenbroek 1746; first device capable of storing electric charge; a capacitor."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_spinning_jenny",
+  "no": 2932,
+  "n": "Spinning Jenny",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Invented 1764–1765; patent no. 962 of 12 July 1770",
+  "ds": 1764,
+  "rar": "uncommon",
+  "vis": "multi-spindle-frame",
+  "l1": "A wooden frame that spins eight threads at once from one turn of the wheel.",
+  "l2": "Eight rovings were fed through two bars clasped by the spinner's left hand; drawing them out drew the fibre, a turn of the wheel twisted all spindles, and on the return stroke the thread wound onto them. One worker could tend eight or more spindles, later up to 120.",
+  "l3": "Hargreaves's patent (no. 962) is dated 12 July 1770. Local spinners angered by falling yarn prices broke into his house and smashed his machines, and he fled to Nottingham in 1768. The yarn was coarse until Arkwright's water frame; jennies stayed common until about 1810.",
+  "ev": "Patent no. 962 (1770); contemporary accounts of the Blackburn riots",
+  "src": [
+   "x28_jenny_wp"
+  ],
+  "rec": [
+   [
+    "plant_thread",
+    "wheel",
+    "mechanism"
+   ],
+   [
+    "plant_thread",
+    "wheel",
+    "weaving_shuttle"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "textile_machines_exp28",
+   "textile",
+   "industrial_revolution"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Invention date from the patent history; exact month not stated."
+  },
+  "artifactType": "textile machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Spinning Jenny — Stanhill, Oswaldtwistle, Lancashire, England (James Hargreaves)"
+  },
+  "historical": {
+   "region": "Stanhill, Oswaldtwistle, Lancashire, England (James Hargreaves)",
+   "firstKnownDate": "1764–1765",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_jenny_wp",
+     "supports": "Hargreaves 1764–1765 at Stanhill, Oswaldtwistle; patent no. 962 of 12 July 1770; eight spindles; riots; in use until about 1810."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_water_frame",
+  "no": 2933,
+  "n": "Water Frame",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Developed in Nottingham 1768–1769; water-powered at Cromford from about 1774",
+  "ds": 1769,
+  "rar": "uncommon",
+  "vis": "roller-spinning-frame",
+  "l1": "A spinning machine driven by a water wheel, drawing fibre between rollers turning at different speeds.",
+  "l2": "Rollers rotating at different speeds draw the cotton out to the thickness wanted before it is twisted, and a water wheel supplies the power, so one mill could run hundreds of spindles. It made strong warp yarn, which the jenny could not.",
+  "l3": "Arkwright formed a partnership in Nottingham in 1768, leased premises in 1769 for a horse-powered factory, and probably had the water-powered Cromford mill working from 1774. His patents for the frame and carding machinery were challenged and lost in 1785; the page notes that the originality of his innovations is debated.",
+  "ev": "Cromford Mill; partnership at Nottingham 1768; patents lost 1785",
+  "src": [
+   "x28_arkwright_erih"
+  ],
+  "rec": [
+   [
+    "plant_thread",
+    "water_power",
+    "gear"
+   ],
+   [
+    "plant_thread",
+    "water_power",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "textile_machines_exp28",
+   "textile",
+   "industrial_revolution"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "The source gives no patent date; originality is disputed."
+  },
+  "artifactType": "textile machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Water Frame — Nottingham and Cromford, England (Richard Arkwright)"
+  },
+  "historical": {
+   "region": "Nottingham and Cromford, England (Richard Arkwright)",
+   "firstKnownDate": "1768–1769",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_arkwright_erih",
+     "supports": "Rollers at different speeds; Nottingham partnership 1768; 1769 premises; Cromford mill from c. 1774; patents lost 1785; first factory-based cotton yarn production."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_wimshurst_machine",
+  "no": 2934,
+  "n": "Wimshurst Machine",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Early 1880s (James Wimshurst)",
+  "ds": 1882,
+  "rar": "uncommon",
+  "vis": "influence-machine",
+  "l1": "Two glass discs turning in opposite directions build a charge with no rubbing, and sparks leap the gap.",
+  "l2": "An influence machine creates electricity without friction: two discs on one axis spin in opposite directions past fixed metal brushes, charges build up and are gathered by metal fixtures near each disc, and the growing charge sparks between two metal globes.",
+  "l3": "The National MagLab museum dates the machine to the early 1880s (the page title gives 1880) and names the British scientist James Wimshurst as its inventor. Many surviving examples add Leyden jars as capacitors, though that detail is not in the page cited here.",
+  "ev": "National High Magnetic Field Laboratory museum record, 'Wimshurst Machine, 1880'",
+  "src": [
+   "x28_wimshurst_maglab"
+  ],
+  "rec": [
+   [
+    "electricity",
+    "glass",
+    "wheel"
+   ],
+   [
+    "electricity",
+    "glass",
+    "copper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "electrostatics_exp28",
+   "electricity"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Decade only; the page does not give a precise year."
+  },
+  "artifactType": "electrical apparatus",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Wimshurst Machine — Britain (James Wimshurst)"
+  },
+  "historical": {
+   "region": "Britain (James Wimshurst)",
+   "firstKnownDate": "1880s",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_wimshurst_maglab",
+     "supports": "James Wimshurst, early 1880s; two discs counter-rotating past brushes; influence machine; sparks between globes."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ }
+]

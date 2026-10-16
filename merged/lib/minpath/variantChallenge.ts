@@ -97,7 +97,7 @@ export function pickVariantChallenge(db: Pick<Db, 'nodes'>, rng: Rng, kind: Modi
   // Phase 2 (only reached when phase 1 found nothing): walk out 3..8 hops from a random start and draw the target from there,
   // so every attempt is already inside the allowed hop range. Same proof of solvability and hub avoidance as above.
   const inRange = new Set(candidates.map(c => c.id));
-  for (let attempt = 0; attempt < 400; attempt++) {
+  for (let attempt = 0; attempt < 2000; attempt++) {  // was 400: the catalogue keeps growing (exp28), and a rare seed needs more walks
     const a = rng.pick(candidates);
     const dist = new Map<string, number>([[a.id, 0]]);
     let frontier = [a.id];

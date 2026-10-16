@@ -9,6 +9,7 @@ import esc from '@/data/expansion/escape_episodes.json';
 const nodes = (db as { nodes: { id: string; era: string; tags?: string[]; modeMeta?: Record<string, { candidate?: boolean }> }[] }).nodes;
 const exp = nodes.filter(n => n.id.startsWith('exp26_'));
 const anc = nodes.filter(n => n.id.startsWith('anc27_'));
+const e28 = nodes.filter(n => n.id.startsWith('exp28_'));
 
 describe('every catalogue item is wired into the modes', () => {
   it('Minimum Path atlas holds every item', () => {
@@ -43,5 +44,23 @@ describe('every catalogue item is wired into the modes', () => {
       if (m.survival?.candidate) expect(haveS.has(n.id)).toBe(true); else expect(haveS.has(n.id)).toBe(false);
     }
     expect(anc.filter(n => haveA.has(n.id)).length).toBeGreaterThan(700);
+  });
+  it('exp28 items join each mode only where their recorded decision says so, and every decision has a reason', () => {
+    const haveA = new Set((arch as { itemId: string }[]).map(t => t.itemId));
+    const haveS = new Set((surv as { id: string }[]).map(t => t.id));
+    const rooms = new Set((esc as { id: string }[]).map(r => r.id));
+    for (const n of e28) {
+      const m = (n.modeMeta ?? {}) as Record<string, { candidate?: boolean; decision?: string; reason?: string }>;
+      for (const k of ['main-evolution', 'survival', 'civilization', 'archaeology', 'escape-room', 'decipher', 'alien-archaeology', 'reverse-evolution', 'minimum-path']) {
+        expect(['playable', 'contextual', 'not_eligible']).toContain(m[k]?.decision);
+        expect((m[k]?.reason ?? '').length).toBeGreaterThan(10);
+      }
+      expect(haveA.has(n.id)).toBe(!!m.archaeology.candidate);
+      expect(haveS.has(n.id)).toBe(!!m.survival.candidate);
+      if (m['escape-room'].candidate) expect(rooms.has('x-' + (n.tags?.[1] ?? ''))).toBe(true);
+      // Decipher uses invented scripts and Alien Archaeology invented civilisations: a human artefact never joins them
+      expect(m.decipher.candidate).toBe(false);
+      expect(m['alien-archaeology'].candidate).toBe(false);
+    }
   });
 });
