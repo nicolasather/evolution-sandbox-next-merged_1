@@ -232,7 +232,7 @@ ITEMS = [
          ev="Crystal Palace demonstration (1854); 488 Broadway (23 March 1857)", first_known="236 BC (probable, Archimedes)",
          confidence=dict(level="established", note="The page gives 1852 for the safety elevator, not 1853."),
          srcs=[wp("elevator_wp", "Elevator", "Archimedes 236 BC probable per Vitruvius; Colosseum 80 AD about 25 elevators; flying chair 1743; Otis safety elevator 1852, Crystal Palace 1854; 488 Broadway 23 March 1857; elevator sickness 1894.")],
-         pool=['rope', 'pulley', 'iron', 'lever', 'steam_engine', 'engineering', 'exp28_windlass', 'exp28_elliptic_leaf_spring', 'steel', 'machine_tools'], must=['pulley'], nrec=2,
+         pool=['rope', 'pulley', 'iron', 'lever', 'steam_engine', 'engineering', 'exp28_well_windlass', 'exp28_elliptic_leaf_spring', 'steel', 'machine_tools'], must=['pulley'], nrec=2,
          tags=["lift", "safety"], regions=["americas", "europe"], art=safety_elevator()),
     dict(id="exp28_dirigible_airship", n="Dirigible Airship", era="industry", cat="technology", ds=1901, rar="rare",
          date="Santos-Dumont No. 6 around the Eiffel Tower 19 October 1901; Giffard 1852; La France 1884; Shenandoah helium 4 September 1923; Hindenburg 6 May 1937", vis="envelope-gondola-fins", topic="flight_exp28",

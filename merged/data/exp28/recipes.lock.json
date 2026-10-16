@@ -1891,5 +1891,269 @@
    "physics",
    "exp28_torricelli_barometer"
   ]
+ ],
+ "exp28_minoan_flush_toilet": [
+  [
+   "brick",
+   "exp26_pottery_water_pipe",
+   "exp26_terracotta_drain"
+  ],
+  [
+   "brick",
+   "exp26_pottery_water_pipe",
+   "anc27_household_flush_drain"
+  ]
+ ],
+ "exp28_babylonian_seed_drill": [
+  [
+   "farming_tools",
+   "stone_ploughshare",
+   "wood"
+  ],
+  [
+   "farming_tools",
+   "stone_ploughshare",
+   "wheel"
+  ]
+ ],
+ "exp28_lamellar_armour": [
+  [
+   "cordage",
+   "bronze",
+   "iron"
+  ],
+  [
+   "cordage",
+   "bronze",
+   "leather_wrapped_axe_handle"
+  ]
+ ],
+ "exp28_sheng": [
+  [
+   "flute",
+   "music",
+   "pottery"
+  ],
+  [
+   "flute",
+   "music",
+   "anc27_bronze_chime_set"
+  ]
+ ],
+ "exp28_mail_armour": [
+  [
+   "iron",
+   "smelting",
+   "metallurgy"
+  ],
+  [
+   "iron",
+   "smelting",
+   "cordage"
+  ]
+ ],
+ "exp28_roman_steelyard": [
+  [
+   "lever",
+   "bronze",
+   "iron"
+  ],
+  [
+   "lever",
+   "bronze",
+   "anc27_bronze_balance_scale"
+  ]
+ ],
+ "exp28_roman_screw_press": [
+  [
+   "lever",
+   "wood",
+   "exp28_archimedes_screw"
+  ],
+  [
+   "lever",
+   "exp28_archimedes_screw",
+   "exp26_pressed_cheese_wheel"
+  ]
+ ],
+ "exp28_crosscut_saw": [
+  [
+   "iron",
+   "wood",
+   "stone_saw"
+  ],
+  [
+   "iron",
+   "wood",
+   "bone_saw"
+  ]
+ ],
+ "exp28_alembic": [
+  [
+   "glass",
+   "copper",
+   "kiln"
+  ],
+  [
+   "glass",
+   "copper",
+   "exp26_blown_glass_cup"
+  ]
+ ],
+ "exp28_shawm": [
+  [
+   "flute",
+   "music",
+   "exp28_bagpipes"
+  ],
+  [
+   "flute",
+   "music",
+   "exp26_cut_quill_nib"
+  ]
+ ],
+ "exp28_pavise": [
+  [
+   "wood",
+   "cloth",
+   "exp28_crossbow"
+  ],
+  [
+   "wood",
+   "exp28_crossbow",
+   "exp28_crossbow"
+  ]
+ ],
+ "exp28_cheugugi": [
+  [
+   "measurement",
+   "mathematics",
+   "copper"
+  ],
+  [
+   "measurement",
+   "mathematics",
+   "casting"
+  ]
+ ],
+ "exp28_harington_water_closet": [
+  [
+   "wood",
+   "exp26_pottery_water_pipe",
+   "exp28_siphon"
+  ],
+  [
+   "wood",
+   "exp26_socketed_water_pipe",
+   "exp28_siphon"
+  ]
+ ],
+ "exp28_wren_tipping_bucket_gauge": [
+  [
+   "measurement",
+   "mechanism",
+   "copper"
+  ],
+  [
+   "measurement",
+   "lever",
+   "copper"
+  ]
+ ],
+ "exp28_natural_horn": [
+  [
+   "music",
+   "copper",
+   "forging"
+  ],
+  [
+   "music",
+   "copper",
+   "casting"
+  ]
+ ],
+ "exp28_pitch_pipe": [
+  [
+   "music",
+   "wood",
+   "exp28_tuning_fork"
+  ],
+  [
+   "music",
+   "wood",
+   "exp28_clarinet"
+  ]
+ ],
+ "exp28_cumming_s_trap": [
+  [
+   "exp28_harington_water_closet",
+   "iron",
+   "exp28_siphon"
+  ],
+  [
+   "exp28_harington_water_closet",
+   "iron",
+   "exp26_socketed_drain_pipe"
+  ]
+ ],
+ "exp28_alzate_ballcock": [
+  [
+   "lever",
+   "copper",
+   "iron"
+  ],
+  [
+   "lever",
+   "copper",
+   "exp28_siphon"
+  ]
+ ],
+ "exp28_chappe_optical_telegraph": [
+  [
+   "wood",
+   "lever",
+   "observation"
+  ],
+  [
+   "wood",
+   "lever",
+   "exp28_dioptra"
+  ]
+ ],
+ "exp28_brass_piston_valve": [
+  [
+   "exp28_natural_horn",
+   "music",
+   "copper"
+  ],
+  [
+   "exp28_natural_horn",
+   "music",
+   "forging"
+  ]
+ ],
+ "exp28_roman_hand_plane": [
+  [
+   "iron",
+   "bronze",
+   "stone_plane"
+  ],
+  [
+   "iron",
+   "bronze",
+   "copper"
+  ]
+ ],
+ "exp28_sextant": [
+  [
+   "exp28_hadley_octant",
+   "exp26_vernier_sextant",
+   "navigation"
+  ],
+  [
+   "exp28_hadley_octant",
+   "exp26_vernier_sextant",
+   "measurement"
+  ]
  ]
 }

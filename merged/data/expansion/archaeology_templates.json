@@ -17810,5 +17810,145 @@
   },
   "rarity": 1,
   "itemId": "exp28_lathe"
+ },
+ {
+  "id": "x-exp28_minoan_flush_toilet",
+  "label": "Minoan Flush Toilet",
+  "material": "fired clay or glass",
+  "category": "pottery",
+  "commonFunction": "A pedestal seat over a drain, washed out by poured or channelled water.",
+  "affinity": {
+   "permanent-settlement": 0.4,
+   "seasonal-camp": 0.3
+  },
+  "rarity": 1,
+  "itemId": "exp28_minoan_flush_toilet"
+ },
+ {
+  "id": "x-exp28_babylonian_seed_drill",
+  "label": "Seed Drill",
+  "material": "worked earth, timber or stone",
+  "category": "structural",
+  "commonFunction": "A wheeled hopper that drops seed through tubes into furrows in even rows.",
+  "affinity": {
+   "permanent-settlement": 0.7
+  },
+  "rarity": 1,
+  "itemId": "exp28_babylonian_seed_drill"
+ },
+ {
+  "id": "x-exp28_lamellar_armour",
+  "label": "Lamellar Armour",
+  "material": "worked earth, timber or stone",
+  "category": "structural",
+  "commonFunction": "Armour of many small plates punched and laced together in rows.",
+  "affinity": {
+   "permanent-settlement": 0.7
+  },
+  "rarity": 1,
+  "itemId": "exp28_lamellar_armour"
+ },
+ {
+  "id": "x-exp28_sheng",
+  "label": "Sheng Mouth Organ",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A bundle of bamboo pipes with free reeds that sounds on both blowing and sucking.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_sheng"
+ },
+ {
+  "id": "x-exp28_mail_armour",
+  "label": "Riveted Mail Armour",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A flexible shirt of interlinked iron rings.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_mail_armour"
+ },
+ {
+  "id": "x-exp28_roman_steelyard",
+  "label": "Steelyard Balance",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A one-pan balance whose weight slides along a marked arm until the beam balances.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_roman_steelyard"
+ },
+ {
+  "id": "x-exp28_roman_screw_press",
+  "label": "Roman Screw Press",
+  "material": "worked earth, timber or stone",
+  "category": "structural",
+  "commonFunction": "A big wooden screw that squeezes grapes or olives under a plate.",
+  "affinity": {
+   "permanent-settlement": 0.7
+  },
+  "rarity": 1,
+  "itemId": "exp28_roman_screw_press"
+ },
+ {
+  "id": "x-exp28_crosscut_saw",
+  "label": "Crosscut Saw",
+  "material": "plant or animal fibre (rarely survives)",
+  "category": "organic",
+  "commonFunction": "A long toothed blade with a handle at each end for two sawyers to cut logs across the grain.",
+  "affinity": {
+   "seasonal-camp": 0.3,
+   "permanent-settlement": 0.4
+  },
+  "rarity": 1,
+  "itemId": "exp28_crosscut_saw"
+ },
+ {
+  "id": "x-exp28_shawm",
+  "label": "Shawm",
+  "material": "plant or animal fibre (rarely survives)",
+  "category": "organic",
+  "commonFunction": "A loud medieval double-reed pipe with a flared bell, ancestor of the oboe.",
+  "affinity": {
+   "seasonal-camp": 0.3,
+   "permanent-settlement": 0.4
+  },
+  "rarity": 1,
+  "itemId": "exp28_shawm"
+ },
+ {
+  "id": "x-exp28_natural_horn",
+  "label": "Natural Horn",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A coiled brass horn with no valves, played with the hand in the bell.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_natural_horn"
+ },
+ {
+  "id": "x-exp28_roman_hand_plane",
+  "label": "Roman Hand Plane",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A wooden or iron block holding a blade that shaves wood flat.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_roman_hand_plane"
  }
 ]

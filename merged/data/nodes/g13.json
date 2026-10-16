@@ -249,6 +249,132 @@
   ]
  },
  {
+  "id": "exp28_minoan_flush_toilet",
+  "no": 3079,
+  "n": "Minoan Flush Toilet",
+  "era": "civilization",
+  "cat": "engineering",
+  "date": "Minoan flushable pedestal toilets by the second millennium BCE (Knossos, Akrotiri); Skara Brae c. 31st century BC; Xi'an c. 2,400 years old",
+  "ds": -1700,
+  "rar": "rare",
+  "vis": "pedestal-seat-channel",
+  "l1": "A pedestal seat over a drain, washed out by poured or channelled water.",
+  "l2": "At Skara Brae the village drainage used a stream to wash waste away; Mesopotamians used clay sewer pipes from about 4000 BCE.",
+  "l3": "The page says the Minoans developed flushable pedestal toilets by the second millennium BCE, with examples excavated at Knossos and Akrotiri (no exact date; ds -1700 is a mid-point marker). Skara Brae's drain is dated only to the 31st century BC. Fun fact: in February 2023 archaeologists in Xi'an announced what may be the world's oldest known flush toilet, about 2,400 years old. (not known: how the Minoan toilets were flushed in detail; the page gives no further description.)",
+  "ev": "Knossos and Akrotiri remains",
+  "src": [
+   "x28_flush_wp3"
+  ],
+  "rec": [
+   [
+    "brick",
+    "exp26_pottery_water_pipe",
+    "exp26_terracotta_drain"
+   ],
+   [
+    "brick",
+    "exp26_pottery_water_pipe",
+    "anc27_household_flush_drain"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "sanitation_exp28",
+   "sanitation",
+   "minoan"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "The page gives only 'second millennium BCE'; ds is a round marker."
+  },
+  "artifactType": "flushable pedestal toilet",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Minoan Flush Toilet — Minoan Crete (Knossos); Santorini (Akrotiri); Orkney (Skara Brae); China (Xi'an)"
+  },
+  "historical": {
+   "region": "Minoan Crete (Knossos); Santorini (Akrotiri); Orkney (Skara Brae); China (Xi'an)",
+   "firstKnownDate": "c. 31st century BC (Skara Brae drain)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_flush_wp3",
+     "supports": "Skara Brae circa 31st century BC drainage; Minoans flushable pedestal toilets second millennium BCE Knossos and Akrotiri; Mesopotamian clay sewer pipes c. 4000 BCE; Xi'an 2,400 years old February 2023."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "pottery",
+    "reason": "stone or ceramic with drain channel object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "africa_asia"
+  ]
+ },
+ {
   "id": "exp28_siphon",
   "no": 3029,
   "n": "Siphon",
@@ -336,6 +462,258 @@
     "candidate": false,
     "decision": "not_eligible",
     "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia",
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_babylonian_seed_drill",
+  "no": 3080,
+  "n": "Seed Drill",
+  "era": "agriculture",
+  "cat": "technology",
+  "date": "Babylonians 1400 BCE; China 2nd century BCE multi-tube iron drills; Venetian patent 1566 (Torello); Cavalina 1602; Tull 1701",
+  "ds": -1400,
+  "rar": "uncommon",
+  "vis": "hopper-tubes-shares",
+  "l1": "A wheeled hopper that drops seed through tubes into furrows in even rows.",
+  "l2": "Seed drills can increase yield (seeds harvested per seed planted) by up to eight times compared with broadcast seeding; some modern drills are 12 m wide.",
+  "l3": "The page says Babylonians used primitive seed drills in 1400 BCE and the Chinese invented multi-tube iron seed drills in the 2nd century BCE; the Venetian Senate patented the first known European drill in 1566 (attributed to Camillo Torello), Tadeo Cavalina described one in 1602 and Jethro Tull refined it in 1701. Fun fact: in the 16th-century Mughal Empire peasants widely used seed drills. (not known: who built the Babylonian drill; the page does not name Han or Zhao Guo.)",
+  "ev": "Venetian patent (1566); Cavalina's description (1602)",
+  "src": [
+   "x28_seeddrill_wp"
+  ],
+  "rec": [
+   [
+    "farming_tools",
+    "stone_ploughshare",
+    "wood"
+   ],
+   [
+    "farming_tools",
+    "stone_ploughshare",
+    "wheel"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "farming_exp28",
+   "farming",
+   "seed"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "The page spells the name Torello, not Tarello."
+  },
+  "artifactType": "planting machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Seed Drill — Mesopotamia; China; Venice; England"
+  },
+  "historical": {
+   "region": "Mesopotamia; China; Venice; England",
+   "firstKnownDate": "1400 BCE",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_seeddrill_wp",
+     "supports": "Babylonians 1400 BCE; Chinese multi-tube iron drills 2nd century BCE; Venetian patent 1566 Torello; Cavalina 1602; Tull 1701; up to eight times yield; Mughal 16th century."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "structural",
+    "reason": "timber hopper, tubes and shares object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia",
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_lamellar_armour",
+  "no": 3081,
+  "n": "Lamellar Armour",
+  "era": "metallurgy",
+  "cat": "technology",
+  "date": "Possible lamellar examples c. 900–600 BC (Neo-Assyrian Empire 911–609 BC); Japan around the 5th century (keiko)",
+  "ds": -900,
+  "rar": "uncommon",
+  "vis": "laced-plate-rows",
+  "l1": "Armour of many small plates punched and laced together in rows.",
+  "l2": "Lamellae are small platelets punched and laced together, typically in horizontal rows; peoples using the lamellar cuirass include the Sarmatians, Avars, Rus, Mongols and Turks.",
+  "l3": "The page dates possible Assyrian lamellar examples to circa 900–600 BC; lamellar reached Japan about the 5th century, where the keiko was a sleeveless jacket. Fun fact: a helmet from Yi county, Hebei, was made of 89 lamellae averaging 5 cm by 4 cm, and the Terracotta Army wears six or seven categories of lamellar armour by rank. (not known: who first laced plates; the page does not mention Scythians.)",
+  "ev": "Neo-Assyrian remains (c. 900–600 BC)",
+  "src": [
+   "x28_lamellar_wp"
+  ],
+  "rec": [
+   [
+    "cordage",
+    "bronze",
+    "iron"
+   ],
+   [
+    "cordage",
+    "bronze",
+    "leather_wrapped_axe_handle"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "arms_exp28",
+   "armour",
+   "metal"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "The page dates 'possible' Assyrian lamellar to circa 900–600 BC; 900 BC is the start of that span."
+  },
+  "artifactType": "body armour",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Lamellar Armour — Assyria, Central Asia, China, Byzantium, Japan"
+  },
+  "historical": {
+   "region": "Assyria, Central Asia, China, Byzantium, Japan",
+   "firstKnownDate": "c. 900 BC",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_lamellar_wp",
+     "supports": "Possible lamellar circa 900-600 BC Neo-Assyrian 911-609 BC; Japan 5th century keiko; platelets punched and laced in horizontal rows; Yi county helmet 89 lamellae; Terracotta Army."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "structural",
+    "reason": "small plates laced with cord object recoverable from a settlement / workshop context",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -748,6 +1126,131 @@
   "regions": [
    "africa_asia",
    "europe"
+  ]
+ },
+ {
+  "id": "exp28_sheng",
+  "no": 3082,
+  "n": "Sheng Mouth Organ",
+  "era": "trade",
+  "cat": "culture",
+  "date": "Images c. 1100 BCE; mentioned in bone oracle writings 14th–12th century BCE; Zeng Hou Yi tomb c. 433 BCE; Shōsōin 8th century; Europe 1740 and 1777",
+  "ds": -433,
+  "rar": "rare",
+  "vis": "pipes-wind-chamber",
+  "l1": "A bundle of bamboo pipes with free reeds that sounds on both blowing and sucking.",
+  "l2": "Players can sound continuously by switching between exhaling and inhaling, much like a harmonica. Zheng Jinwen increased the pipes to 32 between 1872 and 1935.",
+  "l3": "Instruments with gourd wind chambers and bamboo or metal reeds were found in the tomb of Marquis Yi of Zeng (c. 433 BCE); three 17-pipe shengs sent to the Japanese court in the 8th century survive in the Shōsōin. Johann Wilde (1740) and Père Amiot (1777) are believed to have brought it to Europe. Fun fact: the page does not say it inspired the accordion, though it notes similar free-reed instruments were known in Europe about a century before 1740. (not known: when the first sheng was made.)",
+  "ev": "Tomb of Marquis Yi of Zeng (c. 433 BCE)",
+  "src": [
+   "x28_sheng_wp"
+  ],
+  "rec": [
+   [
+    "flute",
+    "music",
+    "pottery"
+   ],
+   [
+    "flute",
+    "music",
+    "anc27_bronze_chime_set"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_instruments_exp28",
+   "music",
+   "free_reed"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "ds uses the physical finds in the tomb of Marquis Yi (c. 433 BCE)."
+  },
+  "artifactType": "free-reed wind instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Sheng Mouth Organ — China; Japan (Shōsōin); Europe"
+  },
+  "historical": {
+   "region": "China; Japan (Shōsōin); Europe",
+   "firstKnownDate": "c. 1100 BCE (images)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_sheng_wp",
+     "supports": "Images c. 1100 BCE; bone oracle 14th-12th century BCE; Marquis Yi tomb c. 433 BCE; Shosoin 8th century 17 pipes; Zheng Jinwen 32 pipes; Wilde 1740, Amiot 1777; free reed sounding on blow and suck."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "bamboo pipes with metal reeds in a gourd or wooden chamber object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia"
   ]
  },
  {
@@ -1747,6 +2250,131 @@
   ]
  },
  {
+  "id": "exp28_mail_armour",
+  "no": 3083,
+  "n": "Riveted Mail Armour",
+  "era": "metallurgy",
+  "cat": "technology",
+  "date": "Earliest surviving mail 3rd century BC (Horný Jatov, Ciumești); Etruscan mail from at least 4th century BC; plate supplements by the 14th century",
+  "ds": -250,
+  "rar": "uncommon",
+  "vis": "linked-ring-fabric",
+  "l1": "A flexible shirt of interlinked iron rings.",
+  "l2": "The most common pattern is 4-to-1, each ring linked with four others; European mail was typically riveted to stop rings splitting. A knee-length mail shirt is a hauberk.",
+  "l3": "The earliest surviving mail is 3rd century BC, found at Horný Jatov, Slovakia, and Ciumești, Romania, and is commonly credited to the Celts, with Etruscan mail from at least the 4th century BC; Rome adopted it as the lorica hamata. The oldest intact hauberk is thought to have belonged to Leopold III of Austria, who died at Sempach in 1386. Fun fact: mail reached China in 718 as tribute to the Tang emperor; Monty Python used spray-painted knitted string. (not known: who invented mail.)",
+  "ev": "Horný Jatov and Ciumești finds (3rd century BC)",
+  "src": [
+   "x28_mail_wp"
+  ],
+  "rec": [
+   [
+    "iron",
+    "smelting",
+    "metallurgy"
+   ],
+   [
+    "iron",
+    "smelting",
+    "cordage"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "arms_exp28",
+   "armour",
+   "iron"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Credit to the Celts is 'commonly' given; Etruscan mail is at least as early."
+  },
+  "artifactType": "body armour",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Riveted Mail Armour — Celtic Europe, Etruria, Rome, later China and Japan"
+  },
+  "historical": {
+   "region": "Celtic Europe, Etruria, Rome, later China and Japan",
+   "firstKnownDate": "4th century BC (Etruscan)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_mail_wp",
+     "supports": "Earliest surviving mail 3rd century BC Horny Jatov and Ciumesti; Etruscan at least 4th century BC; lorica hamata; 4-to-1; riveted; hauberk; plate by 14th century; Leopold III 1386; China 718."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "small linked iron rings object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_saqiya_wheel",
   "no": 2970,
   "n": "Saqiya Water Wheel",
@@ -1867,6 +2495,132 @@
    }
   },
   "regions": [
+   "africa_asia"
+  ]
+ },
+ {
+  "id": "exp28_roman_steelyard",
+  "no": 3084,
+  "n": "Steelyard Balance",
+  "era": "trade",
+  "cat": "technology",
+  "date": "Greek use 5th–4th century BC; Roman and Chinese steelyards invented c. 200 BC; simple lever steelyard over 5,000 years ago",
+  "ds": -200,
+  "rar": "uncommon",
+  "vis": "sliding-poise-beam",
+  "l1": "A one-pan balance whose weight slides along a marked arm until the beam balances.",
+  "l2": "A counterweight slides along the graduated longer arm until the beam balances; its position shows the load's weight. The Latin statera comes from the Greek statḗr.",
+  "l3": "The page says Roman steelyards were invented around 200 BC and Chinese ones independently around 200 BC; Greek craftsmen used them in the 5th and 4th centuries BC, before Archimedes demonstrated the law of the lever. Fun fact: Wildman Whitehouse used a steelyard to measure current in telegraph cables in 1856. (not known: the exact date of the simple lever steelyard of the ancient Near East, 'over 5,000 years ago'.)",
+  "ev": "Roman and Chinese steelyards (c. 200 BC)",
+  "src": [
+   "x28_steelyard_wp"
+  ],
+  "rec": [
+   [
+    "lever",
+    "bronze",
+    "iron"
+   ],
+   [
+    "lever",
+    "bronze",
+    "anc27_bronze_balance_scale"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "weights_measures_exp28",
+   "weighing",
+   "lever"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Dates differ by region; ds uses c. 200 BC for the Roman and Chinese forms."
+  },
+  "artifactType": "weighing instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Steelyard Balance — Rome, China, Greece, the ancient Near East"
+  },
+  "historical": {
+   "region": "Rome, China, Greece, the ancient Near East",
+   "firstKnownDate": "over 5,000 years ago (ancient Near East)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_steelyard_wp",
+     "supports": "Roman steelyards invented c. 200 BC; Chinese independently c. 200 BC; Greek 5th-4th century BC; Near East over 5,000 years ago; sliding weight; Whitehouse 1856; Simmons 1840."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "bronze or iron beam object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
    "africa_asia"
   ]
  },
@@ -2250,6 +3004,131 @@
   ]
  },
  {
+  "id": "exp28_roman_screw_press",
+  "no": 3085,
+  "n": "Roman Screw Press",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "Invented and used by the Romans in the first century AD; part of Gutenberg's press in the mid-15th century",
+  "ds": 50,
+  "rar": "uncommon",
+  "vis": "screw-beam-bed",
+  "l1": "A big wooden screw that squeezes grapes or olives under a plate.",
+  "l2": "A screw turned by a bar presses a plate down on the material; a fly press's weights keep its motion going.",
+  "l3": "The page says the Romans first invented and used the screw press in the first century AD, mainly for wine and olive oil. It was part of Gutenberg's printing press in the mid-15th century (no exact year). Fun fact: screw presses are still used in hand bookbinding to keep book covers flat while glue dries. (not known: the Greek origin sometimes claimed and Hero's design; the page does not mention them or minting presses.)",
+  "ev": "Roman presses (1st century AD)",
+  "src": [
+   "x28_screwpress_wp"
+  ],
+  "rec": [
+   [
+    "lever",
+    "wood",
+    "exp28_archimedes_screw"
+   ],
+   [
+    "lever",
+    "exp28_archimedes_screw",
+    "exp26_pressed_cheese_wheel"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "presses_exp28",
+   "press",
+   "screw"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not mention a Greek origin."
+  },
+  "artifactType": "pressing machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Roman Screw Press — Roman world"
+  },
+  "historical": {
+   "region": "Roman world",
+   "firstKnownDate": "1st century AD",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_screwpress_wp",
+     "supports": "Romans invented and used the screw press in the first century AD for wine and olive oil; part of Gutenberg's press mid-15th century; fly press weights; bookbinding."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "structural",
+    "reason": "timber frame and screw object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_bagpipes",
   "no": 2971,
   "n": "Bagpipes",
@@ -2375,6 +3254,256 @@
   ]
  },
  {
+  "id": "exp28_roman_hand_plane",
+  "no": 3099,
+  "n": "Roman Hand Plane",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "Earliest known planes found in Pompeii (before AD 79, the page gives no date); Bailey's iron planes mid-1860s",
+  "ds": 79,
+  "rar": "uncommon",
+  "vis": "stock-iron-blade",
+  "l1": "A wooden or iron block holding a blade that shaves wood flat.",
+  "l2": "A jack plane is usually 14 to 20 inches long and used for initial material removal; a smoothing plane is up to 10 inches. Japanese planes are pulled toward the body.",
+  "l3": "The page says the earliest known examples of the woodworking plane were found in Pompeii (the page gives no date; ds 79 is the year Pompeii was buried, an outside fact). In the mid-1860s Leonard Bailey began producing cast-iron planes, whose patents Stanley Rule & Level bought. Fun fact: in 1918 an air-powered hand planing tool let one man do the planing work of up to fifteen. (not known: who invented the plane; the page does not describe Egyptian planes.)",
+  "ev": "Pompeii finds",
+  "src": [
+   "x28_plane_wp"
+  ],
+  "rec": [
+   [
+    "iron",
+    "bronze",
+    "stone_plane"
+   ],
+   [
+    "iron",
+    "bronze",
+    "copper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "woodworking_exp28",
+   "woodworking",
+   "plane"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "ds 79 is the burial of Pompeii, not a date given by the page."
+  },
+  "artifactType": "woodworking tool",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Roman Hand Plane — Pompeii, Roman Italy; later United States (Leonard Bailey, Stanley)"
+  },
+  "historical": {
+   "region": "Pompeii, Roman Italy; later United States (Leonard Bailey, Stanley)",
+   "firstKnownDate": "before AD 79",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_plane_wp",
+     "supports": "Earliest known planes found in Pompeii; Leonard Bailey cast-iron planes mid-1860s, patents bought by Stanley; jack 14-20 inches; smoothing up to 10 inches; 1918 air-powered planer."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "wood or iron stock with iron blade object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_crosscut_saw",
+  "no": 3086,
+  "n": "Crosscut Saw",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "In use during the Roman Empire 'although not widely'; the page gives only approximate later dates (15th century, about 1880)",
+  "ds": 100,
+  "rar": "common",
+  "vis": "two-handle-toothed-blade",
+  "l1": "A long toothed blade with a handle at each end for two sawyers to cut logs across the grain.",
+  "l2": "Each tooth's bevelled edge acts like a knife, severing fibres instead of tearing along the grain; bucking saws have straighter backs and greater stiffness so one person can push as well as pull.",
+  "l3": "The page says crosscut saws were used during the Roman Empire although not widely, and gives no exact early dates. Fun fact: Japanese saws and those of ancient Egypt cut only on the pull stroke, and vintage saws could be folded end to end and carried on the back. (not known: the first crosscut saw's date; ds 100 is a mid-Empire marker, not from the page.)",
+  "ev": "Roman use (undated)",
+  "src": [
+   "x28_crosscut_wp"
+  ],
+  "rec": [
+   [
+    "iron",
+    "wood",
+    "stone_saw"
+   ],
+   [
+    "iron",
+    "wood",
+    "bone_saw"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "woodworking_exp28",
+   "woodworking",
+   "saw"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "ds is a mid-Roman-Empire marker; the page gives no exact date."
+  },
+  "artifactType": "saw",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Crosscut Saw — Roman Empire; Europe and North America"
+  },
+  "historical": {
+   "region": "Roman Empire; Europe and North America",
+   "firstKnownDate": "Roman Empire",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_crosscut_wp",
+     "supports": "Crosscut saws in use during the Roman Empire although not widely; teeth sever fibres across the grain; one- and two-man; bucking saws; Japanese saws cut on the pull stroke; folded for carrying."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "organic",
+    "reason": "steel blade with wooden handles object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_zhang_heng_seismoscope",
   "no": 2951,
   "n": "Zhang Heng Seismoscope",
@@ -2495,6 +3624,131 @@
    }
   },
   "regions": [
+   "africa_asia"
+  ]
+ },
+ {
+  "id": "exp28_alembic",
+  "no": 3087,
+  "n": "Alembic Still",
+  "era": "science",
+  "cat": "science",
+  "date": "Dioscorides' ambix c. 50 CE; Zosimos of Panopolis c. 300 CE credits Mary the Jewess; Ibn al-Awwam rose-water",
+  "ds": 300,
+  "rar": "rare",
+  "vis": "cucurbit-head-beak",
+  "l1": "A flask and domed cap with a sloping spout that turns vapour back into liquid.",
+  "l2": "The head or cap (Arabic al-inbīq) fits over the cucurbit's mouth to catch vapours, and a downward-sloping tube carries the condensate to the receiver.",
+  "l3": "The word comes from Arabic al-inbīq, from Greek ambix ('cup, beaker'). Dioscorides' ambix (c. 50 CE) was a helmet-shaped lid for gathering condensed mercury; Zosimos of Panopolis (c. 300 CE) credited Mary the Jewess with inventing the alembic. Fun fact: Unicode has three alembic symbols, and its modern descendant is the pot still. (not known: Jabir ibn Hayyan's role; the page does not mention him.)",
+  "ev": "Zosimos's account (c. 300 CE)",
+  "src": [
+   "x28_alembic_wp"
+  ],
+  "rec": [
+   [
+    "glass",
+    "copper",
+    "kiln"
+   ],
+   [
+    "glass",
+    "copper",
+    "exp26_blown_glass_cup"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "distillation_exp28",
+   "distillation",
+   "alchemy"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "ds 300 is the Zosimos date the page gives; the page dates Zosimos at c. 300 CE."
+  },
+  "artifactType": "distillation vessel",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Alembic Still — Roman Egypt (Alexandria); the Arab world"
+  },
+  "historical": {
+   "region": "Roman Egypt (Alexandria); the Arab world",
+   "firstKnownDate": "c. 50 CE (Dioscorides' ambix)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_alembic_wp",
+     "supports": "From Arabic al-inbiq from Greek ambix; Dioscorides ambix c. 50 CE; Zosimos c. 300 CE credits Mary the Jewess; head receives vapours, sloping tube to receiver; Ibn al-Awwam rose-water; pot still."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
    "africa_asia"
   ]
  },
@@ -4246,6 +5500,132 @@
   ]
  },
  {
+  "id": "exp28_shawm",
+  "no": 3088,
+  "n": "Shawm",
+  "era": "trade",
+  "cat": "culture",
+  "date": "Europe 13th or possibly 12th century; baroque hautbois replaced it c. 1670; still played by German town musicians until 1830",
+  "ds": 1200,
+  "rar": "uncommon",
+  "vis": "double-reed-conical-bore",
+  "l1": "A loud medieval double-reed pipe with a flared bell, ancestor of the oboe.",
+  "l2": "Martin Hotteterre (d. 1712) devised the baroque hautbois, which kept the double reed and conical bore but put the lips directly on the reed.",
+  "l3": "The page dates the shawm to the 'thirteenth or possibly 12th century' in Europe, from similar Near Eastern instruments (Persian surnāy, Turkish zūrnā) probably brought 'around the time of the Crusades'. Around 1670 the hautbois began replacing it and by 1700 it had all but disappeared from concerts. Fun fact: the Mary Rose wreck yielded the only surviving still shawm. (not known: who first brought the shawm to Europe.)",
+  "ev": "Mary Rose still shawm",
+  "src": [
+   "x28_shawm_wp"
+  ],
+  "rec": [
+   [
+    "flute",
+    "music",
+    "exp28_bagpipes"
+   ],
+   [
+    "flute",
+    "music",
+    "exp26_cut_quill_nib"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_instruments_exp28",
+   "music",
+   "reed"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "No exact date is given; ds is the 13th-century marker."
+  },
+  "artifactType": "double-reed wind instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Shawm — Eastern Mediterranean; Europe; Persia (surnāy); Turkey (zūrnā)"
+  },
+  "historical": {
+   "region": "Eastern Mediterranean; Europe; Persia (surnāy); Turkey (zūrnā)",
+   "firstKnownDate": "12th–13th century",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_shawm_wp",
+     "supports": "Europe 13th or possibly 12th century from Near East surnay and zurna; Hotteterre hautbois c. 1670 replaced it, by 1700 gone from concerts; Mary Rose still shawm; German town musicians to 1830."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "organic",
+    "reason": "wood object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "africa_asia"
+  ]
+ },
+ {
   "id": "exp28_portolan_chart",
   "no": 2998,
   "n": "Portolan Chart",
@@ -4619,6 +5999,130 @@
   ]
  },
  {
+  "id": "exp28_pavise",
+  "no": 3089,
+  "n": "Pavise Shield",
+  "era": "trade",
+  "cat": "technology",
+  "date": "In use mid-14th to early 16th century; Bellifortis treatise 1405; Burgundian pavises 1450–1475",
+  "ds": 1350,
+  "rar": "uncommon",
+  "vis": "convex-ridged-spiked-shield",
+  "l1": "A tall painted shield with a ridge and a ground spike, used as a wall by crossbowmen.",
+  "l2": "Pavises were large, square and convex with a central ridge, covered in coarse canvas and painted with oil and egg-based paints; a spike on the bottom planted them in the ground. A smaller version served in hand-to-hand combat.",
+  "l3": "The page dates their use from the mid-14th to the early 16th century (the 1350 ds is the start of that span); Genoese crossbowmen, an elite corps, shared them, with more than three men to a pavise. The Hussite chalice was often painted on them. Fun fact: only about 200 survive, and towns kept them painted with coats of arms in arsenals. (not known: exact dates for the Genoese corps or the Hussite Wars; the page does not mention Pavia.)",
+  "ev": "Bellifortis treatise (1405)",
+  "src": [
+   "x28_pavise_wp"
+  ],
+  "rec": [
+   [
+    "wood",
+    "cloth",
+    "exp28_crossbow"
+   ],
+   [
+    "wood",
+    "exp28_crossbow",
+    "exp28_crossbow"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "arms_exp28",
+   "arms",
+   "shield"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "ds is the start of the page's 'mid-14th century' span."
+  },
+  "artifactType": "defensive shield",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Pavise Shield — Italy (Genoese crossbowmen); Burgundy; Bohemia (Hussite Wars); Germany"
+  },
+  "historical": {
+   "region": "Italy (Genoese crossbowmen); Burgundy; Bohemia (Hussite Wars); Germany",
+   "firstKnownDate": "mid-14th century",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_pavise_wp",
+     "supports": "Used mid-14th to early 16th century; Bellifortis pavise 1405; Burgundian 1450-1475; large square convex ridge; spike; canvas covered, oil and egg paints; about 200 survive."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_fusee",
   "no": 2972,
   "n": "Fusee",
@@ -4864,6 +6368,130 @@
   },
   "regions": [
    "europe"
+  ]
+ },
+ {
+  "id": "exp28_cheugugi",
+  "no": 3090,
+  "n": "Cheugugi Rain Gauge",
+  "era": "science",
+  "cat": "science",
+  "date": "Invented 1441 under Sejong the Great of Joseon; Tianchi basins 1247 (Qin Jiushao)",
+  "ds": 1441,
+  "rar": "rare",
+  "vis": "cylinder-on-pillar",
+  "l1": "A cylinder on a stone pillar that catches rain so its depth can be measured.",
+  "l2": "The page calls the Cheugugi the 'first standardized rain gauge'. Gauges can slightly underestimate rainfall because drops stick to the funnel and sides.",
+  "l3": "It was invented in 1441 during the reign of Sejong the Great of the Joseon dynasty. Qin Jiushao invented Tianchi basin rain and snow gauges in 1247, and Christopher Wren made Britain's first tipping-bucket gauge in 1662. Fun fact: George James Symons published British Rainfall's first annual volume in 1860; the 1899 volume had figures from 3,528 stations. (not known: the date of the Arthashastra's rainfall standards or the Palestine text mentioned; the page gives no dates.)",
+  "ev": "Sejong's reign (1441)",
+  "src": [
+   "x28_raingauge_wp"
+  ],
+  "rec": [
+   [
+    "measurement",
+    "mathematics",
+    "copper"
+   ],
+   [
+    "measurement",
+    "mathematics",
+    "casting"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "weather",
+   "korea"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "ds uses the 1441 Cheugugi, called the first standardized rain gauge."
+  },
+  "artifactType": "rainfall gauge",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Cheugugi Rain Gauge — Joseon Korea; Song China (Qin Jiushao)"
+  },
+  "historical": {
+   "region": "Joseon Korea; Song China (Qin Jiushao)",
+   "firstKnownDate": "1247 (Tianchi basins)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_raingauge_wp",
+     "supports": "Cheugugi 1441 under Sejong the Great, first standardized rain gauge; Qin Jiushao Tianchi basins 1247; Wren tipping bucket 1662; Symons British Rainfall 1860, 3,528 stations in 1899."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia"
   ]
  },
  {
@@ -5856,6 +7484,130 @@
    "europe"
   ],
   "tradeImportance": "medium"
+ },
+ {
+  "id": "exp28_harington_water_closet",
+  "no": 3091,
+  "n": "Harington's Water Closet",
+  "era": "industry",
+  "cat": "technology",
+  "date": "John Harington, A New Discourse of a Stale Subject 1596; installed at Richmond Palace for Elizabeth I",
+  "ds": 1596,
+  "rar": "rare",
+  "vis": "cistern-valve-bowl",
+  "l1": "An early flush toilet with a cistern and a valve that sends water to wash the bowl.",
+  "l2": "The design is described as a forerunner of the modern flush toilet; Alexander Cumming's S-trap (1775) later added a water seal against sewer air.",
+  "l3": "John Harington published A New Discourse of a Stale Subject in 1596 describing a forerunner of the flush toilet at his Kelston house in Somerset and later installed one for his godmother, Queen Elizabeth I, at Richmond Palace. Fun fact: in 1851 George Jennings's Monkey Closets at the Great Exhibition drew 827,280 paying visitors at a penny each. (not known: the exact year of the Richmond installation; the page does not give one.)",
+  "ev": "A New Discourse of a Stale Subject (1596)",
+  "src": [
+   "x28_flush_wp"
+  ],
+  "rec": [
+   [
+    "wood",
+    "exp26_pottery_water_pipe",
+    "exp28_siphon"
+   ],
+   [
+    "wood",
+    "exp26_socketed_water_pipe",
+    "exp28_siphon"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "sanitation_exp28",
+   "sanitation",
+   "toilet"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives 1596 for the publication, not for the Richmond installation."
+  },
+  "artifactType": "flush toilet",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Harington's Water Closet — England (Kelston, Somerset; Richmond Palace)"
+  },
+  "historical": {
+   "region": "England (Kelston, Somerset; Richmond Palace)",
+   "firstKnownDate": "2nd millennium BCE (Minoan flushable toilets)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_flush_wp",
+     "supports": "Harington 1596 A New Discourse of a Stale Subject, Kelston, Richmond Palace for Elizabeth I; Cumming S-trap 1775; Bramah 1778; Crapper 1880 U-trap; Jennings 1851 827,280 visitors; Sloan flushometer 1906."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
  },
  {
   "id": "exp28_pantograph",
@@ -6925,6 +8677,130 @@
     "candidate": true,
     "decision": "playable",
     "reason": "room x-surveying_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_wren_tipping_bucket_gauge",
+  "no": 3092,
+  "n": "Wren's Tipping-Bucket Rain Gauge",
+  "era": "science",
+  "cat": "science",
+  "date": "Christopher Wren with Robert Hooke, 1662; Towneley's rainfall series 1677–1694",
+  "ds": 1662,
+  "rar": "rare",
+  "vis": "funnel-seesaw-bucket",
+  "l1": "A funnel that fills a seesaw bucket that tips every set amount of rain.",
+  "l2": "Rain falls into a funnel and fills one half of a small seesaw; when it holds a fixed amount it tips, empties, and the other half fills. Each tip is counted.",
+  "l3": "The page says Christopher Wren, working with Robert Hooke, created the first tipping-bucket rain gauge in Britain in 1662 (the page gives no details of its build). Richard Towneley made systematic rainfall measurements from 1677 to 1694. Fun fact: Thomas Barker recorded meteorological data including rainfall for 59 years. (not known: how Wren's seesaw counted tips; the page does not describe it. The seesaw counting above is the general principle.)",
+  "ev": "Wren and Hooke (1662)",
+  "src": [
+   "x28_raingauge_wp2"
+  ],
+  "rec": [
+   [
+    "measurement",
+    "mechanism",
+    "copper"
+   ],
+   [
+    "measurement",
+    "lever",
+    "copper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "weather",
+   "rain"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives the date but not the mechanism details."
+  },
+  "artifactType": "rainfall gauge",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Wren's Tipping-Bucket Rain Gauge — England (Wren, Hooke, Towneley)"
+  },
+  "historical": {
+   "region": "England (Wren, Hooke, Towneley)",
+   "firstKnownDate": "1662",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_raingauge_wp2",
+     "supports": "Wren created first tipping-bucket gauge in Britain in 1662 with Hooke; Towneley measurements 1677-1694; Barker 59 years."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -8954,6 +10830,261 @@
   ]
  },
  {
+  "id": "exp28_sextant",
+  "no": 3100,
+  "n": "Marine Sextant",
+  "era": "science",
+  "cat": "technology",
+  "date": "Hadley and Godfrey c. 1731; lunar distances tabulated in the Nautical Almanac 1767; Gago Coutinho aeronautical 1922; Gemini XII 1966",
+  "ds": 1731,
+  "rar": "rare",
+  "vis": "sixty-degree-arc-mirrors",
+  "l1": "A one-sixth-circle brass frame with two mirrors that measures a star's angle above the horizon.",
+  "l2": "The index arm moves the index mirror; the scale is graduated so marked degrees register twice the angle the arm turns. A half-horizon mirror splits the view between horizon and object; a whole-horizon mirror is half-silvered.",
+  "l3": "The page puts Hadley and Godfrey's implementation 'around 1731' and the name comes from the Latin for 'one sixth', for the frame's roughly 60° sector. Fun fact: Buzz Aldrin used a sextant and chart on Gemini XII in 1966 after a radar problem, and an emergency sextant was kept ready for Artemis II. (not known: John Bird's 1759 sextant; the page does not mention him.)",
+  "ev": "Hadley and Godfrey (c. 1731)",
+  "src": [
+   "x28_sextant_wp",
+   "x28_octant_wp"
+  ],
+  "rec": [
+   [
+    "exp28_hadley_octant",
+    "exp26_vernier_sextant",
+    "navigation"
+   ],
+   [
+    "exp28_hadley_octant",
+    "exp26_vernier_sextant",
+    "measurement"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "navigation",
+   "angle"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "The page says 'around 1731', not 1730."
+  },
+  "artifactType": "navigation instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Marine Sextant — England (Hadley); Philadelphia (Godfrey)"
+  },
+  "historical": {
+   "region": "England (Hadley); Philadelphia (Godfrey)",
+   "firstKnownDate": "c. 1731",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_sextant_wp",
+     "supports": "Hadley and Godfrey around 1731; Gago Coutinho 1922; Gemini XII Aldrin 1966; ISS experiment 2018; index arm, horizon mirror; name from Latin for one sixth."
+    },
+    {
+     "source": "x28_octant_wp",
+     "supports": "1767 first Nautical Almanac tabulated lunar distances, leading to the sextant; double reflection doubles angle."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
+  "id": "exp28_natural_horn",
+  "no": 3093,
+  "n": "Natural Horn",
+  "era": "trade",
+  "cat": "culture",
+  "date": "Crooks in common use by 1740; Inventionshorn 1753; hand stopping first half of 18th century (Hampel, Dresden)",
+  "ds": 1740,
+  "rar": "uncommon",
+  "vis": "coiled-tube-bell-crook",
+  "l1": "A coiled brass horn with no valves, played with the hand in the bell.",
+  "l2": "Crooks were swapped in to change the instrument's length and key; hand stopping changes pitch with the hand in the bell. The playing range runs from Bb2 to Eb5.",
+  "l3": "Hand stopping is 'commonly thought' to have emerged in the first half of the 18th century at the Dresden court with Anton Hampel (account from Domnich, 1807); crooks were in common use by 1740; in 1753 Hampel and Johann Werner developed the Inventionshorn with a fixed mouthpiece position. Fun fact: Brahms wrote for the natural horn because he did not care for the valved horn. (not known: the exact year of hand stopping.)",
+  "ev": "Inventionshorn (1753)",
+  "src": [
+   "x28_horn_wp"
+  ],
+  "rec": [
+   [
+    "music",
+    "copper",
+    "forging"
+   ],
+   [
+    "music",
+    "copper",
+    "casting"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_instruments_exp28",
+   "music",
+   "brass"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "The page gives no exact year for hand stopping."
+  },
+  "artifactType": "brass instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Natural Horn — Dresden and Germany; Paris"
+  },
+  "historical": {
+   "region": "Dresden and Germany; Paris",
+   "firstKnownDate": "1740 (crooks in common use)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_horn_wp",
+     "supports": "Hand stopping first half of 18th century Dresden Hampel (Domnich 1807); crooks by 1740; Inventionshorn 1753; Haltenhof tuning slide 1770s; Raoux Paris 1797; range Bb2-Eb5; Brahms."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "brass tube object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_marine_chronometer",
   "no": 2937,
   "n": "Marine Chronometer",
@@ -9329,6 +11460,131 @@
   },
   "regions": [
    "europe"
+  ]
+ },
+ {
+  "id": "exp28_pitch_pipe",
+  "no": 3094,
+  "n": "Pitch Pipe",
+  "era": "industry",
+  "cat": "culture",
+  "date": "18th and 19th centuries (no exact dates given)",
+  "ds": 1750,
+  "rar": "uncommon",
+  "vis": "free-reed-bank",
+  "l1": "A small reed pipe that gives singers their starting note.",
+  "l2": "The earliest pitch pipes resembled recorders with a slide-whistle plunger and a square bore; chromatic pipes give thirteen pitches, each a half step above the last, covering an octave.",
+  "l3": "Most often used in churches without an organ, to give the opening note of a hymn, mainly in the 18th and 19th centuries (the page gives no exact dates; ds 1750 is a marker). Fun fact: a recorded pipe beep can reveal the playback speed of a gramophone record or phonograph cylinder. (not known: who made the first pitch pipe or when.)",
+  "ev": "Church use (18th–19th century)",
+  "src": [
+   "x28_pitchpipe_wp"
+  ],
+  "rec": [
+   [
+    "music",
+    "wood",
+    "exp28_tuning_fork"
+   ],
+   [
+    "music",
+    "wood",
+    "exp28_clarinet"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_instruments_exp28",
+   "music",
+   "pitch"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "The page gives only the 18th and 19th centuries; ds is a round marker."
+  },
+  "artifactType": "pitch reference",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Pitch Pipe — Europe and America (church choirs)"
+  },
+  "historical": {
+   "region": "Europe and America (church choirs)",
+   "firstKnownDate": "18th century",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_pitchpipe_wp",
+     "supports": "Earliest pitch pipes like recorders with slide whistle plunger; church use 18th and 19th centuries; chromatic pipe thirteen pitches; recorded pipe beep reveals playback speed; brass reeds."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
   ]
  },
  {
@@ -9908,6 +12164,130 @@
     "candidate": true,
     "decision": "playable",
     "reason": "room x-textile_machines_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_cumming_s_trap",
+  "no": 3095,
+  "n": "Cumming's S-Trap",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Alexander Cumming, 1775; Joseph Bramah float-valve patent 1778; Crapper U-trap 1880",
+  "ds": 1775,
+  "rar": "rare",
+  "vis": "s-bend-water-seal",
+  "l1": "An S-shaped pipe bend that keeps a plug of water to block sewer smells.",
+  "l2": "The S-trap uses standing water to block foul air rising from the sewer through the bowl and is still used today.",
+  "l3": "Alexander Cumming invented the S-trap in 1775; in 1778 Joseph Bramah patented a float-valve system for the flush tank, having begun by installing toilets based on Cumming's design. Thomas Crapper did not invent the flush toilet; in 1880 he introduced the U-shaped trap and held nine patents. Fun fact: Thomas MacAvity Stewart invented the vortex-flushing bowl in 1907. (not known: how many S-traps Cumming sold.)",
+  "ev": "Cumming's invention (1775)",
+  "src": [
+   "x28_flush_wp2"
+  ],
+  "rec": [
+   [
+    "exp28_harington_water_closet",
+    "iron",
+    "exp28_siphon"
+   ],
+   [
+    "exp28_harington_water_closet",
+    "iron",
+    "exp26_socketed_drain_pipe"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "sanitation_exp28",
+   "sanitation",
+   "trap"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page credits Frederick Humpherson, not Twyford, with the 1885 pedestal flush-down toilet."
+  },
+  "artifactType": "drain trap",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Cumming's S-Trap — England (Cumming, Bramah, Crapper)"
+  },
+  "historical": {
+   "region": "England (Cumming, Bramah, Crapper)",
+   "firstKnownDate": "1775",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_flush_wp2",
+     "supports": "Cumming S-trap 1775 standing water blocks sewer air; Bramah float valve patent 1778; Crapper U-trap 1880, nine patents; Humpherson 1885; Twyford; vortex bowl 1907."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -11116,6 +13496,255 @@
     {
      "source": "x28_governor_wp",
      "supports": "Huygens invented it in the 17th century for windmills and water wheels; Watt's conical pendulum governor 1788 after Boulton's suggestion; flyballs and sleeve linkage reduce the throttle; Maxwell 1868."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_alzate_ballcock",
+  "no": 3096,
+  "n": "Ballcock Float Valve",
+  "era": "industry",
+  "cat": "technology",
+  "date": "José Antonio de Alzate y Ramírez 1790; Edmund Cartwright patent 1797; Cahill US 418,162 (1889); Mueller 1955",
+  "ds": 1790,
+  "rar": "uncommon",
+  "vis": "lever-float-valve",
+  "l1": "A float on a lever that closes the water inlet when the tank is full.",
+  "l2": "A valve on the water supply is opened and closed by a lever with a float on its end: as the level falls the float drops and opens the valve, and as it rises the lever pushes it shut. The page calls it negative feedback.",
+  "l3": "José Antonio de Alzate y Ramírez, a Mexican priest and scientist, described the modern ballcock in 1790 in the Gaceta de Literatura Méxicana; Edmund Cartwright patented the device for steam engines in 1797; W. J. Cahill's 'Ball cock' patent (US 418,162) was issued on 31 December 1889. Fun fact: Mueller's patent describes a hissing noise from water leaking past a slightly open valve. (not known: floatless fill valve dates; the page gives none, nor does it mention Ctesibius or Crapper.)",
+  "ev": "Alzate's description (1790)",
+  "src": [
+   "x28_ballcock_wp"
+  ],
+  "rec": [
+   [
+    "lever",
+    "copper",
+    "iron"
+   ],
+   [
+    "lever",
+    "copper",
+    "exp28_siphon"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "sanitation_exp28",
+   "valve",
+   "water"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not mention Ctesibius or Crapper."
+  },
+  "artifactType": "water-level control valve",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Ballcock Float Valve — Mexico (Alzate); England (Cartwright); United States"
+  },
+  "historical": {
+   "region": "Mexico (Alzate); England (Cartwright); United States",
+   "firstKnownDate": "1790",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_ballcock_wp",
+     "supports": "Alzate described the ballcock in 1790; Cartwright patent 1797 for steam engines; Cahill US 418162 issued 31 December 1889; Mueller 1955; lever and float, negative feedback."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "americas",
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_chappe_optical_telegraph",
+  "no": 3097,
+  "n": "Chappe Optical Telegraph",
+  "era": "network",
+  "cat": "technology",
+  "date": "Chappe's first public demonstration 2 March 1791; Paris–Lille line from summer 1792; Paris–Strasbourg 1798; Edelcrantz Sweden 1794; Murray Britain 1795",
+  "ds": 1791,
+  "rar": "rare",
+  "vis": "tower-beam-arms",
+  "l1": "A hilltop tower with movable arms that relays coded messages from tower to tower.",
+  "l2": "Claude Chappe and his brothers built the first successful optical telegraph; it spread across France as a network, and Swedish (shutter) and British (Murray shutter) variants followed.",
+  "l3": "The first public demonstration was on 2 March 1791 between Brûlon and Parcé, 16 km apart; Claude Chappe was appointed Ingénieur-Télégraphiste in summer 1792 to build a Paris–Lille line, and in 1794 it relayed news of the capture of Condé-sur-l'Escaut in under an hour. The Paris–Strasbourg line (50 stations, 488 km) was complete in 1798. Fun fact: in 1844 Dumas's 'The Count of Monte Cristo' features a semaphore line. (not known: the exact opening date of the Paris–Lille line.)",
+  "ev": "Brûlon–Parcé demonstration (2 March 1791)",
+  "src": [
+   "x28_optel_wp"
+  ],
+  "rec": [
+   [
+    "wood",
+    "lever",
+    "observation"
+   ],
+   [
+    "wood",
+    "lever",
+    "exp28_dioptra"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "signalling_exp28",
+   "signal",
+   "network"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives only summer 1792 for the Paris–Lille appointment, not an opening date."
+  },
+  "artifactType": "semaphore signalling tower",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Chappe Optical Telegraph — France (Brûlon, Parcé, Paris–Lille); Sweden; Britain"
+  },
+  "historical": {
+   "region": "France (Brûlon, Parcé, Paris–Lille); Sweden; Britain",
+   "firstKnownDate": "1684 (Hooke outline, never built)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_optel_wp",
+     "supports": "Chappe demonstration 2 March 1791 Brulon-Parce 16 km; Paris-Lille from summer 1792; Conde 1794; Paris-Strasbourg 1798 50 stations 488 km; Edelcrantz 1794; Murray 1795; Monte Cristo."
     }
    ]
   },
@@ -12437,6 +15066,130 @@
   "regions": [
    "europe",
    "americas"
+  ]
+ },
+ {
+  "id": "exp28_brass_piston_valve",
+  "no": 3098,
+  "n": "Périnet Piston Valve",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Stölzel valve 1814; Vienna double-piston 1821; Riedl rotary valve 1832; Périnet piston 1839",
+  "ds": 1814,
+  "rar": "rare",
+  "vis": "paired-pistons-loops",
+  "l1": "Button pistons that add extra tubing to a brass horn so it can play every note.",
+  "l2": "Modern three-valve sets lower the pitch by two, one and three half-steps, so combined they reach a tritone; tubas often add a fourth valve lowering by a perfect fourth.",
+  "l3": "The page says no successful valve design existed before Heinrich Stölzel applied his valve to the French horn in 1814; François Périnet patented the modern piston valve in 1839, and Joseph Riedl patented the rotary valve in 1832. Fun fact: Adolphe Sax built instruments with six piston valves, but only the most dexterous players could manage them. (not known: the Blühmel 1818 patent; the page does not mention it.)",
+  "ev": "Stölzel's valve (1814); Périnet patent (1839)",
+  "src": [
+   "x28_valve_wp"
+  ],
+  "rec": [
+   [
+    "exp28_natural_horn",
+    "music",
+    "copper"
+   ],
+   [
+    "exp28_natural_horn",
+    "music",
+    "forging"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_instruments_exp28",
+   "music",
+   "valve"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives years only."
+  },
+  "artifactType": "brass instrument mechanism",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Périnet Piston Valve — Germany, Austria, France"
+  },
+  "historical": {
+   "region": "Germany, Austria, France",
+   "firstKnownDate": "1814",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_valve_wp",
+     "supports": "Stolzel valve 1814; Vienna double-piston 1821; Riedl rotary 1832; Perinet piston patented 1839; three-valve sets two, one, three half-steps; Sax six valves; Stacy 1924."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
   ]
  },
  {
