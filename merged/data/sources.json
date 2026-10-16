@@ -645,11 +645,56 @@
    "scope": "topic",
    "checked": "2026-09-12"
   },
+  "x28_shaduf_wp": {
+   "t": "B",
+   "title": "Shadoof",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Shadoof",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chainpump_wp": {
+   "t": "B",
+   "title": "Chain pump",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chain_pump",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_camera_hist_wp": {
    "t": "B",
    "title": "History of the camera",
    "org": "Wikipedia (citing Needham, Wade & Finger, Plott)",
    "url": "https://en.wikipedia.org/wiki/History_of_the_camera",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arch_wp": {
+   "t": "B",
+   "title": "Archimedes%27 screw",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Archimedes%27_screw",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_noria_wp": {
+   "t": "B",
+   "title": "Noria",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Noria",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bagpipes_wp": {
+   "t": "B",
+   "title": "Bagpipes",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bagpipes",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -699,12 +744,30 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_fusee_wp": {
+   "t": "B",
+   "title": "Fusee (horology)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fusee_(horology)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_astrolabe_ox": {
    "t": "S",
    "title": "The mariner's astrolabe and Portuguese exploration",
    "org": "University of Oxford (Cabinet)",
    "url": "https://www.cabinet.ox.ac.uk/node/7661",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_backstaff_wp": {
+   "t": "B",
+   "title": "Backstaff",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Backstaff",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -780,6 +843,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_dead_wp": {
+   "t": "B",
+   "title": "Deadbeat escapement",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Deadbeat_escapement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_divebell_wp": {
    "t": "B",
    "title": "Diving bell",
@@ -789,11 +861,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_clarinet_wp": {
+   "t": "B",
+   "title": "Clarinet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Clarinet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_geneva_wp": {
    "t": "B",
    "title": "Geneva drive",
    "org": "Wikipedia (citing Willis 1945; Bickford 1972; Sclater 2011)",
    "url": "https://en.wikipedia.org/wiki/Geneva_drive",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_meridian_wp": {
+   "t": "B",
+   "title": "Meridian circle",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Meridian_circle",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -813,6 +903,24 @@
    "org": "Whipple Museum of the History of Science, University of Cambridge",
    "url": "https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/acoustics/historical-notes-brief-chronicle-tuning-fork",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_grass_wp": {
+   "t": "B",
+   "title": "Grasshopper escapement",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Grasshopper_escapement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_mural_wp": {
+   "t": "B",
+   "title": "Mural instrument",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Mural_instrument",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -870,6 +978,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_mule_wp": {
+   "t": "B",
+   "title": "Spinning mule",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spinning_mule",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_hygro_wp": {
    "t": "B",
    "title": "Hygrometer",
@@ -893,6 +1010,15 @@
    "title": "Centrifugal governor",
    "org": "Wikipedia (citing Hills 1996; Maxwell 1868)",
    "url": "https://en.wikipedia.org/wiki/Centrifugal_governor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gin_wp": {
+   "t": "B",
+   "title": "Cotton gin",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cotton_gin",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1005,6 +1131,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_barograph_wp": {
+   "t": "B",
+   "title": "Barograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Barograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_anemometer_wp": {
    "t": "B",
    "title": "Anemometer",
@@ -1032,11 +1167,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_stick_wp": {
+   "t": "B",
+   "title": "Marshall Islands stick chart",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Marshall_Islands_stick_chart",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stevenson_wp": {
    "t": "B",
    "title": "Stevenson screen",
    "org": "Wikipedia (citing Stevenson 1864; Middleton 1966)",
    "url": "https://en.wikipedia.org/wiki/Stevenson_screen",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_helio_wp": {
+   "t": "B",
+   "title": "Heliograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Heliograph",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1064,6 +1217,15 @@
    "title": "Cathode-ray tube",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Cathode-ray_tube",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arc_wp": {
+   "t": "B",
+   "title": "Mercury-arc valve",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Mercury-arc_valve",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
