@@ -302,8 +302,9 @@ def main() -> int:
     ok: list[dict] = []
     report: list[dict] = []
     known = dict(base)
-    # install in ds order so exp28 items can chain on earlier exp28 items
-    for it in sorted(items, key=lambda x: (x["ds"], x["id"])):
+    # already-installed items first (in their stable order) so new items can never displace a shipped recipe;
+    # new items follow in ds order so they can chain on earlier exp28 items
+    for it in sorted(items, key=lambda x: (0, prev_no[x["id"]], x["id"]) if x["id"] in prev_no else (1, x["ds"], x["id"])):
         if it["id"] in {o["id"] for o in ok}:
             report.append(dict(id=it["id"], name=it["n"], batch=it["_batch"], status="FAIL", reason="duplicate id in batches"))
             continue
@@ -334,6 +335,10 @@ def main() -> int:
     print(f"items authored {len(items)}  pass {len(ok)}  fail {len(fails)}")
     for r in fails:
         print("  FAIL", r["id"], "-", r["reason"])
+    regress = [r["id"] for r in fails if r["id"] in prev_no]
+    if regress:
+        print("REGRESSION: previously installed items now fail:", regress)
+        return 2
     if a.check:
         return 1 if fails else 0
 

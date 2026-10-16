@@ -249,6 +249,132 @@
   ]
  },
  {
+  "id": "exp28_crossbow",
+  "no": 2985,
+  "n": "Bronze-Lock Crossbow",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "Cast-bronze crossbow locks from China, c. 650 BC; bronze bolts mid-5th century BC at Yutaishan; Greek gastraphetes late 5th century BC",
+  "ds": -650,
+  "rar": "rare",
+  "vis": "trigger-lock-stock",
+  "l1": "A bow on a stock with a bronze trigger lock that holds the string cocked until released.",
+  "l2": "A stock carries a prod and a catch that holds the drawn string; pulling the trigger releases the bolt. Qin and Han bronze trigger mechanisms are the earliest found; European crossbows began using winches in the 13th century and Song crossbows added stirrups.",
+  "l3": "The page gives c. 650 BC for cast-bronze crossbow locks found in China and bronze bolts from the mid-5th century BC at a Chu burial site at Yutaishan, Hubei. The Greek gastraphetes probably appeared in the late 5th century BC and was used at the Siege of Motya in 397 BC; the 11th-century Wujing Zongyao mentions winch mechanisms.",
+  "ev": "Chinese bronze locks (c. 650 BC); Yutaishan bolts; Siege of Motya (397 BC)",
+  "src": [
+   "x28_crossbow_wp"
+  ],
+  "rec": [
+   [
+    "bronze",
+    "lever",
+    "metallurgy"
+   ],
+   [
+    "bronze",
+    "lever",
+    "fiber"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "siege_engines_exp28",
+   "weapon",
+   "mechanism"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives no exact date for the trigger nut or the stirrup."
+  },
+  "artifactType": "projectile weapon",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Bronze-Lock Crossbow — Zhou China (Hubei); Greece (Siege of Motya, 397 BC)"
+  },
+  "historical": {
+   "region": "Zhou China (Hubei); Greece (Siege of Motya, 397 BC)",
+   "firstKnownDate": "c. 650 BC",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_crossbow_wp",
+     "supports": "Cast-bronze crossbow locks in China c. 650 BC; bronze bolts mid-5th century BC at Yutaishan; gastraphetes late 5th century BC, Motya 397 BC; winches 13th century Europe; stirrups Song."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "wood and cast bronze object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia",
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_camera_obscura",
   "no": 2920,
   "n": "Camera Obscura",
@@ -371,6 +497,130 @@
   "regions": [
    "east_asia",
    "west_central_asia",
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_torsion_ballista",
+  "no": 2986,
+  "n": "Torsion Ballista",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "Thought developed for Dionysius of Syracuse, c. 400 BC; Alexander's engineers introduced rope-coil springs",
+  "ds": -400,
+  "rar": "uncommon",
+  "vis": "twisted-skeins",
+  "l1": "A bolt-thrower whose two arms are driven by tightly twisted skeins of rope.",
+  "l2": "Two levers sit in torsion springs made of several loops of twisted skeins; in the Roman version the springs are sinew rope twisted around the arms attached to the bowstring. Drawing the string back with winches twists the springs and stores energy.",
+  "l3": "The page says the earliest ballista is thought to have been developed for Dionysius of Syracuse about 400 BC and descended from the oxybeles and gastraphetes, with Philip II and Alexander developing it further. Rome adopted it after absorbing the Greek states in 146 BC; at Alesia in 52 BC small ballistae were placed in towers. The largest 4th-century ballistae threw a dart over 1,200 yards.",
+  "ev": "Alesia, 52 BC; later carroballista and manuballista",
+  "src": [
+   "x28_ballista_wp"
+  ],
+  "rec": [
+   [
+    "rope",
+    "bronze",
+    "cordage"
+   ],
+   [
+    "rope",
+    "cordage",
+    "casting"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "siege_engines_exp28",
+   "siege",
+   "torsion"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Page gives 'c. 400 BC', thought developed for Dionysius; no exact year."
+  },
+  "artifactType": "projectile engine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Torsion Ballista — Syracuse and Macedon (Greek); Rome from 146 BC"
+  },
+  "historical": {
+   "region": "Syracuse and Macedon (Greek); Rome from 146 BC",
+   "firstKnownDate": "c. 400 BC",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_ballista_wp",
+     "supports": "Thought developed for Dionysius of Syracuse c. 400 BC; descended from oxybeles and gastraphetes; torsion springs of twisted skeins; Rome adopted after 146 BC; Alesia 52 BC."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
    "europe"
   ]
  },
@@ -500,6 +750,251 @@
   ]
  },
  {
+  "id": "exp28_dioptra",
+  "no": 2987,
+  "n": "Dioptra",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "3rd century BC (page gives the century only)",
+  "ds": -250,
+  "rar": "uncommon",
+  "vis": "sighting-tube-disc",
+  "l1": "A sighting rod on a stand with a protractor disc for measuring angles on land or sky.",
+  "l2": "A sighting tube or rod with a sight at each end is mounted on a stable stand with adjustable screws for fine calibration. Fitted with protractors it measures angles, in astronomy to aim at a star or in surveying to read graduated scales.",
+  "l3": "The page dates the dioptra to the 3rd century BC and credits Hero of Alexandria with a book on its construction and use. It was used extensively for aqueducts; whether it was used for the Eupalinian tunnel on Samos (6th century BC, 1,036 m) is disputed. The theodolite replaced it in the 16th century.",
+  "ev": "Hero of Alexandria, On the Dioptra",
+  "src": [
+   "x28_dioptra_wp"
+  ],
+  "rec": [
+   [
+    "geometry",
+    "measurement",
+    "casting"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "surveying_exp28",
+   "surveying",
+   "astronomy"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Century only; Eupalinos tunnel use is speculative."
+  },
+  "artifactType": "surveying instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Dioptra — Hellenistic world; Hero of Alexandria wrote on its construction"
+  },
+  "historical": {
+   "region": "Hellenistic world; Hero of Alexandria wrote on its construction",
+   "firstKnownDate": "3rd century BC",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_dioptra_wp",
+     "supports": "3rd century BC; sighting tube with a sight at each end on a stand; protractors; Hero of Alexandria's book; aqueducts; Eupalinian tunnel use debated; replaced by the theodolite."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "bronze and wood object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_hydraulis",
+  "no": 2988,
+  "n": "Hydraulis Water Organ",
+  "era": "civilization",
+  "cat": "culture",
+  "date": "Ctesibius of Alexandria, 3rd century BC (page gives the century); Aquincum hydraulis dated AD 228",
+  "ds": -250,
+  "rar": "rare",
+  "vis": "water-pressure-pipes",
+  "l1": "An organ whose wind supply is steadied by water pressure under a bell.",
+  "l2": "Water pressure maintains the wind supply to the pipes, which stand in ranks on a windchest; a pipe sounds only when its rank is admitted and its key pressed. Hand pumps feed air into the bell under the water.",
+  "l3": "The page credits Ctesibius of Alexandria with inventing the organ in the 3rd century BC. A hydraulis dated AD 228 was found in pieces at Aquincum and excavated in 1931. It also dates Constantine V's 757 gift of a pipe organ to Pepin the Short and the first documented permanent organ installation, Halberstadt, in 1361.",
+  "ev": "Aquincum hydraulis (AD 228; excavated 1931)",
+  "src": [
+   "x28_organ_wp"
+  ],
+  "rec": [
+   [
+    "music",
+    "flute",
+    "casting"
+   ],
+   [
+    "music",
+    "flute",
+    "engineering"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_exp28",
+   "music",
+   "organ"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Century only; the page does not call the hydraulis pneumatic."
+  },
+  "artifactType": "musical instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Hydraulis Water Organ — Alexandria (Ctesibius); Aquincum (Roman Pannonia)"
+  },
+  "historical": {
+   "region": "Alexandria (Ctesibius); Aquincum (Roman Pannonia)",
+   "firstKnownDate": "3rd century BC",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_organ_wp",
+     "supports": "Ctesibius invented the organ in the 3rd century BC; hydraulis uses water pressure for wind supply; Aquincum hydraulis AD 228; windchest and ranks; 757 gift to Pepin."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia",
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_saqiya_wheel",
   "no": 2970,
   "n": "Saqiya Water Wheel",
@@ -621,6 +1116,255 @@
   },
   "regions": [
    "africa_asia"
+  ]
+ },
+ {
+  "id": "exp28_groma",
+  "no": 2989,
+  "n": "Roman Groma",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "Large-scale Roman centuriation from the 2nd century BC; origin possibly before the 4th century BC",
+  "ds": -150,
+  "rar": "uncommon",
+  "vis": "plumb-cross",
+  "l1": "A cross on a staff with plumb lines that lays out right angles and straight lines.",
+  "l2": "A horizontal cross turns on a vertical staff; a plumb bob hangs from each end and the centre marks the reference point. An assistant places a pole where the surveyor directs and the surveyor sights it along strings on opposite arms.",
+  "l3": "It made centuriation, a rectangular land grid, possible; large-scale Roman centuriation began in the 2nd century BC. It is the only Roman surveying tool with surviving examples: a 5 kg cross was found at Pompeii. Wind disturbs the plumb lines, and archaeologists estimate an error of about 1.5 per mille.",
+  "ev": "Pompeii groma cross; Schulten (1912) reconstruction; Schiöler (1994)",
+  "src": [
+   "x28_groma_wp"
+  ],
+  "rec": [
+   [
+    "geometry",
+    "cordage",
+    "mathematics"
+   ],
+   [
+    "geometry",
+    "wood",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "surveying_exp28",
+   "surveying",
+   "roman"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "Date is the Roman centuriation period; the page gives only a possible earlier origin."
+  },
+  "artifactType": "surveying instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Roman Groma — Roman world; possible origin Mesopotamia or Greece"
+  },
+  "historical": {
+   "region": "Roman world; possible origin Mesopotamia or Greece",
+   "firstKnownDate": "before the 4th century BC (possible origin)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_groma_wp",
+     "supports": "Horizontal cross on a staff with four plumb bobs; centuriation; 2nd century BC large-scale Roman use; Pompeii cross of 5 kg; error about 1.5 per mille."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "wood and iron object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_chorobates",
+  "no": 2990,
+  "n": "Chorobates",
+  "era": "civilization",
+  "cat": "technology",
+  "date": "Described by Vitruvius, De architectura, Book VIII (the page gives no date)",
+  "ds": -25,
+  "rar": "uncommon",
+  "vis": "levelling-bench",
+  "l1": "A 6-metre wooden bench with plumb lines and a water groove for levelling aqueducts.",
+  "l2": "A wooden beam about 6 m long on two legs has a plumb line at each end and two diagonal rods with notches. Matching notches on both sides show the beam is level. In wind, water poured into a groove along the top is used instead.",
+  "l3": "Vitruvius describes it in Book VIII of De architectura, with a length of 20 feet (5.92 m) according to Moreno Gallo. The page does not date Vitruvius, so the date here follows the late 1st century BC context, not the page; later engravings of 1547, 1582, 1673 and 1728 reinterpreted it.",
+  "ev": "Vitruvius, De architectura VIII",
+  "src": [
+   "x28_chorob_wp"
+  ],
+  "rec": [
+   [
+    "measurement",
+    "geometry",
+    "engineering"
+   ],
+   [
+    "measurement",
+    "geometry",
+    "stone"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "surveying_exp28",
+   "surveying",
+   "roman"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "Page does not date Vitruvius; ds is an approximation to the Augustan period, not stated on the page."
+  },
+  "artifactType": "levelling instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Chorobates — Roman world (aqueduct builders)"
+  },
+  "historical": {
+   "region": "Roman world (aqueduct builders)",
+   "firstKnownDate": "Vitruvian description (late 1st century BC)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_chorob_wp",
+     "supports": "Described by Vitruvius in Book VIII of De architectura; wooden beam about 6 m with plumb lines and a water groove; 20 feet per Moreno Gallo; Perrault 1673 reinterpretation."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
   ]
  },
  {
@@ -950,9 +1694,9 @@
     "automatic_ingestion": true
    },
    "escape-room": {
-    "candidate": false,
-    "decision": "contextual",
-    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -1118,6 +1862,256 @@
   },
   "regions": [
    "east_asia"
+  ],
+  "tradeImportance": "medium"
+ },
+ {
+  "id": "exp28_counterweight_trebuchet",
+  "no": 2991,
+  "n": "Counterweight Trebuchet",
+  "era": "science",
+  "cat": "technology",
+  "date": "Earliest description: al-Tarsusi's commentary, 1187; in use around the Mediterranean in the 12th century",
+  "ds": 1187,
+  "rar": "rare",
+  "vis": "swing-beam-box",
+  "l1": "A swinging beam with a heavy box on the short arm that whips a sling on the long arm.",
+  "l2": "A heavy box filled with stones, sand or lead on the short end of the beam is raised, storing potential energy. On release gravity drops it and rotates the beam; the long projectile end, four to six times longer, whips the sling around until the projectile is released.",
+  "l3": "The earliest known description and illustration is a commentary on Saladin's conquests by Mardi ibn Ali al-Tarsusi, dated 1187, and the engine was probably not new. The page says Mohists probably used a traction trebuchet as early as the 4th century BC, but gives no exact date for the counterweight type.",
+  "ev": "al-Tarsusi's commentary (1187)",
+  "src": [
+   "x28_trebuchet_wp"
+  ],
+  "rec": [
+   [
+    "lever",
+    "wood",
+    "mechanical_advantage"
+   ],
+   [
+    "lever",
+    "mechanical_advantage",
+    "engineering"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "siege_engines_exp28",
+   "siege",
+   "mechanism"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page says the counterweight type appeared in the 12th century; the 1187 text is the earliest description, not the first use."
+  },
+  "artifactType": "siege engine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Counterweight Trebuchet — Mediterranean (Christian and Muslim lands)"
+  },
+  "historical": {
+   "region": "Mediterranean (Christian and Muslim lands)",
+   "firstKnownDate": "12th century",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_trebuchet_wp",
+     "supports": "Earliest description al-Tarsusi 1187; counterweight type appeared in the 12th century around the Mediterranean; Mohist traction trebuchet probably 4th century BC; box of stones raises and drops."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "africa_asia"
+  ]
+ },
+ {
+  "id": "exp28_portolan_chart",
+  "no": 2998,
+  "n": "Portolan Chart",
+  "era": "science",
+  "cat": "knowledge",
+  "date": "Carta Pisana, dated 1280; Catalan Atlas, 1375",
+  "ds": 1280,
+  "rar": "rare",
+  "vis": "rhumb-line-vellum",
+  "l1": "An ink-on-vellum sea chart criss-crossed by compass lines that radiate from wind roses.",
+  "l2": "Networks of rhumb lines radiating from wind roses represent 16 compass directions, which became 32 from around 1450. The charts are manuscripts drawn in ink on vellum calf skin, mainly covering the Mediterranean and Black Sea coasts.",
+  "l3": "The earliest surviving chart on the page is the Carta Pisana, dated 1280. Abraham Cresques's Catalan Atlas of 1375 was the first to add compass roses at the centres of rhumb-line networks.",
+  "ev": "Carta Pisana (1280); Catalan Atlas (1375)",
+  "src": [
+   "x28_portolan_wp"
+  ],
+  "rec": [
+   [
+    "maps",
+    "navigation",
+    "exp26_parchment_sheet"
+   ],
+   [
+    "maps",
+    "navigation",
+    "exp26_writing_quill"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "navigation",
+   "cartography"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page dates the Carta Pisana 1280; earlier lost charts are not excluded."
+  },
+  "artifactType": "sea chart",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Portolan Chart — Mediterranean and Black Sea"
+  },
+  "historical": {
+   "region": "Mediterranean and Black Sea",
+   "firstKnownDate": "1280 (earliest surviving)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_portolan_wp",
+     "supports": "Carta Pisana 1280; rhumb lines 16 directions then 32 from about 1450; ink on vellum; Mediterranean and Black Sea; Catalan Atlas 1375 by Cresques."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
   ],
   "tradeImportance": "medium"
  },
@@ -1571,6 +2565,131 @@
     "automatic_ingestion": true
    },
    "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ],
+  "tradeImportance": "high"
+ },
+ {
+  "id": "exp28_plane_table",
+  "no": 2999,
+  "n": "Plane Table",
+  "era": "science",
+  "cat": "technology",
+  "date": "Earliest known mention: Abel Foullon, 1551; Zubler credits Eberhard in 1607",
+  "ds": 1551,
+  "rar": "uncommon",
+  "vis": "drawing-board-alidade",
+  "l1": "A levelled drawing board on a tripod where you sight and draw the map on the spot.",
+  "l2": "The table is set over a point and levelled; a drawing sheet is attached and an alidade is sighted on objects, with a line drawn toward each. The alidade can also be a level, distances come from measurement or stadia marks, and graphical methods let less educated people use it.",
+  "l3": "Abel Foullon's 1551 'holomètre' book is the earliest known mention and describes a developed instrument, so it is older. Cyprian Lucar gives the first English mention in 1590 and Zubler (1607) credits Philipp Eberhard. The page calls Praetorius's 1610 claim apparently incorrect; the name changed from 'plain table' to 'plane table' by 1830.",
+  "ev": "Foullon (1551); Zubler (1607)",
+  "src": [
+   "x28_planetable_wp"
+  ],
+  "rec": [
+   [
+    "maps",
+    "wood",
+    "exp26_sighted_measuring_staff"
+   ],
+   [
+    "geometry",
+    "measurement",
+    "exp26_sighted_measuring_staff"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "surveying_exp28",
+   "surveying",
+   "cartography"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Priority is unresolved: Foullon's 1551 mention, Eberhard's credit in 1607 and the doubtful Praetorius claim."
+  },
+  "artifactType": "surveying instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Plane Table — France (Abel Foullon, 1551); Switzerland (Leonhard Zubler, 1607)"
+  },
+  "historical": {
+   "region": "France (Abel Foullon, 1551); Switzerland (Leonhard Zubler, 1607)",
+   "firstKnownDate": "1551 (earliest mention)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_planetable_wp",
+     "supports": "Foullon 1551 earliest known mention; Lucar 1590; Zubler 1607 credits Eberhard; Praetorius 1610 doubtful; board, alidade, graphical sighting."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
     "candidate": false,
     "decision": "contextual",
     "reason": "family still too small for a fair 5-step room; no room is faked",
@@ -1615,8 +2734,131 @@
   },
   "regions": [
    "europe"
+  ]
+ },
+ {
+  "id": "exp28_chip_log",
+  "no": 2992,
+  "n": "Chip Log",
+  "era": "science",
+  "cat": "technology",
+  "date": "First printed description: William Bourne, A Regiment for the Sea, 1574",
+  "ds": 1574,
+  "rar": "uncommon",
+  "vis": "knotted-log-line",
+  "l1": "A wooden board on a knotted line thrown from the stern, with a sandglass to time the knots, gives a ship's speed.",
+  "l2": "The board acts as a drogue and stays roughly in place as the ship moves away; knots are tied at uniform intervals along the line, and the sailor counts those that run out in the time of a sandglass. Many ships spaced knots 8 fathoms (48 feet) apart and 28-second glasses were common.",
+  "l3": "Bourne's 1574 Regiment for the Sea is the first known printed description, and he also devised a half-minute sandglass. The page states that the word 'knot', for a nautical mile per hour, derives from this method.",
+  "ev": "Bourne, A Regiment for the Sea (1574)",
+  "src": [
+   "x28_chiplog_wp"
   ],
-  "tradeImportance": "high"
+  "rec": [
+   [
+    "rope",
+    "cordage",
+    "navigation"
+   ],
+   [
+    "rope",
+    "navigation",
+    "glass"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "navigation",
+   "maritime"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Earliest known printed description; earlier use is possible."
+  },
+  "artifactType": "speed-measuring device",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Chip Log — England (William Bourne)"
+  },
+  "historical": {
+   "region": "England (William Bourne)",
+   "firstKnownDate": "1574 (first printed description)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_chiplog_wp",
+     "supports": "Bourne's Regiment for the Sea 1574; board as drogue, knotted line, sandglass; 8 fathoms knot spacing, 28-second glass; origin of the word knot."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
  },
  {
   "id": "exp28_davis_quadrant",
@@ -1696,9 +2938,9 @@
     "automatic_ingestion": true
    },
    "escape-room": {
-    "candidate": false,
-    "decision": "contextual",
-    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -2410,6 +3652,130 @@
     {
      "source": "x28_lantern_wp",
      "supports": "Kircher 1645; Huygens's oldest document c. 1659; lamp, mirror, painted glass slide inserted upside down, lens; Langenheim photographic slides 1848."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-optics_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_gregorian_telescope",
+  "no": 2993,
+  "n": "Gregorian Reflecting Telescope",
+  "era": "science",
+  "cat": "technology",
+  "date": "Designed by James Gregory in Optica Promota, 1663; first built by Robert Hooke, 1673",
+  "ds": 1663,
+  "rar": "rare",
+  "vis": "paraboloid-and-ellipsoid",
+  "l1": "A reflecting telescope with a holed parabolic mirror and an elliptical secondary that gives an upright image.",
+  "l2": "The primary is a concave paraboloid with a central hole; the secondary is a concave ellipsoid. Light focuses in front of the secondary, reflects back through the hole in the primary and out to the eyepiece. The image is erect and the tube much shorter than the focal length.",
+  "l3": "Gregory described the design in Optica Promota in 1663, and Hooke built the first working instrument in 1673. It suits spotting scopes and solar telescopes, and amateurs can test the concave secondary with the Foucault test.",
+  "ev": "Gregory, Optica Promota (1663); Hooke's instrument (1673)",
+  "src": [
+   "x28_greg_wp"
+  ],
+  "rec": [
+   [
+    "optics",
+    "astronomy",
+    "metallurgy"
+   ],
+   [
+    "optics",
+    "astronomy",
+    "mathematics"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "optics_exp28",
+   "optics",
+   "astronomy"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Design date 1663; first working instrument 1673."
+  },
+  "artifactType": "telescope",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Gregorian Reflecting Telescope — Scotland (James Gregory); England (Robert Hooke)"
+  },
+  "historical": {
+   "region": "Scotland (James Gregory); England (Robert Hooke)",
+   "firstKnownDate": "1663",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_greg_wp",
+     "supports": "Gregory described the design in Optica Promota 1663; Hooke built the first working instrument 1673; paraboloid primary with hole, ellipsoid secondary; erect image."
     }
    ]
   },
@@ -3923,9 +5289,9 @@
     "automatic_ingestion": true
    },
    "escape-room": {
-    "candidate": false,
-    "decision": "contextual",
-    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -4524,6 +5890,130 @@
     {
      "source": "x28_mule_wp",
      "supports": "Crompton 1779 (range 1775–1779); Roberts self-acting mule patent 1825; carriage moves out and back; yarn wound into cops."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_six_thermometer",
+  "no": 3000,
+  "n": "Six's Maximum–Minimum Thermometer",
+  "era": "science",
+  "cat": "science",
+  "date": "James Six, 1780 (page gives 1780)",
+  "ds": 1780,
+  "rar": "uncommon",
+  "vis": "u-tube-indices",
+  "l1": "A U-shaped thermometer that leaves little steel markers at the day's highest and lowest temperatures.",
+  "l2": "Alcohol in one bulb expands and contracts with temperature and pushes or pulls mercury in the bend; the other bulb is a vacuum that lets the liquids move. Two small steel markers move only when the mercury pushes them, so they stay at the furthest points reached. A magnet resets them.",
+  "l3": "The page credits the British scientist James Six and gives 1780, not 1782. The mercury top shows the current temperature and the markers show the highest and lowest since the last reset, usually every 24 hours.",
+  "ev": "Six's thermometer (1780)",
+  "src": [
+   "x28_six_wp"
+  ],
+  "rec": [
+   [
+    "measurement",
+    "exp26_graduated_glass_tube",
+    "physics"
+   ],
+   [
+    "measurement",
+    "exp26_graduated_glass_tube",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "meteorology",
+   "measurement"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives 1780; the commonly quoted 1782 is not on the page."
+  },
+  "artifactType": "meteorological instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Six's Maximum–Minimum Thermometer — Britain (James Six)"
+  },
+  "historical": {
+   "region": "Britain (James Six)",
+   "firstKnownDate": "1780",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_six_wp",
+     "supports": "James Six 1780; U-shaped tube with mercury, alcohol bulb, vacuum bulb and two steel markers; records highest and lowest temperature; magnetic reset."
     }
    ]
   },
@@ -6207,6 +7697,130 @@
   ]
  },
  {
+  "id": "exp28_analytical_engine",
+  "no": 3001,
+  "n": "Babbage Analytical Engine",
+  "era": "computing",
+  "cat": "computing",
+  "date": "Design begun 1833; first described 1837; Lovelace's notes 1843",
+  "ds": 1837,
+  "rar": "rare",
+  "vis": "mill-and-store",
+  "l1": "A design for a mechanical computer with a 'mill' and a 'store' read from punched cards.",
+  "l2": "The design has a mill, the arithmetic unit, and a store holding 1,000 numbers of 40 digits each, with input on punched cards. The full engine was never built.",
+  "l3": "Babbage began work in 1833 and first described it in 1837; he lectured in Turin in 1840 and Menabrea published a French description in 1842. Ada Lovelace translated it in 1843 with notes including a program for Bernoulli numbers. Babbage died in 1871 with a small part assembled; his son Henry built part of the mill, which in 1910 computed a faulty list of multiples of pi.",
+  "ev": "Menabrea (1842), Lovelace's notes (1843); Henry Babbage's mill (1880–1910)",
+  "src": [
+   "x28_analytical_wp"
+  ],
+  "rec": [
+   [
+    "exp28_difference_engine",
+    "exp28_jacquard_card_chain",
+    "mathematics"
+   ],
+   [
+    "exp28_difference_engine",
+    "exp28_jacquard_card_chain",
+    "gear"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "computing_ancestor"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "A design only; the page says the full engine was never built."
+  },
+  "artifactType": "unbuilt computing design",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Babbage Analytical Engine — England (Charles Babbage, Ada Lovelace)"
+  },
+  "historical": {
+   "region": "England (Charles Babbage, Ada Lovelace)",
+   "firstKnownDate": "1837",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_analytical_wp",
+     "supports": "Design begun 1833, first described 1837; mill and store of 1,000 numbers of 40 digits; punched cards; Menabrea 1842; Lovelace 1843; Babbage died 1871; never built."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_stereoscope",
   "no": 2940,
   "n": "Stereoscope",
@@ -6952,6 +8566,130 @@
   ]
  },
  {
+  "id": "exp28_campbell_stokes_recorder",
+  "no": 2994,
+  "n": "Campbell–Stokes Sunshine Recorder",
+  "era": "industry",
+  "cat": "science",
+  "date": "J. F. Campbell, 1853; modified by G. G. Stokes, 1879",
+  "ds": 1853,
+  "rar": "uncommon",
+  "vis": "burning-sphere",
+  "l1": "A glass ball that burns a trace on a card wherever bright sunshine falls.",
+  "l2": "A crystal ball about 10 cm across focuses sunlight onto a card behind it, scorching a trace that shows how much bright sunshine fell that day. The card holder has three overlapping sets of grooves for the sun's altitude in different seasons.",
+  "l3": "Campbell invented it in 1853 and Stokes modified it in 1879. Each day's card is marked by hour with local noon in the centre, read in tenths; in the Northern Hemisphere it faces south and needs a clear view of the sun.",
+  "ev": "Campbell (1853), Stokes (1879)",
+  "src": [
+   "x28_campbell_wp"
+  ],
+  "rec": [
+   [
+    "optics",
+    "observation",
+    "physics"
+   ],
+   [
+    "optics",
+    "observation",
+    "wood"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "meteorology",
+   "optics"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives 1853 for Campbell and 1879 for Stokes's modification."
+  },
+  "artifactType": "meteorological instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Campbell–Stokes Sunshine Recorder — United Kingdom (John Francis Campbell, George Gabriel Stokes)"
+  },
+  "historical": {
+   "region": "United Kingdom (John Francis Campbell, George Gabriel Stokes)",
+   "firstKnownDate": "1853",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_campbell_wp",
+     "supports": "Campbell 1853; Stokes 1879; glass sphere about 10 cm focuses sunlight to burn a card; daily cards read in tenths."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_planimeter",
   "no": 2943,
   "n": "Amsler Polar Planimeter",
@@ -7153,9 +8891,9 @@
     "automatic_ingestion": true
    },
    "escape-room": {
-    "candidate": false,
-    "decision": "contextual",
-    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -7696,6 +9434,254 @@
   ]
  },
  {
+  "id": "exp28_welsbach_gas_mantle",
+  "no": 2995,
+  "n": "Welsbach Gas Mantle",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Patents 15 March 1887 and 5 March 1889; thoria–ceria mantle perfected 1891, commercial 1892",
+  "ds": 1892,
+  "rar": "uncommon",
+  "vis": "oxide-mesh",
+  "l1": "A fabric bag that burns away to leave a brittle oxide mesh glowing white in a gas flame.",
+  "l2": "The mantle is a fabric bag impregnated with metal salts; the first heating burns the fabric away, leaving a brittle oxide mesh. The oxides emit strongly in visible light but weakly in infrared, so most energy becomes visible light, and the mantle keeps the flame small and contained.",
+  "l3": "Welsbach's US patent of 15 March 1887 covered 'Actinophor', a magnesium–lanthanum–yttrium oxide mix that gave a greenish, unsuccessful light; his patent of 5 March 1889 first mentioned thorium. In 1891 he perfected 99% thoria and 1% ceria, introduced commercially in 1892. The page lists no patent from 1885.",
+  "ev": "US patents 359,524 (1887) and 399,174 (1889)",
+  "src": [
+   "x28_mantle_wp"
+  ],
+  "rec": [
+   [
+    "chemistry",
+    "cloth",
+    "fire"
+   ],
+   [
+    "chemistry",
+    "cloth",
+    "experiment"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "lighting_exp28",
+   "lighting",
+   "chemistry"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Commercial thoria–ceria mantle is 1892; earlier mixes failed commercially."
+  },
+  "artifactType": "lighting component",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Welsbach Gas Mantle — Austria (Carl Auer von Welsbach)"
+  },
+  "historical": {
+   "region": "Austria (Carl Auer von Welsbach)",
+   "firstKnownDate": "1887–1892",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_mantle_wp",
+     "supports": "US patent 15 Mar 1887 (Actinophor); patent 5 Mar 1889 mentions thorium; 1891 99% thoria 1% ceria; commercial 1892; fabric burns off leaving an oxide mesh."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_mirror_nephoscope",
+  "no": 2996,
+  "n": "Mirror Nephoscope",
+  "era": "industry",
+  "cat": "science",
+  "date": "Pomortsev's nephoscope, Russia, 1894; Besson's comb nephoscope, 1912",
+  "ds": 1894,
+  "rar": "uncommon",
+  "vis": "black-mirror-compass",
+  "l1": "A black mirror over a compass that lets you follow a cloud's reflection to find its direction and speed.",
+  "l2": "Level the mirror, turn it until the compass needle lies along the north–south line, then keep the cloud's image and a vertical pointer's tip aligned at the centre as the image moves outward. The radius it travels gives direction; the time between engraved circles gives relative speed.",
+  "l3": "A nephoscope measures cloud altitude, direction and velocity, unlike a nephometer, which measures cloud cover. The page dates Mikhail Pomortsev's Russian nephoscope to 1894 and Louis Besson's comb nephoscope to 1912; it gives no date for Fineman's mirror nephoscope. It calls the mirror type moderately accurate and not easy to use.",
+  "ev": "Pomortsev (1894); Besson (1912)",
+  "src": [
+   "x28_nepho_wp"
+  ],
+  "rec": [
+   [
+    "measurement",
+    "compass",
+    "physics"
+   ],
+   [
+    "compass",
+    "glass",
+    "observation"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "meteorology",
+   "observation"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "Date is Pomortsev's 1894 nephoscope; the page gives no date for Fineman's mirror type or the page's 1877 Finley claim."
+  },
+  "artifactType": "meteorological instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Mirror Nephoscope — Russia (Mikhail Pomortsev); Sweden (Carl Fineman, undated); France (Louis Besson)"
+  },
+  "historical": {
+   "region": "Russia (Mikhail Pomortsev); Sweden (Carl Fineman, undated); France (Louis Besson)",
+   "firstKnownDate": "1894",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_nepho_wp",
+     "supports": "Pomortsev 1894; Besson comb nephoscope 1912; Fineman mirror nephoscope undated; mirror over compass; direction from radius, speed from time between circles."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_cathode_ray_tube",
   "no": 2964,
   "n": "Braun Cathode-Ray Tube",
@@ -8064,5 +10050,129 @@
    "europe"
   ],
   "tradeImportance": "high"
+ },
+ {
+  "id": "exp28_differential_analyser",
+  "no": 2997,
+  "n": "Bush Differential Analyser",
+  "era": "computing",
+  "cat": "computing",
+  "date": "MIT machine built 1928–1931; named in Bush's October 1931 paper; theory from J. Thomson, 1876",
+  "ds": 1931,
+  "rar": "rare",
+  "vis": "integrator-shafts",
+  "l1": "A hall-sized machine of shafts and wheel-and-disc integrators that solves differential equations.",
+  "l2": "Mechanical integrators, wheel-and-disc mechanisms, perform integration; connecting them solves differential equations. An epicyclic differential adds or subtracts, gear ratios multiply and divide by whole numbers, and a multiplier table handles fractions.",
+  "l3": "James Thomson published the first description of a device that could integrate differential equations of any order in 1876, with two companion papers by Kelvin. Hazen and Bush built the MIT differential analyser with six integrators in 1928–1931; Bush's October 1931 paper in the Journal of the Franklin Institute named it.",
+  "ev": "Bush (1931), J. Franklin Institute",
+  "src": [
+   "x28_diffan_wp"
+  ],
+  "rec": [
+   [
+    "mathematics",
+    "gear",
+    "electric_motor"
+   ],
+   [
+    "mathematics",
+    "gear",
+    "measurement"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "computing_ancestor"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives the build as a range; it does not mention a harmonic analyser or a ball-and-disc design."
+  },
+  "artifactType": "analogue computer",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Bush Differential Analyser — Massachusetts, United States (Vannevar Bush, Harold Hazen)"
+  },
+  "historical": {
+   "region": "Massachusetts, United States (Vannevar Bush, Harold Hazen)",
+   "firstKnownDate": "1928–1931",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_diffan_wp",
+     "supports": "Thomson 1876; Hazen and Bush built the MIT machine 1928–1931 with six integrators; named in October 1931; wheel-and-disc integrators, epicyclic differential, multiplier table."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "americas"
+  ]
  }
 ]
