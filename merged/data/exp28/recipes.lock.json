@@ -1,0 +1,182 @@
+{
+ "exp28_camera_obscura": [
+  [
+   "shelter",
+   "awl",
+   "observation"
+  ],
+  [
+   "awl",
+   "observation",
+   "stone"
+  ]
+ ],
+ "exp28_clay_movable_type": [
+  [
+   "pottery",
+   "writing",
+   "kiln"
+  ],
+  [
+   "pottery",
+   "writing",
+   "casting"
+  ]
+ ],
+ "exp28_verge_escapement": [
+  [
+   "gear",
+   "lever",
+   "iron"
+  ],
+  [
+   "gear",
+   "lever",
+   "forging"
+  ]
+ ],
+ "exp28_hourglass": [
+  [
+   "glass",
+   "clock",
+   "wood"
+  ],
+  [
+   "glass",
+   "clock",
+   "lever"
+  ]
+ ],
+ "exp28_mariners_astrolabe": [
+  [
+   "casting",
+   "astronomy",
+   "navigation"
+  ],
+  [
+   "casting",
+   "navigation",
+   "measurement"
+  ]
+ ],
+ "exp28_napiers_bones": [
+  [
+   "mathematics",
+   "wood",
+   "number_system"
+  ],
+  [
+   "mathematics",
+   "number_system",
+   "measurement"
+  ]
+ ],
+ "exp28_gunters_chain": [
+  [
+   "iron",
+   "measurement",
+   "geometry"
+  ],
+  [
+   "iron",
+   "geometry",
+   "cordage"
+  ]
+ ],
+ "exp28_pascaline": [
+  [
+   "gear",
+   "mechanism",
+   "number_system"
+  ],
+  [
+   "gear",
+   "mechanism",
+   "copper"
+  ]
+ ],
+ "exp28_stepped_reckoner": [
+  [
+   "gear",
+   "mathematics",
+   "number_system"
+  ],
+  [
+   "gear",
+   "mathematics",
+   "iron"
+  ]
+ ],
+ "exp28_tuning_fork": [
+  [
+   "iron",
+   "physics",
+   "music"
+  ],
+  [
+   "iron",
+   "music",
+   "mathematics"
+  ]
+ ],
+ "exp28_hadley_octant": [
+  [
+   "glass",
+   "navigation",
+   "wood"
+  ],
+  [
+   "optics",
+   "navigation",
+   "wood"
+  ]
+ ],
+ "exp28_leyden_jar": [
+  [
+   "glass",
+   "iron",
+   "physics"
+  ],
+  [
+   "glass",
+   "iron",
+   "experiment"
+  ]
+ ],
+ "exp28_spinning_jenny": [
+  [
+   "plant_thread",
+   "wheel",
+   "mechanism"
+  ],
+  [
+   "plant_thread",
+   "wheel",
+   "weaving_shuttle"
+  ]
+ ],
+ "exp28_water_frame": [
+  [
+   "plant_thread",
+   "water_power",
+   "gear"
+  ],
+  [
+   "plant_thread",
+   "water_power",
+   "iron"
+  ]
+ ],
+ "exp28_wimshurst_machine": [
+  [
+   "electricity",
+   "glass",
+   "wheel"
+  ],
+  [
+   "electricity",
+   "glass",
+   "copper"
+  ]
+ ]
+}

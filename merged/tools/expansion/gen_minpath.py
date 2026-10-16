@@ -56,7 +56,7 @@ def reachable(g, direction, s, depth):
     return seen
 
 
-PREFIXES = ("exp26_", "anc27_")
+PREFIXES = ("exp26_", "anc27_", "exp28_")  # exp28 items join the atlas; their missions come once the pool is large enough
 # (mission-id suffix, item-id prefix, rng seed): exp26 missions keep their original seed/suffix so existing ids stay stable
 POOLS = (("x", "exp26_", 26), ("y", "anc27_", 27))
 

@@ -26,8 +26,8 @@ describe('recipe data', () => {
       progress = false;
       for (const n of db.nodes) {
         if (e.has(n.id) || !e.isRecipeUnlocked(n.id)) continue;
-        const r = n.rec.find(([a, b]) => e.has(a) && e.has(b));
-        if (r && e.combine(r[0], r[1]).status === 'new') progress = true;
+        const r = n.rec.find(rr => rr.every(i => e.has(i)));
+        if (r && e.combineMany(r).status === 'new') progress = true;
       }
     }
     expect(e.found.size).toBe(db.nodes.length);

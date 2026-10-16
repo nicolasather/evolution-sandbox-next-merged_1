@@ -12,6 +12,9 @@ nodes = [x for x in json.load(open(os.path.join(ROOT, 'data/nodes/g11.json')))]
 _g12 = os.path.join(ROOT, 'data/nodes/g12.json')
 if os.path.exists(_g12):
     nodes += [x for x in json.load(open(_g12)) if x.get('modeMeta', {}).get('escape-room', {}).get('candidate')]
+_g13 = os.path.join(ROOT, 'data/nodes/g13.json')
+if os.path.exists(_g13):  # exp28: only items whose installer decision says their family can fill a fair room
+    nodes += [x for x in json.load(open(_g13)) if x.get('modeMeta', {}).get('escape-room', {}).get('candidate')]
 topics = collections.OrderedDict()
 for x in sorted(nodes, key=lambda x: x['no']): topics.setdefault(x['tags'][1], []).append(x)
 
