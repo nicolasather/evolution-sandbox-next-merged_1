@@ -3122,6 +3122,130 @@
   ]
  },
  {
+  "id": "exp28_fire_arrow",
+  "no": 3063,
+  "n": "Song Fire Arrow",
+  "era": "science",
+  "cat": "technology",
+  "date": "Yue Yifang and Feng Jisheng 969; History of Song credits Tang Fu 1000; 350,000 fire arrows produced 1083",
+  "ds": 969,
+  "rar": "rare",
+  "vis": "arrow-powder-pouch",
+  "l1": "An arrow with a gunpowder pouch that burns, and in later rocket form flies by its own blast.",
+  "l2": "A pouch of gunpowder was bound to the shaft, sealed with pine resin and fused, then shot from a bow or crossbow. Gunpowder carries its own oxygen, so its flames were harder to put out than earlier incendiaries.",
+  "l3": "Gunpowder rocket arrows were invented in 969 by Yue Yifang and Feng Jisheng (the page spells the first name this way); the History of Song also credits Tang Fu in 1000. Joseph Needham argues rockets could not exist before the 12th century and Stephen Haw sees only slight evidence before 1200. Fun fact: Song records say the court produced 350,000 fire arrows in 1083. (not known: whether the 969 arrows were propelled rockets; the page does not mention a 1232 Kaifeng use or a 'gunpowder tube'.)",
+  "ev": "History of Song (969; 1000; 1083)",
+  "src": [
+   "x28_firearrow_wp"
+  ],
+  "rec": [
+   [
+    "gunpowder",
+    "bow",
+    "exp28_crossbow"
+   ],
+   [
+    "gunpowder",
+    "bow",
+    "paper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "gunpowder_exp28",
+   "gunpowder",
+   "weapon"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Dating of true rockets is disputed (Needham, Haw)."
+  },
+  "artifactType": "incendiary arrow",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Song Fire Arrow — Song China"
+  },
+  "historical": {
+   "region": "Song China",
+   "firstKnownDate": "969",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_firearrow_wp",
+     "supports": "Rocket arrows invented 969 by Yue Yifang and Feng Jisheng; History of Song credits Tang Fu 1000; Needham 12th century; Haw before 1200; pouch sealed with pine resin; 350,000 fire arrows 1083."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia"
+  ]
+ },
+ {
   "id": "exp28_water_stamp_mill",
   "no": 3003,
   "n": "Water-Powered Stamp Mill",
@@ -3869,6 +3993,131 @@
   },
   "regions": [
    "europe"
+  ]
+ },
+ {
+  "id": "exp28_post_windmill",
+  "no": 3064,
+  "n": "Post Windmill",
+  "era": "science",
+  "cat": "technology",
+  "date": "Persian panemone c. 700–900 AD; Weedley, Yorkshire 1185; tower mill late 13th century; Dutch drainage mills early 15th century",
+  "ds": 1185,
+  "rar": "uncommon",
+  "vis": "pivoting-body-sails",
+  "l1": "A wooden mill body that turns whole on a central post to face the wind.",
+  "l2": "The page lists the buck and post holding the machinery, trestle and roundhouse supporting a post mill, a windshaft and brake wheel carrying power from the sails, and a wallower, great spur wheel and stone nuts turning the millstones.",
+  "l3": "The earliest certain northern European reference is at Weedley, Yorkshire, in 1185. The post mill was the earliest European type; tower mills (late 13th century) turn only the cap, and smock mills are 17th century. Persian panemones (c. 700–900) had horizontal sails on a vertical shaft. Fun fact: in the Netherlands sails stopped in a '+' meant the mill was open, an 'X' closed. (not known: who built the first post mill; the page does not mention Normandy.)",
+  "ev": "Weedley reference (1185)",
+  "src": [
+   "x28_windmill_wp"
+  ],
+  "rec": [
+   [
+    "wood",
+    "axle",
+    "cloth"
+   ],
+   [
+    "wood",
+    "axle",
+    "engineering"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "mills_exp28",
+   "mill",
+   "wind"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "ds is the first certain northern European reference (1185); the Persian design was horizontal, not vertical."
+  },
+  "artifactType": "windmill",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Post Windmill — Northwestern Europe (northern France, eastern England, Flanders); Persia earlier"
+  },
+  "historical": {
+   "region": "Northwestern Europe (northern France, eastern England, Flanders); Persia earlier",
+   "firstKnownDate": "c. 700–900 (Persian panemone)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_windmill_wp",
+     "supports": "Persian panemone c. 700-900; Weedley Yorkshire 1185 earliest certain northern European reference; post mill earliest European type; tower mill late 13th century; smock mill 17th century; sails + and X signals."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "africa_asia"
   ]
  },
  {
@@ -9207,6 +9456,130 @@
   ]
  },
  {
+  "id": "exp28_cullen_refrigerating_machine",
+  "no": 3078,
+  "n": "Cullen Refrigerating Machine",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Cullen 1755; Franklin and Hadley 1758; Evans 1805; Perkins 1834; Gorrie 1842; Harrison 1851; Carré 1859 (patent 1860)",
+  "ds": 1755,
+  "rar": "rare",
+  "vis": "flask-ether-pump",
+  "l1": "A pump that boils ether in a vacuum so it draws heat out and makes ice.",
+  "l2": "A pump makes a partial vacuum over diethyl ether, which boils and absorbs heat; Evans (1805) described a closed vapour-compression cycle and Perkins (1834) built the first working one.",
+  "l3": "William Cullen built a small refrigerating machine in 1755 (the page gives 1755, not 1748); in 1758 Franklin and Hadley cooled a thermometer bulb below freezing by evaporation. Gorrie built an ice-making prototype in 1842, and Ferdinand Carré's ammonia absorption system (1859) was patented in 1860. Fun fact: the Dunedin's 15 February 1882 voyage is considered the first commercially successful refrigerated shipment. (not known: James Harrison's 1851 machine's design, which the page names only as the 1851 ice machine.)",
+  "ev": "Cullen's machine (1755); Perkins's system (1834)",
+  "src": [
+   "x28_fridge_wp"
+  ],
+  "rec": [
+   [
+    "glass",
+    "physics",
+    "exp26_graduated_glass_tube"
+   ],
+   [
+    "glass",
+    "physics",
+    "exp28_torricelli_barometer"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "cooling_exp28",
+   "cooling",
+   "chemistry"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not give 1851 for Gorrie; it says Harrison built the 1851 ice machine."
+  },
+  "artifactType": "cooling apparatus",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Cullen Refrigerating Machine — Scotland (Cullen); England, United States"
+  },
+  "historical": {
+   "region": "Scotland (Cullen); England, United States",
+   "firstKnownDate": "1755",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_fridge_wp",
+     "supports": "Cullen 1755 ether partial vacuum; Franklin and Hadley 1758; Evans 1805; Perkins 1834; Gorrie 1842; Carre 1859 patent 1860; Dunedin 15 February 1882; GE 1911; Monitor Top 1927."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_electrophorus",
   "no": 3015,
   "n": "Electrophorus",
@@ -9952,6 +10325,130 @@
   ]
  },
  {
+  "id": "exp28_grooved_rolling_mill",
+  "no": 3065,
+  "n": "Cort's Grooved Rolling Mill",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Slitting mills introduced to England 1590; Cort's patent for grooved rolls 1783; steam engine coupled 1786",
+  "ds": 1783,
+  "rar": "rare",
+  "vis": "roll-pair-stand",
+  "l1": "Two grooved iron rollers that squeeze hot iron into bars and plates.",
+  "l2": "Hot rolling is done above the recrystallisation temperature, with tolerances of about 2 to 5%; cold rolling at room temperature strain-hardens the metal up to about 20% and improves finish.",
+  "l3": "Slitting mills, the earliest rolling mills, came to England from what is now Belgium in 1590; Henry Cort patented grooved rolls for iron bars in 1783, reportedly giving 15 times the output of a hammer, and is called the 'father of modern rolling'. A steam engine was first coupled directly to a mill at John Wilkinson's Bradley Works in 1786. Fun fact: aluminium foil's two surface finishes come from pack rolling. (not known: the Leonardo rolling-mill sketch some sources cite; the page does not mention it.)",
+  "ev": "Cort's patent (1783)",
+  "src": [
+   "x28_rolling_wp"
+  ],
+  "rec": [
+   [
+    "iron",
+    "steam_engine",
+    "machine_tools"
+   ],
+   [
+    "iron",
+    "steam_engine",
+    "gear"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "metals_exp28",
+   "iron",
+   "rolling"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not mention Leonardo or call slitting mills Dutch."
+  },
+  "artifactType": "metal rolling machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Cort's Grooved Rolling Mill — England (Hampshire, Pontypool, Bradley Works)"
+  },
+  "historical": {
+   "region": "England (Hampshire, Pontypool, Bradley Works)",
+   "firstKnownDate": "1590 (slitting mills)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_rolling_wp",
+     "supports": "Slitting mills 1590; Cort grooved rolls patent 1783, output 15 times a hammer; steam coupled 1786 Bradley Works; hot and cold rolling; aluminium foil pack rolling."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_hair_hygrometer",
   "no": 2956,
   "n": "Saussure Hair Hygrometer",
@@ -10127,6 +10624,255 @@
     {
      "source": "x28_balloon_wp",
      "supports": "Montgolfier first public demonstration 4 June 1783 (page also says 19 September 1783); tethered ascent c. 15 October 1783 to 26 m; free manned flight 21 November 1783; kongming lantern 220-280 CE; Louis XVI decree."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_paddle_steamer",
+  "no": 3066,
+  "n": "Paddle Steamer",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Pyroscaphe 1783; Charlotte Dundas 1802; Clermont 1807; PS Comet 1812; Savannah 1819; Sirius 1838",
+  "ds": 1783,
+  "rar": "rare",
+  "vis": "paddlebox-wheel-funnel",
+  "l1": "A steamboat driven by big side wheels with paddle blades.",
+  "l2": "About the bottom quarter of the wheel sits in the water; feathering linkages keep each blade nearly vertical while immersed, and a paddlebox reduces splashing.",
+  "l3": "Claude de Jouffroy's Pyroscaphe steamed up the Saône for 15 minutes in 1783 before its engine failed; Symington's Charlotte Dundas (1802) hauled two 70-ton barges nearly 20 mi in 6 hours; Fulton's Clermont entered commercial service in 1807; Henry Bell's PS Comet began Europe's first scheduled passenger service on the Clyde in 1812. Fun fact: Brunel's Great Eastern, at 692 ft and over 32,000 tons, was the largest paddle steamer ever built, and the Waverley is the last seagoing one. (not known: what happened to the Pyroscaphe after 1783.)",
+  "ev": "Pyroscaphe (1783); Comet (1812)",
+  "src": [
+   "x28_paddle_wp"
+  ],
+  "rec": [
+   [
+    "steam_engine",
+    "boat",
+    "iron"
+   ],
+   [
+    "steam_engine",
+    "boat",
+    "engineering"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "ships_exp28",
+   "ships",
+   "steam"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives only years for each early vessel."
+  },
+  "artifactType": "steamboat",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Paddle Steamer — France (Saône); Scotland (Clyde); United States (Hudson)"
+  },
+  "historical": {
+   "region": "France (Saône); Scotland (Clyde); United States (Hudson)",
+   "firstKnownDate": "1783",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_paddle_wp",
+     "supports": "Pyroscaphe 1783 15 minutes; Charlotte Dundas 1802; Clermont 1807; Comet 1812; Savannah 1819; Sirius 1838; feathering floats; Great Eastern 692 ft; Waverley last seagoing."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
+  "id": "exp28_puddling_furnace",
+  "no": 3067,
+  "n": "Puddling Furnace",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Peter Onions at Dowlais 1783 (patent 1370); Henry Cort at Fontley, patent 1784",
+  "ds": 1783,
+  "rar": "rare",
+  "vis": "reverberatory-hearth-rake",
+  "l1": "A coal-fired reverberatory furnace where a worker stirs molten iron until it becomes tough wrought iron.",
+  "l2": "Stirring the molten iron in an oxidising atmosphere burns off its carbon; when the iron reached a pasty state it was gathered into a puddled ball, shingled and rolled.",
+  "l3": "Peter Onions built a larger reverberatory furnace at Dowlais in 1783 and was granted patent 1370; Henry Cort improved it at Fontley with chimney dampers and patented the process in 1784. As patented it worked only on white cast iron, and Richard Crawshay at Cyfarthfa later modified it. Fun fact: puddled iron went into the Eiffel Tower and the Statue of Liberty's frame, and most puddlers died in their thirties. (not known: how a puddler judged when the balls had 'come to nature', which the page says could not be automated.)",
+  "ev": "Onions' patent 1370 (1783); Cort's patent (1784)",
+  "src": [
+   "x28_puddling_wp"
+  ],
+  "rec": [
+   [
+    "iron",
+    "coal",
+    "exp28_coke_blast_furnace"
+   ],
+   [
+    "iron",
+    "coal",
+    "smelting"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "metals_exp28",
+   "iron",
+   "furnace"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page credits both Onions (1783) and Cort (1783–84)."
+  },
+  "artifactType": "ironmaking furnace",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Puddling Furnace — England and Wales (Dowlais, Fontley, Cyfarthfa)"
+  },
+  "historical": {
+   "region": "England and Wales (Dowlais, Fontley, Cyfarthfa)",
+   "firstKnownDate": "1783",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_puddling_wp",
+     "supports": "Onions 1783 Dowlais patent 1370; Cort Fontley patent 1784; reverberatory furnace; puddled ball shingled and rolled; wet puddling Joseph Hall yields; Eiffel Tower and Statue of Liberty."
     }
    ]
   },
@@ -11569,6 +12315,131 @@
   ]
  },
  {
+  "id": "exp28_tin_can",
+  "no": 3068,
+  "n": "Tin Can (Durand's Preserving Can)",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Appert's glass-jar method 1809; Peter Durand patent 1810; sold to Donkin and Hall 1811; first American cannery 1812",
+  "ds": 1810,
+  "rar": "uncommon",
+  "vis": "sealed-cylinder",
+  "l1": "A sealed tin cylinder in which cooked food keeps for years.",
+  "l2": "Appert observed that food cooked in a jar did not spoil unless the seals leaked and sealed food in glass jars; Max Ams invented the double seam in 1888.",
+  "l3": "In 1810 Appert was awarded the French government's 12,000-franc prize for preserving food for the armies; the same year Peter Durand patented the tin can process, based on Philippe de Girard's idea, and sold the patent in 1811 to Bryan Donkin and John Hall. Robert Ayars set up the first American cannery in New York in 1812. Fun fact: in 1974 canned food from the 1865 wreck of the steamboat Bertrand was found still safe to eat after 109 years. (not known: the date of the can opener; the page says only 'another thirty years' after 1810, not 1855.)",
+  "ev": "Durand's patent (1810)",
+  "src": [
+   "x28_canning_wp"
+  ],
+  "rec": [
+   [
+    "iron",
+    "fire",
+    "machine_tools"
+   ],
+   [
+    "iron",
+    "fire",
+    "exp26_lead_came_window"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "food_exp28",
+   "food",
+   "preservation"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives no exact date for the prize offer and does not link 1812 to Donkin and Hall."
+  },
+  "artifactType": "food container",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Tin Can (Durand's Preserving Can) — France (Appert, Girard); England (Durand, Donkin and Hall); New York (Ayars)"
+  },
+  "historical": {
+   "region": "France (Appert, Girard); England (Durand, Donkin and Hall); New York (Ayars)",
+   "firstKnownDate": "1809",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_canning_wp",
+     "supports": "Appert 1809 glass jars; 12,000-franc prize 1810; Durand tin can patent 1810 from Girard's idea; sold 1811 to Donkin and Hall; Ayars first American cannery 1812; double seam 1888; Bertrand cans eaten 1974."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
   "id": "exp28_davy_safety_lamp",
   "no": 2958,
   "n": "Davy Safety Lamp",
@@ -12641,6 +13512,130 @@
     "candidate": true,
     "decision": "playable",
     "reason": "room x-optics_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_friction_match",
+  "no": 3069,
+  "n": "Walker's Friction Match",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Sulphur splints 577; Chancel 1805; Walker first recorded sale 7 April 1827; Sauria white phosphorus 1830/1831; Lundström 1855",
+  "ds": 1827,
+  "rar": "uncommon",
+  "vis": "splint-head-striker",
+  "l1": "A wooden splint whose chemical head lights when it is scraped.",
+  "l2": "Chancel's 1805 self-igniting match head held potassium chlorate, sulfur, gum arabic and sugar, lit by dipping in sulfuric acid; it was too expensive and dangerous for common use.",
+  "l3": "John Walker may have made his discovery in 1826; his first recorded sale on credit was 7 April 1827, and he stopped making his formula by 1830. Charles Sauria used white phosphorus in 1830 or January 1831; Richard Bell opened the first match factory in London in 1832; the Lundström brothers' red-phosphorus matches date to 1855. Fun fact: the 1888 London matchgirls strike focused on the harm from white phosphorus, and US Congress barred its matches from interstate shipment in 1910. (not known: Walker's own name for his product; the page says he never called them matches.)",
+  "ev": "Walker's first recorded sale (7 April 1827)",
+  "src": [
+   "x28_match_wp"
+  ],
+  "rec": [
+   [
+    "fire",
+    "chemistry",
+    "gunpowder"
+   ],
+   [
+    "fire",
+    "chemistry",
+    "paper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "fire_exp28",
+   "fire",
+   "chemistry"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Sauria's date varies by source (1830 or January 1831)."
+  },
+  "artifactType": "fire starter",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Walker's Friction Match — England (Walker); France (Chancel, Sauria); Sweden (Lundström)"
+  },
+  "historical": {
+   "region": "England (Walker); France (Chancel, Sauria); Sweden (Lundström)",
+   "firstKnownDate": "577 (sulphur splints)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_match_wp",
+     "supports": "Sulphur splints 577; Chancel 1805; Walker first sale 7 April 1827; Sauria 1830/1831; Bell factory 1832; Lundstrom 1855; matchgirls strike 1888; white phosphorus ban 1910."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -14307,6 +15302,131 @@
   "tradeImportance": "high"
  },
  {
+  "id": "exp28_cayley_glider",
+  "no": 3070,
+  "n": "Cayley Glider",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Eilmer of Malmesbury c. 1000–1010; Hezârfen Çelebi c. 1630–1632; Cayley c. 1849; Maloney 1905",
+  "ds": 1849,
+  "rar": "rare",
+  "vis": "fixed-wing-pilot",
+  "l1": "A fixed-wing frame with no engine that a pilot glides on.",
+  "l2": "George Cayley's gliders achieved brief wing-borne hops around 1849; in 1905 Daniel Maloney showed controlled flight with a balloon-launched glider released from 4,000 feet.",
+  "l3": "Eilmer of Malmesbury reportedly glided about 200 metres c. 1000–1010 (recorded by William of Malmesbury); Hezârfen Ahmed Çelebi is alleged to have flown across the Bosphorus c. 1630–1632. Fun fact: Eilmer and Ibn Firnas both reportedly blamed their crashes on lacking a tail; POWs built the 'Colditz Cock' glider in 1944. (not known: exact dates of Lilienthal's flights; the page says only he made over 2,000, and has no date for Cayley's 1799 concept or the Wright gliders of 1900–1902.)",
+  "ev": "Cayley's gliders (c. 1849)",
+  "src": [
+   "x28_glider_wp"
+  ],
+  "rec": [
+   [
+    "wood",
+    "cloth",
+    "geometry"
+   ],
+   [
+    "wood",
+    "cloth",
+    "exp28_dandy_horse"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "flight_exp28",
+   "flight",
+   "glider"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "Early flights are legendary or alleged; the page gives c. 1849 for Cayley."
+  },
+  "artifactType": "unpowered aircraft",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Cayley Glider — England (Cayley); Malmesbury; Istanbul"
+  },
+  "historical": {
+   "region": "England (Cayley); Malmesbury; Istanbul",
+   "firstKnownDate": "c. 1000–1010 (Eilmer, reported)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_glider_wp",
+     "supports": "Eilmer c. 1000-1010 glided 200 m; Hezarfen c. 1630-1632 alleged; Cayley c. 1849 hops; Maloney 1905 from 4,000 feet; Colditz Cock 1944; lacking a tail."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "africa_asia"
+  ]
+ },
+ {
   "id": "exp28_hunt_safety_pin",
   "no": 3055,
   "n": "Hunt's Safety Pin",
@@ -14552,6 +15672,131 @@
    }
   },
   "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_otis_safety_elevator",
+  "no": 3071,
+  "n": "Otis Safety Elevator",
+  "era": "industry",
+  "cat": "engineering",
+  "date": "Archimedes 236 BC (probably); Colosseum 80 AD; flying chair 1743; Otis safety elevator 1852, demonstrated 1854; first passenger elevator 23 March 1857",
+  "ds": 1852,
+  "rar": "rare",
+  "vis": "car-rope-pawls",
+  "l1": "A hoist cage with toothed rails and spring catches that stop it falling if the rope breaks.",
+  "l2": "Elisha Otis introduced the safety elevator in 1852 and demonstrated it at the New York Crystal Palace in 1854.",
+  "l3": "Vitruvius's writings are the earliest known reference to an elevator and say Archimedes probably built one in 236 BC; the Colosseum (80 AD) had about 25 elevators raising animals; Louis XV had a 'flying chair' built in 1743. The first passenger elevator was installed at 488 Broadway on 23 March 1857. Fun fact: in 1894 a Chicago physician documented 'elevator sickness'. (not known: how Archimedes's elevator worked; the page gives no details.)",
+  "ev": "Crystal Palace demonstration (1854); 488 Broadway (23 March 1857)",
+  "src": [
+   "x28_elevator_wp"
+  ],
+  "rec": [
+   [
+    "pulley",
+    "iron",
+    "steam_engine"
+   ],
+   [
+    "pulley",
+    "iron",
+    "engineering"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "vertical_transport_exp28",
+   "lift",
+   "safety"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives 1852 for the safety elevator, not 1853."
+  },
+  "artifactType": "passenger lift",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Otis Safety Elevator — United States (New York); France (Versailles); Rome"
+  },
+  "historical": {
+   "region": "United States (New York); France (Versailles); Rome",
+   "firstKnownDate": "236 BC (probable, Archimedes)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_elevator_wp",
+     "supports": "Archimedes 236 BC probable per Vitruvius; Colosseum 80 AD about 25 elevators; flying chair 1743; Otis safety elevator 1852, Crystal Palace 1854; 488 Broadway 23 March 1857; elevator sickness 1894."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "americas",
    "europe"
   ]
  },
@@ -14929,6 +16174,131 @@
   ]
  },
  {
+  "id": "exp28_ironclad_warship",
+  "no": 3072,
+  "n": "Ironclad Warship",
+  "era": "industry",
+  "cat": "engineering",
+  "date": "French batteries at Kinburn 1855; Gloire launched November 1859; HMS Warrior 1860; Monitor v Virginia 9 March 1862",
+  "ds": 1859,
+  "rar": "rare",
+  "vis": "armoured-casemate-hull",
+  "l1": "A steam warship whose wooden sides are covered in thick iron plates.",
+  "l2": "Gloire had 4.5 in (114 mm) iron plates and a top speed of 13 knots, with thirty-six 6.4 in rifled guns; HMS Warrior carried the same 4.5 in plate backed by 15 in of teak and steamed at 14.3 knots.",
+  "l3": "Three French ironclad batteries (Lave, Tonnante and Dévastation) fought at Kinburn in 1855, reaching only about 4 knots. The Monitor and Virginia fought on 9 March 1862 and showed wooden warships were obsolete. Krupp developed gas cementing in 1894. Fun fact: CSS Manassas became the first ironclad in combat on 12 October 1861, and Spain's Numancia was the first to circumnavigate the world, arriving in Cádiz on 20 September 1867. (not known: Warrior's exact launch date; the page gives only 1860.)",
+  "ev": "Gloire (1859); Hampton Roads (9 March 1862)",
+  "src": [
+   "x28_ironclad_wp"
+  ],
+  "rec": [
+   [
+    "iron",
+    "steam_engine",
+    "wood"
+   ],
+   [
+    "iron",
+    "steam_engine",
+    "exp28_screw_propeller"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "naval_exp28",
+   "naval",
+   "armour"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives only the year 1860 for HMS Warrior."
+  },
+  "artifactType": "warship",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Ironclad Warship — France; Britain; United States"
+  },
+  "historical": {
+   "region": "France; Britain; United States",
+   "firstKnownDate": "1855 (floating batteries)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_ironclad_wp",
+     "supports": "Gloire November 1859 4.5 in plate 13 knots; Warrior 1860 teak backing 14.3 knots; Hampton Roads 9 March 1862; Kinburn 1855 batteries; Krupp 1894; Manassas 12 October 1861; Numancia 20 September 1867."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
   "id": "exp28_marshallese_stick_chart",
   "no": 2982,
   "n": "Marshallese Stick Chart",
@@ -15104,6 +16474,130 @@
     {
      "source": "x28_stevenson_wp",
      "supports": "Thomas Stevenson reported a thermometer box in 1864; double-louvred wooden box, no floor, white paint; WMO height 1.25–2 m; houses thermometers, hygrometers, barometers."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_whitehead_torpedo",
+  "no": 3073,
+  "n": "Whitehead Torpedo",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Fulton's attacks April 1804 and 20 July 1807; Whitehead presented 21 December 1866; first sinking 16 January 1878",
+  "ds": 1866,
+  "rar": "rare",
+  "vis": "tube-prop-fins",
+  "l1": "A self-propelled underwater missile driven by compressed air.",
+  "l2": "Whitehead's tubular, self-propelled torpedo was powered by compressed air and officially presented to the Austrian Imperial Naval commission on 21 December 1866.",
+  "l3": "Robert Fulton's torpedo attacks on French ships at Boulogne in April 1804 did no significant damage; on 20 July 1807 he destroyed a vessel in New York Harbor as a demonstration. Russian torpedo boats under Stepan Makarov sank the Turkish steamer Intibah on 16 January 1878. Whitehead bought Ludwig Obry's gyroscope rights in 1888 and a better design in 1890. Fun fact: on 23 April 1891 the Chilean ironclad Blanco Encalada became the first ironclad sunk by a self-propelled torpedo. (not known: the 1895 gyroscope date; the page does not give it.)",
+  "ev": "Presentation to the naval commission (21 Dec 1866)",
+  "src": [
+   "x28_torpedo_wp"
+  ],
+  "rec": [
+   [
+    "steel",
+    "iron",
+    "exp28_screw_propeller"
+   ],
+   [
+    "steel",
+    "exp28_screw_propeller",
+    "gunpowder"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "naval_exp28",
+   "naval",
+   "weapon"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The attacker at Intibah was Russian, not Turkish."
+  },
+  "artifactType": "naval weapon",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Whitehead Torpedo — Austria (Fiume, Whitehead); Russia; Chile"
+  },
+  "historical": {
+   "region": "Austria (Fiume, Whitehead); Russia; Chile",
+   "firstKnownDate": "1804 (Fulton)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_torpedo_wp",
+     "supports": "Fulton April 1804 and 20 July 1807; Whitehead presented 21 December 1866 compressed air; Obry gyroscope 1888 and 1890; Intibah sunk 16 January 1878; Blanco Encalada 23 April 1891."
     }
    ]
   },
@@ -16668,6 +18162,130 @@
   ]
  },
  {
+  "id": "exp28_crookes_tube_xray",
+  "no": 3074,
+  "n": "Crookes Tube (X-ray Source)",
+  "era": "electric",
+  "cat": "science",
+  "date": "Röntgen discovered X-rays 8 November 1895; first paper submitted 28 December 1895",
+  "ds": 1895,
+  "rar": "rare",
+  "vis": "evacuated-glass-electrodes",
+  "l1": "An evacuated glass tube whose electron beam makes invisible X-rays when it hits the glass or anode.",
+  "l2": "Crookes tubes ionised residual air using a high DC voltage, from a few kilovolts to 100 kV; the accelerated electrons made X-rays on striking the anode or the glass wall.",
+  "l3": "Wilhelm Röntgen discovered X-rays on 8 November 1895 while experimenting with Lenard and Crookes tubes and submitted his first paper on 28 December 1895. Fun fact: he noticed a glow from a screen about 1 metre away while the tube was wrapped in black cardboard, and named the rays 'X' for unknown. (not known: the date of the radiograph of his wife's hand and the year of his Nobel Prize; the page gives neither.)",
+  "ev": "Röntgen's discovery (8 Nov 1895)",
+  "src": [
+   "x28_xray_wp"
+  ],
+  "rec": [
+   [
+    "glass",
+    "exp26_drawn_glass_tube",
+    "physics"
+   ],
+   [
+    "glass",
+    "electricity",
+    "exp28_voltaic_pile"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "radiation_exp28",
+   "radiation",
+   "physics"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not date the first radiograph of Röntgen's wife's hand."
+  },
+  "artifactType": "vacuum discharge tube",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Crookes Tube (X-ray Source) — Germany (Würzburg)"
+  },
+  "historical": {
+   "region": "Germany (Würzburg)",
+   "firstKnownDate": "1895",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_xray_wp",
+     "supports": "Rontgen discovered X-rays 8 November 1895 with Lenard and Crookes tubes; first paper 28 December 1895; Crookes tubes few kV to 100 kV; glow 1 m away through black cardboard; named X for unknown."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_electrolytic_capacitor",
   "no": 3010,
   "n": "Aluminium Electrolytic Capacitor",
@@ -16843,6 +18461,130 @@
     {
      "source": "x28_crt_wp",
      "supports": "Braun invented the Braun tube in 1897, cold-cathode diode with phosphor screen; Schuster and Crookes 1890; J. J. Thomson 1897; Zworykin named CRT 1929; deflection coils and raster."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_dirigible_airship",
+  "no": 3075,
+  "n": "Dirigible Airship",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Santos-Dumont No. 6 around the Eiffel Tower 19 October 1901; Giffard 1852; La France 1884; Shenandoah helium 4 September 1923; Hindenburg 6 May 1937",
+  "ds": 1901,
+  "rar": "rare",
+  "vis": "envelope-gondola-fins",
+  "l1": "A powered, steerable gas-filled balloon shaped like a cigar.",
+  "l2": "Rigid airships have an outer framework carrying all loads with gas in internal cells; non-rigid 'blimps' keep shape by gas pressure only. Hydrogen lifts most but burns; helium is safe but rarer and gives somewhat less lift.",
+  "l3": "Santos-Dumont flew Number 6 around the Eiffel Tower and back in under thirty minutes on 19 October 1901, winning a 100,000-franc prize. The page gives only the years 1852 (Giffard) and 1884 (La France) and 'July 1900' for LZ 1. USS Shenandoah (4 September 1923) was the first helium airship; the Hindenburg burned on 6 May 1937, killing 35 of 97. Fun fact: the Graf Zeppelin flew over 1,600,000 km without a passenger injury. (not known: Giffard's exact flight date, which the page omits.)",
+  "ev": "Eiffel Tower flight (19 Oct 1901)",
+  "src": [
+   "x28_airship_wp"
+  ],
+  "rec": [
+   [
+    "exp28_montgolfier_balloon",
+    "internal_combustion_engine",
+    "cloth"
+   ],
+   [
+    "exp28_montgolfier_balloon",
+    "internal_combustion_engine",
+    "steel"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "flight_exp28",
+   "flight",
+   "airship"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives only years for Giffard's flight and La France, and 'July 1900' for LZ 1."
+  },
+  "artifactType": "lighter-than-air aircraft",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Dirigible Airship — France (Santos-Dumont, Giffard); Germany (Zeppelin)"
+  },
+  "historical": {
+   "region": "France (Santos-Dumont, Giffard); Germany (Zeppelin)",
+   "firstKnownDate": "1852 (Giffard)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_airship_wp",
+     "supports": "Santos-Dumont Number 6 19 October 1901, 100,000 francs; Giffard 1852; La France 1884; LZ 1 July 1900; Shenandoah helium 4 September 1923; Hindenburg 6 May 1937; rigid vs non-rigid; Graf Zeppelin 1,600,000 km."
     }
    ]
   },
@@ -17165,6 +18907,131 @@
   ]
  },
  {
+  "id": "exp28_gyrocompass",
+  "no": 3076,
+  "n": "Gyrocompass",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Usable gyrocompass invented 1906 (Germany), tested 1908; Sperry patent 1908; US Navy 1911; Plath commercial 1913",
+  "ds": 1906,
+  "rar": "rare",
+  "vis": "spinning-rotor-card",
+  "l1": "A fast-spinning wheel that finds true north from the Earth's rotation.",
+  "l2": "A gyroscope alone does not find north; a gyrocompass adds either viscous-fluid friction or weights so torque turns the axis until it points to the celestial pole.",
+  "l3": "The page says a usable gyrocompass was invented in Germany in 1906 and passed tests in 1908; Elmer Sperry's patent 1,242,065 is dated 1908 and the US Navy adopted his unit in 1911. In 1913 C. Plath developed the first one on a commercial vessel. Fun fact: Max Schuler found in 1923 that tuning to 84.4 minutes makes it insensitive to lateral motion, and Sperry's 'Metal Mike' was the first gyroscope-guided autopilot. (not known: the Foucault 1852 gyroscope and an Anschütz-Kaempfe 1908 patent, which the page does not mention.)",
+  "ev": "German tests (1908); Navy adoption (1911)",
+  "src": [
+   "x28_gyro_wp"
+  ],
+  "rec": [
+   [
+    "compass",
+    "steel",
+    "electric_motor"
+   ],
+   [
+    "compass",
+    "steel",
+    "physics"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "navigation",
+   "gyroscope"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not mention Foucault or an Anschütz-Kaempfe patent."
+  },
+  "artifactType": "navigation instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Gyrocompass — Germany; United States"
+  },
+  "historical": {
+   "region": "Germany; United States",
+   "firstKnownDate": "1906",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_gyro_wp",
+     "supports": "Usable gyrocompass invented 1906 Germany, tested 1908; Sperry patent 1908; US Navy 1911; Plath 1913; Schuler 84.4 minutes 1923; Krebs 1889; Metal Mike autopilot."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
   "id": "exp28_triode_audion",
   "no": 2965,
   "n": "Triode Audion Tube",
@@ -17284,6 +19151,131 @@
    "europe"
   ],
   "tradeImportance": "high"
+ },
+ {
+  "id": "exp28_fessenden_sonar",
+  "no": 3077,
+  "n": "Active Sonar",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Leonardo tube 1490; Fessenden from 1912, tested 1914; Langevin 1915; Boyle quartz prototype mid-1917; ASDIC tested 1920, production 1922",
+  "ds": 1912,
+  "rar": "rare",
+  "vis": "pings-hull-seabed",
+  "l1": "A ship's sound pinger that listens for echoes from icebergs, submarines or the seabed.",
+  "l2": "Fessenden's system in 1914 demonstrated depth sounding, Morse code and echo ranging and detected an iceberg at 2 miles (3.2 km); at about 500 Hz its 3 m wavelength was too long to find the bearing.",
+  "l3": "Leonardo da Vinci recorded in 1490 a tube in the water used to detect vessels by ear. After the Titanic disaster (1912) Fessenden built a system tested off Newfoundland in 1914; in 1915 Langevin and Chilowsky developed active devices against submarines; in mid-1917 Boyle's team made the first practical one with quartz piezoelectric crystals. Fun fact: the 'Allied Submarine Detection Investigation Committee' meaning of ASDIC was invented in 1939; no such committee appears in the archives. (not known: the Colladon and Sturm 1826 experiment, which the page does not mention.)",
+  "ev": "Fessenden's 1914 test; Boyle prototype (1917)",
+  "src": [
+   "x28_sonar_wp"
+  ],
+  "rec": [
+   [
+    "electricity",
+    "physics",
+    "exp28_galvanometer"
+   ],
+   [
+    "electricity",
+    "physics",
+    "boat"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "sound",
+   "ocean"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "ds uses Fessenden's system begun in 1912; the page does not mention Colladon and Sturm."
+  },
+  "artifactType": "sound-ranging device",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Active Sonar — Canada/Newfoundland (Fessenden); France (Langevin); Britain (Boyle)"
+  },
+  "historical": {
+   "region": "Canada/Newfoundland (Fessenden); France (Langevin); Britain (Boyle)",
+   "firstKnownDate": "1490",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_sonar_wp",
+     "supports": "Leonardo 1490 tube; Fessenden 1912, tested 1914 iceberg 2 miles; Langevin and Chilowsky 1915; Boyle quartz mid-1917; ASDIC 1920 and 1922; ASDIC name story 1939; Hunt coined sonar."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "americas",
+   "europe"
+  ]
  },
  {
   "id": "exp28_sundback_zipper",

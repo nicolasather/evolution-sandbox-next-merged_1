@@ -870,6 +870,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_firearrow_wp": {
+   "t": "B",
+   "title": "Fire arrow",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fire_arrow",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stamp_wp": {
    "t": "B",
    "title": "Stamp mill",
@@ -920,6 +929,15 @@
    "title": "Fulling",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Fulling",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_windmill_wp": {
+   "t": "B",
+   "title": "Windmill",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Windmill",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1320,6 +1338,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_fridge_wp": {
+   "t": "B",
+   "title": "Refrigeration",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Refrigeration",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_electrophorus_wp": {
    "t": "B",
    "title": "Electrophorus",
@@ -1374,6 +1401,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_rolling_wp": {
+   "t": "B",
+   "title": "Rolling (metalworking)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rolling_(metalworking)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_hygro_wp": {
    "t": "B",
    "title": "Hygrometer",
@@ -1388,6 +1424,24 @@
    "title": "Hot air balloon",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Hot_air_balloon",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_paddle_wp": {
+   "t": "B",
+   "title": "Paddle steamer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Paddle_steamer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_puddling_wp": {
+   "t": "B",
+   "title": "Puddling (metallurgy)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Puddling_(metallurgy)",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1500,6 +1554,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_canning_wp": {
+   "t": "B",
+   "title": "Canning",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Canning",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_davy_wp": {
    "t": "B",
    "title": "Davy lamp",
@@ -1577,6 +1640,15 @@
    "title": "Thaumatrope",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Thaumatrope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_match_wp": {
+   "t": "B",
+   "title": "Match",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Match",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1698,6 +1770,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_glider_wp": {
+   "t": "B",
+   "title": "Glider (aircraft)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Glider_(aircraft)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_pin_wp": {
    "t": "B",
    "title": "Safety pin",
@@ -1712,6 +1793,15 @@
    "title": "Collodion process",
    "org": "Wikipedia (citing Towler 1864; Peres 2007)",
    "url": "https://en.wikipedia.org/wiki/Collodion_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_elevator_wp": {
+   "t": "B",
+   "title": "Elevator",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Elevator",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1743,6 +1833,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_ironclad_wp": {
+   "t": "B",
+   "title": "Ironclad warship",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ironclad_warship",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stick_wp": {
    "t": "B",
    "title": "Marshall Islands stick chart",
@@ -1757,6 +1856,15 @@
    "title": "Stevenson screen",
    "org": "Wikipedia (citing Stevenson 1864; Middleton 1966)",
    "url": "https://en.wikipedia.org/wiki/Stevenson_screen",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_torpedo_wp": {
+   "t": "B",
+   "title": "Torpedo",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Torpedo",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1869,6 +1977,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_xray_wp": {
+   "t": "B",
+   "title": "X-ray",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/X-ray",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_elcap_wp": {
    "t": "B",
    "title": "Electrolytic capacitor",
@@ -1883,6 +2000,15 @@
    "title": "Cathode-ray tube",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Cathode-ray_tube",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_airship_wp": {
+   "t": "B",
+   "title": "Airship",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Airship",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1905,11 +2031,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_gyro_wp": {
+   "t": "B",
+   "title": "Gyrocompass",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gyrocompass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_triode_wp": {
    "t": "B",
    "title": "Triode",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Triode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sonar_wp": {
+   "t": "B",
+   "title": "Sonar",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sonar",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"

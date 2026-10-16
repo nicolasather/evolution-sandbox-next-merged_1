@@ -1699,5 +1699,197 @@
    "exp28_hunt_safety_pin",
    "machine_tools"
   ]
+ ],
+ "exp28_fire_arrow": [
+  [
+   "gunpowder",
+   "bow",
+   "exp28_crossbow"
+  ],
+  [
+   "gunpowder",
+   "bow",
+   "paper"
+  ]
+ ],
+ "exp28_post_windmill": [
+  [
+   "wood",
+   "axle",
+   "cloth"
+  ],
+  [
+   "wood",
+   "axle",
+   "engineering"
+  ]
+ ],
+ "exp28_grooved_rolling_mill": [
+  [
+   "iron",
+   "steam_engine",
+   "machine_tools"
+  ],
+  [
+   "iron",
+   "steam_engine",
+   "gear"
+  ]
+ ],
+ "exp28_paddle_steamer": [
+  [
+   "steam_engine",
+   "boat",
+   "iron"
+  ],
+  [
+   "steam_engine",
+   "boat",
+   "engineering"
+  ]
+ ],
+ "exp28_puddling_furnace": [
+  [
+   "iron",
+   "coal",
+   "exp28_coke_blast_furnace"
+  ],
+  [
+   "iron",
+   "coal",
+   "smelting"
+  ]
+ ],
+ "exp28_tin_can": [
+  [
+   "iron",
+   "fire",
+   "machine_tools"
+  ],
+  [
+   "iron",
+   "fire",
+   "exp26_lead_came_window"
+  ]
+ ],
+ "exp28_friction_match": [
+  [
+   "fire",
+   "chemistry",
+   "gunpowder"
+  ],
+  [
+   "fire",
+   "chemistry",
+   "paper"
+  ]
+ ],
+ "exp28_cayley_glider": [
+  [
+   "wood",
+   "cloth",
+   "geometry"
+  ],
+  [
+   "wood",
+   "cloth",
+   "exp28_dandy_horse"
+  ]
+ ],
+ "exp28_otis_safety_elevator": [
+  [
+   "pulley",
+   "iron",
+   "steam_engine"
+  ],
+  [
+   "pulley",
+   "iron",
+   "engineering"
+  ]
+ ],
+ "exp28_ironclad_warship": [
+  [
+   "iron",
+   "steam_engine",
+   "wood"
+  ],
+  [
+   "iron",
+   "steam_engine",
+   "exp28_screw_propeller"
+  ]
+ ],
+ "exp28_whitehead_torpedo": [
+  [
+   "steel",
+   "iron",
+   "exp28_screw_propeller"
+  ],
+  [
+   "steel",
+   "exp28_screw_propeller",
+   "gunpowder"
+  ]
+ ],
+ "exp28_crookes_tube_xray": [
+  [
+   "glass",
+   "exp26_drawn_glass_tube",
+   "physics"
+  ],
+  [
+   "glass",
+   "electricity",
+   "exp28_voltaic_pile"
+  ]
+ ],
+ "exp28_dirigible_airship": [
+  [
+   "exp28_montgolfier_balloon",
+   "internal_combustion_engine",
+   "cloth"
+  ],
+  [
+   "exp28_montgolfier_balloon",
+   "internal_combustion_engine",
+   "steel"
+  ]
+ ],
+ "exp28_gyrocompass": [
+  [
+   "compass",
+   "steel",
+   "electric_motor"
+  ],
+  [
+   "compass",
+   "steel",
+   "physics"
+  ]
+ ],
+ "exp28_fessenden_sonar": [
+  [
+   "electricity",
+   "physics",
+   "exp28_galvanometer"
+  ],
+  [
+   "electricity",
+   "physics",
+   "boat"
+  ]
+ ],
+ "exp28_cullen_refrigerating_machine": [
+  [
+   "glass",
+   "physics",
+   "exp26_graduated_glass_tube"
+  ],
+  [
+   "glass",
+   "physics",
+   "exp28_torricelli_barometer"
+  ]
  ]
 }
