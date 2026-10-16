@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Carved face curious smile">
+<g data-z="0" opacity=".45"><path d="M18 30l4 -5M16 40l6 -4M16 62l6 4M18 72l5 4M80 26l5 5M82 40l5 4"/></g>
+<g data-z="1"><path d="M30 18h40l14 14v36l-14 14h-40l-14 -14v-36z"/></g>
+<g data-z="2"><path d="M34 40q5 -7 10 0M58 36q6 -9 12 0"/><circle cx="40" cy="42" r="1.4"/><circle cx="65" cy="38" r="1.4"/><path d="M36 60q14 16 30 0"/><path d="M62 60l5 -4" /><path d="M50 44l-3 8h6" opacity=".7"/></g>
+</svg>

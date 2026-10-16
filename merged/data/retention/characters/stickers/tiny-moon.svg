@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Tiny crescent moon">
+<g data-z="0" opacity=".45"><path d="M30 28a26 26 0 1 0 38 34M34 34a20 20 0 0 0 4 28M38 30a22 22 0 0 0 0 34" /><path data-extra="1" d="M30 26l2 6M30 30l2 6M30 34l2 6M78 70l3 -3M78 75l3 -3"/></g>
+<g data-z="1"><path d="M60 18a32 32 0 1 0 22 46a26 26 0 0 1 -22 -46z"/></g>
+<g data-z="2"><path d="M74 28l2 5l5 2l-5 2l-2 5l-2 -5l-5 -2l5 -2z"/><circle cx="84" cy="52" r="1.2"/><circle cx="68" cy="14" r="1"/><path d="M34 52a6 6 0 0 1 8 4M38 66a4 4 0 0 1 6 2" opacity=".7"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Iron">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 50h92M50 4v92"/></g>
+<g data-z="2" opacity="0.8"><path d="M12 14a2.6 2.6 0 1 0 0.1 0zM28 14a2.6 2.6 0 1 0 0.1 0zM12 34a2.6 2.6 0 1 0 0.1 0zM28 34a2.6 2.6 0 1 0 0.1 0zM66 14a2.6 2.6 0 1 0 0.1 0zM84 14a2.6 2.6 0 1 0 0.1 0zM66 34a2.6 2.6 0 1 0 0.1 0zM84 34a2.6 2.6 0 1 0 0.1 0zM12 66a2.6 2.6 0 1 0 0.1 0zM28 86a2.6 2.6 0 1 0 0.1 0zM66 66a2.6 2.6 0 1 0 0.1 0zM84 86a2.6 2.6 0 1 0 0.1 0z"/></g>
+<g data-z="3" opacity="0.4"><path d="M8 44l8 0M70 44l10 0M60 58l0 10"/></g>
+</svg>

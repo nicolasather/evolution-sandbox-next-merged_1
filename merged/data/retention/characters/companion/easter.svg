@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Companion with a rare glyph at its core">
+<g data-z="0" opacity=".4"><path d="M22 94h56M30 97h40M18 40l-6 -4M82 40l6 -4M20 64l-8 2M80 64l8 2"/></g>
+<g data-z="1"><path d="M32 40l6 -14h24l6 14z"/><path d="M30 44l-4 36l10 6h28l10 -6l-4 -36z"/><path d="M30 86h10v5h-10zM60 86h10v5h-10z"/></g>
+<g data-z="2"><path d="M36 56h28M36 70h28M36 56v14M64 56v14" opacity=".9"/><path d="M50 58c-6 0 -8 4 -6 8c2 3 8 3 8 -2c0 -3 -4 -3 -4 -1" /><path d="M50 58c6 0 8 4 6 8" opacity=".8"/><path d="M50 56v-5M50 70v5M38 63h-4M62 63h4" /></g>
+<g data-z="3" opacity=".65"><path d="M38 32h24M42 36h16"/><path d="M32 76h36M34 80h32" stroke-dasharray="3 2"/></g>
+<g data-z="4" opacity=".4"><path d="M40 62l-2 4M60 60l2 4M50 63l0 0" stroke-width=".8"/><path d="M31 50l-1 6M69 50l1 6" stroke-width=".8"/></g>
+<g data-z="5" opacity=".8"><path d="M50 10l2 5l5 2l-5 2l-2 5l-2 -5l-5 -2l5 -2z"/></g>
+</svg>

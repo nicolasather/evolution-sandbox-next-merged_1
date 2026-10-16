@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Signal tower">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M50 88L50 22"/><path d="M50 88L30 90M50 88L70 90"/><path d="M50 30L36 60M50 30L64 60"/><path d="M42 48h16M38 62h24"/></g>
+<g data-z="2" opacity="0.85"><path d="M50 18a4 4 0 1 0 0.1 0z"/><path d="M34 14a24 24 0 0 1 0 12"/><path d="M66 14a24 24 0 0 0 0 12"/><path d="M26 8a36 36 0 0 1 0 28"/><path d="M74 8a36 36 0 0 0 0 28"/></g>
+<g data-z="3" opacity="0.45"><path d="M10 84h80"/></g>
+</svg>

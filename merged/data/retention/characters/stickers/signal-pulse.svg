@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Signal pulse that fails">
+<g data-z="0" opacity=".45"><path d="M14 50h72" stroke-dasharray="2 5"/><path data-extra="1" d="M24 60l4 4M24 65l4 4M24 70l4 4M66 32l4 -4M66 37l4 -4"/></g>
+<g data-z="1"><path d="M10 50h18l6 -20l8 40l8 -34l6 14h6"/><path d="M64 50l6 0" /></g>
+<g data-z="2"><path d="M72 40l12 20M84 40l-12 20" /><path d="M20 24a40 40 0 0 1 60 0M30 32a28 28 0 0 1 40 0" opacity=".7" stroke-dasharray="3 4"/><path d="M50 80v6" /></g>
+</svg>

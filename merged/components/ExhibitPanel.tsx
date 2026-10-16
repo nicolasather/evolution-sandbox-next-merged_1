@@ -13,6 +13,8 @@ import { tradeStore } from '@/lib/trade/store';
 import { requestReplay } from '@/lib/world/bus';
 import { LOCK_MESSAGE } from '@/lib/world/progress';
 import type { Engine } from '@/lib/engine';
+import { retentionBus } from '@/lib/retention/bus';
+import { hubUi } from '@/lib/retention/ui';
 import type { Discovery, Source } from '@/lib/types';
 
 const RESILIENCE_LABEL: Record<string, string> = {
@@ -170,6 +172,17 @@ export function ExhibitPanel({
     closeRef.current?.focus({ preventScroll: true });
   }, [open, nodeId]);
 
+  /* the optional layer hears that this exhibit was opened ("inspect") and, if it stays open a few moments, studied */
+  useEffect(() => {
+    if (!open || !nodeId) return;
+    const n = engine.get(nodeId); if (!n) return;
+    const owned = engine.has(nodeId);
+    retentionBus.emit({ t: 'inspect', id: nodeId, owned, era: n.era });
+    if (!owned) return;
+    const t = window.setTimeout(() => retentionBus.emit({ t: 'study', id: nodeId }), 6000);
+    return () => window.clearTimeout(t);
+  }, [open, nodeId, engine]);
+
   if (!node) {
     return (
       <aside id="panel" ref={panelRef} className={cn(open && 'open')} aria-label="Exhibit" aria-hidden={!open} inert={!open}>
@@ -248,6 +261,7 @@ export function ExhibitPanel({
           <h3>Discovery</h3>
           <p className="lead">{node.l1}</p>
           <ShareButton node={node} engine={engine} />
+          {!node.primitive && !node.state && <button type="button" className="chip" onClick={() => hubUi.share(node.id)}>Share card</button>}
         </section>
 
         {(() => {

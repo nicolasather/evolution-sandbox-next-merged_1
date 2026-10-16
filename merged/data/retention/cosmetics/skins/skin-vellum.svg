@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Vellum">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1" opacity="0.8"><path d="M10 18h80M10 34h80M10 50h80M10 66h80M10 82h80"/></g>
+<g data-z="2" opacity="0.6"><path d="M16 12v0M34 28v0M52 44v0M70 60v0M24 76v0M82 20v0M62 88v0"/></g>
+<g data-z="3" opacity="0.7"><path d="M8 6v90M92 6v90"/><path d="M12 24q4 -4 8 0M44 40q4 -4 8 0M70 72q4 -4 8 0"/></g>
+</svg>

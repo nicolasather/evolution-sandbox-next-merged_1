@@ -1,0 +1,302 @@
+[
+  {
+    "id": "e01",
+    "area": "bench",
+    "trigger_idea": "Tap an old knot in the bench three times",
+    "reward_animation": "woodgrain blink"
+  },
+  {
+    "id": "e02",
+    "area": "bench",
+    "trigger_idea": "Place stone beside wood and wait without crafting",
+    "reward_animation": "two shadows exchange places"
+  },
+  {
+    "id": "e03",
+    "area": "bench",
+    "trigger_idea": "Rotate the same item a full circle gently",
+    "reward_animation": "brief engraved spiral"
+  },
+  {
+    "id": "e04",
+    "area": "bench",
+    "trigger_idea": "Return three objects to inventory in quick succession",
+    "reward_animation": "bench gives a tiny bow"
+  },
+  {
+    "id": "e05",
+    "area": "bench",
+    "trigger_idea": "Hold a wooden object without moving for several seconds",
+    "reward_animation": "small beetle scuttles out"
+  },
+  {
+    "id": "e06",
+    "area": "bench",
+    "trigger_idea": "Gently arrange three items into a triangle",
+    "reward_animation": "triangle glow fades"
+  },
+  {
+    "id": "e07",
+    "area": "bench",
+    "trigger_idea": "Drag an item near the left edge then back",
+    "reward_animation": "tiny echo silhouette appears"
+  },
+  {
+    "id": "e08",
+    "area": "bench",
+    "trigger_idea": "Inspect a stone from alternating sides",
+    "reward_animation": "hidden grain shimmer"
+  },
+  {
+    "id": "e09",
+    "area": "bench",
+    "trigger_idea": "Make a soft tapping rhythm on an idle item",
+    "reward_animation": "bench taps reply"
+  },
+  {
+    "id": "e10",
+    "area": "bench",
+    "trigger_idea": "Place a vessel in a quiet area and leave it",
+    "reward_animation": "one musical bubble appears"
+  },
+  {
+    "id": "e11",
+    "area": "scenery",
+    "trigger_idea": "Tap a far-off cloud twice",
+    "reward_animation": "cloud briefly makes a curious shape"
+  },
+  {
+    "id": "e12",
+    "area": "scenery",
+    "trigger_idea": "Watch a water edge for a full slow ripple cycle",
+    "reward_animation": "small fish shadow"
+  },
+  {
+    "id": "e13",
+    "area": "scenery",
+    "trigger_idea": "Tap the largest tree shadow",
+    "reward_animation": "moth rises"
+  },
+  {
+    "id": "e14",
+    "area": "scenery",
+    "trigger_idea": "Tap two fireflies in sequence",
+    "reward_animation": "third firefly joins"
+  },
+  {
+    "id": "e15",
+    "area": "scenery",
+    "trigger_idea": "Wait quietly during a cold climate scene",
+    "reward_animation": "tiny frost spiral"
+  },
+  {
+    "id": "e16",
+    "area": "scenery",
+    "trigger_idea": "Move pointer slowly around a sunbeam",
+    "reward_animation": "dust motes form a loop"
+  },
+  {
+    "id": "e17",
+    "area": "scenery",
+    "trigger_idea": "Click a distant star once on a clear night",
+    "reward_animation": "constellation glimmers"
+  },
+  {
+    "id": "e18",
+    "area": "scenery",
+    "trigger_idea": "Pause near waterfall while motion enabled",
+    "reward_animation": "rainbow glint"
+  },
+  {
+    "id": "e19",
+    "area": "scenery",
+    "trigger_idea": "Tap a cliff mark visible after an era unlock",
+    "reward_animation": "rock-paint animation"
+  },
+  {
+    "id": "e20",
+    "area": "scenery",
+    "trigger_idea": "Explore the extreme corner of a background",
+    "reward_animation": "hidden silhouette peeks"
+  },
+  {
+    "id": "e21",
+    "area": "museum",
+    "trigger_idea": "Inspect a historical tool from multiple angles",
+    "reward_animation": "secret maker mark"
+  },
+  {
+    "id": "e22",
+    "area": "museum",
+    "trigger_idea": "Open and close one exhibit twice",
+    "reward_animation": "curator nod silhouette"
+  },
+  {
+    "id": "e23",
+    "area": "museum",
+    "trigger_idea": "Follow a thematic chain of three verified exhibits",
+    "reward_animation": "constellation of connections"
+  },
+  {
+    "id": "e24",
+    "area": "museum",
+    "trigger_idea": "Hover over the date line of an exhibit",
+    "reward_animation": "tiny clock pulse"
+  },
+  {
+    "id": "e25",
+    "area": "museum",
+    "trigger_idea": "Read three source panels in one visit",
+    "reward_animation": "archivist nod"
+  },
+  {
+    "id": "e26",
+    "area": "archive",
+    "trigger_idea": "Filter an archive to only natural materials",
+    "reward_animation": "tiny leaf motif"
+  },
+  {
+    "id": "e27",
+    "area": "archive",
+    "trigger_idea": "View a craft route in reverse order",
+    "reward_animation": "route line winds backwards"
+  },
+  {
+    "id": "e28",
+    "area": "archive",
+    "trigger_idea": "Visit the same early discovery after reaching a much later era",
+    "reward_animation": "old/new contrast shimmer"
+  },
+  {
+    "id": "e29",
+    "area": "archive",
+    "trigger_idea": "Find a long line of verified interconnected discoveries",
+    "reward_animation": "thread spool unwinds"
+  },
+  {
+    "id": "e30",
+    "area": "archive",
+    "trigger_idea": "Use search with a valid known alias",
+    "reward_animation": "little book flips"
+  },
+  {
+    "id": "e31",
+    "area": "narrator",
+    "trigger_idea": "Dismiss a narrator quip at the exact end of its display",
+    "reward_animation": "gentle wink portrait"
+  },
+  {
+    "id": "e32",
+    "area": "narrator",
+    "trigger_idea": "Choose rare speech and later resume normal",
+    "reward_animation": "portrait does a respectful salute"
+  },
+  {
+    "id": "e33",
+    "area": "narrator",
+    "trigger_idea": "Trigger a first legitimate discovery following a long quiet spell",
+    "reward_animation": "companion applauds silently"
+  },
+  {
+    "id": "e34",
+    "area": "narrator",
+    "trigger_idea": "Reach an early era milestone after returning to the game",
+    "reward_animation": "brief welcome gesture"
+  },
+  {
+    "id": "e35",
+    "area": "narrator",
+    "trigger_idea": "Ask for a hint several minutes after repeated logical attempts",
+    "reward_animation": "companion peers through lens"
+  },
+  {
+    "id": "e36",
+    "area": "npc",
+    "trigger_idea": "Revisit an unlocked historical conversation",
+    "reward_animation": "NPC remembers the encounter locally"
+  },
+  {
+    "id": "e37",
+    "area": "npc",
+    "trigger_idea": "Answer a historical NPC question with a cited discovery",
+    "reward_animation": "NPC displays approving animation"
+  },
+  {
+    "id": "e38",
+    "area": "npc",
+    "trigger_idea": "Bring an era-appropriate tool to an unlocked NPC",
+    "reward_animation": "tiny trade flourish"
+  },
+  {
+    "id": "e39",
+    "area": "npc",
+    "trigger_idea": "Inspect an NPC prop without opening dialogue",
+    "reward_animation": "prop reveals a decorative detail"
+  },
+  {
+    "id": "e40",
+    "area": "npc",
+    "trigger_idea": "Finish a historically verified NPC micro-quest",
+    "reward_animation": "unique short farewell"
+  },
+  {
+    "id": "e41",
+    "area": "physics",
+    "trigger_idea": "Spin a pottery item twice and stop",
+    "reward_animation": "tiny swirl in clay slip"
+  },
+  {
+    "id": "e42",
+    "area": "physics",
+    "trigger_idea": "Toss a rounded stone softly on the bench",
+    "reward_animation": "mini wobble circle"
+  },
+  {
+    "id": "e43",
+    "area": "physics",
+    "trigger_idea": "Brush dust off the same object in three short strokes",
+    "reward_animation": "subtle sparkle from the grain"
+  },
+  {
+    "id": "e44",
+    "area": "physics",
+    "trigger_idea": "Hold a glass object near a light source",
+    "reward_animation": "prismatic dot appears"
+  },
+  {
+    "id": "e45",
+    "area": "physics",
+    "trigger_idea": "Move a wooden object close to water without merging",
+    "reward_animation": "wood reflection distorts"
+  },
+  {
+    "id": "e46",
+    "area": "menu",
+    "trigger_idea": "Open and close the customization drawer without choosing anything",
+    "reward_animation": "icon gives a wink"
+  },
+  {
+    "id": "e47",
+    "area": "menu",
+    "trigger_idea": "Select default theme after previewing several variants",
+    "reward_animation": "tiny confetti-free thank-you nod"
+  },
+  {
+    "id": "e48",
+    "area": "timeline",
+    "trigger_idea": "Scrub gently over three reached era markers",
+    "reward_animation": "timeline star appears"
+  },
+  {
+    "id": "e49",
+    "area": "sharing",
+    "trigger_idea": "Preview a share card for a verified first discovery",
+    "reward_animation": "stamp animation"
+  },
+  {
+    "id": "e50",
+    "area": "cross-mode",
+    "trigger_idea": "Complete a legitimate, comparable task in two existing modes",
+    "reward_animation": "same symbol appears in both journals"
+  }
+]

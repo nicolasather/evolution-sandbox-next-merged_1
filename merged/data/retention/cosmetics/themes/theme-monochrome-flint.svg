@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Flaked flint">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M14 70L30 30L46 52L36 80z"/><path d="M46 52L66 22L86 50L70 76z"/><path d="M30 30L46 52"/></g>
+<g data-z="2" opacity="0.75"><path d="M24 56l8 6M60 46l10 4M52 66l8 -2"/><path d="M88 20l4 -6M90 30l6 -2"/></g>
+<g data-z="3" opacity="0.45"><path d="M10 90h80"/></g>
+</svg>

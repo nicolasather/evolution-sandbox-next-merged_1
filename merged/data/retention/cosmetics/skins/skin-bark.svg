@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Bark">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M14 4c-4 20 4 40 -2 92"/><path d="M30 4c6 24 -4 44 2 92"/><path d="M48 4c-4 20 6 44 0 92"/><path d="M66 4c6 24 -2 40 4 92"/><path d="M84 4c-4 22 4 42 -2 92"/></g>
+<g data-z="2" opacity="0.6"><path d="M22 28q-4 4 0 8M40 56q4 4 0 8M58 22q-4 4 0 8M76 66q4 4 0 8M20 78q4 4 0 8"/></g>
+<g data-z="3" opacity="0.4"><path d="M8 10l4 6M36 10l-4 6M56 40l4 6M90 52l-4 6M24 90l4 4"/></g>
+</svg>

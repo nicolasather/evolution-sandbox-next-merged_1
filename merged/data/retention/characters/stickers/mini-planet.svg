@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Mini planet curious">
+<g data-z="0" opacity=".45"><path d="M34 42c10 6 24 6 34 2M30 54c12 8 28 8 40 2M34 66c8 4 20 4 28 0"/><path data-extra="1" d="M30 46l4 -3M30 52l4 -3M30 58l4 -3M60 70l6 2M60 74l6 2M26 28l6 0M26 33l6 0"/></g>
+<g data-z="1"><circle cx="50" cy="52" r="26"/><ellipse cx="50" cy="52" rx="42" ry="10" transform="rotate(-18 50 52)"/></g>
+<g data-z="2"><circle cx="42" cy="44" r="3"/><circle cx="60" cy="40" r="2.2"/><path d="M40 62q8 4 14 -2" /><path d="M72 16q6 -2 8 4q-4 2 -4 6" opacity=".85"/><circle cx="80" cy="30" r="1.2"/></g>
+</svg>

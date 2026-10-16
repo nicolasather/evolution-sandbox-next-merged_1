@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Railway model">
+<g data-z="0" opacity="0.4"><path d="M10 92h80"/></g>
+<g data-z="1"><path d="M12 80h76"/><path d="M12 88h76"/><path d="M20 76v16M32 76v16M44 76v16M56 76v16M68 76v16M80 76v16"/><path d="M24 60h46l6 8v8H24z"/><path d="M34 60V48h16v12"/><path d="M56 60V52h10v8"/></g>
+<g data-z="2" opacity="0.8"><path d="M30 80a4 4 0 1 0 0.1 0zM48 80a4 4 0 1 0 0.1 0zM66 80a4 4 0 1 0 0.1 0z"/></g>
+<g data-z="3" opacity="0.5"><path d="M38 44q-4 -8 2 -14M44 42q-4 -8 2 -14"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Star chart">
+<g data-z="0" opacity="0.4"><path d="M14 88h72"/></g>
+<g data-z="1"><path d="M14 14h72v70h-72z"/><path d="M20 20h60v58h-60z"/></g>
+<g data-z="2" opacity="0.8"><path d="M30 34l16 12l12 -14l16 18"/><path d="M30 34a2 2 0 1 0 0.1 0zM46 46a2 2 0 1 0 0.1 0zM58 32a2 2 0 1 0 0.1 0zM74 50a2 2 0 1 0 0.1 0z"/><path d="M32 64l12 -8l14 10l14 -12"/></g>
+<g data-z="3" opacity="0.5"><path d="M28 28l2 2M64 28l2 2M42 70l2 2M70 66l2 2M26 52l2 2"/></g>
+</svg>

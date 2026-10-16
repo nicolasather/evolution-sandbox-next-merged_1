@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ink droplet">
+<g data-z="0" opacity=".45"><ellipse cx="50" cy="84" rx="24" ry="5"/><ellipse cx="50" cy="84" rx="12" ry="2.4"/><path data-extra="1" d="M36 70l6 -3M36 75l6 -3M36 80l6 -3M62 50l-4 4M62 56l-4 4M34 34l6 3M34 39l6 3"/></g>
+<g data-z="1"><path d="M50 12c14 22 26 34 26 50a26 26 0 0 1 -52 0c0 -16 12 -28 26 -50z"/></g>
+<g data-z="2"><path d="M36 60c0 8 6 14 14 14" opacity=".9"/><path d="M40 52c0 -4 2 -8 4 -10" opacity=".7"/><path d="M82 30l3 -6M90 42l5 -2M16 30l-4 -6"/><circle cx="84" cy="62" r="2"/></g>
+</svg>

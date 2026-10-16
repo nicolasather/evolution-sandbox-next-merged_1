@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Alan Turing — stylized interpretation, not a likeness">
+<g data-z="0" opacity="0.4"><path d="M38 42l-1 10M37 44l-1 10M36 46l-1 10M63 42l1 10M64 44l1 10M65 46l1 10"/><path d="M10 82l6 10M15 82l6 10M20 82l6 10M25 82l6 10M30 82l6 10M35 82l6 10"/><path d="M40 60l10 2M41 63l10 2M42 66l10 2"/><path data-extra="1" d="M38 20l3 4M42 20l3 4M46 20l3 4M50 20l3 4M54 20l3 4M58 20l3 4M39 29l7 0.5M39 32l7 0.5M38 46l1 6M37 49l1 6M36 52l1 6M62 46l-1 6M63 49l-1 6M64 52l-1 6M44 66l10 1M44 68l10 1M44 70l10 1M14 90l6 9M20 90l6 9M26 90l6 9M32 90l6 9M62 88l5 9M68 88l5 9M74 88l5 9"/></g>
+<g data-z="1"><path d="M38 35C37 45 39 54 45 59L50 62L56 59C61 54 63 45 62 35"/><path d="M36 33C35 22 42 15 51 15C59 15 65 22 64 33"/><path d="M36 28Q44 20 54 22Q60 22 64 28"/><path d="M36 26Q40 18 48 18"/><path d="M45 18L50 24L56 20"/><path d="M38 30L36 36M62 30L64 36"/><path d="M45 60L43 68M56 60L58 68"/><path d="M43 68L36 74L50 90L64 74L57 68"/><path d="M50 76L50 100M46 70L50 76L54 70"/></g>
+<g data-z="2"><path d="M40 36L47 35M53 35L61 36"/><path d="M41 40q3 -2 6 0M53 40q3 -2 6 0"/><path d="M50 38L49 48L52 49"/><path d="M46 55q4 1 8 0"/></g>
+<g data-z="3" opacity="0.65"><path d="M36 74L16 82L10 100M64 74L84 82L90 100"/><path d="M30 92L40 100M70 92L62 100"/><path d="M44 84L40 100M56 84L60 100"/></g>
+<g data-z="4"><path d="M66 80a10 10 0 1 0 0.1 0z"/><path d="M66 80a5 5 0 1 0 0.1 0z"/><path d="M66 68v4M66 92v4M54 80h4M74 80h4"/><path d="M56 98h30"/></g>
+<g data-z="5" opacity="0.9" data-accent="ochre"><path d="M66 80a1.6 1.6 0 1 0 0.1 0z"/></g>
+</svg>

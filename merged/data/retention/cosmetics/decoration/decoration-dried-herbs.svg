@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Dried herbs">
+<g data-z="0" opacity="0.4"><path d="M30 12h40"/></g>
+<g data-z="1"><path d="M30 12h40"/><path d="M50 12V46"/><path d="M44 46L38 88M50 46L50 90M56 46L62 88"/></g>
+<g data-z="2" opacity="0.75"><path d="M40 60q-8 -2 -10 -8M40 72q-8 -2 -10 -8M60 60q8 -2 10 -8M60 72q8 -2 10 -8M50 58q-6 -4 -6 -10M50 70q6 -4 6 -10M48 84q-6 -2 -8 -8M52 84q6 -2 8 -8"/></g>
+<g data-z="3" opacity="0.5"><path d="M46 18l8 0M46 24l8 0M46 30l8 0"/></g>
+</svg>

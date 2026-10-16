@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Slate river bend">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 40c24 -16 40 6 56 0s28 -10 36 -6"/><path d="M4 62c24 -16 40 6 56 0s28 -10 36 -6"/></g>
+<g data-z="2" opacity="0.8"><path d="M20 52q4 -4 8 0M44 54q4 -4 8 0M68 46q4 -4 8 0"/><path d="M8 80l12 -4M30 82l16 -4M58 84l18 -4"/></g>
+<g data-z="3" opacity="0.45"><path d="M10 22l10 -4M66 18l18 -4M14 12l8 0"/></g>
+</svg>

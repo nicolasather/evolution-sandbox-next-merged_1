@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Caravan token">
+<g data-z="0" opacity="0.4"><path d="M14 90h72M22 94h56"/></g>
+<g data-z="1"><path d="M16 50a34 34 0 1 0 68 0a34 34 0 1 0 -68 0"/><path d="M26 50a24 24 0 1 0 48 0a24 24 0 1 0 -48 0"/></g>
+<g data-z="2" opacity="0.8"><path d="M34 58h32l-4 -12h-24z"/><path d="M40 46v-8h6v8M54 46v-8h6v8"/><path d="M34 62a4 4 0 1 0 0.1 0zM58 62a4 4 0 1 0 0.1 0z"/></g>
+<g data-z="3" opacity="0.5"><path d="M50 18v4M50 78v4M18 50h4M78 50h4"/></g>
+</svg>

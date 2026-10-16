@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Gear with a grin">
+<g data-z="0" opacity=".45"><path d="M24 86h52M32 91h36"/></g>
+<g data-z="1"><circle cx="50" cy="48" r="30"/><path d="M44 14h12v8h-12zM44 74h12v8h-12zM14 42h8v12h-8zM78 42h8v12h-8zM25 22l8 -2l4 8l-6 4zM66 70l8 -2l-2 8l-8 2zM70 24l-2 8l-8 -2l2 -8zM30 68l2 8l8 -2l-2 -8z" transform="rotate(0 50 48)"/></g>
+<g data-z="2"><circle cx="50" cy="48" r="12" opacity=".6"/><circle cx="40" cy="42" r="2.4"/><circle cx="60" cy="42" r="2.4"/><path d="M36 54q14 14 28 0"/><path d="M40 58h6M54 58h6" opacity=".7"/></g>
+</svg>

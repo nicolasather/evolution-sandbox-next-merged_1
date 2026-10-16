@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Sundial">
+<g data-z="0" opacity="0.4"><path d="M10 88h80M18 94h64"/></g>
+<g data-z="1"><path d="M16 84a34 14 0 1 1 68 0z"/><path d="M14 84h72"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 70L50 30L74 70"/><path d="M34 78l4 -8M42 80l2 -8M58 80l-2 -8M66 78l-4 -8"/></g>
+<g data-z="3" opacity="0.5"><path d="M50 20v-8M44 24l-4 -4M56 24l4 -4"/></g>
+</svg>

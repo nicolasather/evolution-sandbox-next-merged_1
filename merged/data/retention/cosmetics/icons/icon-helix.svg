@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Helix">
+<g data-z="0" opacity="0.4"><path d="M24 90h52"/></g>
+<g data-z="1"><path d="M32 10c36 10 36 24 0 34c-36 10 -36 24 0 34c18 4 28 8 36 12"/><path d="M68 10c-36 10 -36 24 0 34c36 10 36 24 0 34c-18 4 -28 8 -36 12"/></g>
+<g data-z="2" opacity="0.75"><path d="M36 22h28M34 32h32M32 56h36M34 66h32M40 78h22"/></g>
+</svg>

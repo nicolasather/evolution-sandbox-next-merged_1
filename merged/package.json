@@ -2,14 +2,14 @@
   "name": "evolution-sandbox",
   "version": "1.6.0",
   "private": true,
-  "description": "An explorable discovery graph — combine four raw materials into 918 discoveries, each with its evidence and an honest flag where a source is still missing.",
+  "description": "An explorable discovery graph \u2014 combine four raw materials into 918 discoveries, each with its evidence and an honest flag where a source is still missing.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "data:validate": "node tools/py.mjs tools/validate.py",
+    "data:validate": "node tools/py.mjs tools/validate.py && node tools/retention/validate.mjs",
     "data:build": "node tools/py.mjs tools/build_db.py && node -e \"require('fs').copyFileSync('build/db.json','data/db.json')\"",
     "data:sync": "node tools/py.mjs tools/sync_data.py",
     "data:check": "node tools/py.mjs tools/sync_data.py --check",
@@ -39,7 +39,8 @@
     "lab:fixtures": "tsx tools/devlab/seed-fixtures.ts",
     "lab:sheet": "tsx tools/devlab/contact-sheet.ts",
     "lab:report": "tsx tools/devlab/report.ts",
-    "lab:schema": "tsx tools/devlab/schema-doc.ts"
+    "lab:schema": "tsx tools/devlab/schema-doc.ts",
+    "retention:art": "node tools/retention/build-art.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",

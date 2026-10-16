@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Tim Berners-Lee — stylized interpretation, not a likeness">
+<g data-z="0" opacity="0.4"><path d="M39 42l-1 10M38 44l-1 10M37 46l-1 10M62 42l1 10M63 44l1 10M64 46l1 10"/><path d="M12 82l6 10M17 82l6 10M22 82l6 10M27 82l6 10M32 82l6 10M37 82l6 10"/><path d="M42 60l8 2M43 63l8 2M44 66l8 2"/><path data-extra="1" d="M40 19l2 5M45 19l2 5M50 19l2 5M55 19l2 5M60 19l2 5M41 29l8 0.5M41 32l8 0.5M40 44l1 6M39 47l1 6M38 50l1 6M60 44l-1 6M61 47l-1 6M62 50l-1 6M44 64l10 1M44 66l10 1M44 68l10 1M26 88l5 9M32 88l5 9M38 88l5 9M44 88l5 9M64 88l5 9M70 88l5 9M76 88l5 9"/></g>
+<g data-z="1"><path d="M39 34C38 45 41 54 46 59L50 62L55 59C60 54 62 45 61 34"/><path d="M37 33C36 22 43 15 50 15C57 15 64 22 63 33"/><path d="M38 26Q50 18 62 26M40 20Q50 14 60 20"/><path d="M44 60L42 68M56 60L58 68"/><path d="M42 68L30 74L22 100M58 68L70 74L78 100"/><path d="M42 68L50 76L58 68M50 76V100"/></g>
+<g data-z="2"><path d="M41 35L48 34M52 34L59 35"/><path d="M42 39q3 -2 5 0M53 39q3 -2 5 0"/><path d="M50 37L49 47L51 48"/><path d="M46 54q4 2 8 0"/></g>
+<g data-z="3" opacity="0.65"><path d="M30 82L40 100M24 90L32 100M70 82L60 100M76 90L68 100"/><path d="M44 82L40 100M56 82L60 100"/><path d="M46 70L50 76L54 70M46 74h8"/></g>
+<g data-z="4"><path d="M64 84a2 2 0 1 0 0.1 0zM76 76a2 2 0 1 0 0.1 0zM84 92a2 2 0 1 0 0.1 0zM70 96a2 2 0 1 0 0.1 0z"/><path d="M65 83L75 77M77 78L83 90M72 94L82 91M64 86L69 95M65 84L83 91"/></g>
+<g data-z="5" opacity="0.9" data-accent="ochre"><path d="M70 90a3 3 0 1 0 0.1 0z"/></g>
+</svg>

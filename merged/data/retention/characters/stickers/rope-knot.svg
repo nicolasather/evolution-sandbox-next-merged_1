@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Rope knot celebrating">
+<g data-z="0" opacity=".45"><path d="M30 70c10 10 30 10 40 0M26 62c12 16 36 16 48 0"/></g>
+<g data-z="1"><path d="M14 36c18 -2 24 6 30 20s14 16 22 8s-2 -22 -18 -22s-18 14 -22 24c-2 6 -10 8 -14 4"/><path d="M86 40c-16 4 -24 -2 -30 -14"/><path d="M12 36l-4 -6l8 -2M88 40l4 6l-8 2"/></g>
+<g data-z="2"><path d="M22 34l6 8M32 42l6 8M60 62l8 -2M64 70l8 -2M70 56l6 6" opacity=".6"/><path d="M76 14l2 5l5 2l-5 2l-2 5l-2 -5l-5 -2l5 -2z"/><path d="M20 76l-6 4M28 82l-2 6"/></g>
+</svg>

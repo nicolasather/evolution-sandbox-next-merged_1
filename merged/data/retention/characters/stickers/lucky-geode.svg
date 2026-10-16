@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Geode cut open">
+<g data-z="0" opacity=".45"><path d="M28 82h44M34 88h32M20 70l-6 4M82 68l6 4"/><path data-extra="1" d="M30 50l4 -4M30 56l4 -4"/></g>
+<g data-z="1"><path d="M50 14c20 0 36 14 36 36c0 22 -16 34 -36 34s-36 -12 -36 -34c0 -22 16 -36 36 -36z"/><path d="M50 26c14 0 24 10 24 24c0 14 -10 24 -24 24s-24 -10 -24 -24c0 -14 10 -24 24 -24z" opacity=".8"/></g>
+<g data-z="2"><path d="M38 52l6 -14l8 4l4 14l-8 8z"/><path d="M52 42l8 -4l6 10l-8 10"/><path d="M44 38l2 -8M60 38l2 -6"/><path d="M82 18l2 5l5 2l-5 2l-2 5l-2 -5l-5 -2l5 -2z"/></g>
+</svg>
