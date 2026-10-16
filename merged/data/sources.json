@@ -726,6 +726,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_aqueduct_wp": {
+   "t": "B",
+   "title": "Roman aqueduct",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Roman_aqueduct",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_arch_wp": {
    "t": "B",
    "title": "Archimedes%27 screw",
@@ -771,6 +780,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_hypocaust_wp": {
+   "t": "B",
+   "title": "Hypocaust",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hypocaust",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_chorob_wp": {
    "t": "B",
    "title": "Chorobates",
@@ -812,6 +830,24 @@
    "title": "Windlass",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Windlass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_astrolabe_wp": {
+   "t": "B",
+   "title": "Astrolabe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Astrolabe",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_nocturnal_wp": {
+   "t": "B",
+   "title": "Nocturnal (instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Nocturnal_(instrument)",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1046,6 +1082,24 @@
    "title": "Pascal's calculator",
    "org": "Wikipedia (citing Pascal 1645; Mourlevat 1988)",
    "url": "https://en.wikipedia.org/wiki/Pascaline",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_barometer_wp": {
+   "t": "B",
+   "title": "Barometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Barometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_carillon_wp": {
+   "t": "B",
+   "title": "Carillon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Carillon",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1320,6 +1374,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_gaslight_wp": {
+   "t": "B",
+   "title": "Gas lighting",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gas_lighting",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gasometer_wp": {
+   "t": "B",
+   "title": "Gasometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gasometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_gin_wp": {
    "t": "B",
    "title": "Cotton gin",
@@ -1392,6 +1464,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_arithmometer_wp": {
+   "t": "B",
+   "title": "Arithmometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Arithmometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_galvo_wp": {
    "t": "B",
    "title": "Galvanometer",
@@ -1406,6 +1487,15 @@
    "title": "Difference engine",
    "org": "Wikipedia (citing Swade 2002; Lardner 1834)",
    "url": "https://en.wikipedia.org/wiki/Difference_engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gasometer_wp2": {
+   "t": "B",
+   "title": "Gasometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gasometer",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1460,6 +1550,15 @@
    "title": "Daguerreotype",
    "org": "Wikipedia (citing Lowry 2000; Buerger 1989; Eder 1978)",
    "url": "https://en.wikipedia.org/wiki/Daguerreotype",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_rheostat_wp": {
+   "t": "B",
+   "title": "Rheostat",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rheostat",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"

@@ -17771,5 +17771,31 @@
   },
   "rarity": 1,
   "itemId": "exp28_trephine"
+ },
+ {
+  "id": "x-exp28_aqua_appia",
+  "label": "Aqua Appia",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "Rome's first aqueduct, a covered sloping channel from a spring 16.4 km away to the Forum Boarium.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_aqua_appia"
+ },
+ {
+  "id": "x-exp28_hypocaust",
+  "label": "Hypocaust",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A raised floor on brick pillars through which furnace hot air flows to heat a room.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_hypocaust"
  }
 ]
