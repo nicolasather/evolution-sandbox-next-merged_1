@@ -654,6 +654,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_seismo_wp": {
+   "t": "B",
+   "title": "Seismoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Seismoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_kamal_wp": {
+   "t": "B",
+   "title": "Kamal (navigation)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Kamal_(navigation)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_bisheng_wp": {
    "t": "B",
    "title": "Bi Sheng",
@@ -687,6 +705,15 @@
    "org": "University of Oxford (Cabinet)",
    "url": "https://www.cabinet.ox.ac.uk/node/7661",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pantograph_wp": {
+   "t": "B",
+   "title": "Pantograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pantograph",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -753,11 +780,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_divebell_wp": {
+   "t": "B",
+   "title": "Diving bell",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Diving_bell",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_geneva_wp": {
    "t": "B",
    "title": "Geneva drive",
    "org": "Wikipedia (citing Willis 1945; Bickford 1972; Sclater 2011)",
    "url": "https://en.wikipedia.org/wiki/Geneva_drive",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_orrery_wp": {
+   "t": "B",
+   "title": "Orrery",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Orrery",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -825,6 +870,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_hygro_wp": {
+   "t": "B",
+   "title": "Hygrometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hygrometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_theodolite_wp": {
+   "t": "B",
+   "title": "Theodolite",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Theodolite",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_governor_wp": {
    "t": "B",
    "title": "Centrifugal governor",
@@ -843,11 +906,65 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_lucida_wp": {
+   "t": "B",
+   "title": "Camera lucida",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Camera_lucida",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_davy_wp": {
+   "t": "B",
+   "title": "Davy lamp",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Davy_lamp",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_kaleido_wp": {
+   "t": "B",
+   "title": "Kaleidoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Kaleidoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_galvo_wp": {
+   "t": "B",
+   "title": "Galvanometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Galvanometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_diffengine_wp": {
    "t": "B",
    "title": "Difference engine",
    "org": "Wikipedia (citing Swade 2002; Lardner 1834)",
    "url": "https://en.wikipedia.org/wiki/Difference_engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_thaum_wp": {
+   "t": "B",
+   "title": "Thaumatrope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Thaumatrope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_phena_wp": {
+   "t": "B",
+   "title": "Phenakistiscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Phenakistiscope",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -884,6 +1001,15 @@
    "title": "Aneroid barometer",
    "org": "Wikipedia (citing Heidorn 2002; Middleton 1964)",
    "url": "https://en.wikipedia.org/wiki/Aneroid_barometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_anemometer_wp": {
+   "t": "B",
+   "title": "Anemometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Anemometer",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -929,6 +1055,24 @@
    "title": "Tabulating machine",
    "org": "Wikipedia (citing Hollerith 1894; Truesdell 1965; Austrian 1982)",
    "url": "https://en.wikipedia.org/wiki/Tabulating_machine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_crt_wp": {
+   "t": "B",
+   "title": "Cathode-ray tube",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cathode-ray_tube",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_triode_wp": {
+   "t": "B",
+   "title": "Triode",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Triode",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
