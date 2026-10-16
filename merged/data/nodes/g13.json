@@ -872,6 +872,130 @@
   ]
  },
  {
+  "id": "exp28_slide_rule",
+  "no": 2946,
+  "n": "Slide Rule",
+  "era": "science",
+  "cat": "knowledge",
+  "date": "c. 1622 (Oughtred, Cambridge), from Gunter's 1620 logarithmic scale",
+  "ds": 1622,
+  "rar": "uncommon",
+  "vis": "logarithmic-slide",
+  "l1": "Two sliding logarithmic scales that turn multiplication into adding lengths.",
+  "l2": "Edmund Gunter built a single logarithmic scale in 1620; about 1622 William Oughtred joined two Gunter rules into a design resembling a slide rule. Slide the strip so one number sits over another, and the answer lies under a hairline on the cursor. Accuracy is about three significant digits.",
+  "l3": "Oughtred's ideas reached print only through his student William Forster in 1632 and 1653, and a priority dispute followed with Richard Delamain. Amédée Mannheim's 1859 rule with a cursor became the standard layout, and the HP-35 pocket calculator of 1972 began its end.",
+  "ev": "Gunter (1620) and Oughtred (c. 1622) rules; Mannheim rule of 1859",
+  "src": [
+   "x28_sliderule_wp"
+  ],
+  "rec": [
+   [
+    "mathematics",
+    "measurement",
+    "geometry"
+   ],
+   [
+    "mathematics",
+    "wood",
+    "geometry"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "mathematics"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Invention dated 'around 1620–1630'; priority between Oughtred and Delamain was disputed."
+  },
+  "artifactType": "calculating aid",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Slide Rule — England (Edmund Gunter, William Oughtred)"
+  },
+  "historical": {
+   "region": "England (Edmund Gunter, William Oughtred)",
+   "firstKnownDate": "c. 1620–1630",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_sliderule_wp",
+     "supports": "Gunter 1620 single scale; Oughtred c. 1622 joined two rules; Forster 1632/1653; Mannheim 1859 cursor; wood construction; ~3 significant digits; replaced by pocket calculators in the 1970s."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_pascaline",
   "no": 2927,
   "n": "Pascaline",
@@ -996,6 +1120,254 @@
   ]
  },
  {
+  "id": "exp28_magic_lantern",
+  "no": 2947,
+  "n": "Magic Lantern",
+  "era": "science",
+  "cat": "media",
+  "date": "Huygens' sketches dated to 1659; Kircher's 'Steganographic Mirror' 1645",
+  "ds": 1659,
+  "rar": "uncommon",
+  "vis": "slide-projector",
+  "l1": "A box with a lamp, a mirror and a lens that throws a painted glass slide onto a wall.",
+  "l2": "A concave mirror behind the lamp sends light through a painted glass slide, which is placed upside down, and through a lens focused on the screen. Early slides were hand-painted, often on black backgrounds; the light source went from candles and oil lamps to Argand lamps, limelight and electric arcs.",
+  "l3": "Athanasius Kircher's Ars Magna Lucis et Umbrae (1645) described a 'Steganographic Mirror', a primitive projector. Christiaan Huygens's oldest magic-lantern document, ten sketches of a skeleton removing its skull, is dated to 1659. In 1848 the Langenheim brothers made photographic lantern slides (patented 1850).",
+  "ev": "Huygens's 1659 sketches; Kircher (1645); Vermeir (2005)",
+  "src": [
+   "x28_lantern_wp"
+  ],
+  "rec": [
+   [
+    "lens",
+    "fire",
+    "experiment"
+   ],
+   [
+    "lens",
+    "fire",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "optics_exp28",
+   "optics",
+   "projection"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Date of the oldest surviving document, based on its surrounding papers."
+  },
+  "artifactType": "projector",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Magic Lantern — Netherlands (Christiaan Huygens); Rome (Athanasius Kircher)"
+  },
+  "historical": {
+   "region": "Netherlands (Christiaan Huygens); Rome (Athanasius Kircher)",
+   "firstKnownDate": "1659",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_lantern_wp",
+     "supports": "Kircher 1645; Huygens's oldest document c. 1659; lamp, mirror, painted glass slide inserted upside down, lens; Langenheim photographic slides 1848."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_anchor_escapement",
+  "no": 2935,
+  "n": "Anchor Escapement",
+  "era": "science",
+  "cat": "engineering",
+  "date": "Oldest known anchor clock: Wadham College, Oxford, 1670; popularised by William Clement c. 1680",
+  "ds": 1670,
+  "rar": "rare",
+  "vis": "anchor-and-wheel",
+  "l1": "A ship's-anchor-shaped lever that rocks over a toothed wheel and lets a pendulum clock tick.",
+  "l2": "The anchor's two pallets catch and release the escape wheel's teeth while its crutch pushes the pendulum. Placing the pallets farther from the pivot cut the pendulum swing from about 100° in a verge clock to 4–6°, so clocks could use long, slow seconds pendulums in tall longcase cases.",
+  "l3": "The oldest known anchor clock is the Wadham College clock of 1670, probably by Joseph Knibb. Wikipedia notes that the claim that Robert Hooke invented it is 'now regarded as untrue': his 1671 invention was a constant-force escapement. The anchor recoils, which adds wear; the deadbeat escapement later replaced it in precision clocks.",
+  "ev": "Wadham College clock (1670); Headrick (2002) on the anchor escapement's origin",
+  "src": [
+   "x28_anchor_wp"
+  ],
+  "rec": [
+   [
+    "gear",
+    "lever",
+    "clock"
+   ],
+   [
+    "lever",
+    "clock",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "timekeeping_exp28",
+   "timekeeping",
+   "mechanism"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Attribution to Clement is the page's view; Hooke's priority is 'regarded as untrue'."
+  },
+  "artifactType": "mechanism",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Anchor Escapement — England (William Clement; Joseph Knibb)"
+  },
+  "historical": {
+   "region": "England (William Clement; Joseph Knibb)",
+   "firstKnownDate": "1670",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_anchor_wp",
+     "supports": "Clement popularised it c. 1680; oldest known anchor clock Wadham College 1670 probably by Knibb; Hooke attribution regarded as untrue; pendulum swing from ~100° to 4–6°; recoil."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_stepped_reckoner",
   "no": 2928,
   "n": "Leibniz Stepped Reckoner",
@@ -1047,6 +1419,129 @@
     {
      "source": "x28_stepped_wp",
      "supports": "Idea 1672 in Paris; wooden model to the Royal Society 1 Feb 1673; stepped drum mechanism; two prototypes, one survives in Hanover; carry flaw."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_geneva_drive",
+  "no": 2936,
+  "n": "Geneva Drive",
+  "era": "industry",
+  "cat": "engineering",
+  "date": "Related watch 'Geneva stop' by 17th–18th-century watchmakers; film-projector use from 1896",
+  "ds": 1700,
+  "rar": "uncommon",
+  "vis": "maltese-cross",
+  "l1": "A pin on a spinning wheel steps a slotted wheel round one slot at a time, then locks it still.",
+  "l2": "The drive wheel's pin enters a slot of the driven wheel, advances it one step and leaves; a raised locking disc then holds the driven wheel in place between steps. With four slots it looks like a Maltese cross. Film projectors use it to move the film frame by frame.",
+  "l3": "The name comes from its first use in mechanical watches popularised in Geneva; the page says the related Geneva stop, which limits spring tension, was invented by '17th or 18th century watchmakers' and dates the first film-projector uses to 1896. Wikipedia lists other uses: plotter pen changers, banknote counters, CNC tool changers and turret lathes.",
+  "ev": "Willis (1945) 'Analysis of Geneva Mechanisms'; Bickford (1972)",
+  "src": [
+   "x28_geneva_wp"
+  ],
+  "rec": [
+   [
+    "gear",
+    "wheel",
+    "mechanism"
+   ],
+   [
+    "gear",
+    "wheel",
+    "clock"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "machines_exp28",
+   "mechanism"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "No firm invention date for the drive itself; the page names the watch stop's period and the 1896 projector use."
+  },
+  "artifactType": "mechanism",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Geneva Drive — Geneva watchmaking; later film projectors"
+  },
+  "historical": {
+   "region": "Geneva watchmaking; later film projectors",
+   "firstKnownDate": "17th–18th century (watch stop)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_geneva_wp",
+     "supports": "Named for use in Geneva watches; Geneva stop by 17th/18th-century watchmakers; drive wheel pin, slotted driven wheel, locking disc; film projectors 1896."
     }
    ]
   },
@@ -1367,6 +1862,131 @@
    "europe",
    "americas"
   ]
+ },
+ {
+  "id": "exp28_marine_chronometer",
+  "no": 2937,
+  "n": "Marine Chronometer",
+  "era": "science",
+  "cat": "technology",
+  "date": "Harrison's H1 and H2 completed 1741; H4 submitted 1761; Le Roy's chronometer 1766",
+  "ds": 1741,
+  "rar": "rare",
+  "vis": "gimballed-timepiece",
+  "l1": "A clock steady enough at sea to carry home time, so that a navigator can work out longitude.",
+  "l2": "The earth turns at a known rate, so the difference between local time (from the sun or stars) and the chronometer's Greenwich time gives longitude; each four seconds of error can move the position by up to about a nautical mile. The timepiece sat in a box hung in gimbals so it stayed level as the ship rolled.",
+  "l3": "Britain offered a longitude prize in 1714 (awards from £10,000 to £20,000). Harrison finished H1 and H2 in 1741 and H4 was submitted in 1761. Pierre Le Roy invented the detent escapement in 1748 and in 1766 built a chronometer with a detent escapement, temperature-compensated balance and isochronous balance spring; Arnold and Earnshaw simplified the spring detent in 1780.",
+  "ev": "Harrison's timekeepers; Le Roy 1766; Arnold and Earnshaw patents of 1780",
+  "src": [
+   "x28_chronometer_wp"
+  ],
+  "rec": [
+   [
+    "clock",
+    "navigation",
+    "gear"
+   ],
+   [
+    "clock",
+    "navigation",
+    "mechanism"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "timekeeping_exp28",
+   "timekeeping",
+   "maritime"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives no sea-trial dates for H4."
+  },
+  "artifactType": "timekeeper",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Marine Chronometer — England (John Harrison); France (Pierre Le Roy)"
+  },
+  "historical": {
+   "region": "England (John Harrison); France (Pierre Le Roy)",
+   "firstKnownDate": "1741",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_chronometer_wp",
+     "supports": "Longitude prize 1714; Harrison H1/H2 1741, H4 submitted 1761; Le Roy detent escapement 1748 and 1766 chronometer; Arnold and Earnshaw 1780; gimbals; time difference gives longitude."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ],
+  "tradeImportance": "high"
  },
  {
   "id": "exp28_leyden_jar",
@@ -1746,6 +2366,1248 @@
   ]
  },
  {
+  "id": "exp28_centrifugal_governor",
+  "no": 2948,
+  "n": "Centrifugal Governor",
+  "era": "industry",
+  "cat": "engineering",
+  "date": "Huygens' windmill regulator (17th century); Watt's conical pendulum governor, 1788",
+  "ds": 1788,
+  "rar": "uncommon",
+  "vis": "flyball-governor",
+  "l1": "Two spinning iron balls that swing out as the engine speeds up and shut its throttle — the first feedback control.",
+  "l2": "Power from the engine drives a spindle carrying two weighted arms. As speed rises the balls move outward and upward, pulling a sleeve down that moves a linkage and reduces the throttle opening; as speed falls the reverse happens. A simple governor keeps a speed range, not an exact speed.",
+  "l3": "Christiaan Huygens's governor in the 17th century regulated windmills and water wheels, controlling the distance and pressure between millstones. Following a suggestion from Matthew Boulton, James Watt designed a conical pendulum governor for his steam engine in 1788. James Clerk Maxwell analysed governors in 1868.",
+  "ev": "Maxwell (1868), 'On Governors', Proc. Royal Society 16; Hills (1996), Power From Wind",
+  "src": [
+   "x28_governor_wp"
+  ],
+  "rec": [
+   [
+    "steam_engine",
+    "mechanism",
+    "iron"
+   ],
+   [
+    "steam_engine",
+    "mechanism",
+    "gear"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "machines_exp28",
+   "mechanism",
+   "control"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page names Huygens for the governor and Watt for the steam-engine adaptation of 1788."
+  },
+  "artifactType": "control device",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Centrifugal Governor — Netherlands (Christiaan Huygens); Britain (James Watt, Matthew Boulton)"
+  },
+  "historical": {
+   "region": "Netherlands (Christiaan Huygens); Britain (James Watt, Matthew Boulton)",
+   "firstKnownDate": "17th century / 1788",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_governor_wp",
+     "supports": "Huygens invented it in the 17th century for windmills and water wheels; Watt's conical pendulum governor 1788 after Boulton's suggestion; flyballs and sleeve linkage reduce the throttle; Maxwell 1868."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_jacquard_card_chain",
+  "no": 2938,
+  "n": "Jacquard Punched Card Chain",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Jacquard's patent, 1804 (after Bouchon 1725, Falcon 1728, Vaucanson 1740)",
+  "ds": 1804,
+  "rar": "rare",
+  "vis": "card-chain",
+  "l1": "A chain of punched cards, one per row of cloth, that tells a loom which threads to lift.",
+  "l2": "At each quarter turn a card is pressed against rods: a hole lets a rod pass, no hole pushes it aside. Hooks not displaced are raised, lifting their warp threads to form the shed. Change the cards and the same loom weaves a different pattern.",
+  "l3": "Basile Bouchon used a perforated paper band in 1725, Jean Baptiste Falcon individual pasteboard cards in 1728, and Jacques Vaucanson a perforated barrel in 1740; Jacquard patented the combined machine in 1804.",
+  "ev": "Jacquard machine of 1804 and its predecessors; Jacquard-woven Livre de Prières (Lyon, 1886–87)",
+  "src": [
+   "x28_jacquard_wp"
+  ],
+  "rec": [
+   [
+    "mechanism",
+    "cloth",
+    "weaving_shuttle"
+   ],
+   [
+    "mechanism",
+    "cloth",
+    "paper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "textile_machines_exp28",
+   "textile",
+   "programming_ancestor"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Patent year 1804 as stated by the page; the page does not date the cards' adoption in Lyon."
+  },
+  "artifactType": "loom control",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Jacquard Punched Card Chain — Lyon, France"
+  },
+  "historical": {
+   "region": "Lyon, France",
+   "firstKnownDate": "1725–1804",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_jacquard_wp",
+     "supports": "Jacquard patented in 1804; predecessors Bouchon 1725, Falcon 1728, Vaucanson 1740; chain of cards, holes pass rods, hooks lift warp threads, Lyon."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_difference_engine",
+  "no": 2949,
+  "n": "Babbage Difference Engine",
+  "era": "industry",
+  "cat": "computing",
+  "date": "Announced 14 June 1822; Difference Engine No. 2 designed 1846–1849",
+  "ds": 1822,
+  "rar": "rare",
+  "vis": "figure-wheel-columns",
+  "l1": "A machine of stacked number wheels that makes mathematical tables by repeated addition alone.",
+  "l2": "The method of finite differences lets a polynomial be tabulated with only addition: each column of figure wheels adds its value into its neighbour. Column 1 shows or prints the result and the last column holds a constant.",
+  "l3": "Babbage announced it on 14 June 1822 to the Royal Astronomical Society; government funding began in 1823 and the project was abandoned in 1842 without a working full-size engine. The Science Museum built the calculating section of No. 2 in 1985–1991 and its printer by 2002. Per Georg Scheutz built a smaller engine in 1853, which reached the Dudley Observatory in 1856.",
+  "ev": "Science Museum build of Difference Engine No. 2 (1991); Scheutz engine (1853)",
+  "src": [
+   "x28_diffengine_wp"
+  ],
+  "rec": [
+   [
+    "gear",
+    "mathematics",
+    "copper"
+   ],
+   [
+    "gear",
+    "mathematics",
+    "engineering"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "computing_ancestor"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives 1846 (not 1847) for the start of No. 2's design."
+  },
+  "artifactType": "calculating machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Babbage Difference Engine — England (Charles Babbage); Sweden (Scheutz)"
+  },
+  "historical": {
+   "region": "England (Charles Babbage); Sweden (Scheutz)",
+   "firstKnownDate": "1822",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_diffengine_wp",
+     "supports": "Announced 14 June 1822; government funding 1823, abandoned 1842; No. 2 designed 1846–1849; Science Museum build 1985–1991; Scheutz engine 1853 to Dudley Observatory 1856; finite differences, addition only."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_zoetrope",
+  "no": 2939,
+  "n": "Zoetrope",
+  "era": "industry",
+  "cat": "media",
+  "date": "Horner's Dædaleum, January 1834; Lincoln's zoetrope patent granted 23 April 1867",
+  "ds": 1834,
+  "rar": "uncommon",
+  "vis": "slit-drum",
+  "l1": "A slotted drum that makes a strip of drawings seem to move when you spin it and look through the slits.",
+  "l2": "A strip of pictures showing the phases of a motion sits against the inside of the drum. Looking through the slits as it spins scans the pictures one at a time rather than blurring them; the faster it turns, the smoother the animation.",
+  "l3": "William George Horner published a cylindrical variation of the phenakistoscope, the Dædaleum, in January 1834. William E. Lincoln's definitive zoetrope dates from 1865; he applied for a US patent on 27 July 1866 (assigned to Milton Bradley) and it was granted on 23 April 1867.",
+  "ev": "Horner (1834); Lincoln's US patent of 1867",
+  "src": [
+   "x28_zoetrope_wp"
+  ],
+  "rec": [
+   [
+    "optics",
+    "wheel",
+    "paper"
+   ],
+   [
+    "optics",
+    "wheel",
+    "observation"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "optics_exp28",
+   "optics",
+   "animation_ancestor"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Two inventors a generation apart; the drum with outer slits is Lincoln's."
+  },
+  "artifactType": "optical toy",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Zoetrope — Britain (William George Horner); United States (William E. Lincoln)"
+  },
+  "historical": {
+   "region": "Britain (William George Horner); United States (William E. Lincoln)",
+   "firstKnownDate": "1834",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_zoetrope_wp",
+     "supports": "Horner's Dædaleum January 1834; Lincoln invented the zoetrope 1865, applied 27 July 1866, patent granted 23 April 1867; drum with slits and picture strip."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
+  "id": "exp28_stereoscope",
+  "no": 2940,
+  "n": "Stereoscope",
+  "era": "electric",
+  "cat": "media",
+  "date": "Wheatstone's mirror stereoscope presented 21 June 1838; Holmes stereoscope 1861",
+  "ds": 1838,
+  "rar": "uncommon",
+  "vis": "stereo-viewer",
+  "l1": "A viewer that shows each eye its own picture so that a pair of photographs fuses into one image with depth.",
+  "l2": "Each eye sees the scene from a slightly different position; the stereoscope shows each eye only its own picture of a pair and the brain fuses them. Lenses also make the picture seem more distant, which relaxes the eyes.",
+  "l3": "Charles Wheatstone presented mirrors set at 45° on 21 June 1838, using drawings because practical photography did not yet exist. David Brewster suggested lenses in 1849 and his handheld model was shown at the Great Exhibition of 1851. Oliver Wendell Holmes made a cheap handheld viewer in 1861 and deliberately did not patent it; it stayed in production for a century.",
+  "ev": "Wheatstone (1838), Contributions to the Physiology of Vision; Brewster (1856)",
+  "src": [
+   "x28_stereo_wp"
+  ],
+  "rec": [
+   [
+    "lens",
+    "photography",
+    "wood"
+   ],
+   [
+    "lens",
+    "photography",
+    "experiment"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "optics_exp28",
+   "optics",
+   "photography"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Wheatstone's 1838 presentation; the page also mentions an optician building a device in 1832."
+  },
+  "artifactType": "viewer",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Stereoscope — England (Charles Wheatstone); Scotland (David Brewster); United States (Oliver Wendell Holmes)"
+  },
+  "historical": {
+   "region": "England (Charles Wheatstone); Scotland (David Brewster); United States (Oliver Wendell Holmes)",
+   "firstKnownDate": "1838",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_stereo_wp",
+     "supports": "Wheatstone presented 21 June 1838; Brewster lenticular 1849, shown 1851; Holmes stereoscope 1861 unpatented; how paired views create depth."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
+  "id": "exp28_daguerreotype_plate",
+  "no": 2941,
+  "n": "Daguerreotype Plate",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Process presented by Arago, 19 August 1839",
+  "ds": 1839,
+  "rar": "rare",
+  "vis": "silvered-plate",
+  "l1": "A mirror-polished silver plate that records a camera image, shown under glass in a small case.",
+  "l2": "A silvered copper sheet is polished, sensitised with iodine fumes, exposed in the camera, developed in heated mercury vapour and fixed. Each plate is a one-off positive image, sealed behind glass in a protective case.",
+  "l3": "François Arago presented the process to the French academies on 19 August 1839. Niépce's earlier heliography laid the groundwork; after his death in 1833 his son Isidore signed a new agreement with Daguerre. The French government bought the rights for lifetime pensions to Daguerre and Isidore Niépce and gave the process to the world.",
+  "ev": "Daguerre's 1839 process; Isidore Niépce, Post tenebras lux (1841)",
+  "src": [
+   "x28_daguerre_wp"
+  ],
+  "rec": [
+   [
+    "copper",
+    "chemistry",
+    "lens"
+   ],
+   [
+    "copper",
+    "chemistry",
+    "experiment"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "photography_exp28",
+   "photography",
+   "chemistry"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Announcement date, not first experiments."
+  },
+  "artifactType": "photographic plate",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Daguerreotype Plate — France (Louis Daguerre, Nicéphore Niépce)"
+  },
+  "historical": {
+   "region": "France (Louis Daguerre, Nicéphore Niépce)",
+   "firstKnownDate": "1839",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_daguerre_wp",
+     "supports": "Presented by Arago 19 Aug 1839; silvered copper plate, iodine fumes, mercury vapour development, fixing; Niépce's heliography; French government bought the rights."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_aneroid_barometer",
+  "no": 2942,
+  "n": "Aneroid Barometer",
+  "era": "industry",
+  "cat": "science",
+  "date": "Lucien Vidi, 1844 (Leibniz had proposed the concept c. 1700)",
+  "ds": 1844,
+  "rar": "uncommon",
+  "vis": "capsule-dial",
+  "l1": "A sealed, springy metal box that swells and shrinks with the air pressure and moves a needle — a barometer with no liquid.",
+  "l2": "The evacuated capsule is held open by a strong spring, so outside pressure squeezes it a little more or less. Levers magnify that movement onto a dial. In a barograph the lever carries a pen onto a slowly turning drum to record the changes.",
+  "l3": "Leibniz first proposed the concept around 1700; Lucien Vidi successfully invented it in 1844. Louis Figuier and Émile Gautier (1867) describe the beryllium-copper cell.",
+  "ev": "Vidi's 1844 instrument",
+  "src": [
+   "x28_aneroid_wp"
+  ],
+  "rec": [
+   [
+    "physics",
+    "iron",
+    "measurement"
+   ],
+   [
+    "physics",
+    "iron",
+    "experiment"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "meteorology",
+   "measurement"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives 1844 (not 1845); Heidorn 2002 is the cited basis."
+  },
+  "artifactType": "meteorological instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Aneroid Barometer — France (Lucien Vidi)"
+  },
+  "historical": {
+   "region": "France (Lucien Vidi)",
+   "firstKnownDate": "1844",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_aneroid_wp",
+     "supports": "Leibniz proposed the concept c. 1700; Lucien Vidi invented it in 1844; evacuated capsule, spring, levers and dial; barograph version."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_wet_collodion_plate",
+  "no": 2950,
+  "n": "Wet Collodion Plate",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Invented 1848, published 1851 (Frederick Scott Archer)",
+  "ds": 1851,
+  "rar": "uncommon",
+  "vis": "glass-negative",
+  "l1": "A glass plate coated with sticky collodion and silver, exposed while still wet.",
+  "l2": "Coat the plate with collodion, sensitise it in silver nitrate, expose it while it is wet and develop it. The whole sequence had to finish within about 10 to 15 minutes, before the film dried, but exposures needed only seconds of daylight.",
+  "l3": "Archer created the process in 1848 and published it in 1851. By the end of the 1860s it almost entirely replaced the daguerreotype; gelatin dry plates largely replaced it in the 1870s, though tintypes continued into the 1930s and wet plate was still used in printing in the 1960s.",
+  "ev": "Archer (1851); Towler, The Silver Sunbeam (1864)",
+  "src": [
+   "x28_collodion_wp"
+  ],
+  "rec": [
+   [
+    "photography",
+    "lens",
+    "iron"
+   ],
+   [
+    "photography",
+    "optics",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "photography_exp28",
+   "photography",
+   "chemistry"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Wikipedia gives 1848 invention and 1851 publication."
+  },
+  "artifactType": "photographic plate",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Wet Collodion Plate — England (Frederick Scott Archer)"
+  },
+  "historical": {
+   "region": "England (Frederick Scott Archer)",
+   "firstKnownDate": "1848–1851",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_collodion_wp",
+     "supports": "Archer created it 1848, published 1851; collodion on glass, silver nitrate, expose wet, develop; 10–15 minute window; replaced daguerreotype by late 1860s, then gelatin dry plates in the 1870s."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_planimeter",
+  "no": 2943,
+  "n": "Amsler Polar Planimeter",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Amsler's polar planimeter, 1854 (Hermann's earlier concept, 1818)",
+  "ds": 1854,
+  "rar": "uncommon",
+  "vis": "tracer-arm",
+  "l1": "A two-armed instrument that measures the area of any traced outline by rolling a small wheel.",
+  "l2": "A tracer follows the outline; the other arm pivots on a fixed weight at the pole. A calibrated wheel near the elbow registers only motion at right angles to its axis, so after one circuit its turns give the enclosed area. The principle rests on Green's theorem.",
+  "l3": "Johann Martin Hermann pioneered the concept in 1818; the Swiss mathematician Jakob Amsler-Laffon built the first modern, polar planimeter in 1854.",
+  "ev": "Amsler's 1854 instrument",
+  "src": [
+   "x28_planimeter_wp"
+  ],
+  "rec": [
+   [
+    "measurement",
+    "geometry",
+    "copper"
+   ],
+   [
+    "measurement",
+    "mathematics",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "surveying_exp28",
+   "surveying",
+   "measurement"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Wikipedia gives 1818 for Hermann (not 1814) and 1854 for Amsler; the page offers a single unnamed reference."
+  },
+  "artifactType": "measuring instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Amsler Polar Planimeter — Switzerland (Jakob Amsler-Laffon); Bavaria (J. M. Hermann)"
+  },
+  "historical": {
+   "region": "Switzerland (Jakob Amsler-Laffon); Bavaria (J. M. Hermann)",
+   "firstKnownDate": "1818 / 1854",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_planimeter_wp",
+     "supports": "Hermann pioneered the concept in 1818; Amsler built the first modern polar planimeter in 1854; tracer, pole arm, measuring wheel; area proportional to wheel turns."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_stevenson_screen",
+  "no": 2944,
+  "n": "Stevenson Screen",
+  "era": "industry",
+  "cat": "science",
+  "date": "Thomas Stevenson's thermometer box, reported 1864",
+  "ds": 1864,
+  "rar": "common",
+  "vis": "louvred-box",
+  "l1": "A white louvred wooden box that keeps rain and sun off the thermometers while letting the air through.",
+  "l2": "Double-louvred walls and no floor let air circulate; white paint reflects sunshine. The WMO standard puts thermometers 1.25 to 2 m above the ground. Every station using the same box makes readings comparable.",
+  "l3": "Thomas Stevenson (1818–1887), a Scottish civil engineer and lighthouse designer, described his box in the Journal of the Scottish Meteorological Society in 1864. Original roofs used two asbestos boards with an air gap; laminate replaced them.",
+  "ev": "Stevenson (1864), Journal of the Scottish Meteorological Society",
+  "src": [
+   "x28_stevenson_wp"
+  ],
+  "rec": [
+   [
+    "measurement",
+    "physics",
+    "experiment"
+   ],
+   [
+    "measurement",
+    "physics",
+    "lumber"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "meteorology",
+   "measurement"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Dated by Stevenson's 1864 description."
+  },
+  "artifactType": "meteorological shelter",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Stevenson Screen — Scotland (Thomas Stevenson)"
+  },
+  "historical": {
+   "region": "Scotland (Thomas Stevenson)",
+   "firstKnownDate": "1864",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_stevenson_wp",
+     "supports": "Thomas Stevenson reported a thermometer box in 1864; double-louvred wooden box, no floor, white paint; WMO height 1.25–2 m; houses thermometers, hygrometers, barometers."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_wimshurst_machine",
   "no": 2934,
   "n": "Wimshurst Machine",
@@ -1866,6 +3728,130 @@
   },
   "regions": [
    "europe"
+  ]
+ },
+ {
+  "id": "exp28_hollerith_tabulator",
+  "no": 2945,
+  "n": "Hollerith Tabulating Machine",
+  "era": "electric",
+  "cat": "computing",
+  "date": "Late 1880s; used for the 1890 US Census",
+  "ds": 1889,
+  "rar": "rare",
+  "vis": "tabulator",
+  "l1": "A machine that reads holes in cards with electric pins and counts them on dials.",
+  "l2": "Spring-loaded wires hung over the card, which sat above pools of mercury, one per hole position. Where a hole was punched, a wire dipped into the mercury and closed a circuit; each pulse advanced an electromechanical counter. The tabulator also controlled a sorting box that opened the lid of the compartment chosen by the card's data.",
+  "l3": "Hollerith's first tabulators compiled mortality statistics for Baltimore, Jersey City and New York City in 1886 and then the 1890 US Census. The machine had 40 counters, each counting up to 9,999. His 1894 paper 'The Electric Tabulating Machine' is in the Journal of the Royal Statistical Society.",
+  "ev": "Hollerith (1894), J. Royal Statistical Society 57(4); Truesdell (1965) on the Census Bureau",
+  "src": [
+   "x28_hollerith_wp"
+  ],
+  "rec": [
+   [
+    "electricity",
+    "paper",
+    "mechanism"
+   ],
+   [
+    "electricity",
+    "paper",
+    "copper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculating_exp28",
+   "calculating",
+   "data_processing"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "'Late 1880s' per the page; the 1886 mortality statistics and 1890 Census are both named."
+  },
+  "artifactType": "data-processing machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Hollerith Tabulating Machine — United States (Herman Hollerith)"
+  },
+  "historical": {
+   "region": "United States (Herman Hollerith)",
+   "firstKnownDate": "1886–1890",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_hollerith_wp",
+     "supports": "Hollerith, late 1880s; 1886 mortality statistics and 1890 US Census; pins dip through holes into mercury cups to close circuits; 40 counters up to 9,999; sorting box."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "americas"
   ]
  }
 ]

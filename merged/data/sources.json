@@ -708,6 +708,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_sliderule_wp": {
+   "t": "B",
+   "title": "Slide rule",
+   "org": "Wikipedia (citing Stoll 2006; Smith 1958; Petroski 2011)",
+   "url": "https://en.wikipedia.org/wiki/Slide_rule",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_pascaline_wp": {
    "t": "B",
    "title": "Pascal's calculator",
@@ -717,11 +726,38 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_lantern_wp": {
+   "t": "B",
+   "title": "Magic lantern",
+   "org": "Wikipedia (citing Kircher 1645; Vermeir 2005; Rossell 2002)",
+   "url": "https://en.wikipedia.org/wiki/Magic_lantern",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_anchor_wp": {
+   "t": "B",
+   "title": "Anchor escapement",
+   "org": "Wikipedia (citing Headrick 2002; Britten 1896)",
+   "url": "https://en.wikipedia.org/wiki/Anchor_escapement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stepped_wp": {
    "t": "B",
    "title": "Stepped reckoner",
    "org": "Wikipedia (citing Kidwell & Williams, The Calculating Machines)",
    "url": "https://en.wikipedia.org/wiki/Stepped_reckoner",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_geneva_wp": {
+   "t": "B",
+   "title": "Geneva drive",
+   "org": "Wikipedia (citing Willis 1945; Bickford 1972; Sclater 2011)",
+   "url": "https://en.wikipedia.org/wiki/Geneva_drive",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -740,6 +776,15 @@
    "title": "John Hadley",
    "org": "Encyclopædia Britannica",
    "url": "https://www.britannica.com/biography/John-Hadley",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chronometer_wp": {
+   "t": "B",
+   "title": "Marine chronometer",
+   "org": "Wikipedia (citing Landes, Revolution in Time; Britten; Macey)",
+   "url": "https://en.wikipedia.org/wiki/Marine_chronometer",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -780,12 +825,111 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_governor_wp": {
+   "t": "B",
+   "title": "Centrifugal governor",
+   "org": "Wikipedia (citing Hills 1996; Maxwell 1868)",
+   "url": "https://en.wikipedia.org/wiki/Centrifugal_governor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_jacquard_wp": {
+   "t": "B",
+   "title": "Jacquard machine",
+   "org": "Wikipedia (citing Essinger 2004; Posselt 1887)",
+   "url": "https://en.wikipedia.org/wiki/Jacquard_machine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_diffengine_wp": {
+   "t": "B",
+   "title": "Difference engine",
+   "org": "Wikipedia (citing Swade 2002; Lardner 1834)",
+   "url": "https://en.wikipedia.org/wiki/Difference_engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_zoetrope_wp": {
+   "t": "B",
+   "title": "Zoetrope",
+   "org": "Wikipedia (citing Herbert; Veras 2022; Hopwood 1899)",
+   "url": "https://en.wikipedia.org/wiki/Zoetrope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_stereo_wp": {
+   "t": "B",
+   "title": "Stereoscope",
+   "org": "Wikipedia (citing Wheatstone 1838; Brewster 1856; Wing 1996)",
+   "url": "https://en.wikipedia.org/wiki/Stereoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_daguerre_wp": {
+   "t": "B",
+   "title": "Daguerreotype",
+   "org": "Wikipedia (citing Lowry 2000; Buerger 1989; Eder 1978)",
+   "url": "https://en.wikipedia.org/wiki/Daguerreotype",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_aneroid_wp": {
+   "t": "B",
+   "title": "Aneroid barometer",
+   "org": "Wikipedia (citing Heidorn 2002; Middleton 1964)",
+   "url": "https://en.wikipedia.org/wiki/Aneroid_barometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_collodion_wp": {
+   "t": "B",
+   "title": "Collodion process",
+   "org": "Wikipedia (citing Towler 1864; Peres 2007)",
+   "url": "https://en.wikipedia.org/wiki/Collodion_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_planimeter_wp": {
+   "t": "B",
+   "title": "Planimeter",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Planimeter",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_stevenson_wp": {
+   "t": "B",
+   "title": "Stevenson screen",
+   "org": "Wikipedia (citing Stevenson 1864; Middleton 1966)",
+   "url": "https://en.wikipedia.org/wiki/Stevenson_screen",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_wimshurst_maglab": {
    "t": "S",
    "title": "Wimshurst Machine (1880)",
    "org": "National High Magnetic Field Laboratory, Magnet Academy",
    "url": "https://nationalmaglab.org/magnet-academy/history-of-electricity-magnetism/museum/wimshurst-machine-1880/",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hollerith_wp": {
+   "t": "B",
+   "title": "Tabulating machine",
+   "org": "Wikipedia (citing Hollerith 1894; Truesdell 1965; Austrian 1982)",
+   "url": "https://en.wikipedia.org/wiki/Tabulating_machine",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   }

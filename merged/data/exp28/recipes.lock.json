@@ -83,6 +83,18 @@
    "cordage"
   ]
  ],
+ "exp28_slide_rule": [
+  [
+   "mathematics",
+   "measurement",
+   "geometry"
+  ],
+  [
+   "mathematics",
+   "wood",
+   "geometry"
+  ]
+ ],
  "exp28_pascaline": [
   [
    "gear",
@@ -95,6 +107,30 @@
    "copper"
   ]
  ],
+ "exp28_magic_lantern": [
+  [
+   "lens",
+   "fire",
+   "experiment"
+  ],
+  [
+   "lens",
+   "fire",
+   "iron"
+  ]
+ ],
+ "exp28_anchor_escapement": [
+  [
+   "gear",
+   "lever",
+   "clock"
+  ],
+  [
+   "lever",
+   "clock",
+   "iron"
+  ]
+ ],
  "exp28_stepped_reckoner": [
   [
    "gear",
@@ -105,6 +141,18 @@
    "gear",
    "mathematics",
    "iron"
+  ]
+ ],
+ "exp28_geneva_drive": [
+  [
+   "gear",
+   "wheel",
+   "mechanism"
+  ],
+  [
+   "gear",
+   "wheel",
+   "clock"
   ]
  ],
  "exp28_tuning_fork": [
@@ -129,6 +177,18 @@
    "optics",
    "navigation",
    "wood"
+  ]
+ ],
+ "exp28_marine_chronometer": [
+  [
+   "clock",
+   "navigation",
+   "gear"
+  ],
+  [
+   "clock",
+   "navigation",
+   "mechanism"
   ]
  ],
  "exp28_leyden_jar": [
@@ -167,6 +227,126 @@
    "iron"
   ]
  ],
+ "exp28_centrifugal_governor": [
+  [
+   "steam_engine",
+   "mechanism",
+   "iron"
+  ],
+  [
+   "steam_engine",
+   "mechanism",
+   "gear"
+  ]
+ ],
+ "exp28_jacquard_card_chain": [
+  [
+   "mechanism",
+   "cloth",
+   "weaving_shuttle"
+  ],
+  [
+   "mechanism",
+   "cloth",
+   "paper"
+  ]
+ ],
+ "exp28_difference_engine": [
+  [
+   "gear",
+   "mathematics",
+   "copper"
+  ],
+  [
+   "gear",
+   "mathematics",
+   "engineering"
+  ]
+ ],
+ "exp28_zoetrope": [
+  [
+   "optics",
+   "wheel",
+   "paper"
+  ],
+  [
+   "optics",
+   "wheel",
+   "observation"
+  ]
+ ],
+ "exp28_stereoscope": [
+  [
+   "lens",
+   "photography",
+   "wood"
+  ],
+  [
+   "lens",
+   "photography",
+   "experiment"
+  ]
+ ],
+ "exp28_daguerreotype_plate": [
+  [
+   "copper",
+   "chemistry",
+   "lens"
+  ],
+  [
+   "copper",
+   "chemistry",
+   "experiment"
+  ]
+ ],
+ "exp28_aneroid_barometer": [
+  [
+   "physics",
+   "iron",
+   "measurement"
+  ],
+  [
+   "physics",
+   "iron",
+   "experiment"
+  ]
+ ],
+ "exp28_wet_collodion_plate": [
+  [
+   "photography",
+   "lens",
+   "iron"
+  ],
+  [
+   "photography",
+   "optics",
+   "iron"
+  ]
+ ],
+ "exp28_planimeter": [
+  [
+   "measurement",
+   "geometry",
+   "copper"
+  ],
+  [
+   "measurement",
+   "mathematics",
+   "iron"
+  ]
+ ],
+ "exp28_stevenson_screen": [
+  [
+   "measurement",
+   "physics",
+   "experiment"
+  ],
+  [
+   "measurement",
+   "physics",
+   "lumber"
+  ]
+ ],
  "exp28_wimshurst_machine": [
   [
    "electricity",
@@ -176,6 +356,18 @@
   [
    "electricity",
    "glass",
+   "copper"
+  ]
+ ],
+ "exp28_hollerith_tabulator": [
+  [
+   "electricity",
+   "paper",
+   "mechanism"
+  ],
+  [
+   "electricity",
+   "paper",
    "copper"
   ]
  ]
