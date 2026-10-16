@@ -10525,5 +10525,126 @@
   ],
   "finalPuzzleId": "exit",
   "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-optics_exp28",
+  "title": "The Optics Exp28 Workshop",
+  "setting": "A sealed workshop wall chart of the optics exp28 family of the Discovery Journal.",
+  "introText": "A workshop of optics exp28 stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 8,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Camera Obscura; Magic Lantern; Camera Lucida; Kaleidoscope; Thaumatrope; Phenakistiscope; Zoetrope; Stereoscope. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "8"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp28_phenakistiscope",
+      "text": "Phenakistiscope"
+     },
+     {
+      "id": "exp28_camera_obscura",
+      "text": "Camera Obscura"
+     },
+     {
+      "id": "exp28_stereoscope",
+      "text": "Stereoscope"
+     },
+     {
+      "id": "exp28_thaumatrope",
+      "text": "Thaumatrope"
+     },
+     {
+      "id": "exp28_camera_lucida",
+      "text": "Camera Lucida"
+     }
+    ],
+    "correctOrder": [
+     "exp28_camera_obscura",
+     "exp28_camera_lucida",
+     "exp28_thaumatrope",
+     "exp28_phenakistiscope",
+     "exp28_stereoscope"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp28_camera_lucida",
+      "label": "Camera Lucida"
+     },
+     {
+      "id": "exp28_camera_obscura",
+      "label": "Camera Obscura"
+     },
+     {
+      "id": "exp28_kaleidoscope",
+      "label": "Kaleidoscope"
+     },
+     {
+      "id": "exp28_magic_lantern",
+      "label": "Magic Lantern"
+     }
+    ],
+    "targets": [
+     {
+      "id": "lens",
+      "label": "Lens"
+     },
+     {
+      "id": "optics",
+      "label": "Optics"
+     },
+     {
+      "id": "shelter",
+      "label": "Shelter"
+     },
+     {
+      "id": "glass",
+      "label": "Glass"
+     }
+    ],
+    "correctMatch": {
+     "exp28_camera_obscura": "shelter",
+     "exp28_magic_lantern": "lens",
+     "exp28_camera_lucida": "glass",
+     "exp28_kaleidoscope": "optics"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CCKM"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "8-5-CCKM",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
  }
 ]

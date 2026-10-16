@@ -11,6 +11,30 @@
    "stone"
   ]
  ],
+ "exp28_zhang_heng_seismoscope": [
+  [
+   "bronze",
+   "observation",
+   "mechanism"
+  ],
+  [
+   "bronze",
+   "observation",
+   "metallurgy"
+  ]
+ ],
+ "exp28_kamal": [
+  [
+   "navigation",
+   "astronomy",
+   "cordage"
+  ],
+  [
+   "navigation",
+   "astronomy",
+   "wood"
+  ]
+ ],
  "exp28_clay_movable_type": [
   [
    "pottery",
@@ -56,6 +80,18 @@
   [
    "casting",
    "navigation",
+   "measurement"
+  ]
+ ],
+ "exp28_pantograph": [
+  [
+   "geometry",
+   "lever",
+   "wood"
+  ],
+  [
+   "geometry",
+   "lever",
    "measurement"
   ]
  ],
@@ -143,6 +179,18 @@
    "iron"
   ]
  ],
+ "exp28_diving_bell": [
+  [
+   "wood",
+   "physics",
+   "experiment"
+  ],
+  [
+   "wood",
+   "physics",
+   "engineering"
+  ]
+ ],
  "exp28_geneva_drive": [
   [
    "gear",
@@ -153,6 +201,18 @@
    "gear",
    "wheel",
    "clock"
+  ]
+ ],
+ "exp28_orrery": [
+  [
+   "gear",
+   "astronomy",
+   "clock"
+  ],
+  [
+   "gear",
+   "astronomy",
+   "copper"
   ]
  ],
  "exp28_tuning_fork": [
@@ -227,6 +287,25 @@
    "iron"
   ]
  ],
+ "exp28_hair_hygrometer": [
+  [
+   "measurement",
+   "physics",
+   "fiber"
+  ],
+  [
+   "measurement",
+   "physics",
+   "experiment"
+  ]
+ ],
+ "exp28_theodolite": [
+  [
+   "measurement",
+   "geometry",
+   "copper"
+  ]
+ ],
  "exp28_centrifugal_governor": [
   [
    "steam_engine",
@@ -251,6 +330,54 @@
    "paper"
   ]
  ],
+ "exp28_camera_lucida": [
+  [
+   "glass",
+   "observation",
+   "copper"
+  ],
+  [
+   "optics",
+   "geometry",
+   "copper"
+  ]
+ ],
+ "exp28_davy_safety_lamp": [
+  [
+   "fire",
+   "iron",
+   "chemistry"
+  ],
+  [
+   "fire",
+   "iron",
+   "experiment"
+  ]
+ ],
+ "exp28_kaleidoscope": [
+  [
+   "optics",
+   "observation",
+   "paper"
+  ],
+  [
+   "optics",
+   "observation",
+   "iron"
+  ]
+ ],
+ "exp28_galvanometer": [
+  [
+   "electricity",
+   "copper",
+   "compass"
+  ],
+  [
+   "electricity",
+   "compass",
+   "measurement"
+  ]
+ ],
  "exp28_difference_engine": [
   [
    "gear",
@@ -263,16 +390,40 @@
    "engineering"
   ]
  ],
+ "exp28_thaumatrope": [
+  [
+   "paper",
+   "cordage",
+   "optics"
+  ],
+  [
+   "paper",
+   "cordage",
+   "observation"
+  ]
+ ],
+ "exp28_phenakistiscope": [
+  [
+   "optics",
+   "paper",
+   "wheel"
+  ],
+  [
+   "optics",
+   "paper",
+   "mechanism"
+  ]
+ ],
  "exp28_zoetrope": [
   [
    "optics",
    "wheel",
-   "paper"
+   "observation"
   ],
   [
    "optics",
    "wheel",
-   "observation"
+   "mechanism"
   ]
  ],
  "exp28_stereoscope": [
@@ -311,6 +462,18 @@
    "experiment"
   ]
  ],
+ "exp28_cup_anemometer": [
+  [
+   "measurement",
+   "physics",
+   "wheel"
+  ],
+  [
+   "measurement",
+   "wheel",
+   "mechanism"
+  ]
+ ],
  "exp28_wet_collodion_plate": [
   [
    "photography",
@@ -326,24 +489,24 @@
  "exp28_planimeter": [
   [
    "measurement",
-   "geometry",
-   "copper"
+   "mathematics",
+   "iron"
   ],
   [
    "measurement",
-   "mathematics",
-   "iron"
+   "geometry",
+   "mechanism"
   ]
  ],
  "exp28_stevenson_screen": [
   [
    "measurement",
    "physics",
-   "experiment"
+   "lumber"
   ],
   [
    "measurement",
-   "physics",
+   "experiment",
    "lumber"
   ]
  ],
@@ -369,6 +532,30 @@
    "electricity",
    "paper",
    "copper"
+  ]
+ ],
+ "exp28_cathode_ray_tube": [
+  [
+   "electricity",
+   "glass",
+   "physics"
+  ],
+  [
+   "electricity",
+   "glass",
+   "experiment"
+  ]
+ ],
+ "exp28_triode_audion": [
+  [
+   "electricity",
+   "glass",
+   "iron"
+  ],
+  [
+   "electricity",
+   "glass",
+   "telegraph"
   ]
  ]
 }

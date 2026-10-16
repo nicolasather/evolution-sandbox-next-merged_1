@@ -30,7 +30,7 @@ describe('every catalogue item is wired into the modes', () => {
     const rooms = esc as { id: string }[];
     for (const t of topics) expect(rooms.some(r => r.id === `x-${t}`)).toBe(true);
     // anc27 families that are too small for a fair 5-step order and a 4-way match get no room (see gen_escape.py)
-    const ancTopics = new Set(anc.filter(n => n.modeMeta?.['escape-room']?.candidate).map(n => n.tags?.[1]).filter(Boolean));
+    const ancTopics = new Set([...anc, ...e28].filter(n => n.modeMeta?.['escape-room']?.candidate).map(n => n.tags?.[1]).filter(Boolean));
     const ancRooms = rooms.filter(r => !topics.has(r.id.replace(/^x-/, '')));
     expect(ancRooms.length).toBeGreaterThan(30);
     for (const r of ancRooms) expect(ancTopics.has(r.id.replace(/^x-/, '') as string)).toBe(true);
