@@ -1149,5 +1149,197 @@
    "fire",
    "experiment"
   ]
+ ],
+ "exp28_cupola_furnace": [
+  [
+   "iron",
+   "metallurgy",
+   "casting"
+  ],
+  [
+   "iron",
+   "casting",
+   "fire"
+  ]
+ ],
+ "exp28_horse_collar": [
+  [
+   "cloth",
+   "cordage",
+   "rope"
+  ],
+  [
+   "cloth",
+   "cordage",
+   "stone_leather_burnisher"
+  ]
+ ],
+ "exp28_pound_lock": [
+  [
+   "engineering",
+   "stone",
+   "boat"
+  ],
+  [
+   "engineering",
+   "wood",
+   "lever"
+  ]
+ ],
+ "exp28_water_fulling_mill": [
+  [
+   "water_power",
+   "cloth",
+   "exp28_cam_and_follower"
+  ],
+  [
+   "water_power",
+   "cloth",
+   "weaving_shuttle"
+  ]
+ ],
+ "exp28_brace_and_bit": [
+  [
+   "wood",
+   "iron",
+   "bow_drill"
+  ],
+  [
+   "iron",
+   "lever",
+   "bow_drill"
+  ]
+ ],
+ "exp28_bobbin_lace_pillow": [
+  [
+   "fiber",
+   "cloth",
+   "plant_thread"
+  ],
+  [
+   "cloth",
+   "plant_thread",
+   "bone"
+  ]
+ ],
+ "exp28_spirit_level": [
+  [
+   "glass",
+   "wood",
+   "observation"
+  ],
+  [
+   "glass",
+   "wood",
+   "experiment"
+  ]
+ ],
+ "exp28_trocar_cannula": [
+  [
+   "metallurgy",
+   "copper",
+   "iron"
+  ],
+  [
+   "metallurgy",
+   "copper",
+   "forging"
+  ]
+ ],
+ "exp28_coke_blast_furnace": [
+  [
+   "iron",
+   "metallurgy",
+   "fire"
+  ],
+  [
+   "iron",
+   "metallurgy",
+   "water_power"
+  ]
+ ],
+ "exp28_paul_carding_machine": [
+  [
+   "cloth",
+   "fiber",
+   "mechanism"
+  ],
+  [
+   "cloth",
+   "fiber",
+   "iron"
+  ]
+ ],
+ "exp28_trephine": [
+  [
+   "bone",
+   "bow_drill",
+   "copper"
+  ],
+  [
+   "flint",
+   "bow_drill",
+   "wood"
+  ]
+ ],
+ "exp28_siphon": [
+  [
+   "fiber",
+   "copper",
+   "plant_thread"
+  ],
+  [
+   "pottery",
+   "plant_thread",
+   "rope"
+  ]
+ ],
+ "exp28_well_windlass": [
+  [
+   "wood",
+   "axle",
+   "lever"
+  ],
+  [
+   "wood",
+   "axle",
+   "pulley"
+  ]
+ ],
+ "exp28_spinning_wheel": [
+  [
+   "wheel",
+   "plant_thread",
+   "axle"
+  ],
+  [
+   "fiber",
+   "plant_thread",
+   "axle"
+  ]
+ ],
+ "exp28_elliptic_leaf_spring": [
+  [
+   "forging",
+   "cart",
+   "wheel"
+  ],
+  [
+   "forging",
+   "wheel",
+   "axle"
+  ]
+ ],
+ "exp28_fan_gate": [
+  [
+   "engineering",
+   "wood",
+   "iron"
+  ],
+  [
+   "engineering",
+   "water_power",
+   "iron"
+  ]
  ]
 }

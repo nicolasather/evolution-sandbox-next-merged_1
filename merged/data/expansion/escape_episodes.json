@@ -10767,5 +10767,368 @@
   ],
   "finalPuzzleId": "exit",
   "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-surveying_exp28",
+  "title": "The Surveying Exp28 Workshop",
+  "setting": "A sealed workshop wall chart of the surveying exp28 family of the Discovery Journal.",
+  "introText": "A workshop of surveying exp28 stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 8,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Dioptra; Roman Groma; Chorobates; Plane Table; Gunter's Chain; Th\u00e9venot Spirit Level; Great Theodolite; Amsler Polar Planimeter. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "8"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp28_spirit_level",
+      "text": "Th\u00e9venot Spirit Level"
+     },
+     {
+      "id": "exp28_dioptra",
+      "text": "Dioptra"
+     },
+     {
+      "id": "exp28_planimeter",
+      "text": "Amsler Polar Planimeter"
+     },
+     {
+      "id": "exp28_gunters_chain",
+      "text": "Gunter's Chain"
+     },
+     {
+      "id": "exp28_chorobates",
+      "text": "Chorobates"
+     }
+    ],
+    "correctOrder": [
+     "exp28_dioptra",
+     "exp28_chorobates",
+     "exp28_gunters_chain",
+     "exp28_spirit_level",
+     "exp28_planimeter"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp28_plane_table",
+      "label": "Plane Table"
+     },
+     {
+      "id": "exp28_dioptra",
+      "label": "Dioptra"
+     },
+     {
+      "id": "exp28_gunters_chain",
+      "label": "Gunter's Chain"
+     },
+     {
+      "id": "exp28_chorobates",
+      "label": "Chorobates"
+     }
+    ],
+    "targets": [
+     {
+      "id": "measurement",
+      "label": "Measurement"
+     },
+     {
+      "id": "iron",
+      "label": "Iron"
+     },
+     {
+      "id": "geometry",
+      "label": "Geometry"
+     },
+     {
+      "id": "maps",
+      "label": "Maps"
+     }
+    ],
+    "correctMatch": {
+     "exp28_dioptra": "geometry",
+     "exp28_chorobates": "measurement",
+     "exp28_plane_table": "maps",
+     "exp28_gunters_chain": "iron"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "PDGC"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "8-5-PDGC",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-textile_machines_exp28",
+  "title": "The Textile Machines Exp28 Workshop",
+  "setting": "A sealed workshop wall chart of the textile machines exp28 family of the Discovery Journal.",
+  "introText": "A workshop of textile machines exp28 stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 9,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Spindle Spinning Wheel; Water-Powered Fulling Mill; Bobbin Lace Pillow; Lewis Paul's Carding Machine; Spinning Jenny; Water Frame; Spinning Mule; Whitney Cotton Gin; Jacquard Punched Card Chain. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "9"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp28_spinning_mule",
+      "text": "Spinning Mule"
+     },
+     {
+      "id": "exp28_spinning_wheel",
+      "text": "Spindle Spinning Wheel"
+     },
+     {
+      "id": "exp28_jacquard_card_chain",
+      "text": "Jacquard Punched Card Chain"
+     },
+     {
+      "id": "exp28_spinning_jenny",
+      "text": "Spinning Jenny"
+     },
+     {
+      "id": "exp28_bobbin_lace_pillow",
+      "text": "Bobbin Lace Pillow"
+     }
+    ],
+    "correctOrder": [
+     "exp28_spinning_wheel",
+     "exp28_bobbin_lace_pillow",
+     "exp28_spinning_jenny",
+     "exp28_spinning_mule",
+     "exp28_jacquard_card_chain"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp28_bobbin_lace_pillow",
+      "label": "Bobbin Lace Pillow"
+     },
+     {
+      "id": "exp28_spinning_wheel",
+      "label": "Spindle Spinning Wheel"
+     },
+     {
+      "id": "exp28_paul_carding_machine",
+      "label": "Lewis Paul's Carding Machine"
+     },
+     {
+      "id": "exp28_water_fulling_mill",
+      "label": "Water-Powered Fulling Mill"
+     }
+    ],
+    "targets": [
+     {
+      "id": "water_power",
+      "label": "Water Power"
+     },
+     {
+      "id": "cloth",
+      "label": "Cloth"
+     },
+     {
+      "id": "wheel",
+      "label": "Wheel"
+     },
+     {
+      "id": "fiber",
+      "label": "Fibre"
+     }
+    ],
+    "correctMatch": {
+     "exp28_spinning_wheel": "wheel",
+     "exp28_water_fulling_mill": "water_power",
+     "exp28_bobbin_lace_pillow": "fiber",
+     "exp28_paul_carding_machine": "cloth"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "BSLW"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "9-5-BSLW",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
+ },
+ {
+  "id": "x-water_lifting_exp28",
+  "title": "The Water Lifting Exp28 Workshop",
+  "setting": "A sealed workshop wall chart of the water lifting exp28 family of the Discovery Journal.",
+  "introText": "A workshop of water lifting exp28 stands closed. The door opens only for someone who has read the crafting web of this family: how many entries it holds, in what order they unfold, and which ingredient leads to which tool. This room is built from the game's own recipes, not from historical claims.",
+  "puzzles": [
+   {
+    "id": "ratio",
+    "kind": "ratio",
+    "title": "The Tally Board",
+    "unit": "entries",
+    "correctValue": 6,
+    "tolerance": 0,
+    "prompt": "The tally board lists every entry of this family: Shaduf; Siphon; Chain Pump; Archimedes' Screw; Saqiya Water Wheel; Well Windlass. How many entries are there?",
+    "hint": "Count the names on the board one by one.",
+    "unlockFragment": "6"
+   },
+   {
+    "id": "sequence",
+    "kind": "sequence",
+    "title": "The Unfolding Order",
+    "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
+    "steps": [
+     {
+      "id": "exp28_saqiya_wheel",
+      "text": "Saqiya Water Wheel"
+     },
+     {
+      "id": "exp28_shaduf",
+      "text": "Shaduf"
+     },
+     {
+      "id": "exp28_well_windlass",
+      "text": "Well Windlass"
+     },
+     {
+      "id": "exp28_chain_pump",
+      "text": "Chain Pump"
+     },
+     {
+      "id": "exp28_siphon",
+      "text": "Siphon"
+     }
+    ],
+    "correctOrder": [
+     "exp28_shaduf",
+     "exp28_siphon",
+     "exp28_chain_pump",
+     "exp28_saqiya_wheel",
+     "exp28_well_windlass"
+    ],
+    "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
+    "unlockFragment": "5"
+   },
+   {
+    "id": "match",
+    "kind": "match",
+    "title": "The Ingredient Wall",
+    "prompt": "Four items hang on the wall. Match each to the first ingredient of its main recipe.",
+    "items": [
+     {
+      "id": "exp28_chain_pump",
+      "label": "Chain Pump"
+     },
+     {
+      "id": "exp28_shaduf",
+      "label": "Shaduf"
+     },
+     {
+      "id": "exp28_archimedes_screw",
+      "label": "Archimedes' Screw"
+     },
+     {
+      "id": "exp28_siphon",
+      "label": "Siphon"
+     }
+    ],
+    "targets": [
+     {
+      "id": "fiber",
+      "label": "Fibre"
+     },
+     {
+      "id": "mathematics",
+      "label": "Mathematics"
+     },
+     {
+      "id": "lever",
+      "label": "Lever"
+     },
+     {
+      "id": "rope",
+      "label": "Rope"
+     }
+    ],
+    "correctMatch": {
+     "exp28_shaduf": "lever",
+     "exp28_siphon": "fiber",
+     "exp28_chain_pump": "rope",
+     "exp28_archimedes_screw": "mathematics"
+    },
+    "hint": "Open each item in the Discovery Journal and read its first recipe.",
+    "unlockFragment": "CSAS"
+   },
+   {
+    "id": "exit",
+    "kind": "code",
+    "title": "The Workshop Door",
+    "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
+    "correctCode": "6-5-CSAS",
+    "requires": [
+     "ratio",
+     "sequence",
+     "match"
+    ],
+    "hint": "Count, then steps, then initials in the order the wall lists the items."
+   }
+  ],
+  "finalPuzzleId": "exit",
+  "successText": "The door opens. You read a family of tools the way the game builds it: a count, an order, a chain of ingredients."
  }
 ]
