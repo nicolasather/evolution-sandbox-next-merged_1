@@ -17950,5 +17950,30 @@
   },
   "rarity": 1,
   "itemId": "exp28_roman_hand_plane"
+ },
+ {
+  "id": "x-exp28_bell_reaper",
+  "label": "Bell's Mechanical Reaper",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A horse-drawn machine with a spinning reel and a toothed bar that cuts standing grain.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_bell_reaper"
+ },
+ {
+  "id": "x-exp28_deere_steel_plough",
+  "label": "Deere's Steel Plough",
+  "material": "worked earth, timber or stone",
+  "category": "structural",
+  "commonFunction": "A plough with a polished steel blade that turns sticky prairie soil without clogging.",
+  "affinity": {
+   "permanent-settlement": 0.7
+  },
+  "rarity": 1,
+  "itemId": "exp28_deere_steel_plough"
  }
 ]
