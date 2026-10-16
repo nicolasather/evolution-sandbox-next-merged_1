@@ -10658,11 +10658,11 @@
     "kind": "ratio",
     "title": "The Tally Board",
     "unit": "entries",
-    "correctValue": 7,
+    "correctValue": 8,
     "tolerance": 0,
-    "prompt": "The tally board lists every entry of this family: Kamal; Portolan Chart; Mariner's Astrolabe; Chip Log; Davis Quadrant; Hadley Octant; Marshallese Stick Chart. How many entries are there?",
+    "prompt": "The tally board lists every entry of this family: Kamal; Portolan Chart; Mariner's Astrolabe; Chip Log; Davis Quadrant; Hadley Octant; Mayer Reflecting Circle; Marshallese Stick Chart. How many entries are there?",
     "hint": "Count the names on the board one by one.",
-    "unlockFragment": "7"
+    "unlockFragment": "8"
    },
    {
     "id": "sequence",
@@ -10671,8 +10671,8 @@
     "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
     "steps": [
      {
-      "id": "exp28_davis_quadrant",
-      "text": "Davis Quadrant"
+      "id": "exp28_hadley_octant",
+      "text": "Hadley Octant"
      },
      {
       "id": "exp28_kamal",
@@ -10683,8 +10683,8 @@
       "text": "Marshallese Stick Chart"
      },
      {
-      "id": "exp28_chip_log",
-      "text": "Chip Log"
+      "id": "exp28_davis_quadrant",
+      "text": "Davis Quadrant"
      },
      {
       "id": "exp28_mariners_astrolabe",
@@ -10694,8 +10694,8 @@
     "correctOrder": [
      "exp28_kamal",
      "exp28_mariners_astrolabe",
-     "exp28_chip_log",
      "exp28_davis_quadrant",
+     "exp28_hadley_octant",
      "exp28_marshallese_stick_chart"
     ],
     "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
@@ -10756,7 +10756,7 @@
     "kind": "code",
     "title": "The Workshop Door",
     "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
-    "correctCode": "7-5-MKCP",
+    "correctCode": "8-5-MKCP",
     "requires": [
      "ratio",
      "sequence",

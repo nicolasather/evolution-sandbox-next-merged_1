@@ -375,6 +375,132 @@
   ]
  },
  {
+  "id": "exp28_cam_and_follower",
+  "no": 3002,
+  "n": "Cam and Follower",
+  "era": "civilization",
+  "cat": "engineering",
+  "date": "Cam-shaped crossbow trigger arm c. 600 BC (China); water-driven Hellenistic automata, 3rd century BC; al-Jazari 1206",
+  "ds": -600,
+  "rar": "uncommon",
+  "vis": "eccentric-disc-follower",
+  "l1": "An odd-shaped rotating disc that pushes a follower up and down with each turn.",
+  "l2": "A rotating or sliding piece strikes or presses on a follower, typically a lever, at points along its path. An eccentric disc gives smooth back-and-forth motion, as a camshaft opens engine valves.",
+  "l3": "The page puts a cam-shaped swing arm in a Chinese crossbow trigger about 600 BC and cams in water-driven trip hammers by the later Western Han (206 BC–8 AD). Continuously rotating cams worked in Hellenistic water-driven automata from the 3rd century BC; al-Jazari described cams and camshafts in 1206 and they appear in European mechanisms from the 14th century.",
+  "ev": "Han trip hammers; al-Jazari (1206)",
+  "src": [
+   "x28_cam_wp"
+  ],
+  "rec": [
+   [
+    "wheel",
+    "axle",
+    "lever"
+   ],
+   [
+    "wheel",
+    "lever",
+    "bronze"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "machines_exp28",
+   "mechanism",
+   "machine_element"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page notes later research showed the 600 BC trigger cams did rotate on their own axes."
+  },
+  "artifactType": "mechanism",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Cam and Follower — Zhou and Han China; Hellenistic Greece; medieval Islamic and European workshops"
+  },
+  "historical": {
+   "region": "Zhou and Han China; Hellenistic Greece; medieval Islamic and European workshops",
+   "firstKnownDate": "c. 600 BC",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_cam_wp",
+     "supports": "Cam in a crossbow trigger c. 600 BC China; Western Han trip hammers; Hellenistic automata 3rd century BC; al-Jazari 1206; Schmidmuhlen hammers 1010; European cams 14th century."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "wood or metal object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia",
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_camera_obscura",
   "no": 2920,
   "n": "Camera Obscura",
@@ -1741,6 +1867,256 @@
   ]
  },
  {
+  "id": "exp28_water_stamp_mill",
+  "no": 3003,
+  "n": "Water-Powered Stamp Mill",
+  "era": "science",
+  "cat": "engineering",
+  "date": "Stamp mills used by miners in Samarkand, 973; Styrian texts 1135 and 1175; Agricola's illustrations 1556",
+  "ds": 973,
+  "rar": "uncommon",
+  "vis": "cam-lifted-stamps",
+  "l1": "A line of heavy stamps lifted by cams on a water wheel's axle that drop to crush ore.",
+  "l2": "A heavy stamp sits loosely in a frame; a cam on a rotating shaft lifts it, and as the cam moves out the stamp drops onto the ore below. Agricola's mills were mostly wood with iron shoes on each stamp, the camshaft directly on the waterwheel's axle and stamps in gangs of three.",
+  "l3": "The page notes cams in water-driven automata in the 3rd century BC, Pliny's water-driven pestles in the 1st century AD, miners using stamp mills at Samarkand in 973, and Styrian texts of 1135 and 1175 on vertical stamp mills. It dates the first US stamp mill to 1829 at the Capps mine and the California Stamp to 1894.",
+  "ev": "Agricola, De Re Metallica (1556)",
+  "src": [
+   "x28_stamp_wp"
+  ],
+  "rec": [
+   [
+    "water_power",
+    "axle",
+    "iron"
+   ],
+   [
+    "water_power",
+    "axle",
+    "exp28_cam_and_follower"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "mining_exp28",
+   "mining",
+   "milling"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives 973 for Samarkand use; origin earlier in Hellenistic or Roman times is implied but undated."
+  },
+  "artifactType": "ore-crushing machine",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Water-Powered Stamp Mill — Samarkand (973); Styria; later Europe and California"
+  },
+  "historical": {
+   "region": "Samarkand (973); Styria; later Europe and California",
+   "firstKnownDate": "973",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_stamp_wp",
+     "supports": "Pliny 1st century AD; Samarkand 973; Styrian texts 1135 and 1175; Agricola 1556 water-powered stamp mills; first US stamp mill 1829; camshaft lifts stamps."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia",
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_flywheel",
+  "no": 3004,
+  "n": "Flywheel",
+  "era": "science",
+  "cat": "engineering",
+  "date": "Ibn Bassal (AD 1038–75) used flywheels in the noria and saqiya; Theophilus, c. 1070–1125",
+  "ds": 1038,
+  "rar": "uncommon",
+  "vis": "rim-wheel",
+  "l1": "A heavy wheel that keeps turning and smooths the jerks of a machine's drive.",
+  "l2": "A flywheel stores rotational kinetic energy, which depends on its moment of inertia and the square of its rotational speed. It evens out the delivery of power.",
+  "l3": "The page places the principle in the Neolithic spindle and potter's wheel; Ibn Bassal (AD 1038–75) pioneered flywheels in the noria and saqiya to smooth power delivery, and Theophilus Presbyter (c. 1070–1125) recorded one to equalise rotational speed, per Lynn White Jr. James Pickard combined a flywheel with a crank; the page gives no date for Pickard or Watt.",
+  "ev": "Ibn Bassal; Theophilus, De diversibus artibus",
+  "src": [
+   "x28_flywheel_wp"
+  ],
+  "rec": [
+   [
+    "wheel",
+    "axle",
+    "exp28_saqiya_wheel"
+   ],
+   [
+    "wheel",
+    "mechanism",
+    "pottery"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "machines_exp28",
+   "mechanism",
+   "machine_element"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "ds 1038 is the start of Ibn Bassal's life dates, a lower bound for documented machine use."
+  },
+  "artifactType": "mechanism",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Flywheel — Al-Andalus (Ibn Bassal); Germany (Theophilus Presbyter)"
+  },
+  "historical": {
+   "region": "Al-Andalus (Ibn Bassal); Germany (Theophilus Presbyter)",
+   "firstKnownDate": "Neolithic principle; documented 11th century",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_flywheel_wp",
+     "supports": "Neolithic potter's wheel principle; Ibn Bassal AD 1038–75 flywheels in the noria and saqiya; Theophilus c. 1070–1125; stores rotational kinetic energy."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "africa_asia"
+  ]
+ },
+ {
   "id": "exp28_clay_movable_type",
   "no": 2921,
   "n": "Bi Sheng's Clay Movable Type",
@@ -2488,6 +2864,255 @@
   ]
  },
  {
+  "id": "exp28_rack_and_pinion",
+  "no": 3005,
+  "n": "Cranequin Rack and Pinion",
+  "era": "science",
+  "cat": "engineering",
+  "date": "Cranequin for spanning crossbows, 15th century; Xuanyuan arquebus 1598",
+  "ds": 1450,
+  "rar": "uncommon",
+  "vis": "toothed-bar-gear",
+  "l1": "A toothed bar driven by a small gear that turns rotation into a straight push.",
+  "l2": "Rotating the pinion drives the rack in a straight line and moving the rack turns the pinion; a full turn moves the rack by the pinion's pitch circle circumference.",
+  "l3": "The page cites the 15th-century cranequin, a rack-and-pinion device for drawing back crossbow strings (century only), Zhao Shizhen's 1598 Xuanyuan arquebus with a rack-and-pinion matchlock, and the 1621 Wu Pei Chih description of Ottoman muskets. Uses include rack railways, drill presses, stairlifts, lock gates and car steering.",
+  "ev": "Cranequin crossbows; Wu Pei Chih (1621)",
+  "src": [
+   "x28_rack_wp"
+  ],
+  "rec": [
+   [
+    "gear",
+    "lever",
+    "wheel"
+   ],
+   [
+    "gear",
+    "lever",
+    "metallurgy"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "machines_exp28",
+   "mechanism",
+   "machine_element"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "The page gives only the century for the cranequin; ds 1450 is a midpoint, not a stated year."
+  },
+  "artifactType": "mechanism",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Cranequin Rack and Pinion — Europe (cranequin); Ming China (1598)"
+  },
+  "historical": {
+   "region": "Europe (cranequin); Ming China (1598)",
+   "firstKnownDate": "15th century",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_rack_wp",
+     "supports": "Cranequin rack-and-pinion device in the 15th century; Xuanyuan arquebus 1598; Wu Pei Chih 1621; rotation converts to linear motion."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "africa_asia"
+  ]
+ },
+ {
+  "id": "exp28_sackbut",
+  "no": 3006,
+  "n": "Sackbut",
+  "era": "science",
+  "cat": "culture",
+  "date": "Name saqueboute attested in France 1466; sacabuche in Spain 1478; English shakbusshe 1495",
+  "ds": 1466,
+  "rar": "uncommon",
+  "vis": "slide-trumpet",
+  "l1": "A trumpet with a U-shaped slide that changes the length of the air column.",
+  "l2": "The player slides a double tube in and out to change pitch; the trombone's modern system has seven chromatic slide positions, described about 1795 by André Braun after an older four-position system.",
+  "l3": "The page dates the French saqueboute to 1466, Spanish sacabuche to 1478 and English shakbusshe to 1495, and puts the instrument's development at the mid-15th century without an exact year. The name 'trombone' is Italian for 'large trumpet' and English used 'sackbut' until the early 18th century. Riedlocker designed the tuning slide in the early 19th century.",
+  "ev": "Name attestations of 1466, 1478 and 1495",
+  "src": [
+   "x28_trombone_wp"
+  ],
+  "rec": [
+   [
+    "music",
+    "metallurgy",
+    "casting"
+   ],
+   [
+    "music",
+    "metallurgy",
+    "copper"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_exp28",
+   "music",
+   "brass"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "Page gives name dates and 'mid-15th century' development; no exact invention year or earliest depiction."
+  },
+  "artifactType": "musical instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Sackbut — France, Spain and England (names); developed in the mid-15th century"
+  },
+  "historical": {
+   "region": "France, Spain and England (names); developed in the mid-15th century",
+   "firstKnownDate": "1466 (earliest name)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_trombone_wp",
+     "supports": "saqueboute 1466; sacabuche 1478; shakbusshe 1495; mid-15th-century development; Braun c. 1795 seven positions; Riedlocker tuning slide early 19th century."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_mariners_astrolabe",
   "no": 2924,
   "n": "Mariner's Astrolabe",
@@ -2611,6 +3236,126 @@
    "europe"
   ],
   "tradeImportance": "high"
+ },
+ {
+  "id": "exp28_arrastra",
+  "no": 3007,
+  "n": "Arrastra",
+  "era": "science",
+  "cat": "technology",
+  "date": "Phoenician use (no date on the page); reached Mexico around 1540",
+  "ds": 1540,
+  "rar": "common",
+  "vis": "drag-stone-pit",
+  "l1": "A circular stone pit where drag stones on a pole arm are hauled round to grind ore.",
+  "l2": "Two or more flat-bottomed drag stones sit in a circular pit paved with flat stones, attached to a central post by a long arm that a horse, mule or person pulls. Gold is trapped with mercury; silver ore is treated with salt, copper sulfate and mercury to make an amalgam.",
+  "l3": "Arrastras were widely used in the Mediterranean since Phoenician times (the page gives no exact date); the Spanish introduced them to the New World in the 16th century and they reached Mexico around 1540. Some were powered by water wheels and a few by steam, gasoline or electricity.",
+  "ev": "Spanish colonial silver mills (c. 1540)",
+  "src": [
+   "x28_arrastra_wp"
+  ],
+  "rec": [
+   [
+    "stone",
+    "metallurgy",
+    "cart"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "mining_exp28",
+   "mining",
+   "milling"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "ds is the page's only dated point (c. 1540 in Mexico); the device is much older."
+  },
+  "artifactType": "ore-grinding mill",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Arrastra — Mediterranean (Phoenician); New Spain (c. 1540)"
+  },
+  "historical": {
+   "region": "Mediterranean (Phoenician); New Spain (c. 1540)",
+   "firstKnownDate": "c. 1540 (Mexico)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_arrastra_wp",
+     "supports": "Used since Phoenician times (no date); Spanish brought it to the New World in the 16th century, Mexico around 1540; drag stones in a paved pit; mercury amalgamation."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "americas",
+   "europe"
+  ]
  },
  {
   "id": "exp28_plane_table",
@@ -5591,6 +6336,254 @@
   ]
  },
  {
+  "id": "exp28_reflecting_circle",
+  "no": 3014,
+  "n": "Mayer Reflecting Circle",
+  "era": "science",
+  "cat": "technology",
+  "date": "Tobias Mayer, 1752 (published 1767); Borda and Lenoir's definitive form, 1777",
+  "ds": 1752,
+  "rar": "uncommon",
+  "vis": "full-circle-double-mirror",
+  "l1": "A full circle with two mirrors that measures the angle between two objects.",
+  "l2": "A mirror on the index arm reflects one object into the telescope while the other is seen directly; aligning the two images gives their angular separation. The mirror and arm turn through half the angle between the objects, so the scale is doubled.",
+  "l3": "The page says Tobias Mayer invented it in 1752, with details published in 1767, and Borda and Lenoir refined it to its definitive form in 1777 (the 1787 date quoted elsewhere is not on the page). Hadley and Godfrey independently developed the octant around 1731; Fouchy made one in 1732 and Caleb Smith in 1734.",
+  "ev": "Mayer (1752, published 1767); Borda and Lenoir (1777)",
+  "src": [
+   "x28_reflect_wp"
+  ],
+  "rec": [
+   [
+    "navigation",
+    "astronomy",
+    "glass"
+   ],
+   [
+    "navigation",
+    "mathematics",
+    "measurement"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "navigation_exp28",
+   "navigation",
+   "astronomy"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives 1777 for Borda and Lenoir; the 1787 date and Hadley's 1730 are not on the page."
+  },
+  "artifactType": "navigation instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Mayer Reflecting Circle — Germany (Tobias Mayer); France (Jean-Charles de Borda, Étienne Lenoir)"
+  },
+  "historical": {
+   "region": "Germany (Tobias Mayer); France (Jean-Charles de Borda, Étienne Lenoir)",
+   "firstKnownDate": "1752",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_reflect_wp",
+     "supports": "Mayer invented the reflecting circle 1752, published 1767; Borda and Lenoir 1777 definitive form; Hadley and Godfrey around 1731; mirror turns through half the angle."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "room x-navigation_exp28 is generated from this family's own recipes",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_electrophorus",
+  "no": 3015,
+  "n": "Electrophorus",
+  "era": "science",
+  "cat": "science",
+  "date": "J. C. Wilcke, 1762; improved and popularised by Volta, 1775",
+  "ds": 1762,
+  "rar": "uncommon",
+  "vis": "resin-cake-plate",
+  "l1": "A charged resin cake and a handled metal plate that makes charge again and again.",
+  "l2": "Rub the dielectric cake with fur; set the insulated metal plate on it. Its field separates charge in the plate; touch the top briefly to ground it, then lift the plate off. Lifting takes work, raising its voltage, and the cake keeps its charge so the cycle repeats.",
+  "l3": "The page credits Swedish professor Johan Carl Wilcke with the first version in 1762 and Volta with improving and popularising it in 1775; Volta is sometimes wrongly credited with inventing it. The cake was originally resin, pitch or wax and is now usually plastic.",
+  "ev": "Wilcke (1762); Volta (1775)",
+  "src": [
+   "x28_electrophorus_wp"
+  ],
+  "rec": [
+   [
+    "physics",
+    "experiment",
+    "glass"
+   ],
+   [
+    "physics",
+    "experiment",
+    "cloth"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "electrical_instruments_exp28",
+   "electricity",
+   "electrostatics"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Volta improved it; he did not invent it, per the page."
+  },
+  "artifactType": "electrostatic device",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Electrophorus — Sweden (Johan Carl Wilcke); Italy (Alessandro Volta)"
+  },
+  "historical": {
+   "region": "Sweden (Johan Carl Wilcke); Italy (Alessandro Volta)",
+   "firstKnownDate": "1762",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_electrophorus_wp",
+     "supports": "Wilcke invented the first version in 1762; Volta improved and popularised it in 1775; charged dielectric cake and metal plate on an insulating handle."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_spinning_jenny",
   "no": 2932,
   "n": "Spinning Jenny",
@@ -6578,6 +7571,131 @@
    "africa_asia"
   ],
   "tradeImportance": "high"
+ },
+ {
+  "id": "exp28_cradle_scythe",
+  "no": 3016,
+  "n": "Grain Cradle Scythe",
+  "era": "industry",
+  "cat": "technology",
+  "date": "Grain cradle added to the scythe 'in about 1800'; scythe had replaced the sickle by the 16th century",
+  "ds": 1800,
+  "rar": "common",
+  "vis": "finger-rail-blade",
+  "l1": "A scythe with light wooden fingers above the blade that lay the cut stalks in a neat swath.",
+  "l2": "A grain cradle's light wooden fingers above the blade keep the grain stems aligned as they are cut with the scythe's long snath and blade.",
+  "l3": "The page says that 'in about 1800' a grain cradle was sometimes added to the scythe for mowing grain; scythes had replaced the sickle for reaping crops by the 16th century. The Abbeydale hamlet in Sheffield made scythes from the end of the 18th century to the 1930s. The page's c. 7000 BC date for the earliest scythes is marked 'citation needed'.",
+  "ev": "Abbeydale Industrial Hamlet, Sheffield (museum of scythe-making)",
+  "src": [
+   "x28_scythe_wp"
+  ],
+  "rec": [
+   [
+    "wood",
+    "forging",
+    "lever"
+   ],
+   [
+    "wood",
+    "lever",
+    "iron"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "harvesting_exp28",
+   "harvesting",
+   "agriculture"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "'In about 1800' is the page's wording; the earliest-scythe claim is uncited there."
+  },
+  "artifactType": "harvesting tool",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Grain Cradle Scythe — Europe and North America"
+  },
+  "historical": {
+   "region": "Europe and North America",
+   "firstKnownDate": "c. 1800",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_scythe_wp",
+     "supports": "Grain cradle added in about 1800; scythe replaced sickle by the 16th century; Abbeydale scythe works from the end of the 18th century to the 1930s; c. 7000 BC claim marked citation needed."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
  },
  {
   "id": "exp28_jacquard_card_chain",
@@ -8442,6 +9560,132 @@
   ]
  },
  {
+  "id": "exp28_gutta_percha_cable",
+  "no": 3008,
+  "n": "Gutta-Percha Submarine Cable",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Siemens' gutta-percha cable across the Rhine, 1847; first transatlantic cable operational 16 August 1858",
+  "ds": 1847,
+  "rar": "rare",
+  "vis": "armoured-core",
+  "l1": "A copper core wrapped in gutta-percha and armoured with iron wire for laying under water.",
+  "l2": "Nineteenth-century transatlantic cables used gutta-percha around a multi-stranded copper core; the insulating gum is meltable by heat. Gutta-percha was introduced to Europe by William Montgomerie, and the cables had no in-line repeaters.",
+  "l3": "Wheatstone suggested gutta-percha in 1845 for a Dover–Calais wire; William Siemens laid the first successful underwater gutta-percha cable across the Rhine in 1847. The first transatlantic cable was operational on 16 August 1858 and worked about a month; the SS Great Eastern attempts of 1865 and 1866 produced the first successful one.",
+  "ev": "Siemens' Rhine cable (1847); Atlantic cable of 1858",
+  "src": [
+   "x28_subcable_wp"
+  ],
+  "rec": [
+   [
+    "telegraph",
+    "electricity",
+    "rope"
+   ],
+   [
+    "telegraph",
+    "electricity",
+    "boat"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "telegraphy_exp28",
+   "telegraphy",
+   "cable"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives only years for the 1865 and 1866 attempts and for the gum's 1842 introduction."
+  },
+  "artifactType": "communication cable",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Gutta-Percha Submarine Cable — Germany (William Siemens); Atlantic (1858, 1865–1866)"
+  },
+  "historical": {
+   "region": "Germany (William Siemens); Atlantic (1858, 1865–1866)",
+   "firstKnownDate": "1847",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_subcable_wp",
+     "supports": "Wheatstone 1845 suggestion; Siemens first successful gutta-percha cable across the Rhine 1847; first transatlantic cable operational 16 Aug 1858; 1865 and 1866 attempts; copper core."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ],
+  "tradeImportance": "high"
+ },
+ {
   "id": "exp28_wet_collodion_plate",
   "no": 2950,
   "n": "Wet Collodion Plate",
@@ -9310,6 +10554,130 @@
   ]
  },
  {
+  "id": "exp28_flash_powder",
+  "no": 3017,
+  "n": "Magnesium Flash Powder",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Miethe and Gaedicke, 1887; magnesium ribbon from 1864",
+  "ds": 1887,
+  "rar": "uncommon",
+  "vis": "flash-tray",
+  "l1": "A pinch of magnesium powder and potassium chlorate that burns with a bright flash for photographs indoors.",
+  "l2": "Magnesium burns with a light similar to daylight. Flash powder is magnesium powder mixed with potassium chlorate and ignited by hand to give a brief intense flash.",
+  "l3": "Bunsen and Roscoe found in 1859 that burning magnesium gave daylight-like light; Edward Sonstadt applied for magnesium patents in 1862 and the Manchester Magnesium Company made flat ribbon from 1864. Adolf Miethe and Johannes Gaedicke introduced flash powder in 1887; manufactured flashbulbs replaced it from 1929.",
+  "ev": "Miethe and Gaedicke (1887); Sonstadt patents (1862)",
+  "src": [
+   "x28_flash_wp"
+  ],
+  "rec": [
+   [
+    "chemistry",
+    "fire",
+    "metallurgy"
+   ],
+   [
+    "chemistry",
+    "fire",
+    "experiment"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "photography_exp28",
+   "photography",
+   "chemistry"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Dates from the page; flashbulbs commercially from 1929 in Germany."
+  },
+  "artifactType": "photographic light source",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Magnesium Flash Powder — Germany (Adolf Miethe, Johannes Gaedicke); Manchester (Sonstadt and Mellor)"
+  },
+  "historical": {
+   "region": "Germany (Adolf Miethe, Johannes Gaedicke); Manchester (Sonstadt and Mellor)",
+   "firstKnownDate": "1887",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_flash_wp",
+     "supports": "Bunsen and Roscoe 1859; Sonstadt patents 1862; Manchester Magnesium Company 1864; Miethe and Gaedicke flash powder 1887; flashbulbs 1929."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_hollerith_tabulator",
   "no": 2945,
   "n": "Hollerith Tabulating Machine",
@@ -9361,6 +10729,130 @@
     {
      "source": "x28_hollerith_wp",
      "supports": "Hollerith, late 1880s; 1886 mortality statistics and 1890 US Census; pins dip through holes into mercury cups to close circuits; 40 counters up to 9,999; sorting box."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "americas"
+  ]
+ },
+ {
+  "id": "exp28_nitrate_roll_film",
+  "no": 3009,
+  "n": "Transparent Nitrate Roll Film",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Eastman's paper-base roll film, 1885; transparent cellulose-nitrate roll film, 1889",
+  "ds": 1889,
+  "rar": "uncommon",
+  "vis": "film-spool",
+  "l1": "A transparent, flexible, highly flammable roll of film that photographers could wind on frame by frame.",
+  "l2": "Roll film coated on a clear plastic base replaced glass plates; the first transparent plastic roll film of 1889 was cellulose nitrate, which is highly flammable.",
+  "l3": "The page says George Eastman sold the first flexible roll film in 1885, coated on paper, and the first transparent plastic roll film appeared in 1889. Kodak introduced cellulose acetate 'safety film' in 1908; the changeover for X-ray films was complete in 1933 and nitrate was discontinued for theatrical 35 mm film in 1951.",
+  "ev": "Eastman roll film (1885, 1889); Kodak safety film (1908)",
+  "src": [
+   "x28_film_wp"
+  ],
+  "rec": [
+   [
+    "chemistry",
+    "paper",
+    "experiment"
+   ],
+   [
+    "chemistry",
+    "paper",
+    "cloth"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "photography_exp28",
+   "photography",
+   "chemistry"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not mention Goodwin, 1887, or celluloid by name."
+  },
+  "artifactType": "photographic medium",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Transparent Nitrate Roll Film — United States (Eastman)"
+  },
+  "historical": {
+   "region": "United States (Eastman)",
+   "firstKnownDate": "1889",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_film_wp",
+     "supports": "Eastman first flexible roll film 1885 on paper; first transparent plastic roll film 1889 cellulose nitrate; safety film 1908; nitrate discontinued for theatrical 35 mm 1951."
     }
    ]
   },
@@ -9682,6 +11174,130 @@
   ]
  },
  {
+  "id": "exp28_electrolytic_capacitor",
+  "no": 3010,
+  "n": "Aluminium Electrolytic Capacitor",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Charles Pollak, patent filed 14 January 1896, granted 19 May 1897",
+  "ds": 1896,
+  "rar": "uncommon",
+  "vis": "oxide-foil-can",
+  "l1": "A can of foil and electrolyte where a thin grown oxide layer is the insulator.",
+  "l2": "A positive voltage on the aluminium anode in an electrolyte grows an insulating oxide layer whose thickness matches the voltage, about 1.4 nm per volt. The oxide is the dielectric and the electrolyte the cathode. It is polarised, and roughening the anode raises capacitance.",
+  "l3": "Buff observed in 1857 that an oxide on aluminium blocks current one way; Ducretet used it in 1875 and coined 'valve metal'. Charles Pollak filed a patent for an 'Electric liquid capacitor with aluminium electrodes' on 14 January 1896, granted 19 May 1897; reversing polarity destroys the layer.",
+  "ev": "Pollak's patent (1896/1897)",
+  "src": [
+   "x28_elcap_wp"
+  ],
+  "rec": [
+   [
+    "electricity",
+    "chemistry",
+    "copper"
+   ],
+   [
+    "electricity",
+    "chemistry",
+    "experiment"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "electronics_exp28",
+   "electronics",
+   "component"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Filing and grant dates are both on the page."
+  },
+  "artifactType": "electronic component",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Aluminium Electrolytic Capacitor — Frankfurt, Germany (Charles Pollak)"
+  },
+  "historical": {
+   "region": "Frankfurt, Germany (Charles Pollak)",
+   "firstKnownDate": "1896",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_elcap_wp",
+     "supports": "Buff 1857; Ducretet 1875; Pollak patent filed 14 Jan 1896, granted 19 May 1897; aluminium oxide dielectric 1.4 nm per volt; polarised."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_cathode_ray_tube",
   "no": 2964,
   "n": "Braun Cathode-Ray Tube",
@@ -9733,6 +11349,130 @@
     {
      "source": "x28_crt_wp",
      "supports": "Braun invented the Braun tube in 1897, cold-cathode diode with phosphor screen; Schuster and Crookes 1890; J. J. Thomson 1897; Zworykin named CRT 1929; deflection coils and raster."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_high_voltage_spark_plug",
+  "no": 3011,
+  "n": "High-Voltage Spark Plug",
+  "era": "electric",
+  "cat": "engineering",
+  "date": "Gottlob Honold (Bosch), 1902; Lenoir used a spark plug in 1860",
+  "ds": 1902,
+  "rar": "uncommon",
+  "vis": "insulated-electrode",
+  "l1": "A threaded plug with an insulated centre electrode that sparks across a gap to light the fuel.",
+  "l2": "An ignition coil or magneto applies 12,000–25,000 V across the central and side electrodes; once the voltage exceeds the gas's dielectric strength the gap ionises and a spark ignites the fuel-air mixture.",
+  "l3": "Étienne Lenoir used an electric spark plug in his 1860 gas engine, the first internal combustion piston engine. Patents of 1898 include Tesla, Simms and Bosch; in 1902 Bosch engineer Gottlob Honold invented the first commercially viable high-voltage plug as part of a magneto ignition. Sintered alumina insulators replaced older mica stacks.",
+  "ev": "Honold (1902); Siemens sintered alumina insulators (1930s)",
+  "src": [
+   "x28_sparkplug_wp"
+  ],
+  "rec": [
+   [
+    "electricity",
+    "steel",
+    "pottery"
+   ],
+   [
+    "electricity",
+    "steel",
+    "engineering"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "engines_exp28",
+   "engine",
+   "ignition"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page says modern insulators are sintered alumina, not porcelain."
+  },
+  "artifactType": "engine part",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "High-Voltage Spark Plug — Stuttgart, Germany (Gottlob Honold, Robert Bosch); France (Étienne Lenoir, 1860)"
+  },
+  "historical": {
+   "region": "Stuttgart, Germany (Gottlob Honold, Robert Bosch); France (Étienne Lenoir, 1860)",
+   "firstKnownDate": "1902",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_sparkplug_wp",
+     "supports": "Lenoir 1860; 1898 patents by Tesla, Simms, Bosch; Honold 1902 first commercially viable high-voltage plug; 12,000–25,000 volts; sintered alumina from the 1930s."
     }
    ]
   },
@@ -10050,6 +11790,255 @@
    "europe"
   ],
   "tradeImportance": "high"
+ },
+ {
+  "id": "exp28_screen_grid_tetrode",
+  "no": 3012,
+  "n": "Screen-Grid Tetrode",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Schottky, developed 1915–1916 (German patent 1916, US 1919); Hull's improved tubes marketed 1927",
+  "ds": 1916,
+  "rar": "rare",
+  "vis": "four-electrode-tube",
+  "l1": "A tube with an extra grid between control grid and plate that shields the plate's capacitance.",
+  "l2": "The screen grid sits between the control grid and the anode and acts as an electrostatic shield, cutting grid-to-anode capacitance to a very small value: 0.025 pF against 8 pF for a typical triode. Radio-frequency stages then needed no neutralising circuits.",
+  "l3": "The page says Schottky developed the first tubes with a screen grid in 1915–1916, patented in Germany in 1916 and in the US in 1919. Hull and Williams at General Electric developed improved screen-grid tubes in the later 1920s, first marketed in 1927.",
+  "ev": "Schottky's 1916 patent; Hull and Williams (1927)",
+  "src": [
+   "x28_tetrode_wp"
+  ],
+  "rec": [
+   [
+    "exp28_triode_audion",
+    "electricity",
+    "glass"
+   ],
+   [
+    "exp28_triode_audion",
+    "electricity",
+    "physics"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "electronics_exp28",
+   "electronics",
+   "amplifier"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page gives 1915–1916 for development and patents in 1916 (Germany) and 1919 (US)."
+  },
+  "artifactType": "electron tube",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Screen-Grid Tetrode — Germany (Walter Schottky); United States (Albert Hull, Neal Williams)"
+  },
+  "historical": {
+   "region": "Germany (Walter Schottky); United States (Albert Hull, Neal Williams)",
+   "firstKnownDate": "1915–1916",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_tetrode_wp",
+     "supports": "Schottky developed screen-grid tubes 1915–1916, patents 1916 Germany and 1919 US; Hull and Williams marketed 1927; screen grid shields capacitance, 0.025 pF versus 8 pF."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
+  "id": "exp28_pentode",
+  "no": 3013,
+  "n": "Pentode Valve",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Gilles Holst and Bernard Tellegen, 1926; US patent cited January 1934",
+  "ds": 1926,
+  "rar": "rare",
+  "vis": "five-electrode-tube",
+  "l1": "A five-electrode tube whose extra grid sends stray electrons back to the plate.",
+  "l2": "A suppressor grid between the screen grid and the anode, held at low potential, repels electrons knocked off the anode (secondary emission) back to the anode, while primary electrons from the cathode still arrive.",
+  "l3": "The page credits Gilles Holst and Bernard Tellegen with inventing the pentode in 1926. RCA's 239 (1932) was the first commercially available variable-mu pentode and the Mullard VP4 followed in 1933.",
+  "ev": "Holst and Tellegen (1926); US Patent 1945040",
+  "src": [
+   "x28_pentode_wp"
+  ],
+  "rec": [
+   [
+    "exp28_screen_grid_tetrode",
+    "exp28_triode_audion",
+    "electricity"
+   ],
+   [
+    "exp28_screen_grid_tetrode",
+    "exp28_triode_audion",
+    "glass"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "electronics_exp28",
+   "electronics",
+   "amplifier"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page credits both Holst and Tellegen and does not name Philips."
+  },
+  "artifactType": "electron tube",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Pentode Valve — Netherlands (Gilles Holst, Bernard Tellegen)"
+  },
+  "historical": {
+   "region": "Netherlands (Gilles Holst, Bernard Tellegen)",
+   "firstKnownDate": "1926",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_pentode_wp",
+     "supports": "Holst and Tellegen invented the pentode in 1926; suppressor grid repels secondary-emission electrons; RCA 239 1932; Mullard VP4 1933."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
  },
  {
   "id": "exp28_differential_analyser",

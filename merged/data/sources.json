@@ -672,6 +672,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_cam_wp": {
+   "t": "B",
+   "title": "Cam (mechanism)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cam_(mechanism)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_camera_hist_wp": {
    "t": "B",
    "title": "History of the camera",
@@ -771,6 +780,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_stamp_wp": {
+   "t": "B",
+   "title": "Stamp mill",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Stamp_mill",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flywheel_wp": {
+   "t": "B",
+   "title": "Flywheel",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flywheel",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_bisheng_wp": {
    "t": "B",
    "title": "Bi Sheng",
@@ -825,12 +852,39 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_rack_wp": {
+   "t": "B",
+   "title": "Rack and pinion",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rack_and_pinion",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_trombone_wp": {
+   "t": "B",
+   "title": "Trombone",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trombone",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_astrolabe_ox": {
    "t": "S",
    "title": "The mariner's astrolabe and Portuguese exploration",
    "org": "University of Oxford (Cabinet)",
    "url": "https://www.cabinet.ox.ac.uk/node/7661",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arrastra_wp": {
+   "t": "B",
+   "title": "Arrastra",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Arrastra",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -1059,6 +1113,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_reflect_wp": {
+   "t": "B",
+   "title": "Reflecting instrument",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Reflecting_instrument",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_electrophorus_wp": {
+   "t": "B",
+   "title": "Electrophorus",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Electrophorus",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_jenny_wp": {
    "t": "B",
    "title": "Spinning jenny",
@@ -1127,6 +1199,15 @@
    "title": "Cotton gin",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Cotton_gin",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_scythe_wp": {
+   "t": "B",
+   "title": "Scythe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Scythe",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1266,6 +1347,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_subcable_wp": {
+   "t": "B",
+   "title": "Submarine communications cable",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Submarine_communications_cable",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_collodion_wp": {
    "t": "B",
    "title": "Collodion process",
@@ -1329,11 +1419,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_flash_wp": {
+   "t": "B",
+   "title": "Flash (photography)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flash_(photography)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_hollerith_wp": {
    "t": "B",
    "title": "Tabulating machine",
    "org": "Wikipedia (citing Hollerith 1894; Truesdell 1965; Austrian 1982)",
    "url": "https://en.wikipedia.org/wiki/Tabulating_machine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_film_wp": {
+   "t": "B",
+   "title": "Photographic film",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Photographic_film",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1356,11 +1464,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_elcap_wp": {
+   "t": "B",
+   "title": "Electrolytic capacitor",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Electrolytic_capacitor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_crt_wp": {
    "t": "B",
    "title": "Cathode-ray tube",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Cathode-ray_tube",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sparkplug_wp": {
+   "t": "B",
+   "title": "Spark plug",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spark_plug",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1379,6 +1505,24 @@
    "title": "Triode",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Triode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_tetrode_wp": {
+   "t": "B",
+   "title": "Tetrode",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Tetrode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pentode_wp": {
+   "t": "B",
+   "title": "Pentode",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pentode",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
