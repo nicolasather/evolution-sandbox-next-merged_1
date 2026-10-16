@@ -60,6 +60,14 @@ def main():
         cat = CAT[topic]
         out.append({"id": "x-" + n["id"], "label": n["n"], "material": MAT[cat], "category": cat,
                     "commonFunction": first_sentence(n["l1"]), "affinity": AFF[cat], "rarity": 1, "itemId": n["id"]})
+    g13 = ROOT / "data/nodes/g13.json"   # exp28: sourced items; the installer already decided per item (modeMeta.archaeology)
+    if g13.exists():
+        for n in sorted(json.loads(g13.read_text(encoding="utf-8")), key=lambda x: x["no"]):
+            m = n.get("modeMeta", {}).get("archaeology", {})
+            if m.get("candidate") and m.get("category") in MAT:
+                cat = m["category"]
+                out.append({"id": "x-" + n["id"], "label": n["n"], "material": MAT[cat], "category": cat,
+                            "commonFunction": first_sentence(n["l1"]), "affinity": AFF[cat], "rarity": 1, "itemId": n["id"]})
     p = ROOT / "data/expansion/archaeology_templates.json"
     p.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"{len(out)} archaeology templates")

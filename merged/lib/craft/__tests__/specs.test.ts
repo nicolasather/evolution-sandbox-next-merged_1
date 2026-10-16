@@ -15,7 +15,7 @@ const db = rawDb as unknown as Db;
 const byId = new Map(db.nodes.map(n => [n.id, n]));
 const eraIndex = (id: string) => Math.max(0, db.eras.findIndex(e => e.id === byId.get(id)!.era));
 const pairs: { a: string; b: string; r: string }[] = [];
-for (const n of db.nodes) for (const [a, b] of n.rec) pairs.push({ a, b, r: n.id });
+for (const n of db.nodes) for (const [a, b, ...more] of n.rec) if (!more.length) pairs.push({ a, b, r: n.id }); // 3+-slot recipes are crafted by combineMany, not by a pair
 const specOf = (p: { a: string; b: string; r: string }, relax = false) =>
   deriveSpec(byId.get(p.a)!, byId.get(p.b)!, byId.get(p.r)!, { eraIndex: eraIndex(p.r), relax });
 
