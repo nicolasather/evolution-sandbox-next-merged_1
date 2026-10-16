@@ -962,5 +962,192 @@
    "exp28_jacquard_card_chain",
    "gear"
   ]
+ ],
+ "exp28_cam_and_follower": [
+  [
+   "wheel",
+   "axle",
+   "lever"
+  ],
+  [
+   "wheel",
+   "lever",
+   "bronze"
+  ]
+ ],
+ "exp28_water_stamp_mill": [
+  [
+   "water_power",
+   "axle",
+   "iron"
+  ],
+  [
+   "water_power",
+   "axle",
+   "exp28_cam_and_follower"
+  ]
+ ],
+ "exp28_flywheel": [
+  [
+   "wheel",
+   "axle",
+   "exp28_saqiya_wheel"
+  ],
+  [
+   "wheel",
+   "mechanism",
+   "pottery"
+  ]
+ ],
+ "exp28_rack_and_pinion": [
+  [
+   "gear",
+   "lever",
+   "wheel"
+  ],
+  [
+   "gear",
+   "lever",
+   "metallurgy"
+  ]
+ ],
+ "exp28_sackbut": [
+  [
+   "music",
+   "metallurgy",
+   "casting"
+  ],
+  [
+   "music",
+   "metallurgy",
+   "copper"
+  ]
+ ],
+ "exp28_arrastra": [
+  [
+   "stone",
+   "metallurgy",
+   "cart"
+  ]
+ ],
+ "exp28_gutta_percha_cable": [
+  [
+   "telegraph",
+   "electricity",
+   "rope"
+  ],
+  [
+   "telegraph",
+   "electricity",
+   "boat"
+  ]
+ ],
+ "exp28_nitrate_roll_film": [
+  [
+   "chemistry",
+   "paper",
+   "experiment"
+  ],
+  [
+   "chemistry",
+   "paper",
+   "cloth"
+  ]
+ ],
+ "exp28_electrolytic_capacitor": [
+  [
+   "electricity",
+   "chemistry",
+   "copper"
+  ],
+  [
+   "electricity",
+   "chemistry",
+   "experiment"
+  ]
+ ],
+ "exp28_high_voltage_spark_plug": [
+  [
+   "electricity",
+   "steel",
+   "pottery"
+  ],
+  [
+   "electricity",
+   "steel",
+   "engineering"
+  ]
+ ],
+ "exp28_screen_grid_tetrode": [
+  [
+   "exp28_triode_audion",
+   "electricity",
+   "glass"
+  ],
+  [
+   "exp28_triode_audion",
+   "electricity",
+   "physics"
+  ]
+ ],
+ "exp28_pentode": [
+  [
+   "exp28_screen_grid_tetrode",
+   "exp28_triode_audion",
+   "electricity"
+  ],
+  [
+   "exp28_screen_grid_tetrode",
+   "exp28_triode_audion",
+   "glass"
+  ]
+ ],
+ "exp28_reflecting_circle": [
+  [
+   "navigation",
+   "astronomy",
+   "glass"
+  ],
+  [
+   "navigation",
+   "mathematics",
+   "measurement"
+  ]
+ ],
+ "exp28_electrophorus": [
+  [
+   "physics",
+   "experiment",
+   "glass"
+  ],
+  [
+   "physics",
+   "experiment",
+   "cloth"
+  ]
+ ],
+ "exp28_cradle_scythe": [
+  [
+   "wood",
+   "forging",
+   "lever"
+  ],
+  [
+   "wood",
+   "lever",
+   "iron"
+  ]
+ ],
+ "exp28_flash_powder": [
+  [
+   "chemistry",
+   "fire",
+   "metallurgy"
+  ],
+  [
+   "chemistry",
+   "fire",
+   "experiment"
+  ]
  ]
 }

@@ -17745,5 +17745,18 @@
   },
   "rarity": 1,
   "itemId": "exp28_groma"
+ },
+ {
+  "id": "x-exp28_cam_and_follower",
+  "label": "Cam and Follower",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "An odd-shaped rotating disc that pushes a follower up and down with each turn.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_cam_and_follower"
  }
 ]
