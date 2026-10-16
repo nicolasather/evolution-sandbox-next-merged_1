@@ -1341,5 +1341,130 @@
    "water_power",
    "iron"
   ]
+ ],
+ "exp28_aqua_appia": [
+  [
+   "engineering",
+   "measurement",
+   "lime"
+  ],
+  [
+   "engineering",
+   "measurement",
+   "mortar"
+  ]
+ ],
+ "exp28_hypocaust": [
+  [
+   "brick",
+   "fire",
+   "lime"
+  ],
+  [
+   "brick",
+   "fire",
+   "mortar"
+  ],
+  [
+   "kiln",
+   "fire",
+   "lime"
+  ]
+ ],
+ "exp28_nocturnal": [
+  [
+   "astronomy",
+   "wood",
+   "geometry"
+  ],
+  [
+   "astronomy",
+   "wood",
+   "anc27_star_rising_navigation"
+  ]
+ ],
+ "exp28_torricelli_barometer": [
+  [
+   "exp26_graduated_glass_tube",
+   "glass",
+   "experiment"
+  ],
+  [
+   "exp26_graduated_glass_tube",
+   "glass",
+   "observation"
+  ]
+ ],
+ "exp28_hemony_carillon": [
+  [
+   "anc27_bronze_bell_casting",
+   "clock",
+   "mechanism"
+  ],
+  [
+   "anc27_bronze_bell_casting",
+   "clock",
+   "bronze"
+  ]
+ ],
+ "exp28_murdoch_coal_gas_lamp": [
+  [
+   "exp28_coke_blast_furnace",
+   "iron",
+   "chemistry"
+  ],
+  [
+   "exp28_coke_blast_furnace",
+   "fire",
+   "chemistry"
+  ]
+ ],
+ "exp28_arithmometer": [
+  [
+   "mechanism",
+   "gear",
+   "exp28_jacquard_card_chain"
+  ],
+  [
+   "mechanism",
+   "number_system",
+   "clock"
+  ]
+ ],
+ "exp28_telescopic_gas_holder": [
+  [
+   "exp28_murdoch_coal_gas_lamp",
+   "iron",
+   "engineering"
+  ],
+  [
+   "exp28_murdoch_coal_gas_lamp",
+   "iron",
+   "exp26_pressure_water_main"
+  ]
+ ],
+ "exp28_rheostat": [
+  [
+   "electricity",
+   "exp26_copper_wire_coil",
+   "wood"
+  ],
+  [
+   "electricity",
+   "exp26_copper_wire_coil",
+   "measurement"
+  ]
+ ],
+ "exp28_planispheric_astrolabe": [
+  [
+   "astronomy",
+   "geometry",
+   "anc27_ancient_star_catalogue"
+  ],
+  [
+   "astronomy",
+   "geometry",
+   "anc27_polynesian_star_compass"
+  ]
  ]
 }

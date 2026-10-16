@@ -1126,6 +1126,131 @@
   ]
  },
  {
+  "id": "exp28_aqua_appia",
+  "no": 3034,
+  "n": "Aqua Appia",
+  "era": "civilization",
+  "cat": "engineering",
+  "date": "Completed 312 BC, commissioned by Appius Claudius Caecus",
+  "ds": -312,
+  "rar": "rare",
+  "vis": "sloped-covered-channel",
+  "l1": "Rome's first aqueduct, a covered sloping channel from a spring 16.4 km away to the Forum Boarium.",
+  "l2": "Roman aqueducts carried water by gravity; the page notes siphons in soldered lead pipe crossed valleys where arcades were impractical, and terminal castella acted as settling tanks and cisterns that fed branch pipes through bronze stopcocks.",
+  "l3": "The Aqua Appia was completed in 312 BC, commissioned by the censor Appius Claudius Caecus, fed by a spring 16.4 km from Rome and discharging into a fountain at the Forum Boarium. The page gives no exact dates for the siphons, castella or the Pont du Gard.",
+  "ev": "Aqua Appia (312 BC)",
+  "src": [
+   "x28_aqueduct_wp"
+  ],
+  "rec": [
+   [
+    "engineering",
+    "measurement",
+    "lime"
+   ],
+   [
+    "engineering",
+    "measurement",
+    "mortar"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "waterworks_exp28",
+   "water",
+   "roman"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Exact dates for later aqueduct features are not given on the page."
+  },
+  "artifactType": "aqueduct",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Aqua Appia — Rome, Italy"
+  },
+  "historical": {
+   "region": "Rome, Italy",
+   "firstKnownDate": "312 BC",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_aqueduct_wp",
+     "supports": "Aqua Appia completed 312 BC by Appius Claudius Caecus, spring 16.4 km away, fountain at Forum Boarium; lead siphons; castellum settling tanks with bronze stopcocks."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "stone-lined channel object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_archimedes_screw",
   "no": 2969,
   "n": "Archimedes' Screw",
@@ -1708,6 +1833,136 @@
     "decision": "playable",
     "category": "lithic",
     "reason": "wood and iron object recoverable from a settlement / workshop context",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_hypocaust",
+  "no": 3035,
+  "n": "Hypocaust",
+  "era": "civilization",
+  "cat": "engineering",
+  "date": "Attributed to Sergius Orata c. 80 BC (disputed); described by Vitruvius c. 15 BC",
+  "ds": -80,
+  "rar": "rare",
+  "vis": "pilae-under-floor",
+  "l1": "A raised floor on brick pillars through which furnace hot air flows to heat a room.",
+  "l2": "The page describes a furnace feeding hot gases beneath a floor held up by stacks of pillars (pilae), with tile flues (caliducts) in the walls; Vitruvius describes its construction and operation. The article does not use the Latin terms suspensurae, tubuli or praefurnium.",
+  "l3": "Vitruvius attributes the invention to Sergius Orata c. 80 BC, though a 1996 paper by Garrett G. Fagan disputes his priority; the earliest reference on the page is 350 BC, suggesting the Temple of Ephesus was heated this way. Vitruvius describes it c. 15 BC. A hypocaust at Dzalisi dates to 200–400 AD.",
+  "ev": "Vitruvius, De architectura (c. 15 BC)",
+  "src": [
+   "x28_hypocaust_wp"
+  ],
+  "rec": [
+   [
+    "brick",
+    "fire",
+    "lime"
+   ],
+   [
+    "brick",
+    "fire",
+    "mortar"
+   ],
+   [
+    "kiln",
+    "fire",
+    "lime"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "heating_exp28",
+   "heating",
+   "roman"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "ds uses Vitruvius's attribution to Orata (c. 80 BC); Fagan 1996 disputes it."
+  },
+  "artifactType": "underfloor heating system",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Hypocaust — Roman world"
+  },
+  "historical": {
+   "region": "Roman world",
+   "firstKnownDate": "350 BC (earliest reference)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_hypocaust_wp",
+     "supports": "Vitruvius attributes to Sergius Orata c. 80 BC (disputed); Vitruvius describes c. 15 BC; 350 BC earliest reference; pilae stacks and caliducts; heats public baths."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": true,
+    "decision": "playable",
+    "category": "lithic",
+    "reason": "brick, tile and stone object recoverable from a settlement / workshop context",
     "review": "approved",
     "automatic_ingestion": false
    },
@@ -2365,6 +2620,255 @@
   "regions": [
    "europe",
    "africa_asia"
+  ]
+ },
+ {
+  "id": "exp28_planispheric_astrolabe",
+  "no": 3043,
+  "n": "Planispheric Astrolabe",
+  "era": "science",
+  "cat": "science",
+  "date": "Theon of Alexandria's treatise (c. 335–405); al-Fazari built the first in the Islamic world (8th century)",
+  "ds": 775,
+  "rar": "rare",
+  "vis": "mater-rete-alidade",
+  "l1": "A brass disc with a rotating star map that measures a star's height and tells time and latitude.",
+  "l2": "A mater holds one or more latitude plates (tympans); a free-turning rete carries a projection of the ecliptic and pointers to bright stars, and an alidade on the back reads altitude from the graduated edge. One full turn of the rete is one day.",
+  "l3": "The page says Theon of Alexandria (c. 335–405) wrote a detailed treatise on the astrolabe and that al-Fazari, an eighth-century mathematician, is credited as the first to build one in the Islamic world; it gives no exact date, so ds uses 775 as a round mid-8th-century marker. Uses include altitude measurement, identifying stars, latitude and time, and surveying.",
+  "ev": "Theon of Alexandria's treatise (4th century)",
+  "src": [
+   "x28_astrolabe_wp"
+  ],
+  "rec": [
+   [
+    "astronomy",
+    "geometry",
+    "anc27_ancient_star_catalogue"
+   ],
+   [
+    "astronomy",
+    "geometry",
+    "anc27_polynesian_star_compass"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "timekeeping_exp28",
+   "astronomy",
+   "navigation"
+  ],
+  "confidence": {
+   "level": "uncertain",
+   "note": "No exact date is given for al-Fazari; ds is a round marker. The page says Hipparchus probably used an armillary sphere, not an astrolabe."
+  },
+  "artifactType": "astronomical instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Planispheric Astrolabe — Alexandria; Islamic world"
+  },
+  "historical": {
+   "region": "Alexandria; Islamic world",
+   "firstKnownDate": "4th century (treatise)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_astrolabe_wp",
+     "supports": "Theon of Alexandria (c. 335-405) treatise; al-Fazari 8th century first in Islamic world; mater, tympan, rete, alidade; altitude, latitude and time, surveying."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "africa_asia",
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_nocturnal",
+  "no": 3036,
+  "n": "Nocturnal",
+  "era": "science",
+  "cat": "technology",
+  "date": "Pacificus of Verona (9th century); Lull's Nova geometria (1299); Apianus c. 1530; Cortés 1551",
+  "ds": 850,
+  "rar": "uncommon",
+  "vis": "star-time-disc",
+  "l1": "A hand disc that tells the hour at night by sighting Polaris and a pointer star.",
+  "l2": "An outer disc is marked with months and an inner disc with hours and reference stars; a pointer on a shared pivot is lined up on a star sighted through a hollow rivet. Stars circle Polaris in about 23 h 56 min, so the sky works as a clock once the date is set.",
+  "l3": "The page names Pacificus of Verona (9th century) as inventor of the horologium nocturnum, the precursor to later nocturnals; the earliest image of one in use is 12th century; Raymond Lull's Nova geometria (1299) mentions it; Petrus Apianus describes it c. 1530 and Martín Cortés's Arte de Navegar (1551) popularised it.",
+  "ev": "Nova geometria (1299); Cosmographicus Liber (c. 1530)",
+  "src": [
+   "x28_nocturnal_wp"
+  ],
+  "rec": [
+   [
+    "astronomy",
+    "wood",
+    "geometry"
+   ],
+   [
+    "astronomy",
+    "wood",
+    "anc27_star_rising_navigation"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "timekeeping_exp28",
+   "astronomy",
+   "timekeeping"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "ds is a round 850 for the 9th-century precursor; the page gives no exact date for the earliest instrument."
+  },
+  "artifactType": "astronomical time instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Nocturnal — Medieval and early modern Europe (Verona, Spain)"
+  },
+  "historical": {
+   "region": "Medieval and early modern Europe (Verona, Spain)",
+   "firstKnownDate": "9th century (precursor)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_nocturnal_wp",
+     "supports": "Pacificus of Verona 9th-century horologium nocturnum; 12th-century image; Lull 1299; Apianus c. 1530; Cortés 1551; discs, pointer and hollow rivet; stars circle Polaris in 23 h 56 min."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
   ]
  },
  {
@@ -5521,6 +6025,254 @@
     {
      "source": "x28_pascaline_wp",
      "supports": "Designed 1642 by Blaise Pascal aged 18; presented 1645 after 50 prototypes; sautoir carry; about twenty built; nine survive."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_torricelli_barometer",
+  "no": 3037,
+  "n": "Torricelli Mercury Barometer",
+  "era": "science",
+  "cat": "science",
+  "date": "Torricelli, 1643 (disputed; 1644 report); Puy de Dôme, September 1648",
+  "ds": 1643,
+  "rar": "rare",
+  "vis": "mercury-column-cistern",
+  "l1": "A glass tube of mercury standing in a dish that shows the weight of the air.",
+  "l2": "The column of mercury stands about 760 mm (29.92 in) at one standard atmosphere; its height changes with the weight of the air above it. The Fortin type uses a cistern of variable volume.",
+  "l3": "The page credits Torricelli with inventing the barometer, dated 1643 (disputed; W. E. Knowles Middleton suggests 1644, when Torricelli reported it to Michelangelo Ricci, arguing that the weight of air supports the column). In September 1648 Florin Périer carried one up the Puy de Dôme and found the column fell with altitude, confirming Pascal's prediction.",
+  "ev": "Torricelli's letter to Ricci (1644); Puy de Dôme trial (Sept 1648)",
+  "src": [
+   "x28_barometer_wp"
+  ],
+  "rec": [
+   [
+    "exp26_graduated_glass_tube",
+    "glass",
+    "experiment"
+   ],
+   [
+    "exp26_graduated_glass_tube",
+    "glass",
+    "observation"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "meteorology_exp28",
+   "meteorology",
+   "pressure"
+  ],
+  "confidence": {
+   "level": "debated",
+   "note": "Date disputed between 1643 and 1644; the page gives no date for the Fortin cistern."
+  },
+  "artifactType": "pressure instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Torricelli Mercury Barometer — Italy (Torricelli); France (Puy de Dôme)"
+  },
+  "historical": {
+   "region": "Italy (Torricelli); France (Puy de Dôme)",
+   "firstKnownDate": "1643 (disputed)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_barometer_wp",
+     "supports": "Torricelli credited 1643 (disputed; 1644 report to Ricci); Puy de Dome September 1648; 760 mm = 1 atmosphere; Fortin variable cistern."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_hemony_carillon",
+  "no": 3038,
+  "n": "Tuned-Bell Carillon",
+  "era": "science",
+  "cat": "culture",
+  "date": "Dunkirk bell melodies 1478; Oudenaarde 1510; van Eyck's tuning 1633; Hemony brothers' Zutphen carillon 1644",
+  "ds": 1644,
+  "rar": "uncommon",
+  "vis": "bell-frame-keyboard",
+  "l1": "A tower of tuned bells played from a keyboard of batons.",
+  "l2": "Jacob van Eyck worked out in 1633 how to isolate a bell's five main overtones and tune them to sound harmonious by adjusting the thickness of the bell.",
+  "l3": "The page records a 1478 chronicle of a man playing melodies on bells in Dunkirk; in 1510 Oudenaarde's town hall combined a clock forestrike with nine bells connected to a keyboard. In 1644 Pieter and François Hemony cast 19 bells for Zutphen's Wijnhuistoren with van Eyck as consultant, the first carillon by the modern definition; they produced 51 carillons in the next 36 years. Jef Denyn gave the first carillon concert on 1 August 1892.",
+  "ev": "Zutphen Wijnhuistoren carillon (1644)",
+  "src": [
+   "x28_carillon_wp"
+  ],
+  "rec": [
+   [
+    "anc27_bronze_bell_casting",
+    "clock",
+    "mechanism"
+   ],
+   [
+    "anc27_bronze_bell_casting",
+    "clock",
+    "bronze"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "music_instruments_exp28",
+   "music",
+   "bells"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "ds uses the 1644 Hemony carillon, the first by the modern definition; Oudenaarde's 1510 set was primitive."
+  },
+  "artifactType": "keyboard bell instrument",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Tuned-Bell Carillon — Low Countries (Zutphen, Oudenaarde, Mechelen)"
+  },
+  "historical": {
+   "region": "Low Countries (Zutphen, Oudenaarde, Mechelen)",
+   "firstKnownDate": "1510 (primitive)",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_carillon_wp",
+     "supports": "1478 Dunkirk bells; 1510 Oudenaarde nine bells with keyboard; van Eyck 1633 overtone tuning; Hemony brothers Zutphen 1644 first modern carillon, 19 bells; Denyn first concert 1 Aug 1892."
     }
    ]
   },
@@ -9192,6 +9944,136 @@
   ]
  },
  {
+  "id": "exp28_murdoch_coal_gas_lamp",
+  "no": 3039,
+  "n": "Murdoch's Coal-Gas Lighting",
+  "era": "industry",
+  "cat": "energy",
+  "date": "William Murdoch, Redruth, 1792; Philippe Lebon, 1801; Baltimore street lamp, 7 February 1817",
+  "ds": 1792,
+  "rar": "rare",
+  "vis": "retort-pipe-lamp",
+  "l1": "Coal is baked in a closed retort and the gas it gives off is piped to burn in a lamp.",
+  "l2": "Coal is heated and distilled (carbonised) and the gas is led away; in 1726 Stephen Hales distilled 158 grains of Newcastle coal into 180 cubic inches of gas. Murdoch built a retort to heat coal in 1792.",
+  "l3": "The page says William Murdoch first lit his own house in Redruth, Cornwall, with coal gas in 1792; Philippe Lebon lit his house and gardens in Paris in 1801; Rembrandt Peale's Museum in Baltimore used gas in 1816 and Baltimore's first gas street lamp was lit on 7 February 1817. It does not mention Pall Mall.",
+  "ev": "Murdoch's Redruth house (1792); Baltimore street lamp (7 Feb 1817)",
+  "src": [
+   "x28_gaslight_wp",
+   "x28_gasometer_wp"
+  ],
+  "rec": [
+   [
+    "exp28_coke_blast_furnace",
+    "iron",
+    "chemistry"
+   ],
+   [
+    "exp28_coke_blast_furnace",
+    "fire",
+    "chemistry"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "lighting_exp28",
+   "lighting",
+   "energy"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not cover Pall Mall (1807); that date comes from the separate gasometer page."
+  },
+  "artifactType": "gas lighting system",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Murdoch's Coal-Gas Lighting — Cornwall, England (Redruth); Paris; Baltimore"
+  },
+  "historical": {
+   "region": "Cornwall, England (Redruth); Paris; Baltimore",
+   "firstKnownDate": "1792",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_gaslight_wp",
+     "supports": "Murdoch lit his Redruth house with coal gas in 1792; Lebon 1801; Baltimore museum 1816, first street lamp 7 Feb 1817; coal carbonized; Hales 1726."
+    },
+    {
+     "source": "x28_gasometer_wp",
+     "supports": "Murdoch built a retort in 1792; first public piped gas supply at Pall Mall in 1807."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe",
+   "americas"
+  ]
+ },
+ {
   "id": "exp28_cotton_gin",
   "no": 2980,
   "n": "Whitney Cotton Gin",
@@ -10187,6 +11069,130 @@
   ]
  },
  {
+  "id": "exp28_arithmometer",
+  "no": 3040,
+  "n": "Thomas de Colmar's Arithmometer",
+  "era": "industry",
+  "cat": "computing",
+  "date": "Patented 18 November 1820; industrial production from 1851; production ended 1915",
+  "ds": 1820,
+  "rar": "rare",
+  "vis": "crank-slider-register",
+  "l1": "A crank-driven brass calculator that adds, subtracts, multiplies and divides with sliding setters.",
+  "l2": "The page describes a set of linked Leibniz wheels driven by a crank handle, a descendant of Leibniz's stepped reckoner (the page does not say 'stepped drum').",
+  "l3": "Thomas de Colmar patented the arithmometer on 18 November 1820; industrial production began in 1851 and the page calls it the first commercially successful mechanical calculator. Production stopped in 1915 during World War I. Odhner's pinwheel redesign overtook it in machines made by 1900; the page gives no 1873 date.",
+  "ev": "Patent (18 Nov 1820); production (1851)",
+  "src": [
+   "x28_arithmometer_wp"
+  ],
+  "rec": [
+   [
+    "mechanism",
+    "gear",
+    "exp28_jacquard_card_chain"
+   ],
+   [
+    "mechanism",
+    "number_system",
+    "clock"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "calculation_exp28",
+   "calculation",
+   "machine"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "Page does not date the Odhner machine."
+  },
+  "artifactType": "mechanical calculator",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Thomas de Colmar's Arithmometer — France (Thomas de Colmar)"
+  },
+  "historical": {
+   "region": "France (Thomas de Colmar)",
+   "firstKnownDate": "1820",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_arithmometer_wp",
+     "supports": "Patented 18 Nov 1820; industrial production 1851, first commercially successful mechanical calculator; ended 1915; linked Leibniz wheels with a crank; Odhner pinwheel redesign."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
   "id": "exp28_galvanometer",
   "no": 2960,
   "n": "Schweigger Multiplier Galvanometer",
@@ -10362,6 +11368,130 @@
     {
      "source": "x28_diffengine_wp",
      "supports": "Announced 14 June 1822; government funding 1823, abandoned 1842; No. 2 designed 1846–1849; Science Museum build 1985–1991; Scheutz engine 1853 to Dudley Observatory 1856; finite differences, addition only."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_telescopic_gas_holder",
+  "no": 3041,
+  "n": "Telescopic Gas Holder",
+  "era": "industry",
+  "cat": "engineering",
+  "date": "'Gasometer' name adopted 1782; telescopic holder first invented 1824; cup-and-dip seal patented 1833",
+  "ds": 1824,
+  "rar": "uncommon",
+  "vis": "nested-lifts-water-tank",
+  "l1": "A tank that rises on water as gas fills it, in nested sections like a telescope.",
+  "l2": "Gas pressure lifts the tank floating in a water reservoir; its weight sets the pressure in the gas system. Nested lifts are linked by a cup at the bottom of one that picks up water and engages a downward lip, the dip or grip, on the next, keeping the water seal as it rises; holders had up to four lifts.",
+  "l3": "The page says the telescopic gas holder was first invented in 1824, without naming an inventor, and that Hutchinson patented the cup and dip seal in 1833. Brick tanks arrived in 1818 and carried up to 20,000 cubic feet; Pease invented cable-guided holders in 1880 and Gadd the spiral-guided holder in 1890.",
+  "ev": "Telescopic holder (1824); Hutchinson patent (1833)",
+  "src": [
+   "x28_gasometer_wp2"
+  ],
+  "rec": [
+   [
+    "exp28_murdoch_coal_gas_lamp",
+    "iron",
+    "engineering"
+   ],
+   [
+    "exp28_murdoch_coal_gas_lamp",
+    "iron",
+    "exp26_pressure_water_main"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "lighting_exp28",
+   "gas",
+   "storage"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page does not name the inventor of the 1824 telescopic holder."
+  },
+  "artifactType": "gas storage vessel",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Telescopic Gas Holder — Britain (gasworks)"
+  },
+  "historical": {
+   "region": "Britain (gasworks)",
+   "firstKnownDate": "1824",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_gasometer_wp2",
+     "supports": "Telescopic gas holder first invented 1824; Hutchinson cup and dip seal 1833; brick tanks 1818; Pease 1880; Gadd 1890; nested lifts floating in water, up to four lifts."
     }
    ]
   },
@@ -11108,6 +12238,130 @@
     {
      "source": "x28_daguerre_wp",
      "supports": "Presented by Arago 19 Aug 1839; silvered copper plate, iodine fumes, mercury vapour development, fixing; Niépce's heliography; French government bought the rights."
+    }
+   ]
+  },
+  "modeMeta": {
+   "main-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "catalogue node reached by its own recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "reverse-evolution": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "decomposes along its sourced recipe",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "minimum-path": {
+    "candidate": true,
+    "decision": "playable",
+    "reason": "finite acyclic recipe graph, in the atlas",
+    "review": "approved",
+    "automatic_ingestion": true
+   },
+   "escape-room": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "family still too small for a fair 5-step room; no room is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "post-ancient or perishable: not a plausible excavated find in this mode's sites",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "survival": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "needs workshop, metal or specialist knowledge beyond a survival scenario",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "civilization": {
+    "candidate": false,
+    "decision": "contextual",
+    "reason": "history context only: no causal city effect is claimed, so no production bonus is faked",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "decipher": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "Decipher uses invented scripts; no real inscription is fabricated for this object",
+    "review": "approved",
+    "automatic_ingestion": false
+   },
+   "alien-archaeology": {
+    "candidate": false,
+    "decision": "not_eligible",
+    "reason": "a human artefact is never presented as alien",
+    "review": "approved",
+    "automatic_ingestion": false
+   }
+  },
+  "regions": [
+   "europe"
+  ]
+ },
+ {
+  "id": "exp28_rheostat",
+  "no": 3042,
+  "n": "Wheatstone Rheostat",
+  "era": "electric",
+  "cat": "technology",
+  "date": "Charles Wheatstone coined the name, 1843",
+  "ds": 1843,
+  "rar": "uncommon",
+  "vis": "wire-cylinder-slider",
+  "l1": "A wire-wound cylinder with a sliding contact that varies how much current passes.",
+  "l2": "A rheostat is a two-terminal variable resistor. High-power ones wind resistance wire round an insulator with a wiper sliding from turn to turn; in the other design the wire is on a heat-resistant cylinder and metal fingers slide to move the tap point.",
+  "l3": "The page says Sir Charles Wheatstone coined 'rheostat' in 1843 from Greek roots for 'stream' and 'setter'. It shows his 1843 instruments with a metal and wooden cylinder and a version with a moving whisker. Wire-wound rheostats serve DC motor drives, welding and generator controls.",
+  "ev": "Wheatstone's instruments (1843)",
+  "src": [
+   "x28_rheostat_wp"
+  ],
+  "rec": [
+   [
+    "electricity",
+    "exp26_copper_wire_coil",
+    "wood"
+   ],
+   [
+    "electricity",
+    "exp26_copper_wire_coil",
+    "measurement"
+   ]
+  ],
+  "tags": [
+   "exp28",
+   "electrical_exp28",
+   "electric",
+   "resistor"
+  ],
+  "confidence": {
+   "level": "established",
+   "note": "The page gives the 1843 naming only, no other dates for variable resistors."
+  },
+  "artifactType": "variable resistor",
+  "museum": {
+   "reconstructionStatus": "reference",
+   "label": "Wheatstone Rheostat — England (Wheatstone)"
+  },
+  "historical": {
+   "region": "England (Wheatstone)",
+   "firstKnownDate": "1843",
+   "itemSpecificEvidenceVerified": true,
+   "claims": [
+    {
+     "source": "x28_rheostat_wp",
+     "supports": "Wheatstone coined rheostat in 1843; two-terminal variable resistor; wire wound on insulator with sliding wiper; wire-wound uses in motor drives, welding, generators."
     }
    ]
   },
