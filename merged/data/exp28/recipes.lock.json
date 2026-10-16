@@ -1,4 +1,28 @@
 {
+ "exp28_shaduf": [
+  [
+   "lever",
+   "wood",
+   "plant_thread"
+  ],
+  [
+   "lever",
+   "pottery",
+   "plant_thread"
+  ]
+ ],
+ "exp28_chain_pump": [
+  [
+   "rope",
+   "wheel",
+   "bronze"
+  ],
+  [
+   "wheel",
+   "pulley",
+   "axle"
+  ]
+ ],
  "exp28_camera_obscura": [
   [
    "shelter",
@@ -9,6 +33,42 @@
    "awl",
    "observation",
    "stone"
+  ]
+ ],
+ "exp28_archimedes_screw": [
+  [
+   "mathematics",
+   "wood",
+   "geometry"
+  ],
+  [
+   "mathematics",
+   "wood",
+   "engineering"
+  ]
+ ],
+ "exp28_saqiya_wheel": [
+  [
+   "wheel",
+   "axle",
+   "pottery"
+  ],
+  [
+   "wheel",
+   "pottery",
+   "cart"
+  ]
+ ],
+ "exp28_bagpipes": [
+  [
+   "music",
+   "flute",
+   "fiber"
+  ],
+  [
+   "music",
+   "flute",
+   "cordage"
   ]
  ],
  "exp28_zhang_heng_seismoscope": [
@@ -71,6 +131,18 @@
    "lever"
   ]
  ],
+ "exp28_fusee": [
+  [
+   "clock",
+   "gear",
+   "mechanism"
+  ],
+  [
+   "clock",
+   "gear",
+   "cordage"
+  ]
+ ],
  "exp28_mariners_astrolabe": [
   [
    "casting",
@@ -81,6 +153,18 @@
    "casting",
    "navigation",
    "measurement"
+  ]
+ ],
+ "exp28_davis_quadrant": [
+  [
+   "navigation",
+   "astronomy",
+   "mathematics"
+  ],
+  [
+   "navigation",
+   "wood",
+   "observation"
   ]
  ],
  "exp28_pantograph": [
@@ -123,11 +207,6 @@
   [
    "mathematics",
    "measurement",
-   "geometry"
-  ],
-  [
-   "mathematics",
-   "wood",
    "geometry"
   ]
  ],
@@ -179,6 +258,18 @@
    "iron"
   ]
  ],
+ "exp28_deadbeat_escapement": [
+  [
+   "clock",
+   "gear",
+   "iron"
+  ],
+  [
+   "clock",
+   "gear",
+   "engineering"
+  ]
+ ],
  "exp28_diving_bell": [
   [
    "wood",
@@ -191,6 +282,18 @@
    "engineering"
   ]
  ],
+ "exp28_clarinet": [
+  [
+   "music",
+   "flute",
+   "metallurgy"
+  ],
+  [
+   "music",
+   "flute",
+   "copper"
+  ]
+ ],
  "exp28_geneva_drive": [
   [
    "gear",
@@ -201,6 +304,18 @@
    "gear",
    "wheel",
    "clock"
+  ]
+ ],
+ "exp28_meridian_circle": [
+  [
+   "astronomy",
+   "optics",
+   "clock"
+  ],
+  [
+   "astronomy",
+   "clock",
+   "mathematics"
   ]
  ],
  "exp28_orrery": [
@@ -224,6 +339,30 @@
   [
    "iron",
    "music",
+   "mathematics"
+  ]
+ ],
+ "exp28_grasshopper_escapement": [
+  [
+   "clock",
+   "gear",
+   "copper"
+  ],
+  [
+   "clock",
+   "mechanism",
+   "iron"
+  ]
+ ],
+ "exp28_mural_quadrant": [
+  [
+   "astronomy",
+   "geometry",
+   "copper"
+  ],
+  [
+   "astronomy",
+   "geometry",
    "mathematics"
   ]
  ],
@@ -287,6 +426,18 @@
    "iron"
   ]
  ],
+ "exp28_spinning_mule": [
+  [
+   "mechanism",
+   "cloth",
+   "wheel"
+  ],
+  [
+   "mechanism",
+   "wheel",
+   "weaving_shuttle"
+  ]
+ ],
  "exp28_hair_hygrometer": [
   [
    "measurement",
@@ -316,6 +467,18 @@
    "steam_engine",
    "mechanism",
    "gear"
+  ]
+ ],
+ "exp28_cotton_gin": [
+  [
+   "mechanism",
+   "cloth",
+   "plant_thread"
+  ],
+  [
+   "mechanism",
+   "cloth",
+   "wood"
   ]
  ],
  "exp28_jacquard_card_chain": [
@@ -462,6 +625,18 @@
    "experiment"
   ]
  ],
+ "exp28_barograph": [
+  [
+   "physics",
+   "clock",
+   "paper"
+  ],
+  [
+   "physics",
+   "clock",
+   "measurement"
+  ]
+ ],
  "exp28_cup_anemometer": [
   [
    "measurement",
@@ -498,6 +673,18 @@
    "mechanism"
   ]
  ],
+ "exp28_marshallese_stick_chart": [
+  [
+   "navigation",
+   "cordage",
+   "observation"
+  ],
+  [
+   "navigation",
+   "cordage",
+   "maps"
+  ]
+ ],
  "exp28_stevenson_screen": [
   [
    "measurement",
@@ -508,6 +695,18 @@
    "measurement",
    "experiment",
    "lumber"
+  ]
+ ],
+ "exp28_mance_heliograph": [
+  [
+   "mathematics",
+   "optics",
+   "telegraph"
+  ],
+  [
+   "mathematics",
+   "optics",
+   "metallurgy"
   ]
  ],
  "exp28_wimshurst_machine": [
@@ -546,12 +745,19 @@
    "experiment"
   ]
  ],
- "exp28_triode_audion": [
+ "exp28_mercury_arc_rectifier": [
   [
    "electricity",
    "glass",
    "iron"
   ],
+  [
+   "electricity",
+   "glass",
+   "steel"
+  ]
+ ],
+ "exp28_triode_audion": [
   [
    "electricity",
    "glass",
