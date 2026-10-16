@@ -10537,11 +10537,11 @@
     "kind": "ratio",
     "title": "The Tally Board",
     "unit": "entries",
-    "correctValue": 9,
+    "correctValue": 10,
     "tolerance": 0,
-    "prompt": "The tally board lists every entry of this family: Camera Obscura; Magic Lantern; Gregorian Reflecting Telescope; Camera Lucida; Kaleidoscope; Thaumatrope; Phenakistiscope; Zoetrope; Stereoscope. How many entries are there?",
+    "prompt": "The tally board lists every entry of this family: Camera Obscura; Magic Lantern; Gregorian Reflecting Telescope; Camera Lucida; Kaleidoscope; Fresnel Lighthouse Lens; Thaumatrope; Phenakistiscope; Zoetrope; Stereoscope. How many entries are there?",
     "hint": "Count the names on the board one by one.",
-    "unlockFragment": "9"
+    "unlockFragment": "10"
    },
    {
     "id": "sequence",
@@ -10635,7 +10635,7 @@
     "kind": "code",
     "title": "The Workshop Door",
     "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
-    "correctCode": "9-5-GCCM",
+    "correctCode": "10-5-GCCM",
     "requires": [
      "ratio",
      "sequence",
@@ -10900,11 +10900,11 @@
     "kind": "ratio",
     "title": "The Tally Board",
     "unit": "entries",
-    "correctValue": 9,
+    "correctValue": 10,
     "tolerance": 0,
-    "prompt": "The tally board lists every entry of this family: Spindle Spinning Wheel; Water-Powered Fulling Mill; Bobbin Lace Pillow; Lewis Paul's Carding Machine; Spinning Jenny; Water Frame; Spinning Mule; Whitney Cotton Gin; Jacquard Punched Card Chain. How many entries are there?",
+    "prompt": "The tally board lists every entry of this family: Spindle Spinning Wheel; Water-Powered Fulling Mill; Bobbin Lace Pillow; Lewis Paul's Carding Machine; Spinning Jenny; Water Frame; Spinning Mule; Whitney Cotton Gin; Jacquard Punched Card Chain; Lockstitch Sewing Machine. How many entries are there?",
     "hint": "Count the names on the board one by one.",
-    "unlockFragment": "9"
+    "unlockFragment": "10"
    },
    {
     "id": "sequence",
@@ -10913,16 +10913,16 @@
     "prompt": "Five entries of this family lie scattered. Put them back in the order they appear along the Discovery Journal timeline, earliest first.",
     "steps": [
      {
-      "id": "exp28_spinning_mule",
-      "text": "Spinning Mule"
+      "id": "exp28_cotton_gin",
+      "text": "Whitney Cotton Gin"
      },
      {
       "id": "exp28_spinning_wheel",
       "text": "Spindle Spinning Wheel"
      },
      {
-      "id": "exp28_jacquard_card_chain",
-      "text": "Jacquard Punched Card Chain"
+      "id": "exp28_lockstitch_sewing_machine",
+      "text": "Lockstitch Sewing Machine"
      },
      {
       "id": "exp28_spinning_jenny",
@@ -10937,8 +10937,8 @@
      "exp28_spinning_wheel",
      "exp28_bobbin_lace_pillow",
      "exp28_spinning_jenny",
-     "exp28_spinning_mule",
-     "exp28_jacquard_card_chain"
+     "exp28_cotton_gin",
+     "exp28_lockstitch_sewing_machine"
     ],
     "hint": "Earlier entries sit lower in the Journal and use more basic ingredients.",
     "unlockFragment": "5"
@@ -10998,7 +10998,7 @@
     "kind": "code",
     "title": "The Workshop Door",
     "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
-    "correctCode": "9-5-BSLW",
+    "correctCode": "10-5-BSLW",
     "requires": [
      "ratio",
      "sequence",

@@ -1466,5 +1466,238 @@
    "geometry",
    "anc27_polynesian_star_compass"
   ]
+ ],
+ "exp28_lathe": [
+  [
+   "bow_drill",
+   "wheel",
+   "axle"
+  ],
+  [
+   "bow_drill",
+   "wheel",
+   "rope"
+  ]
+ ],
+ "exp28_newcomen_engine": [
+  [
+   "steam",
+   "iron",
+   "lever"
+  ],
+  [
+   "steam",
+   "iron",
+   "exp28_chain_pump"
+  ]
+ ],
+ "exp28_screw_propeller": [
+  [
+   "exp28_archimedes_screw",
+   "boat",
+   "steam_engine"
+  ],
+  [
+   "exp28_archimedes_screw",
+   "boat",
+   "iron"
+  ]
+ ],
+ "exp28_montgolfier_balloon": [
+  [
+   "cloth",
+   "paper",
+   "fire"
+  ],
+  [
+   "cloth",
+   "fire",
+   "exp28_diving_bell"
+  ]
+ ],
+ "exp28_silk_parachute": [
+  [
+   "cloth",
+   "cordage",
+   "exp28_montgolfier_balloon"
+  ],
+  [
+   "cloth",
+   "cordage",
+   "weaving_shuttle"
+  ]
+ ],
+ "exp28_voltaic_pile": [
+  [
+   "electricity",
+   "copper",
+   "experiment"
+  ],
+  [
+   "electricity",
+   "copper",
+   "cloth"
+  ]
+ ],
+ "exp28_dandy_horse": [
+  [
+   "wheel",
+   "axle",
+   "exp28_horse_collar"
+  ],
+  [
+   "wheel",
+   "axle",
+   "exp28_elliptic_leaf_spring"
+  ]
+ ],
+ "exp28_fresnel_lens": [
+  [
+   "lens",
+   "geometry",
+   "mathematics"
+  ],
+  [
+   "lens",
+   "geometry",
+   "exp28_theodolite"
+  ]
+ ],
+ "exp28_lockstitch_sewing_machine": [
+  [
+   "thread_and_needle",
+   "needle",
+   "exp28_spinning_wheel"
+  ],
+  [
+   "thread_and_needle",
+   "needle",
+   "exp28_fan_gate"
+  ]
+ ],
+ "exp28_pixii_dynamo": [
+  [
+   "electricity",
+   "exp26_copper_wire_coil",
+   "iron"
+  ],
+  [
+   "electricity",
+   "exp26_copper_wire_coil",
+   "exp28_galvanometer"
+  ],
+  [
+   "electricity",
+   "exp26_copper_wire_coil",
+   "physics"
+  ]
+ ],
+ "exp28_pneumatic_tyre": [
+  [
+   "wheel",
+   "axle",
+   "cloth"
+  ],
+  [
+   "wheel",
+   "axle",
+   "chemistry"
+  ]
+ ],
+ "exp28_hunt_safety_pin": [
+  [
+   "needle",
+   "thread_and_needle",
+   "iron"
+  ],
+  [
+   "needle",
+   "thread_and_needle",
+   "exp28_elliptic_leaf_spring"
+  ]
+ ],
+ "exp28_bessemer_converter": [
+  [
+   "iron",
+   "exp28_coke_blast_furnace",
+   "steel"
+  ],
+  [
+   "iron",
+   "exp28_coke_blast_furnace",
+   "engineering"
+  ]
+ ],
+ "exp28_barbed_wire": [
+  [
+   "iron",
+   "steel",
+   "fence"
+  ],
+  [
+   "iron",
+   "steel",
+   "machine_tools"
+  ]
+ ],
+ "exp28_sholes_typewriter": [
+  [
+   "mechanism",
+   "writing",
+   "iron"
+  ],
+  [
+   "mechanism",
+   "writing",
+   "wood"
+  ]
+ ],
+ "exp28_edison_phonograph": [
+  [
+   "electricity",
+   "music",
+   "mechanism"
+  ],
+  [
+   "electricity",
+   "music",
+   "lever"
+  ]
+ ],
+ "exp28_carbon_filament_bulb": [
+  [
+   "glass",
+   "electricity",
+   "exp28_galvanometer"
+  ],
+  [
+   "glass",
+   "electricity",
+   "exp26_drawn_glass_tube"
+  ]
+ ],
+ "exp28_parsons_steam_turbine": [
+  [
+   "steam",
+   "steel",
+   "iron"
+  ],
+  [
+   "steam",
+   "steel",
+   "machine_tools"
+  ]
+ ],
+ "exp28_sundback_zipper": [
+  [
+   "cloth",
+   "exp28_hunt_safety_pin",
+   "exp28_lockstitch_sewing_machine"
+  ],
+  [
+   "cloth",
+   "exp28_hunt_safety_pin",
+   "machine_tools"
+  ]
  ]
 }

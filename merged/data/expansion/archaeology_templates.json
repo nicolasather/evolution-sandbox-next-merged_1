@@ -17797,5 +17797,18 @@
   },
   "rarity": 1,
   "itemId": "exp28_hypocaust"
+ },
+ {
+  "id": "x-exp28_lathe",
+  "label": "Rotary Lathe",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A machine that spins a workpiece against a cutting tool to turn round shapes.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_lathe"
  }
 ]
