@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ink stamp">
+<g data-z="0" opacity="0.4"><path d="M18 92h64"/></g>
+<g data-z="1"><path d="M32 12h36v14c-6 2 -6 14 0 18v8H32v-8c6 -4 6 -16 0 -18z"/><path d="M28 52h44v8H28z"/><path d="M34 60v6M66 60v6"/><path d="M20 70h60v14H20z"/></g>
+<g data-z="2" opacity="0.8"><path d="M40 76h20M30 80h40"/></g>
+<g data-z="3" opacity="0.5"><path d="M44 24h12M44 32h12"/></g>
+</svg>

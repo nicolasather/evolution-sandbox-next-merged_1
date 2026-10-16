@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Dunes and gusting sand">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 74c20 -22 38 -22 52 -4c12 -14 28 -16 40 -2"/><path d="M4 88c24 -10 44 -10 92 0"/></g>
+<g data-z="2" opacity="0.8"><path d="M10 30h40M30 40h58M6 50h30M52 54h40"/><path d="M60 26h20"/></g>
+<g data-z="3" opacity="0.5"><path d="M16 20v0M44 18v0M70 40v0M86 28v0M24 60v0"/></g>
+</svg>

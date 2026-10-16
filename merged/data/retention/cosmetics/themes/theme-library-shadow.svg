@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Library arches">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M8 90V44a14 14 0 0 1 28 0v46"/><path d="M36 90V44a14 14 0 0 1 28 0v46"/><path d="M64 90V44a14 14 0 0 1 28 0v46"/><path d="M4 90h92"/></g>
+<g data-z="2" opacity="0.8"><path d="M12 70h20M12 78h20M40 70h20M40 78h20M68 70h20M68 78h20"/><path d="M22 30v-8M50 30v-8M78 30v-8"/></g>
+<g data-z="3" opacity="0.5"><path d="M14 56h4M44 58h6M72 54h4"/></g>
+</svg>

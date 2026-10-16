@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Bead chain">
+<g data-z="0" opacity=".45"><path d="M18 40c10 20 22 30 32 30s22 -10 32 -30" transform="translate(0 6)"/><path data-extra="1" d="M18 40l4 3M28 46l4 3M38 52l4 3M30 78l6 0M36 81l6 0"/></g>
+<g data-z="1"><circle cx="16" cy="30" r="6"/><circle cx="26" cy="46" r="6"/><circle cx="38" cy="58" r="6"/><circle cx="52" cy="62" r="7.5"/><circle cx="66" cy="58" r="6"/><circle cx="78" cy="46" r="6"/><circle cx="88" cy="30" r="6"/></g>
+<g data-z="2"><path d="M13 28l3 -3M23 44l3 -3M35 56l3 -3M49 59l4 -4M63 56l3 -3M75 44l3 -3M85 28l3 -3" opacity=".85"/><circle cx="52" cy="62" r="2"/><path d="M44 20l3 5l5 1l-4 4l1 6l-5 -3l-5 3l1 -6l-4 -4l5 -1z" /></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Folded paper">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M14 18h72v64h-72z"/><path d="M14 18L50 50L86 18"/><path d="M14 82L40 52M86 82L60 52"/></g>
+<g data-z="2" opacity="0.7"><path d="M24 70h14M24 76h12M62 70h14M64 76h12"/></g>
+<g data-z="3" opacity="0.45"><path d="M30 12l4 -4M70 12l-4 -4"/></g>
+</svg>

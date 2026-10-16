@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Moth made of ink">
+<g data-z="0" opacity=".45"><path d="M34 52l-4 8M38 58l-4 8M66 52l4 8M62 58l4 8"/><path data-extra="1" d="M36 34l3 6M36 40l3 6"/></g>
+<g data-z="1"><path d="M50 40v34"/><path d="M50 44c-8 -16 -26 -20 -34 -12c-4 12 6 24 22 22c-12 4 -14 16 -6 20c10 2 16 -8 18 -16"/><path d="M50 44c8 -16 26 -20 34 -12c4 12 -6 24 -22 22c12 4 14 16 6 20c-10 2 -16 -8 -18 -16"/></g>
+<g data-z="2"><path d="M46 34c-4 -8 -8 -12 -14 -16M54 34c4 -8 8 -12 14 -16"/><circle cx="28" cy="42" r="3.4"/><circle cx="72" cy="42" r="3.4"/><path d="M50 82q0 6 -3 8" /><circle cx="24" cy="86" r="1.4"/><circle cx="78" cy="88" r="1"/></g>
+</svg>

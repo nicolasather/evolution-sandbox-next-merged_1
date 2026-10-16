@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Wire coil">
+<g data-z="0" opacity="0.4"><path d="M14 88h72"/></g>
+<g data-z="1"><path d="M20 80a10 24 0 1 1 0.1 0z"/><path d="M34 80a10 24 0 1 1 0.1 0z"/><path d="M48 80a10 24 0 1 1 0.1 0z"/><path d="M62 80a10 24 0 1 1 0.1 0z"/></g>
+<g data-z="2" opacity="0.8"><path d="M10 52H20M72 52H88"/><path d="M84 52l6 -4M84 52l6 4"/></g>
+<g data-z="3" opacity="0.5"><path d="M22 26q8 -10 16 0M40 22q10 -12 20 0"/></g>
+</svg>

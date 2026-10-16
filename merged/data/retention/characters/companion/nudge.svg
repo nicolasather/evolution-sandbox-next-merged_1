@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Companion nudging — a shard points the way">
+<g data-z="0" opacity=".4"><path d="M18 92h44M24 95h32M66 66h18M66 72h14"/></g>
+<g data-z="1"><path d="M28 42l6 -14l22 2l4 14z" transform="rotate(-4 44 36)"/><path d="M26 46l-2 34l10 6h26l8 -6l-4 -34z"/><path d="M26 86h10v5h-10zM52 86h10v5h-10z"/></g>
+<g data-z="2"><path d="M32 60l6 -5l6 5l-6 5z"/><path d="M46 60l6 -4l6 4l-6 5z"/><path d="M36 60h4M50 60h4" opacity=".7"/></g>
+<g data-z="3"><path d="M60 56l20 -4l14 8l-14 8l-18 -4z"/><path d="M62 60h26" opacity=".7"/><path d="M90 60l-8 -6M90 60l-8 6" /></g>
+<g data-z="4" opacity=".6"><path d="M28 72h30M30 77h26" stroke-dasharray="3 2"/><path d="M42 46v8M42 66v5"/><path d="M70 46l4 -6M78 44l4 -6" stroke-width=".9"/></g>
+</svg>

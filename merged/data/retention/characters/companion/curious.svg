@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Companion curious — an offset observer facet">
+<g data-z="0" opacity=".4"><path d="M24 92h54M32 95h40M70 36l8 -4M72 42l8 -4"/></g>
+<g data-z="1"><path d="M32 42l8 -14l24 -2l6 16z" transform="rotate(-6 50 36)"/><path d="M30 46l-4 34l10 6h28l10 -6l-3 -34z"/><path d="M30 86h10v5h-10zM60 86h10v5h-10z"/></g>
+<g data-z="2"><path d="M34 62l5 -3l5 3l-5 3z"/><path d="M52 58l10 -9l10 9l-10 10z"/><circle cx="62" cy="58" r="3.4"/><circle cx="63" cy="57" r="1"/><path d="M40 62h3" opacity=".7"/></g>
+<g data-z="3"><path d="M72 36l10 -10l4 4l-10 10z"/><path d="M80 28l4 4" opacity=".7"/></g>
+<g data-z="4" opacity=".6"><path d="M32 74h36M34 79h32" stroke-dasharray="3 2"/><path d="M48 46v8M52 68v4"/><path d="M36 30l-3 6M44 28l-2 6" stroke-width=".8" opacity=".6"/></g>
+</svg>

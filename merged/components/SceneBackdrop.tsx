@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { EraId } from '@/lib/types';
 import { overlaysFor } from '@/lib/scenefx/discoveryOverlays';
 import { sceneState } from '@/lib/scenefx/state';
+import { retentionBus } from '@/lib/retention/bus';
 
 /* ============================================================================
    SCENE BACKDROP — engraved line-art landscapes behind the craft screen.
@@ -39,6 +40,29 @@ export function loadScenes(): Promise<Scene[]> {
     return loaded;
   });
   return loading;
+}
+
+/* The 42 additive retention scenes (3 per era, hand-drawn in data/retention/scenes). They are appended AFTER the
+   eleven originals, which stay untouched: sceneForEra() still resolves to an original, so nothing changes until the
+   player picks one of the new ones in the scene picker. Loaded lazily in their own chunk. */
+let loadedAll: Scene[] | null = null;
+let loadingAll: Promise<Scene[]> | null = null;
+export function loadAllScenes(): Promise<Scene[]> {
+  if (loadedAll) return Promise.resolve(loadedAll);
+  loadingAll ??= Promise.all([
+    loadScenes(),
+    import('@/lib/retention/art/scenes.generated'),
+    import('@/data/retention/scenes-extra.json'),
+  ]).then(([base, art, meta]) => {
+    const extra: Scene[] = [];
+    for (const m of meta.default as Array<{ id: string; name: string; eras: EraId[] }>) {
+      const a = art.ART[m.id];
+      if (a) extra.push({ id: m.id, name: m.name, eras: m.eras, svg: a.b });
+    }
+    loadedAll = [...base, ...extra];
+    return loadedAll;
+  });
+  return loadingAll;
 }
 
 export function readScenePref(): string {
@@ -78,7 +102,7 @@ function stagger(root: Element, seed: string) {
 }
 
 export function SceneBackdrop({ era, active, discovered }: { era: EraId; active: boolean; discovered?: ReadonlySet<string> }) {
-  const [scenes, setScenes] = useState<Scene[] | null>(loaded);
+  const [scenes, setScenes] = useState<Scene[] | null>(loadedAll);
   const pref = useScenePref();
   const hostRef = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState<{ a: Scene | null; b: Scene | null; front: 'a' | 'b' }>({ a: null, b: null, front: 'a' });
@@ -86,7 +110,7 @@ export function SceneBackdrop({ era, active, discovered }: { era: EraId; active:
   useEffect(() => {
     if (!active || scenes) return;
     let alive = true;
-    loadScenes().then(s => { if (alive) setScenes(s); }).catch(() => { /* backdrop is decoration */ });
+    loadAllScenes().then(s => { if (alive) setScenes(s); }).catch(() => { /* backdrop is decoration */ });
     return () => { alive = false; };
   }, [active, scenes]);
 
@@ -170,16 +194,22 @@ export function SceneBackdrop({ era, active, discovered }: { era: EraId; active:
 
 /** Small control on the bench: step through the scenes, or let them follow the era. */
 export function ScenePicker({ era }: { era: EraId }) {
-  const [scenes, setScenes] = useState<Scene[] | null>(loaded);
+  const [scenes, setScenes] = useState<Scene[] | null>(loadedAll);
   const pref = useScenePref();
   useEffect(() => {
-    if (!loaded) loadScenes().then(setScenes).catch(() => {});
+    if (!loadedAll) loadAllScenes().then(setScenes).catch(() => {});
   }, []);
   if (!scenes) return null;
 
   const ids = ['auto', ...scenes.map(s => s.id)];
   const i = Math.max(0, ids.indexOf(pref));
-  const step = (d: number) => saveScenePref(ids[(i + d + ids.length) % ids.length]);
+  const step = (d: number) => {
+    const next = ids[(i + d + ids.length) % ids.length];
+    saveScenePref(next);
+    const sc = scenes.find(x => x.id === next);
+    // a manual choice is a real event for the retention layer (auto-follow is not)
+    if (sc) retentionBus.emit({ t: 'scene', id: sc.id, era: sc.eras[0], auto: false });
+  };
   const current = pref === 'auto' ? sceneForEra(scenes, era) : scenes.find(s => s.id === pref) ?? scenes[0];
 
   return (

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Planet and stars">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M46 62a22 22 0 1 0 0.1 0z"/><path d="M14 62C32 76 70 70 88 52"/></g>
+<g data-z="2" opacity="0.8"><path d="M30 60q12 8 32 4"/><path d="M20 18l2 6l6 2l-6 2l-2 6l-2 -6l-6 -2l6 -2z"/><path d="M80 16l1.5 4l4 1.5l-4 1.5l-1.5 4l-1.5 -4l-4 -1.5l4 -1.5z"/><path d="M60 26v0M88 40v0M10 38v0M70 90v0"/></g>
+<g data-z="3" opacity="0.45"><path d="M64 54l6 -2"/></g>
+</svg>

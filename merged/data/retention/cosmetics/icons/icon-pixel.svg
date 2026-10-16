@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pixel">
+<g data-z="0" opacity="0.4"><path d="M20 80h8v8h-8zM72 14h8v8h-8z"/></g>
+<g data-z="1"><path d="M30 30h12v12h-12zM46 30h12v12h-12zM62 30h12v12h-12zM30 46h12v12h-12zM62 46h12v12h-12zM30 62h12v12h-12zM46 62h12v12h-12zM62 62h12v12h-12z"/></g>
+<g data-z="2" opacity="0.8"><path d="M48 32h8v8h-8zM48 64h8v8h-8z"/><path d="M12 50h14M78 50h12"/></g>
+</svg>

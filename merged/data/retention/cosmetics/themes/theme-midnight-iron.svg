@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Iron bridge at night">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 64h92"/><path d="M4 76h92"/><path d="M12 64L24 44L36 64L48 44L60 64L72 44L84 64"/><path d="M10 76V94M50 76V94M90 76V94"/></g>
+<g data-z="2" opacity="0.8"><path d="M24 44h48"/><path d="M12 64L24 76L36 64L48 76L60 64L72 76L84 64"/></g>
+<g data-z="3" opacity="0.5"><path d="M70 18a8 8 0 1 0 0.1 0z"/><path d="M16 24v0M36 16v0M52 28v0M86 36v0"/></g>
+</svg>

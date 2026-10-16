@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Companion in awe — concentric halo">
+<g data-z="0" opacity=".4"><circle cx="50" cy="52" r="46" stroke-dasharray="2 4"/><circle cx="50" cy="52" r="40" stroke-dasharray="1 5"/></g>
+<g data-z="1"><path d="M34 44l6 -12h20l6 12z"/><path d="M32 48l-3 28l9 5h24l9 -5l-3 -28z"/><path d="M32 82h8v4h-8zM60 82h8v4h-8z"/></g>
+<g data-z="2"><circle cx="42" cy="60" r="5.4"/><circle cx="58" cy="60" r="5.4"/><circle cx="42" cy="60" r="2"/><circle cx="58" cy="60" r="2"/><path d="M45 71h10" opacity=".7"/></g>
+<g data-z="3" opacity=".7"><circle cx="50" cy="52" r="34"/><circle cx="50" cy="52" r="28" opacity=".7"/><path d="M50 8v8M50 88v6M6 52h8M86 52h8M18 20l6 6M82 20l-6 6M18 84l6 -6M82 84l-6 -6"/></g>
+<g data-z="4" opacity=".4"><path d="M36 36l-2 6M64 36l2 6M34 52l-1 8M66 52l1 8" stroke-width=".8"/></g>
+</svg>

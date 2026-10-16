@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Quiet wave">
+<g data-z="0" opacity=".45"><path d="M14 78h72M20 84h60M28 90h44"/><path data-extra="1" d="M20 70l6 0M20 75l6 0M60 34l5 0M60 39l5 0"/></g>
+<g data-z="1"><path d="M12 62c10 -14 20 -14 30 0s20 14 30 0s12 -6 16 -2"/><path d="M12 48c10 -14 20 -14 30 0s20 14 30 0s12 -6 16 -2" opacity=".75"/></g>
+<g data-z="2"><path d="M46 22c6 -10 18 -10 22 0c2 5 -3 9 -8 8" /><path d="M50 26c2 -4 7 -4 8 0" opacity=".8"/><circle cx="26" cy="30" r="1.4"/><circle cx="78" cy="26" r="1"/><path d="M22 22l2 4l4 2l-4 2l-2 4l-2 -4l-4 -2l4 -2z" opacity=".8"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Twilight hills and moon">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 70c14 -18 26 -18 38 -6c10 -14 28 -20 54 4"/><path d="M4 84c18 -10 34 -10 46 -2c16 -8 30 -6 46 2"/></g>
+<g data-z="2" opacity="0.8"><path d="M70 24a10 10 0 1 0 0.1 0z"/><path d="M74 22a8 8 0 0 1 0 12"/><path d="M24 24v0M40 14v0M54 30v0M86 12v0M16 44v0"/></g>
+<g data-z="3" opacity="0.4"><path d="M12 94h76"/></g>
+</svg>

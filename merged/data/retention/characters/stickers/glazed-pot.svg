@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Glazed pot celebrating">
+<g data-z="0" opacity=".45"><path d="M30 86h40M34 90h32M28 56c-2 12 2 22 8 26M72 56c2 12 -2 22 -8 26"/></g>
+<g data-z="1"><path d="M38 28h24v8c14 6 20 18 16 32c-3 10 -10 16 -28 16s-25 -6 -28 -16c-4 -14 2 -26 16 -32z"/><path d="M34 26h32" /></g>
+<g data-z="2"><path d="M26 54c8 8 18 4 24 10s16 4 24 -4" opacity=".85"/><path d="M30 64c8 6 16 2 22 8s14 4 20 -2" opacity=".6"/><path d="M42 40c-4 4 -6 10 -4 16" opacity=".8"/><path d="M80 18l2 5l5 2l-5 2l-2 5l-2 -5l-5 -2l5 -2z"/><path d="M18 30l8 4M16 42l8 2M84 38l-8 4"/></g>
+</svg>

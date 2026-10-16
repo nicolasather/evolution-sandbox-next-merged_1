@@ -19,6 +19,7 @@ import { regionGateFor } from './trade/gate';
 import { tradeStore } from './trade/store';
 import type { ActionId, CombineResult, Db, Discovery, ProcessResult, RegionLockInfo, ViewId } from './types';
 import { afterWorld } from './world/bus';
+import { retentionBus } from './retention/bus';
 
 export const db: Db = playDb;
 
@@ -164,6 +165,7 @@ export function useSandbox() {
   const processOnBench = useCallback((id: string, action: ActionId): ProcessResult => {
     const res = engine.process(id, action);
     if (res.status === 'error') return res;
+    retentionBus.emit({ t: 'technique', action, produced: res.status === 'done' && res.discoveries.length > 0 });
     setHintError(null);
     if (res.status === 'done') {
       const first = res.discoveries.find(d => d.status === 'new') ?? res.discoveries[0];
@@ -228,6 +230,7 @@ export function useSandbox() {
   }, []);
 
   const requestHint = useCallback((targetId?: string) => {
+    retentionBus.emit({ t: 'signal', name: 'hint' });
     const r = engine.requestHint(targetId);
     if ('error' in r) { setHintError(r.error); return false; }
     setHintError(null);

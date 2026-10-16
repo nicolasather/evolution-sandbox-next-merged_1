@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Circuit traces">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M10 30h24l10 14h20l10 -14h16"/><path d="M10 56h16l10 14h28l10 -14h16"/><path d="M10 80h30l8 -8"/></g>
+<g data-z="2" opacity="0.9"><path d="M34 30a3 3 0 1 0 0.1 0zM64 44a3 3 0 1 0 0.1 0zM26 56a3 3 0 1 0 0.1 0zM74 56a3 3 0 1 0 0.1 0zM40 80a3 3 0 1 0 0.1 0z"/></g>
+<g data-z="3" opacity="0.5"><path d="M70 76h20v14h-20z"/><path d="M74 80h12"/></g>
+</svg>

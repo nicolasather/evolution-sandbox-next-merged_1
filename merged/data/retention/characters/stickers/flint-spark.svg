@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Flint with a spark">
+<g data-z="0" opacity=".45"><path d="M30 78l8 -6M36 82l8 -6M42 86l8 -6M24 74l6 -5"/></g>
+<g data-z="1"><path d="M22 70l10 -26l20 -14l16 12l-8 24l-24 10z"/><path d="M32 44l14 12l22 -14"/></g>
+<g data-z="2"><path d="M70 24v-10M70 24l8 -6M70 24l9 4M70 24l-8 -6M70 24l-9 5" /><path d="M46 56l-6 18" opacity=".7"/><circle cx="82" cy="40" r="1.4"/><circle cx="88" cy="30" r="1"/></g>
+</svg>

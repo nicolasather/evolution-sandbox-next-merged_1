@@ -1,0 +1,562 @@
+[
+  {
+    "id": "discovery-01",
+    "trigger": "unique_discovery",
+    "threshold": 1,
+    "name": "First Spark",
+    "description": "Make your first nonprimitive discovery",
+    "coins": 10
+  },
+  {
+    "id": "discovery-02",
+    "trigger": "unique_discovery",
+    "threshold": 10,
+    "name": "Ten Steps",
+    "description": "Record 10 unique discoveries",
+    "coins": 15
+  },
+  {
+    "id": "discovery-03",
+    "trigger": "unique_discovery",
+    "threshold": 25,
+    "name": "Twenty-Five Steps",
+    "description": "Record 25 unique discoveries",
+    "coins": 20
+  },
+  {
+    "id": "discovery-04",
+    "trigger": "unique_discovery",
+    "threshold": 50,
+    "name": "Fifty Steps",
+    "description": "Record 50 unique discoveries",
+    "coins": 25
+  },
+  {
+    "id": "discovery-05",
+    "trigger": "unique_discovery",
+    "threshold": 100,
+    "name": "One Hundred",
+    "description": "Record 100 unique discoveries",
+    "coins": 30
+  },
+  {
+    "id": "discovery-06",
+    "trigger": "unique_discovery",
+    "threshold": 200,
+    "name": "Two Hundred",
+    "description": "Record 200 unique discoveries",
+    "coins": 35
+  },
+  {
+    "id": "discovery-07",
+    "trigger": "unique_discovery",
+    "threshold": 500,
+    "name": "Five Hundred",
+    "description": "Record 500 unique discoveries",
+    "coins": 40
+  },
+  {
+    "id": "discovery-08",
+    "trigger": "unique_discovery",
+    "threshold": 1000,
+    "name": "A Thousand Ideas",
+    "description": "Record 1,000 unique discoveries",
+    "coins": 45
+  },
+  {
+    "id": "discovery-09",
+    "trigger": "unique_discovery",
+    "threshold": 1750,
+    "name": "The Great Archive",
+    "description": "Record 1,750 unique discoveries",
+    "coins": 50
+  },
+  {
+    "id": "discovery-10",
+    "trigger": "unique_discovery",
+    "threshold": 2500,
+    "name": "Humanity Unfolded",
+    "description": "Record 2,500 unique discoveries",
+    "coins": 55
+  },
+  {
+    "id": "era-origins",
+    "trigger": "era_reached",
+    "target": "origins",
+    "name": "Arrival: Origins",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-fire",
+    "trigger": "era_reached",
+    "target": "fire",
+    "name": "Arrival: Fire",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-settlement",
+    "trigger": "era_reached",
+    "target": "settlement",
+    "name": "Arrival: Settlement",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-agriculture",
+    "trigger": "era_reached",
+    "target": "agriculture",
+    "name": "Arrival: Agriculture",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-civilization",
+    "trigger": "era_reached",
+    "target": "civilization",
+    "name": "Arrival: Civilization",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-trade",
+    "trigger": "era_reached",
+    "target": "trade",
+    "name": "Arrival: Trade",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-metallurgy",
+    "trigger": "era_reached",
+    "target": "metallurgy",
+    "name": "Arrival: Metallurgy",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-science",
+    "trigger": "era_reached",
+    "target": "science",
+    "name": "Arrival: Science",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-industry",
+    "trigger": "era_reached",
+    "target": "industry",
+    "name": "Arrival: Industry",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-electric",
+    "trigger": "era_reached",
+    "target": "electric",
+    "name": "Arrival: Electric",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-computing",
+    "trigger": "era_reached",
+    "target": "computing",
+    "name": "Arrival: Computing",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-network",
+    "trigger": "era_reached",
+    "target": "network",
+    "name": "Arrival: Network",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-games",
+    "trigger": "era_reached",
+    "target": "games",
+    "name": "Arrival: Games",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "era-simulation",
+    "trigger": "era_reached",
+    "target": "simulation",
+    "name": "Arrival: Simulation",
+    "description": "Reach this era through normal historical progression",
+    "coins": 35
+  },
+  {
+    "id": "route-1",
+    "trigger": "unique_route_count",
+    "threshold": 1,
+    "name": "Paths Recovered 1",
+    "description": "Find 1 distinct valid crafting routes",
+    "coins": 15
+  },
+  {
+    "id": "route-3",
+    "trigger": "unique_route_count",
+    "threshold": 3,
+    "name": "Paths Recovered 3",
+    "description": "Find 3 distinct valid crafting routes",
+    "coins": 23
+  },
+  {
+    "id": "route-5",
+    "trigger": "unique_route_count",
+    "threshold": 5,
+    "name": "Paths Recovered 5",
+    "description": "Find 5 distinct valid crafting routes",
+    "coins": 31
+  },
+  {
+    "id": "route-10",
+    "trigger": "unique_route_count",
+    "threshold": 10,
+    "name": "Paths Recovered 10",
+    "description": "Find 10 distinct valid crafting routes",
+    "coins": 39
+  },
+  {
+    "id": "route-20",
+    "trigger": "unique_route_count",
+    "threshold": 20,
+    "name": "Paths Recovered 20",
+    "description": "Find 20 distinct valid crafting routes",
+    "coins": 47
+  },
+  {
+    "id": "route-30",
+    "trigger": "unique_route_count",
+    "threshold": 30,
+    "name": "Paths Recovered 30",
+    "description": "Find 30 distinct valid crafting routes",
+    "coins": 55
+  },
+  {
+    "id": "route-50",
+    "trigger": "unique_route_count",
+    "threshold": 50,
+    "name": "Paths Recovered 50",
+    "description": "Find 50 distinct valid crafting routes",
+    "coins": 63
+  },
+  {
+    "id": "route-75",
+    "trigger": "unique_route_count",
+    "threshold": 75,
+    "name": "Paths Recovered 75",
+    "description": "Find 75 distinct valid crafting routes",
+    "coins": 71
+  },
+  {
+    "id": "route-100",
+    "trigger": "unique_route_count",
+    "threshold": 100,
+    "name": "Paths Recovered 100",
+    "description": "Find 100 distinct valid crafting routes",
+    "coins": 79
+  },
+  {
+    "id": "route-150",
+    "trigger": "unique_route_count",
+    "threshold": 150,
+    "name": "Paths Recovered 150",
+    "description": "Find 150 distinct valid crafting routes",
+    "coins": 87
+  },
+  {
+    "id": "route-200",
+    "trigger": "unique_route_count",
+    "threshold": 200,
+    "name": "Paths Recovered 200",
+    "description": "Find 200 distinct valid crafting routes",
+    "coins": 95
+  },
+  {
+    "id": "route-300",
+    "trigger": "unique_route_count",
+    "threshold": 300,
+    "name": "Paths Recovered 300",
+    "description": "Find 300 distinct valid crafting routes",
+    "coins": 103
+  },
+  {
+    "id": "museum-1",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 1,
+    "name": "Exhibit Keeper 1",
+    "description": "Unlock 1 museum exhibits",
+    "coins": 15
+  },
+  {
+    "id": "museum-3",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 3,
+    "name": "Exhibit Keeper 3",
+    "description": "Unlock 3 museum exhibits",
+    "coins": 22
+  },
+  {
+    "id": "museum-5",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 5,
+    "name": "Exhibit Keeper 5",
+    "description": "Unlock 5 museum exhibits",
+    "coins": 29
+  },
+  {
+    "id": "museum-10",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 10,
+    "name": "Exhibit Keeper 10",
+    "description": "Unlock 10 museum exhibits",
+    "coins": 36
+  },
+  {
+    "id": "museum-15",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 15,
+    "name": "Exhibit Keeper 15",
+    "description": "Unlock 15 museum exhibits",
+    "coins": 43
+  },
+  {
+    "id": "museum-20",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 20,
+    "name": "Exhibit Keeper 20",
+    "description": "Unlock 20 museum exhibits",
+    "coins": 50
+  },
+  {
+    "id": "museum-30",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 30,
+    "name": "Exhibit Keeper 30",
+    "description": "Unlock 30 museum exhibits",
+    "coins": 57
+  },
+  {
+    "id": "museum-40",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 40,
+    "name": "Exhibit Keeper 40",
+    "description": "Unlock 40 museum exhibits",
+    "coins": 64
+  },
+  {
+    "id": "museum-50",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 50,
+    "name": "Exhibit Keeper 50",
+    "description": "Unlock 50 museum exhibits",
+    "coins": 71
+  },
+  {
+    "id": "museum-75",
+    "trigger": "museum_unique_exhibits",
+    "threshold": 75,
+    "name": "Exhibit Keeper 75",
+    "description": "Unlock 75 museum exhibits",
+    "coins": 78
+  },
+  {
+    "id": "daily-1",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 1,
+    "name": "Daily Curiosity 1",
+    "description": "Complete a daily activity on 1 unique calendar dates (no streak required)",
+    "coins": 15
+  },
+  {
+    "id": "daily-2",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 2,
+    "name": "Daily Curiosity 2",
+    "description": "Complete a daily activity on 2 unique calendar dates (no streak required)",
+    "coins": 25
+  },
+  {
+    "id": "daily-3",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 3,
+    "name": "Daily Curiosity 3",
+    "description": "Complete a daily activity on 3 unique calendar dates (no streak required)",
+    "coins": 35
+  },
+  {
+    "id": "daily-5",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 5,
+    "name": "Daily Curiosity 5",
+    "description": "Complete a daily activity on 5 unique calendar dates (no streak required)",
+    "coins": 45
+  },
+  {
+    "id": "daily-7",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 7,
+    "name": "Daily Curiosity 7",
+    "description": "Complete a daily activity on 7 unique calendar dates (no streak required)",
+    "coins": 55
+  },
+  {
+    "id": "daily-10",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 10,
+    "name": "Daily Curiosity 10",
+    "description": "Complete a daily activity on 10 unique calendar dates (no streak required)",
+    "coins": 65
+  },
+  {
+    "id": "daily-14",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 14,
+    "name": "Daily Curiosity 14",
+    "description": "Complete a daily activity on 14 unique calendar dates (no streak required)",
+    "coins": 75
+  },
+  {
+    "id": "daily-21",
+    "trigger": "daily_unique_dates_completed",
+    "threshold": 21,
+    "name": "Daily Curiosity 21",
+    "description": "Complete a daily activity on 21 unique calendar dates (no streak required)",
+    "coins": 85
+  },
+  {
+    "id": "egg-1",
+    "trigger": "easter_unique_count",
+    "threshold": 1,
+    "name": "Hidden Marks 1",
+    "description": "Find 1 distinct secret engravings",
+    "coins": 10
+  },
+  {
+    "id": "egg-3",
+    "trigger": "easter_unique_count",
+    "threshold": 3,
+    "name": "Hidden Marks 3",
+    "description": "Find 3 distinct secret engravings",
+    "coins": 18
+  },
+  {
+    "id": "egg-5",
+    "trigger": "easter_unique_count",
+    "threshold": 5,
+    "name": "Hidden Marks 5",
+    "description": "Find 5 distinct secret engravings",
+    "coins": 26
+  },
+  {
+    "id": "egg-10",
+    "trigger": "easter_unique_count",
+    "threshold": 10,
+    "name": "Hidden Marks 10",
+    "description": "Find 10 distinct secret engravings",
+    "coins": 34
+  },
+  {
+    "id": "egg-15",
+    "trigger": "easter_unique_count",
+    "threshold": 15,
+    "name": "Hidden Marks 15",
+    "description": "Find 15 distinct secret engravings",
+    "coins": 42
+  },
+  {
+    "id": "egg-25",
+    "trigger": "easter_unique_count",
+    "threshold": 25,
+    "name": "Hidden Marks 25",
+    "description": "Find 25 distinct secret engravings",
+    "coins": 50
+  },
+  {
+    "id": "egg-35",
+    "trigger": "easter_unique_count",
+    "threshold": 35,
+    "name": "Hidden Marks 35",
+    "description": "Find 35 distinct secret engravings",
+    "coins": 58
+  },
+  {
+    "id": "egg-50",
+    "trigger": "easter_unique_count",
+    "threshold": 50,
+    "name": "Hidden Marks 50",
+    "description": "Find 50 distinct secret engravings",
+    "coins": 66
+  },
+  {
+    "id": "npc-1",
+    "trigger": "npc_unique_encounters",
+    "threshold": 1,
+    "name": "Lives Behind Inventions 1",
+    "description": "Meet 1 distinct historical witnesses or grounded composites",
+    "coins": 15
+  },
+  {
+    "id": "npc-3",
+    "trigger": "npc_unique_encounters",
+    "threshold": 3,
+    "name": "Lives Behind Inventions 3",
+    "description": "Meet 3 distinct historical witnesses or grounded composites",
+    "coins": 25
+  },
+  {
+    "id": "npc-5",
+    "trigger": "npc_unique_encounters",
+    "threshold": 5,
+    "name": "Lives Behind Inventions 5",
+    "description": "Meet 5 distinct historical witnesses or grounded composites",
+    "coins": 35
+  },
+  {
+    "id": "npc-10",
+    "trigger": "npc_unique_encounters",
+    "threshold": 10,
+    "name": "Lives Behind Inventions 10",
+    "description": "Meet 10 distinct historical witnesses or grounded composites",
+    "coins": 45
+  },
+  {
+    "id": "npc-15",
+    "trigger": "npc_unique_encounters",
+    "threshold": 15,
+    "name": "Lives Behind Inventions 15",
+    "description": "Meet 15 distinct historical witnesses or grounded composites",
+    "coins": 55
+  },
+  {
+    "id": "npc-20",
+    "trigger": "npc_unique_encounters",
+    "threshold": 20,
+    "name": "Lives Behind Inventions 20",
+    "description": "Meet 20 distinct historical witnesses or grounded composites",
+    "coins": 65
+  },
+  {
+    "id": "npc-25",
+    "trigger": "npc_unique_encounters",
+    "threshold": 25,
+    "name": "Lives Behind Inventions 25",
+    "description": "Meet 25 distinct historical witnesses or grounded composites",
+    "coins": 75
+  },
+  {
+    "id": "npc-30",
+    "trigger": "npc_unique_encounters",
+    "threshold": 30,
+    "name": "Lives Behind Inventions 30",
+    "description": "Meet 30 distinct historical witnesses or grounded composites",
+    "coins": 85
+  }
+]

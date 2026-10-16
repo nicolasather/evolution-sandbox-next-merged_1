@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Copper loop with sparkle">
+<g data-z="0" opacity=".45"><path d="M26 72c-6 -16 6 -34 24 -34M32 78c-8 -18 4 -30 20 -32"/><path data-extra="1" d="M36 58l6 -3M36 63l6 -3M36 68l6 -3M60 64l6 2M60 69l6 2M22 40l2 6M26 40l2 6"/></g>
+<g data-z="1"><path d="M22 58c0 -22 16 -34 34 -34s30 14 28 32s-16 28 -34 26c-12 -2 -16 -10 -10 -20c6 -8 20 -8 24 -2c2 4 -2 10 -8 10"/></g>
+<g data-z="2"><path d="M78 16l2 6l6 2l-6 2l-2 6l-2 -6l-6 -2l6 -2z"/><path d="M14 30l1.5 4l4 1.5l-4 1.5l-1.5 4l-1.5 -4l-4 -1.5l4 -1.5z"/><path d="M34 34c6 -6 14 -8 22 -6" opacity=".75"/></g>
+</svg>

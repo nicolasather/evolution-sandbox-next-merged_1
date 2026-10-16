@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Wheel">
+<g data-z="0" opacity="0.4"><path d="M10 92h80"/></g>
+<g data-z="1"><path d="M50 14a36 36 0 1 0 0.1 0z"/><path d="M50 26a24 24 0 1 0 0.1 0z"/><path d="M50 44a6 6 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 14v12M50 74v12M14 50h12M74 50h12M24 24l9 9M67 67l9 9M76 24l-9 9M33 67l-9 9"/></g>
+</svg>

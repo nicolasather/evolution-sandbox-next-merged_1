@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Arched doorways">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M10 90V48a14 14 0 0 1 28 0v42"/><path d="M40 90V38a14 14 0 0 1 28 0v52"/><path d="M70 90V54a10 10 0 0 1 20 0v36"/><path d="M4 90h92"/></g>
+<g data-z="2" opacity="0.8"><path d="M18 90V54a6 6 0 0 1 12 0v36"/><path d="M48 90V44a6 6 0 0 1 12 0v46"/></g>
+<g data-z="3" opacity="0.5"><path d="M14 28l6 -4M60 18l8 -4M78 30l6 -2"/></g>
+</svg>

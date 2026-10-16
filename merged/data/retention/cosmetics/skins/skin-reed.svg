@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Reed">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M12 4v92M28 4v92M44 4v92M60 4v92M76 4v92M92 4v92"/></g>
+<g data-z="2" opacity="0.8"><path d="M8 24h8M24 24h8M40 36h8M56 36h8M72 24h8M88 36h8M8 62h8M24 74h8M40 62h8M56 74h8M72 62h8M88 74h8"/></g>
+<g data-z="3" opacity="0.4"><path d="M12 6l-4 6M44 6l4 6M76 6l-4 6"/></g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Rays through a lens">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M50 50m-20 0a20 28 0 1 0 40 0a20 28 0 1 0 -40 0"/><path d="M50 50m-10 0a10 18 0 1 0 20 0a10 18 0 1 0 -20 0"/></g>
+<g data-z="2" opacity="0.8"><path d="M4 30L30 44M4 50H30M4 70L30 56"/><path d="M70 44L96 30M70 50H96M70 56L96 70"/></g>
+<g data-z="3" opacity="0.45"><path d="M50 10v8M50 82v8"/></g>
+</svg>
