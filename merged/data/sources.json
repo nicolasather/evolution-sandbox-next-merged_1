@@ -645,11 +645,29 @@
    "scope": "topic",
    "checked": "2026-09-12"
   },
+  "x28_trepan_wp": {
+   "t": "B",
+   "title": "Trepanning",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trepanning",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_shaduf_wp": {
    "t": "B",
    "title": "Shadoof",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Shadoof",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_siphon_wp": {
+   "t": "B",
+   "title": "Siphon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Siphon",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -677,6 +695,15 @@
    "title": "Cam (mechanism)",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Cam_(mechanism)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_cupola_wp": {
+   "t": "B",
+   "title": "Cupola furnace",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cupola_furnace",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -771,6 +798,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_collar_wp": {
+   "t": "B",
+   "title": "Horse collar",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Horse_collar",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_windlass_wp": {
+   "t": "B",
+   "title": "Windlass",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Windlass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_kamal_wp": {
    "t": "B",
    "title": "Kamal (navigation)",
@@ -789,6 +834,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_poundlock_wp": {
+   "t": "B",
+   "title": "Lock (water navigation)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Lock_(water_navigation)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_spinwheel_wp": {
+   "t": "B",
+   "title": "Spinning wheel",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spinning_wheel",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_flywheel_wp": {
    "t": "B",
    "title": "Flywheel",
@@ -803,6 +866,15 @@
    "title": "Bi Sheng",
    "org": "Wikipedia (citing Shen Kuo, Dream Pool Essays)",
    "url": "https://en.wikipedia.org/wiki/Bi_Sheng",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_fulling_wp": {
+   "t": "B",
+   "title": "Fulling",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fulling",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -852,6 +924,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_brace_wp": {
+   "t": "B",
+   "title": "Brace (tool)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Brace_(tool)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_rack_wp": {
    "t": "B",
    "title": "Rack and pinion",
@@ -866,6 +947,15 @@
    "title": "Trombone",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Trombone",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bobbinlace_wp": {
+   "t": "B",
+   "title": "Bobbin lace",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bobbin_lace",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -969,6 +1059,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_spiritlevel_wp": {
+   "t": "B",
+   "title": "Spirit level",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spirit_level",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_greg_wp": {
    "t": "B",
    "title": "Gregorian telescope",
@@ -1014,6 +1113,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_trocar_wp": {
+   "t": "B",
+   "title": "Trocar",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trocar",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_clarinet_wp": {
    "t": "B",
    "title": "Clarinet",
@@ -1037,6 +1145,15 @@
    "title": "Meridian circle",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Meridian_circle",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_coke_wp": {
+   "t": "B",
+   "title": "Coke (fuel)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Coke_(fuel)",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1110,6 +1227,15 @@
    "org": "Engineering and Technology History Wiki (IEEE)",
    "url": "https://ethw.org/Leyden_jar",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_carding_wp": {
+   "t": "B",
+   "title": "Carding",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Carding",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -1212,6 +1338,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_leafspring_wp": {
+   "t": "B",
+   "title": "Leaf spring",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Leaf_spring",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_jacquard_wp": {
    "t": "B",
    "title": "Jacquard machine",
@@ -1226,6 +1361,15 @@
    "title": "Camera lucida",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Camera_lucida",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sluice_wp": {
+   "t": "B",
+   "title": "Sluice",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sluice",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"

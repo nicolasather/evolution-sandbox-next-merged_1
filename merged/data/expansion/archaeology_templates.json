@@ -17758,5 +17758,18 @@
   },
   "rarity": 1,
   "itemId": "exp28_cam_and_follower"
+ },
+ {
+  "id": "x-exp28_trephine",
+  "label": "Trephine",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A drill-like crown cutter that removes a round piece of skull bone.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_trephine"
  }
 ]
