@@ -663,11 +663,38 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_flush_wp3": {
+   "t": "B",
+   "title": "Flush toilet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flush_toilet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_siphon_wp": {
    "t": "B",
    "title": "Siphon",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Siphon",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_seeddrill_wp": {
+   "t": "B",
+   "title": "Seed drill",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Seed_drill",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_lamellar_wp": {
+   "t": "B",
+   "title": "Lamellar armour",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Lamellar_armour",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -695,6 +722,15 @@
    "title": "Cam (mechanism)",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Cam_(mechanism)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sheng_wp": {
+   "t": "B",
+   "title": "Sheng (instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sheng_(instrument)",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -771,11 +807,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_mail_wp": {
+   "t": "B",
+   "title": "Mail (armour)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Mail_(armour)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_noria_wp": {
    "t": "B",
    "title": "Noria",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Noria",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_steelyard_wp": {
+   "t": "B",
+   "title": "Steelyard balance",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Steelyard_balance",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -807,6 +861,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_screwpress_wp": {
+   "t": "B",
+   "title": "Screw press",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Screw_press",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_bagpipes_wp": {
    "t": "B",
    "title": "Bagpipes",
@@ -816,11 +879,38 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_plane_wp": {
+   "t": "B",
+   "title": "Hand plane",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hand_plane",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_crosscut_wp": {
+   "t": "B",
+   "title": "Crosscut saw",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Crosscut_saw",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_seismo_wp": {
    "t": "B",
    "title": "Seismoscope",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Seismoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_alembic_wp": {
+   "t": "B",
+   "title": "Alembic",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Alembic",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -951,6 +1041,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_shawm_wp": {
+   "t": "B",
+   "title": "Shawm",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Shawm",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_portolan_wp": {
    "t": "B",
    "title": "Portolan chart",
@@ -978,6 +1077,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_pavise_wp": {
+   "t": "B",
+   "title": "Pavise",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pavise",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_fusee_wp": {
    "t": "B",
    "title": "Fusee (horology)",
@@ -992,6 +1100,15 @@
    "title": "Brace (tool)",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Brace_(tool)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_raingauge_wp": {
+   "t": "B",
+   "title": "Rain gauge",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rain_gauge",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1064,6 +1181,15 @@
    "title": "Backstaff",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Backstaff",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flush_wp": {
+   "t": "B",
+   "title": "Flush toilet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flush_toilet",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1145,6 +1271,15 @@
    "title": "Spirit level",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Spirit_level",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_raingauge_wp2": {
+   "t": "B",
+   "title": "Rain gauge",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rain_gauge",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1293,6 +1428,33 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_sextant_wp": {
+   "t": "B",
+   "title": "Sextant",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sextant",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_octant_wp": {
+   "t": "B",
+   "title": "Octant (instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Octant_(instrument)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_horn_wp": {
+   "t": "B",
+   "title": "Natural horn",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Natural_horn",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_chronometer_wp": {
    "t": "B",
    "title": "Marine chronometer",
@@ -1325,6 +1487,15 @@
    "title": "Carding",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Carding",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pitchpipe_wp": {
+   "t": "B",
+   "title": "Pitch pipe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pitch_pipe",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1371,6 +1542,15 @@
    "org": "European Route of Industrial Heritage (ERIH)",
    "url": "https://www.erih.net/how-it-started/stories-about-people-biographies/biography/arkwright",
    "type": "heritage",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flush_wp2": {
+   "t": "B",
+   "title": "Flush toilet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flush_toilet",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -1460,6 +1640,24 @@
    "title": "Centrifugal governor",
    "org": "Wikipedia (citing Hills 1996; Maxwell 1868)",
    "url": "https://en.wikipedia.org/wiki/Centrifugal_governor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ballcock_wp": {
+   "t": "B",
+   "title": "Ballcock",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ballcock",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_optel_wp": {
+   "t": "B",
+   "title": "Optical telegraph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Optical_telegraph",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1559,6 +1757,15 @@
    "title": "Canning",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Canning",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_valve_wp": {
+   "t": "B",
+   "title": "Valve (brass instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Valve_(brass_instrument)",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"

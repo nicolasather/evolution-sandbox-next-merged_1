@@ -10658,11 +10658,11 @@
     "kind": "ratio",
     "title": "The Tally Board",
     "unit": "entries",
-    "correctValue": 10,
+    "correctValue": 11,
     "tolerance": 0,
-    "prompt": "The tally board lists every entry of this family: Kamal; Portolan Chart; Mariner's Astrolabe; Chip Log; Davis Quadrant; Hadley Octant; Mayer Reflecting Circle; Marshallese Stick Chart; Gyrocompass; Active Sonar. How many entries are there?",
+    "prompt": "The tally board lists every entry of this family: Kamal; Portolan Chart; Mariner's Astrolabe; Chip Log; Davis Quadrant; Hadley Octant; Marine Sextant; Mayer Reflecting Circle; Marshallese Stick Chart; Gyrocompass; Active Sonar. How many entries are there?",
     "hint": "Count the names on the board one by one.",
-    "unlockFragment": "10"
+    "unlockFragment": "11"
    },
    {
     "id": "sequence",
@@ -10683,8 +10683,8 @@
       "text": "Active Sonar"
      },
      {
-      "id": "exp28_davis_quadrant",
-      "text": "Davis Quadrant"
+      "id": "exp28_hadley_octant",
+      "text": "Hadley Octant"
      },
      {
       "id": "exp28_mariners_astrolabe",
@@ -10694,7 +10694,7 @@
     "correctOrder": [
      "exp28_kamal",
      "exp28_mariners_astrolabe",
-     "exp28_davis_quadrant",
+     "exp28_hadley_octant",
      "exp28_marshallese_stick_chart",
      "exp28_fessenden_sonar"
     ],
@@ -10756,7 +10756,7 @@
     "kind": "code",
     "title": "The Workshop Door",
     "prompt": "Set the three tallies in order: the entry count, the number of steps in the timeline, and the initials of the four items.",
-    "correctCode": "10-5-MKCP",
+    "correctCode": "11-5-MKCP",
     "requires": [
      "ratio",
      "sequence",
