@@ -663,11 +663,29 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_crossbow_wp": {
+   "t": "B",
+   "title": "Crossbow",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Crossbow",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_camera_hist_wp": {
    "t": "B",
    "title": "History of the camera",
    "org": "Wikipedia (citing Needham, Wade & Finger, Plott)",
    "url": "https://en.wikipedia.org/wiki/History_of_the_camera",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ballista_wp": {
+   "t": "B",
+   "title": "Ballista",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ballista",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -681,11 +699,47 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_dioptra_wp": {
+   "t": "B",
+   "title": "Dioptra",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Dioptra",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_organ_wp": {
+   "t": "B",
+   "title": "Pipe organ",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pipe_organ",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_noria_wp": {
    "t": "B",
    "title": "Noria",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Noria",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_groma_wp": {
+   "t": "B",
+   "title": "Groma (surveying)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Groma_(surveying)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chorob_wp": {
+   "t": "B",
+   "title": "Chorobates",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chorobates",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -726,6 +780,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_trebuchet_wp": {
+   "t": "B",
+   "title": "Trebuchet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trebuchet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_portolan_wp": {
+   "t": "B",
+   "title": "Portolan chart",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Portolan_chart",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_verge_wp": {
    "t": "B",
    "title": "Verge escapement",
@@ -759,6 +831,24 @@
    "org": "University of Oxford (Cabinet)",
    "url": "https://www.cabinet.ox.ac.uk/node/7661",
    "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_planetable_wp": {
+   "t": "B",
+   "title": "Plane table",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Plane_table",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chiplog_wp": {
+   "t": "B",
+   "title": "Chip log",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chip_log",
+   "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
   },
@@ -821,6 +911,15 @@
    "title": "Magic lantern",
    "org": "Wikipedia (citing Kircher 1645; Vermeir 2005; Rossell 2002)",
    "url": "https://en.wikipedia.org/wiki/Magic_lantern",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_greg_wp": {
+   "t": "B",
+   "title": "Gregorian telescope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gregorian_telescope",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -987,6 +1086,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_six_wp": {
+   "t": "B",
+   "title": "Six%27s thermometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Six%27s_thermometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_hygro_wp": {
    "t": "B",
    "title": "Hygrometer",
@@ -1104,6 +1212,15 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_analytical_wp": {
+   "t": "B",
+   "title": "Analytical Engine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Analytical_Engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_stereo_wp": {
    "t": "B",
    "title": "Stereoscope",
@@ -1154,6 +1271,15 @@
    "title": "Collodion process",
    "org": "Wikipedia (citing Towler 1864; Peres 2007)",
    "url": "https://en.wikipedia.org/wiki/Collodion_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_campbell_wp": {
+   "t": "B",
+   "title": "Campbell%E2%80%93Stokes recorder",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Campbell%E2%80%93Stokes_recorder",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
@@ -1212,6 +1338,24 @@
    "scope": "topic",
    "checked": "2026-10-16"
   },
+  "x28_mantle_wp": {
+   "t": "B",
+   "title": "Incandescent gas mantle",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Incandescent_gas_mantle",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_nepho_wp": {
+   "t": "B",
+   "title": "Nephoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Nephoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
   "x28_crt_wp": {
    "t": "B",
    "title": "Cathode-ray tube",
@@ -1235,6 +1379,15 @@
    "title": "Triode",
    "org": "Wikipedia",
    "url": "https://en.wikipedia.org/wiki/Triode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_diffan_wp": {
+   "t": "B",
+   "title": "Differential analyser",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Differential_analyser",
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"

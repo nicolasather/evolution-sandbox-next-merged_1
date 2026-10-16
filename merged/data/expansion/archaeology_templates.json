@@ -17706,5 +17706,44 @@
   },
   "rarity": 1,
   "itemId": "anc27_aksumite_monumental_obelisk"
+ },
+ {
+  "id": "x-exp28_crossbow",
+  "label": "Bronze-Lock Crossbow",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A bow on a stock with a bronze trigger lock that holds the string cocked until released.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_crossbow"
+ },
+ {
+  "id": "x-exp28_dioptra",
+  "label": "Dioptra",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A sighting rod on a stand with a protractor disc for measuring angles on land or sky.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_dioptra"
+ },
+ {
+  "id": "x-exp28_groma",
+  "label": "Roman Groma",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A cross on a staff with plumb lines that lays out right angles and straight lines.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "exp28_groma"
  }
 ]
