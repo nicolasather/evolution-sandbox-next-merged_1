@@ -1,3 +1,4 @@
+import { isLightTheme } from '@/lib/theme';
 import { play } from './audio';
 import type { BurstOpts, FxApi, Palette, SoundId } from './types';
 
@@ -206,7 +207,7 @@ export class Fx implements FxApi {
 export function readPalette(): Palette {
   const cs = getComputedStyle(document.documentElement);
   const v = (name: string, fb: string) => cs.getPropertyValue(name).trim() || fb;
-  const light = document.documentElement.dataset.theme === 'light';
+  const light = isLightTheme(document.documentElement.dataset.theme);
   return {
     bone: v('--bone', '#e9e5dd'),
     bone2: v('--bone-2', '#a6a199'),
