@@ -1,0 +1,665 @@
+/* ============================================================================
+   PIXEL ART THEME — data-theme="pixel"
+   An art-direction theme, not an accent skin: besides its own palette it
+   rebuilds the SHAPE of 2D interface surfaces on a 4px logical grid —
+   stepped (notched) outlines, hard bevels, carved item slots, banded skies.
+
+   Rules this file keeps (see the theme brief):
+   • no global pixelation filter and no image-rendering trick on the page:
+     every stepped edge is a deliberate box-shadow / gradient construction;
+   • discovery plates, glyph line art, stickers and 3D items keep their
+     geometry — they are only recoloured through the existing tokens;
+   • text stays real, sharp text (Silkscreen for labels and titles, Archivo
+     for running copy).
+   References: P01 Ember Quest menu, P04/P09 Celeste palettes, P08 CrossCode
+   title, P10 Shovel Knight HUD band, P16/P26/P28 inventory slots, P13/P14/P19
+   colour families.
+   ========================================================================== */
+
+:root[data-theme="pixel"]{
+  /* ── the 4px grid ── */
+  --px:4px;
+  --px2:2px;
+
+  /* ── palette: dusk-island indigo with a full set of bright local colours ── */
+  --px-ol:#0e0a24;        /* outline, one colour everywhere */
+  --px-night:#120c2e;
+  --px-teal:#34d1bf;
+  --px-pink:#ff5d8f;
+  --px-green:#7ed957;
+  --px-sky:#4fb6ff;
+  --px-gold:#ffd25c;
+  --px-amber:#ffb13b;
+  --px-red:#ff5a4e;
+  --px-violet:#a77bff;
+  --px-cream:#fff3d6;
+
+  --ink-0:#1c1640;
+  --ink-1:#241d4f;
+  --ink-2:#2d255f;
+  --ink-3:#3a2f74;
+  --ink-4:#4b3d8f;
+
+  --bone:#fff3d6;
+  --bone-2:#e2d3ff;
+  --bone-3:#b9a8e6;
+  --bone-4:#9483c4;
+
+  --line:#3a2f74;
+  --line-2:#4b3d8f;
+  --line-3:#6a5bb8;
+
+  --ochre:#ffb13b;
+  --ochre-lo:rgba(255,177,59,.16);
+  --ochre-mid:rgba(255,177,59,.5);
+  --on-ochre:#2b1600;
+
+  --r-common:#9a8cc8;
+  --r-uncommon:#7ed957;
+  --r-rare:#4fb6ff;
+  --r-hidden:#ff5d8f;
+
+  /* pixel art has no frosted glass: every surface is a flat, opaque colour */
+  --glass-top:#120c2e;
+  --glass-rail-a:#241d4f;
+  --glass-rail-b:#241d4f;
+  --hover:rgba(255,243,214,.08);
+  --slot-bg:rgba(18,12,46,.55);
+  --slot-full:#2d255f;
+  --glass-trail:#120c2e;
+  --glass-panel-a:#241d4f;
+  --glass-panel-b:#241d4f;
+  --shadow:rgba(14,10,36,.7);
+  --plate-a:#2d255f;
+  --plate-b:#1c1640;
+  --glass-sticky:#120c2e;
+  --scrim:rgba(14,10,36,.8);
+  --glass-nav:#120c2e;
+  --ground-strength:0;
+  --strata-opacity:.55;
+  --grain-opacity:0;
+
+  --plate-line:#fff3d6;
+  --plate-spark:#ffb13b;
+  --plate-glow:0;
+
+  /* the 2.5D layer's twelve colours (app/_cinematic.css section 3) */
+  --t0:#1c1640;--t1:#241d4f;--t2:#3a2f74;--t3:#ffb13b;--t4:#ff5d8f;--t5:#34d1bf;
+  --t6:#4fb6ff;--t7:#a77bff;--t8:#7ed957;--t9:#fff3d6;--t10:#ffffff;--t11:#ffd25c;
+
+  --fs-mono:var(--font-silkscreen),'JetBrains Mono',ui-monospace,monospace!important;
+  --fs-display:var(--font-silkscreen),'Archivo',sans-serif!important;
+  --fs-3d:var(--font-silkscreen),'Archivo',sans-serif!important;
+
+  /* ── reusable frames (read by the rules below) ──
+     A notched outline: four hard shadows, one per side, leave each corner one
+     grid step open — the stepped corner of every pixel-art window. */
+  --px-notch:
+    0 calc(-1 * var(--px)) 0 0 var(--px-ol),
+    0 var(--px) 0 0 var(--px-ol),
+    calc(-1 * var(--px)) 0 0 0 var(--px-ol),
+    var(--px) 0 0 0 var(--px-ol);
+  --px-notch-sm:
+    0 calc(-1 * var(--px2)) 0 0 var(--px-ol),
+    0 var(--px2) 0 0 var(--px-ol),
+    calc(-1 * var(--px2)) 0 0 0 var(--px-ol),
+    var(--px2) 0 0 0 var(--px-ol);
+}
+
+/* ── the world: a banded dusk sky (hard colour steps, never a smooth blend) ── */
+:root[data-theme="pixel"]{--px-world:
+  /* stars: single grid cells, two sizes, on a repeating tile */
+  url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='240' shape-rendering='crispEdges'%3E%3Cg fill='%23fff3d6'%3E%3Crect x='24' y='28' width='4' height='4'/%3E%3Crect x='132' y='12' width='4' height='4'/%3E%3Crect x='212' y='64' width='4' height='4'/%3E%3Crect x='300' y='36' width='4' height='4'/%3E%3Crect x='76' y='120' width='4' height='4'/%3E%3Crect x='256' y='150' width='4' height='4'/%3E%3C/g%3E%3Cg fill='%23ffd25c'%3E%3Crect x='168' y='100' width='4' height='4'/%3E%3Crect x='164' y='104' width='12' height='4' opacity='.0'/%3E%3C/g%3E%3Cg fill='%2334d1bf'%3E%3Crect x='328' y='112' width='4' height='4'/%3E%3Crect x='44' y='196' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E") 0 0/360px 240px repeat-x,
+  /* a stepped mountain range standing on the horizon band (public/themes/pixel-mountains.svg) */
+  url("/themes/pixel-mountains.svg") 0 calc(74.8vh - 108px)/480px 112px repeat-x,
+  linear-gradient(180deg,
+    #1c1640 0 34%,
+    #221a4c 34% 42%,
+    #2b1e5a 42% 49%,
+    #3a2268 49% 55%,
+    #512778 55% 60%,
+    #6e2c84 60% 64%,
+    #93348a 64% 67.5%,
+    #bd4286 67.5% 70%,
+    #e2567c 70% 72%,
+    #ff7b6a 72% 73.6%,
+    #ffa95a 73.6% 74.8%,
+    #2a1f55 74.8% 76%,
+    #221a4a 76% 100%);}
+:root[data-theme="pixel"] #ground{background:var(--px-world)}
+/* the menu covers the game until Begin: it carries the same sky, opaque */
+:root[data-theme="pixel"] #landing{background:var(--px-world)}
+/* the soft drifting lights and the perspective grid floor have no place in pixel art */
+:root[data-theme="pixel"] #ground::before,:root[data-theme="pixel"] #ground::after{display:none}
+:root[data-theme="pixel"] #grain{display:none}
+/* line drawings of the scenery are drawn without anti-aliasing: real stepped edges */
+:root[data-theme="pixel"] #scene svg,:root[data-theme="pixel"] #strata svg{shape-rendering:crispEdges}
+:root[data-theme="pixel"] #scene{color:#b9a8e6}
+:root[data-theme="pixel"] ::selection{background:#ffb13b;color:#2b1600}
+
+/* ── type: labels and numbers set on the pixel face, tight tracking ── */
+:root[data-theme="pixel"] .mono,
+:root[data-theme="pixel"] .tab,
+:root[data-theme="pixel"] .num{font-family:var(--fs-mono);letter-spacing:.06em}
+:root[data-theme="pixel"] .mono{-webkit-font-smoothing:none}
+
+/* ── focus: a stepped gold ring, the same grammar as the frames ── */
+:root[data-theme="pixel"] :focus-visible{outline:var(--px) solid var(--px-gold)!important;outline-offset:var(--px)!important}
+
+/* ============================================================================
+   MAIN MENU (landing)
+   ========================================================================== */
+:root[data-theme="pixel"] .landing-q{font-family:var(--font-silkscreen),sans-serif;font-weight:700;text-transform:uppercase;
+  -webkit-font-smoothing:none}
+:root[data-theme="pixel"] .landing-q .q-1{font-weight:400;color:var(--px-teal);letter-spacing:.18em;
+  text-shadow:var(--px) var(--px) 0 var(--px-ol)}
+:root[data-theme="pixel"] .landing-q .q-1{font-size:clamp(16px,2.2vw,30px)}
+:root[data-theme="pixel"] .landing-q .q-2{color:var(--px-cream);letter-spacing:.02em;white-space:nowrap;font-size:clamp(40px,8.2vw,124px);line-height:1.05;
+  background:none!important;-webkit-text-fill-color:currentColor!important;
+  /* a three-step hard extrusion: pink, violet, outline — no blur */
+  text-shadow:
+    var(--px) var(--px) 0 var(--px-pink),
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 #7b3fb5,
+    calc(var(--px) * 3) calc(var(--px) * 3) 0 var(--px-ol)}
+:root[data-theme="pixel"] .landing-q .q-mark{color:var(--px-amber);font-style:normal}
+:root[data-theme="pixel"] .landing-sub{font-family:var(--font-silkscreen),sans-serif;font-style:normal;color:var(--px-cream);
+  text-shadow:var(--px2) var(--px2) 0 var(--px-ol)}
+:root[data-theme="pixel"] .landing-mats{color:var(--px-gold);font-size:12px;text-shadow:var(--px2) var(--px2) 0 var(--px-ol)}
+:root[data-theme="pixel"] .landing-mats i{color:var(--px-pink)}
+:root[data-theme="pixel"] .landing-foot{color:var(--bone-3)}
+:root[data-theme="pixel"] .landing-foot .landing-facts span{color:var(--bone-2)}
+
+/* the Begin / Continue button: an amber block with a bevel and a notched outline */
+:root[data-theme="pixel"] .begin,
+:root[data-theme="pixel"] .begin-alt{
+  border:0!important;background:var(--px-amber)!important;color:var(--on-ochre)!important;
+  font-family:var(--font-silkscreen),sans-serif;font-weight:700;letter-spacing:.12em;
+  padding:16px 30px 14px;
+  box-shadow:
+    inset var(--px) var(--px) 0 0 #ffd88a,
+    inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 #c46a14,
+    var(--px-notch),
+    0 calc(var(--px) * 2) 0 0 var(--px-ol)!important;
+  transition:translate .08s steps(1),background-color .12s steps(1)}
+:root[data-theme="pixel"] .begin::before,:root[data-theme="pixel"] .begin::after{display:none}
+:root[data-theme="pixel"] .begin .arrow{color:var(--on-ochre);font-family:var(--fs-ui)}
+:root[data-theme="pixel"] .begin:hover,:root[data-theme="pixel"] .begin-alt:hover{background:var(--px-gold)!important}
+:root[data-theme="pixel"] .begin:active,:root[data-theme="pixel"] .begin-alt:active{translate:0 var(--px);
+  box-shadow:
+    inset var(--px) var(--px) 0 0 #c46a14,
+    var(--px-notch)!important}
+:root[data-theme="pixel"] .begin-alt{background:var(--px-teal)!important}
+
+/* ============================================================================
+   TOP BAR — a solid HUD band (Shovel Knight-style), outline under it
+   ========================================================================== */
+:root[data-theme="pixel"] #top{background:var(--px-night)!important;border-bottom:0;
+  box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--ink-3),0 var(--px) 0 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .top-slot{border-color:var(--ink-2)!important}
+:root[data-theme="pixel"] .counter .big{color:var(--px-gold)}
+:root[data-theme="pixel"] .tick{background:var(--ink-4)}
+:root[data-theme="pixel"] .tick.on{background:var(--px-amber)}
+:root[data-theme="pixel"] .era-now{font-family:var(--font-silkscreen),sans-serif;color:var(--px-teal)}
+
+/* tabs: the selected one is a lit amber block sitting in the band */
+:root[data-theme="pixel"] .tab{color:var(--bone-3);text-transform:uppercase;letter-spacing:.02em;padding:0 12px;margin:18px 6px}
+:root[data-theme="pixel"] #top .mono{letter-spacing:.02em}
+:root[data-theme="pixel"] .tab:hover{color:var(--px-cream)}
+:root[data-theme="pixel"] .tab[aria-selected="true"]{color:var(--on-ochre);background:var(--px-amber);
+  box-shadow:inset var(--px) var(--px) 0 0 #ffd88a,inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 #c46a14,var(--px-notch)}
+:root[data-theme="pixel"] .tab-ind{display:none}
+
+/* corner tiles: one bright block per tool, colour-coded like an item hotbar */
+:root[data-theme="pixel"] .tile{--tc:var(--px-ol);border:0!important;color:var(--px-ol)!important;
+  background:var(--tb,var(--px-teal))!important;
+  box-shadow:
+    inset var(--px) var(--px) 0 0 rgba(255,255,255,.38),
+    inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.32),
+    var(--px-notch)!important;
+  translate:0 0}
+:root[data-theme="pixel"] .dock .tile:nth-child(6n+1){--tb:var(--px-teal)}
+:root[data-theme="pixel"] .dock .tile:nth-child(6n+2){--tb:var(--px-pink)}
+:root[data-theme="pixel"] .dock .tile:nth-child(6n+3){--tb:var(--px-green)}
+:root[data-theme="pixel"] .dock .tile:nth-child(6n+4){--tb:var(--px-sky)}
+:root[data-theme="pixel"] .dock .tile:nth-child(6n+5){--tb:var(--px-violet)}
+:root[data-theme="pixel"] .dock .tile:nth-child(6n){--tb:var(--px-gold)}
+:root[data-theme="pixel"] .tile::before{display:none}
+:root[data-theme="pixel"] .tile-art svg{shape-rendering:crispEdges;stroke-width:2.5}
+:root[data-theme="pixel"] .tile:hover,:root[data-theme="pixel"] .tile:focus-visible{translate:0 calc(-1 * var(--px));
+  background:var(--tb,var(--px-teal))!important;filter:brightness(1.1)}
+:root[data-theme="pixel"] .tile:active{translate:0 var(--px)}
+:root[data-theme="pixel"] .tile[aria-pressed="true"]{box-shadow:
+    inset var(--px) var(--px) 0 0 rgba(14,10,36,.32),
+    var(--px-notch),
+    0 0 0 calc(var(--px) * 2) var(--px-gold)!important}
+:root[data-theme="pixel"] .tile::after{background:var(--px-ol);color:var(--px-cream);border:0;
+  box-shadow:var(--px-notch-sm)}
+:root[data-theme="pixel"] .tile-alert{background:var(--px-red)!important;border-radius:0!important;
+  box-shadow:var(--px-notch-sm)}
+
+:root[data-theme="pixel"] .util .icon-btn,
+:root[data-theme="pixel"] .icon-btn{border:0!important;background:var(--ink-3)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--ink-4),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--ink-1),var(--px-notch-sm)!important}
+:root[data-theme="pixel"] .util .icon-btn:hover,:root[data-theme="pixel"] .icon-btn:hover{background:var(--ink-4)!important;color:var(--px-gold)!important}
+
+/* ============================================================================
+   PANELS — inventory rail, technique panel, cards: opaque windows, notched frame
+   ========================================================================== */
+:root[data-theme="pixel"] #rail{background:var(--ink-1)!important;border-right:0;
+  box-shadow:inset calc(-1 * var(--px)) 0 0 0 var(--ink-3),var(--px) 0 0 0 var(--px-ol)}
+:root[data-theme="pixel"] .rail-head{border-bottom:var(--px) solid var(--ink-2)}
+:root[data-theme="pixel"] .rail-hide{color:var(--px-pink)}
+:root[data-theme="pixel"] .searchbox{background:var(--px-night);padding:6px 10px;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--px-ol),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--ink-3)}
+:root[data-theme="pixel"] .inv-era{color:var(--px-teal)}
+
+/* chips: small blocks; the chosen one is lit */
+:root[data-theme="pixel"] .chip{border:0!important;background:var(--ink-3);color:var(--bone-2);
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--ink-4),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--ink-1),var(--px-notch-sm)!important;
+  margin:var(--px2)}
+:root[data-theme="pixel"] .chip:hover{color:var(--px-cream);background:var(--ink-4)}
+:root[data-theme="pixel"] .chip[aria-pressed="true"],:root[data-theme="pixel"] .chip.on,:root[data-theme="pixel"] .chip[aria-selected="true"]{
+  background:var(--px-amber)!important;color:var(--on-ochre)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 #ffd88a,inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 #c46a14,var(--px-notch-sm)!important}
+
+/* inventory items: each one sits in a carved slot (dark inset, light lower lip) */
+:root[data-theme="pixel"] #inv .item,
+:root[data-theme="pixel"] .inv-items .item{background:var(--px-night);border:0!important;
+  box-shadow:inset var(--px) var(--px) 0 0 var(--px-ol),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 var(--ink-3)}
+:root[data-theme="pixel"] #inv .item:hover,
+:root[data-theme="pixel"] .inv-items .item:hover{background:var(--ink-2);color:var(--px-cream)}
+:root[data-theme="pixel"] .item-i{background:var(--px-violet)!important;color:var(--px-ol)!important;border:0!important;
+  box-shadow:var(--px-notch-sm)}
+:root[data-theme="pixel"] .dot{border-radius:0!important}
+
+/* the technique panel on the right */
+:root[data-theme="pixel"] .wb-rail-body{background:var(--ink-1)!important;border:0!important;
+  box-shadow:inset var(--px) var(--px) 0 0 var(--ink-3),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 var(--px-night),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .wb-rail-h{color:var(--px-gold)}
+:root[data-theme="pixel"] .wb-locked-chip{background:var(--px-night);color:var(--bone-4);border:0!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] .wb-act,
+:root[data-theme="pixel"] .wb-rail-tab,
+:root[data-theme="pixel"] .sp-btn{border:0!important;background:var(--ink-3);color:var(--px-cream);
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--ink-4),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--ink-1),var(--px-notch-sm)!important}
+:root[data-theme="pixel"] .wb-act:hover,:root[data-theme="pixel"] .wb-rail-tab:hover,:root[data-theme="pixel"] .sp-btn:hover{background:var(--ink-4);translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] .wb-act[aria-pressed="true"]{background:var(--px-teal);color:var(--px-ol)}
+
+/* the bench's own words */
+:root[data-theme="pixel"] .wb-lbl{color:var(--px-cream);background:var(--px-ol);padding:2px 6px}
+:root[data-theme="pixel"] .guide,:root[data-theme="pixel"] .guide-t{color:var(--px-cream)}
+:root[data-theme="pixel"] .guide b,:root[data-theme="pixel"] .guide strong{color:var(--px-gold)}
+:root[data-theme="pixel"] .trail-lbl,:root[data-theme="pixel"] .reach{color:var(--px-teal)}
+:root[data-theme="pixel"] .trail-item{color:var(--px-cream)}
+:root[data-theme="pixel"] .scene-pick{color:var(--px-cream)}
+
+/* ── the narrator: a classic dialogue window — dark field, cream inner rule, name tab ── */
+:root[data-theme="pixel"] .nar{background:var(--px-night)!important;border:0!important;
+  box-shadow:inset 0 0 0 var(--px2) var(--px-night),inset 0 0 0 calc(var(--px2) + var(--px2)) var(--px-cream),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important;
+  backdrop-filter:none!important}
+:root[data-theme="pixel"] .nar-name{display:inline-block;background:var(--px-amber);color:var(--on-ochre);padding:3px 8px 2px;
+  box-shadow:var(--px-notch-sm)}
+:root[data-theme="pixel"] .nar-line{color:var(--px-cream);font-size:14px!important;line-height:1.55;font-style:normal!important;
+  max-height:calc(1.55em * 3)!important;
+  -webkit-font-smoothing:none}
+:root[data-theme="pixel"] .nar-note{color:var(--bone-3)}
+:root[data-theme="pixel"] .nar-portrait{color:var(--px-teal)}
+:root[data-theme="pixel"] .nar-modes button,:root[data-theme="pixel"] .nar-chip{border:0!important;background:var(--ink-3);color:var(--bone-2);
+  box-shadow:var(--px-notch-sm);margin:0 var(--px2)}
+:root[data-theme="pixel"] .nar-modes button[aria-pressed="true"]{background:var(--px-teal);color:var(--px-ol)}
+:root[data-theme="pixel"] .nar-x{color:var(--px-pink)}
+
+/* ── the corner pills (collection, coins) and the companion ── */
+:root[data-theme="pixel"] .rpill{border:0!important;background:var(--ink-2)!important;color:var(--px-cream);
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--ink-4),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--px-night),var(--px-notch)!important;
+  margin:var(--px)}
+:root[data-theme="pixel"] .rpill:hover{background:var(--ink-3)!important;color:var(--px-gold)}
+:root[data-theme="pixel"] .rcomp{color:var(--px-teal)}
+
+/* ── phones: the bottom tab bar is a HUD band too ── */
+:root[data-theme="pixel"] #mtabs{background:var(--px-night)!important;border-top:0!important;
+  box-shadow:inset 0 var(--px) 0 0 var(--ink-3),0 calc(-1 * var(--px)) 0 0 var(--px-ol)!important}
+:root[data-theme="pixel"] #mtabs button[aria-selected="true"],:root[data-theme="pixel"] #mtabs .on{color:var(--px-amber)!important}
+
+/* ── the scenario banner along the bottom ── */
+:root[data-theme="pixel"] .rev-banner{background:var(--px-night)!important;border:0!important;color:var(--px-cream)!important;
+  box-shadow:var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important;backdrop-filter:none!important}
+
+/* ============================================================================
+   MODE HUB — every mode as a windowed card with its own colour bar
+   ========================================================================== */
+:root[data-theme="pixel"] .hub-eyebrow{color:var(--px-teal)}
+:root[data-theme="pixel"] .hub-title{color:var(--px-cream);text-shadow:var(--px) var(--px) 0 var(--px-pink),calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .hub-sub{color:var(--bone-2)}
+:root[data-theme="pixel"] .hub-head{border-color:var(--ink-3)!important}
+:root[data-theme="pixel"] .hub-track>.hub-exhibit,
+:root[data-theme="pixel"] .hub-exhibit{background:var(--ink-1)!important;border:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--ink-3),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 var(--px-night),
+    var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .hub-exhibit-plate{left:var(--px);right:var(--px);top:var(--px);width:auto;height:calc(var(--px) * 3);background:var(--hc,var(--px-amber))}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+1){--hc:var(--px-amber)}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+2){--hc:var(--px-green)}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+3){--hc:var(--px-gold)}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+4){--hc:#e8a25a}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+5){--hc:var(--px-pink)}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+6){--hc:var(--px-sky)}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+7){--hc:var(--px-violet)}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n+8){--hc:var(--px-teal)}
+:root[data-theme="pixel"] .hub-exhibit:nth-child(9n){--hc:var(--px-red)}
+:root[data-theme="pixel"] .hub-exhibit-kicker{color:var(--hc,var(--px-teal))}
+:root[data-theme="pixel"] .hub-exhibit-title{color:var(--px-cream);text-shadow:var(--px2) var(--px2) 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .hub-exhibit-stats dt{color:var(--bone-3)}
+:root[data-theme="pixel"] .hub-exhibit-stats dd{color:var(--px-gold);font-family:var(--fs-mono)}
+:root[data-theme="pixel"] .hub-continue{border:0!important;background:var(--px-amber)!important;color:var(--on-ochre)!important;
+  box-shadow:inset var(--px) var(--px) 0 0 #ffd88a,inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 #c46a14,var(--px-notch)!important}
+:root[data-theme="pixel"] .hub-continue:hover{background:var(--px-gold)!important}
+:root[data-theme="pixel"] .hub-range{height:calc(var(--px) * 3)!important;background:var(--px-night)!important;
+  box-shadow:var(--px-notch-sm)}
+:root[data-theme="pixel"] .hub-range::-webkit-slider-thumb{width:28px;height:28px;background:var(--px-amber)!important;
+  box-shadow:inset 4px 4px 0 #ffd88a,inset -4px -4px 0 #c46a14,0 -2px 0 var(--px-ol),0 2px 0 var(--px-ol),-2px 0 0 var(--px-ol),2px 0 0 var(--px-ol)!important}
+
+/* ============================================================================
+   MODE INTROS (the cinematic gate) — each mode keeps its own sky colour,
+   lines drawn without anti-aliasing, glow replaced by hard steps
+   ========================================================================== */
+:root[data-theme="pixel"] .cg{
+  --k0:#1c1640!important;--k1:#241d4f!important;--k2:#3a2f74!important;
+  --k3:#e2d3ff!important;--k4:#c9b7f5!important;--k5:#b09ce6!important;--k6:#9483c4!important;--k7:#7a69ad!important;--k8:#5f5196!important;
+  --k9:#e2d3ff!important;--k10:#fff3d6!important;--k11:var(--ochre)!important}
+:root[data-theme="pixel"] .cg[data-scene="survival"]{--k0:#10301e!important;--k1:#17402a!important;--k2:#235a3a!important;--ochre:#7ed957}
+:root[data-theme="pixel"] .cg[data-scene="civilization"]{--k0:#33170f!important;--k1:#482318!important;--k2:#6a3424!important;--ochre:#ffb13b}
+:root[data-theme="pixel"] .cg[data-scene="archaeology"]{--k0:#33230f!important;--k1:#4a3418!important;--k2:#6b4c24!important;--ochre:#ffd25c}
+:root[data-theme="pixel"] .cg[data-scene="escape-room"]{--k0:#33102a!important;--k1:#4a183c!important;--k2:#6b2456!important;--ochre:#ff5d8f}
+:root[data-theme="pixel"] .cg[data-scene="decipher"]{--k0:#0f1d45!important;--k1:#16295e!important;--k2:#203a80!important;--ochre:#4fb6ff}
+:root[data-theme="pixel"] .cg[data-scene="alien-archaeology"]{--k0:#1f0f3d!important;--k1:#2d1757!important;--k2:#40227a!important;--ochre:#a77bff}
+:root[data-theme="pixel"] .cg[data-scene="reverse-evolution"]{--k0:#072c2c!important;--k1:#0c3d3c!important;--k2:#135655!important;--ochre:#34d1bf}
+:root[data-theme="pixel"] .cg[data-scene="minpath"]{--k0:#18123c!important;--k1:#221a52!important;--k2:#33276f!important;--ochre:#ffd25c}
+:root[data-theme="pixel"] .cg[data-scene="hub"]{--ochre:#ffb13b}
+:root[data-theme="pixel"] .ga{background:linear-gradient(180deg,var(--k0) 0 46%,var(--k1) 46% 64%,var(--k2) 64% 70%,var(--k1) 70% 100%)!important}
+:root[data-theme="pixel"] .ga-halo,:root[data-theme="pixel"] .ga-horizon,:root[data-theme="pixel"] .ga-vignette,:root[data-theme="pixel"] .ga-veil{display:none}
+:root[data-theme="pixel"] .ga svg,:root[data-theme="pixel"] .cg svg{shape-rendering:crispEdges}
+:root[data-theme="pixel"] .ga-glow{filter:none!important}
+:root[data-theme="pixel"] .ga-art .flicker,:root[data-theme="pixel"] .ga-art .blink{filter:none!important}
+:root[data-theme="pixel"] .cg-title{color:var(--px-cream)!important;-webkit-font-smoothing:none;
+  text-shadow:var(--px) var(--px) 0 var(--ochre),calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .cg-ch{text-shadow:inherit!important}
+:root[data-theme="pixel"] .cg-line,:root[data-theme="pixel"] .cg-slide{color:var(--px-cream)!important;font-family:var(--fs-mono)!important;
+  text-shadow:var(--px2) var(--px2) 0 var(--px-ol)}
+:root[data-theme="pixel"] .cg-key{color:var(--px-ol)!important;background:var(--ochre);padding:8px 14px;box-shadow:var(--px-notch)}
+:root[data-theme="pixel"] .cg-curtain{background:var(--px-cream)!important}
+
+:root[data-theme="pixel"] .hub-bar button{border:0!important;background:var(--ink-3)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--ink-4),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--ink-1),var(--px-notch)!important}
+:root[data-theme="pixel"] .hub-bar button:disabled{opacity:.45}
+:root[data-theme="pixel"] .hub-count{color:var(--px-gold)}
+
+/* ==== MODE SCREENS (generated from one table — keep the same treatment across modes) ==== */
+
+/* survival */
+:root[data-theme="pixel"] #survival-mode{--sv-bg:#143222;--sv-ink:#fff3d6;--sv-ink-2:#c9e8b0;--sv-ink-3:#8fc07a;--sv-line:#2c6a46;--sv-line-2:#3f8a5c;--sv-warn:#7ed957;--md-panel:#1b4430;--md-acc:#7ed957;--md-on:#0e2414;--md-l:#2c6a46;--md-l2:#3f8a5c}
+:root[data-theme="pixel"] #survival-mode{--sv-water:#3f8fd6;--sv-wood:#3f9a4a;--sv-rock:#8a86a0;--sv-open:#c9b46a;--sv-camp:#ffb13b}
+:root[data-theme="pixel"] #survival-mode .sv-top{background:var(--px-night);border-bottom:0!important;box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--md-l),0 var(--px) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] #survival-mode .sv-map,
+:root[data-theme="pixel"] #survival-mode .sv-log-small{background:var(--md-panel)!important;border:0!important;border-radius:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #survival-mode .sv-exit,
+:root[data-theme="pixel"] #survival-mode .sv-task-btn,
+:root[data-theme="pixel"] #survival-mode .chip{border:0!important;border-radius:0!important;background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] #survival-mode .sv-exit:hover,
+:root[data-theme="pixel"] #survival-mode .sv-task-btn:hover,
+:root[data-theme="pixel"] #survival-mode .chip:hover{background:var(--md-l2)!important;translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] #survival-mode .sv-exit[aria-pressed="true"],
+:root[data-theme="pixel"] #survival-mode .sv-exit[aria-checked="true"],
+:root[data-theme="pixel"] #survival-mode .sv-exit[class*="chosen"],
+:root[data-theme="pixel"] #survival-mode .sv-exit[class*="picked"],
+:root[data-theme="pixel"] #survival-mode .sv-exit.on,
+:root[data-theme="pixel"] #survival-mode .sv-task-btn[aria-pressed="true"],
+:root[data-theme="pixel"] #survival-mode .sv-task-btn[aria-checked="true"],
+:root[data-theme="pixel"] #survival-mode .sv-task-btn[class*="chosen"],
+:root[data-theme="pixel"] #survival-mode .sv-task-btn[class*="picked"],
+:root[data-theme="pixel"] #survival-mode .sv-task-btn.on,
+:root[data-theme="pixel"] #survival-mode .chip[aria-pressed="true"],
+:root[data-theme="pixel"] #survival-mode .chip[aria-checked="true"],
+:root[data-theme="pixel"] #survival-mode .chip[class*="chosen"],
+:root[data-theme="pixel"] #survival-mode .chip[class*="picked"],
+:root[data-theme="pixel"] #survival-mode .chip.on{background:var(--md-acc)!important;color:var(--md-on)!important}
+:root[data-theme="pixel"] #survival-mode .sv-advance{border:0!important;border-radius:0!important;background:var(--md-acc)!important;color:var(--md-on)!important;
+  box-shadow:inset var(--px) var(--px) 0 0 rgba(255,255,255,.4),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.35),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+
+/* civilization */
+:root[data-theme="pixel"] #civilization-mode{--cv-bg:#2a1610;--cv-ink:#fff3d6;--cv-ink-2:#f0c9a8;--cv-ink-3:#c4946f;--cv-line:#6a3a26;--cv-line-2:#8a5034;--cv-accent:#ffb13b;--md-panel:#3a1f15;--md-acc:#ffb13b;--md-on:#2b1600;--md-l:#6a3a26;--md-l2:#8a5034}
+:root[data-theme="pixel"] #civilization-mode .cv-top{background:var(--px-night);border-bottom:0!important;box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--md-l),0 var(--px) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] #civilization-mode .cv-headline,
+:root[data-theme="pixel"] #civilization-mode .cv-problems li,
+:root[data-theme="pixel"] #civilization-mode .cv-allocation{background:var(--md-panel)!important;border:0!important;border-radius:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #civilization-mode .cv-exit,
+:root[data-theme="pixel"] #civilization-mode .chip{border:0!important;border-radius:0!important;background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] #civilization-mode .cv-exit:hover,
+:root[data-theme="pixel"] #civilization-mode .chip:hover{background:var(--md-l2)!important;translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] #civilization-mode .cv-exit[aria-pressed="true"],
+:root[data-theme="pixel"] #civilization-mode .cv-exit[aria-checked="true"],
+:root[data-theme="pixel"] #civilization-mode .cv-exit[class*="chosen"],
+:root[data-theme="pixel"] #civilization-mode .cv-exit[class*="picked"],
+:root[data-theme="pixel"] #civilization-mode .cv-exit.on,
+:root[data-theme="pixel"] #civilization-mode .chip[aria-pressed="true"],
+:root[data-theme="pixel"] #civilization-mode .chip[aria-checked="true"],
+:root[data-theme="pixel"] #civilization-mode .chip[class*="chosen"],
+:root[data-theme="pixel"] #civilization-mode .chip[class*="picked"],
+:root[data-theme="pixel"] #civilization-mode .chip.on{background:var(--md-acc)!important;color:var(--md-on)!important}
+:root[data-theme="pixel"] #civilization-mode .cv-advance{border:0!important;border-radius:0!important;background:var(--md-acc)!important;color:var(--md-on)!important;
+  box-shadow:inset var(--px) var(--px) 0 0 rgba(255,255,255,.4),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.35),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+
+/* archaeology */
+:root[data-theme="pixel"] #archaeology-mode{--ar-bg:#2e2210;--ar-ink:#fff3d6;--ar-ink-2:#f0d9a0;--ar-ink-3:#c4a870;--ar-line:#5a4424;--ar-line-2:#7a5c30;--ar-accent:#ffd25c;--md-panel:#3d2e16;--md-acc:#ffd25c;--md-on:#2b1e00;--md-l:#5a4424;--md-l2:#7a5c30}
+:root[data-theme="pixel"] #archaeology-mode .ar-top{background:var(--px-night);border-bottom:0!important;box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--md-l),0 var(--px) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] #archaeology-mode .ar-square,
+:root[data-theme="pixel"] #archaeology-mode .ar-find,
+:root[data-theme="pixel"] #archaeology-mode .ar-find-detail,
+:root[data-theme="pixel"] #archaeology-mode .ar-hypothesis{background:var(--md-panel)!important;border:0!important;border-radius:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #archaeology-mode .ar-exit,
+:root[data-theme="pixel"] #archaeology-mode .chip{border:0!important;border-radius:0!important;background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] #archaeology-mode .ar-exit:hover,
+:root[data-theme="pixel"] #archaeology-mode .chip:hover{background:var(--md-l2)!important;translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] #archaeology-mode .ar-exit[aria-pressed="true"],
+:root[data-theme="pixel"] #archaeology-mode .ar-exit[aria-checked="true"],
+:root[data-theme="pixel"] #archaeology-mode .ar-exit[class*="chosen"],
+:root[data-theme="pixel"] #archaeology-mode .ar-exit[class*="picked"],
+:root[data-theme="pixel"] #archaeology-mode .ar-exit.on,
+:root[data-theme="pixel"] #archaeology-mode .chip[aria-pressed="true"],
+:root[data-theme="pixel"] #archaeology-mode .chip[aria-checked="true"],
+:root[data-theme="pixel"] #archaeology-mode .chip[class*="chosen"],
+:root[data-theme="pixel"] #archaeology-mode .chip[class*="picked"],
+:root[data-theme="pixel"] #archaeology-mode .chip.on{background:var(--md-acc)!important;color:var(--md-on)!important}
+:root[data-theme="pixel"] #archaeology-mode .ar-report-btn{border:0!important;border-radius:0!important;background:var(--md-acc)!important;color:var(--md-on)!important;
+  box-shadow:inset var(--px) var(--px) 0 0 rgba(255,255,255,.4),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.35),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+
+/* decipher */
+:root[data-theme="pixel"] #decipher-mode{--dph-bg:#111f4a;--dph-ink:#fff3d6;--dph-ink-2:#c9d8ff;--dph-ink-3:#8fa6e0;--dph-line:#26408a;--dph-line-2:#3556ad;--dph-accent:#4fb6ff;--md-panel:#182a60;--md-acc:#4fb6ff;--md-on:#06163a;--md-l:#26408a;--md-l2:#3556ad}
+:root[data-theme="pixel"] #decipher-mode .dph-top{background:var(--px-night);border-bottom:0!important;box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--md-l),0 var(--px) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] #decipher-mode .dph-tutorial,
+:root[data-theme="pixel"] #decipher-mode .dph-inscription,
+:root[data-theme="pixel"] #decipher-mode .dph-anchor-row,
+:root[data-theme="pixel"] #decipher-mode .dph-legend-row{background:var(--md-panel)!important;border:0!important;border-radius:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #decipher-mode .dph-exit,
+:root[data-theme="pixel"] #decipher-mode .chip{border:0!important;border-radius:0!important;background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] #decipher-mode .dph-exit:hover,
+:root[data-theme="pixel"] #decipher-mode .chip:hover{background:var(--md-l2)!important;translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] #decipher-mode .dph-exit[aria-pressed="true"],
+:root[data-theme="pixel"] #decipher-mode .dph-exit[aria-checked="true"],
+:root[data-theme="pixel"] #decipher-mode .dph-exit[class*="chosen"],
+:root[data-theme="pixel"] #decipher-mode .dph-exit[class*="picked"],
+:root[data-theme="pixel"] #decipher-mode .dph-exit.on,
+:root[data-theme="pixel"] #decipher-mode .chip[aria-pressed="true"],
+:root[data-theme="pixel"] #decipher-mode .chip[aria-checked="true"],
+:root[data-theme="pixel"] #decipher-mode .chip[class*="chosen"],
+:root[data-theme="pixel"] #decipher-mode .chip[class*="picked"],
+:root[data-theme="pixel"] #decipher-mode .chip.on{background:var(--md-acc)!important;color:var(--md-on)!important}
+:root[data-theme="pixel"] #decipher-mode .dph-check-btn,
+:root[data-theme="pixel"] #decipher-mode .dph-reveal-btn{border:0!important;border-radius:0!important;background:var(--md-acc)!important;color:var(--md-on)!important;
+  box-shadow:inset var(--px) var(--px) 0 0 rgba(255,255,255,.4),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.35),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+
+/* escape-room */
+:root[data-theme="pixel"] #escaperoom-mode{--er-bg:#2e1028;--er-ink:#fff3d6;--er-ink-2:#ffc9e0;--er-ink-3:#d48fb0;--er-line:#5e1f50;--er-line-2:#7e2a6a;--er-accent:#ff5d8f;--md-panel:#401838;--md-acc:#ff5d8f;--md-on:#2a0618;--md-l:#5e1f50;--md-l2:#7e2a6a}
+:root[data-theme="pixel"] #escaperoom-mode .er-top{background:var(--px-night);border-bottom:0!important;box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--md-l),0 var(--px) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] #escaperoom-mode .er-station,
+:root[data-theme="pixel"] #escaperoom-mode .er-hint-text,
+:root[data-theme="pixel"] #escaperoom-mode .er-match-row,
+:root[data-theme="pixel"] #escaperoom-mode .er-sequence-list li{background:var(--md-panel)!important;border:0!important;border-radius:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #escaperoom-mode .er-exit,
+:root[data-theme="pixel"] #escaperoom-mode .chip{border:0!important;border-radius:0!important;background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] #escaperoom-mode .er-exit:hover,
+:root[data-theme="pixel"] #escaperoom-mode .chip:hover{background:var(--md-l2)!important;translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] #escaperoom-mode .er-exit[aria-pressed="true"],
+:root[data-theme="pixel"] #escaperoom-mode .er-exit[aria-checked="true"],
+:root[data-theme="pixel"] #escaperoom-mode .er-exit[class*="chosen"],
+:root[data-theme="pixel"] #escaperoom-mode .er-exit[class*="picked"],
+:root[data-theme="pixel"] #escaperoom-mode .er-exit.on,
+:root[data-theme="pixel"] #escaperoom-mode .chip[aria-pressed="true"],
+:root[data-theme="pixel"] #escaperoom-mode .chip[aria-checked="true"],
+:root[data-theme="pixel"] #escaperoom-mode .chip[class*="chosen"],
+:root[data-theme="pixel"] #escaperoom-mode .chip[class*="picked"],
+:root[data-theme="pixel"] #escaperoom-mode .chip.on{background:var(--md-acc)!important;color:var(--md-on)!important}
+:root[data-theme="pixel"] #escaperoom-mode .er-ratio-row input,
+:root[data-theme="pixel"] #escaperoom-mode .er-code-row input{background:var(--px-night)!important;border:0!important;border-radius:0!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--px-ol),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--md-l2)!important}
+
+/* alien-archaeology */
+:root[data-theme="pixel"] #alienarchaeology-mode{--xa-bg:#1f1040;--xa-ink:#fff3d6;--xa-ink-2:#dcc9ff;--xa-ink-3:#a88fe0;--xa-line:#3d2380;--xa-line-2:#5230a6;--xa-accent:#a77bff;--md-panel:#2a1856;--md-acc:#a77bff;--md-on:#140630;--md-l:#3d2380;--md-l2:#5230a6}
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-top{background:var(--px-night);border-bottom:0!important;box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--md-l),0 var(--px) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-specimen,
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-hypothesis,
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-axis-row,
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-axis-result{background:var(--md-panel)!important;border:0!important;border-radius:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-exit,
+:root[data-theme="pixel"] #alienarchaeology-mode .chip{border:0!important;border-radius:0!important;background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-exit:hover,
+:root[data-theme="pixel"] #alienarchaeology-mode .chip:hover{background:var(--md-l2)!important;translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-exit[aria-pressed="true"],
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-exit[aria-checked="true"],
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-exit[class*="chosen"],
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-exit[class*="picked"],
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-exit.on,
+:root[data-theme="pixel"] #alienarchaeology-mode .chip[aria-pressed="true"],
+:root[data-theme="pixel"] #alienarchaeology-mode .chip[aria-checked="true"],
+:root[data-theme="pixel"] #alienarchaeology-mode .chip[class*="chosen"],
+:root[data-theme="pixel"] #alienarchaeology-mode .chip[class*="picked"],
+:root[data-theme="pixel"] #alienarchaeology-mode .chip.on{background:var(--md-acc)!important;color:var(--md-on)!important}
+:root[data-theme="pixel"] #alienarchaeology-mode .xa-report-btn{border:0!important;border-radius:0!important;background:var(--md-acc)!important;color:var(--md-on)!important;
+  box-shadow:inset var(--px) var(--px) 0 0 rgba(255,255,255,.4),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.35),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+
+/* reverse-evolution */
+:root[data-theme="pixel"] #reverseevolution-mode{--rev-bg:#082e2e;--rev-ink:#fff3d6;--rev-ink-2:#b8f0e6;--rev-ink-3:#7ac4b8;--rev-line:#145a56;--rev-line-2:#1d7a74;--rev-accent:#34d1bf;--md-panel:#0e3d3c;--md-acc:#34d1bf;--md-on:#032220;--md-l:#145a56;--md-l2:#1d7a74}
+:root[data-theme="pixel"] #reverseevolution-mode .rev-top{background:var(--px-night);border-bottom:0!important;box-shadow:inset 0 calc(-1 * var(--px)) 0 0 var(--md-l),0 var(--px) 0 0 var(--px-ol)}
+:root[data-theme="pixel"] #reverseevolution-mode .rev-target-card,
+:root[data-theme="pixel"] #reverseevolution-mode .rev-node-head,
+:root[data-theme="pixel"] #reverseevolution-mode .rev-children,
+:root[data-theme="pixel"] #reverseevolution-mode .rev-question,
+:root[data-theme="pixel"] #reverseevolution-mode .rev-reveal{background:var(--md-panel)!important;border:0!important;border-radius:0!important;margin:var(--px);
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #reverseevolution-mode .rev-exit,
+:root[data-theme="pixel"] #reverseevolution-mode .chip{border:0!important;border-radius:0!important;background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] #reverseevolution-mode .rev-exit:hover,
+:root[data-theme="pixel"] #reverseevolution-mode .chip:hover{background:var(--md-l2)!important;translate:0 calc(-1 * var(--px2))}
+:root[data-theme="pixel"] #reverseevolution-mode .rev-exit[aria-pressed="true"],
+:root[data-theme="pixel"] #reverseevolution-mode .rev-exit[aria-checked="true"],
+:root[data-theme="pixel"] #reverseevolution-mode .rev-exit[class*="chosen"],
+:root[data-theme="pixel"] #reverseevolution-mode .rev-exit[class*="picked"],
+:root[data-theme="pixel"] #reverseevolution-mode .rev-exit.on,
+:root[data-theme="pixel"] #reverseevolution-mode .chip[aria-pressed="true"],
+:root[data-theme="pixel"] #reverseevolution-mode .chip[aria-checked="true"],
+:root[data-theme="pixel"] #reverseevolution-mode .chip[class*="chosen"],
+:root[data-theme="pixel"] #reverseevolution-mode .chip[class*="picked"],
+:root[data-theme="pixel"] #reverseevolution-mode .chip.on{background:var(--md-acc)!important;color:var(--md-on)!important}
+:root[data-theme="pixel"] #reverseevolution-mode .rev-submit{border:0!important;border-radius:0!important;background:var(--md-acc)!important;color:var(--md-on)!important;
+  box-shadow:inset var(--px) var(--px) 0 0 rgba(255,255,255,.4),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.35),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+
+/* Civilization — Lifelines (the campaign the Civilization card opens) */
+:root[data-theme="pixel"] #lifelines-mode{--ll-bg:#2a1610;--ll-bg2:#3a1f15;--ll-panel:#3a1f15;--ll-ink:#fff3d6;--ll-ink2:#f0c9a8;--ll-ink3:#c4946f;
+  --ll-line:#6a3a26;--ll-line2:#8a5034;--ll-accent:#ffb13b;--ll-warn:#ffd25c;--ll-bad:#ff5a4e;--ll-good:#7ed957;--ll-cut:0px;--md-l:#6a3a26;--md-l2:#8a5034}
+:root[data-theme="pixel"] #lifelines-mode :is(.ll-top,.ll-tutorial,.ll-banner,.ll-stage,.ll-panel,.ll-drawer,.ll-dock,.ll-modal-box,.ll-callout,.ll-chap,.ll-detail,.ll-caption,.ll-subtitle,.ll-prog){
+  border:0!important;border-radius:0!important;clip-path:none!important;
+  box-shadow:inset var(--px) var(--px) 0 0 var(--md-l2),inset calc(-1 * var(--px)) calc(-1 * var(--px)) 0 0 rgba(14,10,36,.45),var(--px-notch)!important}
+:root[data-theme="pixel"] #lifelines-mode :is(.ll-btn,.ll-card-btn,.ll-tab,.ll-choice){border:0!important;border-radius:0!important;clip-path:none!important;
+  background:var(--md-l)!important;color:var(--px-cream)!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--md-l2),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important}
+:root[data-theme="pixel"] #lifelines-mode :is(.ll-btn,.ll-card-btn,.ll-tab,.ll-choice):is([aria-selected="true"],[aria-pressed="true"],.on,.primary){background:var(--px-amber)!important;color:var(--on-ochre)!important}
+:root[data-theme="pixel"] #lifelines-mode .ll-chap[aria-current],:root[data-theme="pixel"] #lifelines-mode .ll-chap.on{box-shadow:inset 0 0 0 var(--px) var(--px-amber),var(--px-notch)!important}
+
+/* Minimum Path (a CSS-module screen with literal colours: matched by its root) */
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]){background:#18123c!important;color:#fff3d6!important}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) :is(h2 span,[class*="eyebrow"]){color:#ffd25c!important}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) [class*="status"]{color:#e2d3ff!important}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) :is(input:not([type=checkbox]),select,textarea){background:#221a52!important;color:#fff3d6!important}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) option{background:#221a52!important}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) :focus-visible{outline-color:#ffd25c!important}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) button{border:0!important;background:#3a2f74!important;color:#fff3d6!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 #4b3d8f,inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 rgba(14,10,36,.5),var(--px-notch-sm)!important;margin:var(--px2)}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) button:hover:not(:disabled){background:#4b3d8f!important}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) :is([class*="controls"],[class*="panel"],[class*="result"]){background:#221a52;border:0!important;padding:1em!important;
+  box-shadow:inset var(--px) var(--px) 0 0 #4b3d8f,var(--px-notch)!important;margin:var(--px)}
+:root[data-theme="pixel"] :is(main[data-motion],[class*="MinimumPathMode"][class*="root"]) h1{font-family:var(--font-silkscreen),sans-serif;text-shadow:var(--px) var(--px) 0 var(--px-pink),calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--px-ol)}
+
+/* shared inside every mode: the step-by-step guide banner and the corner help button */
+:root[data-theme="pixel"] .guide-hint{color:var(--px-gold)!important;text-shadow:var(--px2) var(--px2) 0 var(--px-ol)}
+:root[data-theme="pixel"] .guide-hint:not(.ready){align-self:start;background:var(--px-night)!important;border:0!important;backdrop-filter:none!important;
+  box-shadow:inset 0 0 0 var(--px2) var(--px-night),inset 0 0 0 var(--px) var(--px-gold),var(--px-notch),0 calc(var(--px) * 2) 0 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .guide-hint:not(.ready) .guide-text,:root[data-theme="pixel"] .guide-hint.ready{color:var(--px-cream)!important;text-shadow:var(--px2) var(--px2) 0 var(--px-ol)!important}
+:root[data-theme="pixel"] .guide-link{color:var(--px-teal)!important}
+:root[data-theme="pixel"] .mh-btn{opacity:1;border:0!important;background:var(--ink-3)!important;color:var(--px-cream)!important;box-shadow:var(--px-notch-sm)!important}
+:root[data-theme="pixel"] .mh-menu{background:var(--px-night)!important;border:0!important;box-shadow:var(--px-notch)!important}
+:root[data-theme="pixel"] .mh-item{color:var(--px-cream)!important;border-color:var(--ink-3)!important}
+/* ==== END MODE SCREENS ==== */
+
+/* ==== MUSEUM + READING SCREENS ==== */
+/* reading screens (Archive, Timeline, Graph): a plain backdrop so nothing sits behind cards and text */
+:root[data-theme="pixel"]:has(#v-arch.on,#v-time.on,#v-graph.on) #ground{background:
+  url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='240' shape-rendering='crispEdges'%3E%3Cg fill='%23fff3d6' opacity='.7'%3E%3Crect x='24' y='28' width='4' height='4'/%3E%3Crect x='212' y='64' width='4' height='4'/%3E%3Crect x='300' y='160' width='4' height='4'/%3E%3Crect x='76' y='190' width='4' height='4'/%3E%3C/g%3E%3C/svg%3E") 0 0/360px 240px,
+  #1c1640}
+/* the Museum: its own --m-* tokens; each architecture era keeps a distinct material colour */
+:root[data-theme="pixel"] .mu{--m-ink:#1c1640;--m-ink-2:#241d4f;--m-ink-3:#2d255f;--m-text:#fff3d6;--m-text-2:#e2d3ff;--m-text-3:#b9a8e6;--m-text-4:#9483c4;
+  --m-line:#3a2f74;--m-line-2:#4b3d8f;--m-line-3:#6a5bb8;--m-acc:#ffb13b;--m-serif:var(--font-silkscreen),sans-serif;--m-mono:var(--font-silkscreen),monospace}
+:root[data-theme="pixel"] :is(.mu .at,.mu .hh,.mu .wh,.mu .lg,.mu .mr-dark){background:var(--px-world)!important}
+:root[data-theme="pixel"] .mu .hh-sky{background:linear-gradient(180deg,#1c1640 0 40%,#241d4f 40% 70%,#2d255f 70%)!important}
+:root[data-theme="pixel"] .mu .hh-floor{background-color:#241d4f!important}
+:root[data-theme="pixel"] .mu .hh-fog{background:linear-gradient(90deg,rgba(28,22,64,.5),#1c1640 30%)!important}
+:root[data-theme="pixel"] :is(.mu .pw,.mu .ra){background:#1c1640!important}
+:root[data-theme="pixel"] :is(.mu .ra-drawer,.mu .hh-portal-door){background:#2d255f!important;box-shadow:var(--px-notch)}
+:root[data-theme="pixel"] .mu-btn{border:0!important;background:var(--ink-3)!important;color:var(--px-cream)!important;backdrop-filter:none!important;
+  box-shadow:inset var(--px2) var(--px2) 0 0 var(--ink-4),inset calc(-1 * var(--px2)) calc(-1 * var(--px2)) 0 0 var(--ink-1),var(--px-notch-sm)!important}
+:root[data-theme="pixel"] .mu-btn[aria-pressed="true"]{background:var(--px-amber)!important;color:var(--on-ochre)!important}
+:root[data-theme="pixel"] .mu :is(h1,h2,h3){text-shadow:var(--px) var(--px) 0 var(--px-pink),calc(var(--px) * 2) calc(var(--px) * 2) 0 var(--px-ol)}
+:root[data-theme="pixel"] .arch-cave .hh-wall{background:#3a2c4a!important}
+:root[data-theme="pixel"] .arch-cave .hh-ceiling{background:#241a33!important}
+:root[data-theme="pixel"] .arch-stone .hh-wall{background:#40395e!important}
+:root[data-theme="pixel"] .arch-stone .hh-ceiling{background:#2a2440!important}
+:root[data-theme="pixel"] .arch-earth .hh-wall{background:#4a3226!important}
+:root[data-theme="pixel"] .arch-earth .hh-ceiling{background:#33221a!important}
+:root[data-theme="pixel"] .arch-mudbrick .hh-wall{background:#5a3626!important}
+:root[data-theme="pixel"] .arch-mudbrick .hh-ceiling{background:#3d2418!important}
+:root[data-theme="pixel"] .arch-bronze .hh-wall{background:#5a4524!important}
+:root[data-theme="pixel"] .arch-bronze .hh-ceiling{background:#3d2e16!important}
+:root[data-theme="pixel"] .arch-marble .hh-wall{background:#4d4878!important}
+:root[data-theme="pixel"] .arch-marble .hh-ceiling{background:#332f55!important}
+:root[data-theme="pixel"] .arch-timber .hh-wall{background:#4f3220!important}
+:root[data-theme="pixel"] .arch-timber .hh-ceiling{background:#362214!important}
+:root[data-theme="pixel"] .arch-iron .hh-wall{background:#363d55!important}
+:root[data-theme="pixel"] .arch-iron .hh-ceiling{background:#242a3d!important}
+:root[data-theme="pixel"] .arch-glass .hh-wall{background:#1f4a5e!important}
+:root[data-theme="pixel"] .arch-glass .hh-ceiling{background:#143444!important}
+:root[data-theme="pixel"] .arch-grid .hh-wall{background:#163a5a!important}
+:root[data-theme="pixel"] .arch-grid .hh-ceiling{background:#0e2840!important}
+:root[data-theme="pixel"] .arch-light .hh-wall{background:#3b2f74!important}
+:root[data-theme="pixel"] .arch-light .hh-ceiling{background:#2a2155!important}
+/* ==== END MUSEUM + READING SCREENS ==== */

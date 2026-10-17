@@ -2,7 +2,7 @@ import Script from 'next/script';
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from 'next';
-import { Archivo, Bungee, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import { Archivo, Bungee, Fredoka, Instrument_Serif, JetBrains_Mono, Silkscreen } from 'next/font/google';
 import { siteUrl } from '@/lib/site';
 import { THEME_BOOT } from '@/lib/theme';
 import { clientDevToolsEnabled } from '@/lib/dev/env';
@@ -26,6 +26,14 @@ const jetbrainsMono = JetBrains_Mono({
 /* the 2.5D display face — titles, plates and the big numbers (see app/_cinematic.css) */
 const bungee = Bungee({
   subsets: ['latin'], weight: '400', variable: '--font-bungee', display: 'swap',
+});
+
+/* the two art-direction themes' own faces (app/_theme-pixel.css, app/_theme-cartoon.css) — only those themes use them */
+const silkscreen = Silkscreen({
+  subsets: ['latin'], weight: ['400', '700'], variable: '--font-silkscreen', display: 'swap', preload: false,
+});
+const fredoka = Fredoka({
+  subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-fredoka', display: 'swap', preload: false,
 });
 
 const SITE = siteUrl();
@@ -92,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     // data-theme is set by THEME_BOOT before React hydrates, so the server's
     // markup cannot know it — suppressHydrationWarning covers that one attribute
     <html lang="en" data-theme="dark" suppressHydrationWarning
-      className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${bungee.variable}`}>
+      className={`${archivo.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} ${bungee.variable} ${silkscreen.variable} ${fredoka.variable}`}>
       <head>
         {/* Developer Beta only: re-point localStorage at the beta's own keys before any app code runs */}
         {DEV_BUILD && <script dangerouslySetInnerHTML={{ __html: DEV_STORAGE_BOOT }} />}

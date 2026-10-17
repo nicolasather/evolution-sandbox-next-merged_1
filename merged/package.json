@@ -2,7 +2,7 @@
   "name": "evolution-sandbox",
   "version": "1.6.0",
   "private": true,
-  "description": "An explorable discovery graph \u2014 combine four raw materials into 918 discoveries, each with its evidence and an honest flag where a source is still missing.",
+  "description": "An explorable discovery graph — combine four raw materials into 918 discoveries, each with its evidence and an honest flag where a source is still missing.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -40,11 +40,14 @@
     "lab:sheet": "tsx tools/devlab/contact-sheet.ts",
     "lab:report": "tsx tools/devlab/report.ts",
     "lab:schema": "tsx tools/devlab/schema-doc.ts",
-    "retention:art": "node tools/retention/build-art.mjs"
+    "retention:art": "node tools/retention/build-art.mjs",
+    "quiz:e2e": "node scripts/quiz-e2e.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
     "@sentry/nextjs": "^11.0.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.118.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.8.1",
     "@vercel/speed-insights": "^2.0.0",
@@ -55,6 +58,7 @@
     "pg": "^8.23.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
     "tailwind-merge": "^3.7.0",
     "zod": "^3.25.76"
   },
