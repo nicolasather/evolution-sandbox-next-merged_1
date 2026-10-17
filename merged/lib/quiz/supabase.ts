@@ -45,3 +45,6 @@ export async function currentUser() {
 export async function maybeUser() {
   try { return await currentUser(); } catch (e) { if (e instanceof AppError && e.status === 503) throw e; return null; }
 }
+
+/** Guest accounts are Supabase anonymous users: a real user id and cookie session, but no email or password. */
+export const isGuest = (user: { is_anonymous?: boolean | null }) => user.is_anonymous === true;

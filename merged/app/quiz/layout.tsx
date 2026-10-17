@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import './quiz.css';
 import QuizNav from '@/components/quiz/QuizNav';
-import { maybeUser } from '@/lib/quiz/supabase';
+import { isGuest, maybeUser } from '@/lib/quiz/supabase';
 import { quizConfigured } from '@/lib/quiz/config';
 
 export const metadata: Metadata = {
@@ -14,15 +14,28 @@ export const dynamic = 'force-dynamic';
 export default async function QuizLayout({ children }: { children: ReactNode }) {
   const configured = quizConfigured();
   let email: string | null = null;
+  let signedIn = false;
+  let guest = false;
   if (configured) {
-    try { email = (await maybeUser())?.email ?? null; } catch { /* treated as signed out */ }
+    try {
+      const u = await maybeUser();
+      if (u) { signedIn = true; guest = isGuest(u); email = u.email ?? null; }
+    } catch { /* treated as signed out */ }
   }
   return (
     <div className="qz">
-      <QuizNav email={email} />
+      <QuizNav email={email} signedIn={signedIn} guest={guest} />
       {!configured && (
         <div className="page" style={{ marginBottom: 0 }}>
           <p className="info" role="status">The quiz service is not connected to a database on this deployment yet, so accounts and quizzes are unavailable.</p>
+        </div>
+      )}
+      {guest && (
+        <div className="page" style={{ marginBottom: 0 }}>
+          <p className="info" role="status">
+            <strong>You’re using a guest session.</strong> Your quizzes are saved only in this browser — if you clear cookies, use private browsing or switch device, you’ll lose access to them for good.{' '}
+            <a href="/quiz/keep">Create an account to keep them</a>.
+          </p>
         </div>
       )}
       {children}

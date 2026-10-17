@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { api } from '@/lib/quiz/client';
 
-export default function QuizNav({ email }: { email: string | null }) {
+export default function QuizNav({ email, signedIn, guest }: { email: string | null; signedIn: boolean; guest: boolean }) {
   const path = usePathname();
   const router = useRouter();
   const [busy, setBusy] = useState(false);
@@ -26,8 +26,11 @@ export default function QuizNav({ email }: { email: string | null }) {
         {link('/quiz/new', 'Create')}
         {link('/quiz/join', 'Join a game')}
         <Link href="/" title="Back to the home page">⌂ Home</Link>
-        {email ? (
-          <button onClick={signOut} disabled={busy} title={`Signed in as ${email}`}>Sign out</button>
+        {guest && link('/quiz/keep', 'Keep my quizzes')}
+        {signedIn ? (
+          <button onClick={signOut} disabled={busy} title={guest ? 'Guest session — signing out loses access to your guest quizzes' : `Signed in as ${email}`}>
+            {guest ? 'Leave guest session' : 'Sign out'}
+          </button>
         ) : (
           link('/quiz/login', 'Sign in')
         )}

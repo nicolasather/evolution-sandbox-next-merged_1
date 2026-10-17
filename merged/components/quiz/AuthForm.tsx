@@ -11,6 +11,7 @@ export default function AuthForm({ next, confirmError }: { next: string; confirm
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(confirmError ? 'That confirmation link is invalid or has expired. Try signing in, or create the account again.' : '');
   const [notice, setNotice] = useState('');
+  const [understood, setUnderstood] = useState(false);
 
   async function submit(e: FormEvent) {
     e.preventDefault();
@@ -27,7 +28,17 @@ export default function AuthForm({ next, confirmError }: { next: string; confirm
     } catch (err) { setError((err as Error).message); } finally { setBusy(false); }
   }
 
+  async function continueAsGuest() {
+    setBusy(true); setError(''); setNotice('');
+    try {
+      await api('/api/quiz/auth/anonymous', { method: 'POST', json: {} });
+      router.push(next);
+      router.refresh();
+    } catch (err) { setError((err as Error).message); } finally { setBusy(false); }
+  }
+
   return (
+    <div className="stack">
     <form className="panel stack" onSubmit={submit} aria-labelledby="auth-title">
       <div>
         <p className="eyebrow">Account</p>
@@ -45,5 +56,15 @@ export default function AuthForm({ next, confirmError }: { next: string; confirm
       {error && <p className="error" role="alert">{error}</p>}
       {notice && <p className="success" role="status">{notice}</p>}
     </form>
+    <section className="panel stack" aria-labelledby="guest-title">
+      <h2 id="guest-title" style={{ fontSize: '1.4rem' }}>Or continue as a guest</h2>
+      <p className="muted-text">Try the editor without an email or password. <strong>Warning:</strong> a guest’s quizzes are saved only in this browser. If you clear cookies, use private browsing, or switch browser or device, you’ll permanently lose access to them. You can turn the guest session into a real account later to keep your quizzes.</p>
+      <label style={{ display: 'flex', gap: '.6rem', alignItems: 'flex-start' }}>
+        <input type="checkbox" checked={understood} onChange={(e) => setUnderstood(e.target.checked)} style={{ width: 'auto', marginTop: '.25rem' }} />
+        <span>I understand my guest quizzes can be lost.</span>
+      </label>
+      <button type="button" className="btn ghost" disabled={busy || !understood} onClick={continueAsGuest}>Continue as a guest</button>
+    </section>
+    </div>
   );
 }
