@@ -4,7 +4,7 @@ import { kindLabels } from '@/lib/quiz/types';
 export default function AnswerView({ kind, payload, answerKey }: { kind: string; payload: any; answerKey: any }) {
   let body: React.ReactNode = null;
   if (!answerKey) return null;
-  if (kind === 'multiple_choice') body = <>{payload.options.find((o: any) => o.id === answerKey.correctIds?.[0])?.text}</>;
+  if (kind === 'multiple_choice') body = (() => { const o = payload.options.find((x: any) => x.id === answerKey.correctIds?.[0]); return <>{o?.text || o?.media?.alt}</>; })();
   else if (kind === 'answer_forge') body = <ul>{(answerKey.accepted as string[]).map((a, i) => <li key={i}>{a}</li>)}{answerKey.numericTolerance ? <li>(±{answerKey.numericTolerance} accepted)</li> : null}</ul>;
   else if (kind === 'connection_rush') body = <ul>{(answerKey.pairs as any[]).map((pr, i) => <li key={i}>{payload.left.find((x: any) => x.id === pr.leftId)?.label} → {payload.right.find((x: any) => x.id === pr.rightId)?.label}</li>)}</ul>;
   else if (kind === 'truth_hunt') body = <ul>{payload.statements.map((s: any) => <li key={s.id}>{s.text} — <strong>{answerKey.truth[s.id] ? 'True' : 'False'}</strong></li>)}</ul>;

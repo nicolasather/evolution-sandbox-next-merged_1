@@ -36,6 +36,14 @@ export type GameConfig = {
   modifiers: Modifier[];
   slotLimit: number;
   teamNames: string[];
+  /** Quiz Studio extras; absent on rooms made before the seven-step creator (they play as Classic Quiz). */
+  gameMode?: 'classic_quiz' | 'tower_defense' | 'obstacle_survival' | 'clue_racing';
+  gameOptions?: { lives: number; pace: 'relaxed' | 'normal' | 'fast'; trackLength: number };
+  theme?: 'volt' | 'coral-lime' | 'violet' | 'paper' | 'contrast';
+  seed?: string;
+  practice?: boolean;
+  adaptiveTiming?: boolean;
+  poolSize?: number;
 };
 
 export type Room = {

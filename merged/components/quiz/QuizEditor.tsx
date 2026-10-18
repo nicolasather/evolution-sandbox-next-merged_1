@@ -179,7 +179,7 @@ export default function QuizEditor({ initial, localKey, cloudConfigured }: { ini
       <main className="narrow"><div className="panel stack">
         <h1 style={{ fontSize: '2.4rem' }}>Draft not found</h1>
         <p className="muted-text">This draft isn’t stored in this browser. Drafts created without an account live only on the device and browser that made them.</p>
-        <div className="row"><Link className="btn" href="/quiz/new">Create a Quiz</Link><Link className="btn ghost" href="/quiz/my">My Quizzes</Link></div>
+        <div className="row"><Link className="btn" href="/quiz/create/mode">Create a Quiz</Link><Link className="btn ghost" href="/quiz/my">My Quizzes</Link></div>
       </div></main>
     );
   }

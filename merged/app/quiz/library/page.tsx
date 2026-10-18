@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import QuizList from '@/components/quiz/QuizList';
+import { isGameModeId } from '@/lib/quiz/compatibility';
 import type { PlayMode } from '@/lib/quiz/types';
 export const metadata: Metadata = { title: 'Quiz Library' };
 
-export default async function Library({ searchParams }: { searchParams: Promise<{ mode?: string }> }) {
-  const { mode } = await searchParams;
+export default async function Library({ searchParams }: { searchParams: Promise<{ mode?: string; game?: string }> }) {
+  const { mode, game } = await searchParams;
   const m = mode === 'solo' || mode === 'classroom' || mode === 'online' ? (mode as PlayMode) : null;
-  return <QuizList mine={false} mode={m} />;
+  return <QuizList mine={false} mode={m} game={isGameModeId(game) ? game : null} />;
 }

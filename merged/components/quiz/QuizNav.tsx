@@ -56,7 +56,7 @@ export default function QuizNav({ email, signedIn, guest }: { email: string | nu
           ) : (
             <Link href="/quiz/login" aria-current={path === '/quiz/login' ? 'page' : undefined}>Sign In</Link>
           )}
-          <Link className="cta" href="/quiz/new" aria-current={path === '/quiz/new' ? 'page' : undefined}>Create a Quiz</Link>
+          <Link className="cta" href="/quiz/create/mode" aria-current={path.startsWith('/quiz/create') ? 'page' : undefined}>Create a Quiz</Link>
         </nav>
       </div>
     </header>

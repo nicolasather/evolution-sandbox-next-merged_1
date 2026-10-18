@@ -1,10 +1,13 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { api } from '@/lib/quiz/client';
 import QuestionPlay from './QuestionPlay';
 import QuestionDisplay from './QuestionDisplay';
+import ThemeScope from './ThemeScope';
+import { RaceBoard, roomActionMode } from './games/RoomGame';
+import { GAME_MODES } from '@/lib/quiz/game-modes';
 import AnswerView from './AnswerView';
 import { fmtClock, useRoomState, useTick } from './useRoomState';
 import { modifierDescriptions, modifierLabels, type Modifier } from '@/lib/quiz/types';
@@ -34,7 +37,6 @@ export default function HostConsole({ roomId }: { roomId: string }) {
   const [amount, setAmount] = useState(100);
   const [stealTo, setStealTo] = useState('');
   useTick(250);
-  useEffect(() => { if (s && !team) setTeam(s.teams?.[0]?.id ?? ''); }, [s, team]);
 
   if (fatal) return <main className="narrow"><section className="panel stack"><h1>Can’t open this room</h1><p className="error">{pollError}</p><Link className="btn" href="/quiz/my">My Quizzes</Link></section></main>;
   if (!s) return <main className="page"><p className="muted-text">{pollError || 'Loading room…'}</p></main>;
@@ -65,11 +67,12 @@ export default function HostConsole({ roomId }: { roomId: string }) {
   const grade = (body: Record<string, unknown>) => run(() => api<{ correct: boolean; awarded: number }>(`/api/quiz/rooms/${roomId}/submit`, { method: 'POST', json: { roomQuestionId: s.question.id, actorId: activeTeam?.id, wager, ...body } }), (d) => `${activeTeam?.display_name}: ${d.correct ? 'correct' : 'incorrect'} (${d.awarded >= 0 ? '+' : ''}${d.awarded} points)`);
 
   return (
+    <ThemeScope theme={{ id: s.config.theme }} className="qz-room-theme">
     <main className={`page ${projector ? 'projector' : ''}`} id="main">
       <header className="page-header">
         <div>
-          <p className="eyebrow">{classroom ? 'Teacher · classroom projector' : 'Host · online room'} · {s.flow.replace('_', ' ')} · {s.status}{s.paused ? ' · paused' : ''}</p>
-          <h1>Classic Quiz</h1>
+          <p className="eyebrow">{GAME_MODES[(s.config.gameMode ?? 'classic_quiz') as keyof typeof GAME_MODES].title} · {classroom ? 'Teacher · classroom projector' : 'Host · online room'} · {s.flow.replace('_', ' ')} · {s.status}{s.paused ? ' · paused' : ''}</p>
+          <h1>{GAME_MODES[(s.config.gameMode ?? 'classic_quiz') as keyof typeof GAME_MODES].title}</h1>
           {!classroom && s.status !== 'ended' && <p>Players join at <strong>{joinUrl.replace(/^https?:\/\//, '').split('?')[0]}</strong> with code <span className="code">{s.code}</span></p>}
         </div>
         <div className="row">
@@ -106,6 +109,8 @@ export default function HostConsole({ roomId }: { roomId: string }) {
           ))}</div>
         )}
       </section>
+
+      {roomActionMode(s) && s.status !== 'waiting' && <RaceBoard room={s} actors={(classroom ? s.teams.map((t: any) => ({ id: t.id, name: t.display_name })) : s.players.map((p: any) => ({ id: p.id, name: p.display_name })))} />}
 
       {s.question && s.flow !== 'independent' && (
         <section className="panel stack pop" key={s.question.id}>
@@ -193,5 +198,6 @@ export default function HostConsole({ roomId }: { roomId: string }) {
       {notice && <p className="success" role="status">{notice}</p>}
       {error && <p className="error" role="alert">{error}</p>}
     </main>
+    </ThemeScope>
   );
 }

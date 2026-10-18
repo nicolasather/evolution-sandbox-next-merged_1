@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { api, readToken } from '@/lib/quiz/client';
 import QuestionPlay from './QuestionPlay';
+import ThemeScope from './ThemeScope';
+import { RoomStage, roomActionMode } from './games/RoomGame';
+import { GAME_MODES } from '@/lib/quiz/game-modes';
 import AnswerView from './AnswerView';
 import { fmtClock, useRoomState, useTick } from './useRoomState';
 import { modifierLabels, type Modifier } from '@/lib/quiz/types';
@@ -11,7 +14,7 @@ import { modifierLabels, type Modifier } from '@/lib/quiz/types';
 export default function PlayerRoom({ roomId }: { roomId: string }) {
   const [token, setToken] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
-  useEffect(() => { setToken(readToken(roomId)); setReady(true); }, [roomId]);
+  useEffect(() => { const t = setTimeout(() => { setToken(readToken(roomId)); setReady(true); }, 0); return () => clearTimeout(t); }, [roomId]);
   const { state, error: pollError, fatal, refresh, serverNow } = useRoomState(roomId, { token, ready: ready && !!token });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -50,14 +53,17 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
   }
 
   return (
+    <ThemeScope theme={{ id: s.config.theme }} className="qz-room-theme">
     <main className="page" id="main">
       <header className="page-header">
-        <div><p className="eyebrow">Classic Quiz · {solo ? 'Solo' : 'Online'} · {s.flow.replace('_', ' ')}</p><h1>{solo ? 'Your game' : `Room ${s.code}`}</h1></div>
+        <div><p className="eyebrow">{GAME_MODES[(s.config.gameMode ?? 'classic_quiz') as keyof typeof GAME_MODES].title} · {solo ? 'Solo' : 'Online'} · {s.flow.replace('_', ' ')}</p><h1>{solo ? 'Your game' : `Room ${s.code}`}</h1></div>
         <div className="row">
           {matchLeft !== null && s.status === 'active' && <span className={`timer ${matchLeft < 30 ? 'low' : ''}`} aria-label="Match time left">Match {fmtClock(matchLeft)}</span>}
           {me && <span className="timer" aria-label="Your points">{me.points} pts</span>}
         </div>
       </header>
+
+      {roomActionMode(s) && s.status !== 'waiting' && <RoomStage room={s} actorId={s.selfId} title="You" />}
 
       {s.status === 'waiting' && <section className="panel stack"><h2>Waiting for the host to start…</h2><p className="muted-text">You’re in. This page updates by itself — keep it open.</p></section>}
       {s.paused && s.status === 'active' && <p className="info" role="status">The host has paused the game.</p>}
@@ -106,5 +112,6 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
           <div className="scores">{ranking.map((p: any, i: number) => <div key={p.id} className={`score ${p.id === s.selfId ? 'me' : ''}`}><strong>{i + 1}. {p.display_name}{p.id === s.selfId ? ' (you)' : ''}</strong><span className="pts">{p.points}</span></div>)}</div></section>
       )}
     </main>
+    </ThemeScope>
   );
 }

@@ -1,7 +1,8 @@
 import 'server-only';
 import { createHash, randomBytes, randomInt } from 'node:crypto';
 import { serviceDB, currentUser } from './supabase';
-import { assertCompatible } from './compatibility';
+import { assertCompatible, gameModeSupports } from './compatibility';
+import { loadOneSettings } from './settings-db';
 import { roomCreateSchema } from './validation';
 import { publicPayload } from './public';
 import { AppError } from './errors';
@@ -48,13 +49,22 @@ export async function verifyPlayer(room: Pick<Room, 'id'>, token: string): Promi
 
 export async function createRoom(input: unknown, user: { id: string } | null) {
   const v = roomCreateSchema.parse(input);
-  assertCompatible(v.mode, v.flow, v.modifiers);
+  assertCompatible(v.mode, v.flow, v.modifiers, v.gameMode);
+  if (!gameModeSupports(v.gameMode, v.mode)) throw new AppError('That game mode cannot be played this way', 400);
+  // a private quiz can only be played by its owner
+  const { data: owned } = await serviceDB().from('quizzes').select('owner_id').eq('id', v.quizId).maybeSingle();
+  if (!owned) throw new AppError('Quiz not found', 404);
+  const quizSettings = await loadOneSettings(v.quizId);
+  if (quizSettings?.visibility === 'private' && owned.owner_id !== user?.id) throw new AppError('Quiz not found', 404);
   if (v.mode !== 'solo' && !user) throw new AppError('Sign in required', 401);
   const teamNames = v.mode === 'classroom' ? v.teamNames : [];
   if (v.mode === 'classroom' && (teamNames.length < 2 || new Set(teamNames.map((x) => x.toLowerCase())).size !== teamNames.length)) {
     throw new AppError('Classroom needs 2–8 teams with different names', 400);
   }
-  const config: GameConfig = { durationSeconds: v.durationSeconds, questionSeconds: v.questionSeconds, modifiers: v.modifiers, slotLimit: v.slotLimit, teamNames };
+  const config: GameConfig = { durationSeconds: v.durationSeconds, questionSeconds: v.questionSeconds, modifiers: v.modifiers, slotLimit: v.slotLimit, teamNames,
+    ...(v.gameMode !== 'classic_quiz' ? { gameMode: v.gameMode, gameOptions: v.gameOptions ?? { lives: 3, pace: 'normal' as const, trackLength: 10 } } : {}),
+    theme: v.theme ?? quizSettings?.theme.id, seed: v.seed ?? randomBytes(8).toString('hex'),
+    ...(v.practice ? { practice: true } : {}), ...(v.adaptiveTiming ? { adaptiveTiming: true } : {}), ...(v.poolSize ? { poolSize: v.poolSize } : {}) };
   const token = v.mode === 'solo' ? randomSecret() : undefined;
   for (let attempt = 0; attempt < 8; attempt++) {
     const joinCode = code();
@@ -137,7 +147,20 @@ export async function roomPublicState(room: Room, viewer: Viewer, opts: { peek?:
     review = (data ?? []).map((r) => ({ id: r.id, position: r.position, kind: r.kind, prompt: r.prompt, payload: publicPayload(r.kind, r.payload, r.id), answerKey: r.answer_key }));
   }
 
+  // Graded results per actor, in answer order, so every screen can rebuild the same game scene (engines are deterministic).
+  let gameLogs: Record<string, { correct: boolean; timedOut?: boolean }[]> | null = null;
+  if (room.config.gameMode && room.config.gameMode !== 'classic_quiz') {
+    const { data: qs } = await db.from('room_questions').select('id,position').eq('room_id', room.id);
+    const pos = new Map((qs ?? []).map((r) => [r.id as string, r.position as number]));
+    const { data: subs } = await db.from('submissions').select('actor_id,room_question_id,correct,response').eq('room_id', room.id);
+    gameLogs = {};
+    for (const x of [...(subs ?? [])].sort((a, b) => (pos.get(a.room_question_id as string) ?? 0) - (pos.get(b.room_question_id as string) ?? 0))) {
+      (gameLogs[x.actor_id as string] ??= []).push({ correct: !!x.correct, ...((x.response as { kind?: string })?.kind === 'timeout' ? { timedOut: true } : {}) });
+    }
+  }
+
   return {
+    gameLogs,
     id: room.id, code: room.join_code, mode: room.mode, flow: room.flow, status: room.status,
     paused: !!room.paused_at, config: room.config,
     currentIndex: cursor, turnIndex: room.turn_index, startedAt: room.started_at, expiresAt: room.expires_at,

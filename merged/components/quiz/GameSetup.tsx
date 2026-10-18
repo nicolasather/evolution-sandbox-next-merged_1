@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { api, saveToken } from '@/lib/quiz/client';
-import { allowedFlows, defaultFlow, modifierAvailability } from '@/lib/quiz/compatibility';
+import { allowedFlows, defaultFlow, gameModeSupports, modifierAvailability } from '@/lib/quiz/compatibility';
+import { GAME_MODES } from '@/lib/quiz/game-modes';
+import type { QuizSettings } from '@/lib/quiz/settings';
 import Image from 'next/image';
 import { modeInfo } from '@/lib/quiz/mode-info';
 import { MODIFIERS, flowLabels, modeLabels, modifierDescriptions, modifierLabels, type Flow, type Modifier, type PlayMode } from '@/lib/quiz/types';
@@ -14,16 +16,19 @@ const MODE_HELP: Record<PlayMode, string> = {
   online: 'Players join from their own devices with a room code.',
 };
 
-export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, initialMode = null }: { quizId: string; quizTitle: string; questionCount: number; signedIn: boolean; initialMode?: PlayMode | null }) {
+export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, initialMode = null, settings = null }: { quizId: string; quizTitle: string; questionCount: number; signedIn: boolean; initialMode?: PlayMode | null; settings?: QuizSettings | null }) {
+  const gm = settings?.gameMode ?? 'classic_quiz';
+  const pre = settings?.rules;
+  const start: PlayMode | null = initialMode ?? (pre && gameModeSupports(gm, pre.playMethod) ? pre.playMethod : null);
   const router = useRouter();
-  const [mode, setMode] = useState<PlayMode | null>(initialMode);
-  const [flow, setFlow] = useState<Flow | null>(initialMode ? defaultFlow(initialMode) : null);
-  const [mods, setMods] = useState<Modifier[]>([]);
-  const [minutes, setMinutes] = useState(15);
-  const [qSeconds, setQSeconds] = useState(45);
-  const [noTimer, setNoTimer] = useState(false);
-  const [slotLimit, setSlotLimit] = useState(3);
-  const [teams, setTeams] = useState(['Team 1', 'Team 2', 'Team 3', 'Team 4']);
+  const [mode, setMode] = useState<PlayMode | null>(start);
+  const [flow, setFlow] = useState<Flow | null>(start ? (pre && start === pre.playMethod && allowedFlows(start, gm).includes(pre.flow) ? pre.flow : defaultFlow(start, gm)) : null);
+  const [mods, setMods] = useState<Modifier[]>(start && pre && start === pre.playMethod ? pre.modifiers : []);
+  const [minutes, setMinutes] = useState(pre ? Math.round(pre.durationSeconds / 60) : 15);
+  const [qSeconds, setQSeconds] = useState(pre?.questionSeconds ?? 45);
+  const [noTimer, setNoTimer] = useState(pre ? pre.questionSeconds === null : false);
+  const [slotLimit, setSlotLimit] = useState(pre?.slotLimit ?? 3);
+  const [teams, setTeams] = useState(pre && pre.teamNames.length >= 2 ? pre.teamNames : ['Team 1', 'Team 2', 'Team 3', 'Team 4']);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
 
@@ -31,11 +36,11 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
   const split = useMemo(() => {
     if (!mode || !flow) return { ok: [] as Modifier[], no: [] as { m: Modifier; reason: string }[] };
     const ok: Modifier[] = [], no: { m: Modifier; reason: string }[] = [];
-    for (const m of MODIFIERS) { const a = modifierAvailability(mode, flow, m); if (a.ok) ok.push(m); else no.push({ m, reason: a.reason }); }
+    for (const m of MODIFIERS) { const a = modifierAvailability(mode, flow, m, gm); if (a.ok) ok.push(m); else no.push({ m, reason: a.reason }); }
     return { ok, no };
-  }, [mode, flow]);
+  }, [mode, flow, gm]);
 
-  function pickMode(m: PlayMode) { setMode(m); const f = defaultFlow(m); setFlow(f); setMods([]); setError(''); }
+  function pickMode(m: PlayMode) { setMode(m); const f = defaultFlow(m, gm); setFlow(f); setMods([]); setError(''); }
   function pickFlow(f: Flow) { setFlow(f); setMods([]); }
 
   async function launch() {
@@ -43,7 +48,8 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
     setBusy(true); setError('');
     try {
       const d = await api<{ roomId: string; token?: string }>('/api/quiz/rooms/create', { method: 'POST', json: {
-        quizId, mode, flow, durationSeconds: minutes * 60, questionSeconds: noTimer ? null : qSeconds, modifiers: mods, slotLimit,
+        quizId, mode, flow, durationSeconds: minutes * 60, questionSeconds: noTimer ? null : qSeconds, modifiers: mods, slotLimit, gameMode: gm,
+        ...(settings ? { gameOptions: settings.gameOptions, theme: settings.theme.id, practice: settings.rules.practice, adaptiveTiming: settings.rules.adaptiveTiming, poolSize: settings.rules.poolSize } : {}),
         teamNames: mode === 'classroom' ? teams.map((t) => t.trim()) : [],
       } });
       if (mode === 'solo' && d.token) { saveToken(d.roomId, d.token); router.push(`/quiz/play/${d.roomId}`); }
@@ -54,13 +60,13 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
   return (
     <main className="page">
       <header className="page-header">
-        <div><p className="eyebrow">Game Settings</p><h1>{quizTitle}</h1><p className="muted-text">{questionCount} question{questionCount === 1 ? '' : 's'} · Game mode: <strong>Classic Quiz</strong></p></div>
+        <div><p className="eyebrow">Game Settings</p><h1>{quizTitle}</h1><p className="muted-text">{questionCount} question{questionCount === 1 ? '' : 's'} · Game mode: <strong>{GAME_MODES[gm].title}</strong></p></div>
         <Link className="btn ghost" href="/quiz/library">Quiz Library</Link>
       </header>
 
       <section className="panel stack" aria-labelledby="s-how">
-        <p className="eyebrow">Step 1</p><h2 id="s-how">Choose a Game Mode</h2>
-        <div className="choices">{(['solo', 'classroom', 'online'] as PlayMode[]).map((m) => (
+        <p className="eyebrow">Step 1</p><h2 id="s-how">How will it be played?</h2>
+        <div className="choices">{(['solo', 'classroom', 'online'] as PlayMode[]).filter((m) => gameModeSupports(gm, m)).map((m) => (
           <button key={m} className="choice" aria-pressed={mode === m} onClick={() => pickMode(m)}><strong>{modeLabels[m]}</strong><small>{MODE_HELP[m]}</small></button>
         ))}</div>
         {needsAccount && <p className="info">Hosting a {mode} game needs an account so you can control the room. <Link href={`/quiz/login?next=/quiz/setup/${quizId}`}>Sign in or create one</Link>. Solo play needs no account.</p>}
@@ -71,10 +77,10 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
         <>
           <section className="panel stack" aria-labelledby="s-mode">
             <p className="eyebrow">Step 2</p><h2 id="s-mode">Question Flow</h2>
-            <p className="muted-text">Classic Quiz is played with {modeLabels[mode].toLowerCase()}. Pick how questions are delivered:</p>
-            {allowedFlows(mode).length === 1
+            <p className="muted-text">{GAME_MODES[gm].title} is played with {modeLabels[mode].toLowerCase()}. Pick how questions are delivered:</p>
+            {allowedFlows(mode, gm).length === 1
               ? <p><strong>{flowLabels[flow]}</strong></p>
-              : <div className="choices">{allowedFlows(mode).map((f) => <button key={f} className="choice" aria-pressed={flow === f} onClick={() => pickFlow(f)}><strong>{flowLabels[f].split(' — ')[0]}</strong><small>{flowLabels[f].split(' — ')[1]}</small></button>)}</div>}
+              : <div className="choices">{allowedFlows(mode, gm).map((f) => <button key={f} className="choice" aria-pressed={flow === f} onClick={() => pickFlow(f)}><strong>{flowLabels[f].split(' — ')[0]}</strong><small>{flowLabels[f].split(' — ')[1]}</small></button>)}</div>}
           </section>
 
           <section className="panel stack" aria-labelledby="s-mods">

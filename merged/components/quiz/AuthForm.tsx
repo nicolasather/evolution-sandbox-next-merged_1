@@ -30,7 +30,7 @@ export default function AuthForm({ next, confirmError }: { next: string; confirm
   async function withoutEmail() {
     setBusy(true); setError(''); setNotice('');
     try { await ensureCloudSession(); } catch { /* local drafts still work */ }
-    router.push('/quiz/new');
+    router.push('/quiz/create/mode');
     router.refresh();
   }
 
@@ -62,7 +62,7 @@ export default function AuthForm({ next, confirmError }: { next: string; confirm
         <p className="muted-text" style={{ margin: 0 }}>Open the editor right away. Your quizzes are saved in this browser, and you can add an account later without losing them.</p>
         <p className="note" style={{ margin: 0 }}>Browser-only quizzes are not backed up: clearing site data or switching device means losing access to them. Export Backup in the editor saves a copy.</p>
         <div className="row"><button type="button" className="btn" disabled={busy} onClick={withoutEmail}>Continue Without Email</button>
-          <Link className="btn ghost" href="/quiz/new" style={{ background: '#fff', color: 'var(--qz-ink)' }}>Create a Quiz</Link></div>
+          <Link className="btn ghost" href="/quiz/create/mode" style={{ background: '#fff', color: 'var(--qz-ink)' }}>Create a Quiz</Link></div>
       </section>
     </div>
   );

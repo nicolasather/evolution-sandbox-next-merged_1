@@ -43,7 +43,7 @@ export default async function QuizLayout({ children }: { children: ReactNode }) 
           <Link href="/quiz">Quiz Studio</Link>
           <Link href="/quiz/modes">Game Modes</Link>
           <Link href="/quiz/library">Quiz Library</Link>
-          <Link href="/quiz/new">Create a Quiz</Link>
+          <Link href="/quiz/create/mode">Create a Quiz</Link>
           <Link href="/quiz/join">Join a Game</Link>
           <Link href="/">Evolution Sandbox</Link>
         </nav>

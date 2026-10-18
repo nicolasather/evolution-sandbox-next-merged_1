@@ -1,6 +1,10 @@
 'use client';
 import { useMemo, useState } from 'react';
 import { kindLabels, type QuestionKind } from '@/lib/quiz/types';
+import MediaView from './media/MediaView';
+
+const Pic = ({ m, h = 120 }: { m?: any; h?: number }) => (m ? <MediaView media={m} height={h} /> : null);
+const label = (o: any) => o.text || o.label || o.media?.alt || '';
 
 export type PlayQuestion = { id: string; kind: QuestionKind; prompt: string; payload: any; base_points: number };
 
@@ -44,9 +48,11 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
   return (
     <div className="stack">
       <div><p className="eyebrow">{kindLabels[q.kind]} · {q.base_points} points</p><p className="prompt">{q.prompt}</p></div>
+      <Pic m={p.media} h={280} />
+      {typeof p.hint === 'string' && p.hint && <details><summary>Show hint</summary><p>{p.hint}</p></details>}
       {q.kind === 'multiple_choice' && (
         <div className="answers" role="radiogroup" aria-label="Answer options">
-          {p.options.map((o: any) => <button key={o.id} role="radio" aria-checked={choice === o.id} className="choice" aria-pressed={choice === o.id} onClick={() => setChoice(o.id)} disabled={off}>{o.text}</button>)}
+          {p.options.map((o: any) => <button key={o.id} role="radio" aria-checked={choice === o.id} className="choice" onClick={() => setChoice(o.id)} disabled={off} aria-label={label(o) || undefined}><Pic m={o.media} />{o.text}</button>)}
         </div>
       )}
       {q.kind === 'answer_forge' && (
@@ -57,7 +63,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
           <p className="note">Connect every item on the left to one item on the right. Each can be used once.</p>
           {p.left.map((l: any) => (
             <div className="grid2" key={l.id} style={{ alignItems: 'center' }}>
-              <strong>{l.label}</strong>
+              <span className="stack"><Pic m={l.media} h={90} /><strong>{l.label}</strong></span>
               <select aria-label={`Match for ${l.label}`} disabled={off} value={pairs[l.id] ?? ''} onChange={(e) => setPairs((s) => ({ ...s, [l.id]: e.target.value }))}>
                 <option value="">Choose a match…</option>
                 {p.right.map((r: any) => <option key={r.id} value={r.id} disabled={usedRights.has(r.id) && pairs[l.id] !== r.id}>{r.label}</option>)}
@@ -71,7 +77,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
           <p className="note">Decide whether each statement is true or false.</p>
           {p.statements.map((s: any) => (
             <div className="row spread" key={s.id}>
-              <span style={{ flex: '1 1 260px' }}>{s.text}</span>
+              <span style={{ flex: '1 1 260px' }}><Pic m={s.media} h={110} />{s.text}</span>
               <div className="row" role="group" aria-label={`Is this true? ${s.text}`}>
                 <button className="btn small ghost" aria-pressed={truth[s.id] === true} disabled={off} onClick={() => setTruth((v) => ({ ...v, [s.id]: true }))}>True</button>
                 <button className="btn small ghost" aria-pressed={truth[s.id] === false} disabled={off} onClick={() => setTruth((v) => ({ ...v, [s.id]: false }))}>False</button>

@@ -115,3 +115,10 @@
 .qz .cr-modes .cr-mode .art { border-bottom: 4px solid var(--qz-outline); }
 .qz .cr-modes { align-items: stretch; }
 .qz .cr-formats .cr-format-grid > * { min-width: 0; }
+.qz .cr-race { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.qz .cr-bar { height: 14px; background: var(--qz-field); border: 2px solid var(--qz-outline); }
+.qz .cr-bar span { display: block; height: 100%; background: var(--qz-success); transition: width .4s; }
+@media (prefers-reduced-motion: reduce) { .qz .cr-bar span { transition: none; } }
+.qz .qz-modes4 { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); grid-template-areas: none; }
+.qz .qz-modes4 .qz-mode:nth-child(n) { grid-area: auto; margin-top: 0; }
+.qz .qz-tile .qz-cover { width: 100%; height: auto; display: block; border-bottom: 3px solid var(--qz-outline); }

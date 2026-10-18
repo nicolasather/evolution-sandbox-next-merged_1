@@ -9,8 +9,10 @@ import { deleteLocalDraft, exportDraftJson, listDeviceDrafts, storageIsMemoryOnl
 import { currentSession, ensureCloudSession, type SessionInfo } from '@/lib/quiz/session-client';
 import { saveQuizSchema } from '@/lib/quiz/validation';
 import { modeLabels, type PlayMode } from '@/lib/quiz/types';
+import { ALL_GAME_MODES, GAME_MODES } from '@/lib/quiz/game-modes';
+import type { GameModeId } from '@/lib/quiz/compatibility';
 
-type Item = { id: string; title: string; description: string; status: 'draft' | 'published'; updated_at: string; questionCount: number; isMine: boolean };
+type Item = { id: string; title: string; description: string; status: 'draft' | 'published'; updated_at: string; questionCount: number; isMine: boolean; gameMode?: GameModeId; coverSrc?: string; tags?: string[]; subject?: string; visibility?: string };
 type Sort = 'new' | 'title' | 'size';
 
 const sorters: Record<Sort, (a: Item, b: Item) => number> = {
@@ -20,7 +22,8 @@ const sorters: Record<Sort, (a: Item, b: Item) => number> = {
 };
 const when = (iso: string) => { try { return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }); } catch { return ''; } };
 
-export default function QuizList({ mine, mode = null }: { mine: boolean; mode?: PlayMode | null }) {
+export default function QuizList({ mine, mode = null, game = null }: { mine: boolean; mode?: PlayMode | null; game?: GameModeId | null }) {
+  const [gameFilter, setGameFilter] = useState<GameModeId | ''>(game ?? '');
   const [items, setItems] = useState<Item[] | null>(null);
   const [device, setDevice] = useState<LocalDraft[]>([]);
   const [session, setSession] = useState<SessionInfo | null | undefined>(undefined);
@@ -57,7 +60,7 @@ export default function QuizList({ mine, mode = null }: { mine: boolean; mode?: 
   }, [mine, reload]);
 
   const q = query.trim().toLowerCase();
-  const shown = useMemo(() => (items ?? []).filter((x) => (!mine || x.status === tab) && (x.title + ' ' + x.description).toLowerCase().includes(q)).sort(sorters[sort]), [items, q, sort, mine, tab]);
+  const shown = useMemo(() => (items ?? []).filter((x) => (!mine || x.status === tab) && (!gameFilter || (x.gameMode ?? 'classic_quiz') === gameFilter) && (x.title + ' ' + x.description + ' ' + (x.tags ?? []).join(' ') + ' ' + (x.subject ?? '')).toLowerCase().includes(q)).sort(sorters[sort]), [items, q, sort, mine, tab, gameFilter]);
   const shownDevice = useMemo(() => (mine && tab === 'draft' ? device.filter((d) => (d.title + ' ' + d.description).toLowerCase().includes(q)) : []), [device, q, mine, tab]);
   const counts = useMemo(() => ({ draft: (items ?? []).filter((x) => x.status === 'draft').length + device.length, published: (items ?? []).filter((x) => x.status === 'published').length }), [items, device]);
 
@@ -102,6 +105,11 @@ export default function QuizList({ mine, mode = null }: { mine: boolean; mode?: 
   const controls = (
     <div className="qz-search">
       <label>Search quizzes<input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by title or description" /></label>
+      <label style={{ flex: '0 0 200px' }}>Game mode
+        <select value={gameFilter} onChange={(e) => setGameFilter(e.target.value as GameModeId | '')}>
+          <option value="">All game modes</option>{ALL_GAME_MODES.map((g) => <option key={g} value={g}>{GAME_MODES[g].title}</option>)}
+        </select>
+      </label>
       <label style={{ flex: '0 0 200px' }}>Sort by
         <select value={sort} onChange={(e) => setSort(e.target.value as Sort)}>
           <option value="new">Recently updated</option><option value="title">Title A–Z</option><option value="size">Most questions</option>
@@ -116,7 +124,7 @@ export default function QuizList({ mine, mode = null }: { mine: boolean; mode?: 
         <div className="page" style={{ marginBottom: 0 }}>
           <header className="page-header" style={{ marginBottom: 8 }}>
             <div><p className="eyebrow">Your workspace</p><h1>My Quizzes</h1></div>
-            <Link className="btn" href="/quiz/new">Create a Quiz</Link>
+            <Link className="btn" href="/quiz/create/mode">Create a Quiz</Link>
           </header>
         </div>
       ) : (
@@ -158,7 +166,7 @@ export default function QuizList({ mine, mode = null }: { mine: boolean; mode?: 
             <section className="empty">
               <h2>No quizzes found</h2>
               <p className="muted-text">{q ? 'Nothing matches your search.' : mine ? (tab === 'draft' ? 'You have no drafts yet.' : 'You have not published a quiz yet.') : 'No quizzes have been published yet.'}</p>
-              <Link className="btn" href="/quiz/new">Create a Quiz</Link>
+              <Link className="btn" href="/quiz/create/mode">Create a Quiz</Link>
             </section>
           ) : (
             <div className="cards">
@@ -182,11 +190,12 @@ export default function QuizList({ mine, mode = null }: { mine: boolean; mode?: 
               {shown.map((it) => (
                 <article className="qz-tile" key={it.id} style={{ ['--c' as string]: it.status === 'published' ? 'var(--qz-cyan)' : 'var(--qz-yellow)' }}>
                   <div className="stripe" />
+                  {it.coverSrc && <Image className="qz-cover" src={it.coverSrc} alt="" width={400} height={248} unoptimized />}
                   <div className="body">
                     <h2>{it.title}</h2>
-                    <div className="meta"><span className={`pill ${it.status}`}>{it.status}</span><span>{it.questionCount} question{it.questionCount === 1 ? '' : 's'}</span><span>Updated {when(it.updated_at)}</span></div>
+                    <div className="meta"><span className={`pill ${it.status}`}>{it.status}</span><span>{GAME_MODES[it.gameMode ?? 'classic_quiz'].title}</span><span>{it.questionCount} question{it.questionCount === 1 ? '' : 's'}</span><span>Updated {when(it.updated_at)}</span>{it.visibility && it.visibility !== 'public' && <span className="pill">{it.visibility}</span>}</div>
                     <p className="muted-text" style={{ margin: 0 }}>{it.description || 'No description.'}</p>
-                    <p className="note" style={{ margin: 0 }}>Playable: Solo, Classroom projector, Online.</p>
+                    
                     <div className="actions">
                       {it.questionCount > 0 ? <Link className="btn small" href={playHref(it.id)}>Play</Link> : <span className="note">Add questions to play</span>}
                       {mine && <>
