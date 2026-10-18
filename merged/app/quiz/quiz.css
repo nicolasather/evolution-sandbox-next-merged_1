@@ -26,7 +26,7 @@ html:has(.qz) { height: auto; min-height: 100%; overflow-x: hidden; overflow-y: 
 html:has(.qz) body { height: auto; min-height: 100dvh; overflow: visible; }
 /* The game's custom cursor hides the native one everywhere; Quiz Studio is a form-heavy page, keep the real cursor. */
 html:has(.qz) #rcursor, html:has(.qz) #rfield, html:has(.qz) #grain, html:has(.qz) #ground, html:has(.qz) #strata { display: none !important; }
-html.has-cursor:has(.qz) .qz, html.has-cursor:has(.qz) .qz * { cursor: auto !important; }
+html.has-cursor:has(.qz), html.has-cursor:has(.qz) body, html.has-cursor:has(.qz) .qz, html.has-cursor:has(.qz) .qz * { cursor: auto !important; }
 html.has-cursor:has(.qz) .qz :is(a, button, summary, select, label, [role=button], [role=radio], input[type=checkbox], input[type=radio], input[type=range]):not(:disabled) { cursor: pointer !important; }
 
 .qz {

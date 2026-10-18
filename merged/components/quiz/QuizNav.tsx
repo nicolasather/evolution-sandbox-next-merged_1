@@ -26,6 +26,15 @@ export default function QuizNav({ email, signedIn, guest }: { email: string | nu
     return () => window.removeEventListener('keydown', onKey);
   }, [open]);
 
+  // The game's custom cursor hides the native pointer with an !important rule inside a CSS layer, which unlayered CSS
+  // cannot beat. Quiz Studio keeps the real mouse pointer, so drop that class while a quiz page is showing and put it back on leave.
+  useEffect(() => {
+    const root = document.documentElement;
+    const had = root.classList.contains('has-cursor');
+    root.classList.remove('has-cursor');
+    return () => { if (had) root.classList.add('has-cursor'); };
+  }, []);
+
   async function signOut() {
     if (guest && !window.confirm('Leaving a guest session means you can no longer reach its saved quizzes from this browser. Create an account first to keep them. Leave anyway?')) return;
     setBusy(true);
