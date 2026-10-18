@@ -295,6 +295,37 @@ async function main() {
   r = await A.get('/api/quiz/quizzes?mine=1'); ok(r.json.quizzes.some((x) => x.id === quiz && x.status === 'published'), 'the quiz is still there after sign-out/sign-in');
   r = await A.get(`/api/quiz/quizzes/${quiz}`); ok(r.json.questions.length === 5 && r.json.quiz.title.endsWith('(edited)'), 'with its edits and all five questions');
 
+  section('11b. Guest sessions (anonymous owner)');
+  const G = new Client('guest');
+  r = await G.post('/api/quiz/auth/anonymous');
+  if (r.status === 400 && /not switched on/i.test(r.text)) { console.log('  - guest mode is switched off in Supabase Auth; skipping this section'); }
+  else {
+    ok(r.status === 201 && r.json.guest === true, 'a visitor can start a guest session', r.text);
+    r = await G.get('/api/quiz/auth/session'); ok(r.json.user && r.json.user.guest === true && !r.json.user.email, 'session reports a guest with no email', r.text);
+    r = await G.post('/api/quiz/quizzes', { title: TAG + ' guest quiz', description: '', status: 'draft', questions: questions() }); ok(r.status === 201, 'a guest can create a quiz', r.text);
+    const gq = r.json.id;
+    r = await G.get('/api/quiz/quizzes?mine=1'); ok(r.json.quizzes.some((x) => x.id === gq), 'the guest finds it under My Quizzes');
+    r = await G.post('/api/quiz/quizzes', { id: gq, title: TAG + ' guest quiz (edited)', description: '', status: 'published', questions: questions() }); ok(r.status === 200, 'the guest can edit and publish it', r.text);
+    r = await anon.post('/api/quiz/quizzes', { id: gq, title: 'hijack', description: '', status: 'draft', questions: questions() }); ok(r.status === 401, 'a stranger cannot edit the guest quiz');
+    r = await B.post('/api/quiz/quizzes', { id: gq, title: 'hijack', description: '', status: 'draft', questions: questions() }); ok(r.status >= 400 && r.status < 500, 'a different signed-in user cannot edit the guest quiz', r.text);
+    r = await G.post('/api/quiz/auth/anonymous'); ok(r.status === 200 && r.json.guest === true, 'asking for a guest session again keeps the existing one');
+    // guest cap: 20 quizzes
+    const ids = [gq]; let capped = false;
+    for (let i = 0; i < 21 && !capped; i++) {
+      const x = await G.post('/api/quiz/quizzes', { title: `${TAG} cap ${i}`, description: '', status: 'draft', questions: questions() });
+      if (x.status === 403) capped = true; else if (x.status === 201) ids.push(x.json.id); else { ok(false, 'unexpected status while filling guest cap', x.text); break; }
+    }
+    ok(capped && ids.length === 20, 'a guest is limited to 20 quizzes', `${ids.length}`);
+    // upgrade keeps the owner id (and therefore the quizzes)
+    const cg = creds('guestup');
+    r = await G.post('/api/quiz/auth/upgrade', cg); ok(r.status === 200 && r.json.ok, 'a guest can add an email and password', r.text);
+    r = await G.post('/api/quiz/auth/upgrade', cg); ok(r.status === 409 || r.status === 401, 'an upgraded user cannot upgrade again');
+    r = await G.get('/api/quiz/quizzes?mine=1'); ok(ids.every((id) => r.json.quizzes.some((x) => x.id === id)), 'every guest quiz survived the upgrade');
+    r = await anon.post('/api/quiz/auth/upgrade', cg); ok(r.status === 401, 'upgrade needs a session');
+    for (const id of ids) await G.del(`/api/quiz/quizzes/${id}`);
+    r = await G.get('/api/quiz/quizzes?mine=1'); ok(!r.json.quizzes.some((x) => x.title.includes(TAG)), 'guest test data removed');
+  }
+
   section('12. Clean-up of temporary data');
   r = await A.del(`/api/quiz/quizzes/${quiz}`); ok(r.status === 200, 'temporary quiz deleted (its test rooms cascade)');
   r = await A.del(`/api/quiz/quizzes/${emptyId}`); ok(r.status === 200, 'temporary empty draft deleted');

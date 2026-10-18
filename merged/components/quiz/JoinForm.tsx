@@ -1,6 +1,7 @@
 'use client';
 import { useState, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { api, saveToken } from '@/lib/quiz/client';
 
 export default function JoinForm({ initialCode = '' }: { initialCode?: string }) {
@@ -19,15 +20,20 @@ export default function JoinForm({ initialCode = '' }: { initialCode?: string })
     } catch (err) { setError((err as Error).message); } finally { setBusy(false); }
   }
   return (
-    <form className="panel stack" onSubmit={join}>
-      <div><p className="eyebrow">Online multiplayer</p><h1 style={{ fontSize: '2.2rem' }}>Join a game</h1>
-        <p className="muted-text">Enter the six-character code your host is showing. No account needed. Classroom projector games don’t use student devices.</p></div>
-      <label>Game code
-        <input required minLength={6} maxLength={6} autoCapitalize="characters" autoComplete="off" spellCheck={false} value={code} onChange={(e) => setCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))} placeholder="ABC234" style={{ letterSpacing: '.3em', fontSize: '1.4rem', textAlign: 'center' }} />
-      </label>
-      <label>Your name<input required maxLength={40} value={name} onChange={(e) => setName(e.target.value)} placeholder="Player name" /></label>
-      <button className="btn" disabled={busy || code.length !== 6 || !name.trim()}>{busy ? 'Joining…' : 'Join room'}</button>
-      {error && <p className="error" role="alert">{error}</p>}
-    </form>
+    <div>
+      <div className="qz-side-art"><Image src="/quiz/art/mode-online.svg" alt="" width={1200} height={675} unoptimized priority /></div>
+      <form className="panel stack" onSubmit={join} aria-labelledby="join-h" noValidate>
+        <div><p className="eyebrow">Online game</p><h1 id="join-h" style={{ fontSize: 'clamp(2.4rem, 9vw, 3.6rem)' }}>Join a Game</h1>
+          <p className="muted-text">Enter the six-character code your host is showing. No account or email needed. Classroom projector games don’t use student devices.</p></div>
+        <label>Game code (6 characters)
+          <input className="join-code" required minLength={6} maxLength={6} autoCapitalize="characters" autoComplete="off" spellCheck={false} inputMode="text" value={code} aria-invalid={error ? true : undefined} aria-describedby={error ? 'join-err' : undefined}
+            onChange={(e) => setCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))} placeholder="ABC234" />
+        </label>
+        <p className="note" style={{ margin: 0 }} aria-live="polite">{code.length}/6 characters</p>
+        <label>Your name<input required maxLength={40} value={name} onChange={(e) => setName(e.target.value)} placeholder="Player name" autoComplete="nickname" /></label>
+        <button className="btn" disabled={busy || code.length !== 6 || !name.trim()}>{busy ? 'Joining…' : 'Join Game'}</button>
+        {error && <p className="error" id="join-err" role="alert">{error}</p>}
+      </form>
+    </div>
   );
 }

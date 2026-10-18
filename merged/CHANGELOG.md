@@ -5,6 +5,13 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 18 October 2026 — Quiz Studio redesign, scroll fix, no-email quiz creation
+Quiz Studio only (`/quiz/**`); the game, museum and every other mode are untouched. Full ledger and the one optional Supabase setting: `docs/QUIZ-STUDIO-REDESIGN.md`.
+- **Scroll bug fixed.** The game's design system locks `html`/`body` to the viewport (`overflow:hidden`); Quiz Studio is a normal document, so everything below the first screen was clipped. `app/quiz/quiz.css` now hands scrolling back to the document while a `.qz` tree is mounted (`html:has(.qz)`), and the game's lock returns on navigation.
+- **Create a Quiz opens the editor immediately** — no sign-in, no email, no checkbox. Drafts are saved on the device (`lib/quiz/local-drafts.ts`) and, when the quiz service offers guest (anonymous) sessions, silently online too. Nothing is deleted without an explicit action; "Save Online" in My Quizzes migrates device drafts explicitly.
+- New comic-arcade design system (scoped to `.qz`), self-hosted fonts, six original face-free SVG scenes (`public/quiz/art/`, generator in `tools/quiz-art/`), no slogans.
+- New pages/components: Game Modes (`/quiz/modes`), question navigator + Preview in the editor (real player component and grader), Drafts/Published tabs, search + sort, skeletons, empty/error states.
+
 ### 15 October 2026 — Expansion items wired into the modes
 Minimum Path (+144 missions, 1917-item atlas), Archaeology (588 templates), Survival (171 finds), Escape Room (40 generated rooms + picker); adapter policies opened for those modes; public item counts updated to 1,917. One command for future items: `python3 tools/expansion/sync_modes.py` (guarded by `modeCoverage.test.ts`).
 

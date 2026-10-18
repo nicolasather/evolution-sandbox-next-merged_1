@@ -1,23 +1,37 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import ModeCards from '@/components/quiz/ModeCards';
 
 export default function QuizHome() {
   return (
-    <main className="page">
-      <section className="hero">
-        <p className="eyebrow">Quiz Studio</p>
-        <h1>Your questions.<br />Everyone’s game.</h1>
-        <p className="lead">Write your own quizzes with five kinds of questions, then play solo, run a whole classroom from one projector, or host a live online match with a room code.</p>
-        <div className="row">
-          <Link className="btn" href="/quiz/new">Create a quiz</Link>
-          <Link className="btn ghost" href="/quiz/library">Browse the library</Link>
-          <Link className="btn ghost" href="/quiz/join">Join a game</Link>
+    <main id="main">
+      <section className="qz-hero" aria-labelledby="home-h">
+        <div className="qz-hero-art"><Image src="/quiz/art/hero-arena.svg" alt="" width={1600} height={900} unoptimized priority /></div>
+        <div className="qz-hero-inner">
+          <h1 id="home-h">Quiz Studio</h1>
+          <p className="lead">Write quizzes in five question formats. Play them solo, on a classroom projector, or online with a room code.</p>
+          <div className="row">
+            <Link className="btn" href="/quiz/new">Create a Quiz</Link>
+            <Link className="btn cyan" href="/quiz/join">Join a Game</Link>
+            <Link className="textlink" href="/quiz/library">Quiz Library</Link>
+          </div>
         </div>
       </section>
-      <section className="features">
-        <article className="panel"><h3>Five question formats</h3><p className="muted-text">Multiple Choice, Answer Forge, Connection Rush, Truth Hunt and Fill the Table — mix them freely in one quiz.</p></article>
-        <article className="panel"><h3>One classroom screen</h3><p className="muted-text">A teacher and a projector. Teams answer together or take turns. No student devices or accounts.</p></article>
-        <article className="panel"><h3>Live online play</h3><p className="muted-text">Players join with a six-character code. Everyone gets the same question, or each moves at their own pace.</p></article>
-        <article className="panel"><h3>Nine quiz modifiers</h3><p className="muted-text">Wagers, steals, swaps and more — only the ones that fit your chosen way of playing are offered. Points are the only currency.</p></article>
+
+      <section className="qz-section" aria-labelledby="modes-h">
+        <header>
+          <h2 id="modes-h">Game Modes</h2>
+          <p className="muted-text" style={{ margin: 0 }}>Every play method runs the Classic Quiz game mode.</p>
+        </header>
+        <ModeCards />
+      </section>
+
+      <section className="qz-section" aria-label="Quick links" style={{ paddingBottom: 56 }}>
+        <div className="qz-howto">
+          <Link href="/quiz/new"><strong>Create a Quiz</strong><p className="muted-text">Open the editor now. No email or sign-in needed.</p></Link>
+          <Link href="/quiz/my"><strong>My Quizzes</strong><p className="muted-text">Drafts and published quizzes, including those saved on this device.</p></Link>
+          <Link href="/quiz/library"><strong>Quiz Library</strong><p className="muted-text">Search quizzes other people have published.</p></Link>
+        </div>
       </section>
     </main>
   );

@@ -1,4 +1,4 @@
-import { currentUser, maybeUser, serviceDB } from '@/lib/quiz/supabase';
+import { currentUser, isGuest, maybeUser, serviceDB } from '@/lib/quiz/supabase';
 import { saveQuizSchema } from '@/lib/quiz/validation';
 import { assertSameOrigin, failure, jsonBody, rateLimit, rpc, success } from '@/lib/quiz/api';
 import { AppError } from '@/lib/quiz/errors';
@@ -34,6 +34,11 @@ export async function POST(req: Request) {
     const user = await currentUser();
     await rateLimit(req, 'quiz-save', 60, 600, user.id);
     const parsed = saveQuizSchema.parse(await jsonBody(req));
+    if (isGuest(user) && !parsed.id) {
+      // guests are anonymous, so cap what one browser can pile up; an account lifts the limit
+      const { count } = await serviceDB().from('quizzes').select('id', { count: 'exact', head: true }).eq('owner_id', user.id);
+      if ((count ?? 0) >= 20) throw new AppError('Guest accounts can keep up to 20 quizzes. Create an account to save more.', 403);
+    }
     const id = await rpc<string>('save_owned_quiz', {
       p_owner: user.id, p_quiz: parsed.id ?? null, p_title: parsed.title, p_description: parsed.description,
       p_status: parsed.status, p_questions: parsed.questions,

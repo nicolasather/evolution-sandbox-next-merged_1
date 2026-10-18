@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { api } from '@/lib/quiz/client';
@@ -64,7 +65,7 @@ export default function HostConsole({ roomId }: { roomId: string }) {
   const grade = (body: Record<string, unknown>) => run(() => api<{ correct: boolean; awarded: number }>(`/api/quiz/rooms/${roomId}/submit`, { method: 'POST', json: { roomQuestionId: s.question.id, actorId: activeTeam?.id, wager, ...body } }), (d) => `${activeTeam?.display_name}: ${d.correct ? 'correct' : 'incorrect'} (${d.awarded >= 0 ? '+' : ''}${d.awarded} points)`);
 
   return (
-    <main className={`page ${projector ? 'projector' : ''}`}>
+    <main className={`page ${projector ? 'projector' : ''}`} id="main">
       <header className="page-header">
         <div>
           <p className="eyebrow">{classroom ? 'Teacher · classroom projector' : 'Host · online room'} · {s.flow.replace('_', ' ')} · {s.status}{s.paused ? ' · paused' : ''}</p>
@@ -72,7 +73,7 @@ export default function HostConsole({ roomId }: { roomId: string }) {
           {!classroom && s.status !== 'ended' && <p>Players join at <strong>{joinUrl.replace(/^https?:\/\//, '').split('?')[0]}</strong> with code <span className="code">{s.code}</span></p>}
         </div>
         <div className="row">
-          {matchLeft !== null && s.status === 'active' && <span className={`timer ${matchLeft < 30 ? 'low' : ''}`} aria-label="Match time left">⏱ {fmtClock(matchLeft)}</span>}
+          {matchLeft !== null && s.status === 'active' && <span className={`timer ${matchLeft < 30 ? 'low' : ''}`} aria-label="Match time left">Match {fmtClock(matchLeft)}</span>}
           {qLeft !== null && s.status === 'active' && !s.revealed && <span className={`timer ${qLeft < 8 ? 'low' : ''}`} aria-label="Question time left">Q {fmtClock(qLeft)}</span>}
           <button className="btn small ghost" onClick={() => setProjector((v) => !v)}>{projector ? 'Teacher view' : 'Projector view'}</button>
           <button className="btn small ghost" onClick={() => { void (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.()); }}>Fullscreen</button>
@@ -81,11 +82,11 @@ export default function HostConsole({ roomId }: { roomId: string }) {
 
       <section className="panel">
         <div className="row">
-          <button className="btn" disabled={busy || s.status !== 'waiting'} onClick={() => control('start')}>Start game</button>
+          <button className="btn" disabled={busy || s.status !== 'waiting'} onClick={() => control('start')}>Start Game</button>
           <button className="btn ghost" disabled={busy || s.status !== 'active'} onClick={() => control(s.paused ? 'resume' : 'pause')}>{s.paused ? 'Resume' : 'Pause'}</button>
           <button className="btn ghost" disabled={busy || s.status !== 'active' || s.paused || s.revealed || s.flow === 'independent'} onClick={() => control('reveal')}>Reveal answer</button>
           <button className="btn ghost" disabled={busy || s.status !== 'active' || s.paused || s.flow === 'independent'} onClick={() => control('next')}>{s.currentIndex + 1 >= s.questionCount ? 'Finish game' : classroom && roundRobin ? 'Next question & turn' : 'Next question'}</button>
-          <button className="btn danger" disabled={busy || s.status === 'ended'} onClick={() => { if (confirm('End the game for everyone now?')) void control('end'); }}>End game</button>
+          <button className="btn danger" disabled={busy || s.status === 'ended'} onClick={() => { if (confirm('End the game for everyone now?')) void control('end'); }}>End Game</button>
         </div>
         {s.status === 'active' && s.flow !== 'independent' && <p className="note" style={{ marginTop: 10 }}>Question {s.currentIndex + 1} of {s.questionCount}{s.revealed ? ' · answer revealed' : ''}</p>}
         {s.flow === 'independent' && s.status === 'active' && <p className="note" style={{ marginTop: 10 }}>Independent flow: each player progresses on their own. You control the match (pause, end).</p>}
@@ -99,7 +100,7 @@ export default function HostConsole({ roomId }: { roomId: string }) {
               <strong>{a.display_name}</strong><span className="pts">{a.points}</span>
               {classroom && roundRobin && i === s.turnIndex && s.status === 'active' && <small className="note">Their turn</small>}
               {classroom && s.stealActive && s.stealTarget === a.id && <small className="note">Steal chance</small>}
-              {s.status === 'active' && s.flow !== 'independent' && hasAnswered(a.id) && <small className="note">answered ✓</small>}
+              {s.status === 'active' && s.flow !== 'independent' && hasAnswered(a.id) && <small className="note">Answered</small>}
               {!classroom && s.flow === 'independent' && <small className="note">on question {Math.min(a.cursor_index + 1, s.questionCount)}</small>}
             </div>
           ))}</div>
@@ -134,8 +135,8 @@ export default function HostConsole({ roomId }: { roomId: string }) {
                 </select></label>
               {mods.includes('secret_wager') && <label>Team’s secret wager (max {activeTeam?.points ?? 0})<input type="number" min={0} max={activeTeam?.points ?? 0} value={wager} onChange={(e) => setWager(Math.max(0, Math.min(activeTeam?.points ?? 0, Number(e.target.value) || 0)))} /></label>}
               <div className="row">
-                <button className="btn" disabled={busy || !activeTeam || s.paused || s.revealed || hasAnswered(activeTeam?.id)} onClick={() => grade({ override: true })}>✓ Spoken answer was correct</button>
-                <button className="btn danger" disabled={busy || !activeTeam || s.paused || s.revealed || hasAnswered(activeTeam?.id)} onClick={() => grade({ override: false })}>✗ Spoken answer was wrong</button>
+                <button className="btn" disabled={busy || !activeTeam || s.paused || s.revealed || hasAnswered(activeTeam?.id)} onClick={() => grade({ override: true })}>Spoken answer was correct</button>
+                <button className="btn danger" disabled={busy || !activeTeam || s.paused || s.revealed || hasAnswered(activeTeam?.id)} onClick={() => grade({ override: false })}>Spoken answer was wrong</button>
               </div>
               <details><summary>Enter the team’s written answer instead (checked automatically)</summary>
                 <div className="stack" style={{ marginTop: 12 }}>
@@ -175,16 +176,17 @@ export default function HostConsole({ roomId }: { roomId: string }) {
               </div>
             </>
           )}
-          <div><button className="btn ghost" disabled={busy} onClick={() => run(() => api(`/api/quiz/rooms/${roomId}/modifier`, { method: 'POST', json: { kind: 'undo' } }), () => 'Latest score change was reversed.').catch(() => {})}>↶ Undo latest score change</button>
+          <div><button className="btn ghost" disabled={busy} onClick={() => run(() => api(`/api/quiz/rooms/${roomId}/modifier`, { method: 'POST', json: { kind: 'undo' } }), () => 'Latest score change was reversed.').catch(() => {})}>Undo latest score change</button>
             <span className="note"> Reverses the most recent score event (an answer award or a point event).</span></div>
         </section>
       )}
 
       {s.status === 'ended' && (
         <section className="panel stack"><p className="eyebrow">Game over</p><h2>Final scores</h2>
-          <ol>{[...actors].sort((a, b) => b.points - a.points).map((a: any) => <li key={a.id}><strong>{a.display_name}</strong> — {a.points} pts</li>)}</ol>
+          <div className="qz-side-art" style={{ marginBottom: 0 }}><Image src="/quiz/art/results-podium.svg" alt="" width={1600} height={520} unoptimized /></div>
+          <ol className="scores" style={{ listStyle: 'none', padding: 0, margin: 0 }}>{[...actors].sort((a, b) => b.points - a.points).map((a: any, i: number) => <li key={a.id} className="score"><strong>{i + 1}. {a.display_name}</strong><span className="pts">{a.points}</span><span className="note">points</span></li>)}</ol>
           {s.review && <details><summary>Answer review</summary>{s.review.map((r: any) => <div key={r.id} className="stack" style={{ marginTop: 12 }}><p><strong>{r.position + 1}. {r.prompt}</strong></p><AnswerView kind={r.kind} payload={r.payload} answerKey={r.answerKey} /></div>)}</details>}
-          <div className="row"><Link className="btn" href="/quiz/my">My Quizzes</Link><Link className="btn ghost" href="/quiz/library">Library</Link></div>
+          <div className="row"><Link className="btn" href="/quiz/my">My Quizzes</Link><Link className="btn ghost" href="/quiz/library">Quiz Library</Link></div>
         </section>
       )}
 
