@@ -73,8 +73,8 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
             <div className="row spread" key={s.id}>
               <span style={{ flex: '1 1 260px' }}>{s.text}</span>
               <div className="row" role="group" aria-label={`Is this true? ${s.text}`}>
-                <button className="btn small ghost" aria-pressed={truth[s.id] === true} style={truth[s.id] === true ? { outline: '2px solid var(--qz-accent)' } : undefined} disabled={off} onClick={() => setTruth((v) => ({ ...v, [s.id]: true }))}>True</button>
-                <button className="btn small ghost" aria-pressed={truth[s.id] === false} style={truth[s.id] === false ? { outline: '2px solid var(--qz-accent)' } : undefined} disabled={off} onClick={() => setTruth((v) => ({ ...v, [s.id]: false }))}>False</button>
+                <button className="btn small ghost" aria-pressed={truth[s.id] === true} disabled={off} onClick={() => setTruth((v) => ({ ...v, [s.id]: true }))}>True</button>
+                <button className="btn small ghost" aria-pressed={truth[s.id] === false} disabled={off} onClick={() => setTruth((v) => ({ ...v, [s.id]: false }))}>False</button>
               </div>
             </div>
           ))}

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { api, readToken } from '@/lib/quiz/client';
@@ -37,7 +38,7 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
     setBusy(true); setError('');
     try {
       const d = await api<{ correct: boolean; awarded: number }>(`/api/quiz/rooms/${roomId}/submit`, { method: 'POST', json: { roomQuestionId: s.question.id, token, wager, response } });
-      setFlash(`${d.correct ? 'Correct!' : 'Not quite.'} ${d.awarded >= 0 ? '+' : ''}${d.awarded} points`);
+      setFlash(`${d.correct ? 'Correct.' : 'Not correct.'} ${d.awarded >= 0 ? '+' : ''}${d.awarded} points`);
       setWager(0);
       await refresh();
     } catch (e) { setError((e as Error).message); throw e; } finally { setBusy(false); }
@@ -49,11 +50,11 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
   }
 
   return (
-    <main className="page">
+    <main className="page" id="main">
       <header className="page-header">
         <div><p className="eyebrow">Classic Quiz · {solo ? 'Solo' : 'Online'} · {s.flow.replace('_', ' ')}</p><h1>{solo ? 'Your game' : `Room ${s.code}`}</h1></div>
         <div className="row">
-          {matchLeft !== null && s.status === 'active' && <span className={`timer ${matchLeft < 30 ? 'low' : ''}`} aria-label="Match time left">⏱ {fmtClock(matchLeft)}</span>}
+          {matchLeft !== null && s.status === 'active' && <span className={`timer ${matchLeft < 30 ? 'low' : ''}`} aria-label="Match time left">Match {fmtClock(matchLeft)}</span>}
           {me && <span className="timer" aria-label="Your points">{me.points} pts</span>}
         </div>
       </header>
@@ -76,7 +77,7 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
               <input type="number" min={0} max={me?.points ?? 0} value={wager} onChange={(e) => setWager(Math.max(0, Math.min(me?.points ?? 0, Number(e.target.value) || 0)))} /></label>
           )}
           <QuestionPlay question={s.question} busy={busy} disabled={s.paused || s.revealed || !!answered || (qLeft !== null && qLeft <= 0)} onSubmit={submit} />
-          {solo && mods.includes('potluck') && <div><button className="btn small ghost" disabled={busy || s.paused} onClick={potluck}>🎲 {modifierLabels.potluck} (random −200…+200)</button></div>}
+          {solo && mods.includes('potluck') && <div><button className="btn small ghost" disabled={busy || s.paused} onClick={potluck}>{modifierLabels.potluck} (random −200…+200)</button></div>}
           {answered && s.flow !== 'independent' && <p className="success" role="status">Your answer is locked in. Waiting for the host to continue…</p>}
           {s.revealed && s.question.answerKey && <AnswerView kind={s.question.kind} payload={s.question.payload} answerKey={s.question.answerKey} />}
         </section>
@@ -92,7 +93,8 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
 
       {s.status === 'ended' && (
         <section className="panel stack"><p className="eyebrow">Game over</p><h2>Final standings</h2>
-          <ol>{ranking.map((p: any) => <li key={p.id}><strong>{p.display_name}{p.id === s.selfId ? ' (you)' : ''}</strong> — {p.points} pts</li>)}</ol>
+          <div className="qz-side-art" style={{ marginBottom: 0 }}><Image src="/quiz/art/results-podium.svg" alt="" width={1600} height={520} unoptimized /></div>
+          <ol className="scores" style={{ listStyle: 'none', padding: 0, margin: 0 }}>{ranking.map((p: any, i: number) => <li key={p.id} className={`score ${p.id === s.selfId ? 'me' : ''}`}><strong>{i + 1}. {p.display_name}{p.id === s.selfId ? ' (you)' : ''}</strong><span className="pts">{p.points}</span><span className="note">points</span></li>)}</ol>
           {s.review && <details open><summary>Review the answers</summary>
             {s.review.map((r: any) => <div key={r.id} className="stack" style={{ marginTop: 14 }}><p><strong>{r.position + 1}. {r.prompt}</strong></p><AnswerView kind={r.kind} payload={r.payload} answerKey={r.answerKey} /></div>)}</details>}
           <div className="row"><Link className="btn" href="/quiz/library">Browse quizzes</Link><Link className="btn ghost" href="/quiz/join">Join another game</Link></div>

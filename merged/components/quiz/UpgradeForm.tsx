@@ -31,7 +31,7 @@ export default function UpgradeForm() {
     <form className="panel stack" onSubmit={submit}>
       <div>
         <p className="eyebrow">Guest session</p>
-        <h1 style={{ fontSize: '2.2rem' }}>Keep my quizzes</h1>
+        <h1 style={{ fontSize: '2.6rem' }}>Save to an Account</h1>
         <p className="muted-text">Add an email and password to this guest session. Every quiz you made as a guest stays with you.</p>
       </div>
       <label>Email<input type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label>

@@ -4,6 +4,8 @@ import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { api, saveToken } from '@/lib/quiz/client';
 import { allowedFlows, defaultFlow, modifierAvailability } from '@/lib/quiz/compatibility';
+import Image from 'next/image';
+import { modeInfo } from '@/lib/quiz/mode-info';
 import { MODIFIERS, flowLabels, modeLabels, modifierDescriptions, modifierLabels, type Flow, type Modifier, type PlayMode } from '@/lib/quiz/types';
 
 const MODE_HELP: Record<PlayMode, string> = {
@@ -12,10 +14,10 @@ const MODE_HELP: Record<PlayMode, string> = {
   online: 'Players join from their own devices with a room code.',
 };
 
-export default function GameSetup({ quizId, quizTitle, questionCount, signedIn }: { quizId: string; quizTitle: string; questionCount: number; signedIn: boolean }) {
+export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, initialMode = null }: { quizId: string; quizTitle: string; questionCount: number; signedIn: boolean; initialMode?: PlayMode | null }) {
   const router = useRouter();
-  const [mode, setMode] = useState<PlayMode | null>(null);
-  const [flow, setFlow] = useState<Flow | null>(null);
+  const [mode, setMode] = useState<PlayMode | null>(initialMode);
+  const [flow, setFlow] = useState<Flow | null>(initialMode ? defaultFlow(initialMode) : null);
   const [mods, setMods] = useState<Modifier[]>([]);
   const [minutes, setMinutes] = useState(15);
   const [qSeconds, setQSeconds] = useState(45);
@@ -52,30 +54,32 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn }
   return (
     <main className="page">
       <header className="page-header">
-        <div><p className="eyebrow">Set up a game</p><h1>{quizTitle}</h1><p className="muted-text">{questionCount} question{questionCount === 1 ? '' : 's'} · Game mode: <strong>Classic Quiz</strong> (the only mode available)</p></div>
-        <Link className="btn ghost" href="/quiz/library">Library</Link>
+        <div><p className="eyebrow">Game Settings</p><h1>{quizTitle}</h1><p className="muted-text">{questionCount} question{questionCount === 1 ? '' : 's'} · Game mode: <strong>Classic Quiz</strong></p></div>
+        <Link className="btn ghost" href="/quiz/library">Quiz Library</Link>
       </header>
 
       <section className="panel stack" aria-labelledby="s-how">
-        <p className="eyebrow">Step 1 · How will you play?</p><h2 id="s-how">Choose a play method</h2>
+        <p className="eyebrow">Step 1</p><h2 id="s-how">Choose a Game Mode</h2>
         <div className="choices">{(['solo', 'classroom', 'online'] as PlayMode[]).map((m) => (
           <button key={m} className="choice" aria-pressed={mode === m} onClick={() => pickMode(m)}><strong>{modeLabels[m]}</strong><small>{MODE_HELP[m]}</small></button>
         ))}</div>
-        {needsAccount && <p className="info">Hosting a {mode} game needs an account so you can control the room. <Link href={`/quiz/login?next=/quiz/setup/${quizId}`}><u>Sign in or create one</u></Link>.</p>}
+        {needsAccount && <p className="info">Hosting a {mode} game needs an account so you can control the room. <Link href={`/quiz/login?next=/quiz/setup/${quizId}`}>Sign in or create one</Link>. Solo play needs no account.</p>}
+        {mode && <div className="qz-side-art" style={{ marginTop: 6, marginBottom: 0 }}><Image src={modeInfo(mode).art} alt="" width={1200} height={675} unoptimized /></div>}
       </section>
 
       {mode && flow && (
         <>
           <section className="panel stack" aria-labelledby="s-mode">
-            <p className="eyebrow">Step 2 · Game mode</p><h2 id="s-mode">Classic Quiz</h2>
-            <p className="muted-text">Classic Quiz is the only game mode. Pick how questions are delivered:</p>
+            <p className="eyebrow">Step 2</p><h2 id="s-mode">Question Flow</h2>
+            <p className="muted-text">Classic Quiz is played with {modeLabels[mode].toLowerCase()}. Pick how questions are delivered:</p>
             {allowedFlows(mode).length === 1
               ? <p><strong>{flowLabels[flow]}</strong></p>
               : <div className="choices">{allowedFlows(mode).map((f) => <button key={f} className="choice" aria-pressed={flow === f} onClick={() => pickFlow(f)}><strong>{flowLabels[f].split(' — ')[0]}</strong><small>{flowLabels[f].split(' — ')[1]}</small></button>)}</div>}
           </section>
 
           <section className="panel stack" aria-labelledby="s-mods">
-            <p className="eyebrow">Step 3 · Quiz modifiers (optional)</p><h2 id="s-mods">Modifiers for {modeLabels[mode].toLowerCase()} · {flow.replace('_', ' ')}</h2>
+            <p className="eyebrow">Step 3 · Optional</p><h2 id="s-mods">Modifiers</h2>
+            <p className="note" style={{ margin: 0 }}>Shown for {modeLabels[mode].toLowerCase()} with the {flow.replace('_', ' ')} flow.</p>
             <p className="muted-text">Only modifiers that work with this setup are offered. Points are the only currency. All are off by default.</p>
             {split.ok.map((m) => (
               <label key={m} className="modifier">
@@ -91,7 +95,7 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn }
           </section>
 
           <section className="panel stack" aria-labelledby="s-go">
-            <p className="eyebrow">Step 4 · Settings & launch</p><h2 id="s-go">Timing{mode === 'classroom' ? ' and teams' : ''}</h2>
+            <p className="eyebrow">Step 4</p><h2 id="s-go">Game Settings{mode === 'classroom' ? ' and Teams' : ''}</h2>
             <label>Match duration: {minutes} minutes<input type="range" min={1} max={120} value={minutes} onChange={(e) => setMinutes(Number(e.target.value))} /></label>
             <label className="inline"><input type="checkbox" checked={noTimer} onChange={(e) => setNoTimer(e.target.checked)} /> No time limit per question</label>
             {!noTimer && <label>Time per question: {qSeconds} seconds<input type="range" min={5} max={300} step={5} value={qSeconds} onChange={(e) => setQSeconds(Number(e.target.value))} /></label>}
@@ -107,7 +111,7 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn }
               </div>
             )}
             {error && <p className="error" role="alert">{error}</p>}
-            <div><button className="btn" onClick={launch} disabled={busy || needsAccount || questionCount === 0}>{busy ? 'Creating…' : mode === 'solo' ? 'Start playing' : 'Create game room'}</button></div>
+            <div><button className="btn" onClick={launch} disabled={busy || needsAccount || questionCount === 0}>{busy ? 'Creating…' : 'Start Game'}</button></div>
           </section>
         </>
       )}

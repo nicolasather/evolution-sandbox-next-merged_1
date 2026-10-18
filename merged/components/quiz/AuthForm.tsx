@@ -1,7 +1,9 @@
 'use client';
 import { useState, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { api } from '@/lib/quiz/client';
+import { ensureCloudSession } from '@/lib/quiz/session-client';
 
 export default function AuthForm({ next, confirmError }: { next: string; confirmError?: boolean }) {
   const router = useRouter();
@@ -11,7 +13,6 @@ export default function AuthForm({ next, confirmError }: { next: string; confirm
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(confirmError ? 'That confirmation link is invalid or has expired. Try signing in, or create the account again.' : '');
   const [notice, setNotice] = useState('');
-  const [understood, setUnderstood] = useState(false);
 
   async function submit(e: FormEvent) {
     e.preventDefault();
@@ -21,50 +22,48 @@ export default function AuthForm({ next, confirmError }: { next: string; confirm
       if (mode === 'signup' && out.needsConfirmation) {
         setNotice('Account created. We sent a confirmation link to your email — open it, then come back and sign in.');
         setMode('signin');
-      } else {
-        router.push(next);
-        router.refresh();
-      }
+      } else { router.push(next); router.refresh(); }
     } catch (err) { setError((err as Error).message); } finally { setBusy(false); }
   }
 
-  async function continueAsGuest() {
+  /** No email, no checkbox. A guest session is started silently when the service offers one; otherwise drafts stay on this device. */
+  async function withoutEmail() {
     setBusy(true); setError(''); setNotice('');
-    try {
-      await api('/api/quiz/auth/anonymous', { method: 'POST', json: {} });
-      router.push(next);
-      router.refresh();
-    } catch (err) { setError((err as Error).message); } finally { setBusy(false); }
+    try { await ensureCloudSession(); } catch { /* local drafts still work */ }
+    router.push('/quiz/new');
+    router.refresh();
   }
 
   return (
     <div className="stack">
-    <form className="panel stack" onSubmit={submit} aria-labelledby="auth-title">
       <div>
         <p className="eyebrow">Account</p>
-        <h1 id="auth-title" style={{ fontSize: '2.2rem' }}>{mode === 'signin' ? 'Welcome back' : 'Create your account'}</h1>
-        <p className="muted-text">An account lets you create, save, publish and host quizzes. Students joining an online game don’t need one.</p>
+        <h1 style={{ fontSize: 'clamp(2.4rem, 8vw, 3.6rem)' }}>Sign In</h1>
+        <p className="muted-text">An account keeps your quizzes online and lets you host classroom and online games from any device. Creating and editing quizzes never requires one. Players joining a game don’t need one either.</p>
       </div>
-      <label>Email<input type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label>
-      <label>Password{mode === 'signup' ? ' (at least 8 characters)' : ''}
-        <input type="password" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} minLength={8} required value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <button className="btn" disabled={busy}>{busy ? 'Please wait…' : mode === 'signin' ? 'Sign in' : 'Create account'}</button>
-      <button type="button" className="btn ghost" onClick={() => { setMode(mode === 'signin' ? 'signup' : 'signin'); setError(''); setNotice(''); }}>
-        {mode === 'signin' ? 'I need an account' : 'I already have an account'}
-      </button>
-      {error && <p className="error" role="alert">{error}</p>}
-      {notice && <p className="success" role="status">{notice}</p>}
-    </form>
-    <section className="panel stack" aria-labelledby="guest-title">
-      <h2 id="guest-title" style={{ fontSize: '1.4rem' }}>Or continue as a guest</h2>
-      <p className="muted-text">Try the editor without an email or password. <strong>Warning:</strong> a guest’s quizzes are saved only in this browser. If you clear cookies, use private browsing, or switch browser or device, you’ll permanently lose access to them. You can turn the guest session into a real account later to keep your quizzes.</p>
-      <label style={{ display: 'flex', gap: '.6rem', alignItems: 'flex-start' }}>
-        <input type="checkbox" checked={understood} onChange={(e) => setUnderstood(e.target.checked)} style={{ width: 'auto', marginTop: '.25rem' }} />
-        <span>I understand my guest quizzes can be lost.</span>
-      </label>
-      <button type="button" className="btn ghost" disabled={busy || !understood} onClick={continueAsGuest}>Continue as a guest</button>
-    </section>
+
+      <form className="panel stack" onSubmit={submit} aria-labelledby="auth-title">
+        <div className="tab-row" role="tablist" aria-label="Account action" style={{ marginBottom: 0 }}>
+          <button type="button" role="tab" aria-selected={mode === 'signin'} onClick={() => { setMode('signin'); setError(''); setNotice(''); }}>Sign In</button>
+          <button type="button" role="tab" aria-selected={mode === 'signup'} onClick={() => { setMode('signup'); setError(''); setNotice(''); }}>Create Account</button>
+        </div>
+        <h2 id="auth-title" className="sr-only">{mode === 'signin' ? 'Sign in with email' : 'Create an account'}</h2>
+        <label>Email<input type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} /></label>
+        <label>Password{mode === 'signup' ? ' (at least 8 characters)' : ''}
+          <input type="password" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} minLength={8} required value={password} onChange={(e) => setPassword(e.target.value)} />
+        </label>
+        <button className="btn" disabled={busy}>{busy ? 'Please wait…' : mode === 'signin' ? 'Sign In' : 'Create Account'}</button>
+        {error && <p className="error" role="alert">{error}</p>}
+        {notice && <p className="success" role="status">{notice}</p>}
+      </form>
+
+      <section className="panel paper stack" aria-labelledby="guest-title">
+        <h2 id="guest-title" style={{ fontSize: '2rem' }}>Continue Without Email</h2>
+        <p className="muted-text" style={{ margin: 0 }}>Open the editor right away. Your quizzes are saved in this browser, and you can add an account later without losing them.</p>
+        <p className="note" style={{ margin: 0 }}>Browser-only quizzes are not backed up: clearing site data or switching device means losing access to them. Export Backup in the editor saves a copy.</p>
+        <div className="row"><button type="button" className="btn" disabled={busy} onClick={withoutEmail}>Continue Without Email</button>
+          <Link className="btn ghost" href="/quiz/new" style={{ background: '#fff', color: 'var(--qz-ink)' }}>Create a Quiz</Link></div>
+      </section>
     </div>
   );
 }

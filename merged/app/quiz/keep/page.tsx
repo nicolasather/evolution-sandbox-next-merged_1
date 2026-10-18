@@ -3,7 +3,7 @@ import Link from 'next/link';
 import UpgradeForm from '@/components/quiz/UpgradeForm';
 import { requireUserOrRedirect } from '@/lib/quiz/guard';
 import { isGuest } from '@/lib/quiz/supabase';
-export const metadata: Metadata = { title: 'Keep my quizzes' };
+export const metadata: Metadata = { title: 'Save to an Account' };
 
 export default async function KeepPage() {
   const user = await requireUserOrRedirect('/quiz/keep');
