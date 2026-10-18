@@ -17,7 +17,7 @@ describe('question validation', () => {
   });
   it('strips unknown top-level keys, rejects unknown payload keys and oversized text', () => {
     expect((questionSchema.parse({ ...goodMc, extra: 1 }) as any).extra).toBeUndefined();
-    expect(questionSchema.safeParse({ ...goodMc, payload: { options: goodMc.payload.options, hint: 'x' } }).success).toBe(false);
+    expect(questionSchema.safeParse({ ...goodMc, payload: { options: goodMc.payload.options, bogus: 'x' } }).success).toBe(false);
     expect(questionSchema.safeParse({ ...goodMc, payload: { options: [{ id: 'a', text: 'x'.repeat(501) }, { id: 'b', text: 'B' }] } }).success).toBe(false);
   });
   it('rejects unsafe ids', () => expect(questionSchema.safeParse({ ...goodMc, payload: { options: [{ id: 'a b', text: 'A' }, { id: 'b', text: 'B' }] } }).success).toBe(false));

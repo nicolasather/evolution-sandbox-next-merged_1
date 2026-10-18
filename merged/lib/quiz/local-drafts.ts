@@ -7,6 +7,7 @@
  *  - Drafts are NEVER deleted by this module on its own: only an explicit delete, or removal after a confirmed cloud copy exists.
  *  This is browser storage, not cloud sync, and the UI says so. */
 import type { Question } from './types';
+import type { QuizSettings } from './settings';
 
 export const LOCAL_PREFIX = 'local-';
 export const isLocalId = (id: string) => id.startsWith(LOCAL_PREFIX);
@@ -20,6 +21,10 @@ export type LocalDraft = {
   title: string;
   description: string;
   questions: Question[];
+  /** Creator choices (game mode, rules, theme…). Optional so drafts saved before the seven-step creator still load. */
+  settings?: QuizSettings;
+  /** The creator step the person was last on, so "Resume" lands in the right place. */
+  step?: string;
   createdAt: string;
   updatedAt: string;
 };
@@ -71,10 +76,10 @@ export function listDeviceDrafts(): LocalDraft[] {
   return Object.values(readAll()).filter((d) => !d.cloudId).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
 }
 
-export function saveLocalDraft(input: Pick<LocalDraft, 'key' | 'title' | 'description' | 'questions'> & { cloudId?: string }): WriteResult {
+export function saveLocalDraft(input: Pick<LocalDraft, 'key' | 'title' | 'description' | 'questions'> & { cloudId?: string; settings?: QuizSettings; step?: string }): WriteResult {
   const all = readAll();
   const now = new Date().toISOString();
-  all[input.key] = { v: 1, key: input.key, cloudId: input.cloudId, title: input.title, description: input.description, questions: input.questions, createdAt: all[input.key]?.createdAt ?? now, updatedAt: now };
+  all[input.key] = { v: 1, key: input.key, cloudId: input.cloudId, title: input.title, description: input.description, questions: input.questions, settings: input.settings, step: input.step ?? all[input.key]?.step, createdAt: all[input.key]?.createdAt ?? now, updatedAt: now };
   return writeAll(all);
 }
 
@@ -86,6 +91,11 @@ export function deleteLocalDraft(key: string): void {
 }
 
 /** A plain JSON backup the person can keep, since browser-only drafts are not synced anywhere. */
-export function exportDraftJson(d: Pick<LocalDraft, 'title' | 'description' | 'questions'>): string {
-  return JSON.stringify({ app: 'quiz-studio', version: 1, exportedAt: new Date().toISOString(), title: d.title, description: d.description, questions: d.questions }, null, 2);
+export function exportDraftJson(d: Pick<LocalDraft, 'title' | 'description' | 'questions'> & { settings?: QuizSettings }): string {
+  return JSON.stringify({ app: 'quiz-studio', version: 1, exportedAt: new Date().toISOString(), title: d.title, description: d.description, questions: d.questions, settings: d.settings }, null, 2);
+}
+
+/** The draft the person most recently touched on this device (cloud buffers included), for a one-click "Resume". */
+export function lastEditedDraft(): LocalDraft | null {
+  return Object.values(readAll()).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0] ?? null;
 }

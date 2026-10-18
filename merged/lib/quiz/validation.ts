@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { settingsSchema } from './settings';
 
 const short = z.string().trim().min(1).max(500);
 const safeId = z.string().regex(/^[A-Za-z0-9_-]{1,60}$/, 'Invalid id');
@@ -8,36 +9,61 @@ const questionBase = z.object({
   prompt: z.string().trim().min(1, 'Every question needs a prompt').max(3000),
   basePoints: z.number().int().min(0).max(10000),
 });
-const option = z.object({ id: safeId, text: short }).strict();
-const item = z.object({ id: safeId, label: short }).strict();
+/** A reference to an uploaded image / GIF / video. Never a URL: playback URLs are issued short-lived by the media route. */
+export const MEDIA_KINDS = ['image', 'gif', 'video'] as const;
+export const mediaRef = z.object({
+  id: z.string().uuid(),
+  kind: z.enum(MEDIA_KINDS),
+  /** Describes what is shown without giving the answer away. Required: nothing is image-only for screen readers. */
+  alt: z.string().trim().min(1, 'Describe the picture or video in a few words (without giving away the answer)').max(300),
+  caption: z.string().trim().max(300).optional(),
+  fit: z.enum(['cover', 'contain']).optional(),
+  focusX: z.number().min(0).max(100).optional(),
+  focusY: z.number().min(0).max(100).optional(),
+  posterId: z.string().uuid().optional(),
+}).strict();
+export type MediaRef = z.infer<typeof mediaRef>;
+
+const optText = z.string().trim().max(500);
+const hasContent = (o: { text?: string; label?: string; media?: unknown }) => !!((o.text ?? o.label ?? '').trim() || o.media);
+const option = z.object({ id: safeId, text: optText, media: mediaRef.optional() }).strict().refine(hasContent, { message: 'Every option needs text or a picture' });
+const item = z.object({ id: safeId, label: optText, media: mediaRef.optional() }).strict().refine(hasContent, { message: 'Every matching card needs text or a picture' });
+/** Optional extras every format shares. `hint` and `media` are player-visible; the explanation lives in the answer key. */
+const extras = {
+  media: mediaRef.optional(),
+  hint: z.string().trim().max(300).optional(),
+  timeSeconds: z.number().int().min(5).max(600).optional(),
+};
+const keyExtras = { explanation: z.string().trim().max(600).optional() };
 
 const choice = questionBase.extend({
   kind: z.literal('multiple_choice'),
-  payload: z.object({ options: z.array(option).min(2, 'Add at least two options').max(8) }).strict(),
-  answerKey: z.object({ correctIds: z.array(safeId).length(1) }).strict(),
+  payload: z.object({ options: z.array(option).min(2, 'Add at least two options').max(8), ...extras }).strict(),
+  answerKey: z.object({ correctIds: z.array(safeId).length(1), ...keyExtras }).strict(),
 });
 const forge = questionBase.extend({
   kind: z.literal('answer_forge'),
-  payload: z.object({ placeholder: z.string().max(120).default('Your answer'), caseSensitive: z.boolean().default(false) }).strict(),
-  answerKey: z.object({ accepted: z.array(short).min(1, 'Add at least one accepted answer').max(20), numericTolerance: z.number().min(0).max(1_000_000).optional() }).strict(),
+  payload: z.object({ placeholder: z.string().max(120).default('Your answer'), caseSensitive: z.boolean().default(false), ...extras }).strict(),
+  answerKey: z.object({ accepted: z.array(short).min(1, 'Add at least one accepted answer').max(20), numericTolerance: z.number().min(0).max(1_000_000).optional(), ...keyExtras }).strict(),
 });
 const match = questionBase.extend({
   kind: z.literal('connection_rush'),
-  payload: z.object({ left: z.array(item).min(2).max(12), right: z.array(item).min(2).max(12) }).strict(),
-  answerKey: z.object({ pairs: z.array(z.object({ leftId: safeId, rightId: safeId }).strict()).min(2).max(12) }).strict(),
+  payload: z.object({ left: z.array(item).min(2).max(12), right: z.array(item).min(2).max(12), ...extras }).strict(),
+  answerKey: z.object({ pairs: z.array(z.object({ leftId: safeId, rightId: safeId }).strict()).min(2).max(12), ...keyExtras }).strict(),
 });
 const truth = questionBase.extend({
   kind: z.literal('truth_hunt'),
-  payload: z.object({ statements: z.array(z.object({ id: safeId, text: short }).strict()).min(1).max(20) }).strict(),
-  answerKey: z.object({ truth: z.record(safeId, z.boolean()) }).strict(),
+  payload: z.object({ statements: z.array(z.object({ id: safeId, text: optText, media: mediaRef.optional() }).strict().refine(hasContent, { message: 'Every statement needs text or a picture' })).min(1).max(20), ...extras }).strict(),
+  answerKey: z.object({ truth: z.record(safeId, z.boolean()), ...keyExtras }).strict(),
 });
 const table = questionBase.extend({
   kind: z.literal('fill_table'),
   payload: z.object({
     columns: z.array(short).min(1).max(12),
     rows: z.array(z.array(z.object({ text: z.string().max(500), blank: z.boolean() }).strict())).min(1).max(30),
+    ...extras,
   }).strict(),
-  answerKey: z.object({ cells: z.record(z.string().regex(/^\d{1,2}:\d{1,2}$/), z.array(short).min(1).max(20)) }).strict(),
+  answerKey: z.object({ cells: z.record(z.string().regex(/^\d{1,2}:\d{1,2}$/), z.array(short).min(1).max(20)), ...keyExtras }).strict(),
 });
 
 export const questionSchema = z
@@ -45,6 +71,13 @@ export const questionSchema = z
   .superRefine((q, ctx) => {
     const fail = (message: string) => ctx.addIssue({ code: 'custom', message });
     const unique = (a: string[]) => new Set(a).size === a.length;
+    // Alt text must not hand over the answer: compare against what the key accepts (deterministic, case-insensitive).
+    const leaks = (alt: string, answers: string[]) => answers.some((a) => a.trim().length >= 3 && alt.toLocaleLowerCase('en').includes(a.trim().toLocaleLowerCase('en')));
+    if (q.payload.media) {
+      const answers = q.kind === 'multiple_choice' ? q.payload.options.filter((o) => o.id === q.answerKey.correctIds[0]).map((o) => o.text)
+        : q.kind === 'answer_forge' ? q.answerKey.accepted : [];
+      if (leaks(q.payload.media.alt, answers)) fail('The picture description gives away the answer — describe what is shown, not the solution');
+    }
     if (q.kind === 'multiple_choice') {
       const ids = q.payload.options.map((o) => o.id);
       if (!unique(ids) || q.answerKey.correctIds.some((id) => !ids.includes(id))) fail('Pick exactly one correct option from distinct options');
@@ -81,6 +114,7 @@ export const saveQuizSchema = z
     description: z.string().max(2000).default(''),
     status: z.enum(['draft', 'published']),
     questions: z.array(questionSchema).max(200),
+    settings: settingsSchema.optional(),
   })
   .refine((v) => v.status === 'draft' || v.questions.length > 0, { message: 'Publishing needs at least one question' });
 
@@ -94,6 +128,13 @@ export const roomCreateSchema = z.object({
   durationSeconds: z.number().int().min(60).max(7200),
   questionSeconds: z.number().int().min(5).max(600).nullable(),
   modifiers: z.array(modifierEnum).max(9),
+  gameMode: z.enum(['classic_quiz', 'tower_defense', 'obstacle_survival', 'clue_racing']).default('classic_quiz'),
+  gameOptions: z.object({ lives: z.number().int().min(1).max(9), pace: z.enum(['relaxed', 'normal', 'fast']), trackLength: z.number().int().min(5).max(30) }).strict().optional(),
+  theme: z.enum(['volt', 'coral-lime', 'violet', 'paper', 'contrast']).optional(),
+  seed: z.string().max(40).optional(),
+  practice: z.boolean().optional(),
+  poolSize: z.number().int().min(0).max(200).optional(),
+  adaptiveTiming: z.boolean().optional(),
   slotLimit: z.number().int().min(1).max(100).default(3),
   teamNames: z.array(z.string().trim().min(1).max(40)).max(8).default([]),
 });

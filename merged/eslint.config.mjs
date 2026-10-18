@@ -7,6 +7,11 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    // Quiz question payloads are validated JSON whose shape depends on the question format; the strict Zod schemas are the type boundary.
+    files: ["app/quiz/**", "app/api/quiz/**", "components/quiz/**", "lib/quiz/**"],
+    rules: { "@typescript-eslint/no-explicit-any": "off" },
+  },
   globalIgnores([
     // build output
     ".next/**",

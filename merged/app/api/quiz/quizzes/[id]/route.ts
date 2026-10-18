@@ -4,6 +4,8 @@ import { publicPayload } from '@/lib/quiz/public';
 import { assertSameOrigin, failure, jsonBody, success } from '@/lib/quiz/api';
 import { AppError } from '@/lib/quiz/errors';
 import { z } from 'zod';
+import { loadOneSettings, openByLink } from '@/lib/quiz/settings-db';
+import { publicSettings } from '@/lib/quiz/settings';
 
 const idSchema = z.string().uuid();
 
@@ -14,7 +16,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
     const db = serviceDB();
     const { data: quiz } = await db.from('quizzes').select('id,title,description,status,owner_id,updated_at').eq('id', id).maybeSingle();
     const mine = !!quiz && user?.id === quiz.owner_id;
-    if (!quiz || (quiz.status !== 'published' && !mine)) throw new AppError('Quiz not found', 404); // unpublished quizzes look nonexistent to others
+    const settings = quiz ? await loadOneSettings(id) : null;
+    if (!quiz || (!mine && (quiz.status !== 'published' || !openByLink(settings?.visibility)))) throw new AppError('Quiz not found', 404); // unpublished and private quizzes look nonexistent to others
     const cols = mine ? 'id,position,kind,prompt,payload,answer_key,base_points' : 'id,position,kind,prompt,payload,base_points';
     const { data: rows, error } = await db.from('quiz_questions').select(cols).eq('quiz_id', id).order('position');
     if (error) throw new AppError('Could not load questions', 500);
@@ -23,7 +26,11 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
       payload: mine ? q.payload : publicPayload(q.kind, q.payload, q.id),
       ...(mine ? { answerKey: q.answer_key } : {}),
     }));
-    return success({ quiz: { id: quiz.id, title: quiz.title, description: quiz.description, status: quiz.status, updated_at: quiz.updated_at, isMine: mine }, questions });
+    return success({
+      quiz: { id: quiz.id, title: quiz.title, description: quiz.description, status: quiz.status, updated_at: quiz.updated_at, isMine: mine },
+      settings: settings ? (mine ? settings : publicSettings(settings)) : null,
+      questions,
+    });
   } catch (e) { return failure(e); }
 }
 
