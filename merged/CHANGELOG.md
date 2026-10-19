@@ -1,3 +1,7 @@
+## Quiz Studio Phase 2 stabilisation (2026-10-19)
+- Fixed: guests/room players could not load uploaded media; CSP blocked uploaded media and YouTube/Vimeo embeds; uploads >4.5 MB impossible on Vercel and 25 MiB vs 20 MB mismatch; published-quiz media was scheduled for deletion; draft not reopened on reload; two flaky ModeHub tests; quiz lint errors.
+- Added: migration 005, signed direct upload with server-side verification, Playwright suites, DB tests.
+
 # Changelog
 
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and

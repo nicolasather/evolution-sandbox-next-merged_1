@@ -1,4 +1,5 @@
 /** @jest-environment node */
+import type { Loose } from '../loose';
 import { computeAward, maxPoints, explainScoring, quizMaxPoints, estimateQuizSeconds, formatDuration } from '../scoring';
 import { clockOffset, remainingMs, isNewer, resolveSlots, backoffMs, isAccepted, submissionKey } from '../sync';
 import { createHistory, record, undo, redo, canUndo, canRedo, serialize, parseHistory, recordCoalesced } from '../history';
@@ -6,7 +7,7 @@ import { moveItem, removeMany, duplicateAt, reid, setSection, groupBySection, to
 import { contrast, readableOn, plainError, correlationId } from '../a11y';
 import type { Question } from '../types';
 
-const q = (scoring?: any, base = 100): any => ({ basePoints: base, payload: scoring ? { scoring } : {} });
+const q = (scoring?: Loose, base = 100): Loose => ({ basePoints: base, payload: scoring ? { scoring } : {} });
 
 describe('per-question scoring (item 029)', () => {
   it('fixed and accuracy give full points only for a fully correct answer', () => {
@@ -29,7 +30,7 @@ describe('per-question scoring (item 029)', () => {
     expect(quizMaxPoints([q(), q({ mode: 'time_bonus', timeBonusMax: 10 }, 50)], { questionSeconds: 10 })).toBe(160);
   });
   it('estimates duration', () => {
-    const qs = [{ kind: 'multiple_choice', prompt: 'What is two plus two in base ten arithmetic?', payload: {} }] as any;
+    const qs = [{ kind: 'multiple_choice', prompt: 'What is two plus two in base ten arithmetic?', payload: {} }] as Loose;
     expect(estimateQuizSeconds(qs)).toBeGreaterThan(12); expect(formatDuration(45)).toBe('45 s'); expect(formatDuration(600)).toBe('10 min');
   });
 });
@@ -82,7 +83,7 @@ describe('undo / redo (item 016)', () => {
   });
   it('coalesces typing into one step', () => {
     let h = createHistory('a'); let key: string | null = null;
-    ({ h, key } = recordCoalesced(h, 'ab', 'f', key, false) as any); ({ h, key } = recordCoalesced(h, 'abc', 'f', key, true) as any);
+    ({ h, key } = recordCoalesced(h, 'ab', 'f', key, false) as Loose); ({ h, key } = recordCoalesced(h, 'abc', 'f', key, true) as Loose);
     expect(h.past).toEqual(['a']); expect(h.present).toBe('abc');
   });
 });
@@ -93,16 +94,16 @@ describe('editor operations (items 017, 018, 019, 048)', () => {
     expect(moveItem([1, 2, 3], 0, 2)).toEqual([2, 3, 1]); expect(removeMany([1, 2, 3, 4], [1, 3])).toEqual([1, 3]);
     const out = duplicateAt([mc('x')], 0);
     expect(out).toHaveLength(2);
-    const copy = out[1]!; const id = (copy.answerKey as any).correctIds[0];
-    expect((copy.payload as any).options.map((o: any) => o.id)).toContain(id);
-    expect(id).not.toBe('b'); expect((out[0]!.answerKey as any).correctIds[0]).toBe('b');
+    const copy = out[1]!; const id = (copy.answerKey as Loose).correctIds[0];
+    expect((copy.payload as Loose).options.map((o: Loose) => o.id)).toContain(id);
+    expect(id).not.toBe('b'); expect((out[0]!.answerKey as Loose).correctIds[0]).toBe('b');
   });
   it('re-ids Connection Rush and Truth Hunt keys consistently', () => {
     const r = reid({ kind: 'connection_rush', prompt: 'p', basePoints: 1, payload: { left: [{ id: 'l1', label: 'a' }, { id: 'l2', label: 'b' }], right: [{ id: 'r1', label: 'A' }, { id: 'r2', label: 'B' }] }, answerKey: { pairs: [{ leftId: 'l1', rightId: 'r1' }, { leftId: 'l2', rightId: 'r2' }] } });
-    const p: any = r.payload; const k: any = r.answerKey;
-    expect(k.pairs.every((x: any) => p.left.some((l: any) => l.id === x.leftId) && p.right.some((l: any) => l.id === x.rightId))).toBe(true);
+    const p: Loose = r.payload; const k: Loose = r.answerKey;
+    expect(k.pairs.every((x: Loose) => p.left.some((l: Loose) => l.id === x.leftId) && p.right.some((l: Loose) => l.id === x.rightId))).toBe(true);
     const t = reid({ kind: 'truth_hunt', prompt: 'p', basePoints: 1, payload: { statements: [{ id: 's1', text: 'x' }] }, answerKey: { truth: { s1: true } } });
-    expect(Object.keys((t.answerKey as any).truth)).toEqual([(t.payload as any).statements[0].id]);
+    expect(Object.keys((t.answerKey as Loose).truth)).toEqual([(t.payload as Loose).statements[0].id]);
   });
   it('sections group questions', () => {
     const qs = setSection([mc('1'), mc('2'), mc('3')], [0, 2], 'Fractions'); expect(groupBySection(qs).map((x) => x.prompt)).toEqual(['2', '1', '3']);
@@ -114,8 +115,8 @@ describe('editor operations (items 017, 018, 019, 048)', () => {
     const foreign = { ...mc('f'), payload: { ...mc('f').payload, media: { type: 'image', ref: `quiz-media/${other}/44444444-4444-4444-4444-444444444444.png`, alt: 'no' } } } as Question;
     const r = fromClipboard(toClipboard([withMedia, foreign], owner), owner, () => true);
     expect(r.ok && r.questions).toHaveLength(2);
-    expect(r.ok && (r.questions[0]!.payload as any).media).toBeDefined(); expect(r.ok && (r.questions[1]!.payload as any).media).toBeUndefined();
-    expect(r.ok && r.dropped).toEqual([(foreign.payload as any).media.ref]);
+    expect(r.ok && (r.questions[0]!.payload as Loose).media).toBeDefined(); expect(r.ok && (r.questions[1]!.payload as Loose).media).toBeUndefined();
+    expect(r.ok && r.dropped).toEqual([(foreign.payload as Loose).media.ref]);
     expect(fromClipboard('hello', owner).ok).toBe(false);
     const gone = fromClipboard(toClipboard([withMedia], owner), owner, () => false); expect(gone.ok && gone.dropped).toHaveLength(1);
   });

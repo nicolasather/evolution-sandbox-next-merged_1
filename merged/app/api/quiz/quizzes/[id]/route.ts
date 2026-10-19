@@ -1,7 +1,9 @@
+import type { Loose } from '@/lib/quiz/loose';
 import { currentUser, maybeUser, serviceDB } from '@/lib/quiz/supabase';
 import { publicPayload } from '@/lib/quiz/public';
 import { assertSameOrigin, failure, jsonBody, success } from '@/lib/quiz/api';
 import { AppError } from '@/lib/quiz/errors';
+import { assertMediaRefsAllowed } from '@/lib/quiz/media-refs';
 import { z } from 'zod';
 
 const idSchema = z.string().uuid();
@@ -14,13 +16,13 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
     const db = serviceDB();
     let found = await db.from('quizzes').select('id,title,description,status,owner_id,updated_at,meta').eq('id', id).maybeSingle();
     if (found.error) found = await db.from('quizzes').select('id,title,description,status,owner_id,updated_at').eq('id', id).maybeSingle();
-    const quiz = found.data as (Record<string, any> | null);
+    const quiz = found.data as (Record<string, Loose> | null);
     const mine = !!quiz && user?.id === quiz.owner_id;
     if (!quiz || (quiz.status !== 'published' && !mine)) throw new AppError('Quiz not found', 404); // unpublished quizzes look nonexistent to others
     const cols = mine ? 'id,position,kind,prompt,payload,answer_key,base_points' : 'id,position,kind,prompt,payload,base_points';
     const { data: rows, error } = await db.from('quiz_questions').select(cols).eq('quiz_id', id).order('position');
     if (error) throw new AppError('Could not load questions', 500);
-    const questions = ((rows ?? []) as unknown as Record<string, any>[]).map((q) => ({
+    const questions = ((rows ?? []) as unknown as Record<string, Loose>[]).map((q) => ({
       id: q.id, kind: q.kind, prompt: q.prompt, basePoints: q.base_points,
       payload: mine ? q.payload : publicPayload(q.kind, q.payload, q.id),
       ...(mine ? { answerKey: q.answer_key } : {}),
@@ -48,6 +50,9 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
     if (status === 'published') {
       const { count } = await db.from('quiz_questions').select('id', { count: 'exact', head: true }).eq('quiz_id', id);
       if (!count) throw new AppError('Add at least one question before publishing', 400);
+      const { data: qs } = await db.from('quiz_questions').select('payload').eq('quiz_id', id);
+      const { data: own } = await db.from('quizzes').select('owner_id').eq('id', id).maybeSingle();
+      if (own?.owner_id === user.id) await assertMediaRefsAllowed((qs ?? []) as { payload: Record<string, unknown> }[], user.id, 'published');
     }
     const { data, error } = await db.from('quizzes').update({ status, updated_at: new Date().toISOString() }).eq('id', id).eq('owner_id', user.id).select('id');
     if (error) throw new AppError('Could not update the quiz', 500);

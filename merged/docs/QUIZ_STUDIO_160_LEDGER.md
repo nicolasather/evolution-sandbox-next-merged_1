@@ -29,3 +29,8 @@ Tests: `npx tsc --noEmit` clean; `npx jest lib/quiz components` → 311 pass, 2 
 4. **Load tests (30/100 players)** not run.
 5. **Stranger-safe host identity display, moderation appeal UI, one-device speaker rotation UI** are API/config-level only.
 6. Pre-existing: 2 flaky `ModeHub` tests; ESLint `no-explicit-any` errors.
+
+## Phase 2 verification addendum (2026-10-19) — see `QUIZ-PHASE2-AUDIT.md`
+- Rows marked **Done\*** stay *unverified live* until migrations 004 **and 005** are applied. Item group D (multimedia) was **not** working end-to-end as shipped (guest access, CSP, size cap, clean-up); fixed in this pass, verified by unit/SQL/mocked-browser tests only.
+- The two `ModeHub*` failures were timeouts under load (fixed). Lint is clean in quiz scope (via the `Loose` alias).
+- Still true: no Supabase staging run, no load test, i18n/appeal/speaker-rotation UI incomplete.

@@ -1,4 +1,5 @@
 /** @jest-environment node */
+import type { Loose } from '../loose';
 import { firstAttemptAccuracy, mastery, recovered, reviewMistakes, retryDeck, effectiveSettings, applyQuietClassroom, checkFairPlay, qualifyingSession, conceptOf, type Attempt, type SessionFact } from '../learning';
 import { checkNickname, sanitizeName, generateAliases, decideJoin, publicPlayer, detectBurst, privacyBucket, PRIVACY_DEFAULTS, deletionPlan, isExpired, RETENTION_DAYS, BASE_BLOCKLIST } from '../safety';
 import { sessionReport, modifierImpact, questionStats, performanceBy, perActor, misconceptions, filterSession, studentView, reportCsv, simplePdf, reportPdfLines, type SessionData } from '../reports';
@@ -27,7 +28,7 @@ describe('mastery is separate from points (items 062, 063, 066, 067)', () => {
     const qs = Array.from({ length: 6 }, (_, i) => ({ kind: 'multiple_choice', prompt: `Q${i}`, basePoints: 1, payload: { options: ['a', 'b', 'c', 'd'].map((id) => ({ id, text: id })) }, answerKey: { correctIds: ['a'] } } as Question));
     const d1 = retryDeck(qs, [0, 1, 2, 3, 4, 5], 1, 's'); const d2 = retryDeck(qs, [0, 1, 2, 3, 4, 5], 2, 's');
     expect(d1.map((q) => q.prompt).join()).not.toBe(d2.map((q) => q.prompt).join()); expect(retryDeck(qs, [0, 1, 2], 1, 's')).toEqual(retryDeck(qs, [0, 1, 2], 1, 's'));
-    expect(d1.every((q) => (q.answerKey as any).correctIds[0] === 'a')).toBe(true);
+    expect(d1.every((q) => (q.answerKey as Loose).correctIds[0] === 'a')).toBe(true);
   });
 });
 

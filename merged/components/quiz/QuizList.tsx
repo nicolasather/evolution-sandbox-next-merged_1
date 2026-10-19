@@ -131,7 +131,7 @@ export default function QuizList({ mine, mode = null }: { mine: boolean; mode?: 
   }
   async function duplicate(it: Item) {
     setBusyId(it.id); setError('');
-    try { const r = await api<{ id: string }>(`/api/quiz/quizzes/${it.id}/remix`, { method: 'POST', json: {} }); window.location.href = `/quiz/edit/${r.id}`; }
+    try { const r = await api<{ id: string }>(`/api/quiz/quizzes/${it.id}/remix`, { method: 'POST', json: {} }); window.location.assign(new URL(`/quiz/edit/${r.id}`, window.location.origin).toString()); }
     catch (e) { setError((e as Error).message); setBusyId(''); }
   }
   function removeDevice(d: LocalDraft) {

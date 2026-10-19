@@ -10,6 +10,9 @@ jest.mock('@/data/mode_packets.json', () => {
 });
 jest.mock('@/lib/content/releaseManifest', () => ({ releaseHash: 'c'.repeat(64) }));
 
+/* Test-only: rendering the whole hub (engine + every card) can exceed Jest's 5 s default when the suite runs in parallel on a busy machine. The assertions are unchanged. */
+jest.setTimeout(30_000);
+
 describe('ModeHub with a verified, published packet and the flag ON', () => {
   const OLD = process.env.NEXT_PUBLIC_MODE_PACKETS;
   beforeAll(() => {

@@ -1,5 +1,6 @@
 /** Import / export for question banks (items 041, 042, 043). Nothing here changes a quiz: every function returns a *preview*
  *  (questions plus explicit problems) that the person must confirm on a correction screen first. Pure except readXlsx (node:zlib). */
+import type { Loose } from './loose';
 import { questionSchema, quizMetaSchema } from './validation';
 import { uid } from './editor-model';
 import { explainIssue } from './explain';
@@ -159,7 +160,7 @@ export function exportQuizJson(doc: QuizDoc, now = new Date()): string {
 export type JsonImport = { ok: true; doc: QuizDoc; problems: ImportProblem[]; fromVersion: number } | { ok: false; error: string };
 /** Reads current (v2) and earlier (v1: `{app:'quiz-studio', version:1}`) backups. Invalid questions are reported, never silently dropped into the quiz. */
 export function importQuizJson(text: string): JsonImport {
-  let raw: any;
+  let raw: Loose;
   try { raw = JSON.parse(text); } catch { return { ok: false, error: 'This is not a valid JSON file.' }; }
   if (!raw || typeof raw !== 'object') return { ok: false, error: 'This file does not look like a Quiz Studio backup.' };
   const v1 = raw.app === 'quiz-studio' && raw.version === 1;

@@ -1,11 +1,12 @@
 /** @jest-environment node */
+import type { Loose } from '../loose';
 import { gradeDetailed, gradeQuestion, assertResponseIds, textAccepted } from '../grading';
 import { normalizeText, parseNumber, parseQuantity } from '../text';
 import { publicPayload, publicQuestionView, hintOf } from '../public';
 import { questionSchema, saveQuizSchema } from '../validation';
 import type { Question } from '../types';
 
-const forge = (key: any, payload: any = {}): Question => ({ kind: 'answer_forge', prompt: 'p', basePoints: 100, payload: { placeholder: 'x', caseSensitive: false, ...payload }, answerKey: { accepted: ['x'], ...key } });
+const forge = (key: Loose, payload: Loose = {}): Question => ({ kind: 'answer_forge', prompt: 'p', basePoints: 100, payload: { placeholder: 'x', caseSensitive: false, ...payload }, answerKey: { accepted: ['x'], ...key } });
 const say = (q: Question, text: string) => gradeQuestion(q, { kind: 'answer_forge', text });
 
 describe('text normalisation (item 023)', () => {
@@ -65,7 +66,7 @@ describe('Multiple Choice identity is the option id (items 021, 022)', () => {
   const mc: Question = { kind: 'multiple_choice', prompt: 'p', basePoints: 100, payload: { options: ['a', 'b', 'c', 'd'].map((id) => ({ id, text: id.toUpperCase() })) }, answerKey: { correctIds: ['c'] } };
   it('stays correct after every reshuffle', () => {
     for (let n = 0; n < 40; n++) {
-      const shown = (publicPayload('multiple_choice', mc.payload, `seed-${n}`) as any).options as { id: string; text: string }[];
+      const shown = (publicPayload('multiple_choice', mc.payload, `seed-${n}`) as Loose).options as { id: string; text: string }[];
       expect(shown.map((o) => o.id).sort()).toEqual(['a', 'b', 'c', 'd']);
       const picked = shown.find((o) => o.text === 'C')!;
       expect(gradeQuestion(mc, { kind: 'multiple_choice', selectedIds: [picked.id] })).toBe(true);
@@ -73,9 +74,9 @@ describe('Multiple Choice identity is the option id (items 021, 022)', () => {
     }
   });
   it('actually reorders, differently for different players, unless the creator keeps the order', () => {
-    const orders = new Set(Array.from({ length: 12 }, (_, n) => (publicPayload('multiple_choice', mc.payload, `p${n}`) as any).options.map((o: any) => o.id).join('')));
+    const orders = new Set(Array.from({ length: 12 }, (_, n) => (publicPayload('multiple_choice', mc.payload, `p${n}`) as Loose).options.map((o: Loose) => o.id).join('')));
     expect(orders.size).toBeGreaterThan(3);
-    expect((publicPayload('multiple_choice', { ...mc.payload, shuffle: false }, 'x') as any).options.map((o: any) => o.id).join('')).toBe('abcd');
+    expect((publicPayload('multiple_choice', { ...mc.payload, shuffle: false }, 'x') as Loose).options.map((o: Loose) => o.id).join('')).toBe('abcd');
   });
   it('supports an explicit multi-answer variant graded as a set', () => {
     const multi: Question = { ...mc, payload: { ...mc.payload, multi: true }, answerKey: { correctIds: ['a', 'c'] } };
@@ -109,7 +110,7 @@ describe('Connection Rush, Truth Hunt and Fill the Table partial credit (items 0
   });
   it('Fill the Table never carries blank answers in the player payload', () => {
     const t: Question = { kind: 'fill_table', prompt: 'p', basePoints: 100, payload: { columns: ['k', 'v'], rows: [[{ text: 'a', blank: false }, { text: 'SECRET', blank: true }]] }, answerKey: { cells: { '0:1': ['SECRET'] } } };
-    const v = publicQuestionView({ id: 'x', position: 0, kind: t.kind, prompt: t.prompt, payload: (questionSchema.parse(t) as any).payload, answer_key: t.answerKey, base_points: 100 }, { reveal: false, seed: 's' });
+    const v = publicQuestionView({ id: 'x', position: 0, kind: t.kind, prompt: t.prompt, payload: (questionSchema.parse(t) as Loose).payload, answer_key: t.answerKey, base_points: 100 }, { reveal: false, seed: 's' });
     expect(JSON.stringify(v)).not.toContain('SECRET');
   });
 });
@@ -133,7 +134,7 @@ describe('answer keys never leave early (items 028, 134)', () => {
   it('the key and explanation appear after reveal, the hint only through its own call', () => {
     const r = rows[0]!;
     const v = publicQuestionView({ id: 'q', position: 0, kind: r.kind, prompt: 'p', payload: r.payload, answer_key: r.answer_key, base_points: 10 }, { reveal: true, seed: 's' });
-    expect((v.answerKey as any).explanation).toBe('EXPLAIN-MC');
+    expect((v.answerKey as Loose).explanation).toBe('EXPLAIN-MC');
     expect(hintOf({ answer_key: r.answer_key })).toBe('HINT-MC');
     expect(hintOf({ answer_key: { correctIds: [] } })).toBeNull();
   });
@@ -147,12 +148,13 @@ describe('validation stays backward compatible (item 030)', () => {
   });
   it('rejects unknown keys, an image without alt text, and unsupported partial credit', () => {
     const mc = { kind: 'multiple_choice', prompt: 'p', basePoints: 10, payload: { options: [{ id: 'a', text: 'A' }, { id: 'b', text: 'B' }] }, answerKey: { correctIds: ['a'] } };
+    const REF = 'quiz-media/11111111-1111-1111-1111-111111111111/22222222-2222-2222-2222-222222222222';
     expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, evil: 1 } }).success).toBe(false);
-    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'image', ref: 'quiz-media/x' } } }).success).toBe(false);
-    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'image', ref: 'quiz-media/x', decorative: true } } }).success).toBe(true);
+    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'image', ref: `${REF}.png` } } }).success).toBe(false);
+    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'image', ref: `${REF}.png`, decorative: true } } }).success).toBe(true);
     expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, scoring: { mode: 'partial' } } }).success).toBe(false);
-    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'audio', ref: 'quiz-media/a' } } }).success).toBe(false);
-    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'audio', ref: 'quiz-media/a', transcript: 'Hello' } } }).success).toBe(true);
+    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'audio', ref: `${REF}.mp3` } } }).success).toBe(false);
+    expect(questionSchema.safeParse({ ...mc, payload: { ...mc.payload, media: { type: 'audio', ref: `${REF}.mp3`, transcript: 'Hello' } } }).success).toBe(true);
   });
   it('accepts explanation, hint and distractor notes only in the hidden key', () => {
     const mc = { kind: 'multiple_choice', prompt: 'p', basePoints: 10, payload: { options: [{ id: 'a', text: 'A' }, { id: 'b', text: 'B' }] }, answerKey: { correctIds: ['a'], explanation: 'Because', hint: 'Think', distractorNotes: { b: 'B is wrong because' } } };

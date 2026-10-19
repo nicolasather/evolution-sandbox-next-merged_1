@@ -20,6 +20,7 @@ export default function Collection() {
   const [msg, setMsg] = useState('');
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reads per-device preferences from localStorage after hydration (not available during SSR)
     try { setFav(JSON.parse(localStorage.getItem('qz:fav-icons') ?? '[]')); setWheel(JSON.parse(localStorage.getItem('qz:wheel') ?? '[]')); } catch { /* ignore */ }
     api<Data>('/api/quiz/cosmetics').then(setD).catch((e) => setErr(e.message ?? 'Could not load your collection.'));
   }, []);

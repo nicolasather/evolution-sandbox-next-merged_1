@@ -1,13 +1,21 @@
 import type { NextConfig } from 'next';
 import { withSentryConfig } from '@sentry/nextjs/config';
 
+/** Quiz Studio media lives in a PRIVATE Supabase Storage bucket and is read through short-lived signed URLs on the project's own origin, and uploaded straight to it.
+ *  Without these origins the browser blocks every uploaded image, video and audio clip, and the YouTube/Vimeo embeds. Only the exact project origin is added. */
+function supabaseOrigin(): string {
+  try { const u = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim(); return u ? new URL(u).origin : ''; } catch { return ''; }
+}
+const SB = supabaseOrigin();
 const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://sentry.io https://*.sentry.io",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://sentry.io https://www.google-analytics.com https://www.googletagmanager.com",
+  `img-src 'self' data: https://sentry.io https://www.google-analytics.com https://www.googletagmanager.com ${SB}`.trim(),
+  `media-src 'self' ${SB}`.trim(),
+  "frame-src 'self' https://www.youtube-nocookie.com https://player.vimeo.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://sentry.io https://*.sentry.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",
+  `connect-src 'self' ${SB} https://sentry.io https://*.sentry.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

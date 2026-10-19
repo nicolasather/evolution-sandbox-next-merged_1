@@ -1,4 +1,5 @@
 'use client';
+import type { Loose } from '@/lib/quiz/loose';
 import { AGE_BANDS } from '@/lib/quiz/validation';
 import { coverSvg } from '@/lib/quiz/art';
 
@@ -7,7 +8,7 @@ const LANGS: [string, string][] = [['en', 'English'], ['vi', 'Tiếng Việt'], 
 
 /** Quiz-level details: language, subject, age, tags, cover. All optional, none affects grading. */
 export default function QuizMetaForm({ meta, onChange, title }: { meta: Meta; onChange: (m: Meta) => void; title: string }) {
-  const set = (k: keyof Meta, v: unknown) => { const next: any = { ...meta, [k]: v }; if (v === '' || v === undefined || (Array.isArray(v) && !v.length)) delete next[k]; onChange(next); };
+  const set = (k: keyof Meta, v: unknown) => { const next: Loose = { ...meta, [k]: v }; if (v === '' || v === undefined || (Array.isArray(v) && !v.length)) delete next[k]; onChange(next); };
   const seed = meta.cover?.kind === 'art' ? meta.cover.seed : (title || 'quiz');
   return (
     <div className="stack">

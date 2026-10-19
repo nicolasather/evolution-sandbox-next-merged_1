@@ -48,3 +48,9 @@ dev-data/visual-lab/results/
 dev-data/visual-lab/previews/
 dev-data/visual-lab/reviews.json
 dev-data/visual-lab/contact-sheet.svg
+
+# Quiz Studio test output
+test-results/
+tests/e2e/playwright-report/
+playwright-report/
+reports/

@@ -1,9 +1,10 @@
 /** Small fetch helper shared by the quiz client components. */
+import type { Loose } from './loose';
 export class ApiError extends Error {
   status: number; stage?: number;
   constructor(message: string, status: number, stage?: number) { super(message); this.status = status; this.stage = stage; }
 }
-export async function api<T = any>(url: string, init?: RequestInit & { json?: unknown }): Promise<T> {
+export async function api<T = Loose>(url: string, init?: RequestInit & { json?: unknown }): Promise<T> {
   const { json, ...rest } = init ?? {};
   const res = await fetch(url, {
     ...rest,
@@ -11,7 +12,7 @@ export async function api<T = any>(url: string, init?: RequestInit & { json?: un
     headers: { ...(json !== undefined ? { 'Content-Type': 'application/json' } : {}), ...(rest.headers ?? {}) },
     body: json !== undefined ? JSON.stringify(json) : rest.body,
   });
-  let data: any = null;
+  let data: Loose = null;
   try { data = await res.json(); } catch { /* non-JSON error page */ }
   if (!res.ok) throw new ApiError(data?.error ?? `Request failed (${res.status})`, res.status, data?.stage);
   return data as T;

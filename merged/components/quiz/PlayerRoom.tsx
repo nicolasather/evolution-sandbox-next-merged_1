@@ -1,4 +1,6 @@
 'use client';
+import type { Loose } from '@/lib/quiz/loose';
+import { MediaScope } from './MediaScope';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
@@ -11,7 +13,7 @@ import { effectiveSettings, mastery, reviewMistakes, type Attempt } from '@/lib/
 import { announce } from '@/lib/quiz/a11y';
 import { iconSvg } from '@/lib/quiz/cosmetics/catalog';
 
-export default function PlayerRoom({ roomId }: { roomId: string }) {
+function PlayerRoomInner({ roomId }: { roomId: string }) {
   const [token, setToken] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
   const [calm, setCalm] = useState(false);
@@ -35,13 +37,14 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
       .then((r) => { setEarned(r.earned); setNeedsAccount(!!r.needsAccount); }).catch(() => setEarned([]));
   }, [ended, token, roomId]);
 
+  const review: Loose[] | undefined = state?.review;
   const mistakes = useMemo(() => {
-    if (!state?.review) return [];
-    const qs = state.review.map((r: any) => ({ kind: r.kind, prompt: r.prompt, payload: r.payload, answerKey: r.answerKey, basePoints: 0 }));
+    if (!review) return [];
+    const qs = review.map((r: Loose) => ({ kind: r.kind, prompt: r.prompt, payload: r.payload, answerKey: r.answerKey, basePoints: 0 }));
     const answers: Record<number, { response: unknown; correct: boolean }> = {};
-    state.review.forEach((r: any, i: number) => { if (r.mine) answers[i] = { response: r.mine.response, correct: r.mine.correct }; });
+    review.forEach((r: Loose, i: number) => { if (r.mine) answers[i] = { response: r.mine.response, correct: r.mine.correct }; });
     return reviewMistakes(qs, answers);
-  }, [state?.review]);
+  }, [review]);
 
   if (!ready) return <main className="page"><p className="muted-text">Loading…</p></main>;
   if (!token) return <main className="narrow"><section className="panel stack"><h1>Join a room first</h1><p className="muted-text">This device isn’t part of that game yet.</p><Link className="btn" href="/quiz/join">Enter a game code</Link></section></main>;
@@ -51,9 +54,9 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
   const s = state;
   const cfg = s.config as { lowPressure?: boolean; quietClassroom?: boolean; untimed?: boolean; readAloud?: boolean; questionSeconds: number | null };
   const set = effectiveSettings({ lowPressure: cfg.lowPressure, quietClassroom: cfg.quietClassroom, untimed: cfg.untimed });
-  const me = s.players.find((p: any) => p.id === s.selfId);
+  const me = s.players.find((p: Loose) => p.id === s.selfId);
   const mods: Modifier[] = s.config.modifiers;
-  const ranking = [...s.players].sort((a: any, b: any) => b.points - a.points);
+  const ranking = [...s.players].sort((a: Loose, b: Loose) => b.points - a.points);
   const now = s.paused && s.pausedAt ? Date.parse(s.pausedAt) : serverNow(); // server clock, frozen while paused
   const matchLeft = s.expiresAt ? (Date.parse(s.expiresAt) - now) / 1000 : null;
   const limit = cfg.questionSeconds && set.timerEnabled ? cfg.questionSeconds : null;
@@ -83,7 +86,7 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
     catch (e) { setError((e as Error).message); } finally { setBusy(false); }
   }
   const toggleCalm = () => setCalm((v) => { const n = !v; try { localStorage.setItem('qz:calm', n ? '1' : '0'); } catch { /* ignore */ } return n; });
-  const attempts: Attempt[] = (s.review ?? []).filter((r: any) => r.mine).map((r: any, i: number) => ({ questionKey: String(i), concept: r.prompt.slice(0, 40), correct: r.mine.correct, attemptNo: 1, at: '' }));
+  const attempts: Attempt[] = (s.review ?? []).filter((r: Loose) => r.mine).map((r: Loose, i: number) => ({ questionKey: String(i), concept: r.prompt.slice(0, 40), correct: r.mine.correct, attemptNo: 1, at: '' }));
   const m = mastery(attempts);
   const lock = answered ? 'Your answer is locked in.' : s.paused ? 'The game is paused.' : s.revealed ? 'The answer is shown.' : qLeft !== null && qLeft <= 0 ? 'Time is up.' : 'You can answer now.';
 
@@ -128,7 +131,7 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
           {s.revealed && s.question.answerKey && <AnswerView kind={s.question.kind} payload={s.question.payload} answerKey={s.question.answerKey} />}
           {s.revealed && s.aggregate && s.aggregate.total > 0 && (
             <details open><summary>How the class answered (anonymous)</summary>
-              <ul className="note">{s.question.payload.options?.map((o: any) => <li key={o.id}>{o.text}: {s.aggregate.counts[o.id] ?? 0} of {s.aggregate.total}</li>)}</ul></details>
+              <ul className="note">{s.question.payload.options?.map((o: Loose) => <li key={o.id}>{o.text}: {s.aggregate.counts[o.id] ?? 0} of {s.aggregate.total}</li>)}</ul></details>
           )}
         </section>
       )}
@@ -157,17 +160,23 @@ export default function PlayerRoom({ roomId }: { roomId: string }) {
               {mistakes.map((r) => <div key={r.index} className="stack"><p><strong>{r.index + 1}. {r.prompt}</strong></p><AnswerView kind={s.review[r.index].kind} payload={s.review[r.index].payload} answerKey={s.review[r.index].answerKey} /></div>)}
               <p className="note">Next step: read the explanations above, then try the quiz again whenever you like. There is no need to play again right now.</p></div>
           ) : m.concepts > 0 ? <p className="success">No mistakes to review — nicely done.</p> : null}
-          {set.showRank && !solo && <><h3>Standings</h3><ol className="scores" style={{ listStyle: 'none', padding: 0, margin: 0 }}>{ranking.map((p: any, i: number) => <li key={p.id} className={`score ${p.id === s.selfId ? 'me' : ''}`}><strong>{i + 1}. {p.display_name}{p.id === s.selfId ? ' (you)' : ''}</strong><span className="pts">{p.points}</span><span className="note">points</span></li>)}</ol></>}
+          {set.showRank && !solo && <><h3>Standings</h3><ol className="scores" style={{ listStyle: 'none', padding: 0, margin: 0 }}>{ranking.map((p: Loose, i: number) => <li key={p.id} className={`score ${p.id === s.selfId ? 'me' : ''}`}><strong>{i + 1}. {p.display_name}{p.id === s.selfId ? ' (you)' : ''}</strong><span className="pts">{p.points}</span><span className="note">points</span></li>)}</ol></>}
           {s.review && <details><summary>See every answer</summary>
-            {s.review.map((r: any) => <div key={r.id} className="stack" style={{ marginTop: 14 }}><p><strong>{r.position + 1}. {r.prompt}</strong></p><AnswerView kind={r.kind} payload={r.payload} answerKey={r.answerKey} /></div>)}</details>}
+            {s.review.map((r: Loose) => <div key={r.id} className="stack" style={{ marginTop: 14 }}><p><strong>{r.position + 1}. {r.prompt}</strong></p><AnswerView kind={r.kind} payload={r.payload} answerKey={r.answerKey} /></div>)}</details>}
           <div className="row"><Link className="btn" href="/quiz/library">Browse quizzes</Link><Link className="btn ghost" href="/quiz/join">Join another game</Link></div>
         </section>
       )}
 
       {!solo && s.status !== 'ended' && set.showRank && (
         <section className="panel"><h3>Scoreboard</h3>
-          <div className="scores">{ranking.map((p: any, i: number) => <div key={p.id} className={`score ${p.id === s.selfId ? 'me' : ''}`}><strong>{i + 1}. {p.display_name}{p.id === s.selfId ? ' (you)' : ''}</strong><span className="pts">{p.points}</span></div>)}</div></section>
+          <div className="scores">{ranking.map((p: Loose, i: number) => <div key={p.id} className={`score ${p.id === s.selfId ? 'me' : ''}`}><strong>{i + 1}. {p.display_name}{p.id === s.selfId ? ' (you)' : ''}</strong><span className="pts">{p.points}</span></div>)}</div></section>
       )}
     </main>
   );
+}
+
+
+/** Media in a live room is authorised through the room itself (player token or host session), so the whole screen sits inside the room's media scope. */
+export default function PlayerRoom({ roomId }: { roomId: string }) {
+  return <MediaScope value={roomId}><PlayerRoomInner roomId={roomId} /></MediaScope>;
 }

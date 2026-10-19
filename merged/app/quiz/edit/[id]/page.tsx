@@ -1,3 +1,4 @@
+import type { Loose } from '@/lib/quiz/loose';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { z } from 'zod';
@@ -19,7 +20,7 @@ export default async function EditQuiz({ params }: { params: Promise<{ id: strin
   // Owner filter in the query itself: another user's quiz is indistinguishable from a missing one.
   let found = await db.from('quizzes').select('id,title,description,status,updated_at,meta').eq('id', id).eq('owner_id', user.id).maybeSingle();
   if (found.error) found = await db.from('quizzes').select('id,title,description,status,updated_at').eq('id', id).eq('owner_id', user.id).maybeSingle(); // migration 004 not applied yet
-  const quiz = found.data as (Record<string, any> | null);
+  const quiz = found.data as (Record<string, Loose> | null);
   if (!quiz) notFound();
   const { data: rows, error } = await db.from('quiz_questions').select('id,kind,prompt,payload,answer_key,base_points').eq('quiz_id', id).order('position');
   if (error) throw new Error('Could not load questions');

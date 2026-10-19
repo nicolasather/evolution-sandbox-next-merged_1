@@ -1,4 +1,5 @@
 'use client';
+import type { Loose } from '@/lib/quiz/loose';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { api } from '@/lib/quiz/client';
@@ -8,7 +9,7 @@ import { REPORT_REASONS, REPORT_STATUS_TEXT, isVerified, qualitySignals } from '
 import { coverSvg } from '@/lib/quiz/art';
 import { estimateQuizSeconds, formatDuration, quizMaxPoints } from '@/lib/quiz/scoring';
 
-type Detail = { quiz: { id: string; title: string; description: string; status: string; updated_at: string; isMine: boolean; meta?: Record<string, any> }; questions: { kind: QuestionKind; prompt: string; basePoints: number; payload: Record<string, unknown> }[] };
+type Detail = { quiz: { id: string; title: string; description: string; status: string; updated_at: string; isMine: boolean; meta?: Record<string, Loose> }; questions: { kind: QuestionKind; prompt: string; basePoints: number; payload: Record<string, unknown> }[] };
 const REASON_TEXT: Record<(typeof REPORT_REASONS)[number], string> = { incorrect_fact: 'An answer or fact is wrong', broken_media: 'A picture, audio or video does not work', copyright: 'It uses someone else’s work without permission', inappropriate: 'It is not suitable for a school audience', other: 'Something else' };
 
 /** Library details: what the quiz covers, how long it takes, who made it, and ways to play, remix or report it. No answer keys are ever loaded here. */
@@ -29,7 +30,7 @@ export default function QuizDetail({ id }: { id: string }) {
       const s = await ensureCloudSession();
       if (s.status !== 'ready') throw new Error('Copying a quiz needs a session. Sign in or create an account, then try again.');
       const r = await api<{ id: string }>(`/api/quiz/quizzes/${id}/remix`, { method: 'POST', json: {} });
-      window.location.href = `/quiz/edit/${r.id}`;
+      window.location.assign(new URL(`/quiz/edit/${r.id}`, window.location.origin).toString()); // full navigation on purpose: loads the editor fresh
     } catch (e) { setError((e as Error).message); setBusy(false); }
   }
   async function report() {

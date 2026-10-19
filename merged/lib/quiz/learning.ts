@@ -1,4 +1,5 @@
 /** Learning-quality rules (items 061-070). Pure. */
+import type { Loose } from './loose';
 import type { Question } from './types';
 import { seededShuffle } from './public';
 
@@ -8,7 +9,7 @@ export const SELF_CHECK_LABEL: Record<SelfCheck, string> = { guessed: 'I guessed
 
 /** The concept a question teaches: its objective, else its topic, else the question itself. */
 export function conceptOf(q: Question, index: number): string {
-  const m = (q.payload as any).meta as { objective?: string; topic?: string } | undefined;
+  const m = (q.payload as Loose).meta as { objective?: string; topic?: string } | undefined;
   return m?.objective?.trim() || m?.topic?.trim() || `q:${index}`;
 }
 
@@ -46,7 +47,7 @@ export function reviewMistakes(qs: (Question & { revealed?: boolean })[], respon
   const out: MistakeReview[] = [];
   qs.forEach((q, i) => {
     const r = responses[i]; if (!r || r.correct) return;
-    const ak: any = q.answerKey;
+    const ak: Loose = q.answerKey;
     let note: string | undefined;
     if (q.kind === 'multiple_choice' && ak.distractorNotes) {
       const picked = (r.response as { selectedIds?: string[] })?.selectedIds?.[0];
@@ -63,7 +64,7 @@ export function retryDeck<T extends Question>(qs: T[], missedIndexes: number[], 
   const shuffled = seededShuffle(picked, `${seed}:deck:${attemptNo}`);
   return shuffled.map((q) => {
     if (q.kind !== 'multiple_choice') return q;
-    const pl: any = q.payload;
+    const pl: Loose = q.payload;
     return { ...q, payload: { ...pl, options: seededShuffle(pl.options, `${seed}:${attemptNo}:${q.prompt}`) } };
   });
 }
