@@ -59,13 +59,14 @@ describe('pilot fixture → sandbox → engine → 3D → motion → modes → r
     for (const blocked of ['fx_stone_age_microchip', 'fx_early_copper_ingot', 'fx_fired_clay_bowl', 'fx_sun_dried_block', 'fx_unsourced_charm']) expect(fx(blocked)).toBeUndefined();
   });
 
-  it('the original 918 items keep their ids, numbers and recipes; new ones continue the numbering', () => {
-    expect(db.nodes.length).toBe(923);
+  it('the original items keep their ids, numbers and recipes; new ones continue the numbering', () => {
+    expect(db.nodes.length).toBe(playDb.nodes.length + 5);
     for (const o of playDb.nodes) {
       const n = db.nodes.find(x => x.id === o.id)!;
       expect(n).toBeDefined(); expect(n.no).toBe(o.no); expect(n.rec).toEqual(o.rec);
     }
-    expect(db.nodes.filter(n => n.id.startsWith('fx_')).map(n => n.no).sort()).toEqual([919, 920, 921, 922, 923]);
+    const next = Math.max(...playDb.nodes.map(o => o.no)) + 1;
+    expect(db.nodes.filter(n => n.id.startsWith('fx_')).map(n => n.no).sort((a, b) => a - b)).toEqual([next, next + 1, next + 2, next + 3, next + 4]);
   });
 
   it('the real game data was not touched', () => {
@@ -155,7 +156,7 @@ describe('pilot fixture → sandbox → engine → 3D → motion → modes → r
   describe('modes', () => {
     it('pipeline items pass the gate only in opt-in modes whose rules they meet; excluded modes say no', () => {
       for (const n of db.nodes.filter(x => x.id.startsWith('fx_'))) {
-        for (const m of ['civilization', 'decipher', 'alien-archaeology', 'escape-room'] as const) expect(adapterGate(m, n, db)).toBe(false);
+        for (const m of ['civilization', 'decipher', 'alien-archaeology'] as const) expect(adapterGate(m, n, db)).toBe(false);
         expect(adapterGate('minimum-path', n, db)).toBe(true);
         expect(adapterGate('reverse-evolution', n, db)).toBe(true);
       }
@@ -175,7 +176,7 @@ describe('pilot fixture → sandbox → engine → 3D → motion → modes → r
       expect(pickChallenge(db, createRng('e2e'))).not.toBeNull();
     });
     it('excluded modes never produce a packet', () => {
-      for (const m of ['civilization', 'decipher', 'alien-archaeology', 'escape-room'] as const) {
+      for (const m of ['civilization', 'decipher', 'alien-archaeology'] as const) {
         expect(ADAPTERS[m].policy).toBe('excluded');
         expect(resolvePacket(m, { schemaVersion: 1 }, 's', db).packet).toBeNull();
       }

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Tiny anvil">
+<g data-z="0" opacity="0.4"><path d="M14 90h72M22 94h56"/></g>
+<g data-z="1"><path d="M16 40h50c4 0 8 -4 8 -8h10c0 12 -8 18 -22 18H52c0 6 4 10 8 14v10H36v-10c4 -4 8 -8 8 -14H30c-8 0 -14 -4 -14 -10z"/></g>
+<g data-z="2" opacity="0.75"><path d="M26 44h40"/><path d="M40 72h20"/><path d="M22 40v0"/></g>
+<g data-z="3" opacity="0.5"><path d="M74 22l4 -8M82 28l8 -4"/></g>
+</svg>

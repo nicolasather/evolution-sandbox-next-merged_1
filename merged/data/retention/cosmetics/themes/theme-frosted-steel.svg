@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Frost on girders">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M10 14h80M10 86h80"/><path d="M10 14L50 86L90 14"/><path d="M10 86L50 14L90 86"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 50l6 -6M50 50l-6 -6M50 50l6 6M50 50l-6 6"/><path d="M50 40v-8M50 60v8M40 50h-8M60 50h8"/></g>
+<g data-z="3" opacity="0.5"><path d="M24 30l4 4M72 66l4 4M76 28l4 4"/></g>
+</svg>

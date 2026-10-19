@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Glass lens">
+<g data-z="0" opacity="0.4"><path d="M24 92h40"/></g>
+<g data-z="1"><path d="M42 14a30 30 0 1 0 0.1 0z"/><path d="M42 22a22 22 0 1 0 0.1 0z"/><path d="M64 64l24 24"/><path d="M70 62l22 22"/></g>
+<g data-z="2" opacity="0.8"><path d="M28 34q8 -10 20 -10M30 44q4 -8 12 -8"/></g>
+<g data-z="3" opacity="0.5"><path d="M82 86l6 6"/><path d="M24 52l-6 0"/></g>
+</svg>

@@ -1,0 +1,23 @@
+# id (without anc27_ prefix) -> ingredient list (base ids plain; anc27 ids written as '@name')
+R = {
+ 'pit_firing_pottery_kiln': ['pottery','charcoal'],
+ 'wood_fired_clamp_kiln': ['@pit_firing_pottery_kiln','wood'],
+ 'updraft_pottery_kiln': ['kiln','exp26_firebox_lining_brick'],
+ 'kiln_fire_grate': ['@updraft_pottery_kiln','clay_nodule'],
+ 'downdraft_pottery_kiln': ['@updraft_pottery_kiln','brick'],
+ 'two_chamber_pottery_kiln': ['@updraft_pottery_kiln','@kiln_fire_grate'],
+ 'ceramic_kiln_shelf': ['@kiln_fire_grate','clay_nodule'],
+ 'kiln_temperature_cone_precursor': ['@two_chamber_pottery_kiln','measurement'],
+ 'earthenware_slipping': ['pottery','clay_nodule'],
+ 'burnished_ceramic_vessel': ['@earthenware_slipping','stone_leather_burnisher'],
+ 'painted_geometric_pottery': ['@earthenware_slipping','pigment_compound'],
+ 'cord_marked_pottery': ['pottery','cordage'],
+ 'reduction_fired_pottery': ['@updraft_pottery_kiln','smoke'],
+ 'black_polished_pottery': ['@reduction_fired_pottery','@burnished_ceramic_vessel'],
+ 'glazed_faience_vessel': ['quartz_piece','ash'],
+ 'alkaline_glaze_pottery': ['pottery','ash'],
+ 'high_fired_stoneware_jar': ['@downdraft_pottery_kiln','pottery'],
+ 'clay_crucible_for_metals': ['clay_nodule','copper'],
+ 'ceramic_casting_investment': ['stone_mold','clay_nodule'],
+ 'potters_wheel_pivot_bearing': ['axle','stone'],
+}

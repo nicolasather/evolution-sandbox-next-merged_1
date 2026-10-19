@@ -30,6 +30,7 @@ import { QuestionCard } from './QuestionCard';
 import { NarratorView } from './Narrator';
 import { UnlockNotice } from './UnlockNotice';
 import { useUnlocks } from '@/lib/unlocks/useUnlocks';
+import { useDevOverrides } from '@/lib/dev/overrides';
 import { unlockMemory } from '@/lib/unlocks/store';
 import type { FeatureId } from '@/lib/unlocks/registry';
 import { CinematicGate } from './cinematic/CinematicGate';
@@ -42,6 +43,8 @@ import { ShortcutsOverlay } from './fx/ShortcutsOverlay';
 import { enterFullscreen, installImmersiveTop, installPressFx } from '@/lib/fx';
 import { benchElement, benchSpawn } from '@/lib/craft/bus';
 import { sound } from '@/lib/sound';
+import { retentionBus } from '@/lib/retention/bus';
+import { RetentionLayer } from './retention/RetentionLayer';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { cn } from '@/lib/utils';
 import type { ViewId } from '@/lib/types';
@@ -108,6 +111,8 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   /* What has opened so far. A new visitor sees the workbench and nothing else; every other view,
      corner button, the questions and every other mode open as history is reached (lib/unlocks). */
   const unlocks = useUnlocks(engine, version, s.entered && reveal >= 6);
+  /** Developer Beta only (always false elsewhere): drop the landing film as soon as it starts. */
+  const skipFilm = useDevOverrides().skipIntros;
 
   // The world tint follows the furthest era reached — subtle, not a light show.
   // --era-glow is the second, slower half of the same idea: it only grows, so
@@ -156,6 +161,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       if (!unlocks.has(need)) return; // not unlocked yet: no such door (a shortcut key lands here too)
       unlocks.opened(need);
     }
+    retentionBus.emit({ t: 'view', view: v });
     sound.sfx(v === 'graph' ? 'graph' : v === 'arch' || v === 'time' ? 'archive' : 'tab', 0.6);
     const scene = VIEW_SCENE[v];
     if (scene && v !== view) playGate(scene);
@@ -177,6 +183,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   }, [open, panelOpen]);
 
   const closePanel = useCallback(() => {
+    retentionBus.emit({ t: 'signal', name: 'panel-close' });
     setPanelOpen(false);
     const back = panelReturn.current;
     panelReturn.current = null;
@@ -348,6 +355,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
         }}
         onDone={() => setIntroDone(true)}
         replay={replay}
+        autoSkip={skipFilm}
         getBenchTarget={() => {
           const el = benchElement();
           const r = el?.getBoundingClientRect();
@@ -528,6 +536,14 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       {/* the restrained in-game moment when history opens a new gallery */}
       <MuseumSignal onVisit={() => showView('museum')}
         suppressed={!s.entered || reveal < 6 || view === 'museum' || !!s.ending || gate !== null} />
+
+      <RetentionLayer
+        engine={engine}
+        version={version}
+        entered={s.entered && reveal >= 6}
+        view={view}
+        busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || gate !== null}
+      />
 
       <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Bronze disk">
+<g data-z="0" opacity="0.4"><path d="M14 90h72M22 94h56"/></g>
+<g data-z="1"><path d="M50 12a38 38 0 1 0 0.1 0z"/><path d="M50 24a26 26 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 38a12 12 0 1 0 0.1 0z"/><path d="M50 12V24M50 76V88M12 50H24M76 50H88"/></g>
+<g data-z="3" opacity="0.5"><path d="M50 46a4 4 0 1 0 0.1 0z"/><path d="M30 30l6 6M70 30l-6 6M30 70l6 -6M70 70l-6 -6"/></g>
+</svg>

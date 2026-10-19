@@ -137,12 +137,12 @@ export const ADAPTERS: Record<ModeId, ModeAdapter<unknown>> = {
   'main-evolution': cataloguePacketAdapter('main-evolution', n => !!n.rec?.length || !!n.primitive, 'a catalogue item with a canonical route'),
   'reverse-evolution': reverseEvolution as ModeAdapter<unknown>,
   'minimum-path': minimumPath as ModeAdapter<unknown>,
-  survival: excluded('survival', 'Survival builds camps from its own authored traits, terrain and members; it takes no catalogue items, so there is nothing for a generated item to feed.'),
-  archaeology: excluded('archaeology', 'Archaeologist draws finds from its own authored artifact-type vocabulary on purpose (never the discovery graph), so generated items have no entry point.'),
+  survival: cataloguePacketAdapter('survival', n => !!n.rec?.length, 'an item that can turn up as a camp find', 'metallurgy'),
+  archaeology: cataloguePacketAdapter('archaeology', n => !!n.rec?.length, 'an item that can be dug up as a site find', 'metallurgy'),
   civilization: excluded('civilization', 'Lifelines uses authored districts and its own simulator; catalogue items do not map to its mechanics.'),
   decipher: excluded('decipher', 'Decipher generates invented writing systems on purpose; real items would be a spoiler and a factual risk.'),
   'alien-archaeology': excluded('alien-archaeology', 'Fictional nonhuman civilizations must not be seeded with human historical items.'),
-  'escape-room': excluded('escape-room', 'Each room is an authored episode with a hand-verified mechanism; a generated one would not be.'),
+  'escape-room': cataloguePacketAdapter('escape-room', n => !!n.rec?.length, 'an item a generated workshop room can be built from'),
 };
 
 /**

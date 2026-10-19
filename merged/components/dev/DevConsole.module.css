@@ -1,0 +1,101 @@
+/* Developer Beta console — deliberately unlike the game's own look so nobody mistakes it for part of the game. */
+.root {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2147483000;
+  width: min(380px, calc(100vw - 24px));
+  max-height: min(78vh, 640px);
+  display: flex;
+  flex-direction: column;
+  font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #e8e6e1;
+  background: #14110d;
+  border: 2px solid #ff8a1f;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+.pill {
+  position: fixed;
+  left: 8px;
+  bottom: 8px;
+  z-index: 2147483000;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid #ff8a1f;
+  background: #14110d;
+  color: #ff8a1f;
+  font: 700 8px/1 ui-monospace, monospace;
+  cursor: pointer;
+  opacity: 0.55;
+}
+.pill:hover { opacity: 1; }
+.head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: #ff8a1f;
+  color: #14110d;
+  font-weight: 700;
+  border-radius: 5px 5px 0 0;
+}
+.head span { flex: 1; letter-spacing: 0.06em; }
+.head button {
+  background: #14110d;
+  color: #ff8a1f;
+  border: 0;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font: inherit;
+}
+.tabs { display: flex; flex-wrap: wrap; gap: 2px; padding: 6px 6px 0; }
+.tabs button {
+  background: #231d15;
+  color: #bdb6a8;
+  border: 1px solid #3a3226;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  padding: 3px 7px;
+  cursor: pointer;
+  font: inherit;
+}
+.tabs button[aria-selected='true'] { background: #ff8a1f; color: #14110d; border-color: #ff8a1f; }
+.body { padding: 8px; overflow: auto; border-top: 1px solid #ff8a1f; }
+.row { display: flex; align-items: center; gap: 6px; margin: 4px 0; flex-wrap: wrap; }
+.row label { flex: 1; min-width: 0; }
+.dim { color: #8f887a; }
+.warn { color: #ff6b5e; }
+.ok { color: #6fdc8c; }
+.h { margin: 10px 0 4px; color: #ff8a1f; font-weight: 700; }
+.btn {
+  background: #2c241a;
+  color: #e8e6e1;
+  border: 1px solid #5a4a33;
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font: inherit;
+}
+.btn:hover:not(:disabled) { border-color: #ff8a1f; }
+.btn:disabled { opacity: 0.4; cursor: default; }
+.danger { border-color: #a33; color: #ff9d94; }
+.root select, .root input[type='text'], .root input[type='number'] {
+  background: #0d0b08;
+  color: #e8e6e1;
+  border: 1px solid #5a4a33;
+  border-radius: 4px;
+  padding: 2px 5px;
+  font: inherit;
+  max-width: 100%;
+}
+.list { max-height: 150px; overflow: auto; border: 1px solid #3a3226; border-radius: 4px; padding: 2px 4px; }
+.list li { list-style: none; display: flex; gap: 6px; align-items: center; justify-content: space-between; padding: 1px 0; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 1px 10px; }
+.kv dt { color: #8f887a; }
+.kv dd { margin: 0; word-break: break-word; }
+.log { max-height: 180px; overflow: auto; white-space: pre-wrap; word-break: break-word; }
+.msg { margin-top: 6px; padding: 4px 6px; border: 1px dashed #5a4a33; border-radius: 4px; }

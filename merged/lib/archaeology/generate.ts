@@ -1,5 +1,5 @@
 import { createRng } from '../seed';
-import { CATALOG } from './catalog';
+import { CATALOG, EXTRA_PER_SITE, EXTRA_TEMPLATES } from './catalog';
 import type { Context, Find, SiteFunction, SitePhase, SiteState, SiteTruth, Square } from './types';
 
 /* ============================================================================
@@ -41,9 +41,11 @@ const SETTINGS: Record<SiteFunction, string[]> = {
   ],
 };
 
-function weightedTemplateIds(fn: SiteFunction): string[] {
+function weightedTemplateIds(fn: SiteFunction, rng: ReturnType<typeof createRng>): string[] {
   const pool: string[] = [];
+  const extra = new Set(rng.shuffle(EXTRA_TEMPLATES.map(t => t.id)).slice(0, EXTRA_PER_SITE));
   for (const t of CATALOG) {
+    if (t.id.startsWith('x-') && !extra.has(t.id)) continue;
     const affinity = t.affinity[fn] ?? 0.05;
     const weight = Math.max(1, Math.round(t.rarity * (0.4 + affinity) * 4));
     for (let i = 0; i < weight; i++) pool.push(t.id);
@@ -60,7 +62,7 @@ export function generateSite(seed: string): SiteState {
   };
   truth.setting = rng.pick(SETTINGS[truth.function]);
 
-  const pool = weightedTemplateIds(truth.function);
+  const pool = weightedTemplateIds(truth.function, rng);
   const preservationPool: Array<'poor' | 'fair' | 'good'> = ['poor', 'fair', 'fair', 'good'];
 
   const finds: Find[] = [];

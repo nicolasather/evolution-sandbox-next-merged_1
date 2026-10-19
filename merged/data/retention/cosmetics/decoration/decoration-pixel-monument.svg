@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pixel monument">
+<g data-z="0" opacity="0.4"><path d="M12 92h76"/></g>
+<g data-z="1"><path d="M40 12h20v10h-20z"/><path d="M34 22h32v10h-32z"/><path d="M28 32h44v10h-44z"/><path d="M22 42h56v12h-56z"/><path d="M16 54h68v14h-68z"/><path d="M10 68h80v16h-80z"/></g>
+<g data-z="2" opacity="0.8"><path d="M46 14h8v6h-8z"/><path d="M30 72h12v8h-12zM58 72h12v8h-12z"/><path d="M44 46h12v4h-12z"/></g>
+<g data-z="3" opacity="0.5"><path d="M24 36h6M70 36h6M20 60h8M72 60h8"/></g>
+</svg>

@@ -1,0 +1,386 @@
+[
+ {
+  "id": "stone-fracture",
+  "family": "stone",
+  "name": "Crack Web",
+  "description": "A web of cracks runs out from the centre and the shards drop away.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "stone-reassemble",
+  "family": "stone",
+  "name": "Shards Return",
+  "description": "Shards fly in from a ring and click together.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "stone-flake-strike",
+  "family": "stone",
+  "name": "Flake Strike",
+  "description": "A knapper’s strike: one clean line and curled flakes peeling off.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "stone-chalk-halo",
+  "family": "stone",
+  "name": "Chalk Halo",
+  "description": "A ring of pale dust lifts and settles.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "stone-cairn",
+  "family": "stone",
+  "name": "Little Cairn",
+  "description": "Three small stones stack one on another.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "stone-strata",
+  "family": "stone",
+  "name": "Strata",
+  "description": "Layered lines draw across, one stratum at a time.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "wood-growth-rings",
+  "family": "wood",
+  "name": "Growth Rings",
+  "description": "Uneven growth rings widen outward from the grain.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "wood-splinter-fan",
+  "family": "wood",
+  "name": "Splinter Fan",
+  "description": "Long slivers fan out in an arc.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "fibre-braid",
+  "family": "wood",
+  "name": "Braid",
+  "description": "Three strands cross and braid themselves.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "cloth-weave",
+  "family": "wood",
+  "name": "Cloth Weave",
+  "description": "Warp lines drop, then the weft passes over and under.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "leaf-unfurl",
+  "family": "wood",
+  "name": "Leaf Unfurl",
+  "description": "A stem rises and two leaves unfold.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "bone-tally",
+  "family": "wood",
+  "name": "Tally Marks",
+  "description": "Tally marks are scored one by one.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "metal-spark-shower",
+  "family": "metal",
+  "name": "Spark Shower",
+  "description": "Bright streaks arc out and fall.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "metal-ring-chime",
+  "family": "metal",
+  "name": "Ring Chime",
+  "description": "A ring expands while a glint travels round it.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "forge-glow-line",
+  "family": "metal",
+  "name": "Forge Line",
+  "description": "A heated line scans across and leaves embers.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "gear-mesh",
+  "family": "metal",
+  "name": "Gear Mesh",
+  "description": "Two small gears turn against each other.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "anvil-strike",
+  "family": "metal",
+  "name": "Anvil Strike",
+  "description": "Three hard strikes fan out in hatch lines.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "bolt-tighten",
+  "family": "metal",
+  "name": "Tightening",
+  "description": "A hexagon turns and tightens down.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "soot-plume",
+  "family": "earth",
+  "name": "Soot Plume",
+  "description": "A dark curl of soot lifts and twists away.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "kiln-glow",
+  "family": "earth",
+  "name": "Kiln Arch",
+  "description": "An arch of heat lines glows and fades.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "clay-wheel",
+  "family": "earth",
+  "name": "Potter’s Wheel",
+  "description": "A vessel profile rises ring by ring.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "dust-settle",
+  "family": "earth",
+  "name": "Dust Settles",
+  "description": "Fine dust drifts down in a column.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "brick-course",
+  "family": "earth",
+  "name": "Brick Course",
+  "description": "Bricks lay themselves in a staggered course.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "ash-drift",
+  "family": "earth",
+  "name": "Ash Drift",
+  "description": "Ash flakes slip sideways on a breath of wind.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "glass-caustic",
+  "family": "glass",
+  "name": "Caustic Lines",
+  "description": "A shimmering net of light lines ripples across.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "prism-split",
+  "family": "glass",
+  "name": "Prism Split",
+  "description": "A ray enters a prism and leaves as a fan.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "glass-reform",
+  "family": "glass",
+  "name": "Shatter and Reform",
+  "description": "Shards burst out, turn and close into a ring.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "lens-focus",
+  "family": "glass",
+  "name": "Lens Focus",
+  "description": "Rays converge on a bright point.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "frost-bloom",
+  "family": "glass",
+  "name": "Frost Bloom",
+  "description": "Frost crystals branch out.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "bubble-rise",
+  "family": "glass",
+  "name": "Blown Bubbles",
+  "description": "Bubbles of growing size rise and thin.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "ripple-trio",
+  "family": "liquid",
+  "name": "Three Drops",
+  "description": "Three drops, three ripples, one after another.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "pour-arc",
+  "family": "liquid",
+  "name": "Pour",
+  "description": "A stream arcs down and spreads in a pool.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "wave-lines",
+  "family": "liquid",
+  "name": "Wave Lines",
+  "description": "Wave lines sweep across out of step.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "droplet-crown",
+  "family": "liquid",
+  "name": "Droplet Crown",
+  "description": "A splash lifts into a crown of drops.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "eddy-swirl",
+  "family": "liquid",
+  "name": "Eddy",
+  "description": "A spiral draws in toward the centre.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "rain-curtain",
+  "family": "liquid",
+  "name": "Rain Curtain",
+  "description": "A short curtain of rain with ripples below.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "ember-rise",
+  "family": "fire",
+  "name": "Embers Rise",
+  "description": "Embers climb, flickering.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "flame-tongue",
+  "family": "fire",
+  "name": "Flame Tongue",
+  "description": "A flame outline flickers and steadies.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "spark-arc",
+  "family": "fire",
+  "name": "Arc",
+  "description": "A jittering arc leaps between two points.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "coil-field",
+  "family": "fire",
+  "name": "Field Loops",
+  "description": "Loops of field lines circle a core.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "heat-shimmer",
+  "family": "fire",
+  "name": "Heat Shimmer",
+  "description": "Wavering lines of heat rise.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "smoke-curl",
+  "family": "fire",
+  "name": "Smoke Curl",
+  "description": "A thin smoke thread curls into a loop.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "ink-trail",
+  "family": "signal",
+  "name": "Ink Trail",
+  "description": "A flourish of ink writes itself across.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "computational-tracers",
+  "family": "signal",
+  "name": "Tracers",
+  "description": "Pixel tracers run along right-angled circuit paths.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "pulse-packets",
+  "family": "signal",
+  "name": "Packets",
+  "description": "Rings pulse and send small packets outward.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "constellation-link",
+  "family": "signal",
+  "name": "Constellation",
+  "description": "Points appear and join into a figure.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "thought-orbit",
+  "family": "signal",
+  "name": "Thought Orbit",
+  "description": "Small thoughts orbit once and rise.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ },
+ {
+  "id": "binary-rain",
+  "family": "signal",
+  "name": "Binary Rain",
+  "description": "Ones and zeros fall in thin columns.",
+  "cosmeticOnly": true,
+  "purpose": "success-only visual finishing, independent of gameplay outcome"
+ }
+]

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Mini globe">
+<g data-z="0" opacity="0.4"><path d="M30 92h40"/></g>
+<g data-z="1"><path d="M50 12a32 32 0 1 0 0.1 0z"/><path d="M50 76V86"/><path d="M34 88h32"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 12c-14 10 -14 54 0 64c14 -10 14 -54 0 -64z"/><path d="M18 44h64"/><path d="M22 28q28 10 56 0M22 60q28 -10 56 0"/></g>
+<g data-z="3" opacity="0.5"><path d="M82 22l4 -8M16 70l-6 4"/></g>
+</svg>

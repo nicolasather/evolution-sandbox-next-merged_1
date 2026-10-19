@@ -12,6 +12,7 @@ import { GuideHint, GuideScope, useGuideController } from '@/components/guide/Gu
 import { DECIPHER_MODE, DEC_TARGET, decipherGuide } from '@/lib/guide/decipher';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
+import { freshSeed } from '@/lib/dev/seed';
 
 /* ============================================================================
    DECIPHER — "Read the Lost". A fourth, genuinely different interaction
@@ -57,7 +58,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
     decipherStore.load();
     const saved = decipherStore.get();
     if (saved.activePuzzle && saved.activeAttempt) return { puzzle: saved.activePuzzle, attempt: saved.activeAttempt };
-    const puzzle = saved.tutorialCompleted ? generatePuzzle(`dec-${Date.now()}`) : generateTutorial();
+    const puzzle = saved.tutorialCompleted ? generatePuzzle(freshSeed('dec')) : generateTutorial();
     return { puzzle, attempt: blankAttempt(puzzle) };
   });
   const [checkResult, setCheckResult] = useState<CheckResult | null>(null);
@@ -98,7 +99,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
   };
 
   const startNew = () => {
-    const puzzle = generatePuzzle(`dec-${Date.now()}`);
+    const puzzle = generatePuzzle(freshSeed('dec'));
     const attempt = blankAttempt(puzzle);
     setGame({ puzzle, attempt });
     setCheckResult(null);

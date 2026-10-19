@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Map pin">
+<g data-z="0" opacity=".45"><ellipse cx="50" cy="84" rx="22" ry="5"/><path d="M36 84h28" /><path d="M24 20l12 -4l14 6l14 -6l12 4v34l-12 -4l-14 6l-14 -6l-12 4z" opacity=".5"/><path data-extra="1" d="M20 60l5 -2M76 62l5 2M32 30l4 -4M32 35l4 -4M32 40l4 -4M60 50l-4 4M60 55l-4 4M38 86l24 0M50 70l0 8"/></g>
+<g data-z="1"><path d="M50 78c-14 -16 -22 -26 -22 -38c0 -12 10 -22 22 -22s22 10 22 22c0 12 -8 22 -22 38z"/></g>
+<g data-z="2"><circle cx="50" cy="40" r="9"/><circle cx="50" cy="40" r="3"/><path d="M80 16l2 5l5 2l-5 2l-2 5l-2 -5l-5 -2l5 -2z"/></g>
+</svg>

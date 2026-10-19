@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Telegraph poles">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M20 90V24"/><path d="M52 90V30"/><path d="M84 90V22"/><path d="M12 30h16M44 36h16M76 28h16"/></g>
+<g data-z="2" opacity="0.8"><path d="M20 30C34 44 40 44 52 36"/><path d="M52 36C66 48 74 46 84 28"/><path d="M20 38C34 52 40 50 52 44"/><path d="M52 44C66 56 74 54 84 36"/></g>
+<g data-z="3" opacity="0.5"><path d="M64 14v0M30 12v0M90 54v0M8 56v0"/></g>
+</svg>

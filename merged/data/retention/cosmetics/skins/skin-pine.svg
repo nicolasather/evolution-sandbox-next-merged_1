@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pine">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 28h92M4 56h92M4 82h92"/></g>
+<g data-z="2" opacity="0.8"><path d="M30 42a10 8 0 1 0 0.1 0z"/><path d="M30 42a5 4 0 1 0 0.1 0z"/><path d="M72 70a8 6 0 1 0 0.1 0z"/><path d="M72 70a4 3 0 1 0 0.1 0z"/></g>
+<g data-z="3" opacity="0.5"><path d="M6 14h20M42 14h46M50 36h30M8 44h26M52 62h36M10 70h30M44 90h44"/></g>
+</svg>

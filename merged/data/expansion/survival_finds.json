@@ -1,0 +1,1057 @@
+[
+ {
+  "id": "exp26_seasoned_construction_timber",
+  "n": "Seasoned Construction Timber",
+  "l1": "a foundational preparation/toolkit for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_timber_peg",
+  "n": "Timber Peg",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_pegged_butt_joint",
+  "n": "Pegged Butt Joint",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_pegged_frame_joint",
+  "n": "Pegged Frame Joint",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_pegged_timber_truss",
+  "n": "Pegged Timber Truss",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_mortise_cut",
+  "n": "Mortise Cut",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_mortise_and_tenon_joint",
+  "n": "Mortise And Tenon Joint",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_drawbored_tenon",
+  "n": "Drawbored Tenon",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_wedged_tenon_frame",
+  "n": "Wedged Tenon Frame",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_wooden_dowel",
+  "n": "Wooden Dowel",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_cross_dowel_joint",
+  "n": "Cross Dowel Joint",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_knockdown_dowel_assembly",
+  "n": "Knockdown Dowel Assembly",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_demountable_timber_frame",
+  "n": "Demountable Timber Frame",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_lapped_beam",
+  "n": "Lapped Beam",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_half_lap_joint",
+  "n": "Half Lap Joint",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_scarf_joined_beam",
+  "n": "Scarf Joined Beam",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_long_span_scarf_beam",
+  "n": "Long Span Scarf Beam",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_shaped_rafter",
+  "n": "Shaped Rafter",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_rafter_pair",
+  "n": "Rafter Pair",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_collar_tie_roof",
+  "n": "Collar Tie Roof",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_king_post_roof_truss",
+  "n": "King Post Roof Truss",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_split_wooden_plank",
+  "n": "Split Wooden Plank",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_edge_joined_board",
+  "n": "Edge Joined Board",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_planked_wall_panel",
+  "n": "Planked Wall Panel",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_weatherboard_cladding",
+  "n": "Weatherboard Cladding",
+  "l1": "a design or component for joining and supporting wooden structural members."
+ },
+ {
+  "id": "exp26_prepared_plant_bast",
+  "n": "Prepared Plant Bast",
+  "l1": "a foundational preparation/toolkit for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_twisted_bast_strand",
+  "n": "Twisted Bast Strand",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_two_ply_cord",
+  "n": "Two Ply Cord",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_three_ply_cord",
+  "n": "Three Ply Cord",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_hawser_laid_rope",
+  "n": "Hawser Laid Rope",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_braided_plant_cord",
+  "n": "Braided Plant Cord",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_flat_plaited_cord",
+  "n": "Flat Plaited Cord",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_round_braided_cord",
+  "n": "Round Braided Cord",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_eight_strand_braid",
+  "n": "Eight Strand Braid",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_fiber_fishing_line",
+  "n": "Fiber Fishing Line",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_twined_fishing_leader",
+  "n": "Twined Fishing Leader",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_knotted_net_cord",
+  "n": "Knotted Net Cord",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_net_repair_cord",
+  "n": "Net Repair Cord",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_plant_binding_strip",
+  "n": "Plant Binding Strip",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_wrapped_lash",
+  "n": "Wrapped Lash",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_cross_lash",
+  "n": "Cross Lash",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_diagonal_lash",
+  "n": "Diagonal Lash",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_fiber_carry_loop",
+  "n": "Fiber Carry Loop",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_simple_sling",
+  "n": "Simple Sling",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_woven_carry_strap",
+  "n": "Woven Carry Strap",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_adjustable_carry_strap",
+  "n": "Adjustable Carry Strap",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_cord_net_mesh",
+  "n": "Cord Net Mesh",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_knotted_fishing_mesh",
+  "n": "Knotted Fishing Mesh",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_square_net_panel",
+  "n": "Square Net Panel",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_large_seine_net",
+  "n": "Large Seine Net",
+  "l1": "a design or component for twisting, tying or carrying tensile loads with fibres."
+ },
+ {
+  "id": "exp26_prepared_natural_pigment",
+  "n": "Prepared Natural Pigment",
+  "l1": "a foundational preparation/toolkit for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_ground_red_ochre",
+  "n": "Ground Red Ochre",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_ochre_paint_paste",
+  "n": "Ochre Paint Paste",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_ochre_wash",
+  "n": "Ochre Wash",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_ochre_wall_painting",
+  "n": "Ochre Wall Painting",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_charcoal_black_pigment",
+  "n": "Charcoal Black Pigment",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_carbon_ink_paste",
+  "n": "Carbon Ink Paste",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_carbon_drawing_ink",
+  "n": "Carbon Drawing Ink",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_water_resistant_carbon_ink",
+  "n": "Water Resistant Carbon Ink",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_plant_yellow_dye",
+  "n": "Plant Yellow Dye",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_concentrated_yellow_bath",
+  "n": "Concentrated Yellow Bath",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_yellow_dyed_thread",
+  "n": "Yellow Dyed Thread",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_pattern_dyed_textile",
+  "n": "Pattern Dyed Textile",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_indigo_leaf_paste",
+  "n": "Indigo Leaf Paste",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_reduced_indigo_vat",
+  "n": "Reduced Indigo Vat",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_indigo_dyed_yarn",
+  "n": "Indigo Dyed Yarn",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_indigo_resist_cloth",
+  "n": "Indigo Resist Cloth",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_iron_tannin_ink",
+  "n": "Iron Tannin Ink",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_filtered_iron_gall_ink",
+  "n": "Filtered Iron Gall Ink",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_thickened_writing_ink",
+  "n": "Thickened Writing Ink",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_bound_ink_recipe",
+  "n": "Bound Ink Recipe",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_egg_tempera_medium",
+  "n": "Egg Tempera Medium",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_tempera_paint",
+  "n": "Tempera Paint",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_layered_tempera_panel",
+  "n": "Layered Tempera Panel",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_gilded_tempera_panel",
+  "n": "Gilded Tempera Panel",
+  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+ },
+ {
+  "id": "exp26_prepared_animal_hide",
+  "n": "Prepared Animal Hide",
+  "l1": "a foundational preparation/toolkit for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_scraped_hide",
+  "n": "Scraped Hide",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_softened_hide",
+  "n": "Softened Hide",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_oiled_hide",
+  "n": "Oiled Hide",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_supple_garment_leather",
+  "n": "Supple Garment Leather",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_cut_leather_strip",
+  "n": "Cut Leather Strip",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_leather_lace",
+  "n": "Leather Lace",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_stitched_leather_seam",
+  "n": "Stitched Leather Seam",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_reinforced_leather_seam",
+  "n": "Reinforced Leather Seam",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_leather_pouch",
+  "n": "Leather Pouch",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_drawstring_pouch",
+  "n": "Drawstring Pouch",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_flap_closure_pouch",
+  "n": "Flap Closure Pouch",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_belt_mounted_pouch",
+  "n": "Belt Mounted Pouch",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_rawhide_sheet",
+  "n": "Rawhide Sheet",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_rawhide_binding",
+  "n": "Rawhide Binding",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_rawhide_shield_cover",
+  "n": "Rawhide Shield Cover",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_layered_rawhide_shield",
+  "n": "Layered Rawhide Shield",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_leather_sole_blank",
+  "n": "Leather Sole Blank",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_stitched_sandal_sole",
+  "n": "Stitched Sandal Sole",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_multi_layer_sandal",
+  "n": "Multi Layer Sandal",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_sewn_leather_shoe",
+  "n": "Sewn Leather Shoe",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_leather_water_bag",
+  "n": "Leather Water Bag",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_pitch_sealed_water_bag",
+  "n": "Pitch Sealed Water Bag",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_stitched_water_skin",
+  "n": "Stitched Water Skin",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_carried_water_skin",
+  "n": "Carried Water Skin",
+  "l1": "a design or component for processing hide into useful flexible goods."
+ },
+ {
+  "id": "exp26_food_drying_rack",
+  "n": "Food Drying Rack",
+  "l1": "a foundational preparation/toolkit for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_sun_dried_fruit",
+  "n": "Sun Dried Fruit",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_layered_fruit_leather",
+  "n": "Layered Fruit Leather",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_rolled_fruit_leather",
+  "n": "Rolled Fruit Leather",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_sealed_fruit_leather",
+  "n": "Sealed Fruit Leather",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_air_dried_herbs",
+  "n": "Air Dried Herbs",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_bundled_dry_herbs",
+  "n": "Bundled Dry Herbs",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_powdered_dried_herbs",
+  "n": "Powdered Dried Herbs",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_stored_herb_sachet",
+  "n": "Stored Herb Sachet",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_dried_fish_fillet",
+  "n": "Dried Fish Fillet",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_salt_cured_fish",
+  "n": "Salt Cured Fish",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_smoked_salt_fish",
+  "n": "Smoked Salt Fish",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_sealed_dried_fish_pack",
+  "n": "Sealed Dried Fish Pack",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_dried_meat_strips",
+  "n": "Dried Meat Strips",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_smoke_dried_meat",
+  "n": "Smoke Dried Meat",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_pressed_dried_meat",
+  "n": "Pressed Dried Meat",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_toasted_grain",
+  "n": "Toasted Grain",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_parched_grain_meal",
+  "n": "Parched Grain Meal",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_ground_parched_meal",
+  "n": "Ground Parched Meal",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_instant_grain_mix",
+  "n": "Instant Grain Mix",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_sun_dried_vegetables",
+  "n": "Sun Dried Vegetables",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_blanched_dried_vegetables",
+  "n": "Blanched Dried Vegetables",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_dehydrated_vegetable_flakes",
+  "n": "Dehydrated Vegetable Flakes",
+  "l1": "a design or component for removing moisture from food to help preservation."
+ },
+ {
+  "id": "exp26_portable_cooking_hearth",
+  "n": "Portable Cooking Hearth",
+  "l1": "a foundational preparation/toolkit for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_clay_griddle",
+  "n": "Clay Griddle",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_flat_baking_griddle",
+  "n": "Flat Baking Griddle",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_handled_baking_griddle",
+  "n": "Handled Baking Griddle",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_multi_zone_cooktop",
+  "n": "Multi Zone Cooktop",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_cooking_spit",
+  "n": "Cooking Spit",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_rotating_cooking_spit",
+  "n": "Rotating Cooking Spit",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_geared_roasting_spit",
+  "n": "Geared Roasting Spit",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_cooking_pot_stand",
+  "n": "Cooking Pot Stand",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_three_leg_pot_stand",
+  "n": "Three Leg Pot Stand",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_adjustable_pot_trivet",
+  "n": "Adjustable Pot Trivet",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_folding_pot_stand",
+  "n": "Folding Pot Stand",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_lidded_stew_pot",
+  "n": "Lidded Stew Pot",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_sealed_slow_cooker_pot",
+  "n": "Sealed Slow Cooker Pot",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_insulated_cooking_pot",
+  "n": "Insulated Cooking Pot",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_thermal_retention_cooker",
+  "n": "Thermal Retention Cooker",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_grain_grinding_set",
+  "n": "Grain Grinding Set",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_rotary_hand_mill",
+  "n": "Rotary Hand Mill",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_geared_grain_mill",
+  "n": "Geared Grain Mill",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_fireplace_hood",
+  "n": "Fireplace Hood",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_smoke_flue_hood",
+  "n": "Smoke Flue Hood",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_ventilated_chimney_hood",
+  "n": "Ventilated Chimney Hood",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_forced_draft_kitchen_hood",
+  "n": "Forced Draft Kitchen Hood",
+  "l1": "a design or component for controlling heat and holding food during preparation."
+ },
+ {
+  "id": "exp26_carved_watercraft_hull",
+  "n": "Carved Watercraft Hull",
+  "l1": "a foundational preparation/toolkit for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_dugout_canoe_hull",
+  "n": "Dugout Canoe Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_outrigger_canoe_hull",
+  "n": "Outrigger Canoe Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_double_outrigger_canoe",
+  "n": "Double Outrigger Canoe",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_decked_outrigger_canoe",
+  "n": "Decked Outrigger Canoe",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_planked_boat_hull",
+  "n": "Planked Boat Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_clinker_built_hull",
+  "n": "Clinker Built Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_carvel_built_hull",
+  "n": "Carvel Built Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_frame_first_ship_hull",
+  "n": "Frame First Ship Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_flat_bottom_skiff",
+  "n": "Flat Bottom Skiff",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_punt_boat",
+  "n": "Punt Boat",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_canal_barge",
+  "n": "Canal Barge",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_motorized_canal_barge",
+  "n": "Motorized Canal Barge",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_skin_covered_frame",
+  "n": "Skin Covered Frame",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_skin_boat",
+  "n": "Skin Boat",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_decked_skin_boat",
+  "n": "Decked Skin Boat",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_sealed_kayak_hull",
+  "n": "Sealed Kayak Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_reed_bundle_hull",
+  "n": "Reed Bundle Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_reed_bundle_canoe",
+  "n": "Reed Bundle Canoe",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_large_reed_boat",
+  "n": "Large Reed Boat",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_rigged_reed_watercraft",
+  "n": "Rigged Reed Watercraft",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_wooden_keel_timber",
+  "n": "Wooden Keel Timber",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_keel_and_stem_assembly",
+  "n": "Keel And Stem Assembly",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_keelson_reinforced_hull",
+  "n": "Keelson Reinforced Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "exp26_ballasted_keel_hull",
+  "n": "Ballasted Keel Hull",
+  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+ },
+ {
+  "id": "anc27_wattle_and_daub_hut",
+  "n": "Wattle And Daub Hut",
+  "l1": "Wattle And Daub Hut is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_rammed_earth_house",
+  "n": "Rammed Earth House",
+  "l1": "Rammed Earth House is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_mud_brick_courtyard_house",
+  "n": "Mud Brick Courtyard House",
+  "l1": "Mud Brick Courtyard House is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_reed_mat_roundhouse",
+  "n": "Reed Mat Roundhouse",
+  "l1": "Reed Mat Roundhouse is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_timber_post_longhouse",
+  "n": "Timber Post Longhouse",
+  "l1": "Timber Post Longhouse is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_stone_built_longhouse",
+  "n": "Stone Built Longhouse",
+  "l1": "Stone Built Longhouse is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_plastered_floor_room",
+  "n": "Plastered Floor Room",
+  "l1": "Plastered Floor Room is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_plaster_hearth_alcove",
+  "n": "Plaster Hearth Alcove",
+  "l1": "Plaster Hearth Alcove is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_roof_smoke_vent",
+  "n": "Roof Smoke Vent",
+  "l1": "Roof Smoke Vent is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_house_grain_loft",
+  "n": "House Grain Loft",
+  "l1": "House Grain Loft is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_storage_niche_wall",
+  "n": "Storage Niche Wall",
+  "l1": "Storage Niche Wall is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_domestic_pottery_shelf",
+  "n": "Domestic Pottery Shelf",
+  "l1": "Domestic Pottery Shelf is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_hearth_wind_screen",
+  "n": "Hearth Wind Screen",
+  "l1": "Hearth Wind Screen is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_earthen_floor_drain",
+  "n": "Earthen Floor Drain",
+  "l1": "Earthen Floor Drain is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_interlocking_timber_house",
+  "n": "Interlocking Timber House",
+  "l1": "Interlocking Timber House is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_raised_stilt_house",
+  "n": "Raised Stilt House",
+  "l1": "Raised Stilt House is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_crannog_lake_dwelling",
+  "n": "Crannog Lake Dwelling",
+  "l1": "Crannog Lake Dwelling is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_cliff_shelter_house",
+  "n": "Cliff Shelter House",
+  "l1": "Cliff Shelter House is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_underground_pit_house",
+  "n": "Underground Pit House",
+  "l1": "Underground Pit House is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_communal_longhouse",
+  "n": "Communal Longhouse",
+  "l1": "Communal Longhouse is an ancient-world subject for studying durable dwellings and residential layouts. It illustrates how communities could develop stable villages and family-scale production."
+ },
+ {
+  "id": "anc27_papyrus_reed_raft",
+  "n": "Papyrus Reed Raft",
+  "l1": "Papyrus Reed Raft is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_pitch_sealed_hull_seam",
+  "n": "Pitch-Sealed Hull Seam",
+  "l1": "Waterproof joint between fitted hull planks."
+ },
+ {
+  "id": "anc27_fire_hollowed_canoe_blank",
+  "n": "Fire-Hollowed Canoe Blank",
+  "l1": "A log hollowed partly by controlled charring before final canoe finishing."
+ },
+ {
+  "id": "anc27_twin_hull_river_raft",
+  "n": "Twin Hull River Raft",
+  "l1": "Twin Hull River Raft is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_sewn_plank_riverboat",
+  "n": "Sewn Plank Riverboat",
+  "l1": "Sewn Plank Riverboat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_mortise_tenon_riverboat",
+  "n": "Mortise Tenon Riverboat",
+  "l1": "Mortise Tenon Riverboat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_nile_cargo_barge",
+  "n": "Nile Cargo Barge",
+  "l1": "Nile Cargo Barge is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_river_towboat",
+  "n": "River Towboat",
+  "l1": "River Towboat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_pole_propelled_flatboat",
+  "n": "Pole Propelled Flatboat",
+  "l1": "Pole Propelled Flatboat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_river_ferry_platform",
+  "n": "River Ferry Platform",
+  "l1": "River Ferry Platform is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_paddle_propelled_canoe",
+  "n": "Paddle Propelled Canoe",
+  "l1": "Paddle Propelled Canoe is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_river_trading_scow",
+  "n": "River Trading Scow",
+  "l1": "River Trading Scow is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_reed_bundle_coracle",
+  "n": "Reed Bundle Coracle",
+  "l1": "Reed Bundle Coracle is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_basket_framed_coracle",
+  "n": "Basket Framed Coracle",
+  "l1": "Basket Framed Coracle is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_hide_covered_riverboat",
+  "n": "Hide Covered Riverboat",
+  "l1": "Hide Covered Riverboat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_shallow_draft_cargo_boat",
+  "n": "Shallow Draft Cargo Boat",
+  "l1": "Shallow Draft Cargo Boat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_canal_freight_barge",
+  "n": "Canal Freight Barge",
+  "l1": "Canal Freight Barge is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_double_ended_riverboat",
+  "n": "Double Ended Riverboat",
+  "l1": "Double Ended Riverboat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_river_fish_transport_boat",
+  "n": "River Fish Transport Boat",
+  "l1": "River Fish Transport Boat is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "anc27_river_crossing_ferry",
+  "n": "River Crossing Ferry",
+  "l1": "River Crossing Ferry is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ }
+]

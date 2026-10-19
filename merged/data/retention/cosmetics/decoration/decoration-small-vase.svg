@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Small vase">
+<g data-z="0" opacity="0.4"><path d="M14 90h72M22 94h56"/></g>
+<g data-z="1"><path d="M40 20h20M42 20c-2 8 -2 12 -6 18c-10 8 -14 18 -10 30c3 10 12 16 24 16s21 -6 24 -16c4 -12 0 -22 -10 -30c-4 -6 -4 -10 -6 -18"/></g>
+<g data-z="2" opacity="0.75"><path d="M30 52c12 6 28 6 40 0M28 64c14 6 30 6 44 0"/><path d="M40 34c2 6 -2 10 -4 14"/></g>
+</svg>

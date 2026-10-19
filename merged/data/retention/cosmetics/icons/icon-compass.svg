@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Compass">
+<g data-z="0" opacity="0.4"><path d="M50 6v8M50 86v8M6 50h8M86 50h8"/></g>
+<g data-z="1"><path d="M50 14a36 36 0 1 0 0.1 0z"/><path d="M50 22a28 28 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.85"><path d="M50 28L58 50L50 72L42 50z"/><path d="M50 28L50 50"/><path d="M42 50H58"/><path d="M50 50a3 3 0 1 0 0.1 0z"/></g>
+</svg>

@@ -1,3 +1,4 @@
+import { isLightTheme } from '@/lib/theme';
 import { play } from './audio';
 import type { BurstOpts, FxApi, Palette, SoundId } from './types';
 
@@ -15,10 +16,20 @@ interface Particle {
 interface Ring { x: number; y: number; r0: number; r1: number; life: number; max: number; color: string; width: number }
 
 const MAX_PARTICLES = 420;
+const MAX_SPRITES = 160;
+
+/** A vector sprite that draws itself on the shared canvas (retention layer). Purely cosmetic; `k` runs 0 → 1. */
+export interface Sprite {
+  life: number; max: number;
+  /** Body uid this belongs to, so a new grab can cut it short. 0 = free. */
+  owner: number;
+  draw(g: CanvasRenderingContext2D, k: number, pal: Palette): void;
+}
 
 export class Fx implements FxApi {
   private parts: Particle[] = [];
   private rings: Ring[] = [];
+  private sprites: Sprite[] = [];
   shakeAmt = 0;
   flashAmt = 0;
   shakeX = 0;
@@ -29,7 +40,7 @@ export class Fx implements FxApi {
 
   constructor(pal: Palette) { this.pal = pal; }
 
-  get alive() { return this.parts.length > 0 || this.rings.length > 0 || this.shakeAmt > 0.05 || this.flashAmt > 0.02; }
+  get alive() { return this.parts.length > 0 || this.rings.length > 0 || this.sprites.length > 0 || this.shakeAmt > 0.05 || this.flashAmt > 0.02; }
 
   private col(c: BurstOpts['color']): string {
     if (!c) return this.pal.bone;
@@ -96,6 +107,20 @@ export class Fx implements FxApi {
     }
   }
 
+  /** Add a self-drawing vector sprite. Dropped silently under reduced motion or when the pool is full. */
+  addSprite(max: number, draw: Sprite['draw'], owner = 0) {
+    if (this.reduced || this.sprites.length >= MAX_SPRITES) return;
+    this.sprites.push({ life: 0, max: Math.max(0.05, max), owner, draw });
+  }
+
+  /** Cut short everything a body was doing (a new grab interrupts its effects at once). */
+  clearSprites(owner?: number) {
+    if (owner === undefined) { this.sprites.length = 0; return; }
+    this.sprites = this.sprites.filter(s => s.owner !== owner);
+  }
+
+  get spriteCount() { return this.sprites.length; }
+
   shake(amount: number) { this.shakeAmt = Math.min(9, Math.max(this.shakeAmt, amount)); }
   flash(amount: number) { this.flashAmt = Math.min(1, Math.max(this.flashAmt, amount)); }
   sound(id: SoundId, o?: { vol?: number; rate?: number; pan?: number }) { play(id, o); }
@@ -110,6 +135,11 @@ export class Fx implements FxApi {
       const k = Math.exp(-p.drag * dt);
       p.vx *= k; p.vy = p.vy * k + p.gravity * dt;
       p.x += p.vx * dt; p.y += p.vy * dt;
+    }
+    const sp = this.sprites;
+    for (let i = sp.length - 1; i >= 0; i--) {
+      sp[i].life += dt;
+      if (sp[i].life >= sp[i].max) { sp[i] = sp[sp.length - 1]; sp.pop(); }
     }
     const rs = this.rings;
     for (let i = rs.length - 1; i >= 0; i--) {
@@ -134,6 +164,12 @@ export class Fx implements FxApi {
       g.beginPath();
       g.arc(r.x, r.y, r.r0 + (r.r1 - r.r0) * e, 0, Math.PI * 2);
       g.stroke();
+    }
+    for (const s of this.sprites) {
+      g.save();
+      g.lineCap = 'round'; g.lineJoin = 'round';
+      s.draw(g, Math.min(1, s.life / s.max), this.pal);
+      g.restore();
     }
     for (const p of this.parts) {
       const k = p.life / p.max;
@@ -164,14 +200,14 @@ export class Fx implements FxApi {
     g.globalAlpha = 1;
   }
 
-  clear() { this.parts.length = 0; this.rings.length = 0; this.shakeAmt = 0; this.flashAmt = 0; }
+  clear() { this.parts.length = 0; this.rings.length = 0; this.sprites.length = 0; this.shakeAmt = 0; this.flashAmt = 0; }
 }
 
 /** Resolve the design system's colours for canvas drawing, in whichever theme is live. */
 export function readPalette(): Palette {
   const cs = getComputedStyle(document.documentElement);
   const v = (name: string, fb: string) => cs.getPropertyValue(name).trim() || fb;
-  const light = document.documentElement.dataset.theme === 'light';
+  const light = isLightTheme(document.documentElement.dataset.theme);
   return {
     bone: v('--bone', '#e9e5dd'),
     bone2: v('--bone-2', '#a6a199'),

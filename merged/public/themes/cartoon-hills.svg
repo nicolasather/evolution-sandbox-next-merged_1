@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <!-- Cartoon theme hills: original drawing. One contour colour (#3b2142), one weight, flat fills. -->
+  <g stroke="#3b2142" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- back hills -->
+    <path d="M-20 712C120 640 260 626 420 650S700 708 860 676 1180 600 1360 622 1560 664 1640 650V920H-20Z" fill="#b9e47f"/>
+    <!-- middle hill -->
+    <path d="M-20 780C160 726 360 716 560 744S900 800 1100 770 1460 706 1640 724V920H-20Z" fill="#8fd14f"/>
+    <!-- front hill, left -->
+    <path d="M-20 820C140 772 330 772 520 808S760 900 760 900H-20Z" fill="#6fba3e"/>
+    <!-- front hill, right -->
+    <path d="M900 900C980 840 1160 806 1340 812S1600 846 1640 836V920H900Z" fill="#7cc246"/>
+  </g>
+  <!-- selective shaped highlights on the hill tops -->
+  <g fill="none" stroke="#e4f7b8" stroke-width="7" stroke-linecap="round">
+    <path d="M170 670c70-22 140-28 210-22"/>
+    <path d="M1240 628c50-6 100-4 150 6"/>
+    <path d="M420 742c60 2 110 10 160 20"/>
+    <path d="M90 812c60-16 120-20 180-18"/>
+  </g>
+</svg>

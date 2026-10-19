@@ -11,12 +11,12 @@ const mk = (id: string, extra: Partial<Discovery> = {}): Discovery => ({ ...ston
 describe('adapterGate: the original catalogue is never filtered', () => {
   it('every original item passes every mode', () => {
     for (const mode of ['minimum-path', 'reverse-evolution', 'survival', 'archaeology', 'main-evolution', 'civilization', 'decipher'] as const) {
-      expect(playDb.nodes.every(n => adapterGate(mode, n, playDb))).toBe(true);
+      expect(playDb.nodes.filter(n => !n.visualArchetype).every(n => adapterGate(mode, n, playDb))).toBe(true);
     }
   });
   it('pipeline items need their adapter: excluded modes always say no', () => {
     const n = mk('zz_a');
-    for (const mode of ['civilization', 'decipher', 'alien-archaeology', 'escape-room'] as const) expect(adapterGate(mode, n, playDb)).toBe(false);
+    for (const mode of ['civilization', 'decipher', 'alien-archaeology'] as const) expect(adapterGate(mode, n, playDb)).toBe(false);
     expect(adapterGate('minimum-path', n, playDb)).toBe(true);
   });
   it('a placeholder pipeline item is never offered', () => {

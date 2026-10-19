@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Companion at rest — settled facets">
+<g data-z="0" opacity=".4"><path d="M24 92h52M30 95h40M26 60l-3 4M27 68l-3 4M28 76l-3 4"/></g>
+<g data-z="1"><path d="M32 40l6 -16h24l6 16z"/><path d="M30 44l-4 36l10 6h28l10 -6l-4 -36z"/><path d="M30 86h10v5h-10zM60 86h10v5h-10z"/></g>
+<g data-z="2"><path d="M36 58l6 -5l6 5l-6 5z"/><path d="M52 58l6 -5l6 5l-6 5z"/><path d="M40 58h4M56 58h4" opacity=".7"/><path d="M42 30h16M45 34h10" opacity=".6"/></g>
+<g data-z="3" opacity=".65"><path d="M32 72h36M34 77h32" stroke-dasharray="3 2"/><path d="M50 44v7M50 63v6"/><path d="M62 70l4 6l-3 7" stroke-width="1"/></g>
+<g data-z="4" opacity=".4"><path d="M31 48l-1 8M32 56l-1 8M69 48l1 8M68 56l1 8M36 24l-2 8M64 24l2 8" stroke-width=".8"/></g>
+</svg>

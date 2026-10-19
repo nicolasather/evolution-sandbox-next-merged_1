@@ -27,6 +27,8 @@ export function Cursor() {
     const fine = window.matchMedia?.('(hover: hover) and (pointer: fine)').matches;
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     if (!fine || reduced) return;
+    // Quiz Studio is a form-heavy page that keeps the real mouse pointer (see app/quiz/quiz.css)
+    if (window.location.pathname.startsWith('/quiz')) return;
 
     const el = ref.current;
     if (!el) return;

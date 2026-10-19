@@ -1,649 +1,2485 @@
 {
-  "_note": "Every URL in this file was fetched and confirmed to resolve on 2026-09-11. scope 'topic' means the page is about the entry's subject or its field; scope 'general' means a homepage, portal, collection search or index list, which is kept as background reading but never counts as evidence for a specific entry. An entry whose sources are all general carries the literal string 'source_required' instead of an invented citation. Earlier rejections, kept for the record: si.edu/spotlight/history-of-flight and britannica.com/topic/origins-of-agriculture returned 404 on 2026-09-09.",
-  "tiers": {
-    "S": "Primary institutional and peer-reviewed: national museums, university institutes, scientific and engineering societies, the Nobel Foundation, peer-reviewed journals.",
-    "A": "Major data, standards and public bodies, and primary announcements: Our World in Data, Internet Society, UN family (UNESCO, WHO), NASA, GPS.gov, publisher and company statements.",
-    "B": "Established reference and educational publishers."
+ "_note": "Every URL in this file was fetched and confirmed to resolve on 2026-09-11. scope 'topic' means the page is about the entry's subject or its field; scope 'general' means a homepage, portal, collection search or index list, which is kept as background reading but never counts as evidence for a specific entry. An entry whose sources are all general carries the literal string 'source_required' instead of an invented citation. Earlier rejections, kept for the record: si.edu/spotlight/history-of-flight and britannica.com/topic/origins-of-agriculture returned 404 on 2026-09-09.",
+ "tiers": {
+  "S": "Primary institutional and peer-reviewed: national museums, university institutes, scientific and engineering societies, the Nobel Foundation, peer-reviewed journals.",
+  "A": "Major data, standards and public bodies, and primary announcements: Our World in Data, Internet Society, UN family (UNESCO, WHO), NASA, GPS.gov, publisher and company statements.",
+  "B": "Established reference and educational publishers."
+ },
+ "sources": {
+  "si_ho": {
+   "t": "S",
+   "title": "Human Origins Program",
+   "org": "Smithsonian Institution",
+   "url": "https://humanorigins.si.edu/",
+   "type": "institutional",
+   "scope": "general",
+   "checked": "2026-09-11"
   },
-  "sources": {
-    "si_ho": {
-      "t": "S",
-      "title": "Human Origins Program",
-      "org": "Smithsonian Institution",
-      "url": "https://humanorigins.si.edu/",
-      "type": "institutional",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "si_ho_food": {
-      "t": "S",
-      "title": "Getting Food — evidence of early human diet and foraging",
-      "org": "Smithsonian Human Origins Program",
-      "url": "https://humanorigins.si.edu/evidence/behavior/getting-food",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_ho_hearths": {
-      "t": "S",
-      "title": "Hearths & Shelters",
-      "org": "Smithsonian Human Origins Program",
-      "url": "https://humanorigins.si.edu/evidence/behavior/hearths-shelters",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_ho_firestone": {
-      "t": "S",
-      "title": "Fire-Altered Stone Tools",
-      "org": "Smithsonian Human Origins Program",
-      "url": "https://humanorigins.si.edu/evidence/behavior/hearths-shelters/fire-altered-stone-tools",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_ho_tools": {
-      "t": "S",
-      "title": "Tools & Food",
-      "org": "Smithsonian Human Origins Program",
-      "url": "https://humanorigins.si.edu/human-characteristics/tools-food",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_ho_sapiens": {
-      "t": "S",
-      "title": "Homo sapiens",
-      "org": "Smithsonian Human Origins Program",
-      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_ho_heidel": {
-      "t": "S",
-      "title": "Homo heidelbergensis",
-      "org": "Smithsonian Human Origins Program",
-      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-heidelbergensis",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_ho_neander": {
-      "t": "S",
-      "title": "Homo neanderthalensis",
-      "org": "Smithsonian Human Origins Program",
-      "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-neanderthalensis",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_milestones": {
-      "t": "S",
-      "title": "Milestones in Human Evolution (fact sheet)",
-      "org": "Smithsonian Institution",
-      "url": "https://www.si.edu/newsdesk/factsheets/milestones-human-evolution",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_lighting": {
-      "t": "S",
-      "title": "Lighting A Revolution — invention of electric light",
-      "org": "Smithsonian National Museum of American History",
-      "url": "https://americanhistory.si.edu/lighting",
-      "type": "exhibition",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "si_airspace": {
-      "t": "S",
-      "title": "Stories — aviation and spaceflight history",
-      "org": "Smithsonian National Air and Space Museum",
-      "url": "https://airandspace.si.edu/explore/stories",
-      "type": "institutional",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "nhm_humevo": {
-      "t": "S",
-      "title": "Human evolution",
-      "org": "Natural History Museum, London",
-      "url": "https://www.nhm.ac.uk/discover/human-evolution.html",
-      "type": "institutional",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "bm_collection": {
-      "t": "S",
-      "title": "The Collection — two million years of human history",
-      "org": "British Museum",
-      "url": "https://www.britishmuseum.org/collection",
-      "type": "collection",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "met_toah": {
-      "t": "S",
-      "title": "Heilbrunn Timeline of Art History",
-      "org": "The Metropolitan Museum of Art",
-      "url": "https://www.metmuseum.org/toah/",
-      "type": "institutional",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "met_writing": {
-      "t": "S",
-      "title": "The Origins of Writing",
-      "org": "The Metropolitan Museum of Art",
-      "url": "https://www.metmuseum.org/essays/the-origins-of-writing",
-      "type": "scholarly-essay",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "met_uruk": {
-      "t": "S",
-      "title": "Uruk: The First City",
-      "org": "The Metropolitan Museum of Art",
-      "url": "https://www.metmuseum.org/essays/uruk-the-first-city",
-      "type": "scholarly-essay",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "met_meso_early": {
-      "t": "S",
-      "title": "Mesopotamia, 8000–2000 B.C. — chronology",
-      "org": "The Metropolitan Museum of Art",
-      "url": "https://www.metmuseum.org/toah/ht/02/wam.html",
-      "type": "chronology",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "met_cuneiform": {
-      "t": "S",
-      "title": "Cuneiform — keyword collection",
-      "org": "The Metropolitan Museum of Art",
-      "url": "https://www.metmuseum.org/toah/keywords/cuneiform",
-      "type": "collection",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "isac": {
-      "t": "S",
-      "title": "Institute for the Study of Ancient Cultures",
-      "org": "University of Chicago",
-      "url": "https://isac.uchicago.edu/",
-      "type": "institutional",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "chm_timeline": {
-      "t": "S",
-      "title": "Timeline of Computer History",
-      "org": "Computer History Museum",
-      "url": "https://computerhistory.org/timeline/",
-      "type": "institutional",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "chm_graphics": {
-      "t": "S",
-      "title": "Graphics & Games — Timeline of Computer History",
-      "org": "Computer History Museum",
-      "url": "https://www.computerhistory.org/timeline/graphics-games/",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "chm_spacewar": {
-      "t": "S",
-      "title": "Spacewar! — PDP-1 Restoration Project",
-      "org": "Computer History Museum",
-      "url": "https://www.computerhistory.org/pdp-1/spacewar/",
-      "type": "collection",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "chm_revolution": {
-      "t": "S",
-      "title": "Revolution: The First 2000 Years of Computing",
-      "org": "Computer History Museum",
-      "url": "https://computerhistory.org/exhibits/revolution/",
-      "type": "exhibition",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "ethw": {
-      "t": "S",
-      "title": "Engineering and Technology History Wiki",
-      "org": "IEEE, ASME, ASCE, AIAA and partner societies",
-      "url": "https://ethw.org/Main_Page",
-      "type": "institutional",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "ethw_newcomen": {
-      "t": "S",
-      "title": "Thomas Newcomen and the Steam Engine",
-      "org": "Engineering and Technology History Wiki",
-      "url": "https://ethw.org/Thomas_Newcomen_and_the_Steam_Engine",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ethw_watt": {
-      "t": "S",
-      "title": "ASME Landmark: Boulton & Watt Rotative Steam Engine",
-      "org": "Engineering and Technology History Wiki / ASME",
-      "url": "https://ethw.org/ASME-Landmark:Boulton_&_Watt_Rotative_Steam_Engine",
-      "type": "landmark",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ethw_mecheng": {
-      "t": "S",
-      "title": "Timeline of mechanical engineering innovation",
-      "org": "Engineering and Technology History Wiki",
-      "url": "https://ethw.org/Timeline_of_mechanical_engineering_innovation",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ethw_milestones": {
-      "t": "S",
-      "title": "IEEE Milestones — list of commemorated achievements",
-      "org": "Engineering and Technology History Wiki / IEEE",
-      "url": "https://ethw.org/Milestones:List_of_IEEE_Milestones",
-      "type": "landmark",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "nobel_transistor": {
-      "t": "S",
-      "title": "The Nobel Prize in Physics 1956 — Shockley, Bardeen and Brattain, for the transistor effect",
-      "org": "The Nobel Foundation",
-      "url": "https://www.nobelprize.org/prizes/physics/1956/summary/",
-      "type": "award-record",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "owid_tech": {
-      "t": "A",
-      "title": "Technological Change",
-      "org": "Our World in Data",
-      "url": "https://ourworldindata.org/technological-change",
-      "type": "dataset",
-      "scope": "general",
-      "checked": "2026-09-11"
-    },
-    "owid_urban": {
-      "t": "A",
-      "title": "Urbanization",
-      "org": "Our World in Data",
-      "url": "https://ourworldindata.org/urbanization",
-      "type": "dataset",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "owid_urban500": {
-      "t": "A",
-      "title": "Urbanization over the past 500 years",
-      "org": "Our World in Data",
-      "url": "https://ourworldindata.org/grapher/urbanization-last-500-years",
-      "type": "dataset",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "owid_cities": {
-      "t": "A",
-      "title": "Population of the world's largest cities",
-      "org": "Our World in Data",
-      "url": "https://ourworldindata.org/grapher/population-of-the-worlds-largest-cities",
-      "type": "dataset",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "isoc_internet": {
-      "t": "A",
-      "title": "A Brief History of the Internet — Leiner, Cerf, Clark, Kahn, Kleinrock, Lynch, Postel, Roberts, Wolff",
-      "org": "Internet Society",
-      "url": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/",
-      "type": "primary-account",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_agri": {
-      "t": "B",
-      "title": "Origins of agriculture",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/topic/agriculture",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_agri_began": {
-      "t": "B",
-      "title": "How agriculture and domestication began",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/topic/agriculture/How-agriculture-and-domestication-began",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_neolithic": {
-      "t": "B",
-      "title": "Neolithic",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/event/Neolithic",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_domestication": {
-      "t": "B",
-      "title": "Domestication",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/science/domestication",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "rockstar_gta6": {
-      "t": "A",
-      "title": "Grand Theft Auto VI is Now Set to Launch November 19, 2026",
-      "org": "Rockstar Games (publisher announcement)",
-      "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
-      "type": "primary-announcement",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "unesco_swabian": {
-      "t": "A",
-      "title": "Caves and Ice Age Art in the Swabian Jura — World Heritage listing",
-      "org": "UNESCO World Heritage Centre",
-      "url": "https://whc.unesco.org/en/list/1527/",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "nature_flutes2009": {
-      "t": "S",
-      "title": "New flutes document the earliest musical tradition in southwestern Germany (Conard, Malina & Münzel, 2009)",
-      "org": "Nature (peer-reviewed)",
-      "url": "https://www.nature.com/articles/nature08169",
-      "type": "peer-reviewed",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "cmog_glass": {
-      "t": "S",
-      "title": "Origins of Glassmaking — All About Glass",
-      "org": "Corning Museum of Glass",
-      "url": "https://www.cmog.org/article/origins-glassmaking",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_paper": {
-      "t": "B",
-      "title": "Paper — origin and development",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/technology/paper",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_printing": {
-      "t": "B",
-      "title": "Printing — from its origins in China to Gutenberg",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/technology/printing-publishing",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_money": {
-      "t": "B",
-      "title": "Money — definition, history and types",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/topic/money",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_compass": {
-      "t": "B",
-      "title": "Compass — history, uses and types",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/technology/compass-navigational-instrument",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_eyeglasses": {
-      "t": "B",
-      "title": "Eyeglasses — the history of spectacles",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/technology/eyeglasses",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_gunpowder": {
-      "t": "B",
-      "title": "Gunpowder — facts and history",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/technology/gunpowder",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "who_vaccination": {
-      "t": "A",
-      "title": "A brief history of vaccination",
-      "org": "World Health Organization",
-      "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/a-brief-history-of-vaccination",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "nobel_med1945": {
-      "t": "S",
-      "title": "The Nobel Prize in Physiology or Medicine 1945 — Fleming, Chain and Florey, for the discovery of penicillin",
-      "org": "The Nobel Foundation",
-      "url": "https://www.nobelprize.org/prizes/medicine/1945/summary/",
-      "type": "award-record",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "nobel_fleming_lecture": {
-      "t": "S",
-      "title": "Sir Alexander Fleming — Nobel Lecture",
-      "org": "The Nobel Foundation",
-      "url": "https://www.nobelprize.org/prizes/medicine/1945/fleming/lecture/",
-      "type": "primary-account",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "acs_bakelite": {
-      "t": "S",
-      "title": "Leo Baekeland and the Invention of Bakelite — National Historic Chemical Landmark",
-      "org": "American Chemical Society",
-      "url": "https://www.acs.org/education/whatischemistry/landmarks/bakelite.html",
-      "type": "landmark",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ethw_magnetron": {
-      "t": "S",
-      "title": "Milestones: Development of the Cavity Magnetron, 1939–1941",
-      "org": "Engineering and Technology History Wiki / IEEE",
-      "url": "https://ethw.org/Milestones:Development_of_the_Cavity_Magnetron,_1939-1941",
-      "type": "landmark",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "nasa_sputnik": {
-      "t": "A",
-      "title": "Sputnik and the Origins of the Space Age (Roger D. Launius)",
-      "org": "NASA History Office",
-      "url": "https://www.nasa.gov/history/sputnik/sputorig.html",
-      "type": "scholarly-essay",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "gpsgov": {
-      "t": "A",
-      "title": "GPS — the Global Positioning System",
-      "org": "GPS.gov (U.S. National Coordination Office for Space-Based PNT)",
-      "url": "https://www.gps.gov/gps",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ashby_gps": {
-      "t": "S",
-      "title": "Relativity in the Global Positioning System (Neil Ashby, 2003)",
-      "org": "Living Reviews in Relativity (peer-reviewed)",
-      "url": "https://link.springer.com/article/10.12942/lrr-2003-1",
-      "type": "peer-reviewed",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "nasm_wright_flyer": {
-      "t": "S",
-      "title": "1903 Wright Flyer",
-      "org": "Smithsonian National Air and Space Museum",
-      "url": "https://airandspace.si.edu/collection-objects/1903-wright-flyer/nasm_A19610048000",
-      "type": "collection",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "nobel_radio1909": {
-      "t": "S",
-      "title": "The Nobel Prize in Physics 1909 — Marconi and Braun, for wireless telegraphy",
-      "org": "The Nobel Foundation",
-      "url": "https://www.nobelprize.org/prizes/physics/1909/summary/",
-      "type": "award-record",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "nobel_ic2000": {
-      "t": "S",
-      "title": "The Nobel Prize in Physics 2000 — Kilby, for his part in the invention of the integrated circuit",
-      "org": "The Nobel Foundation",
-      "url": "https://www.nobelprize.org/prizes/physics/2000/summary/",
-      "type": "award-record",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "chm_4004": {
-      "t": "S",
-      "title": "1971: Microprocessor Integrates CPU Function onto a Single Chip",
-      "org": "Computer History Museum — The Silicon Engine",
-      "url": "https://www.computerhistory.org/siliconengine/microprocessor-integrates-cpu-function-onto-a-single-chip/",
-      "type": "exhibition",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "chm_birth_computer": {
-      "t": "S",
-      "title": "Birth of the Computer — Revolution: The First 2000 Years of Computing",
-      "org": "Computer History Museum",
-      "url": "https://www.computerhistory.org/revolution/birth-of-the-computer/4",
-      "type": "exhibition",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ethw_bell1876": {
-      "t": "S",
-      "title": "Milestones: First Intelligible Voice Transmission over Electric Wire, 1876",
-      "org": "Engineering and Technology History Wiki / IEEE",
-      "url": "https://ethw.org/Milestones:First_Intelligible_Voice_Transmission_over_Electric_Wire,_1876",
-      "type": "landmark",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ethw_telegraph1838": {
-      "t": "S",
-      "title": "Milestones: Demonstration of Practical Telegraphy, 1838",
-      "org": "Engineering and Technology History Wiki / IEEE",
-      "url": "https://ethw.org/Milestones:Demonstration_of_Practical_Telegraphy,_1838",
-      "type": "landmark",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ethw_fleming_valve": {
-      "t": "S",
-      "title": "Milestones: Fleming Valve, 1904",
-      "org": "Engineering and Technology History Wiki / IEEE",
-      "url": "https://ethw.org/Milestones:Fleming_Valve,_1904",
-      "type": "landmark",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "owid_ai": {
-      "t": "A",
-      "title": "Artificial Intelligence — including computation used to train notable AI systems",
-      "org": "Our World in Data",
-      "url": "https://ourworldindata.org/artificial-intelligence",
-      "type": "dataset",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "owid_mobile": {
-      "t": "A",
-      "title": "Mobile phone subscriptions per 100 people (ITU, via the World Bank)",
-      "org": "Our World in Data",
-      "url": "https://ourworldindata.org/grapher/mobile-cellular-subscriptions-per-100-people",
-      "type": "dataset",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "ttwo_q1fy27": {
-      "t": "A",
-      "title": "Take-Two Interactive Software, Inc. Reports Results for Fiscal First Quarter 2027",
-      "org": "Take-Two Interactive (earnings release filed with the SEC)",
-      "url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026054580/ttwo1q27earningsrelease.htm",
-      "type": "primary-announcement",
-      "scope": "topic",
-      "checked": "2026-09-11"
-    },
-    "brit_bank": {
-      "t": "B",
-      "title": "Bank — historical development",
-      "org": "Encyclopaedia Britannica",
-      "url": "https://www.britannica.com/money/bank/Historical-development",
-      "type": "reference",
-      "scope": "topic",
-      "checked": "2026-09-12"
-    },
-    "icaew_pacioli": {
-      "t": "S",
-      "title": "Luca Pacioli: The 'Father of Accounting'",
-      "org": "Institute of Chartered Accountants in England and Wales",
-      "url": "https://www.icaew.com/library/library-collection/historical-accounting-literature/pacioli",
-      "type": "institutional",
-      "scope": "topic",
-      "checked": "2026-09-12"
-    },
-    "penn_weights": {
-      "t": "S",
-      "title": "Hanging in the Balance: Precision Weighing in Antiquity",
-      "org": "Penn Museum, University of Pennsylvania",
-      "url": "https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/",
-      "type": "scholarly-essay",
-      "scope": "topic",
-      "checked": "2026-09-12"
-    },
-    "bm_silkroads": {
-      "t": "S",
-      "title": "Silk Roads",
-      "org": "British Museum",
-      "url": "https://www.britishmuseum.org/exhibitions/silk-roads",
-      "type": "exhibition",
-      "scope": "topic",
-      "checked": "2026-09-12"
-    }
+  "si_ho_food": {
+   "t": "S",
+   "title": "Getting Food — evidence of early human diet and foraging",
+   "org": "Smithsonian Human Origins Program",
+   "url": "https://humanorigins.si.edu/evidence/behavior/getting-food",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_ho_hearths": {
+   "t": "S",
+   "title": "Hearths & Shelters",
+   "org": "Smithsonian Human Origins Program",
+   "url": "https://humanorigins.si.edu/evidence/behavior/hearths-shelters",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_ho_firestone": {
+   "t": "S",
+   "title": "Fire-Altered Stone Tools",
+   "org": "Smithsonian Human Origins Program",
+   "url": "https://humanorigins.si.edu/evidence/behavior/hearths-shelters/fire-altered-stone-tools",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_ho_tools": {
+   "t": "S",
+   "title": "Tools & Food",
+   "org": "Smithsonian Human Origins Program",
+   "url": "https://humanorigins.si.edu/human-characteristics/tools-food",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_ho_sapiens": {
+   "t": "S",
+   "title": "Homo sapiens",
+   "org": "Smithsonian Human Origins Program",
+   "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_ho_heidel": {
+   "t": "S",
+   "title": "Homo heidelbergensis",
+   "org": "Smithsonian Human Origins Program",
+   "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-heidelbergensis",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_ho_neander": {
+   "t": "S",
+   "title": "Homo neanderthalensis",
+   "org": "Smithsonian Human Origins Program",
+   "url": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-neanderthalensis",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_milestones": {
+   "t": "S",
+   "title": "Milestones in Human Evolution (fact sheet)",
+   "org": "Smithsonian Institution",
+   "url": "https://www.si.edu/newsdesk/factsheets/milestones-human-evolution",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_lighting": {
+   "t": "S",
+   "title": "Lighting A Revolution — invention of electric light",
+   "org": "Smithsonian National Museum of American History",
+   "url": "https://americanhistory.si.edu/lighting",
+   "type": "exhibition",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "si_airspace": {
+   "t": "S",
+   "title": "Stories — aviation and spaceflight history",
+   "org": "Smithsonian National Air and Space Museum",
+   "url": "https://airandspace.si.edu/explore/stories",
+   "type": "institutional",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "nhm_humevo": {
+   "t": "S",
+   "title": "Human evolution",
+   "org": "Natural History Museum, London",
+   "url": "https://www.nhm.ac.uk/discover/human-evolution.html",
+   "type": "institutional",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "bm_collection": {
+   "t": "S",
+   "title": "The Collection — two million years of human history",
+   "org": "British Museum",
+   "url": "https://www.britishmuseum.org/collection",
+   "type": "collection",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "met_toah": {
+   "t": "S",
+   "title": "Heilbrunn Timeline of Art History",
+   "org": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/toah/",
+   "type": "institutional",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "met_writing": {
+   "t": "S",
+   "title": "The Origins of Writing",
+   "org": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/essays/the-origins-of-writing",
+   "type": "scholarly-essay",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "met_uruk": {
+   "t": "S",
+   "title": "Uruk: The First City",
+   "org": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/essays/uruk-the-first-city",
+   "type": "scholarly-essay",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "met_meso_early": {
+   "t": "S",
+   "title": "Mesopotamia, 8000–2000 B.C. — chronology",
+   "org": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/toah/ht/02/wam.html",
+   "type": "chronology",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "met_cuneiform": {
+   "t": "S",
+   "title": "Cuneiform — keyword collection",
+   "org": "The Metropolitan Museum of Art",
+   "url": "https://www.metmuseum.org/toah/keywords/cuneiform",
+   "type": "collection",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "isac": {
+   "t": "S",
+   "title": "Institute for the Study of Ancient Cultures",
+   "org": "University of Chicago",
+   "url": "https://isac.uchicago.edu/",
+   "type": "institutional",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "chm_timeline": {
+   "t": "S",
+   "title": "Timeline of Computer History",
+   "org": "Computer History Museum",
+   "url": "https://computerhistory.org/timeline/",
+   "type": "institutional",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "chm_graphics": {
+   "t": "S",
+   "title": "Graphics & Games — Timeline of Computer History",
+   "org": "Computer History Museum",
+   "url": "https://www.computerhistory.org/timeline/graphics-games/",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "chm_spacewar": {
+   "t": "S",
+   "title": "Spacewar! — PDP-1 Restoration Project",
+   "org": "Computer History Museum",
+   "url": "https://www.computerhistory.org/pdp-1/spacewar/",
+   "type": "collection",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "chm_revolution": {
+   "t": "S",
+   "title": "Revolution: The First 2000 Years of Computing",
+   "org": "Computer History Museum",
+   "url": "https://computerhistory.org/exhibits/revolution/",
+   "type": "exhibition",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "ethw": {
+   "t": "S",
+   "title": "Engineering and Technology History Wiki",
+   "org": "IEEE, ASME, ASCE, AIAA and partner societies",
+   "url": "https://ethw.org/Main_Page",
+   "type": "institutional",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "ethw_newcomen": {
+   "t": "S",
+   "title": "Thomas Newcomen and the Steam Engine",
+   "org": "Engineering and Technology History Wiki",
+   "url": "https://ethw.org/Thomas_Newcomen_and_the_Steam_Engine",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ethw_watt": {
+   "t": "S",
+   "title": "ASME Landmark: Boulton & Watt Rotative Steam Engine",
+   "org": "Engineering and Technology History Wiki / ASME",
+   "url": "https://ethw.org/ASME-Landmark:Boulton_&_Watt_Rotative_Steam_Engine",
+   "type": "landmark",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ethw_mecheng": {
+   "t": "S",
+   "title": "Timeline of mechanical engineering innovation",
+   "org": "Engineering and Technology History Wiki",
+   "url": "https://ethw.org/Timeline_of_mechanical_engineering_innovation",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ethw_milestones": {
+   "t": "S",
+   "title": "IEEE Milestones — list of commemorated achievements",
+   "org": "Engineering and Technology History Wiki / IEEE",
+   "url": "https://ethw.org/Milestones:List_of_IEEE_Milestones",
+   "type": "landmark",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "nobel_transistor": {
+   "t": "S",
+   "title": "The Nobel Prize in Physics 1956 — Shockley, Bardeen and Brattain, for the transistor effect",
+   "org": "The Nobel Foundation",
+   "url": "https://www.nobelprize.org/prizes/physics/1956/summary/",
+   "type": "award-record",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "owid_tech": {
+   "t": "A",
+   "title": "Technological Change",
+   "org": "Our World in Data",
+   "url": "https://ourworldindata.org/technological-change",
+   "type": "dataset",
+   "scope": "general",
+   "checked": "2026-09-11"
+  },
+  "owid_urban": {
+   "t": "A",
+   "title": "Urbanization",
+   "org": "Our World in Data",
+   "url": "https://ourworldindata.org/urbanization",
+   "type": "dataset",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "owid_urban500": {
+   "t": "A",
+   "title": "Urbanization over the past 500 years",
+   "org": "Our World in Data",
+   "url": "https://ourworldindata.org/grapher/urbanization-last-500-years",
+   "type": "dataset",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "owid_cities": {
+   "t": "A",
+   "title": "Population of the world's largest cities",
+   "org": "Our World in Data",
+   "url": "https://ourworldindata.org/grapher/population-of-the-worlds-largest-cities",
+   "type": "dataset",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "isoc_internet": {
+   "t": "A",
+   "title": "A Brief History of the Internet — Leiner, Cerf, Clark, Kahn, Kleinrock, Lynch, Postel, Roberts, Wolff",
+   "org": "Internet Society",
+   "url": "https://www.internetsociety.org/internet/history-internet/brief-history-internet/",
+   "type": "primary-account",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_agri": {
+   "t": "B",
+   "title": "Origins of agriculture",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/topic/agriculture",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_agri_began": {
+   "t": "B",
+   "title": "How agriculture and domestication began",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/topic/agriculture/How-agriculture-and-domestication-began",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_neolithic": {
+   "t": "B",
+   "title": "Neolithic",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/event/Neolithic",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_domestication": {
+   "t": "B",
+   "title": "Domestication",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/science/domestication",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "rockstar_gta6": {
+   "t": "A",
+   "title": "Grand Theft Auto VI is Now Set to Launch November 19, 2026",
+   "org": "Rockstar Games (publisher announcement)",
+   "url": "https://www.rockstargames.com/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026",
+   "type": "primary-announcement",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "unesco_swabian": {
+   "t": "A",
+   "title": "Caves and Ice Age Art in the Swabian Jura — World Heritage listing",
+   "org": "UNESCO World Heritage Centre",
+   "url": "https://whc.unesco.org/en/list/1527/",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "nature_flutes2009": {
+   "t": "S",
+   "title": "New flutes document the earliest musical tradition in southwestern Germany (Conard, Malina & Münzel, 2009)",
+   "org": "Nature (peer-reviewed)",
+   "url": "https://www.nature.com/articles/nature08169",
+   "type": "peer-reviewed",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "cmog_glass": {
+   "t": "S",
+   "title": "Origins of Glassmaking — All About Glass",
+   "org": "Corning Museum of Glass",
+   "url": "https://www.cmog.org/article/origins-glassmaking",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_paper": {
+   "t": "B",
+   "title": "Paper — origin and development",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/technology/paper",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_printing": {
+   "t": "B",
+   "title": "Printing — from its origins in China to Gutenberg",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/technology/printing-publishing",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_money": {
+   "t": "B",
+   "title": "Money — definition, history and types",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/topic/money",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_compass": {
+   "t": "B",
+   "title": "Compass — history, uses and types",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/technology/compass-navigational-instrument",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_eyeglasses": {
+   "t": "B",
+   "title": "Eyeglasses — the history of spectacles",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/technology/eyeglasses",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_gunpowder": {
+   "t": "B",
+   "title": "Gunpowder — facts and history",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/technology/gunpowder",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "who_vaccination": {
+   "t": "A",
+   "title": "A brief history of vaccination",
+   "org": "World Health Organization",
+   "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/a-brief-history-of-vaccination",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "nobel_med1945": {
+   "t": "S",
+   "title": "The Nobel Prize in Physiology or Medicine 1945 — Fleming, Chain and Florey, for the discovery of penicillin",
+   "org": "The Nobel Foundation",
+   "url": "https://www.nobelprize.org/prizes/medicine/1945/summary/",
+   "type": "award-record",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "nobel_fleming_lecture": {
+   "t": "S",
+   "title": "Sir Alexander Fleming — Nobel Lecture",
+   "org": "The Nobel Foundation",
+   "url": "https://www.nobelprize.org/prizes/medicine/1945/fleming/lecture/",
+   "type": "primary-account",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "acs_bakelite": {
+   "t": "S",
+   "title": "Leo Baekeland and the Invention of Bakelite — National Historic Chemical Landmark",
+   "org": "American Chemical Society",
+   "url": "https://www.acs.org/education/whatischemistry/landmarks/bakelite.html",
+   "type": "landmark",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ethw_magnetron": {
+   "t": "S",
+   "title": "Milestones: Development of the Cavity Magnetron, 1939–1941",
+   "org": "Engineering and Technology History Wiki / IEEE",
+   "url": "https://ethw.org/Milestones:Development_of_the_Cavity_Magnetron,_1939-1941",
+   "type": "landmark",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "nasa_sputnik": {
+   "t": "A",
+   "title": "Sputnik and the Origins of the Space Age (Roger D. Launius)",
+   "org": "NASA History Office",
+   "url": "https://www.nasa.gov/history/sputnik/sputorig.html",
+   "type": "scholarly-essay",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "gpsgov": {
+   "t": "A",
+   "title": "GPS — the Global Positioning System",
+   "org": "GPS.gov (U.S. National Coordination Office for Space-Based PNT)",
+   "url": "https://www.gps.gov/gps",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ashby_gps": {
+   "t": "S",
+   "title": "Relativity in the Global Positioning System (Neil Ashby, 2003)",
+   "org": "Living Reviews in Relativity (peer-reviewed)",
+   "url": "https://link.springer.com/article/10.12942/lrr-2003-1",
+   "type": "peer-reviewed",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "nasm_wright_flyer": {
+   "t": "S",
+   "title": "1903 Wright Flyer",
+   "org": "Smithsonian National Air and Space Museum",
+   "url": "https://airandspace.si.edu/collection-objects/1903-wright-flyer/nasm_A19610048000",
+   "type": "collection",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "nobel_radio1909": {
+   "t": "S",
+   "title": "The Nobel Prize in Physics 1909 — Marconi and Braun, for wireless telegraphy",
+   "org": "The Nobel Foundation",
+   "url": "https://www.nobelprize.org/prizes/physics/1909/summary/",
+   "type": "award-record",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "nobel_ic2000": {
+   "t": "S",
+   "title": "The Nobel Prize in Physics 2000 — Kilby, for his part in the invention of the integrated circuit",
+   "org": "The Nobel Foundation",
+   "url": "https://www.nobelprize.org/prizes/physics/2000/summary/",
+   "type": "award-record",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "chm_4004": {
+   "t": "S",
+   "title": "1971: Microprocessor Integrates CPU Function onto a Single Chip",
+   "org": "Computer History Museum — The Silicon Engine",
+   "url": "https://www.computerhistory.org/siliconengine/microprocessor-integrates-cpu-function-onto-a-single-chip/",
+   "type": "exhibition",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "chm_birth_computer": {
+   "t": "S",
+   "title": "Birth of the Computer — Revolution: The First 2000 Years of Computing",
+   "org": "Computer History Museum",
+   "url": "https://www.computerhistory.org/revolution/birth-of-the-computer/4",
+   "type": "exhibition",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ethw_bell1876": {
+   "t": "S",
+   "title": "Milestones: First Intelligible Voice Transmission over Electric Wire, 1876",
+   "org": "Engineering and Technology History Wiki / IEEE",
+   "url": "https://ethw.org/Milestones:First_Intelligible_Voice_Transmission_over_Electric_Wire,_1876",
+   "type": "landmark",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ethw_telegraph1838": {
+   "t": "S",
+   "title": "Milestones: Demonstration of Practical Telegraphy, 1838",
+   "org": "Engineering and Technology History Wiki / IEEE",
+   "url": "https://ethw.org/Milestones:Demonstration_of_Practical_Telegraphy,_1838",
+   "type": "landmark",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ethw_fleming_valve": {
+   "t": "S",
+   "title": "Milestones: Fleming Valve, 1904",
+   "org": "Engineering and Technology History Wiki / IEEE",
+   "url": "https://ethw.org/Milestones:Fleming_Valve,_1904",
+   "type": "landmark",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "owid_ai": {
+   "t": "A",
+   "title": "Artificial Intelligence — including computation used to train notable AI systems",
+   "org": "Our World in Data",
+   "url": "https://ourworldindata.org/artificial-intelligence",
+   "type": "dataset",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "owid_mobile": {
+   "t": "A",
+   "title": "Mobile phone subscriptions per 100 people (ITU, via the World Bank)",
+   "org": "Our World in Data",
+   "url": "https://ourworldindata.org/grapher/mobile-cellular-subscriptions-per-100-people",
+   "type": "dataset",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "ttwo_q1fy27": {
+   "t": "A",
+   "title": "Take-Two Interactive Software, Inc. Reports Results for Fiscal First Quarter 2027",
+   "org": "Take-Two Interactive (earnings release filed with the SEC)",
+   "url": "https://www.sec.gov/Archives/edgar/data/946581/000162828026054580/ttwo1q27earningsrelease.htm",
+   "type": "primary-announcement",
+   "scope": "topic",
+   "checked": "2026-09-11"
+  },
+  "brit_bank": {
+   "t": "B",
+   "title": "Bank — historical development",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/money/bank/Historical-development",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-09-12"
+  },
+  "icaew_pacioli": {
+   "t": "S",
+   "title": "Luca Pacioli: The 'Father of Accounting'",
+   "org": "Institute of Chartered Accountants in England and Wales",
+   "url": "https://www.icaew.com/library/library-collection/historical-accounting-literature/pacioli",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-09-12"
+  },
+  "penn_weights": {
+   "t": "S",
+   "title": "Hanging in the Balance: Precision Weighing in Antiquity",
+   "org": "Penn Museum, University of Pennsylvania",
+   "url": "https://www.penn.museum/sites/expedition/hanging-in-the-balance-2/",
+   "type": "scholarly-essay",
+   "scope": "topic",
+   "checked": "2026-09-12"
+  },
+  "bm_silkroads": {
+   "t": "S",
+   "title": "Silk Roads",
+   "org": "British Museum",
+   "url": "https://www.britishmuseum.org/exhibitions/silk-roads",
+   "type": "exhibition",
+   "scope": "topic",
+   "checked": "2026-09-12"
+  },
+  "x28_trepan_wp": {
+   "t": "B",
+   "title": "Trepanning",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trepanning",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_shaduf_wp": {
+   "t": "B",
+   "title": "Shadoof",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Shadoof",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flush_wp3": {
+   "t": "B",
+   "title": "Flush toilet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flush_toilet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_siphon_wp": {
+   "t": "B",
+   "title": "Siphon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Siphon",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_seeddrill_wp": {
+   "t": "B",
+   "title": "Seed drill",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Seed_drill",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_lamellar_wp": {
+   "t": "B",
+   "title": "Lamellar armour",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Lamellar_armour",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chainpump_wp": {
+   "t": "B",
+   "title": "Chain pump",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chain_pump",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_crossbow_wp": {
+   "t": "B",
+   "title": "Crossbow",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Crossbow",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_cam_wp": {
+   "t": "B",
+   "title": "Cam (mechanism)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cam_(mechanism)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sheng_wp": {
+   "t": "B",
+   "title": "Sheng (instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sheng_(instrument)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_cupola_wp": {
+   "t": "B",
+   "title": "Cupola furnace",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cupola_furnace",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_camera_hist_wp": {
+   "t": "B",
+   "title": "History of the camera",
+   "org": "Wikipedia (citing Needham, Wade & Finger, Plott)",
+   "url": "https://en.wikipedia.org/wiki/History_of_the_camera",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_lathe_wp": {
+   "t": "B",
+   "title": "Lathe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Lathe",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ballista_wp": {
+   "t": "B",
+   "title": "Ballista",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ballista",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_aqueduct_wp": {
+   "t": "B",
+   "title": "Roman aqueduct",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Roman_aqueduct",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arch_wp": {
+   "t": "B",
+   "title": "Archimedes%27 screw",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Archimedes%27_screw",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_dioptra_wp": {
+   "t": "B",
+   "title": "Dioptra",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Dioptra",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_organ_wp": {
+   "t": "B",
+   "title": "Pipe organ",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pipe_organ",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_mail_wp": {
+   "t": "B",
+   "title": "Mail (armour)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Mail_(armour)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_noria_wp": {
+   "t": "B",
+   "title": "Noria",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Noria",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_steelyard_wp": {
+   "t": "B",
+   "title": "Steelyard balance",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Steelyard_balance",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_groma_wp": {
+   "t": "B",
+   "title": "Groma (surveying)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Groma_(surveying)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hypocaust_wp": {
+   "t": "B",
+   "title": "Hypocaust",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hypocaust",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chorob_wp": {
+   "t": "B",
+   "title": "Chorobates",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chorobates",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_screwpress_wp": {
+   "t": "B",
+   "title": "Screw press",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Screw_press",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bagpipes_wp": {
+   "t": "B",
+   "title": "Bagpipes",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bagpipes",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_plane_wp": {
+   "t": "B",
+   "title": "Hand plane",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hand_plane",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_crosscut_wp": {
+   "t": "B",
+   "title": "Crosscut saw",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Crosscut_saw",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_seismo_wp": {
+   "t": "B",
+   "title": "Seismoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Seismoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_alembic_wp": {
+   "t": "B",
+   "title": "Alembic",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Alembic",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_collar_wp": {
+   "t": "B",
+   "title": "Horse collar",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Horse_collar",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_windlass_wp": {
+   "t": "B",
+   "title": "Windlass",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Windlass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_astrolabe_wp": {
+   "t": "B",
+   "title": "Astrolabe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Astrolabe",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_nocturnal_wp": {
+   "t": "B",
+   "title": "Nocturnal (instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Nocturnal_(instrument)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_kamal_wp": {
+   "t": "B",
+   "title": "Kamal (navigation)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Kamal_(navigation)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_firearrow_wp": {
+   "t": "B",
+   "title": "Fire arrow",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fire_arrow",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_stamp_wp": {
+   "t": "B",
+   "title": "Stamp mill",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Stamp_mill",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_poundlock_wp": {
+   "t": "B",
+   "title": "Lock (water navigation)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Lock_(water_navigation)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_spinwheel_wp": {
+   "t": "B",
+   "title": "Spinning wheel",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spinning_wheel",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flywheel_wp": {
+   "t": "B",
+   "title": "Flywheel",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flywheel",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bisheng_wp": {
+   "t": "B",
+   "title": "Bi Sheng",
+   "org": "Wikipedia (citing Shen Kuo, Dream Pool Essays)",
+   "url": "https://en.wikipedia.org/wiki/Bi_Sheng",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_fulling_wp": {
+   "t": "B",
+   "title": "Fulling",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fulling",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_windmill_wp": {
+   "t": "B",
+   "title": "Windmill",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Windmill",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_trebuchet_wp": {
+   "t": "B",
+   "title": "Trebuchet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trebuchet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_shawm_wp": {
+   "t": "B",
+   "title": "Shawm",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Shawm",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_portolan_wp": {
+   "t": "B",
+   "title": "Portolan chart",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Portolan_chart",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_verge_wp": {
+   "t": "B",
+   "title": "Verge escapement",
+   "org": "Wikipedia (citing Cipolla, Macey, North, Dohrn-van Rossum)",
+   "url": "https://en.wikipedia.org/wiki/Verge_escapement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hourglass_wp": {
+   "t": "B",
+   "title": "Hourglass",
+   "org": "Wikipedia (citing Balmer 1978, 1979; Turner 1993)",
+   "url": "https://en.wikipedia.org/wiki/Hourglass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pavise_wp": {
+   "t": "B",
+   "title": "Pavise",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pavise",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_fusee_wp": {
+   "t": "B",
+   "title": "Fusee (horology)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fusee_(horology)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_brace_wp": {
+   "t": "B",
+   "title": "Brace (tool)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Brace_(tool)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_raingauge_wp": {
+   "t": "B",
+   "title": "Rain gauge",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rain_gauge",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_rack_wp": {
+   "t": "B",
+   "title": "Rack and pinion",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rack_and_pinion",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_trombone_wp": {
+   "t": "B",
+   "title": "Trombone",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trombone",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bobbinlace_wp": {
+   "t": "B",
+   "title": "Bobbin lace",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bobbin_lace",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_astrolabe_ox": {
+   "t": "S",
+   "title": "The mariner's astrolabe and Portuguese exploration",
+   "org": "University of Oxford (Cabinet)",
+   "url": "https://www.cabinet.ox.ac.uk/node/7661",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arrastra_wp": {
+   "t": "B",
+   "title": "Arrastra",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Arrastra",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_planetable_wp": {
+   "t": "B",
+   "title": "Plane table",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Plane_table",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chiplog_wp": {
+   "t": "B",
+   "title": "Chip log",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Chip_log",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_backstaff_wp": {
+   "t": "B",
+   "title": "Backstaff",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Backstaff",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flush_wp": {
+   "t": "B",
+   "title": "Flush toilet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flush_toilet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pantograph_wp": {
+   "t": "B",
+   "title": "Pantograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pantograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_napier_mt": {
+   "t": "S",
+   "title": "Napier's rods",
+   "org": "MacTutor History of Mathematics, University of St Andrews",
+   "url": "https://mathshistory.st-andrews.ac.uk/Extras/Napier_rods/",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gunter_ice": {
+   "t": "S",
+   "title": "Measuring Chain (1977/003)",
+   "org": "ICE Museum Scotland, Heriot-Watt University",
+   "url": "https://ice-museum-scotland.hw.ac.uk/item/1977-003/",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sliderule_wp": {
+   "t": "B",
+   "title": "Slide rule",
+   "org": "Wikipedia (citing Stoll 2006; Smith 1958; Petroski 2011)",
+   "url": "https://en.wikipedia.org/wiki/Slide_rule",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pascaline_wp": {
+   "t": "B",
+   "title": "Pascal's calculator",
+   "org": "Wikipedia (citing Pascal 1645; Mourlevat 1988)",
+   "url": "https://en.wikipedia.org/wiki/Pascaline",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_barometer_wp": {
+   "t": "B",
+   "title": "Barometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Barometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_carillon_wp": {
+   "t": "B",
+   "title": "Carillon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Carillon",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_lantern_wp": {
+   "t": "B",
+   "title": "Magic lantern",
+   "org": "Wikipedia (citing Kircher 1645; Vermeir 2005; Rossell 2002)",
+   "url": "https://en.wikipedia.org/wiki/Magic_lantern",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_spiritlevel_wp": {
+   "t": "B",
+   "title": "Spirit level",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spirit_level",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_raingauge_wp2": {
+   "t": "B",
+   "title": "Rain gauge",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rain_gauge",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_greg_wp": {
+   "t": "B",
+   "title": "Gregorian telescope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gregorian_telescope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_anchor_wp": {
+   "t": "B",
+   "title": "Anchor escapement",
+   "org": "Wikipedia (citing Headrick 2002; Britten 1896)",
+   "url": "https://en.wikipedia.org/wiki/Anchor_escapement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_forceps_wp": {
+   "t": "B",
+   "title": "Obstetrical forceps",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Obstetrical_forceps",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_stepped_wp": {
+   "t": "B",
+   "title": "Stepped reckoner",
+   "org": "Wikipedia (citing Kidwell & Williams, The Calculating Machines)",
+   "url": "https://en.wikipedia.org/wiki/Stepped_reckoner",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_dead_wp": {
+   "t": "B",
+   "title": "Deadbeat escapement",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Deadbeat_escapement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_divebell_wp": {
+   "t": "B",
+   "title": "Diving bell",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Diving_bell",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_trocar_wp": {
+   "t": "B",
+   "title": "Trocar",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Trocar",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_clarinet_wp": {
+   "t": "B",
+   "title": "Clarinet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Clarinet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_geneva_wp": {
+   "t": "B",
+   "title": "Geneva drive",
+   "org": "Wikipedia (citing Willis 1945; Bickford 1972; Sclater 2011)",
+   "url": "https://en.wikipedia.org/wiki/Geneva_drive",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_meridian_wp": {
+   "t": "B",
+   "title": "Meridian circle",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Meridian_circle",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_coke_wp": {
+   "t": "B",
+   "title": "Coke (fuel)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Coke_(fuel)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_orrery_wp": {
+   "t": "B",
+   "title": "Orrery",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Orrery",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_fork_whipple": {
+   "t": "S",
+   "title": "Historical Notes: a Brief Chronicle of the Tuning Fork",
+   "org": "Whipple Museum of the History of Science, University of Cambridge",
+   "url": "https://www.whipplemuseum.cam.ac.uk/explore-whipple-collections/acoustics/historical-notes-brief-chronicle-tuning-fork",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_newcomen_wp": {
+   "t": "B",
+   "title": "Newcomen atmospheric engine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Newcomen_atmospheric_engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_grass_wp": {
+   "t": "B",
+   "title": "Grasshopper escapement",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Grasshopper_escapement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_mural_wp": {
+   "t": "B",
+   "title": "Mural instrument",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Mural_instrument",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hadley_brit": {
+   "t": "B",
+   "title": "John Hadley",
+   "org": "Encyclopædia Britannica",
+   "url": "https://www.britannica.com/biography/John-Hadley",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sextant_wp": {
+   "t": "B",
+   "title": "Sextant",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sextant",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_octant_wp": {
+   "t": "B",
+   "title": "Octant (instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Octant_(instrument)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flyingshuttle_wp": {
+   "t": "B",
+   "title": "Flying shuttle",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flying_shuttle",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_horn_wp": {
+   "t": "B",
+   "title": "Natural horn",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Natural_horn",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_chronometer_wp": {
+   "t": "B",
+   "title": "Marine chronometer",
+   "org": "Wikipedia (citing Landes, Revolution in Time; Britten; Macey)",
+   "url": "https://en.wikipedia.org/wiki/Marine_chronometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_leyden_wp": {
+   "t": "B",
+   "title": "Leyden jar",
+   "org": "Wikipedia (citing Heilbron 1979; Pence 2022)",
+   "url": "https://en.wikipedia.org/wiki/Leyden_jar",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_leyden_ethw": {
+   "t": "S",
+   "title": "Leyden jar",
+   "org": "Engineering and Technology History Wiki (IEEE)",
+   "url": "https://ethw.org/Leyden_jar",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_carding_wp": {
+   "t": "B",
+   "title": "Carding",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Carding",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pitchpipe_wp": {
+   "t": "B",
+   "title": "Pitch pipe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pitch_pipe",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_reflect_wp": {
+   "t": "B",
+   "title": "Reflecting instrument",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Reflecting_instrument",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_fridge_wp": {
+   "t": "B",
+   "title": "Refrigeration",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Refrigeration",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_electrophorus_wp": {
+   "t": "B",
+   "title": "Electrophorus",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Electrophorus",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_jenny_wp": {
+   "t": "B",
+   "title": "Spinning jenny",
+   "org": "Wikipedia (citing Baines 1835; Guest 1828)",
+   "url": "https://en.wikipedia.org/wiki/Spinning_jenny",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arkwright_erih": {
+   "t": "A",
+   "title": "Sir Richard Arkwright (1732–92)",
+   "org": "European Route of Industrial Heritage (ERIH)",
+   "url": "https://www.erih.net/how-it-started/stories-about-people-biographies/biography/arkwright",
+   "type": "heritage",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flush_wp2": {
+   "t": "B",
+   "title": "Flush toilet",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flush_toilet",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_propeller_wp": {
+   "t": "B",
+   "title": "Propeller",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Propeller",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_mule_wp": {
+   "t": "B",
+   "title": "Spinning mule",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spinning_mule",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_six_wp": {
+   "t": "B",
+   "title": "Six%27s thermometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Six%27s_thermometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_rolling_wp": {
+   "t": "B",
+   "title": "Rolling (metalworking)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rolling_(metalworking)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hygro_wp": {
+   "t": "B",
+   "title": "Hygrometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hygrometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_balloon_wp": {
+   "t": "B",
+   "title": "Hot air balloon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hot_air_balloon",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_paddle_wp": {
+   "t": "B",
+   "title": "Paddle steamer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Paddle_steamer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_puddling_wp": {
+   "t": "B",
+   "title": "Puddling (metallurgy)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Puddling_(metallurgy)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_powerloom_wp": {
+   "t": "B",
+   "title": "Power loom",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Power_loom",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_theodolite_wp": {
+   "t": "B",
+   "title": "Theodolite",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Theodolite",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_governor_wp": {
+   "t": "B",
+   "title": "Centrifugal governor",
+   "org": "Wikipedia (citing Hills 1996; Maxwell 1868)",
+   "url": "https://en.wikipedia.org/wiki/Centrifugal_governor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ballcock_wp": {
+   "t": "B",
+   "title": "Ballcock",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ballcock",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_optel_wp": {
+   "t": "B",
+   "title": "Optical telegraph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Optical_telegraph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gaslight_wp": {
+   "t": "B",
+   "title": "Gas lighting",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gas_lighting",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gasometer_wp": {
+   "t": "B",
+   "title": "Gasometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gasometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gin_wp": {
+   "t": "B",
+   "title": "Cotton gin",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cotton_gin",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_parachute_wp": {
+   "t": "B",
+   "title": "Parachute",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Parachute",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_scythe_wp": {
+   "t": "B",
+   "title": "Scythe",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Scythe",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pile_wp": {
+   "t": "B",
+   "title": "Voltaic pile",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Voltaic_pile",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_leafspring_wp": {
+   "t": "B",
+   "title": "Leaf spring",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Leaf_spring",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_jacquard_wp": {
+   "t": "B",
+   "title": "Jacquard machine",
+   "org": "Wikipedia (citing Essinger 2004; Posselt 1887)",
+   "url": "https://en.wikipedia.org/wiki/Jacquard_machine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_lucida_wp": {
+   "t": "B",
+   "title": "Camera lucida",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Camera_lucida",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sluice_wp": {
+   "t": "B",
+   "title": "Sluice",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sluice",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_canning_wp": {
+   "t": "B",
+   "title": "Canning",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Canning",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_valve_wp": {
+   "t": "B",
+   "title": "Valve (brass instrument)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Valve_(brass_instrument)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_davy_wp": {
+   "t": "B",
+   "title": "Davy lamp",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Davy_lamp",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_kaleido_wp": {
+   "t": "B",
+   "title": "Kaleidoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Kaleidoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_dandy_wp": {
+   "t": "B",
+   "title": "Dandy horse",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Dandy_horse",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arithmometer_wp": {
+   "t": "B",
+   "title": "Arithmometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Arithmometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_galvo_wp": {
+   "t": "B",
+   "title": "Galvanometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Galvanometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_diffengine_wp": {
+   "t": "B",
+   "title": "Difference engine",
+   "org": "Wikipedia (citing Swade 2002; Lardner 1834)",
+   "url": "https://en.wikipedia.org/wiki/Difference_engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_fresnel_wp": {
+   "t": "B",
+   "title": "Fresnel lens",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Fresnel_lens",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_cement_wp": {
+   "t": "B",
+   "title": "Portland cement",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Portland_cement",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gasometer_wp2": {
+   "t": "B",
+   "title": "Gasometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gasometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_thaum_wp": {
+   "t": "B",
+   "title": "Thaumatrope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Thaumatrope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_match_wp": {
+   "t": "B",
+   "title": "Match",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Match",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_reaper_wp": {
+   "t": "B",
+   "title": "Reaper",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Reaper",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sewing_wp": {
+   "t": "B",
+   "title": "Sewing machine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sewing_machine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_phena_wp": {
+   "t": "B",
+   "title": "Phenakistiscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Phenakistiscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_dynamo_wp": {
+   "t": "B",
+   "title": "Dynamo",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Dynamo",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_zoetrope_wp": {
+   "t": "B",
+   "title": "Zoetrope",
+   "org": "Wikipedia (citing Herbert; Veras 2022; Hopwood 1899)",
+   "url": "https://en.wikipedia.org/wiki/Zoetrope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_analytical_wp": {
+   "t": "B",
+   "title": "Analytical Engine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Analytical_Engine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_plough_wp": {
+   "t": "B",
+   "title": "Plough",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Plough",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_stereo_wp": {
+   "t": "B",
+   "title": "Stereoscope",
+   "org": "Wikipedia (citing Wheatstone 1838; Brewster 1856; Wing 1996)",
+   "url": "https://en.wikipedia.org/wiki/Stereoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_daguerre_wp": {
+   "t": "B",
+   "title": "Daguerreotype",
+   "org": "Wikipedia (citing Lowry 2000; Buerger 1989; Eder 1978)",
+   "url": "https://en.wikipedia.org/wiki/Daguerreotype",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_vulcan_wp": {
+   "t": "B",
+   "title": "Vulcanization",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Vulcanization",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_rheostat_wp": {
+   "t": "B",
+   "title": "Rheostat",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Rheostat",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_aneroid_wp": {
+   "t": "B",
+   "title": "Aneroid barometer",
+   "org": "Wikipedia (citing Heidorn 2002; Middleton 1964)",
+   "url": "https://en.wikipedia.org/wiki/Aneroid_barometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_barograph_wp": {
+   "t": "B",
+   "title": "Barograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Barograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_anemometer_wp": {
+   "t": "B",
+   "title": "Anemometer",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Anemometer",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_tyre_wp": {
+   "t": "B",
+   "title": "Pneumatic tire",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pneumatic_tire",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_anesthesia_wp": {
+   "t": "B",
+   "title": "Anesthesia",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Anesthesia",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_subcable_wp": {
+   "t": "B",
+   "title": "Submarine communications cable",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Submarine_communications_cable",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_glider_wp": {
+   "t": "B",
+   "title": "Glider (aircraft)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Glider_(aircraft)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pin_wp": {
+   "t": "B",
+   "title": "Safety pin",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Safety_pin",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ophthalmoscope_wp": {
+   "t": "B",
+   "title": "Ophthalmoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ophthalmoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_collodion_wp": {
+   "t": "B",
+   "title": "Collodion process",
+   "org": "Wikipedia (citing Towler 1864; Peres 2007)",
+   "url": "https://en.wikipedia.org/wiki/Collodion_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_elevator_wp": {
+   "t": "B",
+   "title": "Elevator",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Elevator",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_campbell_wp": {
+   "t": "B",
+   "title": "Campbell%E2%80%93Stokes recorder",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Campbell%E2%80%93Stokes_recorder",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_planimeter_wp": {
+   "t": "B",
+   "title": "Planimeter",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Planimeter",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bessemer_wp": {
+   "t": "B",
+   "title": "Bessemer process",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bessemer_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ironclad_wp": {
+   "t": "B",
+   "title": "Ironclad warship",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ironclad_warship",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_stick_wp": {
+   "t": "B",
+   "title": "Marshall Islands stick chart",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Marshall_Islands_stick_chart",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pasteur_wp": {
+   "t": "B",
+   "title": "Pasteurization",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pasteurization",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_stevenson_wp": {
+   "t": "B",
+   "title": "Stevenson screen",
+   "org": "Wikipedia (citing Stevenson 1864; Middleton 1966)",
+   "url": "https://en.wikipedia.org/wiki/Stevenson_screen",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_torpedo_wp": {
+   "t": "B",
+   "title": "Torpedo",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Torpedo",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_barbedwire_wp": {
+   "t": "B",
+   "title": "Barbed wire",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Barbed_wire",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_antiseptic_wp": {
+   "t": "B",
+   "title": "Antiseptic",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Antiseptic",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_typewriter_wp": {
+   "t": "B",
+   "title": "Typewriter",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Typewriter",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_helio_wp": {
+   "t": "B",
+   "title": "Heliograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Heliograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_periodic_wp": {
+   "t": "B",
+   "title": "Periodic table",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Periodic_table",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_phonograph_wp": {
+   "t": "B",
+   "title": "Phonograph",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Phonograph",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_bulb_wp": {
+   "t": "B",
+   "title": "Incandescent light bulb",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_wimshurst_maglab": {
+   "t": "S",
+   "title": "Wimshurst Machine (1880)",
+   "org": "National High Magnetic Field Laboratory, Magnet Academy",
+   "url": "https://nationalmaglab.org/magnet-academy/history-of-electricity-magnetism/museum/wimshurst-machine-1880/",
+   "type": "institutional",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_turbine_wp": {
+   "t": "B",
+   "title": "Steam turbine",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Steam_turbine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hallheroult_wp": {
+   "t": "B",
+   "title": "Hall%E2%80%93H%C3%A9roult process",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Hall%E2%80%93H%C3%A9roult_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_flash_wp": {
+   "t": "B",
+   "title": "Flash (photography)",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Flash_(photography)",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_hollerith_wp": {
+   "t": "B",
+   "title": "Tabulating machine",
+   "org": "Wikipedia (citing Hollerith 1894; Truesdell 1965; Austrian 1982)",
+   "url": "https://en.wikipedia.org/wiki/Tabulating_machine",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_film_wp": {
+   "t": "B",
+   "title": "Photographic film",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Photographic_film",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_mantle_wp": {
+   "t": "B",
+   "title": "Incandescent gas mantle",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Incandescent_gas_mantle",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_nepho_wp": {
+   "t": "B",
+   "title": "Nephoscope",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Nephoscope",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_xray_wp": {
+   "t": "B",
+   "title": "X-ray",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/X-ray",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_elcap_wp": {
+   "t": "B",
+   "title": "Electrolytic capacitor",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Electrolytic_capacitor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_crt_wp": {
+   "t": "B",
+   "title": "Cathode-ray tube",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Cathode-ray_tube",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_airship_wp": {
+   "t": "B",
+   "title": "Airship",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Airship",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_ecg_wp": {
+   "t": "B",
+   "title": "Electrocardiography",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Electrocardiography",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sparkplug_wp": {
+   "t": "B",
+   "title": "Spark plug",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Spark_plug",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_arc_wp": {
+   "t": "B",
+   "title": "Mercury-arc valve",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Mercury-arc_valve",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_gyro_wp": {
+   "t": "B",
+   "title": "Gyrocompass",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Gyrocompass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_triode_wp": {
+   "t": "B",
+   "title": "Triode",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Triode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_haber_wp": {
+   "t": "B",
+   "title": "Haber process",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Haber_process",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_sonar_wp": {
+   "t": "B",
+   "title": "Sonar",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Sonar",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_zipper_wp": {
+   "t": "B",
+   "title": "Zipper",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Zipper",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_tetrode_wp": {
+   "t": "B",
+   "title": "Tetrode",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Tetrode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_pentode_wp": {
+   "t": "B",
+   "title": "Pentode",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pentode",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_diffan_wp": {
+   "t": "B",
+   "title": "Differential analyser",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Differential_analyser",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_nylon_wp": {
+   "t": "B",
+   "title": "Nylon",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Nylon",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_transistor_wp": {
+   "t": "B",
+   "title": "Transistor",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Transistor",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_floatglass_wp": {
+   "t": "B",
+   "title": "Float glass",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Float_glass",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_mouse_wp": {
+   "t": "B",
+   "title": "Computer mouse",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Computer_mouse",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
+  },
+  "x28_floppy_wp": {
+   "t": "B",
+   "title": "Floppy disk",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Floppy_disk",
+   "type": "reference",
+   "scope": "topic",
+   "checked": "2026-10-16"
   }
+ }
 }

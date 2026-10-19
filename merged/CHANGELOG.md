@@ -5,6 +5,19 @@ tools) and `evolution-sandbox-next/` (Next.js).
 
 ## 1.15.0 — 30 September 2026 (unreleased)
 
+### 18 October 2026 — Quiz Studio redesign, scroll fix, no-email quiz creation
+Quiz Studio only (`/quiz/**`); the game, museum and every other mode are untouched. Full ledger and the one optional Supabase setting: `docs/QUIZ-STUDIO-REDESIGN.md`.
+- **Scroll bug fixed.** The game's design system locks `html`/`body` to the viewport (`overflow:hidden`); Quiz Studio is a normal document, so everything below the first screen was clipped. `app/quiz/quiz.css` now hands scrolling back to the document while a `.qz` tree is mounted (`html:has(.qz)`), and the game's lock returns on navigation.
+- **Create a Quiz opens the editor immediately** — no sign-in, no email, no checkbox. Drafts are saved on the device (`lib/quiz/local-drafts.ts`) and, when the quiz service offers guest (anonymous) sessions, silently online too. Nothing is deleted without an explicit action; "Save Online" in My Quizzes migrates device drafts explicitly.
+- New comic-arcade design system (scoped to `.qz`), self-hosted fonts, six original face-free SVG scenes (`public/quiz/art/`, generator in `tools/quiz-art/`), no slogans.
+- New pages/components: Game Modes (`/quiz/modes`), question navigator + Preview in the editor (real player component and grader), Drafts/Published tabs, search + sort, skeletons, empty/error states.
+
+### 15 October 2026 — Expansion items wired into the modes
+Minimum Path (+144 missions, 1917-item atlas), Archaeology (588 templates), Survival (171 finds), Escape Room (40 generated rooms + picker); adapter policies opened for those modes; public item counts updated to 1,917. One command for future items: `python3 tools/expansion/sync_modes.py` (guarded by `modeCoverage.test.ts`).
+
+### 15 October 2026 — Expansion 1,000 (branch `expansion-1000-beta`; drafts only, NOT shipped)
+999 loader-ignored draft nodes (1 quarantined duplicate), a hand-drawn plate for each (`tools/expansion/art/**`, `data/expansion/art_exp26.json`), a preview-only overlay tool (`tools/expansion/preview_install.py`, refuses main/production) and regression tests (`tools/tests/test_expansion_exp26.py`). Nothing is approved, merged into `data/db.json`, or wired into a mode; the 918 shipped nodes are untouched. Counts: `docs/EXPANSION_1000_STATUS.md`.
+
 ### 14 October 2026 — Resource Visual Lab (development prototype; NOT shipped)
 Local-only workbench that has a local Ollama `qwen3:14b` design JSON "plate specs" for 100 resources that are not in the catalogue, compiles them with a closed library of 38 procedural
 components into the existing plate SVG grammar, and renders them through the real `Plate3D`. Dev-gated (`VISUAL_LAB` + `ENABLE_DEV_TOOLS`, never Vercel/production, loopback host); Ollama must be loopback;
@@ -24,6 +37,13 @@ seeds; human publishes; the Humanity Museum is never AI-published), owner-only a
 ledger, `docs/PHASE2_STATUS.md`, `docs/LIVE_DISCOVERY_RUNBOOK.md`, `docs/PHASE2_OWNER_STEPS_VI.md`.
 Item onboarding: a new verified item is queued for a 3D draft and swept once for up to 3 alternative routes (private proposals; `/admin/recipes` panel, `/api/admin/creative/onboard`, optional cron `/api/internal/onboard/tick`); see docs/ITEM_ONBOARDING.md.
 Real LLM / Neon / Blob / Meshy / staging proofs are BLOCKED until the owner provides credentials.
+
+### 14 October 2026 — Phase 1 completion (integration)
+- Exhibit panel shows a labelled stylised 3D reconstruction (`components/Reconstruction3D.tsx`) for items published by the pipeline only;
+  WebGL when available (max 6 live contexts, only while on screen), flat silhouette otherwise. Workbench finish uses the MotionPlan for those items only.
+- Mode adapters are consumed by Minimum Path and Reverse Evolution; Survival and Archaeologist recorded as excluded (no item entry point).
+- Owner-only: `/admin/recipes` (review AI alternatives), `/admin/visual3d` (render preview), AI route rate limit + logging. All 404 unless the dev gate is open.
+- Data fix (demonstrable drift, documented): `data/nodes/g1.json` lacked two 3-slot recipes (`shelter`, `spear`) that `data/db.json` already shipped; added so a rebuild reproduces db.json. Gameplay unchanged; only `dataHash` changed.
 
 ### 14 October 2026 — Logic-First V3, Phase 1 (verified-seed content pipeline)
 New `tools/verified_content.py` (+ `tools/content/`): recipe-free verified seeds → one frozen, rule-checked anchor

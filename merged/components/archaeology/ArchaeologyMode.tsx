@@ -12,6 +12,7 @@ import { GuideHint, GuideScope, useGuideController } from '@/components/guide/Gu
 import { ARCH_MODE, ARCH_TARGET, archaeologyGuide } from '@/lib/guide/archaeology';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
+import { freshSeed } from '@/lib/dev/seed';
 
 /* ============================================================================
    ARCHAEOLOGIST — "Recover". A fourth, genuinely different interaction
@@ -33,7 +34,7 @@ function investigationId(seed: string): string { return `arch-${seed}`; }
 export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
   const [site, setSite] = useState<SiteState | null>(() => {
     archaeologyStore.load();
-    return archaeologyStore.get().active ?? generateSite(`dig-${Date.now()}`);
+    return archaeologyStore.get().active ?? generateSite(freshSeed('dig'));
   });
   const [selectedFind, setSelectedFind] = useState<string | null>(null);
 
@@ -91,7 +92,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
   };
 
   const startNew = () => {
-    const fresh = generateSite(`dig-${Date.now()}`);
+    const fresh = generateSite(freshSeed('dig'));
     setSite(fresh);
     setSelectedFind(null);
     archaeologyStore.setActive(fresh);

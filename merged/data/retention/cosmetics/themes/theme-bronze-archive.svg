@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Archive shelves">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M12 14h76"/><path d="M12 40h76"/><path d="M12 66h76"/><path d="M12 90h76"/><path d="M12 14V90M88 14V90"/></g>
+<g data-z="2" opacity="0.8"><path d="M18 40V24h8v16M30 40V20h8v20M44 40V26h10v14M60 40V22h8v18M72 40V28h8v12"/><path d="M18 66V50h10v16M34 66V46h8v20M48 66V52h8v14M64 66V44h12v22"/></g>
+<g data-z="3" opacity="0.5"><path d="M20 90V76h6v14M32 90V72h8v18M48 90V78h6v12"/></g>
+</svg>

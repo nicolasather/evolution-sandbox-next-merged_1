@@ -16,6 +16,8 @@ const LABEL: Record<ThemePref, string> = {
   glacier: 'Glacier',
   bronze: 'Bronze',
   dusk: 'Dusk',
+  pixel: 'Pixel art',
+  cartoon: 'Cartoon',
 };
 
 /** Each accent skin's own --ochre, hard-coded here purely so the menu can show every
@@ -29,11 +31,13 @@ const SWATCH: Record<Theme, string> = {
   glacier: '#6fc7e8',
   bronze: '#c98a3f',
   dusk: '#9b7cf0',
+  pixel: '#ffb13b',
+  cartoon: '#ff7a2f',
 };
 
 /** True accent skins (not light/dark) get the same "circle + centred glyph" mark neon
  *  originally used, so the family reads as one set of six lit stones. */
-const ACCENT: Record<'neon' | 'ember' | 'verdant' | 'glacier' | 'bronze' | 'dusk', ReactNode> = {
+const ACCENT: Record<'neon' | 'ember' | 'verdant' | 'glacier' | 'bronze' | 'dusk' | 'pixel' | 'cartoon', ReactNode> = {
   neon: <path d="M9 1.5L3.5 9h4l-1 5.5L12.5 7h-4z" />,
   ember: <path d="M8 2c-1.7 2.6-2.7 4.6-2.7 6.6a2.7 2.7 0 0 0 5.4 0c0-.9-.3-1.6-.8-2.1.1.8-.3 1.3-.9 1.3-.6 0-.9-.5-.7-1.2.4-1.6.2-3.2-.3-4.6Z" />,
   verdant: (
@@ -56,6 +60,10 @@ const ACCENT: Record<'neon' | 'ember' | 'verdant' | 'glacier' | 'bronze' | 'dusk
     </>
   ),
   dusk: <path d="M8 1.5c.4 2.6 1.9 4.1 4.5 4.5-2.6.4-4.1 1.9-4.5 4.5-.4-2.6-1.9-4.1-4.5-4.5 2.6-.4 4.1-1.9 4.5-4.5Z" />,
+  /* a stepped 4-pixel diamond — the pixel theme's own grid */
+  pixel: <path d="M7 3h2v2h2v2h2v2h-2v2H9v2H7v-2H5V9H3V7h2V5h2z" stroke="none" />,
+  /* a hand-inked blob star */
+  cartoon: <path d="M8 2.2c.9 1.9 1.6 2.9 3.9 3.1-1.6 1.4-2.1 2.4-1.6 4.6C8.4 8.8 7.4 8.8 5.6 10c.4-2.3-.1-3.3-1.7-4.6 2.3-.3 3-1.3 4.1-3.2Z" strokeLinejoin="round" />,
 };
 
 function ThemeGlyph({ pref }: { pref: ThemePref }) {

@@ -11,6 +11,7 @@ import { nearestTileOfKind } from '@/lib/survival/spatial';
 import { survivalStore } from '@/lib/survival/store';
 import { profile } from '@/lib/profile/store';
 import type { CampState, Task, TaskKind } from '@/lib/survival/types';
+import { freshSeed } from '@/lib/dev/seed';
 
 /* ============================================================================
    SURVIVAL — "Adapt". A genuinely different loop from Main Evolution:
@@ -48,7 +49,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
   // lazy initializer is safe and needs no effect of its own.
   const [camp, setCamp] = useState<CampState | null>(() => {
     survivalStore.load();
-    return survivalStore.get().active ?? generateCamp(`run-${Date.now()}`);
+    return survivalStore.get().active ?? generateCamp(freshSeed('run'));
   });
   const [pending, setPending] = useState<Record<string, TaskKind>>({});
 
@@ -86,7 +87,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
   };
 
   const startNewRun = () => {
-    const fresh = generateCamp(`run-${Date.now()}`);
+    const fresh = generateCamp(freshSeed('run'));
     setCamp(fresh);
     setPending({});
     survivalStore.setActive(fresh);

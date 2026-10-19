@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Little curious owl">
+<g data-z="0" opacity=".45"><path d="M34 74l-4 10M42 78l-4 10M58 78l4 10M66 74l4 10"/><path data-extra="1" d="M34 28l3 -4M34 33l3 -4"/></g>
+<g data-z="1"><path d="M28 30c4 -10 12 -14 22 -8c10 -6 18 -2 22 8c6 18 4 38 -6 46h-32c-10 -8 -12 -28 -6 -46z"/><path d="M28 30l-4 -8l10 4M72 30l4 -8l-10 4"/></g>
+<g data-z="2"><circle cx="40" cy="42" r="8"/><circle cx="60" cy="42" r="8"/><circle cx="41" cy="43" r="2.6"/><circle cx="62" cy="41" r="2.6"/><path d="M50 48l-3 6h6z"/><path d="M38 62q12 6 24 0M40 68q10 5 20 0" opacity=".7"/><path d="M76 20q8 -2 10 4q-6 0 -6 6" opacity=".8"/></g>
+</svg>

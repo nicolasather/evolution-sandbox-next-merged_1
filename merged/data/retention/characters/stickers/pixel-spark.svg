@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Pixel spark glitch">
+<g data-z="0" opacity=".45"><path d="M20 70h8v8h-8zM72 24h8v8h-8zM28 28h6v6h-6zM66 74h6v6h-6z"/></g>
+<g data-z="1"><path d="M46 14h8v16h-8zM46 70h8v16h-8zM14 46h16v8h-16zM70 46h16v8h-16z"/><path d="M38 38h8v8h-8zM54 38h8v8h-8zM38 54h8v8h-8zM54 54h8v8h-8z"/></g>
+<g data-z="2"><path d="M46 46h8v8h-8z"/><path d="M60 22h8v8h-8zM76 66h6v6h-6z" opacity=".8"/><path d="M14 22l12 0M80 82l10 0" opacity=".6"/></g>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Little hourglass wondering">
+<g data-z="0" opacity=".45"><path d="M34 88h32M38 92h24M42 58l-8 14M58 58l8 14"/></g>
+<g data-z="1"><path d="M30 12h40M30 88h40"/><path d="M34 12c0 22 10 30 16 38c-6 8 -16 16 -16 38"/><path d="M66 12c0 22 -10 30 -16 38c6 8 16 16 16 38"/></g>
+<g data-z="2"><path d="M42 28h16M46 36h8" opacity=".85"/><path d="M50 50v14"/><path d="M40 82c4 -8 16 -8 20 0z"/><path d="M76 26q8 -2 8 6q-6 0 -6 6" opacity=".85"/></g>
+</svg>

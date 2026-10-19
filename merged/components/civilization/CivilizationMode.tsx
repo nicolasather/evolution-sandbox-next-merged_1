@@ -1,6 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
+import { devBridge } from '@/lib/dev/bridge';
+import { devOverrides } from '@/lib/dev/overrides';
 import { profile } from '@/lib/profile/store';
 import { ChapterSelect } from './lifelines/ChapterSelect';
 import { EntryChoice } from './lifelines/EntryChoice';
@@ -31,6 +33,17 @@ export function CivilizationMode({ onExit }: { onExit: () => void }) {
     profile.recordModeVisit('civilization');
     return () => { store.detach(); };
   }, [store]);
+
+  // Developer Beta only: the console asked to begin a specific chapter. Nothing ever sets a chapter request
+  // outside an authorised beta, so in production this effect never does anything.
+  const devRequest = useSyncExternalStore(devBridge.subscribeCiv, devBridge.getCivVersion, () => 0);
+  useEffect(() => {
+    if (snap.phase !== 'ready' || devRequest === 0 || !devOverrides.isActive()) return;
+    const chapterId = devBridge.takeCivChapter();
+    if (!chapterId) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (store.devStartChapter(chapterId).ok) setForced('play');
+  }, [snap.phase, devRequest, store]);
 
   // The screen is derived from saved state plus the player's explicit choices; no effect sets it.
   const hasLifelines = !!snap.run || Object.keys(snap.manifest.completions).length > 0;

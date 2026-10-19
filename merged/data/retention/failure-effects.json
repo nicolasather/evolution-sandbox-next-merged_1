@@ -1,0 +1,194 @@
+[
+  {
+    "id": "dust-puff",
+    "intensity": "micro",
+    "appearance": "A tiny dust cloud escapes the stone and settles immediately",
+    "eligible_context": "stone"
+  },
+  {
+    "id": "woody-squeak",
+    "intensity": "micro",
+    "appearance": "Two wood pieces make an exaggerated squeak before separating",
+    "eligible_context": "wood"
+  },
+  {
+    "id": "bone-rattle",
+    "intensity": "micro",
+    "appearance": "Bones rattle like harmless tiny percussion",
+    "eligible_context": "bone"
+  },
+  {
+    "id": "fibre-knot",
+    "intensity": "micro",
+    "appearance": "A loose fibre briefly ties itself into an impossible knot and unravels",
+    "eligible_context": "fibre"
+  },
+  {
+    "id": "clay-face",
+    "intensity": "micro",
+    "appearance": "Soft clay briefly displays a disappointed facial imprint",
+    "eligible_context": "clay"
+  },
+  {
+    "id": "metal-ding",
+    "intensity": "micro",
+    "appearance": "Metal makes a lonely tiny bell-like ding",
+    "eligible_context": "metal"
+  },
+  {
+    "id": "water-plop",
+    "intensity": "micro",
+    "appearance": "A bubble pops out of a nearby water surface",
+    "eligible_context": "water"
+  },
+  {
+    "id": "spark-sneeze",
+    "intensity": "micro",
+    "appearance": "A small harmless spark seems to sneeze and vanishes",
+    "eligible_context": "fire"
+  },
+  {
+    "id": "tool-shrug",
+    "intensity": "micro",
+    "appearance": "The active tool rotates a few degrees like a shrug",
+    "eligible_context": "tool"
+  },
+  {
+    "id": "bench-blink",
+    "intensity": "micro",
+    "appearance": "Two screw heads or knots in the bench blink once",
+    "eligible_context": "general"
+  },
+  {
+    "id": "scroll-nope",
+    "intensity": "micro",
+    "appearance": "A miniature parchment corner unfurls with a scribble and retracts",
+    "eligible_context": "scribe"
+  },
+  {
+    "id": "tiny-tumbleweed",
+    "intensity": "micro",
+    "appearance": "A speck-sized tumbleweed crosses the edge of the bench",
+    "eligible_context": "general"
+  },
+  {
+    "id": "flint-bird",
+    "intensity": "notable",
+    "appearance": "A bird-like puff of sparks takes one hop and dissolves",
+    "eligible_context": "stone"
+  },
+  {
+    "id": "wooden-duck",
+    "intensity": "notable",
+    "appearance": "The wooden offcut briefly wobbles into duck-like silhouette",
+    "eligible_context": "wood"
+  },
+  {
+    "id": "clay-slump",
+    "intensity": "notable",
+    "appearance": "An unsupported clay tower leans dramatically and collapses into itself",
+    "eligible_context": "clay"
+  },
+  {
+    "id": "iron-magnet",
+    "intensity": "notable",
+    "appearance": "Tiny filings align in a confused compass shape and disperse",
+    "eligible_context": "metal"
+  },
+  {
+    "id": "missing-piece",
+    "intensity": "notable",
+    "appearance": "The items briefly assemble a near-solution with a conspicuous empty slot",
+    "eligible_context": "general"
+  },
+  {
+    "id": "paper-airplane",
+    "intensity": "notable",
+    "appearance": "A scribbled blueprint folds into a paper glider and returns",
+    "eligible_context": "paper"
+  },
+  {
+    "id": "whistling-pot",
+    "intensity": "notable",
+    "appearance": "A vessel releases a tiny musical puff and goes silent",
+    "eligible_context": "ceramic"
+  },
+  {
+    "id": "mini-earthquake",
+    "intensity": "notable",
+    "appearance": "Only the bench props wobble gently; pointer targets remain fixed",
+    "eligible_context": "stone"
+  },
+  {
+    "id": "fish-flop",
+    "intensity": "notable",
+    "appearance": "A carved fish shape flops once and becomes ordinary again",
+    "eligible_context": "fishing"
+  },
+  {
+    "id": "misplaced-crown",
+    "intensity": "notable",
+    "appearance": "A small crown appears on an obviously unroyal object and slips off",
+    "eligible_context": "general"
+  },
+  {
+    "id": "microscope-eye",
+    "intensity": "notable",
+    "appearance": "A tiny lens opens like an eye and closes",
+    "eligible_context": "glass"
+  },
+  {
+    "id": "stuck-wheel",
+    "intensity": "notable",
+    "appearance": "A loose wheel spins backward with a squeak and rolls nowhere",
+    "eligible_context": "wheel"
+  },
+  {
+    "id": "hourglass-rewind",
+    "intensity": "notable",
+    "appearance": "Sand in a tiny hourglass reverses for one beat then settles",
+    "eligible_context": "time"
+  },
+  {
+    "id": "ant-parade",
+    "intensity": "notable",
+    "appearance": "Three tiny ants inspect the materials and walk away",
+    "eligible_context": "organic"
+  },
+  {
+    "id": "steam-shape",
+    "intensity": "notable",
+    "appearance": "Steam curls into a question mark, then disperses",
+    "eligible_context": "heat"
+  },
+  {
+    "id": "ink-oops",
+    "intensity": "notable",
+    "appearance": "One ink blot crawls away as if embarrassed",
+    "eligible_context": "ink"
+  },
+  {
+    "id": "ancient-cat",
+    "intensity": "rare",
+    "appearance": "A fleeting cat paw stamp lands near the craft and evaporates",
+    "eligible_context": "general"
+  },
+  {
+    "id": "stone-orchestra",
+    "intensity": "rare",
+    "appearance": "Several materials briefly become a silent conductor-led percussion ensemble",
+    "eligible_context": "general"
+  },
+  {
+    "id": "portal-socks",
+    "intensity": "rare",
+    "appearance": "A tiny harmless portal reveals one sock and closes",
+    "eligible_context": "general"
+  },
+  {
+    "id": "cosmic-fish",
+    "intensity": "rare",
+    "appearance": "A constellation outlines a fish for less than two seconds then fades",
+    "eligible_context": "general"
+  }
+]

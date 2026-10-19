@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Archivist eye with a dropped sleeve">
+<g data-z="0" opacity=".45"><path d="M18 62c10 14 24 20 32 20s22 -6 32 -20M26 70l-3 8M74 70l3 8"/><path data-extra="1" d="M30 52l6 -3M30 57l6 -3"/></g>
+<g data-z="1"><path d="M14 50c10 -16 24 -24 36 -24s26 8 36 24c-10 16 -24 24 -36 24s-26 -8 -36 -24z"/><circle cx="50" cy="50" r="13"/></g>
+<g data-z="2"><circle cx="50" cy="50" r="5"/><path d="M54 45a6 6 0 0 0 -4 -1" opacity=".8"/><path d="M26 20l4 6M40 14l2 7M60 14l-2 7M74 20l-4 6"/><path d="M82 70q6 6 2 14" opacity=".7"/><path d="M84 88l2 6" /></g>
+</svg>

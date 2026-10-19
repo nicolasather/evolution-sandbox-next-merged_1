@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Paper plane hello">
+<g data-z="0" opacity=".45"><path d="M14 74c10 -2 18 -6 26 -10M10 82c14 -2 26 -8 36 -14"/><path data-extra="1" d="M52 60l4 -3M52 65l4 -3"/></g>
+<g data-z="1"><path d="M88 14l-72 32l24 10l8 24l12 -16l20 14z"/><path d="M88 14l-48 42l8 24"/></g>
+<g data-z="2"><path d="M40 56l28 -22M48 80l-4 -20" opacity=".75"/><path d="M22 28l6 -2M16 20l8 2" /><path d="M72 66l8 2M68 76l8 6" opacity=".6"/></g>
+</svg>

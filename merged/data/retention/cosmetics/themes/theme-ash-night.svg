@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Falling ash">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 86h92"/><path d="M16 86V68h10v18M70 86V64h12v22"/></g>
+<g data-z="2" opacity="0.8"><path d="M20 14l2 4M40 24l2 4M60 12l2 4M78 30l2 4M30 44l2 4M54 50l2 4M86 50l2 4M12 54l2 4M68 62l2 4"/></g>
+<g data-z="3" opacity="0.5"><path d="M18 80a3 3 0 1 0 0.1 0zM76 78a3 3 0 1 0 0.1 0z"/></g>
+</svg>

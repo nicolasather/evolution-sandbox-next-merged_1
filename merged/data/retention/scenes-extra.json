@@ -1,0 +1,464 @@
+[
+  {
+    "id": "retention-origins-1",
+    "name": "Wind-Carved Plain",
+    "eras": [
+      "origins"
+    ],
+    "motif": "terraces",
+    "tone": "dawn",
+    "seed": 41,
+    "description": "Original line-engraved terraces composition for the origins era; preserve existing scenes."
+  },
+  {
+    "id": "retention-origins-2",
+    "name": "River of Flint",
+    "eras": [
+      "origins"
+    ],
+    "motif": "river",
+    "tone": "misted",
+    "seed": 64,
+    "description": "Original line-engraved river composition for the origins era; preserve existing scenes."
+  },
+  {
+    "id": "retention-origins-3",
+    "name": "Shadow Cave",
+    "eras": [
+      "origins"
+    ],
+    "motif": "cave",
+    "tone": "cobalt",
+    "seed": 87,
+    "description": "Original line-engraved cave composition for the origins era; preserve existing scenes."
+  },
+  {
+    "id": "retention-fire-1",
+    "name": "Ember Hollow",
+    "eras": [
+      "fire"
+    ],
+    "motif": "fire",
+    "tone": "amber",
+    "seed": 58,
+    "description": "Original line-engraved fire composition for the fire era; preserve existing scenes."
+  },
+  {
+    "id": "retention-fire-2",
+    "name": "Smoke in the Valley",
+    "eras": [
+      "fire"
+    ],
+    "motif": "fog",
+    "tone": "dusk",
+    "seed": 81,
+    "description": "Original line-engraved fog composition for the fire era; preserve existing scenes."
+  },
+  {
+    "id": "retention-fire-3",
+    "name": "Charcoal Canopy",
+    "eras": [
+      "fire"
+    ],
+    "motif": "trees",
+    "tone": "warm",
+    "seed": 104,
+    "description": "Original line-engraved trees composition for the fire era; preserve existing scenes."
+  },
+  {
+    "id": "retention-settlement-1",
+    "name": "First Hearths",
+    "eras": [
+      "settlement"
+    ],
+    "motif": "huts",
+    "tone": "amber",
+    "seed": 75,
+    "description": "Original line-engraved huts composition for the settlement era; preserve existing scenes."
+  },
+  {
+    "id": "retention-settlement-2",
+    "name": "Stone Circle",
+    "eras": [
+      "settlement"
+    ],
+    "motif": "rings",
+    "tone": "blue",
+    "seed": 98,
+    "description": "Original line-engraved rings composition for the settlement era; preserve existing scenes."
+  },
+  {
+    "id": "retention-settlement-3",
+    "name": "Rising Palisade",
+    "eras": [
+      "settlement"
+    ],
+    "motif": "posts",
+    "tone": "dawn",
+    "seed": 121,
+    "description": "Original line-engraved posts composition for the settlement era; preserve existing scenes."
+  },
+  {
+    "id": "retention-agriculture-1",
+    "name": "Irrigation Fields",
+    "eras": [
+      "agriculture"
+    ],
+    "motif": "canals",
+    "tone": "dawn",
+    "seed": 92,
+    "description": "Original line-engraved canals composition for the agriculture era; preserve existing scenes."
+  },
+  {
+    "id": "retention-agriculture-2",
+    "name": "Harvest Wind",
+    "eras": [
+      "agriculture"
+    ],
+    "motif": "crops",
+    "tone": "gold",
+    "seed": 115,
+    "description": "Original line-engraved crops composition for the agriculture era; preserve existing scenes."
+  },
+  {
+    "id": "retention-agriculture-3",
+    "name": "Seedhouse",
+    "eras": [
+      "agriculture"
+    ],
+    "motif": "grain",
+    "tone": "dusk",
+    "seed": 138,
+    "description": "Original line-engraved grain composition for the agriculture era; preserve existing scenes."
+  },
+  {
+    "id": "retention-civilization-1",
+    "name": "Temple Foundations",
+    "eras": [
+      "civilization"
+    ],
+    "motif": "columns",
+    "tone": "dawn",
+    "seed": 109,
+    "description": "Original line-engraved columns composition for the civilization era; preserve existing scenes."
+  },
+  {
+    "id": "retention-civilization-2",
+    "name": "City at the River",
+    "eras": [
+      "civilization"
+    ],
+    "motif": "city",
+    "tone": "blue",
+    "seed": 132,
+    "description": "Original line-engraved city composition for the civilization era; preserve existing scenes."
+  },
+  {
+    "id": "retention-civilization-3",
+    "name": "Ancient Observatory",
+    "eras": [
+      "civilization"
+    ],
+    "motif": "stars",
+    "tone": "dusk",
+    "seed": 155,
+    "description": "Original line-engraved stars composition for the civilization era; preserve existing scenes."
+  },
+  {
+    "id": "retention-trade-1",
+    "name": "Silk Routes",
+    "eras": [
+      "trade"
+    ],
+    "motif": "paths",
+    "tone": "warm",
+    "seed": 126,
+    "description": "Original line-engraved paths composition for the trade era; preserve existing scenes."
+  },
+  {
+    "id": "retention-trade-2",
+    "name": "Harbor Lanterns",
+    "eras": [
+      "trade"
+    ],
+    "motif": "ships",
+    "tone": "blue",
+    "seed": 149,
+    "description": "Original line-engraved ships composition for the trade era; preserve existing scenes."
+  },
+  {
+    "id": "retention-trade-3",
+    "name": "Caravan Pass",
+    "eras": [
+      "trade"
+    ],
+    "motif": "dunes",
+    "tone": "gold",
+    "seed": 172,
+    "description": "Original line-engraved dunes composition for the trade era; preserve existing scenes."
+  },
+  {
+    "id": "retention-metallurgy-1",
+    "name": "Smelting Valley",
+    "eras": [
+      "metallurgy"
+    ],
+    "motif": "furnace",
+    "tone": "amber",
+    "seed": 143,
+    "description": "Original line-engraved furnace composition for the metallurgy era; preserve existing scenes."
+  },
+  {
+    "id": "retention-metallurgy-2",
+    "name": "Copper Workshop",
+    "eras": [
+      "metallurgy"
+    ],
+    "motif": "tools",
+    "tone": "warm",
+    "seed": 166,
+    "description": "Original line-engraved tools composition for the metallurgy era; preserve existing scenes."
+  },
+  {
+    "id": "retention-metallurgy-3",
+    "name": "Forged Horizon",
+    "eras": [
+      "metallurgy"
+    ],
+    "motif": "gears",
+    "tone": "dusk",
+    "seed": 189,
+    "description": "Original line-engraved gears composition for the metallurgy era; preserve existing scenes."
+  },
+  {
+    "id": "retention-science-1",
+    "name": "Geometry Court",
+    "eras": [
+      "science"
+    ],
+    "motif": "rings",
+    "tone": "cobalt",
+    "seed": 160,
+    "description": "Original line-engraved rings composition for the science era; preserve existing scenes."
+  },
+  {
+    "id": "retention-science-2",
+    "name": "Library of Light",
+    "eras": [
+      "science"
+    ],
+    "motif": "books",
+    "tone": "gold",
+    "seed": 183,
+    "description": "Original line-engraved books composition for the science era; preserve existing scenes."
+  },
+  {
+    "id": "retention-science-3",
+    "name": "Celestial Map",
+    "eras": [
+      "science"
+    ],
+    "motif": "stars",
+    "tone": "blue",
+    "seed": 206,
+    "description": "Original line-engraved stars composition for the science era; preserve existing scenes."
+  },
+  {
+    "id": "retention-industry-1",
+    "name": "Factory Shadows",
+    "eras": [
+      "industry"
+    ],
+    "motif": "chimneys",
+    "tone": "dusk",
+    "seed": 177,
+    "description": "Original line-engraved chimneys composition for the industry era; preserve existing scenes."
+  },
+  {
+    "id": "retention-industry-2",
+    "name": "Railway Dawn",
+    "eras": [
+      "industry"
+    ],
+    "motif": "rails",
+    "tone": "warm",
+    "seed": 200,
+    "description": "Original line-engraved rails composition for the industry era; preserve existing scenes."
+  },
+  {
+    "id": "retention-industry-3",
+    "name": "Millwater",
+    "eras": [
+      "industry"
+    ],
+    "motif": "wheels",
+    "tone": "blue",
+    "seed": 223,
+    "description": "Original line-engraved wheels composition for the industry era; preserve existing scenes."
+  },
+  {
+    "id": "retention-electric-1",
+    "name": "Static Rain",
+    "eras": [
+      "electric"
+    ],
+    "motif": "lightning",
+    "tone": "cobalt",
+    "seed": 194,
+    "description": "Original line-engraved lightning composition for the electric era; preserve existing scenes."
+  },
+  {
+    "id": "retention-electric-2",
+    "name": "Copper Lines",
+    "eras": [
+      "electric"
+    ],
+    "motif": "wires",
+    "tone": "amber",
+    "seed": 217,
+    "description": "Original line-engraved wires composition for the electric era; preserve existing scenes."
+  },
+  {
+    "id": "retention-electric-3",
+    "name": "Night of Bulbs",
+    "eras": [
+      "electric"
+    ],
+    "motif": "lamps",
+    "tone": "dusk",
+    "seed": 240,
+    "description": "Original line-engraved lamps composition for the electric era; preserve existing scenes."
+  },
+  {
+    "id": "retention-computing-1",
+    "name": "Logic Corridor",
+    "eras": [
+      "computing"
+    ],
+    "motif": "grid",
+    "tone": "cobalt",
+    "seed": 211,
+    "description": "Original line-engraved grid composition for the computing era; preserve existing scenes."
+  },
+  {
+    "id": "retention-computing-2",
+    "name": "Circuit Atrium",
+    "eras": [
+      "computing"
+    ],
+    "motif": "circuits",
+    "tone": "blue",
+    "seed": 234,
+    "description": "Original line-engraved circuits composition for the computing era; preserve existing scenes."
+  },
+  {
+    "id": "retention-computing-3",
+    "name": "Punchcard Archive",
+    "eras": [
+      "computing"
+    ],
+    "motif": "cards",
+    "tone": "warm",
+    "seed": 257,
+    "description": "Original line-engraved cards composition for the computing era; preserve existing scenes."
+  },
+  {
+    "id": "retention-network-1",
+    "name": "Signal Coast",
+    "eras": [
+      "network"
+    ],
+    "motif": "signals",
+    "tone": "blue",
+    "seed": 228,
+    "description": "Original line-engraved signals composition for the network era; preserve existing scenes."
+  },
+  {
+    "id": "retention-network-2",
+    "name": "Connected Sky",
+    "eras": [
+      "network"
+    ],
+    "motif": "nodes",
+    "tone": "cobalt",
+    "seed": 251,
+    "description": "Original line-engraved nodes composition for the network era; preserve existing scenes."
+  },
+  {
+    "id": "retention-network-3",
+    "name": "Fiber Valley",
+    "eras": [
+      "network"
+    ],
+    "motif": "fibers",
+    "tone": "dusk",
+    "seed": 274,
+    "description": "Original line-engraved fibers composition for the network era; preserve existing scenes."
+  },
+  {
+    "id": "retention-games-1",
+    "name": "Pixel Garden",
+    "eras": [
+      "games"
+    ],
+    "motif": "pixels",
+    "tone": "warm",
+    "seed": 245,
+    "description": "Original line-engraved pixels composition for the games era; preserve existing scenes."
+  },
+  {
+    "id": "retention-games-2",
+    "name": "Arcade Horizons",
+    "eras": [
+      "games"
+    ],
+    "motif": "frames",
+    "tone": "cobalt",
+    "seed": 268,
+    "description": "Original line-engraved frames composition for the games era; preserve existing scenes."
+  },
+  {
+    "id": "retention-games-3",
+    "name": "Virtual Arena",
+    "eras": [
+      "games"
+    ],
+    "motif": "rings",
+    "tone": "blue",
+    "seed": 291,
+    "description": "Original line-engraved rings composition for the games era; preserve existing scenes."
+  },
+  {
+    "id": "retention-simulation-1",
+    "name": "Digital Weather",
+    "eras": [
+      "simulation"
+    ],
+    "motif": "particles",
+    "tone": "blue",
+    "seed": 262,
+    "description": "Original line-engraved particles composition for the simulation era; preserve existing scenes."
+  },
+  {
+    "id": "retention-simulation-2",
+    "name": "Procedural World",
+    "eras": [
+      "simulation"
+    ],
+    "motif": "mesh",
+    "tone": "cobalt",
+    "seed": 285,
+    "description": "Original line-engraved mesh composition for the simulation era; preserve existing scenes."
+  },
+  {
+    "id": "retention-simulation-3",
+    "name": "Future Blueprint",
+    "eras": [
+      "simulation"
+    ],
+    "motif": "blueprints",
+    "tone": "dawn",
+    "seed": 308,
+    "description": "Original line-engraved blueprints composition for the simulation era; preserve existing scenes."
+  }
+]

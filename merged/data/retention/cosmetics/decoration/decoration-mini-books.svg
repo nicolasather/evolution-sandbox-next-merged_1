@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Miniature books">
+<g data-z="0" opacity="0.4"><path d="M12 90h76"/></g>
+<g data-z="1"><path d="M16 86V30h16v56z"/><path d="M34 86V22h14v64z"/><path d="M50 86V34h18v52z"/><path d="M70 86l8 -56l14 2l-8 54z"/></g>
+<g data-z="2" opacity="0.8"><path d="M16 38h16M16 78h16M34 32h14M34 78h14M50 42h18M50 78h18"/><path d="M20 46h8M20 54h8"/></g>
+<g data-z="3" opacity="0.5"><path d="M72 40l12 2M70 50l12 2M68 60l12 2"/></g>
+</svg>

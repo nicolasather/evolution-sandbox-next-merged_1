@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Moonstone disc">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M50 12a38 38 0 1 0 0.1 0z"/><path d="M50 20a30 30 0 1 0 0.1 0z"/></g>
+<g data-z="2" opacity="0.8"><path d="M34 36l10 8l-4 12l10 8M66 30l-8 12l8 10"/><path d="M30 62l8 4"/></g>
+<g data-z="3" opacity="0.5"><path d="M22 78q28 12 56 0"/></g>
+</svg>

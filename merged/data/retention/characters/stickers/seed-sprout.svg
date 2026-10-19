@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Seed sprouting hello">
+<g data-z="0" opacity=".45"><path d="M26 80h48M34 86h32M30 74c8 4 32 4 40 0"/><path data-extra="1" d="M36 92l28 0"/></g>
+<g data-z="1"><path d="M50 78c-14 0 -22 -8 -20 -16c12 -2 20 6 20 16z"/><path d="M50 78c14 0 22 -8 20 -16c-12 -2 -20 6 -20 16z"/><path d="M50 78v-34"/></g>
+<g data-z="2"><path d="M50 52c-14 -2 -22 -12 -20 -24c12 0 20 8 20 24z"/><path d="M50 44c10 -2 18 -10 18 -20c-10 0 -16 6 -18 20z"/><path d="M50 52c-8 -4 -14 -10 -16 -18" opacity=".7"/><path d="M72 20l6 -6M78 28l8 -2" /></g>
+</svg>

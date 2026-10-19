@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Terracotta">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 14h92M4 22h92M4 56h92M4 64h92"/></g>
+<g data-z="2" opacity="0.8"><path d="M10 36l8 6l8 -6l8 6l8 -6l8 6l8 -6l8 6l8 -6l8 6l8 -6"/><path d="M10 82l8 -6l8 6l8 -6l8 6l8 -6l8 6l8 -6l8 6l8 -6l8 6l8 -6"/></g>
+<g data-z="3" opacity="0.4"><path d="M12 94v0M36 90v0M64 94v0M84 90v0"/></g>
+</svg>

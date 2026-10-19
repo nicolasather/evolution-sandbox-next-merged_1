@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { planFor, meshFor } from '@/lib/visual3d/plan';
 import { silhouette } from '@/lib/visual3d/silhouette';
-import { MATERIAL_LOOK } from '@/lib/visual3d/materials';
+import { themedLook } from '@/lib/visual3d/materials';
+import { THEME_EVENT } from '@/lib/theme';
 import { MeshCache } from '@/lib/visual3d/cache';
 import { webglAvailable, mountMesh, type RenderHandle } from '@/lib/visual3d/renderer';
 import { chooseQuality, detectEnv } from '@/lib/visual3d/lods';
@@ -40,6 +41,15 @@ export function Reconstruction3D({ itemId, archetype, family, name }: {
   useEffect(() => { let live = true; loadApprovedMesh(itemId).then(m => { if (live) setApproved(m); }); return () => { live = false; }; }, [itemId]);
   const shown = approved ?? mesh;
 
+  /* The site theme picks the material colours (lib/visual3d/materials.ts themedLook); the mesh never changes. */
+  const [theme, setTheme] = useState<string | null>(null);
+  useEffect(() => {
+    const read = () => setTheme(document.documentElement.dataset.theme ?? null);
+    read();
+    window.addEventListener(THEME_EVENT, read);
+    return () => window.removeEventListener(THEME_EVENT, read);
+  }, []);
+
   const flat = useMemo(() => silhouette(shown).svg, [shown]);
 
   useEffect(() => {
@@ -48,11 +58,11 @@ export function Reconstruction3D({ itemId, archetype, family, name }: {
     let handle: RenderHandle | null = null;
     let dead = false;
     const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
-    mountMesh(canvas, shown, MATERIAL_LOOK[spec.material], { reducedMotion: reduced })
+    mountMesh(canvas, shown, themedLook(spec.material, theme), { reducedMotion: reduced })
       .then(h => { if (dead) h?.dispose(); else { handle = h; setGl(!!h); } })
       .catch(() => setGl(false));
     return () => { dead = true; handle?.dispose(); setGl(false); };
-  }, [shown, spec.material, quality.render]);
+  }, [shown, spec.material, quality.render, theme]);
 
   return (
     <figure className="recon3d" style={{ margin: '0 0 14px', textAlign: 'center' }}>

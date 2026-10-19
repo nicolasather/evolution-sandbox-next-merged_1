@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Glyph } from './Glyph';
 import { markup, type GlyphNode } from '@/lib/glyphs';
 import { buildModel, type Model } from '@/lib/plate3d';
-import { cssVar, THEME_EVENT } from '@/lib/theme';
+import { cssVar, isLightTheme, THEME_EVENT } from '@/lib/theme';
 import { cn } from '@/lib/utils';
 
 /* ============================================================================
@@ -39,7 +39,7 @@ function readPalette(): Palette {
     line: cssVar('--plate-line', '#e9e5dd'),
     spark: cssVar('--plate-spark', '#c4642c'),
     glow: parseFloat(cssVar('--plate-glow', '0')) || 0,
-    light: theme === 'light',
+    light: isLightTheme(theme),
   };
 }
 

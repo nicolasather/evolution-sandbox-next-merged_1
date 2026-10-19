@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Sail">
+<g data-z="0" opacity="0.4"><path d="M10 88q20 8 40 0q20 8 40 0M18 94q16 4 32 0"/></g>
+<g data-z="1"><path d="M50 10V76"/><path d="M50 12c18 12 28 30 28 56H50z"/><path d="M50 20c-12 10 -22 26 -26 48h26z"/></g>
+<g data-z="2" opacity="0.75"><path d="M62 30c4 8 6 16 6 28M38 36c-4 8 -6 14 -6 22"/><path d="M24 76l26 6l30 -6l-6 10H32z"/></g>
+</svg>

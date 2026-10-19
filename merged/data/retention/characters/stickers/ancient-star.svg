@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ancient star">
+<g data-z="0" opacity=".45"><path d="M50 22v-8M50 78v8M22 50h-8M78 50h8M30 30l-6 -6M70 70l6 6M70 30l6 -6M30 70l-6 6"/><path data-extra="1" d="M20 74l6 -4M20 80l6 -4"/></g>
+<g data-z="1"><path d="M50 20l8 22l22 8l-22 8l-8 22l-8 -22l-22 -8l22 -8z"/><circle cx="50" cy="50" r="30" opacity=".5" stroke-dasharray="2 5"/></g>
+<g data-z="2"><path d="M50 36l4 10l10 4l-10 4l-4 10l-4 -10l-10 -4l10 -4z"/><path d="M40 14l1 3l3 1l-3 1l-1 3l-1 -3l-3 -1l3 -1z"/><circle cx="50" cy="50" r="2"/></g>
+</svg>

@@ -14,6 +14,7 @@ import { SCENES, paletteVars } from '@/lib/cinematic/scenes';
 import { Stage } from '../cinematic/CinematicStage';
 import { Signature } from '../cinematic/CinematicSignature';
 import type { Engine } from '@/lib/engine';
+import { retentionBus } from '@/lib/retention/bus';
 
 /* ============================================================================
    MINIMUM PATH — click from a start discovery to a target one through real
@@ -126,6 +127,7 @@ export function MinimumPathChallenge({ engine, active }: { engine: Engine; activ
     const path = [...session.path, id];
     const next: MinPathSession = { ...session, path, done: isComplete(engine.db, { ...session, path }, modifier) };
     setSession(next);
+    if (next.done && !session.done) retentionBus.emit({ t: 'minpath', solved: true });
   };
 
   const newPractice = () => { setMode('practice'); setPracticeSeed(Date.now()); };

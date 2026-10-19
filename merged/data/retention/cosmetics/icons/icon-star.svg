@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Star">
+<g data-z="0" opacity="0.4"><path d="M50 8v8M50 84v8M8 50h8M84 50h8"/></g>
+<g data-z="1"><path d="M50 14l10 26l28 4l-20 20l6 28l-24 -14l-24 14l6 -28l-20 -20l28 -4z"/></g>
+<g data-z="2" opacity="0.8"><path d="M50 32l5 14l15 3l-11 10l3 15l-12 -8l-12 8l3 -15l-11 -10l15 -3z"/></g>
+</svg>

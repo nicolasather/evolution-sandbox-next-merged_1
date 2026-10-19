@@ -78,7 +78,7 @@ describe('alternative proposals — trust boundary', () => {
     const r = validateAltResponse(mk({ ...good, ingredientIds: ids }), 'axe', ctx);
     expect(r.results.length).toBe(1);
     expect(JSON.stringify(playDb.nodes.map(n => [n.id, n.rec]))).toBe(before);
-    expect(playDb.nodes.length).toBe(918);
+    expect(playDb.nodes.filter(n => !n.id.startsWith('exp28_')).length).toBe(1917 + 841); // 918 base + 999 exp26 (g11) + 841 anc27 (g12)
   });
 });
 

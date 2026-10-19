@@ -1,0 +1,14 @@
+{
+ "schema": 1,
+ "note": "Quarantined = rejected from every import path. Nothing here may be published.",
+ "items": [
+  {
+   "id": "exp26_stone_pestle",
+   "name": "Stone Pestle",
+   "plate": 1286,
+   "reason": "DUPLICATE_OF_EXISTING_ITEM",
+   "detail": "Display name 'Stone Pestle' collides (case-insensitive) with existing catalogue item stone_pestle (#336, origins, -20000). The proposal is the same real object, so it is rejected, not renamed.",
+   "resolution": "Dependants were re-pointed at the existing stone_pestle: exp26_grain_grinding_set = [stone_pestle, scraping]."
+  }
+ ]
+}

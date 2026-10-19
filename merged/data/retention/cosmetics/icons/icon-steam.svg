@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Steam">
+<g data-z="0" opacity="0.4"><path d="M24 92h52"/></g>
+<g data-z="1"><path d="M28 56h38c8 0 12 6 12 12v14H26V56"/><path d="M34 56V40h14v16"/><path d="M54 56V36h12v20"/><path d="M30 72h44"/></g>
+<g data-z="2" opacity="0.8"><path d="M40 32q-6 -8 2 -14q-6 -6 0 -12M60 28q-6 -8 2 -14q-6 -6 0 -12"/><path d="M36 82a4 4 0 1 0 0.1 0zM56 82a4 4 0 1 0 0.1 0z"/></g>
+</svg>

@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import { benchSpawn } from './craft/bus';
+import { devBridge } from './dev/bridge';
+import { devOverrides, engineDevHooks } from './dev/overrides';
 import { Engine } from './engine';
 import { isTradeRoutesEnabled } from './modes/flags';
 import { playDb } from './processing';
@@ -17,6 +19,7 @@ import { regionGateFor } from './trade/gate';
 import { tradeStore } from './trade/store';
 import type { ActionId, CombineResult, Db, Discovery, ProcessResult, RegionLockInfo, ViewId } from './types';
 import { afterWorld } from './world/bus';
+import { retentionBus } from './retention/bus';
 
 export const db: Db = playDb;
 
@@ -47,8 +50,13 @@ const SETTLE_MS = 520;
  * useSyncExternalStore, which is also what keeps hydration honest.
  */
 export function useSandbox() {
-  const [engine] = useState(() => new Engine(db, { regionGate: liveRegionGate }));
+  const [engine] = useState(() => new Engine(db, { regionGate: liveRegionGate, dev: engineDevHooks }));
   const version = useSyncExternalStore(engine.subscribe, engine.getVersion, SERVER_VERSION);
+
+  // Developer Beta only: a changed override re-derives the era/tier gates, and the console can reach this engine.
+  // Outside an authorised beta nothing ever changes the overrides and the console does not exist, so both are idle.
+  useEffect(() => devOverrides.subscribe(() => engine.refreshGates()), [engine]);
+  useEffect(() => { devBridge.registerEngine(engine); return () => devBridge.unregisterEngine(engine); }, [engine]);
 
   // Saved progress lives in localStorage, which the server cannot see. Loading
   // it after mount lets hydration match; the engine then announces the change.
@@ -157,6 +165,7 @@ export function useSandbox() {
   const processOnBench = useCallback((id: string, action: ActionId): ProcessResult => {
     const res = engine.process(id, action);
     if (res.status === 'error') return res;
+    retentionBus.emit({ t: 'technique', action, produced: res.status === 'done' && res.discoveries.length > 0 });
     setHintError(null);
     if (res.status === 'done') {
       const first = res.discoveries.find(d => d.status === 'new') ?? res.discoveries[0];
@@ -221,6 +230,7 @@ export function useSandbox() {
   }, []);
 
   const requestHint = useCallback((targetId?: string) => {
+    retentionBus.emit({ t: 'signal', name: 'hint' });
     const r = engine.requestHint(targetId);
     if ('error' in r) { setHintError(r.error); return false; }
     setHintError(null);

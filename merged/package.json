@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "data:validate": "node tools/py.mjs tools/validate.py",
+    "data:validate": "node tools/py.mjs tools/validate.py && node tools/retention/validate.mjs",
     "data:build": "node tools/py.mjs tools/build_db.py && node -e \"require('fs').copyFileSync('build/db.json','data/db.json')\"",
     "data:sync": "node tools/py.mjs tools/sync_data.py",
     "data:check": "node tools/py.mjs tools/sync_data.py --check",
@@ -39,11 +39,15 @@
     "lab:fixtures": "tsx tools/devlab/seed-fixtures.ts",
     "lab:sheet": "tsx tools/devlab/contact-sheet.ts",
     "lab:report": "tsx tools/devlab/report.ts",
-    "lab:schema": "tsx tools/devlab/schema-doc.ts"
+    "lab:schema": "tsx tools/devlab/schema-doc.ts",
+    "retention:art": "node tools/retention/build-art.mjs",
+    "quiz:e2e": "node scripts/quiz-e2e.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
     "@sentry/nextjs": "^11.0.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.118.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.8.1",
     "@vercel/speed-insights": "^2.0.0",
@@ -54,6 +58,7 @@
     "pg": "^8.23.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
     "tailwind-merge": "^3.7.0",
     "zod": "^3.25.76"
   },

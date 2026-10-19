@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Hemp">
+<g data-z="0" opacity="0.35"><path d="M4 4h92v92h-92z"/></g>
+<g data-z="1"><path d="M4 20l92 24"/><path d="M4 44l92 24"/><path d="M4 68l92 24"/><path d="M4 -4l92 24"/></g>
+<g data-z="2" opacity="0.7"><path d="M14 14l8 2M30 18l8 2M46 24l8 2M62 30l8 2M78 36l8 2M14 56l8 2M30 62l8 2M46 68l8 2M62 74l8 2M78 80l8 2"/></g>
+<g data-z="3" opacity="0.4"><path d="M4 32l92 24M4 56l92 24"/></g>
+</svg>
