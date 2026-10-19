@@ -37,7 +37,7 @@ function Door({ v, cx, cy, r, selected, locale, onPick, fx }: { v: Vault; cx: nu
       <circle cx={cx} cy={cy} r={r + 8} fill="#31456b" stroke={INK} strokeWidth="5" />
       <circle cx={cx} cy={cy} r={r} fill={v.opened ? '#0c1b2f' : '#bd8f3a'} stroke={INK} strokeWidth="5" />
       {!v.opened && <><circle cx={cx} cy={cy} r={r * 0.86} fill="none" stroke={INK} strokeWidth="2.5" strokeDasharray="3 7" opacity=".7" /><Mech id={v.door} cx={cx} cy={cy} r={r} open={false} /></>}
-      {v.opened && <g><path d={`M${cx - r * 0.9} ${cy}A${r * 0.9} ${r * 0.9} 0 0 1 ${cx + r * 0.9} ${cy}Z`} fill={GOLD} opacity=".25" /><polygon points={`${cx},${cy - r * 0.5} ${cx + r * 0.36},${cy - r * 0.1} ${cx},${cy + r * 0.42} ${cx - r * 0.36},${cy - r * 0.1}`} fill="#7be0ff" stroke={INK} strokeWidth="4" strokeLinejoin="round" /><text x={cx} y={cy + r * 0.82} textAnchor="middle" fontSize="22" fontWeight="900" fill={GOLD} stroke={INK} strokeWidth="5" paintOrder="stroke" fontFamily="var(--qz-display)">+{v.reward}</text></g>}
+      {v.opened && <g className={fx ? "pj-open" : undefined}><path d={`M${cx - r * 0.9} ${cy}A${r * 0.9} ${r * 0.9} 0 0 1 ${cx + r * 0.9} ${cy}Z`} fill={GOLD} opacity=".25" /><polygon points={`${cx},${cy - r * 0.5} ${cx + r * 0.36},${cy - r * 0.1} ${cx},${cy + r * 0.42} ${cx - r * 0.36},${cy - r * 0.1}`} fill="#7be0ff" stroke={INK} strokeWidth="4" strokeLinejoin="round" /><text x={cx} y={cy + r * 0.82} textAnchor="middle" fontSize="22" fontWeight="900" fill={GOLD} stroke={INK} strokeWidth="5" paintOrder="stroke" fontFamily="var(--qz-display)">+{v.reward}</text></g>}
       {!v.opened && need.map((sh: Shape, i: number) => <g key={i}><rect x={cx - (need.length * gap) / 2 + i * gap + 1} y={cy + r + 20} width={gap - 2} height={gap - 2} rx="4" fill="#0e1a2e" stroke={INK} strokeWidth="3" /><ShapeGlyph shape={sh} x={cx - (need.length * gap) / 2 + i * gap + gap / 2} y={cy + r + 20 + gap / 2 - 1} r={7} /></g>)}
       <text x={cx} y={cy - r - 18} textAnchor="middle" fontSize="20" fontWeight="800" fill={PARCH} stroke={INK} strokeWidth="5" paintOrder="stroke" fontFamily="var(--qz-display)" letterSpacing="1.2">{v.id.toUpperCase()}{v.topic ? ` · ${v.topic}` : ''}</text>
       {(selected || fx) && <circle cx={cx} cy={cy} r={r + 18} fill="none" stroke="#ffd52f" strokeWidth="6" strokeDasharray="14 8" className="pj-pulse" />}
@@ -77,7 +77,7 @@ export default function VaultScene({ core, g, locale, onVault }: VaultProps) {
         return <Door key={v.id} v={v} cx={cx} cy={cy} r={r} selected={g.selected === v.id} fx={fxRef === v.id} locale={locale} onPick={onVault ? () => onVault(v.id) : undefined} />;
       })}
       <g transform="translate(40 40)" aria-hidden><text fontSize="34" fontWeight="900" fontStyle="italic" fill={PARCH} stroke={INK} strokeWidth="7" paintOrder="stroke" fontFamily="var(--qz-display)">{tr(locale, 'openVault').toUpperCase()}</text></g>
-      {core.teams.length > 0 && null}
+      <g transform="translate(40 690)"><rect x="-8" y="-24" width="620" height="34" rx="6" fill="#0b1018" opacity=".8" stroke={INK} strokeWidth="3" /><text fontSize="17" fontWeight="800" fill={PARCH} fontFamily="var(--qz-display)" letterSpacing="1">{opened} of {g.vaults.length} vaults open · grand vault needs {g.grand.need} · {g.grand.opened ? 'OPEN' : 'LOCKED'}</text></g>
     </svg>
   );
 }

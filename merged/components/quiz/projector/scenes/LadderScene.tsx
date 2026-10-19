@@ -66,6 +66,7 @@ export default function LadderScene({ core, g, locale }: LadderProps) {
         const x = px(k) - pw / 2 + 28 + same * 30, y = py(k) + 2;
         return <g key={t.id} className={fxTeam === t.id ? 'pj-bob' : undefined}><Flag i={i} x={x} y={y} s={0.95} label={t.name} />{gt.shield > 0 && <circle cx={x} cy={y - 62} r="9" fill="#28d1d4" stroke={INK} strokeWidth="3.5" />}</g>;
       })}
+      <g transform={`translate(${W - 250} ${H - 40 - core.teams.length * 26})`}>{core.teams.map((t, i) => { const gt = g.teams[t.id]; return <g key={t.id} transform={`translate(0 ${i * 26})`}><rect width="230" height="22" fill={CREAM} stroke={INK} strokeWidth="3" /><text x="8" y="16" fontSize="14" fontWeight="800" fill={COBALT} fontFamily="var(--qz-display)">{t.name.slice(0, 12)} · {gt?.tier ?? 0}/{S} · saved {gt?.checkpoint ?? 0}{gt && gt.shield > 0 ? ' · shield' : ''}</text></g>; })}</g>
       <g transform="translate(40 52)"><text fontSize="40" fontWeight="900" fontStyle="italic" fill={CREAM} stroke={INK} strokeWidth="8" paintOrder="stroke" fontFamily="var(--qz-display)">{tr(locale, 'summit').toUpperCase()} · {S}</text></g>
     </svg>
   );

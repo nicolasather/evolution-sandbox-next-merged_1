@@ -62,3 +62,8 @@
 .qz .pj-modes-hero { display:grid; gap:10px; margin-bottom:26px; }
 .qz .pj-gamefoot a.btn { text-decoration:none; }
 @media (prefers-reduced-motion:reduce) { .qz .pj-pulse { animation:none; } }
+/* Keep the 16:9 scene fully visible on short laptop/projector screens (e.g. 1280x720) */
+@media (min-width: 900px) and (max-height: 900px) { .qz .pj-scene { max-width: max(640px, calc((100vh - 150px) * 16 / 9)); margin-inline: auto; } }
+/* Vault door that has just opened swings in */
+.qz .pj-open { animation: pj-door .6s ease-out; transform-origin: center; } @keyframes pj-door { from { transform: scaleX(.2); opacity: .2; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .qz .pj-open { animation: none; } }
