@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import './quiz.css';
+import './projector.css';
 import QuizNav from '@/components/quiz/QuizNav';
 import { isGuest, maybeUser } from '@/lib/quiz/supabase';
 import { quizConfigured } from '@/lib/quiz/config';

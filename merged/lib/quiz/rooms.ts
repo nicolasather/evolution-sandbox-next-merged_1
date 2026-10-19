@@ -47,8 +47,9 @@ export async function verifyPlayer(room: Pick<Room, 'id'>, token: string): Promi
   return data as PlayerRow;
 }
 
-export async function createRoom(input: unknown, user: { id: string } | null) {
+export async function createRoom(input: unknown, user: { id: string } | null, opts: { allowProjector?: boolean } = {}) {
   const v = roomCreateSchema.parse(input);
+  if (v.projector && !opts.allowProjector) throw new AppError('Projector games are created from the Modes page', 400);
   assertCompatible(v.mode, v.flow, v.modifiers);
   if (v.mode !== 'solo' && !user) throw new AppError('Sign in required', 401);
   const teamNames = v.mode === 'classroom' ? v.teamNames : [];
@@ -63,6 +64,7 @@ export async function createRoom(input: unknown, user: { id: string } | null) {
     ...(v.readAloud ? { readAloud: true } : {}), ...(v.fairPlay ? { fairPlay: true } : {}), ...(v.rotateSpeaker ? { rotateSpeaker: true } : {}),
     ...(v.showIdentity === false ? { showIdentity: false } : {}), ...(v.cosmeticsEnabled === false ? { cosmeticsEnabled: false } : {}),
     ...(v.access ? { access: v.access } : {}),
+    ...(v.projector ? { projector: v.projector } : {}),
   };
   const token = v.mode === 'solo' ? randomSecret() : undefined;
   for (let attempt = 0; attempt < 8; attempt++) {

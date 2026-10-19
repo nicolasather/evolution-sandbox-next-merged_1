@@ -21,7 +21,7 @@ export default function QuizHome() {
       <section className="qz-section" aria-labelledby="modes-h">
         <header>
           <h2 id="modes-h">Game Modes</h2>
-          <p className="muted-text" style={{ margin: 0 }}>Every play method runs the Classic Quiz game mode.</p>
+          <p className="muted-text" style={{ margin: 0 }}>Every play method runs the Classic Quiz game mode. For the classroom projector, five full game worlds are also available — <Link className="textlink" href="/quiz/modes">see Projector Games</Link>.</p>
         </header>
         <ModeCards />
       </section>

@@ -39,6 +39,7 @@ export type GameConfig = {
   lowPressure?: boolean; quietClassroom?: boolean; untimed?: boolean; readAloud?: boolean; shuffleQuestions?: boolean;
   fairPlay?: boolean; showIdentity?: boolean; cosmeticsEnabled?: boolean; rotateSpeaker?: boolean; cancelled?: boolean;
   hideSpeedBonus?: boolean; replayOf?: string;
+  projector?: { game: string; minutes: number | null; focus: string };
   access?: { requireApproval?: boolean; lockedAfterStart?: boolean; hideIdentity?: boolean };
 };
 

@@ -86,6 +86,7 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
           <button key={m} className="choice" aria-pressed={mode === m} onClick={() => pickMode(m)}><strong>{modeLabels[m]}</strong><small>{MODE_HELP[m]}</small></button>
         ))}</div>
         {needsAccount && <p className="info">Hosting a {mode} game needs an account so you can control the room. <Link href={`/quiz/login?next=/quiz/setup/${quizId}`}>Sign in or create one</Link>. Solo play needs no account.</p>}
+        {mode === 'classroom' && <p className="info">Want a full game world on the projector? <Link href={`/quiz/setup/${quizId}/game`}>Choose a Projector Game</Link> — Empire Race, Boss Battle, Escape Room, Treasure Vault or Risk Ladder.</p>}
         {mode && <div className="qz-side-art" style={{ marginTop: 6, marginBottom: 0 }}><Image src={modeInfo(mode).art} alt="" width={1200} height={675} unoptimized /></div>}
       </section>
 
