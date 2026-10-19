@@ -7,7 +7,7 @@ import { L, tr } from '../i18n';
 import { Defs, INK, teamStyle } from './shared';
 
 const W = 1280, H = 720;
-const KIND_LABEL = { attack: { en: 'Heavy strike', vi: 'Đòn mạnh' }, surge: { en: 'Surge', vi: 'Bùng nổ' }, barrier: { en: 'Barrier', vi: 'Dựng rào' }, weakness: { en: 'Weak point opens', vi: 'Lộ điểm yếu' } } as const;
+const KIND_LABEL = { attack: { en: 'Heavy strike' }, surge: { en: 'Surge' }, barrier: { en: 'Barrier' }, weakness: { en: 'Weak point opens' } } as const;
 const pct = (a: number, b: number) => Math.max(0, Math.min(1, b ? a / b : 0));
 
 function Gear({ cx, cy, r, teeth = 12, fill = '#d6a24a', rot = 0, spin = false }: { cx: number; cy: number; r: number; teeth?: number; fill?: string; rot?: number; spin?: boolean }) {

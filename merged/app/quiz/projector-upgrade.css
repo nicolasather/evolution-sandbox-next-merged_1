@@ -1,0 +1,64 @@
+/* APPEND to the existing projector style through merged/app/quiz/layout.tsx.
+   Projector legibility and game-specific palettes. No generic full-page gradient. */
+.qz .pj { --pj-border:#101829; color:#f7f8f9; }
+.qz .pj-top { background:#0c1427; border:3px solid var(--pj-accent); padding:12px 20px; box-shadow:7px 7px 0 #101829; }
+.qz .pj-title h1 { font-weight:950; letter-spacing:.03em; text-wrap:balance; text-shadow:3px 3px 0 #101829; }
+.qz .pj-panel { border:3px solid #101829; box-shadow:6px 6px 0 #101829; }
+.qz .pj-svg { border:5px solid #101829; box-shadow:8px 8px 0 #101829; background:#131c28; }
+.qz .pj-extra-scene { width:100%; aspect-ratio:16/9; min-height:0; max-height:75vh; }
+.qz .pj-extra-controls { display:grid; gap:12px; padding:8px 0; }
+.qz .pj-extra-controls input,.qz .pj-extra-controls select { background:#fef8e9; border:3px solid #111a2a; border-radius:0; min-height:42px; font-size:18px; padding:5px 8px; color:#101829; }
+.qz .pj-rule { font-weight:700; padding:10px; background:#1e3048; border-left:5px solid var(--pj-accent); }
+.qz .pj-tutorial-launch { border:3px solid var(--pj-accent) !important; background:#171f30 !important; color:#fff !important; }
+.qz .pj-tutorial-shade { position:fixed; inset:0; z-index:10000; background:rgba(8,13,25,.86); display:grid; place-items:center; padding:18px; overflow-y:auto; }
+.qz .pj-tutorial-dialog { width:min(920px,96vw); max-height:min(900px,94vh); overflow-y:auto; background:#f8edc9; color:#101829; border:6px solid #101829; box-shadow:12px 12px 0 #ffbd35; padding:clamp(18px,3vw,38px); }
+.qz .pj-tutorial-dialog h2 { font-size:clamp(28px,4vw,46px); line-height:1.1; margin:6px 0 12px; color:#111a2a; text-transform:none; }
+.qz .pj-tutorial-head,.qz .pj-tutorial-actions { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.qz .pj-tutorial-objective { font-size:clamp(18px,2vw,24px); font-weight:800; }
+.qz .pj-tutorial-steps { display:flex; gap:10px; margin:16px 0; }
+.qz .pj-tutorial-steps button { height:42px; width:50px; background:#fff; border:3px solid #101829; color:#101829; font-size:21px; font-weight:900; cursor:pointer; }
+.qz .pj-tutorial-steps button.active { background:#ffd23f; transform:translateY(-3px); }
+.qz .pj-tutorial-content { padding:16px; background:#fff; border:4px solid #101829; }
+.qz .pj-tutorial-index { color:#7c4665; font-weight:900; letter-spacing:.14em; }
+.qz .pj-tutorial-content p { font-size:19px; line-height:1.5; }
+.qz .pj-tutorial-demo { padding:18px; background:#d6eaff; border:4px solid #111a2a; margin:14px 0; }
+.qz .pj-tutorial-demo p { font-size:18px; }
+.qz .pj-tutorial-disclaimer { font-size:14px !important; opacity:.8; }
+.qz .pj-tutorial-actions button { min-width:88px; }
+.qz [data-game='empire_race'] { --pj-accent:#ffcc4d; }
+.qz [data-game='boss_battle'] { --pj-accent:#ff5c65; }
+.qz [data-game='escape_room'] { --pj-accent:#5bd9ff; }
+.qz [data-game='treasure_vault'] { --pj-accent:#8ee3a8; }
+.qz [data-game='risk_ladder'] { --pj-accent:#bd95ff; }
+.qz [data-game='auction_house'] { --pj-accent:#ffc56c; }
+.qz [data-game='territory_war'] { --pj-accent:#91e6b0; }
+.qz [data-game='lucky_factory'] { --pj-accent:#52f0cf; }
+.qz [data-game='pirate_voyage'] { --pj-accent:#72d9ff; }
+.qz [data-game='final_showdown'] { --pj-accent:#ff91ca; }
+@media (max-width:800px) { .qz .pj-tutorial-dialog { padding:14px; } .qz .pj-extra-controls .row { flex-wrap:wrap; } .qz .pj-top { gap:10px; } }
+@media (prefers-reduced-motion:reduce) { .qz .pj-tutorial-steps button.active { transform:none; } .qz .pj-extra-scene * { animation:none !important; transition:none !important; } }
+.qz .pj .pj-coach { background:#fff2d0; color:#101829; border:4px solid #101829; padding:14px 16px; }
+.qz .pj .pj-coach .eyebrow { color:#693e7f; }
+.qz .pj .pj-coach p { font-size:17px; line-height:1.4; }
+.qz .pj .pj-coach strong { display:block; padding-top:6px; font-size:16px; }
+/* practice-lab bar, gallery footers, disabled-reason text and previews */
+.qz .pj-labbar { display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; padding:10px 18px; background:#0c1427; color:#f7f8f9; border-bottom:4px solid #101829; }
+.qz .pj-labbar label { display:flex; align-items:center; gap:6px; font-weight:800; }
+.qz .pj-labbar select { background:#fef8e9; color:#101829; border:3px solid #101829; min-height:38px; font-size:16px; padding:2px 8px; }
+.qz .pj-labnote { margin-left:auto; font-size:14px; opacity:.8; }
+.qz .pj-gamelink { display:flex; flex-direction:column; color:inherit; text-decoration:none; flex:1; }
+.qz .pj-gamefoot { display:flex; gap:10px; padding:10px 14px 14px; flex-wrap:wrap; align-items:center; }
+.qz .pj-act { display:flex; flex-direction:column; gap:3px; align-items:flex-start; }
+.qz .pj-why { color:#ffb4a8; font-size:14px; font-weight:700; line-height:1.3; }
+.qz .pj-note { color:#c8d3e6; font-size:13px; line-height:1.3; }
+.qz .pj-preview { padding:10px 12px; background:#1e3048; border-left:5px solid var(--pj-accent); font-size:16px; line-height:1.4; }
+.qz .pj-preview .pj-why { color:#ffcdc4; }
+.qz .pj-tiers,.qz .pj-build,.qz .pj-stances { display:flex; flex-wrap:wrap; gap:10px 14px; }
+.qz .pj-step { display:inline-flex; align-items:center; gap:8px; font-size:20px; font-weight:900; }
+.qz .pj-tutorial-tips { margin:8px 0 0; padding-left:20px; font-size:16px; }
+.qz .pj-pulse { animation:pjpulse 1.4s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+@keyframes pjpulse { 0%,100% { opacity:1 } 50% { opacity:.45 } }
+.qz .pj-svg { width:100%; height:auto; display:block; }
+.qz .pj-modes-hero { display:grid; gap:10px; margin-bottom:26px; }
+.qz .pj-gamefoot a.btn { text-decoration:none; }
+@media (prefers-reduced-motion:reduce) { .qz .pj-pulse { animation:none; } }

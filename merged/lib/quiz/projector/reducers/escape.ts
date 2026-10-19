@@ -33,14 +33,14 @@ function solve(s: GameState<EscapeG>, h: Hotspot, team: string, partial: boolean
     if (h.slot === 'X') g.seals++;
     const k = invKey(g, team); (g.inv[k] ??= []).push(h.grants);
   }
-  g.selected = null; log(c, bypass ? 'bypass' : 'solved', team, { hs: h.id }); fx(c, 'solve', team, h.id);
+  g.selected = null; log(c, bypass ? 'bypass' : 'solved', team, { hs: h.label.en }); fx(c, 'solve', team, h.id);
 }
 
 function onAnswer(s: GameState<EscapeG>, a: VerifiedAnswer, ask: AskInfo) {
   const { g, core: c } = s; const h = spot(g, ask.ref ?? '');
   if (!h) return; g.attempts[h.id] = (g.attempts[h.id] ?? 0) + 1;
   if (g.solved.includes(h.id)) return; // another team already solved it this round (synchronized): evidence only
-  if (a.grade === 'wrong') { g.cooldown[h.id] = c.round; log(c, 'miss', a.teamId, { hs: h.id }); fx(c, 'miss', a.teamId, h.id); }
+  if (a.grade === 'wrong') { g.cooldown[h.id] = c.round; log(c, 'miss', a.teamId, { hs: h.label.en }); fx(c, 'miss', a.teamId, h.id); }
   else solve(s, h, a.teamId, a.grade === 'partial');
 }
 function afterAsk(s: GameState<EscapeG>) {
@@ -70,13 +70,13 @@ function command(s: GameState<EscapeG>, cmd: GameCommand, _env: Env): ReduceResu
     case 'inspect': {
       if (!free) return err('wrongPhase', { phase: c.phase }); if (!h || h.tier > g.maxTier) return err('badHotspot');
       if (!g.inspected.includes(h.id)) g.inspected.push(h.id);
-      g.selected = h.id; log(c, 'inspect', actorTeam(c).id, { hs: h.id }); fx(c, 'inspect', actorTeam(c).id, h.id); return { ok: true, state: s };
+      g.selected = h.id; log(c, 'inspect', actorTeam(c).id, { hs: h.label.en }); fx(c, 'inspect', actorTeam(c).id, h.id); return { ok: true, state: s };
     }
     case 'cancel_choice': { if (!free || !g.selected) return err('nothingToUndo'); g.selected = null; log(c, 'undo'); return { ok: true, state: s }; }
     case 'hint': {
       if (!free) return err('wrongPhase', { phase: c.phase }); if (!h || !h.question || g.solved.includes(h.id)) return err('badHotspot');
       if ((g.hints[h.id] ?? 0) >= 2) return err('noMoreHints'); if (g.hintTokens <= 0) return err('noHintTokens');
-      g.hintTokens--; g.hints[h.id] = (((g.hints[h.id] ?? 0) + 1) as 1 | 2); log(c, 'hint', actorTeam(c).id, { hs: h.id, level: g.hints[h.id]! }); fx(c, 'hint', actorTeam(c).id, h.id); return { ok: true, state: s };
+      g.hintTokens--; g.hints[h.id] = (((g.hints[h.id] ?? 0) + 1) as 1 | 2); log(c, 'hint', actorTeam(c).id, { hs: h.label.en, level: g.hints[h.id]! }); fx(c, 'hint', actorTeam(c).id, h.id); return { ok: true, state: s };
     }
     case 'unlock': case 'combine': {
       if (!free) return err('wrongPhase', { phase: c.phase }); if (!h || (h.kind !== 'lock' && h.kind !== 'door') || h.tier > g.maxTier) return err('badHotspot');
@@ -85,7 +85,7 @@ function command(s: GameState<EscapeG>, cmd: GameCommand, _env: Env): ReduceResu
       const k = invKey(g, team);
       g.inv[k] = (g.inv[k] ?? []).filter((i) => !h.consumes.includes(i)); g.opened.push(h.id);
       if (h.grants) g.inv[k]!.push(h.grants);
-      log(c, h.kind === 'door' ? 'doorOpen' : 'lockOpen', team, { hs: h.id }); fx(c, h.kind === 'door' ? 'door' : 'unlock', team, h.id);
+      log(c, h.kind === 'door' ? 'doorOpen' : 'lockOpen', team, { hs: h.label.en }); fx(c, h.kind === 'door' ? 'door' : 'unlock', team, h.id);
       if (h.kind === 'door') {
         if (g.roomIdx + 1 >= g.rooms) { g.escaped = true; finish(s, 'objective'); }
         else { g.transition = { n: (g.transition?.n ?? 0) + 1, from: g.roomIdx, to: g.roomIdx + 1 }; g.roomIdx++; g.selected = null; g.hintTokens = HINT_TOKENS; log(c, 'roomEntered', team, { room: g.roomIdx + 1 }); }
@@ -96,7 +96,7 @@ function command(s: GameState<EscapeG>, cmd: GameCommand, _env: Env): ReduceResu
       if (!free) return err('wrongPhase', { phase: c.phase }); if (g.shared) return err('sharedInventory');
       const from = String(p.from ?? ''), to = String(p.to ?? ''), item = String(p.item ?? '');
       if (!g.inv[from]?.includes(item) || !c.teams.some((t) => t.id === to) || from === to) return err('badTrade');
-      g.inv[from] = g.inv[from]!.filter((i, ix, a) => i !== item || a.indexOf(i) !== ix); (g.inv[to] ??= []).push(item); g.trades++; log(c, 'trade', from, { item }); fx(c, 'trade', to); return { ok: true, state: s };
+      g.inv[from] = g.inv[from]!.filter((i, ix, a) => i !== item || a.indexOf(i) !== ix); (g.inv[to] ??= []).push(item); g.trades++; log(c, 'trade', from, { item: CAMPAIGNS[g.campaign].items[item]?.label.en ?? item }); fx(c, 'trade', to); return { ok: true, state: s };
     }
     case 'bypass': {
       if (!free) return err('wrongPhase', { phase: c.phase }); const reason = String(p.reason ?? '').trim();

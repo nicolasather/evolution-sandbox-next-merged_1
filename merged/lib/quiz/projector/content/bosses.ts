@@ -10,21 +10,21 @@ export type BossDef = {
 
 export const BOSSES: Record<BossId, BossDef> = {
   clockwork_leviathan: {
-    id: 'clockwork_leviathan', name: { en: 'Clockwork Leviathan', vi: 'Thủy quái đồng hồ' },
-    blurb: { en: 'A brass sea-engine with a spinning gear core.', vi: 'Cỗ máy biển bằng đồng với lõi bánh răng quay.' },
-    forms: [{ en: 'Armored hull', vi: 'Vỏ giáp' }, { en: 'Pressure barrier', vi: 'Lá chắn áp suất' }, { en: 'Exposed gear core', vi: 'Lõi bánh răng lộ ra' }],
+    id: 'clockwork_leviathan', name: { en: 'Clockwork Leviathan' },
+    blurb: { en: 'A brass sea-engine with a spinning gear core.' },
+    forms: [{ en: 'Armored hull' }, { en: 'Pressure barrier' }, { en: 'Exposed gear core' }],
     moves: [['attack', 'weakness', 'attack', 'attack'], ['barrier', 'attack', 'weakness', 'attack', 'surge'], ['attack', 'surge', 'attack', 'weakness', 'attack']],
   },
   library_colossus: {
-    id: 'library_colossus', name: { en: 'Library Colossus', vi: 'Khổng lồ thư viện' },
-    blurb: { en: 'A stone giant built from stacked shelves and lantern eyes.', vi: 'Tượng đá khổng lồ xếp từ giá sách và đèn lồng.' },
-    forms: [{ en: 'Shelf plating', vi: 'Tấm giá sách' }, { en: 'Index barrier', vi: 'Lá chắn mục lục' }, { en: 'Lantern core', vi: 'Lõi đèn lồng' }],
+    id: 'library_colossus', name: { en: 'Library Colossus' },
+    blurb: { en: 'A stone giant built from stacked shelves and lantern eyes.' },
+    forms: [{ en: 'Shelf plating' }, { en: 'Index barrier' }, { en: 'Lantern core' }],
     moves: [['weakness', 'attack', 'attack', 'weakness'], ['barrier', 'weakness', 'attack', 'attack', 'surge'], ['attack', 'attack', 'surge', 'weakness', 'attack']],
   },
   storm_engine: {
-    id: 'storm_engine', name: { en: 'Storm Engine', vi: 'Động cơ bão' },
-    blurb: { en: 'A tower of coils and turbines that crackles with static.', vi: 'Tháp cuộn dây và tuabin phóng tĩnh điện.' },
-    forms: [{ en: 'Insulated casing', vi: 'Vỏ cách điện' }, { en: 'Static barrier', vi: 'Lá chắn tĩnh điện' }, { en: 'Open coil', vi: 'Cuộn dây hở' }],
+    id: 'storm_engine', name: { en: 'Storm Engine' },
+    blurb: { en: 'A tower of coils and turbines that crackles with static.' },
+    forms: [{ en: 'Insulated casing' }, { en: 'Static barrier' }, { en: 'Open coil' }],
     moves: [['attack', 'attack', 'weakness', 'surge'], ['barrier', 'attack', 'surge', 'attack', 'weakness'], ['surge', 'attack', 'attack', 'weakness', 'attack']],
   },
 };

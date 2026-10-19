@@ -112,7 +112,7 @@ function onAnswer(s: GameState<EmpireG>, a: VerifiedAnswer, ask: AskInfo) {
     const d = g.duel, tile = g.tiles[d.tile]!; const bonus = tile.fort ? 0.5 : 0;
     const win = (d.atk ?? 0) > frac + bonus;
     if (win) { const had = tile.capital; tile.owner = d.attacker; tile.fort = false; log(c, had ? 'captureCapital' : 'duelWon', d.attacker, { tile: tile.id }); fx(c, 'capture', d.attacker, tile.id); }
-    else { log(c, 'duelHeld', d.defender, { tile: tile.id }); fx(c, 'hold', d.defender, tile.id); }
+    else { log(c, 'duelHeld', d.defender, { tile: tile.id + 1 }); fx(c, 'hold', d.defender, tile.id); }
     g.lastDuel = { tile: d.tile, winner: win ? d.attacker : d.defender, attacker: d.attacker }; g.duel = null;
   }
 }
@@ -148,7 +148,7 @@ function command(s: GameState<EmpireG>, cmd: GameCommand, _env: Env): ReduceResu
   switch (cmd.action) {
     case 'choose_zone': {
       if (c.phase !== 'choose') return err('wrongPhase', { phase: c.phase });
-      if (!tile) return err('badTile'); g.target = tile.id; log(c, 'zoneChosen', actorTeam(c).id, { tile: tile.id }); fx(c, 'target', actorTeam(c).id, tile.id); return { ok: true, state: s };
+      if (!tile) return err('badTile'); g.target = tile.id; log(c, 'zoneChosen', actorTeam(c).id, { tile: tile.id + 1 }); fx(c, 'target', actorTeam(c).id, tile.id); return { ok: true, state: s };
     }
     case 'cancel_choice': { if (c.phase !== 'choose' || g.target === null) return err('nothingToUndo'); g.target = null; log(c, 'undo'); return { ok: true, state: s }; }
     case 'continue': { if (c.phase !== 'review') return err('wrongPhase', { phase: c.phase }); endTurn(s); return { ok: true, state: s }; }
@@ -170,20 +170,20 @@ function command(s: GameState<EmpireG>, cmd: GameCommand, _env: Env): ReduceResu
       if (!tile) return err('badTile');
       if (cmd.action === 'claim') {
         if (tile.owner) return err('tileTaken'); if (!reachable(g, team, tile.id)) return err('notAdjacent');
-        tile.owner = team; tile.review = false; spend(cost); log(c, 'claim', team, { tile: tile.id }); fx(c, 'claim', team, tile.id); return { ok: true, state: s };
+        tile.owner = team; tile.review = false; spend(cost); log(c, 'claim', team, { tile: tile.id + 1 }); fx(c, 'claim', team, tile.id); return { ok: true, state: s };
       }
       if (cmd.action === 'fortify') {
         if (tile.owner !== team) return err('notOwned'); if (tile.fort) return err('alreadyFort');
-        tile.fort = true; spend(cost); log(c, 'fortify', team, { tile: tile.id }); fx(c, 'fortify', team, tile.id); return { ok: true, state: s };
+        tile.fort = true; spend(cost); log(c, 'fortify', team, { tile: tile.id + 1 }); fx(c, 'fortify', team, tile.id); return { ok: true, state: s };
       }
       if (cmd.action === 'research') {
         if (!(tile.owner === team || reachable(g, team, tile.id))) return err('notAdjacent'); if (!tile.hidden) return err('nothingHidden');
-        tile.hidden = false; spend(cost); log(c, 'research', team, { tile: tile.id, pts: tile.relic }); fx(c, 'research', team, tile.id); return { ok: true, state: s };
+        tile.hidden = false; spend(cost); log(c, 'research', team, { tile: tile.id + 1, pts: tile.relic }); fx(c, 'research', team, tile.id); return { ok: true, state: s };
       }
       // challenge
       if (!tile.owner || tile.owner === team) return err('notEnemy'); if (!reachable(g, team, tile.id)) return err('notAdjacent');
       g.duel = { tile: tile.id, attacker: team, defender: tile.owner, stage: 'attack', atk: null }; spend(cost);
-      log(c, 'challenge', team, { tile: tile.id }); fx(c, 'challenge', team, tile.id); return { ok: true, state: s };
+      log(c, 'challenge', team, { tile: tile.id + 1 }); fx(c, 'challenge', team, tile.id); return { ok: true, state: s };
     }
     default: return err('unknownAction');
   }

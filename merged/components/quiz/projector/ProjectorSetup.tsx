@@ -7,47 +7,50 @@ import { DURATION_PRESETS, planFor, type Plan, type PoolCheck } from '@/lib/quiz
 import { modifierRule } from '@/lib/quiz/projector/compat';
 import { MODIFIERS } from '@/lib/quiz/types';
 import type { GameKey, LearningFocus, ProjectorSettings } from '@/lib/quiz/projector/types';
-import { detectLocale, L } from './i18n';
+import { L } from './i18n';
 import { TeamSwatch } from './parts';
 import type { Locale } from '@/lib/quiz/projector/types';
 
 const S = {
-  steps: { en: ['Game', 'Teams & flow', 'Time', 'Learning', 'Launch'], vi: ['Trò chơi', 'Đội & cách chơi', 'Thời gian', 'Học tập', 'Bắt đầu'] },
-  game: { en: 'Pick the game first. Modifiers come afterwards.', vi: 'Chọn trò chơi trước. Bổ trợ chọn sau.' },
-  teams: { en: 'Number of teams', vi: 'Số đội' }, flow: { en: 'Turn flow', vi: 'Cách chia lượt' },
-  rr: { en: 'Round robin — one team at a time', vi: 'Lần lượt — mỗi lần một đội' }, sync: { en: 'Synchronized — every team answers', vi: 'Đồng thời — mọi đội cùng trả lời' },
-  names: { en: 'Team names', vi: 'Tên đội' }, time: { en: 'Lesson length', vi: 'Thời lượng tiết học' }, untimed: { en: 'No clock', vi: 'Không giới hạn' }, min: { en: 'min', vi: 'phút' },
-  focus: { en: 'Learning emphasis', vi: 'Mức nhấn mạnh học tập' }, study: { en: 'Study — explanations after every question', vi: 'Học — có giải thích sau mỗi câu' },
-  balanced: { en: 'Balanced', vi: 'Cân bằng' }, gameF: { en: 'Game — faster pace', vi: 'Trò chơi — nhịp nhanh hơn' },
-  low: { en: 'Low pressure (no penalties, gentler timing)', vi: 'Ít áp lực (không trừ điểm, nhịp nhẹ hơn)' }, read: { en: 'Read questions aloud (teacher)', vi: 'Giáo viên đọc to câu hỏi' },
-  repeats: { en: 'Allow one labelled review cycle if the quiz runs short', vi: 'Cho phép một vòng ôn tập có gắn nhãn nếu thiếu câu hỏi' },
-  comeback: { en: 'Comeback help for trailing teams', vi: 'Hỗ trợ đội đang thua' },
-  plan: { en: 'What this lesson will contain', vi: 'Bài học sẽ gồm' }, turns: { en: 'Turns', vi: 'Lượt' }, perTeam: { en: 'Per team', vi: 'Mỗi đội' }, qs: { en: 'Questions', vi: 'Câu hỏi' }, sec: { en: 'Sec / turn', vi: 'Giây / lượt' },
-  avail: { en: 'In this quiz', vi: 'Trong bộ đề' }, short: { en: 'The quiz has {n} fewer questions than this lesson needs.', vi: 'Bộ đề thiếu {n} câu so với nhu cầu tiết học.' },
-  suggest: { en: 'A {m}-minute lesson fits this quiz.', vi: 'Tiết {m} phút phù hợp với bộ đề này.' }, useIt: { en: 'Use {m} min', vi: 'Dùng {m} phút' },
-  tooFew: { en: 'Not enough questions even with a review cycle. Add questions or shorten the lesson.', vi: 'Không đủ câu hỏi dù có vòng ôn tập. Hãy thêm câu hỏi hoặc rút ngắn tiết học.' },
-  mods: { en: 'Modifiers', vi: 'Bổ trợ' }, modsNote: { en: 'Each projector game has its own native mechanics, so classic modifiers are shown with the reason they are off.', vi: 'Mỗi trò chơi máy chiếu có cơ chế riêng, nên các bổ trợ cổ điển được hiển thị kèm lý do đang tắt.' },
-  next: { en: 'Next', vi: 'Tiếp' }, back: { en: 'Back', vi: 'Quay lại' }, launch: { en: 'Create game', vi: 'Tạo trò chơi' }, tryLab: { en: 'Try it first with sample questions', vi: 'Thử trước với câu hỏi mẫu' },
-  creating: { en: 'Creating…', vi: 'Đang tạo…' }, signin: { en: 'Sign in to create a game.', vi: 'Hãy đăng nhập để tạo trò chơi.' },
-  world: { en: 'World', vi: 'Thế giới' }, objective: { en: 'Objective', vi: 'Mục tiêu' }, boss: { en: 'Boss', vi: 'Trùm' }, campaign: { en: 'Campaign', vi: 'Chiến dịch' }, mission: { en: 'Mission', vi: 'Nhiệm vụ' },
-  weak: { en: 'Preview unavailable right now.', vi: 'Hiện chưa xem trước được.' },
+  steps: { en: ['Game', 'Teams & flow', 'Time', 'Learning', 'Launch'] },
+  game: { en: 'Pick the game first. Modifiers come afterwards.' },
+  teams: { en: 'Number of teams' }, flow: { en: 'Turn flow' },
+  rr: { en: 'Round robin — one team at a time' }, sync: { en: 'Synchronized — every team answers' },
+  names: { en: 'Team names' }, time: { en: 'Lesson length' }, untimed: { en: 'No clock' }, min: { en: 'min' },
+  focus: { en: 'Learning emphasis' }, study: { en: 'Study — explanations after every question' },
+  balanced: { en: 'Balanced' }, gameF: { en: 'Game — faster pace' },
+  low: { en: 'Low pressure (no penalties, gentler timing)' }, read: { en: 'Read questions aloud (teacher)' },
+  repeats: { en: 'Allow one labelled review cycle if the quiz runs short' },
+  comeback: { en: 'Comeback help for trailing teams' },
+  plan: { en: 'What this lesson will contain' }, turns: { en: 'Turns' }, perTeam: { en: 'Per team' }, qs: { en: 'Questions' }, sec: { en: 'Sec / turn' },
+  avail: { en: 'In this quiz' }, short: { en: 'The quiz has {n} fewer questions than this lesson needs.' },
+  suggest: { en: 'A {m}-minute lesson fits this quiz.' }, useIt: { en: 'Use {m} min' },
+  tooFew: { en: 'Not enough questions even with a review cycle. Add questions or shorten the lesson.' },
+  mods: { en: 'Modifiers' }, modsNote: { en: 'Each projector game has its own native mechanics, so classic modifiers are shown with the reason they are off.' },
+  next: { en: 'Next' }, back: { en: 'Back' }, launch: { en: 'Create game' }, tryLab: { en: 'Try it first with sample questions' },
+  creating: { en: 'Creating…' }, signin: { en: 'Sign in to create a game.' },
+  world: { en: 'World' }, objective: { en: 'Objective' }, boss: { en: 'Boss' }, campaign: { en: 'Campaign' }, mission: { en: 'Mission' }, board: { en: 'Map' },
+  weak: { en: 'Preview unavailable right now.' },
 } as const;
-const SETTING_OPTS: Record<GameKey, { key: keyof ProjectorSettings; label: keyof typeof S; vals: { v: string; en: string; vi: string }[] }[]> = {
+const SETTING_OPTS: Record<GameKey, { key: keyof ProjectorSettings; label: keyof typeof S; vals: { v: string; en: string }[] }[]> = {
   empire_race: [
-    { key: 'world', label: 'world', vals: [{ v: 'archipelago', en: 'Archipelago', vi: 'Quần đảo' }, { v: 'river_kingdom', en: 'River Kingdom', vi: 'Vương quốc sông' }, { v: 'desert_crossing', en: 'Desert Crossing', vi: 'Sa mạc' }] },
-    { key: 'objective', label: 'objective', vals: [{ v: 'territory', en: 'Territory', vi: 'Lãnh thổ' }, { v: 'capital', en: 'Capital', vi: 'Thủ đô' }, { v: 'expedition', en: 'Expedition', vi: 'Viễn chinh' }] }],
-  boss_battle: [{ key: 'boss', label: 'boss', vals: [{ v: 'clockwork_leviathan', en: 'Clockwork Leviathan', vi: 'Hải quái đồng hồ' }, { v: 'library_colossus', en: 'Library Colossus', vi: 'Người khổng lồ thư viện' }, { v: 'storm_engine', en: 'Storm Engine', vi: 'Cỗ máy bão' }] }],
-  escape_room: [{ key: 'campaign', label: 'campaign', vals: [{ v: 'clockhouse', en: 'Clockhouse', vi: 'Nhà đồng hồ' }, { v: 'celestial_archive', en: 'Celestial Archive', vi: 'Kho lưu trữ thiên văn' }, { v: 'glass_garden', en: 'Glass Garden', vi: 'Vườn thủy tinh' }] }],
+    { key: 'world', label: 'world', vals: [{ v: 'archipelago', en: 'Archipelago' }, { v: 'river_kingdom', en: 'River Kingdom' }, { v: 'desert_crossing', en: 'Desert Crossing' }] },
+    { key: 'objective', label: 'objective', vals: [{ v: 'territory', en: 'Territory' }, { v: 'capital', en: 'Capital' }, { v: 'expedition', en: 'Expedition' }] }],
+  boss_battle: [{ key: 'boss', label: 'boss', vals: [{ v: 'clockwork_leviathan', en: 'Clockwork Leviathan' }, { v: 'library_colossus', en: 'Library Colossus' }, { v: 'storm_engine', en: 'Storm Engine' }] }],
+  escape_room: [{ key: 'campaign', label: 'campaign', vals: [{ v: 'clockhouse', en: 'Clockhouse' }, { v: 'celestial_archive', en: 'Celestial Archive' }, { v: 'glass_garden', en: 'Glass Garden' }] }],
   treasure_vault: [],
-  risk_ladder: [{ key: 'mission', label: 'mission', vals: [{ v: 'highest', en: 'Highest climb', vi: 'Leo cao nhất' }, { v: 'first', en: 'First to summit', vi: 'Lên đỉnh đầu tiên' }, { v: 'group', en: 'Class climb', vi: 'Cả lớp cùng leo' }] }],
+  risk_ladder: [{ key: 'mission', label: 'mission', vals: [{ v: 'highest', en: 'Highest climb' }, { v: 'first', en: 'First to summit' }, { v: 'group', en: 'Class climb' }] }],
+  auction_house: [],
+  territory_war: [{ key: 'board', label: 'board', vals: [{ v: 'frontier', en: 'Frontier plains' }, { v: 'canyon', en: 'Canyon crossing' }, { v: 'delta', en: 'River delta' }] }],
+  lucky_factory: [],
+  pirate_voyage: [],
+  final_showdown: [],
 };
-const t = (l: Locale, k: keyof typeof S, vars: Record<string, string | number> = {}) => { const v = S[k] as { en: string; vi: string }; return Object.entries(vars).reduce((s, [a, b]) => s.replace(`{${a}}`, String(b)), v[l]); };
+const t = (l: Locale, k: keyof typeof S, vars: Record<string, string | number> = {}) => { const v = S[k] as { en: string }; return Object.entries(vars).reduce((s, [a, b]) => s.replace(`{${a}}`, String(b)), v[l]); };
 
 export default function ProjectorSetup({ quizId, quizTitle, questionCount, signedIn, initialGame }: { quizId: string; quizTitle: string; questionCount: number; signedIn: boolean; initialGame: string | null }) {
   const router = useRouter();
-  const [locale, setLocale] = useState<Locale>('en');
-  // eslint-disable-next-line react-hooks/set-state-in-effect -- detect browser language after mount (SSR-safe)
-  useEffect(() => setLocale(detectLocale()), []);
+  const [locale] = useState<Locale>('en'); // English-only launch
   const [step, setStep] = useState(isGameKey(initialGame) ? 1 : 0);
   const [game, setGame] = useState<GameKey>(isGameKey(initialGame) ? initialGame : 'empire_race');
   const [teams, setTeams] = useState(3); const [names, setNames] = useState<string[]>(['Red', 'Blue', 'Green', 'Gold', 'Violet', 'Teal', 'Pink', 'Grey']);
@@ -82,7 +85,7 @@ export default function ProjectorSetup({ quizId, quizTitle, questionCount, signe
   return (
     <main className="page stack" style={{ ['--pj-accent' as string]: info.accent }}>
       <header className="stack"><p className="eyebrow">{quizTitle} · {questionCount}</p><h1>{L(locale, info.name)}</h1>
-        <div className="row"><button className="btn small ghost" aria-pressed={locale === 'vi'} onClick={() => setLocale(locale === 'vi' ? 'en' : 'vi')}>{locale === 'vi' ? 'VI · EN' : 'EN · VI'}</button></div></header>
+</header>
       <ol className="pj-steps" aria-label="steps">{S.steps[locale].map((s, i) => <li key={s} aria-current={i === step ? 'step' : undefined} style={i === step ? { background: 'var(--qz-yellow)', color: '#0b1018' } : undefined}>{s}</li>)}</ol>
       {step === 0 && <section className="stack"><h2>{t(locale, 'game')}</h2>
         <div className="pj-games" role="radiogroup" aria-label={t(locale, 'game')}>{MODE_LIST.map((m) => (

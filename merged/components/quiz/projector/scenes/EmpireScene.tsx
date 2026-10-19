@@ -1,6 +1,6 @@
 'use client';
 import type { EmpireG, Tile } from '@/lib/quiz/projector/reducers/empire';
-import { hexXY, ek, neighborsOf } from '@/lib/quiz/projector/reducers/empire';
+import { hexXY, ek, neighborsOf, edgeOpen, reachable, COST } from '@/lib/quiz/projector/reducers/empire';
 import type { Core, Locale } from '@/lib/quiz/projector/types';
 import { tr } from '../i18n';
 import { Defs, Flag, INK, Pulse } from './shared';
@@ -47,6 +47,11 @@ export default function EmpireScene({ core, g, locale, selected, onTile }: Empir
   const fxTile = core.fx && (core.fx.kind === 'claim' || core.fx.kind === 'target' || core.fx.kind === 'fort') ? Number(core.fx.ref) : null;
   const edges: { a: number; b: number; bridged: boolean }[] = g.blocked.map((k) => { const [a, b] = k.split('-').map(Number) as [number, number]; return { a, b, bridged: g.bridges.includes(ek(a, b)) }; });
   const sea = WORLD_SEA[g.world] ?? '#147d91';
+  // Legal moves for the team whose turn it is (planning only): claimable zones glow with their cost, rival zones next to our land show Challenge,
+  // and our own zones that a rival touches are marked as threatened borders.
+  const acting = core.askMode === 'all' ? null : core.teams[core.actor % core.teams.length]!.id; const planning = core.phase === 'planning' && !!acting;
+  const move = (t: Tile): 'claim' | 'challenge' | null => !planning || !acting ? null : !t.owner && reachable(g, acting, t.id) ? 'claim' : t.owner && t.owner !== acting && reachable(g, acting, t.id) ? 'challenge' : null;
+  const threatened = (t: Tile) => planning && acting !== null && t.owner === acting && neighborsOf(g, t.id).some((n) => g.tiles[n]!.owner && g.tiles[n]!.owner !== acting && edgeOpen(g, n, t.id));
   return (
     <svg className="pj-svg" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${tr(locale, 'tile', { n: '' })} map`} preserveAspectRatio="xMidYMid meet">
       <Defs id="pj" />
@@ -76,6 +81,9 @@ export default function EmpireScene({ core, g, locale, selected, onTile }: Empir
             {t.relic > 0 && !t.hidden && <g transform={`translate(${x + S * 0.4} ${y - S * 0.38})`}><path d="M0 -12L9 0L0 12L-9 0Z" fill="#7be0ff" stroke={INK} strokeWidth="3" /></g>}
             {t.review && <g transform={`translate(${x - S * 0.45} ${y - S * 0.4})`}><circle r="11" fill="#fff" stroke={INK} strokeWidth="3" /><path d="M-5 0L-1 4L6 -4" fill="none" stroke={INK} strokeWidth="3" /></g>}
             <text x={x + S * 0.5} y={y + S * 0.72} textAnchor="middle" fontSize={Math.max(13, S * 0.26)} fontWeight="800" fill="#fff" stroke={INK} strokeWidth="4" paintOrder="stroke" fontFamily="var(--qz-display)">{t.id + 1}</text>
+            {move(t) && <g pointerEvents="none"><path d={hexPath(x, y, S * 0.94)} fill="none" stroke={move(t) === 'claim' ? '#fff' : '#ff386a'} strokeWidth="6" strokeDasharray="10 7" className="pj-pulse" />
+              <g transform={`translate(${x} ${y + S * 0.05})`}><rect x={-S * 0.46} y={-12} width={S * 0.92} height="24" rx="8" fill={move(t) === 'claim' ? '#ffd52f' : '#ff386a'} stroke={INK} strokeWidth="3" /><text y="6" textAnchor="middle" fontSize="14" fontWeight="900" fill={move(t) === 'claim' ? INK : '#fff'} fontFamily="var(--qz-display)">{move(t) === 'claim' ? `Claim ${COST.claim}` : `Challenge ${COST.challenge}`}</text></g></g>}
+            {threatened(t) && <g pointerEvents="none" transform={`translate(${x - S * 0.4} ${y - S * 0.4})`}><path d="M0 -13L13 10H-13Z" fill="#ff386a" stroke={INK} strokeWidth="3" strokeLinejoin="round" /><text y="6" textAnchor="middle" fontSize="12" fontWeight="900" fill="#fff">!</text></g>}
             {(sel || fxTile === t.id) && <path d={hexPath(x, y, S * 1.03)} fill="none" stroke="#ffd52f" strokeWidth="6" className="pj-pulse" />}
             {t.value >= 2 && <g>{Array.from({ length: t.value }, (_, k) => <circle key={k} cx={x - S * 0.5 + k * 11} cy={y - S * 0.62} r="4.2" fill="#ffd52f" stroke={INK} strokeWidth="2" />)}</g>}
           </g>

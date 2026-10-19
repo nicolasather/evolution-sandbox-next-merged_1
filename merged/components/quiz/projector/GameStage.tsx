@@ -6,6 +6,11 @@ import type { EmpireG } from '@/lib/quiz/projector/reducers/empire';
 import type { EscapeG } from '@/lib/quiz/projector/reducers/escape';
 import type { LadderG } from '@/lib/quiz/projector/reducers/ladder';
 import type { VaultG } from '@/lib/quiz/projector/reducers/vault';
+import type { AuctionG } from '@/lib/quiz/projector/reducers/auction';
+import type { TerritoryG } from '@/lib/quiz/projector/reducers/territory';
+import type { FactoryG } from '@/lib/quiz/projector/reducers/factory';
+import type { PirateG } from '@/lib/quiz/projector/reducers/pirate';
+import type { ShowdownG } from '@/lib/quiz/projector/reducers/showdown';
 import type { Core, Locale } from '@/lib/quiz/projector/types';
 import { fmtClock, useTick } from '../useRoomState';
 import { BossControls, EmpireControls, EscapeControls, LadderControls, VaultControls } from './GameControls';
@@ -14,6 +19,10 @@ import BossScene from './scenes/BossScene';
 import EmpireScene from './scenes/EmpireScene';
 import EscapeScene from './scenes/EscapeScene';
 import LadderScene from './scenes/LadderScene';
+import { AuctionScene, TerritoryScene, FactoryScene, PirateScene, ShowdownScene } from './scenes/ExtraScenes';
+import { AuctionControls, TerritoryControls, FactoryControls, PirateControls, ShowdownControls } from './ExtraGameControls';
+import TutorialOverlay from './TutorialOverlay';
+import CoachPanel from './CoachPanel';
 import VaultScene from './scenes/VaultScene';
 import { L, logText, tr } from './i18n';
 import type { GameApi } from './useGame';
@@ -23,8 +32,8 @@ const KEY = 'qz:pj:prefs';
 export function usePrefs(initial: Locale): [Prefs, (p: Partial<Prefs>) => void] {
   const [prefs, set] = useState<Prefs>({ locale: initial, large: false, contrast: false, calm: false, sound: false });
   // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrate saved preferences after mount (SSR-safe)
-  useEffect(() => { try { const raw = localStorage.getItem(KEY); if (raw) set((p) => ({ ...p, ...(JSON.parse(raw) as Partial<Prefs>) })); } catch { /* private mode */ } }, []);
-  const update = useCallback((p: Partial<Prefs>) => set((cur) => { const n = { ...cur, ...p }; try { localStorage.setItem(KEY, JSON.stringify(n)); } catch { /* ignore */ } return n; }), []);
+  useEffect(() => { try { const raw = localStorage.getItem(KEY); if (raw) set((p) => ({ ...p, ...(JSON.parse(raw) as Partial<Prefs>), locale: 'en' })); } catch { /* private mode */ } }, []);
+  const update = useCallback((p: Partial<Prefs>) => set((cur) => { const n = { ...cur, ...p, locale: 'en' as const }; try { localStorage.setItem(KEY, JSON.stringify(n)); } catch { /* ignore */ } return n; }), []);
   return [prefs, update];
 }
 
@@ -62,12 +71,17 @@ function Scene({ core, g, locale, host, st }: { core: Core; g: unknown; locale: 
     case 'boss_battle': return <BossScene core={core} g={g as BossG} locale={locale} />;
     case 'escape_room': return <EscapeScene core={core} g={g as EscapeG} locale={locale} selected={typeof sel === 'string' ? sel : null} onSpot={host ? (id) => st.setSelected(id) : undefined} />;
     case 'treasure_vault': return <VaultScene core={core} g={g as VaultG} locale={locale} onVault={host ? (id) => st.setSelected(id) : undefined} />;
-    default: return <LadderScene core={core} g={g as LadderG} locale={locale} />;
+    case 'risk_ladder': return <LadderScene core={core} g={g as LadderG} locale={locale} />;
+    case 'auction_house': return <AuctionScene core={core} g={g as AuctionG} selected={typeof sel === 'number' ? sel : null} onLot={host ? (id) => st.setSelected(id) : undefined} />;
+    case 'territory_war': return <TerritoryScene core={core} g={g as TerritoryG} selected={typeof sel === 'number' ? sel : null} onCell={host ? (id) => st.setSelected(id) : undefined} />;
+    case 'lucky_factory': return <FactoryScene core={core} g={g as FactoryG} selected={typeof sel === 'number' ? sel : null} onMachine={host ? (id) => st.setSelected(id) : undefined} />;
+    case 'pirate_voyage': return <PirateScene core={core} g={g as PirateG} selected={typeof sel === 'number' ? sel : null} onIsland={host ? (id) => st.setSelected(id) : undefined} />;
+    case 'final_showdown': return <ShowdownScene core={core} g={g as ShowdownG} />;
   }
 }
 
 export default function GameStage({ api, view, prefs, setPrefs, projectorHref, backHref }: { api: GameApi; view: 'host' | 'projector'; prefs: Prefs; setPrefs: (p: Partial<Prefs>) => void; projectorHref?: string; backHref?: string }) {
-  const { snap } = api; const locale = prefs.locale; const host = view === 'host';
+  const { snap } = api; const locale: Locale = 'en'; const host = view === 'host';
   const [selected, setSelected] = useState<string | number | null>(null);
   useCues(snap?.game.core, prefs.sound);
   // eslint-disable-next-line react-hooks/set-state-in-effect -- a new phase or round clears the pending selection
@@ -80,7 +94,7 @@ export default function GameStage({ api, view, prefs, setPrefs, projectorHref, b
   const asking = core.phase === 'asking' && !!snap.question; const teamName = (id?: string) => core.teams.find((t) => t.id === id)?.name ?? '';
   const last = core.log[core.log.length - 1]; const activeName = core.askMode === 'all' ? tr(locale, 'allTeams') : tr(locale, 'yourTurn', { team: core.teams[core.actor % core.teams.length]!.name });
   const ctl = { core, g, locale, send: api.send, busy: api.busy, selected, clearSel: () => setSelected(null) };
-  const Controls = core.game === 'empire_race' ? EmpireControls : core.game === 'boss_battle' ? BossControls : core.game === 'escape_room' ? EscapeControls : core.game === 'treasure_vault' ? VaultControls : LadderControls;
+  const Controls = core.game === 'empire_race' ? EmpireControls : core.game === 'boss_battle' ? BossControls : core.game === 'escape_room' ? EscapeControls : core.game === 'treasure_vault' ? VaultControls : core.game === 'risk_ladder' ? LadderControls : core.game === 'auction_house' ? AuctionControls : core.game === 'territory_war' ? TerritoryControls : core.game === 'lucky_factory' ? FactoryControls : core.game === 'pirate_voyage' ? PirateControls : ShowdownControls;
   return (
     <div className="pj" data-game={core.game} data-view={view} data-large={prefs.large || undefined} data-contrast={prefs.contrast || undefined} data-calm={prefs.calm || undefined} lang={locale}
       style={{ ['--pj-accent' as string]: info.accent, ['--pj-paper' as string]: info.paper, ['--pj-ink' as string]: info.ink }}>
@@ -92,7 +106,7 @@ export default function GameStage({ api, view, prefs, setPrefs, projectorHref, b
           {core.finishAfterTurn && !finished && <span className="pj-flag">{tr(locale, 'lastTurn')}</span>}
         </div>
         <div className="pj-tools" role="group" aria-label={tr(locale, 'language')}>
-          <button className="btn small ghost" aria-pressed={locale === 'vi'} onClick={() => setPrefs({ locale: locale === 'vi' ? 'en' : 'vi' })} aria-label={tr(locale, 'language')}>{locale === 'vi' ? 'VI · EN' : 'EN · VI'}</button>
+          {host && <TutorialOverlay game={core.game} name={info.name.en} />}
           <button className="btn small ghost" aria-pressed={prefs.large} onClick={() => setPrefs({ large: !prefs.large })}>{tr(locale, 'largePrint')}</button>
           <button className="btn small ghost" aria-pressed={prefs.contrast} onClick={() => setPrefs({ contrast: !prefs.contrast })}>{tr(locale, 'highContrast')}</button>
           <button className="btn small ghost" aria-pressed={prefs.calm} onClick={() => setPrefs({ calm: !prefs.calm })}>{tr(locale, 'calm')}</button>
@@ -116,6 +130,7 @@ export default function GameStage({ api, view, prefs, setPrefs, projectorHref, b
         </div>
         {host && (
           <aside className="pj-dock" aria-label="Teacher controls">
+            {!waiting && !finished && <CoachPanel core={core} g={g} />}
             <section className="pj-panel pj-clockctl">
               <div className="row">
                 <button className="btn primary" disabled={api.busy || !waiting} onClick={() => api.send('start')}>{tr(locale, 'start')}</button>

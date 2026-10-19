@@ -1,12 +1,12 @@
 /** Shared types for the five projector games. Pure (no server-only imports) so reducers run on server, in tests and in the local practice lab. */
 import type { QuestionKind } from '../types';
 
-export const GAME_KEYS = ['empire_race', 'boss_battle', 'escape_room', 'treasure_vault', 'risk_ladder'] as const;
+export const GAME_KEYS = ['empire_race', 'boss_battle', 'escape_room', 'treasure_vault', 'risk_ladder', 'auction_house', 'territory_war', 'lucky_factory', 'pirate_voyage', 'final_showdown'] as const;
 export type GameKey = (typeof GAME_KEYS)[number];
 export const LEARNING_FOCUSES = ['study', 'balanced', 'game'] as const;
 export type LearningFocus = (typeof LEARNING_FOCUSES)[number];
-export type Locale = 'en' | 'vi';
-export type L10n = { en: string; vi: string };
+export type Locale = 'en';
+export type L10n = { en: string };
 export type Grade = 'correct' | 'partial' | 'wrong';
 export type Difficulty = 1 | 2 | 3;
 
@@ -36,9 +36,10 @@ export type CampaignId = 'clockhouse' | 'celestial_archive' | 'glass_garden';
 export type EmpireWorld = 'archipelago' | 'river_kingdom' | 'desert_crossing';
 export type EmpireObjective = 'territory' | 'capital' | 'expedition';
 export type LadderMission = 'highest' | 'first' | 'group';
+export type TerritoryBoard = 'frontier' | 'canyon' | 'delta';
 
 export type ProjectorSettings = {
-  world?: EmpireWorld; objective?: EmpireObjective; boss?: BossId; campaign?: CampaignId; mission?: LadderMission;
+  world?: EmpireWorld; objective?: EmpireObjective; boss?: BossId; campaign?: CampaignId; mission?: LadderMission; board?: TerritoryBoard;
   comeback?: boolean; zoneTopics?: string[];
 };
 export type ProjectorConfig = {

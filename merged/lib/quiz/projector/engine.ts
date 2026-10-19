@@ -24,6 +24,10 @@ export interface GameModule<G = any> {
   checkEnd(s: GameState<G>): 'objective' | 'defeat' | null;
   /** extra turns are rarely needed by games (kept for symmetry) */
   onTurnStart?(s: GameState<G>): void;
+  /** called when the teacher skips the acting team's turn, BEFORE the turn advances (refund stakes, void unpaid choices) */
+  onSkip?(s: GameState<G>, teamId: string): void;
+  /** called once, BEFORE standings are computed, whenever the match ends for any reason (settle or void pending commitments) */
+  onFinish?(s: GameState<G>, reason: string): void;
 }
 
 const MODULES: Partial<Record<GameKey, GameModule>> = {};
@@ -47,6 +51,7 @@ export function fx(c: Core, kind: string, team?: string, ref?: string | number) 
 
 export function finish(s: GameState, reason: Core['finished'] extends infer F ? (F extends { reason: infer R } ? R : never) : never) {
   const m = moduleFor(s.core.game);
+  m.onFinish?.(s, reason);
   const standings = m.standings(s).sort((a, b) => b.score - a.score);
   let rank = 0, prev: number | null = null;
   standings.forEach((st, i) => { if (st.score !== prev) rank = i + 1; st.rank = rank; prev = st.score; });
@@ -107,6 +112,7 @@ export function reduce(state: GameState, cmd: GameCommand, env: Env): ReduceResu
       if (reason.length < 3) return err('reasonRequired');
       if (c.phase === 'asking' && (c.ask?.answered.length ?? 0) > 0) return err('answersAlready');
       const t = actorTeam(c); c.skipped.push({ team: t.id, reason }); log(c, 'turnSkipped', t.id);
+      m.onSkip?.(s, t.id);
       endTurn(s); return { ok: true, state: s };
     }
     case 'reveal': {

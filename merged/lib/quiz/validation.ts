@@ -223,7 +223,7 @@ export const roomCreateSchema = z.object({
   cosmeticsEnabled: z.boolean().optional(),
   access: z.object({ requireApproval: z.boolean().optional(), lockedAfterStart: z.boolean().optional(), hideIdentity: z.boolean().optional() }).strict().optional(),
   rotateSpeaker: z.boolean().optional(),
-  projector: z.object({ game: z.enum(['empire_race', 'boss_battle', 'escape_room', 'treasure_vault', 'risk_ladder']), minutes: z.number().int().min(5).max(180).nullable(), focus: z.enum(['study', 'balanced', 'game']) }).strict().optional(),
+  projector: z.object({ game: z.enum(['empire_race', 'boss_battle', 'escape_room', 'treasure_vault', 'risk_ladder', 'auction_house', 'territory_war', 'lucky_factory', 'pirate_voyage', 'final_showdown']), minutes: z.number().int().min(5).max(180).nullable(), focus: z.enum(['study', 'balanced', 'game']) }).strict().optional(),
 });
 export const joinSchema = z.object({
   joinCode: z.string().trim().length(6).regex(/^[A-Za-z0-9]{6}$/),
@@ -273,7 +273,7 @@ export function parseQuestion(x: unknown): ParsedQuestion {
 /** Projector game creation: the game is chosen first; the server derives everything else (rooms, questions, plan, state). */
 export const projectorCreateSchema = z.object({
   quizId: z.string().uuid(),
-  game: z.enum(['empire_race', 'boss_battle', 'escape_room', 'treasure_vault', 'risk_ladder']),
+  game: z.enum(['empire_race', 'boss_battle', 'escape_room', 'treasure_vault', 'risk_ladder', 'auction_house', 'territory_war', 'lucky_factory', 'pirate_voyage', 'final_showdown']),
   flow: z.enum(['round_robin', 'synchronized']).default('round_robin'),
   teamNames: z.array(z.string().trim().min(1).max(40)).min(2).max(8),
   minutes: z.number().int().min(5).max(180).nullable(),
@@ -285,7 +285,7 @@ export const projectorCreateSchema = z.object({
   settings: z.object({
     world: z.enum(['archipelago', 'river_kingdom', 'desert_crossing']).optional(), objective: z.enum(['territory', 'capital', 'expedition']).optional(),
     boss: z.enum(['clockwork_leviathan', 'library_colossus', 'storm_engine']).optional(), campaign: z.enum(['clockhouse', 'celestial_archive', 'glass_garden']).optional(),
-    mission: z.enum(['highest', 'first', 'group']).optional(), comeback: z.boolean().optional(),
+    mission: z.enum(['highest', 'first', 'group']).optional(), board: z.enum(['frontier', 'canyon', 'delta']).optional(), comeback: z.boolean().optional(),
   }).strict().default({}),
   seed: z.string().min(4).max(64).optional(),
 });

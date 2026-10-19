@@ -39,7 +39,12 @@ export function TeamStrip({ core, g, locale }: { core: Core; g: unknown; locale:
         else if (core.game === 'boss_battle') { const b = (g as BossG).teams[t.id]; stat = b ? <><b>{b.dealt}</b><small>{tr(locale, 'strike')}</small><span className="pj-role">{b.chosen ? tr(locale, b.chosen) : b.role}</span></> : null; }
         else if (core.game === 'escape_room') { const e = g as EscapeG; const inv = e.inv[e.shared ? 'shared' : t.id] ?? []; stat = <><b>{inv.length}</b><small>{tr(locale, 'inventory')}</small></>; }
         else if (core.game === 'treasure_vault') { const v = (g as VaultG).teams[t.id]; stat = v ? <><b>{vaultScore(v)}</b><small>{v.held}+{v.banked}</small><span className="pj-keys">{SHAPES.filter((s) => (v.frags[s] ?? 0) > 0).map((s) => <span key={s} className="pj-key"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden><ShapeGlyph shape={s as Shape} x={9} y={9} r={6} /></svg>{v.frags[s]}</span>)}</span></> : null; }
-        else { const l = (g as LadderG).teams[t.id]; stat = l ? <><b>{l.tier}</b><small>/{(g as LadderG).summit}</small><span className="pj-role">{l.banked}+{l.unbanked}</span></> : null; }
+        else if (core.game === 'auction_house') { const a = (g as import('@/lib/quiz/projector/reducers/auction').AuctionG).teams[t.id]; stat = a ? <><b>{a.points}</b><small>points</small><span className="pj-role">{a.prizes} prizes</span></> : null; }
+        else if (core.game === 'territory_war') { const w = g as import('@/lib/quiz/projector/reducers/territory').TerritoryG; stat = <><b>{w.cells.filter(c => c.owner === t.id).length}</b><small>zones</small><span className="pj-role">{w.teams[t.id]?.points ?? 0} points</span></>; }
+        else if (core.game === 'lucky_factory') { const f = (g as import('@/lib/quiz/projector/reducers/factory').FactoryG).teams[t.id]; stat = f ? <><b>{f.shipped}</b><small>goods</small><span className="pj-role">{f.machines.length} machines</span></> : null; }
+        else if (core.game === 'pirate_voyage') { const p = (g as import('@/lib/quiz/projector/reducers/pirate').PirateG).teams[t.id]; stat = p ? <><b>{p.banked}</b><small>banked</small><span className="pj-role">{p.cargo} cargo · {p.points} pts</span></> : null; }
+        else if (core.game === 'final_showdown') { const f = (g as import('@/lib/quiz/projector/reducers/showdown').ShowdownG).teams[t.id]; stat = f ? <><b>{f.points}</b><small>points</small><span className="pj-role">{f.streak} streak</span></> : null; }
+        else if (core.game === 'risk_ladder') { const l = (g as LadderG).teams[t.id]; stat = l ? <><b>{l.tier}</b><small>/{(g as LadderG).summit}</small><span className="pj-role">{l.banked}+{l.unbanked}</span></> : null; }
         return <li key={t.id} className={active === t.id ? 'on' : ''} aria-current={active === t.id ? 'true' : undefined}><TeamSwatch i={i} /><span className="pj-tn">{t.name}</span><span className="pj-st">{stat}</span></li>;
       })}
     </ul>
@@ -47,7 +52,7 @@ export function TeamStrip({ core, g, locale }: { core: Core; g: unknown; locale:
 }
 
 type Q = { kind: string; prompt: string; base_points?: number; payload: { options?: { id: string; text: string }[]; left?: { id: string; label: string }[]; right?: { id: string; label: string }[]; statements?: { id: string; text: string }[]; columns?: string[]; rows?: { text: string; blank: boolean }[][] }; answerKey?: { correctIds?: string[]; accepted?: string[]; explanation?: string } & Record<string, unknown> };
-const KIND_EN: Record<string, { en: string; vi: string }> = { multiple_choice: { en: 'Multiple choice', vi: 'Trắc nghiệm' }, answer_forge: { en: 'Say your answer', vi: 'Nói đáp án' }, connection_rush: { en: 'Match the pairs', vi: 'Nối cặp' }, truth_hunt: { en: 'True or false', vi: 'Đúng hay sai' }, fill_table: { en: 'Fill the table', vi: 'Điền bảng' } };
+const KIND_EN: Record<string, { en: string }> = { multiple_choice: { en: 'Multiple choice' }, answer_forge: { en: 'Say your answer' }, connection_rush: { en: 'Match the pairs' }, truth_hunt: { en: 'True or false' }, fill_table: { en: 'Fill the table' } };
 
 /** The question as the class sees it (no answer key). Large print scales via CSS on .pj[data-large]. */
 export function QuestionView({ q, core, locale }: { q: unknown; core: Core; locale: Locale }) {
@@ -98,15 +103,25 @@ export function topicBreakdown(evidence: Evidence[]) {
   return [...by.entries()].map(([topic, r]) => ({ topic, n: r.n, pct: Math.round((r.score / r.n) * 100) })).sort((a, b) => a.pct - b.pct);
 }
 
+const OUTCOME: Record<string, string> = {
+  victory: 'The class broke the boss.', defeat: 'The boss won this time.', escaped: 'Everyone is through the last door.', inProgress: 'The class ran out of time before the final door.', unfinished: 'The boss is still standing.',
+  objective: 'The objective was reached.', winner: 'The land has been counted.', draw: 'A tie on the map.', summit: 'A team reached the summit.', groupSummit: 'The class reached the summit together.', timeUp: 'Time ran out.',
+  grand: 'The grand vault was opened.', allOpen: 'Every door was opened.', auctionComplete: 'The auction has closed.', auctionWithdrawn: 'The unfinished round was withdrawn and every bid was refunded.',
+  mapFilled: 'Every square on the map is taken.', territoryResult: 'The map has been counted.', factoryResult: 'All shifts are done; goods shipped decide the order.', voyageComplete: 'The voyage is over; banked treasure decides the order.', showdownResult: 'The final is over.',
+};
 export function Summary({ core, locale, host }: { core: Core; locale: Locale; host: boolean }) {
   const f = core.finished!; const coop = core.game === 'boss_battle' || core.game === 'escape_room';
-  const win = f.outcome === 'victory' || f.outcome === 'escaped' || (!coop && f.outcome !== 'defeat');
+  const win = f.outcome === 'victory' || f.outcome === 'escaped';
   const topics = host && core.evidence ? topicBreakdown(core.evidence) : [];
+  const revisit = topics.filter((t) => t.pct < 70 && t.n >= 2).slice(0, 3); const strong = [...topics].reverse().filter((t) => t.pct >= 80 && t.n >= 2).slice(0, 3);
+  const note = OUTCOME[f.outcome];
   return (
     <section className="pj-summary" aria-label={tr(locale, 'finished')}>
       <h2>{coop ? (win ? tr(locale, 'victory') : tr(locale, 'defeat')) : tr(locale, 'finished')}</h2>
+      {note && <p className="pj-outcome">{note}</p>}
       <ol className="pj-standings">{f.standings.map((s) => { const i = core.teams.findIndex((t) => t.id === s.team); return <li key={s.team}><b>{s.rank}</b><TeamSwatch i={i} /><span>{core.teams[i]?.name}</span><strong>{s.score}</strong></li>; })}</ol>
-      {topics.length > 0 && <div className="pj-topics"><h3>{tr(locale, 'byTopic')}</h3><ul>{topics.map((t) => <li key={t.topic}><span>{t.topic}</span><span className="pj-bar" aria-hidden><i style={{ width: `${t.pct}%` }} /></span><b>{tr(locale, 'accuracy', { p: t.pct })}</b><small>{tr(locale, 'answered', { n: t.n })}</small></li>)}</ul></div>}
+      {topics.length > 0 && <div className="pj-topics"><h3>{tr(locale, 'byTopic')}</h3><ul>{topics.map((t) => <li key={t.topic}><span>{t.topic}</span><span className="pj-bar" aria-hidden><i style={{ width: `${t.pct}%` }} /></span><b>{tr(locale, 'accuracy', { p: t.pct })}</b><small>{tr(locale, 'answered', { n: t.n })}</small></li>)}</ul>
+        {(revisit.length > 0 || strong.length > 0) && <p className="pj-review">{strong.length > 0 && <span><b>Strong:</b> {strong.map((t) => t.topic).join(', ')}. </span>}{revisit.length > 0 && <span><b>Worth revisiting:</b> {revisit.map((t) => t.topic).join(', ')}.</span>}</p>}</div>}
     </section>
   );
 }

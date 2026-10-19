@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ModeCards from '@/components/quiz/ModeCards';
+import { MODE_LIST } from '@/lib/quiz/projector/modes';
 
 export default function QuizHome() {
   return (
@@ -18,10 +19,25 @@ export default function QuizHome() {
         </div>
       </section>
 
+      <section className="qz-section" aria-labelledby="pjhome-h" id="projector-games">
+        <header>
+          <h2 id="pjhome-h">Projector Games</h2>
+          <p className="muted-text" style={{ margin: 0 }}>Ten classroom game worlds for one teacher computer and a projector. No student devices needed. <Link className="textlink" href="/quiz/modes">See all ten</Link> · <Link className="textlink" href="/quiz/lab">Practice lab</Link></p>
+        </header>
+        <div className="pj-games">
+          {MODE_LIST.map((m) => (
+            <Link key={m.key} className="pj-game" style={{ ['--accent' as string]: m.accent }} href={`/quiz/lab?game=${m.key}`}>
+              <Image src={`/quiz/modes/${m.art}.svg`} alt="" width={1200} height={675} unoptimized />
+              <span className="body"><span className="tag">{m.style.en}</span><h3>{m.name.en}</h3><p>{m.objective.en}</p></span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="qz-section" aria-labelledby="modes-h">
         <header>
           <h2 id="modes-h">Game Modes</h2>
-          <p className="muted-text" style={{ margin: 0 }}>Every play method runs the Classic Quiz game mode. For the classroom projector, five full game worlds are also available — <Link className="textlink" href="/quiz/modes">see Projector Games</Link>.</p>
+          <p className="muted-text" style={{ margin: 0 }}>Every play method runs the Classic Quiz game mode. For the classroom projector, see the ten Projector Games above or <Link className="textlink" href="/quiz/modes">browse every mode</Link>.</p>
         </header>
         <ModeCards />
       </section>

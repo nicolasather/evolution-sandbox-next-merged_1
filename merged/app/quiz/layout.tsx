@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import './quiz.css';
+import './projector-upgrade.css';
 import './projector.css';
 import QuizNav from '@/components/quiz/QuizNav';
 import { isGuest, maybeUser } from '@/lib/quiz/supabase';
@@ -42,6 +43,7 @@ export default async function QuizLayout({ children }: { children: ReactNode }) 
       <footer className="qz-footer">
         <nav aria-label="Quiz Studio footer">
           <Link href="/quiz">Quiz Studio</Link>
+          <Link href="/quiz/modes#projector-games">Projector Games</Link>
           <Link href="/quiz/modes">Game Modes</Link>
           <Link href="/quiz/library">Quiz Library</Link>
           <Link href="/quiz/new">Create a Quiz</Link>

@@ -11,6 +11,11 @@ import { hotspotNeeds } from './content/escape-campaigns';
 import type { VaultG } from './reducers/vault';
 import { payment } from './reducers/vault';
 import type { LadderG } from './reducers/ladder';
+import type { AuctionG } from './reducers/auction';
+import { legalTargets, previewCell, type TerritoryG } from './reducers/territory';
+import { breakdownVictim, MACHINE_KINDS, PRICE as FACTORY_PRICE, upgradeCost, REPAIR_COST, INSPECT_COST, type FactoryG } from './reducers/factory';
+import { COST as PIRATE_COST, type PirateG } from './reducers/pirate';
+import { choicePrice, type ShowdownG } from './reducers/showdown';
 
 export const KINDS: QuestionKind[] = ['multiple_choice', 'answer_forge', 'connection_rush', 'truth_hunt', 'fill_table'];
 export function makePool(n: number, topics = ['Fractions', 'Geometry', 'Algebra', 'Data'], opts: { difficulty?: boolean } = {}): PoolQuestion[] {
@@ -109,6 +114,68 @@ export function nextCommand(state: GameState): GameCommand | null {
       if (unset) { const t = g.teams[unset]!; if (t.unbanked >= 20 && t.tier - t.checkpoint >= 2) return { action: 'choose_action', payload: { team: unset, action: 'bank' } }; return { action: 'choose_action', payload: { team: unset, action: 'climb' } }; }
       if (ids.some((id) => g.teams[id]!.chosen)) return { action: 'ask' };
       return { action: 'end_turn' };
+    }
+  }
+  const ids = c.askMode === 'all' ? c.teams.map((t) => t.id) : [actor];
+  if (game === 'auction_house') {
+    const g = state.g as AuctionG;
+    if (c.phase === 'choose') return { action: 'ask', payload: { tier: c.teams.findIndex((t) => t.id === actor) % 2 ? 'challenge' : 'standard' } };
+    for (const id of ids) {
+      const t = g.teams[id]!; const i = c.teams.findIndex((x) => x.id === id);
+      if (!g.bids[id] && !t.passed) {
+        if (t.points >= 4 && (c.round + i) % 3 !== 0) return { action: 'bid', payload: { team: id, lot: g.lineup[(c.round + i) % g.lineup.length]!.id, amount: Math.min(t.points, 3 + ((i + c.round) % 5)) } };
+        return { action: 'pass_bid', payload: { team: id } };
+      }
+    }
+    return { action: 'end_turn' };
+  }
+  if (game === 'territory_war') {
+    const g = state.g as TerritoryG;
+    if (c.phase === 'choose') return { action: 'ask', payload: { tier: c.round % 2 ? 'standard' : 'challenge' } };
+    for (const id of ids) {
+      const targets = legalTargets(g, id); const order = Object.keys(targets).map(Number).sort((a, b) => Number(g.cells[b]!.objective) - Number(g.cells[a]!.objective) || a - b);
+      if (order.length) { const cell = order[0]!; return { action: targets[cell]!, payload: { team: id, cell } }; }
+      const own = g.cells.find((x) => x.owner === id && x.wall < 3 && previewCell(g, id, x.id).ok); if (own && g.teams[id]!.points >= 6) return { action: 'fortify', payload: { team: id, cell: own.id } };
+    }
+    return { action: 'end_turn' };
+  }
+  if (game === 'lucky_factory') {
+    const g = state.g as FactoryG;
+    if (c.phase === 'choose') return { action: 'ask', payload: { tier: c.round % 3 ? 'standard' : 'challenge' } };
+    for (const id of ids) {
+      const t = g.teams[id]!; const i = c.teams.findIndex((x) => x.id === id);
+      const broken = t.machines.findIndex((m) => m.broken); if (broken >= 0 && t.points >= REPAIR_COST) return { action: 'repair', payload: { team: id, index: broken } };
+      if (g.events[0] === 'breakdown' && !t.inspected && t.points >= INSPECT_COST && breakdownVictim(t, i, g.shift) !== null) return { action: 'inspect', payload: { team: id } };
+      const missing = MACHINE_KINDS.filter((k) => !t.machines.some((m) => m.kind === k)).sort((a, b) => FACTORY_PRICE[a] - FACTORY_PRICE[b])[0];
+      if (missing && t.machines.length < g.slots && t.points >= FACTORY_PRICE[missing]) return { action: 'build', payload: { team: id, kind: missing } };
+      const up = t.machines.findIndex((m) => !m.broken && m.level < 3 && t.points >= upgradeCost(m.level) + 2); if (up >= 0) return { action: 'upgrade', payload: { team: id, index: up } };
+    }
+    return { action: 'end_turn' };
+  }
+  if (game === 'pirate_voyage') {
+    const g = state.g as PirateG;
+    if (c.phase === 'choose') return { action: 'ask', payload: { tier: c.round % 2 ? 'standard' : 'challenge' } };
+    for (const id of ids) {
+      const t = g.teams[id]!; const here = g.islands[t.position]!;
+      const rival = c.teams.find((x) => x.id !== id && g.teams[x.id]!.position === t.position && g.teams[x.id]!.cargo > 2 && t.position !== 0);
+      if (rival && t.points >= PIRATE_COST.raid) return { action: 'raid', payload: { team: id, rival: rival.id } };
+      if (t.cargo >= 10 || (t.cargo > 0 && here.neighbors.length && t.position !== 0 && t.cargo >= 6)) { const back = here.neighbors.filter((n) => g.islands[n]!.hops < here.hops).sort((a, b) => a - b)[0]; if (back !== undefined && t.points >= (g.storms.includes(back) ? 5 : 3)) return { action: 'sail', payload: { team: id, to: back } }; }
+      const next = here.neighbors.map((n) => g.islands[n]!).filter((n) => n.id !== 0 && n.treasure > 0 && n.charted).sort((a, b) => b.treasure - a.treasure)[0];
+      if (next && t.points >= (g.storms.includes(next.id) ? 5 : 3)) return { action: 'sail', payload: { team: id, to: next.id } };
+      const unknown = here.neighbors.map((n) => g.islands[n]!).find((n) => !n.charted && n.id !== 0); if (unknown && t.points >= PIRATE_COST.chart + 3) return { action: 'chart', payload: { team: id, island: unknown.id } };
+      if (t.guard === 0 && t.cargo > 4 && t.points >= PIRATE_COST.guard) return { action: 'guard', payload: { team: id } };
+      const go = here.neighbors.filter((n) => n !== 0 || t.cargo > 0).sort((a, b) => g.islands[b]!.hops - g.islands[a]!.hops)[0]; if (go !== undefined && t.points >= 5) return { action: 'sail', payload: { team: id, to: go } };
+    }
+    return { action: 'end_turn' };
+  }
+  if (game === 'final_showdown') {
+    const g = state.g as ShowdownG;
+    if (c.phase === 'choose') {
+      for (const id of ids) {
+        const t = g.teams[id]!; const i = c.teams.findIndex((x) => x.id === id);
+        if (!t.choice) { const pref = (['steady', 'double', 'shield'] as const)[(i + c.round) % 3]!; const choice = t.points >= choicePrice(pref) && !(pref === 'shield' && t.shields >= 2) ? pref : 'steady'; return { action: 'choose_action', payload: { team: id, choice } }; }
+      }
+      return { action: 'ask' };
     }
   }
   return { action: 'ask' };
