@@ -20,6 +20,8 @@ export type LocalDraft = {
   title: string;
   description: string;
   questions: Question[];
+  /** Quiz-level details (language, subject, age band…); optional so drafts saved before this existed still load. */
+  meta?: Record<string, unknown>;
   createdAt: string;
   updatedAt: string;
 };
@@ -71,10 +73,10 @@ export function listDeviceDrafts(): LocalDraft[] {
   return Object.values(readAll()).filter((d) => !d.cloudId).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
 }
 
-export function saveLocalDraft(input: Pick<LocalDraft, 'key' | 'title' | 'description' | 'questions'> & { cloudId?: string }): WriteResult {
+export function saveLocalDraft(input: Pick<LocalDraft, 'key' | 'title' | 'description' | 'questions'> & { cloudId?: string; meta?: Record<string, unknown> }): WriteResult {
   const all = readAll();
   const now = new Date().toISOString();
-  all[input.key] = { v: 1, key: input.key, cloudId: input.cloudId, title: input.title, description: input.description, questions: input.questions, createdAt: all[input.key]?.createdAt ?? now, updatedAt: now };
+  all[input.key] = { v: 1, key: input.key, cloudId: input.cloudId, title: input.title, description: input.description, questions: input.questions, meta: input.meta, createdAt: all[input.key]?.createdAt ?? now, updatedAt: now };
   return writeAll(all);
 }
 

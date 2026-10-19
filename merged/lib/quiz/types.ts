@@ -36,6 +36,10 @@ export type GameConfig = {
   modifiers: Modifier[];
   slotLimit: number;
   teamNames: string[];
+  lowPressure?: boolean; quietClassroom?: boolean; untimed?: boolean; readAloud?: boolean; shuffleQuestions?: boolean;
+  fairPlay?: boolean; showIdentity?: boolean; cosmeticsEnabled?: boolean; rotateSpeaker?: boolean; cancelled?: boolean;
+  hideSpeedBonus?: boolean; replayOf?: string;
+  access?: { requireApproval?: boolean; lockedAfterStart?: boolean; hideIdentity?: boolean };
 };
 
 export type Room = {

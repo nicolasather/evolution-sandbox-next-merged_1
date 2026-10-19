@@ -253,3 +253,27 @@ html.has-cursor:has(.qz) .qz :is(a, button, summary, select, label, [role=button
 .qz .qz-mode.wide .art::after { display: none; }
 .qz .qz-mode.wide .body { padding: 22px 26px; }
 @media (max-width: 860px) { .qz .qz-mode.wide, .qz .qz-mode.wide.flip { display: flex; } .qz .qz-mode.wide .art { aspect-ratio: 16 / 9; min-height: 0; border-right: 0; border-bottom: 4px solid var(--qz-outline); order: 0 !important; border-left: 0 !important; } }
+
+/* ---- Quiz Studio 160: touch targets, calm mode, projector, print, mobile nav ---- */
+.qz .choice { min-height: 56px; }
+.qz .choice[data-selected="true"] { border-color: var(--qz-yellow); background: #2a2610; box-shadow: 4px 4px 0 var(--qz-yellow); }
+.qz .btn, .qz button, .qz select, .qz input[type="checkbox"], .qz input[type="radio"] { min-height: 44px; }
+.qz input[type="checkbox"], .qz input[type="radio"] { min-width: 24px; min-height: 24px; }
+.qz :focus-visible { outline: 3px solid var(--qz-cyan); outline-offset: 2px; }
+.qz [data-calm="true"] * { animation: none !important; transition: none !important; }
+.qz [data-calm="true"] { --qz-edge: #4a5568; }
+.qz-bottom-nav { display: none; }
+@media (max-width: 640px) {
+  .qz-bottom-nav { position: fixed; inset: auto 0 0 0; z-index: 40; display: flex; justify-content: space-around; background: var(--qz-outline); border-top: 4px solid var(--qz-yellow); padding: 4px 0 env(safe-area-inset-bottom); }
+  .qz-bottom-nav a { flex: 1; min-height: 56px; display: flex; align-items: center; justify-content: center; font-family: var(--qz-display); font-weight: 800; font-size: .8rem; text-transform: uppercase; }
+  .qz { padding-bottom: 72px; }
+}
+.qz .qz-crumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: .9rem; color: var(--qz-muted); margin: 8px 0; }
+.qz .qz-crumbs a { text-decoration: underline; min-height: 44px; display: inline-flex; align-items: center; }
+.qz .qz-projector { font-size: clamp(1.4rem, 3vw, 3rem); padding: 3vw; }
+.qz .qz-projector .join-code { font-size: clamp(4rem, 14vw, 12rem) !important; }
+@media print {
+  .qz-header, .qz-footer, .qz-bottom-nav, .qz .btn, .qz .tab-row, .qz nav { display: none !important; }
+  .qz, .qz .panel { background: #fff !important; color: #000 !important; box-shadow: none !important; border-color: #000 !important; }
+  .qz { padding: 0 !important; }
+}

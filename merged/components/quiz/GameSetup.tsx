@@ -24,6 +24,16 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
   const [noTimer, setNoTimer] = useState(false);
   const [slotLimit, setSlotLimit] = useState(3);
   const [teams, setTeams] = useState(['Team 1', 'Team 2', 'Team 3', 'Team 4']);
+  const [lowPressure, setLowPressure] = useState(false);
+  const [quiet, setQuiet] = useState(false);
+  const [readAloud, setReadAloud] = useState(true);
+  const [fairPlay, setFairPlay] = useState(true);
+  const [approval, setApproval] = useState(false);
+  const [lockAfterStart, setLockAfterStart] = useState(false);
+  const [hideIdentity, setHideIdentity] = useState(false);
+  const [cosmetics, setCosmetics] = useState(true);
+  const [shuffle, setShuffle] = useState(false);
+  const [rotate, setRotate] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
 
@@ -35,6 +45,10 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
     return { ok, no };
   }, [mode, flow]);
 
+  function applyQuiet(on: boolean) {
+    setQuiet(on);
+    if (on) { setMods((xs) => xs.filter((x) => !['lose_all', 'go_to_first', 'steal_points', 'give_points', 'swap_points', 'steal_question', 'potluck'].includes(x))); setCosmetics(false); }
+  }
   function pickMode(m: PlayMode) { setMode(m); const f = defaultFlow(m); setFlow(f); setMods([]); setError(''); }
   function pickFlow(f: Flow) { setFlow(f); setMods([]); }
 
@@ -45,6 +59,9 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
       const d = await api<{ roomId: string; token?: string }>('/api/quiz/rooms/create', { method: 'POST', json: {
         quizId, mode, flow, durationSeconds: minutes * 60, questionSeconds: noTimer ? null : qSeconds, modifiers: mods, slotLimit,
         teamNames: mode === 'classroom' ? teams.map((t) => t.trim()) : [],
+        lowPressure, quietClassroom: quiet, untimed: noTimer, readAloud, fairPlay, shuffleQuestions: shuffle,
+        showIdentity: !hideIdentity, cosmeticsEnabled: cosmetics && !quiet, rotateSpeaker: mode === 'classroom' ? rotate : undefined,
+        ...(mode === 'online' ? { access: { requireApproval: approval, lockedAfterStart: lockAfterStart, hideIdentity } } : {}),
       } });
       if (mode === 'solo' && d.token) { saveToken(d.roomId, d.token); router.push(`/quiz/play/${d.roomId}`); }
       else router.push(`/quiz/host/${d.roomId}`);
@@ -58,8 +75,13 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
         <Link className="btn ghost" href="/quiz/library">Quiz Library</Link>
       </header>
 
+      <section className="panel stack" aria-labelledby="s-gm">
+        <p className="eyebrow">Step 1</p><h2 id="s-gm">Game Mode</h2>
+        <p><strong>Classic Quiz</strong> — every format, every play method and every modifier work with it.</p>
+      </section>
+
       <section className="panel stack" aria-labelledby="s-how">
-        <p className="eyebrow">Step 1</p><h2 id="s-how">Choose a Game Mode</h2>
+        <p className="eyebrow">Step 2</p><h2 id="s-how">Play Method</h2>
         <div className="choices">{(['solo', 'classroom', 'online'] as PlayMode[]).map((m) => (
           <button key={m} className="choice" aria-pressed={mode === m} onClick={() => pickMode(m)}><strong>{modeLabels[m]}</strong><small>{MODE_HELP[m]}</small></button>
         ))}</div>
@@ -70,7 +92,7 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
       {mode && flow && (
         <>
           <section className="panel stack" aria-labelledby="s-mode">
-            <p className="eyebrow">Step 2</p><h2 id="s-mode">Question Flow</h2>
+            <p className="eyebrow">Step 3</p><h2 id="s-mode">Question Flow</h2>
             <p className="muted-text">Classic Quiz is played with {modeLabels[mode].toLowerCase()}. Pick how questions are delivered:</p>
             {allowedFlows(mode).length === 1
               ? <p><strong>{flowLabels[flow]}</strong></p>
@@ -78,10 +100,10 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
           </section>
 
           <section className="panel stack" aria-labelledby="s-mods">
-            <p className="eyebrow">Step 3 · Optional</p><h2 id="s-mods">Modifiers</h2>
+            <p className="eyebrow">Step 4 · Optional</p><h2 id="s-mods">Modifiers</h2>
             <p className="note" style={{ margin: 0 }}>Shown for {modeLabels[mode].toLowerCase()} with the {flow.replace('_', ' ')} flow.</p>
             <p className="muted-text">Only modifiers that work with this setup are offered. Points are the only currency. All are off by default.</p>
-            {split.ok.map((m) => (
+            {split.ok.filter((m) => !quiet || !['lose_all', 'go_to_first', 'steal_points', 'give_points', 'swap_points', 'steal_question', 'potluck'].includes(m)).map((m) => (
               <label key={m} className="modifier">
                 <input type="checkbox" checked={mods.includes(m)} onChange={(e) => setMods((xs) => (e.target.checked ? [...xs, m] : xs.filter((x) => x !== m)))} />
                 <span><strong>{modifierLabels[m]}</strong><small>{modifierDescriptions[m]}</small></span>
@@ -95,12 +117,30 @@ export default function GameSetup({ quizId, quizTitle, questionCount, signedIn, 
           </section>
 
           <section className="panel stack" aria-labelledby="s-go">
-            <p className="eyebrow">Step 4</p><h2 id="s-go">Game Settings{mode === 'classroom' ? ' and Teams' : ''}</h2>
+            <p className="eyebrow">Step 5</p><h2 id="s-go">Game Settings{mode === 'classroom' ? ' and Teams' : ''}</h2>
             <label>Match duration: {minutes} minutes<input type="range" min={1} max={120} value={minutes} onChange={(e) => setMinutes(Number(e.target.value))} /></label>
             <label className="inline"><input type="checkbox" checked={noTimer} onChange={(e) => setNoTimer(e.target.checked)} /> No time limit per question</label>
             {!noTimer && <label>Time per question: {qSeconds} seconds<input type="range" min={5} max={300} step={5} value={qSeconds} onChange={(e) => setQSeconds(Number(e.target.value))} /></label>}
+            <fieldset className="stack" style={{ border: '1px dashed var(--qz-edge)', padding: 12 }}>
+              <legend>Calm and fair play</legend>
+              <label className="modifier"><input type="checkbox" checked={quiet} onChange={(e) => applyQuiet(e.target.checked)} /><span><strong>Quiet Classroom</strong><small>Turns off point-stealing events, Potluck, sounds, reactions and collectibles. The questions stay exactly the same.</small></span></label>
+              <label className="modifier"><input type="checkbox" checked={lowPressure} onChange={(e) => setLowPressure(e.target.checked)} /><span><strong>Low-pressure play</strong><small>Hides rank and the podium and ignores speed, so players focus on learning.</small></span></label>
+              <label className="modifier"><input type="checkbox" checked={fairPlay} onChange={(e) => setFairPlay(e.target.checked)} /><span><strong>Fair-play limits</strong><small>Caps how often each point-stealing event can be used and asks you to confirm before using one.</small></span></label>
+              <label className="modifier"><input type="checkbox" checked={readAloud} onChange={(e) => setReadAloud(e.target.checked)} /><span><strong>Read-aloud button</strong><small>Lets players hear each question with their browser’s voice.</small></span></label>
+              <label className="modifier"><input type="checkbox" checked={shuffle} onChange={(e) => setShuffle(e.target.checked)} /><span><strong>Shuffle question order</strong><small>Useful for replays. The quiz itself is not changed.</small></span></label>
+              <label className="modifier"><input type="checkbox" checked={cosmetics && !quiet} disabled={quiet} onChange={(e) => setCosmetics(e.target.checked)} /><span><strong>Collectible progress</strong><small>Players can earn icons and frames from this game.</small></span></label>
+            </fieldset>
+            {mode === 'online' && (
+              <fieldset className="stack" style={{ border: '1px dashed var(--qz-edge)', padding: 12 }}>
+                <legend>Who can join</legend>
+                <label className="modifier"><input type="checkbox" checked={approval} onChange={(e) => setApproval(e.target.checked)} /><span><strong>I approve each player</strong><small>New players wait until you let them in.</small></span></label>
+                <label className="modifier"><input type="checkbox" checked={lockAfterStart} onChange={(e) => setLockAfterStart(e.target.checked)} /><span><strong>Lock the room when the game starts</strong><small>Nobody can join late.</small></span></label>
+                <label className="modifier"><input type="checkbox" checked={hideIdentity} onChange={(e) => setHideIdentity(e.target.checked)} /><span><strong>Hide icons and frames</strong><small>Show names only on the shared screen.</small></span></label>
+              </fieldset>
+            )}
             {mode === 'classroom' && (
               <div className="stack">
+                <label className="modifier"><input type="checkbox" checked={rotate} onChange={(e) => setRotate(e.target.checked)} /><span><strong>Rotate the speaker role</strong><small>Suggests a different team member to answer each turn.</small></span></label>
                 <div className="row spread"><h3 style={{ margin: 0 }}>Teams ({teams.length})</h3>
                   <div className="row">
                     <button className="btn small ghost" disabled={teams.length >= 8} onClick={() => setTeams((s) => [...s, `Team ${s.length + 1}`])}>Add team</button>

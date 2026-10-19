@@ -27,6 +27,11 @@ export function seededShuffle<T>(items: readonly T[], seed: string): T[] {
 }
 
 export function publicPayload(kind: QuestionKind | string, payload: Record<string, unknown>, seed: string): Record<string, unknown> {
+  if (kind === 'multiple_choice') {
+    // Display order is shuffled per player/attempt, but grading uses stable option ids, so the order never matters to the key.
+    const options = Array.isArray(payload.options) ? (payload.options as unknown[]) : [];
+    return payload.shuffle === false ? payload : { ...payload, options: seededShuffle(options, seed) };
+  }
   if (kind === 'connection_rush') {
     const right = Array.isArray(payload.right) ? (payload.right as unknown[]) : [];
     return { ...payload, right: seededShuffle(right, seed) };
@@ -36,4 +41,21 @@ export function publicPayload(kind: QuestionKind | string, payload: Record<strin
     return { ...payload, rows: rows.map((row) => row.map((c) => (c.blank ? { text: '', blank: true } : c))) };
   }
   return payload;
+}
+
+export type StoredQuestion = { id: string; position: number; kind: string; prompt: string; payload: Record<string, unknown>; answer_key: Record<string, unknown>; base_points: number };
+/** The ONLY shape a player may receive for a live question. The answer key (with the explanation, hint and distractor notes) is added
+ *  only after reveal, or for a host who explicitly peeks. Used by the room state route and covered by tests for all five formats (item 134). */
+export function publicQuestionView(row: StoredQuestion, opts: { reveal: boolean; hostPeek?: boolean; seed: string }) {
+  const out: Record<string, unknown> = {
+    id: row.id, position: row.position, kind: row.kind, prompt: row.prompt, base_points: row.base_points,
+    payload: publicPayload(row.kind, row.payload, opts.seed),
+    hasHint: typeof row.answer_key?.hint === 'string' && row.answer_key.hint.length > 0,
+  };
+  if (opts.reveal || opts.hostPeek) out.answerKey = row.answer_key;
+  return out;
+}
+/** Hints are released by a separate call so the first response never carries them (item 028). */
+export function hintOf(row: Pick<StoredQuestion, 'answer_key'>): string | null {
+  const h = row.answer_key?.hint; return typeof h === 'string' && h.trim() ? h : null;
 }

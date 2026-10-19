@@ -1,10 +1,11 @@
 import 'server-only';
 import { serviceDB, currentUser } from './supabase';
 import { getRoom, verifyPlayer, roomQuestion, questionToGrader } from './rooms';
-import { assertResponseIds, gradeQuestion } from './grading';
+import { assertResponseIds, gradeDetailed } from './grading';
+import { computeAward } from './scoring';
 import { submissionSchema } from './validation';
 import { AppError } from './errors';
-import { rpc } from './api';
+import { rpc, fromDbError } from './api';
 import type { Room } from './types';
 
 /**
@@ -80,16 +81,45 @@ export async function submitAnswer(input: unknown) {
 
   // ── STAGE 4 · Grade on the server (hidden key) or accept the host’s audited decision ─────────
   const manual = room.mode === 'classroom' && v.override !== undefined;
-  const correct = manual ? (v.override as boolean) : gradeQuestion(graded, response);
-  const baseAward = correct ? q.base_points : 0;
+  const grade = manual ? { correct: v.override as boolean, fraction: v.override ? 1 : 0 } : gradeDetailed(graded, response);
+  const correct = grade.correct;
+  const cfg = room.config as { questionSeconds?: number | null; hideSpeedBonus?: boolean };
+  // elapsed time is measured on the SERVER clock, never taken from the client
+  const elapsedMs = opened ? Math.max(0, nowMs - new Date(opened).getTime()) : undefined;
+  const award = manual ? { base: correct ? q.base_points : 0, bonus: 0 }
+    : computeAward({ basePoints: q.base_points, payload: q.payload as never }, grade, { questionSeconds: cfg.questionSeconds, hideSpeedBonus: cfg.hideSpeedBonus, elapsedMs });
+  const baseAward = award.base;
+  const bonus = Math.min(award.bonus, q.base_points);
+  const partial = !correct && baseAward > 0;
 
   // ── STAGE 5 · Atomic commit + audit (row-locked SQL function, unique submission, bounded delta) ─
-  try {
-    return await rpc<{ correct: boolean; awarded: number; newPoints: number; finished: boolean }>('commit_answer', {
-      p_room: room.id, p_question: q.id, p_actor_type: actorType, p_actor: actorId,
-      p_response: response, p_correct: correct, p_base_award: baseAward, p_wager: v.wager, p_manual: manual,
-    });
-  } catch (e) {
-    throw e instanceof AppError ? fail(5, e.message, e.status) : e;
+  type Result = { correct: boolean; awarded: number; newPoints: number; finished: boolean };
+  const plain = baseAward === (correct ? q.base_points : 0) && bonus === 0; // nothing v1 cannot express
+  const { data, error } = await serviceDB().rpc('commit_answer_v2', {
+    p_room: room.id, p_question: q.id, p_actor_type: actorType, p_actor: actorId, p_response: response,
+    p_correct: correct, p_base_award: baseAward, p_bonus: bonus, p_partial: partial,
+    p_wager: v.wager, p_manual: manual,
+  });
+  if (!error) return data as Result;
+  // Migration 004 not applied yet: fall back to the original function for plain right/wrong answers so the app keeps working.
+  const missing = error.code === 'PGRST202' || /could not find the function|does not exist/i.test(error.message ?? '');
+  if (missing && plain) {
+    try {
+      return await rpc<Result>('commit_answer', {
+        p_room: room.id, p_question: q.id, p_actor_type: actorType, p_actor: actorId,
+        p_response: response, p_correct: correct, p_base_award: baseAward, p_wager: v.wager, p_manual: manual,
+      });
+    } catch (e) { throw e instanceof AppError ? fail(5, e.message, e.status) : e; }
   }
+  if (missing) {
+    // partial credit / bonus cannot be stored yet: award the nearest value v1 allows (nothing for a partial answer) rather than fail
+    try {
+      return await rpc<Result>('commit_answer', {
+        p_room: room.id, p_question: q.id, p_actor_type: actorType, p_actor: actorId,
+        p_response: response, p_correct: correct, p_base_award: correct ? q.base_points : 0, p_wager: v.wager, p_manual: manual,
+      });
+    } catch (e) { throw e instanceof AppError ? fail(5, e.message, e.status) : e; }
+  }
+  const mapped = fromDbError(error);
+  throw fail(5, mapped.message, mapped.status);
 }

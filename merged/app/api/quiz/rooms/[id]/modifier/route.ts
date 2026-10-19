@@ -2,6 +2,8 @@ import { getRoom, isHost, verifyPlayer } from '@/lib/quiz/rooms';
 import { modifierRequestSchema } from '@/lib/quiz/validation';
 import { assertSameOrigin, failure, jsonBody, rpc, success } from '@/lib/quiz/api';
 import { AppError } from '@/lib/quiz/errors';
+import { serviceDB } from '@/lib/quiz/supabase';
+import { DEFAULT_FAIR_PLAY } from '@/lib/quiz/learning';
 
 /** Instant point events. Hosts trigger them in classroom / online games; a solo player may trigger Potluck on themselves. */
 export async function POST(req: Request, { params }: { params: Promise<{ id: string }> }) {
@@ -22,6 +24,15 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
       return success(await rpc('set_steal', { p_room: id, p_host: user.id, p_target: v.target }));
     }
     if (!v.target) throw new AppError('Choose a target', 400);
+    // Optional fair-play limits (088): a cap on how often each destructive modifier can be used, a cap on the amount, and an explicit confirmation.
+    if (room.config.fairPlay && DEFAULT_FAIR_PLAY[v.kind]) {
+      const limit = DEFAULT_FAIR_PLAY[v.kind]!;
+      const { data: used } = await serviceDB().from('score_events').select('group_id').eq('room_id', id).eq('reason', v.kind).is('undone_at', null);
+      const times = new Set((used ?? []).map((r) => r.group_id as string)).size;
+      if (times >= limit.maxUses) throw new AppError(`Fair-play limit: ${v.kind.replace(/_/g, ' ')} can be used ${limit.maxUses} time${limit.maxUses === 1 ? '' : 's'} per game.`, 400);
+      if (limit.confirm && !v.confirmed) throw new AppError('Please confirm this point event first.', 409);
+      if (limit.maxLoss > 0 && (v.kind === 'steal_points' || v.kind === 'give_points')) v.amount = Math.min(v.amount, limit.maxLoss);
+    }
     return success(await rpc('apply_modifier', { p_room: id, p_kind: v.kind, p_target: v.target, p_other: v.other ?? null, p_amount: v.amount }));
   } catch (e) { return failure(e); }
 }

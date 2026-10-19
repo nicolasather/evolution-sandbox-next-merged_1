@@ -3,6 +3,9 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+## Quiz Studio 160 upgrade
+- 6-step quiz wizard, new question scoring (multi-correct, partial credit, speed bonus), media, import/export, library, learning review, host tools, reports, collectibles, safety/privacy. See docs/QUIZ_STUDIO_160_LEDGER.md. Requires migration 004 for full features.
+
 ## 1.15.0 — 30 September 2026 (unreleased)
 
 ### 18 October 2026 — Quiz Studio redesign, scroll fix, no-email quiz creation

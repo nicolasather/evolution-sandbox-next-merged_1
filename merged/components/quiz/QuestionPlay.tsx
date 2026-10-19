@@ -1,15 +1,22 @@
 'use client';
 import { useMemo, useState } from 'react';
 import { kindLabels, type QuestionKind } from '@/lib/quiz/types';
+import MediaView from './MediaView';
 
 export type PlayQuestion = { id: string; kind: QuestionKind; prompt: string; payload: any; base_points: number };
 
 /** Renders one question in any of the five formats and returns the player's response. It never knows the answer. */
-export default function QuestionPlay({ question: q, onSubmit, busy = false, disabled = false, submitLabel = 'Submit answer' }: {
+export default function QuestionPlay({ question: q, onSubmit, busy = false, disabled = false, submitLabel = 'Submit answer', onHint, readAloud = true }: {
   question: PlayQuestion; onSubmit: (response: unknown) => Promise<unknown>; busy?: boolean; disabled?: boolean; submitLabel?: string;
+  /** Asks the server for this question's hint. Hints are never part of the question itself. */
+  onHint?: () => Promise<string | null>; readAloud?: boolean;
 }) {
   const p = q.payload;
   const [choice, setChoice] = useState('');
+  const [multi, setMulti] = useState<string[]>([]);
+  const [hint, setHint] = useState<string | null | undefined>(undefined);
+  const [speaking, setSpeaking] = useState(false);
+  const canSpeak = typeof window !== 'undefined' && 'speechSynthesis' in window;
   const [forge, setForge] = useState('');
   const [pairs, setPairs] = useState<Record<string, string>>({});
   const [truth, setTruth] = useState<Record<string, boolean>>({});
@@ -19,7 +26,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
 
   const response = (): unknown => {
     switch (q.kind) {
-      case 'multiple_choice': return { kind: q.kind, selectedIds: choice ? [choice] : [] };
+      case 'multiple_choice': return { kind: q.kind, selectedIds: p.multi ? multi : choice ? [choice] : [] };
       case 'answer_forge': return { kind: q.kind, text: forge };
       case 'connection_rush': return { kind: q.kind, pairs: leftIds.map((l) => ({ leftId: l, rightId: pairs[l] ?? '' })) };
       case 'truth_hunt': return { kind: q.kind, truth };
@@ -27,7 +34,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
     }
   };
   const valid =
-    q.kind === 'multiple_choice' ? !!choice :
+    q.kind === 'multiple_choice' ? (p.multi ? multi.length > 0 : !!choice) :
     q.kind === 'answer_forge' ? !!forge.trim() :
     q.kind === 'connection_rush' ? leftIds.every((x) => pairs[x]) && new Set(Object.values(pairs)).size === leftIds.length :
     q.kind === 'truth_hunt' ? p.statements.every((x: any) => x.id in truth) :
@@ -39,14 +46,39 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
     try { await onSubmit(response()); } catch { setSent(false); } // the parent shows the error; allow another try
   }
   const off = disabled || sent;
+  const spoken = () => [q.prompt, ...(q.kind === 'multiple_choice' ? p.options.map((o: any, i: number) => `${String.fromCharCode(65 + i)}. ${o.text}`) : q.kind === 'truth_hunt' ? p.statements.map((x: any) => x.text) : [])].join('. ');
+  function speak() {
+    if (!canSpeak) return;
+    if (speaking) { window.speechSynthesis.cancel(); setSpeaking(false); return; }
+    const u = new SpeechSynthesisUtterance(spoken()); u.onend = () => setSpeaking(false); u.onerror = () => setSpeaking(false);
+    setSpeaking(true); window.speechSynthesis.speak(u);
+  }
   const usedRights = new Set(Object.values(pairs));
 
   return (
     <div className="stack">
-      <div><p className="eyebrow">{kindLabels[q.kind]} · {q.base_points} points</p><p className="prompt">{q.prompt}</p></div>
+      <div>
+        <p className="eyebrow">{kindLabels[q.kind]} · {q.base_points} points</p>
+        <p className="prompt">{q.prompt}</p>
+        {p.media && <MediaView media={p.media} />}
+        {readAloud && (
+          <div className="row">
+            {canSpeak && <button type="button" className="btn small ghost" onClick={speak} aria-pressed={speaking}>{speaking ? 'Stop reading' : '🔊 Read aloud'}</button>}
+            {!canSpeak && <details><summary>Text version (read aloud is not available in this browser)</summary><p className="note">{spoken()}</p></details>}
+          </div>
+        )}
+      </div>
       {q.kind === 'multiple_choice' && (
         <div className="answers" role="radiogroup" aria-label="Answer options">
-          {p.options.map((o: any) => <button key={o.id} role="radio" aria-checked={choice === o.id} className="choice" aria-pressed={choice === o.id} onClick={() => setChoice(o.id)} disabled={off}>{o.text}</button>)}
+          {p.multi && <p className="note">Choose every correct option.</p>}
+          {p.options.map((o: any) => {
+            const on = p.multi ? multi.includes(o.id) : choice === o.id;
+            return (
+              <button key={o.id} role={p.multi ? 'checkbox' : 'radio'} aria-checked={on} className="choice" data-selected={on} onClick={() => (p.multi ? setMulti((m) => (m.includes(o.id) ? m.filter((x) => x !== o.id) : [...m, o.id])) : setChoice(o.id))} disabled={off}>
+                {o.image && <MediaView media={o.image} compact />}{o.text}
+              </button>
+            );
+          })}
         </div>
       )}
       {q.kind === 'answer_forge' && (
@@ -92,7 +124,12 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
           ))}</tbody>
         </table></div>
       )}
-      <div><button className="btn" onClick={submit} disabled={!valid || off || busy}>{sent ? 'Answer sent' : busy ? 'Checking…' : submitLabel}</button></div>
+      <div className="row" style={{ alignItems: 'center' }}>
+        <button className="btn" onClick={submit} disabled={!valid || off || busy} aria-busy={busy}>{sent ? '✓ Answer sent' : busy ? 'Checking…' : submitLabel}</button>
+        {onHint && !off && hint === undefined && <button type="button" className="btn small ghost" onClick={async () => { try { setHint(await onHint()); } catch { setHint(null); } }}>Show hint</button>}
+        <span className="sr-only" role="status" aria-live="polite">{sent ? 'Your answer was sent.' : ''}</span>
+      </div>
+      {hint !== undefined && <p className="info" role="status">{hint ? `Hint: ${hint}` : 'There is no hint for this question.'}</p>}
     </div>
   );
 }

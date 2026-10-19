@@ -17,10 +17,12 @@ export default async function EditQuiz({ params }: { params: Promise<{ id: strin
   if (!z.string().uuid().safeParse(id).success) notFound();
   const db = serviceDB();
   // Owner filter in the query itself: another user's quiz is indistinguishable from a missing one.
-  const { data: quiz } = await db.from('quizzes').select('id,title,description,status,updated_at').eq('id', id).eq('owner_id', user.id).maybeSingle();
+  let found = await db.from('quizzes').select('id,title,description,status,updated_at,meta').eq('id', id).eq('owner_id', user.id).maybeSingle();
+  if (found.error) found = await db.from('quizzes').select('id,title,description,status,updated_at').eq('id', id).eq('owner_id', user.id).maybeSingle(); // migration 004 not applied yet
+  const quiz = found.data as (Record<string, any> | null);
   if (!quiz) notFound();
   const { data: rows, error } = await db.from('quiz_questions').select('id,kind,prompt,payload,answer_key,base_points').eq('quiz_id', id).order('position');
   if (error) throw new Error('Could not load questions');
   const questions: Question[] = (rows ?? []).map((q) => ({ id: q.id, kind: q.kind, prompt: q.prompt, payload: q.payload, answerKey: q.answer_key, basePoints: q.base_points }));
-  return <QuizEditor cloudConfigured initial={{ id: quiz.id, title: quiz.title, description: quiz.description, status: quiz.status, questions, updatedAt: quiz.updated_at }} />;
+  return <QuizEditor cloudConfigured initial={{ id: quiz.id, title: quiz.title, description: quiz.description, status: quiz.status, questions, updatedAt: quiz.updated_at, meta: quiz.meta ?? {} }} />;
 }
