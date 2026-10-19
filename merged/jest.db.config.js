@@ -6,5 +6,5 @@ module.exports = {
   ...base,
   testEnvironment: 'node',
   testMatch: ['**/*.db.test.ts'],
-  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/', '<rootDir>/tests/e2e/'],
 };

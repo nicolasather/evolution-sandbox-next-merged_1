@@ -1,4 +1,5 @@
 /** @jest-environment node */
+import type { Loose } from '../loose';
 import { ICONS, THEMES, REACTIONS, BORDERS, NAMEPLATES, BANNERS, ALL_FRAMES, iconSvg, describeCriterion, nameplateText, equipReaction, canReact, isValidReaction, MAX_WHEEL, reactionFallbackSvg } from '../cosmetics/catalog';
 import { emptyLedger, applyEvent, refreshUnlocks, owns, equip, visibleIdentity, freeItems, collectionProgress, lockerSearch, type LedgerEvent } from '../cosmetics/ledger';
 
@@ -41,7 +42,7 @@ describe('reaction wheel (item 127)', () => {
 });
 
 describe('progress ledger (items 112-120, 126, 130)', () => {
-  const session = (n: number, o: any = {}): LedgerEvent => ({ id: `ev${n}`, kind: 'session', at: new Date(Date.UTC(2026, 0, n + 1)).toISOString(), accuracy: 0.8, fact: { sessionId: `s${n}`, quizId: o.quizId ?? `quiz${n}`, verified: true, answered: 10, distinctQuestions: 10, durationSeconds: 200, at: new Date(Date.UTC(2026, 0, n + 1)).toISOString(), ...o.fact } });
+  const session = (n: number, o: Loose = {}): LedgerEvent => ({ id: `ev${n}`, kind: 'session', at: new Date(Date.UTC(2026, 0, n + 1)).toISOString(), accuracy: 0.8, fact: { sessionId: `s${n}`, quizId: o.quizId ?? `quiz${n}`, verified: true, answered: 10, distinctQuestions: 10, durationSeconds: 200, at: new Date(Date.UTC(2026, 0, n + 1)).toISOString(), ...o.fact } });
   it('starts everyone with free items only', () => { const l = emptyLedger(); expect(freeItems().length).toBeGreaterThan(0); expect(freeItems().every((id) => owns(l, id))).toBe(true); expect(owns(l, ICONS.find((i) => !i.free)!.id)).toBe(false); });
   it('applying the same event twice changes nothing (idempotent)', () => {
     const e = session(1); const r1 = applyEvent(emptyLedger(), e); const r2 = applyEvent(r1.ledger, e);

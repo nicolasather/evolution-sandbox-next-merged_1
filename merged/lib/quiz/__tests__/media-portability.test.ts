@@ -1,4 +1,5 @@
 /** @jest-environment node */
+import type { Loose } from '../loose';
 import zlib from 'node:zlib';
 import { sniff, checkUpload, looksDangerous, parseEmbed, isCanonicalEmbedSrc, mediaPath, ownsPath, questionMediaRefs, unreferencedAssets, imageStyle, proposeReplacement, confirmReplacement, cancelReplacement, annotationProblems, mp4Seconds, LIMITS, USER_QUOTA_BYTES } from '../media';
 import { parseCsv, readXlsx, suggestMapping, previewImport, exportQuizJson, importQuizJson, parseBulkPaste } from '../portability';
@@ -106,7 +107,7 @@ describe('CSV / XLSX import shows a preview and errors before anything changes (
     expect(map).toMatchObject({ question: 0, answer: 1, wrong1: 2, wrong2: 3, points: 4, explanation: 5 });
     const p = previewImport(rows, map);
     expect(p.questions).toHaveLength(2); expect(p.questions[0]!.kind).toBe('multiple_choice'); expect(p.questions[1]!.kind).toBe('answer_forge');
-    expect((p.questions[0]!.answerKey as any).explanation).toBe('Basic "sum"');
+    expect((p.questions[0]!.answerKey as Loose).explanation).toBe('Basic "sum"');
     expect(p.problems.map((x) => x.row)).toEqual([4, 5]); expect(p.problems[0]!.field).toBe('question'); expect(p.problems[1]!.field).toBe('points');
     p.questions.forEach((q) => expect(questionSchema.safeParse(q).success).toBe(true));
   });
@@ -134,7 +135,7 @@ describe('CSV / XLSX import shows a preview and errors before anything changes (
 });
 
 describe('versioned JSON backup (item 042)', () => {
-  const doc = { title: 'T', description: 'D', meta: { subject: 'Math', language: 'en', tags: ['a'] }, questions: [{ kind: 'answer_forge', prompt: 'p', basePoints: 10, payload: { placeholder: 'x', caseSensitive: false }, answerKey: { accepted: ['a'], explanation: 'Because' } }] as any };
+  const doc = { title: 'T', description: 'D', meta: { subject: 'Math', language: 'en', tags: ['a'] }, questions: [{ kind: 'answer_forge', prompt: 'p', basePoints: 10, payload: { placeholder: 'x', caseSensitive: false }, answerKey: { accepted: ['a'], explanation: 'Because' } }] as Loose };
   it('round-trips metadata and explanations', () => {
     const r = importQuizJson(exportQuizJson(doc)); expect(r.ok && r.doc).toEqual(doc); expect(r.ok && r.fromVersion).toBe(2);
   });
@@ -152,8 +153,8 @@ describe('bulk paste always yields a correction list (item 043)', () => {
   it('parses numbered questions with lettered options and a marked answer', () => {
     const items = parseBulkPaste('1. Largest planet?\nA) Mars\nB) Jupiter *\nC) Venus\n\n2) Capital of Japan?\nA. Osaka\nB. Tokyo\nAnswer: B\n3. Water formula?\nAnswer: H2O | water');
     expect(items).toHaveLength(3);
-    const k = (i: number) => (items[i]!.question!.answerKey as any);
-    expect((items[0]!.question!.payload as any).options[k(0).correctIds[0] === (items[0]!.question!.payload as any).options[1].id ? 1 : 0].text).toBe('Jupiter');
+    const k = (i: number) => (items[i]!.question!.answerKey as Loose);
+    expect((items[0]!.question!.payload as Loose).options[k(0).correctIds[0] === (items[0]!.question!.payload as Loose).options[1].id ? 1 : 0].text).toBe('Jupiter');
     expect(items[1]!.warnings).toHaveLength(0); expect(items[2]!.question!.kind).toBe('answer_forge'); expect(k(2).accepted).toEqual(['H2O', 'water']);
   });
   it('parses question | answer lines and warns about lines it cannot use', () => {

@@ -1,4 +1,5 @@
 /** @jest-environment node */
+import type { Loose } from '../loose';
 import { joinSchema, questionSchema, roomCreateSchema, saveQuizSchema } from '../validation';
 import { explainIssue } from '../explain';
 import { publicPayload, seededShuffle } from '../public';
@@ -16,14 +17,14 @@ describe('question validation', () => {
     expect(questionSchema.safeParse({ ...goodMc, basePoints: 10001 }).success).toBe(false);
   });
   it('strips unknown top-level keys, rejects unknown payload keys and oversized text', () => {
-    expect((questionSchema.parse({ ...goodMc, extra: 1 }) as any).extra).toBeUndefined();
+    expect((questionSchema.parse({ ...goodMc, extra: 1 }) as Loose).extra).toBeUndefined();
     expect(questionSchema.safeParse({ ...goodMc, payload: { options: goodMc.payload.options, hint: 'x' } }).success).toBe(false);
     expect(questionSchema.safeParse({ ...goodMc, payload: { options: [{ id: 'a', text: 'x'.repeat(501) }, { id: 'b', text: 'B' }] } }).success).toBe(false);
   });
   it('rejects unsafe ids', () => expect(questionSchema.safeParse({ ...goodMc, payload: { options: [{ id: 'a b', text: 'A' }, { id: 'b', text: 'B' }] } }).success).toBe(false));
   it('Fill the Table needs a blank with an answer, and strips blank text from the visible payload', () => {
     const t = { kind: 'fill_table', prompt: 'Q', basePoints: 10, payload: { columns: ['a', 'b'], rows: [[{ text: 'SECRET', blank: true }, { text: 'x', blank: false }]] }, answerKey: { cells: { '0:0': ['SECRET'] } } };
-    const r = questionSchema.parse(t) as any;
+    const r = questionSchema.parse(t) as Loose;
     expect(r.payload.rows[0][0]).toEqual({ text: '', blank: true });
     expect(questionSchema.safeParse({ ...t, answerKey: { cells: {} } }).success).toBe(false);
     expect(questionSchema.safeParse({ ...t, payload: { ...t.payload, rows: [[{ text: '', blank: false }, { text: '', blank: false }]] } }).success).toBe(false);
@@ -48,7 +49,7 @@ describe('question validation', () => {
   it('explains problems in plain language with the question number', () => {
     const r = saveQuizSchema.safeParse({ title: 'T', status: 'draft', questions: [goodMc, { ...goodMc, prompt: '' }] });
     expect(r.success).toBe(false);
-    if (!r.success) expect(explainIssue({ path: r.error.issues[0]!.path as any, message: r.error.issues[0]!.message, code: r.error.issues[0]!.code })).toMatch(/^Question 2:/);
+    if (!r.success) expect(explainIssue({ path: r.error.issues[0]!.path as Loose, message: r.error.issues[0]!.message, code: r.error.issues[0]!.code })).toMatch(/^Question 2:/);
   });
 });
 
@@ -56,15 +57,15 @@ describe('public payloads never hand out answers', () => {
   it('shuffles Connection Rush right column differently from authored order', () => {
     const right = [{ id: 'r1' }, { id: 'r2' }, { id: 'r3' }, { id: 'r4' }];
     for (const seed of ['a', 'b', 'c', 'd', 'e', 'f', 'g']) {
-      const out = (publicPayload('connection_rush', { left: [], right }, seed) as any).right;
-      expect(out.map((x: any) => x.id).join()).not.toBe('r1,r2,r3,r4');
+      const out = (publicPayload('connection_rush', { left: [], right }, seed) as Loose).right;
+      expect(out.map((x: Loose) => x.id).join()).not.toBe('r1,r2,r3,r4');
       expect(out).toHaveLength(4);
     }
     expect(seededShuffle([1, 2], 'x')).toEqual([2, 1]);
   });
   it('is deterministic per question so polling does not reshuffle', () => expect(seededShuffle([1, 2, 3, 4, 5], 'same')).toEqual(seededShuffle([1, 2, 3, 4, 5], 'same')));
   it('blanks the text of Fill the Table blanks', () => {
-    const out = publicPayload('fill_table', { columns: ['a'], rows: [[{ text: 'LEAK', blank: true }]] }, 's') as any;
+    const out = publicPayload('fill_table', { columns: ['a'], rows: [[{ text: 'LEAK', blank: true }]] }, 's') as Loose;
     expect(JSON.stringify(out)).not.toContain('LEAK');
   });
 });

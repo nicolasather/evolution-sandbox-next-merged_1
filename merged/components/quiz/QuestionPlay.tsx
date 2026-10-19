@@ -1,9 +1,10 @@
 'use client';
+import type { Loose } from '@/lib/quiz/loose';
 import { useMemo, useState } from 'react';
 import { kindLabels, type QuestionKind } from '@/lib/quiz/types';
 import MediaView from './MediaView';
 
-export type PlayQuestion = { id: string; kind: QuestionKind; prompt: string; payload: any; base_points: number };
+export type PlayQuestion = { id: string; kind: QuestionKind; prompt: string; payload: Loose; base_points: number };
 
 /** Renders one question in any of the five formats and returns the player's response. It never knows the answer. */
 export default function QuestionPlay({ question: q, onSubmit, busy = false, disabled = false, submitLabel = 'Submit answer', onHint, readAloud = true }: {
@@ -22,7 +23,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
   const [truth, setTruth] = useState<Record<string, boolean>>({});
   const [cells, setCells] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
-  const leftIds: string[] = useMemo(() => (q.kind === 'connection_rush' ? p.left.map((a: any) => a.id) : []), [q.kind, p]);
+  const leftIds: string[] = useMemo(() => (q.kind === 'connection_rush' ? p.left.map((a: Loose) => a.id) : []), [q.kind, p]);
 
   const response = (): unknown => {
     switch (q.kind) {
@@ -37,8 +38,8 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
     q.kind === 'multiple_choice' ? (p.multi ? multi.length > 0 : !!choice) :
     q.kind === 'answer_forge' ? !!forge.trim() :
     q.kind === 'connection_rush' ? leftIds.every((x) => pairs[x]) && new Set(Object.values(pairs)).size === leftIds.length :
-    q.kind === 'truth_hunt' ? p.statements.every((x: any) => x.id in truth) :
-    p.rows.every((row: any[], r: number) => row.every((cell: any, c: number) => !cell.blank || (cells[`${r}:${c}`] ?? '').trim().length > 0));
+    q.kind === 'truth_hunt' ? p.statements.every((x: Loose) => x.id in truth) :
+    p.rows.every((row: Loose[], r: number) => row.every((cell: Loose, c: number) => !cell.blank || (cells[`${r}:${c}`] ?? '').trim().length > 0));
 
   async function submit() {
     if (!valid || disabled || busy || sent) return;
@@ -46,7 +47,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
     try { await onSubmit(response()); } catch { setSent(false); } // the parent shows the error; allow another try
   }
   const off = disabled || sent;
-  const spoken = () => [q.prompt, ...(q.kind === 'multiple_choice' ? p.options.map((o: any, i: number) => `${String.fromCharCode(65 + i)}. ${o.text}`) : q.kind === 'truth_hunt' ? p.statements.map((x: any) => x.text) : [])].join('. ');
+  const spoken = () => [q.prompt, ...(q.kind === 'multiple_choice' ? p.options.map((o: Loose, i: number) => `${String.fromCharCode(65 + i)}. ${o.text}`) : q.kind === 'truth_hunt' ? p.statements.map((x: Loose) => x.text) : [])].join('. ');
   function speak() {
     if (!canSpeak) return;
     if (speaking) { window.speechSynthesis.cancel(); setSpeaking(false); return; }
@@ -71,7 +72,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
       {q.kind === 'multiple_choice' && (
         <div className="answers" role="radiogroup" aria-label="Answer options">
           {p.multi && <p className="note">Choose every correct option.</p>}
-          {p.options.map((o: any) => {
+          {p.options.map((o: Loose) => {
             const on = p.multi ? multi.includes(o.id) : choice === o.id;
             return (
               <button key={o.id} role={p.multi ? 'checkbox' : 'radio'} aria-checked={on} className="choice" data-selected={on} onClick={() => (p.multi ? setMulti((m) => (m.includes(o.id) ? m.filter((x) => x !== o.id) : [...m, o.id])) : setChoice(o.id))} disabled={off}>
@@ -87,12 +88,12 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
       {q.kind === 'connection_rush' && (
         <div className="stack">
           <p className="note">Connect every item on the left to one item on the right. Each can be used once.</p>
-          {p.left.map((l: any) => (
+          {p.left.map((l: Loose) => (
             <div className="grid2" key={l.id} style={{ alignItems: 'center' }}>
               <strong>{l.label}</strong>
               <select aria-label={`Match for ${l.label}`} disabled={off} value={pairs[l.id] ?? ''} onChange={(e) => setPairs((s) => ({ ...s, [l.id]: e.target.value }))}>
                 <option value="">Choose a match…</option>
-                {p.right.map((r: any) => <option key={r.id} value={r.id} disabled={usedRights.has(r.id) && pairs[l.id] !== r.id}>{r.label}</option>)}
+                {p.right.map((r: Loose) => <option key={r.id} value={r.id} disabled={usedRights.has(r.id) && pairs[l.id] !== r.id}>{r.label}</option>)}
               </select>
             </div>
           ))}
@@ -101,7 +102,7 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
       {q.kind === 'truth_hunt' && (
         <div className="stack">
           <p className="note">Decide whether each statement is true or false.</p>
-          {p.statements.map((s: any) => (
+          {p.statements.map((s: Loose) => (
             <div className="row spread" key={s.id}>
               <span style={{ flex: '1 1 260px' }}>{s.text}</span>
               <div className="row" role="group" aria-label={`Is this true? ${s.text}`}>
@@ -115,8 +116,8 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
       {q.kind === 'fill_table' && (
         <div className="tablewrap"><table>
           <thead><tr>{p.columns.map((c: string, i: number) => <th key={i}>{c}</th>)}</tr></thead>
-          <tbody>{p.rows.map((row: any[], r: number) => (
-            <tr key={r}>{row.map((cell: any, c: number) => (
+          <tbody>{p.rows.map((row: Loose[], r: number) => (
+            <tr key={r}>{row.map((cell: Loose, c: number) => (
               <td key={c}>{cell.blank
                 ? <input aria-label={`Fill row ${r + 1}, column ${c + 1}`} placeholder="Fill in" disabled={off} maxLength={500} value={cells[`${r}:${c}`] ?? ''} onChange={(e) => setCells((s) => ({ ...s, [`${r}:${c}`]: e.target.value }))} />
                 : cell.text}</td>

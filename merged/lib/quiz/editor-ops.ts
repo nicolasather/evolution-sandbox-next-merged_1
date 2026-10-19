@@ -1,4 +1,5 @@
 /** Pure question-list operations for the editor (items 017, 018, 048). Every function returns a NEW array. */
+import type { Loose } from './loose';
 import { carryOverMedia } from './media';
 import { questionSchema } from './validation';
 import { uid } from './editor-model';
@@ -19,9 +20,9 @@ export function reid(q: Question, make: (p: string) => string = uid): Question {
   const copy = JSON.parse(JSON.stringify(q)) as Question & { id?: string };
   delete copy.id;
   const map = new Map<string, string>();
-  const collect = (v: any) => { if (Array.isArray(v)) v.forEach(collect); else if (v && typeof v === 'object') { if (typeof v.id === 'string' && !map.has(v.id)) map.set(v.id, make(v.id.slice(0, 1) || 'x')); Object.values(v).forEach(collect); } };
+  const collect = (v: Loose) => { if (Array.isArray(v)) v.forEach(collect); else if (v && typeof v === 'object') { if (typeof v.id === 'string' && !map.has(v.id)) map.set(v.id, make(v.id.slice(0, 1) || 'x')); Object.values(v).forEach(collect); } };
   collect(copy.payload);
-  const remap = (v: any, keyed: boolean): any => {
+  const remap = (v: Loose, keyed: boolean): Loose => {
     if (Array.isArray(v)) return v.map((x) => remap(x, keyed));
     if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [map.get(k) ?? k, remap(x, keyed)]));
     return typeof v === 'string' && map.has(v) ? map.get(v)! : v;
@@ -37,7 +38,7 @@ export function setSection(qs: readonly Question[], indexes: number[], section: 
   const pick = new Set(indexes);
   return qs.map((q, i) => {
     if (!pick.has(i)) return q;
-    const meta = { ...((q.payload as any).meta ?? {}) } as Record<string, unknown>;
+    const meta = { ...((q.payload as Loose).meta ?? {}) } as Record<string, unknown>;
     if (section.trim()) meta.section = section.trim().slice(0, 80); else delete meta.section;
     const payload = { ...q.payload, meta } as Record<string, unknown>;
     if (!Object.keys(meta).length) delete payload.meta;
@@ -56,7 +57,7 @@ export function toClipboard(qs: readonly Question[], ownerId: string | null): st
 export type PasteResult = { ok: true; questions: Question[]; dropped: string[]; problems: string[] } | { ok: false; error: string };
 /** Pasted questions get fresh ids. Media the person does not own, or that no longer exists, is removed and reported — never silently kept as a broken link. */
 export function fromClipboard(text: string, ownerId: string | null, mediaExists: (path: string) => boolean = () => true): PasteResult {
-  let raw: any; try { raw = JSON.parse(text); } catch { return { ok: false, error: 'The clipboard does not contain Quiz Studio questions.' }; }
+  let raw: Loose; try { raw = JSON.parse(text); } catch { return { ok: false, error: 'The clipboard does not contain Quiz Studio questions.' }; }
   if (raw?.schema !== CLIPBOARD_SCHEMA || !Array.isArray(raw.questions)) return { ok: false, error: 'The clipboard does not contain Quiz Studio questions.' };
   const out: Question[] = []; const dropped: string[] = []; const problems: string[] = [];
   raw.questions.forEach((q: Question, i: number) => {
@@ -69,7 +70,7 @@ export function fromClipboard(text: string, ownerId: string | null, mediaExists:
   return { ok: true, questions: out, dropped, problems };
 }
 function stripAllMedia(q: Question, dropped: string[]): Question {
-  const walk = (v: any): any => {
+  const walk = (v: Loose): Loose => {
     if (Array.isArray(v)) return v.map(walk);
     if (v && typeof v === 'object') {
       if ((v.type === 'image' || v.type === 'video' || v.type === 'audio') && typeof v.ref === 'string' && v.ref.startsWith('quiz-media/')) { dropped.push(v.ref); return undefined; }

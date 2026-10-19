@@ -124,6 +124,8 @@ export default function QuizEditor({ initial, localKey, cloudConfigured }: { ini
     if (hasContent) {
       const w = saveLocalDraft({ key, cloudId: L.id, title: D.title, description: D.description, questions: D.qs, meta: D.meta as Record<string, unknown> });
       if (!w.ok) { deviceOk = false; deviceMsg = w.reason === 'quota' ? 'This browser’s storage is full' : 'This browser is blocking storage (private mode?)'; }
+      // A brand-new quiz now exists on this device: make the address bar point at it, so a reload (or the Back button) reopens THIS draft instead of a blank editor.
+      else if (!L.id && window.location.pathname === '/quiz/new') { try { window.history.replaceState(null, '', `/quiz/edit/${key}`); } catch { /* ignore */ } }
     }
     try { const h = serialize(L.hist); if (h) sessionStorage.setItem(HIST_KEY(key), h); } catch { /* ignore */ }
 

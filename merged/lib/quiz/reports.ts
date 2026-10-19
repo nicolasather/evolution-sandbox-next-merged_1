@@ -1,10 +1,11 @@
 /** Session reports (items 101-109). Pure. Academic points (answers) and modifier effects (steals, swaps, potluck…) are always kept apart,
  *  and team-level classroom data is never presented as individual mastery. */
+import type { Loose } from './loose';
 import { normalizeText } from './text';
 import { SCORE_NOTE } from './report-text';
 
 export type RQuestion = { id: string; position: number; kind: string; prompt: string; basePoints: number; topic?: string; difficulty?: string; objective?: string; optionText?: Record<string, string> };
-export type RSubmission = { questionId: string; actorId: string; correct: boolean; response: any; awarded: number; wager?: number; at: string };
+export type RSubmission = { questionId: string; actorId: string; correct: boolean; response: Loose; awarded: number; wager?: number; at: string };
 export type REvent = { actorId: string; delta: number; reason: string; at?: string; undone?: boolean };
 export type RActor = { id: string; name: string; points: number };
 export type SessionData = {
@@ -83,7 +84,7 @@ export function performanceBy(d: SessionData, by: 'topic' | 'objective' | 'diffi
   const g = new Map<string, { answered: number; correct: number }>();
   d.submissions.filter((s) => s.response?.kind !== 'timeout').forEach((s) => {
     const q = d.questions.find((x) => x.id === s.questionId); if (!q) return;
-    const k = (by === 'kind' ? q.kind : (q as any)[by]) || 'Ungrouped';
+    const k = (by === 'kind' ? q.kind : (q as Loose)[by]) || 'Ungrouped';
     const a = g.get(k) ?? g.set(k, { answered: 0, correct: 0 }).get(k)!; a.answered++; if (s.correct) a.correct++;
   });
   return [...g].map(([label, v]) => ({ label, ...v, accuracy: v.answered ? v.correct / v.answered : 0 })).sort((a, b) => a.accuracy - b.accuracy);
@@ -93,7 +94,7 @@ export function perActor(d: SessionData, actorId: string, by: 'topic' | 'objecti
   const g = new Map<string, { answered: number; correct: number }>();
   d.submissions.filter((s) => s.actorId === actorId).forEach((s) => {
     const q = d.questions.find((x) => x.id === s.questionId); if (!q) return;
-    const k = by === 'question' ? `Q${q.position + 1}` : ((q as any)[by] || 'Ungrouped');
+    const k = by === 'question' ? `Q${q.position + 1}` : ((q as Loose)[by] || 'Ungrouped');
     const a = g.get(k) ?? g.set(k, { answered: 0, correct: 0 }).get(k)!; a.answered++; if (s.correct) a.correct++;
   });
   return { teamLevel: false as const, rows: [...g].map(([label, v]) => ({ label, ...v })) };

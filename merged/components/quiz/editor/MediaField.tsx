@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { ensureCloudSession } from '@/lib/quiz/session-client';
-import { parseEmbed } from '@/lib/quiz/media';
+import { LIMITS, parseEmbed } from '@/lib/quiz/media';
+import { uploadMedia } from '@/lib/quiz/upload-client';
 import type { Media } from '@/lib/quiz/validation';
 import MediaView from '../MediaView';
 
@@ -16,10 +17,7 @@ export default function MediaField({ media, onChange, idPrefix }: { media?: Medi
     try {
       const s = await ensureCloudSession();
       if (s.status !== 'ready') { setMsg('Uploading needs the online quiz service. You can still paste a YouTube or Vimeo link, or add media later.'); return; }
-      const fd = new FormData(); fd.append('file', file);
-      const res = await fetch('/api/quiz/media', { method: 'POST', body: fd });
-      const j = await res.json();
-      if (!res.ok) throw new Error(j.error ?? 'Upload failed');
+      const j = await uploadMedia(file, { onStage: (st) => setMsg(st === 'checking' ? 'Checking the file…' : st === 'sending' ? 'Uploading…' : 'Verifying the upload…') });
       const type = String(j.mime).startsWith('image/') ? 'image' : String(j.mime).startsWith('audio/') ? 'audio' : 'video';
       onChange({ type, ref: j.path, alt: '' } as Media);
       setMsg(`Uploaded. ${(j.remainingBytes / 1048576).toFixed(0)} MB of your space left.`);
@@ -38,7 +36,8 @@ export default function MediaField({ media, onChange, idPrefix }: { media?: Medi
       {!media && (
         <>
           <label>Upload an image, audio or video file
-            <input type="file" accept="image/png,image/jpeg,image/webp,image/gif,audio/mpeg,audio/mp4,audio/wav,audio/ogg,video/mp4,video/webm" disabled={busy} onChange={(e) => { const f = e.target.files?.[0]; if (f) void upload(f); e.target.value = ''; }} />
+            <span className="note" style={{ display: 'block' }}>Images (including GIFs) up to {(LIMITS.image.maxBytes / 1048576).toFixed(0)} MB · video up to {(LIMITS.video.maxBytes / 1048576).toFixed(0)} MB and {LIMITS.video.maxSeconds} s · audio up to {(LIMITS.audio.maxBytes / 1048576).toFixed(0)} MB and {LIMITS.audio.maxSeconds / 60} min</span>
+            <input type="file" accept="image/png,image/jpeg,image/webp,image/avif,image/gif,audio/mpeg,audio/mp4,audio/wav,video/mp4,video/webm" disabled={busy} onChange={(e) => { const f = e.target.files?.[0]; if (f) void upload(f); e.target.value = ''; }} />
           </label>
           <div className="row" style={{ flexWrap: 'nowrap' }}>
             <input aria-label="YouTube or Vimeo link" placeholder="…or paste a YouTube / Vimeo link" value={embedUrl} onChange={(e) => setEmbedUrl(e.target.value)} />

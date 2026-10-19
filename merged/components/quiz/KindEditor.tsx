@@ -1,10 +1,11 @@
 'use client';
+import type { Loose } from '@/lib/quiz/loose';
 import { uid } from '@/lib/quiz/editor-model';
 import type { Question } from '@/lib/quiz/types';
 
 /** The per-format answer editor. Each of the five formats keeps its own data shape, exactly as the server validates it. */
 export default function KindEditor({ q, onChange }: { q: Question; onChange: (p: Partial<Question>) => void }) {
-  const pl: any = q.payload, ak: any = q.answerKey;
+  const pl: Loose = q.payload, ak: Loose = q.answerKey;
   switch (q.kind) {
     case 'multiple_choice': {
       const opts = pl.options as { id: string; text: string }[];

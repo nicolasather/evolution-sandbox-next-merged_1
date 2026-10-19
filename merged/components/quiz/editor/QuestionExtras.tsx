@@ -1,4 +1,5 @@
 'use client';
+import type { Loose } from '@/lib/quiz/loose';
 import { SCORING_MODES, explainScoring, scoringOf } from '@/lib/quiz/scoring';
 import type { Question } from '@/lib/quiz/types';
 import type { Media } from '@/lib/quiz/validation';
@@ -9,8 +10,8 @@ const clean = <T extends Record<string, unknown>>(o: T): T => Object.fromEntries
 
 /** Teaching notes, scoring, classification and media for one question. Everything here is optional. */
 export default function QuestionExtras({ q, index, onChange }: { q: Question; index: number; onChange: (p: Patch) => void }) {
-  const pl: any = q.payload, ak: any = q.answerKey;
-  const meta = (pl.meta ?? {}) as Record<string, any>;
+  const pl: Loose = q.payload, ak: Loose = q.answerKey;
+  const meta = (pl.meta ?? {}) as Record<string, Loose>;
   const setPl = (k: string, v: unknown) => onChange({ payload: clean({ ...pl, [k]: v }) });
   const setAk = (k: string, v: unknown) => onChange({ answerKey: clean({ ...ak, [k]: v }) });
   const setMeta = (k: string, v: unknown) => setPl('meta', clean({ ...meta, [k]: v }));

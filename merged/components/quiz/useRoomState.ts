@@ -1,8 +1,9 @@
 'use client';
+import type { Loose } from '@/lib/quiz/loose';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { api, ApiError } from '@/lib/quiz/client';
 
-export type RoomState = any;
+export type RoomState = Loose;
 
 /** Polls the server for room state. (Live updates every ~1.5 s; slower when the tab is hidden.) */
 export function useRoomState(roomId: string, opts: { token?: string | null; host?: boolean; peek?: boolean; ready: boolean }) {

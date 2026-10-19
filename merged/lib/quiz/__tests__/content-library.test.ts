@@ -1,10 +1,11 @@
 /** @jest-environment node */
+import type { Loose } from '../loose';
 import { findDuplicates, checkQuality, evidenceWarnings, canPublish, groupQuestions, reviewSequence, duplicateIntoLanguage, revalidate, translatableStrings, takeSnapshot, rollback, hashDoc, changedQuestions, t } from '../content';
 import { relevance, searchLibrary, facets, toggleFavorite, emptyCollections, addFolder, moveToFolder, parseCollections, sectionsOf, planBulk, remix, canTransition, isVerified, duplicateSpamSignal, editDistance, type LibraryQuiz } from '../library';
 import { coverSvg, themeForSubject } from '../art';
 import type { Question } from '../types';
 
-const mc = (prompt: string, right: string, wrong: string[], extra: any = {}): Question => ({ kind: 'multiple_choice', prompt, basePoints: 100, payload: { options: [right, ...wrong].map((text, i) => ({ id: `o${i}`, text })), ...extra.payload }, answerKey: { correctIds: ['o0'], ...extra.key } });
+const mc = (prompt: string, right: string, wrong: string[], extra: Loose = {}): Question => ({ kind: 'multiple_choice', prompt, basePoints: 100, payload: { options: [right, ...wrong].map((text, i) => ({ id: `o${i}`, text })), ...extra.payload }, answerKey: { correctIds: ['o0'], ...extra.key } });
 const forge = (prompt: string, a: string[]): Question => ({ kind: 'answer_forge', prompt, basePoints: 100, payload: { placeholder: 'x', caseSensitive: false }, answerKey: { accepted: a } });
 
 describe('duplicate detection (item 044)', () => {
@@ -43,7 +44,7 @@ describe('question-quality checklist (item 047)', () => {
 });
 
 describe('AI drafts stay unverified and never publish themselves (items 045, 046)', () => {
-  const draft = (extra: any = {}) => mc('In which year did the Berlin Wall fall?', '1989', ['1991', '1979'], { payload: { meta: { aiDraft: true, ...extra } } });
+  const draft = (extra: Loose = {}) => mc('In which year did the Berlin Wall fall?', '1989', ['1991', '1979'], { payload: { meta: { aiDraft: true, ...extra } } });
   it('warns about unsupported numbers and about missing human verification', () => {
     expect(evidenceWarnings(draft()).join(' ')).toMatch(/no source/); expect(evidenceWarnings(draft()).join(' ')).toMatch(/not marked this AI draft as verified/);
     expect(evidenceWarnings(draft({ evidence: 'Encyclopaedia, 2024', verified: true }))).toEqual([]);
@@ -63,7 +64,7 @@ describe('grouping, localisation and revisions (items 048, 049, 050)', () => {
     const doc = { title: 'Fractions', description: '', meta: { language: 'en' }, questions: [mc('Half of 10?', '5', ['4'])] };
     const before = JSON.stringify(doc); const { copy, problems, source } = duplicateIntoLanguage(doc, 'vi', { 0: { prompt: 'Một nửa của 10?', texts: { o0: '5', o1: '4' } } });
     expect(JSON.stringify(source)).toBe(before); expect(copy.meta!.language).toBe('vi'); expect(copy.questions[0]!.prompt).toBe('Một nửa của 10?');
-    expect((copy.questions[0]!.answerKey as any).correctIds).toEqual(['o0']); expect(problems).toEqual([]);
+    expect((copy.questions[0]!.answerKey as Loose).correctIds).toEqual(['o0']); expect(problems).toEqual([]);
     const broken = duplicateIntoLanguage(doc, 'vi', { 0: { texts: { o0: '' } } }); expect(broken.problems).toHaveLength(1);
     expect(revalidate([{ ...doc.questions[0]!, prompt: '' }])).toHaveLength(1);
     expect(translatableStrings(doc.questions[0]!).map((s) => s.text)).toEqual(['5', '4']);
@@ -73,7 +74,7 @@ describe('grouping, localisation and revisions (items 048, 049, 050)', () => {
     const live = { title: 'V1', description: '', questions: [mc('Q?', 'a', ['b'])] };
     const snap = takeSnapshot(live, 'Published v1', new Date('2026-01-01T00:00:00Z'));
     live.title = 'V2'; live.questions[0]!.prompt = 'Changed?'; expect(snap.doc.title).toBe('V1'); expect(snap.doc.questions[0]!.prompt).toBe('Q?');
-    expect(() => { (snap.doc as any).title = 'x'; }).toThrow();
+    expect(() => { (snap.doc as Loose).title = 'x'; }).toThrow();
     const r = rollback(live, snap); expect(r.restored.title).toBe('V1'); expect(r.safety.doc.title).toBe('V2'); expect(r.safety.label).toContain('Before restoring');
     expect(hashDoc({ a: 1, b: 2 })).toBe(hashDoc({ b: 2, a: 1 })); expect(changedQuestions(snap.doc, live)).toEqual({ added: 0, removed: 0, changed: 1 });
   });
@@ -95,7 +96,7 @@ describe('library search, filters and sorting (items 051-054)', () => {
     expect(editDistance('kitten', 'sitting', 3)).toBe(3); expect(relevance(all[0]!, '')).toBe(1);
   });
   it('filters by subject, age, language, type, duration, media and verified', () => {
-    const ids = (f: any) => searchLibrary(all, { filters: f }).map((q) => q.id).sort();
+    const ids = (f: Loose) => searchLibrary(all, { filters: f }).map((q) => q.id).sort();
     expect(ids({ subject: 'history' })).toEqual(['2']); expect(ids({ ageBand: '8-10' })).toEqual(['3']); expect(ids({ language: 'en' })).toEqual(['1', '3']);
     expect(ids({ kind: 'multiple_choice' })).toEqual(['1']); expect(ids({ minSeconds: 500, maxSeconds: 700 })).toEqual(['3']); expect(ids({ hasMedia: true })).toEqual(['1']); expect(ids({ verifiedOnly: true })).toEqual(['2']);
   });
@@ -124,7 +125,7 @@ describe('collections, My Quizzes, bulk actions and remix (items 055-058)', () =
     const src = { id: 'src-1', title: 'Original', description: 'd', ownerName: 'Ms Lan', questions: [mc('Q?', 'a', ['b'])] };
     const r = remix(src, (p) => `${p}new${Math.random().toString(36).slice(2, 6)}`);
     expect(r.status).toBe('draft'); expect(r.meta).toMatchObject({ sourceId: 'src-1', sourceTitle: 'Original', sourceAuthor: 'Ms Lan' });
-    const q: any = r.questions[0]; expect(q.payload.options.map((o: any) => o.id)).toContain(q.answerKey.correctIds[0]); expect(q.answerKey.correctIds[0]).not.toBe('o0'); expect(src.questions[0]!.answerKey).toEqual({ correctIds: ['o0'] });
+    const q: Loose = r.questions[0]; expect(q.payload.options.map((o: Loose) => o.id)).toContain(q.answerKey.correctIds[0]); expect(q.answerKey.correctIds[0]).not.toBe('o0'); expect(src.questions[0]!.answerKey).toEqual({ correctIds: ['o0'] });
   });
 });
 

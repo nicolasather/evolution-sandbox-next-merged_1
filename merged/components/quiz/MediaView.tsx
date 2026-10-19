@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import { EMBED_IFRAME_ATTRS, isCanonicalEmbedSrc, parseEmbed, imageStyle } from '@/lib/quiz/media';
 import type { Media } from '@/lib/quiz/validation';
+import { readToken } from '@/lib/quiz/client';
+import { useMediaRoom } from './MediaScope';
 
 /** Renders a question's media safely: uploads through short-lived signed links, embeds only from the allow-list in a sandboxed iframe.
  *  Always has a text alternative; a failed load shows a plain-language fallback instead of breaking the question. */
@@ -9,16 +11,18 @@ export default function MediaView({ media, compact = false }: { media: Media; co
   const [url, setUrl] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
   const isUpload = media.type !== 'embed';
+  const roomId = useMediaRoom();
   useEffect(() => {
     if (!isUpload) return;
     let live = true;
     /* eslint-disable react-hooks/set-state-in-effect */
     setFailed(false); setUrl(null);
     /* eslint-enable react-hooks/set-state-in-effect */
-    if (/^https:\/\//.test(media.ref)) { setUrl(media.ref); return; }
-    fetch(`/api/quiz/media?path=${encodeURIComponent(media.ref)}`).then((r) => (r.ok ? r.json() : Promise.reject())).then((j) => { if (live) setUrl(j.url); }).catch(() => { if (live) setFailed(true); });
+    const token = roomId ? readToken(roomId) : null;
+    const q = `path=${encodeURIComponent(media.ref)}${roomId ? `&room=${encodeURIComponent(roomId)}` : ''}`;
+    fetch(`/api/quiz/media?${q}`, { cache: 'no-store', headers: token ? { 'x-player-token': token } : {} }).then((r) => (r.ok ? r.json() : Promise.reject())).then((j) => { if (live) setUrl(j.url); }).catch(() => { if (live) setFailed(true); });
     return () => { live = false; };
-  }, [media.ref, isUpload]);
+  }, [media.ref, isUpload, roomId]);
 
   const box = { maxWidth: '100%', maxHeight: compact ? 160 : 360, borderRadius: 6 } as const;
   const alt = media.decorative ? '' : (media.alt ?? '');

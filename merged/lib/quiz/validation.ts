@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { isStoragePath, parseEmbed } from './media';
 
 const short = z.string().trim().min(1).max(500);
 const safeId = z.string().regex(/^[A-Za-z0-9_-]{1,60}$/, 'Invalid id');
@@ -27,6 +28,10 @@ export const mediaSchema = z
   .strict()
   .superRefine((m, ctx) => {
     const fail = (message: string) => ctx.addIssue({ code: 'custom', message });
+    // A forged reference must never reach a player's browser: uploads are well-formed storage paths, embeds are allow-listed YouTube/Vimeo links.
+    if (m.type === 'embed') { if (!parseEmbed(m.ref)) fail('Only YouTube and Vimeo links are supported'); }
+    else if (!isStoragePath(m.ref)) fail('This media file is not a valid upload. Upload it again.');
+    if (m.poster !== undefined && !isStoragePath(m.poster)) fail('The video poster is not a valid upload');
     if (m.type === 'image' && !m.decorative && !(m.alt && m.alt.length > 0)) fail('Describe the image (alt text), or mark it decorative');
     if ((m.type === 'video' || m.type === 'audio') && !(m.transcript || m.caption)) fail('Add a caption or transcript for this audio or video');
   });

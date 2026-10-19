@@ -1,5 +1,6 @@
 /** Content-quality tools for creators (items 044, 046, 047, 048, 049, 050). Pure. Nothing here edits or deletes a question:
  *  every function reports findings and the creator decides. */
+import type { Loose } from './loose';
 import { normalizeText } from './text';
 import { questionSchema } from './validation';
 import { explainIssue } from './explain';
@@ -15,12 +16,12 @@ function jaccard(a: Set<string>, b: Set<string>) {
 }
 /** What a question "asks and answers" in plain text, used to tell a true repeat from a similar-but-different question. */
 export function answerSignature(q: Question): string {
-  const ak: any = q.answerKey; const pl: any = q.payload;
+  const ak: Loose = q.answerKey; const pl: Loose = q.payload;
   switch (q.kind) {
-    case 'multiple_choice': return (ak.correctIds as string[]).map((id) => key(pl.options.find((o: any) => o.id === id)?.text ?? '')).sort().join('|');
+    case 'multiple_choice': return (ak.correctIds as string[]).map((id) => key(pl.options.find((o: Loose) => o.id === id)?.text ?? '')).sort().join('|');
     case 'answer_forge': return (ak.accepted as string[]).map(key).sort().join('|');
-    case 'connection_rush': return (ak.pairs as any[]).map((p) => `${key(pl.left.find((x: any) => x.id === p.leftId)?.label ?? '')}>${key(pl.right.find((x: any) => x.id === p.rightId)?.label ?? '')}`).sort().join('|');
-    case 'truth_hunt': return pl.statements.map((s: any) => `${key(s.text)}=${ak.truth[s.id]}`).sort().join('|');
+    case 'connection_rush': return (ak.pairs as Loose[]).map((p) => `${key(pl.left.find((x: Loose) => x.id === p.leftId)?.label ?? '')}>${key(pl.right.find((x: Loose) => x.id === p.rightId)?.label ?? '')}`).sort().join('|');
+    case 'truth_hunt': return pl.statements.map((s: Loose) => `${key(s.text)}=${ak.truth[s.id]}`).sort().join('|');
     case 'fill_table': return Object.entries(ak.cells as Record<string, string[]>).sort().map(([k, v]) => `${k}:${v.map(key).sort().join('/')}`).join('|');
   }
 }
@@ -67,8 +68,8 @@ export function checkQuality(q: Question): QualityIssue[] {
   if (NEGATIVE.test(p) && q.kind === 'multiple_choice') add('negative-stem', 'A negative stem ("not", "except") — consider writing the negative word in capitals so it is not missed.', 'info', 'prompt');
 
   if (q.kind === 'multiple_choice') {
-    const o: { id: string; text: string }[] = (q.payload as any).options;
-    const correct = new Set((q.answerKey as any).correctIds as string[]);
+    const o: { id: string; text: string }[] = (q.payload as Loose).options;
+    const correct = new Set((q.answerKey as Loose).correctIds as string[]);
     const texts = o.map((x) => key(x.text));
     if (new Set(texts).size !== texts.length) add('duplicate-options', 'Two options say the same thing after tidying, so more than one could be right.', 'warn', 'options');
     const right = o.filter((x) => correct.has(x.id)); const wrong = o.filter((x) => !correct.has(x.id));
@@ -80,24 +81,24 @@ export function checkQuality(q: Question): QualityIssue[] {
     if (o.some((x) => ABSOLUTES.test(x.text))) add('absolutes', 'Words like "always", "never" or "all of the above" make options easy to rule in or out.', 'info', 'options');
     if (o.some((x) => x.text.length > 120)) add('long-option', 'An option is over 120 characters.', 'info', 'options');
     if (o.length === 2) add('two-options', 'Only two options means a 50 % chance of guessing. Three or four is fairer.', 'info', 'options');
-    if (o.length > 1 && !(q.answerKey as any).distractorNotes) add('no-distractor-notes', 'Add a note on why wrong options are wrong to turn mistakes into learning.', 'info', 'explanation');
+    if (o.length > 1 && !(q.answerKey as Loose).distractorNotes) add('no-distractor-notes', 'Add a note on why wrong options are wrong to turn mistakes into learning.', 'info', 'explanation');
   }
   if (q.kind === 'answer_forge') {
-    const a: string[] = (q.answerKey as any).accepted; const k = a.map(key);
+    const a: string[] = (q.answerKey as Loose).accepted; const k = a.map(key);
     if (new Set(k).size !== k.length) add('duplicate-aliases', 'Two accepted answers are the same after tidying.', 'info', 'accepted');
     if (a.length === 1 && a[0] && a[0].length > 40) add('long-answer', 'A long typed answer is hard to match exactly. Consider Multiple Choice or add alternatives.', 'warn', 'accepted');
   }
   if (q.kind === 'truth_hunt') {
-    const vals = Object.values((q.answerKey as any).truth as Record<string, boolean>);
+    const vals = Object.values((q.answerKey as Loose).truth as Record<string, boolean>);
     if (vals.length >= 3 && (vals.every(Boolean) || vals.every((v) => !v))) add('all-same', 'Every statement has the same answer, so players can guess the pattern.', 'warn', 'statements');
   }
-  if (!(q.answerKey as any).explanation) add('no-explanation', 'No explanation yet. Players learn most when they see why an answer is right.', 'info', 'explanation');
+  if (!(q.answerKey as Loose).explanation) add('no-explanation', 'No explanation yet. Players learn most when they see why an answer is right.', 'info', 'explanation');
   return out;
 }
 
 /** Facts and numbers in an AI draft need a human check. Unsupported ones stay "unverified" (item 046). */
 export function evidenceWarnings(q: Question): string[] {
-  const meta = (q.payload as any).meta as { aiDraft?: boolean; verified?: boolean; evidence?: string } | undefined;
+  const meta = (q.payload as Loose).meta as { aiDraft?: boolean; verified?: boolean; evidence?: string } | undefined;
   if (!meta?.aiDraft) return [];
   const w: string[] = [];
   const text = JSON.stringify([q.prompt, q.payload, q.answerKey]);
@@ -108,7 +109,7 @@ export function evidenceWarnings(q: Question): string[] {
 }
 /** Drafts from an assistant are labelled and never publish themselves. */
 export function canPublish(qs: Question[]): { ok: boolean; blocked: number[] } {
-  const blocked = qs.map((q, i) => ((q.payload as any).meta?.aiDraft && !(q.payload as any).meta?.verified ? i : -1)).filter((i) => i >= 0);
+  const blocked = qs.map((q, i) => ((q.payload as Loose).meta?.aiDraft && !(q.payload as Loose).meta?.verified ? i : -1)).filter((i) => i >= 0);
   return { ok: blocked.length === 0, blocked };
 }
 
@@ -117,14 +118,14 @@ export type GroupBy = 'topic' | 'difficulty' | 'objective' | 'section';
 export function groupQuestions(qs: Question[], by: GroupBy): Map<string, number[]> {
   const m = new Map<string, number[]>();
   qs.forEach((q, i) => {
-    const g = ((q.payload as any).meta?.[by] as string | undefined)?.trim() || 'Ungrouped';
+    const g = ((q.payload as Loose).meta?.[by] as string | undefined)?.trim() || 'Ungrouped';
     (m.get(g) ?? m.set(g, []).get(g)!).push(i);
   });
   return m;
 }
 /** A review sequence drawn from groups, without editing the bank. Deterministic for a given seed. */
 export function reviewSequence(qs: Question[], filter: { topic?: string; difficulty?: string; objective?: string }, limit = 20): number[] {
-  return qs.map((q, i) => ({ i, m: (q.payload as any).meta ?? {} }))
+  return qs.map((q, i) => ({ i, m: (q.payload as Loose).meta ?? {} }))
     .filter(({ m }) => (!filter.topic || m.topic === filter.topic) && (!filter.difficulty || m.difficulty === filter.difficulty) && (!filter.objective || m.objective === filter.objective))
     .slice(0, limit).map((x) => x.i);
 }
@@ -146,7 +147,7 @@ export function duplicateIntoLanguage(doc: { title: string; description: string;
   copy.questions.forEach((q, i) => {
     const tr = translation[i]; if (!tr) return;
     if (tr.prompt) q.prompt = tr.prompt;
-    if (tr.texts) { const walk = (v: any) => { if (Array.isArray(v)) v.forEach(walk); else if (v && typeof v === 'object') { if (typeof v.id === 'string' && tr.texts![v.id] !== undefined) { if ('text' in v) v.text = tr.texts![v.id]; else if ('label' in v) v.label = tr.texts![v.id]; } Object.values(v).forEach(walk); } }; walk(q.payload); }
+    if (tr.texts) { const walk = (v: Loose) => { if (Array.isArray(v)) v.forEach(walk); else if (v && typeof v === 'object') { if (typeof v.id === 'string' && tr.texts![v.id] !== undefined) { if ('text' in v) v.text = tr.texts![v.id]; else if ('label' in v) v.label = tr.texts![v.id]; } Object.values(v).forEach(walk); } }; walk(q.payload); }
   });
   return { copy, problems: revalidate(copy.questions), source: doc };
 }
@@ -158,7 +159,7 @@ export function revalidate(qs: Question[]): { index: number; message: string }[]
 /** Everything a translator needs: each visible string with the id that identifies it (answer keys are never shown here). */
 export function translatableStrings(q: Question): { id: string; text: string }[] {
   const out: { id: string; text: string }[] = [];
-  const walk = (v: any) => { if (Array.isArray(v)) v.forEach(walk); else if (v && typeof v === 'object') { if (typeof v.id === 'string') { if (typeof v.text === 'string' && v.text) out.push({ id: v.id, text: v.text }); else if (typeof v.label === 'string' && v.label) out.push({ id: v.id, text: v.label }); } Object.values(v).forEach(walk); } };
+  const walk = (v: Loose) => { if (Array.isArray(v)) v.forEach(walk); else if (v && typeof v === 'object') { if (typeof v.id === 'string') { if (typeof v.text === 'string' && v.text) out.push({ id: v.id, text: v.text }); else if (typeof v.label === 'string' && v.label) out.push({ id: v.id, text: v.label }); } Object.values(v).forEach(walk); } };
   walk(q.payload);
   return out;
 }
@@ -167,7 +168,7 @@ export function translatableStrings(q: Question): { id: string; text: string }[]
 export type Snapshot = { id: string; takenAt: string; label: string; hash: string; doc: { title: string; description: string; meta?: Record<string, unknown>; questions: Question[] } };
 function stable(v: unknown): string {
   if (Array.isArray(v)) return `[${v.map(stable).join(',')}]`;
-  if (v && typeof v === 'object') return `{${Object.keys(v as object).sort().map((k) => `${JSON.stringify(k)}:${stable((v as any)[k])}`).join(',')}}`;
+  if (v && typeof v === 'object') return `{${Object.keys(v as object).sort().map((k) => `${JSON.stringify(k)}:${stable((v as Loose)[k])}`).join(',')}}`;
   return JSON.stringify(v);
 }
 export function hashDoc(doc: unknown): string {
