@@ -77,6 +77,27 @@ export default function ModesPage() {
           </div>
         </div>
       </section>
+      <section className="td-modecard" style={{ marginBottom: 44 }} aria-labelledby="ar-h" id="arena-clash">
+        <div className="td-modebody">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/quiz/arena/art/13_mode_library.svg" alt="Arena Clash on the mode shelf: three formats, five roles, a planning board" width={640} height={360} style={{ width: '100%', height: 'auto', borderRadius: 16 }} />
+          <div className="stack" style={{ gap: 10 }}>
+            <p className="eyebrow" style={{ margin: 0 }}>Online · 2–4 teams of 1–5 · Control Circuit / Banner Relay / Crystal Dash</p>
+            <h2 id="ar-h" className="td-sign" style={{ justifySelf: 'start' }}>Arena Clash</h2>
+            <p style={{ maxWidth: '60ch' }}>Teams share one friendly arena on their own devices and race to the same goals. No attacks, no blocking: roles help the team. Between rounds the arena freezes for one class question; correct answers earn the points a team spends on a small helper. The quiz always counts at least half of the score.</p>
+            <ul>
+              <li>Five noncombat roles, three formats, three maps built so every team has the same start.</li>
+              <li>The server moves every token and grades every answer; a device only sends the direction it steers.</li>
+              <li>Teacher console, projector view and join QR, keyboard and touch controls, reduced motion.</li>
+            </ul>
+            <div className="td-row wrap" style={{ marginTop: 6 }}>
+              <Link className="td-btn primary" href="/quiz/library?mode=online&game=arena_clash">Pick a quiz</Link>
+              <Link className="td-btn" href="/quiz/arena/practice">Practice with bots</Link>
+              <Link className="td-btn ghost" href="/quiz/arena">How to play</Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="stack" style={{ gap: 18, marginBottom: 44 }} aria-labelledby="pj-h" id="projector-games">
         <header><p className="eyebrow">Classroom projector</p><h2 id="pj-h" style={{ fontStyle: 'italic' }}>Projector Games · {MODE_LIST.length} game worlds</h2>
           <p className="muted-text" style={{ maxWidth: '62ch' }}>Ten full game worlds for one teacher computer and a projector. Teams answer aloud, the teacher marks them, and no student devices or accounts are needed. From 5 to 180 minutes, or no clock at all.</p>

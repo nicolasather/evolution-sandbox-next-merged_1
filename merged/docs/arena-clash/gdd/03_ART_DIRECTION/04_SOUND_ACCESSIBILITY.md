@@ -1,0 +1,3 @@
+# Feedback and accessibility
+
+Sound design: soft whimsical UI clicks, short chimes on quiz result, paper flutter for banner, rounded percussive zone capture, gentle score animation, never constant loud alarms. Mute default in silent classrooms, teacher can mute projector. Respect reduced-motion and reduced-sound OS settings; subtitle every meaningful audio cue. Contrast >=4.5:1 text, avoid color-only team labels and seizure-inducing flicker. Keyboard arrows/WASD, tab navigable forms, mobile 44px+ touch, all question kinds accessible with assistive input, no timer that automatically penalizes disability without teacher configurable extensions. Reveal explanation must not disappear before reading.

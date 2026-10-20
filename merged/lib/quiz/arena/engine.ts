@@ -62,7 +62,7 @@ export function reduceSeat(s: ArenaState, seatId: string, a: SeatAction): Attemp
   if (s.phase === 'finished') return fail('FINISHED', 'The match is over.');
   const next = clone(s); const me = next.seats.find((x) => x.id === seatId)!; const team = next.teams.find((t) => t.id === me.teamId)!;
   switch (a.kind) {
-    case 'role': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'Roles are chosen in the lobby.'); if (!ROLES.includes(a.role)) return fail('BAD_ROLE', 'Unknown role.'); me.role = a.role; me.ready = false; return { ok: true, state: next };
+    case 'role': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'Roles are chosen in the lobby.'); if (!ROLES.includes(a.role)) return fail('BAD_ROLE', 'Unknown role.'); if (activeSeats(s, me.teamId).length === 1 && a.role !== 'runner') return fail('SOLO_ROLE', 'A team of one plays the Runner. More teammates unlock the other four roles.'); me.role = a.role; me.ready = false; return { ok: true, state: next };
     case 'ready': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'The match already started.'); me.ready = a.ready; return { ok: true, state: next };
     case 'rename': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'Names change in the lobby.'); me.name = a.name; return { ok: true, state: next };
     case 'buy': {

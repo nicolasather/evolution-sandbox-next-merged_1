@@ -28,7 +28,7 @@ const toLib = (i: Item): LibraryQuiz => ({
   verified: i.reviewState === 'approved', reviewState: (i.reviewState as LibraryQuiz['reviewState']) ?? 'unreviewed',
 });
 
-export default function QuizList({ mine, mode = null, game = null, towerDefense = false, swarm = false, obstacle = false }: { mine: boolean; mode?: PlayMode | null; game?: GameKey | null; towerDefense?: boolean; swarm?: boolean; obstacle?: boolean }) {
+export default function QuizList({ mine, mode = null, game = null, towerDefense = false, swarm = false, obstacle = false, arena = false }: { mine: boolean; mode?: PlayMode | null; game?: GameKey | null; towerDefense?: boolean; swarm?: boolean; obstacle?: boolean; arena?: boolean }) {
   const [items, setItems] = useState<Item[] | null>(null);
   const [device, setDevice] = useState<LocalDraft[]>([]);
   const [session, setSession] = useState<SessionInfo | null | undefined>(undefined);
@@ -162,7 +162,7 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
 
   const loading = items === null;
   const totalShown = shown.length + shownDevice.length;
-  const playHref = (id: string) => (obstacle ? `/quiz/setup/${id}/os` : swarm ? `/quiz/setup/${id}/swarm` : towerDefense ? `/quiz/setup/${id}/td` : game ? `/quiz/setup/${id}/game?game=${game}` : `/quiz/setup/${id}${mode ? `?mode=${mode}` : ''}`);
+  const playHref = (id: string) => (arena ? `/quiz/setup/${id}/arena` : obstacle ? `/quiz/setup/${id}/os` : swarm ? `/quiz/setup/${id}/swarm` : towerDefense ? `/quiz/setup/${id}/td` : game ? `/quiz/setup/${id}/game?game=${game}` : `/quiz/setup/${id}${mode ? `?mode=${mode}` : ''}`);
   const setF = (k: keyof Filters, v: unknown) => setFilters((f) => { const n = { ...f, [k]: v === '' || v === false ? undefined : v } as Filters; return n; });
   const hasFilters = Object.values(filters).some((v) => v !== undefined);
 
@@ -223,7 +223,12 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
                 <div><h2 className="td-sign">Obstacle Survival</h2><p>Online, one device per student, squads of 1–5. Choose a quiz to host it with.</p><Link className="td-btn small ghost" href="/quiz/modes">Change mode</Link></div>
               </div>
             )}
-            {mode && !towerDefense && !swarm && !obstacle && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
+            {mode && arena && (
+              <div className="td-libcard" aria-label="Selected mode: Arena Clash">
+                <div><h2 className="td-sign">Arena Clash</h2><p>Online, one device per student, 2–4 teams of 1–5. Choose a quiz to host it with.</p><Link className="td-btn small ghost" href="/quiz/modes">Change mode</Link></div>
+              </div>
+            )}
+            {mode && !towerDefense && !swarm && !obstacle && !arena && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
           </div>
         </section>
       )}

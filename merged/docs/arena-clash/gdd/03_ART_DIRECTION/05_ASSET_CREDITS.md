@@ -1,0 +1,3 @@
+# Artwork provenance and licensing
+
+The 18 SVG mockups and generated PNG previews in this archive are newly authored vector compositions for the game design. They are concept/layout references, not proof of in-game production illustration. All design work must be original and allow source reuse in the user's repo. No assets copied from Kingdom Rush, Bloons TD, Cuphead, Blooket, Survivor.io, copyrighted cartoon characters, or third-party stock photos. If additional font, sound or icon library used, document license with URL, allowed commercial usage and redistribution. Never bundle proprietary font files. Keep original source artwork in repo.

@@ -1,0 +1,5 @@
+# Schema and persistence
+
+Use a NEW additive migration (name after latest actual migration) for `arena_sessions` (room, config, seed, phase, checkpoint JSON, rev/lease), `arena_participants` (room, token subject, team, role, state), `arena_answers` (unique room/window/participant), `arena_awards` (unique room/window/team), `arena_purchases`, `arena_events`, `arena_results` (immutable terminal), `arena_audit`. The design intentionally keeps player email out. Restrict client grants with RLS and service-role only. DB functions `arena_acquire_lease` and `arena_save_checkpoint` must fence stale worker owners. Sessions clean up expired records without changing original quiz data. Write migration _down only for approved rollback; warn that it destroys Arena-specific history.
+
+Session lifecycle: create → lobby → active → finish/abandon. No phantom player rows if seat refused. Every answer commit and awarding is exactly-once. A worker restart must replay committed answers and avoid duplicate awards.

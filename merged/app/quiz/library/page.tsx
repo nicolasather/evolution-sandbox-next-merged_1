@@ -12,5 +12,6 @@ export default async function Library({ searchParams }: { searchParams: Promise<
   const td = m === 'online' && game === 'tower_defense'; // Tower Defense was chosen on /quiz/modes
   const sw = m === 'online' && game === 'swarm_survival'; // Swarm Survival was chosen on /quiz/modes
   const ob = m === 'online' && game === 'obstacle_survival'; // Obstacle Survival was chosen on /quiz/modes
-  return <QuizList mine={false} mode={m} game={g} towerDefense={td} swarm={sw} obstacle={ob} />;
+  const ar = m === 'online' && game === 'arena_clash'; // Arena Clash was chosen on /quiz/modes
+  return <QuizList mine={false} mode={m} game={g} towerDefense={td} swarm={sw} obstacle={ob} arena={ar} />;
 }
