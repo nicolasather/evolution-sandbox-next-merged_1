@@ -13,6 +13,8 @@ export type OSPublic = {
   you: { seatId: string; teamId: string; role: Role; ready: boolean; tick: number | null } | null;
   barrier: { chapter: number; phaseId: string; deadlineMs: number; position: number; help: boolean; eligible: number; answered: number } | null;
   finish: { reason: string; standings: (Standing & { name: string })[] } | null; limits: number[]; log?: string[];
+  /** Purchases waiting for the teacher. Hosts see every request; a student sees only their own squad's. `needsApproval` = the room asks before spending this much. */
+  approvals: { id: string; seatId: string; seatName: string; teamId: string; perk: Perk; price: number }[]; approvalAbove: number; teamSizeCap: number;
 };
 
 export function project(s: OSState, view: OSView, viewerSeat: string | null, now: number, bodies: Record<string, Body> = {}, answered: ReadonlySet<string> = new Set()): OSPublic {
@@ -41,6 +43,8 @@ export function project(s: OSState, view: OSView, viewerSeat: string | null, now
     barrier: b ? { chapter: b.chapter, phaseId: b.phaseId, deadlineMs: b.deadlineMs, position: b.position, help: !!me && b.help.includes(me.teamId), eligible: view === 'student' ? myElig.length : Object.values(b.eligible).flat().length, answered: view === 'student' ? myElig.filter((id) => answered.has(id)).length : [...answered].length } : null,
     finish: s.finish ? { reason: s.finish.reason, standings: s.finish.standings.map((x) => ({ ...x, name: nameOf(x.teamId) })) } : null,
     limits: s.plan.limitDist.map((v) => (v > 100000 ? -1 : v)),
+    approvals: view === 'projector' ? [] : (s.approvals ?? []).filter((a) => view === 'host' || (!!me && a.teamId === me.teamId)).map((a) => ({ id: a.id, seatId: a.seatId, seatName: s.seats.find((x) => x.id === a.seatId)?.name ?? '', teamId: a.teamId, perk: a.perk, price: a.price })),
+    approvalAbove: s.approvalAbove ?? 0, teamSizeCap: s.teamSizeCap ?? 5,
     ...(view === 'host' ? { log: s.log } : {}),
   };
 }

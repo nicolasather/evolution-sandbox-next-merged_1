@@ -1,7 +1,8 @@
 /** @jest-environment node */
-import { addTeamEffects, advance, endsMatchNext, maxSeatTick, reduceHost, reduceSeat, worldTick, activeSeats, type Advance } from '../engine';
+import { addTeamEffects, advance, endsMatchNext, hydrateConfig, maxSeatTick, reduceHost, reduceSeat, worldTick, activeSeats, type Advance } from '../engine';
 import type { Body, HostAction, OSState } from '../domain';
 import { TICK_MS, MAX_POINTS } from '../balance';
+import { barrierSecondsFor } from '../plan';
 import { barrierPoints, masteryOf, standingsOf } from '../score';
 import { project } from '../public';
 import { newBody } from '../physics';
@@ -194,9 +195,9 @@ describe('squad shop (OS-054, OS-066, OS-068)', () => {
 describe('team effects and projections', () => {
   test('ability effects become capped squad pulses', () => {
     const { state } = started(2); let s = state;
-    for (let i = 0; i < 30; i++) s = addTeamEffects(s, ids(2)[0], [{ kind: 'recover', tick: i, at: [3, 3] }]);
+    for (let i = 0; i < 30; i++) s = addTeamEffects(s, ids(2)[0], [{ kind: 'recover', tick: i, at: [3, 3] }], i);
     expect(s.teams[0].assists).toBeLessThanOrEqual(2 * s.plan.chapters); expect(s.teams[0].pulses.length).toBeLessThanOrEqual(24);
-    expect(addTeamEffects(state, 'stranger!', [{ kind: 'plank', tick: 1, at: [1, 1] }])).toBe(state);
+    expect(addTeamEffects(state, 'stranger!', [{ kind: 'plank', tick: 1, at: [1, 1] }], 1)).toBe(state);
   });
   test('OS-069/OS-110 views never carry the seed, answer keys, other squads\' economy or (projector) any names', () => {
     const m = makeMatch({ format: 'relay_race', teamCount: 2 }, 6); let s = seatUp(m.state, ['aaaa-aaaa'], 'sq1'); s = seatUp(s, ['bbbb-bbbb'], 'sq2'); s.teams[1].points = 123; s.teams[1].perks.push('safe_gate');
@@ -206,5 +207,84 @@ describe('team effects and projections', () => {
     const proj = project(s, 'projector', null, T0, bodies); expect(proj.seats).toEqual([]); expect(JSON.stringify(proj)).not.toMatch(/aaaa-aaaa|bbbb-bbbb|123/);
     const h = project(s, 'host', null, T0, bodies); expect(h.seats).toHaveLength(2); expect(h.teams.find((t) => t.id === 'sq2')!.points).toBe(123);
     for (const v of [mine, proj, h]) expect(JSON.stringify(v)).not.toMatch(/answerKey|answer_key|seed/i);
+  });
+});
+
+describe('Game 3 corrective pass (OS-F01..F04)', () => {
+  test('OS-F01 the teacher\'s squad size cap is enforced on join and on move_seat, for caps 1, 2 and 5', () => {
+    for (const cap of [1, 2, 5]) {
+      const m = makeMatch({ format: 'relay_race', teamCount: 2, teamSizeCap: cap }); let s = m.state;
+      for (let i = 0; i < cap * 2; i++) s = seatUp(s, [`cap${cap}-${i}`.padEnd(9, 'x')]);
+      expect(s.teams.map((t) => activeSeats(s, t.id).length)).toEqual([cap, cap]);
+      expect(() => seatUp(s, ['one-too-many'])).toThrow(/full/);
+    }
+    // moving into a full squad is refused too
+    const m = makeMatch({ format: 'relay_race', teamCount: 2, teamSizeCap: 2 }); let s = seatUp(m.state, ['aaaa-aaaa', 'bbbb-bbbb', 'cccc-cccc', 'dddd-dddd']);
+    const who = activeSeats(s, 'sq1')[0].id; const r = reduceHost(s, { kind: 'move_seat', seatId: who, teamId: 'sq2' }, T0); expect(r.result).toMatchObject({ ok: false, code: 'TEAM_FULL' });
+    // a desired team that is full falls back to the other squad instead of overfilling
+    s = reduceHost(s, { kind: 'kick', seatId: activeSeats(s, 'sq2')[0].id }, T0).result.ok ? s : s;
+  });
+  test('OS-F01 an old session without the new fields is upgraded from the trusted config', () => {
+    const m = makeMatch({ teamSizeCap: 2, readAloud: true, approvalAbove: 100 }); const old = JSON.parse(JSON.stringify(m.state)) as OSState;
+    for (const k of ['teamSizeCap', 'readAloud', 'lowPressure', 'approvalAbove', 'approvals', 'approvalSeq'] as const) delete (old as Record<string, unknown>)[k];
+    const up = hydrateConfig(old, m.cfg); expect(up).toMatchObject({ teamSizeCap: 2, readAloud: true, approvalAbove: 100, approvals: [], approvalSeq: 0 }); expect(hydrateConfig(up, m.cfg)).toBe(up);
+  });
+  test.each(['multiple_choice', 'answer_forge', 'connection_rush', 'truth_hunt', 'fill_table'] as const)('OS-F02 the real %s question window honours reading time and low pressure', (kind) => {
+    for (const [readAloud, lowPressure] of [[false, false], [true, false], [false, true], [true, true]] as const) {
+      const m = makeMatch({ readAloud, lowPressure }, 5); const pool = m.pool.map((p) => ({ ...p, kind }));
+      let s = seatUp(m.state, ['aaaa-aaaa']); s = host(s, { kind: 'start' }, T0).s;
+      const bar = drive(s, T0 + 15_000 + m.plan.chapterTicks * TICK_MS, pool).state; expect(bar.phase).toBe('barrier');
+      expect((bar.barrier!.deadlineMs - bar.barrier!.openedAtMs) / 1000).toBe(barrierSecondsFor(kind, readAloud, lowPressure));
+    }
+  });
+  test('OS-F02 pausing and resuming cannot shorten the question window', () => {
+    const m = makeMatch({ readAloud: true }, 5); let s = seatUp(m.state, ['aaaa-aaaa']); s = host(s, { kind: 'start' }, T0).s;
+    const bar = drive(s, T0 + 15_000 + m.plan.chapterTicks * TICK_MS, m.pool).state; const len = bar.barrier!.deadlineMs - bar.barrier!.openedAtMs;
+    const rb = host(host(bar, { kind: 'pause' }, bar.barrier!.openedAtMs + 9000).s, { kind: 'resume' }, bar.barrier!.openedAtMs + 99_000).s; expect(rb.barrier!.deadlineMs - rb.barrier!.openedAtMs).toBe(len); expect(rb.barrier!.deadlineMs).toBe(bar.barrier!.deadlineMs + 90_000);
+  });
+  function shop(approvalAbove: 0 | 100 | 150, n = 2) {
+    const m = makeMatch({ approvalAbove }, 6); let s = seatUp(m.state, ids(n)); s = host(s, { kind: 'start' }, T0).s; s = JSON.parse(JSON.stringify(s)) as OSState;
+    s.phase = 'build_choice'; s.teams[0].points = 300; s.phaseDeadlineMs = T0 + 60_000; return { ...m, s };
+  }
+  test('OS-F03 below the threshold buys instantly; at or above it needs the teacher; a student cannot approve', () => {
+    const { s } = shop(100);
+    const cheap = reduceSeat(s, ids(2)[0], { kind: 'purchase', perk: 'route_peek' }); expect(cheap).toMatchObject({ ok: true }); expect(cheap.ok && cheap.state.teams[0].points).toBe(260);
+    const ask = reduceSeat(s, ids(2)[0], { kind: 'purchase', perk: 'bridge_socket' }); expect(ask).toMatchObject({ ok: true, note: 'approval_requested' });
+    if (!ask.ok) throw new Error('x'); expect(ask.state.teams[0].points).toBe(300); expect(ask.state.approvals).toHaveLength(1); expect(ask.state.teams[0].perks).toEqual([]);
+    expect(reduceSeat(ask.state, ids(2)[0], { kind: 'purchase', perk: 'safe_gate' })).toMatchObject({ ok: false, code: 'APPROVAL_PENDING' });
+    const id = ask.state.approvals![0].id; const ok = host(ask.state, { kind: 'approve', approvalId: id }, T0 + 5).s;
+    expect(ok.teams[0].points).toBe(180); expect(ok.teams[0].perks).toEqual(['bridge_socket']); expect(ok.approvals).toEqual([]);
+    expect(reduceHost(ok, { kind: 'approve', approvalId: id }, T0 + 6).result).toMatchObject({ ok: false, code: 'NO_APPROVAL' }); // duplicate approval cannot charge twice
+  });
+  test('OS-F03 threshold 150 asks only for the 160-point upgrade; 0 never asks; deny charges nothing', () => {
+    const { s } = shop(150); expect(reduceSeat(s, ids(2)[0], { kind: 'purchase', perk: 'bridge_socket' })).toMatchObject({ ok: true, note: 'bridge_socket bought' });
+    const ask = reduceSeat(s, ids(2)[0], { kind: 'purchase', perk: 'safe_gate' }); if (!ask.ok) throw new Error('x'); expect(ask.note).toBe('approval_requested');
+    const denied = host(ask.state, { kind: 'deny', approvalId: ask.state.approvals![0].id }, T0 + 5).s; expect(denied.teams[0].points).toBe(300); expect(denied.approvals).toEqual([]);
+    expect(reduceSeat(shop(0).s, ids(2)[0], { kind: 'purchase', perk: 'safe_gate' })).toMatchObject({ ok: true, note: 'safe_gate bought' });
+  });
+  test('OS-F03 waiting requests reserve points, expire with the shop, and need a running match', () => {
+    const { s, pool } = shop(100); s.teams[0].points = 130;
+    const a = reduceSeat(s, ids(2)[0], { kind: 'purchase', perk: 'bridge_socket' }); if (!a.ok) throw new Error('x');
+    expect(reduceSeat(a.state, ids(2)[1], { kind: 'purchase', perk: 'checkpoint_beacon' })).toMatchObject({ ok: false, code: 'INSUFFICIENT_POINTS' }); // 120 already promised
+    const paused = host(a.state, { kind: 'pause' }, T0 + 1).s; expect(reduceHost(paused, { kind: 'approve', approvalId: 'ap1' }, T0 + 2).result).toMatchObject({ ok: false, code: 'PAUSED' });
+    const gone = advance(a.state, { now: s.phaseDeadlineMs! + 1, pool, answers: [], seedKey: 'k' }).state; expect(gone.phase).toBe('countdown'); expect(gone.approvals).toEqual([]); expect(gone.teams[0].points).toBe(130);
+    const late = reduceHost(gone, { kind: 'approve', approvalId: 'ap1' }, T0 + 99); expect(late.result).toMatchObject({ ok: false, code: 'NO_APPROVAL' });
+  });
+  test('OS-F03 a kicked student\'s waiting request disappears; projections show requests to the host and the squad only', () => {
+    const m = makeMatch({ approvalAbove: 100, format: 'relay_race', teamCount: 2 }, 6); let s = seatUp(m.state, ['aaaa-aaaa'], 'sq1'); s = seatUp(s, ['bbbb-bbbb'], 'sq2'); s = host(s, { kind: 'start' }, T0).s;
+    s = JSON.parse(JSON.stringify(s)) as OSState; s.phase = 'build_choice'; s.teams[0].points = 200; s.teams[1].points = 200;
+    const r = reduceSeat(s, 'aaaa-aaaa', { kind: 'purchase', perk: 'safe_gate' }); if (!r.ok) throw new Error('x'); const bodies = { 'aaaa-aaaa': newBody(m.idx), 'bbbb-bbbb': newBody(m.idx) };
+    expect(project(r.state, 'host', null, T0, bodies).approvals).toHaveLength(1); expect(project(r.state, 'student', 'aaaa-aaaa', T0, bodies).approvals).toHaveLength(1);
+    expect(project(r.state, 'student', 'bbbb-bbbb', T0, bodies).approvals).toHaveLength(0); expect(project(r.state, 'projector', null, T0, bodies).approvals).toHaveLength(0);
+    expect(host(r.state, { kind: 'kick', seatId: 'aaaa-aaaa' }, T0 + 1).s.approvals).toEqual([]);
+  });
+  test('OS-F04 the reducer ignores the wall clock: identical inputs give byte-identical output under different Date.now()', () => {
+    const { state } = started(2); const eff = [{ kind: 'plank' as const, tick: 400, at: [2, 2] as [number, number] }, { kind: 'surge' as const, tick: 10, at: [1, 1] as [number, number] }];
+    const spy = jest.spyOn(Date, 'now'); try {
+      spy.mockReturnValue(1); const a = JSON.stringify(addTeamEffects(state, ids(2)[0], eff, 900));
+      spy.mockReturnValue(9_999_999_999_999); const b = JSON.stringify(addTeamEffects(state, ids(2)[0], eff, 900)); expect(b).toBe(a);
+    } finally { spy.mockRestore(); }
+    const kept = addTeamEffects(state, ids(2)[0], eff, 900).teams[0].pulses; expect(kept.map((p) => p.kind)).toEqual(['plank']); // the old window (tick 10..90) is below 900-800
+    expect(addTeamEffects(state, ids(2)[0], eff, 200).teams[0].pulses.map((p) => p.kind)).toEqual(['plank', 'surge']); // nothing still active is dropped
   });
 });

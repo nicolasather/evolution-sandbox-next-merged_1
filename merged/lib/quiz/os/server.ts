@@ -16,7 +16,7 @@ import type { QuestionKind, Room } from '../types';
 import { MAX_AHEAD_TICKS, MAX_LAG_TICKS, TICK_MS } from './balance';
 import { courseFor, type CourseIndex } from './course';
 import type { Body, CommittedAnswer, Credit, HostAction, OSConfig, OSState, PoolEntry, RoomEffect, SeatAction, SeatRec } from './domain';
-import { addSeat, addTeamEffects, advance, createSession, endsMatchNext, maxSeatTick, reduceHost, reduceSeat, RULES_VERSION, worldTick } from './engine';
+import { addSeat, addTeamEffects, advance, createSession, endsMatchNext, hydrateConfig, maxSeatTick, reduceHost, reduceSeat, RULES_VERSION, worldTick } from './engine';
 import { MIN_CHAPTERS, planMatch } from './plan';
 import { applyBatch, idleTo, newBody, type Ctx } from './physics';
 import { project, type OSPublic } from './public';
@@ -47,7 +47,8 @@ export async function loadSession(roomId: string): Promise<SessionRow> {
   const { data, error } = await serviceDB().from('os_sessions').select('*').eq('room_id', roomId).maybeSingle();
   if (error) throw new AppError('Unexpected server error', 500);
   if (!data) throw new AppError('Obstacle Survival match not found', 404);
-  return { ...(data as SessionRow), revision: IN_DB((data as SessionRow).revision) };
+  const r = data as SessionRow;
+  return { ...r, revision: IN_DB(r.revision), state: hydrateConfig(r.state, r.config) }; // OS-F01/F02/F03: trusted room settings, never request input
 }
 type QRow = { id: string; position: number; kind: QuestionKind; payload: Record<string, unknown> | null; base_points: number };
 export async function loadPool(roomId: string): Promise<{ pool: PoolEntry[]; base: Map<string, number> }> {
@@ -312,7 +313,7 @@ export async function submitInput(roomId: string, seatId: string, batch: { comma
     const r = applyBatch(body, batch.fromTick, batch.samples, ctx, maxSeatTick(s, now, MAX_AHEAD_TICKS));
     if (!r.ok) return { ok: false, code: r.code, message: r.message, tick: body.tick, status: STATUS[r.code] ?? 400 };
     const { body: nb, out } = r.state; const effects = out.effects;
-    const nextState = effects.length ? addTeamEffects(s, seatId, effects) : null;
+    const nextState = effects.length ? addTeamEffects(s, seatId, effects, wt) : null;
     const digest = createHash('sha256').update(JSON.stringify([batch.fromTick, batch.samples])).digest('hex').slice(0, 32);
     const { data, error } = await serviceDB().rpc('os_input', { p_room: roomId, p_seat: seatId, p_command: batch.commandId, p_seat_rev: row.revision, p_body: nb, p_from: batch.fromTick, p_to: nb.tick, p_digest: digest, p_session_rev: nextState ? sess.revision : null, p_state: nextState, p_summary: nextState ? { effects: effects.map((e) => e.kind) } : {} });
     if (error) {

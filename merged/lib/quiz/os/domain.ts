@@ -48,6 +48,8 @@ export type TeamRec = {
   id: string; name: string; points: number; earned: number; spent: number; wasted: number; mastery: number; masteryOf: number;
   perks: Perk[]; pulses: Pulse[]; assists: number; chaptersCleared: number; barrierAwards: number[];
 };
+/** A purchase that waits for the teacher (OS-F03). Points are NOT taken until the teacher approves; `price` is checked again at that moment. */
+export type Approval = { id: string; seatId: string; teamId: string; perk: Perk; price: number; requestedMs: number };
 export type Roster = Record<string, string[]>; // teamId -> eligible seat ids frozen when a barrier opens
 export type BarrierRec = {
   chapter: number; phaseId: string; position: number; questionId: string | null; openedAtMs: number; deadlineMs: number; eligible: Roster; settled: boolean; help: string[];
@@ -73,12 +75,15 @@ export type OSState = {
   chapter: number; clock: Clock; freezeTick: number | null; phaseDeadlineMs: number | null; phaseStartedMs: number;
   seats: SeatRec[]; teams: TeamRec[]; plan: PlanRec; barrier: BarrierRec | null; credited: string[]; usedPositions: number[];
   startedAtMs: number | null; finish: Finish | null; log: string[];
+  /** Trusted room settings mirrored into the state from `os_sessions.config` (OS-F01/F02/F03). Optional only so sessions created before them still load; `hydrateConfig` fills them. */
+  teamSizeCap?: number; readAloud?: boolean; lowPressure?: boolean; approvalAbove?: number; approvals?: Approval[]; approvalSeq?: number;
 };
 
 export type SeatAction = { kind: 'role'; role: Role } | { kind: 'ready'; ready: boolean } | { kind: 'purchase'; perk: Perk } | { kind: 'rename'; name: string };
 export type HostAction =
   | { kind: 'start' } | { kind: 'pause' } | { kind: 'resume' } | { kind: 'end' } | { kind: 'lock'; locked: boolean }
-  | { kind: 'skip' } | { kind: 'kick'; seatId: string } | { kind: 'move_seat'; seatId: string; teamId: string };
+  | { kind: 'skip' } | { kind: 'kick'; seatId: string } | { kind: 'move_seat'; seatId: string; teamId: string }
+  | { kind: 'approve'; approvalId: string } | { kind: 'deny'; approvalId: string };
 export type Attempt<T> = { ok: true; state: T; note?: string } | { ok: false; code: string; message: string };
 export type OSView = 'student' | 'host' | 'projector';
 

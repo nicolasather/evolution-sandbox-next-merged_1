@@ -12,7 +12,7 @@ export const osCreateSchema = z.object({
   teamNames: z.array(z.string().trim().min(1).max(24)).max(4).optional(),
   teamSizeCap: z.number().int().min(1).max(5).default(5),
   lowPressure: z.boolean().default(false), readAloud: z.boolean().default(false), hideNames: z.boolean().default(false),
-  approvalAbove: z.number().int().min(0).max(20).default(0), requireApproval: z.boolean().default(false), allowReviewCycle: z.boolean().default(false),
+  approvalAbove: z.union([z.literal(0), z.literal(100), z.literal(150)]).default(0), requireApproval: z.boolean().default(false), allowReviewCycle: z.boolean().default(false),
 }).strict().superRefine((v, ctx) => {
   if (v.format === 'cooperative_escape' && v.teamCount !== 1) ctx.addIssue({ code: 'custom', message: 'Cooperative escape uses exactly one squad', path: ['teamCount'] });
   if (v.format === 'relay_race' && v.teamCount < 2) ctx.addIssue({ code: 'custom', message: 'Relay race needs 2–4 squads', path: ['teamCount'] });
@@ -39,6 +39,8 @@ export const osHostSchema = z.object({
     z.object({ kind: z.literal('lock'), locked: z.boolean() }).strict(),
     z.object({ kind: z.literal('kick'), seatId: z.string().uuid() }).strict(),
     z.object({ kind: z.literal('move_seat'), seatId: z.string().uuid(), teamId: z.string().max(10) }).strict(),
+    z.object({ kind: z.literal('approve'), approvalId: z.string().regex(/^ap[0-9]{1,6}$/) }).strict(),
+    z.object({ kind: z.literal('deny'), approvalId: z.string().regex(/^ap[0-9]{1,6}$/) }).strict(),
   ]),
 }).strict();
 export const osAnswerSchema = z.object({ roomQuestionId: z.string().uuid(), response: z.unknown(), commandId: id.optional() }).strict();

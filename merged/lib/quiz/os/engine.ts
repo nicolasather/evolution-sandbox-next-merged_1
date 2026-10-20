@@ -4,7 +4,7 @@
  *  World time: a squad's world advances 1 tick per 50 ms of *server* time while the phase is 'traversing', up to the planned freeze tick, and stands still in
  *  every other phase (questions never cost running-world time). Clients cannot choose the time; they can only choose their own inputs for ticks the server has reached. */
 import { MAX_POINTS, MAX_SEATS_PER_ROOM, MAX_SEATS_PER_TEAM, PERK_LIMIT, PERKS, RULES_VERSION, TICK_MS, PULSE_TICKS } from './balance';
-import type { Attempt, Body, Credit, CommittedAnswer, HostAction, OSConfig, OSState, PoolEntry, Pulse, Role, RoomEffect, SeatAction, SeatRec, TeamRec } from './domain';
+import type { Approval, Attempt, Body, Credit, CommittedAnswer, HostAction, OSConfig, OSState, Perk, PoolEntry, Pulse, Role, RoomEffect, SeatAction, SeatRec, TeamRec } from './domain';
 import { ROLES } from './domain';
 import { barrierSecondsFor, pickPositions, type OSPlan } from './plan';
 import { addPoints, barrierPoints, masteryOf, standingsOf, type Sub } from './score';
@@ -14,11 +14,24 @@ const clone = <T,>(v: T): T => JSON.parse(JSON.stringify(v)) as T;
 const fail = (code: string, message: string): { ok: false; code: string; message: string } => ({ ok: false, code, message });
 export { RULES_VERSION };
 
+const clampCap = (n: unknown) => Math.max(1, Math.min(MAX_SEATS_PER_TEAM, Number.isFinite(Number(n)) ? Math.floor(Number(n)) : MAX_SEATS_PER_TEAM));
+const approvalOf = (n: unknown) => (n === 100 || n === 150 ? n : 0);
+/** OS-F01/F02/F03: the squad-size cap, reading/pressure settings and approval threshold come ONLY from the room's stored config (never from a request body). Called whenever a row is loaded so sessions created before these fields existed are upgraded in memory. */
+export function hydrateConfig(s: OSState, cfg: Pick<OSConfig, 'teamSizeCap' | 'readAloud' | 'lowPressure' | 'approvalAbove'>): OSState {
+  const cap = clampCap(cfg.teamSizeCap); const ap = approvalOf(cfg.approvalAbove);
+  if (s.teamSizeCap === cap && s.readAloud === !!cfg.readAloud && s.lowPressure === !!cfg.lowPressure && s.approvalAbove === ap && s.approvals && s.approvalSeq !== undefined) return s;
+  return { ...s, teamSizeCap: cap, readAloud: !!cfg.readAloud, lowPressure: !!cfg.lowPressure, approvalAbove: ap, approvals: s.approvals ?? [], approvalSeq: s.approvalSeq ?? 0 };
+}
+export const capOf = (s: OSState) => clampCap(s.teamSizeCap);
+export const needsApproval = (s: OSState, price: number) => (s.approvalAbove ?? 0) > 0 && price >= (s.approvalAbove ?? 0);
+export const pendingOf = (s: OSState, teamId?: string): Approval[] => (s.approvals ?? []).filter((a) => !teamId || a.teamId === teamId);
+
 export function createSession(cfg: OSConfig, plan: OSPlan, pool: readonly PoolEntry[], teamIds: readonly string[], now: number): OSState {
   const positions = pickPositions(pool, plan.chapters);
   const teams: TeamRec[] = teamIds.slice(0, cfg.teamCount).map((id, i) => ({ id, name: cfg.teamNames[i] ?? `Squad ${i + 1}`, points: 0, earned: 0, spent: 0, wasted: 0, mastery: 0, masteryOf: 0, perks: [], pulses: [], assists: 0, chaptersCleared: 0, barrierAwards: [] }));
   const { questionsNeeded: _n, questionsAvailable: _a, reviewCycle: _r, notes: _no, estimatedMinutes: _e, ...rec } = plan; void [_n, _a, _r, _no, _e];
   return {
+    teamSizeCap: clampCap(cfg.teamSizeCap), readAloud: !!cfg.readAloud, lowPressure: !!cfg.lowPressure, approvalAbove: approvalOf(cfg.approvalAbove), approvals: [], approvalSeq: 0,
     rulesVersion: RULES_VERSION, phase: 'lobby', format: cfg.format, locked: false, paused: false, pausedAtMs: null, chapter: 0,
     clock: { running: false, anchorMs: now, anchorTick: 0 }, freezeTick: null, phaseDeadlineMs: null, phaseStartedMs: now, seats: [], teams,
     plan: { ...rec, positions }, barrier: null, credited: [], usedPositions: [], startedAtMs: null, finish: null, log: [],
@@ -46,7 +59,7 @@ export function addSeat(s: OSState, seatId: string, name: string, now: number, d
   if (s.locked) return fail('LOCKED', 'The teacher has closed this room to new players.');
   if (s.seats.some((x) => x.id === seatId)) return { ok: true, state: s };
   if (activeSeats(s).length >= MAX_SEATS_PER_ROOM) return fail('ROOM_FULL', 'This room already has 20 players.');
-  const cap = Math.min(MAX_SEATS_PER_TEAM, s.teams.length ? MAX_SEATS_PER_TEAM : 1);
+  const cap = capOf(s);
   const counts = new Map(s.teams.map((t) => [t.id, activeSeats(s, t.id).length]));
   let team = desiredTeam && counts.has(desiredTeam) && (counts.get(desiredTeam) ?? 0) < cap ? desiredTeam : null;
   if (!team) { const open = s.teams.filter((t) => (counts.get(t.id) ?? 0) < cap).sort((a, b) => (counts.get(a.id)! - counts.get(b.id)!) || a.id.localeCompare(b.id)); team = open[0]?.id ?? null; }
@@ -69,18 +82,36 @@ export function reduceSeat(s: OSState, seatId: string, a: SeatAction): Attempt<O
   if (a.kind === 'rename') { const n = a.name.normalize('NFKC').replace(/\s+/g, ' ').trim().slice(0, 24); if (!n) return fail('BAD_NAME', 'Choose a name.'); if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'Names change in the lobby.'); me.name = n; return { ok: true, state: next }; }
   // purchase — the one place points leave a squad
   if (s.phase !== 'build_choice') return fail('WRONG_PHASE', 'The squad shop is only open between chapters.');
+  if (s.paused) return fail('PAUSED', 'The match is paused.');
   const price = PERKS[a.perk]; if (!Number.isInteger(price)) return fail('BAD_PERK', 'Unknown upgrade.');
   const team = next.teams.find((t) => t.id === me.teamId)!;
-  if (team.perks.filter((p) => p === a.perk).length >= PERK_LIMIT[a.perk]) return fail('PERK_LIMIT', 'Your squad already has the most of this upgrade.');
+  const waiting = pendingOf(next, team.id);
+  if (team.perks.filter((p) => p === a.perk).length + waiting.filter((w) => w.perk === a.perk).length >= PERK_LIMIT[a.perk]) return fail('PERK_LIMIT', 'Your squad already has the most of this upgrade.');
+  // points already promised to requests that are waiting for the teacher cannot be promised twice
+  const free = team.points - waiting.reduce((n, w) => n + w.price, 0);
+  if (free < price) return fail('INSUFFICIENT_POINTS', `You need ${price} points.`);
+  if (needsApproval(s, price)) {
+    if (waiting.some((w) => w.seatId === seatId)) return fail('APPROVAL_PENDING', 'Wait for the teacher to answer your last request.');
+    const seq = (next.approvalSeq ?? 0) + 1; next.approvalSeq = seq;
+    next.approvals = [...(next.approvals ?? []), { id: `ap${seq}`, seatId, teamId: team.id, perk: a.perk, price, requestedMs: 0 } satisfies Approval];
+    next.log = [...next.log.slice(-39), `ask:${team.id}:${a.perk}`]; return { ok: true, state: next, note: 'approval_requested' };
+  }
+  const bought = applyPurchase(next, team.id, seatId, a.perk, price); if (!bought.ok) return bought;
+  return { ok: true, state: next, note: `${a.perk} bought` };
+}
+/** The single place where a perk is paid for and granted (used by instant purchases and by teacher approvals). Mutates `next`. */
+function applyPurchase(next: OSState, teamId: string, seatId: string, perk: Perk, price: number): { ok: true } | { ok: false; code: string; message: string } {
+  const team = next.teams.find((t) => t.id === teamId)!;
+  if (team.perks.filter((p) => p === perk).length >= PERK_LIMIT[perk]) return fail('PERK_LIMIT', 'Your squad already has the most of this upgrade.');
   if (team.points < price) return fail('INSUFFICIENT_POINTS', `You need ${price} points.`);
-  team.points -= price; team.spent += price; team.perks.push(a.perk);
-  if (a.perk === 'safe_gate' && s.freezeTick !== null) team.pulses.push({ kind: 'safe', from: s.freezeTick + 1, to: s.freezeTick + s.plan.chapterTicks + 1, seatId });
+  team.points -= price; team.spent += price; team.perks.push(perk);
+  if (perk === 'safe_gate' && next.freezeTick !== null) team.pulses.push({ kind: 'safe', from: next.freezeTick + 1, to: next.freezeTick + next.plan.chapterTicks + 1, seatId });
   if (team.points < 0 || team.points > MAX_POINTS) return fail('POINT_BOUNDS', 'Economy invariant.');
-  next.log = [...next.log.slice(-39), `buy:${team.id}:${a.perk}`]; return { ok: true, state: next, note: `${a.perk} bought` };
+  next.log = [...next.log.slice(-39), `buy:${team.id}:${perk}`]; return { ok: true };
 }
 
 /** Records the team-wide effects of an ability (plank / survey / recovery) in the squad's pulse list. Called by the input route in the SAME transaction as the body. */
-export function addTeamEffects(s: OSState, seatId: string, effects: readonly TeamEffect[]): OSState {
+export function addTeamEffects(s: OSState, seatId: string, effects: readonly TeamEffect[], nowTick: number): OSState {
   if (!effects.length) return s;
   const next = clone(s); const seat = next.seats.find((x) => x.id === seatId); const team = seat && next.teams.find((t) => t.id === seat.teamId); if (!team) return s;
   for (const e of effects) {
@@ -88,7 +119,8 @@ export function addTeamEffects(s: OSState, seatId: string, effects: readonly Tea
     team.assists = Math.min(2 * s.plan.chapters, team.assists + 1);
   }
   // keep the list short: finished windows are of no use to any seat that is not hopelessly behind
-  const floor = worldTick(next, Date.now()) - 800; team.pulses = team.pulses.filter((p) => p.to >= floor).slice(-24);
+  // OS-F04: the pruning floor comes from the authoritative tick passed in, never from the wall clock
+  const floor = nowTick - 800; team.pulses = team.pulses.filter((p) => p.to >= floor).slice(-24);
   return next;
 }
 
@@ -121,14 +153,23 @@ export function reduceHost(s: OSState, a: HostAction, now: number): { result: At
     }
     case 'kick': {
       const seat = next.seats.find((x) => x.id === a.seatId); if (!seat) return no('NO_SEAT', 'That student is not in this room.');
-      seat.revoked = true; effects.push({ type: 'kick', seatId: a.seatId }); break;
+      seat.revoked = true; next.approvals = (next.approvals ?? []).filter((x) => x.seatId !== a.seatId); effects.push({ type: 'kick', seatId: a.seatId }); break;
     }
     case 'move_seat': {
       if (s.phase !== 'lobby') return no('WRONG_PHASE', 'Squads can only change in the lobby.');
       const seat = next.seats.find((x) => x.id === a.seatId && !x.revoked); if (!seat) return no('NO_SEAT', 'That student is not in this room.');
       if (!next.teams.some((t) => t.id === a.teamId)) return no('NO_TEAM', 'Unknown squad.');
-      if (activeSeats(next, a.teamId).filter((x) => x.id !== a.seatId).length >= MAX_SEATS_PER_TEAM) return no('TEAM_FULL', 'That squad is full.');
+      if (activeSeats(next, a.teamId).filter((x) => x.id !== a.seatId).length >= capOf(s)) return no('TEAM_FULL', 'That squad is full.');
       seat.teamId = a.teamId; break;
+    }
+    case 'approve': case 'deny': {
+      if (s.paused) return no('PAUSED', 'Resume the match first.');
+      const ap = (s.approvals ?? []).find((x) => x.id === a.approvalId); if (!ap) return no('NO_APPROVAL', 'That request is no longer open.');
+      next.approvals = (next.approvals ?? []).filter((x) => x.id !== a.approvalId);
+      if (a.kind === 'deny') { next.log = [...next.log.slice(-39), `deny:${ap.teamId}:${ap.perk}`]; break; }
+      if (s.phase !== 'build_choice') return no('WRONG_PHASE', 'The shop closed before you answered.');
+      const bought = applyPurchase(next, ap.teamId, ap.seatId, ap.perk, ap.price); if (!bought.ok) return no(bought.code, bought.message);
+      break;
     }
   }
   return { result: { ok: true, state: next }, effects };
@@ -170,7 +211,7 @@ export function advance(state: OSState, ctx: AdvanceCtx): Advance {
           next.phase = 'reveal'; next.phaseDeadlineMs = at; next.phaseStartedMs = at; next.clock = { running: false, anchorMs: at, anchorTick: s.freezeTick }; next.chapter = s.plan.chapters - 1; moved = true;
         } else {
           const entry = ctx.pool.find((p) => p.position === position);
-          const secs = barrierSecondsFor(entry?.kind ?? 'multiple_choice', false, false);
+          const secs = barrierSecondsFor(entry?.kind ?? 'multiple_choice', !!s.readAloud, !!s.lowPressure);
           const eligible: Record<string, string[]> = {}; for (const t of s.teams) eligible[t.id] = activeSeats(s, t.id).map((x) => x.id);
           next.phase = 'barrier'; next.clock = { running: false, anchorMs: at, anchorTick: s.freezeTick }; next.phaseStartedMs = at; next.phaseDeadlineMs = at + secs * 1000;
           const help: string[] = []; // a bought "help question" is spent on this barrier: a strategy tip, never an answer or extra points
@@ -210,7 +251,7 @@ export function advance(state: OSState, ctx: AdvanceCtx): Advance {
         moved = true;
       }
     } else if (s.phase === 'build_choice') {
-      if (s.phaseDeadlineMs !== null && ctx.now >= s.phaseDeadlineMs) { const at = s.phaseDeadlineMs; next.phase = 'countdown'; next.phaseStartedMs = at; next.phaseDeadlineMs = at + s.plan.countdownSeconds * 1000; moved = true; }
+      if (s.phaseDeadlineMs !== null && ctx.now >= s.phaseDeadlineMs) { const at = s.phaseDeadlineMs; if (next.approvals?.length) { next.log = [...next.log.slice(-39), `expired:${next.approvals.length}`]; next.approvals = []; } next.phase = 'countdown'; next.phaseStartedMs = at; next.phaseDeadlineMs = at + s.plan.countdownSeconds * 1000; moved = true; }
     } else if (s.phase === 'countdown') {
       if (s.phaseDeadlineMs !== null && ctx.now >= s.phaseDeadlineMs) {
         const at = s.phaseDeadlineMs; next.phase = 'traversing'; next.chapter = s.chapter + 1; next.barrier = null;
