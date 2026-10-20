@@ -14,7 +14,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     const room = await getRoom(id);
     // Projector games and Tower Defense settle their modifiers inside their own reducers; a classic point event would act on the wrong ledger.
     if ((room.config as { swarm?: unknown }).swarm) throw new AppError('Swarm Survival has no modifiers.', 400);
-    if ((room.config as { projector?: unknown; td?: unknown }).projector || (room.config as { td?: unknown }).td) throw new AppError('This game applies its modifiers through its own game controls.', 400);
+    if ((room.config as { projector?: unknown; td?: unknown }).projector || (room.config as { td?: unknown }).td || (room.config as { os?: unknown }).os) throw new AppError('This game applies its modifiers through its own game controls.', 400);
     if (room.mode === 'solo') {
       const player = await verifyPlayer(room, req.headers.get('x-player-token') ?? '');
       if (v.kind !== 'potluck') throw new AppError('That modifier is not available in solo play', 400);

@@ -56,6 +56,27 @@ export default function ModesPage() {
           </div>
         </div>
       </section>
+      <section className="td-modecard" style={{ marginBottom: 44 }} aria-labelledby="os-h" id="obstacle-survival">
+        <div className="td-modebody">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/quiz/os/art/01_desktop_traverse.svg" alt="A paper-and-ink course with hazards, a squad panel and a chapter banner" width={640} height={360} style={{ width: '100%', height: 'auto', borderRadius: 16 }} />
+          <div className="stack" style={{ gap: 10 }}>
+            <p className="eyebrow" style={{ margin: 0 }}>Online · 1–5 players per squad · Cooperative escape / Relay race</p>
+            <h2 id="os-h" className="td-sign" style={{ justifySelf: 'start' }}>Obstacle Survival</h2>
+            <p style={{ maxWidth: '60ch' }}>Every student runs a 2D course on their own device. At each gate the course freezes for one class question; correct answers earn points the squad spends at the checkpoint shop. Cooperative escape for one class squad, or a relay race between 2–4 squads (up to 20 students).</p>
+            <ul>
+              <li>Five roles, twelve hazards with visible warnings, four maps.</li>
+              <li>The server grades every answer and runs the physics check; no device decides a score.</li>
+              <li>Teacher console, projector view, keyboard and touch controls, reduced motion.</li>
+            </ul>
+            <div className="td-row wrap" style={{ marginTop: 6 }}>
+              <Link className="td-btn primary" href="/quiz/library?mode=online&game=obstacle_survival">Pick a quiz</Link>
+              <Link className="td-btn" href="/quiz/os/practice">Practice alone</Link>
+              <Link className="td-btn ghost" href="/quiz/os">How to play</Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="stack" style={{ gap: 18, marginBottom: 44 }} aria-labelledby="pj-h" id="projector-games">
         <header><p className="eyebrow">Classroom projector</p><h2 id="pj-h" style={{ fontStyle: 'italic' }}>Projector Games · {MODE_LIST.length} game worlds</h2>
           <p className="muted-text" style={{ maxWidth: '62ch' }}>Ten full game worlds for one teacher computer and a projector. Teams answer aloud, the teacher marks them, and no student devices or accounts are needed. From 5 to 180 minutes, or no clock at all.</p>

@@ -11,5 +11,6 @@ export default async function Library({ searchParams }: { searchParams: Promise<
   const g = m === 'classroom' && isGameKey(game) ? game : null; // a projector game was chosen on /quiz/modes
   const td = m === 'online' && game === 'tower_defense'; // Tower Defense was chosen on /quiz/modes
   const sw = m === 'online' && game === 'swarm_survival'; // Swarm Survival was chosen on /quiz/modes
-  return <QuizList mine={false} mode={m} game={g} towerDefense={td} swarm={sw} />;
+  const ob = m === 'online' && game === 'obstacle_survival'; // Obstacle Survival was chosen on /quiz/modes
+  return <QuizList mine={false} mode={m} game={g} towerDefense={td} swarm={sw} obstacle={ob} />;
 }

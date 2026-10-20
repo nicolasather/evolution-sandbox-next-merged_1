@@ -13,6 +13,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     const { user, room } = await isHost(id);
     if ((room.config as { swarm?: unknown }).swarm) throw new AppError('Swarm Survival points come only from graded answers.', 400);
     if ((room.config as { td?: unknown }).td) throw new AppError('Tower Defense points come only from answers.', 400);
+    if ((room.config as { os?: unknown }).os) throw new AppError('Obstacle Survival points come only from graded answers.', 400);
     await rateLimit(req, 'adjust', 120, 600, user.id);
     const b = schema.parse(await jsonBody(req));
     return success(await rpc('adjust_points', { p_room: id, p_host: user.id, p_actor_type: b.actorType, p_actor: b.actorId, p_delta: b.delta, p_reason: b.reason }));

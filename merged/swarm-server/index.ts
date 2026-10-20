@@ -1,24 +1,29 @@
 /** Swarm Survival worker entry point. One persistent Node process.  See swarm-server/README.md.
- *    SWARM_SECRET            required. >= 32 chars. Shared with the Next app (it mints host tokens with the same secret).
+ *    SWARM_SECRET            required. >= 32 chars (>= 16 only with SWARM_DEV=1). Shared with the Next app (it mints host tokens with the same secret).
  *    DATABASE_URL            Postgres (Supabase direct connection). Required unless SWARM_DEV=1.
  *    PORT / HOST             default 8787 / 0.0.0.0
+ *    SWARM_PG_CA_PEM         optional. The database provider's CA certificate (PEM). The server certificate of a remote database is ALWAYS verified.
+ *    SWARM_METRICS_TOKEN     optional. When set, GET /metrics needs 'Authorization: Bearer <token>'; when unset /metrics is disabled outside SWARM_DEV.
  *    SWARM_ALLOWED_ORIGINS   comma list of site origins allowed to join / open sockets (e.g. https://your-site.vercel.app)
  *    SWARM_MAX_ROOMS / SWARM_MAX_SOCKETS / SWARM_TRUST_PROXY / SWARM_WORKER_ID / SWARM_FILE (dev) */
 import { Pool } from 'pg';
 import { startSwarmServer } from '../lib/swarm/server/server';
 import { MemoryStore, PgStore, FileStore, type Store } from '../lib/swarm/server/store';
 import { PgSource, FixtureSource } from '../lib/swarm/server/quiz-source';
+import { pgConnection } from '../lib/swarm/server/pg-ssl';
+import { checkSecret } from '../lib/swarm/config';
 
 const env = process.env; const dev = env.SWARM_DEV === '1';
 const log = (m: string, o?: unknown) => console.log(JSON.stringify({ t: new Date().toISOString(), m, ...(o && typeof o === 'object' ? o : {}) }));
 const die = (m: string): never => { console.error(`swarm-server: ${m}`); process.exit(1); };
 
 async function main() {
-  const secret = env.SWARM_SECRET ?? ''; if (secret.length < (dev ? 16 : 32)) die('SWARM_SECRET must be set (at least 32 characters in production).');
+  const secret = env.SWARM_SECRET ?? ''; const sc = checkSecret(secret, { production: !dev }); if (!sc.ok) die(sc.message);
   let store: Store; let pool: Pool | null = null;
   if (env.DATABASE_URL) {
     if (dev) die('SWARM_DEV=1 refuses to run with DATABASE_URL set: dev routes must never touch a real database.');
-    pool = new Pool({ connectionString: env.DATABASE_URL, max: Number(env.SWARM_PG_POOL ?? 8), ssl: /localhost|127\.0\.0\.1/.test(env.DATABASE_URL) ? undefined : { rejectUnauthorized: false } });
+    let conn; try { conn = pgConnection(env.DATABASE_URL, env.SWARM_PG_CA_PEM); } catch (e) { return die(e instanceof Error ? e.message : String(e)); }
+    pool = new Pool({ connectionString: conn.connectionString, max: Number(env.SWARM_PG_POOL ?? 8), ssl: conn.ssl });
     await pool.query('select 1'); store = new PgStore(pool, () => pool!.end());
   } else if (dev) store = env.SWARM_FILE ? await FileStore.open(env.SWARM_FILE) : new MemoryStore();
   else return die('DATABASE_URL is required (or SWARM_DEV=1 for local development with an in-memory store).');
@@ -27,7 +32,7 @@ async function main() {
   const sql = pool;
   const srv = await startSwarmServer({
     port: Number(env.PORT ?? 8787), host: env.HOST, secret, store, dev, log, allowedOrigins: dev && origins.length === 0 ? ['*'] : origins,
-    workerId: env.SWARM_WORKER_ID, maxRooms: env.SWARM_MAX_ROOMS ? Number(env.SWARM_MAX_ROOMS) : undefined, maxSockets: env.SWARM_MAX_SOCKETS ? Number(env.SWARM_MAX_SOCKETS) : undefined, trustProxy: env.SWARM_TRUST_PROXY === '1',
+    workerId: env.SWARM_WORKER_ID, maxRooms: env.SWARM_MAX_ROOMS ? Number(env.SWARM_MAX_ROOMS) : undefined, maxSockets: env.SWARM_MAX_SOCKETS ? Number(env.SWARM_MAX_SOCKETS) : undefined, trustProxy: env.SWARM_TRUST_PROXY === '1', metricsToken: env.SWARM_METRICS_TOKEN || undefined,
     sourceFor: (roomId) => (sql ? new PgSource(sql, roomId) : new FixtureSource(40)),
   });
   log('swarm worker listening', { port: srv.port, dev, store: pool ? 'postgres' : env.SWARM_FILE ? 'file' : 'memory' });

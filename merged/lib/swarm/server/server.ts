@@ -2,7 +2,7 @@
  *  a serverless function: a match lives in this process's memory and is checkpointed to the store. Horizontal scale = more workers, each
  *  holding the lease for the rooms it hosts (a room never runs in two workers). */
 import http from 'node:http';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, timingSafeEqual } from 'node:crypto';
 import { WebSocketServer, type WebSocket } from 'ws';
 import { z } from 'zod';
 import { signToken, verifyToken, newSubject } from '../net/tokens';
@@ -20,6 +20,8 @@ export type ServerOpts = {
   sourceFor: (roomId: string) => QuizSource; allowedOrigins?: string[]; dev?: boolean;
   maxRooms?: number; maxSockets?: number; joinPerMinPerIp?: number; joinPerMinPerRoom?: number; checkpointEveryMs?: number; resultsTtlMs?: number;
   tokenTtlSec?: number; helloTimeoutMs?: number; trustProxy?: boolean;
+  /** SW-09: /metrics needs 'Authorization: Bearer <this>'. With no token it is served only in dev (o.dev) and is a 404 otherwise. */
+  metricsToken?: string;
 };
 export type Running = { port: number; metrics: Metrics; rooms: Map<string, RoomRuntime>; close(): Promise<void>; url: string; wsUrl: string; ensureRoom(roomId: string): Promise<RoomRuntime> };
 
@@ -57,7 +59,7 @@ export async function startSwarmServer(o: ServerOpts): Promise<Running> {
   const clientIp = (req: http.IncomingMessage) => (o.trustProxy ? String(req.headers['x-forwarded-for'] ?? '').split(',')[0]!.trim() : '') || req.socket.remoteAddress || 'unknown';
   const cors = (req: http.IncomingMessage, res: http.ServerResponse) => {
     const origin = req.headers.origin; if (origin && (origins.includes('*') || origins.includes(origin))) { res.setHeader('access-control-allow-origin', origin); res.setHeader('vary', 'origin'); }
-    res.setHeader('access-control-allow-methods', 'GET,POST,OPTIONS'); res.setHeader('access-control-allow-headers', 'content-type'); res.setHeader('access-control-max-age', '600');
+    res.setHeader('access-control-allow-methods', 'GET,POST,OPTIONS'); res.setHeader('access-control-allow-headers', 'content-type'); // /metrics is called server-to-server, never by a browser, so Authorization is deliberately not allowed here res.setHeader('access-control-max-age', '600');
   };
   const json = (res: http.ServerResponse, status: number, body: unknown) => { res.statusCode = status; res.setHeader('content-type', 'application/json'); res.setHeader('cache-control', 'no-store'); res.end(JSON.stringify(body)); };
   const readBody = (req: http.IncomingMessage, max = 4096) => new Promise<unknown>((resolve, reject) => { let n = 0; const chunks: Buffer[] = []; req.on('data', (d: Buffer) => { n += d.length; if (n > max) { reject(Object.assign(new Error('too large'), { status: 413 })); req.destroy(); } else chunks.push(d); }); req.on('end', () => { try { resolve(chunks.length ? JSON.parse(Buffer.concat(chunks).toString('utf8')) : {}); } catch { reject(Object.assign(new Error('bad json'), { status: 400 })); } }); req.on('error', reject); });
@@ -68,7 +70,11 @@ export async function startSwarmServer(o: ServerOpts): Promise<Running> {
       const url = new URL(req.url ?? '/', 'http://x');
       if (req.method === 'OPTIONS') { res.statusCode = 204; res.end(); return; }
       if (url.pathname === '/healthz') { json(res, 200, { ok: true, worker: workerId, protocol: PROTOCOL, rooms: rooms.size, sockets, uptimeSec: Math.floor((Date.now() - startedAt) / 1000) }); return; }
-      if (url.pathname === '/metrics') { res.setHeader('content-type', 'text/plain; version=0.0.4'); res.end(metrics.render()); return; }
+      if (url.pathname === '/metrics') {
+        const tokenOk = (): boolean => { const h = String(req.headers.authorization ?? ''); const want = o.metricsToken ?? ''; if (!want || !h.startsWith('Bearer ')) return false; const a = Buffer.from(h.slice(7)); const b = Buffer.from(want); return a.length === b.length && timingSafeEqual(a, b); };
+        if (o.metricsToken ? !tokenOk() : !o.dev) { json(res, o.metricsToken ? 401 : 404, { code: o.metricsToken ? 'unauthorized' : 'not_found', message: o.metricsToken ? 'Metrics need a token.' : 'Not found.' }); return; }
+        res.setHeader('content-type', 'text/plain; version=0.0.4'); res.end(metrics.render()); return;
+      }
       if (url.pathname === '/join' && req.method === 'POST') {
         if (req.headers.origin && !(origins.includes('*') || origins.includes(req.headers.origin))) { json(res, 403, { code: 'origin', message: 'This site is not allowed to join.' }); return; }
         if (limited(`ip:${clientIp(req)}`, o.joinPerMinPerIp ?? 30)) { metrics.inc('join_rate_limited'); json(res, 429, { code: 'rate', message: 'Too many tries. Wait a minute and try again.' }); return; }

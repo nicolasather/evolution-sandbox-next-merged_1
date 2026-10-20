@@ -248,3 +248,16 @@ describe('presence, pause, restart', () => {
   });
 });
 void CANARY;
+
+describe('SW-09 /metrics exposure', () => {
+  it('outside dev, /metrics is a 404 unless a token is configured; with one it needs the bearer token', async () => {
+    await boot({ dev: false, allowedOrigins: ['https://site.test'] });
+    expect((await fetch(srv.url + '/metrics')).status).toBe(404);
+    await srv.close();
+    await boot({ dev: false, allowedOrigins: ['https://site.test'], metricsToken: 'm'.repeat(32) });
+    expect((await fetch(srv.url + '/metrics')).status).toBe(401);
+    expect((await fetch(srv.url + '/metrics', { headers: { authorization: 'Bearer wrong' } })).status).toBe(401);
+    const ok = await fetch(srv.url + '/metrics', { headers: { authorization: 'Bearer ' + 'm'.repeat(32) } }); expect(ok.status).toBe(200); expect(await ok.text()).toMatch(/swarm_rooms \d/);
+    const h = await fetch(srv.url + '/healthz'); expect(JSON.stringify(await h.json())).not.toMatch(/token|secret|room[Ii]d/); // health exposes counts only
+  });
+});

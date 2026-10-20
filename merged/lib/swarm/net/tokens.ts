@@ -1,6 +1,7 @@
 /** Signed, expiring identity tokens (HMAC-SHA256). Node-only: used by the Next routes that mint them and by the worker that verifies them.
  *  A token names ONE room and ONE subject. It carries no score, no team and no role: the worker's roster is the only authority for those. */
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+import { SECRET_MIN_DEV, SECRET_MIN_PRODUCTION } from '../config';
 
 export type TokenKind = 'player' | 'host' | 'screen';
 export type Claims = { v: 1; typ: TokenKind; room: string; sub: string; exp: number; iat: number; jti: string };
@@ -9,7 +10,9 @@ const b64 = (b: Buffer | string) => Buffer.from(b).toString('base64url');
 const mac = (body: string, secret: string) => createHmac('sha256', secret).update(body).digest();
 
 export function signToken(c: { typ: TokenKind; room: string; sub: string; ttlSec: number; now?: number }, secret: string): string {
-  if (!secret || secret.length < 16) throw new Error('SWARM_SECRET must be at least 16 characters');
+  // Hard floor only: the production minimum (SECRET_MIN_PRODUCTION) is enforced at the config boundaries (checkSecret in the Next app and the worker),
+  // so a dev/test fixture can still sign, while a hosted deployment with a short secret never reaches this point.
+  if (!secret || secret.length < SECRET_MIN_DEV) throw new Error(`SWARM_SECRET must be at least ${SECRET_MIN_DEV} characters (${SECRET_MIN_PRODUCTION} in production)`);
   const now = c.now ?? Date.now();
   const claims: Claims = { v: 1, typ: c.typ, room: c.room, sub: c.sub, iat: Math.floor(now / 1000), exp: Math.floor(now / 1000) + c.ttlSec, jti: randomBytes(8).toString('hex') };
   const body = b64(JSON.stringify(claims));

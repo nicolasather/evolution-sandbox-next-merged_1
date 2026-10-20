@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 /** Put this file under merged/tests/e2e, or adjust testDir to match placement. */
 export default defineConfig({
   testDir: '.',
-  testMatch: ['projector-lab.spec.ts', 'td-practice.spec.ts', 'quiz-ui-smoke.spec.ts', 'quiz-api-security.spec.ts', 'quiz-creator.spec.ts', 'quiz-media-ui.spec.ts', 'swarm-survival.spec.ts'],
+  testMatch: ['projector-lab.spec.ts', 'td-practice.spec.ts', 'quiz-ui-smoke.spec.ts', 'quiz-api-security.spec.ts', 'quiz-creator.spec.ts', 'quiz-media-ui.spec.ts', 'swarm-survival.spec.ts', 'os-ui.spec.ts'],
   timeout: 30_000,
   expect: { timeout: 10_000 },
   fullyParallel: false,

@@ -9,8 +9,16 @@ runtime inside the browser, no server); online rooms cannot be created.
 1. Apply `supabase/migrations/008_swarm_survival.sql` to Supabase (SQL editor or `psql`). Needs 001–007 already applied.
 2. Host the worker somewhere that keeps a process alive and speaks WebSocket over TLS (Fly.io, Railway, Render, a VM). Use `swarm-server/Dockerfile`.
    Set `SWARM_SECRET`, `DATABASE_URL` (direct, not the pooler in transaction mode), `SWARM_ALLOWED_ORIGINS=https://evolution-sandbox-next-merged-1-g1s.vercel.app`.
-3. In Vercel set `SWARM_SECRET` (identical), `SWARM_URL=https://<worker>`, `NEXT_PUBLIC_SWARM_URL=wss://<worker>` (or https; the client derives ws), then redeploy.
+3. In Vercel set `SWARM_SECRET` (identical, **≥ 32 characters**, generated with e.g. `openssl rand -base64 48`), `SWARM_URL=https://<worker>` and `NEXT_PUBLIC_SWARM_URL=https://<worker>`, then redeploy.
+   **Both are the worker's https ORIGIN** (no path, query, credentials or `wss://`). The browser calls `POST https://<worker>/join` and derives `wss://<worker>/ws` itself; a `wss://` value is rejected with a setup error (SW-01).
 4. Smoke: teacher creates a Swarm room, two phones join, one question, results. Run `npm run swarm:e2e` against the preview with the worker URL set.
+
+## Security configuration (SW-01..SW-04, SW-09)
+- **Secret**: one production minimum of 32 characters on both the Next app and the worker (`lib/swarm/config.ts`). A 16–31 character secret is refused by both. Only `SWARM_DEV=1` / non-production runs accept ≥16, and `VERCEL_ENV=production` ignores that allowance. Rotating the secret invalidates every live token: rotate between matches, never mid-match; set it on the worker and on Vercel together, then redeploy both.
+- **Database TLS**: a remote `DATABASE_URL` is always verified (`rejectUnauthorized: true`). If the provider uses a private CA, put its PEM in `SWARM_PG_CA_PEM` (a `\n`-escaped one-liner is accepted). `sslmode=disable|allow|prefer|no-verify` in the URL is refused at startup. Loopback databases (local dev/CI) may run without TLS. There is no switch that disables verification. Test against the real provider before release (SW-F07).
+- **Metrics**: `GET /metrics` is a 404 in production unless `SWARM_METRICS_TOKEN` is set, in which case it needs `Authorization: Bearer <token>` (scrape it from a private collector, not a browser). `/healthz` returns counts only.
+- **Teacher preflight**: the setup page and room creation now probe `<worker>/healthz` (2.5 s, cached 5 s) and migration 008; an offline worker, protocol mismatch or missing schema blocks *creating* a room with a specific message, while Practice mode is unaffected.
+- **Seat storage**: a student's seat token is kept in `localStorage`; if the browser refuses storage the seat lives in that tab only and the player screen warns that a reload would lose it. Tokens are never put in URLs or logs.
 
 ## Migration 008
 Adds `swarm_sessions, swarm_participants, swarm_answers, swarm_credits, swarm_purchases, swarm_audit, swarm_results` and three functions

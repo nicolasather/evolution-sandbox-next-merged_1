@@ -6,9 +6,8 @@ import { useSwarm } from './useSwarm';
 import { usePrefs } from './prefs';
 import { wsUrlOf } from '@/lib/swarm/client/urls';
 
-export const seatKey = (roomId: string) => `swarm:seat:${roomId}`;
-export type Seat = { token: string; workerUrl: string; name: string; code: string };
-export function readSeat(roomId: string): Seat | null { try { return JSON.parse(localStorage.getItem(seatKey(roomId)) ?? 'null') as Seat | null; } catch { return null; } }
+import { readSeat, type Seat } from './seat';
+export { seatKey, readSeat, type Seat } from './seat';
 
 /** An online match as a student: the seat (a signed token from joining) lives in this browser; reloading or losing the connection resumes the same avatar. */
 export default function SwarmPlayer({ roomId }: { roomId: string }) {
@@ -20,5 +19,8 @@ export default function SwarmPlayer({ roomId }: { roomId: string }) {
   if (seat === undefined) return <main className="sw" id="main"><section className="sw-card" role="status"><h2>Loading…</h2></section></main>;
   if (!seat) return <main className="sw" id="main"><section className="sw-card"><h1>Join this match first</h1><p>This browser does not have a seat in the match. Enter the code your teacher shows.</p><Link className="sw-btn primary" href="/quiz/swarm/join">Join with a code</Link></section></main>;
   if (!conn) return <main className="sw" id="main"><section className="sw-card" role="status"><h2>Connecting…</h2></section></main>;
-  return <SwarmGame conn={conn} prefs={prefs} setPrefs={setPrefs} roomId={roomId} token={seat.token} />;
+  return (<>
+    {seat.volatile && <p className="sw-warn" role="status" data-testid="volatile-seat" style={{ margin: 0, padding: '6px 12px' }}>This browser cannot save your seat. Do not reload or close this tab, or you will lose your place in the match. Allow site storage to fix this.</p>}
+    <SwarmGame conn={conn} prefs={prefs} setPrefs={setPrefs} roomId={roomId} token={seat.token} />
+  </>);
 }

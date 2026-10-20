@@ -107,8 +107,9 @@ describe('the worker and the Next routes on real SQL', () => {
     const pre = await swarm.swarmPreflight({ quizId: quiz, minutes: 45 }); expect(pre.questions).toBe(10); expect(pre.plan.questionsTotal).toBeLessThanOrEqual(10); expect(pre.plan.warnings.join(' ')).toMatch(/10 questions/);
     await expect(swarm.swarmPreflight({ quizId: quiz, minutes: 3 })).rejects.toThrow();
     // create through the real create_room_with_content + swarm_create_session
-    await expect(swarm.createSwarmRoom({ quizId: quiz, config: { mode: 'versus', teamCount: 1, teamSizeCap: 2, minutes: 5 } }, { id: HOST })).rejects.toThrow(/Versus needs/);
-    const created = await swarm.createSwarmRoom({ quizId: quiz, config: { mode: 'coop', teamCount: 1, teamSizeCap: 2, minutes: 5 } }, { id: HOST });
+    await expect(swarm.createSwarmRoom({ quizId: quiz, config: { mode: 'versus', teamCount: 1, teamSizeCap: 2, minutes: 5 } }, { id: HOST }, { health: async () => ({ status: 'ok' as const, message: 'test' }), schemaReady: async () => true })).rejects.toThrow(/Versus needs/);
+    const probes = { health: async () => ({ status: 'ok' as const, message: 'test' }), schemaReady: async () => true }; // the worker starts after the room exists in this test
+    const created = await swarm.createSwarmRoom({ quizId: quiz, config: { mode: 'coop', teamCount: 1, teamSizeCap: 2, minutes: 5 } }, { id: HOST }, probes);
     expect(created.joinCode).toMatch(/^[A-Z2-9]{6}$/); const roomId = created.roomId;
     expect((await q<{ config: { swarm?: unknown } }>('select config from rooms where id=$1', [roomId]))[0]!.config.swarm).toBeTruthy();
     const other = randomUUID(); await q('insert into auth.users(id,email) values($1,$2)', [other, `${other}@t.invalid`]);

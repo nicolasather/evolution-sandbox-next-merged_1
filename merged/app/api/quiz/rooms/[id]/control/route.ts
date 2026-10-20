@@ -12,6 +12,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     // Tower Defense drives its room through td_commit; a classic "next"/"reveal" here would desynchronise the match
     if ((room.config as { swarm?: unknown }).swarm) throw new AppError('Use the Swarm Survival host console for this room.', 400);
     if ((room.config as { td?: unknown }).td) throw new AppError('Use the Tower Defense host console for this room.', 400);
+    if ((room.config as { os?: unknown }).os) throw new AppError('Use the Obstacle Survival host console for this room.', 400);
     const { action } = controlSchema.parse(await jsonBody(req));
     const v2 = await serviceDB().rpc('control_room_v2', { p_room: id, p_host: user.id, p_action: action });
     if (!v2.error) return success(v2.data);

@@ -5,6 +5,8 @@ import { AppError } from '../errors';
 import { code as roomCode, createRoom, getRoom } from '../rooms';
 import { rpc } from '../api';
 import { signToken, verifyToken, newSubject } from '@/lib/swarm/net/tokens';
+import { checkSecret, isProductionRuntime, parseWorkerHttpOrigin, workerWsUrl, WorkerUrlError } from '@/lib/swarm/config';
+import { PROTOCOL } from '@/lib/swarm/domain';
 import { planSession } from '@/lib/swarm/plan';
 import type { Config } from '@/lib/swarm/domain';
 import { swarmCreateSchema, swarmPreflightSchema } from './validation';
@@ -12,17 +14,53 @@ import { publicQuestionView, type StoredQuestion } from '../public';
 import { z } from 'zod';
 
 export const HOST_TOKEN_TTL = 8 * 3600;
-/** Worker coordinates. The secret is shared with the worker (swarm-server) and never leaves the server. */
+/** Worker coordinates. The secret is shared with the worker (swarm-server) and never leaves the server.
+ *  SW-01: the address is a validated https ORIGIN (never wss://); SW-02: the same secret minimum as the worker. */
+export type WorkerHealth = { status: 'ok' | 'unconfigured' | 'misconfigured' | 'offline' | 'unhealthy' | 'protocol_mismatch'; message: string };
 export function swarmEnv() {
-  const secret = process.env.SWARM_SECRET?.trim(); const url = (process.env.NEXT_PUBLIC_SWARM_URL ?? process.env.SWARM_URL)?.trim().replace(/\/$/, '');
-  return { secret: secret && secret.length >= 16 ? secret : undefined, url: url || undefined };
+  const secretRaw = process.env.SWARM_SECRET?.trim(); const urlRaw = (process.env.NEXT_PUBLIC_SWARM_URL ?? process.env.SWARM_URL)?.trim();
+  const problems: string[] = []; let url: string | undefined; let secret: string | undefined;
+  if (urlRaw) { try { url = parseWorkerHttpOrigin(urlRaw); } catch (e) { problems.push(e instanceof WorkerUrlError ? e.message : 'The game server address is invalid.'); } }
+  if (secretRaw) { const c = checkSecret(secretRaw, { production: isProductionRuntime() }); if (c.ok) secret = secretRaw; else problems.push(c.message); }
+  return { secret, url, problems, present: !!(secretRaw || urlRaw) };
 }
 export function requireSwarm() {
   const e = swarmEnv();
+  if (e.problems.length) throw new AppError(`Swarm Survival's game server is misconfigured: ${e.problems.join(' ')} Ask the site owner (see swarm-server/README.md).`, 503);
   if (!e.secret || !e.url) throw new AppError('Swarm Survival needs its game server. Ask the site owner to deploy it (see swarm-server/README.md) and set NEXT_PUBLIC_SWARM_URL and SWARM_SECRET.', 503);
   return { secret: e.secret, url: e.url };
 }
-export const wsUrlOf = (httpUrl: string) => httpUrl.replace(/^http/, 'ws') + '/ws';
+const wsUrlOf = workerWsUrl; export { wsUrlOf };
+
+/** SW-08: is the worker actually answering, and does it speak the protocol this app expects? Bounded (2.5 s) and cached for a few seconds,
+ *  so the preflight (which the setup page repeats while a teacher edits options) never hammers the worker. Never throws; never returns raw errors. */
+const HEALTH_TTL_MS = 5000; const healthCache = new Map<string, { at: number; value: WorkerHealth }>();
+export async function workerHealth(fetchImpl: typeof fetch = fetch, now: () => number = Date.now): Promise<WorkerHealth> {
+  const e = swarmEnv();
+  if (e.problems.length) return { status: 'misconfigured', message: 'The game server settings on this site are invalid. Ask the site owner.' };
+  if (!e.secret || !e.url) return { status: 'unconfigured', message: 'The game server is not set up on this site yet.' };
+  const hit = healthCache.get(e.url); if (hit && now() - hit.at < HEALTH_TTL_MS) return hit.value;
+  let value: WorkerHealth;
+  try {
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 2500);
+    try {
+      const res = await fetchImpl(`${e.url}/healthz`, { signal: ctl.signal, cache: 'no-store', headers: { accept: 'application/json' } });
+      if (!res.ok) value = { status: 'unhealthy', message: 'The game server answered with an error. Try again in a minute.' };
+      else {
+        const j = (await res.json().catch(() => null)) as { ok?: unknown; protocol?: unknown } | null;
+        if (!j || j.ok !== true) value = { status: 'unhealthy', message: 'The game server is not ready yet. Try again in a minute.' };
+        else if (j.protocol !== PROTOCOL) value = { status: 'protocol_mismatch', message: 'The game server is running a different version than this site. Ask the site owner to redeploy it.' };
+        else value = { status: 'ok', message: 'The game server is online.' };
+      }
+    } finally { clearTimeout(timer); }
+  } catch { value = { status: 'offline', message: 'The game server cannot be reached right now. Practice mode still works; try again shortly.' }; }
+  healthCache.set(e.url, { at: now(), value }); return value;
+}
+/** Migration 008 present? A harmless zero-row read. */
+export async function swarmSchemaReady(): Promise<boolean> {
+  const { error } = await serviceDB().from('swarm_sessions').select('room_id').limit(1);
+  return !error;
+}
 
 async function quizKinds(quizId: string): Promise<string[]> {
   const { data, error } = await serviceDB().from('quiz_questions').select('kind,position').eq('quiz_id', quizId).order('position');
@@ -34,12 +72,15 @@ export async function swarmPreflight(input: unknown) {
   const v = swarmPreflightSchema.parse(input); const kinds = await quizKinds(v.quizId);
   const plan = planSession({ minutes: v.minutes, poolSize: kinds.length, focus: v.focus, difficulty: v.difficulty, allowReviewCycle: v.allowReviewCycle });
   const byKind: Record<string, number> = {}; for (const k of kinds) byKind[k] = (byKind[k] ?? 0) + 1;
-  const worker = swarmEnv();
-  return { ok: kinds.length >= 3, questions: kinds.length, byKind, plan: { waves: plan.waves.length, questionsTotal: plan.questionsTotal, drafts: plan.drafts, bosses: plan.waves.filter((w) => w.boss).map((w) => w.boss!.kind), estimateSeconds: plan.estimateSeconds, warnings: plan.warnings, reviewCycle: plan.reviewCycle }, workerConfigured: !!(worker.secret && worker.url), request: v };
+  const worker = swarmEnv(); const health = await workerHealth(); const schemaReady = health.status === 'ok' ? await swarmSchemaReady() : null;
+  return { ok: kinds.length >= 3, questions: kinds.length, byKind, plan: { waves: plan.waves.length, questionsTotal: plan.questionsTotal, drafts: plan.drafts, bosses: plan.waves.filter((w) => w.boss).map((w) => w.boss!.kind), estimateSeconds: plan.estimateSeconds, warnings: plan.warnings, reviewCycle: plan.reviewCycle }, workerConfigured: !!(worker.secret && worker.url && !worker.problems.length), worker: health, schemaReady, request: v };
 }
 
-export async function createSwarmRoom(input: unknown, user: { id: string }) {
+/** `deps` exists so tests can stand in for the network/DB probes; production callers never pass it. */
+export async function createSwarmRoom(input: unknown, user: { id: string }, deps: { health?: () => Promise<WorkerHealth>; schemaReady?: () => Promise<boolean> } = {}) {
   const { secret, url } = requireSwarm();
+  const health = await (deps.health ?? workerHealth)(); if (health.status !== 'ok') throw new AppError(health.message, 503);
+  if (!(await (deps.schemaReady ?? swarmSchemaReady)())) throw new AppError('Swarm Survival is not installed in the database yet (migration 008). Ask the site owner.', 503);
   const v = swarmCreateSchema.parse(input); const config: Config = v.config;
   const kinds = await quizKinds(v.quizId); if (kinds.length < 3) throw new AppError('This quiz needs at least 3 questions for Swarm Survival.', 400);
   const names = config.teamNames; if (names && new Set(names.map((n) => n.toLowerCase())).size !== names.length) throw new AppError('Teams need different names', 400);
