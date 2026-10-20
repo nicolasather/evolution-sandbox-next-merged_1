@@ -28,6 +28,7 @@ export async function submitAnswer(input: unknown, opts: { allowTD?: boolean } =
   let room: Room;
   try { room = await getRoom(v.roomId); } catch (e) { throw e instanceof AppError ? fail(1, e.message, e.status) : e; }
   // Tower Defense answers must pass the game's own gate (open question, deadline, per-round cap) in lib/quiz/td/server.ts first
+  if ((room.config as { swarm?: unknown }).swarm) throw fail(1, 'Answer from the Swarm Survival screen.', 403);
   if ((room.config as { td?: unknown }).td && !opts.allowTD) throw fail(1, 'Answer from the Tower Defense screen.', 403);
   let actorType: 'team' | 'player';
   let actorId: string;

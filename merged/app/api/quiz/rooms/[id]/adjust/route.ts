@@ -11,6 +11,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     assertSameOrigin(req);
     const { id } = await params;
     const { user, room } = await isHost(id);
+    if ((room.config as { swarm?: unknown }).swarm) throw new AppError('Swarm Survival points come only from graded answers.', 400);
     if ((room.config as { td?: unknown }).td) throw new AppError('Tower Defense points come only from answers.', 400);
     await rateLimit(req, 'adjust', 120, 600, user.id);
     const b = schema.parse(await jsonBody(req));

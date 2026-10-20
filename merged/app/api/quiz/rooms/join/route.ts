@@ -14,6 +14,8 @@ export async function POST(req: Request) {
     assertSameOrigin(req);
     await rateLimit(req, 'room-join', 200, 600);
     const input = joinSchema.parse(await jsonBody(req));
+    const target = await serviceDB().from('rooms').select('config').eq('join_code', input.joinCode.toUpperCase()).maybeSingle();
+    if ((target.data?.config as { swarm?: unknown } | undefined)?.swarm) throw new AppError('This is a Swarm Survival room. Join it from the Swarm join page.', 400);
     const token = randomSecret(); // only its SHA-256 hash is stored
     const nick = checkNickname(input.displayName);
     if (!nick.ok) throw new AppError(nick.message ?? 'Please choose a different name.', 400);
