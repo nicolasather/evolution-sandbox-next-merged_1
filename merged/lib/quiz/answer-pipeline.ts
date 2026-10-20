@@ -20,7 +20,7 @@ export const STAGES = ['identify', 'eligibility', 'validate', 'grade', 'commit']
 
 const fail = (stage: number, message: string, status = 400) => new AppError(message, status, stage);
 
-export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; allowOS?: boolean } = {}) {
+export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; allowOS?: boolean; allowArena?: boolean } = {}) {
   const v = submissionSchema.parse(input);
   const db = serviceDB();
 
@@ -31,6 +31,7 @@ export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; al
   if ((room.config as { swarm?: unknown }).swarm) throw fail(1, 'Answer from the Swarm Survival screen.', 403);
   if ((room.config as { td?: unknown }).td && !opts.allowTD) throw fail(1, 'Answer from the Tower Defense screen.', 403);
   if ((room.config as { os?: unknown }).os && !opts.allowOS) throw fail(1, 'Answer from the Obstacle Survival screen.', 403);
+  if ((room.config as { arena?: unknown }).arena && !opts.allowArena) throw fail(1, 'Answer from the Arena Clash screen.', 403);
   let actorType: 'team' | 'player';
   let actorId: string;
   let playerCursor: number | null = null;

@@ -16,6 +16,7 @@ export async function POST(req: Request) {
     const input = joinSchema.parse(await jsonBody(req));
     const target = await serviceDB().from('rooms').select('config').eq('join_code', input.joinCode.toUpperCase()).maybeSingle();
     if ((target.data?.config as { swarm?: unknown } | undefined)?.swarm) throw new AppError('This is a Swarm Survival room. Join it from the Swarm join page.', 400);
+    if ((target.data?.config as { arena?: unknown } | undefined)?.arena) throw new AppError('This is an Arena Clash room. Join it from the Arena Clash join page.', 400);
     if ((target.data?.config as { os?: unknown } | undefined)?.os) throw new AppError('This is an Obstacle Survival room. Join it from the Obstacle Survival join page.', 400);
     const token = randomSecret(); // only its SHA-256 hash is stored
     const nick = checkNickname(input.displayName);

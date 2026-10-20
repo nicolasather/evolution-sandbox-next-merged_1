@@ -1,7 +1,7 @@
-import { advance, addSeat, createSession, hydrateConfig, reduceHost, reduceSeat, standingsOf, worldTarget } from '../engine';
+import { advance, addSeat, hydrateConfig, reduceHost, reduceSeat, standingsOf } from '../engine';
 import type { ArenaState, IntentEntry } from '../domain';
 import { geometryFor } from '../maps';
-import { cfgOf, newMatch, playMatch, poolOf } from '../testkit';
+import { cfgOf, newMatch, playMatch } from '../testkit';
 import { ZONE_R } from '../balance';
 import { geoOf, startEpisode, simulate } from '../sim';
 import { planMatch } from '../plan';
@@ -14,7 +14,6 @@ const goLive = (o: Parameters<typeof newMatch>[0], now = 0) => {
 };
 const entry = (tick: number, x: number, y: number, seq: number): IntentEntry => ({ tick, x, y, seq });
 const put = (s: ArenaState, id: string, x: number, y: number) => { const seat = s.seats.find((q) => q.id === id)!; seat.x = x; seat.y = y; seat.seenTick = s.live!.tick; };
-const keepAlive = (s: ArenaState, ids: string[]) => { for (const id of ids) s.seats.find((q) => q.id === id)!.seenTick = s.live!.tick; };
 
 describe('lobby and seats', () => {
   it('seats players on balanced teams, honours the cap, the 20-seat room limit and the lock', () => {
