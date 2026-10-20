@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // bundled output of swarm-server (npm run swarm:build); the source in lib/swarm is linted
+    "swarm-server/dist/**",
     // Vengeance UI components are copied in from their registry and kept close
     // to upstream so they stay easy to diff and update; they are linted there,
     // not here. Everything this project wrote itself is linted.

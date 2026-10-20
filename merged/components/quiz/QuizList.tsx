@@ -28,7 +28,7 @@ const toLib = (i: Item): LibraryQuiz => ({
   verified: i.reviewState === 'approved', reviewState: (i.reviewState as LibraryQuiz['reviewState']) ?? 'unreviewed',
 });
 
-export default function QuizList({ mine, mode = null, game = null, towerDefense = false }: { mine: boolean; mode?: PlayMode | null; game?: GameKey | null; towerDefense?: boolean }) {
+export default function QuizList({ mine, mode = null, game = null, towerDefense = false, swarm = false }: { mine: boolean; mode?: PlayMode | null; game?: GameKey | null; towerDefense?: boolean; swarm?: boolean }) {
   const [items, setItems] = useState<Item[] | null>(null);
   const [device, setDevice] = useState<LocalDraft[]>([]);
   const [session, setSession] = useState<SessionInfo | null | undefined>(undefined);
@@ -162,7 +162,7 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
 
   const loading = items === null;
   const totalShown = shown.length + shownDevice.length;
-  const playHref = (id: string) => (towerDefense ? `/quiz/setup/${id}/td` : game ? `/quiz/setup/${id}/game?game=${game}` : `/quiz/setup/${id}${mode ? `?mode=${mode}` : ''}`);
+  const playHref = (id: string) => (swarm ? `/quiz/setup/${id}/swarm` : towerDefense ? `/quiz/setup/${id}/td` : game ? `/quiz/setup/${id}/game?game=${game}` : `/quiz/setup/${id}${mode ? `?mode=${mode}` : ''}`);
   const setF = (k: keyof Filters, v: unknown) => setFilters((f) => { const n = { ...f, [k]: v === '' || v === false ? undefined : v } as Filters; return n; });
   const hasFilters = Object.values(filters).some((v) => v !== undefined);
 
@@ -213,7 +213,12 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
                 <div><h2 className="td-sign">Tower Defense</h2><p>Online, one device per student. Choose a quiz to host it with.</p><Link className="td-btn small ghost" href="/quiz/modes">Change mode</Link></div>
               </div>
             )}
-            {mode && !towerDefense && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
+            {mode && swarm && (
+              <div className="td-libcard" aria-label="Selected mode: Swarm Survival">
+                <div><h2 className="td-sign">Swarm Survival</h2><p>Online, one device per student, teams of 1–5. Choose a quiz to host it with.</p><Link className="td-btn small ghost" href="/quiz/modes">Change mode</Link></div>
+              </div>
+            )}
+            {mode && !towerDefense && !swarm && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
           </div>
         </section>
       )}

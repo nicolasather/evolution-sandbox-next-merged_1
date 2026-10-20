@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="t">
+  <title id="t">Swarm Survival: five colourful avatars guard a hexagon beacon in a meadow while round and angular creatures close in</title>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B7DD95"/><stop offset="1" stop-color="#8CCB7A"/></linearGradient></defs>
+  <rect width="640" height="400" rx="18" fill="url(#g)" stroke="#1D2C35" stroke-width="6"/>
+  <ellipse cx="320" cy="205" rx="250" ry="150" fill="#F2E6B0" stroke="#1D2C35" stroke-width="3" stroke-opacity=".25"/>
+  <ellipse cx="320" cy="205" rx="170" ry="92" fill="#A7D58E"/>
+  <g stroke="#1D2C35" stroke-width="5" stroke-linejoin="round">
+    <polygon points="320,160 352,178 352,214 320,232 288,214 288,178" fill="#FFFBF1"/><path d="M320 176c14 12 14 30 0 40-14-10-14-28 0-40z" fill="#FFCD55"/>
+    <circle cx="238" cy="262" r="21" fill="#3C7BD9"/><rect x="396" y="116" width="40" height="40" rx="12" fill="#F77765" transform="rotate(10 416 136)"/>
+    <path d="M214 140h34v34h-34zM231 130v54M205 157h52" fill="#5CBBA0" transform="translate(0 0)"/>
+    <polygon points="430,262 456,300 404,300" fill="#FFCD55"/><circle cx="352" cy="294" r="19" fill="#9A6BD8"/>
+  </g>
+  <g stroke="#1D2C35" stroke-width="4" stroke-linejoin="round" fill="#F08A2C">
+    <ellipse cx="112" cy="110" rx="26" ry="20" fill="#F77765"/><polygon points="540,300 566,338 514,338" fill="#F2A93B"/><rect x="92" y="290" width="40" height="40" rx="8" fill="#3C7BD9"/><polygon points="540,96 566,114 566,142 540,160 514,142 514,114" fill="#F08A2C"/><path d="M300 350l24-22 24 22-24 22z" fill="#4FC3D9"/>
+  </g>
+  <g fill="#1D2C35" opacity=".8"><circle cx="260" cy="246" r="3"/><circle cx="278" cy="238" r="3"/><circle cx="410" cy="170" r="3"/><circle cx="392" cy="182" r="3"/></g>
+  <g fill="none" stroke="#1D2C35" stroke-width="3" opacity=".55"><path d="M40 60l8 14 8-14M590 220l8 14 8-14M70 360l8 14 8-14"/></g>
+</svg>

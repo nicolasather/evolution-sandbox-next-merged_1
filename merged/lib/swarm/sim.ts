@@ -250,7 +250,7 @@ function shoot(a: Arena, p: PlayerEnt, role: Role, target: EnemyEnt, team: Team,
 }
 
 /** One role ability, authorized here (cooldown + alive). The client only asks. */
-export function useAbility(a: Arena, ctx: SimCtx, pid: string): boolean {
+export function castAbility(a: Arena, ctx: SimCtx, pid: string): boolean {
   const p = a.players[pid]; if (!p || p.down || p.abilityCd > 0 || !ctx.connected(pid) || a.status !== 'alive') return false;
   const role = ctx.roles(pid); const team = ctx.team; p.abilityCd = ROLE_DEFS[role].abilityCd; p.abilityMax = ROLE_DEFS[role].abilityCd; p.abilityUses++;
   switch (role) {

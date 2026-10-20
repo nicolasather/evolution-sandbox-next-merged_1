@@ -148,7 +148,7 @@ export class RoomRuntime {
     this.sendSnapshot(c, now, true); this.flushEventsTo(c);
     return c;
   }
-  private flushEventsTo(_c: Conn) { /* new sockets get state from the snapshot; past toasts are not replayed */ }
+  private flushEventsTo(c: Conn) { void c; /* new sockets get state from the snapshot; past toasts are not replayed */ }
   detach(c: Conn, takeover = false) {
     if (!this.conns.delete(c.id)) return; const key = `${c.kind}:${c.sub}`; if (this.bySub.get(key) === c) this.bySub.delete(key);
     if (takeover) return;

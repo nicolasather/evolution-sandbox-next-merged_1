@@ -6,7 +6,7 @@ import { BOSS, DISCONNECT, ECONOMY, UPGRADE_DEFS, beaconHp } from './balance';
 import { MAPS } from './maps';
 import { planSession, questionSecondsFor } from './plan';
 import { buyUpgrade, draftOffers, rankTeams, resolveVotes, teamAward } from './economy';
-import { makeCtx, newArena, protectOnDisconnect, startWave, stepArena, useAbility, up, type SimCtx } from './sim';
+import { makeCtx, newArena, protectOnDisconnect, startWave, stepArena, castAbility, up, type SimCtx } from './sim';
 import { seedFrom } from './rng';
 
 export type Result<T = object> = ({ ok: true } & T) | { ok: false; code: string; message: string };
@@ -383,7 +383,7 @@ export function playerAbility(r: Room, pid: string, actionId: string): Result {
   if (!isActivePhase(r.phase) || r.paused) return fail('wrong_phase', 'Abilities are paused right now.');
   if (!once(r, `a:${pid}:${actionId}`)) return { ok: true };
   const a = r.arenas[p.teamId]; if (!a || !a.players[pid]) return fail('no_avatar', 'You join the arena at the next wave.');
-  if (!useAbility(a, ctxFor(r, p.teamId), pid)) return fail('not_ready', 'Ability is recharging.');
+  if (!castAbility(a, ctxFor(r, p.teamId), pid)) return fail('not_ready', 'Ability is recharging.');
   p.commands++; emit(r, 'ability', { pid, team: p.teamId }); return { ok: true };
 }
 

@@ -1,0 +1,19 @@
+/** Original general-knowledge questions for Practice mode (all five existing kinds). Practice never touches a teacher's quiz, a database or any score. */
+import type { StoredQuestion } from '../../quiz/public';
+const b = (i: number, kind: string, prompt: string, payload: unknown, answer_key: unknown): StoredQuestion => ({ id: `pq${i}`, position: i, kind, prompt, payload: payload as Record<string, unknown>, answer_key: answer_key as Record<string, unknown>, base_points: 100 });
+export function practiceQuestions(): StoredQuestion[] {
+  return [
+    b(1, 'multiple_choice', 'Which planet is closest to the Sun?', { options: [{ id: 'a', text: 'Venus' }, { id: 'b', text: 'Mercury' }, { id: 'c', text: 'Mars' }, { id: 'd', text: 'Jupiter' }] }, { correctIds: ['b'], explanation: 'Mercury orbits closest to the Sun.' }),
+    b(2, 'truth_hunt', 'Mark each statement true or false.', { statements: [{ id: 's1', text: 'Plants make food using sunlight.' }, { id: 's2', text: 'Sound travels faster than light.' }, { id: 's3', text: 'Water boils at 100 °C at sea level.' }] }, { truth: { s1: true, s2: false, s3: true }, explanation: 'Light is far faster than sound; a flash comes before its thunder.' }),
+    b(3, 'answer_forge', 'What is 12 × 7?', { placeholder: 'Type a number', caseSensitive: false }, { accepted: ['84'], explanation: '12 × 7 = 84.' }),
+    b(4, 'connection_rush', 'Match each animal to its group.', { left: [{ id: 'l1', label: 'Eagle' }, { id: 'l2', label: 'Salmon' }, { id: 'l3', label: 'Frog' }], right: [{ id: 'r1', label: 'Bird' }, { id: 'r2', label: 'Fish' }, { id: 'r3', label: 'Amphibian' }] }, { pairs: [{ leftId: 'l1', rightId: 'r1' }, { leftId: 'l2', rightId: 'r2' }, { leftId: 'l3', rightId: 'r3' }], explanation: 'Birds, fish and amphibians are different animal groups.' }),
+    b(5, 'multiple_choice', 'Which of these is a prime number?', { options: [{ id: 'a', text: '21' }, { id: 'b', text: '27' }, { id: 'c', text: '29' }, { id: 'd', text: '33' }] }, { correctIds: ['c'], explanation: '29 has no divisors other than 1 and itself.' }),
+    b(6, 'fill_table', 'Complete the table of doubles.', { columns: ['Number', 'Double'], rows: [[{ text: '4', blank: false }, { text: '', blank: true }], [{ text: '9', blank: false }, { text: '', blank: true }]] }, { cells: { '0:1': ['8'], '1:1': ['18'] }, explanation: 'Doubling multiplies by two.' }),
+    b(7, 'answer_forge', 'What gas do plants take in from the air?', { placeholder: 'One or two words', caseSensitive: false }, { accepted: ['carbon dioxide', 'co2'], explanation: 'Plants use carbon dioxide for photosynthesis.' }),
+    b(8, 'truth_hunt', 'Mark each statement true or false.', { statements: [{ id: 's1', text: 'A triangle has four sides.' }, { id: 's2', text: 'The Earth orbits the Sun.' }] }, { truth: { s1: false, s2: true }, explanation: 'Triangles have three sides.' }),
+    b(9, 'multiple_choice', 'Which is the largest ocean?', { options: [{ id: 'a', text: 'Atlantic' }, { id: 'b', text: 'Indian' }, { id: 'c', text: 'Pacific' }] }, { correctIds: ['c'], explanation: 'The Pacific covers about a third of the planet.' }),
+    b(10, 'connection_rush', 'Match each tool to its job.', { left: [{ id: 'l1', label: 'Ruler' }, { id: 'l2', label: 'Thermometer' }], right: [{ id: 'r1', label: 'Measures temperature' }, { id: 'r2', label: 'Measures length' }] }, { pairs: [{ leftId: 'l1', rightId: 'r2' }, { leftId: 'l2', rightId: 'r1' }], explanation: 'Each instrument measures a different quantity.' }),
+    b(11, 'answer_forge', 'How many minutes are in two hours?', { placeholder: 'Type a number', caseSensitive: false }, { accepted: ['120'], explanation: '2 × 60 = 120.' }),
+    b(12, 'multiple_choice', 'Which part of a plant takes in water from the soil?', { options: [{ id: 'a', text: 'Roots' }, { id: 'b', text: 'Leaves' }, { id: 'c', text: 'Petals' }] }, { correctIds: ['a'], explanation: 'Roots absorb water and minerals.' }),
+  ];
+}

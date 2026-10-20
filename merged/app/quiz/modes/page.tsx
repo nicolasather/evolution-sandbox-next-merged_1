@@ -35,6 +35,27 @@ export default function ModesPage() {
           </div>
         </div>
       </section>
+      <section className="td-modecard" style={{ marginBottom: 44 }} aria-labelledby="sw-h" id="swarm-survival">
+        <div className="td-modebody">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/quiz/swarm/poster.svg" alt="Five coloured avatars guard a beacon in a meadow while creatures close in" width={640} height={400} style={{ width: '100%', height: 'auto', borderRadius: 16 }} />
+          <div className="stack" style={{ gap: 10 }}>
+            <p className="eyebrow" style={{ margin: 0 }}>Online · 1–5 players per team · Co-op / Versus</p>
+            <h2 id="sw-h" className="td-sign" style={{ justifySelf: 'start' }}>Swarm Survival</h2>
+            <p style={{ maxWidth: '60ch' }}>Every student steers their own avatar on their own device and defends a beacon from swarms. Between waves the whole arena freezes for one question; correct answers earn points the team spends on upgrades. Co-op for one class team, or 2–4 teams on identical arenas (up to 20 students).</p>
+            <ul>
+              <li>Five roles, eight creatures, three bosses with telegraphed attacks.</li>
+              <li>The game server grades every answer; no device decides a score.</li>
+              <li>Teacher console: pause, extend, skip, lock, remove, and a projector view.</li>
+            </ul>
+            <div className="td-row wrap" style={{ marginTop: 6 }}>
+              <Link className="td-btn primary" href="/quiz/library?mode=online&game=swarm_survival">Pick a quiz</Link>
+              <Link className="td-btn" href="/quiz/swarm/practice">Practice alone</Link>
+              <Link className="td-btn ghost" href="/quiz/swarm">How to play</Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="stack" style={{ gap: 18, marginBottom: 44 }} aria-labelledby="pj-h" id="projector-games">
         <header><p className="eyebrow">Classroom projector</p><h2 id="pj-h" style={{ fontStyle: 'italic' }}>Projector Games · {MODE_LIST.length} game worlds</h2>
           <p className="muted-text" style={{ maxWidth: '62ch' }}>Ten full game worlds for one teacher computer and a projector. Teams answer aloud, the teacher marks them, and no student devices or accounts are needed. From 5 to 180 minutes, or no clock at all.</p>

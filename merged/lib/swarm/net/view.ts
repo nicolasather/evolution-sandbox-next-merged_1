@@ -36,11 +36,12 @@ export function buildView(room: Room, viewer: Viewer, nowMs: number, lookup: QLo
   s.meta = {
     rev: room.rev, phase: room.phase, paused: room.paused, pauseReason: room.pauseReason, wave: room.wave, waves: plan.waves.length, waveTick: room.waveTick, waveTicks: pw?.ticks ?? 0, boss: pw?.boss?.kind ?? null,
     locked: room.locked, mode: room.config.mode, map: room.config.mapId, code: room.code, phaseEndsMs: room.phaseEndsMs, resumeAtMs: room.resumeAtMs, hostPresent: room.hostPresent,
-    teamSizeCap: room.config.teamSizeCap, minutes: room.config.minutes, qDone: room.qUsed, qTotal: plan.questionsTotal, draftsDone: room.draftsDone, allowRespec: room.config.allowRespec, lateJoin: room.lateJoin, focus,
+    teamSizeCap: room.config.teamSizeCap, captainOnly: room.config.captainOnlyDraft, hideNames: viewer.kind === 'screen' && room.config.hideTeamNames, minutes: room.config.minutes, qDone: room.qUsed, qTotal: plan.questionsTotal, draftsDone: room.draftsDone, allowRespec: room.config.allowRespec, lateJoin: room.lateJoin, focus,
   };
+  const shown = (t: string, name: string) => (viewer.kind === 'screen' && room.config.hideTeamNames ? `Team ${room.teamOrder.indexOf(t) + 1}` : name);
   s.teams = room.teamOrder.map((t) => {
     const tm = room.teams[t]!; const a = room.arenas[t]; const own = focus === t;
-    return { id: t, name: tm.name, status: a?.status ?? 'alive', waves: tm.wavesCompleted, beacon: a ? Math.round((100 * a.beacon.hp) / Math.max(1, a.beacon.max)) : 100, size: Object.values(room.roster).filter((m) => m.teamId === t && !m.forfeited).length,
+    return { id: t, name: shown(t, tm.name), status: a?.status ?? 'alive', waves: tm.wavesCompleted, beacon: a ? Math.round((100 * a.beacon.hp) / Math.max(1, a.beacon.max)) : 100, size: Object.values(room.roster).filter((m) => m.teamId === t && !m.forfeited).length,
       ...(own || viewer.kind !== 'player' ? { wallet: tm.wallet, upgrades: tm.upgrades } : {}) };
   });
   s.roster = room.rosterOrder.map((id) => room.roster[id]!).filter((m) => !m.forfeited && (viewer.kind !== 'player' || m.teamId === me?.teamId)).map((m) => ({
@@ -69,7 +70,7 @@ export function buildView(room: Room, viewer: Viewer, nowMs: number, lookup: QLo
       myVote: me ? votes[me.id] ?? null : null,
     };
   }
-  if (room.results) s.results = { ...room.results, phase: room.phase };
+  if (room.results) s.results = { ...room.results, standings: room.results.standings.map((x) => ({ ...x, name: shown(x.teamId, x.name) })), phase: room.phase };
   const e: ViewParts['e'] = { p: {}, e: {}, b: {}, h: {}, t: {}, d: {} };
   const fx: unknown[] = [];
   const a = focus ? room.arenas[focus] : undefined;
