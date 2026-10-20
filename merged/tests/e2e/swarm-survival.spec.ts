@@ -124,6 +124,40 @@ test.describe('online match', () => {
   });
 });
 
+test.describe('teacher console and projector', () => {
+  test.setTimeout(180_000);
+  /** The real pages, the real worker. Only the Next.js token route (which needs a signed-in teacher and the database) is stubbed with tokens the dev worker issued. */
+  test('console controls drive a live match; the projector mirrors it read-only and hides team names when asked', async ({ browser }) => {
+    const room = await devRoom(BASE, { mode: 'versus', teamCount: 2, teamSizeCap: 2, minutes: 5, hideTeamNames: true, teamNames: ['Mint Comets', 'Coral Crew'] }, 40, 21);
+    const stub = async (ctx: BrowserContext) => ctx.route('**/api/quiz/swarm/rooms/*/token', (r) => r.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ workerUrl: BASE, wsUrl: WS, joinCode: room.code, hostToken: room.hostToken, screenToken: room.screenToken }) }));
+    const tctx = await browser.newContext({ viewport: { width: 1440, height: 900 } }); await stub(tctx); const T = await tctx.newPage();
+    const sctx = await browser.newContext({ viewport: { width: 1920, height: 1080 } }); await stub(sctx); const S = await sctx.newPage();
+    await T.goto(`/quiz/swarm/${room.roomId}/host`); await expect(T.getByTestId('join-code')).toHaveText(room.code, { timeout: 30_000 });
+    await S.goto(`/quiz/swarm/${room.roomId}/screen`); await expect(S.getByTestId('screen-lobby')).toBeVisible({ timeout: 30_000 }); await expect(S.getByTestId('screen-lobby')).toContainText(room.code);
+    const ctxA = await browser.newContext(); const ctxB = await browser.newContext(); const A = await join(ctxA, room.code, 'Ada'); const B = await join(ctxB, room.code, 'Bo');
+    await expect(T.getByText('Ada').first()).toBeVisible({ timeout: 10_000 }); await expect(T.getByText('Bo').first()).toBeVisible();
+    await expect(T.getByTestId('begin')).toHaveCount(0); await T.getByTestId('open-roles').click();
+    await expect(A.getByRole('heading', { name: 'Choose your role' })).toBeVisible();
+    await T.getByTestId('begin').click(); await expect(A.getByTestId('wavepanel')).toBeVisible({ timeout: 25_000 });
+    // projector: team names are hidden, the arena is drawn, and it has no way to send commands
+    await expect(S.getByLabel('Teams')).toContainText('Team 1'); await expect(S.getByLabel('Teams')).not.toContainText('Mint Comets'); await expect(T.getByLabel('Room', { exact: true })).toBeVisible();
+    await expect(T.getByRole('heading', { name: 'Teams' })).toBeVisible(); await expect(T.getByText('Mint Comets').first()).toBeVisible(); // the teacher still sees the real names
+    expect((await canvasInk(S)).colours).toBeGreaterThan(8);
+    // pause from the console: students see why, the world stops
+    await T.getByTestId('pause').click(); await expect(A.getByTestId('paused')).toBeVisible({ timeout: 8000 }); await expect(T.getByTestId('host-paused')).toBeVisible();
+    await expect(T.getByTestId('pause')).toHaveText('Resume'); await T.getByTestId('pause').click(); await expect(A.getByTestId('paused')).toHaveCount(0, { timeout: 8000 });
+    // ask now → question; skipping needs a written reason
+    await T.getByRole('button', { name: 'Ask now' }).click(); await expect(A.getByTestId('question')).toBeVisible({ timeout: 15_000 });
+    await expect(S.getByTestId('screen-question')).toBeVisible(); await expect(T.getByRole('button', { name: 'Write a reason to skip' })).toBeDisabled();
+    await T.getByLabel(/Skip this question/).fill('wording unclear'); await T.getByRole('button', { name: 'Skip question' }).click(); await expect(T.getByTestId('host-msg')).toContainText(/skipped/i);
+    // ending needs two steps
+    await T.screenshot({ path: 'docs/swarm-survival/screens/e2e-teacher-1440x900.png' }); await S.screenshot({ path: 'docs/swarm-survival/screens/e2e-projector-1920x1080.png' });
+    await T.getByTestId('end-request').click(); await expect(T.getByTestId('end-confirm')).toBeVisible(); await T.getByTestId('end-confirm').click();
+    await expect(A.getByTestId('results')).toBeVisible({ timeout: 20_000 }); await expect(S.getByTestId('results')).toBeVisible(); await expect(S.getByTestId('results')).toContainText('Team 1');
+    for (const c of [tctx, sctx, ctxA, ctxB]) await c.close(); void B;
+  });
+});
+
 test('practice: plays offline in the browser with the real rules', async ({ page }) => {
   test.setTimeout(90_000); // the first visit may compile the route on a dev server
   await page.goto('/quiz/swarm/practice'); await page.waitForLoadState('networkidle'); await page.getByTestId('practice-go').click({ timeout: 60_000 });
