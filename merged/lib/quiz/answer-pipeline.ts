@@ -20,13 +20,15 @@ export const STAGES = ['identify', 'eligibility', 'validate', 'grade', 'commit']
 
 const fail = (stage: number, message: string, status = 400) => new AppError(message, status, stage);
 
-export async function submitAnswer(input: unknown) {
+export async function submitAnswer(input: unknown, opts: { allowTD?: boolean } = {}) {
   const v = submissionSchema.parse(input);
   const db = serviceDB();
 
   // ── STAGE 1 · Identify & authorise ────────────────────────────────────────────────────────────
   let room: Room;
   try { room = await getRoom(v.roomId); } catch (e) { throw e instanceof AppError ? fail(1, e.message, e.status) : e; }
+  // Tower Defense answers must pass the game's own gate (open question, deadline, per-round cap) in lib/quiz/td/server.ts first
+  if ((room.config as { td?: unknown }).td && !opts.allowTD) throw fail(1, 'Answer from the Tower Defense screen.', 403);
   let actorType: 'team' | 'player';
   let actorId: string;
   let playerCursor: number | null = null;

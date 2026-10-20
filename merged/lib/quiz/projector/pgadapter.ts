@@ -40,14 +40,30 @@ class Query implements PromiseLike<Res> {
   }
   then<T1 = Res, T2 = never>(ok?: ((v: Res) => T1 | PromiseLike<T1>) | null, bad?: ((e: unknown) => T2 | PromiseLike<T2>) | null): Promise<T1 | T2> { return this.exec().then(ok, bad); }
 }
+/** Argument types of a SQL function, looked up once, so values are sent the way PostgREST sends them: JSON for jsonb parameters (objects AND
+ *  arrays), native arrays for array parameters (uuid[]), plain values otherwise. */
+const argTypes = new Map<string, Promise<Record<string, string>>>();
+function typesOf(pool: Pool, name: string) {
+  let p = argTypes.get(name);
+  if (!p) {
+    p = pool.query(`select unnest(proargnames) n, unnest(proargtypes::regtype[]::text[]) t from pg_proc where proname = $1 and pronamespace = 'public'::regnamespace`, [name])
+      .then((r) => Object.fromEntries(r.rows.map((x) => [x.n as string, x.t as string])));
+    argTypes.set(name, p);
+  }
+  return p;
+}
 export function pgSupabase(pool: Pool) {
   return {
     from: (t: string) => new Query(pool, t),
     async rpc(name: string, args: Record<string, unknown>) {
       const keys = Object.keys(args);
-      const vals = keys.map((k) => (typeof args[k] === 'object' && args[k] !== null && !Array.isArray(args[k]) ? JSON.stringify(args[k]) : args[k]));
-      try { const r = await pool.query(`select public.${name}(${keys.map((k, i) => `${k} => $${i + 1}${typeof args[k] === 'object' && args[k] !== null && !Array.isArray(args[k]) ? '::jsonb' : ''}`).join(',')}) as r`, vals); return { data: r.rows[0].r, error: null }; }
-      catch (e) { const err = e as { code?: string; message: string }; return { data: null, error: { code: err.code, message: err.message } }; }
+      try {
+        const types = await typesOf(pool, name);
+        const isJson = (k: string) => types[k] === 'jsonb' || types[k] === 'json' || (types[k] === undefined && typeof args[k] === 'object' && args[k] !== null && !Array.isArray(args[k]));
+        const vals = keys.map((k) => (isJson(k) && args[k] !== null && args[k] !== undefined ? JSON.stringify(args[k]) : args[k]));
+        const r = await pool.query(`select public.${name}(${keys.map((k, i) => `${k} => $${i + 1}${isJson(k) ? '::jsonb' : ''}`).join(',')}) as r`, vals);
+        return { data: r.rows[0].r, error: null };
+      } catch (e) { const err = e as { code?: string; message: string }; return { data: null, error: { code: err.code, message: err.message } }; }
     },
   };
 }
