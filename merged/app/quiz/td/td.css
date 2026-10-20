@@ -104,7 +104,7 @@
 .td-hit.pad:hover, .td-hit.pad:focus-visible { background: rgba(255, 201, 75, .35); }
 .td-hit[aria-pressed="true"] { outline: 3px solid var(--gold); outline-offset: -2px; background: rgba(255, 201, 75, .25); }
 .td-hit:disabled { cursor: default; }
-.td-camera { display: flex; align-items: center; gap: 8px; padding: 6px; background: var(--paper); border-top: 3px solid var(--ink); }
+.td-camera { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 6px; background: var(--paper); border-top: 3px solid var(--ink); }
 .td-mini { width: 96px; height: 58px; padding: 0; border: 2px solid var(--ink); border-radius: 4px; background: none; cursor: pointer; flex: none; }
 .td-mini svg { width: 100%; height: 100%; display: block; }
 .td-campad { display: flex; gap: 4px; } .td-campad button { min-width: 44px; min-height: 44px; border: 2px solid var(--ink); border-radius: 4px; background: #fff; color: var(--ink); cursor: pointer; }
@@ -148,7 +148,7 @@
 .td-opponents li span { grid-column: 2; font-size: .85em; color: var(--muted); }
 .td-salvo { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: var(--r); padding: 10px; }
 .td-unitlist { background: var(--paper); color: var(--ink); border: 3px solid var(--ink); border-radius: var(--r); padding: 8px 12px; }
-.td-unitlist summary { cursor: pointer; font-weight: 600; min-height: 32px; color: var(--ink); }
+.qz .td-unitlist summary, .td-unitlist summary { cursor: pointer; font-weight: 600; min-height: 32px; color: var(--ink); }
 .td-waveres ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .td-waveres li { background: #fff; border: 2px solid var(--ink); border-radius: 4px; padding: 6px 8px; }
 .td-waveres b { font: 600 1.25rem var(--display); }
@@ -283,8 +283,9 @@
 /* responsive: 360 → 1920 */
 @media (max-width: 1100px) { .td-play { grid-template-columns: minmax(0, 1fr) 300px; } }
 @media (max-width: 860px) {
-  .td-play, .td-lobby, .td-hubhero, .td-modecard .td-modebody { grid-template-columns: 1fr; }
-  .td-mapprev { position: static; order: -1; }
+  .td-play, .td-lobby, .td-hubhero, .td-modecard .td-modebody { grid-template-columns: minmax(0, 1fr); }
+  .td-joincard, .td-mapprev, .td-rail, .td-boardcol { min-width: 0; }
+  .td-mapprev { position: static; }
   .td-hubgrid, .td-loop { grid-template-columns: 1fr 1fr; }
   .td-screengrid.n2, .td-screengrid.n3, .td-screengrid.n4 { grid-template-columns: 1fr; }
 }

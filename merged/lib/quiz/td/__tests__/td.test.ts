@@ -276,7 +276,7 @@ describe('whole matches (TD-007, TD-011, TD-016, TD-017)', () => {
     expect(state.phase).toBe('finished'); expect(state.finish!.outcome).not.toBe('victory');
   });
   it('pause freezes every deadline; resume shifts them by exactly the paused time', () => {
-    let { s, now } = toBuild(lobby());
+    const b = toBuild(lobby()); let s = b.s; const now = b.now;
     const dl = s.phaseDeadlineMs!; const end = s.matchEndMs!;
     s = (reduceHost(s, { kind: 'pause' }, now).result as { state: TDState }).state;
     expect(advance(s, { now: now + 600_000, seed: 'seed', pool: pool(60) }).changed).toBe(false);

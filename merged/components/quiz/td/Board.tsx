@@ -25,7 +25,7 @@ const towerName = (t: TDTower) => `${TOWERS[t.kind].name} level ${t.level}${t.br
 
 export default function Board(p: BoardProps) {
   const wrap = useRef<HTMLDivElement>(null); const cv = useRef<HTMLCanvasElement>(null); const staticCv = useRef<HTMLCanvasElement | null>(null);
-  const [viewW, setViewW] = useState(960); const [cam, setCam] = useState({ x: 0, y: 0 }); const [fit, setFit] = useState(false); const userPan = useRef(0);
+  const [viewW, setViewW] = useState(960); const [cam, setCam] = useState({ x: 0, y: 0 }); const [fit, setFit] = useState(p.interactive === false); /* display-only boards show the whole map */ const userPan = useRef(0);
   const map = MAPS[p.mapId]; const path = useMemo(() => mapPath(p.mapId), [p.mapId]);
   // camera: keep a tile at least 44 CSS px wide unless the player asked for the whole map
   const zoom = fit ? 1 : Math.max(1, Math.min(2.6, (44 * 20) / Math.max(320, viewW)));
@@ -33,8 +33,10 @@ export default function Board(p: BoardProps) {
   const clampCam = useCallback((x: number, y: number) => ({ x: Math.max(0, Math.min(boardW - viewW, x)), y: Math.max(0, Math.min(boardH - viewH, y)) }), [boardW, boardH, viewW, viewH]);
   useEffect(() => {
     const el = wrap.current; if (!el) return;
-    const ro = new ResizeObserver(() => setViewW(Math.round(el.clientWidth)));
-    ro.observe(el); setViewW(Math.round(el.clientWidth));
+    // a hidden or not-yet-laid-out wrapper reports 0: keep the last real width instead of drawing a 0-pixel board
+    const measure = () => { const w = Math.round(el.clientWidth); if (w > 0) setViewW(w); };
+    const ro = new ResizeObserver(measure);
+    ro.observe(el); measure();
     return () => ro.disconnect();
   }, []);
   // eslint-disable-next-line react-hooks/set-state-in-effect -- keep the camera inside the board when the size changes
@@ -103,6 +105,7 @@ export default function Board(p: BoardProps) {
   const frame = useCallback(() => {
     const c = cv.current; if (!c) return;
     const dpr = Math.min(2, window.devicePixelRatio || 1); const scale = (boardW / W) * dpr;
+    if (!(W * scale >= 1)) return;
     if (c.width !== Math.round(W * scale)) { c.width = Math.round(W * scale); c.height = Math.round(H * scale); staticCv.current = null; }
     if (!staticCv.current) staticCv.current = drawStatic(scale);
     const g = c.getContext('2d')!; g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(staticCv.current, 0, 0); g.setTransform(scale, 0, 0, scale, 0, 0);
@@ -254,7 +257,7 @@ export default function Board(p: BoardProps) {
           <button type="button" className="td-btn ghost small" onClick={() => setFit(true)}>Whole map</button>
         </div>
       )}
-      {!camMode && fit && viewW < 700 && <button type="button" className="td-btn ghost small td-zoomback" onClick={() => setFit(false)}>Zoom in to build</button>}
+      {!camMode && fit && viewW < 700 && p.interactive !== false && <button type="button" className="td-btn ghost small td-zoomback" onClick={() => setFit(false)}>Zoom in to build</button>}
     </div>
   );
 }

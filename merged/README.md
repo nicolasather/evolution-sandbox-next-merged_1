@@ -63,6 +63,13 @@ Vercel the production domain is picked up automatically when it is unset;
 anywhere else, an unset value falls back to `http://localhost:3000`, which is
 only right for local runs. There is deliberately no invented placeholder domain.
 
+Quiz Studio's online Tower Defense (`/quiz/td`) and the two projector
+modifiers need Supabase migrations `006_projector_next_five.sql` and
+`007_tower_defense.sql` (in `supabase/migrations/`). Apply them in that order
+in the Supabase SQL editor (`npm run db:migrate` is for `db/migrations`, not
+these). The offline practice (`/quiz/td/practice`) works without them.
+Status and test evidence: `docs/TD_IMPLEMENTATION_STATUS.md`.
+
 ---
 
 ## Architecture
