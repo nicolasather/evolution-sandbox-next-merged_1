@@ -209,6 +209,7 @@ export function useArenaLocal(o: PracticeOpts): ArenaClient {
     let s = createSession(cfg, plan, POOL, ['t1', 't2'], Date.now());
     const add = (id: string, name: string, team: string, role: Role) => { const r = addSeat(s, id, name, Date.now(), team); if (r.ok) { s = r.state; const seat = s.seats.find((x) => x.id === id)!; seat.role = role; if (id !== SELF) seat.ready = true; } };
     add(SELF, 'You', 't1', o.role); add(BOTS[0]!, 'Bot A', 't1', o.role === 'runner' ? 'navigator' : 'runner'); add(BOTS[1]!, 'Bot B', 't2', 'runner'); add(BOTS[2]!, 'Bot C', 't2', 'sentinel');
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- a new practice setup restarts the local run
     st.current = s; answers.current = new Map(); verdict.current = null; lines.current = {}; seen.current = new Set(); const first = build(Date.now()); snapRef.current = first; setSnap(first); if (first) pres.current.ingest(first);
     let last = 0; const h = setInterval(() => {
       const cur = st.current; if (!cur) return; const now = Date.now();

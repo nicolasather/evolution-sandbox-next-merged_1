@@ -35,3 +35,6 @@ Legend: **V** = verified by an automated test run in this workspace · **P** = p
 | OS-131 | Migrations applied in staging | **B** | Not applied anywhere. Owner approval needed. |
 
 OS-112 (host reward anti-farm): **N** — this mode grants no host reward; nothing was added and nothing tested.
+
+## Addendum — OS-F07 (honest hosted QA)
+Evidence after the OS-F01…F06 fixes: engine and component tests, the PGlite database test (`npm run test:db -- lib/quiz/os`) and the Playwright UI spec against engine-built mock snapshots. **Not done:** no hosted Supabase migration, no deployed build of these fixes and no multi-device run were performed; the two supplied Vercel URLs were only fetched read-only and do not contain this branch. Hosted readiness is therefore **unproven**.
