@@ -7,6 +7,12 @@ function supabaseOrigin(): string {
   try { const u = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim(); return u ? new URL(u).origin : ''; } catch { return ''; }
 }
 const SB = supabaseOrigin();
+/** Swarm Survival talks to its own persistent worker over WebSocket: allow exactly that origin (http→ws, https→wss) and nothing else. */
+function swarmOrigins(): string {
+  const raw = process.env.NEXT_PUBLIC_SWARM_URL; if (!raw) return '';
+  try { const u = new URL(raw); const host = u.host; return u.protocol === 'https:' || u.protocol === 'wss:' ? `https://${host} wss://${host}` : `http://${host} ws://${host}`; } catch { return ''; }
+}
+const SW = swarmOrigins();
 const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://sentry.io https://*.sentry.io",
@@ -15,7 +21,7 @@ const CSP = [
   `media-src 'self' ${SB}`.trim(),
   "frame-src 'self' https://www.youtube-nocookie.com https://player.vimeo.com",
   "font-src 'self' data:",
-  `connect-src 'self' ${SB} https://sentry.io https://*.sentry.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com`,
+  `connect-src 'self' ${SB} ${SW} https://sentry.io https://*.sentry.io https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

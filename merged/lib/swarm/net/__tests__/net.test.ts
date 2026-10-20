@@ -66,7 +66,7 @@ describe('per-viewer redaction (every phase, every question kind)', () => {
   it('shows a student only their own team: no rival wallet, upgrades, offers, roster or avatars', () => {
     const fx = mkRoom({ mode: 'versus', sizes: [2, 2], minutes: 10, seed: 6 }); let checked = 0;
     walk(fx, (room) => {
-      const me = room.rosterOrder.find((id) => room.roster[id]!.teamId === 't1')!; const v = buildView(room, { kind: 'player', pid: me }, 0, lookup); const s = v.s as Record<string, any>;
+      const me = room.rosterOrder.find((id) => room.roster[id]!.teamId === 't1')!; const v = buildView(room, { kind: 'player', pid: me }, 0, lookup); const s = v.s as Record<string, unknown>;
       const rival = (s.teams as { id: string; wallet?: number; upgrades?: unknown }[]).find((t) => t.id === 't2'); if (rival) { expect(rival.wallet).toBeUndefined(); expect(rival.upgrades).toBeUndefined(); }
       for (const r of s.roster as { team: string }[]) expect(r.team).toBe('t1'); if (s.draft) expect(JSON.stringify(s.draft)).not.toContain('t2');
       const rivals = room.rosterOrder.filter((id) => room.roster[id]!.teamId === 't2'); for (const id of rivals) expect(v.e.p![id]).toBeUndefined(); checked++;
