@@ -49,7 +49,8 @@
     "swarm:dev": "tsx swarm-server/dev.ts",
     "swarm:build": "esbuild swarm-server/index.ts --bundle --platform=node --target=node22 --format=esm --external:pg-native --banner:js=\"import{createRequire}from'module';const require=createRequire(import.meta.url);\" --outfile=swarm-server/dist/server.mjs",
     "swarm:balance": "tsx tools/swarm/balance.ts",
-    "test:swarm": "jest lib/swarm app/api/quiz/swarm"
+    "test:swarm": "jest lib/swarm app/api/quiz/swarm",
+    "swarm:e2e": "playwright test -c tests/e2e/playwright.quiz.config.ts swarm-survival --project=chromium-desktop --project=chromium-mobile"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
