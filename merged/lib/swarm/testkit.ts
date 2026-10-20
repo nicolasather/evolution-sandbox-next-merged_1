@@ -9,7 +9,7 @@ import { inHazard } from './bosses';
 export const KINDS = ['multiple_choice', 'answer_forge', 'truth_hunt', 'connection_rush', 'fill_table'];
 export const fixturePool = (n: number) => Array.from({ length: n }, (_, i) => ({ id: `rq${i + 1}`, kind: KINDS[i % KINDS.length]! }));
 export type Fixture = { room: Room; ids: string[][]; now: number };
-export function mkRoom(o: { mode?: 'coop' | 'versus'; sizes: number[]; minutes?: number; roles?: (Role | 'mix')[]; pool?: number; seed?: number; config?: Partial<Config>; start?: boolean }): Fixture {
+export function mkRoom(o: { mode?: 'coop' | 'versus'; sizes: number[]; minutes?: number; roles?: (Role | 'mix')[]; roleList?: Role[][]; pool?: number; seed?: number; config?: Partial<Config>; start?: boolean }): Fixture {
   const mode = o.mode ?? (o.sizes.length === 1 ? 'coop' : 'versus'); const now = 1_000_000;
   const cap = Math.max(...o.sizes);
   const room = createRoom({ id: `room-${o.seed ?? 1}`, code: 'ABC123', seed: o.seed ?? 1337, nowMs: now, pool: fixturePool(o.pool ?? 40), config: { mode, teamCount: o.sizes.length, teamSizeCap: cap, minutes: o.minutes ?? 5, ...(o.config ?? {}) } });
@@ -18,7 +18,7 @@ export function mkRoom(o: { mode?: 'coop' | 'versus'; sizes: number[]; minutes?:
     const row: string[] = [];
     for (let i = 0; i < n; i++) {
       const id = `p${ti + 1}_${i + 1}`; const wanted = o.roles?.[ti];
-      const role = wanted && wanted !== 'mix' ? wanted : ROLES[i % ROLES.length]!;
+      const role = o.roleList?.[ti]?.[i] ?? (wanted && wanted !== 'mix' ? wanted : ROLES[i % ROLES.length]!);
       const r = seat(room, { id, name: `Kid ${ti + 1}-${i + 1}`, desiredTeam: `t${ti + 1}`, role }, now); if (!r.ok) throw new Error(r.message); row.push(id);
     }
     ids.push(row);

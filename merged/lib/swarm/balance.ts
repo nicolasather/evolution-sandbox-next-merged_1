@@ -10,24 +10,24 @@ export type RoleDef = {
 };
 export const ROLE_DEFS: Record<Role, RoleDef> = {
   guardian: { hp: 145, speed: 74, dmg: 20, fireEvery: 17, range: 130, bulletSpeed: 300, bulletR: 7, abilityCd: 500, color: '#3C7BD9', accent: '#FFFBF1', label: 'Guardian', ability: 'Barrier Pulse', blurb: 'Tough. Shields friends and the beacon.' },
-  striker: { hp: 92, speed: 92, dmg: 15, fireEvery: 12, range: 160, bulletSpeed: 380, bulletR: 5, abilityCd: 440, color: '#F77765', accent: '#FFFBF1', label: 'Striker', ability: 'Volley', blurb: 'Fast twin bolts. Fragile, hits hard.' },
+  striker: { hp: 92, speed: 92, dmg: 10, fireEvery: 12, range: 160, bulletSpeed: 380, bulletR: 5, abilityCd: 440, color: '#F77765', accent: '#FFFBF1', label: 'Striker', ability: 'Volley', blurb: 'Fast twin bolts. Fragile, hits hard.' },
   medic: { hp: 100, speed: 84, dmg: 12, fireEvery: 14, range: 142, bulletSpeed: 340, bulletR: 5, abilityCd: 520, color: '#5CBBA0', accent: '#FFFBF1', label: 'Medic', ability: 'Mend Circle', blurb: 'Heals the team. Plus-shaped, never faces.' },
   engineer: { hp: 108, speed: 78, dmg: 15, fireEvery: 15, range: 148, bulletSpeed: 340, bulletR: 5, abilityCd: 540, color: '#FFCD55', accent: '#1D2C35', label: 'Engineer', ability: 'Pocket Turret', blurb: 'Drops a short-lived turret.' },
-  scout: { hp: 89, speed: 104, dmg: 11, fireEvery: 11, range: 150, bulletSpeed: 400, bulletR: 4, abilityCd: 400, color: '#9A6BD8', accent: '#FFFBF1', label: 'Scout', ability: 'Slip Step', blurb: 'Quickest. Dashes through danger.' },
+  scout: { hp: 89, speed: 104, dmg: 13, fireEvery: 11, range: 150, bulletSpeed: 400, bulletR: 4, abilityCd: 400, color: '#9A6BD8', accent: '#FFFBF1', label: 'Scout', ability: 'Slip Step', blurb: 'Quickest. Dashes through danger.' },
 };
 export const ROLE_PRIORITY: Role[] = ['guardian', 'medic', 'engineer', 'striker', 'scout']; // deterministic draft tie-break
 
 export const ABILITY = {
-  guardian: { radius: 96, shieldTicks: 40, absorbFracOfBase: 0.30, beaconShield: 18 },
+  guardian: { radius: 96, shieldTicks: 40, absorbFracOfBase: 0.30, beaconShield: 30 },
   striker: { bolts: 6, spreadTicks: 3 },
-  medic: { radius: 110, heal: 18, beaconRepair: 8, beaconRepairCapFrac: 0.2 },
-  engineer: { ttl: 70, fireEvery: 12, dmg: 10, range: 150, maxDist: 60 },
+  medic: { radius: 110, heal: 18, beaconRepair: 16, beaconRepairCapFrac: 0.3 },
+  engineer: { ttl: 180, fireEvery: 12, dmg: 10, range: 150, maxDist: 60 },
   scout: { dash: 84, ticks: 4, invuln: 5 },
 } as const;
 export const PASSIVE = {
-  guardianDR: 0.15, guardianBeaconDR: 0.10, guardianBeaconRange: 100,
+  guardianDR: 0.15, guardianBeaconDR: 0.30, guardianBeaconRange: 100,
   strikerRetargetCd: 0.9,
-  medicHealEvery: 140, medicHeal: 3, medicRange: 130,
+  medicHealEvery: 140, medicHeal: 3, medicRange: 130, medicBeaconMend: 4,
   scoutBurstTicks: 30, scoutBurstBonus: 0.25, scoutBurstCd: 120,
 } as const;
 

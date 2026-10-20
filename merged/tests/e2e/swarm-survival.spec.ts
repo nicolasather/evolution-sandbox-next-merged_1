@@ -25,7 +25,6 @@ async function join(ctx: BrowserContext, code: string, name: string): Promise<Pa
   const p = await ctx.newPage(); await p.goto(`/quiz/swarm/join?code=${code}`); await p.waitForLoadState('networkidle');
   await p.getByTestId('name').fill(name); await p.getByTestId('join').click(); await p.waitForURL(/\/quiz\/swarm\/[0-9a-f-]{36}$/, { timeout: 15000 }); return p;
 }
-const phaseOf = (p: Page) => p.getByTestId('phase');
 const canvasInk = (p: Page) => p.evaluate(() => { const c = document.querySelector('canvas[data-testid=arena]') as HTMLCanvasElement; const g = c.getContext('2d')!; const d = g.getImageData(0, 0, c.width, c.height).data; let nonBlank = 0; const seen = new Set<number>(); for (let i = 0; i < d.length; i += 4 * 97) { if (d[i + 3]) nonBlank++; seen.add((d[i]! >> 5) * 64 + (d[i + 1]! >> 5) * 8 + (d[i + 2]! >> 5)); } return { nonBlank, colours: seen.size }; });
 
 test.describe('online match', () => {

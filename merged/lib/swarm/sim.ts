@@ -417,6 +417,8 @@ function stepHealing(a: Arena, ctx: SimCtx) {
       let best: PlayerEnt | null = null, br = 2;
       for (const q of ps) { if (q.down || q.id === m.id || q.hp >= q.maxHp || dist(q.x - m.x, q.y - m.y) > PASSIVE.medicRange) continue; const r = q.hp / q.maxHp; if (r < br || (r === br && best && q.id < best.id)) { br = r; best = q; } }
       if (best) { best.hp = Math.min(best.maxHp, best.hp + PASSIVE.medicHeal); fx(a, 'heal', best.x, best.y, PASSIVE.medicHeal); }
+      // a Medic standing near the beacon also mends it a little (shares the same per-match repair cap as the ability)
+      if (dist(WORLD.bx - m.x, WORLD.by - m.y) <= PASSIVE.medicRange + WORLD.beaconR) { const cap = Math.round(a.beacon.max * ABILITY.medic.beaconRepairCapFrac); const r = Math.min(PASSIVE.medicBeaconMend, cap - a.beacon.repaired, a.beacon.max - a.beacon.hp); if (r > 0) { a.beacon.hp += r; a.beacon.repaired += r; fx(a, 'heal', WORLD.bx, WORLD.by, r); } }
     }
   }
   const g = up(team, 'mend_garden');
