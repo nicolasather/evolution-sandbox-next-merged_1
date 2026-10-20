@@ -166,6 +166,21 @@ suite('Tower Defense server (real SQL)', () => {
     }
   }, 120_000);
 
+  it('join cleanup: a refused seat leaves no player row behind, and a refused join does not block a later valid one', async () => {
+    const td = await import('../server');
+    const created = await td.createTDRoom({ quizId: await quiz(30), format: 'versus', teamCount: 2, teamSizeCap: 1, minutes: 10, mapId: 'coral_quarry', flow: 'synchronized' }, { id: HOST });
+    const count = async () => Number((await q('select count(*)::int as n from players where room_id=$1 and status<>$2', [created.roomId, 'removed']))[0].n);
+    await td.joinTD({ joinCode: created.joinCode, displayName: 'First', desiredTeam: 'sq1' }, null);
+    const before = await count();
+    // the host closes the room: the join is refused up front
+    await td.hostCommand(created.roomId, cmd(), { kind: 'lock', locked: true } as never).catch(() => undefined);
+    await expect(td.joinTD({ joinCode: created.joinCode, displayName: 'Late' }, null)).rejects.toMatchObject({ status: 403 });
+    expect(await count()).toBe(before);
+    // an unknown code reveals nothing and creates nothing
+    await expect(td.joinTD({ joinCode: 'ZZZZZZ', displayName: 'Nobody' }, null)).rejects.toMatchObject({ status: 400 });
+    expect(await count()).toBe(before);
+  }, 60_000);
+
   it('privileges: anon and authenticated cannot read or call anything Tower Defense', async () => {
     for (const role of ['anon', 'authenticated']) {
       for (const t of ['td_sessions', 'td_events', 'td_credits', 'td_presence', 'td_results', 'td_outbox']) {

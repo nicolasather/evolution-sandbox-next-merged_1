@@ -21,3 +21,8 @@ the contact sheet (`index.html`).
 | Core and gate | `core.svg`, `spawn.svg` | 2 |
 
 Licence: same as the repository. Authored in October 2026 for this project.
+
+## October 2026 redesign addendum
+
+Towers, enemies, bosses, props (bridges, shrubs, lanterns, fence posts, signboards, rocks, banners, gears, crystals) and the three full-board maps were redrawn
+for the storybook/toybox direction. Still original vector code (`lib/quiz/td/art.ts`, `lib/quiz/td/boardart.ts`), no external or generated imagery, no faces.

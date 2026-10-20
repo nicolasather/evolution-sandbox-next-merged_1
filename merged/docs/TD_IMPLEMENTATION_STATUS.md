@@ -194,3 +194,17 @@ The DB tests never touch a hosted database. Each test creates its own rooms in a
 - Realtime broadcast after a commit is a hint only. Polling (1 s while active) always works. The Realtime channel itself is untested, because Supabase is unreachable from here.
 - The Vercel build of this commit was not observed from here.
 - Signed-in flows (create a room, host console, projector) were not driven in a browser.
+
+## Redesign pass (2026-10-20, Stage A)
+
+Storybook-fantasy × toybox look applied to every TD surface (library card, modes card, hub, setup, join/lobby, student, host, projector, results);
+original SVG set rebuilt; full-board map art; range + lane-reach overlay; first-match Coach (7 skippable steps); `ReasonTag` (points / phase / taken pad / branch)
+and `RankingRules` (ranking order, team-size fairness, speed earns nothing).
+
+| Item | Evidence |
+|---|---|
+| Join cleanup (review finding, MEDIUM) | `joinTD` removes the player row created by `join_room_v2` whenever the seat is refused or the room stays busy (`discardUnseated`). DB test `join cleanup…` proves a refused join leaves no player row. The *race* path (seat refused after the RPC) is covered by code only; the test exercises the up-front lock and unknown-code refusals. |
+| `laneReach`, `ReasonTag`, `RankingRules`, `Coach` | `components/quiz/td/__tests__/clarity.test.tsx` (7 tests) |
+| TD suites | `lib/quiz/td` + `components/quiz/td`: 4 suites, 73 tests green; DB suite 5 tests on local Postgres 16 with migrations 001–007 |
+| Reconnect/presence in several real browsers | NOT proven here (needs a database-backed room). Unchanged logic. |
+| Screenshots | `docs/screenshots/td/{before,after}` |
