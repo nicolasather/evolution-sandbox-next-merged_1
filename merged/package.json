@@ -2,7 +2,7 @@
   "name": "evolution-sandbox",
   "version": "1.6.0",
   "private": true,
-  "description": "An explorable discovery graph — combine four raw materials into 918 discoveries, each with its evidence and an honest flag where a source is still missing.",
+  "description": "An explorable discovery graph \u2014 combine four raw materials into 918 discoveries, each with its evidence and an honest flag where a source is still missing.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -45,7 +45,11 @@
     "quiz:audit": "node scripts/quiz-release-audit.mjs --root .",
     "quiz:audit:post160": "node scripts/post160-static-audit.mjs --root .",
     "quiz:test:e2e": "playwright test -c tests/e2e/playwright.quiz.config.ts",
-    "quiz:test:db": "jest -c jest.db.config.js --runInBand lib/quiz/__tests__"
+    "quiz:test:db": "jest -c jest.db.config.js --runInBand lib/quiz/__tests__",
+    "swarm:dev": "tsx swarm-server/dev.ts",
+    "swarm:build": "esbuild swarm-server/index.ts --bundle --platform=node --target=node22 --format=esm --external:pg-native --banner:js=\"import{createRequire}from'module';const require=createRequire(import.meta.url);\" --outfile=swarm-server/dist/server.mjs",
+    "swarm:balance": "tsx tools/swarm/balance.ts",
+    "test:swarm": "jest lib/swarm app/api/quiz/swarm"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.133.0",
@@ -81,6 +85,7 @@
     "@types/react-dom": "^19.3.0",
     "@types/ws": "^8.18.2",
     "cross-env": "^10.1.0",
+    "esbuild": "^0.28.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.6",
     "husky": "^9.1.7",

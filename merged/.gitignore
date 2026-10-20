@@ -54,3 +54,4 @@ test-results/
 tests/e2e/playwright-report/
 playwright-report/
 reports/
+swarm-server/dist/

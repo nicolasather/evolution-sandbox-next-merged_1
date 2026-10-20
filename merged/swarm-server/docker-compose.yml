@@ -1,0 +1,17 @@
+# Local/staging composition: worker + a throw-away Postgres with the repository's migrations. NOT a production Supabase replacement.
+#   docker compose -f swarm-server/docker-compose.yml up --build
+services:
+  worker:
+    build: { context: .., dockerfile: swarm-server/Dockerfile }
+    environment:
+      SWARM_SECRET: ${SWARM_SECRET:?set SWARM_SECRET (32+ chars)}
+      DATABASE_URL: postgres://postgres:postgres@db:5432/swarm
+      SWARM_ALLOWED_ORIGINS: ${SWARM_ALLOWED_ORIGINS:-http://localhost:3000}
+      SWARM_MAX_ROOMS: "40"
+    ports: ["8787:8787"]
+    depends_on: { db: { condition: service_healthy } }
+    restart: unless-stopped
+  db:
+    image: postgres:16
+    environment: { POSTGRES_PASSWORD: postgres, POSTGRES_DB: swarm }
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U postgres"], interval: 5s, timeout: 3s, retries: 10 }
