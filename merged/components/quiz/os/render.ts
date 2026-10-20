@@ -4,14 +4,16 @@ import type { Cell, Hazard, Pulse, Role } from '@/lib/quiz/os/domain';
 import { TILE } from '@/lib/quiz/os/balance';
 import { ck, hazardPhase, unck, type CourseIndex } from '@/lib/quiz/os/course';
 import { C, TEAM_COLORS } from './art';
+import { BIOME_KITS, drawProp, hash2 } from '../art/props';
 
 export type Dot = { id: string; x: number; y: number; role: Role; team: number; stunned: boolean; goal: boolean; mine: boolean; mate: boolean; invincible?: boolean; hop?: boolean; label?: string };
 export type Scene = {
   idx: CourseIndex; tick: number; dots: Dot[]; width: number; height: number; mode: 'follow' | 'overview';
   center: { x: number; y: number } | null; gate: number; pulses: readonly Pulse[]; peek: boolean; frozen: boolean; reduced: boolean; lowFx: boolean;
   ghosts?: Cell[]; sockets: boolean; label?: string;
+  /** seconds of ambient animation (sway, flicker). Visual only — never read by gameplay. 0 when motion is reduced. */
+  time?: number;
 };
-const BIOME = ['#E3EDD9', '#E5E1EE', '#DDEBF0', '#EEE6D2'];
 const inkW = 3;
 
 function layout(sc: Scene) {
@@ -27,20 +29,40 @@ function layout(sc: Scene) {
 export function drawWorld(g: CanvasRenderingContext2D, sc: Scene) {
   const { idx } = sc; const course = idx.course; const { t, ox, oy } = layout(sc);
   g.save(); g.clearRect(0, 0, sc.width, sc.height);
-  g.fillStyle = BIOME[course.biomeIndex % BIOME.length] ?? BIOME[0]; g.fillRect(0, 0, sc.width, sc.height);
   const X = (tx: number) => ox + tx * t; const Y = (ty: number) => oy + ty * t;
   const vis = (tx: number, ty: number) => X(tx) > -t && X(tx) < sc.width && Y(ty) > -t && Y(ty) < sc.height;
-  // ground texture: mint squares outside the lane (the lane stays quiet so hazards read first)
-  if (!sc.lowFx) { g.fillStyle = 'rgba(109,215,176,.55)'; const [cw, ch] = course.size; for (let y = -1; y <= ch; y++) for (let x = -1; x <= cw; x++) if ((x * 7 + y * 13) % 5 === 0 && !idx.cells.has(ck(x, y)) && vis(x, y)) g.fillRect(X(x) + t * 0.2, Y(y) + t * 0.2, t * 0.6, t * 0.6); }
-  // the lane
-  g.fillStyle = C.paper;
-  for (const k of idx.cells) { const [x, y] = unck(k); if (vis(x, y)) g.fillRect(X(x) - 0.5, Y(y) - 0.5, t + 1, t + 1); }
+  const time = sc.reduced ? 0 : sc.time ?? 0; const kit = BIOME_KITS[course.biomeIndex % 4] ?? BIOME_KITS[0];
+  // ground: two soft tones in a slow checker, then grass tufts / sparkles; the lane itself stays quiet so hazards read first
+  g.fillStyle = kit.ground; g.fillRect(0, 0, sc.width, sc.height);
+  const x0 = Math.floor(-ox / t) - 1; const x1 = Math.ceil((sc.width - ox) / t) + 1; const y0 = Math.floor(-oy / t) - 1; const y1 = Math.ceil((sc.height - oy) / t) + 1;
+  const isLane = (x: number, y: number) => idx.cells.has(ck(x, y)) || idx.sockets.has(ck(x, y));
+  if (!sc.lowFx) {
+    g.fillStyle = kit.groundDark; for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) if ((x + y) % 2 === 0 && !isLane(x, y)) g.fillRect(X(x), Y(y), t + 0.5, t + 0.5);
+    g.strokeStyle = kit.accent; g.lineWidth = 2; g.lineCap = 'round';
+    for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) { if (isLane(x, y) || hash2(x, y, 3) > 0.34) continue; const bx = X(x) + hash2(x, y, 4) * t; const by = Y(y) + hash2(x, y, 5) * t; const sw = Math.sin(time * 1.8 + x) * t * 0.04; g.beginPath(); g.moveTo(bx - t * 0.06, by); g.lineTo(bx - t * 0.08 + sw, by - t * 0.16); g.moveTo(bx, by); g.lineTo(bx + sw, by - t * 0.2); g.moveTo(bx + t * 0.06, by); g.lineTo(bx + t * 0.08 + sw, by - t * 0.15); g.stroke(); }
+  }
+  // lane: a lifted paper strip (offset shadow first, then the paper with a faint tile checker)
+  g.fillStyle = 'rgba(23,37,58,.2)'; for (const k of idx.cells) { const [x, y] = unck(k); if (vis(x, y)) g.fillRect(X(x) + t * 0.07, Y(y) + t * 0.1, t, t); }
+  g.fillStyle = C.paper; for (const k of idx.cells) { const [x, y] = unck(k); if (vis(x, y)) g.fillRect(X(x) - 0.5, Y(y) - 0.5, t + 1, t + 1); }
+  if (!sc.lowFx) { g.fillStyle = 'rgba(234,185,121,.2)'; for (const k of idx.cells) { const [x, y] = unck(k); if (vis(x, y) && (x + y) % 2 === 0) g.fillRect(X(x), Y(y), t, t); } }
   // lane edge: a 3 px ink line wherever a neighbour is not walkable
   g.strokeStyle = C.ink; g.lineWidth = inkW; g.lineCap = 'round'; g.beginPath();
   for (const k of idx.cells) { const [x, y] = unck(k); if (!vis(x, y)) continue; const open = (a: number, b: number) => idx.cells.has(ck(a, b)) || (sc.sockets && idx.sockets.has(ck(a, b)));
     if (!open(x, y - 1)) { g.moveTo(X(x), Y(y)); g.lineTo(X(x + 1), Y(y)); } if (!open(x, y + 1)) { g.moveTo(X(x), Y(y + 1)); g.lineTo(X(x + 1), Y(y + 1)); }
     if (!open(x - 1, y)) { g.moveTo(X(x), Y(y)); g.lineTo(X(x), Y(y + 1)); } if (!open(x + 1, y)) { g.moveTo(X(x + 1), Y(y)); g.lineTo(X(x + 1), Y(y + 1)); } }
   g.stroke();
+  // scenery: deterministic props around the lane (never on it, never covering the tiles north of it), drawn back to front
+  if (!sc.lowFx) {
+    const props: { x: number; y: number; kind: (typeof kit.edge)[number]; k: number }[] = [];
+    const nearLane = (x: number, y: number) => { for (let dy = -3; dy <= 3; dy++) for (let dx = -3; dx <= 3; dx++) if (idx.cells.has(ck(x + dx, y + dy))) return true; return false; };
+    for (let y = y0; y <= y1 + 1; y++) for (let x = x0; x <= x1; x++) {
+      if (isLane(x, y) || isLane(x, y - 1) || isLane(x, y - 2) || isLane(x, y + 0)) continue; const r = hash2(x, y, 11); const near = nearLane(x, y);
+      if (near ? r > 0.2 : r > 0.1) continue; const pool = near ? kit.edge : [...kit.edge, ...kit.far]; const kind = pool[Math.floor(hash2(x, y, 12) * pool.length)];
+      props.push({ x: x + 0.2 + hash2(x, y, 13) * 0.6, y: y + 0.6 + hash2(x, y, 14) * 0.35, kind, k: hash2(x, y, 15) });
+    }
+    props.sort((a, b) => a.y - b.y);
+    for (const p of props) { const px = X(p.x); const py = Y(p.y); if (px < -t || px > sc.width + t || py < -t * 0.5 || py > sc.height + t * 1.6) continue; drawProp(g, p.kind, px, py, t * (0.95 + p.k * 0.35), time, p.k, Math.floor(p.k * 8)); }
+  }
   // route peek / survey pulse: a dotted lemon line along the safest lane
   const survey = sc.pulses.some((p) => p.kind === 'survey' && sc.tick >= p.from && sc.tick < p.to);
   if (sc.peek || survey) { g.strokeStyle = C.lemon; g.lineWidth = 6; g.setLineDash([2, 10]); g.beginPath(); course.expandedSafePath.forEach(([x, y], i) => { const px = X(x + 0.5), py = Y(y + 0.5); if (i) g.lineTo(px, py); else g.moveTo(px, py); }); g.stroke(); g.setLineDash([]); }
@@ -48,7 +70,7 @@ export function drawWorld(g: CanvasRenderingContext2D, sc: Scene) {
   if (sc.sockets) for (const k of idx.sockets) { const [x, y] = unck(k); g.fillStyle = 'rgba(247,217,107,.7)'; g.fillRect(X(x), Y(y), t, t); g.strokeStyle = C.ink; g.lineWidth = 2; g.setLineDash([6, 5]); g.strokeRect(X(x) + 1, Y(y) + 1, t - 2, t - 2); g.setLineDash([]); }
   // start, checkpoints and goal
   const tag = (c: Cell, text: string, fill: string) => { const px = X(c[0]) + t / 2, py = Y(c[1]) + t / 2; if (!vis(c[0], c[1])) return; g.fillStyle = fill; g.strokeStyle = C.ink; g.lineWidth = inkW; const w = Math.max(t * 0.9, 30); roundRect(g, px - w / 2, py - t * 0.22, w, t * 0.44, 7); g.fill(); g.stroke(); g.fillStyle = C.ink; g.font = `800 ${Math.max(9, t * 0.2)}px system-ui, sans-serif`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(text, px, py + 1); };
-  tag(course.start, 'START', C.mint); course.checkpoints.forEach((c, i) => { g.fillStyle = 'rgba(109,215,176,.45)'; g.fillRect(X(c[0]), Y(c[1]), t, t); flag(g, X(c[0]) + t / 2, Y(c[1]) + t / 2, t, i + 1); }); tag(course.goal, 'GOAL', C.lemon);
+  tag(course.start, 'START', C.mint); course.checkpoints.forEach((c, i) => { g.fillStyle = 'rgba(109,215,176,.45)'; g.fillRect(X(c[0]), Y(c[1]), t, t); flag(g, X(c[0]) + t / 2, Y(c[1]) + t / 2, t, i + 1, time); }); tag(course.goal, 'GOAL', C.lemon);
   // gates (a closed chapter limit is a wall): a striped ink bar on the first tile beyond the limit
   if (Number.isFinite(sc.gate) && sc.gate < idx.totalDist) for (const [k, d] of idx.dist) if (d === sc.gate + 1) { const [x, y] = unck(k); if (!vis(x, y)) continue; g.fillStyle = C.lemon; g.fillRect(X(x), Y(y), t, t); g.strokeStyle = C.ink; g.lineWidth = inkW; g.beginPath(); for (let i = -t; i < t * 2; i += t / 3) { g.moveTo(X(x) + i, Y(y) + t); g.lineTo(X(x) + i + t, Y(y)); } g.save(); g.beginPath(); g.rect(X(x), Y(y), t, t); g.clip(); g.stroke(); g.restore(); g.strokeRect(X(x), Y(y), t, t); }
   // hazards
@@ -62,9 +84,10 @@ export function drawWorld(g: CanvasRenderingContext2D, sc: Scene) {
   g.restore();
 }
 function roundRect(g: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
-function flag(g: CanvasRenderingContext2D, cx: number, cy: number, t: number, n: number) {
+function flag(g: CanvasRenderingContext2D, cx: number, cy: number, t: number, n: number, time = 0) {
+  const w = Math.sin(time * 4 + n) * t * 0.05;
   g.strokeStyle = C.ink; g.lineWidth = inkW; g.beginPath(); g.moveTo(cx - t * 0.15, cy + t * 0.3); g.lineTo(cx - t * 0.15, cy - t * 0.32); g.stroke();
-  g.fillStyle = C.mint; g.beginPath(); g.moveTo(cx - t * 0.15, cy - t * 0.32); g.lineTo(cx + t * 0.25, cy - t * 0.18); g.lineTo(cx - t * 0.15, cy - t * 0.04); g.closePath(); g.fill(); g.stroke();
+  g.fillStyle = C.mint; g.beginPath(); g.moveTo(cx - t * 0.15, cy - t * 0.32); g.quadraticCurveTo(cx + t * 0.1, cy - t * 0.3 + w, cx + t * 0.25 + w, cy - t * 0.18); g.quadraticCurveTo(cx + t * 0.1, cy - t * 0.06 - w, cx - t * 0.15, cy - t * 0.04); g.closePath(); g.fill(); g.stroke();
   g.fillStyle = C.ink; g.font = `800 ${Math.max(9, t * 0.22)}px system-ui, sans-serif`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(n), cx + t * 0.12, cy + t * 0.28);
 }
 /** state 0 idle, 1 warning (dashed outline + "!"), 2 active (solid, filled). The picture itself differs per kind, so state is readable without colour. */
@@ -91,10 +114,10 @@ function drawHazard(g: CanvasRenderingContext2D, h: Hazard, state: 0 | 1 | 2, px
   g.restore();
 }
 function drawDot(g: CanvasRenderingContext2D, d: Dot, px: number, py: number, t: number, sc: Scene) {
-  const r = t * 0.3; const lift = d.hop ? t * 0.18 : 0; const blink = d.invincible && !sc.reduced && Math.floor(sc.tick / 2) % 2 === 0;
+  const r = t * 0.3; const phase = (d.x + d.y) / 900; const bob = sc.reduced || d.stunned ? 0 : Math.abs(Math.sin(sc.tick / 2.2 + phase)) * t * 0.05; const lift = (d.hop ? t * 0.18 : 0) + bob; const blink = d.invincible && !sc.reduced && Math.floor(sc.tick / 2) % 2 === 0;
   g.save(); g.globalAlpha = blink ? 0.45 : d.mine || d.mate ? 1 : 0.8;
   g.fillStyle = 'rgba(23,37,58,.22)'; g.beginPath(); g.ellipse(px, py + r * 0.9, r * 0.9, r * 0.32, 0, 0, 7); g.fill();
-  g.translate(px, py - lift); g.lineJoin = 'round'; g.strokeStyle = C.ink; g.lineWidth = d.mine ? 4 : inkW;
+  g.translate(px, py - lift); if (d.hop && !sc.reduced) g.scale(0.92, 1.1); else if (!d.stunned && !sc.reduced) g.scale(1 + bob / t, 1 - bob / t); g.lineJoin = 'round'; g.strokeStyle = C.ink; g.lineWidth = d.mine ? 4 : inkW;
   const fill = d.stunned ? '#B8C0CB' : d.goal ? C.lemon : roleColor(d.role);
   g.fillStyle = fill;
   switch (d.role) {

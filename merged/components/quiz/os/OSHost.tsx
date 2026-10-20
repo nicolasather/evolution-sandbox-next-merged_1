@@ -12,6 +12,7 @@ import { usePrefs } from './prefs';
 import { useOSRemote } from './useOS';
 import { api } from '@/lib/quiz/client';
 import { MAP_INFO } from '@/lib/quiz/os/course';
+import { PERK_COPY } from '@/lib/quiz/os/balance';
 import type { HostAction } from '@/lib/quiz/os/domain';
 
 export default function OSHost({ roomId }: { roomId: string }) {
@@ -47,6 +48,15 @@ export default function OSHost({ roomId }: { roomId: string }) {
         {snap.paused && <p className="os-banner" role="status">Game paused. Students and the projector show a pause banner until you resume.</p>}
         {screen && <p className="os-note">Projector link opened in a new tab. Opening a new one switches the old link off.</p>}
       </section>
+      {snap.approvals.length > 0 && (
+        <section className="os-card os-approvals" aria-label="Purchase requests" data-testid="os-approvals">
+          <h2>Purchase requests ({snap.approvals.length})</h2>
+          <p className="os-note">Your rule: ask before any purchase of {snap.approvalAbove} points or more. Points are only spent if you approve. Requests close when the shop closes.</p>
+          <ul>{snap.approvals.map((a) => (
+            <li key={a.id}><span><b>{a.seatName}</b> ({snap.teams.find((t) => t.id === a.teamId)?.name}) wants <b>{PERK_COPY[a.perk].name}</b> for {a.price} points{left !== null ? ` · shop closes in ${fmt(left)}` : ''}</span>
+              <span className="os-row"><button type="button" className="os-btn small primary" disabled={client.busy} onClick={() => void run({ kind: 'approve', approvalId: a.id })}>Approve</button><button type="button" className="os-btn small" disabled={client.busy} onClick={() => void run({ kind: 'deny', approvalId: a.id })}>Not now</button></span></li>))}</ul>
+        </section>
+      )}
       {['barrier', 'reveal'].includes(snap.phase) && snap.question && (
         <section className="os-card"><h2>Question {Math.min(snap.chapters, snap.chapter + 1)} of {snap.chapters}</h2><p className="os-prompt">{String(snap.question.prompt ?? '')}</p>
           {snap.barrier && <p className="os-meter" aria-label={`${snap.barrier.answered} of ${snap.barrier.eligible} answered`}><span style={{ width: `${snap.barrier.eligible ? (snap.barrier.answered / snap.barrier.eligible) * 100 : 0}%` }} />{snap.barrier.answered} / {snap.barrier.eligible} answered</p>}

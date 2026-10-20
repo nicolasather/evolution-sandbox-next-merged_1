@@ -86,14 +86,29 @@ export function TouchControls({ client, role, disabled }: { client: OSClient; ro
 export function KeyHelp() { return <p className="os-keys" aria-label="Keyboard controls"><kbd>←↑↓→</kbd> or <kbd>WASD</kbd> move · <kbd>Space</kbd> hop · <kbd>E</kbd> ability</p>; }
 
 // ── lobby ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-export function RolePicker({ value, onPick, busy }: { value: Role | null; onPick: (r: Role) => void; busy: boolean }) {
+/** Recommended role sets by squad size (OS-F05). One student gets ONE balanced solo kit; larger squads see every role with the ones that complement their size marked. */
+export const SOLO_ROLE: Role = 'trailblazer';
+export const ROLE_SETS: Record<number, readonly Role[]> = { 1: [SOLO_ROLE], 2: ['trailblazer', 'medic'], 3: ['trailblazer', 'medic', 'shieldbearer'], 4: ['trailblazer', 'medic', 'shieldbearer', 'bridgewright'], 5: ROLES };
+export function RolePicker({ value, onPick, busy, squadSize = 5 }: { value: Role | null; onPick: (r: Role) => void; busy: boolean; squadSize?: number }) {
+  const n = Math.max(1, Math.min(5, squadSize)); const rec = ROLE_SETS[n];
+  if (n === 1) {
+    return (
+      <fieldset className="os-roles solo"><legend>YOUR RUNNER <small>a balanced solo kit — no choices needed</small></legend>
+        <div className="os-rolegrid one">
+          <div className="os-role" data-role={SOLO_ROLE} aria-current="true"><RoleIcon role={SOLO_ROLE} size={64} /><b>{ROLE_INFO[SOLO_ROLE].name}</b><small>{ROLE_INFO[SOLO_ROLE].ability}</small><small className="desc">{ROLE_INFO[SOLO_ROLE].short}</small><span className="os-choose">✓ Your kit</span></div>
+        </div>
+        <p className="os-note">Teammates unlock more roles: with 2 or more students in a squad you can pick from {ROLES.length - 1} team roles that cover for each other.</p>
+        {value !== SOLO_ROLE && <button type="button" className="os-btn small" disabled={busy} onClick={() => onPick(SOLO_ROLE)}>Use the solo kit</button>}
+      </fieldset>
+    );
+  }
   return (
-    <fieldset className="os-roles"><legend>CHOOSE A ROLE <small>every role can finish the course alone</small></legend>
+    <fieldset className="os-roles"><legend>CHOOSE A ROLE <small>{n} in your squad: we suggest {rec.map((r) => ROLE_INFO[r].name).join(', ')}</small></legend>
       <div className="os-rolegrid">
         {ROLES.map((r) => (
-          <button key={r} type="button" className="os-role" data-role={r} aria-pressed={value === r} disabled={busy} onClick={() => onPick(r)}>
+          <button key={r} type="button" className="os-role" data-role={r} data-rec={rec.includes(r) || undefined} aria-pressed={value === r} disabled={busy} onClick={() => onPick(r)}>
             <RoleIcon role={r} size={56} /><b>{ROLE_INFO[r].name}</b><small>{ROLE_INFO[r].ability}</small><small className="desc">{ROLE_INFO[r].short}</small>
-            <span className="os-choose">{value === r ? '✓ Chosen' : 'Choose role'}</span>
+            <span className="os-choose">{value === r ? '✓ Chosen' : rec.includes(r) ? 'Suggested for your squad' : 'Choose role'}</span>
           </button>
         ))}
       </div>
@@ -182,10 +197,11 @@ export function RevealPanel({ snap }: { snap: OSSnap }) {
 }
 
 // ── shop ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-const REASONS: Record<string, string> = { INSUFFICIENT_POINTS: 'Not enough points', PERK_LIMIT: 'Limit reached', WRONG_PHASE: 'Shop is closed', STALE_REVISION: 'A teammate just spent points' };
+const REASONS: Record<string, string> = { APPROVAL_PENDING: 'Waiting for your teacher to answer your last request',  INSUFFICIENT_POINTS: 'Not enough points', PERK_LIMIT: 'Limit reached', WRONG_PHASE: 'Shop is closed', STALE_REVISION: 'A teammate just spent points' };
 export function Shop({ snap, client }: { snap: OSSnap; client: OSClient }) {
   const team = snap.teams.find((t) => t.id === snap.you?.teamId); const points = team?.points ?? 0; const owned = snap.perks ?? {}; const [msg, setMsg] = useState('');
-  const buy = async (perk: Perk) => { const r = await client.act({ kind: 'purchase', perk }); setMsg(r.ok ? `${PERK_COPY[perk].name} bought for the whole squad.` : (REASONS[r.code ?? ''] ?? r.message ?? 'That did not work.')); };
+  const waiting = snap.approvals ?? []; const askAt = snap.approvalAbove ?? 0;
+  const buy = async (perk: Perk) => { const r = await client.act({ kind: 'purchase', perk }); setMsg(r.ok ? (r.note === 'approval_requested' ? `Asked your teacher about ${PERK_COPY[perk].name}. Points are only spent if they say yes.` : `${PERK_COPY[perk].name} bought for the whole squad.`) : (REASONS[r.code ?? ''] ?? r.message ?? 'That did not work.')); };
   return (
     <section className="os-shop" aria-label="Checkpoint shop" data-testid="os-shop">
       <header><h2>CHECKPOINT SHOP</h2><p className="os-points"><b>{points}</b> points to spend — shared by your squad</p></header>
@@ -196,10 +212,11 @@ export function Shop({ snap, client }: { snap: OSSnap; client: OSClient }) {
               <span className="os-perkicon" aria-hidden="true">{PERK_ICON[p]}</span>
               <span className="body"><b>{PERK_COPY[p].name}</b><small>{PERK_COPY[p].blurb}</small><small>Owned {n} of {PERK_LIMIT[p]}</small></span>
               <span className="cost">{PERKS[p]} pts</span>
-              <button type="button" className="os-btn small primary" disabled={client.busy || !!why} onClick={() => void buy(p)} aria-describedby={`why-${p}`}>Buy</button>
+              <button type="button" className="os-btn small primary" disabled={client.busy || !!why} onClick={() => void buy(p)} aria-describedby={`why-${p}`}>{askAt > 0 && PERKS[p] >= askAt ? 'Ask teacher' : 'Buy'}</button>
               <span id={`why-${p}`} className={`os-tag ${full ? 'taken' : poor ? 'points' : 'ok'}`}>{why ?? 'Available'}</span>
             </li>); })}
       </ul>
+      {waiting.length > 0 && <ul className="os-waiting" aria-label="Requests waiting for the teacher">{waiting.map((w) => <li key={w.id}>{w.seatName || 'A teammate'} asked for <b>{PERK_COPY[w.perk].name}</b> ({w.price} pts) — waiting for the teacher</li>)}</ul>}
       {msg && <p className="os-note" role="status">{msg}</p>}
       <p className="os-note">Points are the only currency. Spending is final and the same for every squadmate.</p>
     </section>

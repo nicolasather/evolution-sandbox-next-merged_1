@@ -38,16 +38,18 @@ export default function OSGame({ client, practiceBack }: { client: OSClient; pra
   const stunned = (() => { const f = client.frame(); return !!f?.me && f.me.stunUntil > f.me.tick; })();
   return (
     <div className={`os os-game ${prefs.contrast ? 'contrast' : ''} ${prefs.large ? 'large' : ''} ${reduced ? 'calm' : ''}`} data-phase={phase} data-testid="os-game">
-      <header className="os-top">
-        <div className="os-title"><b>Obstacle Survival</b><span className="os-chip"><RoleIcon role={you.role} size={20} /> {ROLE_INFO[you.role].name}</span><span className="os-chip squad" style={{ borderColor: TEAM_COLORS[mySquad % 4] }}>{TEAM_MARK[mySquad % 4]} {team?.name ?? 'Squad'}</span></div>
-        <div className="os-row"><button type="button" className="os-btn small" onClick={() => setCoach(true)}>How to play</button><button type="button" className="os-btn small" onClick={() => setSettings(true)}>Display &amp; sound</button>{practiceBack && <Link className="os-btn small ghost" href="/quiz/os">Leave practice</Link>}</div>
+      <header className={`os-top ${lobby ? '' : 'compact'}`}>
+        <div className="os-title">{lobby && <b>Obstacle Survival</b>}<span className="os-chip"><RoleIcon role={you.role} size={20} /> {ROLE_INFO[you.role].name}</span><span className="os-chip squad" style={{ borderColor: TEAM_COLORS[mySquad % 4] }}>{TEAM_MARK[mySquad % 4]} {team?.name ?? 'Squad'}</span></div>
+        <details className="os-menu"><summary aria-label="Game menu">Menu</summary>
+          <div className="os-menupanel"><button type="button" className="os-btn small" onClick={() => setCoach(true)}>How to play</button><button type="button" className="os-btn small" onClick={() => setSettings(true)}>Display &amp; sound</button>{practiceBack && <Link className="os-btn small ghost" href="/quiz/os">Leave practice</Link>}</div>
+        </details>
       </header>
       <ConnBadge conn={client.conn} />
       {lobby ? (
         <section className="os-card os-lobby" data-testid="os-lobby">
           <h1>Get ready, {snap.seats.find((s) => s.id === you.seatId)?.name ?? 'runner'}</h1>
           <p className="os-note">Room code <b data-testid="os-code">{snap.room.code}</b>. The teacher starts the match when everyone is ready.</p>
-          <RolePicker value={you.role} busy={client.busy} onPick={(r) => void client.act({ kind: 'role', role: r })} />
+          <RolePicker squadSize={snap.seats.filter((x) => x.teamId === you.teamId).length} value={you.role} busy={client.busy} onPick={(r) => void client.act({ kind: 'role', role: r })} />
           <ul className="os-roster" aria-label="Your squad">{snap.seats.filter((s) => s.teamId === you.teamId).map((s) => <li key={s.id}><RoleIcon role={s.role} size={26} /><b>{s.name}</b>{s.id === you.seatId ? ' (you)' : ''}<span>{ROLE_INFO[s.role].name}</span><span className={s.ready ? 'ok' : ''}>{s.ready ? '✓ ready' : 'not ready'}</span></li>)}</ul>
           <div className="os-row"><button type="button" className="os-btn primary big" aria-pressed={you.ready} disabled={client.busy} onClick={() => void client.act({ kind: 'ready', ready: !you.ready })}>{you.ready ? '✓ Ready — tap to undo' : 'I’m ready'}</button><button type="button" className="os-btn" onClick={() => setCoach(true)}>How to play</button></div>
           <HazardLegend />

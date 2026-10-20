@@ -85,7 +85,7 @@ export default function OSSetup({ quizId, quizTitle, questionCount, signedIn }: 
             <label className="os-check"><input type="checkbox" checked={readAloud} onChange={(e) => setRead(e.target.checked)} />Read-aloud time: adds reading time to every question</label>
             <label className="os-check"><input type="checkbox" checked={hideNames} onChange={(e) => setHide(e.target.checked)} />Hide student names on the projector</label>
             <label className="os-check"><input type="checkbox" checked={requireApproval} onChange={(e) => setReq(e.target.checked)} />Approve each student before they join</label>
-            <label className="os-field">Ask me before purchases above<select value={approvalAbove} onChange={(e) => setApproval(Number(e.target.value))}><option value={0}>Never ask</option><option value={100}>100 points</option><option value={150}>150 points</option></select></label>
+            <label className="os-field">Ask me before purchases of<select value={approvalAbove} onChange={(e) => setApproval(Number(e.target.value))}><option value={0}>Never ask</option><option value={100}>100 points or more</option><option value={150}>150 points or more</option></select></label>
           </div>
         </li>
       </ol>

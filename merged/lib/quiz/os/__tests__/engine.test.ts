@@ -279,12 +279,12 @@ describe('Game 3 corrective pass (OS-F01..F04)', () => {
     expect(host(r.state, { kind: 'kick', seatId: 'aaaa-aaaa' }, T0 + 1).s.approvals).toEqual([]);
   });
   test('OS-F04 the reducer ignores the wall clock: identical inputs give byte-identical output under different Date.now()', () => {
-    const { state } = started(2); const eff = [{ kind: 'plank' as const, tick: 400, at: [2, 2] as [number, number] }, { kind: 'surge' as const, tick: 10, at: [1, 1] as [number, number] }];
+    const { state } = started(2); const eff = [{ kind: 'plank' as const, tick: 400, at: [2, 2] as [number, number] }, { kind: 'survey' as const, tick: 10, at: [1, 1] as [number, number] }];
     const spy = jest.spyOn(Date, 'now'); try {
       spy.mockReturnValue(1); const a = JSON.stringify(addTeamEffects(state, ids(2)[0], eff, 900));
       spy.mockReturnValue(9_999_999_999_999); const b = JSON.stringify(addTeamEffects(state, ids(2)[0], eff, 900)); expect(b).toBe(a);
     } finally { spy.mockRestore(); }
     const kept = addTeamEffects(state, ids(2)[0], eff, 900).teams[0].pulses; expect(kept.map((p) => p.kind)).toEqual(['plank']); // the old window (tick 10..90) is below 900-800
-    expect(addTeamEffects(state, ids(2)[0], eff, 200).teams[0].pulses.map((p) => p.kind)).toEqual(['plank', 'surge']); // nothing still active is dropped
+    expect(addTeamEffects(state, ids(2)[0], eff, 200).teams[0].pulses.map((p) => p.kind)).toEqual(['plank', 'survey']); // nothing still active is dropped
   });
 });
