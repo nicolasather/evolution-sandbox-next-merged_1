@@ -30,8 +30,10 @@ function WavePanel({ conn }: { conn: SwarmConnection }) {
       {boss && m.phase === 'boss_wave' && <div className="sw-boss"><h3>Boss: {BOSS_DEFS[boss].label}</h3><p>{BOSS_DEFS[boss].summary}</p></div>}
       <h3>Your team</h3>
       <ul className="sw-roster">{roster.map((r) => { const e = p[r.id]; const down = e ? !!(e[5] & 2) : false; return <li key={r.id}><RoleBadge role={r.role} size={28} /><span>{r.name}{r.id === me?.id ? ' (you)' : ''}</span><em className={down ? 'off' : r.on ? 'on' : 'off'}>{down ? 'down — stay close to revive' : r.on ? (e ? `${e[2]} / ${e[3]} HP` : 'online') : 'offline'}</em></li>; })}</ul>
-      <p className="sw-note">Move: WASD, arrows or the stick. Ability: Space or the button. You shoot on your own.</p>
-      {me?.role && <p className="sw-note">You are the <b>{ROLE_DEFS[me.role as (typeof ROLES)[number]].label}</b>: {ROLE_DEFS[me.role as (typeof ROLES)[number]].blurb}</p>}
+      <details className="sw-how"><summary>Controls and your role</summary>
+        <p className="sw-note">Move: WASD, arrows or the stick. Ability: Space or the button. You shoot on your own. The map is bigger than your screen: follow the gold arrow back to the beacon, and use the minimap (top left).</p>
+        {me?.role && <p className="sw-note">You are the <b>{ROLE_DEFS[me.role as (typeof ROLES)[number]].label}</b>: {ROLE_DEFS[me.role as (typeof ROLES)[number]].blurb}</p>}
+      </details>
     </section>
   );
 }

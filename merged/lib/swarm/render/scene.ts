@@ -1,6 +1,8 @@
 /** Composes one frame of the arena from the buffered authoritative snapshots. Drawing only: nothing here changes game state. */
 import { ENEMY_KINDS, BOSS_KINDS, ROLES, type Role, type EnemyKind, type BossKind, type MapId } from '../domain';
-import { ROLE_DEFS, WORLD, BOSS_DEFS } from '../balance';
+import { ROLE_DEFS, WORLD, VIEW, BOSS_DEFS } from '../balance';
+import { MAPS, regionAt } from '../maps';
+import { drawLandmark, drawAmbient } from './landmarks';
 import { SnapshotBuffer, sampleGroup } from './interp';
 import { renderBackdrop } from './backdrop';
 import { drawRole, drawEnemy, drawBoss, drawBeacon, drawTurret, drawDrone, drawBullet, ROLE_SCALE, type RoleState } from './sprites';
@@ -14,32 +16,47 @@ export type RosterRow = { id: string; name: string; role: Role; on: boolean };
 export type ArenaInfo = { beacon: { hp: number; max: number; shieldOn: boolean }; status: string };
 export type FrameInput = {
   mapId: MapId; clientMs: number; buffer: SnapshotBuffer; roster: RosterRow[]; meId?: string; arena?: ArenaInfo; fx: FxLayer; hc: boolean; reduced: boolean;
-  selfInput?: { x: number; y: number }; interpDelayMs?: number; showNames?: boolean; paused?: boolean; phone?: boolean;
+  selfInput?: { x: number; y: number }; /** show the whole arena (host / projector / teacher) instead of following one avatar */ overview?: boolean; interpDelayMs?: number; showNames?: boolean; paused?: boolean; phone?: boolean;
 };
 type Track = { x: number; y: number; hp: number; hit: number; fire: number; moving: boolean; seen: number };
 
 export class SceneRenderer {
   private ctx: CanvasRenderingContext2D; private back: { key: string; canvas: HTMLCanvasElement } | null = null; private tracks = new Map<string, Track>(); private seenBullets = new Set<number>(); private lastT = 0;
-  scale = 1; ox = 0; oy = 0; cssW = 0; cssH = 0;
+  scale = 1; ox = 0; oy = 0; cssW = 0; cssH = 0; private base = 1; private fit = 1; private cx: number = WORLD.bx; private cy: number = WORLD.by; private camInit = false; private regionId = ''; private regionAge = 99; private regionName = '';
+  /** the world rectangle currently on screen (for the minimap and culling) */
+  view: { x0: number; y0: number; x1: number; y1: number } = { x0: 0, y0: 0, x1: WORLD.w, y1: WORLD.h };
   constructor(public canvas: HTMLCanvasElement) { const c = canvas.getContext('2d'); if (!c) throw new Error('Canvas is not available'); this.ctx = c; }
-  /** Fit the 960×600 logical world into the element (letterboxed), sharp on high-DPI screens. */
+  /** Size the canvas sharply for high-DPI screens; the camera shows a 960×600-sized window of the 1920×1200 world (or all of it in overview). */
   resize() {
     const r = this.canvas.getBoundingClientRect(); const dpr = Math.min(3, typeof window === 'undefined' ? 1 : window.devicePixelRatio || 1); const w = Math.max(2, Math.round(r.width * dpr)), h = Math.max(2, Math.round(r.height * dpr));
     if (this.canvas.width !== w || this.canvas.height !== h) { this.canvas.width = w; this.canvas.height = h; }
-    this.cssW = r.width; this.cssH = r.height; this.scale = Math.min(w / WORLD.w, h / WORLD.h); this.ox = (w - WORLD.w * this.scale) / 2; this.oy = (h - WORLD.h * this.scale) / 2;
+    this.cssW = r.width; this.cssH = r.height; this.base = Math.min(w / VIEW.w, h / VIEW.h); this.fit = Math.min(w / WORLD.w, h / WORLD.h); this.scale = this.base; this.ox = 0; this.oy = 0;
   }
   toWorld(clientX: number, clientY: number): [number, number] { const r = this.canvas.getBoundingClientRect(); const dpr = this.canvas.width / Math.max(1, r.width); return [((clientX - r.left) * dpr - this.ox) / this.scale, ((clientY - r.top) * dpr - this.oy) / this.scale]; }
   private backdrop(mapId: MapId, th: Theme): HTMLCanvasElement {
-    const key = `${mapId}:${th.hc}:${Math.round(this.scale * 100)}`; if (this.back?.key === key) return this.back.canvas;
-    const c = document.createElement('canvas'); c.width = Math.round(WORLD.w * this.scale); c.height = Math.round(WORLD.h * this.scale); const g = c.getContext('2d')!; g.scale(this.scale, this.scale); renderBackdrop(g, th, mapId); this.back = { key, canvas: c }; return c;
+    const key = `${mapId}:${th.hc}`; if (this.back?.key === key) return this.back.canvas; const q = 1.25;
+    const c = document.createElement('canvas'); c.width = Math.round(WORLD.w * q); c.height = Math.round(WORLD.h * q); const g = c.getContext('2d')!; g.scale(q, q); renderBackdrop(g, th, mapId); this.back = { key, canvas: c }; return c;
   }
   frame(f: FrameInput) {
     const th = theme(f.hc, f.reduced); const ctx = this.ctx; const t = f.clientMs / 1000; const dt = Math.min(0.1, Math.max(0, t - this.lastT)); this.lastT = t;
     ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = '#1D2C35'; ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-    ctx.drawImage(this.backdrop(f.mapId, th), this.ox, this.oy);
-    ctx.save(); ctx.translate(this.ox, this.oy); ctx.scale(this.scale, this.scale); ctx.beginPath(); ctx.rect(0, 0, WORLD.w, WORLD.h); ctx.clip();
     const serverNow = f.clientMs + f.buffer.offset; const delay = f.interpDelayMs ?? 110;
     const s = f.buffer.at(serverNow - delay); const selfS = f.buffer.at(serverNow - 55);
+    // ---- camera: follow your avatar (or the squad's centre when spectating); overview shows the whole arena ----
+    const sc = f.overview ? this.fit : this.base; this.scale = sc; const vw = this.canvas.width / sc, vh = this.canvas.height / sc;
+    let tx: number = WORLD.bx, ty: number = WORLD.by;
+    if (!f.overview && selfS) {
+      const mine = f.meId ? sampleGroup('p', selfS)[f.meId] : undefined;
+      if (mine) { tx = mine[0]!; ty = mine[1]!; } else { const all = Object.values(sampleGroup('p', selfS)); if (all.length) { tx = all.reduce((n, a) => n + a[0]!, 0) / all.length; ty = all.reduce((n, a) => n + a[1]!, 0) / all.length; } }
+    }
+    if (!this.camInit || f.reduced) { this.cx = tx; this.cy = ty; this.camInit = true; } else { const k = 1 - Math.exp(-dt * 7); this.cx += (tx - this.cx) * k; this.cy += (ty - this.cy) * k; }
+    const camX = vw >= WORLD.w ? (WORLD.w - vw) / 2 : Math.min(WORLD.w - vw, Math.max(0, this.cx - vw / 2)); const camY = vh >= WORLD.h ? (WORLD.h - vh) / 2 : Math.min(WORLD.h - vh, Math.max(0, this.cy - vh / 2));
+    this.ox = -camX * sc; this.oy = -camY * sc; this.view = { x0: camX, y0: camY, x1: camX + vw, y1: camY + vh };
+    const mapDef = MAPS[f.mapId];
+    ctx.drawImage(this.backdrop(f.mapId, th), this.ox, this.oy, WORLD.w * sc, WORLD.h * sc);
+    ctx.save(); ctx.translate(this.ox, this.oy); ctx.scale(sc, sc); ctx.beginPath(); ctx.rect(0, 0, WORLD.w, WORLD.h); ctx.clip();
+    for (const lm of mapDef.landmarks) if (lm.x > this.view.x0 - 160 && lm.x < this.view.x1 + 160 && lm.y > this.view.y0 - 160 && lm.y < this.view.y1 + 160) drawLandmark(ctx, th, lm, f.reduced ? 0 : t);
+    drawAmbient(ctx, th, mapDef, t, this.view);
     if (s) {
       const P = sampleGroup('p', s), E = sampleGroup('e', s), B = sampleGroup('b', s), T = sampleGroup('t', s), D = sampleGroup('d', s);
       if (selfS && f.meId) { const mine = sampleGroup('p', selfS)[f.meId]; if (mine) { const m = mine.slice(); if (f.selfInput && !f.paused && !(m[5]! & DOWN)) { const age = Math.min(0.09, Math.max(0, (f.clientMs - (f.buffer.latest()?.arrived ?? f.clientMs)) / 1000)) ; const sp = ROLE_DEFS[ROLES[m[6]!] ?? 'scout'].speed; m[0] = Math.min(WORLD.w - 16, Math.max(16, m[0]! + f.selfInput.x * sp * age)); m[1] = Math.min(WORLD.h - 16, Math.max(16, m[1]! + f.selfInput.y * sp * age)); } P[f.meId] = m; } }
@@ -76,6 +93,35 @@ export class SceneRenderer {
       for (const a of Object.values(B)) drawBullet(ctx, th, a[2]!, a[0]!, a[1]!, a[3]!, a[4]!, a[5]!);
       f.fx.draw(ctx, th, t);
       for (const k of this.tracks.keys()) if (t - this.tracks.get(k)!.seen > 3) this.tracks.delete(k);
+    }
+    ctx.restore();
+    if (s) this.overlay(f, th, s, mapDef, dt);
+  }
+  /** screen-space aids for the big arena: beacon pointer when it is off screen, a small minimap, and the "you entered …" region banner */
+  private overlay(f: FrameInput, th: Theme, s: NonNullable<ReturnType<SnapshotBuffer['at']>>, map: (typeof MAPS)[MapId], dt: number) {
+    const ctx = this.ctx; const W = this.canvas.width, H = this.canvas.height; const u = Math.max(1, Math.min(W / 960, H / 600)); const v = this.view; ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0);
+    const P = sampleGroup('p', s), E = sampleGroup('e', s);
+    if (!f.overview) {
+      // beacon pointer
+      if (WORLD.bx < v.x0 || WORLD.bx > v.x1 || WORLD.by < v.y0 || WORLD.by > v.y1) {
+        const sx = WORLD.bx * this.scale + this.ox, sy = WORLD.by * this.scale + this.oy; const ccx = W / 2, ccy = H / 2; const ang = Math.atan2(sy - ccy, sx - ccx); const m = 34 * u;
+        const k = Math.min((W / 2 - m) / Math.max(1e-3, Math.abs(Math.cos(ang))), (H / 2 - m) / Math.max(1e-3, Math.abs(Math.sin(ang)))); const px = ccx + Math.cos(ang) * k, py = ccy + Math.sin(ang) * k;
+        ctx.translate(px, py); ctx.rotate(ang); ctx.beginPath(); ctx.moveTo(16 * u, 0); ctx.lineTo(-10 * u, -11 * u); ctx.lineTo(-4 * u, 0); ctx.lineTo(-10 * u, 11 * u); ctx.closePath(); ctx.fillStyle = GOLD; ctx.fill(); ctx.lineWidth = 3 * u; ctx.lineJoin = 'round'; ctx.strokeStyle = th.ink; ctx.stroke(); ctx.rotate(-ang); ctx.translate(-px, -py);
+      }
+      // region banner
+      const me = f.meId ? P[f.meId] : undefined; const rg = me ? regionAt(map, me[0]!, me[1]!) : null;
+      if ((rg?.id ?? '') !== this.regionId) { this.regionId = rg?.id ?? ''; if (rg) { this.regionName = rg.name; this.regionAge = 0; } }
+      this.regionAge += dt;
+      if (this.regionAge < 2.6 && this.regionName) { const a = Math.min(1, (2.6 - this.regionAge) / 0.8, this.regionAge / 0.25); ctx.globalAlpha = a; ctx.font = `800 ${15 * u}px system-ui, sans-serif`; ctx.textAlign = 'center'; ctx.lineJoin = 'round'; ctx.lineWidth = 5 * u; ctx.strokeStyle = th.ink; ctx.strokeText(this.regionName, W / 2, 56 * u); ctx.fillStyle = PAPER_2; ctx.fillText(this.regionName, W / 2, 56 * u); ctx.globalAlpha = 1; }
+      // minimap
+      const mw = Math.round(W < 700 ? 96 * u : 150 * u), mh = mw * (WORLD.h / WORLD.w), mx = 10 * u, my = 10 * u; const kx = mw / WORLD.w, ky = mh / WORLD.h;
+      ctx.globalAlpha = 0.92; ctx.fillStyle = map.ground; ctx.fillRect(mx, my, mw, mh); ctx.globalAlpha = 0.55; for (const r of map.regions) { ctx.fillStyle = r.tint; ctx.fillRect(mx + r.x * kx, my + r.y * ky, r.w * kx, r.h * ky); } ctx.globalAlpha = 1;
+      ctx.fillStyle = th.ink; for (const o of map.obstacles) { if (o.kind === 'circle') { ctx.beginPath(); ctx.arc(mx + o.x * kx, my + o.y * ky, Math.max(1.5, o.r * kx), 0, TAU); ctx.fill(); } else ctx.fillRect(mx + o.x * kx, my + o.y * ky, Math.max(2, o.w * kx), Math.max(2, o.h * ky)); }
+      ctx.fillStyle = '#F77765'; for (const a of Object.values(E)) ctx.fillRect(mx + a[1]! * kx - 1, my + a[2]! * ky - 1, 2.2 * u, 2.2 * u);
+      ctx.fillStyle = GOLD; ctx.beginPath(); ctx.arc(mx + WORLD.bx * kx, my + WORLD.by * ky, 3.2 * u, 0, TAU); ctx.fill(); ctx.lineWidth = 1.4 * u; ctx.strokeStyle = th.ink; ctx.stroke();
+      for (const [id, a] of Object.entries(P)) { ctx.fillStyle = id === f.meId ? '#FFFFFF' : '#3FBF8A'; ctx.beginPath(); ctx.arc(mx + a[0]! * kx, my + a[1]! * ky, (id === f.meId ? 3.4 : 2.6) * u, 0, TAU); ctx.fill(); ctx.lineWidth = 1.2 * u; ctx.strokeStyle = th.ink; ctx.stroke(); }
+      ctx.lineWidth = 1.6 * u; ctx.strokeStyle = PAPER_2; ctx.strokeRect(mx + v.x0 * kx, my + v.y0 * ky, (v.x1 - v.x0) * kx, (v.y1 - v.y0) * ky);
+      ctx.lineWidth = 2.4 * u; ctx.strokeStyle = th.ink; ctx.strokeRect(mx, my, mw, mh);
     }
     ctx.restore();
   }

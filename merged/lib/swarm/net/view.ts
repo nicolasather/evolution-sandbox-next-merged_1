@@ -10,7 +10,8 @@ export type Viewer = { kind: 'player'; pid: string } | { kind: 'host'; focus?: s
 export type ViewParts = { s: Record<string, unknown>; e: Record<string, Record<string, number[]>>; fx: unknown[] };
 export type Delta = { s?: Record<string, unknown>; e?: Record<string, { set?: Record<string, number[]>; del?: string[] }> };
 
-const r1 = (n: number) => Math.round(n * 10) / 10;
+const r1 = (n: number) => Math.round(n * 10) / 10 + 0; // + 0 turns -0 into 0 so wire values compare cleanly
+const rz = (n: number) => Math.round(n) + 0;
 const KIND_IDX: Record<string, number> = Object.fromEntries([...ENEMY_KINDS, ...BOSS_KINDS].map((k, i) => [k, i]));
 const STATE_IDX: Record<string, number> = { spawn: 0, seek: 1, pre_attack: 2, attack: 3, recover: 4, dead: 5 };
 const SRC_IDX: Record<string, number> = { player: 0, turret: 1, drone: 2, hazard: 3 };
@@ -41,7 +42,7 @@ export function buildView(room: Room, viewer: Viewer, nowMs: number, lookup: QLo
   const shown = (t: string, name: string) => (viewer.kind === 'screen' && room.config.hideTeamNames ? `Team ${room.teamOrder.indexOf(t) + 1}` : name);
   s.teams = room.teamOrder.map((t) => {
     const tm = room.teams[t]!; const a = room.arenas[t]; const own = focus === t;
-    return { id: t, name: shown(t, tm.name), status: a?.status ?? 'alive', waves: tm.wavesCompleted, beacon: a ? Math.round((100 * a.beacon.hp) / Math.max(1, a.beacon.max)) : 100, size: Object.values(room.roster).filter((m) => m.teamId === t && !m.forfeited).length,
+    return { id: t, name: shown(t, tm.name), status: a?.status ?? 'alive', waves: tm.wavesCompleted, beacon: a ? rz((100 * a.beacon.hp) / Math.max(1, a.beacon.max)) : 100, size: Object.values(room.roster).filter((m) => m.teamId === t && !m.forfeited).length,
       ...(own || viewer.kind !== 'player' ? { wallet: tm.wallet, upgrades: tm.upgrades } : {}) };
   });
   s.roster = room.rosterOrder.map((id) => room.roster[id]!).filter((m) => !m.forfeited && (viewer.kind !== 'player' || m.teamId === me?.teamId)).map((m) => ({
@@ -75,14 +76,14 @@ export function buildView(room: Room, viewer: Viewer, nowMs: number, lookup: QLo
   const fx: unknown[] = [];
   const a = focus ? room.arenas[focus] : undefined;
   if (a && room.phase !== 'lobby') {
-    s.arena = { team: a.teamId, status: a.status, beacon: { hp: Math.round(a.beacon.hp), max: a.beacon.max, shield: Math.round(a.beacon.shield), shieldOn: a.beacon.shieldTicks > 0 }, kills: a.kills, active: isActivePhase(room.phase) && !room.paused, w: a.waveTick, wt: a.waveTicks };
+    s.arena = { team: a.teamId, status: a.status, beacon: { hp: rz(a.beacon.hp), max: a.beacon.max, shield: rz(a.beacon.shield), shieldOn: a.beacon.shieldTicks > 0 }, kills: a.kills, active: isActivePhase(room.phase) && !room.paused, w: a.waveTick, wt: a.waveTicks };
     for (const [pid, p] of Object.entries(a.players)) {
       const m = room.roster[pid]; const f = (m && !m.connected ? OFFLINE : 0) | (p.down ? DOWN : 0) | (p.shieldTicks > 0 ? SHIELD : 0) | (p.dashTicks > 0 ? DASH : 0) | (p.protectTicks > 0 ? PROT : 0) | (p.invuln > 0 ? INV : 0) | (p.rootTicks > 0 ? ROOT : 0) | (p.slowTicks > 0 ? SLOW : 0) | (p.outWave ? OUT : 0);
-      e.p![pid] = [r1(p.x), r1(p.y), Math.round(p.hp), p.maxHp, Math.round(p.face * 100), f, ROLES.indexOf((m?.role ?? 'scout') as Role), Math.round(p.shield), p.abilityCd, p.abilityMax, p.downTicks, p.reviveTicks];
+      e.p![pid] = [r1(p.x), r1(p.y), rz(p.hp), p.maxHp, rz(p.face * 100), f, ROLES.indexOf((m?.role ?? 'scout') as Role), rz(p.shield), p.abilityCd, p.abilityMax, p.downTicks, p.reviveTicks];
     }
-    for (const en of a.enemies) if (en.state !== 'dead') e.e![String(en.id)] = [KIND_IDX[en.kind]!, r1(en.x), r1(en.y), Math.round(en.hp), en.maxHp, STATE_IDX[en.state]!, Math.round(en.face * 100), en.radius, en.phase, en.st];
+    for (const en of a.enemies) if (en.state !== 'dead') e.e![String(en.id)] = [KIND_IDX[en.kind]!, r1(en.x), r1(en.y), rz(en.hp), en.maxHp, STATE_IDX[en.state]!, rz(en.face * 100), en.radius, en.phase, en.st];
     for (const b of a.bullets) e.b![String(b.id)] = [r1(b.x), r1(b.y), SRC_IDX[b.src]!, b.r, r1(b.vx), r1(b.vy)];
-    for (const h of a.hazards) e.h![String(h.id)] = [HZ_IDX[h.kind]!, r1(h.x), r1(h.y), Math.round(h.a0 * 1000), Math.round(h.a1 * 1000), Math.round(h.w * 1000), r1(h.r0), r1(h.r1), Math.round(h.gapA * 1000), Math.round(h.gapW * 1000), h.telegraph, h.telegraphMax, h.active, h.activeMax, h.t];
+    for (const h of a.hazards) e.h![String(h.id)] = [HZ_IDX[h.kind]!, r1(h.x), r1(h.y), rz(h.a0 * 1000), rz(h.a1 * 1000), rz(h.w * 1000), r1(h.r0), r1(h.r1), rz(h.gapA * 1000), rz(h.gapW * 1000), h.telegraph, h.telegraphMax, h.active, h.activeMax, h.t];
     for (const t of a.turrets) e.t![String(t.id)] = [r1(t.x), r1(t.y), t.ttl];
     a.drones.forEach((dr) => { e.d![String(dr.id)] = [r1(dr.x), r1(dr.y)]; });
   }

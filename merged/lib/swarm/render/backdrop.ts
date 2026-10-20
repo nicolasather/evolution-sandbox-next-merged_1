@@ -27,16 +27,26 @@ function crystal(ctx: C, th: Theme, x: number, y: number, s: number) { path(ctx,
 function gearDeco(ctx: C, th: Theme, x: number, y: number, r: number, col: string) { ctx.beginPath(); for (let i = 0; i < 16; i++) { const a = (i / 16) * TAU; const rr = i % 2 ? r * 0.82 : r; ctx.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr); } ctx.closePath(); outline(ctx, th, col, 3); ctx.beginPath(); ctx.arc(x, y, r * 0.3, 0, TAU); outline(ctx, th, shade(col, 0.8), 2.4); }
 
 function decorate(ctx: C, th: Theme, map: MapDef) {
-  const r = new Stream(seedFrom(`swarm-map:${map.id}`)); const edge = (): [number, number] => { const side = r.int(4); const u = r.float(); const d = 8 + r.float() * 44; return side === 0 ? [u * WORLD.w, d] : side === 1 ? [WORLD.w - d, u * WORLD.h] : side === 2 ? [u * WORLD.w, WORLD.h - d] : [d, u * WORLD.h]; };
+  const r = new Stream(seedFrom(`swarm-map:${map.id}`));
+  // scatter across the whole floor, but keep the combat ring around the beacon and every solid obstacle clean
+  const edge = (): [number, number] => {
+    for (let k = 0; k < 40; k++) {
+      const x = 30 + r.float() * (WORLD.w - 60), y = 30 + r.float() * (WORLD.h - 60);
+      if (Math.hypot(x - WORLD.bx, (y - WORLD.by) * 1.5) < 330) continue;
+      if (map.obstacles.some((o) => (o.kind === 'circle' ? Math.hypot(x - o.x, y - o.y) < o.r + 30 : x > o.x - 30 && x < o.x + o.w + 30 && y > o.y - 30 && y < o.y + o.h + 30))) continue;
+      return [x, y];
+    }
+    return [40, 40];
+  };
   if (map.id === 'meadow_circuit') {
-    for (let i = 0; i < 26; i++) { const [x, y] = edge(); const k = r.int(5); if (k < 2) tuft(ctx, th, x, y, '#7DBB78'); else if (k === 2) flower(ctx, th, x, y, ['#FF9FB5', '#FFD66E', '#FFFFFF'][r.int(3)]!); else if (k === 3) mushroom(ctx, th, x, y, 0.9); else fence(ctx, th, x, y); }
-    lantern(ctx, th, 70, 70); lantern(ctx, th, 890, 70); lantern(ctx, th, 70, 535); lantern(ctx, th, 890, 535);
+    for (let i = 0; i < 90; i++) { const [x, y] = edge(); const k = r.int(5); if (k < 2) tuft(ctx, th, x, y, '#7DBB78'); else if (k === 2) flower(ctx, th, x, y, ['#FF9FB5', '#FFD66E', '#FFFFFF'][r.int(3)]!); else if (k === 3) mushroom(ctx, th, x, y, 0.9); else fence(ctx, th, x, y); }
+    for (const [x, y] of [[90, 90], [1830, 90], [90, 1110], [1830, 1110], [960, 90], [960, 1110], [90, 600], [1830, 600]] as const) lantern(ctx, th, x, y);
   } else if (map.id === 'paper_quarry') {
-    for (let i = 0; i < 24; i++) { const [x, y] = edge(); const k = r.int(4); if (k === 0) slate(ctx, th, x, y, '#BFAE8A'); else if (k === 1) chip(ctx, th, x, y, '#A8977A'); else if (k === 2) ridge(ctx, th, x, y, 0.55, '#B9A783'); else { ctx.beginPath(); ctx.moveTo(x - 10, y + 6); ctx.lineTo(x + 10, y - 6); ctx.lineWidth = 3; ctx.strokeStyle = th.ink; ctx.stroke(); } }
-    for (const [x, y] of [[480, 20], [940, 300], [480, 580], [20, 300]] as const) { ctx.save(); ctx.translate(x, y); ctx.beginPath(); ctx.roundRect(-26, -14, 52, 28, 5); outline(ctx, th, '#E6DAC0', 3); ctx.beginPath(); ctx.moveTo(-14, 0); ctx.lineTo(14, 0); ctx.lineWidth = 3; ctx.strokeStyle = th.ink; ctx.setLineDash([5, 5]); ctx.stroke(); ctx.setLineDash([]); ctx.restore(); } // the four spawn gates
+    for (let i = 0; i < 80; i++) { const [x, y] = edge(); const k = r.int(4); if (k === 0) slate(ctx, th, x, y, '#BFAE8A'); else if (k === 1) chip(ctx, th, x, y, '#A8977A'); else if (k === 2) ridge(ctx, th, x, y, 0.55, '#B9A783'); else { ctx.beginPath(); ctx.moveTo(x - 10, y + 6); ctx.lineTo(x + 10, y - 6); ctx.lineWidth = 3; ctx.strokeStyle = th.ink; ctx.stroke(); } }
+    for (const [x, y] of [[960, 24], [1896, 600], [960, 1176], [24, 600]] as const) { ctx.save(); ctx.translate(x, y); ctx.beginPath(); ctx.roundRect(-26, -14, 52, 28, 5); outline(ctx, th, '#E6DAC0', 3); ctx.beginPath(); ctx.moveTo(-14, 0); ctx.lineTo(14, 0); ctx.lineWidth = 3; ctx.strokeStyle = th.ink; ctx.setLineDash([5, 5]); ctx.stroke(); ctx.setLineDash([]); ctx.restore(); } // the four spawn gates
   } else {
-    for (let i = 0; i < 22; i++) { const [x, y] = edge(); const k = r.int(4); if (k < 2) crystal(ctx, th, x, y, 0.7 + r.float() * 0.5); else if (k === 2) snow(ctx, th, x, y); else gearDeco(ctx, th, x, y, 12, '#D9C27A'); }
-    for (const [x, y] of [[60, 60], [900, 60], [60, 540], [900, 540]] as const) gearDeco(ctx, th, x, y, 22, '#D9C27A');
+    for (let i = 0; i < 76; i++) { const [x, y] = edge(); const k = r.int(4); if (k < 2) crystal(ctx, th, x, y, 0.7 + r.float() * 0.5); else if (k === 2) snow(ctx, th, x, y); else gearDeco(ctx, th, x, y, 12, '#D9C27A'); }
+    for (const [x, y] of [[70, 70], [1850, 70], [70, 1130], [1850, 1130], [960, 70], [960, 1130]] as const) gearDeco(ctx, th, x, y, 22, '#D9C27A');
   }
 }
 
@@ -45,8 +55,11 @@ export function renderBackdrop(ctx: C, th: Theme, mapId: MapId) {
   ctx.fillStyle = map.ground; ctx.fillRect(0, 0, w, h);
   // soft two-tone patches (large flat shapes, no gradients)
   const r = new Stream(seedFrom(`swarm-ground:${map.id}`)); ctx.fillStyle = th.hc ? map.ground : shade(map.ground, 0.94); for (let i = 0; i < 12; i++) { ctx.beginPath(); ctx.ellipse(r.float() * w, r.float() * h, 50 + r.float() * 90, 30 + r.float() * 60, r.float() * 3, 0, TAU); ctx.fill(); }
+  // themed regions: big soft tinted floors, plus lanes that tie the four corners to the centre
+  for (const rg of map.regions) { ctx.save(); ctx.globalAlpha = th.hc ? 0.18 : 0.5; ctx.fillStyle = rg.tint; ctx.beginPath(); ctx.roundRect(rg.x + 20, rg.y + 20, rg.w - 40, rg.h - 40, 90); ctx.fill(); ctx.restore(); }
+  ctx.save(); ctx.lineCap = 'round'; ctx.lineWidth = 46; ctx.strokeStyle = map.lane; ctx.globalAlpha = th.hc ? 0.3 : 0.6; for (const [x, y] of [[330, 220], [1590, 220], [330, 980], [1590, 980]] as const) { ctx.beginPath(); ctx.moveTo(x, y); ctx.quadraticCurveTo((x + w / 2) / 2 + (y < h / 2 ? 40 : -40), (y + h / 2) / 2, w / 2, h / 2); ctx.stroke(); } ctx.restore();
   // the ring path around the beacon
-  ctx.beginPath(); ctx.ellipse(w / 2, h / 2, 300, 180, 0, 0, TAU); ctx.lineWidth = 64; ctx.strokeStyle = th.hc ? map.lane : map.lane; ctx.globalAlpha = th.hc ? 0.4 : 0.75; ctx.stroke(); ctx.globalAlpha = 1;
+  ctx.beginPath(); ctx.ellipse(w / 2, h / 2, 330, 200, 0, 0, TAU); ctx.lineWidth = 70; ctx.strokeStyle = th.hc ? map.lane : map.lane; ctx.globalAlpha = th.hc ? 0.4 : 0.75; ctx.stroke(); ctx.globalAlpha = 1;
   if (!th.hc) decorate(ctx, th, map);
   // authored props from the map file
   for (const p of map.props) { const s = p.s ?? 1; if (p.kind === 'bush') bush(ctx, th, p.x, p.y, s, shade(map.ground2, 0.92)); else if (p.kind === 'tuft') tuft(ctx, th, p.x, p.y, '#7DBB78'); else if (p.kind === 'flower') flower(ctx, th, p.x, p.y, '#FF9FB5'); else if (p.kind === 'slate') slate(ctx, th, p.x, p.y, '#BFAE8A'); else if (p.kind === 'chip') chip(ctx, th, p.x, p.y, '#A8977A'); else if (p.kind === 'snow') snow(ctx, th, p.x, p.y); }

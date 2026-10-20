@@ -73,7 +73,7 @@ export function seat(r: Room, a: { id: string; name: string; desiredTeam?: strin
   if (!teamId) { const open = r.teamOrder.filter((t) => size(t) < cap).sort((x, y) => size(x) - size(y) || r.teamOrder.indexOf(x) - r.teamOrder.indexOf(y)); teamId = open[0] ?? null; }
   if (!teamId) return fail('full', 'Every team is full.');
   const first = size(teamId) === 0;
-  const p: Participant = { id: a.id, name: a.name, teamId, role: a.role ?? ROLES[Math.min(ROLES.length - 1, size(teamId)) % ROLES.length]!, connected: true, forfeited: false, ready: false, captain: first, joinedMs: nowMs, lastSeenMs: nowMs, protections: 0, answered: 0, fracSum: 0, windows: 0, commands: 0, moves: 0, seq: 0, pending: started };
+  const p: Participant = { id: a.id, name: a.name, teamId, role: a.role ?? (() => { const open = rolesForSquad(size(teamId) + 1); return open[size(teamId) % open.length]!; })(), connected: true, forfeited: false, ready: false, captain: first, joinedMs: nowMs, lastSeenMs: nowMs, protections: 0, answered: 0, fracSum: 0, windows: 0, commands: 0, moves: 0, seq: 0, pending: started };
   r.roster[a.id] = p; r.rosterOrder.push(a.id); bump(r); emit(r, 'join', { pid: a.id, team: teamId });
   return { ok: true, teamId, role: p.role };
 }
@@ -81,6 +81,8 @@ export function setRole(r: Room, pid: string, role: Role): Result {
   const p = r.roster[pid]; if (!p) return fail('unknown', 'Unknown player.');
   if (!ROLES.includes(role)) return fail('bad_role', 'Unknown role.');
   const lobby = r.phase === 'lobby' || r.phase === 'role_pick';
+  const squad = Object.values(r.roster).filter((m) => m.teamId === p.teamId).length;
+  if (p.role !== role && !rolesForSquad(squad).includes(role)) return fail('role_locked', `A squad of ${squad} can use: ${rolesForSquad(squad).map((x) => ROLE_DEFS[x].label).join(', ')}.`);
   const boundary = r.phase === 'ready' && r.config.allowRespec;
   if (!lobby && !boundary) return fail('wrong_phase', 'Roles can only change before the match or between waves when the teacher allows it.');
   p.role = role; p.ready = false; bump(r);
@@ -88,7 +90,7 @@ export function setRole(r: Room, pid: string, role: Role): Result {
   if (e) { const old = e.maxHp; const rd = require_role(role); e.maxHp = rd.hp; e.hp = Math.max(1, Math.round((e.hp / old) * rd.hp)); e.abilityMax = rd.abilityCd; e.abilityCd = Math.min(e.abilityCd, rd.abilityCd); e.fireCd = 0; dropCtx(r); }
   return { ok: true };
 }
-import { ROLE_DEFS } from './balance';
+import { ROLE_DEFS, rolesForSquad } from './balance';
 const require_role = (role: Role) => ROLE_DEFS[role];
 export function setReady(r: Room, pid: string, ready: boolean): Result { const p = r.roster[pid]; if (!p) return fail('unknown', 'Unknown player.'); p.ready = ready; bump(r); return { ok: true }; }
 export function connect(r: Room, pid: string, nowMs: number) { const p = r.roster[pid]; if (!p) return; p.connected = true; p.lastSeenMs = nowMs; r.emptySinceMs = null; bump(r); emit(r, 'online', { pid }); }

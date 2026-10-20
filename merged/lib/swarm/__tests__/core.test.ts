@@ -112,8 +112,8 @@ describe('arena rules', () => {
     const e = mkRoom({ sizes: [1], roles: ['engineer'], config: { mapId: 'paper_quarry' } }); e.now += 9000; step(e.room, e.now);
     const eid = e.ids[0]![0]!; playerAbility(e.room, eid, 'x'); const a = e.room.arenas.t1!; a.players[eid]!.abilityCd = 0; playerAbility(e.room, eid, 'y'); expect(a.turrets.length).toBe(1);
     const g = mkRoom({ sizes: [1], roles: ['guardian'] }); g.now += 9000; step(g.room, g.now); playerAbility(g.room, g.ids[0]![0]!, 'z'); const gp = g.room.arenas.t1!.players[g.ids[0]![0]!]!; expect(gp.shield).toBeLessThanOrEqual(Math.round(gp.maxHp * 0.35));
-    const [x, y] = resolveObstacles(MAPS.paper_quarry, 250, 168, 16); expect(Math.hypot(x - 250, y - 168)).toBeGreaterThan(0); // pushed out of the ridge, never trapped inside
-    const [cx, cy] = resolveObstacles(MAPS.frost_conservatory, 200, 150, 16); expect(Math.hypot(cx - 200, cy - 150)).toBeGreaterThanOrEqual(24 + 16 - 1e-6);
+    const [x, y] = resolveObstacles(MAPS.paper_quarry, 510, 336, 16); expect(Math.hypot(x - 510, y - 336)).toBeGreaterThan(0); // pushed out of the ridge, never trapped inside
+    const [cx, cy] = resolveObstacles(MAPS.frost_conservatory, 400, 300, 16); expect(Math.hypot(cx - 400, cy - 300)).toBeGreaterThanOrEqual(24 * 1.4 + 16 - 1e-6);
   });
   it('boss hazards: one geometry definition for server and renderer', () => {
     const arc = { kind: 'arc', x: 100, y: 100, a0: 0, a1: 0, w: 0.35, r0: 30, r1: 300, gapA: 0, gapW: 0, telegraph: 0, telegraphMax: 0, active: 0, activeMax: 4, t: 0, dmg: 1, hit: [], src: 1, id: 1 } as never;

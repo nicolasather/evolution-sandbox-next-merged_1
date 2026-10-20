@@ -6,6 +6,7 @@ import QuestionPlay, { type PlayQuestion } from '../QuestionPlay';
 import AnswerView from '../AnswerView';
 import type { SwarmConnection } from '@/lib/swarm/client/connection';
 import { ROLES, type Role } from '@/lib/swarm/domain';
+import { rolesForSquad, ROLE_REASON } from '@/lib/swarm/balance';
 import { ROLE_DEFS, UPGRADE_DEFS } from '@/lib/swarm/balance';
 import { drawRole } from '@/lib/swarm/render/sprites';
 import { theme } from '@/lib/swarm/render/palette';
@@ -64,17 +65,18 @@ export function PauseOverlay({ conn }: { conn: SwarmConnection }) {
 
 /** Roles and readiness before the match starts. */
 export function LobbyPanel({ conn, prefs }: { conn: SwarmConnection; prefs: Prefs }) {
-  const m = conn.s.meta as A; const me = conn.s.me as A | undefined; const roster = (conn.s.roster as A[]) ?? []; const lobby = m.phase === 'lobby';
+  const m = conn.s.meta as A; const me = conn.s.me as A | undefined; const roster = (conn.s.roster as A[]) ?? []; const lobby = m.phase === 'lobby'; const squad = Math.max(1, roster.length); const open = rolesForSquad(squad);
   return (
     <section className="sw-card" aria-labelledby="sw-lobby-h" data-testid="lobby">
       <h2 id="sw-lobby-h">{lobby ? 'Waiting for the teacher' : 'Choose your role'}</h2>
       <p>{lobby ? 'You are in. Pick a role now or wait for the teacher to open the role screen. Everyone answers questions, whatever the role.' : 'Everyone answers questions and earns points together. Your role is how you move and fight in the arena.'}</p>
       <ul className="sw-roles" role="radiogroup" aria-label="Role">
-        {ROLES.map((r) => { const d = ROLE_DEFS[r]; const on = me?.role === r; return (
+        {(ROLES.filter((r) => open.includes(r) || me?.role === r)).map((r) => { const d = ROLE_DEFS[r]; const on = me?.role === r; return (
           <li key={r}><button type="button" role="radio" aria-checked={on} className={`sw-role ${on ? 'on' : ''}`} style={{ ['--rc' as string]: d.color }} onClick={() => conn.role(r)} data-testid={`role-${r}`}>
             <RoleBadge role={r} hc={prefs.contrast} /><span><b>{d.label}</b><small>{d.blurb}</small><small className="sw-ab">Ability: {d.ability}</small></span>
           </button></li>); })}
       </ul>
+      <p className="sw-note" data-testid="role-reason">{ROLE_REASON[Math.min(5, squad)]}</p>
       <p className="sw-note">Roles are a choice of play style, not a rank. Two people can share a role.</p>
       <h3>Your team ({roster.length})</h3>
       <ul className="sw-roster" aria-label="Team members">{roster.map((p) => <li key={p.id}><RoleBadge role={p.role} size={28} hc={prefs.contrast} /><span>{p.name}{p.id === me?.id ? ' (you)' : ''}{p.cap ? ' · captain' : ''}</span><em className={p.on ? 'on' : 'off'}>{p.on ? (p.ready ? 'ready' : 'online') : 'offline'}</em></li>)}</ul>

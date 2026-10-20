@@ -87,3 +87,14 @@
 @media (max-width: 480px) { .sw { padding: 8px 10px 110px; } .sw-card { padding: 12px; } .sw-stat { padding: 3px 10px; font-size: .92rem; } }
 
 .sw .sw-prefs summary, .sw .sw-prefs label { color: var(--ink); }
+
+/* ---- compact chrome for the large arena (less clutter, more map) ---- */
+.sw-hud{display:flex;flex-wrap:wrap;gap:6px 10px;padding:4px 10px;font-size:.82rem;align-items:center}
+.sw-hud .sw-stat{padding:2px 8px;border-radius:999px;background:rgba(255,251,241,.9);border:2px solid #1D2C35;white-space:nowrap}
+.sw-how{border:2px dashed rgba(29,44,53,.35);border-radius:10px;padding:4px 10px;margin-top:6px}
+.sw-how summary{cursor:pointer;font-weight:700;font-size:.85rem}
+.sw-prefs{font-size:.8rem}
+.sw-wave h3{margin:.2rem 0;font-size:.95rem}
+.sw-wave .sw-roster li{padding:2px 0}
+@media (prefers-reduced-motion:no-preference){.sw:not(.calm) .sw-ability.ready{animation:sw-ready 1.4s ease-in-out infinite}}
+@keyframes sw-ready{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}

@@ -2,7 +2,9 @@
  *  (see docs/swarm-survival/BALANCE_REPORT.md). Nothing in the simulation hard-codes a stat outside this file. */
 import type { BossKind, EnemyKind, Role, UpgradeKind } from './domain';
 
-export const WORLD = { w: 960, h: 600, bx: 480, by: 300, beaconR: 32, playerR: 16, spawnRing: 65, noSpawnNearPlayer: 85 } as const;
+/** The arena is 1920×1200 (4× the old 960×600 floor). Clients see a VIEW-sized window that follows their avatar; the host/projector can show everything. */
+export const VIEW = { w: 960, h: 600 } as const;
+export const WORLD = { w: 1920, h: 1200, bx: 960, by: 600, beaconR: 32, playerR: 16, spawnRing: 65, noSpawnNearPlayer: 85 } as const;
 export const DT = 0.05;
 
 export type RoleDef = {
@@ -107,3 +109,22 @@ export const WAVE_START = { playerHeal: 0.25, beaconRepair: 0.08, returnHpFrac: 
 
 /** Wave budget tuning (cost units before the team-size threat coefficient). */
 export const TUNE = { hpBase: 0.55, b1: 2.2, b0: 3, bs: 1.7, hpProgress: 0.6, hpTeam: 0.2, dmgProgress: 0.3, beaconDmg: 0.5, smallTeamAssist: { 1: 1.35, 2: 1.2, 3: 1.1, 4: 1.04, 5: 1 } as Record<number, number> } as const;
+
+/** Roles open to a squad of a given size. A solo player gets ONE all-rounder (no choice to get wrong); each extra seat unlocks the next role, so a small squad
+ *  is never asked to cover jobs it has no people for. Everyone still answers every question. */
+export const SOLO_ROLE: Role = 'engineer';
+export const ROLES_BY_SIZE: Record<number, readonly Role[]> = {
+  1: ['engineer'],
+  2: ['striker', 'guardian'],
+  3: ['striker', 'guardian', 'medic'],
+  4: ['striker', 'guardian', 'medic', 'engineer'],
+  5: ['striker', 'guardian', 'medic', 'engineer', 'scout'],
+};
+export const rolesForSquad = (size: number): readonly Role[] => ROLES_BY_SIZE[Math.max(1, Math.min(5, Math.floor(size) || 1))]!;
+export const ROLE_REASON: Record<number, string> = {
+  1: 'Playing solo: you get one all-rounder. The Engineer shoots and drops a turret to help hold the beacon.',
+  2: 'A pair: one fighter and one tank. Pick the one your partner is not.',
+  3: 'Three players: a healer joins the fighter and tank.',
+  4: 'Four players: an engineer adds turrets to the mix.',
+  5: 'A full squad of five: every role is open, including the fast Scout.',
+};
