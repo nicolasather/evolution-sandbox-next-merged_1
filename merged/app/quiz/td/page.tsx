@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MAPS } from '@/lib/quiz/td/maps';
 import { BOSSES, ENEMIES, ROLES, TOWERS } from '@/lib/quiz/td/balance';
 import { TD_ENEMIES, TD_MAPS, TD_ROLES, TD_TOWERS } from '@/lib/quiz/td/domain';
+import Poster from '@/components/quiz/td/Poster';
 import './td.css';
 export const metadata: Metadata = { title: 'Tower Defense' };
 
@@ -13,7 +14,7 @@ export default function TDHub() {
       <div className="td-hub">
         <section className="td-hubhero">
           <div>
-            <h1>Tower Defense</h1>
+            <h1 className="td-sign">Tower Defense</h1>
             <p>Every student plays on their own device, in a squad of 1 to 5. Correct answers earn points; the squad spends them on towers between waves and keeps enemies away from its core.</p>
             <p>Co-op puts the class on one board. Competitive puts 2–4 squads on identical maps with identical waves, ranked by waves cleared, then core health, then accuracy.</p>
             <div className="td-row wrap" style={{ marginTop: 12 }}>
@@ -22,8 +23,7 @@ export default function TDHub() {
               <Link className="td-btn" href="/quiz/td/practice">Practice alone</Link>
             </div>
           </div>
-          {/* eslint-disable-next-line @next/next/no-img-element -- static original SVG */}
-          <img src="/quiz/td/map_meadow_circuit_board.svg" alt="The Meadow Circuit map: a lane winds from the gate on the left to the core on the right, with square tower pads beside it" width={1280} height={768} />
+          <Poster mapId="meadow_circuit" ribbon="Co-op or squads" alt="The Meadow Circuit map: a lane winds from the gate on the left to the fort on the right, with square tower pads beside it" />
         </section>
         <ol className="td-loop" aria-label="One round">
           <li><b>Answer</b>Everyone gets the same question and the same reading time. Speed earns nothing.</li>

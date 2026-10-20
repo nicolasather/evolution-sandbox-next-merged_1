@@ -53,6 +53,7 @@ export default function TDHost({ roomId }: { roomId: string }) {
             ? <span className="td-row"><button type="button" className="td-btn danger" disabled={client.busy} onClick={() => void run({ kind: 'end' }).then(() => setConfirmEnd(false))}>End the match now</button><button type="button" className="td-btn ghost" onClick={() => setConfirmEnd(false)}>Keep playing</button></span>
             : <button type="button" className="td-btn ghost" onClick={() => setConfirmEnd(true)}>End match…</button>)}
         </div>
+        {snap.paused && snap.paused.reason !== 'host_offline' && <p className="td-banner" role="status">Game paused. Students and the projector show a pause banner until you resume.</p>}
         {screen && <p className="td-note">Projector link opened in a new tab. Opening a new one switches the old link off.</p>}
         {snap.paused?.reason === 'host_offline' && <p className="td-banner">The match paused while this console was offline. Resume when you are ready.</p>}
       </section>

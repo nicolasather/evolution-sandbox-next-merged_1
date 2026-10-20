@@ -5,8 +5,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Board, { type WaveSummary } from './Board';
-import { Art, BuildMenu, ConnBadge, EnemyLegend, Hud, Opponents, QuestionOverlay, RevealPanel, RolePicker, Ticker, TowerCard, WaveResultPanel, TEAM_SWATCH, useNow } from './parts';
+import { Art, BuildMenu, ConnBadge, EnemyLegend, Hud, Opponents, QuestionOverlay, RankingRules, RevealPanel, RolePicker, Ticker, TowerCard, WaveResultPanel, TEAM_SWATCH, useNow } from './parts';
 import Results from './Results';
+import Coach, { useCoach } from './Coach';
 import type { TDClient } from './useTD';
 import { ROLES } from '@/lib/quiz/td/balance';
 import { roleSVG } from '@/lib/quiz/td/art';
@@ -23,7 +24,7 @@ function usePrefs(): [Prefs, (p: Partial<Prefs>) => void] {
 
 export default function TDGame({ client, practice = false }: { client: TDClient; practice?: boolean }) {
   const { snap } = client; const now = useNow(client.serverNow);
-  const [prefs, setPrefs] = usePrefs();
+  const [prefs, setPrefs] = usePrefs(); const [coachOpen, openCoach, closeCoach] = useCoach();
   const [pad, setPad] = useState<string | null>(null); const [tower, setTower] = useState<string | null>(null); const [hover, setHover] = useState<TDTowerKind | null>(null);
   const [moving, setMoving] = useState(false); const [msg, setMsg] = useState<{ text: string; tone: 'ok' | 'err' } | null>(null);
   const [submittedQ, setSubmittedQ] = useState<string | null>(null); const [personal, setPersonal] = useState<Record<string, unknown> | null>(null); const [personalDone, setPersonalDone] = useState(false);
@@ -70,6 +71,7 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
           <button type="button" className="td-btn ghost small" aria-pressed={prefs.calm} onClick={() => setPrefs({ calm: !prefs.calm })}>Calm</button>
           <button type="button" className="td-btn ghost small" aria-pressed={prefs.large} onClick={() => setPrefs({ large: !prefs.large })}>Large text</button>
           <button type="button" className="td-btn ghost small" aria-pressed={prefs.contrast} onClick={() => setPrefs({ contrast: !prefs.contrast })}>Contrast</button>
+          <button type="button" className="td-btn ghost small" data-testid="td-help" onClick={openCoach}>Help</button>
         </div>
       </header>
       <ConnBadge conn={client.conn} />
@@ -79,8 +81,9 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
       {lobby && me && (
         <main className="td-lobby">
           <section className="td-panel td-joincard">
-            <h1>{phase === 'countdown' ? `Starting in ${Math.max(0, Math.ceil(((snap.phaseDeadlineMs ?? now) - now) / 1000))}` : 'Get ready'}</h1>
+            <h1 className="td-sign">{phase === 'countdown' ? `Starting in ${Math.max(0, Math.ceil(((snap.phaseDeadlineMs ?? now) - now) / 1000))}` : 'Get ready'}</h1>
             <p className="td-note">{snap.config.format === 'coop' ? 'Your class defends one core together.' : `Squads defend identical maps. Waves cleared rank first, then core health, then accuracy.`} {snap.plan.waves} waves · about {snap.plan.minutes} minutes.</p>
+            {snap.config.format === 'versus' && <RankingRules squads />}
             <fieldset className="td-teams"><legend>TEAM</legend>
               {snap.teams.map((t) => { const n = snap.seats.filter((s) => s.teamId === t.id && !s.revoked).length; return (
                 <button key={t.id} type="button" className="td-teambtn" aria-pressed={me.teamId === t.id} disabled={client.busy || phase !== 'lobby' || (me.teamId !== t.id && n >= snap.config.teamSizeCap)} onClick={() => void act({ kind: 'team', teamId: t.id })}>
@@ -91,7 +94,7 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
             <button type="button" className={`td-btn big ${ready ? '' : 'primary'}`} disabled={client.busy || !me.teamId || phase !== 'lobby'} aria-pressed={ready} onClick={() => void act({ kind: 'ready', ready: !ready })}>{ready ? '✓ READY — tap to undo' : 'READY'}</button>
             {practice && <button type="button" className="td-btn primary big" disabled={client.busy} onClick={() => void client.host({ kind: 'start' })}>Start practice</button>}
           </section>
-          <section className="td-panel td-mapprev"><h2>{map.title}</h2><Board mapId={snap.config.mapId} towers={[]} phase="lobby" waveInput={null} waveStartMs={null} pausedAtMs={null} serverNow={client.serverNow} calm showPads={false} selectedPad={null} selectedTower={null} ghost={null} label={`${map.title}: the lane runs from the gate on the left to the core on the right.`} coreHP={team?.coreHP ?? 24} maxCoreHP={team?.maxCoreHP ?? 24} interactive={false} />
+          <section className="td-panel td-mapprev"><h2 className="td-sign">{map.title}</h2><Board mapId={snap.config.mapId} towers={[]} phase="lobby" waveInput={null} waveStartMs={null} pausedAtMs={null} serverNow={client.serverNow} calm showPads={false} selectedPad={null} selectedTower={null} ghost={null} label={`${map.title}: the lane runs from the gate on the left to the core on the right.`} coreHP={team?.coreHP ?? 24} maxCoreHP={team?.maxCoreHP ?? 24} interactive={false} />
             <p className="td-note">Answer questions to earn points. Spend points on towers between waves. Enemies walk the lane; protect the core.</p></section>
         </main>
       )}
@@ -157,6 +160,7 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
             {phase === 'wave_result' && <WaveResultPanel team={team} />}
             {phase === 'wave' && round?.wave && <section className="td-panel"><h3>WAVE {round.n}</h3><EnemyLegend kinds={round.wave.archetypes} />{round.wave.boss && <p className="td-note">Boss: watch for the warning above it — every effect is announced a second ahead.</p>}</section>}
             <Opponents snap={snap} />
+            {snap.config.format === 'versus' && <RankingRules squads />}
             <section className="td-panel"><h3>SQUAD</h3><ul className="td-roster">{snap.seats.filter((s) => s.teamId === team.id && !s.revoked).map((s) => <li key={s.id}>{s.role ? <Art svg={roleSVG(s.role)} size={22} /> : <span className="td-dot" />}{s.name}{s.id === snap.selfSeatId ? ' (you)' : ''}{phase === 'build' && s.ready ? ' ✓' : ''}</li>)}</ul><Ticker team={team} seats={snap.seats} /></section>
           </aside>
           {showQuestion && snap.question && <QuestionOverlay snap={snap} question={snap.question} now={now} submitted={!quizOpen} onSubmit={async (r) => { const out = await client.answer(String(snap.question!.id), r); if (out.accepted) setSubmittedQ(String(snap.question!.id)); return out; }} />}
@@ -165,6 +169,7 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
       )}
       {!lobby && phase !== 'finished' && !team && <main className="td narrow"><section className="td-panel"><h1>Waiting for a squad</h1><p className="td-note">Every squad is full. The teacher can move you into one between waves.</p></section></main>}
       {phase === 'finished' && <Results snap={snap} client={client} practice={practice} />}
+      {coachOpen && phase !== 'finished' && <Coach onClose={closeCoach} hidden={phase === 'quiz_open' || !!personal} />}
     </div>
   );
 }

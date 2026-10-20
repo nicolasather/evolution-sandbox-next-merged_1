@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import QuestionPlay, { type PlayQuestion } from '../QuestionPlay';
 import AnswerView from '../AnswerView';
 import { BRANCHES, BOSSES, ENEMIES, LEVEL_DAMAGE_PCT, LEVEL_RANGE_PCT, ROLES, TICKS_PER_SECOND, TOWERS } from '@/lib/quiz/td/balance';
-import { roleSVG, towerSVG, enemySVG, kindSVG } from '@/lib/quiz/td/art';
+import { roleSVG, towerSVG, enemySVG, kindSVG, iconSVG, TOWER_ACCENT } from '@/lib/quiz/td/art';
 import { buildCost, moveCost, previewBoard, sellRefund, targetCost, upgradeCost } from '@/lib/quiz/td/engine';
-import { TD_BRANCHES, TD_ROLES, TD_TARGETING, TD_TOWERS, type TDBoardAction, type TDRole, type TDSeat, type TDState, type TDTeam, type TDTower, type TDTowerKind } from '@/lib/quiz/td/domain';
+import { laneReach } from '@/lib/quiz/td/maps';
+import { TD_BRANCHES, TD_ROLES, type TDErrorCode, TD_TARGETING, TD_TOWERS, type TDBoardAction, type TDRole, type TDSeat, type TDState, type TDTeam, type TDTower, type TDTowerKind } from '@/lib/quiz/td/domain';
 import { kindLabels } from '@/lib/quiz/types';
 import type { TDSnap } from './useTD';
 
@@ -28,9 +29,9 @@ export function Hud({ snap, team, now, compact }: { snap: TDSnap; team: TDTeam |
   const left = snap.phaseDeadlineMs !== null ? (snap.paused ? snap.phaseDeadlineMs - snap.paused.atMs : snap.phaseDeadlineMs - now) : null;
   return (
     <div className={`td-hud ${compact ? 'compact' : ''}`} role="group" aria-label="Match status">
-      <span className="td-stat"><b>WAVE</b> {Math.max(0, Math.min(snap.round, snap.plan.waves))} / {snap.plan.waves}</span>
-      {team && <span className="td-stat core"><b>CORE</b> {team.coreHP} / {team.maxCoreHP}<span className="td-meter" aria-hidden="true"><i style={{ width: `${(team.coreHP / Math.max(1, team.maxCoreHP)) * 100}%` }} /></span></span>}
-      {team && <span className="td-stat points"><b>POINTS</b> {team.points}</span>}
+      <span className="td-stat"><Art svg={iconSVG('wave')} size={24} /><b>WAVE</b> {Math.max(0, Math.min(snap.round, snap.plan.waves))} / {snap.plan.waves}</span>
+      {team && <span className="td-stat core"><Art svg={iconSVG('core')} size={24} /><b>CORE</b> {team.coreHP} / {team.maxCoreHP}<span className="td-meter" aria-hidden="true"><i style={{ width: `${(team.coreHP / Math.max(1, team.maxCoreHP)) * 100}%` }} /></span></span>}
+      {team && <span className="td-stat points"><Art svg={iconSVG('points')} size={24} /><b>POINTS</b> {team.points}</span>}
       <span className="td-stat phase" aria-live="polite"><b>{PHASE_LABEL[snap.phase]}</b>{left !== null && snap.phase !== 'finished' ? ` ${fmt(left)}` : ''}{snap.paused ? ' · paused' : ''}</span>
     </div>
   );
@@ -41,6 +42,13 @@ export function ConnBadge({ conn }: { conn: string }) {
   const text = conn === 'connecting' ? 'Connecting…' : conn === 'degraded' ? 'Slow connection — still syncing' : conn === 'reconnecting' ? 'Reconnecting – actions paused' : 'Back online — board refreshed';
   return <p className={`td-conn ${conn}`} role="status">{text}</p>;
 }
+
+/** Why an action is unavailable, as a coloured tag plus the plain sentence: points, phase, a taken pad and a missing branch look different at a glance. */
+const REASON: Partial<Record<TDErrorCode, { label: string; cls: string }>> = {
+  INSUFFICIENT_POINTS: { label: 'Not enough points', cls: 'points' }, WRONG_PHASE: { label: 'Wrong phase', cls: 'phase' }, PAUSED: { label: 'Paused', cls: 'phase' }, MATCH_FINISHED: { label: 'Match over', cls: 'phase' },
+  PAD_OCCUPIED: { label: 'Pad taken', cls: 'taken' }, BRANCH_REQUIRED: { label: 'Pick a branch', cls: 'branch' }, MAX_TOWERS: { label: 'Tower limit', cls: 'taken' }, MAX_LEVEL: { label: 'Max level', cls: 'branch' },
+};
+export function ReasonTag({ code }: { code?: TDErrorCode }) { const r = code ? REASON[code] : undefined; return r ? <span className={`td-tag ${r.cls}`}>{r.label}</span> : null; }
 
 // ── lobby ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 export function RolePicker({ value, onPick, busy }: { value: TDRole | null; onPick: (r: TDRole | null) => void; busy: boolean }) {
@@ -67,16 +75,17 @@ export function BuildMenu({ state, seat, padId, onBuild, onHover, busy }: { stat
   return (
     <section className="td-drawer" aria-label={`Build on pad ${padId.toUpperCase()}`}>
       <h3>EMPTY PAD {padId.toUpperCase()}</h3>
+      <p className="td-note">Point at a card to see on the map how far that tower reaches.</p>
       <div className="td-towergrid">
         {TD_TOWERS.map((k) => {
           const pv = previewBoard(state, seat, { kind: 'build', padId, tower: k }); const cost = buildCost(state, team, seat, k);
           return (
-            <button key={k} type="button" className="td-towercard" disabled={busy || !pv.ok} onMouseEnter={() => onHover(k)} onFocus={() => onHover(k)} onMouseLeave={() => onHover(null)} onClick={() => onBuild(k)} aria-describedby={`why-${k}`}>
+            <button key={k} type="button" className="td-towercard" style={{ ['--tw' as string]: TOWER_ACCENT[k] }} disabled={busy || !pv.ok} onMouseEnter={() => onHover(k)} onFocus={() => onHover(k)} onMouseLeave={() => onHover(null)} onClick={() => onBuild(k)} aria-describedby={`why-${k}`}>
               <Art svg={towerSVG(k, 1)} size={48} />
               <span className="name">{TOWERS[k].name}</span>
               <span className="cost">{cost.cost} POINTS{cost.architect ? ' · Architect −10%' : ''}{cost.kit ? ' · Comeback kit' : ''}</span>
-              <span className="role">{TOWERS[k].role}{dps(k, 1) ? ` · ${dps(k, 1)} dmg/s` : ''} · range {rangeTiles(k, 1)}</span>
-              <span id={`why-${k}`} className={pv.ok ? 'ok' : 'why'}>{pv.ok ? `BUILD: ${TOWERS[k].name.split(' ')[0]!.toUpperCase()} ${cost.cost} POINTS` : pv.message}</span>
+              <span className="role">{TOWERS[k].role}{dps(k, 1) ? ` · ${dps(k, 1)} dmg/s` : ''} · range {rangeTiles(k, 1)} · reaches {laneReach(state.config.mapId, padId, TOWERS[k].range)}% of the lane</span>
+              {pv.ok ? <span id={`why-${k}`} className="ok">BUILD: {TOWERS[k].name.split(' ')[0]!.toUpperCase()} {cost.cost} POINTS</span> : <span id={`why-${k}`} className="why"><ReasonTag code={pv.code} /> {pv.message}</span>}
             </button>
           );
         })}
@@ -94,14 +103,14 @@ export function TowerCard({ state, seat, tower, onAction, onMove, moving, busy }
   const lastDmg = team.lastWave?.damageByTower?.[tower.id];
   return (
     <section className="td-drawer" aria-label={`${TOWERS[tower.kind].name} details`}>
-      <div className="td-towerhead"><Art svg={towerSVG(tower.kind, tower.level)} size={56} /><div><h3>{TOWERS[tower.kind].name} · LEVEL {tower.level}</h3>
+      <div className="td-towerhead"><Art svg={towerSVG(tower.kind, tower.level)} size={60} /><div><h3>{TOWERS[tower.kind].name} · LEVEL {tower.level}</h3><span className="td-pips" aria-hidden="true">{[1, 2, 3].map((n) => <i key={n} className={n <= tower.level ? 'on' : ''} />)}</span>
         <p className="td-note">{tower.kind === 'beacon' ? `Speeds up towers within ${rangeTiles(tower.kind, tower.level)} tiles` : `${dps(tower.kind, tower.level)} dmg/s · range ${rangeTiles(tower.kind, tower.level)} tiles`}{tower.branch ? ` · ${BRANCHES[tower.branch]!.name}` : ''}{lastDmg !== undefined ? ` · last wave: ${lastDmg} damage` : ''}</p></div></div>
-      {tower.level === 1 && up !== null && <button type="button" className="td-btn primary" disabled={busy || !upPv?.ok} onClick={() => onAction({ kind: 'upgrade', towerId: tower.id })}>{upPv?.ok ? `Upgrade to level 2 · ${up} points (+30% damage, +10% range)` : upPv?.message}</button>}
+      {tower.level === 1 && up !== null && <button type="button" className="td-btn primary" disabled={busy || !upPv?.ok} onClick={() => onAction({ kind: 'upgrade', towerId: tower.id })}>{upPv?.ok ? `Upgrade to level 2 · ${up} points (+30% damage, +10% range)` : <><ReasonTag code={upPv?.code} /> {upPv?.message}</>}</button>}
       {tower.level === 2 && up !== null && (
         <div className="td-branches" role="group" aria-label="Level 3 upgrade: choose one">
           {TD_BRANCHES[tower.kind].map((b) => { const pv = can({ kind: 'upgrade', towerId: tower.id, branch: b }); return (
             <button key={b} type="button" className="td-branch" disabled={busy || !pv.ok} onClick={() => onAction({ kind: 'upgrade', towerId: tower.id, branch: b })}>
-              <b>{BRANCHES[b]!.name}</b><span>{BRANCHES[b]!.effect}</span><small>{BRANCHES[b]!.tradeoff}</small><span className={pv.ok ? 'cost' : 'why'}>{pv.ok ? `SPEND ${up} POINTS` : pv.message}</span>
+              <b>{BRANCHES[b]!.name}</b><span>{BRANCHES[b]!.effect}</span><small>{BRANCHES[b]!.tradeoff}</small><span className={pv.ok ? 'cost' : 'why'}>{pv.ok ? `SPEND ${up} POINTS` : <><ReasonTag code={pv.code} /> {pv.message}</>}</span>
             </button>); })}
         </div>
       )}
@@ -116,7 +125,7 @@ export function TowerCard({ state, seat, tower, onAction, onMove, moving, busy }
         <button type="button" className="td-btn ghost" disabled={busy || state.phase !== 'build'} aria-pressed={moving} onClick={onMove}>{moving ? 'Pick an empty pad…' : `Move · ${moveCost(tower) || 'free'}`}</button>
         <button type="button" className="td-btn ghost" disabled={busy || state.phase !== 'build'} onClick={() => onAction({ kind: 'sell', towerId: tower.id })}>Sell · +{sellRefund(tower)}</button>
       </div>
-      {state.phase !== 'build' && <p className="td-why">Build only between waves.</p>}
+      {state.phase !== 'build' && <p className="td-why"><ReasonTag code="WRONG_PHASE" /> Build only between waves.</p>}
     </section>
   );
 }
@@ -134,6 +143,7 @@ export function QuestionOverlay({ snap, question, now, onSubmit, submitted, pers
         <header className="td-quizhead">
           <h2 id="td-q-head" ref={head} tabIndex={-1}>{personal ? 'YOUR QUESTION' : `QUESTION ${r?.question?.index ?? ''} / ${r?.question?.total ?? snap.plan.waves}`}</h2>
           <span><Art svg={kindSVG(String(question.kind))} size={28} /> {kindLabels[question.kind as keyof typeof kindLabels]}{r?.question?.repeat ? ' · review cycle' : ''}</span>
+          {!personal && <span className="td-freeze">❄ Battle frozen</span>}
           {left !== null && <span className={`td-timer ${left < 10_000 ? 'low' : ''}`} role="timer" aria-label={`Time left ${fmt(left)}`}>TIME {fmt(left)}</span>}
         </header>
         {submitted ? (
@@ -182,6 +192,21 @@ export function Opponents({ snap }: { snap: TDSnap }) {
       <h3>OTHER SQUADS</h3>
       <ul>{others.map((t) => <li key={t.id}><i style={{ background: TEAM_SWATCH[t.colorIndex] }} aria-hidden="true" /><b>{t.name}</b><span>wave {t.wavesCleared} · core {t.coreHP}/{t.maxCoreHP}{'accuracyPct' in t && t.accuracyPct !== null ? ` · ${t.accuracyPct}%` : ''}{t.fallen ? ' · core fallen' : ''}</span></li>)}</ul>
     </section>
+  );
+}
+
+/** How the match is scored, in words anyone can check: shown in competitive matches so squad size and speed never feel like hidden advantages. */
+export function RankingRules({ squads }: { squads: boolean }) {
+  return (
+    <details className="td-rules">
+      <summary>How is this scored?</summary>
+      <ol>
+        {squads && <li><b>Ranking:</b> waves cleared first, then core health left, then answer accuracy. Every squad plays the same map and the same waves.</li>}
+        <li><b>Points:</b> a correct squad answer earns 60% of the round’s award, plus up to 40% more as more of the squad gets it right. A squad of 5 does not earn five times a squad of 1: only the <i>share</i> correct counts.</li>
+        <li><b>Speed:</b> answering faster earns nothing.</li>
+        <li><b>Spending:</b> points buy towers and upgrades only; the server checks every purchase.</li>
+      </ol>
+    </details>
   );
 }
 

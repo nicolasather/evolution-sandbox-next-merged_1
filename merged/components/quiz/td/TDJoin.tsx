@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { api, ApiError } from '@/lib/quiz/client';
+import Poster from './Poster';
 
 export default function TDJoin({ initialCode }: { initialCode: string }) {
   const router = useRouter();
@@ -19,7 +20,8 @@ export default function TDJoin({ initialCode }: { initialCode: string }) {
   return (
     <main className="td narrow">
       <form className="td-panel td-joinform" onSubmit={submit}>
-        <h1>Join Tower Defense</h1>
+        <Poster mapId="meadow_circuit" ribbon="Your squad is waiting" alt="A Tower Defense map: your squad builds towers beside the lane to stop enemies reaching the fort" />
+        <h1 className="td-sign">Join Tower Defense</h1>
         <label className="td-field">Room code<input inputMode="text" autoCapitalize="characters" autoComplete="off" value={code} maxLength={6} onChange={(e) => setCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, ''))} aria-describedby="td-code-hint" /></label>
         <p id="td-code-hint" className="td-note">Six letters and numbers, shown on the teacher’s screen.</p>
         <label className="td-field">Your name<input value={name} maxLength={24} autoComplete="nickname" onChange={(e) => setName(e.target.value)} /></label>

@@ -28,7 +28,7 @@ function Screen({ roomId, token }: { roomId: string; token: string }) {
   return (
     <div className="td td-screen" data-phase={snap.phase}>
       <header className="td-top">
-        <div className="td-title"><b>Tower Defense</b><span className="td-chip">{MAPS[snap.config.mapId].title}</span></div>
+        <div className="td-title"><b>Tower Defense</b><span className="td-chip">{MAPS[snap.config.mapId].title}</span>{snap.paused && <span className="td-chip" role="status" style={{ background: 'var(--coral)' }}>PAUSED</span>}</div>
         <div className="td-clock"><span className="td-phase">{PHASE_LABEL[snap.phase]}{snap.paused ? ' · paused' : ''}</span>{left !== null && <b>{fmt(left)}</b>}{snap.round > 0 && <span>Wave {snap.round} of {snap.plan.waves}</span>}</div>
       </header>
       {snap.phase === 'lobby' && (
@@ -46,7 +46,8 @@ function Screen({ roomId, token }: { roomId: string; token: string }) {
         <main className={`td-screengrid n${teams.length}`}>
           {teams.map((t) => (
             <section key={t.id} className="td-screenboard">
-              <h2><i style={{ background: TEAM_SWATCH[t.colorIndex] }} aria-hidden="true" />{t.name}<span>Core {t.coreHP}/{t.maxCoreHP} · {t.wavesCleared} waves</span></h2>
+              <h2><i style={{ background: TEAM_SWATCH[t.colorIndex] }} aria-hidden="true" />{t.name}{t.fallen ? ' · core fallen' : ''}<span>Core {t.coreHP}/{t.maxCoreHP} · {t.wavesCleared}/{snap.plan.waves} waves</span></h2>
+              <div className="td-bar" role="img" aria-label={`${t.name}: core ${t.coreHP} of ${t.maxCoreHP}`}><span className="c" style={{ flex: t.coreHP }} /><span className="w" style={{ flex: Math.max(0, t.maxCoreHP - t.coreHP) }} /></div>
               <Board mapId={snap.config.mapId} towers={t.towers} phase={snap.phase} waveInput={round?.waveInput?.[t.id] ?? null} waveStartMs={round?.waveStartMs ?? null} pausedAtMs={snap.paused?.atMs ?? null} serverNow={client.serverNow} calm={false} showPads={false} selectedPad={null} selectedTower={null} ghost={null} label={`${t.name} board`} coreHP={t.coreHP} maxCoreHP={t.maxCoreHP} interactive={false} lowFx={teams.length > 2} />
             </section>))}
         </main>

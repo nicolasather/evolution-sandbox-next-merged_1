@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
+import Poster from '@/components/quiz/td/Poster';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api } from '@/lib/quiz/client';
 import { prepare } from '@/lib/quiz/editor-model';
@@ -206,7 +207,13 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
           <div className="inner">
             <h1 id="lib-h">Quiz Library</h1>
             <p style={{ maxWidth: '52ch', margin: 0 }}>Quizzes people have published. Anyone can play them. A “Reviewed” badge means a moderator checked it — popularity alone never makes a quiz correct.</p>
-            {mode && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{towerDefense ? 'Tower Defense (online, personal devices)' : game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
+            {mode && towerDefense && (
+              <div className="td-libcard" aria-label="Selected mode: Tower Defense">
+                <Poster mapId="meadow_circuit" />
+                <div><h2 className="td-sign">Tower Defense</h2><p>Online, one device per student. Choose a quiz to host it with.</p><Link className="td-btn small ghost" href="/quiz/modes">Change mode</Link></div>
+              </div>
+            )}
+            {mode && !towerDefense && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
           </div>
         </section>
       )}

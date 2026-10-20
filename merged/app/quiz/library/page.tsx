@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '../td/td.css';
 import QuizList from '@/components/quiz/QuizList';
 import { isGameKey } from '@/lib/quiz/projector/modes';
 import type { PlayMode } from '@/lib/quiz/types';

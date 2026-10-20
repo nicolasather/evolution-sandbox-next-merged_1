@@ -27,11 +27,26 @@ export default function Results({ snap, client, practice = false, host = false }
   const myTeam = snap.selfTeamId; const seatName = (id: string) => snap.seats.find((s) => s.id === id)?.name ?? 'Player';
   const practiceReview = practice ? PRACTICE.filter((p) => snap.usedPositions.includes(p.position) || snap.usedPositions.includes(p.position + 100)).map((p) => ({ position: p.position, prompt: p.prompt, kind: p.kind, explanation: (p.answerKey as { explanation?: string }).explanation ?? null })) : [];
 
+  const mineRow = standings.find((x) => x.teamId === myTeam) ?? standings[0];
+  const celebrate = !!fin && (fin.outcome === 'victory' || (mineRow?.rank === 1 && snap.config.format === 'versus'));
+  const podiumOrder = standings.length >= 3 ? [1, 0, 2, 3] : standings.length === 2 ? [1, 0] : [0];
+  const CONFETTI = ['#FFC94B', '#FC7462', '#55BD8C', '#67BCD9', '#FF8FB1', '#A48EDD'];
   return (
     <main className="td-results">
       <section className="td-panel td-finale">
-        <h1>{fin ? OUTCOME[fin.outcome] : 'Match over'}</h1>
+        {celebrate && <div className="td-confetti" aria-hidden="true">{Array.from({ length: 22 }, (_, i) => <i key={i} style={{ left: `${(i * 37) % 100}%`, background: CONFETTI[i % CONFETTI.length], animationDelay: `${(i % 7) * 0.4}s`, animationDuration: `${3 + (i % 5) * 0.5}s` }} />)}</div>}
+        <h1 className="td-sign">{fin ? OUTCOME[fin.outcome] : 'Match over'}</h1>
         {fin && <p className="td-note">{REASON[fin.reason]}</p>}
+        {mineRow && <div className="td-chapter" aria-label="Your squad"><span>{mineRow.wavesCleared} of {snap.plan.waves} waves cleared</span><span>Core {mineRow.coreHP}/{mineRow.maxCoreHP}</span><span>{mineRow.accuracyPct === null ? 'Accuracy —' : `${mineRow.accuracyPct}% accuracy`}</span></div>}
+        {standings.length > 1 && (
+          <div className="td-podium" aria-hidden="true">
+            {podiumOrder.map((i) => standings[i]).filter((x): x is NonNullable<typeof x> => !!x).map((st) => { const t = teamOf(st.teamId); return (
+              <div key={st.teamId} className={`td-pod r${Math.min(4, st.rank)} ${st.teamId === myTeam ? 'mine' : ''}`}>
+                <span className="flag" style={{ background: TEAM_SWATCH[t?.colorIndex ?? 0] }} /><span className="name">{t?.name ?? st.teamId}</span><span className="meta">{st.wavesCleared} waves · core {st.coreHP}/{st.maxCoreHP}</span>
+                <div className="block">{st.rank}</div>
+              </div>); })}
+          </div>
+        )}
         <ol className="td-standings">
           {standings.map((s) => { const t = teamOf(s.teamId); return (
             <li key={s.teamId} className={s.teamId === myTeam ? 'mine' : ''}>
@@ -43,7 +58,7 @@ export default function Results({ snap, client, practice = false, host = false }
         {snap.config.format === 'versus' && <p className="td-note">Ranking: waves cleared, then core health, then answer accuracy.</p>}
       </section>
       <section className="td-panel">
-        <h2>What the class answered</h2>
+        <h2 className="td-sign">What the class answered</h2>
         {practice && <ul className="td-review">{practiceReview.map((q) => <li key={q.position}><p className="q">{q.prompt}</p>{q.explanation && <p className="td-note">{q.explanation}</p>}</li>)}</ul>}
         {!practice && !review && !err && <p className="td-note" role="status">Loading the review…</p>}
         {err && <p className="td-why">{err}</p>}

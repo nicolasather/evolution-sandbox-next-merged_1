@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ALL_MODES, modeInfo } from '@/lib/quiz/mode-info';
 import { MODE_LIST } from '@/lib/quiz/projector/modes';
 import TutorialOverlay from '@/components/quiz/projector/TutorialOverlay';
+import Poster from '@/components/quiz/td/Poster';
 import '../td/td.css';
 export const metadata: Metadata = { title: 'Game Modes' };
 
@@ -15,21 +16,21 @@ export default function ModesPage() {
           <p className="muted-text" style={{ maxWidth: '60ch' }}>Start with the ten Projector Games for a whole classroom, or scroll down for the classic modes. Only the modifiers that work with your choice are offered afterwards, and points are the only currency.</p></div>
         <Link className="btn ghost" href="/quiz/library">Quiz Library</Link>
       </header>
-      <section className="stack td-modecard" style={{ gap: 14, marginBottom: 44 }} aria-labelledby="td-h" id="tower-defense">
-        <header><p className="eyebrow">Online · personal devices</p><h2 id="td-h" style={{ fontStyle: 'italic' }}>Tower Defense</h2></header>
+      <section className="td-modecard" style={{ marginBottom: 44 }} aria-labelledby="td-h" id="tower-defense">
         <div className="td-modebody">
-          <Image src="/quiz/td/map_meadow_circuit_board.svg" alt="A Tower Defense map: a winding lane from a gate to a core, with tower pads beside it" width={1280} height={768} unoptimized />
+          <Poster mapId="meadow_circuit" ribbon="Online · own devices" />
           <div className="stack" style={{ gap: 10 }}>
+            <h2 id="td-h" className="td-sign" style={{ justifySelf: 'start' }}>Tower Defense</h2>
             <p style={{ maxWidth: '60ch' }}>Each student plays on their own device in a squad of 1 to 5. Correct answers earn points; squads spend them on towers between waves and defend their core. Co-op for one class squad, or 2–4 competitive squads on identical maps (up to 20 students).</p>
-            <ul className="muted-text" style={{ margin: 0, paddingLeft: 18, maxWidth: '60ch' }}>
+            <ul>
               <li>Questions together before each build, or at each student’s own pace while towers defend.</li>
               <li>Six towers with upgrade branches, five roles, eight enemy types and a boss on every map.</li>
               <li>The teacher console pauses, extends and approves; the projector shows every squad’s board.</li>
             </ul>
-            <div className="row" style={{ gap: 8, flexWrap: 'wrap' }}>
-              <Link className="btn small primary" href="/quiz/library?mode=online&game=tower_defense">Pick a quiz</Link>
-              <Link className="btn small ghost" href="/quiz/td/practice">Practice alone</Link>
-              <Link className="btn small ghost" href="/quiz/td">How to play</Link>
+            <div className="td-row wrap" style={{ marginTop: 6 }}>
+              <Link className="td-btn primary" href="/quiz/library?mode=online&game=tower_defense">Pick a quiz</Link>
+              <Link className="td-btn" href="/quiz/td/practice">Practice alone</Link>
+              <Link className="td-btn ghost" href="/quiz/td">How to play</Link>
             </div>
           </div>
         </div>

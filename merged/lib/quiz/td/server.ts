@@ -195,7 +195,7 @@ export async function joinTD(input: { joinCode: string; displayName: string; des
   for (let attempt = 0; attempt < 4; attempt++) {
     const cur = await loadSession(roomId);
     const r = addSeat(cur.state, joined.playerId, nick.name, Date.now(), input.desiredTeam ?? null);
-    if (!r.ok) throw new AppError(r.message, 403);
+    if (!r.ok) { await discardUnseated(joined.playerId); throw new AppError(r.message, 403); }
     try {
       await commit(roomId, { actor: joined.playerId, command: `join-${joined.playerId}`, expected: cur.revision, action: 'join', state: r.state, payload: {} });
       await touch(roomId, { seatId: joined.playerId }); // a device that just joined is present
@@ -203,7 +203,16 @@ export async function joinTD(input: { joinCode: string; displayName: string; des
       return { roomId, seatId: joined.playerId, teamId: seat.teamId, status: joined.status ?? 'active', token };
     } catch (e) { if (e instanceof Conflict) continue; throw e; }
   }
+  await discardUnseated(joined.playerId);
   throw new AppError('The room is busy — please try again.', 409);
+}
+/** join_room_v2 creates the player row BEFORE the seat is accepted. When the seat is refused (room full, locked meanwhile, busy) that row
+ *  would stay behind as an unusable player, so it is removed again. Best effort: a failure here must never mask the real refusal. */
+async function discardUnseated(playerId: string) {
+  try {
+    const del = await serviceDB().from('players').delete().eq('id', playerId);
+    if (del.error) await serviceDB().from('players').update({ status: 'removed' }).eq('id', playerId);
+  } catch { /* the join refusal is what the student needs to see */ }
 }
 
 // ── projections ────────────────────────────────────────────────────────────────────────────────────────────────────────────

@@ -11,6 +11,7 @@ import { BOSSES } from '@/lib/quiz/td/balance';
 import { TD_MAPS, type TDMapId, type TDPlan } from '@/lib/quiz/td/domain';
 import { checkTeamNames } from '@/lib/quiz/projector/team-names';
 import { TEAM_SWATCH } from './parts';
+import { FormatDiagram } from './diagrams';
 
 const DEFAULT_NAMES = ['Mint Comets', 'Coral Crew', 'Blue Orbits', 'Golden Gears'];
 type Pre = { plan: TDPlan; questions: number; byKind: Record<string, number>; ok: boolean };
@@ -67,13 +68,13 @@ export default function TDSetup({ quizId, quizTitle, questionCount, signedIn }: 
   );
   return (
     <main className="td td-setup">
-      <header className="td-setuphead"><p className="td-note">Tower Defense · online, one device per student</p><h1>{quizTitle}</h1><p className="td-note">{questionCount} questions in this quiz.</p></header>
+      <header className="td-setuphead"><p className="td-note">Tower Defense · online, one device per student</p><h1 className="td-sign">{quizTitle}</h1><p className="td-note">{questionCount} questions in this quiz.</p></header>
       <ol className="td-steps">
         <li>
           <h2>Format</h2>
           <div className="td-choice" role="radiogroup" aria-label="Format">
-            <button type="button" role="radio" aria-checked={format === 'coop'} onClick={() => setFormat('coop')}><b>Co-op</b><span>The whole class defends one core. Up to 5 students build together.</span></button>
-            <button type="button" role="radio" aria-checked={format === 'versus'} onClick={() => setFormat('versus')}><b>Competitive squads</b><span>2–4 squads defend identical maps with identical waves. Up to 20 students.</span></button>
+            <button type="button" role="radio" aria-checked={format === 'coop'} onClick={() => setFormat('coop')}><FormatDiagram kind="coop" /><b>Co-op</b><span>The whole class defends one core. Up to 5 students build together.</span></button>
+            <button type="button" role="radio" aria-checked={format === 'versus'} onClick={() => setFormat('versus')}><FormatDiagram kind="versus" /><b>Competitive squads</b><span>2–4 squads defend identical maps with identical waves. Up to 20 students.</span></button>
           </div>
         </li>
         <li>
@@ -117,7 +118,7 @@ export default function TDSetup({ quizId, quizTitle, questionCount, signedIn }: 
           <div className="td-maps" role="radiogroup" aria-label="Map">
             {TD_MAPS.map((m) => (
               <button key={m} type="button" role="radio" aria-checked={mapId === m} onClick={() => setMapId(m)} style={{ ['--map' as string]: MAPS[m].palette.ground, ['--lane' as string]: MAPS[m].palette.lane }}>
-                <span className="swatch" aria-hidden="true" /><b>{MAPS[m].title}</b><span>{MAPS[m].materials.replace(/ · /g, ', ')}. Boss: {BOSSES[MAPS[m].boss].name}.</span></button>))}
+                <span className="swatch" aria-hidden="true">{/* eslint-disable-next-line @next/next/no-img-element -- static original SVG */}<img src={`/quiz/td/map_${m}_board.svg`} alt="" width={640} height={384} /></span><b>{MAPS[m].title}</b><span>{MAPS[m].materials.replace(/ · /g, ', ')}. Boss: {BOSSES[MAPS[m].boss].name}.</span></button>))}
           </div>
         </li>
         <li>

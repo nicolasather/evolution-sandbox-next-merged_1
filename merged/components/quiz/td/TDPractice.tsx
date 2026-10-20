@@ -15,10 +15,10 @@ export default function TDPractice() {
   return (
     <main className="td narrow td-practicesetup">
       <section className="td-panel">
-        <h1>Tower Defense practice</h1>
+        <h1 className="td-sign">Tower Defense practice</h1>
         <p className="td-note">Play the whole loop alone with 12 sample questions: answer, earn points, build towers, hold the core. Nothing is saved.</p>
         <fieldset className="td-maps"><legend>Map</legend>
-          {TD_MAPS.map((m) => <button key={m} type="button" role="radio" aria-checked={draft.mapId === m} onClick={() => setDraft({ ...draft, mapId: m })} style={{ ['--map' as string]: MAPS[m].palette.ground, ['--lane' as string]: MAPS[m].palette.lane }}><span className="swatch" aria-hidden="true" /><b>{MAPS[m].title}</b><span>{MAPS[m].materials.replace(/ · /g, ', ')}</span></button>)}
+          {TD_MAPS.map((m) => <button key={m} type="button" role="radio" aria-checked={draft.mapId === m} onClick={() => setDraft({ ...draft, mapId: m })} style={{ ['--map' as string]: MAPS[m].palette.ground, ['--lane' as string]: MAPS[m].palette.lane }}><span className="swatch" aria-hidden="true">{/* eslint-disable-next-line @next/next/no-img-element -- static original SVG */}<img src={`/quiz/td/map_${m}_board.svg`} alt="" width={640} height={384} /></span><b>{MAPS[m].title}</b><span>{MAPS[m].materials.replace(/ · /g, ', ')}</span></button>)}
         </fieldset>
         <label className="td-field">Length<select value={draft.minutes} onChange={(e) => setDraft({ ...draft, minutes: Number(e.target.value) })}><option value={10}>10 minutes</option><option value={15}>15 minutes</option><option value={20}>20 minutes</option></select></label>
         <RolePicker value={draft.role} busy={false} onPick={(r) => setDraft({ ...draft, role: r })} />
