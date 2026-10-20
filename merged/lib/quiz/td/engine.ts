@@ -10,7 +10,7 @@
 import type { QuestionKind } from '../types';
 import {
   COMEBACK_KIT_PCT, MAX_PLAYERS, MAX_SEATS_PER_TEAM, MAX_TOWERS_PER_TEAM, MOVE_COST_PCT, NETWORK_GRACE_MS, ROLE_CAPS, ROLES, SELL_REFUND_PCT,
-  STARTING_CORE_HP, STARTING_POINTS, TARGET_CHANGE_COST, TICK_MS, TOWERS, WAGER_CAP, independentAward, roundAward, syncTeamAward,
+  STARTING_CORE_HP, STARTING_POINTS, TARGET_CHANGE_COST, TICK_MS, TOWERS, TOWER_AGES, WAGER_CAP, independentAward, isUnlocked, roundAward, rolesForSquad, syncTeamAward, unlockWave,
 } from './balance';
 import {
   TD_BRANCHES, TD_ROLES, TD_TARGETING, TD_TOWERS, type TDBoardAction, type TDConfig, type TDErrorCode, type TDFinish, type TDHostAction, type TDPhase, type TDResult,
@@ -117,6 +117,7 @@ export function previewBoard(s: TDState, seat: TDSeat, a: TDBoardAction): { ok: 
   switch (a.kind) {
     case 'build': {
       if (!TD_TOWERS.includes(a.tower)) return no('INVALID_ACTION', 'Unknown tower.');
+      if (!isUnlocked(a.tower, s.round, s.plan.waves)) return no('LOCKED', `${TOWERS[a.tower].name} unlocks at wave ${unlockWave(a.tower, s.plan.waves)} (${TOWER_AGES[a.tower].age}).`);
       if (!map.pads.some((p) => p.id === a.padId)) return no('INVALID_PAD', 'That is not a build pad.');
       if (team.towers.some((t) => t.padId === a.padId)) return no('PAD_OCCUPIED', 'Pad already occupied.');
       if (team.towers.length >= MAX_TOWERS_PER_TEAM) return no('MAX_TOWERS', `A squad can hold ${MAX_TOWERS_PER_TEAM} towers.`);
@@ -204,6 +205,7 @@ export function reduceSeat(state: TDState, seatId: string, action: TDSeatAction)
     case 'role': {
       if (!between) return fail('WRONG_PHASE', 'Roles change in the lobby or between waves.');
       if (action.role !== null && !TD_ROLES.includes(action.role)) return fail('INVALID_ACTION', 'Unknown role.');
+      if (action.role !== null && team && !rolesForSquad(s.seats.filter((x) => x.teamId === team.id && !x.revoked).length).includes(action.role)) return fail('ROLE_SIZE', 'That role needs a bigger squad. Pick one of the roles offered for your squad size.');
       seat.role = action.role; if (team) log(team, s, 'role', seat.id, { role: action.role ?? 'none' }); return { ok: true, state: s };
     }
     case 'team': {

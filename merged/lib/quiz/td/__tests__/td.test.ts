@@ -1,6 +1,6 @@
 /** Tower Defense — pure engine and simulation (Matrix B of 05_QA_RELEASE/01_TEST_MATRIX_AND_ACCEPTANCE.md). */
 import { rngFrom } from '../../projector/rng';
-import { BOSS_TELEGRAPH_TICKS, ENEMIES, LOW_PRESSURE_BOSS_LEAK, MAX_SLOW_PCT, ROLES, STARTING_CORE_HP, STARTING_POINTS, TOWERS, roundAward, syncTeamAward, independentAward } from '../balance';
+import { BOSS_TELEGRAPH_TICKS, ENEMIES, ENEMY_INFO, LOW_PRESSURE_BOSS_LEAK, MAX_SLOW_PCT, ROLES, STARTING_CORE_HP, STARTING_POINTS, TOWERS, TOWER_TIMELINE, nextUnlock, rolesForSquad, roundAward, syncTeamAward, independentAward, unlockWave } from '../balance';
 import { addSeat, advance, createMatch, creditPersonal, personalAllowed, previewBoard, reduceHost, reduceSeat, sellRefund, standings, type CommittedAnswer } from '../engine';
 import { MAPS, mapPath, validateMap } from '../maps';
 import { project } from '../public';
@@ -9,7 +9,7 @@ import { planWave } from '../waves';
 import { planMatch } from '../plan';
 import { padsByCoverage } from '../bot';
 import { cfg, playMatch, pool } from '../testkit';
-import { TD_BRANCHES, TD_ENEMIES, TD_MAPS, TD_TOWERS, type TDState, type TDTowerKind, type TDWaveInput } from '../domain';
+import { TD_BRANCHES, TD_ENEMIES, TD_MAPS, TD_ROLES, TD_TOWERS, type TDState, type TDTowerKind, type TDWaveInput } from '../domain';
 
 const T0 = 1_700_000_000_000;
 const input = (o: Partial<TDWaveInput> & { kinds?: TDTowerKind[]; level?: 1 | 2 | 3; branch?: string | null } = {}): TDWaveInput => {
@@ -144,11 +144,11 @@ describe('economy and board actions (TD-002, TD-003, TD-004, TD-012, TD-018)', (
     let wins = 0; for (let i = 0; i < 50; i++) { const r = reduceSeat(s, 'seat-0-0', { kind: 'build', padId: 'm01', tower: 'frost' }); if (r.ok) { wins++; s = r.state; } }
     expect(wins).toBe(0); expect(team().points).toBe(before - TOWERS.bolt.cost);
     expect(reduceSeat(s, 'seat-0-0', { kind: 'build', padId: 'nope', tower: 'bolt' })).toMatchObject({ ok: false, code: 'INVALID_PAD' });
-    const poor = JSON.parse(JSON.stringify(s)) as TDState; poor.teams[0]!.points = 5;
+    const poor = JSON.parse(JSON.stringify(s)) as TDState; poor.teams[0]!.points = 5; poor.round = 5;
     expect(reduceSeat(poor, 'seat-0-0', { kind: 'build', padId: 'm02', tower: 'arc' })).toMatchObject({ ok: false, code: 'INSUFFICIENT_POINTS', message: `Insufficient points: need ${TOWERS.arc.cost - 5} more.` });
   });
   it('every tower reaches level 3 with one exclusive branch; upgrades and sales are exact', () => {
-    let { s } = toBuild(lobby()); s.teams[0]!.points = 10_000;
+    let { s } = toBuild(lobby()); s.teams[0]!.points = 10_000; s.round = 5;
     TD_TOWERS.forEach((k, i) => { s = ok(reduceSeat(s, 'seat-0-0', { kind: 'build', padId: MAPS.meadow_circuit.pads[i]!.id, tower: k })); });
     for (const t of [...s.teams[0]!.towers]) {
       s = ok(reduceSeat(s, 'seat-0-0', { kind: 'upgrade', towerId: t.id }));
@@ -321,7 +321,7 @@ describe('host controls and seats (TD-007, TD-019)', () => {
     const empty = lobby({ format: 'versus', teamCount: 2 }, 0);
     expect(reduceHost(empty, { kind: 'start' }, T0).result).toMatchObject({ ok: false, code: 'NOT_READY_YET' });
     expect(reduceHost(empty, { kind: 'start', override: true }, T0).result.ok).toBe(true);
-    let { s } = toBuild(lobby({ approvalAbove: 150 }));
+    let { s } = toBuild(lobby({ approvalAbove: 150 })); s.round = 5;
     const r = reduceSeat(s, 'seat-0-0', { kind: 'build', padId: 'm01', tower: 'ember' }); expect(r.ok && r.note).toBe('NEEDS_APPROVAL'); s = (r as { state: TDState }).state;
     expect(s.teams[0]!.towers).toHaveLength(0);
     s = (reduceHost(s, { kind: 'approve', teamId: 'team-0', pendingId: s.teams[0]!.pending[0]!.id, approve: true }, T0).result as { state: TDState }).state;
@@ -349,3 +349,23 @@ describe('projections (TD-019, Matrix F sensitive data)', () => {
   });
 });
 void TD_ENEMIES;
+
+describe('Game 1 corrective pass: chronological unlocks, enemy notes, role sets by squad size', () => {
+  it('towers unlock in historical order and the engine refuses a locked one with the era in the message', () => {
+    const { s } = toBuild(lobby()); s.teams[0]!.points = 5000;
+    expect(TOWER_TIMELINE).toEqual(['thorn', 'bolt', 'ember', 'beacon', 'frost', 'arc']);
+    const waves = s.plan.waves; const order = TOWER_TIMELINE.map((k) => unlockWave(k, waves)); expect([...order].sort((a, b) => a - b)).toEqual(order);
+    const r = reduceSeat(s, 'seat-0-0', { kind: 'build', padId: 'm01', tower: 'arc' }); expect(r).toMatchObject({ ok: false, code: 'LOCKED' }); expect(!r.ok && r.message).toMatch(/Industrial age/);
+    expect(reduceSeat(s, 'seat-0-0', { kind: 'build', padId: 'm01', tower: 'thorn' })).toMatchObject({ ok: true });
+    const late = JSON.parse(JSON.stringify(s)) as TDState; late.round = waves; expect(reduceSeat(late, 'seat-0-0', { kind: 'build', padId: 'm01', tower: 'arc' })).toMatchObject({ ok: true });
+  });
+  it('short matches still reach every tower before the last wave', () => { for (const w of [3, 4, 5, 6, 10]) for (const k of TOWER_TIMELINE) expect(unlockWave(k, w)).toBeLessThanOrEqual(Math.max(1, w - 1)); expect(nextUnlock(1, 8)).toEqual({ kind: 'ember', wave: 2 }); expect(nextUnlock(8, 8)).toBeNull(); });
+  it('every enemy kind has a field note with a counter', () => { for (const k of TD_ENEMIES) { expect(ENEMY_INFO[k].story.length).toBeGreaterThan(10); expect(ENEMY_INFO[k].counter.length).toBeGreaterThan(10); expect(ENEMY_INFO[k].threat).toBeGreaterThanOrEqual(1); } });
+  it('role sets grow with squad size; a solo squad gets exactly one role and the server refuses the rest', () => {
+    expect(rolesForSquad(1)).toEqual(['architect']); expect(rolesForSquad(2)).toHaveLength(2); expect(rolesForSquad(5)).toHaveLength(5);
+    const { s } = toBuild(lobby()); const seatsOnTeam0 = s.seats.filter((x) => x.teamId === s.teams[0]!.id && !x.revoked).length;
+    const allowed = rolesForSquad(seatsOnTeam0); const banned = TD_ROLES.find((r) => !allowed.includes(r));
+    if (banned) expect(reduceSeat(s, 'seat-0-0', { kind: 'role', role: banned })).toMatchObject({ ok: false, code: 'ROLE_SIZE' });
+    expect(reduceSeat(s, 'seat-0-0', { kind: 'role', role: allowed[0]! })).toMatchObject({ ok: true });
+  });
+});

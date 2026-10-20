@@ -219,5 +219,5 @@ export type TDFinish = { atMs: number; reason: 'complete' | 'core' | 'time' | 't
 export type TDErrorCode =
   | 'WRONG_PHASE' | 'NOT_YOUR_TEAM' | 'INSUFFICIENT_POINTS' | 'INVALID_PAD' | 'PAD_OCCUPIED' | 'TOWER_MISSING' | 'MAX_LEVEL'
   | 'INVALID_ACTION' | 'MATCH_FINISHED' | 'SEAT_REVOKED' | 'SEAT_FULL' | 'ROOM_LOCKED' | 'STALE_REVISION' | 'MAX_TOWERS'
-  | 'ABILITY_USED' | 'ROLE_REQUIRED' | 'BRANCH_REQUIRED' | 'BRANCH_INVALID' | 'PAUSED' | 'NEEDS_APPROVAL' | 'NOT_READY_YET' | 'NOT_HOST';
+  | 'ABILITY_USED' | 'ROLE_REQUIRED' | 'BRANCH_REQUIRED' | 'BRANCH_INVALID' | 'PAUSED' | 'NEEDS_APPROVAL' | 'NOT_READY_YET' | 'NOT_HOST' | 'LOCKED' | 'ROLE_SIZE';
 export type TDResult = { ok: true; state: TDState; note?: string } | { ok: false; code: TDErrorCode; message: string };

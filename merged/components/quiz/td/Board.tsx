@@ -10,6 +10,8 @@ import { MAPS, mapPath, padCenter } from '@/lib/quiz/td/maps';
 import { WaveSim, type SimEvent } from '@/lib/quiz/td/sim';
 import type { TDMapId, TDPhase, TDTower, TDTowerKind, TDWaveInput } from '@/lib/quiz/td/domain';
 import { boardImg, bossImg, enemyImg, onSpriteLoad, towerImg } from './sprites';
+import { drawProp } from '../art/props';
+import { sceneryFor } from '@/lib/quiz/td/scenery';
 
 const W = 1280, H = 768, TILE = 64, S = TILE / 1000;
 type Fx = { k: string; t0: number; dur: number; x: number; y: number; x2?: number; y2?: number; pts?: [number, number][]; r?: number; text?: string; color?: string; e?: number };
@@ -126,6 +128,8 @@ export default function Board(p: BoardProps) {
       }
       alpha = s.done ? 1 : Math.max(0, Math.min(1, tf - (s.tick - 1)));
     } else if (sim.current && p.phase !== 'wave_result') { sim.current = null; fx.current = []; }
+    // scenery: storybook props around the lane (animated sway/spin/flicker unless calm), drawn under pads, towers and enemies
+    if (!p.lowFx) { const tsec = p.calm ? 0 : realNow / 1000; for (const pr of sceneryFor(map.id)) drawProp(g, pr.kind, pr.x, pr.y, pr.size, tsec, pr.seed, pr.tint); }
     // pads: little stone plinths with a plus; the hovered or chosen one lifts and glows
     if (p.showPads) for (const pad of map.pads) {
       if (p.towers.some((t) => t.padId === pad.id)) continue;
@@ -196,7 +200,9 @@ export default function Board(p: BoardProps) {
         const flash = !p.calm && (hitUntil.current.get(e.id) ?? 0) > realNow;
         const pose = flash ? 'hit' : s.tick % 13 < 6 ? 'idle' : 'move'; const im = enemyImg(e.kind, pose); const size = e.kind === 'bulwark' || e.kind === 'splitter' ? 48 : 42;
         const hop = p.calm ? 0 : e.kind === 'skimmer' ? 8 + Math.sin((s.tick + e.id) / 5) * 3 : Math.abs(Math.sin((s.tick + e.id * 3) / 3)) * 3;
-        if (im) g.drawImage(im, x - size / 2, y - size + 10 - hop, size, size); else { g.fillStyle = PAL.coral; g.beginPath(); g.arc(x, y - 8, 14, 0, Math.PI * 2); g.fill(); }
+        g.fillStyle = 'rgba(25,40,58,0.2)'; g.beginPath(); g.ellipse(x, y + 6, size * 0.3 * (1 - hop / 40), 5, 0, 0, Math.PI * 2); g.fill();
+        const tilt = p.calm || e.kind === 'skimmer' ? 0 : Math.sin((s.tick + e.id * 5) / (e.kind === 'bulwark' ? 7 : e.kind === 'zipper' ? 2 : 4)) * (e.kind === 'bulwark' ? 0.05 : 0.11);
+        if (im) { g.save(); g.translate(x, y + 10); g.rotate(tilt); g.drawImage(im, -size / 2, -size - hop, size, size); g.restore(); } else { g.fillStyle = PAL.coral; g.beginPath(); g.arc(x, y - 8, 14, 0, Math.PI * 2); g.fill(); }
         if (s.tick < e.slowUntil) { g.strokeStyle = PAL.blue; g.lineWidth = 2.5; g.beginPath(); g.ellipse(x, y + 4, 18, 6, 0, 0, Math.PI * 2); g.stroke(); }
         if (e.poison.length) { g.fillStyle = PAL.green; g.beginPath(); g.ellipse(x + 15, y - 30, 5, 3, -0.6, 0, Math.PI * 2); g.fill(); g.strokeStyle = INK; g.lineWidth = 1.5; g.stroke(); }
         if (e.shield > 0) { g.strokeStyle = PAL.paper; g.lineWidth = 2.5; g.beginPath(); g.arc(x, y - 8, 22, -1, 1); g.stroke(); }

@@ -127,3 +127,52 @@ export const SALVO_RADIUS = 1500;
 /** Question reading time by format, in seconds (GDD §5). Mixed quizzes use the real composition, never "all multiple choice". */
 export const READ_SECONDS = { multiple_choice: 38, answer_forge: 55, connection_rush: 65, truth_hunt: 48, fill_table: 75 } as const;
 export const NETWORK_GRACE_MS = 1500; // the same bounded allowance for every student after a deadline
+
+
+// ── Game 1 corrective pass: chronological tower unlocks, enemy field notes, role sets by squad size ─────────────────────────────────────────
+import type { TDTowerKind as _TK, TDEnemyKind as _EK, TDRole as _R } from './domain';
+/** Towers follow the history of defence technology: each one is a recognisable step on the timeline, and a squad meets them in that order.
+ *  `wave` is the first wave a squad may BUILD it (waves are 1-based; the unlock is checked against the round the next wave belongs to). */
+export type TowerAge = { age: string; era: string; wave: number; story: string };
+export const TOWER_AGES: Record<_TK, TowerAge> = {
+  thorn: { age: 'Stone Age', era: 'about 100,000 years ago', wave: 1, story: 'Poisoned thorns and plant toxins were among the first things people used to hold off a threat.' },
+  bolt: { age: 'Ancient world', era: 'about 400 BCE', wave: 1, story: 'The first bolt-throwers (the gastraphetes and later ballistae) launched bolts with a mechanical stock.' },
+  ember: { age: 'Bronze and Iron Age', era: 'about 3000 BCE', wave: 2, story: 'Kilns and furnaces made metal possible — and a sheet of fire stops armoured foes.' },
+  beacon: { age: 'Classical age', era: 'about 280 BCE', wave: 3, story: 'Lighthouses and signal fires let a whole coastline work together at once.' },
+  frost: { age: 'Renaissance', era: 'about 1600 CE', wave: 4, story: 'Ground lenses — telescopes and microscopes — learned to bend and focus light, and with it, cold to a point.' },
+  arc: { age: 'Industrial age', era: 'about 1800 CE', wave: 5, story: 'Voltaic piles and coils turned electricity into a force that jumps from one target to the next.' },
+};
+export const TOWER_TIMELINE: readonly _TK[] = ['thorn', 'bolt', 'ember', 'beacon', 'frost', 'arc'];
+/** First wave a tower can be built, capped so short matches still reach every tower before their final wave. */
+export const unlockWave = (kind: _TK, waves: number): number => {
+  const last = Math.max(1, waves - 1); const w = TOWER_AGES[kind].wave; // short matches compress the table evenly instead of piling every late tower onto one wave
+  return last >= 5 ? w : Math.max(1, Math.min(last, Math.round((w * last) / 5)));
+};
+export const isUnlocked = (kind: _TK, round: number, waves: number): boolean => round >= unlockWave(kind, waves);
+export const nextUnlock = (round: number, waves: number): { kind: _TK; wave: number } | null => {
+  const left = TOWER_TIMELINE.map((k) => ({ kind: k, wave: unlockWave(k, waves) })).filter((x) => x.wave > round).sort((a, b) => a.wave - b.wave);
+  return left[0] ?? null;
+};
+
+export type EnemyInfo = { type: string; threat: 1 | 2 | 3 | 4 | 5; story: string; behaviour: string; counter: string };
+export const ENEMY_INFO: Record<_EK, EnemyInfo> = {
+  drifter: { type: 'Walker', threat: 1, story: 'A wobbly toy scout that follows the lane without a plan.', behaviour: 'Walks at a steady pace and has no special trait.', counter: 'Any tower. A good target for your first Thorn Planter or Bolt Turret.' },
+  zipper: { type: 'Runner', threat: 2, story: 'A spring-loaded runner that cannot sit still.', behaviour: 'Fast, low health, and sprints for a second and a half when it is 40% along the lane.', counter: 'Frost Lens slows it before the sprint; Bolt Turrets have the fire rate to hit it.' },
+  bulwark: { type: 'Heavy', threat: 3, story: 'A tin-plated tank that shrugs off small hits.', behaviour: 'Slow, very tough, armour cuts 45% of every hit, and it hurts the core for 2 when it arrives.', counter: 'Ember Kiln melts armour. Several Bolts also work if you upgrade them.' },
+  skimmer: { type: 'Flyer', threat: 2, story: 'A paper kite that ignores the lane’s corners.', behaviour: 'Flies over the lane, so ground-only towers cannot touch it.', counter: 'Bolt, Frost and Arc can hit flyers. Ember and Thorn cannot.' },
+  warden: { type: 'Shielded', threat: 3, story: 'A guard with a spare shield strapped to its back.', behaviour: 'Carries a 60-point shield before its health is touched, and 25% armour.', counter: 'Burst the shield down with fast hits (Bolt, Arc); Ember’s armour melt helps against the 25% armour.' },
+  splitter: { type: 'Swarm maker', threat: 3, story: 'Looks like one enemy but pops into two.', behaviour: 'When it falls it splits into two smaller enemies with 45% of its health each.', counter: 'Ember splash and Arc chains clear the pieces together.' },
+  sapper: { type: 'Saboteur', threat: 3, story: 'A tinkerer with a screwdriver and bad intentions.', behaviour: 'Jams the nearest tower for about one and a half seconds as it passes.', counter: 'Alchemist’s Purify, or kill it early with long-range towers.' },
+  colossus: { type: 'Boss', threat: 5, story: 'A giant that appears at the end of a chapter, with a warning before every trick.', behaviour: 'Huge health, 25% armour, and it hurts the core for 5. Each boss has three phases with a one-second telegraph.', counter: 'Upgrade your best towers, keep Frost Lenses on the lane, and read the warning banner.' },
+};
+
+/** OS-style role gating: which roles a squad of N may pick. One student gets one balanced solo role; bigger squads add complementary roles. */
+export const SOLO_ROLE: _R = 'architect';
+export const ROLES_BY_SIZE: Record<number, readonly _R[]> = {
+  1: ['architect'], 2: ['architect', 'tactician'], 3: ['architect', 'tactician', 'warden'], 4: ['architect', 'tactician', 'warden', 'alchemist'], 5: ['architect', 'tactician', 'warden', 'alchemist', 'artillerist'],
+};
+export const rolesForSquad = (size: number): readonly _R[] => ROLES_BY_SIZE[Math.max(1, Math.min(5, Math.floor(size) || 1))];
+export const ROLE_REASON: Record<_R, string> = {
+  architect: 'Cheaper first tower: the solo-ready role.', tactician: 'Free targeting and a scan: pairs well with a builder.', warden: 'Extra core health: a safety net once three can share the work.',
+  alchemist: 'Longer Frost and Thorn effects: needs a squad that runs those towers.', artillerist: 'Salvo and splash: shines when four others hold the lane.',
+};

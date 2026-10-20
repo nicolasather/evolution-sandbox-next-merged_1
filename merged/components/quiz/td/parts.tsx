@@ -2,11 +2,11 @@
 import { useEffect, useRef, useState } from 'react';
 import QuestionPlay, { type PlayQuestion } from '../QuestionPlay';
 import AnswerView from '../AnswerView';
-import { BRANCHES, BOSSES, ENEMIES, LEVEL_DAMAGE_PCT, LEVEL_RANGE_PCT, ROLES, TICKS_PER_SECOND, TOWERS } from '@/lib/quiz/td/balance';
+import { BRANCHES, BOSSES, ENEMIES, ENEMY_INFO, LEVEL_DAMAGE_PCT, LEVEL_RANGE_PCT, ROLES, ROLE_REASON, TICKS_PER_SECOND, TOWERS, TOWER_AGES, TOWER_TIMELINE, isUnlocked, nextUnlock, rolesForSquad, unlockWave } from '@/lib/quiz/td/balance';
 import { roleSVG, towerSVG, enemySVG, kindSVG, iconSVG, TOWER_ACCENT } from '@/lib/quiz/td/art';
 import { buildCost, moveCost, previewBoard, sellRefund, targetCost, upgradeCost } from '@/lib/quiz/td/engine';
 import { laneReach } from '@/lib/quiz/td/maps';
-import { TD_BRANCHES, TD_ROLES, type TDErrorCode, TD_TARGETING, TD_TOWERS, type TDBoardAction, type TDRole, type TDSeat, type TDState, type TDTeam, type TDTower, type TDTowerKind } from '@/lib/quiz/td/domain';
+import { TD_BRANCHES, TD_ROLES, type TDErrorCode, TD_TARGETING, TD_TOWERS, type TDBoardAction, type TDRole, type TDEnemyKind, type TDSeat, type TDState, type TDTeam, type TDTower, type TDTowerKind } from '@/lib/quiz/td/domain';
 import { kindLabels } from '@/lib/quiz/types';
 import type { TDSnap } from './useTD';
 
@@ -45,28 +45,54 @@ export function ConnBadge({ conn }: { conn: string }) {
 
 /** Why an action is unavailable, as a coloured tag plus the plain sentence: points, phase, a taken pad and a missing branch look different at a glance. */
 const REASON: Partial<Record<TDErrorCode, { label: string; cls: string }>> = {
-  INSUFFICIENT_POINTS: { label: 'Not enough points', cls: 'points' }, WRONG_PHASE: { label: 'Wrong phase', cls: 'phase' }, PAUSED: { label: 'Paused', cls: 'phase' }, MATCH_FINISHED: { label: 'Match over', cls: 'phase' },
+  INSUFFICIENT_POINTS: { label: 'Not enough points', cls: 'points' }, WRONG_PHASE: { label: 'Wrong phase', cls: 'phase' }, PAUSED: { label: 'Paused', cls: 'phase' }, MATCH_FINISHED: { label: 'Match over', cls: 'phase' }, LOCKED: { label: 'Not unlocked yet', cls: 'phase' }, ROLE_SIZE: { label: 'Needs a bigger squad', cls: 'phase' },
   PAD_OCCUPIED: { label: 'Pad taken', cls: 'taken' }, BRANCH_REQUIRED: { label: 'Pick a branch', cls: 'branch' }, MAX_TOWERS: { label: 'Tower limit', cls: 'taken' }, MAX_LEVEL: { label: 'Max level', cls: 'branch' },
 };
 export function ReasonTag({ code }: { code?: TDErrorCode }) { const r = code ? REASON[code] : undefined; return r ? <span className={`td-tag ${r.cls}`}>{r.label}</span> : null; }
 
 // ── lobby ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-export function RolePicker({ value, onPick, busy }: { value: TDRole | null; onPick: (r: TDRole | null) => void; busy: boolean }) {
+export function RolePicker({ value, onPick, busy, squadSize = 5 }: { value: TDRole | null; onPick: (r: TDRole | null) => void; busy: boolean; squadSize?: number }) {
+  const n = Math.max(1, Math.min(5, squadSize)); const allowed = rolesForSquad(n);
   return (
-    <fieldset className="td-roles"><legend>ROLE <small>optional — every role can answer and build</small></legend>
+    <fieldset className="td-roles"><legend>ROLE <small>{n === 1 ? 'one balanced role for a solo squad' : `${allowed.length} roles for a squad of ${n}`}</small></legend>
       <div className="td-rolegrid">
-        {TD_ROLES.map((r) => (
-          <button key={r} type="button" className="td-role" aria-pressed={value === r} disabled={busy} onClick={() => onPick(value === r ? null : r)}>
-            <Art svg={roleSVG(r)} size={52} />
-            <span><b>{ROLES[r].name}</b><small>{ROLES[r].passive}</small><small className="active">{ROLES[r].active}</small></span>
-          </button>
-        ))}
+        {TD_ROLES.filter((r) => n === 1 ? allowed.includes(r) : true).map((r) => {
+          const ok = allowed.includes(r);
+          return (
+            <button key={r} type="button" className="td-role" aria-pressed={value === r} disabled={busy || !ok} aria-describedby={`role-why-${r}`} onClick={() => onPick(value === r && n > 1 ? null : r)}>
+              <Art svg={roleSVG(r)} size={52} />
+              <span><b>{ROLES[r].name}</b><small>{ROLES[r].passive}</small><small className="active">{ROLES[r].active}</small><small id={`role-why-${r}`} className={ok ? 'fit' : 'locked'}>{ok ? ROLE_REASON[r] : `Needs a squad of ${[1, 2, 3, 4, 5].find((k) => rolesForSquad(k).includes(r))} or more — ${ROLE_REASON[r]}`}</small></span>
+            </button>
+          );
+        })}
       </div>
+      {n === 1 && <p className="td-note">With one player there is nothing to share, so you get the role that helps a lone builder most. More teammates unlock more roles.</p>}
     </fieldset>
   );
 }
 
-// ── build drawer ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+/** The technology timeline: six towers in history order, each with its age, the wave it unlocks at, and whether the squad has it yet. */
+export function TechTimeline({ round, waves, compact }: { round: number; waves: number; compact?: boolean }) {
+  const next = nextUnlock(round, waves);
+  return (
+    <section className={`td-timeline ${compact ? 'compact' : ''}`} aria-label="Tower unlock timeline">
+      <h3>TECH TIMELINE</h3>
+      <ol>
+        {TOWER_TIMELINE.map((k) => { const on = isUnlocked(k, Math.max(1, round), waves); const isNext = next?.kind === k;
+          return (
+            <li key={k} className={on ? 'on' : isNext ? 'next' : 'off'} style={{ ['--tw' as string]: TOWER_ACCENT[k] }}>
+              <Art svg={towerSVG(k, 1)} size={compact ? 30 : 38} />
+              <span><b>{TOWERS[k].name}</b><small>{TOWER_AGES[k].age} · {TOWER_AGES[k].era}</small>{!compact && <small className="story">{TOWER_AGES[k].story}</small>}</span>
+              <em>{on ? 'Unlocked' : `Wave ${unlockWave(k, waves)}`}</em>
+            </li>);
+        })}
+      </ol>
+      {next && <p className="td-note">Next unlock: <b>{TOWERS[next.kind].name}</b> ({TOWER_AGES[next.kind].age}) at wave {next.wave}.</p>}
+    </section>
+  );
+}
+
+// ── build drawer ────────────────────────────────────────────────────────────────────────────────────────────
 const dps = (kind: TDTowerKind, level: number) => { const st = TOWERS[kind]; return st.cooldownTicks ? Math.round((st.damage * LEVEL_DAMAGE_PCT[level - 1]! / 100) * TICKS_PER_SECOND / st.cooldownTicks) : 0; };
 const rangeTiles = (kind: TDTowerKind, level: number) => Math.round(TOWERS[kind].range * LEVEL_RANGE_PCT[level - 1]! / 100 / 100) / 10;
 
@@ -84,6 +110,7 @@ export function BuildMenu({ state, seat, padId, onBuild, onHover, busy }: { stat
               <Art svg={towerSVG(k, 1)} size={48} />
               <span className="name">{TOWERS[k].name}</span>
               <span className="cost">{cost.cost} POINTS{cost.architect ? ' · Architect −10%' : ''}{cost.kit ? ' · Comeback kit' : ''}</span>
+              <span className="age">{TOWER_AGES[k].age} · {TOWER_AGES[k].era}</span>
               <span className="role">{TOWERS[k].role}{dps(k, 1) ? ` · ${dps(k, 1)} dmg/s` : ''} · range {rangeTiles(k, 1)} · reaches {laneReach(state.config.mapId, padId, TOWERS[k].range)}% of the lane</span>
               {pv.ok ? <span id={`why-${k}`} className="ok">BUILD: {TOWERS[k].name.split(' ')[0]!.toUpperCase()} {cost.cost} POINTS</span> : <span id={`why-${k}`} className="why"><ReasonTag code={pv.code} /> {pv.message}</span>}
             </button>
@@ -222,7 +249,33 @@ export function Ticker({ team, seats }: { team: TDTeam; seats: { id: string; nam
   return <ol className="td-ticker" aria-label="Squad activity">{[...team.log].reverse().slice(0, 5).map((l) => <li key={l.n}>{text(l.k, l.p, l.seat)}</li>)}</ol>;
 }
 
-export function EnemyLegend({ kinds }: { kinds: string[] }) {
-  return <ul className="td-legend" aria-label="Enemy types in this wave">{kinds.map((k) => <li key={k}><Art svg={enemySVG(k as never)} size={28} />{k === 'colossus' ? 'Boss' : ENEMIES[k as keyof typeof ENEMIES]?.name ?? k}</li>)}</ul>;
+export function EnemyLegend({ kinds, onPick }: { kinds: string[]; onPick?: (k: TDEnemyKind) => void }) {
+  return (
+    <ul className="td-legend" aria-label="Enemy types in this wave">
+      {kinds.map((k) => { const label = k === 'colossus' ? 'Boss' : ENEMIES[k as keyof typeof ENEMIES]?.name ?? k;
+        return <li key={k}>{onPick ? <button type="button" className="td-enemychip" onClick={() => onPick(k as TDEnemyKind)} aria-label={`About the ${label}`}><Art svg={enemySVG(k as never)} size={28} />{label}<i aria-hidden="true">i</i></button> : <><Art svg={enemySVG(k as never)} size={28} />{label}</>}</li>; })}
+    </ul>
+  );
+}
+/** Field-guide card for one enemy kind: what it is, what it does, what to do about it. Read from the same stats the simulation uses. */
+export function EnemyCard({ kind, onClose }: { kind: TDEnemyKind; onClose: () => void }) {
+  const st = ENEMIES[kind]; const info = ENEMY_INFO[kind]; const ref = useRef<HTMLButtonElement>(null); useEffect(() => { ref.current?.focus(); }, [kind]);
+  const sps = Math.round((st.speed * TICKS_PER_SECOND) / 10) / 100;
+  return (
+    <div className="td-enemycard" role="dialog" aria-modal="false" aria-labelledby="td-enemy-h" data-testid="td-enemycard" onKeyDown={(e) => { if (e.key === 'Escape') onClose(); }}>
+      <header><Art svg={enemySVG(kind)} size={64} /><div><h3 id="td-enemy-h">{kind === 'colossus' ? 'Boss — the Colossus family' : st.name}</h3><p className="td-note">{info.type} · threat {'●'.repeat(info.threat)}{'○'.repeat(5 - info.threat)}</p></div>
+        <button type="button" ref={ref} className="td-btn small ghost" onClick={onClose} aria-label="Close enemy card">Close</button></header>
+      <p>{info.story}</p>
+      <dl>
+        <div><dt>Health</dt><dd>{st.hp}{st.shield ? ` + ${st.shield} shield` : ''}</dd></div>
+        <div><dt>Speed</dt><dd>{sps} tiles/s{st.sprint ? ` (sprints +${st.sprint.pct}%)` : ''}</dd></div>
+        <div><dt>Armour</dt><dd>{st.armorPct}%{st.armorPct ? ' of each hit is blocked' : ' — none'}</dd></div>
+        <div><dt>Core damage</dt><dd>{st.leak} if it arrives</dd></div>
+        <div><dt>Moves</dt><dd>{st.flying ? 'Flying' : 'On the ground'}</dd></div>
+        <div><dt>Special</dt><dd>{info.behaviour}</dd></div>
+      </dl>
+      <p className="td-counter"><b>What to do:</b> {info.counter}</p>
+    </div>
+  );
 }
 export { BOSSES };

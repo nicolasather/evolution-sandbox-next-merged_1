@@ -7,10 +7,11 @@ import { useTDLocal, type PracticeOpts } from './useTD';
 import { MAPS } from '@/lib/quiz/td/maps';
 import { TD_MAPS } from '@/lib/quiz/td/domain';
 import { RolePicker } from './parts';
+import { SOLO_ROLE } from '@/lib/quiz/td/balance';
 
 export default function TDPractice() {
   const [opts, setOpts] = useState<PracticeOpts | null>(null);
-  const [draft, setDraft] = useState<PracticeOpts>({ mapId: 'meadow_circuit', minutes: 10, role: null, lowPressure: false });
+  const [draft, setDraft] = useState<PracticeOpts>({ mapId: 'meadow_circuit', minutes: 10, role: SOLO_ROLE, lowPressure: false });
   if (opts) return <Practice opts={opts} />;
   return (
     <main className="td narrow td-practicesetup">
@@ -21,7 +22,7 @@ export default function TDPractice() {
           {TD_MAPS.map((m) => <button key={m} type="button" role="radio" aria-checked={draft.mapId === m} onClick={() => setDraft({ ...draft, mapId: m })} style={{ ['--map' as string]: MAPS[m].palette.ground, ['--lane' as string]: MAPS[m].palette.lane }}><span className="swatch" aria-hidden="true">{/* eslint-disable-next-line @next/next/no-img-element -- static original SVG */}<img src={`/quiz/td/map_${m}_board.svg`} alt="" width={640} height={384} /></span><b>{MAPS[m].title}</b><span>{MAPS[m].materials.replace(/ · /g, ', ')}</span></button>)}
         </fieldset>
         <label className="td-field">Length<select value={draft.minutes} onChange={(e) => setDraft({ ...draft, minutes: Number(e.target.value) })}><option value={10}>10 minutes</option><option value={15}>15 minutes</option><option value={20}>20 minutes</option></select></label>
-        <RolePicker value={draft.role} busy={false} onPick={(r) => setDraft({ ...draft, role: r })} />
+        <RolePicker squadSize={1} value={draft.role} busy={false} onPick={(r) => setDraft({ ...draft, role: r ?? SOLO_ROLE })} />
         <label className="td-check"><input type="checkbox" checked={draft.lowPressure} onChange={(e) => setDraft({ ...draft, lowPressure: e.target.checked })} />Low pressure: longer timers, the core cannot fall</label>
         <button type="button" className="td-btn primary big" data-testid="td-practice-go" onClick={() => setOpts(draft)}>Open the practice board</button>
       </section>

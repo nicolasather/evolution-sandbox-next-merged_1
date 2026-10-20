@@ -5,14 +5,14 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Board, { type WaveSummary } from './Board';
-import { Art, BuildMenu, ConnBadge, EnemyLegend, Hud, Opponents, QuestionOverlay, RankingRules, RevealPanel, RolePicker, Ticker, TowerCard, WaveResultPanel, TEAM_SWATCH, useNow } from './parts';
+import { Art, BuildMenu, ConnBadge, EnemyCard, EnemyLegend, Hud, TechTimeline, Opponents, QuestionOverlay, RankingRules, RevealPanel, RolePicker, Ticker, TowerCard, WaveResultPanel, TEAM_SWATCH, useNow } from './parts';
 import Results from './Results';
 import Coach, { useCoach } from './Coach';
 import type { TDClient } from './useTD';
 import { ROLES } from '@/lib/quiz/td/balance';
 import { roleSVG } from '@/lib/quiz/td/art';
 import { MAPS } from '@/lib/quiz/td/maps';
-import type { TDSeat, TDState, TDTeam, TDTowerKind } from '@/lib/quiz/td/domain';
+import type { TDEnemyKind, TDSeat, TDState, TDTeam, TDTowerKind } from '@/lib/quiz/td/domain';
 
 type Prefs = { calm: boolean; large: boolean; contrast: boolean };
 function usePrefs(): [Prefs, (p: Partial<Prefs>) => void] {
@@ -28,7 +28,7 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
   const [pad, setPad] = useState<string | null>(null); const [tower, setTower] = useState<string | null>(null); const [hover, setHover] = useState<TDTowerKind | null>(null);
   const [moving, setMoving] = useState(false); const [msg, setMsg] = useState<{ text: string; tone: 'ok' | 'err' } | null>(null);
   const [submittedQ, setSubmittedQ] = useState<string | null>(null); const [personal, setPersonal] = useState<Record<string, unknown> | null>(null); const [personalDone, setPersonalDone] = useState(false);
-  const [summary, setSummary] = useState<WaveSummary | null>(null); const [salvoMode, setSalvoMode] = useState(false); const [reinforceMode, setReinforceMode] = useState(false);
+  const [enemyInfo, setEnemyInfo] = useState<TDEnemyKind | null>(null); const [summary, setSummary] = useState<WaveSummary | null>(null); const [salvoMode, setSalvoMode] = useState(false); const [reinforceMode, setReinforceMode] = useState(false);
   const phase = snap?.phase;
   // a new phase closes stale menus (the board may have changed under them)
   // eslint-disable-next-line react-hooks/set-state-in-effect -- reset per-phase UI
@@ -64,15 +64,17 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
 
   return (
     <div className={`td ${prefs.large ? 'large' : ''} ${prefs.contrast ? 'contrast' : ''} ${prefs.calm ? 'td-calm' : ''}`} data-phase={phase} style={{ ['--td-map' as string]: map.palette.accent }}>
-      <header className="td-top">
+      <header className="td-top compact">
         <div className="td-title"><span className="td-squad"><i style={{ background: team ? TEAM_SWATCH[team.colorIndex] : '#999' }} aria-hidden="true" />{team?.name ?? 'Waiting for a squad'}</span>{practice && <span className="td-chip">Practice · nothing is saved</span>}</div>
         <Hud snap={snap} team={team} now={now} />
-        <div className="td-prefs" role="group" aria-label="Display">
-          <button type="button" className="td-btn ghost small" aria-pressed={prefs.calm} onClick={() => setPrefs({ calm: !prefs.calm })}>Calm</button>
-          <button type="button" className="td-btn ghost small" aria-pressed={prefs.large} onClick={() => setPrefs({ large: !prefs.large })}>Large text</button>
-          <button type="button" className="td-btn ghost small" aria-pressed={prefs.contrast} onClick={() => setPrefs({ contrast: !prefs.contrast })}>Contrast</button>
-          <button type="button" className="td-btn ghost small" data-testid="td-help" onClick={openCoach}>Help</button>
-        </div>
+        <details className="td-menu"><summary aria-label="Menu and display options">Menu</summary>
+          <div className="td-menupanel" role="group" aria-label="Display">
+            <button type="button" className="td-btn ghost small" aria-pressed={prefs.calm} onClick={() => setPrefs({ calm: !prefs.calm })}>Calm</button>
+            <button type="button" className="td-btn ghost small" aria-pressed={prefs.large} onClick={() => setPrefs({ large: !prefs.large })}>Large text</button>
+            <button type="button" className="td-btn ghost small" aria-pressed={prefs.contrast} onClick={() => setPrefs({ contrast: !prefs.contrast })}>Contrast</button>
+            <button type="button" className="td-btn ghost small" data-testid="td-help" onClick={openCoach}>Help</button>
+          </div>
+        </details>
       </header>
       <ConnBadge conn={client.conn} />
       {snap.paused && <p className="td-banner" role="status">{snap.paused.reason === 'host_offline' ? 'Paused: the teacher’s screen is offline.' : 'The teacher paused the game.'}</p>}
@@ -90,12 +92,12 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
                   <i style={{ background: TEAM_SWATCH[t.colorIndex] }} aria-hidden="true" /><b>{t.name}</b><small>{'players' in t ? (t as { players: number }).players : n} / {snap.config.teamSizeCap}</small></button>); })}
             </fieldset>
             {!me.teamId && <p className="td-why">All squads are full. The teacher will place you.</p>}
-            <RolePicker value={me.role} busy={client.busy} onPick={(r) => void act({ kind: 'role', role: r })} />
+            <RolePicker squadSize={snap.seats.filter((x) => x.teamId === me.teamId && !x.revoked).length || 1} value={me.role} busy={client.busy} onPick={(r) => void act({ kind: 'role', role: r })} />
             <button type="button" className={`td-btn big ${ready ? '' : 'primary'}`} disabled={client.busy || !me.teamId || phase !== 'lobby'} aria-pressed={ready} onClick={() => void act({ kind: 'ready', ready: !ready })}>{ready ? '✓ READY — tap to undo' : 'READY'}</button>
             {practice && <button type="button" className="td-btn primary big" disabled={client.busy} onClick={() => void client.host({ kind: 'start' })}>Start practice</button>}
           </section>
           <section className="td-panel td-mapprev"><h2 className="td-sign">{map.title}</h2><Board mapId={snap.config.mapId} towers={[]} phase="lobby" waveInput={null} waveStartMs={null} pausedAtMs={null} serverNow={client.serverNow} calm showPads={false} selectedPad={null} selectedTower={null} ghost={null} label={`${map.title}: the lane runs from the gate on the left to the core on the right.`} coreHP={team?.coreHP ?? 24} maxCoreHP={team?.maxCoreHP ?? 24} interactive={false} />
-            <p className="td-note">Answer questions to earn points. Spend points on towers between waves. Enemies walk the lane; protect the core.</p></section>
+            <p className="td-note">Answer questions to earn points. Spend points on towers between waves. Enemies walk the lane; protect the core.</p><TechTimeline round={1} waves={snap.plan.waves} /></section>
         </main>
       )}
 
@@ -126,8 +128,9 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
               <section className="td-panel">
                 <h3>BUILD</h3>
                 <p className="td-note">Tap an empty pad to build, or a tower to upgrade, sell or move it. {team.points < 120 ? 'Answer correctly to earn more points.' : ''}</p>
-                {team.scanned && <><p className="td-note">Scan: the next wave brings</p><EnemyLegend kinds={team.scanned} /></>}
-                {round?.wave && <><p className="td-note">This wave:</p><EnemyLegend kinds={round.wave.archetypes} /></>}
+                {team.scanned && <><p className="td-note">Scan: the next wave brings (tap one to learn about it)</p><EnemyLegend kinds={team.scanned} onPick={setEnemyInfo} /></>}
+                {round?.wave && <><p className="td-note">This wave (tap an enemy for its field notes):</p><EnemyLegend kinds={round.wave.archetypes} onPick={setEnemyInfo} /></>}
+                <TechTimeline round={snap.round} waves={snap.plan.waves} compact />
               </section>
             )}
             {phase === 'build' && me?.role && ability && (
@@ -158,11 +161,12 @@ export default function TDGame({ client, practice = false }: { client: TDClient;
             )}
             {phase === 'reveal' && <RevealPanel snap={snap} question={snap.question} />}
             {phase === 'wave_result' && <WaveResultPanel team={team} />}
-            {phase === 'wave' && round?.wave && <section className="td-panel"><h3>WAVE {round.n}</h3><EnemyLegend kinds={round.wave.archetypes} />{round.wave.boss && <p className="td-note">Boss: watch for the warning above it — every effect is announced a second ahead.</p>}</section>}
+            {phase === 'wave' && round?.wave && <section className="td-panel"><h3>WAVE {round.n}</h3><p className="td-note">Tap an enemy to see what it does.</p><EnemyLegend kinds={round.wave.archetypes} onPick={setEnemyInfo} />{round.wave.boss && <p className="td-note">Boss: watch for the warning above it — every effect is announced a second ahead.</p>}</section>}
             <Opponents snap={snap} />
             {snap.config.format === 'versus' && <RankingRules squads />}
             <section className="td-panel"><h3>SQUAD</h3><ul className="td-roster">{snap.seats.filter((s) => s.teamId === team.id && !s.revoked).map((s) => <li key={s.id}>{s.role ? <Art svg={roleSVG(s.role)} size={22} /> : <span className="td-dot" />}{s.name}{s.id === snap.selfSeatId ? ' (you)' : ''}{phase === 'build' && s.ready ? ' ✓' : ''}</li>)}</ul><Ticker team={team} seats={snap.seats} /></section>
           </aside>
+          {enemyInfo && <EnemyCard kind={enemyInfo} onClose={() => setEnemyInfo(null)} />}
           {showQuestion && snap.question && <QuestionOverlay snap={snap} question={snap.question} now={now} submitted={!quizOpen} onSubmit={async (r) => { const out = await client.answer(String(snap.question!.id), r); if (out.accepted) setSubmittedQ(String(snap.question!.id)); return out; }} />}
           {personal && <QuestionOverlay snap={snap} question={personal} now={now} personal submitted={personalDone} onClose={() => setPersonal(null)} onSubmit={async (r) => { const out = await client.answer(String(personal.id), r); setPersonalDone(true); setMsg({ text: out.correct ? `Correct — +${out.awarded ?? 0} points for your squad.` : 'Not this time. The explanation appears in the review at the end.', tone: 'ok' }); return out; }} />}
         </main>
