@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { CAMPAIGNS, hotspotNeeds } from '@/lib/quiz/projector/content/escape-campaigns';
 import { SHAPE_LABEL, SHAPES } from '@/lib/quiz/projector/content/vault-doors';
 import type { BossAction, BossG } from '@/lib/quiz/projector/reducers/boss';
@@ -15,8 +15,10 @@ type Send = (action: string, payload?: Record<string, unknown>) => Promise<boole
 export type CtlProps = { core: Core; g: unknown; locale: Locale; send: Send; busy: boolean; selected: string | number | null; clearSel: () => void };
 
 /** A button that says WHY it is off. `why` is shown under the button whenever it is disabled (and is the tooltip), so a locked action is never a mystery. */
-const Btn = ({ children, onClick, disabled, kind = '', title, why }: { children: React.ReactNode; onClick: () => void; disabled?: boolean; kind?: string; title?: string; why?: string }) => (
-  <span className="pj-act"><button className={`btn small ${kind}`} onClick={onClick} disabled={disabled} title={disabled ? why ?? title : title}>{children}</button>{disabled && why ? <small className="pj-why" role="note">{why}</small> : null}</span>);
+function Btn({ children, onClick, disabled, kind = '', title, why }: { children: React.ReactNode; onClick: () => void; disabled?: boolean; kind?: string; title?: string; why?: string }) {
+  const id = useId(); const shown = !!(disabled && why);
+  return <span className="pj-act"><button className={`btn small ${kind}`} onClick={onClick} disabled={disabled} aria-describedby={shown ? id : undefined} title={disabled ? why ?? title : title}>{children}</button>{shown ? <small id={id} className="pj-why" role="note">{why}</small> : null}</span>;
+}
 const first = (...c: [boolean, string][]) => c.find(([f]) => f)?.[1];
 function TeamPick({ core, value, onChange, only }: { core: Core; value: string; onChange: (v: string) => void; only?: string[] }) {
   return <div className="pj-teampick" role="radiogroup">{core.teams.filter((t) => !only || only.includes(t.id)).map((t) => { const i = core.teams.findIndex((x) => x.id === t.id); return <button key={t.id} role="radio" aria-checked={value === t.id} className={value === t.id ? 'on' : ''} onClick={() => onChange(t.id)}><TeamSwatch i={i} size={20} />{t.name}</button>; })}</div>;

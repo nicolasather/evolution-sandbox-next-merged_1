@@ -61,6 +61,13 @@ function refill(g: PirateG) { for (const i of g.islands) if (i.id !== 0 && i.tre
 
 const mod: GameModule<PirateG> = {
   key: 'pirate_voyage',
+  /** Native spendable balance: Secret Wager and Steal the Question settle here (one ledger, never teams.points). */
+  wallet: {
+    balance: (s, team) => s.g.teams[team]?.points ?? 0,
+    add: (s, team, delta) => { const t = s.g.teams[team]; if (t) t.points = Math.max(0, t.points + delta); },
+    earn: (fraction) => (fraction <= 0 ? 0 : Math.max(1, Math.round(EARN.standard * fraction))),
+    wagerCap: EARN.standard,
+  },
   init(_c, a: InitArgs) {
     const n = islandCount(a.plan.band); const r = rngFrom(`${a.seed}:pirates`);
     const islands: Island[] = ISLAND_DATA.slice(0, n).map((d, id) => ({ ...d, id, treasure: 0, base: 0, charted: id === 0, hops: 0, neighbors: [] }));

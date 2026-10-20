@@ -1,4 +1,4 @@
-import { allowedModifiers, assertProjectorModifiers, modifierRule } from '../compat';
+import { allowedModifiers, assertProjectorModifiers, modifierRule, WALLET_GAMES } from '../compat';
 import { GAME_KEYS } from '../types';
 import { MODES, MODE_LIST } from '../modes';
 import { STR } from '../../../../components/quiz/projector/i18n';
@@ -8,8 +8,12 @@ describe('modifier compatibility', () => {
   it('every game explains every modifier in English', () => {
     for (const g of GAME_KEYS) for (const m of MODIFIERS) { const r = modifierRule(g, m); expect(r.reason.en.length).toBeGreaterThan(3);  }
   });
-  it('no classic modifier is silently accepted by a projector game', () => {
-    for (const g of GAME_KEYS) { expect(allowedModifiers(g)).toEqual([]); if (MODIFIERS.length) expect(() => assertProjectorModifiers(g, [MODIFIERS[0]!])).toThrow(); }
+  it('no classic modifier is silently accepted by a projector game (only the principled allow-list)', () => {
+    for (const g of GAME_KEYS) {
+      const wallet = WALLET_GAMES.includes(g);
+      expect(allowedModifiers(g, { flow: 'round_robin' })).toEqual(wallet ? ['secret_wager', 'steal_question'] : []);
+      for (const m of MODIFIERS) if (!modifierRule(g, m).allowed) expect(() => assertProjectorModifiers(g, [m])).toThrow();
+    }
   });
 });
 describe('localisation coverage', () => {

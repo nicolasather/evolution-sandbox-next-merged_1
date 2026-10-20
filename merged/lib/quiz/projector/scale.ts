@@ -12,9 +12,15 @@ const KIND_SECONDS: Record<QuestionKind, number> = { multiple_choice: 40, truth_
 const DISCUSS_SECONDS: Record<LearningFocus, number> = { study: 55, balanced: 30, game: 15 };
 const ACTION_SECONDS = 15;
 
+/** Average turn length. Pass the kinds of the quiz WITH duplicates (one entry per question): the average is then weighted by how often
+ *  each kind really occurs, so a quiz of 39 Fill-the-Table questions and 1 Multiple Choice is planned as a Fill-the-Table lesson. */
 export function secondsPerTurn(focus: LearningFocus, kinds: readonly QuestionKind[]): number {
   const avg = kinds.length ? kinds.reduce((a, k) => a + KIND_SECONDS[k], 0) / kinds.length : KIND_SECONDS.multiple_choice;
   return Math.round(avg + DISCUSS_SECONDS[focus] + ACTION_SECONDS);
+}
+/** One entry per ORIGINAL question (labelled repeats excluded), in pool order: the input `planFor` expects. */
+export function poolKinds(pool: readonly PoolQuestion[]): QuestionKind[] {
+  return pool.filter((p) => p.repeatOf === null).map((p) => p.kind);
 }
 
 export type DurationBand = 'blitz' | 'short' | 'standard' | 'long' | 'campaign';

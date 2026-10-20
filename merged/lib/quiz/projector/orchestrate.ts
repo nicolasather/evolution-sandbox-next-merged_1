@@ -4,7 +4,7 @@
 import { reduce } from './engine';
 import './games';
 import { pickQuestion } from './planner';
-import type { AskInfo, GameCommand, GameState, PoolQuestion, ReduceResult, VerifiedAnswer } from './types';
+import type { AskInfo, GameCommand, GameState, PoolQuestion, Rebound, ReduceResult, VerifiedAnswer } from './types';
 import { err } from './types';
 
 export type Providers = {
@@ -12,6 +12,8 @@ export type Providers = {
   open(pick: { position: number; teamIds: string[] }): Promise<{ roomQuestionId: string }>;
   /** grade one team on the open question. Server: runs the five-stage answer pipeline, then reads the committed row. */
   grade(teamId: string, ask: AskInfo): Promise<VerifiedAnswer>;
+  /** Steal the Question: hand the still-open question to another team and grade it (server: set_steal + the five-stage pipeline). */
+  rebound?(teamId: string, r: Rebound, ask: AskInfo | null): Promise<VerifiedAnswer>;
   reveal(): Promise<void>;
 };
 
@@ -28,6 +30,11 @@ export async function run(state: GameState, cmd: GameCommand, pool: PoolQuestion
   }
   if (need.type === 'grade') {
     const answer = await prov.grade(need.teamId, state.core.ask!);
+    return reduce(state, cmd, { pool, answer });
+  }
+  if (need.type === 'rebound') {
+    if (!prov.rebound || !state.core.rebound) return err('modifierOff', { modifier: 'steal_question' });
+    const answer = await prov.rebound(need.teamId, state.core.rebound, state.core.ask);
     return reduce(state, cmd, { pool, answer });
   }
   await prov.reveal();

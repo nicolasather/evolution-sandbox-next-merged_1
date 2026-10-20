@@ -46,7 +46,16 @@ export type ProjectorConfig = {
   v: 1; game: GameKey; focus: LearningFocus; minutes: number | null; seed: string; settings: ProjectorSettings;
   /** accepted only when the teacher ticks it; shortage of questions is handled by labelled repeat cycles */
   allowRepeats?: boolean;
+  /** classic modifiers the teacher enabled, already validated against the game's allow-list (compat.ts) */
+  mods?: ProjectorModifier[];
 };
+/** The classic modifiers a projector game can run through its own reducer (see compat.ts for why the others stay off). */
+export const PROJECTOR_MODIFIERS = ['secret_wager', 'steal_question'] as const;
+export type ProjectorModifier = (typeof PROJECTOR_MODIFIERS)[number];
+/** A team's committed wager on the next question (secret on the projector until it is settled). */
+export type Wager = { team: string; amount: number };
+/** Steal the Question: after a wrong answer in round robin, the teacher may hand the same open question to one other team for one try. */
+export type Rebound = { position: number; roomQuestionId: string; from: string; used: boolean; team: string | null };
 
 export type LogEntry = { n: number; k: string; team?: string; p?: Record<string, string | number> };
 export type Evidence = { sub: string; team: string; pos: number; topic: string | null; kind: QuestionKind; grade: Grade; fraction: number; manual: boolean; purpose: string };
@@ -64,6 +73,10 @@ export type Core = {
   fx: { n: number; kind: string; team?: string; ref?: string | number } | null;
   finishAfterTurn: boolean; extensions: { minutes: number; reason: string }[];
   finished: Finished | null; skipped: { team: string; reason: string }[]; secondsPerTurn: number;
+  /** Optional (absent on sessions created before modifiers existed, which therefore behave as 'all off'). */
+  mods?: { wager: boolean; rebound: boolean };
+  wagers?: Record<string, number>;
+  rebound?: Rebound | null;
 };
 
 export type GameState<G = unknown> = { core: Core; g: G };
@@ -72,6 +85,7 @@ export type GameCommand = { action: string; payload?: Record<string, unknown> };
 export type Need =
   | { type: 'ask'; teamIds: string[]; topic: string | null; difficulty: Difficulty | null; purpose: string; ref: string | null }
   | { type: 'grade'; teamId: string }
+  | { type: 'rebound'; teamId: string }
   | { type: 'reveal' };
 export type ReduceOk = { ok: true; state: GameState; need?: Need };
 export type ReduceErr = { ok: false; code: string; params?: Record<string, string | number> };

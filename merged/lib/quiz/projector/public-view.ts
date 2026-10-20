@@ -15,6 +15,8 @@ export function publicView(state: GameState, view: View): PublicState {
   const s = JSON.parse(JSON.stringify(state)) as GameState;
   // The seed derives every hidden value (lot prices, chest sizes, vault rewards): it never leaves the server.
   const core: PublicCore = { ...s.core, seed: '', usedCount: s.core.usedPositions.length, consumed: [], usedPositions: [], log: s.core.log.slice(-60), evidence: view === 'host' ? s.core.evidence : [] };
+  // Secret Wager: the shared screen only learns THAT a team staked something (-1), never how much, until it is settled
+  if (view === 'projector' && core.wagers) core.wagers = Object.fromEntries(Object.keys(core.wagers).map((k) => [k, -1]));
   let g: unknown = s.g;
   if (s.core.game === 'auction_house') {
     // Lot prices stay hidden until the gavel; the projector also never sees the amounts on the paddles before the gavel falls.

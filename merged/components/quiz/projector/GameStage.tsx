@@ -23,6 +23,7 @@ import { AuctionScene, TerritoryScene, FactoryScene, PirateScene, ShowdownScene 
 import { AuctionControls, TerritoryControls, FactoryControls, PirateControls, ShowdownControls } from './ExtraGameControls';
 import TutorialOverlay from './TutorialOverlay';
 import CoachPanel from './CoachPanel';
+import ModifierPanel from './ModifierPanel';
 import VaultScene from './scenes/VaultScene';
 import { L, logText, tr } from './i18n';
 import type { GameApi } from './useGame';
@@ -91,7 +92,7 @@ export default function GameStage({ api, view, prefs, setPrefs, projectorHref, b
   if (!snap) return <main className="page"><p className="muted-text" role="status">{api.offline ? tr(locale, 'offline') : tr(locale, 'loading')}</p></main>;
   const core = snap.game.core as Core; const g = snap.game.g; const info = MODES[core.game]; const waiting = snap.clock.status === 'waiting';
   const finished = core.phase === 'finished'; const turnN = Math.min(core.turnsUsed + (finished ? 0 : 1), core.turnBudget);
-  const asking = core.phase === 'asking' && !!snap.question; const teamName = (id?: string) => core.teams.find((t) => t.id === id)?.name ?? '';
+  const asking = (core.phase === 'asking' || (!!core.rebound && !core.rebound.used)) && !!snap.question; const teamName = (id?: string) => core.teams.find((t) => t.id === id)?.name ?? '';
   const last = core.log[core.log.length - 1]; const activeName = core.askMode === 'all' ? tr(locale, 'allTeams') : tr(locale, 'yourTurn', { team: core.teams[core.actor % core.teams.length]!.name });
   const ctl = { core, g, locale, send: api.send, busy: api.busy, selected, clearSel: () => setSelected(null) };
   const Controls = core.game === 'empire_race' ? EmpireControls : core.game === 'boss_battle' ? BossControls : core.game === 'escape_room' ? EscapeControls : core.game === 'treasure_vault' ? VaultControls : core.game === 'risk_ladder' ? LadderControls : core.game === 'auction_house' ? AuctionControls : core.game === 'territory_war' ? TerritoryControls : core.game === 'lucky_factory' ? FactoryControls : core.game === 'pirate_voyage' ? PirateControls : ShowdownControls;
@@ -148,6 +149,7 @@ export default function GameStage({ api, view, prefs, setPrefs, projectorHref, b
             </section>
             {!finished && !waiting && core.phase === 'asking' && <MarkPanel q={snap.question} core={core} locale={locale} busy={api.busy} onMark={(teamId, verdict) => api.send('grade', { teamId, verdict })} />}
             {!finished && !waiting && (core.phase === 'review' || core.phase === 'resolution') && <section className="pj-panel"><button className="btn primary" disabled={api.busy} onClick={() => api.send('continue')}>{tr(locale, 'continueBtn')}</button></section>}
+            {!finished && !waiting && <ModifierPanel core={core} g={g} send={api.send} busy={api.busy} />}
             {!finished && !waiting && core.phase !== 'asking' && <section className="pj-panel"><h3>{activeName}</h3><Controls {...ctl} /></section>}
             <section className="pj-panel pj-log" aria-label="log"><ol>{[...core.log].reverse().slice(0, 8).map((e) => <li key={e.n}>{logText(locale, e, teamName)}</li>)}</ol></section>
             {backHref && finished && <a className="btn ghost" href={backHref}>{tr(locale, 'report')}</a>}

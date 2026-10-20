@@ -92,6 +92,13 @@ function onAnswer(s: GameState<AuctionG>, a: VerifiedAnswer, ask: AskInfo) {
 
 const mod: GameModule<AuctionG> = {
   key: 'auction_house',
+  /** Native spendable balance: Secret Wager and Steal the Question settle here (one ledger, never teams.points). */
+  wallet: {
+    balance: (s, team) => s.g.teams[team]?.points ?? 0,
+    add: (s, team, delta) => { const t = s.g.teams[team]; if (t) t.points = Math.max(0, t.points + delta); },
+    earn: (fraction) => (fraction <= 0 ? 0 : Math.max(1, Math.round(EARN.standard * fraction))),
+    wagerCap: EARN.standard,
+  },
   init(_core, a: InitArgs) {
     const teams: AuctionG['teams'] = {}; for (const t of a.teams) teams[t.id] = emptyTeam();
     const per = lotsPerRound(a.teams.length, a.plan.turnsPerTeam);

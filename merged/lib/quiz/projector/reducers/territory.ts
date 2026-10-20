@@ -149,6 +149,13 @@ function onAnswer(s: GameState<TerritoryG>, a: VerifiedAnswer, ask: AskInfo) {
 
 const mod: GameModule<TerritoryG> = {
   key: 'territory_war',
+  /** Native spendable balance: Secret Wager and Steal the Question settle here (one ledger, never teams.points). */
+  wallet: {
+    balance: (s, team) => s.g.teams[team]?.points ?? 0,
+    add: (s, team, delta) => { const t = s.g.teams[team]; if (t) t.points = Math.max(0, t.points + delta); },
+    earn: (fraction) => (fraction <= 0 ? 0 : Math.max(1, Math.round(EARN.standard * fraction))),
+    wagerCap: EARN.standard,
+  },
   init(_c, a: InitArgs) {
     const board: TerritoryBoard = a.settings.board ?? (['frontier', 'canyon', 'delta'] as const)[rngFrom(`${a.seed}:board`).int(3)]!;
     const b = generateBoard(a.seed, a.teams.map((t) => t.id), a.plan.turnsPerTeam, board);

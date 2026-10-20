@@ -74,6 +74,13 @@ function onAnswer(s: GameState<FactoryG>, a: VerifiedAnswer, ask: AskInfo) {
 
 const mod: GameModule<FactoryG> = {
   key: 'lucky_factory',
+  /** Native spendable balance: Secret Wager and Steal the Question settle here (one ledger, never teams.points). */
+  wallet: {
+    balance: (s, team) => s.g.teams[team]?.points ?? 0,
+    add: (s, team, delta) => { const t = s.g.teams[team]; if (t) t.points = Math.max(0, t.points + delta); },
+    earn: (fraction) => (fraction <= 0 ? 0 : Math.max(1, Math.round(EARN.standard * fraction))),
+    wagerCap: EARN.standard,
+  },
   init(_c, a: InitArgs) {
     const teams: FactoryG['teams'] = {};
     for (const t of a.teams) teams[t.id] = { points: START_POINTS, shipped: 0, machines: [{ kind: 'conveyor', level: 1, broken: false }], upgrades: 0, repairs: 0, breakdowns: 0, inspected: false, lastShift: 0, lastOutput: 0 };

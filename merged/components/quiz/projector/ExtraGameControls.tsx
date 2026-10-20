@@ -1,7 +1,7 @@
 'use client';
 /** Teacher controls for the five newer projector games. Every button states its cost, and a disabled button says WHY in plain words,
  *  so the class (and the teacher) always see the consequence before it is chosen. The reducer re-checks everything; these are previews. */
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import type { Core, Locale } from '@/lib/quiz/projector/types';
 import { COLLECTION_BONUS, EARN as AUCTION_EARN, type AuctionG } from '@/lib/quiz/projector/reducers/auction';
 import { EARN as TERR_EARN, legalTargets, previewCell, WALL_MAX, type TerritoryG } from '@/lib/quiz/projector/reducers/territory';
@@ -16,10 +16,11 @@ type Props = { core: Core; g: unknown; locale?: Locale; send: Send; busy: boolea
 
 /** A button with an always-visible reason when it cannot be used. */
 function Act({ children, onClick, off, why, kind = 'ghost', note }: { children: React.ReactNode; onClick: () => void; off?: boolean; why?: string; kind?: string; note?: string }) {
+  const id = useId(); const text = off && why ? why : note; // the visible reason/note is ALSO the button's accessible description
   return (
     <div className="pj-act">
-      <button className={`btn small ${kind}`} disabled={off} onClick={onClick} aria-describedby={off && why ? undefined : undefined} title={off ? why : note}>{children}</button>
-      {off && why ? <small className="pj-why" role="note">{why}</small> : note ? <small className="pj-note">{note}</small> : null}
+      <button className={`btn small ${kind}`} disabled={off} onClick={onClick} aria-describedby={text ? id : undefined} title={off ? why : note}>{children}</button>
+      {off && why ? <small id={id} className="pj-why" role="note">{why}</small> : note ? <small id={id} className="pj-note">{note}</small> : null}
     </div>
   );
 }

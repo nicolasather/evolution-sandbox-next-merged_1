@@ -2,12 +2,23 @@
  *  grade an answer, reveal). Reducers never read a clock, a network or a claimed result; correctness only arrives as `env.answer`,
  *  which the server builds from a committed submission row. */
 import { pickQuestion, topicsOf } from './planner';
-import type { AskInfo, Core, Env, GameCommand, GameKey, GameState, LearningFocus, ReduceResult, Standing, TeamRef, VerifiedAnswer } from './types';
+import type { AskInfo, Core, Env, GameCommand, GameKey, GameState, LearningFocus, ProjectorModifier, ReduceResult, Standing, TeamRef, VerifiedAnswer } from './types';
 import { err } from './types';
 import type { Plan } from './scale';
 import type { ProjectorSettings } from './types';
 
-export type InitArgs = { seed: string; focus: LearningFocus; lowPressure: boolean; teams: TeamRef[]; turnBudget: number; secondsPerTurn: number; askMode: 'single' | 'all'; pool: Env['pool']; settings: ProjectorSettings; plan: Plan };
+export type InitArgs = { seed: string; focus: LearningFocus; lowPressure: boolean; teams: TeamRef[]; turnBudget: number; secondsPerTurn: number; askMode: 'single' | 'all'; pool: Env['pool']; settings: ProjectorSettings; plan: Plan; mods?: readonly ProjectorModifier[] };
+
+/** A game whose score is a native, spendable points balance exposes it here. Only such games accept Secret Wager and Steal the Question:
+ *  both are settled in that balance, never in a separate ledger. */
+export type Wallet<G> = {
+  balance(s: GameState<G>, team: string): number;
+  add(s: GameState<G>, team: string, delta: number): void;
+  /** what one standard question earns at this answer fraction (0..1): the reward for a successful steal */
+  earn(fraction: number): number;
+  /** the largest wager a team may commit (also capped by its balance) */
+  wagerCap: number;
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- each reducer narrows its own state shape; the registry stores them type-erased
 export interface GameModule<G = any> {
@@ -28,6 +39,8 @@ export interface GameModule<G = any> {
   onSkip?(s: GameState<G>, teamId: string): void;
   /** called once, BEFORE standings are computed, whenever the match ends for any reason (settle or void pending commitments) */
   onFinish?(s: GameState<G>, reason: string): void;
+  /** present only on games whose score is a native spendable balance (see Wallet) */
+  wallet?: Wallet<G>;
 }
 
 const MODULES: Partial<Record<GameKey, GameModule>> = {};
@@ -39,6 +52,7 @@ export function initCore(game: GameKey, a: InitArgs): Core {
     v: 1, game, seed: a.seed, focus: a.focus, lowPressure: a.lowPressure, teams: a.teams, askMode: a.askMode, turnBudget: a.turnBudget,
     turnsUsed: 0, round: 1, actor: 0, phase: 'choose', ask: null, consumed: [], usedPositions: [], evidence: [], log: [], seq: 0, fx: null,
     finishAfterTurn: false, extensions: [], finished: null, skipped: [], secondsPerTurn: a.secondsPerTurn,
+    mods: { wager: !!a.mods?.includes('secret_wager'), rebound: !!a.mods?.includes('steal_question') && a.askMode === 'single' }, wagers: {}, rebound: null,
   };
 }
 
@@ -51,6 +65,8 @@ export function fx(c: Core, kind: string, team?: string, ref?: string | number) 
 
 export function finish(s: GameState, reason: Core['finished'] extends infer F ? (F extends { reason: infer R } ? R : never) : never) {
   const m = moduleFor(s.core.game);
+  if (s.core.wagers && Object.keys(s.core.wagers).length) { s.core.wagers = {}; log(s.core, 'wagersVoided'); } // an unsettled wager costs nothing
+  s.core.rebound = null;
   m.onFinish?.(s, reason);
   const standings = m.standings(s).sort((a, b) => b.score - a.score);
   let rank = 0, prev: number | null = null;
@@ -64,7 +80,8 @@ export function finish(s: GameState, reason: Core['finished'] extends infer F ? 
 /** End of a turn: count it, rotate, check objective / budget. Same transition for every game. */
 export function endTurn(s: GameState) {
   const c = s.core, m = moduleFor(c.game);
-  c.ask = null;
+  c.ask = null; c.rebound = null;
+  if (c.wagers) for (const k of Object.keys(c.wagers)) delete c.wagers[k]; // wagers only ever ride on the question of their own turn
   if (c.askMode === 'all') { c.turnsUsed += c.teams.length; c.actor = 0; c.round++; }
   else {
     c.turnsUsed++;
@@ -112,12 +129,14 @@ export function reduce(state: GameState, cmd: GameCommand, env: Env): ReduceResu
       if (reason.length < 3) return err('reasonRequired');
       if (c.phase === 'asking' && (c.ask?.answered.length ?? 0) > 0) return err('answersAlready');
       const t = actorTeam(c); c.skipped.push({ team: t.id, reason }); log(c, 'turnSkipped', t.id);
+      if (c.wagers?.[t.id]) delete c.wagers[t.id];
       m.onSkip?.(s, t.id);
       endTurn(s); return { ok: true, state: s };
     }
     case 'reveal': {
       if (!c.ask) return err('nothingToReveal');
       if (!env.revealed) return { ok: true, state, need: { type: 'reveal' } };
+      if (c.rebound && !c.rebound.used) { c.rebound = null; log(c, 'reboundClosed'); } // once the answer is on screen nobody can still try it
       log(c, 'revealed'); fx(c, 'reveal');
       if (c.phase === 'asking' && c.ask.answered.length >= c.ask.teamIds.length) m.afterAsk(s);
       return { ok: true, state: s };
@@ -149,10 +168,52 @@ export function reduce(state: GameState, cmd: GameCommand, env: Env): ReduceResu
       const ask = c.ask;
       ask.answered.push(teamId);
       m.onAnswer(s, a, ask);
+      settleWager(s, a);
+      // Steal the Question: a wrong answer in round robin opens the same question to one other team (the teacher decides who, or passes)
+      if (c.mods?.rebound && c.askMode === 'single' && a.grade === 'wrong' && c.teams.length > 1 && m.wallet && !c.rebound) {
+        c.rebound = { position: a.position, roomQuestionId: a.roomQuestionId, from: teamId, used: false, team: null }; log(c, 'reboundOpen', teamId);
+      }
       if ((c.phase as string) !== 'finished' && ask.answered.length >= ask.teamIds.length) m.afterAsk(s);
       const end = (c.phase as string) === 'finished' ? null : m.checkEnd(s);
       if (end) finish(s, end);
       return { ok: true, state: s };
+    }
+    case 'wager': {
+      if (!c.mods?.wager || !m.wallet) return err('modifierOff', { modifier: 'secret_wager' });
+      if (c.phase !== 'choose') return err('wagerBeforeQuestion');
+      const team = TEXT(p.team, 60); const amount = Number(p.amount);
+      if (!c.teams.some((t) => t.id === team)) return err('teamUnknown');
+      if (!mayAct(c, team)) return err('notYourTurn');
+      if (!Number.isInteger(amount) || amount < 0) return err('badWager');
+      const cap = Math.min(m.wallet.wagerCap, m.wallet.balance(s, team));
+      if (amount > cap) return err('wagerTooHigh', { max: cap });
+      c.wagers ??= {};
+      if (amount === 0) delete c.wagers[team]; else c.wagers[team] = amount;
+      log(c, amount ? 'wagerSet' : 'wagerCleared', team); fx(c, 'note', team);
+      return { ok: true, state: s };
+    }
+    case 'rebound': {
+      if (!c.mods?.rebound || !m.wallet) return err('modifierOff', { modifier: 'steal_question' });
+      const r = c.rebound; const team = TEXT(p.team, 60);
+      if (!r || r.used) return err('noRebound');
+      if (team === r.from) return err('reboundSameTeam');
+      if (!c.teams.some((t) => t.id === team)) return err('teamUnknown');
+      if (!env.answer) return { ok: true, state, need: { type: 'rebound', teamId: team } };
+      const a = env.answer;
+      if (a.teamId !== team || a.roomQuestionId !== r.roomQuestionId || a.position !== r.position) return err('answerMismatch');
+      if (c.consumed.includes(a.submissionId)) return err('alreadyConsumed');
+      c.consumed.push(a.submissionId);
+      c.evidence.push({ sub: a.submissionId, team, pos: a.position, topic: a.topic, kind: a.kind, grade: a.grade, fraction: a.fraction, manual: a.teacherOverride, purpose: 'rebound' });
+      if (c.evidence.length > 300) c.evidence.shift();
+      const gain = a.grade === 'wrong' ? 0 : m.wallet.earn(gradeFraction(a));
+      if (gain > 0) m.wallet.add(s, team, gain);
+      r.used = true; r.team = team;
+      log(c, gain ? 'reboundWon' : 'reboundMissed', team, { n: gain }); fx(c, gain ? 'gain' : 'miss', team);
+      return { ok: true, state: s };
+    }
+    case 'rebound_pass': {
+      if (!c.rebound || c.rebound.used) return err('noRebound');
+      c.rebound = null; log(c, 'reboundPassed'); return { ok: true, state: s };
     }
     default: {
       if (!canAct(c)) return err('finished');
@@ -164,6 +225,17 @@ export function reduce(state: GameState, cmd: GameCommand, env: Env): ReduceResu
 }
 
 /** Utility used by game modules to build an ask for the acting team (single) or everyone (all). */
+/** Secret Wager: settled exactly once, on the verified answer of the team that committed it. Correct wins it, wrong loses it (never more than
+ *  the team holds), a partial answer returns it untouched. No other outcome is possible, so the teacher can preview it in full. */
+function settleWager(s: GameState, a: VerifiedAnswer) {
+  const c = s.core; const w = c.wagers?.[a.teamId]; const wallet = moduleFor(c.game).wallet;
+  if (!w || !wallet) return;
+  delete c.wagers![a.teamId];
+  if (a.grade === 'correct') { wallet.add(s, a.teamId, w); log(c, 'wagerWon', a.teamId, { n: w }); }
+  else if (a.grade === 'wrong') { const loss = Math.min(w, wallet.balance(s, a.teamId)); wallet.add(s, a.teamId, -loss); log(c, 'wagerLost', a.teamId, { n: loss }); }
+  else log(c, 'wagerReturned', a.teamId, { n: w });
+}
+
 export function askTeams(c: Core, only?: string): string[] { return only ? [only] : c.askMode === 'all' ? c.teams.map((t) => t.id) : [actorTeam(c).id]; }
 export { pickQuestion, topicsOf };
 
