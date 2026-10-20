@@ -8,5 +8,6 @@ export default async function Library({ searchParams }: { searchParams: Promise<
   const { mode, game } = await searchParams;
   const m = mode === 'solo' || mode === 'classroom' || mode === 'online' ? (mode as PlayMode) : null;
   const g = m === 'classroom' && isGameKey(game) ? game : null; // a projector game was chosen on /quiz/modes
-  return <QuizList mine={false} mode={m} game={g} />;
+  const td = m === 'online' && game === 'tower_defense'; // Tower Defense was chosen on /quiz/modes
+  return <QuizList mine={false} mode={m} game={g} towerDefense={td} />;
 }

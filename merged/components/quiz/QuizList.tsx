@@ -27,7 +27,7 @@ const toLib = (i: Item): LibraryQuiz => ({
   verified: i.reviewState === 'approved', reviewState: (i.reviewState as LibraryQuiz['reviewState']) ?? 'unreviewed',
 });
 
-export default function QuizList({ mine, mode = null, game = null }: { mine: boolean; mode?: PlayMode | null; game?: GameKey | null }) {
+export default function QuizList({ mine, mode = null, game = null, towerDefense = false }: { mine: boolean; mode?: PlayMode | null; game?: GameKey | null; towerDefense?: boolean }) {
   const [items, setItems] = useState<Item[] | null>(null);
   const [device, setDevice] = useState<LocalDraft[]>([]);
   const [session, setSession] = useState<SessionInfo | null | undefined>(undefined);
@@ -161,7 +161,7 @@ export default function QuizList({ mine, mode = null, game = null }: { mine: boo
 
   const loading = items === null;
   const totalShown = shown.length + shownDevice.length;
-  const playHref = (id: string) => (game ? `/quiz/setup/${id}/game?game=${game}` : `/quiz/setup/${id}${mode ? `?mode=${mode}` : ''}`);
+  const playHref = (id: string) => (towerDefense ? `/quiz/setup/${id}/td` : game ? `/quiz/setup/${id}/game?game=${game}` : `/quiz/setup/${id}${mode ? `?mode=${mode}` : ''}`);
   const setF = (k: keyof Filters, v: unknown) => setFilters((f) => { const n = { ...f, [k]: v === '' || v === false ? undefined : v } as Filters; return n; });
   const hasFilters = Object.values(filters).some((v) => v !== undefined);
 
@@ -206,7 +206,7 @@ export default function QuizList({ mine, mode = null, game = null }: { mine: boo
           <div className="inner">
             <h1 id="lib-h">Quiz Library</h1>
             <p style={{ maxWidth: '52ch', margin: 0 }}>Quizzes people have published. Anyone can play them. A “Reviewed” badge means a moderator checked it — popularity alone never makes a quiz correct.</p>
-            {mode && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
+            {mode && <p className="info" style={{ marginTop: 16, maxWidth: 640 }}>Selected mode: <strong>{towerDefense ? 'Tower Defense (online, personal devices)' : game ? MODES[game].name.en : modeLabels[mode]}</strong>. Choose a quiz to play with it. <Link href="/quiz/modes">Change mode</Link></p>}
           </div>
         </section>
       )}

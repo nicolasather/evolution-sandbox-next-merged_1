@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ALL_MODES, modeInfo } from '@/lib/quiz/mode-info';
 import { MODE_LIST } from '@/lib/quiz/projector/modes';
 import TutorialOverlay from '@/components/quiz/projector/TutorialOverlay';
+import '../td/td.css';
 export const metadata: Metadata = { title: 'Game Modes' };
 
 export default function ModesPage() {
@@ -14,6 +15,25 @@ export default function ModesPage() {
           <p className="muted-text" style={{ maxWidth: '60ch' }}>Start with the ten Projector Games for a whole classroom, or scroll down for the classic modes. Only the modifiers that work with your choice are offered afterwards, and points are the only currency.</p></div>
         <Link className="btn ghost" href="/quiz/library">Quiz Library</Link>
       </header>
+      <section className="stack td-modecard" style={{ gap: 14, marginBottom: 44 }} aria-labelledby="td-h" id="tower-defense">
+        <header><p className="eyebrow">Online · personal devices</p><h2 id="td-h" style={{ fontStyle: 'italic' }}>Tower Defense</h2></header>
+        <div className="td-modebody">
+          <Image src="/quiz/td/map_meadow_circuit_board.svg" alt="A Tower Defense map: a winding lane from a gate to a core, with tower pads beside it" width={1280} height={768} unoptimized />
+          <div className="stack" style={{ gap: 10 }}>
+            <p style={{ maxWidth: '60ch' }}>Each student plays on their own device in a squad of 1 to 5. Correct answers earn points; squads spend them on towers between waves and defend their core. Co-op for one class squad, or 2–4 competitive squads on identical maps (up to 20 students).</p>
+            <ul className="muted-text" style={{ margin: 0, paddingLeft: 18, maxWidth: '60ch' }}>
+              <li>Questions together before each build, or at each student’s own pace while towers defend.</li>
+              <li>Six towers with upgrade branches, five roles, eight enemy types and a boss on every map.</li>
+              <li>The teacher console pauses, extends and approves; the projector shows every squad’s board.</li>
+            </ul>
+            <div className="row" style={{ gap: 8, flexWrap: 'wrap' }}>
+              <Link className="btn small primary" href="/quiz/library?mode=online&game=tower_defense">Pick a quiz</Link>
+              <Link className="btn small ghost" href="/quiz/td/practice">Practice alone</Link>
+              <Link className="btn small ghost" href="/quiz/td">How to play</Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="stack" style={{ gap: 18, marginBottom: 44 }} aria-labelledby="pj-h" id="projector-games">
         <header><p className="eyebrow">Classroom projector</p><h2 id="pj-h" style={{ fontStyle: 'italic' }}>Projector Games · {MODE_LIST.length} game worlds</h2>
           <p className="muted-text" style={{ maxWidth: '62ch' }}>Ten full game worlds for one teacher computer and a projector. Teams answer aloud, the teacher marks them, and no student devices or accounts are needed. From 5 to 180 minutes, or no clock at all.</p>
