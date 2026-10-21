@@ -46,3 +46,11 @@
 /* cards: lifted paper with a coloured under-edge per game */
 .os-card { box-shadow: 4px 5px 0 #4FB286, 0 18px 30px rgba(23,37,58,.18); } .ar-card { box-shadow: 4px 5px 0 #745FAD, 0 18px 30px rgba(23,37,58,.28); } .cr-card { box-shadow: 4px 5px 0 #F6A04D, 0 18px 30px rgba(90,50,20,.22); background-image: linear-gradient(rgba(255,255,255,.35), rgba(255,255,255,0)); }
 @media (prefers-contrast: more) { :is(.ar, .os, .cr, .sw) { background-image: none; } :is(.ar, .os, .cr)::before { display: none; } }
+
+/* Illustrated map posters (components/quiz/art/MapPoster.tsx): picker cards show the real map's world, not a colour chip. */
+.mp { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 3px solid var(--ink); border-radius: 12px; background: var(--paper); box-shadow: 0 3px 0 var(--ink); margin-bottom: 6px; }
+.mp.sm { width: 112px; flex: none; margin: 0; border-width: 2.5px; border-radius: 9px; }
+:is(.ar-maps, .cr-maps, .os-maps) button { transition: transform .15s ease, box-shadow .15s ease; }
+:is(.ar-maps, .cr-maps, .os-maps) button:hover .mp, :is(.ar-maps, .cr-maps, .os-maps) button[aria-checked='true'] .mp { box-shadow: 0 3px 0 var(--ink), 0 0 0 4px #F7D96B; }
+@media (prefers-reduced-motion: reduce) { :is(.ar-maps, .cr-maps, .os-maps) button { transition: none; } }
+.ar-pick, .cr-pick, .os-mapopt { align-items: center; }

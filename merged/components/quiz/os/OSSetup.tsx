@@ -1,6 +1,7 @@
 'use client';
 /** Teacher setup for an online Obstacle Survival match: format → squads → length (the quiz check runs here with the real question formats) → map → options → create.
  *  Nothing is created until the last button, and the button says what it does. */
+import MapPoster, { OS_THEME } from '@/components/quiz/art/MapPoster';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -76,7 +77,7 @@ export default function OSSetup({ quizId, quizTitle, questionCount, signedIn }: 
         </li>
         <li><h2>Map</h2>
           <div className="os-maps" role="radiogroup" aria-label="Map">{MAP_INFO.map((m) => (
-            <button key={m.id} type="button" role="radio" aria-checked={mapId === m.id} onClick={() => setMapId(m.id)}><b>{m.name}</b><span>{BASE_COURSES[m.id].hazards.length} hazards · {BASE_COURSES[m.id].checkpoints.length} checkpoints</span></button>))}
+            <button key={m.id} type="button" role="radio" aria-checked={mapId === m.id} onClick={() => setMapId(m.id)}><MapPoster theme={OS_THEME[m.id] ?? 'chalk'} seed={m.biome + 1} /><b>{m.name}</b><span>{BASE_COURSES[m.id].hazards.length} hazards · {BASE_COURSES[m.id].checkpoints.length} checkpoints</span></button>))}
           </div>
         </li>
         <li><h2>Options</h2>

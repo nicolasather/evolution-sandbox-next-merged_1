@@ -9,6 +9,7 @@ import { checkTeamNames } from '@/lib/quiz/projector/team-names';
 import { FORMAT_COPY, HELPER_COPY, DURATION_MINUTES, WEIGHTS } from '@/lib/quiz/arena/balance';
 import { FORMATS, HELPERS, MAP_IDS, type Format, type Helper, type MapId, type Weighting } from '@/lib/quiz/arena/domain';
 import { MAP_INFO } from '@/lib/quiz/arena/maps';
+import MapPoster, { ARENA_THEME } from '@/components/quiz/art/MapPoster';
 import { FormatIcon, HelperIcon, TeamBadge } from './icons';
 import { TEAM_COLORS } from './art';
 
@@ -75,7 +76,7 @@ export default function ArenaSetup({ quizId, quizTitle, questionCount, signedIn 
           </div>
         </li>
         <li><h2>Map</h2>
-          <div className="ar-maps" role="radiogroup" aria-label="Map">{MAP_IDS.map((m) => <button key={m} type="button" role="radio" aria-checked={mapId === m} onClick={() => setMapId(m)}><i className="ar-swatch big" style={{ background: `linear-gradient(135deg, ${MAP_INFO[m].palette.ground} 55%, ${MAP_INFO[m].palette.ground2} 55%)`, borderColor: MAP_INFO[m].palette.accent }} aria-hidden="true" /><b>{MAP_INFO[m].title}</b><span>{MAP_INFO[m].blurb}</span></button>)}</div>
+          <div className="ar-maps" role="radiogroup" aria-label="Map">{MAP_IDS.map((m) => <button key={m} type="button" role="radio" aria-checked={mapId === m} onClick={() => setMapId(m)}><MapPoster theme={ARENA_THEME[m] ?? 'meadow'} seed={MAP_IDS.indexOf(m) + 1} /><b>{MAP_INFO[m].title}</b><span>{MAP_INFO[m].blurb}</span></button>)}</div>
           <p className="ar-note">All maps are built from one sector turned around the middle, so every team has the same distances, shortcuts and start.</p>
         </li>
         <li><h2>Scoring</h2>

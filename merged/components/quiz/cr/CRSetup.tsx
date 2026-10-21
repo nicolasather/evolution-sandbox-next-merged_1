@@ -1,6 +1,7 @@
 'use client';
 /** Teacher setup for an online Clue Racing race, in five stages: 1 Format → 2 Map & difficulty → 3 Teams → 4 Length (the quiz check runs here with the real question formats) → 5 Options & perks.
  *  Nothing is created until the last button, and the button says what it does and, when disabled, why. */
+import MapPoster, { CR_THEME } from '@/components/quiz/art/MapPoster';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -51,7 +52,7 @@ export default function CRSetup({ quizId, quizTitle, questionCount, signedIn }: 
       <section className="cr-card cr-stage-card" aria-live="polite">
         {stage === 0 && <><h2>1 · Format</h2><div className="cr-choice" role="radiogroup" aria-label="Format">{FORMATS.map((f) => <button key={f} type="button" role="radio" aria-checked={format === f} onClick={() => setFormat(f)}><FormatIcon format={f} size={30} /><b>{FORMAT_COPY[f].name}</b><span>{FORMAT_COPY[f].blurb}</span></button>)}</div></>}
         {stage === 1 && <><h2>2 · Map &amp; difficulty</h2>
-          <div className="cr-maps" role="radiogroup" aria-label="Map">{MAP_IDS.map((m) => <button key={m} type="button" role="radio" aria-checked={mapId === m} onClick={() => setMapId(m)}><i className="cr-swatch big" style={{ background: `linear-gradient(135deg, ${MAP_INFO[m].palette.ground} 55%, ${MAP_INFO[m].palette.road} 55%)`, borderColor: MAP_INFO[m].palette.accent }} aria-hidden="true" /><b>{MAP_INFO[m].title}</b><span>{MAP_INFO[m].blurb}</span></button>)}</div>
+          <div className="cr-maps" role="radiogroup" aria-label="Map">{MAP_IDS.map((m) => <button key={m} type="button" role="radio" aria-checked={mapId === m} onClick={() => setMapId(m)}><MapPoster theme={CR_THEME[m] ?? 'orchard'} seed={MAP_IDS.indexOf(m) + 1} /><b>{MAP_INFO[m].title}</b><span>{MAP_INFO[m].blurb}</span></button>)}</div>
           <p className="cr-note">Every team races the same authored course from the same start, at the same speed.</p>
           <div className="cr-choice" role="radiogroup" aria-label="Difficulty">{(['easy', 'normal', 'challenge'] as const).map((d) => <button key={d} type="button" role="radio" aria-checked={difficulty === d} onClick={() => setDifficulty(d)}><b>{d[0]!.toUpperCase() + d.slice(1)}</b><span>{DIFFICULTY_COPY[d]}</span></button>)}</div></>}
         {stage === 2 && <><h2>3 · Teams</h2>
