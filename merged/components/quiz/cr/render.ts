@@ -3,6 +3,7 @@
  *  giant bitmap). Scenery is a deterministic function of the map id, so the same course always looks the same on every device. Everything drawn is a pure function of
  *  (public state, smoothed token positions, ambient time): the renderer can never change the game.
  *  Motion budget: ambient loops are quantised to 12 fps, at most 90 particles are alive at once, and `reduced` motion freezes every loop and every camera ease. */
+import { drawAtmosphere } from '../art/atmosphere';
 import { drawProp, hash2, PAL, rr, type PropKind } from '../art/props';
 import { ARRIVE_R, HUB_R, ROAD_R, SPUR_R, TICK_MS, WORLD_H, WORLD_W } from '@/lib/quiz/cr/balance';
 import type { FxRec, OptionId, Role } from '@/lib/quiz/cr/domain';
@@ -224,6 +225,7 @@ export function drawCR(g: CanvasRenderingContext2D, f: CRFrame, o: DrawOpts) {
   if (live && !o.lowFx) for (const fx of live.fx) { const age = f.tick - fx.tick; if (age < 0 || age > 40) continue; if (reduced && age > 12) continue; fxDraw(g, fx, age, budget, tq, reduced); }
   if (!reduced && !o.lowFx && budget.n > 0) ambient(g, f.course.mapId, left, top, right - left, bottom - top, sc, o.time, budget);
   g.restore();
+  if (!o.contrast) drawAtmosphere(g, W, H, o.time, 'parchment', { reduced, lowFx: o.lowFx, seed: 9 });
   // screen space: objective arrow (when the goal is off-screen) and the minimap
   if (geo && o.mini && f.pub.phase === 'race' && o.focus === 'race') {
     const me = f.dots.find((d) => d.mine); const goal = live?.objective && !live.objective.done ? (live.objective.target !== null && live.objective.target >= 0 ? geo.spurs[live.objective.target]?.end : geo.hubB) ?? geo.hubB : geo.hubB;

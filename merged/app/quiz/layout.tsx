@@ -5,6 +5,7 @@ import './quiz.css';
 import './projector-upgrade.css';
 import './projector.css';
 import './game-polish.css';
+import './game-scenery.css';
 import QuizNav from '@/components/quiz/QuizNav';
 import { isGuest, maybeUser } from '@/lib/quiz/supabase';
 import { quizConfigured } from '@/lib/quiz/config';

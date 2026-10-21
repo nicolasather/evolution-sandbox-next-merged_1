@@ -1,6 +1,7 @@
 /** Arena Clash canvas renderer: a storybook "toy table" drawn with the shared prop painter (components/quiz/art/props.ts). Original flat shapes, 3 px ink outlines, no faces,
  *  no copied art. The static ground (patchwork, lanes, plaza, bases, vaults) is painted ONCE per map into an offscreen layer; zones, crystals, banner, gates, tokens and effects
  *  are animated on top. Everything drawn is a pure function of (public state, smoothed token positions, ambient time) — the renderer can never change the game. */
+import { drawAtmosphere } from '../art/atmosphere';
 import { drawProp, hash2, PAL, rr, type PropKind } from '../art/props';
 import type { Geometry, Solid } from '@/lib/quiz/arena/maps';
 import { MAP_INFO } from '@/lib/quiz/arena/maps';
@@ -147,6 +148,7 @@ export function drawArena(g: CanvasRenderingContext2D, f: ArenaFrame, o: DrawOpt
   // vault arrow (deposit guide) and fx
   if (live) live.fx.forEach((e) => { const age = Math.max(0, tick - e.tick) / 20; if (age > 2) return; const col = e.teamId ? TEAM_COLORS[f.teamIndex(e.teamId) % 4]! : PAL.lemon; g.save(); g.globalAlpha = Math.max(0, 1 - age / 2); g.strokeStyle = col; g.lineWidth = 5; g.beginPath(); g.arc(e.x, e.y, 14 + age * 46, 0, Math.PI * 2); g.stroke(); if (!o.lowFx && !o.reduced) for (let k = 0; k < 6; k++) { const a = (k * Math.PI) / 3 + age; g.fillStyle = col; g.beginPath(); g.arc(e.x + Math.cos(a) * (10 + age * 40), e.y + Math.sin(a) * (10 + age * 40), 3, 0, Math.PI * 2); g.fill(); } g.restore(); });
   g.restore();
+  if (!o.contrast) drawAtmosphere(g, W, H, o.time, 'stadium', { reduced: o.reduced, lowFx: o.lowFx, seed: 5 });
   if (o.mini && o.mode === 'follow') drawMini(g, f, o, pal);
 }
 

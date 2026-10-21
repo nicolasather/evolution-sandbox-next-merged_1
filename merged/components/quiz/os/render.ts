@@ -1,5 +1,6 @@
 /** Canvas renderer for the course. Everything dynamic (hazards, players, camera) is drawn here; the HUD is DOM. A pure function of its scene:
  *  the same scene always draws the same picture, so screenshots and tests are repeatable. No faces, no gradients, 3 px ink outlines. */
+import { drawAtmosphere } from '../art/atmosphere';
 import type { Cell, Hazard, Pulse, Role } from '@/lib/quiz/os/domain';
 import { TILE } from '@/lib/quiz/os/balance';
 import { ck, hazardPhase, unck, type CourseIndex } from '@/lib/quiz/os/course';
@@ -80,6 +81,7 @@ export function drawWorld(g: CanvasRenderingContext2D, sc: Scene) {
   // players: rivals first, then squadmates, then you
   const order = [...sc.dots].sort((a, b) => Number(a.mine) - Number(b.mine) || Number(a.mate) - Number(b.mate));
   for (const d of order) drawDot(g, d, X(d.x / TILE), Y(d.y / TILE), t, sc);
+  drawAtmosphere(g, sc.width, sc.height, sc.time ?? 0, 'morning', { reduced: sc.reduced, lowFx: sc.lowFx, seed: 2 });
   if (sc.frozen) { g.fillStyle = 'rgba(25,46,70,.12)'; g.fillRect(0, 0, sc.width, sc.height); }
   g.restore();
 }

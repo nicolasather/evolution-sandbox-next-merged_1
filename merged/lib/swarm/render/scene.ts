@@ -8,6 +8,7 @@ import { renderBackdrop } from './backdrop';
 import { drawRole, drawEnemy, drawBoss, drawBeacon, drawTurret, drawDrone, drawBullet, ROLE_SCALE, type RoleState } from './sprites';
 import { decodeHazard, drawHazard } from './hazards';
 import { FxLayer } from './fxlayer';
+import { drawAtmosphere } from '../../../components/quiz/art/atmosphere';
 import { theme, GOLD, SAFE, WARN, PAPER_2, type Theme } from './palette';
 
 const TAU = Math.PI * 2;
@@ -95,6 +96,7 @@ export class SceneRenderer {
       for (const k of this.tracks.keys()) if (t - this.tracks.get(k)!.seen > 3) this.tracks.delete(k);
     }
     ctx.restore();
+    if (!f.hc) { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); const k = this.canvas.width / Math.max(1, this.cssW); ctx.scale(k, k); drawAtmosphere(ctx, this.cssW, this.cssH, t, 'dusk', { reduced: f.reduced, seed: 3 }); ctx.restore(); }
     if (s) this.overlay(f, th, s, mapDef, dt);
   }
   /** screen-space aids for the big arena: beacon pointer when it is off screen, a small minimap, and the "you entered …" region banner */
