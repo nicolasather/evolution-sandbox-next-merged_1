@@ -2,11 +2,12 @@
 import { normalizeText } from './text';
 import type { Question } from './types';
 import { reid } from './editor-ops';
+import { subjectIdFromLabel } from './taxonomy';
 
 export type LibraryQuiz = {
   id: string; title: string; description: string; updatedAt: string; ownerId?: string; ownerName?: string;
   questionCount: number; questions?: Pick<Question, 'kind' | 'prompt' | 'payload'>[];
-  meta?: { subject?: string; language?: string; ageBand?: string; tags?: string[]; cover?: unknown; sourceId?: string; sourceTitle?: string; sourceAuthor?: string };
+  meta?: { subject?: string; language?: string; ageBand?: string; subjectIds?: string[]; gradeIds?: string[]; curriculumIds?: string[]; tags?: string[]; cover?: unknown; sourceId?: string; sourceTitle?: string; sourceAuthor?: string };
   saves?: number; verified?: boolean; reviewState?: 'unreviewed' | 'approved' | 'flagged'; hasMedia?: boolean; estimatedSeconds?: number;
 };
 
@@ -50,10 +51,13 @@ export function relevance(quiz: LibraryQuiz, query: string): number {
 }
 
 export type Filters = {
-  subject?: string; ageBand?: string; language?: string; kind?: string; minSeconds?: number; maxSeconds?: number; hasMedia?: boolean; verifiedOnly?: boolean;
+  subject?: string; subjectId?: string; gradeId?: string; curriculumId?: string; ageBand?: string; language?: string; kind?: string; minSeconds?: number; maxSeconds?: number; hasMedia?: boolean; verifiedOnly?: boolean;
 };
 export function matchesFilters(q: LibraryQuiz, f: Filters): boolean {
   if (f.subject && fold(q.meta?.subject ?? '') !== fold(f.subject)) return false;
+  if (f.subjectId && !(q.meta?.subjectIds?.includes(f.subjectId) || subjectIdFromLabel(q.meta?.subject) === f.subjectId)) return false;
+  if (f.gradeId && !q.meta?.gradeIds?.includes(f.gradeId)) return false; // grades are matched only when the author stated them
+  if (f.curriculumId && !q.meta?.curriculumIds?.includes(f.curriculumId)) return false;
   if (f.ageBand && q.meta?.ageBand !== f.ageBand) return false;
   if (f.language && q.meta?.language !== f.language) return false;
   if (f.kind && !(q.questions ?? []).some((x) => x.kind === f.kind)) return false;
@@ -83,7 +87,8 @@ export function searchLibrary(all: LibraryQuiz[], opts: { query?: string; filter
 }
 export function facets(all: LibraryQuiz[]) {
   const count = (get: (q: LibraryQuiz) => string | undefined) => { const m = new Map<string, number>(); all.forEach((q) => { const v = get(q); if (v) m.set(v, (m.get(v) ?? 0) + 1); }); return [...m].sort((a, b) => b[1] - a[1]); };
-  return { subjects: count((q) => q.meta?.subject), ageBands: count((q) => q.meta?.ageBand), languages: count((q) => q.meta?.language) };
+  const countMany = (get: (q: LibraryQuiz) => string[] | undefined) => { const m = new Map<string, number>(); all.forEach((q) => { for (const v of new Set(get(q) ?? [])) m.set(v, (m.get(v) ?? 0) + 1); }); return [...m].sort((a, b) => b[1] - a[1]); };
+  return { subjectIds: countMany((q) => q.meta?.subjectIds ?? [subjectIdFromLabel(q.meta?.subject)].filter((x): x is string => !!x)), gradeIds: countMany((q) => q.meta?.gradeIds), curriculumIds: countMany((q) => q.meta?.curriculumIds), subjects: count((q) => q.meta?.subject), ageBands: count((q) => q.meta?.ageBand), languages: count((q) => q.meta?.language) };
 }
 
 /* ── Collections and favourites (055) ──────────────────────────────────────────────────────────────────────────────────── */

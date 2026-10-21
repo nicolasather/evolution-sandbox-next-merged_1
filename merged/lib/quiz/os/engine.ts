@@ -54,6 +54,21 @@ export function maxSeatTick(s: OSState, now: number, ahead: number): number {
 
 // ── seats ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 export const activeSeats = (s: OSState, teamId?: string) => s.seats.filter((x) => !x.revoked && (!teamId || x.teamId === teamId));
+/** A squad of one always plays the balanced solo kit; larger squads use each role at most once (squads hold at most 5 and there are 5 roles, so this is always satisfiable). */
+export const SOLO_ROLE: Role = 'trailblazer';
+const ROLE_FILL: readonly Role[] = ['trailblazer', 'medic', 'shieldbearer', 'bridgewright', 'pathfinder'];
+/** Applied when squad membership changes before the match starts. Mid-match nobody's role is revoked. Returns the seats whose role changed. */
+export function reconcileRoles(s: OSState): string[] {
+  const changed: string[] = [];
+  for (const t of s.teams) {
+    const mates = activeSeats(s, t.id).sort((a, b) => a.joinedAt - b.joinedAt || (a.id < b.id ? -1 : 1));
+    if (mates.length === 1) { if (mates[0]!.role !== SOLO_ROLE) { mates[0]!.role = SOLO_ROLE; changed.push(mates[0]!.id); } continue; }
+    const used = new Set<Role>(); const dups = [];
+    for (const m of mates) { if (used.has(m.role)) dups.push(m); else used.add(m.role); }
+    for (const m of dups) { const free = ROLE_FILL.find((r) => !used.has(r)); if (free) { m.role = free; used.add(free); changed.push(m.id); } }
+  }
+  return changed;
+}
 export function addSeat(s: OSState, seatId: string, name: string, now: number, desiredTeam: string | null): Attempt<OSState> {
   if (s.phase === 'finished') return fail('FINISHED', 'The match is over.');
   if (s.locked) return fail('LOCKED', 'The teacher has closed this room to new players.');
@@ -64,11 +79,12 @@ export function addSeat(s: OSState, seatId: string, name: string, now: number, d
   let team = desiredTeam && counts.has(desiredTeam) && (counts.get(desiredTeam) ?? 0) < cap ? desiredTeam : null;
   if (!team) { const open = s.teams.filter((t) => (counts.get(t.id) ?? 0) < cap).sort((a, b) => (counts.get(a.id)! - counts.get(b.id)!) || a.id.localeCompare(b.id)); team = open[0]?.id ?? null; }
   if (!team) return fail('TEAM_FULL', 'Every squad is full.');
-  const next = clone(s); next.seats.push({ id: seatId, name, teamId: team, role: 'trailblazer', ready: false, revoked: false, joinedAt: now }); return { ok: true, state: next };
+  const next = clone(s); const taken = new Set(activeSeats(next, team).map((x) => x.role)); next.seats.push({ id: seatId, name, teamId: team, role: ROLE_FILL.find((r) => !taken.has(r)) ?? SOLO_ROLE, ready: false, revoked: false, joinedAt: now }); return { ok: true, state: next };
 }
 
 const ROLE_PHASES = new Set(['lobby', 'preview', 'build_choice', 'countdown']);
-export function reduceSeat(s: OSState, seatId: string, a: SeatAction): Attempt<OSState> {
+/** `nowMs` must be the server's trusted clock; it stamps approval requests (never a client-supplied time). */
+export function reduceSeat(s: OSState, seatId: string, a: SeatAction, nowMs = 0): Attempt<OSState> {
   const seat = s.seats.find((x) => x.id === seatId);
   if (!seat || seat.revoked) return fail('SEAT_REVOKED', 'The teacher removed this device from the match.');
   if (s.phase === 'finished') return fail('WRONG_PHASE', 'The match is over.');
@@ -76,6 +92,9 @@ export function reduceSeat(s: OSState, seatId: string, a: SeatAction): Attempt<O
   if (a.kind === 'role') {
     if (!ROLES.includes(a.role)) return fail('BAD_ROLE', 'Unknown role.');
     if (!ROLE_PHASES.has(s.phase)) return fail('WRONG_PHASE', 'Roles can change between chapters, not mid-run.');
+    const mates = activeSeats(s, me.teamId);
+    if (mates.length === 1 && a.role !== SOLO_ROLE) return fail('SOLO_ROLE', 'A squad of one plays the balanced solo kit. More teammates unlock the other roles.');
+    if (mates.some((x) => x.id !== seatId && x.role === a.role)) return fail('ROLE_TAKEN', 'A teammate already has that role.');
     me.role = a.role; return { ok: true, state: next };
   }
   if (a.kind === 'ready') { if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'The match already started.'); me.ready = a.ready; return { ok: true, state: next }; }
@@ -93,7 +112,7 @@ export function reduceSeat(s: OSState, seatId: string, a: SeatAction): Attempt<O
   if (needsApproval(s, price)) {
     if (waiting.some((w) => w.seatId === seatId)) return fail('APPROVAL_PENDING', 'Wait for the teacher to answer your last request.');
     const seq = (next.approvalSeq ?? 0) + 1; next.approvalSeq = seq;
-    next.approvals = [...(next.approvals ?? []), { id: `ap${seq}`, seatId, teamId: team.id, perk: a.perk, price, requestedMs: 0 } satisfies Approval];
+    next.approvals = [...(next.approvals ?? []), { id: `ap${seq}`, seatId, teamId: team.id, perk: a.perk, price, requestedMs: nowMs } satisfies Approval];
     next.log = [...next.log.slice(-39), `ask:${team.id}:${a.perk}`]; return { ok: true, state: next, note: 'approval_requested' };
   }
   const bought = applyPurchase(next, team.id, seatId, a.perk, price); if (!bought.ok) return bought;
@@ -153,14 +172,14 @@ export function reduceHost(s: OSState, a: HostAction, now: number): { result: At
     }
     case 'kick': {
       const seat = next.seats.find((x) => x.id === a.seatId); if (!seat) return no('NO_SEAT', 'That student is not in this room.');
-      seat.revoked = true; next.approvals = (next.approvals ?? []).filter((x) => x.seatId !== a.seatId); effects.push({ type: 'kick', seatId: a.seatId }); break;
+      seat.revoked = true; next.approvals = (next.approvals ?? []).filter((x) => x.seatId !== a.seatId); if (next.phase === 'lobby') reconcileRoles(next); effects.push({ type: 'kick', seatId: a.seatId }); break;
     }
     case 'move_seat': {
       if (s.phase !== 'lobby') return no('WRONG_PHASE', 'Squads can only change in the lobby.');
       const seat = next.seats.find((x) => x.id === a.seatId && !x.revoked); if (!seat) return no('NO_SEAT', 'That student is not in this room.');
       if (!next.teams.some((t) => t.id === a.teamId)) return no('NO_TEAM', 'Unknown squad.');
       if (activeSeats(next, a.teamId).filter((x) => x.id !== a.seatId).length >= capOf(s)) return no('TEAM_FULL', 'That squad is full.');
-      seat.teamId = a.teamId; break;
+      seat.teamId = a.teamId; reconcileRoles(next); break;
     }
     case 'approve': case 'deny': {
       if (s.paused) return no('PAUSED', 'Resume the match first.');

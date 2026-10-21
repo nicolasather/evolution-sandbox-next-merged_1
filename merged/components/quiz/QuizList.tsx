@@ -13,6 +13,8 @@ import { kindLabels, modeLabels, QUESTION_KINDS, type PlayMode } from '@/lib/qui
 import { addFolder, emptyCollections, facets, isVerified, moveToFolder, parseCollections, planBulk, searchLibrary, toggleFavorite, type BulkAction, type Collections, type Filters, type LibraryQuiz, type SortKey } from '@/lib/quiz/library';
 import { coverSvg } from '@/lib/quiz/art';
 import { formatDuration } from '@/lib/quiz/scoring';
+import { emptyProfile, loadProfile, recommend, summarize, type Profile } from '@/lib/quiz/onboarding/profile';
+import { describeGrades, labelOf } from '@/lib/quiz/taxonomy';
 import { MODES } from '@/lib/quiz/projector/modes';
 import type { GameKey } from '@/lib/quiz/projector/types';
 
@@ -45,6 +47,7 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
   const [reload, setReload] = useState(0);
   const [memoryOnly, setMemoryOnly] = useState(false);
   const [offline, setOffline] = useState(false);
+  const [profile, setProfile] = useState<Profile>(() => emptyProfile());
 
   useEffect(() => {
     let live = true;
@@ -64,6 +67,7 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
     /* browser storage only exists after hydration */
     /* eslint-disable react-hooks/set-state-in-effect */
     try { setColl(parseCollections(localStorage.getItem(COLL_KEY))); } catch { /* ignore */ }
+    setProfile(loadProfile());
     if (mine) {
       setDevice(listDeviceDrafts()); setMemoryOnly(storageIsMemoryOnly());
       void currentSession().then((s) => { if (live) setSession(s); });
@@ -89,7 +93,10 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
     const ranked = searchLibrary(lib.filter((l) => ids.has(l.id)), { query, filters, sort: sort as SortKey });
     return ranked.map((r) => byId.get(r.id)!).filter(Boolean);
   }, [items, mine, tab, folder, coll, sort, query, filters, lib, byId]);
+  const hasFilters = Object.values(filters).some((v) => v !== undefined);
   const q = query.trim().toLowerCase();
+  /** Only real, published quizzes whose stated classification matches the saved profile; never padded, never locks the library to it. */
+  const picks = useMemo(() => (mine || q || hasFilters ? [] : recommend(lib.filter((l) => byId.get(l.id)?.status === 'published' && !byId.get(l.id)?.archived).map((l) => ({ ...l, meta: l.meta })), profile, 4)), [mine, q, hasFilters, lib, byId, profile]);
   const shownDevice = useMemo(() => (mine && tab === 'draft' ? device.filter((d) => (d.title + ' ' + d.description).toLowerCase().includes(q)) : []), [device, q, mine, tab]);
   const counts = useMemo(() => {
     const live = (items ?? []).filter((x) => !x.archived);
@@ -164,7 +171,6 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
   const totalShown = shown.length + shownDevice.length;
   const playHref = (id: string) => (clue ? `/quiz/setup/${id}/cr` : arena ? `/quiz/setup/${id}/arena` : obstacle ? `/quiz/setup/${id}/os` : swarm ? `/quiz/setup/${id}/swarm` : towerDefense ? `/quiz/setup/${id}/td` : game ? `/quiz/setup/${id}/game?game=${game}` : `/quiz/setup/${id}${mode ? `?mode=${mode}` : ''}`);
   const setF = (k: keyof Filters, v: unknown) => setFilters((f) => { const n = { ...f, [k]: v === '' || v === false ? undefined : v } as Filters; return n; });
-  const hasFilters = Object.values(filters).some((v) => v !== undefined);
 
   const controls = (
     <div className="stack">
@@ -180,6 +186,9 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
         <summary>Filters{hasFilters ? ' (active)' : ''}</summary>
         <div className="grid2" style={{ marginTop: 10 }}>
           <label>Subject<select value={filters.subject ?? ''} onChange={(e) => setF('subject', e.target.value)}><option value="">Any</option>{fac.subjects.map(([n, c]) => <option key={n} value={n}>{n} ({c})</option>)}</select></label>
+          <label>Subject (standard list)<select value={filters.subjectId ?? ''} onChange={(e) => setF('subjectId', e.target.value)}><option value="">Any</option>{fac.subjectIds.map(([id, c]) => <option key={id} value={id}>{labelOf('subject', id)} ({c})</option>)}</select></label>
+          <label>Exact grade<select value={filters.gradeId ?? ''} onChange={(e) => setF('gradeId', e.target.value)}><option value="">Any</option>{fac.gradeIds.map(([id, c]) => <option key={id} value={id}>{labelOf('grade', id)} ({c})</option>)}</select></label>
+          <label>Curriculum<select value={filters.curriculumId ?? ''} onChange={(e) => setF('curriculumId', e.target.value)}><option value="">Any</option>{fac.curriculumIds.map(([id, c]) => <option key={id} value={id}>{labelOf('curriculum', id)} ({c})</option>)}</select></label>
           <label>Age group<select value={filters.ageBand ?? ''} onChange={(e) => setF('ageBand', e.target.value)}><option value="">Any</option>{AGES.map((a) => <option key={a} value={a}>{a}</option>)}</select></label>
           <label>Language<select value={filters.language ?? ''} onChange={(e) => setF('language', e.target.value)}><option value="">Any</option>{fac.languages.map(([n, c]) => <option key={n} value={n}>{n} ({c})</option>)}</select></label>
           <label>Question format<select value={filters.kind ?? ''} onChange={(e) => setF('kind', e.target.value)}><option value="">Any</option>{QUESTION_KINDS.map((k) => <option key={k} value={k}>{kindLabels[k]}</option>)}</select></label>
@@ -256,6 +265,17 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
           </>
         )}
         {controls}
+        {!mine && !loading && profile.subjects.length > 0 && !q && !hasFilters && (
+          <section className="panel" aria-labelledby="rec-h" style={{ margin: '14px 0' }}>
+            <div className="row spread"><h2 id="rec-h" style={{ margin: 0 }}>Suggested for you</h2><Link className="textlink" href="/quiz/welcome">Edit my teaching profile</Link></div>
+            <p className="note" style={{ margin: '4px 0 10px' }}>Based on {summarize(profile)}. Everything else is still in the library below.</p>
+            {picks.length === 0 ? <p className="muted-text" style={{ margin: 0 }}>No published quiz states a matching subject and grade yet. Browse the full library below, or <Link href="/quiz/new">create one</Link>.</p> : (
+              <ul className="stack" style={{ listStyle: 'none', padding: 0, margin: 0, gap: 8 }}>
+                {picks.map(({ quiz, match }) => <li key={quiz.id} className="row spread"><span><b>{quiz.title}</b><br /><small className="note">{match.reasons.join(' · ')}</small></span><Link className="btn small" href={playHref(quiz.id)}>Play</Link></li>)}
+              </ul>
+            )}
+          </section>
+        )}
         {loading && <p className="sr-only" role="status">Loading quizzes…</p>}
         {offline && <p className="info" role="status" style={{ margin: '14px 0' }}>You appear to be offline. Drafts saved on this device are still available.</p>}
         {error && (
@@ -316,7 +336,7 @@ export default function QuizList({ mine, mode = null, game = null, towerDefense 
                         <button className="btn small ghost" aria-pressed={fav} aria-label={fav ? `Remove ${it.title} from favorites` : `Add ${it.title} to favorites`} onClick={() => saveColl(toggleFavorite(coll, it.id))}>{fav ? '★' : '☆'}</button>
                       </div>
                       <div className="meta"><span className={`pill ${it.status}`}>{it.status}</span>{verified && <span className="pill published" title="A moderator reviewed this quiz">Reviewed</span>}<span>{it.questionCount} question{it.questionCount === 1 ? '' : 's'}</span><span>about {formatDuration(it.questionCount * 25)}</span><span>Updated {when(it.updated_at)}</span></div>
-                      {(it.meta?.subject || it.meta?.ageBand || it.meta?.language) && <p className="note" style={{ margin: 0 }}>{[it.meta?.subject, it.meta?.ageBand && `Ages ${it.meta.ageBand}`, it.meta?.language?.toUpperCase()].filter(Boolean).join(' · ')}</p>}
+                      {(it.meta?.subject || it.meta?.ageBand || it.meta?.language || it.meta?.gradeIds?.length) && <p className="note" style={{ margin: 0 }}>{[it.meta?.subject, it.meta?.gradeIds?.length ? describeGrades(it.meta.gradeIds) : undefined, it.meta?.ageBand && `Ages ${it.meta.ageBand}`, it.meta?.language?.toUpperCase()].filter(Boolean).join(' · ')}</p>}
                       <p className="muted-text" style={{ margin: 0 }}>{it.description || 'No description.'}</p>
                       {(it.kinds?.length ?? 0) > 0 && <p className="note" style={{ margin: 0 }}>{it.kinds!.map((k) => (kindLabels as Record<string, string>)[k]).join(' · ')}</p>}
                       <div className="actions">

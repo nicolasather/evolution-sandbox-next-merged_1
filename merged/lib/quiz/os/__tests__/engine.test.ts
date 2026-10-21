@@ -29,10 +29,10 @@ describe('seats and capacity', () => {
   test('joining twice is idempotent (same seat, no sixth member)', () => { const m = makeMatch(); const a = seatUp(m.state, ['seat-aaaa']); const b = seatUp(a, ['seat-aaaa']); expect(b.seats).toHaveLength(1); });
   test('a locked or finished room refuses joins', () => { const m = makeMatch(); const locked = host(m.state, { kind: 'lock', locked: true }, T0).s; expect(() => seatUp(locked, ['seat-bbbb'])).toThrow(/closed/); });
   test('role changes: lobby/preview/shop only, never mid-run', () => {
-    const { state } = started(1); const id = ids(1)[0];
-    expect(reduceSeat(state, id, { kind: 'role', role: 'medic' })).toMatchObject({ ok: true });
+    const { state } = started(2); const id = ids(1)[0];
+    expect(reduceSeat(state, id, { kind: 'role', role: 'shieldbearer' })).toMatchObject({ ok: true });
     const run = drive(state, T0 + 20_000, [] as never).state; expect(run.phase).toBe('traversing');
-    expect(reduceSeat(run, id, { kind: 'role', role: 'medic' })).toMatchObject({ ok: false, code: 'WRONG_PHASE' });
+    expect(reduceSeat(run, id, { kind: 'role', role: 'shieldbearer' })).toMatchObject({ ok: false, code: 'WRONG_PHASE' });
   });
   test('a removed device is refused everywhere', () => {
     const { state } = started(2); const k = host(state, { kind: 'kick', seatId: ids(2)[0] }, T0 + 1); expect(k.fx).toEqual([{ type: 'kick', seatId: ids(2)[0] }]);

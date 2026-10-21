@@ -35,7 +35,15 @@ export function hydrateConfig(s: ArenaState, cfg: Pick<ArenaConfig, 'teamSizeCap
  *  already hold until the match ends, so a cooldown or pending ability is never silently revoked. Returns the names of seats whose role changed. */
 export function reconcileSolo(s: ArenaState): string[] {
   const changed: string[] = [];
-  for (const t of s.teams) { const mates = activeSeats(s, t.id); if (mates.length === 1 && mates[0]!.role !== 'runner') { mates[0]!.role = 'runner'; mates[0]!.ready = false; changed.push(mates[0]!.id); } }
+  for (const t of s.teams) {
+    const mates = activeSeats(s, t.id).sort((a, b) => a.joinedAt - b.joinedAt || (a.id < b.id ? -1 : 1));
+    if (mates.length === 1) { if (mates[0]!.role !== 'runner') { mates[0]!.role = 'runner'; mates[0]!.ready = false; changed.push(mates[0]!.id); } continue; }
+    // Distinct roles inside a team (lobby only): the earliest joiner keeps a contested role, later duplicates take the first free one. Mid-match nobody's role is revoked.
+    if (s.phase !== 'lobby') continue;
+    const used = new Set<string>(); const dups = [];
+    for (const m of mates) { if (used.has(m.role)) dups.push(m); else used.add(m.role); }
+    for (const m of dups) { const free = ROLES.find((r) => !used.has(r)); if (free) { m.role = free; m.ready = false; used.add(free); changed.push(m.id); } }
+  }
   return changed;
 }
 export const capOf = (s: ArenaState) => clampCap(s.teamSizeCap);
@@ -60,7 +68,7 @@ export function addSeat(s: ArenaState, seatId: string, name: string, now: number
   if (!team) { const open = s.teams.filter((t) => (counts.get(t.id) ?? 0) < cap).sort((a, b) => (counts.get(a.id)! - counts.get(b.id)!) || a.id.localeCompare(b.id)); team = open[0]?.id ?? null; }
   if (!team) return fail('TEAM_FULL', 'Every team is full.');
   const next = clone(s); const mates = activeSeats(next, team).length;
-  const seat: SeatRec = { id: seatId, name, teamId: team, role: ROLES[mates % ROLES.length]!, ready: false, revoked: false, joinedAt: now, x: 0, y: 0, ix: 0, iy: 0, seq: 0, seenTick: next.live?.tick ?? next.tick, abilityReadyTick: next.live?.tick ?? 0, carrying: 0, carryValue: 0, banner: false, dashUntil: 0, captures: 0, pulses: 0, deposits: 0, handins: 0, assists: 0 };
+  const seat: SeatRec = { id: seatId, name, teamId: team, role: ROLES.find((r) => !activeSeats(next, team!).some((x) => x.role === r)) ?? ROLES[mates % ROLES.length]!, ready: false, revoked: false, joinedAt: now, x: 0, y: 0, ix: 0, iy: 0, seq: 0, seenTick: next.live?.tick ?? next.tick, abilityReadyTick: next.live?.tick ?? 0, carrying: 0, carryValue: 0, banner: false, dashUntil: 0, captures: 0, pulses: 0, deposits: 0, handins: 0, assists: 0 };
   next.seats.push(seat); const sp = spawnFor(next, seat, next.live?.episode ?? 0); seat.x = sp.x; seat.y = sp.y; return { ok: true, state: next };
 }
 
@@ -69,7 +77,7 @@ export function reduceSeat(s: ArenaState, seatId: string, a: SeatAction): Attemp
   if (s.phase === 'finished') return fail('FINISHED', 'The match is over.');
   const next = clone(s); const me = next.seats.find((x) => x.id === seatId)!; const team = next.teams.find((t) => t.id === me.teamId)!;
   switch (a.kind) {
-    case 'role': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'Roles are chosen in the lobby.'); if (!ROLES.includes(a.role)) return fail('BAD_ROLE', 'Unknown role.'); if (activeSeats(s, me.teamId).length === 1 && a.role !== 'runner') return fail('SOLO_ROLE', 'A team of one plays the Runner. More teammates unlock the other four roles.'); me.role = a.role; me.ready = false; return { ok: true, state: next };
+    case 'role': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'Roles are chosen in the lobby.'); if (!ROLES.includes(a.role)) return fail('BAD_ROLE', 'Unknown role.'); if (activeSeats(s, me.teamId).length === 1 && a.role !== 'runner') return fail('SOLO_ROLE', 'A team of one plays the Runner. More teammates unlock the other four roles.'); if (activeSeats(s, me.teamId).some((x) => x.id !== seatId && x.role === a.role)) return fail('ROLE_TAKEN', 'A teammate already has that role.'); me.role = a.role; me.ready = false; return { ok: true, state: next };
     case 'ready': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'The match already started.'); me.ready = a.ready; return { ok: true, state: next };
     case 'rename': if (s.phase !== 'lobby') return fail('WRONG_PHASE', 'Names change in the lobby.'); me.name = a.name; return { ok: true, state: next };
     case 'buy': {

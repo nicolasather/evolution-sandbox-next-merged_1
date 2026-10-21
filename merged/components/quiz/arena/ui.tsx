@@ -123,7 +123,7 @@ export function KeyHelp() { return <p className="ar-keys" aria-label="Keyboard c
 
 // ── lobby ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 /** One role per student on a team of one (the Runner); bigger teams see all five with the set that fits their size marked. */
-export function RolePicker({ value, onPick, busy, teamSize }: { value: Role | null; onPick: (r: Role) => void; busy: boolean; teamSize: number }) {
+export function RolePicker({ value, onPick, busy, teamSize, taken = [] }: { value: Role | null; onPick: (r: Role) => void; busy: boolean; teamSize: number; taken?: readonly Role[] }) {
   const n = Math.max(1, Math.min(5, teamSize)); const rec = ROLE_SETS[n]!;
   if (n === 1) {
     return (
@@ -137,9 +137,9 @@ export function RolePicker({ value, onPick, busy, teamSize }: { value: Role | nu
     <fieldset className="ar-roles"><legend>CHOOSE A ROLE <small>{n} on your team: we suggest {rec.map((r) => ROLE_INFO[r].name).join(', ')}</small></legend>
       <div className="ar-rolegrid">
         {ROLES.map((r) => (
-          <button key={r} type="button" className="ar-role" data-role={r} data-rec={rec.includes(r) || undefined} aria-pressed={value === r} disabled={busy} onClick={() => onPick(r)}>
+          <button key={r} type="button" className="ar-role" data-role={r} data-rec={rec.includes(r) || undefined} aria-pressed={value === r} disabled={busy || (value !== r && taken.includes(r))} onClick={() => onPick(r)}>
             <RoleIcon role={r} size={56} /><b>{ROLE_INFO[r].name}</b><small>{ROLE_INFO[r].ability} · {ROLE_INFO[r].seconds}s rest</small><small className="desc">{ROLE_INFO[r].how}</small>
-            <span className="ar-choose">{value === r ? '✓ Chosen' : rec.includes(r) ? 'Suggested for your team' : 'Choose role'}</span>
+            <span className="ar-choose">{value === r ? '✓ Chosen' : taken.includes(r) ? 'Taken by a teammate' : rec.includes(r) ? 'Suggested for your team' : 'Choose role'}</span>
           </button>
         ))}
       </div>

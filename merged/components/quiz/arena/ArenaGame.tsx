@@ -54,7 +54,7 @@ export default function ArenaGame({ client, practiceBack }: { client: ArenaClien
           <h1>Get ready, {snap.seats.find((s) => s.id === you.seatId)?.name ?? 'player'}</h1>
           <p className="ar-note">{client.local ? 'Practice: your team and two rivals run the real arena with sample questions.' : <>Room code <b data-testid="ar-code">{snap.room.code}</b>. The teacher starts the match when everyone is ready.</>}</p>
           <p className="ar-note"><b>{FORMAT_COPY[snap.format].name}</b> on <b>{mapName(snap.mapId)}</b>. {FORMAT_COPY[snap.format].blurb}</p>
-          <RolePicker teamSize={mates.length} value={you.role} busy={client.busy} onPick={(r) => void client.act({ kind: 'role', role: r }).then((x) => { if (!x.ok) show(x.message ?? ''); })} />
+          <RolePicker teamSize={mates.length} taken={mates.filter((m) => m.id !== you.seatId).map((m) => m.role)} value={you.role} busy={client.busy} onPick={(r) => void client.act({ kind: 'role', role: r }).then((x) => { if (!x.ok) show(x.message ?? ''); })} />
           <ul className="ar-roster" aria-label="Your team">{mates.map((s) => <li key={s.id}><RoleIcon role={s.role} size={26} /><b>{s.name}</b>{s.id === you.seatId ? ' (you)' : ''}<span>{ROLE_INFO[s.role].name}</span><span className={s.ready ? 'ok' : ''}>{s.ready ? '✓ ready' : 'not ready'}</span></li>)}</ul>
           <div className="ar-row">
             <button type="button" className="ar-btn primary big" aria-pressed={you.ready} disabled={client.busy} onClick={() => void client.act({ kind: 'ready', ready: !you.ready })}>{you.ready ? '✓ Ready — tap to undo' : 'I’m ready'}</button>

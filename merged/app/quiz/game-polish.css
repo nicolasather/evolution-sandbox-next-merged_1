@@ -1,0 +1,52 @@
+/* Games 3–5 (Arena Clash, Obstacle Survival, Clue Racing) — shared polish layer.
+   Craft carried over from the Game 1 benchmark (clear hierarchy, tactile controls, readable play field), never its art or colours: each game keeps its own palette.
+   Everything that moves is inside prefers-reduced-motion: no-preference and is off when a game sets its own `calm` class. */
+
+/* ── 1. Focus mode: while a match is on screen the site chrome steps back ─────────────────────────────────────────────── */
+.qz:has(:is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap)) > :is(.qz-footer, .notice) { display: none; }
+.qz:has(:is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap)) .qz-nav { border-bottom-width: 2px; }
+.qz:has(:is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap)) .qz-nav-inner { padding-block: 2px; }
+.qz:has(:is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap)) .qz-nav .logo { font-size: 1.15rem; text-shadow: 2px 2px 0 var(--qz-coral); }
+.qz:has(:is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap)) .qz-nav nav > * { opacity: .55; min-height: 36px; padding-block: 2px; font-size: .9rem; transition: opacity .15s; }
+.qz:has(:is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap)) .qz-nav nav > :is(:hover, :focus-visible) { opacity: 1; }
+.qz:has(:is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap)) .qz-nav nav a.cta { box-shadow: none; }
+
+/* ── 2. Tactile role cards (lobby): hover lift, press, focus ring, clear taken state ──────────────────────────────────── */
+:is(.ar-role, .os-role, .cr-role):is(button) { transition: transform .12s ease, box-shadow .12s ease, filter .12s ease; }
+:is(.ar-role, .os-role, .cr-role):is(button):not(:disabled):hover { transform: translateY(-3px); box-shadow: 5px 6px 0 var(--ink, #1b2a41); }
+:is(.ar-role, .os-role, .cr-role):is(button):not(:disabled):active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink, #1b2a41); }
+:is(.ar-role, .os-role, .cr-role):is(button):focus-visible { outline: 4px solid #ffd23f; outline-offset: 3px; }
+:is(.ar-role, .os-role, .cr-role):is(button):disabled { cursor: not-allowed; }
+:is(.ar-role, .os-role, .cr-role)[aria-pressed='true'] :is(.ar-choose, .os-choose, .cr-choose) { background: #ffd23f; }
+.ar-role:disabled:not([aria-pressed='true']), .os-role:disabled:not([aria-pressed='true']), .cr-role:disabled:not([aria-pressed='true']) { filter: grayscale(.55); opacity: .78; }
+
+/* ── 3. Stage framing: a soft vignette and inner rim so the field reads as a place, not a flat panel ─────────────────── */
+:is(.ar-stage, .os-stage, .cr-stage) { position: relative; isolation: isolate; }
+:is(.ar-stage, .os-stage, .cr-stage)::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1; border-radius: inherit; box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .22), inset 0 0 70px rgba(20, 28, 50, .26); }
+:is(.ar-stage, .os-stage, .cr-stage) > :is(.ar-banner, .os-banner, .cr-banner, [role='status'], [role='alert']) { z-index: 3; }
+
+/* ── 4. Motion (only when allowed) ──────────────────────────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  /* scene entry: the HUD and stage rise in, quickly and once */
+  :is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap):not(.calm *) { animation: gp-enter .38s cubic-bezier(.2, .9, .3, 1.1) both; }
+  :is(.ar-lobby, .os-lobby, .cr-lobby) { animation: gp-enter .34s cubic-bezier(.2, .9, .3, 1.1) both; }
+  /* idle: the chosen role breathes, the ready button invites */
+  :is(.ar-role, .os-role, .cr-role)[aria-pressed='true'] svg, :is(.ar-role, .os-role, .cr-role)[aria-current='true'] svg { animation: gp-bob 2.6s ease-in-out infinite; transform-origin: 50% 90%; }
+  :is(.ar-btn, .os-btn, .cr-btn).primary:not(:disabled):not([aria-pressed='true']) { animation: gp-nudge 2.8s ease-in-out 1.2s infinite; }
+  /* impact feedback on status chips when a number changes */
+  :is(.ar-pill, .os-chip, .cr-chip)[data-bump] { animation: gp-bump .35s ease-out; }
+  /* result screens: the winner banner shimmers once */
+  :is(.ar-results, .os-results, .cr-results) :is(h1, h2):first-of-type { background: linear-gradient(100deg, currentColor 40%, #ffd23f 50%, currentColor 60%) 0 0 / 250% 100% no-repeat; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gp-shine 1.6s ease-out .2s 1 both; }
+}
+@keyframes gp-enter { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+@keyframes gp-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-4px) rotate(2deg); } }
+@keyframes gp-nudge { 0%, 88%, 100% { transform: none; } 92% { transform: translateY(-3px); } 96% { transform: translateY(1px); } }
+@keyframes gp-bump { 0% { transform: scale(1); } 40% { transform: scale(1.18); } 100% { transform: scale(1); } }
+@keyframes gp-shine { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { :is(.ar-stagewrap, .os-stagewrap, .cr-stagewrap, .ar-lobby, .os-lobby, .cr-lobby) { animation: none; } }
+
+/* ── 5. Small screens: keep the play field primary ────────────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  :is(.ar-stage, .os-stage, .cr-stage)::after { box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .22); }
+  :is(.ar-role, .os-role, .cr-role) .desc { display: none; }
+}

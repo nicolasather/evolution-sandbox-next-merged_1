@@ -144,3 +144,16 @@ describe('cover artwork (item 053)', () => {
     expect(coverSvg('x', 'History').replace('http://www.w3.org/2000/svg','')).not.toMatch(/<text|<image|http/); expect(themeForSubject('Lịch sử', 'x').id).toBe('time'); expect(themeForSubject('Chemistry', 'x').id).toBe('lab');
   });
 });
+
+describe('taxonomy filters (subject / exact grade / curriculum)', () => {
+  const mk = (id: string, meta: NonNullable<LibraryQuiz['meta']>): LibraryQuiz => ({ id, title: id, description: '', updatedAt: '2026-01-01', questionCount: 5, meta });
+  const all = [mk('a', { subjectIds: ['mathematics'], gradeIds: ['g9', 'g10'], curriculumIds: ['moet'] }), mk('b', { subject: 'Math' }), mk('c', { subjectIds: ['physics'], gradeIds: ['g10'], curriculumIds: ['cambridge'] })];
+  it('filters by stable subject id, accepting legacy free-text subjects that match exactly', () => {
+    expect(searchLibrary(all, { filters: { subjectId: 'mathematics' } }).map((q) => q.id).sort()).toEqual(['a', 'b']);
+  });
+  it('filters by exact grade and curriculum only on stated classifications', () => {
+    expect(searchLibrary(all, { filters: { gradeId: 'g10' } }).map((q) => q.id).sort()).toEqual(['a', 'c']);
+    expect(searchLibrary(all, { filters: { gradeId: 'g10', curriculumId: 'moet' } }).map((q) => q.id)).toEqual(['a']);
+  });
+  it('facets count each id once per quiz', () => { const f = facets(all); expect(f.gradeIds).toEqual([['g10', 2], ['g9', 1]]); expect(f.subjectIds.find(([id]) => id === 'mathematics')?.[1]).toBe(2); });
+});

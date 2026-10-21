@@ -1,3 +1,6 @@
+## 2026-10-21 Quiz Studio
+- Role fixes for Arena Clash / Obstacle Survival, teacher onboarding + taxonomy, rewards rules engine, game polish layer. See merged/docs/quiz-studio/IMPLEMENTATION_BASELINE.md.
+
 # Changelog
 
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and

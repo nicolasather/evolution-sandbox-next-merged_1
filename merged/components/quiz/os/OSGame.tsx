@@ -49,7 +49,7 @@ export default function OSGame({ client, practiceBack }: { client: OSClient; pra
         <section className="os-card os-lobby" data-testid="os-lobby">
           <h1>Get ready, {snap.seats.find((s) => s.id === you.seatId)?.name ?? 'runner'}</h1>
           <p className="os-note">Room code <b data-testid="os-code">{snap.room.code}</b>. The teacher starts the match when everyone is ready.</p>
-          <RolePicker squadSize={snap.seats.filter((x) => x.teamId === you.teamId).length} value={you.role} busy={client.busy} onPick={(r) => void client.act({ kind: 'role', role: r })} />
+          <RolePicker squadSize={snap.seats.filter((x) => x.teamId === you.teamId).length} taken={snap.seats.filter((x) => x.teamId === you.teamId && x.id !== you.seatId).map((x) => x.role)} value={you.role} busy={client.busy} onPick={(r) => void client.act({ kind: 'role', role: r })} />
           <ul className="os-roster" aria-label="Your squad">{snap.seats.filter((s) => s.teamId === you.teamId).map((s) => <li key={s.id}><RoleIcon role={s.role} size={26} /><b>{s.name}</b>{s.id === you.seatId ? ' (you)' : ''}<span>{ROLE_INFO[s.role].name}</span><span className={s.ready ? 'ok' : ''}>{s.ready ? '✓ ready' : 'not ready'}</span></li>)}</ul>
           <div className="os-row"><button type="button" className="os-btn primary big" aria-pressed={you.ready} disabled={client.busy} onClick={() => void client.act({ kind: 'ready', ready: !you.ready })}>{you.ready ? '✓ Ready — tap to undo' : 'I’m ready'}</button><button type="button" className="os-btn" onClick={() => setCoach(true)}>How to play</button></div>
           <HazardLegend />

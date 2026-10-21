@@ -179,6 +179,10 @@ export const quizMetaSchema = z
     subject: z.string().trim().max(60).optional(),
     language: z.string().trim().regex(/^[a-z]{2,3}(-[A-Za-z0-9]{2,8})?$/, 'Use a language code such as en or vi').optional(),
     ageBand: z.enum(AGE_BANDS).optional(),
+    /** Stable taxonomy ids (lib/quiz/taxonomy.ts). A quiz may suit several exact grades; these are never inferred silently. */
+    subjectIds: z.array(z.string().regex(/^[a-z0-9_]{1,32}$/)).max(6).optional(),
+    gradeIds: z.array(z.string().regex(/^[a-z0-9_]{1,32}$/)).max(16).optional(),
+    curriculumIds: z.array(z.string().regex(/^[a-z0-9_]{1,32}$/)).max(8).optional(),
     tags: z.array(z.string().trim().min(1).max(24)).max(8).optional(),
     cover: z.discriminatedUnion('kind', [z.object({ kind: z.literal('art'), seed: z.string().max(60) }).strict(), z.object({ kind: z.literal('upload'), ref: z.string().max(600), alt: z.string().max(300).optional() }).strict()]).optional(),
     objectives: z.array(z.string().trim().min(1).max(200)).max(20).optional(),

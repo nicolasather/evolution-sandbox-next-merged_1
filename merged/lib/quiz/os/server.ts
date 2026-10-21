@@ -260,7 +260,7 @@ export async function touch(roomId: string, who: { seatId?: string; host?: boole
 export type CommandOutcome = { ok: true; revision: number; replayed: boolean; note?: string } | { ok: false; code: string; message: string; currentRevision: number };
 export async function seatCommand(roomId: string, seatId: string, commandId: string, action: SeatAction, expectedRevision?: number): Promise<CommandOutcome> {
   for (let attempt = 0; attempt < 4; attempt++) {
-    const row = await step(roomId); const r = reduceSeat(row.state, seatId, action);
+    const row = await step(roomId); const r = reduceSeat(row.state, seatId, action, Date.now());
     if (!r.ok) {
       const stale = expectedRevision !== undefined && expectedRevision < row.revision && r.code === 'INSUFFICIENT_POINTS';
       return { ok: false, code: stale ? 'STALE_REVISION' : r.code, message: stale ? 'A teammate just used these points. The shop is refreshed.' : r.message, currentRevision: row.revision };

@@ -89,7 +89,7 @@ export function KeyHelp() { return <p className="os-keys" aria-label="Keyboard c
 /** Recommended role sets by squad size (OS-F05). One student gets ONE balanced solo kit; larger squads see every role with the ones that complement their size marked. */
 export const SOLO_ROLE: Role = 'trailblazer';
 export const ROLE_SETS: Record<number, readonly Role[]> = { 1: [SOLO_ROLE], 2: ['trailblazer', 'medic'], 3: ['trailblazer', 'medic', 'shieldbearer'], 4: ['trailblazer', 'medic', 'shieldbearer', 'bridgewright'], 5: ROLES };
-export function RolePicker({ value, onPick, busy, squadSize = 5 }: { value: Role | null; onPick: (r: Role) => void; busy: boolean; squadSize?: number }) {
+export function RolePicker({ value, onPick, busy, squadSize = 5, taken = [] }: { value: Role | null; onPick: (r: Role) => void; busy: boolean; squadSize?: number; taken?: readonly Role[] }) {
   const n = Math.max(1, Math.min(5, squadSize)); const rec = ROLE_SETS[n];
   if (n === 1) {
     return (
@@ -106,9 +106,9 @@ export function RolePicker({ value, onPick, busy, squadSize = 5 }: { value: Role
     <fieldset className="os-roles"><legend>CHOOSE A ROLE <small>{n} in your squad: we suggest {rec.map((r) => ROLE_INFO[r].name).join(', ')}</small></legend>
       <div className="os-rolegrid">
         {ROLES.map((r) => (
-          <button key={r} type="button" className="os-role" data-role={r} data-rec={rec.includes(r) || undefined} aria-pressed={value === r} disabled={busy} onClick={() => onPick(r)}>
+          <button key={r} type="button" className="os-role" data-role={r} data-rec={rec.includes(r) || undefined} aria-pressed={value === r} disabled={busy || (value !== r && taken.includes(r))} onClick={() => onPick(r)}>
             <RoleIcon role={r} size={56} /><b>{ROLE_INFO[r].name}</b><small>{ROLE_INFO[r].ability}</small><small className="desc">{ROLE_INFO[r].short}</small>
-            <span className="os-choose">{value === r ? '✓ Chosen' : rec.includes(r) ? 'Suggested for your squad' : 'Choose role'}</span>
+            <span className="os-choose">{value === r ? '✓ Chosen' : taken.includes(r) ? 'Taken by a teammate' : rec.includes(r) ? 'Suggested for your squad' : 'Choose role'}</span>
           </button>
         ))}
       </div>

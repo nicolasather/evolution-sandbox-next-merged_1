@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ModeCards from '@/components/quiz/ModeCards';
 import { MODE_LIST } from '@/lib/quiz/projector/modes';
+import OnboardingPrompt from '@/components/quiz/onboarding/OnboardingPrompt';
 
 export default function QuizHome() {
   return (
@@ -18,6 +19,8 @@ export default function QuizHome() {
           </div>
         </div>
       </section>
+
+      <OnboardingPrompt />
 
       <section className="qz-section" aria-labelledby="pjhome-h" id="projector-games">
         <header>
@@ -46,6 +49,8 @@ export default function QuizHome() {
         <div className="qz-howto">
           <Link href="/quiz/new"><strong>Create a Quiz</strong><p className="muted-text">Open the editor now. No email or sign-in needed.</p></Link>
           <Link href="/quiz/my"><strong>My Quizzes</strong><p className="muted-text">Drafts and published quizzes, including those saved on this device.</p></Link>
+          <Link href="/quiz/welcome"><strong>Teaching Profile</strong><p className="muted-text">Choose subjects, exact grades and curriculum so the library suggests the right quizzes.</p></Link>
+          <Link href="/quiz/rewards"><strong>Coins &amp; Rewards</strong><p className="muted-text">How Points, Coins and cosmetics work, and what is fair.</p></Link>
           <Link href="/quiz/library"><strong>Quiz Library</strong><p className="muted-text">Search quizzes other people have published.</p></Link>
         </div>
       </section>
