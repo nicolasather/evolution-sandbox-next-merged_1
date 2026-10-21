@@ -93,7 +93,7 @@
     "typescript": "^6.0.3"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": "22"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
