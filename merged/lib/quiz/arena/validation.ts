@@ -9,7 +9,7 @@ const proto = z.literal(PROTOCOL).optional();
 export const MAX_PACKET_BYTES = 8 * 1024; export const MAX_ANSWER_BYTES = 16 * 1024;
 export const arenaCreateSchema = z.object({
   quizId: z.string().uuid(), format: z.enum(FORMATS as unknown as [string, ...string[]]).default('control'), mapId: z.enum(MAP_IDS as unknown as [string, ...string[]]).default('meadow_mosaic'),
-  minutes: z.number().int().refine((m) => (DURATION_MINUTES as readonly number[]).includes(m), 'Choose 5, 10, 15, 20, 30 or 45 minutes').default(15),
+  minutes: z.number().int().refine((m) => (DURATION_MINUTES as readonly number[]).includes(m), 'Choose 10, 15, 20, 30 or 45 minutes (a hosted match needs at least three rounds)').default(15),
   teamCount: z.number().int().min(2).max(4).default(2), teamNames: z.array(z.string().trim().min(1).max(24)).max(4).optional(), teamSizeCap: z.number().int().min(1).max(5).default(5),
   weighting: z.enum(['study', 'balanced', 'game']).default('balanced'), lowPressure: z.boolean().default(false), readAloud: z.boolean().default(false), hideNames: z.boolean().default(false),
   allowReviewCycle: z.boolean().default(false), requireApproval: z.boolean().default(false),

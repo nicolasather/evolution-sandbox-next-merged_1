@@ -31,6 +31,13 @@ export function createSession(cfg: ArenaConfig, plan: ArenaPlan, pool: readonly 
 export function hydrateConfig(s: ArenaState, cfg: Pick<ArenaConfig, 'teamSizeCap' | 'lowPressure' | 'readAloud' | 'weighting' | 'helpers' | 'seed'>): ArenaState {
   return { ...s, teamSizeCap: clampCap(cfg.teamSizeCap), lowPressure: !!cfg.lowPressure, readAloud: !!cfg.readAloud, weighting: cfg.weighting, helpers: [...cfg.helpers], seed: cfg.seed };
 }
+/** AC-03: a team of one always plays the Runner. Applied at once in the lobby (after a kick or a move). Mid-match the policy is explicit: a player who loses their teammates KEEPS the role they
+ *  already hold until the match ends, so a cooldown or pending ability is never silently revoked. Returns the names of seats whose role changed. */
+export function reconcileSolo(s: ArenaState): string[] {
+  const changed: string[] = [];
+  for (const t of s.teams) { const mates = activeSeats(s, t.id); if (mates.length === 1 && mates[0]!.role !== 'runner') { mates[0]!.role = 'runner'; mates[0]!.ready = false; changed.push(mates[0]!.id); } }
+  return changed;
+}
 export const capOf = (s: ArenaState) => clampCap(s.teamSizeCap);
 export const activeSeats = (s: ArenaState, teamId?: string) => s.seats.filter((x) => !x.revoked && (!teamId || x.teamId === teamId));
 export const quizWeight = (s: ArenaState) => Math.max(0.5, WEIGHTS[s.weighting] ?? 0.6);
@@ -153,14 +160,14 @@ export function reduceHost(s: ArenaState, a: HostAction, now: number, pool: read
     }
     case 'kick': {
       const seat = next.seats.find((x) => x.id === a.seatId); if (!seat) return no('NO_SEAT', 'That student is not in this room.');
-      seat.revoked = true; if (next.live) { if (seat.banner && next.live.banner?.carrier === seat.id) next.live.banner = { ...next.live.banner, carrier: null, teamId: null, cp: 0, droppedAt: next.live.tick, blockedUntil: next.live.tick }; seat.banner = false; seat.carrying = 0; seat.carryValue = 0; } effects.push({ type: 'kick', seatId: a.seatId }); break;
+      seat.revoked = true; if (next.phase === 'lobby') reconcileSolo(next); if (next.live) { if (seat.banner && next.live.banner?.carrier === seat.id) next.live.banner = { ...next.live.banner, carrier: null, teamId: null, cp: 0, droppedAt: next.live.tick, blockedUntil: next.live.tick }; seat.banner = false; seat.carrying = 0; seat.carryValue = 0; } effects.push({ type: 'kick', seatId: a.seatId }); break;
     }
     case 'move_seat': {
       if (s.phase !== 'lobby') return no('WRONG_PHASE', 'Teams can only change in the lobby.');
       const seat = next.seats.find((x) => x.id === a.seatId && !x.revoked); if (!seat) return no('NO_SEAT', 'That student is not in this room.');
       if (!next.teams.some((t) => t.id === a.teamId)) return no('NO_TEAM', 'Unknown team.');
       if (activeSeats(next, a.teamId).filter((x) => x.id !== a.seatId).length >= capOf(s)) return no('TEAM_FULL', 'That team is full.');
-      seat.teamId = a.teamId; for (const x of next.seats.filter((q) => !q.revoked)) { const sp = spawnFor(next, x, 0); x.x = sp.x; x.y = sp.y; } break;
+      seat.teamId = a.teamId; reconcileSolo(next); for (const x of next.seats.filter((q) => !q.revoked)) { const sp = spawnFor(next, x, 0); x.x = sp.x; x.y = sp.y; } break;
     }
   }
   return { result: { ok: true, state: next }, effects };

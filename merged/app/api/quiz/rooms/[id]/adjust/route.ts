@@ -14,6 +14,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     if ((room.config as { swarm?: unknown }).swarm) throw new AppError('Swarm Survival points come only from graded answers.', 400);
     if ((room.config as { td?: unknown }).td) throw new AppError('Tower Defense points come only from answers.', 400);
     if ((room.config as { arena?: unknown }).arena) throw new AppError('Arena Clash points come only from graded answers and the arena.', 400);
+  if ((room.config as { cr?: unknown }).cr) throw new AppError('Clue Racing points come only from graded answers and the race.', 400);
     if ((room.config as { os?: unknown }).os) throw new AppError('Obstacle Survival points come only from graded answers.', 400);
     await rateLimit(req, 'adjust', 120, 600, user.id);
     const b = schema.parse(await jsonBody(req));

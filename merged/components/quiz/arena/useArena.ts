@@ -112,7 +112,7 @@ export function useArenaRemote(roomId: string, view: 'student' | 'host' | 'proje
   }, []);
   const accept = useCallback((d: ArenaSnap) => {
     if (d.revision < rev.current || (d.revision === rev.current && d.serverNow < lastNow.current)) return;
-    rev.current = d.revision; lastNow.current = d.serverNow; offset.current = d.serverNow - Date.now(); snapRef.current = d; pres.current.ingest(d); setSnap(d);
+    if (typeof d.lastSeq === 'number' && d.lastSeq > seq.current) seq.current = d.lastSeq; /* AC-02: continue after the server's counter */ rev.current = d.revision; lastNow.current = d.serverNow; offset.current = d.serverNow - Date.now(); snapRef.current = d; pres.current.ingest(d); setSnap(d);
     if (view === 'student') describeFx(d, seenFx.current, pushFeed);
   }, [view, pushFeed]);
   const refresh = useCallback(async () => {
@@ -149,7 +149,7 @@ export function useArenaRemote(roomId: string, view: 'student' | 'host' | 'proje
       const v = input.dir(); const now = Date.now(); const changed = v.x !== sent.current.x || v.y !== sent.current.y;
       if (!changed && now - sent.current.at < 1000) return; if (changed && now - sent.current.at < 100) return;
       sending.current = true; seq.current += 1; const body = { p: 'arena/1', seq: seq.current, x: v.x, y: v.y };
-      try { await api(`/api/quiz/arena/rooms/${roomId}/input`, { method: 'POST', json: body }); sent.current = { x: v.x, y: v.y, at: now }; }
+      try { const r = await api<{ seq?: number; replayed?: boolean }>(`/api/quiz/arena/rooms/${roomId}/input`, { method: 'POST', json: body }); if (r.replayed && typeof r.seq === 'number') seq.current = Math.max(seq.current, r.seq); sent.current = { x: v.x, y: v.y, at: now }; }
       catch (e) { if (e instanceof ApiError && [401, 403, 404].includes(e.status)) { setFatal(true); setError(e.message); } else if (e instanceof ApiError && e.status === 409) { sent.current = { ...sent.current, at: now }; } else sent.current = { ...sent.current, at: 0 }; }
       finally { sending.current = false; }
     }, 60);
@@ -201,10 +201,10 @@ export function useArenaLocal(o: PracticeOpts): ArenaClient {
     let questionView: Record<string, unknown> | null = null;
     if (s.question && ['question_open', 'reveal'].includes(s.phase)) { const base = PRACTICE.find((p) => p.id === s.question!.questionId); if (base) questionView = { id: base.id, position: base.position, kind: base.kind, prompt: base.prompt, base_points: 100, payload: publicPayload(base.kind, base.payload, `${base.id}:me`), ...(s.phase === 'reveal' ? { answerKey: base.answerKey } : {}) }; }
     const award = s.phase === 'reveal' ? s.teams[0]?.awards.at(-1) ?? null : null;
-    return { ...pub, revision: s.cycle * 100 + ['lobby', 'question_open', 'reveal', 'planning', 'arena_live', 'episode_result', 'finished'].indexOf(s.phase), room: { id: 'practice', code: 'PRACTICE', status: s.phase === 'finished' ? 'ended' : 'active' }, map: { mapId: s.mapId, format: s.format, seed: s.seed }, questionView, tip: null, mine: s.phase === 'reveal' ? verdict.current : null, award };
+    return { ...pub, lastSeq: null, revision: s.cycle * 100 + ['lobby', 'question_open', 'reveal', 'planning', 'arena_live', 'episode_result', 'finished'].indexOf(s.phase), room: { id: 'practice', code: 'PRACTICE', status: s.phase === 'finished' ? 'ended' : 'active' }, map: { mapId: s.mapId, format: s.format, seed: s.seed }, questionView, tip: null, mine: s.phase === 'reveal' ? verdict.current : null, award };
   }, []);
   useEffect(() => {
-    const cfg = { ...cfgOf({ format: o.format, mapId: o.mapId, sizes: [2, 2], minutes: 5, lowPressure: o.lowPressure, seed: `practice${o.mapId}${o.format}` }), teamNames: ['Your team', 'Rivals'] };
+    const cfg = { ...cfgOf({ format: o.format, mapId: o.mapId, sizes: [2, 2], minutes: 10, lowPressure: o.lowPressure, seed: `practice${o.mapId}${o.format}` }), teamNames: ['Your team', 'Rivals'] };
     const plan = { ...planMatch(cfg, POOL.map((p) => p.kind as QuestionKind)), cycles: 3 };
     let s = createSession(cfg, plan, POOL, ['t1', 't2'], Date.now());
     const add = (id: string, name: string, team: string, role: Role) => { const r = addSeat(s, id, name, Date.now(), team); if (r.ok) { s = r.state; const seat = s.seats.find((x) => x.id === id)!; seat.role = role; if (id !== SELF) seat.ready = true; } };

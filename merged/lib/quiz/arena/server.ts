@@ -152,14 +152,14 @@ export async function preflight(input: { quizId: string; minutes: number; readAl
   const kinds = await quizKinds(input.quizId);
   const plan = planMatch({ durationMinutes: input.minutes, readAloud: input.readAloud, lowPressure: input.lowPressure, allowReviewCycle: input.allowReviewCycle }, kinds);
   const byKind: Record<string, number> = {}; for (const k of kinds) byKind[k] = (byKind[k] ?? 0) + 1;
-  return { plan: { cycles: plan.cycles, episodeSeconds: plan.episodeSeconds, estimatedMinutes: plan.estimatedMinutes, questionsAvailable: plan.questionsAvailable, reviewCycle: plan.reviewCycle, notes: plan.notes, minutes: plan.minutes, quizShare: plan.quizShare }, questions: kinds.length, byKind, ok: plan.cycles >= MIN_CYCLES || kinds.length >= MIN_CYCLES };
+  return { plan: { cycles: plan.cycles, episodeSeconds: plan.episodeSeconds, estimatedMinutes: plan.estimatedMinutes, questionsAvailable: plan.questionsAvailable, reviewCycle: plan.reviewCycle, notes: plan.notes, minutes: plan.minutes, quizShare: plan.quizShare }, questions: kinds.length, byKind, ok: plan.cycles >= MIN_CYCLES, needsMinimum: MIN_CYCLES };
 }
 export async function createArenaRoom(input: unknown, user: { id: string }) {
   const v = arenaCreateSchema.parse(input);
   const names = (v.teamNames ?? DEFAULT_NAMES.slice(0, v.teamCount)).map((n) => n.normalize('NFKC').replace(/\s+/g, ' ').trim());
   if (new Set(names.map((n) => n.toLowerCase())).size !== names.length) throw new AppError('Teams need different names', 400);
   const pre = await preflight({ quizId: v.quizId, minutes: v.minutes, readAloud: v.readAloud, lowPressure: v.lowPressure, allowReviewCycle: v.allowReviewCycle });
-  if (!pre.ok) throw new AppError('This quiz needs at least 3 questions for Arena Clash.', 400);
+  if (!pre.ok) throw new AppError(`With this quiz and length the match would have only ${pre.plan.cycles} round(s); Arena Clash needs at least ${MIN_CYCLES}. Choose a shorter length or add questions.`, 400);
   const config: ArenaConfig = { schemaVersion: 1, format: v.format as Format, mapId: v.mapId as MapId, seed: randomBytes(8).toString('hex'), durationMinutes: v.minutes, teamCount: v.teamCount, teamNames: names, teamSizeCap: v.teamSizeCap, weighting: v.weighting, lowPressure: v.lowPressure, readAloud: v.readAloud, hideNames: v.hideNames, allowReviewCycle: v.allowReviewCycle, helpers: v.helpers as ArenaConfig['helpers'] };
   const out = await createRoom({ quizId: v.quizId, mode: 'online', flow: 'synchronized', durationSeconds: v.minutes * 60 + GRACE_SECONDS * 2, questionSeconds: null, modifiers: [], slotLimit: 3, teamNames: [], lowPressure: v.lowPressure || undefined, readAloud: v.readAloud, untimed: true, access: v.requireApproval ? { requireApproval: true } : undefined }, user);
   const roomId = out.roomId;
@@ -217,7 +217,7 @@ export async function joinArena(input: { joinCode: string; displayName: string; 
 
 // ── projections ────────────────────────────────────────────────────────────────────────────────────────────────────────────
 export type Viewer = { view: 'student'; seatId: string } | { view: 'host' } | { view: 'projector' };
-export type ArenaSnapshot = ArenaPublic & { revision: number; room: { id: string; code: string; status: string }; map: { mapId: string; format: string; seed: string }; questionView: Record<string, unknown> | null; tip: string | null; mine: number | null; award: number | null };
+export type ArenaSnapshot = ArenaPublic & { lastSeq: number | null; revision: number; room: { id: string; code: string; status: string }; map: { mapId: string; format: string; seed: string }; questionView: Record<string, unknown> | null; tip: string | null; mine: number | null; award: number | null };
 export const TIPS: Record<string, string> = {
   multiple_choice: 'Read every option before you pick. Cross out the ones that cannot be right.', truth_hunt: 'Judge each statement on its own: one false word makes it false.',
   answer_forge: 'Say the answer in a few words first, then check the spelling.', connection_rush: 'Start with the pair you are most sure about; the rest get easier.', fill_table: 'Fill the cells you know first, then use them to work out the rest.',
@@ -232,6 +232,8 @@ export async function snapshot(roomId: string, viewer: Viewer, now = Date.now())
     // a student's own result is private until the reveal: only their own row is ever read back to them
     if (viewer.view === 'student' && s.phase === 'reveal') { const mineRow = (data ?? []).find((d) => d.actor_id === viewer.seatId); const q0 = await roomQuestion(room, q.position); const base = Math.max(1, Number(q0?.base_points) || 1); mine = mineRow ? Math.max(0, Math.min(1000, Math.round((Number(mineRow.base_awarded) / base) * 1000))) : null; }
   }
+  let lastSeq: number | null = null;
+  if (viewer.view === 'student') { const { data: sq } = await serviceDB().from('arena_seats').select('last_seq').eq('room_id', roomId).eq('player_id', viewer.seatId).maybeSingle(); lastSeq = sq ? N(sq.last_seq) : 0; } // private to this seat (AC-02)
   const pub = project(s, viewer.view, viewer.view === 'student' ? viewer.seatId : null, now, answered);
   let questionView: Record<string, unknown> | null = null; let tip: string | null = null;
   if (q && ['question_open', 'reveal'].includes(s.phase)) {
@@ -240,7 +242,7 @@ export async function snapshot(roomId: string, viewer: Viewer, now = Date.now())
   }
   const me = viewer.view === 'student' ? s.seats.find((x) => x.id === viewer.seatId) : null;
   const award = me && s.phase === 'reveal' ? (s.teams.find((t) => t.id === me.teamId)?.awards.at(-1) ?? null) : null;
-  return { ...pub, revision: row.revision, room: { id: room.id, code: room.join_code, status: room.status }, map: { mapId: row.config.mapId, format: row.config.format, seed: row.config.seed }, questionView, tip, mine, award };
+  return { ...pub, lastSeq, revision: row.revision, room: { id: room.id, code: room.join_code, status: room.status }, map: { mapId: row.config.mapId, format: row.config.format, seed: row.config.seed }, questionView, tip, mine, award };
 }
 export async function touch(roomId: string, who: { seatId?: string; host?: boolean }) {
   try { await serviceDB().rpc('arena_touch', { p_room: roomId, p_player: who.seatId ?? null, p_host: !!who.host }); } catch { /* presence is best effort */ }

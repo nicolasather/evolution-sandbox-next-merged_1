@@ -40,7 +40,8 @@ export const HELPER_COPY: Record<Helper, { name: string; blurb: string; effect: 
   deposit_guidance: { name: 'Deposit guide', blurb: 'A glowing arrow to your vault, and a 15% wider drop-off ring for one episode.', effect: '+15% drop-off ring' },
 };
 export const BOOST_SPEED = 1.1; export const BOOST_CAPTURE = 0.9; export const BOOST_DEPOSIT = 1.15;
-export const DURATION_MINUTES = [5, 10, 15, 20, 30, 45] as const;
+/** AC-01: a hosted 5-minute match cannot fit the 3-round minimum (45 s slack + 3 x (28 s quiz + 9 + 18 + 40 + 7) = 351 s), so hosted lengths start at 10 minutes. Practice is a separate short tutorial. */
+export const DURATION_MINUTES = [10, 15, 20, 30, 45] as const;
 /** Live episode length in seconds, by match length (45–90 s for 15 min, 70–140 s for 30–45 min). */
 export const EPISODE_SECONDS: Record<number, number> = { 5: 40, 10: 55, 15: 70, 20: 85, 30: 100, 45: 120 };
 export const PLANNING_SECONDS = 18; export const REVEAL_SECONDS = 9; export const RESULT_SECONDS = 7; export const COUNTDOWN_SECONDS = 3;
