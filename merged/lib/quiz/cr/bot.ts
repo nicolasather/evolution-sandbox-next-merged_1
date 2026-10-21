@@ -17,7 +17,7 @@ export function along(poly: readonly Pt[], p: Pt, stopAt = 10): Intent {
 /** Polyline from wherever the body is to the end of spur `site` at the leg's destination hub. */
 function pathToSite(s: CRState, p: Pt, site: number, option: OptionId): Pt[] {
   const g = geoOf(s); const target = g.spurs[site]!; const opt = goalPath(g, option);
-  const onSpur = g.spurs.find((sp) => dist(p, g.hubB) > 150 && sp.pts.slice(1).some((q, i) => segD(p, sp.pts[i]!, q) < 30));
+  const onSpur = g.spurs.find((sp) => dist(p, g.hubB) > 150 && sp.pts.slice(1).some((q, i) => segD(p, sp.pts[i]!, q) < 62));
   if (dist(p, g.hubB) <= 150) return [p, ...target.pts];
   if (onSpur) return [p, ...[...onSpur.pts].reverse(), ...target.pts.slice(1)];
   return [...opt, ...target.pts.slice(1)];

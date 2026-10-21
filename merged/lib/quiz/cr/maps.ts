@@ -28,7 +28,7 @@ export const MAP_INFO: Record<MapId, MapInfo> = {
     landmarks: [{ name: 'Observatory', kind: 'dome' }, { name: 'Glass Skybridge', kind: 'glass' }, { name: 'Blossom Glade', kind: 'blossom' }, { name: 'Cloud Tram', kind: 'tram' }, { name: 'Banner Lift', kind: 'banners' }, { name: 'Moon Fountain', kind: 'fountain' }, { name: 'Petal Steps', kind: 'petals' }, { name: 'Star Tower', kind: 'spire' }, { name: 'Mint Island', kind: 'island' }, { name: 'Lantern Rope', kind: 'ropes' }],
     stationNames: ['Petal', 'Nimbus', 'Aster', 'Zephyr', 'Lumen', 'Orchid', 'Cirrus'] },
 };
-export const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; };
+export const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } h ^= h >>> 16; h = Math.imul(h, 0x85ebca6b); h ^= h >>> 13; h = Math.imul(h, 0xc2b2ae35); h ^= h >>> 16; return h >>> 0; };
 const clampPt = (p: Pt): Pt => ({ x: Math.round(Math.max(150, Math.min(WORLD_W - 150, p.x))), y: Math.round(Math.max(150, Math.min(WORLD_H - 150, p.y))) });
 const MIDX = (m: MapId) => Math.floor(hash(m) % 360);
 export const dist = (a: Pt, b: Pt) => Math.hypot(a.x - b.x, a.y - b.y);
