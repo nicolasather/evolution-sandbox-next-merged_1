@@ -3,6 +3,12 @@
 Shared by both editions: `evolution-sandbox/` (single file, canonical data and
 tools) and `evolution-sandbox-next/` (Next.js).
 
+
+## Unreleased — Clue Racing (Game 5) + Arena Clash audit fixes
+- Added Clue Racing (`cr/1`): 4 maps, 3 formats, roles by team size, synchronized quiz freezes, server-authoritative evidence/score, setup wizard, join/lobby, student play, host, projector, results, practice. Migration `011_clue_racing.sql` (+down) — not applied to any hosted DB.
+- Fixed Arena Clash audit items AC-01/02/03.
+- See `merged/docs/clue-racing/`.
+
 ## 1.12.0 — 25 September 2026 (unreleased)
 
 ### The Global Invention Map — a major progression system, with a 3D Earth

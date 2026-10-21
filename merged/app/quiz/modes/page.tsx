@@ -98,6 +98,27 @@ export default function ModesPage() {
           </div>
         </div>
       </section>
+      <section className="td-modecard" style={{ marginBottom: 44 }} aria-labelledby="cr-h" id="clue-racing">
+        <div className="td-modebody">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/quiz/cr/art/svg/01_mode_hub.svg" alt="Clue Racing on the mode shelf: four storybook maps, a clue board and a route fork" width={640} height={360} style={{ width: '100%', height: 'auto', borderRadius: 16 }} />
+          <div className="stack" style={{ gap: 10 }}>
+            <p className="eyebrow" style={{ margin: 0 }}>Online · 2–4 teams of 1–5 · Split-Route Sprint / Signal Relay / Atlas Circuit</p>
+            <h2 id="cr-h" className="td-sign" style={{ justifySelf: 'start' }}>Clue Racing</h2>
+            <p style={{ maxWidth: '60ch' }}>Everyone races their own explorer across one illustrated course on their own device. At every checkpoint the whole race freezes for one class question, and the class’s answers unfold the clue that says where to go next. Nobody can attack, block or slow anyone, and speed never earns points.</p>
+            <ul>
+              <li>Four handcrafted maps, three formats, six roles that fit any team size from one to five.</li>
+              <li>The server walks every explorer and grades every answer; a device only sends the direction it steers.</li>
+              <li>Teacher wizard, projector view and join QR, keyboard and touch controls, reduced motion.</li>
+            </ul>
+            <div className="td-row wrap" style={{ marginTop: 6 }}>
+              <Link className="td-btn primary" href="/quiz/library?mode=online&game=clue_racing">Pick a quiz</Link>
+              <Link className="td-btn" href="/quiz/cr/practice">Practice alone</Link>
+              <Link className="td-btn ghost" href="/quiz/cr">How to play</Link>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="stack" style={{ gap: 18, marginBottom: 44 }} aria-labelledby="pj-h" id="projector-games">
         <header><p className="eyebrow">Classroom projector</p><h2 id="pj-h" style={{ fontStyle: 'italic' }}>Projector Games · {MODE_LIST.length} game worlds</h2>
           <p className="muted-text" style={{ maxWidth: '62ch' }}>Ten full game worlds for one teacher computer and a projector. Teams answer aloud, the teacher marks them, and no student devices or accounts are needed. From 5 to 180 minutes, or no clock at all.</p>

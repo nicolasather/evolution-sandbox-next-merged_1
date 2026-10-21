@@ -1,0 +1,2 @@
+# Animation / FX inventory and performance
+Server FX kinds drawn on canvas (12): checkpoint, stamp, wrong, pass, beacon, bridge, pulse, sight, fold, finish, inspect, arrive. Plus CSS: gate flip, clue unfold, countdown, bottom-sheet slide. Role accessories (6) and ambient particles are drawn per frame. Particle cap `PARTICLE_CAP = 90`; ambient quantised to 12 fps; coarse pointers render at ~33 ms; culled drawing; reduced motion disables ambient/parallax. Counts are an honest inventory, not a measured frame-rate benchmark (no FPS profile was run).

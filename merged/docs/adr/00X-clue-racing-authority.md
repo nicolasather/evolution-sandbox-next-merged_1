@@ -1,0 +1,3 @@
+# ADR: Clue Racing authority on serverless
+
+Status: accepted. Context: the host platform is serverless (no persistent worker/WebSocket process). Decision: a deterministic pure reducer plus lazy catch-up on every request, committed with revision compare-and-set, idempotent command ids, and Realtime only as a hint (`rev`) with polling as truth. Clients send intent only (direction + monotonic sequence); the server owns position, evidence, map and score. Consequences: exact restore after cold start by construction (CR-123 still needs a hosted run); no sub-50 ms push; a persistent worker remains an option if scale demands it.

@@ -1,0 +1,1747 @@
+{
+ "title": "Clue Racing acceptance matrix",
+ "total": 174,
+ "state": "local build, honest status; hosted verification NOT done",
+ "items": [
+  {
+   "id": "CR-001",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Game mode library card shows original live-map preview and correct Clue Racing name",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-002",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Hub explains formats concretely without marketing slogan",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-003",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Gallery provides four actual different map previews",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-004",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Teacher setup step 1 selects one of three formats and preserves choice",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-005",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Teacher setup step 2 loads a real published quiz inventory",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-006",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Question shortage displayed before Create, not after failed room",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-007",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Setup step 3 lets teacher choose 2\u20134 squads in competitive mode",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-008",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Setup caps each squad at 1\u20135 students and total 20",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-009",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Setup step 4 chooses 10, 15, 20, 30 or 45 minutes",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-010",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Duration estimate accounts for actual question kinds and read-aloud",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-011",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Empty quiz produces actionable error and disables launch",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-012",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Step 5 filters modifiers based on selected format and sync flow",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-013",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Map selection shows objective diagrams and leg count for each map",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-014",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Accessibility settings preview their actual effects",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-015",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Game launch creates one authoritative room and unique code",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-016",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Double-click room creation cannot produce two paid or ghost rooms",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-017",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Join without email works with six-character classroom code",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-018",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Bad room code returns non-enumerating error message",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-019",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Join screen handles locked/full/ended room separately without revealing secrets",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-020",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Guest nickname sanitized and checked for duplicates",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-021",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Room screen reconnects with same seat after reload",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-022",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Practice game launches without Supabase/network/login",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "tests/e2e/clue-racing.spec.ts (practice, one menu button, canvas >=80% viewport)"
+   ]
+  },
+  {
+   "id": "CR-023",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Practice gives no saved points/teacher rewards",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-024",
+   "category": "ENTRY_AND_SETUP",
+   "criterion": "Practice and real game reuse meaningful movement/map rules",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-025",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Solo practice displays exactly one Solo Pathfinder tile",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (roles by team size), components/__tests__/CRUi.test.tsx"
+   ]
+  },
+  {
+   "id": "CR-026",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Solo live team also offers one role, auto-selected",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (roles by team size), components/__tests__/CRUi.test.tsx"
+   ]
+  },
+  {
+   "id": "CR-027",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Two-person team offers only Scout and Signal Keeper roles",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (roles by team size), components/__tests__/CRUi.test.tsx"
+   ]
+  },
+  {
+   "id": "CR-028",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Three-person team adds Cartographer and no extra roles",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (roles by team size), components/__tests__/CRUi.test.tsx"
+   ]
+  },
+  {
+   "id": "CR-029",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Four-person team adds Trail Maker and no extra roles",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (roles by team size), components/__tests__/CRUi.test.tsx"
+   ]
+  },
+  {
+   "id": "CR-030",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Five-person team adds Archivist and no extra roles",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (roles by team size), components/__tests__/CRUi.test.tsx"
+   ]
+  },
+  {
+   "id": "CR-031",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Duplicate exclusive role rejected by server",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (role validation)"
+   ]
+  },
+  {
+   "id": "CR-032",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Client posting forbidden role rejected by server",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (role validation)"
+   ]
+  },
+  {
+   "id": "CR-033",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Role switch disallowed mid-run and mid-question",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-034",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Role reassignment allowed at lobby or teacher-sanctioned checkpoint",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-035",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Decrease team size only adjusts role at safe boundary",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-036",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Reconnect grace reserves previously assigned role",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-037",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Solo Pathfinder can complete every map and format",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-038",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Every role has named benefit and clear disabled/cooldown reason",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-039",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Team utility burst budget caps stacked role advantage",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-040",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "All role abilities function in practice/local engine",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-041",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Spectator cannot trigger role abilities",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-042",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Role animations visibly distinct and triggered by accepted actions",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-043",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "No role can expose an answer key before reveal",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-044",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Role assignment cannot cross rooms via forged teamId",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-045",
+   "category": "ROLE_AND_SQUADS",
+   "criterion": "Keyboard-only team role picker has visible focus",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-046",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Sunleaf Passage authored traversable course exists with original world art",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (four maps, reachability, 1000-seed sweep)"
+   ]
+  },
+  {
+   "id": "CR-047",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Tideglass Harbor authored traversable course exists with original world art",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (four maps, reachability, 1000-seed sweep)"
+   ]
+  },
+  {
+   "id": "CR-048",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Copperwind Borough authored traversable course exists with original world art",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (four maps, reachability, 1000-seed sweep)"
+   ]
+  },
+  {
+   "id": "CR-049",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Starpetal Heights authored traversable course exists with original world art",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (four maps, reachability, 1000-seed sweep)"
+   ]
+  },
+  {
+   "id": "CR-050",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Each map has distinct landmarks, route styling and palette",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (four maps, reachability, 1000-seed sweep)"
+   ]
+  },
+  {
+   "id": "CR-051",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Each map route graph has a valid path between start and goal",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (four maps, reachability, 1000-seed sweep)"
+   ]
+  },
+  {
+   "id": "CR-052",
+   "category": "COURSES_AND_MODES",
+   "criterion": "All generated seeds in 1000-seed sweep preserve reachability",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (four maps, reachability, 1000-seed sweep)"
+   ]
+  },
+  {
+   "id": "CR-053",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Split-Route Sprint has meaningful fork choices, not cosmetic branches",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (format rules)"
+   ]
+  },
+  {
+   "id": "CR-054",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Route candidates have honest distance/wait information",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-055",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Tie in route vote selects stated safe branch deterministically",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-056",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Signal Relay safely passes flag near teammates",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (Signal Relay)"
+   ]
+  },
+  {
+   "id": "CR-057",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Solo relay works without fake NPC teammates",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts, tests/e2e/clue-racing.spec.ts (solo flows)"
+   ]
+  },
+  {
+   "id": "CR-058",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Abandoned flag can be recovered without team hostage",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-059",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Atlas Circuit enforces evidence-specified stamp order",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (format rules)"
+   ]
+  },
+  {
+   "id": "CR-060",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Wrong stamp has bounded team delay and never removes quiz points",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (format rules)"
+   ]
+  },
+  {
+   "id": "CR-061",
+   "category": "COURSES_AND_MODES",
+   "criterion": "No route can require a role absent from a valid team size",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-062",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Client cannot teleport past a locked checkpoint",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (no forged stamp, speed clamp, walls)"
+   ]
+  },
+  {
+   "id": "CR-063",
+   "category": "COURSES_AND_MODES",
+   "criterion": "All map/site interactions validate server-side proximity",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (no forged stamp, speed clamp, walls)"
+   ]
+  },
+  {
+   "id": "CR-064",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Player movement speed is clamped on server",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (no forged stamp, speed clamp, walls)"
+   ]
+  },
+  {
+   "id": "CR-065",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Camera smoothly tracks actor while keeping next goal visible",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-066",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Mobile camera permits safe thumb controls without clipping",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-067",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Camera overview map accessible without 3D/render hacks",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-068",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Teams race on same seed and topologically equivalent map",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-069",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Scenery never overlays a hitbox or route marker without visibility",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-070",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Movement disabled during any quiz barrier and teacher pause",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (freeze/pause/resume exact)"
+   ]
+  },
+  {
+   "id": "CR-071",
+   "category": "COURSES_AND_MODES",
+   "criterion": "Game win recorded once and uses published tie rules",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-072",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Multiple Choice question renders and grades through shared pipeline",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-073",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Answer Forge question renders and grades through shared pipeline",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-074",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Connection Rush question renders and grades through shared pipeline",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-075",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Truth Hunt question renders and grades through shared pipeline",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-076",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Fill the Table question renders and grades through shared pipeline",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-077",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Photo/GIF/video/audio question media available with safe signed URL",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-078",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Secret answerKey hidden from player until reveal",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (public projections hide key/seed)"
+   ]
+  },
+  {
+   "id": "CR-079",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Secret answerKey hidden from other team and projector before reveal",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (public projections hide key/seed)"
+   ]
+  },
+  {
+   "id": "CR-080",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Answer speed confers no academic points",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (speed never rewarded)"
+   ]
+  },
+  {
+   "id": "CR-081",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Question timer uses readAloud/lowPressure selected in setup",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-082",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Identical question kind yields identical window across all teams",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-083",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Question freeze stops all actor/objective/cooldown simulation",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (freeze/pause/resume exact)"
+   ]
+  },
+  {
+   "id": "CR-084",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Question freeze leaves exactly same world tick after resume",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (freeze/pause/resume exact)"
+   ]
+  },
+  {
+   "id": "CR-085",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Barrier eligibility snapshot excludes late joiners before opening",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-086",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Each student can receive credit only once per barrier",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts, lib/quiz/cr/__tests__/server.db.test.ts (credit exactly once; equal credit for 1 vs 5)"
+   ]
+  },
+  {
+   "id": "CR-087",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Duplicate answer transaction returns same outcome",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts, lib/quiz/cr/__tests__/server.db.test.ts (credit exactly once; equal credit for 1 vs 5)"
+   ]
+  },
+  {
+   "id": "CR-088",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Partial-credit fraction follows official quiz grader",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-089",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Team points = normalized mean over eligible seats, capped 100 per window",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-090",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "One-player and five-player teams with same accuracy earn equal wallet credit",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts, lib/quiz/cr/__tests__/server.db.test.ts (credit exactly once; equal credit for 1 vs 5)"
+   ]
+  },
+  {
+   "id": "CR-091",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Missed response counts as zero without fabricating student answer",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-092",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "All teams receive public evidence after reveal regardless of correctness",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-093",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Evidence cannot be forged by client or received before reveal",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-094",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Question explanation stays readable until teacher transition",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-095",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Wrong answer never causes unsolvable or secret route lock",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-096",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Points wallet bounded 0..600 and overflow reported",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts, lib/quiz/cr/__tests__/server.db.test.ts (wallet cap, perks)"
+   ]
+  },
+  {
+   "id": "CR-097",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Two simultaneous perk purchases cannot overspend wallet",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts, lib/quiz/cr/__tests__/server.db.test.ts (wallet cap, perks)"
+   ]
+  },
+  {
+   "id": "CR-098",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Only one active copy of capped navigation upgrade allowed",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts, lib/quiz/cr/__tests__/server.db.test.ts (wallet cap, perks)"
+   ]
+  },
+  {
+   "id": "CR-099",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Academic mastery scoring publishes 60% weight honestly",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (60/25/15 score)"
+   ]
+  },
+  {
+   "id": "CR-100",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Route and teamwork weight 25% and 15% exactly",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (60/25/15 score)"
+   ]
+  },
+  {
+   "id": "CR-101",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "No team-size farming of teamwork actions",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-102",
+   "category": "QUIZ_EVIDENCE_POINTS",
+   "criterion": "Remainder wallet/rewards are not used for host compensation",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-103",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Join HTTP endpoint rate-limited and strict body schema",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-104",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Move packet rate-limited and schema-validated",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (intent validation, foreign seat, cross-room)"
+   ]
+  },
+  {
+   "id": "CR-105",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Forged client position and score fields rejected",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (intent validation, foreign seat, cross-room)"
+   ]
+  },
+  {
+   "id": "CR-106",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Ability cooldown enforced server side",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (ability cooldowns)"
+   ]
+  },
+  {
+   "id": "CR-107",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Foreign seat token rejected on current room",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (intent validation, foreign seat, cross-room)"
+   ]
+  },
+  {
+   "id": "CR-108",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Revoked seat rejected after kick",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-109",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Expired token rejected, rejoin path friendly",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-110",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Host-only start/pause/resume/extend/end enforced",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-111",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Projector token cannot submit quiz or alter score",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-112",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Read-only projector excludes student names when hideNames enabled",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-113",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Client cannot read other team private route ballot",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-114",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Private replay endpoint denies pre-finish access",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-115",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Answer key never appears in realtime notifications",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-116",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Room revision increments on semantic state commits",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-117",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Idempotency ledger returns original outcome on duplicate command",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (idempotent / racing commits)"
+   ]
+  },
+  {
+   "id": "CR-118",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Stale revision conflict retries without double effect",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (idempotent / racing commits)"
+   ]
+  },
+  {
+   "id": "CR-119",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Reconnect continues same seat without creating ghost player",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-120",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Lost input batch retransmitted without teleport",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-121",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Host pause freezes quiz deadlines and world clocks",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (freeze/pause/resume exact)"
+   ]
+  },
+  {
+   "id": "CR-122",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Resume after 10-minute pause preserves remaining question seconds",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/engine.test.ts (freeze/pause/resume exact)"
+   ]
+  },
+  {
+   "id": "CR-123",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Worker restart or serverless cold start restores room exactly",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-124",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Terminal cleanup expires ended sessions and revokes tokens",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-125",
+   "category": "NETWORK_SECURITY",
+   "criterion": "No secret keys bundled in browser build",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-126",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Production HTTP and WebSocket use validated TLS as applicable",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-127",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Database migration uses additive names and safe RLS policies",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (migration up/down/up on PGlite; hosted DB NOT touched)"
+   ]
+  },
+  {
+   "id": "CR-128",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Cross-room teacher action denied",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (intent validation, foreign seat, cross-room)"
+   ]
+  },
+  {
+   "id": "CR-129",
+   "category": "NETWORK_SECURITY",
+   "criterion": "Underage student alias not exported to public analytics",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-130",
+   "category": "NETWORK_SECURITY",
+   "criterion": "No privileged debug endpoint accessible in production",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-131",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "All four maps contain >=10 unique scenery prop designs each",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-132",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "All four maps have >=3 non-repeating visual landmarks each",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-133",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "At least six distinct role silhouettes share cohesive art family",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-134",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Actors have eight-direction directional poses",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_met",
+   "evidence": [
+    "8-direction poses not built (4-facing + flip only)"
+   ]
+  },
+  {
+   "id": "CR-135",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Running animation uses movement-synced cadence and real anticipation",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-136",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Role actions have windup/use/recovery states",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_met",
+   "evidence": [
+    "windup/use/recovery states only partially animated"
+   ]
+  },
+  {
+   "id": "CR-137",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Interactive site tells apart inactive/ready/selected clearly",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-138",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Route choice unfurls path with clearly highlighted waypoint",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-139",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Checkpoint stamp motion triggered only by real server acceptance",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-140",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Question transition mutes world motion before overlay",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-141",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Reveal motion communicates learning state without hiding explanation",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-142",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Stamp/reward animation has reduced-motion alternative",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-143",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Clean gameplay HUD has single compact secondary menu",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "tests/e2e/clue-racing.spec.ts (practice, one menu button, canvas >=80% viewport)"
+   ]
+  },
+  {
+   "id": "CR-144",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Global site top nav hidden or minimized scoped to active game",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-145",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Player viewport >=80% available game scene except mobile controls",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "tests/e2e/clue-racing.spec.ts (practice, one menu button, canvas >=80% viewport)"
+   ]
+  },
+  {
+   "id": "CR-146",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Question modal keyboard focus trapped and restored",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-147",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "High-contrast mode uses shape/pattern and text in addition to color",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-148",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "No human/animal faces or stock photography in shipped assets",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-149",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "No copied game art or unlicensed font files in bundle",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-150",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "English-only gameplay copy without marketing quotes",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-151",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "At 390px width no horizontal clipping or dead controls",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-152",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "At 1920px projector scoreboard readable from back of room",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-153",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Audio off by default, effects controlled locally",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-154",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Keyboard WASD/arrow movement, Enter inspect, accessible action mapping",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-155",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Touch pointer capture released on background tab/quiz freeze",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-156",
+   "category": "ART_AND_ACCESSIBILITY",
+   "criterion": "Motion reduction avoids flashing >3Hz and parallax",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-157",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Win screen separates game outcome from learning mastery",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-158",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "End game shows question review without leaking other participants",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-159",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Teacher report displays per-question class mastery safely",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-160",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Teacher can export only authorized data per platform retention policy",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-161",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Local practice matches same route grammar with zero live rewards",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-162",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Migration up/down tested on isolated database with preexisting modes",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "pass_local",
+   "evidence": [
+    "lib/quiz/cr/__tests__/server.db.test.ts (migration up/down/up on PGlite; hosted DB NOT touched)"
+   ]
+  },
+  {
+   "id": "CR-163",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "No regression in Tower Defense and Swarm Survival tests",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-164",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "No regression in Obstacle Survival when branch integrated",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-165",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "No regression in Arena Clash if implemented before Game 5",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-166",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Teacher + two real browsers finish deployed session",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-167",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Twenty students for 15 minutes produce no duplicate credits",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-168",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Hidden-tab recovery restores correct route and freezes",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-169",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "200ms latency and 5% packet loss do not break deterministic authority",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-170",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Typecheck/lint/build and applicable test suites green",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-171",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Real deployment origins/CSP/DB migration documented and checked",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-172",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Published package includes original source artworks and asset manifest",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  },
+  {
+   "id": "CR-173",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Actual animation video/screenshot captures stored with report",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "not_run",
+   "evidence": [
+    "needs hosted deployment / real DB / multi-browser; not run in this session"
+   ]
+  },
+  {
+   "id": "CR-174",
+   "category": "FINAL_AND_DEPLOYMENT",
+   "criterion": "Final report distinguishes local tests from hosted tests",
+   "method": "E2E / integration / unit / screenshot review depending on criterion",
+   "status": "implemented_unverified",
+   "evidence": [
+    "implemented in code; no dedicated automated or manual evidence recorded yet"
+   ]
+  }
+ ]
+}
