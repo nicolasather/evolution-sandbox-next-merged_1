@@ -24,3 +24,8 @@ Branch `claude/clue-racing`. Status is local only. Nothing was deployed and no m
 - Firefox / WebKit projects not run.
 
 Per-criterion status: `acceptance.json` (CR-001…CR-174).
+
+## Final local check results
+- `next build`: NOT green in this sandbox — it fails only on `next/font` fetching Google Fonts (network allowlist blocks it). No code/type error was reported; `tsc` is clean. Re-run on a networked machine or Vercel preview.
+- Full jest: 3 failures, all in Swarm Survival (`lib/swarm`, tests stale against the earlier "solo = one role" change from the Arena base branch); not touched by this work. All Clue Racing/Arena/quiz tests pass (999/999 in `lib/quiz` + `components/__tests__`).
+- Playwright Chromium desktop + mobile pass for `clue-racing.spec.ts`.
