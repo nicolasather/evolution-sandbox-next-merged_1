@@ -27,7 +27,7 @@ export default function Chooser() {
         </Link>
         <Link href="/quiz/rank" className="choose-card" style={{ borderColor: '#eab308', background: 'linear-gradient(135deg,#fffde7,#fff3b0)' }} aria-label="View user leaderboard">
           <h2>👑 Rank Board</h2>
-          <small>View user leaderboard — XP, skor, beruntun, dan nilai komposit.</small>
+          <small>View user leaderboard — ranked by XP, score, streak and composite.</small>
           <span className="cta" style={{ background: '#eab308', color: '#422006', fontWeight: 700 }}>Rank →</span>
         </Link>
       </div>
