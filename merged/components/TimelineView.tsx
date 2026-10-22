@@ -139,6 +139,9 @@ export function TimelineView({
                         </span>
                         <span className="tl-stem" />
                         <span className={cn('tl-dot', `r-${n.rar}`)} />
+                        <span className="tl-rank-badge" aria-label="Player rank link to leaderboard" title="Link to leaderboard">
+                          <a href="/quiz/rank" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 600, fontSize: 10, letterSpacing: '.05em' }}>#Rank</a>
+                        </span>
                       </button>
                     </li>
                   ) : (

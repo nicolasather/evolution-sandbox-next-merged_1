@@ -463,9 +463,14 @@
 .tl-pt:hover .tl-card,.tl-pt.sel .tl-card,.tl-pt button:focus-visible .tl-card{border-color:var(--ochre);background:var(--ochre-lo)}
 .tl-pt:hover .tl-dot,.tl-pt.sel .tl-dot{transform:translate(-50%,-50%) scale(1.5);box-shadow:0 0 0 1px var(--ochre)}
 .tl-pt:hover .tl-stem,.tl-pt.sel .tl-stem{background:var(--ochre)}
-.tl-pt:not(.ahead){animation:tlIn .6s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 35ms)}
+/* 60fps: short, opacity-only entrance; the stagger window is capped by --i (max 24)
+   so only a bounded number of layers are ever promoted. translateZ(0) is kept on
+   the card (one composited surface per point) rather than on every li, to avoid
+   burning GPU memory on long rails. */
+.tl-pt:not(.ahead){animation:tlIn .2s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 6ms)}
+.tl-card{transform:translateX(-50%) translateZ(0);backface-visibility:hidden}
 @keyframes tlIn{from{opacity:0}to{opacity:1}}
-#v-time.on .tl-pt:not(.ahead) .tl-stem{animation:tlStem .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 35ms + .1s)}
+#v-time.on .tl-pt:not(.ahead) .tl-stem{animation:tlStem .25s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 8ms + .05s)}
 @keyframes tlStem{from{transform:scaleY(0)}to{transform:none}}
 @media (max-width:900px){
   .tl-head{top:44px;left:16px}
