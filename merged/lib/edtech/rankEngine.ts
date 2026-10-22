@@ -11,14 +11,10 @@
  * Rankings are stored in user_rank table with multiple metric dimensions.
  */
 
-import { createClient } from '@supabase/supabase-js';
-import { Database } from './database.types';
+import { serviceDB } from '@/lib/quiz/supabase';
 
-// Initialize Supabase client (will be configured by the app)
-const supabase = createClient<Database>(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+// Initialize Supabase client
+const supabase = serviceDB();
 
 export interface RankEntry {
   userId: string;
@@ -79,7 +75,7 @@ export async function getUserRank(userId: string, options: RankOptions = {}): Pr
     // Get user profile first
     const { data: profile, error: profileError } = await supabase
       .from('user_profile')
-      .select('id, display_name, avatar_url, xp, level, streak')
+      .select('id, auth_user_id, display_name, avatar_url, xp, level, streak')
       .eq('auth_user_id', userId)
       .single();
 
@@ -381,6 +377,7 @@ export async function getRankStats(): Promise<any> {
           composite_score,
           rank_position,
           user_profile!inner(
+            auth_user_id,
             display_name,
             avatar_url,
             xp,

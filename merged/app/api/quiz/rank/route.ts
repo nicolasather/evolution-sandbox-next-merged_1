@@ -1,7 +1,7 @@
 import 'server-only';
-import { NextRequest, NextResponse } from 'next/server';
-import { success, failure, rpc, assertSameOrigin, rateLimit } from '@/lib/quiz/api';
-import { rankEngine } from '@/lib/edtech/rankEngine';
+import { NextRequest } from 'next/server';
+import { success, failure, rateLimit } from '@/lib/quiz/api';
+import rankEngine from '@/lib/edtech/rankEngine';
 
 export async function GET(req: NextRequest) {
   try {
