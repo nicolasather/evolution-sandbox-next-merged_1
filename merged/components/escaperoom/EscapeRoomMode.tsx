@@ -37,7 +37,7 @@ function RatioStation({ puzzle, solved, hint, onSubmit, onHint }: {
       ) : (
         <div className="er-station-controls">
           <div className="er-ratio-row">
-            <input type="number" value={draft} onChange={e => setDraft(e.target.value)} placeholder="0" />
+            <input type="number" value={draft} onChange={e => setDraft(e.target.value)} placeholder="0" aria-label="Answer value" />
             <span className="mono">{puzzle.unit}</span>
           </div>
           <div className="er-station-actions">
@@ -153,7 +153,7 @@ function CodeStation({ puzzle, solved, hint, unlocked, onSubmit, onHint }: {
       ) : (
         <div className="er-station-controls">
           <div className="er-code-row">
-            <input type="text" value={draft} onChange={e => setDraft(e.target.value)} placeholder="___-_-__" disabled={!unlocked} />
+            <input type="text" value={draft} onChange={e => setDraft(e.target.value)} placeholder="___-_-__" disabled={!unlocked} aria-label="Exit code" />
           </div>
           <div className="er-station-actions">
             <button className="chip" onClick={() => draft && onSubmit(draft)} disabled={!unlocked || !draft}>Open the door</button>

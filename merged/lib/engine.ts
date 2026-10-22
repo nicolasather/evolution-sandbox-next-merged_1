@@ -720,7 +720,7 @@ export class Engine {
         this.save(); this.emit();
         return { status: 'era_locked', a: A, b: B, items, gate: eg, message: `${eg.message} Remember this pair.` };
       }
-      const g = this.gate(node.stone_age_tier!);
+      const g = this.gate(node.stone_age_tier ?? 'olduvai');
       this.lockedPairs.add(pk);
       this.streak = 0; // a right answer, just early: never counts as being stuck
       this.save(); this.emit();

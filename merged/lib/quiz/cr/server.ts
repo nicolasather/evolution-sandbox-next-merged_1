@@ -316,7 +316,7 @@ export async function answer(roomId: string, token: string, seatId: string, inpu
   if (s.phase !== 'barrier' || !q || q.questionId !== input.roomQuestionId) throw new AppError('That question is closed.', 409);
   if (Date.now() > q.deadlineMs + 1500) throw new AppError('That question is closed.', 409);
   if (!(q.eligible[seat.teamId] ?? []).includes(seatId)) throw new AppError('You joined after this question opened — the next one is yours.', 409);
-  await submitAnswer({ roomId, roomQuestionId: input.roomQuestionId, token, response: input.response, wager: 0 }, { allowCR: true });
+  await submitAnswer({ roomId, roomQuestionId: input.roomQuestionId, token, response: input.response, wager: 0 });
   void step(roomId).catch(() => undefined); // may close the question early when everyone has answered
   return { accepted: true, private: true };
 }
