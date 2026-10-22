@@ -1,7 +1,13 @@
 /** Match planner: turns the host's target length and the quiz's REAL question inventory into chapters (traverse → question → reveal → choice → count-in).
  *  It is a target, not a promise: the teacher sees these numbers before launch. */
 import type { QuestionKind } from '../types';
-import { READ_SECONDS } from '../td/balance';
+export const READ_SECONDS: Record<string, number> = {
+  multiple_choice: 15,
+  answer_forge: 20,
+  connection_rush: 18,
+  truth_hunt: 12,
+  fill_table: 25,
+};
 import { CHAPTERS_FOR, DURATION_MINUTES, TICK_MS } from './balance';
 import type { CourseIndex } from './course';
 import type { OSConfig, PlanRec, PoolEntry } from './domain';

@@ -63,12 +63,13 @@ function Today({ engine, onOpen }: { engine: Engine; onOpen: (id: string) => voi
 }
 
 export function ArchiveView({
-  engine, active, onOpen,
+  engine, version, active, onOpen,
 }: { engine: Engine; version: number; active: boolean; onOpen: (id: string) => void }) {
   const [tab, setTab] = useState<Tab>('collection');
   const [filter, setFilter] = useState<Filter>('all');
   const [era, setEra] = useState<string | null>(null);
   const s = engine.stats();
+  void version;
   const { counts } = engine.db;
   const reach = new Set(engine.withinReach().map(n => n.id));
 

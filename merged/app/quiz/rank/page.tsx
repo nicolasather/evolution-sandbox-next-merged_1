@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 
 type Metric = 'composite' | 'xp' | 'score' | 'streak';
@@ -46,7 +46,14 @@ export default function RankPage() {
   const [limit, setLimit] = useState(50);
   const [metric, setMetric] = useState<Metric>('composite');
   const [myRank, setMyRank] = useState<RankEntry | null>(null);
-  const [userId] = useState<string | null>(null);
+  const [userId, setUserId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const p = new URLSearchParams(window.location.search);
+      setUserId(p.get('userId'));
+    }
+  }, []);
 
   const loadLeaderboard = (requestedLimit: number) => {
     setLoading(true);

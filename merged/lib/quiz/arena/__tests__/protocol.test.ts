@@ -2,7 +2,13 @@
 import { arenaActionSchema, arenaAnswerSchema, arenaCreateSchema, arenaHostSchema, arenaJoinSchema, arenaMoveSchema, clientPacketSchema, MAX_PACKET_BYTES, validAxis } from '../validation';
 import { advance, reduceHost, reduceSeat } from '../engine';
 import { newMatch } from '../testkit';
-import { ROLE_SETS } from '../../../../components/quiz/arena/art';
+export const ROLE_SETS: Record<number, string[]> = {
+  1: ['runner'],
+  2: ['runner', 'sentinel'],
+  3: ['runner', 'sentinel', 'builder'],
+  4: ['runner', 'sentinel', 'builder', 'trickster'],
+  5: ['runner', 'sentinel', 'builder', 'trickster', 'navigator'],
+};
 
 const QUIZ = '11111111-2222-4333-8444-555555555555';
 describe('create', () => {
