@@ -1,0 +1,1258 @@
+[
+  {
+    "type": "Broken Reference (url())",
+    "file": "app\\_design-system.css",
+    "line": 140,
+    "snippet": "url(%23n)",
+    "issue": "Asset referenced in url(\"%23n\") does not exist.",
+    "fix": "Check asset path or ensure file exists in public/ or relative folder."
+  },
+  {
+    "type": "Broken Reference (url())",
+    "file": "app\\_museum.css",
+    "line": 58,
+    "snippet": "url(%23g)",
+    "issue": "Asset referenced in url(\"%23g\") does not exist.",
+    "fix": "Check asset path or ensure file exists in public/ or relative folder."
+  },
+  {
+    "type": "CSS Class Mismatch / Typo",
+    "file": ".backup_phase1_gap\\Reconstruction3D.tsx",
+    "line": 46,
+    "snippet": "recon3d",
+    "issue": "Class \"recon3d\" used in literal className has no matching CSS rule and is not recognized.",
+    "fix": "Verify spelling or define \".recon3d\" in CSS."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": ".backup_phase1_gap\\Workbench.tsx",
+    "line": 1648,
+    "snippet": "<input type=\"range\" className=\"wb-vol\" min={0} max={100} step={5} value={Math.round(volume * 100)}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\admin\\OnboardPanel.tsx",
+    "line": 42,
+    "snippet": "<input type=\"password\" autoComplete=\"off\" value={token} onChange={e => setToken(e.target.value)} style={{ display: 'block', width: '100%', padding: 8, marginTop: 4 }} />",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\admin\\RecipeReview.tsx",
+    "line": 62,
+    "snippet": "<input type=\"password\" autoComplete=\"off\" value={token} onChange={e => setToken(e.target.value)}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\alienarchaeology\\AlienArchaeologyMode.tsx",
+    "line": 166,
+    "snippet": "<input",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\archaeology\\ArchaeologyMode.tsx",
+    "line": 194,
+    "snippet": "<li key={f.id} className=\"ar-find ar-find-analyzed\" onClick={() => setSelectedFind(f.id)}>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\civilization\\LegacyCivilization.tsx",
+    "line": 135,
+    "snippet": "<input",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\civilization\\lifelines\\ChapterSelect.tsx",
+    "line": 62,
+    "snippet": "<label key={o.id}><input type=\"checkbox\" checked={mastery.includes(o.id)} onChange={e => setMastery(e.target.checked ? [...mastery, o.id] : mastery.filter(x => x !== o.id))} /> {o.label} — <small>{o.description}</small></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\ChapterSelect.tsx",
+    "line": 127,
+    "snippet": "<li key={s.chapter.id}><button type=\"button\" className={'ll-chap' + (chapter?.id === s.chapter.id ? ' sel' : '')} onClick={() => choose(s.chapter.id)}><i>{s.chapter.order}</i><b>{s.chapter.title}</b></button></li>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\ChapterSelect.tsx",
+    "line": 138,
+    "snippet": "<li key={t.era.id}><button type=\"button\" disabled={!t.unlocked || !t.firstChapter} className={'ll-chap' + (chapter?.id === t.firstChapter?.id ? ' sel' : '')} onClick={() => t.firstChapter && choose(t.firstChapter.id)}>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\Overlays.tsx",
+    "line": 116,
+    "snippet": "<li key={c}><button type=\"button\" className={'ll-btn' + (picked === i ? ' sel' : '')} disabled={picked !== null} onClick={() => { setPicked(i); onAnswer(i); }}>{c}</button></li>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\Overlays.tsx",
+    "line": 131,
+    "snippet": "<div className=\"ll-row spread\"><h2 className=\"ll-h3\">Settings</h2><button type=\"button\" className=\"ll-btn small ghost\" onClick={onClose}>Close</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\civilization\\lifelines\\Overlays.tsx",
+    "line": 140,
+    "snippet": "<label className=\"ll-field\"><input type=\"checkbox\" checked={settings.subtitles} onChange={e => onChange({ subtitles: e.target.checked })} /> Show subtitles</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\civilization\\lifelines\\Overlays.tsx",
+    "line": 149,
+    "snippet": "<label className=\"ll-field\"><span>Speed {settings.narrationSpeed.toFixed(2)}×</span><input type=\"range\" min={0.6} max={1.4} step={0.02} value={settings.narrationSpeed} onChange={e => onChange({ narrationSpeed: Number(e.target.value) })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\civilization\\lifelines\\Overlays.tsx",
+    "line": 150,
+    "snippet": "<label className=\"ll-field\"><span>Volume {Math.round(settings.volume * 100)}%</span><input type=\"range\" min={0} max={1} step={0.05} value={settings.volume} onChange={e => onChange({ volume: Number(e.target.value) })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\civilization\\lifelines\\Overlays.tsx",
+    "line": 158,
+    "snippet": "<label className=\"ll-field\"><input type=\"checkbox\" checked={settings.questionsEnabled} onChange={e => onChange({ questionsEnabled: e.target.checked })} /> Occasional optional learning questions</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\Overlays.tsx",
+    "line": 167,
+    "snippet": "<div className=\"ll-row spread\"><h2 className=\"ll-h3\">How this works</h2><button type=\"button\" className=\"ll-btn small ghost\" onClick={onClose}>Close</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\Panels.tsx",
+    "line": 131,
+    "snippet": "<div className=\"ll-row spread\"><h2 className=\"ll-h3\">Forecast for season {rep.turn}</h2><button type=\"button\" className=\"ll-btn small ghost\" onClick={onClose}>Close</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\Panels.tsx",
+    "line": 209,
+    "snippet": "<div className=\"ll-row spread\"><h2 className=\"ll-h3\">Programmes{districtId ? ` · ${districtName(run.layout, districtId)}` : ''}</h2><button type=\"button\" className=\"ll-btn small ghost\" onClick={onClose}>Close</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\civilization\\lifelines\\Panels.tsx",
+    "line": 260,
+    "snippet": "<div className=\"ll-row spread\"><h2 className=\"ll-h3\">Council</h2><button type=\"button\" className=\"ll-btn small ghost\" onClick={onClose}>Cancel</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\dev\\DevConsole.tsx",
+    "line": 220,
+    "snippet": "<div className={styles.row}><button type=\"button\" className={styles.btn} disabled={!active} onClick={() => { devOverrides.restoreDefaults(); say('Đã khôi phục mặc định beta.'); }}>Khôi phục mặc định beta</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\dev\\DevConsole.tsx",
+    "line": 258,
+    "snippet": "<input type=\"file\" accept=\"application/json,.json\" hidden disabled={!active || !nsActive} onChange={async e => {",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\dev\\DevConsole.tsx",
+    "line": 287,
+    "snippet": "<div className={styles.row}><button type=\"button\" className={styles.btn} onClick={clearLog}>Xóa nhật ký</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\dev\\DevConsole.tsx",
+    "line": 398,
+    "snippet": "<div className={styles.row}><input type=\"text\" placeholder=\"tìm theo tên hoặc id\" value={q} onChange={e => setQ(e.target.value)} /></div>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\devlab\\Gallery.tsx",
+    "line": 170,
+    "snippet": "<label className={css.stat}><input type=\"checkbox\" checked={flat} onChange={e => setFlat(e.target.checked)} /> flat 2D preview (fast)</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\devlab\\Gallery.tsx",
+    "line": 271,
+    "snippet": "<div className={css.list}>{matches.map(m => <button key={m.id} className={css.btn} onClick={() => { setCmp(m); setCmpQ(''); }}>{m.n}</button>)}</div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\escaperoom\\EscapeRoomMode.tsx",
+    "line": 40,
+    "snippet": "<input type=\"number\" value={draft} onChange={e => setDraft(e.target.value)} placeholder=\"0\" />",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\escaperoom\\EscapeRoomMode.tsx",
+    "line": 156,
+    "snippet": "<input type=\"text\" value={draft} onChange={e => setDraft(e.target.value)} placeholder=\"___-_-__\" disabled={!unlocked} />",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\ExhibitPanel.tsx",
+    "line": 224,
+    "snippet": "<div className=\"panel-grab\" aria-hidden=\"true\" onClick={onClose} />",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\experiments\\ExperimentWorkspace.tsx",
+    "line": 77,
+    "snippet": "<div className=\"confirm-row\"><button className=\"chip\" ref={closeRef} onClick={onClose}>Close</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\experiments\\ExperimentWorkspace.tsx",
+    "line": 91,
+    "snippet": "<input type=\"range\" min={0} max={100} value={intensity}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\experiments\\ExperimentWorkspace.tsx",
+    "line": 96,
+    "snippet": "<input type=\"range\" min={0} max={100} value={duration}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\InventoryRail.tsx",
+    "line": 109,
+    "snippet": "<input",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\minimumpath\\MinimumPathMode.tsx",
+    "line": 101,
+    "snippet": "<p>{content.source.note}</p><button type=\"button\" className={guide.glow(MP_TARGET.open)} onClick={open}>Bắt đầu / Tiếp tục</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\minimumpath\\MinimumPathMode.tsx",
+    "line": 124,
+    "snippet": "<label>Tìm bước tiếp theo<input value={query} onChange={event => setQuery(event.target.value)} placeholder=\"Tên phát minh\" /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\minimumpath\\MinimumPathMode.tsx",
+    "line": 151,
+    "snippet": "<label><input type=\"checkbox\" checked={save.settings.showNames} onChange={event => void commit({ ...save, settings: { ...save.settings, showNames: event.target.checked } })} />Hiện tên thay mã</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\minimumpath\\MinimumPathMode.tsx",
+    "line": 152,
+    "snippet": "<label><input type=\"checkbox\" checked={save.settings.motion} onChange={event => void commit({ ...save, settings: { ...save.settings, motion: event.target.checked } })} />Chuyển động</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\minimumpath\\MinimumPathMode.tsx",
+    "line": 153,
+    "snippet": "<label>Cỡ chữ<input type=\"range\" min={content.limits.minScale} max={content.limits.maxScale} step={content.limits.scaleStep} value={save.settings.textScale}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "CSS Class Mismatch / Typo",
+    "file": "components\\museum\\MuseumAtrium.tsx",
+    "line": 60,
+    "snippet": "side",
+    "issue": "Class \"side\" used in literal className has no matching CSS rule and is not recognized.",
+    "fix": "Verify spelling or define \".side\" in CSS."
+  },
+  {
+    "type": "CSS Class Mismatch / Typo",
+    "file": "components\\museum\\MuseumAtrium.tsx",
+    "line": 85,
+    "snippet": "side",
+    "issue": "Class \"side\" used in literal className has no matching CSS rule and is not recognized.",
+    "fix": "Verify spelling or define \".side\" in CSS."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\museum\\WorldHistory.tsx",
+    "line": 121,
+    "snippet": "<input type=\"range\" min={0} max={1000} value={Math.round(dial * 1000)}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\museum\\WorldHistory.tsx",
+    "line": 129,
+    "snippet": "<li key={g}><button type=\"button\" onClick={() => {",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\MuseumGallery.tsx",
+    "line": 231,
+    "snippet": "<div className=\"mst-ctl\"><button type=\"button\" className=\"mu-btn\" onClick={() => setTourEnd(false)}>Stay in the hall</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\AuthForm.tsx",
+    "line": 51,
+    "snippet": "<label>Email<input type=\"email\" autoComplete=\"email\" required value={email} onChange={(e) => setEmail(e.target.value)} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\AuthForm.tsx",
+    "line": 53,
+    "snippet": "<input type=\"password\" autoComplete={mode === 'signin' ? 'current-password' : 'new-password'} minLength={8} required value={password} onChange={(e) => setPassword(e.target.value)} />",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\AuthForm.tsx",
+    "line": 64,
+    "snippet": "<div className=\"row\"><button type=\"button\" className=\"btn\" disabled={busy} onClick={withoutEmail}>Continue Without Email</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\Collection.tsx",
+    "line": 47,
+    "snippet": "<label><input type=\"checkbox\" checked={d.optedOut} onChange={(e) => optOut(e.target.checked)} /> Don’t award or show collectibles for me</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\Collection.tsx",
+    "line": 50,
+    "snippet": "<label>Search <input type=\"search\" value={q} onChange={(e) => setQ(e.target.value)} /></label>{' '}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\Collection.tsx",
+    "line": 52,
+    "snippet": "<label><input type=\"checkbox\" checked={favOnly} onChange={(e) => setFavOnly(e.target.checked)} /> Favourites</label>{' '}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\Collection.tsx",
+    "line": 53,
+    "snippet": "<label><input type=\"checkbox\" checked={recent} onChange={(e) => setRecent(e.target.checked)} /> Recently unlocked</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\Collection.tsx",
+    "line": 72,
+    "snippet": "<div>{REACTIONS.map((r) => <button key={r.id} className=\"btn small ghost\" aria-pressed={wheel.includes(r.id)} onClick={() => toggleWheel(r.id)}><span aria-hidden>{r.glyph}</span> {r.label}</button>)}</div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\editor\\HelpPanel.tsx",
+    "line": 28,
+    "snippet": "<div className=\"row spread\"><h2 id=\"help-h\" style={{ margin: 0, fontSize: '1.6rem' }}>Help</h2><button className=\"btn small ghost\" onClick={onClose}>Close</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\ImportExport.tsx",
+    "line": 58,
+    "snippet": "<input type=\"file\" accept=\".csv,.tsv,.txt,.xlsx,.json\" onChange={(e) => { const f = e.target.files?.[0]; if (f) void onFile(f); e.target.value = ''; }} />",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\ImportExport.tsx",
+    "line": 77,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={hasHeader} onChange={(e) => { setHasHeader(e.target.checked); if (e.target.checked) setMapping(suggestMapping(rows[0] ?? [])); }} /> First row contains column names</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\editor\\ImportExport.tsx",
+    "line": 107,
+    "snippet": "<div><button className=\"btn small\" disabled={!pastedOk.length} onClick={() => { onAdd(pastedOk.map((p) => p.question!)); setPasted(''); }}>Add {pastedOk.length} question{pastedOk.length === 1 ? '' : 's'}</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 40,
+    "snippet": "<input type=\"file\" accept=\"image/png,image/jpeg,image/webp,image/avif,image/gif,audio/mpeg,audio/mp4,audio/wav,video/mp4,video/webm\" disabled={busy} onChange={(e) => { const f = e.target.files?.[0]; if (f) void upload(f); e.target.value = ''; }} />",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 52,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={!!media.decorative} onChange={(e) => onChange({ ...media, decorative: e.target.checked })} /> Decorative only (no description needed)</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 53,
+    "snippet": "<label>Caption (optional)<input value={media.caption ?? ''} maxLength={500} onChange={(e) => onChange({ ...media, caption: e.target.value })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 55,
+    "snippet": "{media.type === 'video' && <label className=\"inline\"><input type=\"checkbox\" checked={!!media.muted} onChange={(e) => onChange({ ...media, muted: e.target.checked })} /> Start muted</label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 58,
+    "snippet": "<label>Focus left–right<input type=\"range\" min={0} max={1} step={0.05} value={media.focal?.x ?? 0.5} onChange={(e) => onChange({ ...media, focal: { x: Number(e.target.value), y: media.focal?.y ?? 0.5 } })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 59,
+    "snippet": "<label>Focus up–down<input type=\"range\" min={0} max={1} step={0.05} value={media.focal?.y ?? 0.5} onChange={(e) => onChange({ ...media, focal: { x: media.focal?.x ?? 0.5, y: Number(e.target.value) } })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 60,
+    "snippet": "<div className=\"row\"><button type=\"button\" className=\"btn small ghost\" onClick={() => onChange({ ...media, rotate: (((media.rotate ?? 0) + 90) % 360) as 0 | 90 | 180 | 270 })}>Rotate 90°</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\editor\\MediaField.tsx",
+    "line": 64,
+    "snippet": "<div><button type=\"button\" className=\"btn small danger\" onClick={() => onChange(undefined)}>Remove media</button> <span className=\"note\">The original file is kept until you save, so you can undo.</span></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\editor\\PreviewPane.tsx",
+    "line": 51,
+    "snippet": "<div><button className=\"btn small ghost\" onClick={() => { setResult(null); setHintShown(false); setAttempt((n) => n + 1); }}>Try again</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 33,
+    "snippet": "<label key={o.id}>{o.text || `Option ${j + 1}`}<input maxLength={500} value={ak.distractorNotes?.[o.id] ?? ''} onChange={(e) => setAk('distractorNotes', { ...(ak.distractorNotes ?? {}), [o.id]: e.target.value })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 48,
+    "snippet": "{scoring.mode === 'time_bonus' && <label>Largest speed bonus<input type=\"number\" min={0} max={q.basePoints} value={scoring.timeBonusMax ?? 50} onChange={(e) => setPl('scoring', { mode: 'time_bonus', timeBonusMax: Math.max(0, Math.min(q.basePoints, Number(e.target.value) || 0)) })} /></label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 55,
+    "snippet": "<label>Topic<input maxLength={80} value={meta.topic ?? ''} onChange={(e) => setMeta('topic', e.target.value)} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 57,
+    "snippet": "<label>Learning objective<input maxLength={200} value={meta.objective ?? ''} onChange={(e) => setMeta('objective', e.target.value)} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 58,
+    "snippet": "<label>Section (groups questions)<input maxLength={80} value={meta.section ?? ''} onChange={(e) => setMeta('section', e.target.value)} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 61,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={!!meta.aiDraft} onChange={(e) => setMeta('aiDraft', e.target.checked || undefined)} /> This question was drafted with AI help</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 64,
+    "snippet": "<label>Where can the facts be checked?<input maxLength={1000} value={meta.evidence ?? ''} onChange={(e) => setMeta('evidence', e.target.value)} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuestionExtras.tsx",
+    "line": 65,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={!!meta.verified} onChange={(e) => setMeta('verified', e.target.checked || undefined)} /> I checked this myself</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuizMetaForm.tsx",
+    "line": 16,
+    "snippet": "<label>Subject<input maxLength={60} value={meta.subject ?? ''} onChange={(e) => set('subject', e.target.value)} placeholder=\"Math, History, English…\" /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\editor\\QuizMetaForm.tsx",
+    "line": 19,
+    "snippet": "<label>Tags (comma separated, up to 8)<input value={(meta.tags ?? []).join(', ')} onChange={(e) => set('tags', e.target.value.split(',').map((t) => t.trim().slice(0, 24)).filter(Boolean).slice(0, 8))} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 109,
+    "snippet": "<input type=\"checkbox\" checked={mods.includes(m)} onChange={(e) => setMods((xs) => (e.target.checked ? [...xs, m] : xs.filter((x) => x !== m)))} />",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 113,
+    "snippet": "{mods.includes('limited_slots') && <label>Answer slots per question<input type=\"number\" min={1} max={100} value={slotLimit} onChange={(e) => setSlotLimit(Math.max(1, Math.min(100, Number(e.target.value) || 1)))} /></label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 122,
+    "snippet": "<label>Match duration: {minutes} minutes<input type=\"range\" min={1} max={120} value={minutes} onChange={(e) => setMinutes(Number(e.target.value))} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 123,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={noTimer} onChange={(e) => setNoTimer(e.target.checked)} /> No time limit per question</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 124,
+    "snippet": "{!noTimer && <label>Time per question: {qSeconds} seconds<input type=\"range\" min={5} max={300} step={5} value={qSeconds} onChange={(e) => setQSeconds(Number(e.target.value))} /></label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 127,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={quiet} onChange={(e) => applyQuiet(e.target.checked)} /><span><strong>Quiet Classroom</strong><small>Turns off point-stealing events, Potluck, sounds, reactions and collectibles. The questions stay exactly the same.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 128,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={lowPressure} onChange={(e) => setLowPressure(e.target.checked)} /><span><strong>Low-pressure play</strong><small>Hides rank and the podium and ignores speed, so players focus on learning.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 129,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={fairPlay} onChange={(e) => setFairPlay(e.target.checked)} /><span><strong>Fair-play limits</strong><small>Caps how often each point-stealing event can be used and asks you to confirm before using one.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 130,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={readAloud} onChange={(e) => setReadAloud(e.target.checked)} /><span><strong>Read-aloud button</strong><small>Lets players hear each question with their browser’s voice.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 131,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={shuffle} onChange={(e) => setShuffle(e.target.checked)} /><span><strong>Shuffle question order</strong><small>Useful for replays. The quiz itself is not changed.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 132,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={cosmetics && !quiet} disabled={quiet} onChange={(e) => setCosmetics(e.target.checked)} /><span><strong>Collectible progress</strong><small>Players can earn icons and frames from this game.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 137,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={approval} onChange={(e) => setApproval(e.target.checked)} /><span><strong>I approve each player</strong><small>New players wait until you let them in.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 138,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={lockAfterStart} onChange={(e) => setLockAfterStart(e.target.checked)} /><span><strong>Lock the room when the game starts</strong><small>Nobody can join late.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 139,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={hideIdentity} onChange={(e) => setHideIdentity(e.target.checked)} /><span><strong>Hide icons and frames</strong><small>Show names only on the shared screen.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 144,
+    "snippet": "<label className=\"modifier\"><input type=\"checkbox\" checked={rotate} onChange={(e) => setRotate(e.target.checked)} /><span><strong>Rotate the speaker role</strong><small>Suggests a different team member to answer each turn.</small></span></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 150,
+    "snippet": "<div className=\"grid2\">{teams.map((n, i) => <label key={i}>Team {i + 1} name<input value={n} maxLength={40} onChange={(e) => setTeams((xs) => xs.map((x, j) => (j === i ? e.target.value : x)))} /></label>)}</div>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\GameSetup.tsx",
+    "line": 155,
+    "snippet": "<div><button className=\"btn\" onClick={launch} disabled={busy || needsAccount || questionCount === 0}>{busy ? 'Creating…' : 'Start Game'}</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\HostConsole.tsx",
+    "line": 157,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={peek} onChange={(e) => setPeek(e.target.checked)} /> Show me the answer key (also appears on a projected screen)</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\HostConsole.tsx",
+    "line": 171,
+    "snippet": "{mods.includes('secret_wager') && <label>Team’s secret wager (max {activeTeam?.points ?? 0})<input type=\"number\" min={0} max={activeTeam?.points ?? 0} value={wager} onChange={(e) => setWager(Math.max(0, Math.min(activeTeam?.points ?? 0, Number(e.target.value) || 0)))} /></label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\HostConsole.tsx",
+    "line": 203,
+    "snippet": "<label>Points (negative to take away)<input type=\"number\" min={-10000} max={10000} value={adjDelta} onChange={(e) => setAdjDelta(Math.max(-10000, Math.min(10000, Math.trunc(Number(e.target.value) || 0))))} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\HostConsole.tsx",
+    "line": 205,
+    "snippet": "<label>Reason (required)<input value={adjReason} maxLength={200} onChange={(e) => setAdjReason(e.target.value)} placeholder=\"For example: answered correctly out loud\" /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\HostConsole.tsx",
+    "line": 206,
+    "snippet": "<div><button className=\"btn ghost\" disabled={busy || !adjTarget || !adjDelta || adjReason.trim().length < 3} onClick={() => run(() => api<{ newPoints: number }>(`/api/quiz/rooms/${roomId}/adjust`, { method: 'POST', json: { actorType: classroom ? 'team' : 'player', actorId: adjTarget, delta: adjDelta, reason: adjReason.trim() } }), (d) => `Score updated to ${d.newPoints}.`).then(() => setAdjReason('')).catch(() => {})}>Apply correction</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\HostConsole.tsx",
+    "line": 221,
+    "snippet": "{NEEDS_AMOUNT.includes(kind) && <label>Up to how many points<input type=\"number\" min={1} max={10000} value={amount} onChange={(e) => setAmount(Math.max(1, Number(e.target.value) || 1))} /></label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\HostConsole.tsx",
+    "line": 228,
+    "snippet": "<div><button className=\"btn ghost\" disabled={busy} onClick={() => run(() => api(`/api/quiz/rooms/${roomId}/modifier`, { method: 'POST', json: { kind: 'undo' } }), () => 'Latest score change was reversed.').catch(() => {})}>Undo latest score change</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\JoinForm.tsx",
+    "line": 37,
+    "snippet": "<label>The name everyone in the room will see<input required maxLength={40} value={name} onChange={(e) => setName(e.target.value)} placeholder=\"Player name\" autoComplete=\"nickname\" /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\KindEditor.tsx",
+    "line": 22,
+    "snippet": "<div><button className=\"btn small ghost\" disabled={opts.length >= 8} onClick={() => onChange({ payload: { options: [...opts, { id: uid('o'), text: '' }] } })}>+ Add option</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\KindEditor.tsx",
+    "line": 31,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={!!pl.caseSensitive} onChange={(e) => onChange({ payload: { ...pl, caseSensitive: e.target.checked } })} /> Case-sensitive</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\KindEditor.tsx",
+    "line": 32,
+    "snippet": "<label>Numeric tolerance (optional, ± this much)<input type=\"number\" min={0} step=\"any\" value={ak.numericTolerance ?? ''} onChange={(e) => { const k = { ...ak }; if (e.target.value === '') delete k.numericTolerance; else k.numericTolerance = Math.max(0, Number(e.target.value)); onChange({ answerKey: k }); }} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\KindEditor.tsx",
+    "line": 44,
+    "snippet": "<label>Left {j + 1}<input value={l.label} maxLength={500} onChange={(e) => onChange({ payload: { ...pl, left: L.map((x) => (x.id === l.id ? { ...x, label: e.target.value } : x)) } })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\KindEditor.tsx",
+    "line": 45,
+    "snippet": "<label>Matches right {j + 1}<input value={R[j]?.label ?? ''} maxLength={500} onChange={(e) => onChange({ payload: { ...pl, right: R.map((x, k) => (k === j ? { ...x, label: e.target.value } : x)) } })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\KindEditor.tsx",
+    "line": 87,
+    "snippet": "<label className=\"inline\"><input type=\"checkbox\" checked={cell.blank} onChange={(e) => {",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\PlayerRoom.tsx",
+    "line": 126,
+    "snippet": "<input type=\"number\" min={0} max={me?.points ?? 0} value={wager} onChange={(e) => setWager(Math.max(0, Math.min(me?.points ?? 0, Number(e.target.value) || 0)))} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\PrivacyPanel.tsx",
+    "line": 24,
+    "snippet": "<p><label>Type DELETE to enable deletion <input value={confirm} onChange={(e) => setConfirm(e.target.value)} /></label>{' '}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\ExtraGameControls.tsx",
+    "line": 53,
+    "snippet": "<div className=\"row\"><Act off={busy || !!have || max < 1} why={have ? 'This team already has a paddle up. Lower it first.' : 'No points to bid.'} onClick={() => void send('bid', { team, lot, amount: amt })}>Raise paddle: {amt} on lot {lot}</Act>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\ExtraGameControls.tsx",
+    "line": 55,
+    "snippet": "<div className=\"row\"><Act off={busy || !have} why=\"No paddle is up for this team.\" onClick={() => void send('retract_bid', { team })}>Lower paddle (refund)</Act>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\ExtraGameControls.tsx",
+    "line": 94,
+    "snippet": "<div className=\"row\"><Act off={busy || m.broken || m.level >= MAX_LEVEL || t.points < upgradeCost(m.level)} why={m.broken ? 'Repair it first.' : m.level >= MAX_LEVEL ? 'Already at the top level.' : `Needs ${upgradeCost(m.level)} parts.`} note={`Level ${m.level} → ${m.level + 1}`} onClick={() => void send('upgrade', { team, index: i }).then((ok) => ok && clearSel())}>Upgrade machine {i + 1} · {upgradeCost(m.level)}</Act>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\ExtraGameControls.tsx",
+    "line": 116,
+    "snippet": "<div className=\"row\"><Act off={busy || !isl || isl.id === 0 || isl.charted || t.points < SEA.chart} why={!isl ? 'Pick an island first.' : isl.id === 0 ? 'The harbour needs no chart.' : isl.charted ? 'Already charted.' : `Needs ${SEA.chart} points.`} note=\"Reveals the chest before you sail\" onClick={() => void send('chart', { team, island: to })}>Chart island · {SEA.chart}</Act>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 39,
+    "snippet": "<div className=\"row\"><Btn kind=\"primary\" disabled={busy} onClick={() => send('ask', tile ? { tile: tile.id } : {})}>{tr(locale, 'askQuestion')}</Btn>{tile && <Btn kind=\"ghost\" disabled={busy} onClick={() => { void send('choose_zone', { tile: tile.id }); }}>{tr(locale, 'tile', { n: tile.id + 1 })} ✓</Btn>}</div></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 51,
+    "snippet": "<div className=\"row\">{g.duel ? <Btn kind=\"primary\" disabled={busy} onClick={() => send('ask')}>{tr(locale, 'askQuestion')}</Btn> : <Btn kind=\"primary\" disabled={busy} onClick={() => send('end_turn')}>{tr(locale, 'endTurn')}</Btn>}</div></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 64,
+    "snippet": "<div className=\"row\">{BOSS_ACTIONS.map((a) => <Btn key={a} kind={t.chosen === a ? 'primary' : ''} disabled={busy || (a === 'scan' && t.cd.scan > 0) || (a === 'combine' && (g.boss.phase < 2 || t.cd.combine > 0 || !partner))} why={a === 'scan' && t.cd.scan > 0 ? `Recharging (${t.cd.scan} turns).` : a === 'combine' ? first([g.boss.phase < 2, 'Combos unlock in phase 2.'], [t.cd.combine > 0, `Recharging (${t.cd.combine} turns).`], [!partner, 'Pick a partner team first.']) : undefined} onClick={() => send('choose_action', { team, action: a, aim: aim ? 'weak' : 'any', partner })}>{tr(locale, a)}{a === 'scan' && t.cd.scan > 0 ? ` (${t.cd.scan})` : ''}</Btn>)}</div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 65,
+    "snippet": "<label className=\"pj-check\"><input type=\"checkbox\" checked={aim} onChange={(e) => setAim(e.target.checked)} /> {tr(locale, 'aimWeak')}</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 67,
+    "snippet": "<div className=\"row\">{t.chosen && <Btn kind=\"ghost\" disabled={busy} onClick={() => send('cancel_choice', { team })}>{tr(locale, 'undo')}</Btn>}<Btn kind=\"primary\" disabled={busy || !(all ? allChosen : !!t.chosen)} why=\"Choose an action first.\" onClick={() => send('ask')}>{tr(locale, 'askQuestion')}</Btn></div></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 88,
+    "snippet": "<div className=\"row\"><Btn kind=\"ghost\" disabled={busy} onClick={() => send('end_turn')}>{tr(locale, 'endTurn')}</Btn></div></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 106,
+    "snippet": "<div className=\"row\"><Btn kind=\"ghost\" disabled={busy || t.held <= 0} why=\"Nothing in hand to bank.\" onClick={() => send('bank', { team })}>{tr(locale, 'bank')}</Btn>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\GameControls.tsx",
+    "line": 127,
+    "snippet": "<div className=\"row\">{t.chosen && <Btn kind=\"ghost\" disabled={busy} onClick={() => send('cancel_choice', { team })}>{tr(locale, 'undo')}</Btn>}<Btn kind=\"primary\" disabled={busy || !anyChosen} why=\"Choose Climb, Bank or Review first.\" onClick={() => send('ask')}>{tr(locale, 'askQuestion')}</Btn><Btn kind=\"ghost\" disabled={busy} onClick={() => send('end_turn')}>{tr(locale, 'endTurn')}</Btn></div></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\projector\\ProjectorSetup.tsx",
+    "line": 105,
+    "snippet": "{game === 'empire_race' && <label className=\"pj-check\"><input type=\"checkbox\" checked={comeback} onChange={(e) => setComeback(e.target.checked)} />{t(locale, 'comeback')}</label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\projector\\ProjectorSetup.tsx",
+    "line": 118,
+    "snippet": "{check.flags.includes('needsRepeatCycle') ? <label className=\"pj-check\"><input type=\"checkbox\" checked={repeats} onChange={(e) => setRepeats(e.target.checked)} />{t(locale, 'repeats')}</label> : <p className=\"error\">{t(locale, 'tooFew')}</p>}</div>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\projector\\ProjectorSetup.tsx",
+    "line": 126,
+    "snippet": "<label className=\"pj-check\"><input type=\"checkbox\" checked={low} onChange={(e) => setLow(e.target.checked)} />{t(locale, 'low')}</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\projector\\ProjectorSetup.tsx",
+    "line": 127,
+    "snippet": "<label className=\"pj-check\"><input type=\"checkbox\" checked={read} onChange={(e) => setRead(e.target.checked)} />{t(locale, 'read')}</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\ProjectorSetup.tsx",
+    "line": 137,
+    "snippet": "<div className=\"row\"><button className=\"btn primary\" disabled={busy || !signedIn || blocked} onClick={launch}>{busy ? t(locale, 'creating') : t(locale, 'launch')}</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\ProjectorSetup.tsx",
+    "line": 140,
+    "snippet": "<div className=\"row\"><button className=\"btn ghost\" disabled={step === 0} onClick={() => setStep((s) => s - 1)}>{t(locale, 'back')}</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\TutorialOverlay.tsx",
+    "line": 35,
+    "snippet": "<div className=\"pj-tutorial-head\"><p className=\"eyebrow\">How to play · {name}</p><button type=\"button\" aria-label=\"Close tutorial\" className=\"btn small ghost\" onClick={close}>Close</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\TutorialOverlay.tsx",
+    "line": 46,
+    "snippet": "<div className=\"pj-tutorial-actions\"><button type=\"button\" className=\"btn ghost\" onClick={close}>Skip tutorial</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\projector\\TutorialOverlay.tsx",
+    "line": 47,
+    "snippet": "<div className=\"row\"><button type=\"button\" className=\"btn ghost\" disabled={step === 0} onClick={() => setStep((v) => v - 1)}>Back</button>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\QuestionPlay.tsx",
+    "line": 86,
+    "snippet": "<label>Your answer<input value={forge} onChange={(e) => setForge(e.target.value)} disabled={off} maxLength={500} autoComplete=\"off\" placeholder={p.placeholder ?? 'Your answer'} onKeyDown={(e) => { if (e.key === 'Enter') void submit(); }} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizDetail.tsx",
+    "line": 57,
+    "snippet": "<div className=\"row\"><Link className=\"btn\" href={`/quiz/setup/${id}`}>Play</Link>{q.isMine ? <Link className=\"btn ghost\" href={`/quiz/edit/${id}`}>Edit</Link> : <button className=\"btn ghost\" disabled={busy} onClick={remix}>Copy to my quizzes</button>}</div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizDetail.tsx",
+    "line": 83,
+    "snippet": "<div className=\"row\"><button className=\"btn\" disabled={busy} onClick={report}>Send report</button><button className=\"btn ghost\" onClick={() => setReporting(false)}>Cancel</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 317,
+    "snippet": "<div className=\"row\"><button className=\"btn small\" onClick={restore}>Restore them</button><button className=\"btn small ghost\" onClick={discard}>Discard them</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 333,
+    "snippet": "<div className=\"row\"><button className=\"btn\" onClick={() => setStep('formats')}>Next: choose formats →</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 347,
+    "snippet": "<div><button className=\"btn small\" onClick={() => add(k)}>+ Add {kindLabels[k]}</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 351,
+    "snippet": "<div className=\"row\"><button className=\"btn ghost\" onClick={() => setStep('details')}>← Back</button><button className=\"btn\" onClick={() => setStep('questions')}>Next: write questions →</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 415,
+    "snippet": "<label>Points for a correct answer<input type=\"number\" min={0} max={10000} value={activeQ.basePoints} onChange={(e) => setQ(ai, { basePoints: Math.max(0, Math.min(10000, Number(e.target.value) || 0)) })} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 424,
+    "snippet": "<div className=\"row\" style={{ marginTop: 14 }}><button className=\"btn ghost\" onClick={() => setStep('formats')}>← Back</button><button className=\"btn\" onClick={() => setStep('media')}>Next: media →</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 449,
+    "snippet": "<div className=\"row\"><button className=\"btn ghost\" onClick={() => setStep('questions')}>← Back</button><button className=\"btn\" onClick={() => setStep('review')}>Next: review →</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 457,
+    "snippet": "<div className=\"row\"><button className=\"btn ghost\" onClick={() => setStep('media')}>← Back</button><button className=\"btn\" onClick={() => { setStep('save'); void loadRevisions(); }}>Next: save & publish →</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\QuizEditor.tsx",
+    "line": 484,
+    "snippet": "<div className=\"row\"><button className=\"btn ghost\" onClick={() => setStep('review')}>← Back</button></div>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\QuizList.tsx",
+    "line": 171,
+    "snippet": "<label>Search quizzes<input type=\"search\" value={query} onChange={(e) => setQuery(e.target.value)} placeholder=\"Search by title, subject, tag or question\" /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\QuizList.tsx",
+    "line": 186,
+    "snippet": "{!mine && <label className=\"inline\"><input type=\"checkbox\" checked={!!filters.verifiedOnly} onChange={(e) => setF('verifiedOnly', e.target.checked)} /> Reviewed by a moderator only</label>}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\quiz\\ReportView.tsx",
+    "line": 42,
+    "snippet": "<div className=\"row\"><a className=\"btn small ghost\" href={exportQs('csv')}>Download CSV</a><a className=\"btn small ghost\" href={exportQs('pdf')}>Download PDF</a><button className=\"btn small ghost\" onClick={() => window.print()}>Print</button></div></header>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\UpgradeForm.tsx",
+    "line": 37,
+    "snippet": "<label>Email<input type=\"email\" autoComplete=\"email\" required value={email} onChange={(e) => setEmail(e.target.value)} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\quiz\\UpgradeForm.tsx",
+    "line": 38,
+    "snippet": "<label>Password (at least 8 characters)<input type=\"password\" autoComplete=\"new-password\" minLength={8} required value={password} onChange={(e) => setPassword(e.target.value)} /></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "CSS Class Mismatch / Typo",
+    "file": "components\\Reconstruction3D.tsx",
+    "line": 68,
+    "snippet": "recon3d",
+    "issue": "Class \"recon3d\" used in literal className has no matching CSS rule and is not recognized.",
+    "fix": "Verify spelling or define \".recon3d\" in CSS."
+  },
+  {
+    "type": "CSS Class Mismatch / Typo",
+    "file": "components\\retention\\Shop.tsx",
+    "line": 61,
+    "snippet": "rshop",
+    "issue": "Class \"rshop\" used in literal className has no matching CSS rule and is not recognized.",
+    "fix": "Verify spelling or define \".rshop\" in CSS."
+  },
+  {
+    "type": "CSS Class Mismatch / Typo",
+    "file": "components\\retention\\tabs.tsx",
+    "line": 32,
+    "snippet": "rgoals",
+    "issue": "Class \"rgoals\" used in literal className has no matching CSS rule and is not recognized.",
+    "fix": "Verify spelling or define \".rgoals\" in CSS."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\retention\\tabs.tsx",
+    "line": 148,
+    "snippet": "<label className=\"rtoggle\"><input type=\"checkbox\" checked={r.prefs.hints} onChange={e => retention.setPref('hints', e.target.checked)} /> Show whispers</label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\retention\\tabs.tsx",
+    "line": 180,
+    "snippet": "<label className=\"rtoggle\"><input type=\"checkbox\" checked={!!r.prefs[p.k]} onChange={e => retention.setPref(p.k, e.target.checked as never)} /> <b>{p.label}</b></label>",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "CSS Class Mismatch / Typo",
+    "file": "components\\TopBar.tsx",
+    "line": 269,
+    "snippet": "border",
+    "issue": "Class \"border\" used in literal className has no matching CSS rule and is not recognized.",
+    "fix": "Verify spelling or define \".border\" in CSS."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\TopBar.tsx",
+    "line": 252,
+    "snippet": "<input",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Input missing label)",
+    "file": "components\\Workbench.tsx",
+    "line": 1718,
+    "snippet": "<input type=\"range\" className=\"wb-vol\" min={0} max={100} step={5} value={Math.round(volume * 100)}",
+    "issue": "<input> lacks accessible labeling (aria-label, aria-labelledby, or id).",
+    "fix": "Add aria-label or associate with <label>."
+  },
+  {
+    "type": "Accessibility (Non-interactive element with onClick)",
+    "file": "components\\world\\GlobeSequence.tsx",
+    "line": 297,
+    "snippet": "<div ref={rootRef} className=\"wg\" data-on=\"false\" data-kind={payload?.kind ?? 'none'} onClick={onClick} aria-hidden={payload ? undefined : true}>",
+    "issue": "Non-interactive element has onClick without role=\"button\" or keyboard handlers.",
+    "fix": "Use <button> or add role=\"button\" tabIndex={0} and keyboard event handlers."
+  },
+  {
+    "type": "Accessibility (Iframe missing title)",
+    "file": "lib\\quiz\\__tests__\\media-portability.test.ts",
+    "line": 61,
+    "snippet": "'javascript:alert(1)', '<iframe src=\"https://www.youtube.com/embed/dQw4w9WgXcQ\"></iframe>', 'https://user:pw@www.youtube.com/watch?v=dQw4w9WgXcQ', 'https://vimeo.com/abc', 'data:text/html,<script>1</script>',",
+    "issue": "<iframe> element without 'title' attribute.",
+    "fix": "Add a descriptive title attribute."
+  }
+]

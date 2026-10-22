@@ -1,0 +1,1073 @@
+[
+  {
+    "file": "app\\globals.css",
+    "line": 5,
+    "snippet": "(`npm run data:check` verifies that), so both builds stay in visual sync.",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\globals.css",
+    "line": 11,
+    "snippet": "rules (`button { padding: 0; border: 0 }` and friends) outranked every",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\globals.css",
+    "line": 13,
+    "snippet": "lost its styling. Layered, the order is: preflight < design system < utilities. */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\globals.css",
+    "line": 144,
+    "snippet": "everything in them is scoped to its own :root[data-theme], so no other theme changes. */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\quiz\\quiz.css",
+    "line": 19,
+    "snippet": "Root cause: the game's design system (app/_design-system.css) sets `html{height:100%;overflow:hidden}` and",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\quiz\\quiz.css",
+    "line": 20,
+    "snippet": "`body{height:100%;overflow:hidden}` because the game is a fixed full-viewport app. Quiz Studio is a normal",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\quiz\\quiz.css",
+    "line": 23,
+    "snippet": "document. :has() follows client-side navigation, so leaving /quiz restores the game's lock untouched.",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_camera.css",
+    "line": 2,
+    "snippet": "CAMERA — the CSS half of `lib/camera.ts` (P0.2: a simulated camera that",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_camera.css",
+    "line": 6,
+    "snippet": "the `transform` shorthand) on purpose: `--cam-x`/`--cam-y` are rewritten",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic-art.css",
+    "line": 2,
+    "snippet": "CINEMATIC ART — the openings drawn like the workspace picture: dense",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic-art.css",
+    "line": 6,
+    "snippet": "Imported after _flat.css on purpose: the openings are the one place the",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic-motion.css",
+    "line": 14,
+    "snippet": "Everything here is additive: new custom properties and a handful of",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 5,
+    "snippet": "2. The gate       (.cg-*)   the ~10 s opening: title, 1–3 lines, Space",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 19,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 41,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 158,
+    "snippet": "and never replace them: they colour the 2.5D layer only. */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 203,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 209,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 594,
+    "snippet": "--si / --sf (slide index / fraction) are set by the gate and the deck: as the",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 598,
+    "snippet": "transform:rotateX(calc(var(--py,0) * -3deg)) rotateY(calc(var(--px,0) * 4deg + (var(--sf,0) - .5) * 36deg))",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 666,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 856,
+    "snippet": "Path deck now share the workbench's language: near-black ground, hairline grey",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 858,
+    "snippet": "(Palette itself: lib/cinematic/scenes.ts paletteOf. Everything below only",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 871,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_cinematic.css",
+    "line": 880,
+    "snippet": ".st-floor{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_craft.css",
+    "line": 1,
+    "snippet": "Unclosed comments (/* count: 21, */ count: 20)",
+    "issue": "CSS file has unclosed block comments.",
+    "fix": "Close all block comments with */."
+  },
+  {
+    "file": "app\\_craft.css",
+    "line": 111,
+    "snippet": "No boxes: a faint ring of dust, almost nothing until the hand or a piece is over it. */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 136,
+    "snippet": "#ground{position:fixed;inset:0;z-index:0;pointer-events:none;background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 208,
+    "snippet": "background:var(--glass-top);backdrop-filter:blur(14px)}   /* above the views: its search dropdown overlaps them */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 259,
+    "snippet": "class (0,1,0) and an id (1,0,0) beats it, so `#v-work{display:grid}` kept the",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 261,
+    "snippet": "#v-work{grid-template-columns:var(--rail) 1fr;grid-template-areas:\"rail bench\";right:var(--panel)}   /* the panel column sits beside it */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 405,
+    "snippet": ".panel-grab{display:none}   /* a phone affordance; the mobile block shows it */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 428,
+    "snippet": "border:1px solid var(--line);background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 505,
+    "snippet": "#v-arch{overflow-y:auto;padding:0 0 70px}   /* display is set only by .view / .view.on */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 643,
+    "snippet": ".rail-tools .searchbox input{font-size:16px;padding:6px 0}   /* 16px stops iOS zooming on focus */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_design-system.css",
+    "line": 140,
+    "snippet": "url(%23n)",
+    "issue": "Broken url() asset reference: \"%23n\" does not exist.",
+    "fix": "Verify asset path or place the asset in public/ or relative folder."
+  },
+  {
+    "file": "app\\_era-glow.css",
+    "line": 8,
+    "snippet": "is the other axis: it only grows, tracking how much of the whole game has",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-glow.css",
+    "line": 15,
+    "snippet": "`background`, so it never has to duplicate or fight that file's own rule:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-glow.css",
+    "line": 16,
+    "snippet": "`#ground` is already `position:fixed` in `_design-system.css`, which is",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 3,
+    "snippet": "own P0.5/P0.65 wording: the person confirmed directly that the intended",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 7,
+    "snippet": "`_era-glow.css` already adds one radial layer on `#ground::after` — a",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 11,
+    "snippet": "confirmed by grep before adding this): a *multi*-colour ambient gradient",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 15,
+    "snippet": "circuit/glow). No JS changes needed: that hook already exists and is",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 20,
+    "snippet": "the single-file build (`npm run data:check`).",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 22,
+    "snippet": "Paint order on `#ground` (all `position:fixed`, so this layer's `inset:0`",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 23,
+    "snippet": "is contained by it): the base single-hue radial (`_design-system.css`) →",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 26,
+    "snippet": "*behind* the workbench and every panel (`#ground` is `z-index:0`) — this",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 43,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 53,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 62,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 73,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 81,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 91,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_era-palette.css",
+    "line": 102,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_flat.css",
+    "line": 3,
+    "snippet": "trail behind the pointer: hairlines, flat greys and the single ochre accent.",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_guide.css",
+    "line": 4,
+    "snippet": "overlay, no fake button, no layout shift: only box-shadow/filter/outline on",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_learn.css",
+    "line": 2,
+    "snippet": "QUESTION CARD — top-right, under the top bar. A note, not a dialog: it takes",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_learn.css",
+    "line": 6,
+    "snippet": ".qc,.qc-fold{position:fixed;z-index:34;right:120px;top:calc(var(--top,52px) + 12px)}   /* left of the technique rail */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_minpath.css",
+    "line": 4,
+    "snippet": "#v-minpath{overflow-y:auto;padding:0 0 70px}   /* display is set only by .view / .view.on, see _design-system.css */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_mode-hub.css",
+    "line": 4,
+    "snippet": "plain: one real exhibit today, not a dashboard of placeholder tiles.",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_mode-hub.css",
+    "line": 6,
+    "snippet": "#v-hub{overflow-y:auto;padding:0 0 70px}   /* display is set only by .view / .view.on, see _design-system.css */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_mode-hub.css",
+    "line": 14,
+    "snippet": "leads, then each exhibit card materialises in turn — `:nth-of-type` reads",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 13,
+    "snippet": "#v-museum{overflow:hidden;overflow:clip}   /* display is set only by .view / .view.on, see _design-system.css */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 55,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 60,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 145,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 158,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 178,
+    "snippet": ".arch-cave .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 184,
+    "snippet": ".arch-stone .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 189,
+    "snippet": ".arch-earth .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 193,
+    "snippet": ".arch-mudbrick .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 198,
+    "snippet": ".arch-bronze .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 202,
+    "snippet": ".arch-marble .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 207,
+    "snippet": ".arch-timber .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 211,
+    "snippet": ".arch-glass .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 216,
+    "snippet": ".arch-iron .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 222,
+    "snippet": ".arch-light .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum-gallery.css",
+    "line": 226,
+    "snippet": ".arch-grid .hh-wall{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 149,
+    "snippet": "opacity:0;will-change:transform,opacity;transition:color .5s ease",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 260,
+    "snippet": "unchanged: the plate lives inside the body's square and turns with it.",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 263,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 271,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 280,
+    "snippet": "background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 382,
+    "snippet": ".exh-art::before{ /* the spotlight: a soft cone from above */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 386,
+    "snippet": ".exh-art::after{ /* the pedestal: a low step with a lit top edge */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 499,
+    "snippet": "below the full 12–25s era-transition tier on purpose: `.era-shift` is",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 500,
+    "snippet": "`pointer-events:none` and never blocks the workbench, but a full-opacity",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 530,
+    "snippet": ".arch-grid .card{position:relative;border:1px solid var(--line-2);background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_museum.css",
+    "line": 58,
+    "snippet": "url(%23g)",
+    "issue": "Broken url() asset reference: \"%23g\" does not exist.",
+    "fix": "Verify asset path or place the asset in public/ or relative folder."
+  },
+  {
+    "file": "app\\_narrator.css",
+    "line": 6,
+    "snippet": "the brief's literal ask — was tried on paper and dropped: this corner was",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_narrator.css",
+    "line": 11,
+    "snippet": "cinematic captions: a soft gradient wash instead of a flat card with a",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_open-world.css",
+    "line": 4,
+    "snippet": "Loaded last (see globals.css), so it takes the workspace apart on purpose:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_open-world.css",
+    "line": 20,
+    "snippet": "--panel:0px;                 /* no column is ever reserved for the exhibit */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_open-world.css",
+    "line": 176,
+    "snippet": "#bench .wb-art{filter:drop-shadow(0 1px 1px rgba(0,0,0,.35))",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 27,
+    "snippet": "background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 33,
+    "snippet": "background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 80,
+    "snippet": "gradients only: nothing animates, nothing is measured, and it costs nothing",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 81,
+    "snippet": "at rest. Kept faint: the play stays the brightest thing on the screen.",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 84,
+    "snippet": ":root[data-era-group=\"stone\"] .wb{background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 88,
+    "snippet": ":root[data-era-group=\"earth\"] .wb{background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 90,
+    "snippet": ":root[data-era-group=\"metal\"] .wb{background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 92,
+    "snippet": ":root[data-era-group=\"paper\"] .wb{background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 95,
+    "snippet": ":root[data-era-group=\"iron\"] .wb{background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 98,
+    "snippet": ":root[data-era-group=\"circuit\"] .wb{background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_physics.css",
+    "line": 102,
+    "snippet": ":root[data-era-group=\"glow\"] .wb{background-image:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_rail.css",
+    "line": 3,
+    "snippet": "The rail lives at the edge: down the right side on a desktop, along the",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_reactive-fx.css",
+    "line": 3,
+    "snippet": "ceremony. Additive layer on top of _fx.css: nothing here is required for the",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_reactive-fx.css",
+    "line": 10,
+    "snippet": "and only under html.has-cursor — every existing cursor:grab / pointer rule",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_reactive-fx.css",
+    "line": 100,
+    "snippet": "The dragged clone: .fx-ghost already gives it the ochre drop-shadow used",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_reactive-fx.css",
+    "line": 106,
+    "snippet": "never a new color, per the one-accent palette: a real pair leans in a",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_retention.css",
+    "line": 3,
+    "snippet": "secrets, stickers, share card. Same engraved language as the rest of the game: thin strokes, ink and bone, ochre",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_retention.css",
+    "line": 4,
+    "snippet": "as the single accent. Everything here is pointer-events:none unless it is a real control, and every motion",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 4,
+    "snippet": "uploaded reference (C01): one confident hand-inked contour weight, stacked",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 11,
+    "snippet": "Rules this file keeps:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 20,
+    "snippet": "--ct-ink:#3b2142;          /* the single contour colour */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 21,
+    "snippet": "--ct-w:3px;                /* contour weight */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 22,
+    "snippet": "--ct-lip:5px;              /* raised depth under a control */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 94,
+    "snippet": "--ct-raise:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 98,
+    "snippet": "--ct-press:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 104,
+    "snippet": ":root[data-theme=\"cartoon\"]{--ct-world:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 120,
+    "snippet": ":root[data-theme=\"cartoon\"]:has(#v-hub.on,#v-arch.on,#v-time.on,#v-graph.on) #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 219,
+    "snippet": "PANELS — inventory, techniques, cards: inked paper with stacked depth",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-cartoon.css",
+    "line": 290,
+    "snippet": "MODE HUB — friendly cards (C25): coloured inner ring, inked contour, lip",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-neon.css",
+    "line": 3,
+    "snippet": "Kept out of _design-system.css on purpose: that file mirrors the single-file",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-neon.css",
+    "line": 71,
+    "snippet": ":root[data-theme=\"neon\"] #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 3,
+    "snippet": "An art-direction theme, not an accent skin: besides its own palette it",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 7,
+    "snippet": "Rules this file keeps (see the theme brief):",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 8,
+    "snippet": "• no global pixelation filter and no image-rendering trick on the page:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 14,
+    "snippet": "References: P01 Ember Quest menu, P04/P09 Celeste palettes, P08 CrossCode",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 25,
+    "snippet": "--px-ol:#0e0a24;        /* outline, one colour everywhere */",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 95,
+    "snippet": "A notched outline: four hard shadows, one per side, leave each corner one",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 97,
+    "snippet": "--px-notch:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 102,
+    "snippet": "--px-notch-sm:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 110,
+    "snippet": ":root[data-theme=\"pixel\"]{--px-world:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 160,
+    "snippet": "text-shadow:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 178,
+    "snippet": "box-shadow:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 188,
+    "snippet": "box-shadow:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 215,
+    "snippet": "box-shadow:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 231,
+    "snippet": ":root[data-theme=\"pixel\"] .tile[aria-pressed=\"true\"]{box-shadow:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 246,
+    "snippet": "PANELS — inventory rail, technique panel, cards: opaque windows, notched frame",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-pixel.css",
+    "line": 627,
+    "snippet": ":root[data-theme=\"pixel\"]:has(#v-arch.on,#v-time.on,#v-graph.on) #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-variants.css",
+    "line": 5,
+    "snippet": "--check): a full token set per `:root[data-theme=\"…\"]`, layered on top of",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-variants.css",
+    "line": 64,
+    "snippet": ":root[data-theme=\"ember\"] #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-variants.css",
+    "line": 117,
+    "snippet": ":root[data-theme=\"verdant\"] #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-variants.css",
+    "line": 170,
+    "snippet": ":root[data-theme=\"glacier\"] #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-variants.css",
+    "line": 223,
+    "snippet": ":root[data-theme=\"bronze\"] #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_theme-variants.css",
+    "line": 276,
+    "snippet": ":root[data-theme=\"dusk\"] #ground{background:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_time-tunnel.css",
+    "line": 4,
+    "snippet": "Loaded after _museum.css, which it overrides for the phases that changed:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_time-tunnel.css",
+    "line": 6,
+    "snippet": "collapse → tunnel → slow → fall → exit        (reduced motion: reduced → exit)",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_time-tunnel.css",
+    "line": 8,
+    "snippet": "There is no black screen between the tunnel and the world: while the streaks",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_unlock.css",
+    "line": 8,
+    "snippet": "5. The opening of every mode and view: title, lines and slides are set in real",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_world.css",
+    "line": 2,
+    "snippet": "WORLD — the global invention progression: the globe reveal, the top-bar",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  },
+  {
+    "file": "app\\_world.css",
+    "line": 6,
+    "snippet": "The globe reveal is deliberately a dark, quiet room whatever the theme:",
+    "issue": "Missing semicolon at end of declaration.",
+    "fix": "Add a semicolon (;) at the end of the property declaration."
+  }
+]
