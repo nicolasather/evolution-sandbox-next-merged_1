@@ -30,7 +30,7 @@ function SkeletonRow() {
               background: '#e2e8f0',
               borderRadius: 4,
               width: i === 1 ? '60%' : '40%',
-              animation: 'pulse 1.5s infinite',
+              animation: 'pulse 1.5s ease-in-out infinite',
             }}
           />
         </td>

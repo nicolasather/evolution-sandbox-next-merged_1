@@ -92,7 +92,7 @@ export async function getUserRank(userId: string, options: RankOptions = {}): Pr
   }
 
   try {
-    // Fetch profile and rank in parallel for maximum speed (Upgrade 46-55)
+    // Fetch profile and rank in parallel; leaderboard ordered by composite metric proxy (xp + streak weighting) to align with UI/DB view
     const [profileRes, leaderboardRes] = await Promise.all([
       supabase
         .from('user_profile')
@@ -117,7 +117,7 @@ export async function getUserRank(userId: string, options: RankOptions = {}): Pr
     const totalCount = allUsers.length || 1;
     const rankIndex = allUsers.findIndex(u => u.auth_user_id === userId);
     const rank = rankIndex >= 0 ? rankIndex + 1 : totalCount + 1;
-    const percentile = Math.round(((totalCount - rank + 1) / totalCount) * 10000) / 100;
+    const percentile = totalCount > 0 ? Math.round(((totalCount - rank + 1) / totalCount) * 10000) / 100 : 0;
 
     const entry: RankEntry = {
       userId: profile.auth_user_id,
@@ -126,12 +126,12 @@ export async function getUserRank(userId: string, options: RankOptions = {}): Pr
       xp: profile.xp,
       level: profile.level,
       streak: profile.streak,
-      score: profile.xp * 0.1, // Optimized proxy score calculation
-      performance: 85.0,     // Default benchmark performance
-      compositeScore: calculateCompositeScore(profile.xp, profile.xp * 0.1, profile.streak, 85.0),
+      score: profile.xp * 0.1, // Aggregated score proxy
+      performance: Math.min(Math.max((profile.xp / 10000) * 100, 0), 100), // Dynamic performance from XP
+      compositeScore: calculateCompositeScore(profile.xp, profile.xp * 0.1, profile.streak, Math.min(Math.max((profile.xp / 10000) * 100, 0), 100)),
       rank,
       percentile,
-      velocity: 1.2
+      velocity: 0
     };
 
     if (useCache) {
@@ -167,7 +167,7 @@ export async function getGlobalLeaderboard(options: RankOptions = {}): Promise<R
       const rank = index + 1;
       const percentile = total > 1 ? Math.round(((total - rank) / (total - 1)) * 10000) / 100 : 100;
       const score = profile.xp * 0.1;
-      const performance = 85.0;
+      const performance = Math.min(Math.max((profile.xp / 10000) * 100, 0), 100);
 
       return {
         userId: profile.auth_user_id,
@@ -181,7 +181,7 @@ export async function getGlobalLeaderboard(options: RankOptions = {}): Promise<R
         compositeScore: calculateCompositeScore(profile.xp, score, profile.streak, performance),
         rank,
         percentile,
-        velocity: 1.0
+        velocity: 0
       };
     });
   } catch (err) {
@@ -192,8 +192,8 @@ export async function getGlobalLeaderboard(options: RankOptions = {}): Promise<R
 
 // Stubs for split-agent route (POST recalc / award) — authoritative DB path is batch_award_xp_and_rank / refresh_global_leaderboard
 export async function recalculateAllRanks(_options?: { metric?: string; userId?: string }): Promise<any> {
-  return { refreshed: true, note: 'Use DB refresh_global_leaderboard() for concurrent materialized-view refresh.' };
+  throw new Error('recalculateAllRanks: use DB refresh_global_leaderboard() for concurrent materialized-view refresh; stub must not silently claim success');
 }
 export async function awardXPBatch(opts: { userProfileId: string; xpAmount: number; source?: string; roomId?: string; questionId?: string }): Promise<any> {
-  return { awarded: true, profileId: opts.userProfileId, amount: opts.xpAmount };
+  throw new Error('awardXPBatch: delegate to DB batch_award_xp_and_rank() — stub must not silently claim success. opts=' + JSON.stringify({ profileId: opts.userProfileId, amount: opts.xpAmount }));
 }
