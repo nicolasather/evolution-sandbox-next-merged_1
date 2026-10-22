@@ -537,6 +537,13 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
       <MuseumSignal onVisit={() => showView('museum')}
         suppressed={!s.entered || reveal < 6 || view === 'museum' || !!s.ending || gate !== null} />
 
+      {/* Rank Board / User Rank link — visible on main sandbox screen */}
+      {s.entered && (
+        <a href="/quiz/rank" aria-label="View leaderboard" className="tl-rank-badge" style={{ position:'fixed', top:12, right:12, zIndex:100, padding:'0.35rem 0.65rem', borderRadius:9999, background:'#eab308', color:'#422006', fontWeight:700, textDecoration:'none', boxShadow:'0 2px 8px rgba(234,179,8,0.3)', fontSize:'0.8rem', lineHeight:1.2, letterSpacing:'.02em', willChange:'transform' }}>
+        👑 Rank
+      </a>
+      )}
+
       <RetentionLayer
         engine={engine}
         version={version}

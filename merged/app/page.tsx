@@ -25,10 +25,10 @@ export default function Chooser() {
           <small>Create quizzes and play them solo, on a classroom projector, or online with a room code.</small>
           <span className="cta">Enter the Quiz →</span>
         </Link>
-        <Link href="/quiz/rank" className="choose-card" style={{ borderColor: '#eab308', background: 'linear-gradient(135deg,#fffde7,#fff3b0)' }} aria-label="Xem bảng xếp hạng người dùng">
-          <h2>👑 Rank Board</h2>
-          <small>Xem xếp hạng người dùng — XP, điểm, chuỗi và điểm tổng hợp.</small>
-          <span className="cta" style={{ background: '#eab308', color: '#422006', fontWeight: 700 }}>Xem Rank →</span>
+        <Link href="/quiz/rank" className="choose-card" style={{ borderColor: '#eab308' }} aria-label="View user leaderboard">
+          <h2>Rank Board</h2>
+          <small>See the user leaderboard — ranked by XP, score, streak and composite.</small>
+          <span className="cta">View Rank →</span>
         </Link>
       </div>
     </main>
