@@ -898,7 +898,7 @@ export class Engine {
         this.save(); this.emit();
         return { status: 'region_locked', action, from, region: rg, message: rg.message };
       }
-      const g = this.gate(outs[0].stone_age_tier!);
+      const g = this.gate(outs[0].stone_age_tier ?? 'olduvai');
       this.streak = 0;
       this.save(); this.emit();
       return {
