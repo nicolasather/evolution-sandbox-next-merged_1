@@ -54,6 +54,8 @@ create index if not exists user_rank_metric on public.user_rank(metric);
 create index if not exists user_rank_composite on public.user_rank(composite_score desc);
 create unique index if not exists user_rank_unique_profile_metric_window on public.user_rank(user_profile_id, metric, window_start, window_end)
   where window_start is not null and window_end is not null;
+create unique index if not exists user_rank_unique_profile_metric_all_time on public.user_rank(user_profile_id, metric)
+  where window_start is null and window_end is null;
 
 -- 3. user_xp: Tracks XP gains per source ----------
 create table if not exists public.user_xp (
@@ -255,7 +257,7 @@ begin
     order by ur.composite_score desc
     limit p_limit
   ) loop
-    leaderboard := jsonb_build_array(leaderboard, jsonb_build_object(
+    leaderboard := leaderboard || jsonb_build_array(jsonb_build_object(
       'userId', user_record->>'id',
       'displayName', user_record->>'display_name',
       'avatarUrl', user_record->>'avatar_url',

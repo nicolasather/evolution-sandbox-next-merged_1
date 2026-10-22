@@ -240,4 +240,12 @@ export function TimelineView({
     const onWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
       e.preventDefault();
-      pending
+      pendingDelta += e.deltaY;
+      if (!raf) {
+        raf = requestAnimationFrame(() => {
+          el.scrollLeft += pendingDelta;
+          pendingDelta = 0;
+          raf = 0;
+        });
+      }
+    };
