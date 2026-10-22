@@ -19,7 +19,14 @@ export async function proxy(request: NextRequest) {
     },
   });
   // Validates (and if needed refreshes) the session; the result is deliberately not used for routing decisions here.
-  await supabase.auth.getClaims();
+  try {
+    await Promise.race([
+      supabase.auth.getClaims(),
+      new Promise((_, r) => setTimeout(() => r(new Error('timeout')), 5000)),
+    ]);
+  } catch (e) {
+    // Network timeout or Supabase error: continue without blocking request
+  }
   return response;
 }
 

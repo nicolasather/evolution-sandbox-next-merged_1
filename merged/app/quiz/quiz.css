@@ -107,6 +107,7 @@ html.has-cursor:has(.qz) .qz :is(a, button, summary, select, label, [role=button
 .qz .btn:hover { text-decoration: none; transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--qz-outline), 6px 6px 0 1px rgba(255,255,255,.3); }
 .qz .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--qz-outline); }
 .qz .btn.cyan { background: var(--qz-cyan); }
+.qz .btn.yellow { background: var(--qz-yellow); }
 .qz .btn.coral { background: var(--qz-coral); color: #fff; }
 .qz .btn.ghost { background: var(--qz-panel2); color: var(--qz-text); border-color: var(--qz-edge); box-shadow: 4px 4px 0 var(--qz-outline); }
 .qz .btn.danger { background: #3b1a1d; color: #ff9d97; border-color: var(--qz-error); }

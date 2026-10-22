@@ -15,6 +15,7 @@ export default function QuizHome() {
           <div className="row">
             <Link className="btn" href="/quiz/new">Create a Quiz</Link>
             <Link className="btn cyan" href="/quiz/join">Join a Game</Link>
+            <Link className="btn yellow" href="/quiz/rank">Rank Board</Link>
             <Link className="textlink" href="/quiz/library">Quiz Library</Link>
           </div>
         </div>
