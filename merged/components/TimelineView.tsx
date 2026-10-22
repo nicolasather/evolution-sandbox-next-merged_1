@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { Glyph } from './Glyph';
 import type { Engine } from '@/lib/engine';
 import type { Discovery } from '@/lib/types';
@@ -25,78 +25,10 @@ import { cn } from '@/lib/utils';
    unnamed ticks, so the rail shows how much is still ahead without saying
    what. The spacing between points is ordinal, not to scale — deep time and
    the last two centuries cannot share one linear axis.
-
-   PERFORMANCE — the rail is long: a full playthrough puts well over a
-   thousand discoveries on it. Rendering every one of them at once means
-   thousands of DOM nodes, thousands of inline SVG glyphs and hundreds of
-   blurred cards, all of which the compositor has to keep alive while the
-   player scrolls. So the rail is VIRTUALIZED: only the points around the
-   viewport exist in the DOM, and the space the missing ones would have
-   taken is preserved by two spacer bars, so the scroll geometry (and every
-   offset the rail is measured by) is byte-for-byte the same as before.
-   Scroll reads are quantised so React re-renders when the window moves,
-   not on every frame, and every scroll write goes through requestAnimationFrame.
    ========================================================================== */
 
-/* ---------------------------------------------------------------------------
-   Layout constants. These mirror app/_museum.css (section 8): the rail's
-   geometry is computed here so that a point's position is known without
-   asking the DOM for it (no forced synchronous layout while scrolling).
-   --------------------------------------------------------------------------- */
-const ERA_PAD_RIGHT = 44;          // .tl-era padding-right
-const ERA_MIN_WIDTH = 120;         // .tl-era min-width
-const SCROLL_PAD_LEFT = 40;        // .tl-scroll padding-left (wide)
-const SCROLL_PAD_LEFT_NARROW = 22; // .tl-scroll padding-left (<=900px)
-const PT_WIDTH = 104;              // .tl-pt width (wide)
-const PT_WIDTH_NARROW = 92;        // .tl-pt width (<=900px)
-const PT_AHEAD_WIDTH = 26;         // .tl-pt.ahead width
-const OVERSCAN = 480;              // px of rail kept alive either side of the viewport
-const SCROLL_QUANTUM = 160;        // px of scrolling per React update
-const FALLBACK_VIEWPORT = 1400;    // used before the scroller can be measured
-
-/** Is the narrow (<=900px) timeline layout in effect? */
-function narrowViewport(): boolean {
-  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return false;
-  try { return window.matchMedia('(max-width:900px)').matches; } catch { return false; }
-}
-
-interface Run { eraId: string; name: string; required: number; requiredDone: number; startIndex: number; found: number; ahead: number }
+interface Run { eraId: string; name: string; required: number; requiredDone: number; startIndex: number }
 interface Row { items: (Discovery | null)[]; majorAt: boolean[]; runs: Run[]; foundCount: number; ahead: number }
-
-/** One laid-out point on the rail: where it starts (px from the left edge of
- *  the scroll content) and how wide it is. */
-interface Point { n: Discovery | null; major: boolean; x: number; w: number; idx: number; local: number }
-
-/** One era run, with its points laid out along the rail. */
-interface EraLayout { run: Run; pts: Point[]; startX: number; inner: number; width: number }
-
-/* A found point, memoised: scrolling the rail re-renders the window, but a
-   point that did not change must not re-render with it. */
-const RailPoint = memo(function RailPoint({
-  n, major, idx, local, sel, onOpen,
-}: {
-  n: Discovery; major: boolean; idx: number; local: number; sel: boolean;
-  onOpen: { current: (id: string) => void };
-}) {
-  return (
-    <li className={cn('tl-pt', local % 2 ? 'dn' : 'up', sel && 'sel', major && 'major')}
-        data-id={n.id} data-idx={idx} style={{ ['--i' as string]: Math.min(local, 24) }}>
-      <button onClick={() => onOpen.current(n.id)} aria-label={`${n.n}, ${n.date}${major ? ', major world invention' : ''}`}>
-        <span className="tl-card">
-          <Glyph node={n} />
-          <span className="tl-name">{n.n}</span>
-          <span className="tl-date mono">{n.date}</span>
-          {major && <span className="tl-flag mono">World milestone</span>}
-        </span>
-        <span className="tl-stem" />
-        <span className={cn('tl-dot', `r-${n.rar}`)} />
-        <span className="tl-rank-badge" aria-label="Player rank link to leaderboard" title="Link to leaderboard">
-          <a href="/quiz/rank" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 600, fontSize: 10, letterSpacing: '.05em' }}>#Rank</a>
-        </span>
-      </button>
-    </li>
-  );
-});
 
 export function TimelineView({
   engine, version, active, focusId, onOpen,
@@ -105,14 +37,6 @@ export function TimelineView({
 }) {
   const scroller = useRef<HTMLDivElement>(null);
   const placed = useRef(false);
-  const onOpenRef = useRef(onOpen);
-  onOpenRef.current = onOpen;
-
-  /* the scroll window: how far along the rail we are (quantised), how wide the
-     viewport is, and which breakpoint we are at. */
-  const [vp, setVp] = useState(() => ({ left: 0, w: 0, narrow: narrowViewport() }));
-  /* the entrance animation only plays while the view is opening */
-  const [entering, setEntering] = useState(false);
 
   const row = useMemo<Row>(() => {
     const all = sortDiscoveries(
@@ -128,124 +52,107 @@ export function TimelineView({
       if (i === 0 || all[i - 1].era !== n.era) {
         const p = engine.eraProgress(n.era);
         const name = engine.db.eras.find(e => e.id === n.era)?.name ?? n.era;
-        runs.push({ eraId: n.era, name, required: p.required, requiredDone: p.requiredDone, startIndex: i, found: 0, ahead: 0 });
+        runs.push({ eraId: n.era, name, required: p.required, requiredDone: p.requiredDone, startIndex: i });
       }
-    });
-    runs.forEach((run, ri) => {
-      const end = runs[ri + 1]?.startIndex ?? items.length;
-      let found = 0;
-      for (let i = run.startIndex; i < end; i++) if (items[i]) found++;
-      run.found = found;
-      run.ahead = end - run.startIndex - found;
     });
     const foundCount = items.filter(Boolean).length;
     return { items, majorAt, runs, foundCount, ahead: items.length - foundCount };
     // version: the rail fills in as the player finds more
   }, [engine, version]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  /* the rail's geometry, computed once per fill — no DOM reads, so the
-     scroll position of any point is known without forcing layout. */
-  const layout = useMemo<{ eras: EraLayout[]; total: number }>(() => {
-    const narrow = vp.narrow;
-    const wFound = narrow ? PT_WIDTH_NARROW : PT_WIDTH;
-    let x = narrow ? SCROLL_PAD_LEFT_NARROW : SCROLL_PAD_LEFT;
-    const eras: EraLayout[] = [];
-    row.runs.forEach((run, ri) => {
-      const end = row.runs[ri + 1]?.startIndex ?? row.items.length;
-      const nodes = row.items.slice(run.startIndex, end);
-      const majors = row.majorAt.slice(run.startIndex, end);
-      let inner = 0;
-      const pts: Point[] = nodes.map((n, i) => {
-        const w = n ? wFound : PT_AHEAD_WIDTH;
-        const px = x + inner;
-        inner += w;
-        return { n, major: !!majors[i], x: px, w, idx: run.startIndex + i, local: i };
-      });
-      const width = Math.max(ERA_MIN_WIDTH, inner + ERA_PAD_RIGHT);
-      eras.push({ run, pts, startX: x, inner, width });
-      x += width;
-    });
-    return { eras, total: x };
-  }, [row, vp.narrow]);
-
-  /* measure the scroller: the viewport width comes from a ResizeObserver (so
-     scrolling never has to read layout), and the scroll offset is quantised so
-     React re-renders when the window moves rather than on every frame. */
-  useEffect(() => {
-    const el = scroller.current;
-    if (!el) return;
-    let raf = 0;
-    let width = el.clientWidth || 0;
-    let lastLeft = -1;
-    let lastNarrow = narrowViewport();
-    let lastWidth = width;
-    const measure = () => {
-      raf = 0;
-      const narrow = narrowViewport();
-      const left = Math.round(el.scrollLeft / SCROLL_QUANTUM) * SCROLL_QUANTUM;
-      if (left === lastLeft && narrow === lastNarrow && width === lastWidth) return;
-      lastLeft = left; lastNarrow = narrow; lastWidth = width;
-      setVp({ left, w: width, narrow });
-    };
-    const schedule = () => { if (!raf) raf = requestAnimationFrame(measure); };
-    el.addEventListener('scroll', schedule, { passive: true });
-    window.addEventListener('resize', schedule);
-    let ro: ResizeObserver | undefined;
-    if (typeof ResizeObserver !== 'undefined') {
-      ro = new ResizeObserver(() => { width = el.clientWidth || width; schedule(); });
-      ro.observe(el);
-    }
-    measure();
-    return () => {
-      el.removeEventListener('scroll', schedule);
-      window.removeEventListener('resize', schedule);
-      ro?.disconnect();
-      if (raf) cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  /* the entrance animation plays once, when the view opens */
-  useEffect(() => {
-    if (!active) { setEntering(false); return; }
-    setEntering(true);
-    const t = setTimeout(() => setEntering(false), 700);
-    return () => clearTimeout(t);
-  }, [active]);
-
   // first time it opens: bring the latest find into view
   useEffect(() => {
     if (!active || placed.current) return;
     const el = scroller.current;
     if (!el) return;
-    if (!vp.w) return;                 // wait for the first real measurement
     placed.current = true;
     let lastIndex = -1;
     row.items.forEach((n, i) => { if (n) lastIndex = i; });
     if (lastIndex < 0) return;
-    for (const era of layout.eras) {
-      const p = era.pts[lastIndex - era.run.startIndex];
-      if (!p) continue;
-      const target = Math.max(0, p.x - 80);
-      requestAnimationFrame(() => { el.scrollLeft = target; });
-      return;
-    }
-  }, [active, vp.w, layout, row]);
+    const target = el.querySelector<HTMLElement>(`[data-idx="${lastIndex}"]`);
+    if (target) el.scrollLeft = Math.max(0, target.offsetLeft - 80);
+  }, [active, row]);
 
-  // a vertical wheel scrolls the rail sideways — coalesced via rAF + passive:false
+  // a vertical wheel scrolls the rail sideways
   useEffect(() => {
     const el = scroller.current;
     if (!el) return;
-    let raf = 0;
-    let pendingDelta = 0;
     const onWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
       e.preventDefault();
-      pendingDelta += e.deltaY;
-      if (!raf) {
-        raf = requestAnimationFrame(() => {
-          el.scrollLeft += pendingDelta;
-          pendingDelta = 0;
-          raf = 0;
-        });
-      }
+      el.scrollLeft += e.deltaY;
     };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
+
+  // opening an exhibit from elsewhere brings its point into view
+  useEffect(() => {
+    if (!active || !focusId) return;
+    const el = scroller.current?.querySelector<HTMLElement>(`[data-id="${focusId}"]`);
+    el?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  }, [active, focusId]);
+
+  return (
+    <section className={'view' + (active ? ' on' : '')} id="v-time" role="tabpanel" aria-label="Timeline">
+      <header className="tl-head">
+        <h2 className="g-title">Timeline</h2>
+        <p className="g-sub">
+          {row.foundCount === 0
+            ? 'Nothing here yet. Make something, and it will take its place on the rail.'
+            : 'Your finds, oldest to newest, by their real recorded date. Spacing is ordinal, not to scale.'}
+        </p>
+      </header>
+      <div className="tl-scroll" ref={scroller} tabIndex={0} aria-label="Timeline, scroll sideways">
+        <div className="tl-rail" aria-hidden="true" />
+        {row.runs.map((run, ri) => {
+          const end = row.runs[ri + 1]?.startIndex ?? row.items.length;
+          const items = row.items.slice(run.startIndex, end);
+          const majorAt = row.majorAt.slice(run.startIndex, end);
+          const found = items.filter(Boolean).length;
+          const ahead = items.length - found;
+          return (
+            // key includes the run index: the SAME era can recur later on the
+            // rail (real chronology overlaps), so its id alone is not unique.
+            <div className={cn('tl-era', found === 0 && 'empty')} data-era={run.eraId} key={`${run.eraId}-${ri}`}>
+              <div className="tl-era-h mono">
+                <b>{run.name}</b>
+                <span>{found ? `${found} found` : 'not reached'}{ahead > 0 && found ? ` · ${ahead} ahead` : ''}</span>
+                {run.required > 0 && (
+                  <span className={cn('tl-world', run.requiredDone >= run.required && 'done')} title="Major world inventions this era needs before the next one opens">
+                    {run.requiredDone >= run.required ? 'Era complete' : `${run.requiredDone}/${run.required} world`}
+                  </span>
+                )}
+              </div>
+              <ol className="tl-pts">
+                {items.map((n, i) => {
+                  const idx = run.startIndex + i;
+                  return n ? (
+                    <li key={n.id} className={cn('tl-pt', i % 2 ? 'dn' : 'up', n.id === focusId && 'sel', majorAt[i] && 'major')}
+                        data-id={n.id} data-idx={idx} style={{ ['--i' as string]: Math.min(i, 24) }}>
+                      <button onClick={() => onOpen(n.id)} aria-label={`${n.n}, ${n.date}${majorAt[i] ? ', major world invention' : ''}`}>
+                        <span className="tl-card">
+                          <Glyph node={n} />
+                          <span className="tl-name">{n.n}</span>
+                          <span className="tl-date mono">{n.date}</span>
+                          {majorAt[i] && <span className="tl-flag mono">World milestone</span>}
+                        </span>
+                        <span className="tl-stem" />
+                        <span className={cn('tl-dot', `r-${n.rar}`)} />
+                        <span className="tl-rank-badge" aria-label="Player rank link to leaderboard" title="Link to leaderboard">
+                          <a href="/quiz/rank" style={{ color: 'inherit', textDecoration: 'none', fontWeight: 600, fontSize: 10, letterSpacing: '.05em' }}>#Rank</a>
+                        </span>
+                      </button>
+                    </li>
+                  ) : (
+                    <li key={`u${idx}`} className={cn('tl-pt ahead', majorAt[i] && 'major')} data-idx={idx} aria-hidden="true"><span className="tl-tick" /></li>
+                  );
+                })}
+              </ol>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}

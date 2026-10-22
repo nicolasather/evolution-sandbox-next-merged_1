@@ -18,7 +18,10 @@
 
 import { serviceDB } from '@/lib/quiz/supabase';
 
-const supabase = serviceDB();
+/* The client is created lazily: importing this module must not throw on a deployment
+   that has no quiz service configured (e.g. during a build), so the failure surfaces
+   per-request instead of at module evaluation. */
+const db = () => serviceDB();
 
 export interface RankEntry {
   userId: string;
@@ -94,12 +97,12 @@ export async function getUserRank(userId: string, options: RankOptions = {}): Pr
   try {
     // Fetch profile and rank in parallel; leaderboard ordered by composite metric proxy (xp + streak weighting) to align with UI/DB view
     const [profileRes, leaderboardRes] = await Promise.all([
-      supabase
+      db()
         .from('user_profile')
         .select('id, auth_user_id, display_name, avatar_url, xp, level, streak')
         .eq('auth_user_id', userId)
         .single(),
-      supabase
+      db()
         .from('user_profile')
         .select('auth_user_id, xp, streak')
         .order('xp', { ascending: false })
@@ -150,9 +153,10 @@ export async function getUserRank(userId: string, options: RankOptions = {}): Pr
  */
 export async function getGlobalLeaderboard(options: RankOptions = {}): Promise<RankEntry[]> {
   try {
-    const { limit = 50, metric = 'composite', useCache = true } = options;
+    const { limit = 50 } = options;
+    void options;
 
-    const { data, error } = await supabase
+    const { data, error } = await db()
       .from('user_profile')
       .select('id, auth_user_id, display_name, avatar_url, xp, level, streak')
       .order('xp', { ascending: false })
