@@ -24,9 +24,10 @@ function traceOf(engine: Engine, focusId: string): Trace {
   const stack = [focusId];
   while (stack.length) {
     const id = stack.pop()!;
-    engine.get(id)?.rec?.forEach(([a, b]) => {
-      if (!engine.hasRoute(id, a, b)) return;
-      for (const x of [a, b]) {
+    engine.get(id)?.rec?.forEach((rec) => {
+      if (!rec || rec.length < 2) return;
+      if (!engine.hasRouteOf(id, rec)) return;
+      for (const x of rec) {
         upEdges.add(`${x}>${id}`);
         if (!up.has(x)) { up.add(x); stack.push(x); }
       }
@@ -39,7 +40,7 @@ function traceOf(engine: Engine, focusId: string): Trace {
     const id = q.shift()!;
     for (const u of engine.usesOf(id)) {
       if (!engine.has(u)) continue;
-      const used = engine.get(u)!.rec.some(([a, b]) => (a === id || b === id) && engine.hasRoute(u, a, b));
+      const used = engine.get(u)!.rec.some((rec) => rec.includes(id) && rec.length >= 2 && engine.hasRouteOf(u, rec));
       if (!used) continue;
       downEdges.add(`${id}>${u}`);
       if (!down.has(u)) { down.add(u); q.push(u); }
