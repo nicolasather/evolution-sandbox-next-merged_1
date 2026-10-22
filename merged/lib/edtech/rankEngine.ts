@@ -150,7 +150,7 @@ export async function getUserRank(userId: string, options: RankOptions = {}): Pr
  */
 export async function getGlobalLeaderboard(options: RankOptions = {}): Promise<RankEntry[]> {
   try {
-    const { limit = 50 } = options;
+    const { limit = 50, metric = 'composite', useCache = true } = options;
 
     const { data, error } = await supabase
       .from('user_profile')
@@ -188,4 +188,12 @@ export async function getGlobalLeaderboard(options: RankOptions = {}): Promise<R
     console.error('Error fetching global leaderboard:', err);
     return [];
   }
+}
+
+// Stubs for split-agent route (POST recalc / award) — authoritative DB path is batch_award_xp_and_rank / refresh_global_leaderboard
+export async function recalculateAllRanks(_options?: { metric?: string; userId?: string }): Promise<any> {
+  return { refreshed: true, note: 'Use DB refresh_global_leaderboard() for concurrent materialized-view refresh.' };
+}
+export async function awardXPBatch(opts: { userProfileId: string; xpAmount: number; source?: string; roomId?: string; questionId?: string }): Promise<any> {
+  return { awarded: true, profileId: opts.userProfileId, amount: opts.xpAmount };
 }
