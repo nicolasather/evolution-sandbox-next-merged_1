@@ -1,29 +1,35 @@
-import 'server-only';
-import { NextRequest } from 'next/server';
-import { success, failure, rateLimit } from '@/lib/quiz/api';
-import rankEngine from '@/lib/edtech/rankEngine';
+/**
+ * Quiz & EdTech Rank API Route Handler
+ * High-performance endpoint for retrieving global rankings, user stats, and batch performance metrics.
+ */
 
-export async function GET(req: NextRequest) {
+import { NextResponse } from 'next/server';
+import { getGlobalLeaderboard, getUserRank } from '@/lib/edtech/rankEngine';
+
+export async function GET(request: Request) {
   try {
-    // Rate limit
-    await rateLimit(req, 'rank:get', 30, 10);
-
-    const { searchParams } = new URL(req.url);
-    const metric = searchParams.get('metric') || 'composite';
-    const limit = parseInt(searchParams.get('limit') || '50', 10);
-    const userId = searchParams.get('userId');
+    const url = new URL(request.url);
+    const userId = url.searchParams.get('userId');
+    const limitParam = url.searchParams.get('limit');
+    const limit = limitParam ? parseInt(limitParam, 10) : 50;
 
     if (userId) {
-      // Get single user rank
-      const result = await rankEngine.getUserRank(userId, { metric: metric as any, limit, includeDetails: true });
-      return success(result);
+      const rankEntry = await getUserRank(userId, { limit });
+      if (!rankEntry) {
+        return NextResponse.json({ success: false, error: 'User rank not found' }, { status: 404 });
+      }
+      return NextResponse.json({ success: true, data: rankEntry });
     }
 
-    // Get leaderboard
-    const leaderboard = await rankEngine.getLeaderboard({ metric: metric as any, limit });
-    return success({ leaderboard, count: leaderboard.length, metric, generatedAt: new Date().toISOString() });
-
-  } catch (error) {
-    return failure(error);
+    const leaderboard = await getGlobalLeaderboard({ limit });
+    return NextResponse.json({
+      success: true,
+      count: leaderboard.length,
+      timestamp: new Date().toISOString(),
+      data: leaderboard
+    });
+  } catch (err: any) {
+    console.error('Error in rank API route:', err);
+    return NextResponse.json({ success: false, error: err?.message || 'Internal server error' }, { status: 500 });
   }
 }

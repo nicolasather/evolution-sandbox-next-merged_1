@@ -25,6 +25,11 @@ export default function Chooser() {
           <small>Create quizzes and play them solo, on a classroom projector, or online with a room code.</small>
           <span className="cta">Enter the Quiz →</span>
         </Link>
+        <Link href="/quiz/rank" className="choose-card" style={{ borderColor: '#eab308' }}>
+          <h2>Rank Board</h2>
+          <small>See the user leaderboard — ranked by XP, score, streak and composite.</small>
+          <span className="cta">View Rank →</span>
+        </Link>
       </div>
     </main>
   );
