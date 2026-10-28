@@ -16,6 +16,7 @@ export default function QuizHome() {
             <Link className="btn" href="/quiz/new">Create a Quiz</Link>
             <Link className="btn cyan" href="/quiz/join">Join a Game</Link>
             <Link className="btn yellow" href="/quiz/rank">Rank Board</Link>
+            <Link className="btn cyan" href="/quiz/remix?autostart=1">⚡ Auto-Generate from 1,917 Sandbox Discoveries</Link>
             <Link className="textlink" href="/quiz/library">Quiz Library</Link>
           </div>
         </div>

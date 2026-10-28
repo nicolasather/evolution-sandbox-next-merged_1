@@ -1,309 +1,117 @@
 'use client';
-
-import { useEffect, useMemo, useState } from 'react';
+/** Rank board: two segregated leagues, server-verified composite score, evolutionary tiers, holographic podium, erasure + takedown controls. */
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useHasMounted } from '@/lib/useHasMounted';
+import { LegalPanel } from '@/components/quiz/remix/parts';
+import { TIERS } from '@/lib/quiz/remix/composite';
 
-type Metric = 'composite' | 'xp' | 'score' | 'streak';
+type League = 'official' | 'community';
+type Row = { rank: number; nickname: string; composite: number; score: number; accuracy: number; maxStreak: number; xp: number; tier: { id: string; label: string }; questions: number; playerKey: string };
 
-interface RankEntry {
-  userId: string;
-  displayName: string;
-  avatarUrl?: string;
-  xp: number;
-  level: number;
-  streak: number;
-  score: number;
-  performance: number;
-  compositeScore: number;
-  rank: number;
-  percentile?: number;
-}
+const LEAGUES: { id: League; label: string; blurb: string }[] = [
+  { id: 'official', label: '👑 OFFICIAL RANKED LEAGUE', blurb: 'Verified official quizzes and auto-generated Sandbox quizzes with 10 or more questions.' },
+  { id: 'community', label: '🛠️ COMMUNITY CUSTOM ARENA', blurb: 'Custom and short quizzes. Kept apart so they can never move the official XP, streak or composite ranking.' },
+];
+const LOCAL_KEYS = ['evo.quiz.shared.v1', 'evo.quiz.playerKey'];
+const SESSION_KEYS = ['evo.remix.session.v1'];
 
-function SkeletonRow() {
-  return (
-    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-      {Array.from({ length: 7 }).map((_, i) => (
-        <td key={i} style={{ padding: '1rem' }}>
-          <div
-            style={{
-              height: 16,
-              background: '#e2e8f0',
-              borderRadius: 4,
-              width: i === 1 ? '60%' : '40%',
-              animation: 'pulse 1.5s ease-in-out infinite',
-            }}
-          />
-        </td>
-      ))}
-    </tr>
-  );
+function Skeleton() {
+  return <div aria-busy="true" aria-label="Loading rankings">{Array.from({ length: 5 }).map((_, i) => <div key={i} className="rx-skeleton" style={{ height: 38, margin: '8px 0' }} />)}</div>;
 }
 
 export default function RankPage() {
-  const [leaderboard, setLeaderboard] = useState<RankEntry[]>([]);
+  const mounted = useHasMounted();
+  const [league, setLeague] = useState<League>('official');
+  const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [limit, setLimit] = useState(50);
-  const [metric, setMetric] = useState<Metric>('composite');
-  const [myRank, setMyRank] = useState<RankEntry | null>(null);
-  const [userId, setUserId] = useState<string | null>(null);
+  const [error, setError] = useState('');
+  const [msg, setMsg] = useState('');
+  const [report, setReport] = useState({ open: false, quizId: '', reason: '' });
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const p = new URLSearchParams(window.location.search);
-      setUserId(p.get('userId'));
-    }
+  const load = useCallback((l: League) => {
+    fetch(`/api/quiz/rank?league=${l}&limit=50`, { cache: 'no-store' })
+      .then((r) => r.json())
+      .then((d: { success: boolean; data?: Row[]; error?: string }) => { if (d.success) { setRows(d.data ?? []); setError(''); } else setError(d.error ?? 'Failed to load rankings'); })
+      .catch((e: unknown) => setError(e instanceof Error ? e.message : 'Network error'))
+      .finally(() => setLoading(false));
   }, []);
+  useEffect(() => { load(league); }, [league, load]);
 
-  const loadLeaderboard = (requestedLimit: number) => {
-    setLoading(true);
-    setError(null);
-    fetch(`/api/quiz/rank?limit=${requestedLimit}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          setLeaderboard(data.data || []);
-        } else {
-          setError(data.error || 'Failed to load rankings');
-        }
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err?.message || 'Network error');
-        setLoading(false);
-      });
+  const clearMyData = async () => {
+    if (!window.confirm('Delete your scores from the rank boards and clear data stored on this device (XP, badges, hints, saved game)?')) return;
+    let key = '';
+    try { key = window.localStorage.getItem('evo.quiz.playerKey') ?? ''; } catch { /* blocked */ }
+    let removed = 0;
+    if (key) {
+      try {
+        const r = await fetch('/api/quiz/rank?action=erase', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ playerKey: key }) });
+        removed = ((await r.json()) as { removed?: number }).removed ?? 0;
+      } catch { /* offline: local wipe still happens */ }
+    }
+    try { LOCAL_KEYS.forEach((k) => window.localStorage.removeItem(k)); SESSION_KEYS.forEach((k) => window.sessionStorage.removeItem(k)); } catch { /* blocked */ }
+    setMsg(`Done. ${removed} leaderboard ${removed === 1 ? 'entry' : 'entries'} removed and local data cleared. Xóa dữ liệu thành công.`);
+    setLoading(true); load(league);
+  };
+  const sendReport = async () => {
+    if (!report.quizId.trim()) { setMsg('Enter the quiz name or ID to report.'); return; }
+    try {
+      const r = await fetch('/api/quiz/rank?action=report_quiz', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ quizId: report.quizId, reason: report.reason }) });
+      setMsg(r.ok ? 'Thank you. The quiz is hidden from public listings while it is reviewed.' : 'Could not send the report. Try again shortly.');
+      if (r.ok) setReport({ open: false, quizId: '', reason: '' });
+    } catch { setMsg('Network error. Try again.'); }
   };
 
-  useEffect(() => {
-    loadLeaderboard(limit);
-    // The API supports ?userId=<id> for a single-user lookup; wire it in once an id is available.
-    if (userId) {
-      fetch(`/api/quiz/rank?userId=${encodeURIComponent(userId)}&limit=50`)
-        .then((r) => r.json())
-        .then((d) => {
-          if (d.success && d.data) setMyRank(d.data);
-        })
-        .catch(() => {
-          /* silent: the card is optional */
-        });
-    }
-  }, [limit, userId]);
-
-  // The API exposes `limit` and `userId` only, so metric ordering happens client-side.
-  const sorted = useMemo(() => {
-    const copy = [...leaderboard];
-    copy.sort((a, b) => {
-      switch (metric) {
-        case 'xp':
-          return b.xp - a.xp;
-        case 'score':
-          return b.score - a.score;
-        case 'streak':
-          return b.streak - a.streak;
-        default:
-          return b.compositeScore - a.compositeScore;
-      }
-    });
-    return copy;
-  }, [leaderboard, metric]);
-
-  const visible = useMemo(() => sorted.slice(0, limit), [sorted, limit]);
-
-  const metricLabel = useMemo(() => {
-    switch (metric) {
-      case 'xp':
-        return 'XP';
-      case 'score':
-        return 'Score';
-      case 'streak':
-        return 'Streak';
-      default:
-        return 'Composite';
-    }
-  }, [metric]);
-
-  const metricValue = (entry: RankEntry) => {
-    switch (metric) {
-      case 'xp':
-        return entry.xp.toLocaleString();
-      case 'score':
-        return entry.score.toLocaleString();
-      case 'streak':
-        return `${entry.streak}d`;
-      default:
-        return String(entry.compositeScore);
-    }
-  };
-
-  const METRICS: { key: Metric; label: string }[] = [
-    { key: 'composite', label: 'Composite' },
-    { key: 'xp', label: 'XP' },
-    { key: 'score', label: 'Score' },
-    { key: 'streak', label: 'Streak' },
-  ];
+  const top = rows.slice(0, 3);
+  const pillar = (r: Row | undefined, cls: string, crown?: boolean) => (r ? (
+    <div className={`rk-pillar ${cls}`}>{crown && <span className="rk-crown" aria-hidden="true">👑</span>}<div className="rk-name">#{r.rank} {r.nickname}</div><div className="rk-big">{r.composite}</div><div>{r.tier.label}</div></div>
+  ) : <div className={`rk-pillar ${cls}`} style={{ opacity: 0.35 }}><div className="rk-name">—</div></div>);
 
   return (
-    <main id="main" style={{ maxWidth: 960, margin: '0 auto', padding: '2rem 1rem', fontFamily: 'system-ui, sans-serif' }}>
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
-        <div>
-          <h1 style={{ fontSize: '2.25rem', fontWeight: 800, margin: 0, background: 'linear-gradient(to right, #6366f1, #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            🏆 Global User Leaderboard
-          </h1>
-          <p style={{ color: '#64748b', marginTop: '0.5rem' }}>Real-time user ranks based on XP, room activity, streaks, and performance.</p>
+    <main id="main" className="rk-root">
+      <div className="rk-wrap">
+        <h1>Rank Board</h1>
+        <p className="rk-formula">Composite = Score<sub>norm</sub>×0.40 + Accuracy²×1000×0.25 + min(Streak,50)×20×0.20 + min(1000, log₁₀(XP+1)×250)×0.15. Computed on the server from a signed game session.</p>
+
+        <div className="rk-tabs" role="tablist" aria-label="League">
+          {LEAGUES.map((l) => <button key={l.id} role="tab" type="button" className="rk-tab" aria-selected={league === l.id} onClick={() => { setLoading(true); setLeague(l.id); }}>{l.label}</button>)}
         </div>
-        <Link href="/quiz" className="btn" style={{ padding: '0.5rem 1rem', background: '#e2e8f0', borderRadius: '0.375rem', textDecoration: 'none', color: '#1e293b', fontWeight: 600 }}>
-          ← Back to Quiz
-        </Link>
-      </header>
+        <p>{LEAGUES.find((l) => l.id === league)!.blurb}</p>
 
-      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-        <span style={{ color: '#475569', fontWeight: 600, fontSize: '0.875rem' }}>Sort by:</span>
-        {METRICS.map((m) => (
-          <button
-            key={m.key}
-            type="button"
-            onClick={() => setMetric(m.key)}
-            aria-pressed={metric === m.key}
-            style={{
-              padding: '0.35rem 0.75rem',
-              borderRadius: '9999px',
-              border: metric === m.key ? '2px solid #6366f1' : '1px solid #cbd5e1',
-              background: metric === m.key ? '#ede9fe' : '#fff',
-              color: metric === m.key ? '#4c1d95' : '#334155',
-              fontWeight: 600,
-              fontSize: '0.875rem',
-              cursor: 'pointer',
-            }}
-          >
-            {m.label}
-          </button>
-        ))}
-      </div>
+        {error && <p role="alert" style={{ color: '#fda4af' }}>{error} <button type="button" className="rx-btn" onClick={() => { setLoading(true); load(league); }}>Retry</button></p>}
 
-      {myRank && (
-        <section
-          aria-label="Your rank"
-          style={{
-            background: 'linear-gradient(135deg, #6366f1, #a855f7)',
-            borderRadius: '0.75rem',
-            padding: '1.25rem 1.5rem',
-            color: '#fff',
-            marginBottom: '1.5rem',
-            boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-            <div>
-              <h2 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 700 }}>Your Rank</h2>
-              <div style={{ fontSize: '0.875rem', opacity: 0.9, marginTop: '0.25rem' }}>
-                {myRank.displayName} · Lvl {myRank.level} · {metricLabel}: {metricValue(myRank)}
-              </div>
-            </div>
-            <div style={{ fontWeight: 800, fontSize: '1.5rem' }}>#{myRank.rank}</div>
-          </div>
-        </section>
-      )}
-
-      {loading && (
-        <div style={{ background: '#ffffff', borderRadius: '0.75rem', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)', overflow: 'hidden' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-            <thead>
-              <tr style={{ background: '#f1f5f9', borderBottom: '2px solid #e2e8f0', color: '#475569', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                <th style={{ padding: '1rem' }}>Rank</th>
-                <th style={{ padding: '1rem' }}>User</th>
-                <th style={{ padding: '1rem' }}>Level</th>
-                <th style={{ padding: '1rem' }}>{metricLabel}</th>
-                <th style={{ padding: '1rem' }}>Streak</th>
-                <th style={{ padding: '1rem' }}>Score</th>
-                <th style={{ padding: '1rem' }}>Composite</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Array.from({ length: 5 }).map((_, i) => (
-                <SkeletonRow key={i} />
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-
-      {error && (
-        <div style={{ padding: '1rem', background: '#fee2e2', color: '#991b1b', borderRadius: '0.5rem', marginBottom: '1.5rem' }}>
-          Error: {error}
-        </div>
-      )}
-
-      {!loading && !error && (
-        <>
-          <div style={{ background: '#ffffff', borderRadius: '0.75rem', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)', overflow: 'hidden' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-              <thead>
-                <tr style={{ background: '#f1f5f9', borderBottom: '2px solid #e2e8f0', color: '#475569', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                  <th style={{ padding: '1rem' }}>Rank</th>
-                  <th style={{ padding: '1rem' }}>User</th>
-                  <th style={{ padding: '1rem' }}>Level</th>
-                  <th style={{ padding: '1rem' }}>{metricLabel}</th>
-                  <th style={{ padding: '1rem' }}>Streak</th>
-                  <th style={{ padding: '1rem' }}>Score</th>
-                  <th style={{ padding: '1rem' }}>Composite</th>
-                </tr>
-              </thead>
-              <tbody>
-                {visible.length === 0 ? (
-                  <tr>
-                    <td colSpan={7} style={{ textAlign: 'center', padding: '3rem', color: '#64748b' }}>
-                      No ranked users found yet. Play a quiz or record scores to appear on the leaderboard!
-                    </td>
-                  </tr>
-                ) : (
-                  visible.map((entry) => (
-                    <tr key={entry.userId} style={{ borderBottom: '1px solid #e2e8f0', transition: 'background 0.2s' }}>
-                      <td style={{ padding: '1rem', fontWeight: 700, color: entry.rank <= 3 ? '#d97706' : '#1e293b' }}>
-                        #{entry.rank} {entry.rank === 1 ? '🥇' : entry.rank === 2 ? '🥈' : entry.rank === 3 ? '🥉' : ''}
-                      </td>
-                      <td style={{ padding: '1rem', fontWeight: 600, color: '#0f172a' }}>{entry.displayName}</td>
-                      <td style={{ padding: '1rem' }}>
-                        <span style={{ background: '#e0e7ff', color: '#3730a3', padding: '0.25rem 0.5rem', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: 600 }}>
-                          Lvl {entry.level}
-                        </span>
-                      </td>
-                      <td style={{ padding: '1rem', fontFamily: 'monospace', fontWeight: 600 }}>{metricValue(entry)}</td>
-                      <td style={{ padding: '1rem' }}>🔥 {entry.streak}d</td>
-                      <td style={{ padding: '1rem', fontFamily: 'monospace' }}>{entry.score.toLocaleString()}</td>
-                      <td style={{ padding: '1rem', fontFamily: 'monospace', fontWeight: 700, color: '#4f46e5' }}>{entry.compositeScore}</td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
+        {loading ? <Skeleton /> : rows.length === 0 ? (
+          <p>No verified runs here yet. <Link href="/quiz/remix?autostart=1" className="rx-deeplink">Play a Sandbox Remix quiz</Link> to claim the first spot.</p>
+        ) : (
+          <>
+            <div className="rk-podium" aria-label="Top three">{pillar(top[1], 'rk-p2')}{pillar(top[0], 'rk-p1', true)}{pillar(top[2], 'rk-p3')}</div>
+            <table className="rk-table">
+              <thead><tr><th>#</th><th>Explorer</th><th>Tier</th><th>Composite</th><th>Score</th><th>Accuracy</th><th>Streak</th><th>XP</th></tr></thead>
+              <tbody>{rows.map((r) => <tr key={r.playerKey + r.rank}><td>{r.rank}</td><td>{r.nickname}</td><td>{r.tier.label}</td><td><b>{r.composite}</b></td><td>{r.score}</td><td>{Math.round(r.accuracy * 100)}%</td><td>{r.maxStreak}</td><td>{r.xp}</td></tr>)}</tbody>
             </table>
-          </div>
+          </>
+        )}
 
-          {leaderboard.length > limit && (
-            <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-              <button
-                type="button"
-                onClick={() => setLimit((l) => l + 50)}
-                style={{ padding: '0.65rem 1.25rem', borderRadius: '9999px', border: '1px solid #cbd5e1', background: '#fff', color: '#334155', fontWeight: 700, cursor: 'pointer' }}
-              >
-                Load more (+50)
-              </button>
-            </div>
-          )}
-          <div style={{ marginTop: '0.5rem', textAlign: 'center', fontSize: '0.875rem', color: '#64748b' }}>
-            Showing {visible.length} of {leaderboard.length} ranked users
-          </div>
-        </>
-      )}
+        <details className="rx-legal" style={{ marginTop: 18 }}>
+          <summary>Evolutionary rank tiers</summary>
+          <ul>{TIERS.map((t) => <li key={t.id}>{t.label}: composite {t.id === 'singularity' ? '≥ 850 and Top 10' : t.id === 'proto' ? '< 300' : t.id === 'cambrian' ? '300 – 599' : '600 – 849'}</li>)}</ul>
+        </details>
 
-      <section aria-label="Ranking Algorithm Details" style={{ marginTop: '3rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '0.75rem', border: '1px solid #e2e8f0' }}>
-        <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1rem', color: '#1e293b' }}>⚡ High-Performance Ranking &amp; Optimization Architecture</h2>
-        <ul style={{ margin: 0, paddingLeft: '1.25rem', color: '#475569', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-          <li><strong>O(1) Caching Layer:</strong> In-memory LRU caching with TTL for blazing fast sub-millisecond retrieval.</li>
-          <li><strong>Database Optimization:</strong> Indexed composite score metrics and concurrent materialized views for zero-latency queries.</li>
-          <li><strong>FPS &amp; Rendering:</strong> Hardware-accelerated transitions and lightweight virtualized DOM rendering.</li>
-          <li><strong>Composite Weighting:</strong> 50% XP + 30% Room Score + 15% Streak + 5% Performance accuracy.</li>
-        </ul>
-      </section>
+        <div className="rk-actions">
+          {mounted && <button type="button" className="rx-btn" onClick={() => void clearMyData()}>🗑️ Xóa Dữ Liệu Cá Nhân / Clear My Data</button>}
+          {league === 'community' && <button type="button" className="rx-btn alt" onClick={() => setReport((r) => ({ ...r, open: !r.open }))}>🚩 Report Quiz</button>}
+          <Link className="rx-btn" href="/quiz/remix">Play Sandbox Remix</Link>
+        </div>
+        {report.open && (
+          <div className="rx-card" style={{ maxWidth: 520, borderColor: '#f59e0b' }}>
+            <label>Quiz name or ID<br /><input className="rx-input" maxLength={80} value={report.quizId} onChange={(e) => setReport({ ...report, quizId: e.target.value })} /></label>
+            <label><br />What is wrong with it?<br /><input className="rx-input" maxLength={300} value={report.reason} onChange={(e) => setReport({ ...report, reason: e.target.value })} /></label>
+            <div className="rx-row"><button type="button" className="rx-btn" onClick={() => void sendReport()}>Send report (hides it now)</button></div>
+          </div>
+        )}
+        {msg && <p role="status">{msg}</p>}
+        <LegalPanel />
+      </div>
     </main>
   );
 }

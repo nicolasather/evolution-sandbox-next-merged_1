@@ -1,5 +1,6 @@
 import 'server-only';
-import { createHash, randomBytes, randomInt } from 'node:crypto';
+import { createHash, randomBytes } from 'node:crypto';
+import { generateRoomCode } from '../quizSecurity';
 import { serviceDB, currentUser } from './supabase';
 import { assertCompatible } from './compatibility';
 import { roomCreateSchema } from './validation';
@@ -11,12 +12,8 @@ import type { Room, Question, GameConfig } from './types';
 
 export function hashSecret(s: string) { return createHash('sha256').update(s).digest('hex'); }
 export function randomSecret() { return randomBytes(32).toString('base64url'); }
-const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no 0/O/1/I
-export function code() {
-  let out = '';
-  for (let i = 0; i < 6; i++) out += CODE_ALPHABET[randomInt(CODE_ALPHABET.length)];
-  return out;
-}
+/** 6 projector-safe characters (no 0/O/1/I/L) from lib/quizSecurity. */
+export function code() { return generateRoomCode(); }
 
 export async function getRoom(id: string): Promise<Room> {
   const { data, error } = await serviceDB().from('rooms').select('*').eq('id', id).maybeSingle();

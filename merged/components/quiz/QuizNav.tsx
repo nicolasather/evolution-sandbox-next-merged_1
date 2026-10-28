@@ -3,8 +3,10 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { api } from '@/lib/quiz/client';
+import { ProjectorToggle } from './remix/parts';
 
 const LINKS: { href: string; label: string; match: (p: string) => boolean }[] = [
+  { href: '/quiz/remix', label: 'Sandbox Remix', match: (p) => p.startsWith('/quiz/remix') },
   { href: '/quiz/modes', label: 'Game Modes', match: (p) => p.startsWith('/quiz/modes') },
   { href: '/quiz/library', label: 'Quiz Library', match: (p) => p.startsWith('/quiz/library') },
   { href: '/quiz/my', label: 'My Quizzes', match: (p) => p.startsWith('/quiz/my') },
@@ -57,6 +59,7 @@ export default function QuizNav({ email, signedIn, guest }: { email: string | nu
             <Link href="/quiz/login" aria-current={path === '/quiz/login' ? 'page' : undefined}>Sign In</Link>
           )}
           <Link className="cta" href="/quiz/new" aria-current={path === '/quiz/new' ? 'page' : undefined}>Create a Quiz</Link>
+          <ProjectorToggle />
         </nav>
       </div>
     </header>

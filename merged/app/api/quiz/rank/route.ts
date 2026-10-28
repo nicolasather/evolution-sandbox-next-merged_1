@@ -6,6 +6,10 @@
 
 import { NextResponse } from 'next/server';
 import { getGlobalLeaderboard, getUserRank, clearRankCache, recalculateAllRanks, awardXPBatch } from '@/lib/edtech/rankEngine';
+import { clientKey, rankWriteLimiter, sanitizeNickname, sanitizeText, LIMITS } from '@/lib/quizSecurity';
+import { checkUserText, generateSafeNickname } from '@/lib/legalCompliance';
+import { trustedSummary } from '@/lib/quiz/remix/server';
+import { board as leagueBoard, submit as submitToLeague, erase as eraseFromLeagues, has as hasSession, reportQuiz } from '@/lib/quiz/remix/leagues';
 
 const ALLOWED_METRICS = ['xp', 'score', 'streak', 'performance', 'composite', 'overall'] as const;
 type MetricType = 'xp' | 'score' | 'streak' | 'performance' | 'composite';
@@ -30,6 +34,13 @@ export async function GET(req: Request) {
     const limit = limitParam ? parseInt(limitParam, 10) : 50;
     const metricParam = url.searchParams.get('metric');
     const metric = validateMetric(metricParam) ?? 'composite';
+
+    // Remix leagues: `?league=official|community` returns the segregated, server-verified boards.
+    const league = url.searchParams.get('league');
+    if (league === 'official' || league === 'community') {
+      const rows = leagueBoard(league, Math.min(100, Math.max(1, Number.isFinite(limit) ? limit : 50)));
+      return NextResponse.json({ success: true, league, count: rows.length, data: rows }, { status: 200, headers: { 'Cache-Control': 'no-store' } });
+    }
 
     if (isNaN(limit) || limit < 1 || limit > 500) {
       return badRequest('Invalid limit (1-500)');
@@ -62,6 +73,40 @@ export async function POST(request: Request) {
     const url = new URL(request.url);
     const action = url.searchParams.get('action') || 'recalculate';
     const body = await request.json().catch(() => ({}));
+
+    // ── Remix league writes. Score is NEVER read from the body: only from the HMAC-signed session token. ──
+    if (action === 'submit' || action === 'erase' || action === 'report_quiz') {
+      if (!rankWriteLimiter.hit(clientKey(request))) return NextResponse.json({ success: false, error: 'Too many leaderboard writes. Try again in a minute.' }, { status: 429, headers: { 'Cache-Control': 'no-store' } });
+    }
+    if (action === 'submit') {
+      const t = trustedSummary(body?.token);
+      if (!t.ok) return badRequest(`Submission rejected: ${t.reason}`);
+      if (hasSession(t.summary.sid)) return badRequest('Submission rejected: already submitted');
+      // Real names on a public board need explicit consent (Decree 13/2023 Art. 11); otherwise use a generated handle.
+      const wanted = body?.consentToPublicName === true ? sanitizeNickname(body?.nickname) : '';
+      const checked = wanted ? checkUserText(wanted) : null;
+      const nickname = checked && checked.ok ? checked.value : generateSafeNickname();
+      const playerKey = sanitizeText(body?.playerKey, 40) || t.summary.sid;
+      const row = submitToLeague({ sid: t.summary.sid, playerKey, nickname, league: t.summary.league, score: t.summary.score, correct: t.session.answered.length - t.session.missed.length, total: t.summary.total, maxStreak: t.summary.maxStreak, xp: t.summary.xp });
+      return NextResponse.json({ success: true, league: row.league, composite: row.composite, nickname }, { status: 200, headers: { 'Cache-Control': 'no-store' } });
+    }
+    if (action === 'erase') {
+      const playerKey = sanitizeText(body?.playerKey, 40);
+      if (!playerKey) return badRequest('playerKey required');
+      return NextResponse.json({ success: true, removed: eraseFromLeagues(playerKey) }, { status: 200, headers: { 'Cache-Control': 'no-store' } });
+    }
+    if (action === 'report_quiz') {
+      const quizId = sanitizeText(body?.quizId, 80);
+      if (!quizId) return badRequest('quizId required');
+      reportQuiz(quizId, sanitizeText(body?.reason, LIMITS.prompt) || 'unspecified');
+      return NextResponse.json({ success: true, hidden: true }, { status: 200, headers: { 'Cache-Control': 'no-store' } });
+    }
+
+    // The legacy actions below mutate XP/ranks from caller-supplied numbers (forgery vector), so they now require a server secret.
+    if (action === 'recalculate' || action === 'recalculateAllRanks' || action === 'award_xp' || action === 'batch_award_xp_and_rank') {
+      const secret = process.env.QUIZ_ADMIN_TOKEN;
+      if (!secret || request.headers.get('x-admin-token') !== secret) return NextResponse.json({ success: false, error: 'Forbidden' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
+    }
 
     if (action === 'recalculate' || action === 'recalculateAllRanks') {
       // Input validation

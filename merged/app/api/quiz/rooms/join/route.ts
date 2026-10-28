@@ -7,11 +7,13 @@ import { owns, emptyLedger } from '@/lib/quiz/cosmetics/ledger';
 import { iconById } from '@/lib/quiz/cosmetics/catalog';
 import { AppError } from '@/lib/quiz/errors';
 import { fromDbError, clientIp } from '@/lib/quiz/api';
+import { roomJoinFailLimiter } from '@/lib/quizSecurity';
 import { assertSameOrigin, failure, jsonBody, rateLimit, rpc, success } from '@/lib/quiz/api';
 
 export async function POST(req: Request) {
   try {
     assertSameOrigin(req);
+    if (roomJoinFailLimiter.blocked(clientIp(req))) throw new AppError('Too many failed attempts. Wait a minute and try again.', 429);
     await rateLimit(req, 'room-join', 200, 600);
     const input = joinSchema.parse(await jsonBody(req));
     const target = await serviceDB().from('rooms').select('config').eq('join_code', input.joinCode.toUpperCase()).maybeSingle();
@@ -38,5 +40,5 @@ export async function POST(req: Request) {
       } catch { /* cosmetics are optional; never block joining */ }
     }
     return success({ roomId: out.roomId, playerId: out.playerId, status: out.status ?? 'active', token }, 201);
-  } catch (e) { return failure(e); }
+  } catch (e) { roomJoinFailLimiter.hit(clientIp(req)); return failure(e); } // max 5 failed joins per 60 s per client
 }

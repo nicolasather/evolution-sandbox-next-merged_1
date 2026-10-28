@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { AppRoot } from '@/components/AppRoot';
+import CatalystDock from '@/components/quiz/remix/CatalystDock';
 
 export const metadata: Metadata = { alternates: { canonical: '/sandbox' } };
 
@@ -24,6 +25,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(GAME_JSON_LD).replace(/</g, '\\u003c') }}
       />
       <AppRoot />
+      <CatalystDock />
     </>
   );
 }
