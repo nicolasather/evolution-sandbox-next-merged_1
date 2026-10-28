@@ -4,6 +4,9 @@ import { serviceDB } from '@/lib/quiz/supabase';
 import { BUCKET } from '@/lib/quiz/media';
 import { timingSafeEqual } from 'node:crypto';
 
+/** Cleanup can scan and delete many rows: allow up to 300s (same convention as other routes). */
+export const maxDuration = 300;
+
 /** Vercel Cron calls this daily with `Authorization: Bearer $CRON_SECRET`. Deletes only stale rooms, limiter rows, expired telemetry and media nothing references — never quizzes. */
 export async function GET(req: Request) {
   try {
