@@ -20,7 +20,8 @@ export const STAGES = ['identify', 'eligibility', 'validate', 'grade', 'commit']
 
 const fail = (stage: number, message: string, status = 400) => new AppError(message, status, stage);
 
-export async function submitAnswer(input: unknown) {
+/** Optional per-mode flags are accepted by the Arena, Clue Racing and Obstacle Survival callers. Not enforced here yet: unchanged behavior. */
+export async function submitAnswer(input: unknown, _modeFlags?: { allowArena?: boolean; allowCR?: boolean; allowOS?: boolean }) {
   const v = submissionSchema.parse(input);
   const db = serviceDB();
 
