@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import OSGame from '../OSGame';
 import OSJoin from '../OSJoin';
 import type { OSClient, OSSnap } from '../useOS';
@@ -55,6 +55,8 @@ describe('OSGame (student screen)', () => {
   it('barrier: the class question is a dialog, says the course is frozen, and the answer goes to the server once', async () => {
     const c = client(snapOf('barrier')); render(<OSGame client={c} />);
     const dlg = screen.getByRole('dialog'); expect(within(dlg).getByText(/Course frozen/)).toBeInTheDocument(); expect(within(dlg).getAllByText('What is 7 × 8?').length).toBeGreaterThan(0);
+    // the 1.5s pre-read lock keeps answers closed at first; wait for it to lift
+    await waitFor(() => expect(within(dlg).getByRole('textbox')).toBeEnabled(), { timeout: 3000 });
     fireEvent.change(within(dlg).getByRole('textbox'), { target: { value: '56' } });
     await act(async () => { fireEvent.click(within(dlg).getByRole('button', { name: /Submit answer/ })); });
     expect(c.answer).toHaveBeenCalledTimes(1); expect(c.answer).toHaveBeenCalledWith(expect.any(String), expect.anything());

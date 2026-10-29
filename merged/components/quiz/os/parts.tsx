@@ -177,7 +177,7 @@ export function BarrierQuestion({ snap, now, local, onSubmit, submitted }: { sna
         </header>
         {snap.tip && <p className="os-tip"><b>Help:</b> {snap.tip}</p>}
         {submitted ? <div className="os-submitted" role="status"><p className="big">✓ Answer sent</p><p>{local ? 'Nice.' : `The course stays frozen until everyone has answered or time is up. ${b.answered} of ${b.eligible} in your squad have answered.`}</p></div>
-          : <QuestionPlay question={q as unknown as PlayQuestion} onSubmit={onSubmit} submitLabel="Submit answer" readAloud />}
+          : <QuestionPlay liveRound question={q as unknown as PlayQuestion} onSubmit={onSubmit} submitLabel="Submit answer" readAloud />}
         <p className="os-note">Every teammate gets the same reading time. Speed earns nothing. Only your own answer counts toward your squad’s points.</p>
       </div>
     </div>

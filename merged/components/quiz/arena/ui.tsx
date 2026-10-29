@@ -203,7 +203,7 @@ export function QuestionBreak({ snap, now, local, onSubmit, submitted }: { snap:
         </header>
         {snap.tip && <p className="ar-tip"><b>Help:</b> {snap.tip}</p>}
         {submitted ? <div className="ar-submitted" role="status"><p className="big">✓ Answer sent</p><p>{local ? 'Nice. Classmates are answering.' : `The arena stays frozen until your team has answered or time is up. ${b.answered} of ${b.eligible} on your team have answered.`}</p></div>
-          : <QuestionPlay question={q as unknown as PlayQuestion} onSubmit={onSubmit} submitLabel="Submit answer" readAloud />}
+          : <QuestionPlay liveRound question={q as unknown as PlayQuestion} onSubmit={onSubmit} submitLabel="Submit answer" readAloud />}
         <p className="ar-note">Every teammate gets the same time. Speed earns nothing. Your team’s points are the average of everyone’s answer.</p>
       </div>
     </div>

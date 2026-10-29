@@ -102,7 +102,7 @@ export function QuestionPanel({ conn, readAloud }: { conn: SwarmConnection; read
       <div className="sw-qhead"><h2 id="sw-q-h">{reveal ? 'Answer' : `Question ${q.index + 1} of ${q.total}`}</h2>
         {!reveal && left !== null && <span className={`sw-timer ${left < 8000 ? 'low' : ''}`} role="timer" aria-label={`${Math.ceil(left / 1000)} seconds left`}>{fmtClock(left)}</span>}
         <span className="sw-note" data-testid="answered-count">{got} of {total} on your team answered</span></div>
-      {!reveal && !me?.answered && <QuestionPlay key={q.w} question={pq} onSubmit={submit} readAloud={readAloud} disabled={!!m.paused || (left !== null && left <= 0)} onHint={(pq as A).hasHint ? async () => { const h = await conn.hint(q.w); setInfo(h ?? ''); return h; } : undefined} />}
+      {!reveal && !me?.answered && <QuestionPlay liveRound key={q.w} question={pq} onSubmit={submit} readAloud={readAloud} disabled={!!m.paused || (left !== null && left <= 0)} onHint={(pq as A).hasHint ? async () => { const h = await conn.hint(q.w); setInfo(h ?? ''); return h; } : undefined} />}
       {!reveal && me?.answered && <p className="sw-ok" role="status" data-testid="locked">Answer locked in. Waiting for teammates — the arena stays frozen until everyone answers or time ends.</p>}
       {!reveal && info && <p className="sw-note">Hint: {info}</p>}
       {err && <p className="sw-err" role="alert">{err}</p>}
