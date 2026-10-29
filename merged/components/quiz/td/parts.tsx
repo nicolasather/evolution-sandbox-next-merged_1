@@ -176,7 +176,7 @@ export function QuestionOverlay({ snap, question, now, onSubmit, submitted, pers
         {submitted ? (
           <div className="td-submitted" role="status"><p className="big">✓ Submitted</p><p>{personal ? 'Your answer is in.' : `Battle is frozen until everyone has answered or the time is up. ${counts}.`}</p></div>
         ) : (
-          <QuestionPlay question={question as unknown as PlayQuestion} onSubmit={onSubmit} submitLabel="Submit answer" readAloud={snap.config.readAloud || true} />
+          <QuestionPlay liveRound question={question as unknown as PlayQuestion} onSubmit={onSubmit} submitLabel="Submit answer" readAloud={snap.config.readAloud || true} />
         )}
         <p className="td-note">{personal ? 'Towers keep defending while you answer. Accuracy matters, not speed.' : 'Every teammate gets the same reading time. Speed earns nothing.'}</p>
         {personal && onClose && submitted && <button type="button" className="td-btn" onClick={onClose}>Back to the board</button>}

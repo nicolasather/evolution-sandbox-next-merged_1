@@ -1,0 +1,105 @@
+/* Quiz Studio upgrades: hub tilt cards, dock, keycaps, focus-loss curtain, rank podium, sliding league pill, radar drawer.
+   Animations use only transform and opacity. Reduced motion is honoured via the dock and the OS setting. */
+
+/* ---- 48px touch targets ---- */
+.qz .btn,
+.qz .choice,
+.qz .rk-tab,
+.qz .qz-dock-btn,
+.qz .rk-sticky button,
+.qz .rk-drawer-close { min-height: 48px; min-width: 48px; }
+
+/* ---- Dock ---- */
+.qz-dock { position: fixed; top: 12px; right: 12px; z-index: 60; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; max-width: calc(100vw - 24px); }
+.qz-dock-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(15, 23, 42, 0.92); color: #f8fafc; border: 2px solid #475569; border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
+.qz-dock-btn[aria-pressed='true'] { border-color: #facc15; background: #2a2205; }
+.qz-dock-btn:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+
+/* ---- Hub: 3D tilt, specular highlight, pills, staggered entrance ---- */
+.qz .qz-mode { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); transform-style: preserve-3d; }
+.qz .qz-mode::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.16), transparent 60%); opacity: var(--spec, 0); transition: opacity 200ms ease-out; }
+.qz .qz-mode:hover::after { --spec: 1; opacity: 1; }
+.qz .qz-mode-enter { animation: qzEnter 480ms cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+@keyframes qzEnter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.qz .qz-pills { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.qz .qz-pills li { border: 2px solid currentColor; border-radius: 999px; padding: 2px 10px; font-size: 0.8rem; font-weight: 700; }
+
+/* ---- Question keycaps and hotkey depression ---- */
+.qz .qz-keycap { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-right: 10px; border: 2px solid currentColor; border-bottom-width: 4px; border-radius: 6px; font-weight: 800; flex: 0 0 auto; }
+.qz .choice { transition: transform 90ms ease-out; }
+.qz .choice[data-pressed='true'] { transform: translateY(3px); }
+.qz .qz-protect .prompt,
+.qz .qz-protect .choice { user-select: none; -webkit-user-select: none; }
+.qz .qz-toast { position: fixed; left: 50%; bottom: 72px; transform: translateX(-50%); z-index: 70; background: #7f1d1d; color: #fff; border-radius: 10px; padding: 10px 16px; font-weight: 700; }
+.qz .qz-toast-shake { animation: qzShake 400ms ease-in-out; }
+@keyframes qzShake { 0%, 100% { transform: translateX(-50%); } 25% { transform: translateX(calc(-50% - 6px)); } 75% { transform: translateX(calc(-50% + 6px)); } }
+
+/* ---- Focus-loss curtain (live rounds) ---- */
+.qz .qz-curtain { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 24px; background: rgba(127, 29, 29, 0.9); backdrop-filter: blur(8px); color: #fff; text-align: center; }
+.qz .qz-curtain p { margin: 0; font-size: clamp(1.25rem, 3vw, 2rem); font-weight: 800; }
+.qz .qz-curtain small { display: block; margin-top: 8px; font-size: 1rem; opacity: 0.9; }
+
+/* ---- Projector-friendly fluid type for stems and options ---- */
+[data-projector='1'] .prompt { font-size: clamp(1.75rem, 3.2vw, 3.5rem); }
+[data-projector='1'] .choice { font-size: clamp(1.25rem, 2.2vw, 2.25rem); }
+
+/* ---- Rank board ---- */
+.qz .rk-league { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 2px solid #334155; border-radius: 14px; padding: 4px; width: min(100%, 720px); margin-bottom: 12px; }
+.qz .rk-league .rk-thumb { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 10px; background: #2a2205; border: 2px solid #facc15; transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1); }
+.qz .rk-league .rk-tab { position: relative; z-index: 1; border: 0; background: transparent; }
+.qz .rk-league .rk-tab[aria-selected='true'] { background: transparent; }
+.qz .rk-podium .rk-pillar { animation: qzRise 600ms cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+.qz .rk-podium .rk-p2 { animation-delay: 0ms; }
+.qz .rk-podium .rk-p3 { animation-delay: 120ms; }
+.qz .rk-podium .rk-p1 { animation-delay: 240ms; }
+@keyframes qzRise { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+.qz .rk-verified { display: inline-block; margin-left: 6px; border: 2px solid #34d399; color: #6ee7b7; border-radius: 999px; padding: 0 8px; font-size: 0.75rem; font-weight: 800; }
+.qz .rk-sort { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.qz .rk-sticky { position: fixed; left: 50%; bottom: 12px; transform: translateX(-50%); z-index: 65; width: min(calc(100% - 24px), 680px); display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 10px 14px; border-radius: 14px; background: rgba(15, 23, 42, 0.78); backdrop-filter: blur(12px); border: 2px solid #facc15; color: #f8fafc; }
+.qz .rk-drawer-wrap { position: fixed; inset: 0; z-index: 80; display: flex; justify-content: flex-end; background: rgba(2, 6, 23, 0.55); }
+.qz .rk-drawer { width: min(100%, 380px); height: 100%; overflow-y: auto; background: #0f172a; border-left: 3px solid #facc15; padding: 18px; color: #f8fafc; animation: qzSlide 320ms cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+@keyframes qzSlide { from { transform: translateX(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+.qz .rk-radar polygon.rk-shape { fill: rgba(250, 204, 21, 0.25); stroke: #facc15; stroke-width: 2; transition: points 400ms cubic-bezier(0.16, 1, 0.3, 1); }
+.qz .rk-radar text { fill: #e2e8f0; font-size: 11px; font-weight: 700; }
+
+/* ---- Calm the quiz when motion is reduced (dock or OS setting) ---- */
+html[data-qz-motion='reduce'] .qz *,
+html[data-qz-motion='reduce'] .qz *::before,
+html[data-qz-motion='reduce'] .qz *::after {
+  animation-duration: 150ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 150ms !important;
+}
+html[data-qz-motion='reduce'] .qz .qz-mode { transform: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-qz-motion]) .qz *,
+  html:not([data-qz-motion]) .qz *::before,
+  html:not([data-qz-motion]) .qz *::after { animation-duration: 150ms !important; animation-delay: 0ms !important; transition-duration: 150ms !important; }
+}
+
+/* Keep the sticky rank bar and dock clear of the bottom nav on phones */
+@media (max-width: 640px) {
+  .qz .rk-sticky { bottom: 64px; }
+  .qz-dock { top: auto; bottom: 72px; right: 8px; }
+  .qz-dock-btn { font-size: 0.75rem; padding: 6px 9px; }
+}
+
+/* ---- Question timer: 3-zone bar, heartbeat in the last 5 seconds, leading-edge spark (GPU transform only) ---- */
+.qz .qz-timer { margin: 6px 0 10px; }
+.qz .qz-timer-track { position: relative; height: 12px; background: var(--qz-field); border-radius: 6px; overflow: visible; }
+.qz .qz-timer-fill { position: absolute; inset: 0; border-radius: 6px; transform-origin: left center; transition: transform 250ms linear, background-color 400ms ease; will-change: transform; }
+.qz .qz-timer-track.qz-heartbeat { animation: qzBeat 500ms ease-in-out infinite; }
+@keyframes qzBeat { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.45); } }
+.qz .qz-spark { position: absolute; top: 50%; left: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; box-shadow: 0 0 12px currentColor, 0 0 4px #fff; transition: transform 250ms linear; animation: qzSpark 900ms ease-out infinite; }
+@keyframes qzSpark { 0% { opacity: 1; scale: 1; } 100% { opacity: 0; scale: 2.2; } }
+
+/* ---- Pre-read curtain: word-by-word stem, tension gauge, answers spring in after 1.5s ---- */
+.qz .qz-word { display: inline-block; animation: qzWord 260ms cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+@keyframes qzWord { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.qz .qz-tension { display: grid; gap: 6px; margin: 6px 0 10px; font-weight: 700; }
+.qz .qz-tension-track { height: 8px; border-radius: 4px; background: var(--qz-field); overflow: hidden; }
+.qz .qz-tension-fill { height: 100%; width: 100%; background: #facc15; transform-origin: left center; transform: scaleX(0); animation: qzTension 1500ms linear forwards; }
+@keyframes qzTension { to { transform: scaleX(1); } }
+.qz .answers { transition: opacity 320ms ease-out, transform 420ms cubic-bezier(0.16, 1, 0.3, 1); }
+.qz .answers[data-reading='true'] { opacity: 0; transform: translateY(12px); }

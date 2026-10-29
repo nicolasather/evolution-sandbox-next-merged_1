@@ -6,6 +6,9 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { api, readToken } from '@/lib/quiz/client';
 import QuestionPlay from './QuestionPlay';
+import TimerBar from './TimerBar';
+import StreakForge, { FORGE_START, nextForge, type ForgeState } from './StreakForge';
+import { buzz } from './useQuizMotion';
 import AnswerView from './AnswerView';
 import { fmtClock, useRoomState, useTick } from './useRoomState';
 import { modifierLabels, type Modifier } from '@/lib/quiz/types';
@@ -26,6 +29,7 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
   const [error, setError] = useState('');
   const [wager, setWager] = useState(0);
   const [flash, setFlash] = useState('');
+  const [forge, setForge] = useState<ForgeState>(FORGE_START);
   const [earned, setEarned] = useState<{ id: string; name: string }[] | null>(null);
   const [needsAccount, setNeedsAccount] = useState(false);
   useTick(250);
@@ -73,6 +77,8 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
       const d = await api<{ correct: boolean; awarded: number }>(`/api/quiz/rooms/${roomId}/submit`, { method: 'POST', json: { roomQuestionId: s.question.id, token, wager, response } });
       setFlash(set.showPoints ? `${d.correct ? 'Correct.' : d.awarded > 0 ? 'Partly correct.' : 'Not correct.'} ${d.awarded >= 0 ? '+' : ''}${d.awarded} points` : d.correct ? 'Correct.' : 'Answer recorded.');
       setWager(0);
+      setForge((f) => nextForge(f, d.correct));
+      buzz(d.correct ? 30 : 80);
       await refresh();
     } catch (e) { setError((e as Error).message); throw e; } finally { setBusy(false); }
   }
@@ -97,6 +103,7 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
         <div className="row">
           {matchLeft !== null && s.status === 'active' && set.timerEnabled && <span className={`timer ${matchLeft < 30 ? 'low' : ''}`} aria-label="Match time left">Match {fmtClock(matchLeft)}</span>}
           {me && set.showPoints && <span className="timer" aria-label="Your points">{me.points} pts</span>}
+          <StreakForge state={forge} />
           <button className="btn small ghost" aria-pressed={calm} onClick={toggleCalm} title="Fewer animations and less to look at">Calm mode</button>
         </div>
       </header>
@@ -117,15 +124,13 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
             {qLeft !== null && !answered && <span className={`timer ${qLeft < 8 ? 'low' : ''}`} aria-label="Question time left">{fmtClock(qLeft)}</span>}
           </div>
           <div role="progressbar" aria-labelledby="qprogress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress} style={{ height: 8, background: 'var(--qz-field)', borderRadius: 4, overflow: 'hidden' }}><div style={{ width: `${progress}%`, height: '100%', background: 'var(--qz-cyan)', transition: calm ? 'none' : 'width .3s' }} /></div>
-          {qLeft !== null && !answered && limit && (
-            <div aria-hidden style={{ height: 10, background: 'var(--qz-field)', borderRadius: 5, overflow: 'hidden' }}><div style={{ width: `${Math.max(0, Math.min(100, (qLeft / limit) * 100))}%`, height: '100%', background: qLeft < 8 ? 'var(--qz-coral)' : 'var(--qz-yellow)' }} /></div>
-          )}
+          {qLeft !== null && !answered && limit && <TimerBar seconds={qLeft} limit={limit} />}
           <p className="note" role="status" aria-live="polite" data-testid="lock-state">{lock}{s.flow === 'round_robin' ? ' It is a shared turn.' : ''}</p>
           {mods.includes('secret_wager') && !answered && (
             <label>Secret wager (0–{me?.points ?? 0} points). Win it if you’re right, lose it if you’re wrong.
               <input type="number" min={0} max={me?.points ?? 0} value={wager} onChange={(e) => setWager(Math.max(0, Math.min(me?.points ?? 0, Number(e.target.value) || 0)))} /></label>
           )}
-          <QuestionPlay question={s.question} busy={busy} readAloud={cfg.readAloud !== false} onHint={hint} disabled={s.paused || s.revealed || !!answered || (qLeft !== null && qLeft <= 0)} onSubmit={submit} />
+          <QuestionPlay liveRound question={s.question} busy={busy} readAloud={cfg.readAloud !== false} onHint={hint} disabled={s.paused || s.revealed || !!answered || (qLeft !== null && qLeft <= 0)} onSubmit={submit} />
           {solo && mods.includes('potluck') && <div><button className="btn small ghost" disabled={busy || s.paused} onClick={potluck}>{modifierLabels.potluck} (random −200…+200)</button></div>}
           {answered && s.flow !== 'independent' && <p className="success" role="status">Your answer is locked in. Waiting for the host to continue…</p>}
           {s.revealed && s.question.answerKey && <AnswerView kind={s.question.kind} payload={s.question.payload} answerKey={s.question.answerKey} />}

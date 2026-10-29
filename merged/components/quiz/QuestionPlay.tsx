@@ -1,16 +1,24 @@
 'use client';
 import type { Loose } from '@/lib/quiz/loose';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type SyntheticEvent } from 'react';
 import { kindLabels, type QuestionKind } from '@/lib/quiz/types';
 import MediaView from './MediaView';
 
 export type PlayQuestion = { id: string; kind: QuestionKind; prompt: string; payload: Loose; base_points: number };
 
-/** Renders one question in any of the five formats and returns the player's response. It never knows the answer. */
-export default function QuestionPlay({ question: q, onSubmit, busy = false, disabled = false, submitLabel = 'Submit answer', onHint, readAloud = true }: {
+const KEYCAP_LETTERS = 'ABCDEFGH';
+const STRIKE_LIMIT = 3;
+
+/** Renders one question in any of the five formats and returns the player's response. It never knows the answer.
+ *  `liveRound` turns on the live-round protections: copy/context-menu guard and the focus-loss curtain. */
+export default function QuestionPlay({ question: q, onSubmit, busy = false, disabled = false, submitLabel = 'Submit answer', onHint, readAloud = true, liveRound = false, onFocusLost }: {
   question: PlayQuestion; onSubmit: (response: unknown) => Promise<unknown>; busy?: boolean; disabled?: boolean; submitLabel?: string;
   /** Asks the server for this question's hint. Hints are never part of the question itself. */
   onHint?: () => Promise<string | null>; readAloud?: boolean;
+  /** Live rounds only: blocks copy and context menus on the question, and shows a curtain when the player leaves the window. */
+  liveRound?: boolean;
+  /** Called with the running strike count each time the player leaves the game window during a live round. */
+  onFocusLost?: (strikes: number) => void;
 }) {
   const p = q.payload;
   const [choice, setChoice] = useState('');
@@ -24,6 +32,86 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
   const [cells, setCells] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
   const leftIds: string[] = useMemo(() => (q.kind === 'connection_rush' ? p.left.map((a: Loose) => a.id) : []), [q.kind, p]);
+  // Pre-read curtain: answers stay locked for 1.5s on each new question so nobody clicks in a panic.
+  const [reading, setReading] = useState(true);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- start the 1.5s pre-read window for each new question
+    setReading(true);
+    const t = setTimeout(() => setReading(false), 1500);
+    return () => clearTimeout(t);
+  }, [q.id]);
+  const off = disabled || sent || reading;
+  const [pressed, setPressed] = useState<string | null>(null);
+  const [toast, setToast] = useState('');
+  const [lost, setLost] = useState(false);
+  const [strikes, setStrikes] = useState(0);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const returnTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const guarded = liveRound && !disabled && !sent;
+
+  function flashToast(text: string) {
+    setToast(text);
+    clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(''), 2200);
+  }
+
+  // Keyboard hotkeys for single-choice questions: 1-4 or A-D pick an option; the matching keycap depresses.
+  useEffect(() => {
+    if (q.kind !== 'multiple_choice' || off) return undefined;
+    const opts: Loose[] = p.options;
+    const onKey = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      const k = e.key.toLowerCase();
+      const idx = /^[1-9]$/.test(k) ? Number(k) - 1 : KEYCAP_LETTERS.toLowerCase().indexOf(k);
+      if (idx < 0 || idx >= opts.length) return;
+      e.preventDefault();
+      const id = opts[idx].id as string;
+      setPressed(id);
+      setTimeout(() => setPressed((cur) => (cur === id ? null : cur)), 140);
+      if (p.multi) setMulti((m) => (m.includes(id) ? m.filter((x) => x !== id) : [...m, id]));
+      else setChoice(id);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+    // `off` and the payload shape are the only inputs; `p` is stable for one question
+  }, [q.kind, p, off]);
+
+  // Live-round focus guard: leaving the window shows the curtain at once; returning waits a 1.5s cooldown.
+  useEffect(() => {
+    if (!guarded) return undefined;
+    const leave = () => {
+      clearTimeout(returnTimer.current);
+      setLost(true);
+      setStrikes((s) => {
+        const next = s + 1;
+        onFocusLost?.(next);
+        return next;
+      });
+    };
+    const back = () => {
+      if (document.visibilityState !== 'visible') return;
+      clearTimeout(returnTimer.current);
+      returnTimer.current = setTimeout(() => setLost(false), 1500);
+    };
+    const onVis = () => (document.visibilityState === 'hidden' ? leave() : back());
+    document.addEventListener('visibilitychange', onVis);
+    window.addEventListener('blur', leave);
+    window.addEventListener('focus', back);
+    return () => {
+      document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('blur', leave);
+      window.removeEventListener('focus', back);
+      clearTimeout(returnTimer.current);
+    };
+  }, [guarded, onFocusLost]);
+
+  function guardCopy(e: SyntheticEvent) {
+    if (!guarded) return;
+    e.preventDefault();
+    flashToast('Copy Protected During Live Round');
+  }
 
   const response = (): unknown => {
     switch (q.kind) {
@@ -46,7 +134,6 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
     setSent(true);
     try { await onSubmit(response()); } catch { setSent(false); } // the parent shows the error; allow another try
   }
-  const off = disabled || sent;
   const spoken = () => [q.prompt, ...(q.kind === 'multiple_choice' ? p.options.map((o: Loose, i: number) => `${String.fromCharCode(65 + i)}. ${o.text}`) : q.kind === 'truth_hunt' ? p.statements.map((x: Loose) => x.text) : [])].join('. ');
   function speak() {
     if (!canSpeak) return;
@@ -57,10 +144,36 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
   const usedRights = new Set(Object.values(pairs));
 
   return (
-    <div className="stack">
+    <div
+      className={`stack${liveRound ? ' qz-protect' : ''}`}
+      onCopy={guardCopy}
+      onCut={guardCopy}
+      onContextMenu={guardCopy}
+    >
+      {guarded && lost && (
+        <div className="qz-curtain" role="alertdialog" aria-modal="true" aria-labelledby="qz-curtain-title">
+          <div>
+            <p id="qz-curtain-title">FOCUS LOST — Return to Game Window</p>
+            <small>Strike {Math.min(strikes, STRIKE_LIMIT)}/{STRIKE_LIMIT}. Answers unlock 1.5 seconds after you return.</small>
+          </div>
+        </div>
+      )}
+      {toast && <p className="qz-toast" role="status">{toast}</p>}
       <div>
         <p className="eyebrow">{kindLabels[q.kind]} · {q.base_points} points</p>
-        <p className="prompt">{q.prompt}</p>
+        <p className="prompt">
+          {reading
+            ? q.prompt.split(/\s+/).filter(Boolean).map((w, i) => (
+              <span key={`${i}-${w}`} className="qz-word" style={{ animationDelay: `${i * 18}ms` }}>{w} </span>
+            ))
+            : q.prompt}
+        </p>
+        {reading && (
+          <div className="qz-tension" role="status" aria-live="polite">
+            <span>Read carefully… answers unlock in a moment</span>
+            <div className="qz-tension-track" aria-hidden="true"><div className="qz-tension-fill" /></div>
+          </div>
+        )}
         {p.media && <MediaView media={p.media} />}
         {readAloud && (
           <div className="row">
@@ -70,12 +183,13 @@ export default function QuestionPlay({ question: q, onSubmit, busy = false, disa
         )}
       </div>
       {q.kind === 'multiple_choice' && (
-        <div className="answers" role="radiogroup" aria-label="Answer options">
+        <div className="answers" data-reading={reading} role="radiogroup" aria-label="Answer options">
           {p.multi && <p className="note">Choose every correct option.</p>}
           {p.options.map((o: Loose) => {
             const on = p.multi ? multi.includes(o.id) : choice === o.id;
             return (
-              <button key={o.id} role={p.multi ? 'checkbox' : 'radio'} aria-checked={on} className="choice" data-selected={on} onClick={() => (p.multi ? setMulti((m) => (m.includes(o.id) ? m.filter((x) => x !== o.id) : [...m, o.id])) : setChoice(o.id))} disabled={off}>
+              <button key={o.id} role={p.multi ? 'checkbox' : 'radio'} aria-checked={on} className="choice" data-selected={on} data-pressed={pressed === o.id}onClick={() => (p.multi ? setMulti((m) => (m.includes(o.id) ? m.filter((x) => x !== o.id) : [...m, o.id])) : setChoice(o.id))} disabled={off}>
+                <span className="qz-keycap" aria-hidden="true">{KEYCAP_LETTERS[p.options.indexOf(o)] ?? ''}</span>
                 {o.image && <MediaView media={o.image} compact />}{o.text}
               </button>
             );
