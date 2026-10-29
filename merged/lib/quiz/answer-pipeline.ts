@@ -72,6 +72,9 @@ export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; al
   const dup = await db.from('submissions').select('id', { count: 'exact', head: true }).eq('room_question_id', q.id).eq('actor_type', actorType).eq('actor_id', actorId);
   if ((dup.count ?? 0) > 0) throw fail(2, 'This question has already been answered', 409);
   if (v.wager > 0 && !room.config.modifiers.includes('secret_wager')) throw fail(2, 'Wagers are not enabled in this game');
+  // a frozen score still records the answer, but earns nothing and cannot wager (migration 012; before it is applied the column reads as not frozen)
+  const frozen = actorType === 'player' && (await db.from('players').select('score_frozen').eq('id', actorId).maybeSingle()).data?.score_frozen === true;
+  const wager = frozen ? 0 : v.wager;
 
   // ── STAGE 3 · Validate the response structure and ids ─────────────────────────────────────────
   const graded = questionToGrader(q);
@@ -94,8 +97,8 @@ export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; al
   const elapsedMs = opened ? Math.max(0, nowMs - new Date(opened).getTime()) : undefined;
   const award = manual ? { base: correct ? q.base_points : 0, bonus: 0 }
     : computeAward({ basePoints: q.base_points, payload: q.payload as never }, grade, { questionSeconds: cfg.questionSeconds, hideSpeedBonus: cfg.hideSpeedBonus, elapsedMs });
-  const baseAward = award.base;
-  const bonus = Math.min(award.bonus, q.base_points);
+  const baseAward = frozen ? 0 : award.base;
+  const bonus = frozen ? 0 : Math.min(award.bonus, q.base_points);
   const partial = !correct && baseAward > 0;
 
   // ── STAGE 5 · Atomic commit + audit (row-locked SQL function, unique submission, bounded delta) ─
@@ -104,7 +107,7 @@ export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; al
   const { data, error } = await serviceDB().rpc('commit_answer_v2', {
     p_room: room.id, p_question: q.id, p_actor_type: actorType, p_actor: actorId, p_response: response,
     p_correct: correct, p_base_award: baseAward, p_bonus: bonus, p_partial: partial,
-    p_wager: v.wager, p_manual: manual,
+    p_wager: wager, p_manual: manual,
   });
   if (!error) return data as Result;
   // Migration 004 not applied yet: fall back to the original function for plain right/wrong answers so the app keeps working.
@@ -113,7 +116,7 @@ export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; al
     try {
       return await rpc<Result>('commit_answer', {
         p_room: room.id, p_question: q.id, p_actor_type: actorType, p_actor: actorId,
-        p_response: response, p_correct: correct, p_base_award: baseAward, p_wager: v.wager, p_manual: manual,
+        p_response: response, p_correct: correct, p_base_award: baseAward, p_wager: wager, p_manual: manual,
       });
     } catch (e) { throw e instanceof AppError ? fail(5, e.message, e.status) : e; }
   }
@@ -122,7 +125,7 @@ export async function submitAnswer(input: unknown, opts: { allowTD?: boolean; al
     try {
       return await rpc<Result>('commit_answer', {
         p_room: room.id, p_question: q.id, p_actor_type: actorType, p_actor: actorId,
-        p_response: response, p_correct: correct, p_base_award: correct ? q.base_points : 0, p_wager: v.wager, p_manual: manual,
+        p_response: response, p_correct: correct, p_base_award: correct && !frozen ? q.base_points : 0, p_wager: wager, p_manual: manual,
       });
     } catch (e) { throw e instanceof AppError ? fail(5, e.message, e.status) : e; }
   }

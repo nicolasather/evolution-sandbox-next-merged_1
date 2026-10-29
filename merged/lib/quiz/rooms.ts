@@ -100,7 +100,7 @@ export async function roomPublicState(room: Room, viewer: Viewer, opts: { peek?:
   const db = serviceDB();
   // `status` and `identity` come from migration 004; fall back to the original columns when it has not been applied.
   const loadPlayers = async () => {
-    const rich = await db.from('players').select('id,display_name,points,cursor_index,question_opened_at,status,identity').eq('room_id', room.id).order('joined_at');
+    const rich = await db.from('players').select('id,display_name,points,cursor_index,question_opened_at,status,identity,shadow_muted,warnings,score_frozen').eq('room_id', room.id).order('joined_at');
     if (!rich.error) return rich;
     return db.from('players').select('id,display_name,points,cursor_index,question_opened_at').eq('room_id', room.id).order('joined_at');
   };
@@ -111,7 +111,7 @@ export async function roomPublicState(room: Room, viewer: Viewer, opts: { peek?:
   ]);
   if (countRes.error || teamsRes.error || playersRes.error) throw new AppError('Could not load room state', 500);
   const total = countRes.count ?? 0;
-  type P = { id: string; display_name: string; points: number; cursor_index: number; question_opened_at: string | null; status?: string; identity?: Record<string, unknown> };
+  type P = { id: string; display_name: string; points: number; cursor_index: number; question_opened_at: string | null; status?: string; identity?: Record<string, unknown>; shadow_muted?: boolean; warnings?: number; score_frozen?: boolean };
   const players = (playersRes.data ?? []) as unknown as P[];
   const statusOf = (p: P) => p.status ?? 'active';
   const self = viewer.role === 'player' ? players.find((p) => p.id === viewer.playerId) : undefined;
@@ -172,7 +172,8 @@ export async function roomPublicState(room: Room, viewer: Viewer, opts: { peek?:
     question,
     teams: teamsRes.data ?? [],
     // removed and banned players disappear for everyone; players awaiting approval are visible to the host only
-    players: players.filter((p) => ['active'].includes(statusOf(p)) || p.id === self?.id).map((p) => ({ id: p.id, display_name: p.display_name, points: p.points, cursor_index: p.cursor_index, identity: room.config?.access?.hideIdentity ? {} : (p.identity ?? {}) })),
+    // a shadow-muted player keeps playing and sees themselves, but other players and the projector never see them; the host still sees them to moderate
+    players: players.filter((p) => (['active'].includes(statusOf(p)) && (!p.shadow_muted || viewer.role === 'host')) || p.id === self?.id).map((p) => ({ id: p.id, display_name: p.display_name, points: p.points, cursor_index: p.cursor_index, identity: room.config?.access?.hideIdentity ? {} : (p.identity ?? {}), ...(viewer.role === 'host' ? { warnings: p.warnings ?? 0, score_frozen: !!p.score_frozen, shadow_muted: !!p.shadow_muted } : {}) })),
     pendingPlayers: viewer.role === 'host' ? players.filter((p) => statusOf(p) === 'pending').map((p) => ({ id: p.id, display_name: p.display_name })) : [],
     selfStatus: self ? statusOf(self) : null,
     aggregate,

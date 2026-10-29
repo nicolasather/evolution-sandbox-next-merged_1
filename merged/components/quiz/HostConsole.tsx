@@ -11,6 +11,8 @@ import AnswerView from './AnswerView';
 import { fmtClock, useRoomState, useTick } from './useRoomState';
 import { modifierDescriptions, modifierLabels, type Modifier } from '@/lib/quiz/types';
 import { iconSvg } from '@/lib/quiz/cosmetics/catalog';
+import TeacherScoreOverride from './TeacherScoreOverride';
+import { OVERRIDE_START, type OverrideState } from '@/lib/quiz/score-override';
 
 const INSTANT: Modifier[] = ['lose_all', 'go_to_first', 'steal_points', 'give_points', 'swap_points', 'potluck'];
 const NEEDS_OTHER: Modifier[] = ['steal_points', 'give_points', 'swap_points'];
@@ -20,6 +22,22 @@ const TARGET_LABEL: Record<string, [string, string]> = {
   give_points: ['Giver (loses points)', 'Receiver (gains points)'],
   swap_points: ['First', 'Second'],
 };
+
+/** Saves one audited points correction per actor. Returns an error message, or '' when every save went through. */
+async function saveAdjust(roomId: string, actorType: 'player' | 'team', ids: string[], delta: number, reason: string): Promise<string> {
+  try {
+    for (const actorId of ids) await api(`/api/quiz/rooms/${roomId}/adjust`, { method: 'POST', json: { actorType, actorId, delta, reason } });
+    return '';
+  } catch (e) { return e instanceof Error ? e.message : 'Could not save that adjustment.'; }
+}
+
+/** Quick score bar with its own log state. Points are saved on the server; the log here is this session's view. */
+function ScoreAdjust({ students, persist }: { students: { id: string; name: string; points: number }[]; persist: (ids: string[], delta: number, reason: string) => Promise<boolean> }) {
+  const [value, setValue] = useState<OverrideState>(OVERRIDE_START);
+  // the server total already includes every saved adjustment, so this session's adjustments are taken out to get the earned part back
+  const rows = students.map((s) => ({ id: s.id, name: s.name, earned: s.points - (value.adjust[s.id] ?? 0) }));
+  return <TeacherScoreOverride students={rows} value={value} onChange={setValue} persist={persist} />;
+}
 
 function HostConsoleInner({ roomId, projectorOnly = false }: { roomId: string; projectorOnly?: boolean }) {
   const [peek, setPeek] = useState(false);
@@ -105,6 +123,15 @@ function HostConsoleInner({ roomId, projectorOnly = false }: { roomId: string; p
         {s.flow === 'independent' && s.status === 'active' && <p className="note" style={{ marginTop: 10 }}>Independent flow: each player progresses on their own. You control the match (pause, end).</p>}
       </section>}
 
+      {!projectorOnly && (
+        <section className="panel stack" aria-labelledby="adj-h"><h2 id="adj-h">Score adjustments</h2>
+          <ScoreAdjust
+            students={actors.map((a: Loose) => ({ id: a.id, name: a.display_name, points: a.points }))}
+            persist={async (ids, delta, why) => { const err = await saveAdjust(roomId, classroom ? 'team' : 'player', ids, delta, why); setError(err); void refresh(); return !err; }}
+          />
+        </section>
+      )}
+
       {!projectorOnly && !classroom && (s.pendingPlayers?.length ?? 0) > 0 && (
         <section className="panel stack" aria-labelledby="pend-h"><h2 id="pend-h">Waiting to join ({s.pendingPlayers.length})</h2>
           <ul style={{ listStyle: 'none', padding: 0 }}>{s.pendingPlayers.map((p: Loose) => (
@@ -121,6 +148,9 @@ function HostConsoleInner({ roomId, projectorOnly = false }: { roomId: string; p
               <strong>{a.identity?.icon && <span aria-hidden style={{ display: 'inline-block', width: 26, height: 26, verticalAlign: 'middle', marginRight: 6 }} dangerouslySetInnerHTML={{ __html: iconSvg(a.identity.icon, { size: 26 }) }} />}{a.display_name}</strong><span className="pts">{a.points}</span>
               {!projector && !classroom && s.status !== 'ended' && (
                 <span className="row" style={{ gap: 4 }}>
+                  <button className="btn small ghost" aria-label={`Warn ${a.display_name}`} onClick={() => run(() => api(`/api/quiz/rooms/${roomId}/moderate`, { method: 'POST', json: { playerId: a.id, action: 'warn' } }), () => `${a.display_name} warned.`).catch(() => {})}>Warn</button>
+                  <button className="btn small ghost" aria-pressed={!!a.score_frozen} aria-label={`${a.score_frozen ? 'Unfreeze' : 'Freeze'} score of ${a.display_name}`} onClick={() => run(() => api(`/api/quiz/rooms/${roomId}/moderate`, { method: 'POST', json: { playerId: a.id, action: 'freeze', on: !a.score_frozen } }), () => `${a.display_name}: score ${a.score_frozen ? 'unfrozen' : 'frozen'}.`).catch(() => {})}>{a.score_frozen ? 'Unfreeze' : 'Freeze score'}</button>
+                  <button className="btn small ghost" aria-pressed={!!a.shadow_muted} aria-label={`${a.shadow_muted ? 'Unshadow' : 'Shadow-mute'} ${a.display_name}`} onClick={() => run(() => api(`/api/quiz/rooms/${roomId}/moderate`, { method: 'POST', json: { playerId: a.id, action: 'shadow', on: !a.shadow_muted } }), () => `${a.display_name}: ${a.shadow_muted ? 'visible again' : 'shadow-muted (hidden from others)'}.`).catch(() => {})}>{a.shadow_muted ? 'Unshadow' : 'Shadow-mute'}</button>
                   <button className="btn small ghost" aria-label={`Remove ${a.display_name}`} onClick={() => { if (confirm(`Remove ${a.display_name} from this game?`)) void run(() => api(`/api/quiz/rooms/${roomId}/moderate`, { method: 'POST', json: { playerId: a.id, action: 'remove' } }), () => `${a.display_name} removed.`).catch(() => {}); }}>Remove</button>
                   <button className="btn small danger" aria-label={`Ban ${a.display_name}`} onClick={() => { if (confirm(`Ban ${a.display_name}? They cannot rejoin this room.`)) void run(() => api(`/api/quiz/rooms/${roomId}/moderate`, { method: 'POST', json: { playerId: a.id, action: 'ban' } }), () => `${a.display_name} banned.`).catch(() => {}); }}>Ban</button>
                 </span>)}

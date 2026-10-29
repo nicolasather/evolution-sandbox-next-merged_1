@@ -8,6 +8,7 @@ import { api, readToken } from '@/lib/quiz/client';
 import QuestionPlay from './QuestionPlay';
 import TimerBar from './TimerBar';
 import StreakForge, { FORGE_START, nextForge, type ForgeState } from './StreakForge';
+import WagerStreakArena, { wagerForTier, type WagerMult } from './WagerStreakArena';
 import { buzz } from './useQuizMotion';
 import AnswerView from './AnswerView';
 import { fmtClock, useRoomState, useTick } from './useRoomState';
@@ -27,7 +28,9 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
   const { state, error: pollError, fatal, refresh, serverNow } = useRoomState(roomId, { token, ready: ready && !!token });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
-  const [wager, setWager] = useState(0);
+  const [tier, setTier] = useState<WagerMult>(1);
+  // tab-switch strikes count per question: 2 strikes lock the wager (client-side for now; the server does not read strikes yet)
+  const [strikes, setStrikes] = useState({ q: '', n: 0 });
   const [flash, setFlash] = useState('');
   const [forge, setForge] = useState<ForgeState>(FORGE_START);
   const [earned, setEarned] = useState<{ id: string; name: string }[] | null>(null);
@@ -74,9 +77,9 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
   async function submit(response: unknown) {
     setBusy(true); setError('');
     try {
-      const d = await api<{ correct: boolean; awarded: number }>(`/api/quiz/rooms/${roomId}/submit`, { method: 'POST', json: { roomQuestionId: s.question.id, token, wager, response } });
+      const d = await api<{ correct: boolean; awarded: number }>(`/api/quiz/rooms/${roomId}/submit`, { method: 'POST', json: { roomQuestionId: s.question.id, token, wager: strikeCount() >= 2 ? 0 : wagerForTier(Number(s.question.base_points ?? 100), tier), response } });
       setFlash(set.showPoints ? `${d.correct ? 'Correct.' : d.awarded > 0 ? 'Partly correct.' : 'Not correct.'} ${d.awarded >= 0 ? '+' : ''}${d.awarded} points` : d.correct ? 'Correct.' : 'Answer recorded.');
-      setWager(0);
+      setTier(1);
       setForge((f) => nextForge(f, d.correct));
       buzz(d.correct ? 30 : 80);
       await refresh();
@@ -94,6 +97,8 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
   const toggleCalm = () => setCalm((v) => { const n = !v; try { localStorage.setItem('qz:calm', n ? '1' : '0'); } catch { /* ignore */ } return n; });
   const attempts: Attempt[] = (s.review ?? []).filter((r: Loose) => r.mine).map((r: Loose, i: number) => ({ questionKey: String(i), concept: r.prompt.slice(0, 40), correct: r.mine.correct, attemptNo: 1, at: '' }));
   const m = mastery(attempts);
+  /** Tab-switch strikes on the question now showing. */
+  function strikeCount() { return s.question && strikes.q === s.question.id ? strikes.n : 0; }
   const lock = answered ? 'Your answer is locked in.' : s.paused ? 'The game is paused.' : s.revealed ? 'The answer is shown.' : qLeft !== null && qLeft <= 0 ? 'Time is up.' : 'You can answer now.';
 
   return (
@@ -127,10 +132,9 @@ function PlayerRoomInner({ roomId }: { roomId: string }) {
           {qLeft !== null && !answered && limit && <TimerBar seconds={qLeft} limit={limit} />}
           <p className="note" role="status" aria-live="polite" data-testid="lock-state">{lock}{s.flow === 'round_robin' ? ' It is a shared turn.' : ''}</p>
           {mods.includes('secret_wager') && !answered && (
-            <label>Secret wager (0–{me?.points ?? 0} points). Win it if you’re right, lose it if you’re wrong.
-              <input type="number" min={0} max={me?.points ?? 0} value={wager} onChange={(e) => setWager(Math.max(0, Math.min(me?.points ?? 0, Number(e.target.value) || 0)))} /></label>
+            <WagerStreakArena stake={Number(s.question.base_points ?? 100)} shield={forge.shield} wagerLocked={strikeCount() >= 2} maxWager={me?.points ?? 0} wager={tier} onWager={setTier} forged={forge.forged} />
           )}
-          <QuestionPlay liveRound question={s.question} busy={busy} readAloud={cfg.readAloud !== false} onHint={hint} disabled={s.paused || s.revealed || !!answered || (qLeft !== null && qLeft <= 0)} onSubmit={submit} />
+          <QuestionPlay liveRound question={s.question} busy={busy} readAloud={cfg.readAloud !== false} onHint={hint} disabled={s.paused || s.revealed || !!answered || (qLeft !== null && qLeft <= 0)} onSubmit={submit} onFocusLost={(n) => setStrikes({ q: s.question.id, n })} />
           {solo && mods.includes('potluck') && <div><button className="btn small ghost" disabled={busy || s.paused} onClick={potluck}>{modifierLabels.potluck} (random −200…+200)</button></div>}
           {answered && s.flow !== 'independent' && <p className="success" role="status">Your answer is locked in. Waiting for the host to continue…</p>}
           {s.revealed && s.question.answerKey && <AnswerView kind={s.question.kind} payload={s.question.payload} answerKey={s.question.answerKey} />}
