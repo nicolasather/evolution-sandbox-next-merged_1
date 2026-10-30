@@ -1,19 +1,12 @@
-/* Quiz Studio upgrades: hub tilt cards, dock, keycaps, focus-loss curtain, rank podium, sliding league pill, radar drawer.
-   Animations use only transform and opacity. Reduced motion is honoured via the dock and the OS setting. */
+/* Quiz Studio upgrades: hub tilt cards, keycaps, focus-loss curtain, rank podium, sliding league pill, radar drawer.
+   Animations use only transform and opacity. Reduced motion is honoured via the Settings page and the OS setting. */
 
 /* ---- 48px touch targets ---- */
 .qz .btn,
 .qz .choice,
 .qz .rk-tab,
-.qz .qz-dock-btn,
 .qz .rk-sticky button,
 .qz .rk-drawer-close { min-height: 48px; min-width: 48px; }
-
-/* ---- Dock ---- */
-.qz-dock { position: fixed; top: 12px; right: 12px; z-index: 60; display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; max-width: calc(100vw - 24px); }
-.qz-dock-btn { display: inline-flex; align-items: center; gap: 6px; background: rgba(15, 23, 42, 0.92); color: #f8fafc; border: 2px solid #475569; border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer; }
-.qz-dock-btn[aria-pressed='true'] { border-color: #facc15; background: #2a2205; }
-.qz-dock-btn:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
 
 /* ---- Hub: 3D tilt, specular highlight, pills, staggered entrance ---- */
 .qz .qz-mode { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1); transform-style: preserve-3d; }
@@ -81,8 +74,6 @@ html[data-qz-motion='reduce'] .qz .qz-mode { transform: none !important; }
 /* Keep the sticky rank bar and dock clear of the bottom nav on phones */
 @media (max-width: 640px) {
   .qz .rk-sticky { bottom: 64px; }
-  .qz-dock { top: auto; bottom: 72px; right: 8px; }
-  .qz-dock-btn { font-size: 0.75rem; padding: 6px 9px; }
 }
 
 /* ---- Question timer: 3-zone bar, heartbeat in the last 5 seconds, leading-edge spark (GPU transform only) ---- */
