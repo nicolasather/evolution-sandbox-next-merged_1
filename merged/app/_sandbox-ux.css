@@ -16,6 +16,11 @@
 .sx-guide-count { color: var(--bone-4); font-size: 11px; }
 .sx-guide-acts { display: flex; gap: 8px; }
 
+/* on a phone the materials sit at the bottom-left, so the card moves to the top and never covers them */
+@media (max-width: 720px) {
+  .sx-guide { top: 64px; bottom: auto; transform: translateX(-50%); }
+}
+
 /* the one element a step points at: a steady ring, no motion */
 .sx-guide-hl {
   outline: 2px solid var(--bone-1, currentColor); outline-offset: 3px; border-radius: 8px;
