@@ -11,6 +11,10 @@ import type { Discovery } from '@/lib/types';
 const RARITY_LABEL: Record<string, string> = {
   common: 'Common', uncommon: 'Uncommon', rare: 'Rare', hidden: 'Hidden find',
 };
+/** How many items the rail shows at once when it is not filtered. */
+const RAIL_LIMIT = 12;
+/** How far back in the path counts as "recently used" for that choice. */
+const RAIL_RECENT = 24;
 const HIDE_DONE_KEY = 'evo.inv.hideDone';
 const HIDE_DONE_EVENT = 'evo:hide-done';
 
@@ -59,6 +63,7 @@ export function InventoryRail({
 }) {
   const [q, setQ] = useState('');
   const [era, setEra] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const slots = useRef({ a: slotA, b: slotB });
   useEffect(() => { slots.current = { a: slotA, b: slotB }; }, [slotA, slotB]);
   const hideDone = useSyncExternalStore(subscribeHideDone, readHideDone, () => false);
@@ -75,6 +80,18 @@ export function InventoryRail({
     const needle = q.trim().toLowerCase();
     list = list.filter(n => n.n.toLowerCase().includes(needle) || n.tags?.some(t => t.includes(needle)));
   }
+
+  // Unfiltered, the rail shows only the items most worth a look right now: new finds,
+  // then what was touched most recently. Everything else waits behind "Show all".
+  const filtering = !!era || !!q.trim();
+  const capped = !filtering && !showAll && list.length > RAIL_LIMIT;
+  if (capped) {
+    const rank = new Map<string, number>();
+    engine.path().slice(-RAIL_RECENT).reverse().forEach((n, i) => { if (!rank.has(n.id)) rank.set(n.id, i + 1); });
+    const score = (n: Discovery) => (engine.isFresh(n.id) ? 0 : (rank.get(n.id) ?? RAIL_RECENT + 1));
+    list = [...list].sort((a, b) => score(a) - score(b)).slice(0, RAIL_LIMIT);
+  }
+  const hiddenCount = all.length - list.length;
 
   // era still groups the rail (a useful chapter heading), but within each
   // group items now read oldest to newest instead of the order they were
@@ -130,6 +147,11 @@ export function InventoryRail({
 
       <div id="inv">
         {groups.size === 0 && <div className="inv-era mono">No match</div>}
+        {(capped || showAll) && !filtering && all.length > RAIL_LIMIT && (
+          <button type="button" className="inv-more mono" onClick={() => setShowAll(v => !v)} aria-expanded={showAll}>
+            {showAll ? `Show fewer` : `Show all ${all.length} · ${hiddenCount} more`}
+          </button>
+        )}
         {engine.db.eras.map(e => {
           const g = groups.get(e.id);
           if (!g?.length) return null;

@@ -63,6 +63,7 @@
 
 /* The Action Rail and the technique reveal (replaces the old five-hand dock). */
 @import "./_rail.css" layer(components);
+@import "./_sandbox-ux.css" layer(components);
 
 /* What things physically are: warmth, scorch, wetness, ripples, wind. Motion-safe. */
 @import "./_physics.css" layer(components);

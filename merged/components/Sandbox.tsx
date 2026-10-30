@@ -46,6 +46,11 @@ import { sound } from '@/lib/sound';
 import { retentionBus } from '@/lib/retention/bus';
 import { RetentionLayer } from './retention/RetentionLayer';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
+import { clearGuideDone, guideDone } from '@/lib/sandbox/guideStore';
+import { SandboxGuide } from './sandbox/SandboxGuide';
+import { SandboxHelp } from './sandbox/SandboxHelp';
+import { EmoteTray } from './sandbox/EmoteTray';
+import { SandboxIcon, type SandboxIconId } from './sandbox/SandboxIcons';
 import { cn } from '@/lib/utils';
 import type { ViewId } from '@/lib/types';
 import type { ModeId } from '@/lib/modes/types';
@@ -72,6 +77,11 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   const [onlyPath, setOnlyPath] = useState(false);
   const [fitSignal, setFitSignal] = useState(0);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
+  /** The first-time guide: null until the saved flag is read on the client, then on until finished. */
+  const [guideOn, setGuideOn] = useState<boolean | null>(null);
+  useEffect(() => { setGuideOn(!guideDone()); }, []);
+  const replayGuide = useCallback(() => { clearGuideDone(); setGuideOn(true); }, []);
   const [journalOpen, setJournalOpen] = useState(false);
   const [milestonesOpen, setMilestonesOpen] = useState(false);
   const [worldOpen, setWorldOpen] = useState(false);
@@ -462,20 +472,36 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
 
       <nav id="mtabs" aria-label="Views">
         {([
-          ['work', 'Workspace'], ['graph', 'Graph'], ['arch', 'Archive'], ['time', 'Timeline'],
-        ] as [ViewId, string][]).filter(([id]) => !VIEW_FEATURE[id] || unlocks.has(VIEW_FEATURE[id] as FeatureId)).map(([id, label]) => (
+          ['work', 'Workspace', 'workspace'], ['graph', 'Graph', 'graph'], ['arch', 'Archive', 'archive'], ['time', 'Timeline', 'timeline'],
+        ] as [ViewId, string, SandboxIconId][]).filter(([id]) => !VIEW_FEATURE[id] || unlocks.has(VIEW_FEATURE[id] as FeatureId)).map(([id, label, icon]) => (
           <button key={id} aria-pressed={view === id} onClick={() => showView(id)}
             className={VIEW_FEATURE[id] && unlocks.fresh(VIEW_FEATURE[id] as FeatureId) ? 'unlock-fresh' : undefined}>
-            <svg width="18" height="18" viewBox="0 0 20 20" stroke="currentColor" strokeWidth="1.4" fill="none" aria-hidden="true">
-              {id === 'work' && <><rect x="2" y="6" width="7" height="8" /><rect x="11" y="6" width="7" height="8" /></>}
-              {id === 'graph' && <><circle cx="4" cy="10" r="2" /><circle cx="16" cy="5" r="2" /><circle cx="16" cy="15" r="2" /><path d="M6 9l8-3M6 11l8 3" /></>}
-              {id === 'time' && <><path d="M2 10h16" /><circle cx="5" cy="10" r="1.6" /><circle cx="10" cy="10" r="1.6" /><circle cx="15" cy="10" r="1.6" /><path d="M5 4v4M10 12v4M15 4v4" /></>}
-              {id === 'arch' && <><rect x="3" y="3" width="6" height="6" /><rect x="11" y="3" width="6" height="6" /><rect x="3" y="11" width="6" height="6" /><rect x="11" y="11" width="6" height="6" /></>}
-            </svg>
+            <SandboxIcon id={icon} size={18} />
             <ReactiveLabel text={label} className="mono" />
           </button>
         ))}
       </nav>
+
+      {/* Help and expressions: small, out of the way, present whenever the workspace is */}
+      {s.entered && reveal >= 6 && (
+        <div className="sx-tray" data-wb-avoid="off">
+          <EmoteTray />
+          <button type="button" className="sx-help-btn chip" onClick={() => setHelpOpen(true)} aria-haspopup="dialog"
+            aria-label="Help" title="Help">
+            <SandboxIcon id="help" size={16} />
+          </button>
+        </div>
+      )}
+
+      <SandboxHelp open={helpOpen} onClose={() => setHelpOpen(false)} onReplayGuide={replayGuide} />
+
+      {guideOn && s.entered && reveal >= 6 && view === 'work' && !s.ending && !confirmOpen && !helpOpen && (
+        <SandboxGuide
+          onFinish={() => setGuideOn(false)}
+          combineKey={s.result?.key ?? 0}
+          lastResult={s.result}
+        />
+      )}
 
       {s.ending && (
         <Ending

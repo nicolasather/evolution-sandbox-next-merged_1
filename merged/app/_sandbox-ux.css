@@ -1,0 +1,73 @@
+/* Sandbox UX: first-time guide, Help panel, expressions tray, icon labels.
+   Quiet by default — nothing here animates unless the player acts. */
+
+.sx-iconlabel { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ---- first-time guide: one card, bottom centre, above the views ---- */
+.sx-guide {
+  position: fixed; left: 50%; bottom: 74px; transform: translateX(-50%);
+  z-index: 60; width: min(460px, calc(100vw - 32px));
+  padding: 14px 16px 12px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--bg-raised, rgba(20, 20, 22, 0.94)); color: var(--bone-1, inherit);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+.sx-guide-text { margin: 0 0 10px; line-height: 1.45; font-size: 14px; }
+.sx-guide-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.sx-guide-count { color: var(--bone-4); font-size: 11px; }
+.sx-guide-acts { display: flex; gap: 8px; }
+
+/* the one element a step points at: a steady ring, no motion */
+.sx-guide-hl {
+  outline: 2px solid var(--bone-1, currentColor); outline-offset: 3px; border-radius: 8px;
+  position: relative; z-index: 59;
+}
+
+/* ---- Help panel ---- */
+.sx-help-scrim {
+  position: fixed; inset: 0; z-index: 90; display: grid; place-items: center;
+  background: rgba(0, 0, 0, 0.5); padding: 16px;
+}
+.sx-help {
+  width: min(520px, 100%); max-height: min(78vh, 640px); display: flex; flex-direction: column;
+  border: 1px solid var(--line); border-radius: 14px; background: var(--bg-raised, #161618); color: var(--bone-1, inherit);
+}
+.sx-help-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.sx-help-head h2 { margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+.sx-help-body { overflow: auto; padding: 4px 16px 16px; font-size: 14px; line-height: 1.5; }
+.sx-help-body h3 { margin: 16px 0 6px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bone-4); }
+.sx-help-body ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.sx-help-body li { display: flex; align-items: center; gap: 8px; }
+.sx-help-body kbd { font-family: inherit; border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font-size: 12px; }
+.sx-help-foot { margin-top: 18px; }
+
+/* ---- expressions tray + help button, bottom-right, small ---- */
+.sx-tray { position: fixed; right: 12px; bottom: 70px; z-index: 55; display: flex; align-items: flex-end; gap: 8px; }
+.sx-help-btn { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; }
+.sx-emote { position: relative; }
+.sx-emote-toggle { width: 34px; height: 34px; display: grid; place-items: center; padding: 0; }
+.sx-emote-pop {
+  position: absolute; right: 0; bottom: 42px; display: flex; gap: 4px; padding: 6px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--bg-raised, #161618);
+}
+.sx-emote-btn {
+  display: grid; justify-items: center; gap: 2px; padding: 6px 6px 4px; min-width: 52px;
+  border: 0; border-radius: 8px; background: transparent; color: inherit; cursor: pointer;
+}
+.sx-emote-btn:hover, .sx-emote-btn:focus-visible { background: rgba(255, 255, 255, 0.06); }
+.sx-emote-name { font-size: 9px; color: var(--bone-4); }
+.sx-emote-said {
+  position: absolute; right: 42px; bottom: 6px; margin: 0; max-width: 220px; white-space: nowrap;
+  padding: 6px 10px; border: 1px solid var(--line); border-radius: 10px; font-size: 12px;
+  background: var(--bg-raised, #161618); display: flex; align-items: center; gap: 6px;
+  animation: sx-said 180ms ease-out;
+}
+@keyframes sx-said { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .sx-emote-said { animation: none; } }
+
+/* ---- inventory: the capped list's "show all" line ---- */
+.inv-more {
+  display: block; width: calc(100% - 30px); margin: 8px 15px 4px; padding: 6px 0;
+  background: transparent; border: 0; border-top: 1px dashed var(--line); color: var(--bone-4);
+  font-size: 11px; text-align: left; cursor: pointer;
+}
+.inv-more:hover, .inv-more:focus-visible { color: var(--bone-1, inherit); }
