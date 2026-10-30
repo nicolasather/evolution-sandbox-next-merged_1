@@ -9,7 +9,6 @@ import './game-scenery.css';
 import './remix.css';
 import './quiz-upgrade.css';
 import QuizNav from '@/components/quiz/QuizNav';
-import QuizDock from '@/components/quiz/QuizDock';
 import { isGuest, maybeUser } from '@/lib/quiz/supabase';
 import { quizConfigured } from '@/lib/quiz/config';
 
@@ -33,7 +32,6 @@ export default async function QuizLayout({ children }: { children: ReactNode }) 
   return (
     <div className="qz">
       <QuizNav email={email} signedIn={signedIn} guest={guest} />
-      <QuizDock />
       {!configured && (
         <div className="notice"><p className="info" role="status">The online quiz service isn’t connected on this deployment. You can still create quizzes: they are saved on this device.</p></div>
       )}
@@ -56,7 +54,7 @@ export default async function QuizLayout({ children }: { children: ReactNode }) 
           <Link href="/quiz/join">Join a Game</Link>
           <Link href="/quiz/collection">My collection</Link>
           <Link href="/quiz/help">Help &amp; privacy</Link>
-          <Link href="/">Evolution Sandbox</Link>
+          <Link href="/quiz/settings">Settings</Link>
         </nav>
       </footer>
       <nav className="qz-bottom-nav" aria-label="Quick navigation">

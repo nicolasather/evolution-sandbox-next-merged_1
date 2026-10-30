@@ -4,7 +4,7 @@ import QRCode from 'qrcode';
 import { LEGAL_FRAMEWORKS } from '@/lib/legalCompliance';
 import { isMuted, setMuted } from '@/lib/soundEffects';
 
-/* ── projector high-contrast mode (shared by /quiz and /quiz/rank through <html data-projector>) ─────────────────────── */
+/* ── projector high-contrast mode (shared by the Quiz Studio pages through <html data-projector>) ─────────────────────── */
 const PKEY = 'evo.quiz.projector';
 const listeners = new Set<() => void>();
 function readProjector(): boolean { try { return window.localStorage.getItem(PKEY) === '1'; } catch { return false; } }

@@ -34,6 +34,7 @@ export function buzz(ms: number) {
   try { navigator.vibrate(ms); } catch { /* unsupported */ }
 }
 
+/** Motion state for Quiz Studio: follows the OS "reduce motion" setting unless the player chooses otherwise on the Settings page. */
 export function useQuizMotion(): { reduced: boolean; setReduced: (on: boolean) => void } {
   const [system, setSystem] = useState(false);
   const [override, setOverride] = useState<boolean | null>(null);
@@ -51,5 +52,10 @@ export function useQuizMotion(): { reduced: boolean; setReduced: (on: boolean) =
     writeFlag(MOTION_KEY, on);
     setOverride(on);
   }, []);
-  return { reduced: override ?? system, setReduced };
+  const reduced = override ?? system;
+  useEffect(() => {
+    // CSS calms every quiz animation off this attribute, wherever the player is in Quiz Studio
+    document.documentElement.dataset.qzMotion = reduced ? 'reduce' : 'auto';
+  }, [reduced]);
+  return { reduced, setReduced };
 }
