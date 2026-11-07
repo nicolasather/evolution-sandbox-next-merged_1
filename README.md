@@ -1,4 +1,37 @@
-# Evolution Sandbox + Quiz Studio — Projector Games upgrade
+# Evolution Sandbox + Quiz Studio
+
+## START HERE (for people and AI readers)
+
+This repository holds **one Next.js app** that serves **two websites**. All live code is in [`merged/`](merged/). Read that folder, not the root.
+
+| URL path | What it is | Code |
+|---|---|---|
+| `/` | Chooser page: links to the sandbox and the quiz | `merged/app/page.tsx` |
+| `/sandbox` | Evolution Sandbox, the discovery game (918 discoveries) | `merged/app/sandbox/`, `merged/components/AppRoot.tsx`, `merged/lib/` |
+| `/quiz/...` | Quiz Studio: quizzes, live rooms, Projector Games | `merged/app/quiz/`, `merged/app/api/quiz/`, `merged/components/quiz/`, `merged/lib/quiz/` |
+
+Other folders in this repo:
+- `merged/`: **the live app. Start here.**
+- `app/`, `components/`, `lib/`, `data/` at the root, `_backup_*` folders, and `evolution-sandbox-next-merged_1/`: older copies or backups. Do not use them as reference.
+- `Claude outputs/`: generated notes and scripts, not app code.
+
+### Hosting
+- Both websites are built from `merged/` (Vercel "Root Directory" must be `merged`).
+- Production sites are on Vercel. Current links are listed in the project notes; check the Vercel dashboard if a link has moved.
+- Scheduled job: `merged/vercel.json` runs the quiz media cleanup daily.
+
+### Developer beta (not visible to players)
+`merged/docs/BETA.md` explains the developer switches that unlock every mode for testing. They work only when two Vercel environment variables are set for a non-production deployment, and the server confirms them. Production returns 404 for the switch endpoint. Start with `merged/lib/dev/overrides.ts`.
+
+### Reviewing the code
+Read `merged/docs/AI_REVIEW_BRIEF.md` for a reading order and the route list.
+
+### Not in this repo
+Not tracked here: a single-file HTML version of the game (`evolution-sandbox/`, described in `merged/README.md`). It may also be that a separate quiz repository is still linked to one of the Vercel projects; if a live site looks different from this code, check that project's Git settings in Vercel. The code in this repo is the one intended to serve both websites.
+
+---
+
+## Projector Games upgrade notes
 
 The Next.js app lives in `merged/`. This file documents the Projector Games upgrade (10 classroom projector modes, English only).
 
