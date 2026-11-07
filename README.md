@@ -2,7 +2,7 @@
 
 ## START HERE (for people and AI readers)
 
-This repository holds **one Next.js app** that serves **two websites**. All live code is in [`merged/`](merged/). Read that folder, not the root.
+This repository holds a **combined copy** of the Next.js app that contains both websites. It is **not guaranteed to be what is live**: the quiz website is built from a separate repository, [`nicolasather/quiz`](https://github.com/nicolasather/quiz), and the sandbox may be built from [`nicolasather/evosandbox`](https://github.com/nicolasather/evosandbox). Check each Vercel project's Git settings before treating this repo as the live code.
 
 | URL path | What it is | Code |
 |---|---|---|
@@ -16,8 +16,8 @@ Other folders in this repo:
 - `Claude outputs/`: generated notes and scripts, not app code.
 
 ### Hosting
-- Both websites are built from `merged/` (Vercel "Root Directory" must be `merged`).
-- Production sites are on Vercel. Current links are listed in the project notes; check the Vercel dashboard if a link has moved.
+- Vercel project `quiz` (ID `prj_PyoD9JWhVSOW5ZdTaNpPcTvsJfPA`) is linked to the local folder `quiz/`, i.e. repo `nicolasather/quiz`. Its git connection on Vercel was not verified here.
+- The sandbox's Vercel project and its repo were not verified here. The combined copy in this repo builds with Root Directory `merged`.
 - Scheduled job: `merged/vercel.json` runs the quiz media cleanup daily.
 
 ### Developer beta (not visible to players)
@@ -27,7 +27,7 @@ Other folders in this repo:
 Read `merged/docs/AI_REVIEW_BRIEF.md` for a reading order and the route list.
 
 ### Not in this repo
-Not tracked here: a single-file HTML version of the game (`evolution-sandbox/`, described in `merged/README.md`). It may also be that a separate quiz repository is still linked to one of the Vercel projects; if a live site looks different from this code, check that project's Git settings in Vercel. The code in this repo is the one intended to serve both websites.
+Separate repositories that are **not** this one: [`nicolasather/quiz`](https://github.com/nicolasather/quiz) (quiz website), [`nicolasather/evosandbox`](https://github.com/nicolasather/evosandbox) (sandbox website, Next.js build), and the single-file HTML version of the game (`evolution-sandbox/`, described in `merged/README.md`). Use those repositories for the live code.
 
 ---
 
