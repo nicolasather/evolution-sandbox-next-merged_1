@@ -2,7 +2,14 @@
 
 ## START HERE (for people and AI readers)
 
-This repository holds a **combined copy** of the Next.js app that contains both websites. It is **not guaranteed to be what is live**: the quiz website is built from a separate repository, [`nicolasather/quiz`](https://github.com/nicolasather/quiz), and the sandbox may be built from [`nicolasather/evosandbox`](https://github.com/nicolasather/evosandbox). Check each Vercel project's Git settings before treating this repo as the live code.
+This repository holds a **combined copy** of the Next.js app that contains both websites. It is **not** what the two public websites are built from:
+
+| Public website | Vercel project | GitHub repo it builds from |
+|---|---|---|
+| Sandbox: https://evosandbox.vercel.app/sandbox | `evosandbox` | [`nicolasather/evosandbox`](https://github.com/nicolasather/evosandbox) |
+| Quiz: https://quiz-zeta-seven-71.vercel.app/quiz | `quiz` | [`nicolasather/quiz`](https://github.com/nicolasather/quiz) |
+
+This repo (`evolution-sandbox-next-merged_1`) is deployed to its own Vercel project, `evolution-sandbox-next-merged-1` (https://evolution-sandbox-next-merged-1.vercel.app), which rebuilds on every push to `main`.
 
 | URL path | What it is | Code |
 |---|---|---|
@@ -16,8 +23,8 @@ Other folders in this repo:
 - `Claude outputs/`: generated notes and scripts, not app code.
 
 ### Hosting
-- Vercel project `quiz` (ID `prj_PyoD9JWhVSOW5ZdTaNpPcTvsJfPA`) is linked to the local folder `quiz/`, i.e. repo `nicolasather/quiz`. Its git connection on Vercel was not verified here.
-- The sandbox's Vercel project and its repo were not verified here. The combined copy in this repo builds with Root Directory `merged`.
+- Checked in the Vercel dashboard: each project's connected repository is listed in the table above.
+- This repo's own project builds with Root Directory `merged`.
 - Scheduled job: `merged/vercel.json` runs the quiz media cleanup daily.
 
 ### Developer beta (not visible to players)

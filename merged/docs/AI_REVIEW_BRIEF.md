@@ -1,6 +1,9 @@
 # AI review brief — Evolution Sandbox (beta)
 
-Paste this file, or point the AI at it, together with the repository (branch `beta`).
+Paste this file, or point the AI at it, together with the repository for the site being reviewed:
+- Sandbox website: `nicolasather/evosandbox`
+- Quiz website: `nicolasather/quiz`
+- Combined copy: `nicolasather/evolution-sandbox-next-merged_1`, branch `main`
 
 ## Reading order
 
