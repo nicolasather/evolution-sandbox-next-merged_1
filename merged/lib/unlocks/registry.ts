@@ -16,7 +16,7 @@ import type { ModeId } from '@/lib/modes/types';
 export type FeatureId =
   | 'archive' | 'graph' | 'quiz' | 'journal' | 'timeline' | 'hub' | 'puzzles'
   | 'museum' | 'world' | 'trade' | 'lab' | 'minpath'
-  | 'companion' | 'collection' | 'visitors' | 'eggs' | 'events'
+  | 'companion' | 'collection' | 'visitors' | 'eggs' | 'events' | 'goals'
   | 'mode:survival' | 'mode:archaeology' | 'mode:civilization' | 'mode:decipher'
   | 'mode:escape-room' | 'mode:reverse-evolution' | 'mode:alien-archaeology';
 
@@ -66,6 +66,7 @@ export const FEATURES: Feature[] = [
   { id: 'quiz',     label: 'Questions', line: 'Small questions will appear in the corner. Answer them to learn new ways of working things.', where: 'the corner of the workspace', rule: { made: 8 } },
   { id: 'journal',  label: 'Journal',  line: 'A recap of the journey you are making.',                 where: 'the Journal button, top bar', rule: { made: 12 } },
   { id: 'collection', label: 'Collection', line: 'Your coins, cosmetics and reactions, kept in one drawer.', where: 'the Collection button, top bar', rule: { made: 20 } },
+  { id: 'goals', label: 'Goals', line: 'Three small daily goals and a long list of achievements, for when you want them.', where: 'the Goals tab, Collection drawer', rule: { made: 20 } },
   { id: 'hub',      label: 'Modes',    line: 'Other ways to live this history. Survival is the first door.', where: 'the Modes button, top bar', rule: { made: 20 } },
   { id: 'mode:survival', label: 'Survival', line: 'Keep a small prehistoric group alive.',            where: 'the Modes hub',              rule: { made: 20 } },
   { id: 'timeline', label: 'Timeline', line: 'Your finds, oldest to newest.',                          where: 'the Timeline tab, top bar',  rule: { era: 'settlement' } },

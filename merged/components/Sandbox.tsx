@@ -428,16 +428,16 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
             />
           </section>
 
-          <GraphView
+          {view === 'graph' && <GraphView
             engine={engine}
             version={version}
-            active={view === 'graph'}
+            active
             onlyPath={onlyPath}
             onOnlyPathChange={setOnlyPath}
             fitSignal={fitSignal}
             focusId={s.focus?.id ?? null}
             onOpen={openExhibit}
-          />
+          />}
           {view === 'arch' && <ArchiveView engine={engine} version={version} active onOpen={openExhibit} />}
           {view === 'time' && <TimelineView engine={engine} version={version} active focusId={s.focus?.id ?? null} onOpen={openExhibit} />}
           <ModeHub engine={engine} active={view === 'hub'} unlocks={unlocks} onLaunch={() => showView('work')} onLaunchMode={onLaunchMode} />

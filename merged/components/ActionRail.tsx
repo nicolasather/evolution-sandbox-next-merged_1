@@ -5,6 +5,8 @@ import type { Engine } from '@/lib/engine';
 import { ACTIONS } from '@/lib/processing/actions';
 import { TECH_BY_ID, TECH_ORDER } from '@/lib/processing/techniques';
 import { TECHNIQUE_BANDS, describeTechniqueOrigin } from '@/lib/chronology';
+import { ERA_IDS } from '@/lib/unlocks/registry';
+import { bandOpen } from '@/lib/unlocks/techniqueGate';
 import type { ActionId } from '@/lib/types';
 import { LockedMark, TechniqueIcon } from './TechniqueIcon';
 
@@ -51,6 +53,8 @@ export function ActionRail({ engine, mode, hintAction = null, working, onPick, o
 
   const known = new Set(engine.known);
   const learned = known.size;
+  // the furthest era reached: a learned technique of a later band waits in the rail until history gets there
+  const eraIdx = ERA_IDS.indexOf(engine.currentEra().id as (typeof ERA_IDS)[number]);
 
   // techniques in chronological order, split into the display bands — a
   // technique the player has not learned yet stays an unnamed "?" in its
@@ -76,7 +80,7 @@ export function ActionRail({ engine, mode, hintAction = null, working, onPick, o
             <div key={band.id} className="wb-rail-group" data-band={band.id} role="group" aria-label={band.label}>
               <span className="wb-rail-h mono" aria-hidden="true">{band.label}</span>
               <div className="wb-rail-row">
-                {techs.filter(t => known.has(t.id)).map(t => {
+                {techs.filter(t => known.has(t.id) && bandOpen(band.id, eraIdx)).map(t => {
                   const a = ACTIONS[t.id];
                   const isNew = engine.isNewTech(t.id);
                   return (
@@ -91,6 +95,9 @@ export function ActionRail({ engine, mode, hintAction = null, working, onPick, o
                     </button>
                   );
                 })}
+                {!bandOpen(band.id, eraIdx) && techs.some(t => known.has(t.id)) && (
+                  <span className="wb-rail-soon mono" title="You have found techniques from this period. They appear here as history reaches it.">Later in history</span>
+                )}
                 {(() => {
                   const left = techs.filter(t => !known.has(t.id)).length;
                   if (!left) return null;

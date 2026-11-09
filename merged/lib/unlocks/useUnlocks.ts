@@ -71,8 +71,20 @@ export function useUnlocks(engine: Engine, version: number, enabled: boolean): U
   const has = useCallback((id: FeatureId) => open.has(id), [open]);
   const fresh = useCallback((id: FeatureId) => earned.has(id) && !memory.opened.includes(id), [earned, memory.opened]);
   const opened = useCallback((id: FeatureId) => unlockMemory.markOpened(id), []);
-  const dismissNotice = useCallback(() => setQueue(q => q.slice(1)), []);
-  const notice = queue.length ? featureOf(queue[0]) : null;
+  // one card per moment: dismissing it clears everything that opened together, never a long series of cards
+  const dismissNotice = useCallback(() => setQueue([]), []);
+  const notice = useMemo<Feature | null>(() => {
+    if (!queue.length) return null;
+    if (queue.length === 1) return featureOf(queue[0]);
+    const fs = queue.map(id => featureOf(id));
+    return {
+      id: queue[0],
+      label: `${fs.length} new things`,
+      line: fs.map(f => f.label).join(', ') + '.',
+      where: 'the glowing controls',
+      rule: {},
+    };
+  }, [queue]);
   return useMemo(() => ({ has, fresh, opened, notice, dismissNotice }), [has, fresh, opened, notice, dismissNotice]);
 }
 

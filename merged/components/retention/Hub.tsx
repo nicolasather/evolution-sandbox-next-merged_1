@@ -7,6 +7,7 @@ import { retentionBus } from '@/lib/retention/bus';
 import { Shop } from './Shop';
 import { CameosTab, EventsTab, GoalsTab, JourneyTab, SettingsTab, WhispersTab } from './tabs';
 import { useHubUi, useRetention } from './hooks';
+import type { FeatureId } from '@/lib/unlocks/registry';
 
 const TABS: [HubTab, string][] = [
   ['shop', 'Collection'], ['goals', 'Goals'], ['events', 'Scenarios'], ['cameos', 'Visitors'], ['journey', 'Journey'], ['whispers', 'Whispers'], ['settings', 'Settings'],
@@ -14,7 +15,13 @@ const TABS: [HubTab, string][] = [
 const sig = () => { const s = retention.get(); return JSON.stringify([s.owned, s.equipped]); };
 
 /** The one drawer for the optional layer. Esc or the backdrop closes it. */
-export function Hub({ engine, version }: { engine: Engine; version: number }) {
+export function Hub({ engine, version, unlocks = { has: () => true } }: { engine: Engine; version: number; unlocks?: { has: (id: FeatureId) => boolean } }) {
+  // a tab appears only when its feature is open: Goals, Scenarios and Visitors are discovered later, not on first open
+  const tabOpen = (id: HubTab) =>
+    id === 'goals' ? unlocks.has('goals')
+    : id === 'events' ? unlocks.has('events')
+    : id === 'cameos' ? unlocks.has('visitors')
+    : true;
   const ui = useHubUi();
   const r = useRetention();
   const panel = useRef<HTMLDivElement>(null);
@@ -52,7 +59,7 @@ export function Hub({ engine, version }: { engine: Engine; version: number }) {
           <button className="chip" onClick={() => hubUi.close()} aria-label="Close">Close</button>
         </header>
         <nav className="rtabs" role="tablist" aria-label="Sections">
-          {TABS.map(([id, label]) => <button key={id} role="tab" aria-selected={ui.tab === id} onClick={() => hubUi.tab(id)}>{label}</button>)}
+          {TABS.filter(([id]) => tabOpen(id)).map(([id, label]) => <button key={id} role="tab" aria-selected={ui.tab === id} onClick={() => hubUi.tab(id)}>{label}</button>)}
         </nav>
         <div className="rbody">
           {ui.tab === 'shop' && <Shop />}

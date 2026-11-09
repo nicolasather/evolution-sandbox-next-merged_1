@@ -56,7 +56,7 @@ export function RetentionLayer({ engine, version, entered, view, busy, unlocks }
           ))}
         </div>
       </div>
-      <Hub engine={engine} version={version} />
+      <Hub engine={engine} version={version} unlocks={unlocks} />
       <ShareCard engine={engine} />
     </>
   );

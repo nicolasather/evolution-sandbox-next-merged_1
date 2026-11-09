@@ -103,6 +103,11 @@ export function MilestonesPanel({
 
   const pct = Math.round((stats.core / Math.max(1, stats.coreTotal)) * 100);
 
+  // the road shows what is open, the next door, and two after it: never the whole catalogue at once
+  const nextIdx = FEATURES.findIndex(f => !earned.has(f.id));
+  const road = FEATURES.filter((f, i) => earned.has(f.id) || nextIdx < 0 || i <= nextIdx + 2);
+  const ahead = FEATURES.length - road.length;
+
   return (
     <div id="milestones" className="confirm" role="dialog" aria-modal="true" aria-labelledby="ms-t"
       onClick={ev => { if (ev.target === ev.currentTarget) onClose(); }}>
@@ -155,7 +160,7 @@ export function MilestonesPanel({
               <span className="ms-label">Workbench <em className="mono">start</em></span>
               <span className="ms-line mono">Main Evolution is open from the first moment.</span>
             </li>
-            {FEATURES.map(f => {
+            {road.map(f => {
               const state = doorOf(f);
               const need = missing(f);
               return (
@@ -182,6 +187,7 @@ export function MilestonesPanel({
           </ol>
         </section>
 
+        {ahead > 0 && <p className="mono ms-ahead">{ahead} more {ahead === 1 ? 'door' : 'doors'} ahead, shown as you reach them.</p>}
         <section aria-label="Eras">
           <h3 className="ms-h mono">Eras · what each one opens</h3>
           <ul className="ms-eras">
