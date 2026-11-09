@@ -8,14 +8,28 @@ describe('unlock rules', () => {
 
   it('opens the bench-side features by discoveries, in order', () => {
     const at = (made: number) => unlockedFor({ made, eraIndex: 0 });
-    expect(at(2).has('archive')).toBe(false);
-    expect(at(3).has('archive')).toBe(true);
-    expect(at(6).has('graph')).toBe(true);
+    expect(at(7).has('archive')).toBe(false);
+    expect(at(8).has('archive')).toBe(true);
+    expect(at(7).has('graph')).toBe(false);
+    expect(at(8).has('graph')).toBe(true);
     expect(at(8).has('quiz')).toBe(true);
+    expect(at(8).has('companion')).toBe(true);
     expect(at(12).has('journal')).toBe(true);
+    expect(at(19).has('collection')).toBe(false);
+    expect(at(20).has('collection')).toBe(true);
     expect(at(20).has('hub')).toBe(true);
     expect(at(20).has('mode:survival')).toBe(true);
     expect(at(20).has('timeline')).toBe(false); // needs an era
+  });
+
+  it('keeps the optional layer closed until its milestones', () => {
+    expect(unlockedFor({ made: 0, eraIndex: ERA_IDS.indexOf('trade') }).has('eggs')).toBe(true);
+    expect(unlockedFor({ made: 0, eraIndex: ERA_IDS.indexOf('metallurgy') }).has('eggs')).toBe(true);
+    expect(unlockedFor({ made: 0, eraIndex: ERA_IDS.indexOf('agriculture') }).has('eggs')).toBe(false);
+    expect(unlockedFor({ made: 0, eraIndex: ERA_IDS.indexOf('science') }).has('events')).toBe(false); // discoveries too
+    expect(unlockedFor({ made: 50, eraIndex: ERA_IDS.indexOf('science') }).has('events')).toBe(true);
+    expect(unlockedFor({ made: 50, eraIndex: ERA_IDS.indexOf('trade') }).has('events')).toBe(false);
+    expect(unlockedFor({ made: 7, eraIndex: ERA_IDS.indexOf('settlement') }).has('visitors')).toBe(true);
   });
 
   it('opens the rest era by era and never earlier', () => {
@@ -68,7 +82,7 @@ describe('unlock rules', () => {
 
   it('says what is still needed', () => {
     const f = FEATURES.find(x => x.id === 'graph')!;
-    expect(requirementText(f, id => id)).toBe('Make 6 discoveries');
+    expect(requirementText(f, id => id)).toBe('Make 8 discoveries');
     const m = FEATURES.find(x => x.id === 'museum')!;
     expect(requirementText(m, id => `the ${id} era`)).toBe('Reach the agriculture era');
   });

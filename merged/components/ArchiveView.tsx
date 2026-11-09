@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Glyph } from './Glyph';
 import { StatsCounter } from './vengeance/stats-counter';
 import { LineHoverLink } from './vengeance/line-hover-link';
@@ -71,7 +71,8 @@ export function ArchiveView({
   const s = engine.stats();
   void version;
   const { counts } = engine.db;
-  const reach = new Set(engine.withinReach().map(n => n.id));
+  // derived from the engine only when it changes (`version`), not on every render
+  const reach = useMemo(() => { void version; return new Set(engine.withinReach().map(n => n.id)); }, [engine, version]);
 
   let list = engine.db.nodes.slice();
   if (era) list = list.filter(n => n.era === era);
@@ -104,10 +105,19 @@ export function ArchiveView({
 
   const history = engine.history().slice().reverse();
   const worldSum = engine.worldSummary();
-  const eraProgress = engine.db.eras.map(e => {
-    const all = engine.db.nodes.filter(n => n.era === e.id && !n.hidden);
-    return { e, have: all.filter(n => engine.has(n.id)).length, total: all.length };
-  });
+  // one pass over the catalogue, grouped by era, instead of a full filter per era on every render
+  const eraProgress = useMemo(() => {
+    void version;
+    const byEra = new Map<string, { have: number; total: number }>();
+    for (const n of engine.db.nodes) {
+      if (n.hidden) continue;
+      const t = byEra.get(n.era) ?? { have: 0, total: 0 };
+      t.total += 1;
+      if (engine.has(n.id)) t.have += 1;
+      byEra.set(n.era, t);
+    }
+    return engine.db.eras.map(e => ({ e, have: byEra.get(e.id)?.have ?? 0, total: byEra.get(e.id)?.total ?? 0 }));
+  }, [engine, version]);
 
   return (
     <section className={'view' + (active ? ' on' : '')} id="v-arch" role="tabpanel" aria-label="Archive">

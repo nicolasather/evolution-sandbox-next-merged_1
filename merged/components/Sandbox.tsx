@@ -45,6 +45,7 @@ import { benchElement, benchSpawn } from '@/lib/craft/bus';
 import { sound } from '@/lib/sound';
 import { retentionBus } from '@/lib/retention/bus';
 import { RetentionLayer } from './retention/RetentionLayer';
+import { hubUi } from '@/lib/retention/ui';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { clearGuideDone, guideDone } from '@/lib/sandbox/guideStore';
 import { SandboxGuide } from './sandbox/SandboxGuide';
@@ -395,6 +396,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
           onMuseum={() => showView('museum')}
           onMinPath={() => showView('minpath')}
           onMilestones={() => setMilestonesOpen(true)}
+          onCollection={() => hubUi.open()}
         />
 
         <div id="views" data-current={view} className={rv ? 'rv' : undefined}>
@@ -436,8 +438,8 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
             focusId={s.focus?.id ?? null}
             onOpen={openExhibit}
           />
-          <ArchiveView engine={engine} version={version} active={view === 'arch'} onOpen={openExhibit} />
-          <TimelineView engine={engine} version={version} active={view === 'time'} focusId={s.focus?.id ?? null} onOpen={openExhibit} />
+          {view === 'arch' && <ArchiveView engine={engine} version={version} active onOpen={openExhibit} />}
+          {view === 'time' && <TimelineView engine={engine} version={version} active focusId={s.focus?.id ?? null} onOpen={openExhibit} />}
           <ModeHub engine={engine} active={view === 'hub'} unlocks={unlocks} onLaunch={() => showView('work')} onLaunchMode={onLaunchMode} />
           {(view === 'museum' || museumMounted) && (
             <MuseumGallery engine={engine} version={version} active={view === 'museum'} onOpen={openExhibit} blocked={gate !== null} />
@@ -568,6 +570,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
         version={version}
         entered={s.entered && reveal >= 6}
         view={view}
+        unlocks={unlocks}
         busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || gate !== null}
       />
 

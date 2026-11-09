@@ -16,6 +16,7 @@ import type { ModeId } from '@/lib/modes/types';
 export type FeatureId =
   | 'archive' | 'graph' | 'quiz' | 'journal' | 'timeline' | 'hub' | 'puzzles'
   | 'museum' | 'world' | 'trade' | 'lab' | 'minpath'
+  | 'companion' | 'collection' | 'visitors' | 'eggs' | 'events'
   | 'mode:survival' | 'mode:archaeology' | 'mode:civilization' | 'mode:decipher'
   | 'mode:escape-room' | 'mode:reverse-evolution' | 'mode:alien-archaeology';
 
@@ -59,21 +60,26 @@ const eraRank = (id: string) => ERA_IDS.indexOf(id as (typeof ERA_IDS)[number]);
  * journal), then each door opens with an era of history.
  */
 export const FEATURES: Feature[] = [
-  { id: 'archive',  label: 'Archive',  line: 'Everything you have kept, in one place.',                where: 'the Archive tab, top bar',   rule: { made: 3 } },
-  { id: 'graph',    label: 'Graph',    line: 'See how every idea leans on another.',                   where: 'the Graph tab, top bar',     rule: { made: 6 } },
+  { id: 'archive',  label: 'Archive',  line: 'Everything you have kept, in one place.',                where: 'the Archive tab, top bar',   rule: { made: 8 } },
+  { id: 'companion', label: 'Companion', line: 'A small companion who keeps you company on the bench.', where: 'the bench', rule: { made: 8 } },
+  { id: 'graph',    label: 'Graph',    line: 'See how every idea leans on another.',                   where: 'the Graph tab, top bar',     rule: { made: 8 } },
   { id: 'quiz',     label: 'Questions', line: 'Small questions will appear in the corner. Answer them to learn new ways of working things.', where: 'the corner of the workspace', rule: { made: 8 } },
   { id: 'journal',  label: 'Journal',  line: 'A recap of the journey you are making.',                 where: 'the Journal button, top bar', rule: { made: 12 } },
+  { id: 'collection', label: 'Collection', line: 'Your coins, cosmetics and reactions, kept in one drawer.', where: 'the Collection button, top bar', rule: { made: 20 } },
   { id: 'hub',      label: 'Modes',    line: 'Other ways to live this history. Survival is the first door.', where: 'the Modes button, top bar', rule: { made: 20 } },
   { id: 'mode:survival', label: 'Survival', line: 'Keep a small prehistoric group alive.',            where: 'the Modes hub',              rule: { made: 20 } },
   { id: 'timeline', label: 'Timeline', line: 'Your finds, oldest to newest.',                          where: 'the Timeline tab, top bar',  rule: { era: 'settlement' } },
+  { id: 'visitors', label: 'Visitors', line: 'People from history drop by the bench to talk about what they made.', where: 'the bench', rule: { era: 'settlement' } },
   { id: 'museum',   label: 'Museum',   line: 'Everything humanity learned, gathered in one building.', where: 'the Museum button, top bar', rule: { era: 'agriculture' } },
   { id: 'world',    label: 'World',    line: 'The map of where each invention happened.',              where: 'the World chip, top bar',    rule: { era: 'agriculture' } },
   { id: 'mode:archaeology', label: 'Archaeologist', line: 'Excavate a site and justify what you find.', where: 'the Modes hub',             rule: { era: 'civilization' } },
   { id: 'mode:civilization', label: 'Civilization', line: 'Keep a settlement working.',               where: 'the Modes hub',             rule: { era: 'civilization' } },
   { id: 'trade',    label: 'Trade',    line: 'Ideas travel further than people ever did.',             where: 'the Trade button, top bar',  rule: { era: 'trade' } },
+  { id: 'eggs',     label: 'Secrets',  line: 'Some things on the bench respond to curiosity.',         where: 'the bench',                  rule: { era: 'trade' } },
   { id: 'mode:decipher', label: 'Decipher', line: 'Read a writing system nobody has seen.',            where: 'the Modes hub',              rule: { era: 'trade' } },
   { id: 'mode:escape-room', label: 'Escape Room', line: 'Reason through how a historical mechanism worked.', where: 'the Modes hub',       rule: { era: 'metallurgy' } },
   { id: 'lab',      label: 'Laboratory', line: 'Change one thing. Watch what breaks.',                 where: 'the Laboratory button, top bar', rule: { era: 'science' } },
+  { id: 'events',   label: 'Scenarios', line: 'Occasional fictional scenarios drift past the bench. They never interrupt your work.', where: 'the bench', rule: { made: 50, era: 'science' } },
   { id: 'puzzles',  label: 'Puzzles',  line: 'A daily Tech Sudoku and a weekly Mega Challenge.',       where: 'the Modes hub',              rule: { era: 'science' } },
   { id: 'mode:reverse-evolution', label: 'Reverse Evolution', line: 'Descend from a smartphone to a stone.', where: 'the Modes hub',     rule: { era: 'industry' } },
   { id: 'minpath',  label: 'Minimum Path', line: 'Find the shortest road through the recipes.',         where: 'the Minimum Path button, top bar', rule: { era: 'electric' } },

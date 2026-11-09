@@ -44,7 +44,7 @@ function SoundButton() {
   );
 }
 
-type Tone = 'minpath' | 'museum' | 'hub' | 'trade' | 'lab' | 'journal' | 'milestones';
+type Tone = 'minpath' | 'museum' | 'hub' | 'trade' | 'lab' | 'journal' | 'milestones' | 'collection';
 
 /** The face of a corner tile: one square, hairline, single-colour line drawing.
  *  Strokes use currentColor (see the .tile block in app/_cinematic.css) and every
@@ -102,6 +102,13 @@ function TileArt({ tone }: { tone: Tone }) {
           <rect className="fill" x="38" y="36" width="4" height="4" />
         </>
       )}
+      {tone === 'collection' && (
+        <>
+          <circle {...P} cx="24" cy="24" r="16" />
+          <path {...P} d="M18 24h12M24 18v12" />
+          <rect className="fill" x="22" y="22" width="4" height="4" />
+        </>
+      )}
     </svg>
   );
 }
@@ -136,7 +143,7 @@ function Tile({
 
 export function TopBar({
   engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum, onMinPath,
-  onMilestones, unlocks = NO_LOCKS,
+  onMilestones, onCollection, unlocks = NO_LOCKS,
 }: {
   engine: Engine;
   view: ViewId;
@@ -153,6 +160,8 @@ export function TopBar({
   onMinPath: () => void;
   /** Opens the Milestones page (how far the player has come, which doors are open). Optional: no button without it. */
   onMilestones?: () => void;
+  /** Opens the Collection drawer (coins, cosmetics, reactions). Shown once the Collection feature is unlocked. */
+  onCollection?: () => void;
   /** What has opened so far. Left out, everything is open (tests, embedded uses). */
   unlocks?: Pick<Unlocks, 'has' | 'fresh' | 'opened'>;
 }) {
@@ -311,6 +320,8 @@ export function TopBar({
             className="max-[900px]:hidden" onClick={go('lab', onLab)} />}
           {onMilestones && has('archive') && <Tile id="milestones-open" tone="milestones" cap="Milestones" label="Milestones — how far you have come"
             onClick={onMilestones} />}
+          {onCollection && has('collection') && <Tile id="collection-open" tone="collection" cap="Collection" label="Collection — coins, cosmetics and reactions" fresh={fresh('collection')}
+            onClick={go('collection', onCollection)} />}
           {has('journal') && <Tile id="journal-open" tone="journal" cap="Journal" label="Your journal" fresh={fresh('journal')}
             className="max-[900px]:hidden" onClick={go('journal', onJournal)} />}
         </div>

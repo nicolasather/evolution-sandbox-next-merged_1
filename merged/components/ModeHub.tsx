@@ -16,7 +16,7 @@ import { getMode } from '@/lib/modes/registry';
 import { survivalStore } from '@/lib/survival/store';
 import type { Engine } from '@/lib/engine';
 import type { ModeId } from '@/lib/modes/types';
-import { featureOfMode, type FeatureId } from '@/lib/unlocks/registry';
+import { featureOf, featureOfMode, requirementText, type FeatureId } from '@/lib/unlocks/registry';
 import { NO_LOCKS, type Unlocks } from '@/lib/unlocks/useUnlocks';
 
 /* ============================================================================
@@ -34,7 +34,7 @@ import { NO_LOCKS, type Unlocks } from '@/lib/unlocks/useUnlocks';
 
 const dateFmt = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
 
-function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fresh, modeId }: {
+function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fresh, modeId, lockedReason }: {
   kicker: string;
   title: string;
   description: string;
@@ -45,6 +45,8 @@ function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fr
   fresh?: boolean;
   /** Phase 2 (off by default): reviewed, certified flavour for this mode, shown under the description. */
   modeId?: ModeId;
+  /** Set while the wing is locked: what unlocks it. The card shows it and cannot be launched. */
+  lockedReason?: string | null;
 }) {
   const [note, setNote] = useState<{ text: string; disclosure: string | null } | null>(null);
   useEffect(() => {
@@ -54,18 +56,24 @@ function ExhibitCard({ kicker, title, description, stats, ctaLabel, onLaunch, fr
     return () => { live = false; };
   }, [modeId]);
   return (
-    <div className={'hub-exhibit' + (fresh ? ' is-new' : '')} data-new={fresh || undefined}>
+    <div className={'hub-exhibit' + (fresh && !lockedReason ? ' is-new' : '') + (lockedReason ? ' is-locked' : '')} data-new={fresh && !lockedReason ? true : undefined}>
       <div className="hub-exhibit-plate" aria-hidden="true" />
       <div className="hub-exhibit-body">
         <p className="mono hub-exhibit-kicker">{kicker}{fresh && <b className="hub-new"> · New</b>}</p>
         <h2 className="hub-exhibit-title">{title}</h2>
         <p className="hub-exhibit-desc">{description}</p>
         {note && <p className="hub-exhibit-desc mono" data-testid="packet-note" style={{ opacity: 0.8, fontSize: 12 }}>{note.text}{note.disclosure ? ` — ${note.disclosure}` : ''}</p>}
+        {lockedReason && (
+          <p className="hub-exhibit-lock mono" data-testid="mode-locked">
+            <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true" style={{ marginRight: 6, verticalAlign: '-1px' }}><rect x="3" y="7" width="10" height="7" fill="none" stroke="currentColor" strokeWidth="1.5" /><path d="M5 7V5a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
+            Locked · {lockedReason}
+          </p>
+        )}
         <dl className="hub-exhibit-stats">
           {stats.map(s => <div key={s.label}><dt className="mono">{s.label}</dt><dd>{s.value}</dd></div>)}
         </dl>
-        <button className={'hub-continue' + (fresh ? ' guide-glow' : '')} onClick={onLaunch}>
-          <ReactiveLabel text={ctaLabel} className="mono" />
+        <button className={'hub-continue' + (fresh && !lockedReason ? ' guide-glow' : '')} onClick={lockedReason ? undefined : onLaunch} disabled={!!lockedReason} aria-disabled={!!lockedReason}>
+          {lockedReason ? <span className="mono">Locked</span> : <ReactiveLabel text={ctaLabel} className="mono" />}
         </button>
       </div>
     </div>
@@ -187,7 +195,12 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
     if (f) unlocks.opened(f);
     onLaunchMode?.(m);
   };
-  const shown = (m: ModeId) => { const f = featureOfMode(m); return !f || unlocks.has(f); };
+  /** The reason a wing is still closed (null when open): shown on its card, never launchable. */
+  const lockedFor = (m: ModeId): string | null => {
+    const f = featureOfMode(m);
+    if (!f || unlocks.has(f)) return null;
+    return requirementText(featureOf(f), id => engine.db.eras.find(e => e.id === id)?.name ?? id) + '.';
+  };
   const isNew = (m: ModeId) => { const f = featureOfMode(m); return !!f && unlocks.fresh(f as FeatureId); };
 
   return (
@@ -215,8 +228,9 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           ]}
         />
 
-        {shown('survival') && (
+        {(
         <ExhibitCard
+          lockedReason={lockedFor('survival')}
           kicker={survivalMode?.subtitle ?? 'Adapt'}
           title={survivalMode?.title ?? 'Survival'}
           description={survivalMode?.description ?? ''}
@@ -232,8 +246,9 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
         />
         )}
 
-        {shown('civilization') && (
+        {(
         <ExhibitCard
+          lockedReason={lockedFor('civilization')}
           kicker={civMode?.subtitle ?? 'Build'}
           title={civMode?.title ?? 'Civilization'}
           description={civMode?.description ?? ''}
@@ -249,8 +264,9 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
         />
         )}
 
-        {shown('archaeology') && (
+        {(
         <ExhibitCard
+          lockedReason={lockedFor('archaeology')}
           kicker={archMode?.subtitle ?? 'Recover'}
           title={archMode?.title ?? 'Archaeologist'}
           description={archMode?.description ?? ''}
@@ -266,8 +282,9 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
         />
         )}
 
-        {shown('decipher') && (
+        {(
         <ExhibitCard
+          lockedReason={lockedFor('decipher')}
           kicker={decMode?.subtitle ?? 'Read the Lost'}
           title={decMode?.title ?? 'Decipher'}
           description={decMode?.description ?? ''}
@@ -283,8 +300,9 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
         />
         )}
 
-        {shown('escape-room') && (
+        {(
         <ExhibitCard
+          lockedReason={lockedFor('escape-room')}
           kicker={escMode?.subtitle ?? 'Enter the Past'}
           title={escMode?.title ?? 'Historical Escape Room'}
           description={escMode?.description ?? ''}
@@ -300,8 +318,9 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
         />
         )}
 
-        {shown('alien-archaeology') && (
+        {(
         <ExhibitCard
+          lockedReason={lockedFor('alien-archaeology')}
           kicker={alienMode?.subtitle ?? 'Unknown Worlds'}
           title={alienMode?.title ?? 'Alien Archaeology'}
           description={alienMode?.description ?? ''}
@@ -317,8 +336,9 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
         />
         )}
 
-        {shown('reverse-evolution') && (
+        {(
         <ExhibitCard
+          lockedReason={lockedFor('reverse-evolution')}
           kicker={revMode?.subtitle ?? 'From Smartphone to Stone'}
           title={revMode?.title ?? 'Reverse Evolution'}
           description={revMode?.description ?? ''}
@@ -333,7 +353,7 @@ export function ModeHub({ engine, active, onLaunch, onLaunchMode, unlocks = NO_L
           ]}
         />
         )}
-        {getMode('minimum-path')?.status === 'available' && shown('minimum-path') && <ExhibitCard
+        {getMode('minimum-path')?.status === 'available' && <ExhibitCard lockedReason={lockedFor('minimum-path')}
           kicker="Atlas"
           title={getMode('minimum-path')?.title ?? 'Minimum Path'}
           description="Find the shortest route through the game's recipe network, with checkpoints and blocked paths."
