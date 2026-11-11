@@ -3,6 +3,9 @@
 import { useEffect, useState } from 'react';
 import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
 import { SURVIVAL_MODE, SV_TARGET, survivalGuide } from '@/lib/guide/survival';
+import { markPrimerSeen, primerSeen } from '@/lib/guide/survivalPrimer';
+import { SurvivalPrimer } from './SurvivalPrimer';
+import { CampPerson, CampSky } from './CampArt';
 import { generateCamp } from '@/lib/survival/generate';
 import { memoryExhibit, summarizeCamp } from '@/lib/survival/memory';
 import { energyWord, moraleWord, warmthWord } from '@/lib/survival/read';
@@ -52,6 +55,9 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
     return survivalStore.get().active ?? generateCamp(freshSeed('run'));
   });
   const [pending, setPending] = useState<Record<string, TaskKind>>({});
+  // The on-page tour opens by itself for a first-time visitor (no past runs, never dismissed) and is always
+  // reopenable from "How to play". While it is open the small text hint steps back, so only one guide talks at a time.
+  const [primerOpen, setPrimerOpen] = useState(() => !primerSeen() && survivalStore.get().memories.length === 0);
 
   useEffect(() => {
     if (!camp) return;
@@ -63,7 +69,8 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
   }, []);
 
   const sg = survivalGuide(camp, pending, survivalStore.get().memories.length > 0);
-  const guide = useGuideController({ mode: SURVIVAL_MODE, eligible: sg.eligible, step: sg.step, finished: sg.finished });
+  const guide = useGuideController({ mode: SURVIVAL_MODE, eligible: sg.eligible && !primerOpen, step: sg.step, finished: sg.finished });
+  const closePrimer = () => { markPrimerSeen(); setPrimerOpen(false); };
 
   if (!camp) return null;
 
@@ -114,11 +121,12 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
   }
 
   return (
-    <GuideScope value={guide}><div id="survival-mode">
+    <GuideScope value={guide}><div id="survival-mode" data-period={camp.period}>
       <header className="sv-top">
         <button className="chip sv-exit" onClick={onExit}>← Hub</button>
         <p className="mono sv-eyebrow">Survival — Adapt</p>
-        <p className="sv-daycount">Day {camp.day} of {camp.objective.targetDay} · {camp.period}</p>
+        <p className="sv-daycount" data-primer="goal">Day {camp.day} of {camp.objective.targetDay} · {camp.period}</p>
+        <button className="chip sv-help" onClick={() => setPrimerOpen(true)} aria-haspopup="dialog">How to play</button>
       </header>
 
       <div className="sv-body">
@@ -142,12 +150,13 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
         </section>
 
         <section className="sv-status">
-          <div className="sv-resources">
+          <CampSky period={camp.period} />
+          <div className="sv-resources" data-primer="resources">
             <div><span className="mono">Food</span><b>{camp.resources.food.toFixed(1)}</b></div>
             <div><span className="mono">Water</span><b>{camp.resources.water.toFixed(1)}</b></div>
             <div><span className="mono">Wood</span><b>{camp.resources.wood.toFixed(1)}</b></div>
-            <div><span className="mono">Fire</span><b>{camp.fire.lit ? 'Lit' : 'Out'}</b></div>
-            <div><span className="mono">Shelter</span><b>{['None', 'Windbreak', 'Lean-to', 'Solid'][camp.shelter.level]}</b></div>
+            <div data-primer="fire"><span className="mono">Fire</span><b>{camp.fire.lit ? 'Lit' : 'Out'}</b></div>
+            <div data-primer="shelter"><span className="mono">Shelter</span><b>{['None', 'Windbreak', 'Lean-to', 'Solid'][camp.shelter.level]}</b></div>
           </div>
 
           <ol className="sv-log sv-log-small">
@@ -157,8 +166,10 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
       </div>
 
       <section className="sv-roster">
-        {camp.members.map(m => (
+        {camp.members.map((m, idx) => (
           <div key={m.id} className={`sv-member${m.injured ? ' is-injured' : ''}`}>
+            <CampPerson name={m.name} task={pending[m.id]} injured={m.injured} />
+            <div className="sv-member-body" data-primer={idx === 0 ? 'member' : undefined}>
             <div className="sv-member-head">
               <span className="sv-member-name">{m.name}</span>
               <span className="mono sv-member-trait">{m.trait.replace('-', ' ')}</span>
@@ -168,7 +179,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
             ) : (
               <>
                 <p className="sv-member-states mono">{energyWord(m.energy)} · {warmthWord(m.warmth)} · {moraleWord(m.morale)}</p>
-                <div className={'sv-tasks ' + guide.glow(SV_TARGET.member(m.id))}>
+                <div className={'sv-tasks ' + guide.glow(SV_TARGET.member(m.id))} data-primer={idx === 0 ? 'tasks' : undefined}>
                   {ASSIGNABLE.map(t => (
                     <button
                       key={t.kind}
@@ -182,6 +193,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
                 </div>
               </>
             )}
+            </div>
           </div>
         ))}
       </section>
@@ -190,8 +202,9 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
         <p className="sv-advance-hint mono">
           {camp.members.filter(m => !m.injured && !pending[m.id]).length > 0 ? 'Unassigned members will idle this period.' : ` `}
         </p>
-        <button className={'chip sv-advance ' + guide.glow(SV_TARGET.advance)} onClick={advance}>Advance to {camp.period === 'night' ? 'morning' : ({ morning: 'day', day: 'evening', evening: 'night' } as Record<string, string>)[camp.period]}</button>
+        <button className={'chip sv-advance ' + guide.glow(SV_TARGET.advance)} data-primer="advance" onClick={advance}>Advance to {camp.period === 'night' ? 'morning' : ({ morning: 'day', day: 'evening', evening: 'night' } as Record<string, string>)[camp.period]}</button>
       </div>
+      <SurvivalPrimer open={primerOpen} onClose={closePrimer} />
     </div></GuideScope>
   );
 }

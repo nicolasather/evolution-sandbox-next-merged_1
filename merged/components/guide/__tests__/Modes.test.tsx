@@ -1,6 +1,7 @@
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { GUIDE_PAUSE_MS } from '../GuideProvider';
 import { guidePrefs } from '@/lib/guide/prefs';
+import { PRIMER_KEY } from '@/lib/guide/survivalPrimer';
 import { ReverseEvolutionMode } from '@/components/reverseevolution/ReverseEvolutionMode';
 import { ArchaeologyMode } from '@/components/archaeology/ArchaeologyMode';
 import { DecipherMode } from '@/components/decipher/DecipherMode';
@@ -51,12 +52,24 @@ describe('guides in the real modes (fresh browser)', () => {
     expect(glowing()[0]).toHaveTextContent('Study it');
   });
   it('Survival: glows one member\'s task row, and "Guide off" removes everything', () => {
+    // The on-page tour opens first on a first visit; mark it seen so this test checks the text guide alone.
+    window.localStorage.setItem(PRIMER_KEY, 'done');
     render(<SurvivalMode onExit={noop} />); pause();
     expect(screen.getByText('GIVE EACH PERSON A TASK')).toBeInTheDocument();
     expect(glowing()).toHaveLength(1);
     fireEvent.click(screen.getByRole('button', { name: 'GUIDE OFF' })); pause();
     expect(glowing()).toHaveLength(0);
     expect(screen.queryByText('GIVE EACH PERSON A TASK')).toBeNull();
+  });
+  it('Survival: a first visit opens the tour, and the text guide waits behind it', () => {
+    render(<SurvivalMode onExit={noop} />); pause();
+    expect(document.querySelector('.sv-primer-card')).not.toBeNull();
+    expect(screen.queryByText('GIVE EACH PERSON A TASK')).toBeNull();
+    expect(glowing()).toHaveLength(0);
+    fireEvent.click(screen.getByRole('button', { name: 'Skip' })); pause();
+    expect(document.querySelector('.sv-primer-card')).toBeNull();
+    expect(window.localStorage.getItem(PRIMER_KEY)).toBe('done');
+    expect(screen.getByText('GIVE EACH PERSON A TASK')).toBeInTheDocument();
   });
   it('Minimum Path: glows the start button (Vietnamese text)', () => {
     render(<MinimumPathMode onExit={noop} />); pause();

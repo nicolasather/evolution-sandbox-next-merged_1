@@ -93,13 +93,16 @@ function angleDelta(a: number, b: number): number {
 }
 
 export function Plate3D({
-  node, locked = false, variant = 'exhibit', label,
+  node, locked = false, variant = 'exhibit', label, svg,
 }: {
   node: GlyphNode;
   locked?: boolean;
   variant?: Variant;
   /** Accessible name; defaults to a generic description. */
   label?: string;
+  /** Optional hand-drawn line art (inner SVG markup in a 100x100 box, trusted constants only) used
+   *  instead of the discovery drawing. `node.id` must then be a stable key for that drawing. */
+  svg?: string;
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -107,7 +110,7 @@ export function Plate3D({
   const [touched, setTouched] = useState(false);
   const [dragging, setDragging] = useState(false);
   const key = node.id;
-  const src = markup(node);
+  const src = svg ?? markup(node);
 
   useEffect(() => {
     const wrap = wrapRef.current, canvas = canvasRef.current;
@@ -431,7 +434,9 @@ export function Plate3D({
       aria-label={`${name} — 3D model. Drag, or use the arrow keys, to turn it.`}
     >
       <span className="p3d-flat" aria-hidden="true">
-        <Glyph node={node} plate={variant === 'exhibit'} locked={locked} sw={variant === 'exhibit' ? 1.6 : undefined} />
+        {svg
+          ? <svg className="p3d-art" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: svg }} />
+          : <Glyph node={node} plate={variant === 'exhibit'} locked={locked} sw={variant === 'exhibit' ? 1.6 : undefined} />}
       </span>
       <canvas ref={canvasRef} aria-hidden="true" />
       {variant === 'exhibit' && live && <span className="p3d-hint mono" aria-hidden="true">Drag to turn</span>}

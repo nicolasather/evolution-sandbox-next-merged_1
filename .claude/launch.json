@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "merged", "run", "dev", "--", "-p", "3000"],
       "port": 3000
+    },
+    {
+      "name": "merged-dev-beta",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["-e", "require('child_process').spawn('npx',['next','dev','-p','3005'],{cwd:'merged',stdio:'inherit',shell:true,env:{...process.env,NEXT_PUBLIC_ENABLE_DEV_TOOLS:'true',ENABLE_DEV_TOOLS:'true',NEXT_PUBLIC_DEPLOY_ENV:'development'}})"],
+      "port": 3005
     }
   ]
 }
