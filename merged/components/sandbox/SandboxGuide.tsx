@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { CombineResult } from '@/lib/types';
-import { markGuideDone } from '@/lib/sandbox/guideStore';
+import { markGuideDone, type GuideVariant } from '@/lib/sandbox/guideStore';
 
 /* ============================================================================
    FIRST-TIME GUIDE — about a minute, no slides. It names one thing at a time,
@@ -28,21 +28,34 @@ const STEPS: Step[] = [
   { text: 'You are free now. Experiment as you like. Help (?) explains the tools, Archive, Graph and Timeline.', advance: 'next' },
 ];
 
+/* Civilization runs the same bench. Its guide teaches the same moves, framed as the first settlement needs. */
+const CIV_STEPS: Step[] = [
+  { text: 'Civilization uses the same bench. Your goal: turn raw materials into the tools and crafts that let a settlement feed and shelter itself.', advance: 'next' },
+  { text: 'Start with what a settlement needs first. Tap Stone in your inventory.', target: '#inv [data-id="stone"]', advance: 'pick' },
+  { text: 'Use a technique on it: pick one on the right, then use it on the stone.', target: '.wb-rail .wb-act', advance: 'tool' },
+  { text: 'Settlements combine materials into new things. Bring Wood to the bench and combine it with the stone.', target: '#inv [data-id="wood"]', advance: 'combine' },
+  { text: 'Each discovery opens the next step toward a settlement. Read this card, then carry on.', target: '#outcome', advance: 'next' },
+  { text: 'Keep combining. Help (?) shows the Timeline, Graph and Archive, where the settlement routes are recorded.', advance: 'next' },
+];
+
 const HL = 'sx-guide-hl';
 
-export function SandboxGuide({ onFinish, combineKey, lastResult }: {
+export function SandboxGuide({ onFinish, combineKey, lastResult, variant = 'main' }: {
   /** Ends the guide; it is then never shown automatically again. */
   onFinish: () => void;
   /** Changes every time the player makes a combine attempt. */
   combineKey: number;
   lastResult: (CombineResult & { key: number }) | null;
+  /** Which guide text and completion flag to use. */
+  variant?: GuideVariant;
 }) {
+  const steps = variant === 'civilization' ? CIV_STEPS : STEPS;
   const [i, setI] = useState(0);
   const [failNote, setFailNote] = useState(false);
-  const step = STEPS[i];
+  const step = steps[i];
   const seenKey = useRef(combineKey);
 
-  const finish = () => { markGuideDone(); onFinish(); };
+  const finish = () => { markGuideDone(variant); onFinish(); };
   const go = (n: number) => setI(n);
 
   // the one element a step points at, lit until the step changes
@@ -75,12 +88,12 @@ export function SandboxGuide({ onFinish, combineKey, lastResult }: {
     else if (lastResult?.status === 'fail') setFailNote(true);
   }, [combineKey, lastResult]);
 
-  const last = i === STEPS.length - 1;
+  const last = i === steps.length - 1;
   return (
     <aside className="sx-guide" role="region" aria-label="Introduction" data-step={i}>
       <p className="sx-guide-text">{failNote && step.advance === 'combine' ? 'That pair does not make anything. Try another.' : step.text}</p>
       <div className="sx-guide-row">
-        <span className="sx-guide-count mono" aria-hidden="true">{i + 1} / {STEPS.length}</span>
+        <span className="sx-guide-count mono" aria-hidden="true">{i + 1} / {steps.length}</span>
         <div className="sx-guide-acts">
           <button type="button" className="chip" onClick={finish}>Skip</button>
           {step.advance === 'next' && (

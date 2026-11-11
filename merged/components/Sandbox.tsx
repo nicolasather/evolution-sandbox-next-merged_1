@@ -47,7 +47,7 @@ import { retentionBus } from '@/lib/retention/bus';
 import { RetentionLayer } from './retention/RetentionLayer';
 import { hubUi } from '@/lib/retention/ui';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
-import { clearGuideDone, guideDone } from '@/lib/sandbox/guideStore';
+import { clearGuideDone, guideDone, type GuideVariant } from '@/lib/sandbox/guideStore';
 import { SandboxGuide } from './sandbox/SandboxGuide';
 import { SandboxHelp } from './sandbox/SandboxHelp';
 import { EmoteTray } from './sandbox/EmoteTray';
@@ -67,7 +67,7 @@ const VIEW_FEATURE: Partial<Record<ViewId, FeatureId>> = {
   graph: 'graph', arch: 'archive', time: 'timeline', hub: 'hub', museum: 'museum', minpath: 'minpath',
 };
 
-export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => void } = {}) {
+export function Sandbox({ onLaunchMode, variant = 'main' }: { onLaunchMode?: (mode: ModeId) => void; variant?: GuideVariant } = {}) {
   const [panelOpen, setPanelOpen] = useState(false);
   const s = useSandbox();
   const { engine, version, view, setView, open, clearSlots, setEnding, reset } = s;
@@ -81,8 +81,8 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
   const [helpOpen, setHelpOpen] = useState(false);
   /** The first-time guide: null until the saved flag is read on the client, then on until finished. */
   const [guideOn, setGuideOn] = useState<boolean | null>(null);
-  useEffect(() => { setGuideOn(!guideDone()); }, []);
-  const replayGuide = useCallback(() => { clearGuideDone(); setGuideOn(true); }, []);
+  useEffect(() => { setGuideOn(!guideDone(variant)); }, [variant]);
+  const replayGuide = useCallback(() => { clearGuideDone(variant); setGuideOn(true); }, [variant]);
   const [journalOpen, setJournalOpen] = useState(false);
   const [milestonesOpen, setMilestonesOpen] = useState(false);
   const [worldOpen, setWorldOpen] = useState(false);
@@ -499,6 +499,7 @@ export function Sandbox({ onLaunchMode }: { onLaunchMode?: (mode: ModeId) => voi
 
       {guideOn && s.entered && reveal >= 6 && view === 'work' && !s.ending && !confirmOpen && !helpOpen && (
         <SandboxGuide
+          variant={variant}
           onFinish={() => setGuideOn(false)}
           combineKey={s.result?.key ?? 0}
           lastResult={s.result}

@@ -25,8 +25,8 @@ export const MODES: ModeDefinition[] = [
   {
     id: 'civilization',
     title: 'Civilization',
-    subtitle: 'Lifelines',
-    description: 'Keep a settlement working: plan districts and the links between them, and read what the network is telling you.',
+    subtitle: 'Settlements',
+    description: 'Combine raw materials into the tools and crafts that built settlements, in the same bench as the main game.',
     status: 'available',
     // Legacy settlements stay under this key. Lifelines keeps its run and campaign under
     // `evo.civilization.lifelines.v2` / `.campaign.v2` (lib/civilization/lifelines/schema.ts).

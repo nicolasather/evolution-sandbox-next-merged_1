@@ -20,7 +20,6 @@ import { devBridge } from '@/lib/dev/bridge';
    ========================================================================== */
 
 const SurvivalMode = dynamic(() => import('./survival/SurvivalMode').then(m => m.SurvivalMode), { ssr: false });
-const CivilizationMode = dynamic(() => import('./civilization/CivilizationMode').then(m => m.CivilizationMode), { ssr: false });
 const ArchaeologyMode = dynamic(() => import('./archaeology/ArchaeologyMode').then(m => m.ArchaeologyMode), { ssr: false });
 const DecipherMode = dynamic(() => import('./decipher/DecipherMode').then(m => m.DecipherMode), { ssr: false });
 const EscapeRoomMode = dynamic(() => import('./escaperoom/EscapeRoomMode').then(m => m.EscapeRoomMode), { ssr: false });
@@ -74,7 +73,9 @@ function AppRootBody() {
 
   let body: ReactNode;
   if (mode === 'survival') body = <SurvivalMode onExit={exitToHub} />;
-  else if (mode === 'civilization') body = <CivilizationMode onExit={exitToHub} />;
+  /* Civilization is the main merging workbench with its own guide. The keyed element remounts cleanly
+     when the player switches between this and Main Evolution. */
+  else if (mode === 'civilization') body = <Sandbox key="civilization" onLaunchMode={setMode} variant="civilization" />;
   else if (mode === 'archaeology') body = <ArchaeologyMode onExit={exitToHub} />;
   else if (mode === 'decipher') body = <DecipherMode onExit={exitToHub} />;
   else if (mode === 'escape-room') body = <EscapeRoomMode onExit={exitToHub} />;
@@ -86,7 +87,7 @@ function AppRootBody() {
   return (
     <>
       {body}
-      {mode !== 'main-evolution' && !gate && <ModeHelp mode={mode} onReplayIntro={() => replay(mode)} />}
+      {mode !== 'main-evolution' && mode !== 'civilization' && !gate && <ModeHelp mode={mode} onReplayIntro={() => replay(mode)} />}
       <CinematicGate scene={gate} onClose={closeGate} />
       {DevConsole && <DevConsole mode={mode} />}
     </>
