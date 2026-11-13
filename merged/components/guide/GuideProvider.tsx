@@ -136,3 +136,40 @@ export function GuideHint({ className = '' }: { className?: string }) {
     </div>
   );
 }
+
+/* ============================================================================
+   BLENDED GUIDE — the instruction sits right above the control it points at, in
+   the same flow as the play, instead of a banner at the top of the page. It shows
+   only while its target is the active step, so the screen never carries more than
+   one instruction. `GuideLive` keeps the same words for screen readers only.
+   ========================================================================== */
+
+/** The step's instruction, placed by the control it points at. Renders nothing while its target is not active. */
+export function GuideCallout({ target, prefix, className = '' }: { target?: string; prefix?: string; className?: string }) {
+  const { step, skip } = useGuide();
+  const [openId, setOpenId] = useState<string | null>(null);
+  const hit = !!step && (target !== undefined ? step.targets.includes(target) : step.targets.some(t => t.startsWith(prefix ?? '')));
+  if (!step || !hit) return null;
+  const expanded = openId === step.id;
+  return (
+    <div className={`guide-callout ${className}`.trim()} data-guide-callout={step.id}>
+      <p className="guide-callout-text">{step.text}</p>
+      <span className="guide-tools">
+        {step.detail && (
+          <button type="button" className="guide-link" aria-expanded={expanded} onClick={() => setOpenId(expanded ? null : step.id)}>
+            {expanded ? 'LESS' : 'WHY?'}
+          </button>
+        )}
+        <button type="button" className="guide-link" onClick={skip}>GUIDE OFF</button>
+      </span>
+      {expanded && step.detail && <p className="guide-detail">{step.detail}</p>}
+    </div>
+  );
+}
+
+/** The current instruction for screen readers only (a polite live region). Nothing visible. */
+export function GuideLive() {
+  const { step, ready } = useGuide();
+  const text = step ? step.text : ready ? READY_TEXT : '';
+  return <p className="guide-sr" role="status" aria-live="polite">{text}</p>;
+}

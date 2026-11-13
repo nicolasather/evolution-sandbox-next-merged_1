@@ -9,7 +9,9 @@ import { FUNCTION_LABEL, PHASE_LABEL, SURVEY_HINT_LABEL } from '@/lib/archaeolog
 import { applyAction, isFindRevealed, type SiteAction } from '@/lib/archaeology/simulate';
 import { archaeologyStore } from '@/lib/archaeology/store';
 import type { SiteFunction, SitePhase, SiteState } from '@/lib/archaeology/types';
-import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ModeStage } from '@/components/ModeStage';
+import { GuideCallout, GuideLive, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ModeBackdrop } from '@/components/ModeBackdrop';
 import { ARCH_MODE, ARCH_TARGET, archaeologyGuide } from '@/lib/guide/archaeology';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
@@ -154,9 +156,13 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="ar-body">
-        <GuideHint />
+        <ModeBackdrop mode="archaeology" />
+        <ModeStage mode="archaeology" title="Dig" caption="Survey a square, excavate the layers in order, then argue for an interpretation from what you actually recovered." />
+        <GuideLive />
         <section className="ar-grid-section">
           <p className="mono ar-h">Site grid — {site.gridSize}×{site.gridSize}</p>
+          <GuideCallout prefix="arch-survey:" />
+          <GuideCallout prefix="arch-dig:" />
           <div className="ar-grid" style={{ gridTemplateColumns: `repeat(${site.gridSize}, 1fr)` }}>
             {site.squares.flat().map(sq => {
               const findsHere = revealed.filter(f => f.squareX === sq.x && f.squareY === sq.y).length;
@@ -188,6 +194,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
         <section className="ar-finds-section">
           <p className="mono ar-h">Recovered finds</p>
           {revealed.length === 0 && <p className="ar-empty">Nothing excavated yet.</p>}
+          <GuideCallout prefix="arch-analyze:" />
           <ul className="ar-finds-list">
             {unanalyzed.map(f => (
               <li key={f.id} className="ar-find ar-find-unanalyzed">
@@ -225,6 +232,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
 
       <section className="ar-hypothesis">
         <p className="mono ar-h">Working hypothesis</p>
+        <GuideCallout target={ARCH_TARGET.fn} />
         <div className="ar-hypothesis-row">
           <span className="mono">Site function</span>
           <div className="ar-choice-group">
@@ -249,6 +257,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
             ))}
           </div>
         </div>
+        <GuideCallout target={ARCH_TARGET.report} />
         <div className="ar-report-row">
           <button
             className={'chip ar-report-btn ' + g(ARCH_TARGET.report)}

@@ -134,6 +134,7 @@
 
 /* The follow-the-glow guide: after _flat.css, because the glow on the one real control to press is wanted. */
 @import "./_guide.css" layer(components);
+@import "./_modestage.css" layer(components);
 
 /* Unlock glow + notice, the calmer guide line, and the 3D type of every opening. After _guide.css so it can refine it. */
 @import "./_unlock.css" layer(components);

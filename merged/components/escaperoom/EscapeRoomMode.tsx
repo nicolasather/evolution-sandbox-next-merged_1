@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { emitCrew } from '@/lib/characters/bus';
-import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
+import { GuideCallout, GuideLive, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
+import { ModeBackdrop } from '@/components/ModeBackdrop';
+import { ModeStage } from '@/components/ModeStage';
 import { ER_TARGET, ESCAPE_MODE, escapeRoomGuide } from '@/lib/guide/escaperoom';
 import { episodeExhibit, summarizeEpisode } from '@/lib/escaperoom/memory';
 import { DEFAULT_EPISODE_ID, EPISODES, getEpisode } from '@/lib/escaperoom/registry';
@@ -31,6 +33,7 @@ function RatioStation({ puzzle, solved, hint, onSubmit, onHint }: {
   const glow = useGuideGlow();
   return (
     <div className={'er-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
+      <GuideCallout target={ER_TARGET.station(puzzle.id)} />
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {solved ? (
@@ -69,6 +72,7 @@ function SequenceStation({ puzzle, solved, hint, onSubmit, onHint }: {
   const glow = useGuideGlow();
   return (
     <div className={'er-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
+      <GuideCallout target={ER_TARGET.station(puzzle.id)} />
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {solved ? (
@@ -106,6 +110,7 @@ function MatchStation({ puzzle, solved, hint, onSubmit, onHint }: {
   const glow = useGuideGlow();
   return (
     <div className={'er-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
+      <GuideCallout target={ER_TARGET.station(puzzle.id)} />
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {solved ? (
@@ -147,6 +152,7 @@ function CodeStation({ puzzle, solved, hint, unlocked, onSubmit, onHint }: {
   const glow = useGuideGlow();
   return (
     <div className={'er-station er-exit-station' + (solved ? ' er-solved' : '') + ' ' + glow(ER_TARGET.station(puzzle.id))}>
+      <GuideCallout target={ER_TARGET.station(puzzle.id)} />
       <p className="mono er-station-title">{puzzle.title}</p>
       <p className="er-station-prompt">{puzzle.prompt}</p>
       {!unlocked && !solved && <p className="er-locked-note">Solve the other stations to fill the tray.</p>}
@@ -264,8 +270,10 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="er-body">
+        <ModeBackdrop mode="escape-room" />
+        <ModeStage mode="escape-room" title="Lock" caption="Each station turns one part of the mechanism. Solve them in the order the past actually used." />
         <p className="er-intro">{episode.introText}</p>
-        <GuideHint />
+        <GuideLive />
 
         <div className="er-stations">
           {episode.puzzles.map((puzzle: Puzzle) => {

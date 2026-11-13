@@ -1,0 +1,129 @@
+/* ============================================================================
+   MODE STAGE — the 3D object that opens each extra mode, on one quiet surface.
+   Depth comes from a single declared elevation (shadow with offset + blur) and
+   the object's own wireframe perspective, not from stripes, grids or hard block
+   shadows (see the craft floor: decorative grids need a real canvas under them).
+   ========================================================================== */
+
+.mode-stage {
+  margin: 0 0 clamp(18px, 3vw, 28px);
+  padding: clamp(14px, 2.4vw, 22px);
+  display: grid;
+  grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(14px, 2.6vw, 26px);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg) 92%, var(--line) 8%);
+  box-shadow: 0 22px 36px -24px rgba(0, 0, 0, 0.55);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* The subject's own world, two depth planes. Far: thin and faint. Near: heavier, brighter.
+   Used behind the stage object and behind each play board; the parent sets position and isolation. */
+.er-body, .dph-body, .ar-body, .xa-body, .rev-body, main[data-motion] { position: relative; isolation: isolate; }
+/* On a board the world is a fixed strip at the top, not stretched over the whole (tall) play area */
+:is(.er-body, .dph-body, .ar-body, .xa-body, .rev-body, main[data-motion]) > .mode-backdrop { inset: 0 0 auto 0; height: 420px; }
+.mode-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.mode-backdrop circle { fill: none; }
+.mode-backdrop-far { stroke-width: 1; opacity: 0.38; }
+.mode-backdrop-near { stroke-width: 1.6; opacity: 0.68; }
+.mode-backdrop-near circle { fill: none; }
+
+.mode-stage-model,
+.mode-stage-caption { position: relative; z-index: 1; }
+
+.mode-stage-model {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.mode-stage-model .p3d { width: 100%; height: 100%; }
+
+.mode-stage-caption {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--fg);
+  max-width: 52ch;
+}
+
+.mode-stage-caption strong {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+@media (max-width: 640px) {
+  .mode-stage { grid-template-columns: 1fr; text-align: center; }
+  .mode-stage-model { max-width: 150px; }
+}
+
+/* ============================================================================
+   MODE CARDS — the stations, squares, specimens and choices of every board share
+   one elevation: a quiet top highlight, a soft shadow that carries the offset, and
+   a thin depth line on a plane just beneath the card. Hover lifts the card a
+   little. Glow (the guide) still wins while it is the active target.
+   ========================================================================== */
+
+:is(.er-station, .dph-legend-row, .rev-target-card, .ar-square, .xa-specimen, .ar-find, .xa-axis-row, main[data-motion] article) {
+  position: relative;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 96%, var(--line) 4%), color-mix(in srgb, var(--bg) 90%, var(--line) 10%));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--fg) 7%, transparent), 0 16px 24px -18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s ease;
+}
+
+/* the depth line: a plane one step behind the card */
+:is(.er-station, .dph-legend-row, .rev-target-card, .ar-square, .xa-specimen, .ar-find, .xa-axis-row, main[data-motion] article)::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  bottom: -6px;
+  height: 1px;
+  background: var(--line);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+:is(.er-station, .dph-legend-row, .rev-target-card, .ar-square, .xa-specimen, .ar-find, .xa-axis-row, main[data-motion] article):hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--fg) 9%, transparent), 0 22px 30px -18px rgba(0, 0, 0, 0.7);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.er-station, .dph-legend-row, .rev-target-card, .ar-square, .xa-specimen, .ar-find, .xa-axis-row, main[data-motion] article) { transition: none; }
+  :is(.er-station, .dph-legend-row, .rev-target-card, .ar-square, .xa-specimen, .ar-find, .xa-axis-row, main[data-motion] article):hover { transform: none; }
+}
+
+/* Decipher's tutorial is collapsed by default: the board comes first, the steps are one click away */
+.dph-tutorial { margin: 0 0 18px; }
+.dph-tutorial > summary { cursor: pointer; list-style: none; padding: 8px 0; color: var(--fg); }
+.dph-tutorial > summary::-webkit-details-marker { display: none; }
+.dph-tutorial > summary::after { content: "+"; float: right; opacity: 0.6; }
+.dph-tutorial[open] > summary::after { content: "−"; }
+.dph-tutorial > summary:focus-visible { outline: 2px solid var(--guide-glow, var(--line)); outline-offset: 3px; }
+
+/* PHONE — boards never grow wider than the screen: the single column can shrink, children can shrink,
+   and the site grid drops to two columns so its Survey / Dig buttons stay on screen. */
+:is(.er-body, .dph-body, .ar-body, .xa-body, .rev-body) > * { min-width: 0; }
+@media (max-width: 640px) {
+  :is(.er-body, .dph-body, .ar-body, .xa-body, .rev-body) { grid-template-columns: minmax(0, 1fr) !important; }
+  .ar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .ar-square-actions { flex-wrap: wrap; }
+}

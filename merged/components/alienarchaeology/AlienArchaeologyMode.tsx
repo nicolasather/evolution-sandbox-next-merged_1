@@ -8,7 +8,9 @@ import { ALL_AXES, generateSite } from '@/lib/alienarchaeology/generate';
 import { applyAction } from '@/lib/alienarchaeology/simulate';
 import { alienArchaeologyStore } from '@/lib/alienarchaeology/store';
 import type { AlienSiteState, AxisId, AxisValue } from '@/lib/alienarchaeology/types';
-import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ModeStage } from '@/components/ModeStage';
+import { GuideCallout, GuideLive, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ModeBackdrop } from '@/components/ModeBackdrop';
 import { ALIEN_MODE, XA_TARGET, alienGuide } from '@/lib/guide/alien';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
@@ -124,11 +126,14 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="xa-body">
-        <GuideHint />
+        <ModeBackdrop mode="alien-archaeology" />
+        <ModeStage mode="alien-archaeology" title="Monolith" caption="A builder you have never seen left these ruins. Study each specimen and let the evidence name its purpose." />
+        <GuideLive />
         <p className="xa-intro">{site.truth.setting}</p>
 
         <section className="xa-specimens-section">
           <p className="mono xa-h">Recovered specimens</p>
+          <GuideCallout prefix="xa-study:" />
           <div className="xa-specimens">
             {site.specimens.map(spec => {
               const t = template(spec.templateId);
@@ -164,6 +169,8 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
           const confidence = site.confidences[axis] ?? 0.5;
           return (
             <div key={axis} className="xa-axis-row">
+              <GuideCallout target={XA_TARGET.reading(axis)} />
+              <GuideCallout target={XA_TARGET.confidence(axis)} />
               <span className="mono xa-axis-label">{AXIS_LABEL[axis]}</span>
               <div className="xa-choice-group">
                 {options.map((opt: AxisValue) => (
@@ -184,6 +191,7 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
             </div>
           );
         })}
+        <GuideCallout target={XA_TARGET.report} />
         <div className="xa-report-row">
           <button className={'chip xa-report-btn ' + g(XA_TARGET.report)} disabled={!allAxesSet} onClick={fileReport}>File field report</button>
         </div>

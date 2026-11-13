@@ -9,7 +9,9 @@ import { assignGlyph, blankAttempt, checkAttempt, revealAnswer, type CheckResult
 import { decipherStore } from '@/lib/decipher/store';
 import { generateTutorial } from '@/lib/decipher/tutorial';
 import type { DecipherAttempt, DecipherPuzzle, Glyph, NounConceptId, NumberConceptId } from '@/lib/decipher/types';
-import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ModeStage } from '@/components/ModeStage';
+import { GuideCallout, GuideLive, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
+import { ModeBackdrop } from '@/components/ModeBackdrop';
 import { DECIPHER_MODE, DEC_TARGET, decipherGuide } from '@/lib/guide/decipher';
 import { notebook } from '@/lib/notebook/store';
 import { profile } from '@/lib/profile/store';
@@ -161,14 +163,16 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
       </header>
 
       <div className="dph-body">
-        <GuideHint />
+        <ModeBackdrop mode="decipher" />
+        <ModeStage mode="decipher" title="Tablet" caption="Each glyph is a sign used by a people nobody can read yet. Test a meaning against the evidence, not against a guess." />
+        <GuideLive />
         {puzzle.tutorialSteps && (
-          <section className="dph-tutorial">
-            <p className="mono dph-h">How to read this</p>
+          <details className="dph-tutorial">
+            <summary className="mono dph-h">How to read this · {puzzle.tutorialSteps.length} steps</summary>
             <ol className="dph-tutorial-steps">
               {puzzle.tutorialSteps.map((s, i) => <li key={i}>{s}</li>)}
             </ol>
-          </section>
+          </details>
         )}
 
         <p className="dph-intro">{puzzle.introText}</p>
@@ -212,6 +216,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
         <section className="dph-legend">
           <p className="mono dph-h">Mystery glyphs — assign a meaning to each</p>
           <p className="dph-legend-note">Assigning a word to a second glyph clears it from wherever else you placed it — count how often each glyph appears above to guide your first guess.</p>
+          <GuideCallout prefix="dec-row:" />
           <div className="dph-legend-rows">
             {nounGlyphs.map(g => {
               const current = attempt.assignments[g.id];
@@ -239,6 +244,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
           </p>
         )}
 
+        <GuideCallout target={DEC_TARGET.check} />
         <div className="dph-actions-row">
           <button className={'chip dph-check-btn ' + guide.glow(DEC_TARGET.check)} onClick={check}>Check</button>
           <button className="chip dph-reveal-btn" onClick={reveal}>Reveal the reading</button>

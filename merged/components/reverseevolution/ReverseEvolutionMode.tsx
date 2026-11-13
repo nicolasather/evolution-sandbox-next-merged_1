@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { emitCrew } from '@/lib/characters/bus';
-import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
+import { ModeStage } from '@/components/ModeStage';
+import { GuideCallout, GuideLive, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
+import { ModeBackdrop } from '@/components/ModeBackdrop';
 import { REV_TARGET, REVERSE_MODE, reverseGuide } from '@/lib/guide/reverse';
 import { reverseTargets } from '@/lib/reverseevolution/catalog';
 import { generateRun } from '@/lib/reverseevolution/generate';
@@ -31,6 +33,7 @@ function QuestionPanel({ optionIds, selected, onToggle, onSubmit, onReveal }: {
   const glow = useGuideGlow();
   return (
     <div className="rev-question">
+      <GuideCallout target={REV_TARGET.option} />
       <div className="rev-options">
         {optionIds.map(id => (
           <button
@@ -40,6 +43,7 @@ function QuestionPanel({ optionIds, selected, onToggle, onSubmit, onReveal }: {
           >{nameOf(id)}</button>
         ))}
       </div>
+      <GuideCallout target={REV_TARGET.submit} />
       <div className="rev-question-actions">
         <button className={'chip rev-submit ' + glow(REV_TARGET.submit)} disabled={selected.length === 0} onClick={() => onSubmit(selected)}>Submit</button>
         <button className="chip rev-reveal" onClick={onReveal}>Just show me</button>
@@ -149,8 +153,11 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
           <p className="mono rev-eyebrow">Reverse Evolution — From Smartphone to Stone</p>
         </header>
         <div className="rev-body">
-          <GuideHint />
+        <ModeBackdrop mode="reverse-evolution" />
+          <ModeStage mode="reverse-evolution" title="Tree" caption="Start at the complex object and descend through its dependencies to the raw materials at the bottom." />
+          <GuideLive />
           <p className="rev-intro">Pick a real, complex discovery. Trace what it was actually made from, step by step, back toward raw materials — every question and every answer is real Main Evolution data, not invented for this mode.</p>
+          <GuideCallout target={REV_TARGET.card} />
           <div className="rev-targets">
             {reverseTargets(playDb).map(t => (
               <button key={t.id} className={'rev-target-card ' + guide.glow(REV_TARGET.card)} onClick={() => start(t.id, Date.now())}>
@@ -195,7 +202,8 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
         <p className="rev-progress mono">{state.correctCount + state.revealedCount} of {state.nodesUsed - 1} steps answered</p>
       </header>
       <div className="rev-body">
-        <GuideHint />
+        <ModeBackdrop mode="reverse-evolution" />
+        <GuideLive />
         <TreeNodeView state={state} nodeKey="n0" selected={selected} onToggle={toggle} onSubmit={submit} onReveal={reveal} />
       </div>
     </div></GuideScope>

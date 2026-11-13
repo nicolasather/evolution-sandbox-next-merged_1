@@ -20,34 +20,34 @@ describe('guides in the real modes (fresh browser)', () => {
   it('Reverse Evolution: glows a discovery card, then the options, then Submit', () => {
     render(<ReverseEvolutionMode onExit={noop} />);
     pause();
-    expect(screen.getByText('PICK A DISCOVERY')).toBeInTheDocument();
+    expect(document.querySelector('[data-guide-callout]')).toHaveTextContent('PICK A DISCOVERY');
     expect(glowing().length).toBeGreaterThan(0);
     fireEvent.click(glowing()[0]); pause();
-    expect(screen.getByText('TICK WHAT IT WAS MADE FROM')).toBeInTheDocument();
+    expect(document.querySelector('[data-guide-callout]')).toHaveTextContent('TICK WHAT IT WAS MADE FROM');
     fireEvent.click(glowing()[0]); pause();
-    expect(screen.getByText('SUBMIT YOUR ANSWER')).toBeInTheDocument();
+    expect(document.querySelector('[data-guide-callout]')).toHaveTextContent('SUBMIT YOUR ANSWER');
     expect(glowing()).toHaveLength(1);
     expect(glowing()[0]).toHaveTextContent('Submit');
   });
   it('Archaeologist: starts with one Survey button', () => {
     render(<ArchaeologyMode onExit={noop} />); pause();
-    expect(screen.getByText('SURVEY A SQUARE')).toBeInTheDocument();
+    expect(document.querySelector('[data-guide-callout]')).toHaveTextContent('SURVEY A SQUARE');
     expect(glowing()).toHaveLength(1);
     expect(glowing()[0]).toHaveTextContent('Survey');
   });
   it('Decipher: glows the first mystery glyph row', () => {
     render(<DecipherMode onExit={noop} />); pause();
-    expect(screen.getByText('GIVE THIS GLYPH A MEANING')).toBeInTheDocument();
+    expect(document.querySelector('[data-guide-callout]')).toHaveTextContent('GIVE THIS GLYPH A MEANING');
     expect(glowing()).toHaveLength(1);
   });
   it('Escape Room: glows one station', () => {
     render(<EscapeRoomMode onExit={noop} />); pause();
-    expect(screen.getByText('SOLVE THIS STATION')).toBeInTheDocument();
+    expect(document.querySelector('[data-guide-callout]')).toHaveTextContent('SOLVE THIS STATION');
     expect(glowing()).toHaveLength(1);
   });
   it('Alien Archaeology: glows "Study it" on one specimen', () => {
     render(<AlienArchaeologyMode onExit={noop} />); pause();
-    expect(screen.getByText('STUDY A SPECIMEN')).toBeInTheDocument();
+    expect(document.querySelector('[data-guide-callout]')).toHaveTextContent('STUDY A SPECIMEN');
     expect(glowing()).toHaveLength(1);
     expect(glowing()[0]).toHaveTextContent('Study it');
   });
@@ -73,8 +73,11 @@ describe('guides in the real modes (fresh browser)', () => {
   });
   it('Minimum Path: glows the start button (Vietnamese text)', () => {
     render(<MinimumPathMode onExit={noop} />); pause();
-    expect(screen.getByText('BẤM BẮT ĐẦU')).toBeInTheDocument();
-    expect(glowing()[0]).toHaveTextContent('Bắt đầu');
+    // the instruction sits directly above the control it points at, not in a banner
+    const callout = document.querySelector('[data-guide-callout]');
+    expect(callout).toHaveTextContent('PRESS START');
+    expect(callout?.nextElementSibling).toBe(glowing()[0]);
+    expect(glowing()[0]).toHaveTextContent('Start');
   });
   it('a player who switched the guide off sees none of it', () => {
     guidePrefs.skip('archaeology');

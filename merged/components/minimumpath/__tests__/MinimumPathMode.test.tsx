@@ -12,45 +12,45 @@ beforeEach(() => {
     request: async (_name: string, callback: () => unknown) => callback(),
   } });
 });
-async function saved() { await waitFor(() => expect(screen.queryByText('Đang lưu…')).toBeNull()); }
+async function saved() { await waitFor(() => expect(screen.queryByText('Saving…')).toBeNull()); }
 test('E2E component: enter → mission → legal moves → result → save → remount → resume → exit', async () => {
   const exit = jest.fn(); const ui = render(<MinimumPathMode onExit={exit} />);
-  fireEvent.click(screen.getByText('Bắt đầu / Tiếp tục'));
-  fireEvent.click(screen.getByText('Bắt đầu màn đã chọn')); await saved();
+  fireEvent.click(screen.getByText('Start / Continue'));
+  fireEvent.click(screen.getByText('Start selected mission')); await saved();
   const path = shortest(graph, content.missions[0])!;
   for (const id of path.slice(1)) {
-    fireEvent.click(screen.getByRole('button', { name: `Đi tới ${graph.items.get(id)!.name}` })); await saved();
+    fireEvent.click(screen.getByRole('button', { name: `Go to ${graph.items.get(id)!.name}` })); await saved();
   }
-  expect(screen.getByText('Đã tìm đường tối ưu')).toBeTruthy();
+  expect(screen.getByText('Found the optimal route')).toBeTruthy();
   expect(JSON.parse(localStorage.getItem(SAVE_KEY)!).records).toHaveLength(1);
   ui.unmount(); render(<MinimumPathMode onExit={exit} />);
-  fireEvent.click(screen.getByText('Bắt đầu / Tiếp tục'));
-  expect(screen.getByText('Đã tìm đường tối ưu')).toBeTruthy();
-  fireEvent.click(screen.getByText('Thoát mode')); expect(exit).toHaveBeenCalledTimes(1);
+  fireEvent.click(screen.getByText('Start / Continue'));
+  expect(screen.getByText('Found the optimal route')).toBeTruthy();
+  fireEvent.click(screen.getByText('Exit mode')); expect(exit).toHaveBeenCalledTimes(1);
 });
 test('hint marks assisted and corrupt save stays untouched through play', async () => {
   localStorage.setItem(SAVE_KEY, 'unreadable');
   render(<MinimumPathMode onExit={() => undefined} />);
-  fireEvent.click(screen.getByText('Bắt đầu / Tiếp tục'));
-  fireEvent.click(screen.getByText('Bắt đầu màn đã chọn')); await saved();
-  fireEvent.click(screen.getByText('Gợi ý bước tiếp theo')); await saved();
-  expect(screen.getByText('Có hỗ trợ')).toBeTruthy();
+  fireEvent.click(screen.getByText('Start / Continue'));
+  fireEvent.click(screen.getByText('Start selected mission')); await saved();
+  fireEvent.click(screen.getByText('Hint: next step')); await saved();
+  expect(screen.getByText('Assisted')).toBeTruthy();
   expect(localStorage.getItem(SAVE_KEY)).toBe('unreadable');
-  expect(screen.getByText(/Thử đi tới/)).toBeTruthy();
+  expect(screen.getByText(/Try going to/)).toBeTruthy();
 });
 test('missing Web Locks permits play without overwriting stored data', async () => {
   Object.defineProperty(navigator, 'locks', { configurable: true, value: undefined });
   render(<MinimumPathMode onExit={() => undefined} />);
-  fireEvent.click(screen.getByText('Bắt đầu / Tiếp tục'));
-  fireEvent.click(screen.getByText('Bắt đầu màn đã chọn')); await saved();
+  fireEvent.click(screen.getByText('Start / Continue'));
+  fireEvent.click(screen.getByText('Start selected mission')); await saved();
   expect(localStorage.getItem(SAVE_KEY)).toBeNull();
-  expect(screen.getByText(/Chỉ giữ trong phiên/)).toBeTruthy();
+  expect(screen.getByText(/Session only/)).toBeTruthy();
 });
 test('other tab conflict preserves remote save and reports memory-only mode', async () => {
   render(<MinimumPathMode onExit={() => undefined} />);
-  fireEvent.click(screen.getByText('Bắt đầu / Tiếp tục'));
+  fireEvent.click(screen.getByText('Start / Continue'));
   localStorage.setItem(SAVE_KEY, 'remote-change');
-  fireEvent.click(screen.getByText('Bắt đầu màn đã chọn')); await saved();
+  fireEvent.click(screen.getByText('Start selected mission')); await saved();
   expect(localStorage.getItem(SAVE_KEY)).toBe('remote-change');
-  expect(screen.getByText(/Tab khác đã thay đổi/)).toBeTruthy();
+  expect(screen.getByText(/Another tab changed the save/)).toBeTruthy();
 });
