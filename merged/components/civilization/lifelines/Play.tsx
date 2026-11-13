@@ -1,5 +1,6 @@
 'use client';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { evaluateMastery } from '@/lib/civilization/lifelines/campaign';
 import { pickQuestion } from '@/lib/civilization/lifelines/questions';
 import { GATHER_RESOURCES, SERVICE_LABEL, GATHER_AMOUNT, formatUnits } from '@/lib/civilization/lifelines/rules';
@@ -43,7 +44,13 @@ export function Play({ onChapters }: { onChapters: () => void }) {
 
   const act = useCallback((c: Command) => {
     const r = store.dispatch(c);
-    if (!r.ok) { setNotice(blockReasonText(r.code)); setBlocked(n => n + 1); } else { setNotice(''); setBlocked(0); }
+    if (!r.ok) { setNotice(blockReasonText(r.code)); setBlocked(n => n + 1); } else {
+      setNotice(''); setBlocked(0);
+      // the crew hears only what the engine accepted
+      if (c.type === 'resolve-event') emitCrew('civilization', 'civilization-decision');
+      else if (c.type === 'advance') emitCrew('civilization', 'civilization-resource-change', { turn: store.getSnapshot().run?.turn ?? null });
+      else if (c.type === 'queue-programme' || c.type === 'gather' || c.type === 'set-policies' || c.type === 'set-routing' || c.type === 'build-link' || c.type === 'repair-link') emitCrew('civilization', 'civilization-task-assign', { command: c.type });
+    }
     return { ok: r.ok, code: r.ok ? undefined : r.code };
   }, [store]);
 
@@ -100,6 +107,16 @@ export function Play({ onChapters }: { onChapters: () => void }) {
     })
     : null), [run, index, selected, panel, preview, ro, manifest.completions]);
   const guide = useGuideController({ mode: 'civilization', eligible: guideInfo?.eligible ?? false, step: guideInfo?.step ?? null, finished: guideInfo?.finished ?? false });
+
+  const crisisId = run?.pendingEventId ?? null;
+  useEffect(() => { if (crisisId) emitCrew('civilization', 'civilization-crisis'); }, [crisisId]);
+  const doneAt = run?.completion.completedAtTurn ?? null;
+  const lastChapter = !!index && !!chapter && [...index.chapters.values()].every(c => c.order <= chapter.order);
+  useEffect(() => {
+    if (doneAt === null) return;
+    emitCrew('civilization', 'civilization-chapter-complete');
+    if (lastChapter) emitCrew('civilization', 'civilization-campaign-complete');
+  }, [doneAt, lastChapter]);
 
   if (!index || !run || !chapter) return null;
   const completed = run.completion.completedAtTurn !== null;

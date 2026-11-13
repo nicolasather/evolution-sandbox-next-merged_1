@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { CONCEPT_GLOSS, NOUN_CONCEPTS, NUMBER_VALUE } from '@/lib/decipher/catalog';
 import { generatePuzzle } from '@/lib/decipher/generate';
 import { decipherExhibit, summarizeAttempt } from '@/lib/decipher/memory';
@@ -67,6 +68,8 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
     if (!decipherStore.get().activePuzzle) decipherStore.setActive(game.puzzle, game.attempt);
     notebook.ensureInvestigation(investigationId(game.puzzle.id), 'Decipherment — ' + game.puzzle.id, 'decipher');
     profile.recordModeVisit('decipher');
+    emitCrew('decipher', 'decipher-enter');
+    if (game.puzzle.tutorialSteps) emitCrew('decipher', 'decipher-tutorial-step');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -74,6 +77,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
   const guide = useGuideController({ mode: DECIPHER_MODE, eligible: dg.eligible, step: dg.step, finished: dg.finished });
 
   const finishPuzzle = (puzzle: DecipherPuzzle, attempt: DecipherAttempt) => {
+    emitCrew('decipher', 'decipher-tablet-complete', { solved: attempt.solved });
     const memory = summarizeAttempt(puzzle, attempt);
     decipherStore.archiveActive(memory);
     const exhibit = decipherExhibit(memory);
@@ -87,6 +91,11 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
     const next = { ...game, attempt: nextAttempt };
     setGame(next);
     setCheckResult(result);
+    // the checker's own verdict, never the button
+    emitCrew('decipher', 'decipher-check-used');
+    if (result.allCorrect) emitCrew('decipher', 'decipher-solution-correct');
+    else if (result.correctCount * 3 <= result.total) emitCrew('decipher', 'decipher-check-poor', { correct: result.correctCount, total: result.total });
+    else emitCrew('decipher', 'decipher-partial-correct', { correct: result.correctCount, total: result.total });
     if (nextAttempt.solved) finishPuzzle(next.puzzle, nextAttempt);
     else decipherStore.setActive(next.puzzle, nextAttempt);
   };
@@ -107,6 +116,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
   };
 
   const assign = (glyphId: string, conceptId: NounConceptId | null) => {
+    emitCrew('decipher', game.attempt.assignments[glyphId] ? 'decipher-assignment-replaced' : 'decipher-glyph-assigned');
     const nextAttempt = assignGlyph(game.attempt, glyphId, conceptId);
     const next = { ...game, attempt: nextAttempt };
     setGame(next);
@@ -206,7 +216,7 @@ export function DecipherMode({ onExit }: { onExit: () => void }) {
             {nounGlyphs.map(g => {
               const current = attempt.assignments[g.id];
               return (
-                <div key={g.id} className={'dph-legend-row ' + guide.glow(DEC_TARGET.row(g.id))}>
+                <div key={g.id} className={'dph-legend-row ' + guide.glow(DEC_TARGET.row(g.id))} onFocus={() => emitCrew('decipher', 'decipher-glyph-inspect')}>
                   <GlyphIcon glyph={g} size={40} />
                   <div className="dph-legend-options">
                     {NOUN_CONCEPTS.map(c => (

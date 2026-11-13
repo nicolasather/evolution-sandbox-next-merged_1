@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
 import { REV_TARGET, REVERSE_MODE, reverseGuide } from '@/lib/guide/reverse';
 import { reverseTargets } from '@/lib/reverseevolution/catalog';
@@ -77,7 +78,8 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
   });
 
   const [selected, setSelected] = useState<string[]>([]);
-  const toggle = (id: string) => setSelected(x => x.includes(id) ? x.filter(i => i !== id) : [...x, id]);
+  useEffect(() => { emitCrew('reverse-evolution', 'reverse-enter'); }, []);
+  const toggle = (id: string) => { emitCrew('reverse-evolution', 'reverse-option-select'); setSelected(x => x.includes(id) ? x.filter(i => i !== id) : [...x, id]); };
   const rg = reverseGuide(state, selected.length);
   const guide = useGuideController({ mode: REVERSE_MODE, eligible: rg.eligible, step: rg.step, finished: rg.finished });
 
@@ -90,12 +92,18 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
     setSelected([]);
     setState(run);
     reverseEvolutionStore.setActive(run);
+    emitCrew('reverse-evolution', 'reverse-target-select');
+    emitCrew('reverse-evolution', 'reverse-run-start');
     profile.recordModeVisit('reverse-evolution');
   };
 
   const submit = (selectedIds: string[]) => {
     if (!state) return;
     const { state: next } = applyAction(playDb, state, { kind: 'submit', selectedIds });
+    // the dependency check's own verdict
+    emitCrew('reverse-evolution', next.correctCount > state.correctCount ? 'reverse-answer-correct' : 'reverse-answer-wrong');
+    if (next.nodesUsed > state.nodesUsed) { emitCrew('reverse-evolution', 'reverse-node-expand'); emitCrew('reverse-evolution', 'reverse-chain-depth', { used: next.nodesUsed }); }
+    if (next.ending === 'complete' && state.ending !== 'complete') emitCrew('reverse-evolution', 'reverse-run-complete');
     setSelected([]);
     setState(next);
     reverseEvolutionStore.setActive(next);
@@ -104,6 +112,8 @@ export function ReverseEvolutionMode({ onExit }: { onExit: () => void }) {
   const reveal = () => {
     if (!state) return;
     const { state: next } = applyAction(playDb, state, { kind: 'reveal' });
+    emitCrew('reverse-evolution', 'reverse-answer-reveal');
+    if (next.ending === 'complete' && state.ending !== 'complete') emitCrew('reverse-evolution', 'reverse-run-complete');
     setSelected([]);
     setState(next);
     reverseEvolutionStore.setActive(next);

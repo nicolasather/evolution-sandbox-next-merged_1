@@ -45,6 +45,8 @@ import { benchElement, benchSpawn } from '@/lib/craft/bus';
 import { sound } from '@/lib/sound';
 import { retentionBus } from '@/lib/retention/bus';
 import { RetentionLayer } from './retention/RetentionLayer';
+import { BenchCrewLink } from './characters/BenchCrewLink';
+import { emitHere } from '@/lib/characters/bus';
 import { hubUi } from '@/lib/retention/ui';
 import { ERA_TINT, useSandbox } from '@/lib/useSandbox';
 import { clearGuideDone, guideDone, type GuideVariant } from '@/lib/sandbox/guideStore';
@@ -433,7 +435,7 @@ export function Sandbox({ onLaunchMode, variant = 'main' }: { onLaunchMode?: (mo
             version={version}
             active
             onlyPath={onlyPath}
-            onOnlyPathChange={setOnlyPath}
+            onOnlyPathChange={v => { emitHere('graph-route-follow', { on: v }, 'ui'); setOnlyPath(v); }}
             fitSignal={fitSignal}
             focusId={s.focus?.id ?? null}
             onOpen={openExhibit}
@@ -574,6 +576,9 @@ export function Sandbox({ onLaunchMode, variant = 'main' }: { onLaunchMode?: (mo
         unlocks={unlocks}
         busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || gate !== null}
       />
+      {/* The crew's link to this bench: real progress, readiness, what makes the player busy, and the narrow bench actions. */}
+      <BenchCrewLink engine={engine} version={version} active={s.entered && reveal >= 6} mode={variant === 'civilization' ? 'civilization' : 'main-evolution'}
+        busy={panelOpen || !!s.ending || confirmOpen || shortcutsOpen || journalOpen || milestonesOpen || worldOpen || tradeOpen || labOpen || gate !== null} view={view} advanced={unlocks.has('companion')} />
 
       <ShortcutsOverlay open={shortcutsOpen} onClose={() => setShortcutsOpen(false)} onReplay={replayJourney} />
 

@@ -1,0 +1,104 @@
+/* ============================================================================
+   THE CREW — three small creatures that live along the bottom edge of every mode.
+   The lane never takes the pointer: only the hit button around each creature does.
+   Motion is transform / opacity only; the clips are driven by lib/characters/animator.
+   ========================================================================== */
+:root{--crew-size:84px;--crew-lift:calc(var(--nav-h,0px) + 74px)}
+@media (max-width:720px){:root{--crew-size:64px;--crew-lift:calc(var(--nav-h,0px) + 64px)}}
+
+.crew-lane{position:fixed;left:0;right:0;top:0;height:0;z-index:41;pointer-events:none;contain:layout style}
+.crew-actor{position:absolute;left:0;top:0;width:var(--crew-size);height:var(--crew-size);pointer-events:none;will-change:transform;transition:opacity .35s ease-out,translate .35s cubic-bezier(.23,1,.32,1)}
+.crew-actor:not([data-placed]){visibility:hidden}
+.crew-rot{position:relative;width:100%;height:100%;transform-origin:50% 50%}
+
+
+
+.crew-lane[data-tucked="1"] .crew-actor{opacity:0;translate:0 30%}
+.crew-flip{width:100%;height:100%}
+.crew-flip[data-facing="left"]{transform:scaleX(-1)}
+.crew-rig{position:relative;transform-origin:50% 100%;color:var(--bone,#e8dfc8)}
+.crew-rig svg{display:block;overflow:visible}
+.crew-rig [data-joint]{transform-box:fill-box;transform-origin:50% 50%}
+.crew-rig [data-joint="body"],.crew-rig [data-joint="head"]{transform-origin:50% 100%}
+.crew-rig [data-joint="legs"]{transform-origin:50% 0%}
+.crew-rig [data-joint="armL"]{transform-origin:100% 0%}
+.crew-rig [data-joint="armR"]{transform-origin:0% 0%}
+.crew-rig [data-joint="tail"]{transform-origin:50% 100%}
+.crew-rig[data-char="orra"] [data-joint="tail"]{transform-origin:50% 50%}
+.crew-rig [data-joint="prop"]{opacity:0}
+.crew-rig [data-joint="fx"]{transform-origin:50% 50%}
+.crew-rig .fx{opacity:0;transition:opacity .12s}
+.crew-rig[data-fx~="smile"] .fx-smile,
+.crew-rig[data-fx~="laugh"] .fx-laugh,
+.crew-rig[data-fx~="frown"] .fx-frown,
+.crew-rig[data-fx~="tears"] .fx-tears,
+.crew-rig[data-fx~="stars"] .fx-stars,
+.crew-rig[data-fx~="zzz"] .fx-zzz,
+.crew-rig[data-fx~="bubble"] .fx-bubble,
+.crew-rig[data-fx~="sweat"] .fx-sweat,
+.crew-rig[data-fx~="anger"] .fx-anger,
+.crew-rig[data-fx~="hearts"] .fx-hearts,
+.crew-rig[data-fx~="question"] .fx-question,
+.crew-rig[data-fx~="exclaim"] .fx-exclaim,
+.crew-rig[data-fx~="sparkle"] .fx-sparkle,
+.crew-rig[data-fx~="swirl"] .fx-swirl,
+.crew-rig[data-fx~="note"] .fx-note,
+.crew-rig[data-fx~="blush"] .fx-blush,
+.crew-rig[data-fx~="dust"] .fx-dust{opacity:1}
+.crew-actor[data-char="orra"] .crew-flip{translate:0 -4%}
+
+.crew-hit{position:absolute;left:14%;right:14%;top:18%;bottom:0;border:0;padding:0;border-radius:40% 40% 18% 18%;background:transparent;cursor:pointer;pointer-events:auto;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.crew-hit:focus-visible{outline:2px solid var(--ochre,#c9974a);outline-offset:2px}
+
+.crew-bubble{position:absolute;bottom:calc(100% - 6px);left:50%;translate:calc(-50% + var(--bshift,0px)) 0;max-width:190px;width:max-content;padding:4px 9px;border:1px solid var(--line-2,#4a4640);background:var(--ink-1,#14120f);color:var(--bone,#e8dfc8);font:500 11px/1.35 var(--font-mono,ui-monospace,monospace);letter-spacing:.02em;white-space:nowrap;pointer-events:none;animation:crewBubble .22s ease-out both}
+.crew-bubble[data-who="vex"]{border-color:#b8683a}
+.crew-bubble[data-who="orra"]{border-color:#9fb0b4}
+.crew-bubble[data-who="kip"]{border-color:var(--ochre,#c9974a)}
+.crew-prank{position:absolute;bottom:calc(100% + 18px);left:50%;translate:calc(-50% + var(--bshift,0px)) 0;padding:1px 6px;border:1px dashed #b8683a;color:#e1a47e;background:var(--ink-1,#14120f);font:600 9px/1.4 var(--font-mono,monospace);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;pointer-events:none}
+@keyframes crewBubble{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* the creature may be on any edge: its speech goes to the screen side of it, never rotated */
+.crew-actor[data-edge="top"] :is(.crew-bubble,.crew-emotes){bottom:auto;top:calc(100% - 6px)}
+.crew-actor[data-edge="top"] .crew-prank{bottom:auto;top:calc(100% + 18px)}
+.crew-actor[data-edge="left"] :is(.crew-bubble,.crew-prank,.crew-emotes){bottom:auto;top:14%;left:calc(100% - 6px);translate:0 0}
+.crew-actor[data-edge="right"] :is(.crew-bubble,.crew-prank,.crew-emotes){bottom:auto;top:14%;left:auto;right:calc(100% - 6px);translate:0 0}
+.crew-actor[data-edge="left"] .crew-prank{top:calc(14% + 34px)}
+.crew-actor[data-edge="right"] .crew-prank{top:calc(14% + 34px)}
+
+.crew-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.crew-chip{position:fixed;right:10px;bottom:calc(var(--crew-lift) - 4px);z-index:42;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--line-2,#4a4640);background:var(--ink-1,#14120f);color:var(--bone-3,#9b937f);border-radius:50%;cursor:pointer;opacity:.75;transition:opacity .2s}
+.crew-chip:hover,.crew-chip:focus-visible,.crew-chip[aria-expanded="true"]{opacity:1;color:var(--ochre,#c9974a)}
+.crew-chip:focus-visible{outline:2px solid var(--ochre,#c9974a);outline-offset:2px}
+.crew-chip svg{width:16px;height:16px}
+
+.crew-panel{position:fixed;right:10px;bottom:calc(var(--crew-lift) + 36px);z-index:60;width:min(290px,calc(100vw - 20px));max-height:min(70vh,520px);overflow:auto;padding:12px 12px 10px;border:1px solid var(--line-2,#4a4640);border-left:2px solid var(--ochre,#c9974a);background:var(--ink-1,#14120f);color:var(--bone,#e8dfc8);font-size:12px;line-height:1.45;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.crew-panel h2{margin:0 0 8px;font:600 11px/1 var(--font-mono,monospace);letter-spacing:.16em;text-transform:uppercase;color:var(--ochre,#c9974a)}
+.crew-panel h3{margin:10px 0 4px;font:600 10px/1 var(--font-mono,monospace);letter-spacing:.12em;text-transform:uppercase;color:var(--bone-3,#9b937f)}
+.crew-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 0}
+.crew-row label{flex:1;cursor:pointer}
+.crew-row small{display:block;color:var(--bone-3,#9b937f);font-size:10.5px}
+.crew-row input[type="checkbox"]{width:16px;height:16px;accent-color:var(--ochre,#c9974a)}
+.crew-row[data-off="1"]{opacity:.45}
+.crew-panel button.crew-link{margin-top:8px;border:1px solid var(--line-2,#4a4640);background:none;color:var(--bone-2,#cfc4a6);padding:4px 8px;font:inherit;font-size:11px;cursor:pointer}
+.crew-panel button.crew-link:hover{border-color:var(--ochre,#c9974a)}
+.crew-lock{display:flex;align-items:center;gap:8px;padding:4px 0;color:var(--bone-3,#9b937f);font-size:11px}
+
+.crew-ask{position:fixed;right:12px;bottom:calc(var(--crew-lift) + 100px);z-index:44;width:min(270px,calc(100vw - 24px));padding:10px 12px;border:1px solid var(--line-2,#4a4640);border-left:2px solid var(--ochre,#c9974a);background:var(--ink-1,#14120f);color:var(--bone,#e8dfc8);font-size:12px;line-height:1.45}
+.crew-ask p{margin:0 0 8px}
+.crew-ask .crew-btns{display:flex;gap:6px}
+.crew-ask button{border:1px solid var(--line-2,#4a4640);background:none;color:var(--bone-2,#cfc4a6);padding:4px 10px;font:inherit;font-size:11px;cursor:pointer}
+.crew-ask button:first-child{border-color:var(--ochre,#c9974a);color:var(--ochre,#c9974a)}
+.crew-ask button:focus-visible{outline:2px solid var(--ochre,#c9974a);outline-offset:2px}
+
+.crew-ceremony{position:fixed;left:50%;bottom:calc(var(--crew-lift) + 130px);transform:translateX(-50%);z-index:46;padding:7px 14px;border:1px solid var(--ochre,#c9974a);background:var(--ink-1,#14120f);color:var(--bone,#e8dfc8);font:600 11px/1.3 var(--font-mono,monospace);letter-spacing:.14em;text-transform:uppercase;pointer-events:none;animation:crewBubble .4s ease-out both}
+
+.crew-emotes{position:absolute;bottom:calc(100% + 4px);left:50%;translate:calc(-50% + var(--bshift,0px)) 0;display:flex;gap:4px;padding:4px;border:1px solid var(--line-2,#4a4640);background:var(--ink-1,#14120f);pointer-events:auto}
+.crew-emotes button{border:0;background:none;color:var(--bone-2,#cfc4a6);font:600 10px/1 var(--font-mono,monospace);letter-spacing:.06em;padding:6px 7px;cursor:pointer;text-transform:uppercase}
+.crew-emotes button:hover,.crew-emotes button:focus-visible{color:var(--ochre,#c9974a);outline:1px solid var(--ochre,#c9974a)}
+
+.crew-teaser{position:absolute;bottom:0;width:calc(var(--crew-size) * .5);height:calc(var(--crew-size) * .5);opacity:.28;pointer-events:none}
+
+.crew-debug{position:fixed;left:8px;top:60px;z-index:9999;max-width:340px;padding:8px 10px;background:rgba(0,0,0,.82);color:#9fd;font:10px/1.4 monospace;white-space:pre-wrap}
+
+@media (prefers-reduced-motion:reduce){.crew-actor,.crew-bubble,.crew-ceremony{transition:none;animation:none}}
+@media print{.crew-lane,.crew-chip,.crew-panel,.crew-ask{display:none}}

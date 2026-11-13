@@ -15,6 +15,8 @@ import { survivalStore } from '@/lib/survival/store';
 import { profile } from '@/lib/profile/store';
 import type { CampState, Task, TaskKind } from '@/lib/survival/types';
 import { freshSeed } from '@/lib/dev/seed';
+import { emitCrew } from '@/lib/characters/bus';
+import { survivalFacts } from '@/lib/characters/facts';
 
 /* ============================================================================
    SURVIVAL — "Adapt". A genuinely different loop from Main Evolution:
@@ -63,6 +65,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
     if (!camp) return;
     if (!survivalStore.get().active) survivalStore.setActive(camp);
     profile.recordModeVisit('survival');
+    emitCrew('survival', 'survival-camp-enter');
     // Only ever needs to run once, on mount — camp updates afterward go
     // through advance()/startNewRun(), which persist explicitly themselves.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -82,6 +85,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
       assignments[m.id] = resolveTask(camp, kind);
     }
     const { state } = advanceTick(camp, assignments);
+    for (const id of survivalFacts(camp, state)) emitCrew('survival', id); // facts the simulation just produced
     setCamp(state);
     setPending({});
     if (state.ending !== 'ongoing') {
@@ -185,7 +189,7 @@ export function SurvivalMode({ onExit }: { onExit: () => void }) {
                       key={t.kind}
                       className="sv-task-btn"
                       aria-pressed={(pending[m.id] ?? 'idle') === t.kind}
-                      onClick={() => setPending(p => ({ ...p, [m.id]: t.kind }))}
+                      onClick={() => { emitCrew('survival', 'survival-task-select', { task: t.kind }); setPending(p => ({ ...p, [m.id]: t.kind })); }}
                     >
                       {t.label}
                     </button>

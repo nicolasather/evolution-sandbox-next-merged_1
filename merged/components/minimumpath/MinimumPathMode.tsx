@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { GuideHint, GuideScope, useGuideController } from '@/components/guide/GuideProvider';
 import { MINPATH_MODE, MP_TARGET, minimumPathGuide } from '@/lib/guide/minimumpath';
 import { content, graph } from '@/lib/minimumpath/content';
@@ -22,6 +23,7 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
   const [hint, setHint] = useState('');
   const [showSolution, setShowSolution] = useState(false);
   const [help, setHelp] = useState(false);
+  useEffect(() => { emitCrew('minimum-path', 'minpath-enter'); }, []);
   const mission = content.missions.find(m => m.id === save.run?.missionId);
   const run = save.run;
   const done = Boolean(mission && run && isComplete(mission, run.path));
@@ -48,6 +50,7 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
       setStatus(result.kind === 'invalid' ? 'Bản lưu không tương thích hoặc bị lỗi. Đã giữ nguyên; phiên này không ghi đè.' : 'Không truy cập được bộ nhớ. Phiên này chỉ lưu tạm.');
     }
     setOpened(true); setHint(''); setShowSolution(false);
+    emitCrew('minimum-path', 'minpath-open-run');
   }
   async function commit(next: Save) {
     setSave(next);
@@ -73,11 +76,18 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
   function step(id: string) {
     if (!run || !mission) return;
     const next = move(graph, mission, run, id, content.limits.maxPath);
+    // the graph logic's own verdict on the path so far
+    emitCrew('minimum-path', 'minpath-node-choose');
+    if (isComplete(mission, next.path)) {
+      emitCrew('minimum-path', 'minpath-mission-complete');
+      if (next.path.length - 1 === mission.optimal) emitCrew('minimum-path', 'minpath-optimal-path');
+    }
     setHint(''); setQuery('');
     void commit(recordResult({ ...save, run: next }, mission));
   }
   function requestHint() {
     if (!mission || !run || done) return;
+    emitCrew('minimum-path', 'minpath-hint-request');
     const route = shortest(graph, mission, run.path);
     setHint(route?.[1] ? `Thử đi tới ${name(route[1])}. Còn ${route.length - 1} bước tối thiểu từ đây.` : 'Nhánh này không tới đích được theo điều kiện hiện tại. Quay lại một bước.');
     void commit({ ...save, run: { ...run, assisted: true } });
@@ -104,10 +114,10 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
       <fieldset disabled={busy} className={styles.controls}>
         <legend>Hành trình · {completedIds.size}/{content.missions.length} màn hoàn thành</legend>
         <label>Chương<select value={chapterId} onChange={event => {
-          const id = event.target.value; setChapterId(id);
+          const id = event.target.value; emitCrew('minimum-path', 'minpath-chapter-select'); setChapterId(id);
           const first = content.missions.find(m => m.chapter === id); if (first) setSelected(first.id);
         }}>{content.chapters.map(chapter => <option value={chapter.id} key={chapter.id}>{chapter.title}</option>)}</select></label>
-        <label>Màn<select value={selected} onChange={event => setSelected(event.target.value)}>
+        <label>Màn<select value={selected} onChange={event => { emitCrew('minimum-path', 'minpath-mission-select'); setSelected(event.target.value); }}>
           {content.missions.filter(m => m.chapter === chapterId).map(m => <option value={m.id} key={m.id}>{completedIds.has(m.id) ? '✓ ' : ''}{m.id} · {m.title}</option>)}
         </select></label>
         <button type="button" className={guide.glow(MP_TARGET.begin)} onClick={begin}>{run ? 'Bắt đầu màn đã chọn · thay lượt hiện tại' : 'Bắt đầu màn đã chọn'}</button>
@@ -131,14 +141,14 @@ export function MinimumPathMode({ onExit }: { onExit: () => void }) {
           {!visible.length && <p>{options.length ? 'Không khớp từ tìm kiếm.' : 'Không có lối ra hợp lệ. Hãy quay lại.'}</p>}
           {run.path.length >= content.limits.maxPath && <p>Đã chạm giới hạn lượt đi. Quay lại hoặc bắt đầu lại màn.</p>}
           <div className={styles.actions}>
-            <button type="button" disabled={busy || run.path.length <= 1} onClick={() => { setHint(''); void commit({ ...save, run: { ...run, path: run.path.slice(0, -1), assisted: true } }); }}>Quay lại một bước</button>
+            <button type="button" disabled={busy || run.path.length <= 1} onClick={() => { emitCrew('minimum-path', 'minpath-path-backtrack'); setHint(''); void commit({ ...save, run: { ...run, path: run.path.slice(0, -1), assisted: true } }); }}>Quay lại một bước</button>
             <button type="button" disabled={busy} onClick={requestHint}>Gợi ý bước tiếp theo</button>
           </div><p aria-live="polite">{hint}</p>
         </>}
         {done && <div className={styles.result} role="status">
           <h3>{run.path.length - 1 === mission.optimal ? 'Đã tìm đường tối ưu' : 'Đã đến đích'}</h3>
           <p>Của bạn: {run.path.length - 1} · Tối ưu: {mission.optimal} · Dư: {run.path.length - 1 - mission.optimal} bước.</p>
-          <button type="button" onClick={() => setShowSolution(!showSolution)}>So sánh lời giải</button>
+          <button type="button" onClick={() => { if (!showSolution) emitCrew('minimum-path', 'minpath-solution-open'); setShowSolution(!showSolution); }}>So sánh lời giải</button>
           {solution && <p>{solution.map(name).join(' → ')}</p>}
           <p>Lời giải khác có cùng số bước vẫn được công nhận.</p>
         </div>}

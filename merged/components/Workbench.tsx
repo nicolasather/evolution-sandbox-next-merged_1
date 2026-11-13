@@ -32,6 +32,7 @@ import { kindOf } from '@/lib/craft/kinds';
 import { envOf, physicsOf } from '@/lib/processing/physics';
 import { ActionRail } from './ActionRail';
 import { TechniqueReveal } from './TechniqueReveal';
+import { emitHere } from '@/lib/characters/bus';
 
 /* ============================================================================
    WORKBENCH — the ground where things are worked and put together.
@@ -456,6 +457,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       nearA?.el.removeAttribute('data-near'); nearB?.el.removeAttribute('data-near');
       nearA = a; nearB = b;
       a?.el.setAttribute('data-near', ''); b?.el.setAttribute('data-near', '');
+      if (a && b) emitHere('bench-two-items-near', undefined, 'ui');
     }
     function magnet(dt: number) {
       const held = drag?.body;
@@ -606,9 +608,9 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       fx.shake(early ? 1 : 2.4);
       fx.burst(mx, my, { n: 5, color: 'bone3', speed: 40, life: 0.3 });
       cool = 0.35;
-      if (res.status === 'era_locked') say_(res.message, 'warn', 'Complete all major world inventions from this era to advance.');
-      else if (res.status === 'tier_locked') say_(res.message, 'warn');
-      else if (res.status === 'region_locked') say_(res.message, 'warn', `Documented origin: ${res.region.originLabel}.`);
+      if (res.status === 'era_locked') { emitHere('craft-locked-era'); say_(res.message, 'warn', 'Complete all major world inventions from this era to advance.'); }
+      else if (res.status === 'tier_locked') { emitHere('craft-locked-tier'); say_(res.message, 'warn'); }
+      else if (res.status === 'region_locked') { emitHere('craft-locked-region'); say_(res.message, 'warn', `Documented origin: ${res.region.originLabel}.`); }
       else {
         const f = res as Extract<CombineResult, { status: 'fail' }>;
         // a plain "that makes nothing" may rarely earn a tiny gag; informative lines never do
@@ -1341,7 +1343,7 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       if (!drag) {
         if (e.pointerType === 'mouse') {
           const h = world.bodyAt(p.x, p.y, q => !q.locked);
-          if (h !== hover) { hover = h; host.style.cursor = h ? 'grab' : ''; }
+          if (h !== hover) { hover = h; host.style.cursor = h ? 'grab' : ''; if (h && !h.temp) emitHere('bench-item-hover', { itemId: h.itemId }, 'ui'); }
           // P0.14: the scenery answers the pointer passing over it too, not only a click —
           // only over bare ground (no piece under the cursor), never mid-drag/craft (both
           // already excluded by the branches above), throttled on top of the engine's own
@@ -1396,6 +1398,8 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
       tactile.release(d.body, fresh ? d.vx : 0, fresh ? d.vy : 0);
       dirty = true;
       if (!d.moved && performance.now() - d.t0 < 380) { tap(d.body); tactile.tap(d.body); }
+      // a piece let go over one of the crew is a gift to them (the crew stage listens; nothing else does)
+      if (d.moved && e.type === 'pointerup') window.dispatchEvent(new CustomEvent('evo:piece-drop', { detail: { x: e.clientX, y: e.clientY } }));
       wake();
     };
 
@@ -1555,6 +1559,31 @@ export function Workbench({ engine, active, onCombine, onProcess, onBegin, onIns
         return !hit?.closest('[data-wb-avoid]:not([data-wb-avoid="off"]), .wb-sel');
       },
       element: () => host,
+      canAct: () => !session && !resolving && !mode && !drag && !pull && !act && !trial && !demo && hits.size === 0 && world.touching().length === 0,
+      mergePair: (a, b) => {
+        const eng = latest.current.engine;
+        if (session || resolving || mode || drag || pull || act || trial || hits.size > 0) return false;
+        if (a === b || !eng.holds(a) || !eng.holds(b)) return false;
+        lastTap = null;
+        if (!spawn(a, { tap: true })) return false;
+        return spawn(b, { tap: true });
+      },
+      returnHome: () => {
+        const free = world.bodies.filter(b => !b.temp && !b.held && drag?.body !== b && sel !== b && act?.b !== b && trial?.body !== b && !(session && (session.a === b || session.b === b)));
+        if (session || resolving || free.length === 0) return null;
+        const b = free[Math.floor(Math.random() * free.length)];
+        const id = b.itemId;
+        sendHome(b, 'quick');
+        return id;
+      },
+      returnItems: ids => {
+        let n = 0;
+        for (const b of [...world.bodies]) {
+          if (!ids.includes(b.itemId) || b.temp || b.held || drag?.body === b || (session && (session.a === b || session.b === b))) continue;
+          sendHome(b, 'quick'); n++;
+        }
+        return n;
+      },
     });
 
     const unprobe = registerProbe(() => {

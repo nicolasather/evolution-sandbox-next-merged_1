@@ -6,6 +6,7 @@ import { useDevOverrides } from '@/lib/dev/overrides';
 import type { Chapter } from '@/lib/civilization/lifelines/schema';
 import { Banners, exportNow } from './Banners';
 import { useLifelines } from './ui';
+import { emitCrew } from '@/lib/characters/bus';
 
 type Tab = 'campaign' | 'replay' | 'sandbox' | 'chronicle';
 
@@ -36,9 +37,9 @@ export function ChapterSelect({ onPlay, onExit, onLegacy, onReplayIntro }: { onP
     if (!variant) return;
     if (hasRun && !confirmReplace) { setConfirmReplace(true); return; }
     const r = store.startRun(variant.id, mode, mode === 'campaign' ? mastery : [], hasRun);
-    if (r.ok) { setConfirmReplace(false); onPlay(); } else setError(r.code);
+    if (r.ok) { emitCrew('civilization', 'civilization-chapter-start'); setConfirmReplace(false); onPlay(); } else setError(r.code);
   };
-  const choose = (id: string) => { setPickId(id); setBiome(null); setMastery([]); setConfirmReplace(false); setError(''); };
+  const choose = (id: string) => { emitCrew('civilization', 'civilization-chapter-select'); setPickId(id); setBiome(null); setMastery([]); setConfirmReplace(false); setError(''); };
   const selectable = (c: { unlocked: boolean }) => c.unlocked;
 
   const detail = chapter && (

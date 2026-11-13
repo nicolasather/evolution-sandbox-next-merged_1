@@ -20,6 +20,7 @@ import { tradeStore } from './trade/store';
 import type { ActionId, CombineResult, Db, Discovery, ProcessResult, RegionLockInfo, ViewId } from './types';
 import { afterWorld } from './world/bus';
 import { retentionBus } from './retention/bus';
+import { emitHere } from './characters/bus';
 
 export const db: Db = playDb;
 
@@ -211,7 +212,7 @@ export function useSandbox() {
 
   /** Dropped from the inventory onto the bench at a point (viewport px). */
   const dropOnBench = useCallback((id: string, clientX: number, clientY: number) => {
-    if (benchSpawn(id, { clientX, clientY })) { setResult(null); return; }
+    if (benchSpawn(id, { clientX, clientY })) { emitHere('inventory-drop-bench', { itemId: id }, 'ui'); setResult(null); return; }
     place(id);
   }, [place]);
 

@@ -5,7 +5,6 @@ import { runtime } from '@/lib/retention/runtime';
 import { hubUi } from '@/lib/retention/ui';
 import type { Unlocks } from '@/lib/unlocks/useUnlocks';
 import { CosmeticApplier } from './CosmeticApplier';
-import { Companion } from './Companion';
 import { EggWatcher } from './EggWatcher';
 import { EventLayer } from './EventLayer';
 import { Hub } from './Hub';
@@ -46,7 +45,7 @@ export function RetentionLayer({ engine, version, entered, view, busy, unlocks }
       <CosmeticApplier />
       {unlocks.has('events') && <EventLayer engine={engine} visible={onBench} />}
       {onBench && deco && SHOP_BY_ID[deco] && <div className="rdeco" aria-hidden="true"><RArt kind="decoration" id={deco} size={96} /></div>}
-      {unlocks.has('companion') && <Companion engine={engine} visible={onBench && !busy} />}
+      {/* The old corner Companion is replaced by the global crew stage (components/characters), mounted once in AppRoot. */}
       {unlocks.has('eggs') && <EggWatcher engine={engine} active={entered} />}
       {unlocks.has('visitors') && <NpcEncounter engine={engine} visible={onBench && !busy} />}
       <div className="rhud">

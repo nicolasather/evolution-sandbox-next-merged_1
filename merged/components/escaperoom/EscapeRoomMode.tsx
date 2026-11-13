@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { GuideHint, GuideScope, useGuideController, useGuideGlow } from '@/components/guide/GuideProvider';
 import { ER_TARGET, ESCAPE_MODE, escapeRoomGuide } from '@/lib/guide/escaperoom';
 import { episodeExhibit, summarizeEpisode } from '@/lib/escaperoom/memory';
@@ -62,6 +63,7 @@ function SequenceStation({ puzzle, solved, hint, onSubmit, onHint }: {
     const next = order.slice();
     [next[i], next[j]] = [next[j], next[i]];
     setOrder(next);
+    emitCrew('escape-room', 'escape-mechanism-adjusted');
   };
   const textOf = (id: string) => puzzle.steps.find(s => s.id === id)!.text;
   const glow = useGuideGlow();
@@ -119,7 +121,7 @@ function MatchStation({ puzzle, solved, hint, onSubmit, onHint }: {
                     <button
                       key={t.id}
                       className={'chip' + (matches[item.id] === t.id ? ' er-chosen' : '')}
-                      onClick={() => setMatches(m => ({ ...m, [item.id]: t.id }))}
+                      onClick={() => { emitCrew('escape-room', 'escape-object-collected'); setMatches(m => ({ ...m, [item.id]: t.id })); }}
                     >{t.label}</button>
                   ))}
                 </div>
@@ -180,11 +182,13 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
     const fresh = blankState(ep);
     setState(fresh);
     escapeRoomStore.setActive(fresh);
+    emitCrew('escape-room', 'escape-enter-room');
   };
 
   useEffect(() => {
     if (!escapeRoomStore.get().activeState) escapeRoomStore.setActive(state);
     profile.recordModeVisit('escape-room');
+    emitCrew('escape-room', 'escape-enter-room');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -195,6 +199,15 @@ export function EscapeRoomMode({ onExit }: { onExit: () => void }) {
     const { state: next } = applyAction(episode, state, action);
     setState(next);
     escapeRoomStore.setActive(next);
+    // what the puzzle logic actually decided
+    if (action.kind === 'revealHint') { emitCrew('escape-room', 'escape-inspect-mechanism'); emitCrew('escape-room', 'escape-clue-found'); }
+    else {
+      emitCrew('escape-room', 'escape-object-used');
+      const solvedNow = next.solvedPuzzleIds.length > state.solvedPuzzleIds.length;
+      emitCrew('escape-room', solvedNow ? 'escape-guess-right' : 'escape-guess-wrong');
+      if (solvedNow && action.kind === 'submitCode') emitCrew('escape-room', 'escape-door-unlocked');
+      if (next.completed && !state.completed) emitCrew('escape-room', 'escape-episode-complete');
+    }
   };
 
   // Each directly referenced as its own onClick (never wrapped in an

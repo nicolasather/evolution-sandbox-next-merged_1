@@ -19,6 +19,15 @@ export interface BenchHandle {
   /** Is this viewport point over the bench? */
   contains(clientX: number, clientY: number): boolean;
   element(): HTMLElement | null;
+  /** The crew's explicit, narrow capabilities (all go through the real Workbench paths). */
+  /** Nothing is being dragged, crafted, resolved or touching: it is safe to act on the bench. */
+  canAct?(): boolean;
+  /** Put two owned items on the bench so they pull together and combine through the normal path. */
+  mergePair?(a: string, b: string): boolean;
+  /** Send ONE loose, unheld piece back to the backpack (the normal, undoable fly-home). Returns its item id. */
+  returnHome?(): string | null;
+  /** Send these items back home (used to put a failed autonomous attempt right). */
+  returnItems?(ids: string[]): number;
 }
 
 let handle: BenchHandle | null = null;
@@ -31,3 +40,8 @@ export function registerBench(h: BenchHandle): () => void {
 export const benchSpawn = (id: string, o?: SpawnOptions): boolean => handle?.spawn(id, o) ?? false;
 export const benchContains = (x: number, y: number): boolean => handle?.contains(x, y) ?? false;
 export const benchElement = (): HTMLElement | null => handle?.element() ?? null;
+
+export const benchCanAct = (): boolean => handle?.canAct?.() ?? false;
+export const benchMergePair = (a: string, b: string): boolean => handle?.mergePair?.(a, b) ?? false;
+export const benchReturnHome = (): string | null => handle?.returnHome?.() ?? null;
+export const benchReturnItems = (ids: string[]): number => handle?.returnItems?.(ids) ?? 0;

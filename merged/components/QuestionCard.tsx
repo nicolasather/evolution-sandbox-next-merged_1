@@ -6,6 +6,7 @@ import type { Tutor } from '@/lib/learn/tutor';
 import type { Engine } from '@/lib/engine';
 import { TECH_BY_ID } from '@/lib/processing/techniques';
 import { TechniqueIcon } from './TechniqueIcon';
+import { emitHere } from '@/lib/characters/bus';
 
 /* ============================================================================
    QUESTION CARD — a small question in the top-right corner. Not a modal: it
@@ -23,6 +24,8 @@ export function QuestionCard({ tutor, engine, busy }: { tutor: Tutor; engine: En
   useSyncExternalStore(tutor.subscribe, tutor.getVersion, () => 0);
   const phase = tutor.phase;
   const shown = tutor.shown;
+
+  useEffect(() => { if (phase === 'open' && shown) emitHere('question-open', { id: shown.q.id }, 'game'); }, [phase, shown]);
 
   // what was answered before is not asked again
   useEffect(() => { tutor.load(); }, [tutor]);
@@ -73,7 +76,7 @@ export function QuestionCard({ tutor, engine, busy }: { tutor: Tutor; engine: En
           {shown.order.map(a => (
             <li key={a}>
               <button type="button" className={shown.faded.includes(a) ? 'is-faded' : ''} disabled={phase === 'wrong'}
-                onClick={() => { tutor.answer(a, Date.now(), { knows: k => engine.knows(k), isPending: k => engine.isPending(k) }, k => engine.teach(k)); }}>
+                onClick={() => { const r = tutor.answer(a, Date.now(), { knows: k => engine.knows(k), isPending: k => engine.isPending(k) }, k => engine.teach(k)); /* the real result of the tutor, never the button that was pressed */ if (r) emitHere('question-answer-correct-or-wrong', { correct: r === 'right' }); }}>
                 {a}
               </button>
             </li>

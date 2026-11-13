@@ -6,6 +6,7 @@ import { armItemDrag } from '@/lib/dragcraft';
 import { sortDiscoveries } from '@/lib/chronology';
 import { cn } from '@/lib/utils';
 import type { Engine } from '@/lib/engine';
+import { emitHere } from '@/lib/characters/bus';
 import type { Discovery } from '@/lib/types';
 
 const RARITY_LABEL: Record<string, string> = {
@@ -67,7 +68,7 @@ export function InventoryRail({
   const slots = useRef({ a: slotA, b: slotB });
   useEffect(() => { slots.current = { a: slotA, b: slotB }; }, [slotA, slotB]);
   const hideDone = useSyncExternalStore(subscribeHideDone, readHideDone, () => false);
-  const toggleDone = () => setHideDoneStored(!hideDone);
+  const toggleDone = () => { emitHere('inventory-hide-used-toggle', { on: !hideDone }, 'ui'); setHideDoneStored(!hideDone); };
   const open = useSyncExternalStore(subscribeOpen, readOpen, () => true);
 
   const all = engine.inventory();
@@ -106,7 +107,7 @@ export function InventoryRail({
     <>
     {!open && (
       <button type="button" id="rail-tab" className="mono" aria-expanded="false" aria-controls="rail"
-        onClick={() => setOpenStored(true)}>
+        onClick={() => { emitHere('inventory-open', undefined, 'ui'); setOpenStored(true); }}>
         Inventory · {all.length}
       </button>
     )}
@@ -114,7 +115,7 @@ export function InventoryRail({
       <div className="rail-head">
         <span className="mono">Inventory · {all.length}</span>
         <button type="button" className="rail-hide mono" aria-expanded={open} aria-controls="inv"
-          onClick={() => setOpenStored(false)}>Hide</button>
+          onClick={() => { emitHere('inventory-close', undefined, 'ui'); setOpenStored(false); }}>Hide</button>
       </div>
 
       <div className="rail-tools">
@@ -125,7 +126,7 @@ export function InventoryRail({
           </svg>
           <input
             type="search" value={q} placeholder="Filter" aria-label="Filter inventory"
-            autoComplete="off" onChange={e => setQ(e.target.value)}
+            autoComplete="off" onChange={e => { emitHere('inventory-filter-change', undefined, 'ui'); setQ(e.target.value); }}
           />
         </div>
         {doneCount > 0 && (
@@ -137,9 +138,9 @@ export function InventoryRail({
       </div>
 
       <div className="rail-filters">
-        <button className="chip" aria-pressed={!era} onClick={() => setEra(null)}>All</button>
+        <button className="chip" aria-pressed={!era} onClick={() => { emitHere('inventory-filter-change', undefined, 'ui'); setEra(null); }}>All</button>
         {engine.erasReached().map(e => (
-          <button key={e.id} className="chip" aria-pressed={era === e.id} onClick={() => setEra(e.id)}>
+          <button key={e.id} className="chip" aria-pressed={era === e.id} onClick={() => { emitHere('inventory-filter-change', undefined, 'ui'); setEra(e.id); }}>
             {e.name}
           </button>
         ))}
@@ -173,7 +174,7 @@ export function InventoryRail({
                         highlightId === n.id && 'hinted',
                       )}
                       style={{ touchAction: 'none' }}
-                      onPointerDown={ev => armItemDrag(ev, {
+                      onPointerDown={ev => { emitHere('inventory-drag-item', { itemId: n.id }, 'ui'); armItemDrag(ev, {
                         id: n.id,
                         originEl: ev.currentTarget,
                         engine,
@@ -181,8 +182,8 @@ export function InventoryRail({
                         onDrop,
                         onBenchDrop,
                         onLongPress: (x, y) => onContextMenu(x, y, n.id),
-                      })}
-                      onClick={() => onPick(n.id)}
+                      }); }}
+                      onClick={() => { emitHere('inventory-pick-item', { itemId: n.id }, 'ui'); onPick(n.id); }}
                       onContextMenu={ev => { ev.preventDefault(); onContextMenu(ev.clientX, ev.clientY, n.id); }}
                       aria-label={`${n.n}. ${RARITY_LABEL[n.rar]}.${p === 'done' ? ' Used up.' : ''} Put on the bench.`}
                     >

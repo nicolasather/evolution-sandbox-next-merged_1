@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { alienExhibit, summarizeSite } from '@/lib/alienarchaeology/memory';
 import { AXIS_LABEL, VALUE_LABEL, axisOptions, template } from '@/lib/alienarchaeology/catalog';
 import { ALL_AXES, generateSite } from '@/lib/alienarchaeology/generate';
@@ -36,6 +37,7 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
     if (!alienArchaeologyStore.get().active) alienArchaeologyStore.setActive(site);
     notebook.ensureInvestigation(investigationId(site.seed), 'Xenoarchaeology — ' + site.seed, 'alien-archaeology');
     profile.recordModeVisit('alien-archaeology');
+    emitCrew('alien-archaeology', 'alien-enter');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -49,12 +51,23 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
     const { state } = applyAction(site, action);
     setSite(state);
     alienArchaeologyStore.setActive(state);
+    if (action.kind === 'reveal') { emitCrew('alien-archaeology', 'alien-specimen-reveal'); emitCrew('alien-archaeology', 'alien-specimen-inspect'); }
+    else if (action.kind === 'setHypothesis') emitCrew('alien-archaeology', 'alien-hypothesis-set');
+    else if (action.kind === 'setConfidence') emitCrew('alien-archaeology', 'alien-confidence-adjust');
   };
 
   const fileReport = () => {
+    emitCrew('alien-archaeology', 'alien-report-submit');
     const { state } = applyAction(site, { kind: 'submit' });
     setSite(state);
+    if (state.report) {
+      // the report's own scoring decides which of these is true
+      const res = state.report.axisResults;
+      if (res.some(r => !r.matched)) emitCrew('alien-archaeology', 'alien-evidence-conflict');
+      if (res.some(r => r.matched)) emitCrew('alien-archaeology', 'alien-model-fit-improves');
+    }
     if (state.ending !== 'ongoing') {
+      emitCrew('alien-archaeology', 'alien-expedition-complete', { ending: state.ending });
       const memory = summarizeSite(state);
       alienArchaeologyStore.archiveActive(memory);
       const exhibit = alienExhibit(memory);
@@ -120,7 +133,7 @@ export function AlienArchaeologyMode({ onExit }: { onExit: () => void }) {
             {site.specimens.map(spec => {
               const t = template(spec.templateId);
               return (
-                <div key={spec.id} className={'xa-specimen' + (spec.revealed ? ' xa-revealed' : '')}>
+                <div key={spec.id} className={'xa-specimen' + (spec.revealed ? ' xa-revealed' : '')} onClick={() => emitCrew('alien-archaeology', 'alien-specimen-select')}>
                   {spec.revealed ? (
                     <p className="xa-specimen-desc">{t.description}</p>
                   ) : (

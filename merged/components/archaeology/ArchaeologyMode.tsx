@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { template } from '@/lib/archaeology/catalog';
 import { generateSite } from '@/lib/archaeology/generate';
 import { siteExhibit, summarizeSite } from '@/lib/archaeology/memory';
@@ -43,6 +44,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
     if (!archaeologyStore.get().active) archaeologyStore.setActive(site);
     notebook.ensureInvestigation(investigationId(site.seed), 'Excavation — ' + site.seed, 'archaeology');
     profile.recordModeVisit('archaeology');
+    emitCrew('archaeology', 'archaeology-enter');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -59,6 +61,11 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
     const { state } = applyAction(site, action);
     setSite(state);
     archaeologyStore.setActive(state);
+    // facts the site logic just produced
+    if (action.kind === 'survey') emitCrew('archaeology', 'archaeology-context-recorded');
+    if (action.kind === 'excavate') { emitCrew('archaeology', 'archaeology-excavate'); if (state.finds.length > site.finds.length) emitCrew('archaeology', 'archaeology-find-revealed'); }
+    if (action.kind === 'analyze') emitCrew('archaeology', 'archaeology-evidence-linked');
+    if (action.kind === 'hypothesize') { emitCrew('archaeology', 'archaeology-hypothesis-added', { field: action.field }); if (action.field === 'phase') emitCrew('archaeology', 'archaeology-site-phase'); }
     if (action.kind === 'analyze') {
       const f = state.finds.find(x => x.id === action.findId);
       if (f?.analysis) {
@@ -79,9 +86,11 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
    *  finished report's Museum unlock — stays inside a function React's
    *  purity analysis can see is only ever invoked from a real event. */
   const fileReport = () => {
+    emitCrew('archaeology', 'archaeology-report-submit');
     const { state } = applyAction(site, { kind: 'report' });
     setSite(state);
     if (state.ending !== 'ongoing') {
+      emitCrew('archaeology', 'archaeology-report-complete', { ending: state.ending });
       const memory = summarizeSite(state);
       archaeologyStore.archiveActive(memory);
       const exhibit = siteExhibit(memory);
@@ -191,7 +200,7 @@ export function ArchaeologyMode({ onExit }: { onExit: () => void }) {
               </li>
             ))}
             {analyzed.map(f => (
-              <li key={f.id} className="ar-find ar-find-analyzed" onClick={() => setSelectedFind(f.id)}>
+              <li key={f.id} className="ar-find ar-find-analyzed" onClick={() => { emitCrew('archaeology', 'archaeology-find-selected'); setSelectedFind(f.id); }}>
                 <span className="ar-find-title">{template(f.templateId).label}</span>
                 <span className="ar-find-sub mono">{f.analysis!.confidence} confidence · {PHASE_LABEL[f.analysis!.phaseEstimate]}</span>
               </li>

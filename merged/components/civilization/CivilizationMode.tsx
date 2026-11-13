@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useSyncExternalStore } from 'react';
+import { emitCrew } from '@/lib/characters/bus';
 import { devBridge } from '@/lib/dev/bridge';
 import { devOverrides } from '@/lib/dev/overrides';
 import { profile } from '@/lib/profile/store';
@@ -31,6 +32,7 @@ export function CivilizationMode({ onExit }: { onExit: () => void }) {
   useEffect(() => {
     void store.reopen();
     profile.recordModeVisit('civilization');
+    emitCrew('civilization', 'civilization-enter');
     return () => { store.detach(); };
   }, [store]);
 
@@ -83,7 +85,7 @@ export function CivilizationMode({ onExit }: { onExit: () => void }) {
   } else if (snap.phase !== 'ready' || view === 'boot') {
     body = <div className="ll-screen ll-center"><p className="ll-eyebrow" role="status">Loading Lifelines…</p></div>;
   } else if (view === 'choice') {
-    body = <EntryChoice onExit={onExit} onLegacy={() => { store.markLegacyPromptAnswered(); setView('legacy'); }} onLifelines={() => { store.markLegacyPromptAnswered(); setView(null); }} />;
+    body = <EntryChoice onExit={onExit} onLegacy={() => { emitCrew('civilization', 'civilization-entry-choice', { choice: 'legacy' }); store.markLegacyPromptAnswered(); setView('legacy'); }} onLifelines={() => { emitCrew('civilization', 'civilization-entry-choice', { choice: 'lifelines' }); store.markLegacyPromptAnswered(); setView(null); }} />;
   } else if (view === 'cinematic') {
     // only reached through "Replay intro": the full original version, whatever the saved entrySeen says
     body = <EntryCinematic first reduced={reduced} onDone={afterCinematic} />;

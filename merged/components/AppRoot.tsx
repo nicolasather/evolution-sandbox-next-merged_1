@@ -7,6 +7,7 @@ import { CinematicGate } from './cinematic/CinematicGate';
 import { IntroVisitProvider } from './cinematic/IntroVisit';
 import { useModeGate } from './cinematic/useModeGate';
 import { ModeHelp } from './guide/ModeHelp';
+import { CharacterStage } from './characters/CharacterStage';
 import type { ModeId } from '@/lib/modes/types';
 import { devBridge } from '@/lib/dev/bridge';
 
@@ -89,6 +90,8 @@ function AppRootBody() {
       {body}
       {mode !== 'main-evolution' && mode !== 'civilization' && !gate && <ModeHelp mode={mode} onReplayIntro={() => replay(mode)} />}
       <CinematicGate scene={gate} onClose={closeGate} />
+      {/* The crew lives here, above every mode: mounted exactly once, so it survives each mode swap. */}
+      <CharacterStage mode={mode} gate={!!gate} />
       {DevConsole && <DevConsole mode={mode} />}
     </>
   );
