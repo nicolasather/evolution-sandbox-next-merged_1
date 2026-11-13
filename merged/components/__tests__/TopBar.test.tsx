@@ -31,7 +31,6 @@ describe('TopBar', () => {
         onTrade={() => {}}
         onLab={() => {}}
         onMuseum={() => {}}
-        onMinPath={() => {}}
       />
     );
     // the label's characters are split into their own spans for the spatial
@@ -56,7 +55,6 @@ describe('TopBar', () => {
         onTrade={() => {}}
         onLab={() => {}}
         onMuseum={() => {}}
-        onMinPath={() => {}}
       />
     );
     const chip = screen.getByRole('button', { name: /World progress: 1 of 3 required inventions in Era1/ });
@@ -79,7 +77,6 @@ describe('TopBar', () => {
         onTrade={() => {}}
         onLab={() => {}}
         onMuseum={() => {}}
-        onMinPath={() => {}}
       />
     );
     const input = screen.getByPlaceholderText('Search');

@@ -142,7 +142,7 @@ function Tile({
 }
 
 export function TopBar({
-  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum, onMinPath,
+  engine, view, onView, onOpen, onReset, onShortcuts, onJournal, onWorld, onHub, onTrade, onLab, onMuseum,
   onMilestones, onCollection, unlocks = NO_LOCKS,
 }: {
   engine: Engine;
@@ -157,7 +157,6 @@ export function TopBar({
   onTrade: () => void;
   onLab: () => void;
   onMuseum: () => void;
-  onMinPath: () => void;
   /** Opens the Milestones page (how far the player has come, which doors are open). Optional: no button without it. */
   onMilestones?: () => void;
   /** Opens the Collection drawer (coins, cosmetics, reactions). Shown once the Collection feature is unlocked. */
@@ -308,8 +307,6 @@ export function TopBar({
 
       <div className="top-slot top-actions">
         <div className="dock">
-          {has('minpath') && <Tile id="minpath-open" tone="minpath" cap="Minimum Path" label="Minimum Path challenge" fresh={fresh('minpath')}
-            pressed={view === 'minpath'} className="max-[900px]:hidden" onClick={go('minpath', onMinPath)} />}
           {has('museum') && <Tile id="museum-open" tone="museum" cap="Museum" label="Museum" alert={museumNew && view !== 'museum'} fresh={fresh('museum')}
             pressed={view === 'museum'} className="max-[900px]:hidden" onClick={go('museum', onMuseum)} />}
           {has('hub') && <Tile id="hub-open" tone="hub" cap="Modes" label="Mode Hub" fresh={fresh('hub')}

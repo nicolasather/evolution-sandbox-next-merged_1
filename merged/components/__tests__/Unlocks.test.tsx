@@ -17,7 +17,7 @@ const engine = {
 const noop = () => {};
 const bar = (unlocks?: any) => (
   <TopBar engine={engine} view="work" onView={noop} onOpen={noop} onReset={noop} onShortcuts={noop}
-    onJournal={noop} onWorld={noop} onHub={noop} onTrade={noop} onLab={noop} onMuseum={noop} onMinPath={noop}
+    onJournal={noop} onWorld={noop} onHub={noop} onTrade={noop} onLab={noop} onMuseum={noop}
     unlocks={unlocks} />
 );
 const locked = (open: string[], fresh: string[] = []) => ({
@@ -31,7 +31,7 @@ describe('top bar and unlocks', () => {
     expect(screen.queryByRole('tab', { name: 'Graph' })).toBeNull();
     expect(screen.queryByRole('tab', { name: 'Archive' })).toBeNull();
     expect(screen.queryByRole('tab', { name: 'Timeline' })).toBeNull();
-    for (const id of ['hub-open', 'museum-open', 'trade-open', 'lab-open', 'journal-open', 'minpath-open', 'slot-search', 'slot-routes', 'slot-hidden']) {
+    for (const id of ['hub-open', 'museum-open', 'trade-open', 'lab-open', 'journal-open', 'slot-search', 'slot-routes', 'slot-hidden']) {
       expect(container.querySelector('#' + id)).toBeNull();
     }
   });

@@ -396,7 +396,6 @@ export function Sandbox({ onLaunchMode, variant = 'main' }: { onLaunchMode?: (mo
           onTrade={() => { setTradeOpen(true); playGate('trade'); }}
           onLab={() => { setLabOpen(true); playGate('lab'); }}
           onMuseum={() => showView('museum')}
-          onMinPath={() => showView('minpath')}
           onMilestones={() => setMilestonesOpen(true)}
           onCollection={() => hubUi.open()}
         />
