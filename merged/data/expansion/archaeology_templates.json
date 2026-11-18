@@ -4403,7 +4403,7 @@
   "label": "Clay Griddle",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A flat clay plate set over a fire for baking and cooking.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4416,7 +4416,7 @@
   "label": "Flat Baking Griddle",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A flat griddle, used for baking bread and cakes over a fire.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4429,7 +4429,7 @@
   "label": "Handled Baking Griddle",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A griddle with a handle for lifting it from the fire.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4442,7 +4442,7 @@
   "label": "Multi Zone Cooktop",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A cooktop with several zones that can be heated separately.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4455,7 +4455,7 @@
   "label": "Cooking Spit",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A rod on which food is skewered and turned over a fire.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4468,7 +4468,7 @@
   "label": "Rotating Cooking Spit",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A cooking spit that turns continuously over the heat.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4481,7 +4481,7 @@
   "label": "Geared Roasting Spit",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A roasting spit turned through gears to set its speed.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4494,7 +4494,7 @@
   "label": "Cooking Pot Stand",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A stand that holds a cooking pot above the fire.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4507,7 +4507,7 @@
   "label": "Three Leg Pot Stand",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A pot stand with three legs for stability on uneven ground.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4520,7 +4520,7 @@
   "label": "Adjustable Pot Trivet",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A pot stand whose height can be adjusted over the fire.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4533,7 +4533,7 @@
   "label": "Folding Pot Stand",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A pot stand that folds flat for carrying.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4546,7 +4546,7 @@
   "label": "Lidded Stew Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A pot with a lid for slow cooking of stews.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4559,7 +4559,7 @@
   "label": "Sealed Slow Cooker Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A pot sealed to cook food slowly and keep its moisture.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4572,7 +4572,7 @@
   "label": "Insulated Cooking Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A cooking pot with insulation that keeps food hot after cooking.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4585,7 +4585,7 @@
   "label": "Thermal Retention Cooker",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A cooker that finishes cooking with the heat it has stored.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4598,7 +4598,7 @@
   "label": "Grain Grinding Set",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A set of stones or a mortar for grinding grain into flour.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4611,7 +4611,7 @@
   "label": "Rotary Hand Mill",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A hand-turned mill that grinds grain between two rotating stones.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4624,7 +4624,7 @@
   "label": "Geared Grain Mill",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A grain mill driven through gears from a handle or animal.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4637,7 +4637,7 @@
   "label": "Fireplace Hood",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A hood over a fireplace that collects smoke and directs it up.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4650,7 +4650,7 @@
   "label": "Smoke Flue Hood",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A hood that directs smoke into a flue leading out of the building.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4663,7 +4663,7 @@
   "label": "Ventilated Chimney Hood",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A chimney hood with openings that draw air through it.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4676,7 +4676,7 @@
   "label": "Forced Draft Kitchen Hood",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for controlling heat and holding food during preparation.",
+  "commonFunction": "A kitchen hood with a fan that pulls smoke and fumes out.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3

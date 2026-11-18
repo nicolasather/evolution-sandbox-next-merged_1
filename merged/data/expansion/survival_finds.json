@@ -622,112 +622,112 @@
  {
   "id": "exp26_clay_griddle",
   "n": "Clay Griddle",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A flat clay plate set over a fire for baking and cooking."
  },
  {
   "id": "exp26_flat_baking_griddle",
   "n": "Flat Baking Griddle",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A flat griddle, used for baking bread and cakes over a fire."
  },
  {
   "id": "exp26_handled_baking_griddle",
   "n": "Handled Baking Griddle",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A griddle with a handle for lifting it from the fire."
  },
  {
   "id": "exp26_multi_zone_cooktop",
   "n": "Multi Zone Cooktop",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A cooktop with several zones that can be heated separately."
  },
  {
   "id": "exp26_cooking_spit",
   "n": "Cooking Spit",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A rod on which food is skewered and turned over a fire."
  },
  {
   "id": "exp26_rotating_cooking_spit",
   "n": "Rotating Cooking Spit",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A cooking spit that turns continuously over the heat."
  },
  {
   "id": "exp26_geared_roasting_spit",
   "n": "Geared Roasting Spit",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A roasting spit turned through gears to set its speed."
  },
  {
   "id": "exp26_cooking_pot_stand",
   "n": "Cooking Pot Stand",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A stand that holds a cooking pot above the fire."
  },
  {
   "id": "exp26_three_leg_pot_stand",
   "n": "Three Leg Pot Stand",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A pot stand with three legs for stability on uneven ground."
  },
  {
   "id": "exp26_adjustable_pot_trivet",
   "n": "Adjustable Pot Trivet",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A pot stand whose height can be adjusted over the fire."
  },
  {
   "id": "exp26_folding_pot_stand",
   "n": "Folding Pot Stand",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A pot stand that folds flat for carrying."
  },
  {
   "id": "exp26_lidded_stew_pot",
   "n": "Lidded Stew Pot",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A pot with a lid for slow cooking of stews."
  },
  {
   "id": "exp26_sealed_slow_cooker_pot",
   "n": "Sealed Slow Cooker Pot",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A pot sealed to cook food slowly and keep its moisture."
  },
  {
   "id": "exp26_insulated_cooking_pot",
   "n": "Insulated Cooking Pot",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A cooking pot with insulation that keeps food hot after cooking."
  },
  {
   "id": "exp26_thermal_retention_cooker",
   "n": "Thermal Retention Cooker",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A cooker that finishes cooking with the heat it has stored."
  },
  {
   "id": "exp26_grain_grinding_set",
   "n": "Grain Grinding Set",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A set of stones or a mortar for grinding grain into flour."
  },
  {
   "id": "exp26_rotary_hand_mill",
   "n": "Rotary Hand Mill",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A hand-turned mill that grinds grain between two rotating stones."
  },
  {
   "id": "exp26_geared_grain_mill",
   "n": "Geared Grain Mill",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A grain mill driven through gears from a handle or animal."
  },
  {
   "id": "exp26_fireplace_hood",
   "n": "Fireplace Hood",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A hood over a fireplace that collects smoke and directs it up."
  },
  {
   "id": "exp26_smoke_flue_hood",
   "n": "Smoke Flue Hood",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A hood that directs smoke into a flue leading out of the building."
  },
  {
   "id": "exp26_ventilated_chimney_hood",
   "n": "Ventilated Chimney Hood",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A chimney hood with openings that draw air through it."
  },
  {
   "id": "exp26_forced_draft_kitchen_hood",
   "n": "Forced Draft Kitchen Hood",
-  "l1": "a design or component for controlling heat and holding food during preparation."
+  "l1": "A kitchen hood with a fan that pulls smoke and fumes out."
  },
  {
   "id": "exp26_carved_watercraft_hull",

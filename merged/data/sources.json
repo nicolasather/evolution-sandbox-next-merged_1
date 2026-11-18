@@ -2813,6 +2813,42 @@
    "type": "magazine-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "semi_ieee": {
+   "t": "A",
+   "title": "The Lost History of the Transistor",
+   "org": "IEEE Spectrum",
+   "url": "https://spectrum.ieee.org/the-lost-history-of-the-transistor",
+   "type": "magazine-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "computing_oreilly": {
+   "t": "B",
+   "title": "Chapter 1. How We Got Here: History of Data Centers and Current Choices",
+   "org": "O'Reilly (Business Continuity Planning)",
+   "url": "https://www.oreilly.com/library/view/business-continuity-planning/9780470258613/ch01.html",
+   "type": "book-chapter-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "gui_wiki": {
+   "t": "B",
+   "title": "History of the graphical user interface",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/History_of_the_graphical_user_interface",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "cooking_smithsonian": {
+   "t": "A",
+   "title": "Cooking Through the Ages: A Timeline of Oven Inventions",
+   "org": "Smithsonian Magazine",
+   "url": "https://www.smithsonianmag.com/legacy_blog/cooking-through-the-ages-a-timeline-of-oven-inventions/",
+   "type": "magazine-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }
