@@ -2786,6 +2786,33 @@
    "type": "reference-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "photo_history": {
+   "t": "B",
+   "title": "8 crucial innovations in the invention of photography",
+   "org": "History.com",
+   "url": "https://www.history.com/articles/8-crucial-innovations-in-the-invention-of-photography",
+   "type": "popular-history-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "medical_pmc": {
+   "t": "A",
+   "title": "History of medical instruments (PMC9482790)",
+   "org": "PubMed Central (National Library of Medicine)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9482790",
+   "type": "journal-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "chem_apparatus": {
+   "t": "A",
+   "title": "Apparatus and Acumen",
+   "org": "American Scientist",
+   "url": "https://www.americanscientist.org/article/apparatus-and-acumen",
+   "type": "magazine-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

@@ -86053,12 +86053,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Coated Glass Plate: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass plate coated with a light-sensitive emulsion to record an image.",
+  "l2": "The coating changes when light strikes it, and the image is fixed by chemical processing. Glass gave a flat, stable base for early photography.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86074,13 +86074,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86155,12 +86154,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Silver Gelatin Plate: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass plate coated with silver salts in gelatin, which records light more quickly.",
+  "l2": "Gelatin holds the silver salts evenly, and the emulsion is far more sensitive to light than earlier coatings. It made shorter exposures possible.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86176,13 +86175,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86257,12 +86255,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Dry Plate Negative: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass plate coated with a dried emulsion that can be stored and used later.",
+  "l2": "A dry plate can be made in advance and kept until needed. It freed the photographer from preparing the plate on the spot.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86278,13 +86276,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86359,12 +86356,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Large Format Film Negative: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large negative on film or glass, used to make prints of high detail.",
+  "l2": "A large negative records fine detail, which carries into the print. It is used with a view camera.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86380,13 +86377,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86461,12 +86457,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Pinhole Camera Box: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A light-tight box with a tiny hole that forms an image on the far wall.",
+  "l2": "A pinhole lets light in without a lens and forms a sharp, dim image. It is the simplest camera.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86482,13 +86478,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86563,12 +86558,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Single Lens Camera: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A camera with one lens that focuses the image onto the plate or film.",
+  "l2": "A lens gathers more light than a pinhole and focuses the image sharply. It made photography faster and clearer.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86584,13 +86579,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86665,12 +86659,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Folding Bellows Camera: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A camera with a bellows that folds for storage and extends for focusing.",
+  "l2": "The bellows is a flexible light-tight tube that lets the lens move. It folds flat when the camera is carried.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86686,13 +86680,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86767,12 +86760,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "View Camera: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large camera with a bellows, used for careful composition and focusing.",
+  "l2": "The photographer views the image on a ground glass at the back and adjusts the lens and film plane. It suits deliberate, detailed work.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86788,13 +86781,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86869,12 +86861,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Darkroom Chemical Tray: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shallow tray in which photographic prints or plates are developed.",
+  "l2": "The tray holds the developer and fixer, and the plate is rocked in the liquid to develop the image. It is used in a darkroom.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86890,13 +86882,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -86971,12 +86962,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Contact Print Frame: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A frame that presses a negative against paper so that a print can be made by exposure.",
+  "l2": "The negative is held flat against the paper, so the light makes a print of the same size. It gives a simple print from a negative.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -86992,13 +86983,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87073,12 +87063,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Photographic Enlarger: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A device that projects a negative onto paper at a larger size.",
+  "l2": "A lamp shines through the negative and a lens enlarges the image onto the paper. It lets the photographer print at any size.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87094,13 +87084,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87175,12 +87164,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Color Enlarger: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An enlarger that adds colour filters to the light to make colour prints.",
+  "l2": "Filters adjust the balance of red, green and blue light, which controls the colours in the print. It is used for colour darkroom work.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87196,13 +87185,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87277,12 +87265,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Photo Shutter Blade: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thin blade that opens and closes to expose the film for a set time.",
+  "l2": "The blade moves across the aperture to control how long light reaches the film. Its timing sets the exposure.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87298,13 +87286,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87380,12 +87367,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mechanical Leaf Shutter: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shutter made of overlapping metal leaves that open from the centre.",
+  "l2": "The leaves open and close around the lens, exposing the whole frame at once. It is quiet and works at any speed.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87401,13 +87388,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87482,12 +87468,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Focal Plane Shutter: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shutter placed just in front of the film, running across the frame.",
+  "l2": "A slit runs across the film, so only a narrow strip is exposed at any moment. It allows very fast speeds.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87503,13 +87489,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87584,12 +87569,12 @@
   "ds": 1940,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Electronic Camera Shutter: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shutter controlled by an electronic circuit, with precise timing.",
+  "l2": "Electronic timing gives accurate speeds without springs and gears. It is used in modern cameras.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87605,13 +87590,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87686,12 +87670,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Camera Film Spool: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A spool on which film is wound inside the camera.",
+  "l2": "The spool holds the film in roll form, so many exposures can be made from one length. It is wound as each frame is taken.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87707,13 +87691,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87789,12 +87772,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Roll Film Cartridge: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A light-tight cartridge holding a roll of film.",
+  "l2": "The cartridge protects the film from light until it is loaded. Roll film made photography accessible to amateurs.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87810,13 +87793,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87891,12 +87873,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "35mm Film Cassette: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cassette of 35 mm film, the standard format for many cameras.",
+  "l2": "The 35 mm format gives a good balance of size and detail in a small camera. It became the standard for decades.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -87912,13 +87894,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -87993,12 +87974,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reusable Film Magazine: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A film magazine that can be loaded and reused in a camera.",
+  "l2": "A reusable magazine can be recharged with new film without changing the camera. It is used in professional equipment.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -88014,13 +87995,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88095,12 +88075,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Camera Lens Barrel: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The tube that holds the lens elements in a camera.",
+  "l2": "The barrel keeps the lens elements aligned and at the correct spacing. It is the body of the lens.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -88116,13 +88096,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88198,12 +88177,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mounted Camera Lens: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A camera lens fitted to a mount that attaches to the camera.",
+  "l2": "The mount holds the lens firmly and lines it up with the film. It lets the lens be removed and changed.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -88219,13 +88198,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88300,12 +88278,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Interchangeable Camera Lens: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lens that can be swapped on the camera for different views.",
+  "l2": "Different lenses give wide or telephoto views, so the photographer can change the picture without changing the camera. It is the basis of the modern camera system.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -88321,13 +88299,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88402,12 +88379,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Optically Stabilized Camera Lens: a design or component for recording and printing optical images.",
-  "l2": "In photography technology, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: lens aperture, enclosed body and shutter control. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lens that compensates for camera shake to keep the image steady.",
+  "l2": "A moving element in the lens shifts the image to cancel small movements of the hand. It allows sharper pictures at slow speeds.",
+  "l3": "Field background: photography and cameras from the camera obscura to roll film (History.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: photography and cameras from the camera obscura to roll film (History.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "photo_history"
   ],
   "rec": [
    [
@@ -88423,13 +88400,12 @@
    "expansion_2026_1000",
    "photography_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88607,12 +88583,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wooden Stethoscope: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: paired ear tubes, hose and chest piece. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wooden tube used to listen to sounds inside the body.",
+  "l2": "A wooden tube carries the sounds of the heart and lungs to the ear. Laennec's early stethoscope was a simple tube of this kind.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -88628,13 +88604,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88709,12 +88684,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Flexible Tube Stethoscope: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals; paired ear tubes, hose and chest piece. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stethoscope with a flexible tube linking the chest piece and the ears.",
+  "l2": "A flexible tube lets the doctor listen more comfortably and more closely. It replaced the rigid wooden tube.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -88730,13 +88705,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88811,12 +88785,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Dual Head Stethoscope: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: paired ear tubes, hose and chest piece. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stethoscope with two chest pieces, one for low and one for high sounds.",
+  "l2": "Two chest pieces pick up sounds at different pitches. The doctor chooses the one that suits the sound being heard.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -88832,13 +88806,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -88913,12 +88886,12 @@
   "ds": 1940,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Electronic Stethoscope: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: paired ear tubes, hose and chest piece. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stethoscope that amplifies and records the sounds electronically.",
+  "l2": "Electronic amplification makes faint sounds louder and can record them for later study. It is used for careful diagnosis.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -88934,13 +88907,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89015,12 +88987,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mercury Thermometer Tube: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals; thin sensor tube and measurement display. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass tube filled with mercury, used to measure temperature.",
+  "l2": "Mercury expands steadily with heat, so its level in the tube shows the temperature. The tube is sealed and marked with a scale.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89036,13 +89008,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89117,12 +89088,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clinical Mercury Thermometer: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: thin sensor tube and measurement display. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mercury thermometer made for measuring body temperature.",
+  "l2": "A clinical thermometer has a narrow neck that holds the mercury at its highest reading. It is shaken down before use.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89138,13 +89109,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89219,12 +89189,12 @@
   "ds": 1950,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Digital Thermometer: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: thin sensor tube and measurement display. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thermometer that shows temperature as digits from an electronic sensor.",
+  "l2": "An electronic sensor measures the temperature and shows it on a display. It replaced mercury for safety.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89240,13 +89210,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89321,12 +89290,12 @@
   "ds": 1951,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Infrared Tympanic Thermometer: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: thin sensor tube and measurement display. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thermometer that reads temperature from the ear by infrared sensing.",
+  "l2": "The ear's infrared heat is measured in a moment, which makes the reading quick and simple. It is used in clinics and at home.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89342,13 +89311,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89423,12 +89391,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Bandage Roll: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A roll of cloth bandage for wrapping a wound or support.",
+  "l2": "The roll is unwound and wrapped round a limb or a wound. It holds dressings in place and gives support.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89444,13 +89412,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89525,12 +89492,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wound Dressing Pad: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pad of absorbent material placed over a wound.",
+  "l2": "The pad soaks up blood and fluid and protects the wound from dirt. It is held in place by a bandage.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89546,13 +89513,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89627,12 +89593,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sterile Gauze Dressing: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A dressing of gauze that is sterilised for use on wounds.",
+  "l2": "Sterile gauze keeps germs out of the wound while it heals. It is packed in a sealed pack until opened.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89648,13 +89614,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89729,12 +89694,12 @@
   "ds": 1861,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adhesive Sterile Dressing: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sterile dressing with an adhesive edge that sticks to the skin.",
+  "l2": "The adhesive holds the dressing without tape, which is quicker to apply. It stays clean until it is removed.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89750,13 +89715,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89831,12 +89795,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Surgical Forceps Blank: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A metal blank shaped for use as surgical forceps.",
+  "l2": "The blank is cut and shaped into the two arms of the forceps, which are then finished and jointed.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89852,13 +89816,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -89934,12 +89897,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Nonlocking Forceps: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Forceps that hold tissue by pressure, without a lock.",
+  "l2": "Forceps grip tissue or thread as the surgeon squeezes the handles. They are released by opening the arms.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -89955,13 +89918,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90036,12 +89998,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Locking Hemostat: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clamp with a lock that holds a blood vessel closed.",
+  "l2": "The lock keeps the jaws shut on a vessel, so the bleeding stops and the surgeon can work with both hands. It is released by a ratchet.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90057,13 +90019,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90138,12 +90099,12 @@
   "ds": 1960,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Micro Surgical Forceps: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Fine forceps for delicate work on small tissues.",
+  "l2": "The fine tips allow the surgeon to handle very small structures with precision. They are used in microsurgery.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90159,13 +90120,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90240,12 +90200,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Washing Station: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A basin set up for washing hands before and after treatment.",
+  "l2": "Clean hands prevent infection passing from one patient to another. The station is kept supplied with water and soap.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90261,13 +90221,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90343,12 +90302,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clinical Scrub Sink: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sink set up for surgeons to scrub their hands before surgery.",
+  "l2": "A surgeon scrubs the hands and arms to the elbow before an operation. The sink has taps that can be worked without touching them.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90364,13 +90323,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90445,12 +90403,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Hands Free Scrub Sink: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A scrub sink operated by foot or knee controls, not by hand.",
+  "l2": "Foot or knee controls keep the scrubbed hands clean while the water runs. It avoids touching the taps.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90466,13 +90424,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90547,12 +90504,12 @@
   "ds": 1950,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sensor Operated Scrub Sink: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A scrub sink that turns on when the hands are placed under the tap.",
+  "l2": "A sensor detects the hands and runs the water without any touch. It keeps the sink hygienic.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90568,13 +90525,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90649,12 +90605,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Medicine Syringe: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: barrel, graduated scale, plunger. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass syringe for injecting medicine.",
+  "l2": "The glass barrel can be sterilised and reused, and the markings show the dose. A plunger pushes the medicine through the needle.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90670,13 +90626,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90752,12 +90707,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reusable Glass Syringe: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: barrel, graduated scale, plunger. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass syringe that is cleaned and sterilised for repeated use.",
+  "l2": "Reuse saves cost, but the syringe must be sterilised fully between patients. It is made of glass for that reason.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90773,13 +90728,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90854,12 +90808,12 @@
   "ds": 1930,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Disposable Plastic Syringe: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: barrel, graduated scale, plunger. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A plastic syringe used once and then discarded.",
+  "l2": "A disposable syringe removes the risk of passing infection between patients. It is cheap enough to throw away after use.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90875,13 +90829,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -90956,12 +90909,12 @@
   "ds": 1931,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Safety Retractable Syringe: a design or component for clinical examination, preparation and safer handling.",
-  "l2": "In medical instruments, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: barrel, graduated scale, plunger. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A syringe whose needle retracts into the body after use, to prevent needle injury.",
+  "l2": "The needle is pulled back into the barrel after the injection, which protects the user. It reduces accidental needle sticks.",
+  "l3": "Field background: medical instruments, including the stethoscope (PubMed Central review). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: medical instruments, including the stethoscope (PubMed Central review). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "medical_pmc"
   ],
   "rec": [
    [
@@ -90977,13 +90930,12 @@
    "expansion_2026_1000",
    "medical_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -91161,12 +91113,12 @@
   "ds": 1791,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Test Tube: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small glass tube used to hold and heat small volumes of liquid.",
+  "l2": "The tube can be heated and holds a small sample for testing. It is one of the most common laboratory vessels.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91182,13 +91134,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91263,12 +91214,12 @@
   "ds": 1792,
   "rar": "common",
   "vis": "tool",
-  "l1": "Graduated Test Tube: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A test tube marked with volume lines.",
+  "l2": "The marks let the volume of a liquid be read directly. It is used for measuring small quantities.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91284,13 +91235,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91365,12 +91315,12 @@
   "ds": 1793,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Culture Test Tube: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A test tube used to grow cultures of microorganisms.",
+  "l2": "The tube holds a growth medium that can be inoculated and kept warm. Its stopper keeps out contamination.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91386,13 +91336,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91467,12 +91416,12 @@
   "ds": 1794,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sealed Reaction Tube: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A tube sealed so that a reaction can take place without air or moisture.",
+  "l2": "The seal keeps the contents isolated, so the reaction is controlled. It is used for sensitive chemistry.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91488,13 +91437,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91569,12 +91517,12 @@
   "ds": 1791,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Flask Blank: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass blank shaped for a laboratory flask.",
+  "l2": "The blank is blown and shaped into the body and neck of a flask. It is then annealed and finished.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91590,13 +91538,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91671,12 +91618,12 @@
   "ds": 1792,
   "rar": "common",
   "vis": "tool",
-  "l1": "Conical Laboratory Flask: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flask with a conical body and a narrow neck.",
+  "l2": "The narrow neck reduces spills and can take a stopper. The shape lets the contents be swirled without loss.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91692,13 +91639,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91773,12 +91719,12 @@
   "ds": 1793,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Vacuum Filter Flask: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thick-walled flask with a side arm, used for filtering under vacuum.",
+  "l2": "A vacuum draws the liquid through the filter quickly. The thick glass resists the pressure difference.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91794,13 +91740,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91875,12 +91820,12 @@
   "ds": 1794,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Round Bottom Reaction Flask: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flask with a round body, used for heating and reacting liquids.",
+  "l2": "The round body heats evenly and holds the reaction mixture safely. It is fitted with a neck for condensers and stoppers.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91896,13 +91841,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -91977,12 +91921,12 @@
   "ds": 1791,
   "rar": "common",
   "vis": "tool",
-  "l1": "Simple Condenser Tube: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A tube that cools vapour back into liquid.",
+  "l2": "Vapour condenses on the cool inside of the tube and runs back as liquid. It is used to collect a distillate.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -91998,13 +91942,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92079,12 +92022,12 @@
   "ds": 1792,
   "rar": "common",
   "vis": "tool",
-  "l1": "Liebig Condenser: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A condenser with an inner tube surrounded by a cooling jacket.",
+  "l2": "Cooling water flows around the inner tube, condensing the vapour inside. It is the standard condenser in many labs.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92100,13 +92043,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92181,12 +92123,12 @@
   "ds": 1793,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Allihn Condenser: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A condenser with bulbs on the inner tube that increase the cooling surface.",
+  "l2": "The bulbs give more surface for the vapour to condense on. They suit reflux work in a small space.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92202,13 +92144,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92283,12 +92224,12 @@
   "ds": 1794,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Fractionating Condenser: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A column that separates a mixture into fractions by repeated condensation.",
+  "l2": "Each stage condenses the higher-boiling part and lets the lower-boiling part pass up. It separates liquids with close boiling points.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92304,13 +92245,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92385,12 +92325,12 @@
   "ds": 1791,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clay Crucible: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clay pot that holds material while it is heated to high temperatures.",
+  "l2": "The crucible holds the sample in a fire without melting. It is made from fired clay.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92406,13 +92346,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92488,12 +92427,12 @@
   "ds": 1792,
   "rar": "common",
   "vis": "tool",
-  "l1": "Porcelain Crucible: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crucible made of porcelain, used for heating at high temperature.",
+  "l2": "Porcelain resists heat and chemical attack better than plain clay. It is used for ignition and analysis.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92509,13 +92448,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92590,12 +92528,12 @@
   "ds": 1793,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Quartz Crucible: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crucible made of quartz for very high temperature work.",
+  "l2": "Quartz withstands high temperatures and resists most chemicals. It is used where porcelain would fail.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92611,13 +92549,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92692,12 +92629,12 @@
   "ds": 1794,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "High Alumina Crucible: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crucible made of alumina, for the most demanding heating.",
+  "l2": "Alumina withstands very high temperatures and attack by many substances. It is used in high-temperature chemistry.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92713,13 +92650,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92794,12 +92730,12 @@
   "ds": 1791,
   "rar": "common",
   "vis": "tool",
-  "l1": "Graduated Pipette Tube: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends; tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pipette marked with volume lines for measuring liquids.",
+  "l2": "The graduations let the volume be read as liquid is drawn or released. It is less precise than a volumetric pipette.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92815,13 +92751,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92897,12 +92832,12 @@
   "ds": 1792,
   "rar": "common",
   "vis": "tool",
-  "l1": "Volumetric Pipette: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pipette that delivers one exact volume of liquid.",
+  "l2": "A single mark gives a very precise volume each time. It is used where accuracy matters.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -92918,13 +92853,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -92999,12 +92933,12 @@
   "ds": 1960,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Micropipette: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pipette that measures and delivers very small volumes.",
+  "l2": "It transfers tiny, precise quantities of liquid, which is needed in biology and chemistry. Each volume is set on the instrument.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -93020,13 +92954,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -93101,12 +93034,12 @@
   "ds": 1961,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Volume Micropipette: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A micropipette whose volume can be set to different amounts.",
+  "l2": "The volume is adjusted on the instrument, so one pipette can measure a range. It is used for many sample types.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -93122,13 +93055,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -93203,12 +93135,12 @@
   "ds": 1791,
   "rar": "common",
   "vis": "tool",
-  "l1": "Laboratory Burner Stand: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stand that holds a burner or a flame source steady during heating.",
+  "l2": "The stand holds the burner under the vessel and keeps it in place. It is used for controlled heating.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -93224,13 +93156,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -93306,12 +93237,12 @@
   "ds": 1792,
   "rar": "common",
   "vis": "tool",
-  "l1": "Spirit Burner: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A burner that burns spirit, a flammable liquid, to produce heat.",
+  "l2": "Spirit gives a clean, hot flame that can be controlled by the wick. It was an early laboratory heat source.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -93327,13 +93258,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -93408,12 +93338,12 @@
   "ds": 1850,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Bunsen Burner: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A gas burner that produces a hot, clean flame for heating in the laboratory.",
+  "l2": "Mixing air with the gas gives a hot, almost colourless flame. It is adjustable and is the standard laboratory heater.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -93429,13 +93359,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -93510,12 +93439,12 @@
   "ds": 1851,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Gas Controlled Laboratory Burner: a design or component for containing, transferring and analyzing laboratory materials.",
-  "l2": "In chemistry instruments, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A laboratory burner with a valve to control the gas flow.",
+  "l2": "The valve sets the flame size and temperature, so the heating can be controlled precisely. It is used across the laboratory.",
+  "l3": "Field background: laboratory apparatus and chemistry instruments (American Scientist). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: laboratory apparatus and chemistry instruments (American Scientist). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "chem_apparatus"
   ],
   "rec": [
    [
@@ -93531,13 +93460,12 @@
    "expansion_2026_1000",
    "chemistry_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
