@@ -78463,12 +78463,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Coil Winding: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Copper wire wound in turns around a core to make a magnetic coil.",
+  "l2": "Each turn adds to the magnetic field when current flows, so the winding sets the strength of the machine. The turns are insulated from each other.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -78484,13 +78484,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -78565,12 +78564,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Field Coil Assembly: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A coil assembly that creates the magnetic field of a machine.",
+  "l2": "The field coil is energised to produce a steady magnetic field across which the armature turns. It is fixed to the frame.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -78586,13 +78585,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -78667,12 +78665,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Wound Motor Stator: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: stator, rotor, shaft, and enclosure. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The fixed, wound part of a motor that creates a rotating magnetic field.",
+  "l2": "The stator's coils are energised in sequence to turn the rotor. It is the stationary half of the motor.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -78688,13 +78686,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -78769,12 +78766,12 @@
   "ds": 1960,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Brushless Motor Stator: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: stator, rotor, shaft, and enclosure. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A motor stator without brushes, switching the current electronically.",
+  "l2": "The stator's coils are powered by electronic switching, so no brushes are needed. The motor lasts longer and runs more quietly.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -78790,13 +78787,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -78871,12 +78867,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Laminated Iron Core: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An iron core built from thin insulated sheets stacked together.",
+  "l2": "The thin sheets cut the swirling currents that would heat a solid core. Lamination keeps machines efficient.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -78892,13 +78888,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -78973,12 +78968,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Electromagnet Core: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An iron core that becomes magnetic when current flows through a coil around it.",
+  "l2": "The core concentrates the magnetic field, which makes the electromagnet strong. It switches on and off with the current.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -78994,13 +78989,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79075,12 +79069,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Transformer Core: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The laminated iron core of a transformer that carries magnetic flux between coils.",
+  "l2": "The core links the primary and secondary coils magnetically, so voltage can be stepped up or down. Its laminations keep losses low.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79096,13 +79090,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79177,12 +79170,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "High Frequency Ferrite Transformer: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A transformer with a ferrite core for high-frequency use.",
+  "l2": "Ferrite conducts magnetic flux well at high frequencies, where iron cores would lose energy. It is used in power supplies and radio circuits.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79198,13 +79191,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79279,12 +79271,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Commutator Segment: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "One copper segment of a commutator that switches current into the armature.",
+  "l2": "Each segment connects one part of the coil to the brushes. Together the segments reverse the current in the coil as it turns.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79300,13 +79292,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79381,12 +79372,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Segmented Commutator: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A ring of commutator segments that reverses the current in a rotating coil.",
+  "l2": "The segments turn past the brushes, so the current in the armature reverses at the right moment. The motor keeps turning in the same direction.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79402,13 +79393,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79483,12 +79473,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Brush Motor Armature: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: stator, rotor, shaft, and enclosure. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The rotating part of a brush motor, carrying coils fed through the commutator.",
+  "l2": "Current reaches the armature through the brushes and commutator, and the magnetic force turns the armature. It is the rotor of a DC motor.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79504,13 +79494,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79585,12 +79574,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "DC Traction Motor: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: stator, rotor, shaft, and enclosure. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A direct current motor that drives a railway vehicle.",
+  "l2": "A DC traction motor gives strong turning force at low speed, which suits starting a heavy train. It was the standard on early electric railways.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79606,13 +79595,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79687,12 +79675,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Generator Rotor Blank: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rotor core cut and prepared for winding into a generator.",
+  "l2": "The blank is laminated and slotted, ready to take the rotor winding. It is the starting point for a generator's rotating part.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79708,13 +79696,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79790,12 +79777,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wound Generator Rotor: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A generator rotor with its coils wound in place.",
+  "l2": "The rotor turns in the magnetic field and induces current in its windings. The windings carry the output of the generator.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79811,13 +79798,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79892,12 +79878,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Alternating Current Generator: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A generator that produces alternating current.",
+  "l2": "Alternating current reverses direction many times a second, and it can be stepped up for long-distance transmission. Most power is generated this way.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -79913,13 +79899,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -79994,12 +79979,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Permanent Magnet Alternator: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An alternator whose field is supplied by permanent magnets, not coils.",
+  "l2": "Permanent magnets need no current to create the field, which simplifies the machine. It is used where a small, reliable generator is needed.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80015,13 +80000,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80096,12 +80080,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Electrical Contact Blank: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A metal piece shaped for use as an electrical contact.",
+  "l2": "The blank is cut to shape and then finished to make a clean, low-resistance contact. Contacts carry current between parts of a circuit.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80117,13 +80101,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80199,12 +80182,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Spring Electrical Contact: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An electrical contact held closed by a spring.",
+  "l2": "The spring keeps the contact pressed firmly together, so current flows reliably. It can spring open when the switch is operated.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80220,13 +80203,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80301,12 +80283,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Snap Action Switch: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A switch that opens and closes quickly by a snap mechanism.",
+  "l2": "The contacts snap apart with a sharp action, which reduces arcing and gives a clean switching. It is used where a fast, definite change is needed.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80322,13 +80304,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80403,12 +80384,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sealed Limit Switch: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A switch sealed against dust and moisture that stops a machine at a set position.",
+  "l2": "The seal keeps the switch working in harsh conditions. It is triggered by the moving part reaching its limit.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80424,13 +80405,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80505,12 +80485,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Bus Strip: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat copper strip that carries current in a switchboard.",
+  "l2": "A strip carries large currents with low resistance and is easy to mount. It forms the conductor of a busbar.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80526,13 +80506,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80608,12 +80587,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Electrical Busbar: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A metal bar that collects and distributes electrical current in a switchboard.",
+  "l2": "A busbar carries current from a supply to several circuits. Its size is set by the current it must carry.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80629,13 +80608,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80710,12 +80688,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Insulated Busbar Assembly: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A busbar covered in insulation to protect it and prevent short circuits.",
+  "l2": "The insulation keeps the busbar from touching other parts or people. It is set in a housing inside the switchboard.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80731,13 +80709,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -80812,12 +80789,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "High Current Switchgear: a design or component for conducting and converting electrical energy.",
-  "l2": "In electrical machines, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: teeth arranged around hub and shaft. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Switchgear that controls and protects circuits carrying large currents.",
+  "l2": "Switchgear breaks the circuit safely when a fault occurs, protecting the equipment. It is built to withstand high currents and arcing.",
+  "l3": "Field background: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: electrical machines, dynamos and motors (Copper Development Association, the development of the dynamo). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "elec_copper"
   ],
   "rec": [
    [
@@ -80833,13 +80810,12 @@
    "expansion_2026_1000",
    "electrical_machines",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81017,12 +80993,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Telegraph Key Contact: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A contact in a telegraph key that makes and breaks the circuit.",
+  "l2": "Pressing the key closes the contact and sends a pulse down the line. Its shape and spring set the feel of the key.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81038,13 +81014,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81119,12 +81094,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Manual Telegraph Key: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hand key used to send telegraph signals.",
+  "l2": "The operator taps the key to send dots and dashes in Morse code. The key is mounted on a base and wired to the line.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81140,13 +81115,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81221,12 +81195,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sounder Telegraph Circuit: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: board outline, conductive traces and component packages. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telegraph circuit with a sounder that clicks to show each signal.",
+  "l2": "The sounder is an electromagnet that clicks when the line is energised. Operators read the signals by sound.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81242,13 +81216,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81323,12 +81296,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Duplex Telegraph Circuit: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: board outline, conductive traces and component packages. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telegraph circuit that carries messages in both directions at once.",
+  "l2": "Two signals travel on one line at the same time, which doubles the capacity of the wire. It is an early form of multiplexing.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81344,13 +81317,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81425,12 +81397,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Telephone Carbon Granule: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Carbon granules whose resistance changes with pressure, used in a microphone.",
+  "l2": "Sound pressure changes the contact between the granules, which varies the current. It made telephones loud enough to use.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81446,13 +81418,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81527,12 +81498,12 @@
   "ds": 1960,
   "rar": "common",
   "vis": "tool",
-  "l1": "Carbon Microphone Capsule: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A microphone capsule of carbon granules that converts sound into electric current.",
+  "l2": "The granules are compressed by the sound wave, which changes the resistance and sends a varying current down the line.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81548,13 +81519,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81629,12 +81599,12 @@
   "ds": 1961,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Handset Telephone: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telephone with a separate earpiece and mouthpiece held in one hand.",
+  "l2": "The handset puts the microphone close to the mouth and the earpiece to the ear. It is more comfortable than a box telephone.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81650,13 +81620,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81731,12 +81700,12 @@
   "ds": 1962,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Desk Telephone Exchange: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A switchboard that connects telephone calls between subscribers.",
+  "l2": "An operator or automatic equipment connects one line to another on request. Exchanges made the telephone network possible.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81752,13 +81721,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81833,12 +81801,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Insulated Signal Wire: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wire covered in insulation to carry a signal safely.",
+  "l2": "Insulation keeps the signal in the wire and stops short circuits. It is needed wherever wires run close together.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81854,13 +81822,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -81935,12 +81902,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Twisted Wire Pair: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two insulated wires twisted together to reduce interference.",
+  "l2": "Twisting cancels much of the noise picked up by the two wires. It is the basis of telephone and network cabling.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -81956,13 +81923,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82037,12 +82003,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Pair Cable: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: insulation jacket, cross-section or connectors. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cable containing many twisted pairs of wires.",
+  "l2": "Many pairs in one sheath carry many circuits in a single cable. It saves space and installation effort.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82058,13 +82024,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82139,12 +82104,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Shielded Data Cable: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: insulation jacket, cross-section or connectors. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A data cable with a metal shield to block outside interference.",
+  "l2": "The shield stops noise from entering the signal, so data arrives intact. It is used in computer and network cabling.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82160,13 +82125,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82241,12 +82205,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mechanical Telephone Dial: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telephone dial that sends pulses for each digit through a mechanical switch.",
+  "l2": "Turning the dial sends a number of electrical pulses that the exchange counts. It sets up the call.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82262,13 +82226,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82344,12 +82307,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rotary Telephone Dial: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rotary dial that sends a number as a series of pulses.",
+  "l2": "The rotary dial sends one pulse per digit as it returns. It was the common telephone dial for decades.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82365,13 +82328,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82446,12 +82408,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Push Button Dial: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telephone keypad that sends tones for each button pressed.",
+  "l2": "Each button sends a tone or a code, which is faster than a rotary dial. It suits modern exchanges.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82467,13 +82429,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82548,12 +82509,12 @@
   "ds": 1950,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Digital Telephone Keypad: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telephone keypad that sends digital signals for each key.",
+  "l2": "Digital codes are sent for each key, which is quick and reliable. It replaced the rotary dial in modern phones.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82569,13 +82530,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82650,12 +82610,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cable Plug Contact: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: insulation jacket, cross-section or connectors. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A metal contact in a plug that connects to a socket.",
+  "l2": "The contact carries the signal from the cable to the socket, so the circuit is made when the plug is inserted.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82671,13 +82631,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82753,12 +82712,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Two Pin Cable Connector: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: insulation jacket, cross-section or connectors. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A plug with two pins that connects a two-wire cable.",
+  "l2": "Two pins carry the two wires of a circuit and fit into matching sockets. It is a simple and reliable connection.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82774,13 +82733,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82855,12 +82813,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Modular Signal Connector: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small modular plug that connects several wires in one fitting.",
+  "l2": "A modular plug holds several wires in a single fitting that clicks into place. It is quick to fit and easy to change.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82876,13 +82834,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -82957,12 +82914,12 @@
   "ds": 1904,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Shielded Network Connector: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A network plug with metal shielding to protect the signal from interference.",
+  "l2": "The shield connects to the cable's screen, which keeps outside noise away from the data. It is used in computer networks.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -82978,13 +82935,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83059,12 +83015,12 @@
   "ds": 1901,
   "rar": "common",
   "vis": "tool",
-  "l1": "Signal Relay Coil: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: coil, movable contact and frame. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The coil of a relay that switches a circuit when energised.",
+  "l2": "Current in the coil pulls the armature and closes the contacts. A small current can switch a large one through the relay.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -83080,13 +83036,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83162,12 +83117,12 @@
   "ds": 1902,
   "rar": "common",
   "vis": "tool",
-  "l1": "Electromagnetic Signal Relay: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: coil, movable contact and frame. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A relay that uses an electromagnet to switch a signal circuit.",
+  "l2": "The electromagnet moves the contacts to open or close the circuit. Relays were the switching elements of early telephone exchanges.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -83183,13 +83138,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83264,12 +83218,12 @@
   "ds": 1903,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Telephone Switching Relay: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: coil, movable contact and frame. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A relay used in a telephone exchange to connect calls.",
+  "l2": "The relay sets up each connection as a call is made. Many relays together made up the switching of a large exchange.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -83285,13 +83239,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83366,12 +83319,12 @@
   "ds": 1940,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Electronic Switching Matrix: a design or component for carrying messages through conductors and switching devices.",
-  "l2": "In wired communications, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A grid of electronic switches that connects inputs to outputs.",
+  "l2": "The matrix routes signals between any input and any output by closing electronic switches. It replaced the mechanical switchboard.",
+  "l3": "Field background: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wired telegraph and telephone communications (open textbook, history of telecommunications). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wired_utsa"
   ],
   "rec": [
    [
@@ -83387,13 +83340,12 @@
    "expansion_2026_1000",
    "wired_communications",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83571,12 +83523,12 @@
   "ds": 1971,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wire Loop Antenna: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: conductive loop or radiating rods. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loop of wire used to receive radio signals.",
+  "l2": "The loop picks up the magnetic part of a radio wave and passes the signal to a receiver. It is simple and compact.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -83592,13 +83544,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83673,12 +83624,12 @@
   "ds": 1972,
   "rar": "common",
   "vis": "tool",
-  "l1": "Tuned Loop Antenna: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: conductive loop or radiating rods. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loop antenna tuned to a particular frequency.",
+  "l2": "Tuning picks out one station from many, by matching the loop to the frequency. It sharpens the reception.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -83694,13 +83645,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83775,12 +83725,12 @@
   "ds": 1973,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ferrite Rod Antenna: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: conductive loop or radiating rods. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An antenna wound on a ferrite rod to receive radio signals.",
+  "l2": "The ferrite concentrates the magnetic field, which makes a small antenna work well. It is used in portable radios.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -83796,13 +83746,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83877,12 +83826,12 @@
   "ds": 1974,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Active Loop Antenna: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: conductive loop or radiating rods. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loop antenna with an amplifier built in.",
+  "l2": "The amplifier boosts the weak signal from a small loop, so reception is good even when the antenna is small.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -83898,13 +83847,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -83979,12 +83927,12 @@
   "ds": 1971,
   "rar": "common",
   "vis": "tool",
-  "l1": "Crystal Detector Contact: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crystal contact that rectifies radio signals so they can be heard.",
+  "l2": "The crystal allows current to flow in one direction only, which turns the radio signal into sound. It was used in early radios.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84000,13 +83948,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84081,12 +84028,12 @@
   "ds": 1972,
   "rar": "common",
   "vis": "tool",
-  "l1": "Crystal Radio Receiver: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A simple radio receiver that uses a crystal detector and needs no battery.",
+  "l2": "The receiver draws its power from the radio signal itself, so it needs no battery. Headphones are the output.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84102,13 +84049,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84183,12 +84129,12 @@
   "ds": 1973,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Vacuum Tube Radio Receiver: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A radio receiver that amplifies the signal with a vacuum tube.",
+  "l2": "The tube boosts the weak signal so it can drive a loudspeaker. It made radio loud and reliable.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84204,13 +84150,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84285,12 +84230,12 @@
   "ds": 1974,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Transistor Radio Receiver: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: three electrical terminals and package. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A radio receiver that uses transistors instead of vacuum tubes.",
+  "l2": "Transistors are small, cool and use little power. The transistor radio made portable listening common.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84306,13 +84251,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84387,12 +84331,12 @@
   "ds": 1971,
   "rar": "common",
   "vis": "tool",
-  "l1": "Variable Capacitor Plate: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A metal plate set in a variable capacitor that changes the tuning.",
+  "l2": "Moving the plates changes the capacitance, which changes the frequency the circuit is tuned to. It is the tuning control of a radio.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84408,13 +84352,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84489,12 +84432,12 @@
   "ds": 1972,
   "rar": "common",
   "vis": "tool",
-  "l1": "Air Variable Capacitor: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A variable capacitor with air as the insulating gap between its plates.",
+  "l2": "Air has very low loss at radio frequencies, so the tuning is clean and efficient. The plates are moved mechanically.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84510,13 +84453,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84591,12 +84533,12 @@
   "ds": 1973,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Resonant Tuning Circuit: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: board outline, conductive traces and component packages. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A circuit that resonates at one frequency and rejects others.",
+  "l2": "A coil and capacitor together resonate at a set frequency. Only the wanted station passes strongly through the circuit.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84612,13 +84554,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84693,12 +84634,12 @@
   "ds": 1974,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Frequency Synthesizer Module: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A module that produces a precise frequency from a reference oscillator.",
+  "l2": "The module generates accurate frequencies on demand, which keeps a radio on its channel. It is used in modern transmitters and receivers.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84714,13 +84655,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84795,12 +84735,12 @@
   "ds": 1971,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Radio Coil: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper coil used in a radio circuit to store energy at a set frequency.",
+  "l2": "The coil works with a capacitor to tune the circuit. Its turns and spacing set the frequency.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84816,13 +84756,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -84898,12 +84837,12 @@
   "ds": 1972,
   "rar": "common",
   "vis": "tool",
-  "l1": "Solenoid Inductor: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cylindrical coil used as an inductor in a radio circuit.",
+  "l2": "The coil stores energy in its magnetic field, and with a capacitor it sets the tuning. The solenoid form is simple to make.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -84919,13 +84858,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85000,12 +84938,12 @@
   "ds": 1973,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "RF Transformer Coil: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A coil that couples radio signals from one stage to the next.",
+  "l2": "The coil transfers the signal between two circuits, with the turns set to match the impedances. It is the coupling in a radio amplifier.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85021,13 +84959,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85102,12 +85039,12 @@
   "ds": 1974,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Shielded RF Inductor: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A radio-frequency inductor enclosed in a metal shield.",
+  "l2": "The shield stops the coil picking up or radiating unwanted signals. It keeps neighbouring stages isolated.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85123,13 +85060,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85204,12 +85140,12 @@
   "ds": 1971,
   "rar": "common",
   "vis": "tool",
-  "l1": "Radio Oscillator Circuit: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: board outline, conductive traces and component packages. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A circuit that generates a steady radio-frequency signal.",
+  "l2": "The oscillator produces a signal at a set frequency, which is used to mix or to transmit. It is the heart of a transmitter or local oscillator.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85225,13 +85161,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85307,12 +85242,12 @@
   "ds": 1972,
   "rar": "common",
   "vis": "tool",
-  "l1": "Vacuum Tube Oscillator: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An oscillator built around a vacuum tube.",
+  "l2": "The tube amplifies a signal fed back into the circuit, which keeps it oscillating. It produced radio waves in early transmitters.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85328,13 +85263,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85409,12 +85343,12 @@
   "ds": 1973,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Transistor RF Oscillator: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: three electrical terminals and package. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A radio oscillator built around a transistor.",
+  "l2": "The transistor sustains the oscillation at a set frequency with little power. It replaced the vacuum tube in modern equipment.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85430,13 +85364,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85511,12 +85444,12 @@
   "ds": 1974,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Phase Locked Loop Oscillator: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An oscillator whose frequency is locked to a reference by a feedback loop.",
+  "l2": "The loop keeps the oscillator exactly on frequency, which makes the signal very stable. It is used in tuners and communications equipment.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85532,13 +85465,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85613,12 +85545,12 @@
   "ds": 1971,
   "rar": "common",
   "vis": "tool",
-  "l1": "Radio Speaker Cone: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A paper or plastic cone that moves air to make sound from a signal.",
+  "l2": "The cone moves with the signal and pushes the air to make sound. Its size and stiffness shape the sound.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85634,13 +85566,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85716,12 +85647,12 @@
   "ds": 1972,
   "rar": "common",
   "vis": "tool",
-  "l1": "Moving Coil Speaker: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loudspeaker in which a coil moving in a magnet drives a cone.",
+  "l2": "Current in the coil pushes it against the magnet, which moves the cone. It is the standard loudspeaker design.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85737,13 +85668,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85818,12 +85748,12 @@
   "ds": 1973,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Enclosed Radio Loudspeaker: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loudspeaker mounted in a box that improves its bass.",
+  "l2": "The enclosure stops the sound from the front and back of the cone cancelling each other, which gives fuller bass.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85839,13 +85769,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",
@@ -85920,12 +85849,12 @@
   "ds": 1974,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Powered Monitor Speaker: a design or component for generating, selecting, radiating and receiving radio signals.",
-  "l2": "In radio technologies, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loudspeaker with its own amplifier built in.",
+  "l2": "An internal amplifier drives the speaker directly, so it needs no separate power amplifier. It suits compact sound systems.",
+  "l3": "Field background: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: radio receivers, transmitters and their components (Electronics Notes, radio history timeline). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "radio_timeline"
   ],
   "rec": [
    [
@@ -85941,13 +85870,12 @@
    "expansion_2026_1000",
    "radio_technologies",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "circuit",

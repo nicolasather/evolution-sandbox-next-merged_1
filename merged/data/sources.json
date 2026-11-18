@@ -2759,6 +2759,33 @@
    "type": "magazine-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "elec_copper": {
+   "t": "B",
+   "title": "The Development of the Dynamo",
+   "org": "Copper Development Association (60 Centuries of Copper)",
+   "url": "https://www.copper.org/education/history/60centuries/electrical/thedevelopment.php",
+   "type": "industry-history-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "wired_utsa": {
+   "t": "B",
+   "title": "History of telecommunications",
+   "org": "University of Texas at San Antonio (open textbook, Networking)",
+   "url": "https://utsa.pressbooks.pub/networking/chapter/history-of-telecommunications/",
+   "type": "textbook-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "radio_timeline": {
+   "t": "B",
+   "title": "Radio history timeline",
+   "org": "Electronics Notes",
+   "url": "https://electronics-notes.com/articles/history/radio-receivers/radio-history-timeline.php",
+   "type": "reference-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }
