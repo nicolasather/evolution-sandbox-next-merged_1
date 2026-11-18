@@ -230,6 +230,10 @@
       [
         "water_crossing",
         "lumber"
+      ],
+      [
+        "anc27_papyrus_reed_raft",
+        "rope"
       ]
     ],
     "tags": [

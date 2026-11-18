@@ -755,6 +755,10 @@
       [
         "smelting",
         "trade"
+      ],
+      [
+        "anc27_copper_ore_roasting",
+        "fire"
       ]
     ],
     "tags": [
@@ -1111,6 +1115,10 @@
       [
         "construction",
         "wood"
+      ],
+      [
+        "anc27_solid_disk_wooden_wheel",
+        "axle"
       ]
     ],
     "tags": [
@@ -1181,6 +1189,10 @@
       [
         "axle",
         "construction"
+      ],
+      [
+        "anc27_wooden_cart_bed",
+        "wheel"
       ]
     ],
     "tags": [

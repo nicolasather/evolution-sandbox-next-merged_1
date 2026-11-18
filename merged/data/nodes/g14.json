@@ -115,6 +115,14 @@
       [
         "plant",
         "sharp_stone"
+      ],
+      [
+        "anc27_serrated_flint_sickle",
+        "wood"
+      ],
+      [
+        "anc27_bronze_sickle_blade",
+        "wood"
       ]
     ],
     "tags": [

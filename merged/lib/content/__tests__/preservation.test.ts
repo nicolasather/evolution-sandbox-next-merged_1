@@ -48,5 +48,5 @@ describe('V3 preservation goldens', () => {
 const GOLD = {
   majors: '4257ccf9d8680cdb',
   museum: 'de2dc494e35af039',
-  nodes918: '49d866a05d14b6e5', // re-recorded: routes were ADDED to slingshot, spear, bow, shelter, fire, navigation, axe and hoe; none removed // re-recorded: early-craft routes were ADDED to fish_trap, adze, fishing_line, fishing_hook and pestle (no original route was removed)
+  nodes918: 'b086ae07eae05c86', // re-recorded again: routes ADDED to cart, wheel, copper, sickle, cordage and raft; none removed // re-recorded: routes were ADDED to slingshot, spear, bow, shelter, fire, navigation, axe and hoe; none removed // re-recorded: early-craft routes were ADDED to fish_trap, adze, fishing_line, fishing_hook and pestle (no original route was removed)
 };

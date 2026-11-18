@@ -380,6 +380,18 @@
       [
         "fiber",
         "cutting"
+      ],
+      [
+        "anc27_drop_spindle",
+        "fiber"
+      ],
+      [
+        "anc27_wool_spinning_spindle",
+        "fiber"
+      ],
+      [
+        "anc27_twisted_wool_yarn",
+        "fiber"
       ]
     ],
     "tags": [
