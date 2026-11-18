@@ -563,6 +563,14 @@
         "wood",
         "binding",
         "sewing"
+      ],
+      [
+        "woven_mat",
+        "wood"
+      ],
+      [
+        "hide_bedding",
+        "wood"
       ]
     ],
     "tags": [
@@ -606,6 +614,14 @@
         "composite_tool",
         "wood",
         "bone"
+      ],
+      [
+        "bound_blade",
+        "wood"
+      ],
+      [
+        "flaky_flint_dagger",
+        "wood"
       ]
     ],
     "tags": [
@@ -712,6 +728,10 @@
       [
         "bow_drill",
         "fiber"
+      ],
+      [
+        "brand",
+        "wood"
       ]
     ],
     "tags": [

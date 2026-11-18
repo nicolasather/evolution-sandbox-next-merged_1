@@ -36,5 +36,5 @@ describe('preservation baseline', () => {
 });
 
 // recorded 5538 before the early-craft batches; they add 28 recipe entries (g14 items and new routes to existing items)
-const BASELINE_RECIPES = 5566; // 3856 + 1682 (two authored routes per anc27 item) + 28 from the early-craft batches (g14 items and added routes)
+const BASELINE_RECIPES = 5577; // +11 routes from dead-end consumption (slingshot, spear, bow, shelter, fire, navigation, axe, hoe); // 3856 + 1682 (two authored routes per anc27 item) + 28 from the early-craft batches (g14 items and added routes)
 const BASELINE_TECHNIQUES = 25;

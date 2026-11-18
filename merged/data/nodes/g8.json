@@ -123,6 +123,14 @@
       [
         "binding",
         "sharp_stone"
+      ],
+      [
+        "flat_axe_stone",
+        "wood"
+      ],
+      [
+        "greenstone_polished_axe",
+        "wood"
       ]
     ],
     "tags": [
@@ -1389,6 +1397,10 @@
       [
         "rope",
         "hunting"
+      ],
+      [
+        "sling",
+        "stone"
       ]
     ],
     "tags": [
@@ -1903,6 +1915,10 @@
       [
         "hardened_spear",
         "cordage"
+      ],
+      [
+        "sinew_cord",
+        "lumber"
       ]
     ],
     "tags": [
@@ -2877,6 +2893,10 @@
       [
         "hafted_tool",
         "cultivation"
+      ],
+      [
+        "digging_stick",
+        "plant"
       ]
     ],
     "tags": [

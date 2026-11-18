@@ -301,6 +301,10 @@
       [
         "landscape_knowledge",
         "astronomy"
+      ],
+      [
+        "gps",
+        "computer"
       ]
     ],
     "tags": [
