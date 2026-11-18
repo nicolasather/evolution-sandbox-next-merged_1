@@ -2678,6 +2678,33 @@
    "type": "government-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "glass_getty": {
+   "t": "A",
+   "title": "Ancient Glass — Introduction",
+   "org": "J. Paul Getty Museum",
+   "url": "https://www.getty.edu/publications/ancient-glass/intro/",
+   "type": "museum-publication-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "optics_openlearn": {
+   "t": "A",
+   "title": "A brief history of the lens",
+   "org": "The Open University (OpenLearn)",
+   "url": "https://www.open.edu/openlearn/society-politics-law/sociology/brief-history-the-lens",
+   "type": "university-course-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "binding_sobb": {
+   "t": "B",
+   "title": "Books and Bookbinding",
+   "org": "Society of Bookbinders",
+   "url": "https://www.societyofbookbinders.com/what-is-a-book/",
+   "type": "association-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

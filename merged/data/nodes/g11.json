@@ -55693,12 +55693,12 @@
   "ds": -1998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Bead Blank: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small blob of molten glass shaped roughly into a bead.",
+  "l2": "The glass is pulled and wound on a rod to make a bead. The bead is then cooled and finished.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -55714,13 +55714,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -55795,12 +55794,12 @@
   "ds": -1997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Drawn Glass Bead: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass bead drawn from a rod of molten glass.",
+  "l2": "Drawing stretches the glass into a rod, which is cut into beads. Each bead is rounded and smoothed.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -55816,13 +55815,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -55897,12 +55895,12 @@
   "ds": -1996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multicolor Glass Bead: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass bead with several colours wound into it.",
+  "l2": "Coloured glass is wound onto the bead while hot, so the colours stay fixed in the glass. Patterns come from how the colours are laid.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -55918,13 +55916,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -55999,12 +55996,12 @@
   "ds": -1995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Decorated Millefiori Bead: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bead decorated with a cross-section of many small glass canes.",
+  "l2": "Millefiori canes are cut into slices and set into the bead, showing a pattern in each cross-section. The technique was used for ornaments and vessels.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56020,13 +56017,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56101,12 +56097,12 @@
   "ds": -1998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Cup Blank: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A blob of molten glass shaped for a cup.",
+  "l2": "The glass is gathered on a rod and shaped roughly. It is then worked into the form of a cup.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56122,13 +56118,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56203,12 +56198,12 @@
   "ds": -1997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Blown Glass Cup: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cup shaped by blowing air into molten glass on a rod.",
+  "l2": "Blowing expands the glass from the inside, so a thin, even wall forms. Glassblowing made vessels quicker and thinner than casting or moulding.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56224,13 +56219,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56305,12 +56299,12 @@
   "ds": -1996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Handled Glass Tankard: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass tankard with a handle attached to its side.",
+  "l2": "The handle is attached while the glass is hot, so it fuses to the body. A tankard is a larger drinking vessel.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56326,13 +56320,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56407,12 +56400,12 @@
   "ds": -1995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Heat Resistant Glass Beaker: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass beaker made to withstand heating.",
+  "l2": "Heat-resistant glass contains boron or similar additives, so it does not crack when heated. It is used in laboratories.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56428,13 +56421,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56509,12 +56501,12 @@
   "ds": -1998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Bottle Blank: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: narrow neck above wider hollow vessel. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A blob of molten glass shaped for a bottle.",
+  "l2": "The glass is gathered and blown into a rough bottle shape. It is trimmed and its neck finished.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56530,13 +56522,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56611,12 +56602,12 @@
   "ds": -1997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Long Neck Glass Bottle: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: narrow neck above wider hollow vessel. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass bottle with a long, narrow neck.",
+  "l2": "A long neck lets the contents be poured slowly and keeps dirt out. The neck is drawn out while the glass is soft.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56632,13 +56623,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56713,12 +56703,12 @@
   "ds": -1996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stoppered Glass Bottle: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: narrow neck above wider hollow vessel. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass bottle closed with a stopper.",
+  "l2": "A stopper seals the neck and keeps the contents from spilling or evaporating. It is ground to fit the neck.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56734,13 +56724,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56815,12 +56804,12 @@
   "ds": -1995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pressure Rated Glass Bottle: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: narrow neck above wider hollow vessel; frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass bottle strong enough to hold a gas or liquid under pressure.",
+  "l2": "Pressure rating depends on the thickness and annealing of the glass. The bottle is tested before use.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56836,13 +56825,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -56917,12 +56905,12 @@
   "ds": -1998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Window Pane: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: frame outline with glass panel divisions. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat sheet of glass for a window.",
+  "l2": "A pane lets light into a room while keeping out wind and rain. Early panes were made by blowing and flattening a cylinder.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -56938,13 +56926,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57020,12 +57007,12 @@
   "ds": -1997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Flattened Glass Pane: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass pane flattened by heating and pressing.",
+  "l2": "Flattening makes the glass smoother and more even. The pane is then cooled slowly to avoid cracks.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57041,13 +57028,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57122,12 +57108,12 @@
   "ds": -1996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Lead Came Window: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: frame outline with glass panel divisions. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A window of glass pieces held together by lead strips.",
+  "l2": "Lead came is a grooved strip that holds each piece of glass in its place. The lead is soldered at the joints.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57143,13 +57129,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57224,12 +57209,12 @@
   "ds": -1995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Double Glazed Window: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: frame outline with glass panel divisions; ceramic profile with visible glaze boundary. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A window with two panes of glass sealed with a gap of air between them.",
+  "l2": "The air gap insulates the window, so less heat escapes. The panes are sealed around the edges.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57245,13 +57230,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57326,12 +57310,12 @@
   "ds": -1998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Tube Blank: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short length of glass shaped for drawing into a tube.",
+  "l2": "The blank is gathered and worked into a rough tube before it is drawn to size.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57347,13 +57331,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57429,12 +57412,12 @@
   "ds": -1997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Drawn Glass Tube: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass tube drawn out to a set bore.",
+  "l2": "Drawing pulls the soft glass into a long, even tube. The bore is set by how fast it is drawn.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57450,13 +57433,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57531,12 +57513,12 @@
   "ds": -1996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Graduated Glass Tube: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass tube marked with a scale for measuring.",
+  "l2": "Marks are etched or painted on the tube so that the volume or length can be read. The scale must be accurate to be useful.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57552,13 +57534,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57633,12 +57614,12 @@
   "ds": -1995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Calibrated Glass Pipette: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass pipette marked to deliver a set volume.",
+  "l2": "A pipette is calibrated so that it delivers a known volume each time. It is used in measurement and chemistry.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57654,13 +57635,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57735,12 +57715,12 @@
   "ds": -1998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Sphere Blank: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A blob of glass shaped roughly into a sphere.",
+  "l2": "The glass is gathered and rounded before it is blown or finished.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57756,13 +57736,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57838,12 +57817,12 @@
   "ds": -1997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hollow Glass Sphere: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hollow sphere of blown glass.",
+  "l2": "A sphere is blown to a thin, even wall. It is used for ornaments and for optical and lighting purposes.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57859,13 +57838,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -57940,12 +57918,12 @@
   "ds": -1996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Silvered Glass Ornament: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hollow glass sphere coated on the inside with a reflective layer.",
+  "l2": "The silver coating reflects light and gives the ornament its brightness. It is applied inside the sphere and sealed.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -57961,13 +57939,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -58042,12 +58019,12 @@
   "ds": -1995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Vacuum Insulated Glass Vessel: a design or component for forming transparent, brittle glass into useful shapes.",
-  "l2": "In glass vessels, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A double-walled glass vessel with a vacuum between the walls.",
+  "l2": "The vacuum stops heat passing between the walls, so the contents stay hot or cold. This is the principle of the vacuum flask.",
+  "l3": "Field background: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient glassmaking and glass vessels (J. Paul Getty Museum). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "glass_getty"
   ],
   "rec": [
    [
@@ -58063,13 +58040,12 @@
    "expansion_2026_1000",
    "glass_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -58247,12 +58223,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Single Magnifying Lens: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A single lens that makes small things look larger.",
+  "l2": "A convex lens bends light so that a close object appears bigger. It is the simplest optical aid.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58268,13 +58244,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -58349,12 +58324,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mounted Magnifier: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A magnifying lens set in a frame with a handle.",
+  "l2": "A mount holds the lens at the right distance and keeps it steady. The handle lets the user move it over the object.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58370,13 +58345,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -58451,12 +58425,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Folding Pocket Magnifier: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small magnifier that folds into a case.",
+  "l2": "The lens folds into its case, so it can be carried in a pocket. It is used for reading fine print.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58472,13 +58446,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -58553,12 +58526,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Illuminated Inspection Magnifier: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A magnifier with a light, used to inspect small detail.",
+  "l2": "The light shows the object clearly, so fine detail can be checked. It is used for inspection and repair.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58574,13 +58547,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -58655,12 +58627,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Convex Lens Pair: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two convex lenses set together to magnify more.",
+  "l2": "Two lenses together can magnify more than one, and they can focus light over a distance. A pair is the basis of many optical instruments.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58676,13 +58648,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -58757,12 +58728,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Simple Refracting Telescope: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: long focal tube and lens mounts. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telescope using a convex lens to gather light and an eyepiece to magnify it.",
+  "l2": "The objective lens gathers light and the eyepiece magnifies the image. It makes distant objects appear closer.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58778,13 +58749,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -58859,12 +58829,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Achromatic Refractor: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telescope whose lenses are combined to reduce colour fringing.",
+  "l2": "Two glasses with different refractive properties cancel most of the colour distortion. The image is clearer than with a single lens.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58880,13 +58850,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59063,12 +59032,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Concave Mirror Blank: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass disc shaped roughly for grinding into a concave mirror.",
+  "l2": "The disc is ground to a curve and then polished. Its shape sets how it focuses light.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59084,13 +59053,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59165,12 +59133,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Polished Concave Mirror: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A concave mirror ground and polished to a smooth curve.",
+  "l2": "A concave mirror gathers light to a focus. Polishing gives a clean reflection.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59186,13 +59154,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59267,12 +59234,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Newtonian Reflector: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A reflecting telescope with a concave mirror and a small flat mirror.",
+  "l2": "The large mirror gathers light and the small mirror sends the image to an eyepiece at the side. Mirrors avoid the colour problems of lenses.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59288,13 +59255,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59369,12 +59335,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Compound Reflecting Telescope: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: long focal tube and lens mounts. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A reflecting telescope using several mirrors to fold the light path.",
+  "l2": "Several mirrors make a long light path in a short tube. This gives high magnification in a compact instrument.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59390,13 +59356,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59471,12 +59436,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Ground Lens Blank: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A piece of optical glass cut and roughly shaped for a lens.",
+  "l2": "The blank is ground to the curve of the lens and then polished. Its surface must be accurate for a sharp image.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59492,13 +59457,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59574,12 +59538,12 @@
   "ds": 1960,
   "rar": "common",
   "vis": "tool",
-  "l1": "Microscope Objective: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: optical tube, specimen platform and focus knob. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The lens nearest the object in a microscope.",
+  "l2": "The objective gathers the light from the specimen and forms the first magnified image. Its quality sets the sharpness of the whole microscope.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59595,13 +59559,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59676,12 +59639,12 @@
   "ds": 1961,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Compound Microscope: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: optical tube, specimen platform and focus knob. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A microscope using an objective lens and an eyepiece to magnify small objects.",
+  "l2": "Two lenses in sequence magnify the object in two stages. It reveals detail too small to see with the eye alone.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59697,13 +59660,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59778,12 +59740,12 @@
   "ds": 1962,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Binocular Laboratory Microscope: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: optical tube, specimen platform and focus knob. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A microscope with two eyepieces for viewing with both eyes.",
+  "l2": "Two eyepieces reduce eye strain and make the image easier to see for long periods. It is used for detailed laboratory work.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59799,13 +59761,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59880,12 +59841,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Prism Blank: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A piece of glass cut to form a prism.",
+  "l2": "The blank is cut and ground to the angles of the prism. Its faces must be flat and accurate.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -59901,13 +59862,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -59983,12 +59943,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Triangular Optical Prism: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A triangular glass prism that bends and splits light.",
+  "l2": "A prism bends light by refraction and splits white light into colours. It is used in instruments that measure or analyse light.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -60004,13 +59964,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60085,12 +60044,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Direct Vision Spectroscope: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A spectroscope in which the light is split by prisms and viewed straight through.",
+  "l2": "Several prisms spread the light into a spectrum, which is seen through a small telescope. It shows the colours that make up the light.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -60106,13 +60065,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60187,12 +60145,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Prism Spectrometer: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A spectrometer that measures the wavelengths in light using a prism.",
+  "l2": "A prism spreads light by wavelength, and a scale measures the angles of the spectral lines. It identifies the substances that emit or absorb light.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -60208,13 +60166,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60289,12 +60246,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Glass Reticle Blank: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass disc prepared to carry a fine pattern of lines.",
+  "l2": "The disc is polished flat so that a pattern can be etched on it. It forms the scale seen through an eyepiece.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -60310,13 +60267,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60392,12 +60348,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Etched Optical Reticle: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glass reticle with lines etched into its surface.",
+  "l2": "Etching cuts fine, accurate lines into the glass. The lines are used to aim or measure through the eyepiece.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -60413,13 +60369,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60494,12 +60449,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Crosshair Eyepiece: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An eyepiece with a crosshair for aiming and measuring.",
+  "l2": "The crosshair marks the centre of the view so that the target can be aligned exactly. It is used in sighting instruments.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -60515,13 +60470,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60596,12 +60550,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rangefinding Optical Sight: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An optical sight that estimates the distance to a target.",
+  "l2": "The sight measures the angle between two marks on the target to find its range. It is used for aiming and measuring distance.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -60617,13 +60571,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60801,12 +60754,12 @@
   "ds": 107,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Cut Paper Sheet: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: thin sheet, fibers and page fold. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sheet of paper cut by hand to a set size.",
+  "l2": "The sheet is trimmed to the page size needed for a book. Hand cutting is done against a straight edge.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -60822,13 +60775,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -60903,12 +60855,12 @@
   "ds": 108,
   "rar": "common",
   "vis": "tool",
-  "l1": "Folded Paper Quire: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: thin sheet, fibers and page fold. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Paper sheets folded in half to make the pages of a book.",
+  "l2": "A quire is a set of sheets folded together. Folding makes the leaves of a book and keeps the sheets in order.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -60924,13 +60876,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61005,12 +60956,12 @@
   "ds": 109,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Gathered Paper Signatures: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: thin sheet, fibers and page fold. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Folded paper quires gathered in order, ready to be sewn.",
+  "l2": "Each signature is a group of folded sheets. The signatures are placed in sequence and then sewn into the book.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61026,13 +60977,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61107,12 +61057,12 @@
   "ds": 110,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Bound Paper Codex: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: thin sheet, fibers and page fold. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A book of paper pages sewn and bound between covers.",
+  "l2": "A codex has its pages bound along one edge, so it opens and is read like a modern book. It replaced the roll as the main form of book.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61128,13 +61078,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61209,12 +61158,12 @@
   "ds": 107,
   "rar": "common",
   "vis": "tool",
-  "l1": "Writing Quill: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pen made from a bird's flight feather, cut to a point.",
+  "l2": "A quill holds ink and makes a fine line. Its tip is shaped and split to suit the hand.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61230,13 +61179,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61311,12 +61259,12 @@
   "ds": 108,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cut Quill Nib: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The tip of a quill cut to a fine nib.",
+  "l2": "The nib is cut with a knife to a slit and a point. Its shape decides the thickness of the line.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61332,13 +61280,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61413,12 +61360,12 @@
   "ds": 109,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Metal Dip Pen: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pen with a metal nib dipped in ink.",
+  "l2": "The metal nib replaces the quill and lasts longer. It is dipped into the ink and drawn across the page.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61434,13 +61381,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61515,12 +61461,12 @@
   "ds": 110,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reservoir Fountain Pen: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pen that carries its own supply of ink in a reservoir.",
+  "l2": "A reservoir feeds ink to the nib as it is written, so the pen does not need dipping. It was a major step in writing convenience.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61536,13 +61482,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61617,12 +61562,12 @@
   "ds": 107,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wax Writing Tablet: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A tablet of wood covered in wax that is written on with a stylus.",
+  "l2": "A stylus scratches letters into the wax, and the wax can be smoothed to write again. It was used for notes and temporary records.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61638,13 +61583,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61719,12 +61663,12 @@
   "ds": 108,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hinged Wax Diptych: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: two leaves and a pin axis. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two wax tablets hinged together to form a book that closes.",
+  "l2": "The hinged tablets close over the wax face, so the writing is protected. A diptych can be carried and opened to write.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61740,13 +61684,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61821,12 +61764,12 @@
   "ds": 109,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reusable Writing Tablet: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wax tablet that can be smoothed and written on again.",
+  "l2": "The wax is smoothed with the back of the stylus, so the tablet can be reused many times. It is a cheap and reusable surface.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61842,13 +61785,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -61923,12 +61865,12 @@
   "ds": 110,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Portable Note Tablet: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small note tablet for carrying and writing on the move.",
+  "l2": "A portable tablet is small enough to carry in a pocket or bag. It is used for notes and quick records.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -61944,13 +61886,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62025,12 +61966,12 @@
   "ds": 107,
   "rar": "common",
   "vis": "tool",
-  "l1": "Parchment Sheet: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: curved voussoirs and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sheet of prepared animal skin for writing.",
+  "l2": "Parchment is made from scraped and stretched skin. It is durable and takes ink well, so it was used for important documents.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62046,13 +61987,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62128,12 +62068,12 @@
   "ds": 108,
   "rar": "common",
   "vis": "tool",
-  "l1": "Ruled Manuscript Page: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A parchment page ruled with guide lines for writing.",
+  "l2": "Ruling sets the lines for the text so that it is straight and evenly spaced. The lines are scored into the page.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62149,13 +62089,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62230,12 +62169,12 @@
   "ds": 109,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Illuminated Manuscript Leaf: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A manuscript page decorated with painted letters and images.",
+  "l2": "Illumination uses gold, colour and pictures to decorate the text. It was done by hand in workshops.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62251,13 +62190,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62332,12 +62270,12 @@
   "ds": 110,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Bound Manuscript Volume: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A manuscript book of many leaves, sewn and bound together.",
+  "l2": "The leaves are gathered and sewn, then bound between covers. A volume keeps its pages in order and protects them.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62353,13 +62291,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62434,12 +62371,12 @@
   "ds": 107,
   "rar": "common",
   "vis": "tool",
-  "l1": "Book Cover Board: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: folded pages, spine and cover. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stiff board used to make the cover of a book.",
+  "l2": "Boards are cut to the page size and covered with leather or cloth. They protect the pages and give the book its shape.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62455,13 +62392,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62537,12 +62473,12 @@
   "ds": 108,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cloth Book Case: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems; folded pages, spine and cover. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A book cover made by covering boards with cloth.",
+  "l2": "Cloth covering is cheaper and lighter than leather and suits many books. The cloth is stuck to the boards and turned in at the edges.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62558,13 +62494,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62639,12 +62574,12 @@
   "ds": 109,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Case Bound Book: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: folded pages, spine and cover. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A book whose pages are sewn and then fixed into a case of boards and cloth.",
+  "l2": "The case is made separately and the pages are glued into it. Case binding is the common form for modern hardbacks.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62660,13 +62595,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62741,12 +62675,12 @@
   "ds": 110,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Library Binding Book: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: folded pages, spine and cover. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A book bound for heavy use in a library.",
+  "l2": "Library binding uses stronger sewing and covers for books that are handled a great deal. It keeps the book in use for years.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62762,13 +62696,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62843,12 +62776,12 @@
   "ds": 107,
   "rar": "common",
   "vis": "tool",
-  "l1": "Handwritten Index Slip: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A slip of paper or parchment written with an index entry.",
+  "l2": "Index slips record a title or heading so it can be found quickly. They were often kept in a box or case.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62864,13 +62797,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -62946,12 +62878,12 @@
   "ds": 108,
   "rar": "common",
   "vis": "tool",
-  "l1": "Alphabetical Card Index: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A set of cards arranged in alphabetical order for finding entries.",
+  "l2": "Cards are filed alphabetically, so an entry can be found by its first letter. It is a long-lived way of organising records.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -62967,13 +62899,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -63048,12 +62979,12 @@
   "ds": 109,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Printed Library Catalogue: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A catalogue of a library's holdings printed in book form.",
+  "l2": "A printed catalogue lists every book so that readers can find it without going to the shelves. It is updated by printing new editions.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -63069,13 +63000,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -63150,12 +63080,12 @@
   "ds": 1990,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Online Library Catalogue: a design or component for producing and preserving written records.",
-  "l2": "In writing and binding, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A library catalogue searched on a computer.",
+  "l2": "An online catalogue lets readers search the holdings by title, author or subject. It can be updated at once.",
+  "l3": "Field background: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: writing materials, the codex and bookbinding (Society of Bookbinders). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "binding_sobb"
   ],
   "rec": [
    [
@@ -63171,13 +63101,12 @@
    "expansion_2026_1000",
    "writing_and_binding",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",

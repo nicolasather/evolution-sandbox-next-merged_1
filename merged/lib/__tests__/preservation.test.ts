@@ -12,9 +12,9 @@ describe('preservation baseline', () => {
     expect(orig.length).toBe(2780); // 918 base + 999 exp26 (g11) + 841 anc27 individual-recipe items (g12) + 22 early-craft items (g14)
     expect(db.eras.length).toBe(14);
     expect(db.categories.length).toBe(13);
-    expect(Object.keys(db.sources).filter(k => !k.startsWith('x28_')).length).toBe(93); // 71 + 22 topic sources added with the field notes for batches 1-7
+    expect(Object.keys(db.sources).filter(k => !k.startsWith('x28_')).length).toBe(96); // 71 + 25 topic sources added with the field notes for batches 1-8
     expect({ total: orig.length, core: orig.filter(n => !n.hidden).length, hidden: orig.filter(n => n.hidden).length,
-      sourceRequired: orig.filter(n => n.src.includes('source_required')).length }).toEqual({ total: 2780, core: 2764, hidden: 16, sourceRequired: 2111 }); // 2615 before the rewrite batches; 504 rewritten items now cite a topic source
+      sourceRequired: orig.filter(n => n.src.includes('source_required')).length }).toEqual({ total: 2780, core: 2764, hidden: 16, sourceRequired: 2039 }); // 2615 before the rewrite batches; 576 rewritten items now cite a topic source
   });
 
   it('keeps every recipe', () => {

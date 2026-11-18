@@ -6527,7 +6527,7 @@
   "label": "Glass Bead Blank",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A small blob of molten glass shaped roughly into a bead.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6540,7 +6540,7 @@
   "label": "Drawn Glass Bead",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass bead drawn from a rod of molten glass.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6553,7 +6553,7 @@
   "label": "Multicolor Glass Bead",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass bead with several colours wound into it.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6566,7 +6566,7 @@
   "label": "Decorated Millefiori Bead",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A bead decorated with a cross-section of many small glass canes.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6579,7 +6579,7 @@
   "label": "Glass Cup Blank",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A blob of molten glass shaped for a cup.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6592,7 +6592,7 @@
   "label": "Blown Glass Cup",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A cup shaped by blowing air into molten glass on a rod.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6605,7 +6605,7 @@
   "label": "Handled Glass Tankard",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass tankard with a handle attached to its side.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6618,7 +6618,7 @@
   "label": "Heat Resistant Glass Beaker",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass beaker made to withstand heating.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6631,7 +6631,7 @@
   "label": "Glass Bottle Blank",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A blob of molten glass shaped for a bottle.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6644,7 +6644,7 @@
   "label": "Long Neck Glass Bottle",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass bottle with a long, narrow neck.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6657,7 +6657,7 @@
   "label": "Stoppered Glass Bottle",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass bottle closed with a stopper.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6670,7 +6670,7 @@
   "label": "Pressure Rated Glass Bottle",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass bottle strong enough to hold a gas or liquid under pressure.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6683,7 +6683,7 @@
   "label": "Glass Window Pane",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A flat sheet of glass for a window.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6696,7 +6696,7 @@
   "label": "Flattened Glass Pane",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass pane flattened by heating and pressing.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6709,7 +6709,7 @@
   "label": "Lead Came Window",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A window of glass pieces held together by lead strips.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6722,7 +6722,7 @@
   "label": "Double Glazed Window",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A window with two panes of glass sealed with a gap of air between them.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6735,7 +6735,7 @@
   "label": "Glass Tube Blank",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A short length of glass shaped for drawing into a tube.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6748,7 +6748,7 @@
   "label": "Drawn Glass Tube",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass tube drawn out to a set bore.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6761,7 +6761,7 @@
   "label": "Graduated Glass Tube",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass tube marked with a scale for measuring.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6774,7 +6774,7 @@
   "label": "Calibrated Glass Pipette",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A glass pipette marked to deliver a set volume.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6787,7 +6787,7 @@
   "label": "Glass Sphere Blank",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A blob of glass shaped roughly into a sphere.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6800,7 +6800,7 @@
   "label": "Hollow Glass Sphere",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A hollow sphere of blown glass.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6813,7 +6813,7 @@
   "label": "Silvered Glass Ornament",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A hollow glass sphere coated on the inside with a reflective layer.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6826,7 +6826,7 @@
   "label": "Vacuum Insulated Glass Vessel",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for forming transparent, brittle glass into useful shapes.",
+  "commonFunction": "A double-walled glass vessel with a vacuum between the walls.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -6852,7 +6852,7 @@
   "label": "Hand Cut Paper Sheet",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A sheet of paper cut by hand to a set size.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6865,7 +6865,7 @@
   "label": "Folded Paper Quire",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "Paper sheets folded in half to make the pages of a book.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6878,7 +6878,7 @@
   "label": "Gathered Paper Signatures",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "Folded paper quires gathered in order, ready to be sewn.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6891,7 +6891,7 @@
   "label": "Bound Paper Codex",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A book of paper pages sewn and bound between covers.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6904,7 +6904,7 @@
   "label": "Writing Quill",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A pen made from a bird's flight feather, cut to a point.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6917,7 +6917,7 @@
   "label": "Cut Quill Nib",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "The tip of a quill cut to a fine nib.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6930,7 +6930,7 @@
   "label": "Metal Dip Pen",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A pen with a metal nib dipped in ink.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6943,7 +6943,7 @@
   "label": "Reservoir Fountain Pen",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A pen that carries its own supply of ink in a reservoir.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6956,7 +6956,7 @@
   "label": "Wax Writing Tablet",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A tablet of wood covered in wax that is written on with a stylus.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6969,7 +6969,7 @@
   "label": "Hinged Wax Diptych",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "Two wax tablets hinged together to form a book that closes.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6982,7 +6982,7 @@
   "label": "Reusable Writing Tablet",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A wax tablet that can be smoothed and written on again.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -6995,7 +6995,7 @@
   "label": "Portable Note Tablet",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A small note tablet for carrying and writing on the move.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7008,7 +7008,7 @@
   "label": "Parchment Sheet",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A sheet of prepared animal skin for writing.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7021,7 +7021,7 @@
   "label": "Ruled Manuscript Page",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A parchment page ruled with guide lines for writing.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7034,7 +7034,7 @@
   "label": "Illuminated Manuscript Leaf",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A manuscript page decorated with painted letters and images.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7047,7 +7047,7 @@
   "label": "Bound Manuscript Volume",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A manuscript book of many leaves, sewn and bound together.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7060,7 +7060,7 @@
   "label": "Book Cover Board",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A stiff board used to make the cover of a book.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7073,7 +7073,7 @@
   "label": "Cloth Book Case",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A book cover made by covering boards with cloth.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7086,7 +7086,7 @@
   "label": "Case Bound Book",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A book whose pages are sewn and then fixed into a case of boards and cloth.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7099,7 +7099,7 @@
   "label": "Library Binding Book",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A book bound for heavy use in a library.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7112,7 +7112,7 @@
   "label": "Handwritten Index Slip",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A slip of paper or parchment written with an index entry.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7125,7 +7125,7 @@
   "label": "Alphabetical Card Index",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A set of cards arranged in alphabetical order for finding entries.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
@@ -7138,7 +7138,7 @@
   "label": "Printed Library Catalogue",
   "material": "inscribed or deliberately placed object",
   "category": "ritual",
-  "commonFunction": "a design or component for producing and preserving written records.",
+  "commonFunction": "A catalogue of a library's holdings printed in book form.",
   "affinity": {
    "ceremonial-site": 0.6,
    "permanent-settlement": 0.2
