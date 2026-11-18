@@ -17568,10 +17568,10 @@
     "ds": -99800,
     "rar": "common",
     "vis": "cobble",
-    "l1": "A raw material used in complex social and technical innovations",
-    "l2": "Fish Storage represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A second store of fish kept for later.",
+    "l2": "Fish are dried, salted or kept cool in a container so that they last.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17591,7 +17591,11 @@
       "vessel"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "bison_fur",
@@ -17603,10 +17607,10 @@
     "ds": -299700,
     "rar": "rare",
     "vis": "wave",
-    "l1": "Evidence or remains of animal life",
-    "l2": "Bison Fur represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The fur of a bison.",
+    "l2": "Bison fur is thick and insulating and can be worked into clothing or bedding.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17626,7 +17630,11 @@
       "animal"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "hammer_blank_1",
@@ -17638,10 +17646,10 @@
     "ds": -99800,
     "rar": "uncommon",
     "vis": "wave",
-    "l1": "A technique developed during the late period",
-    "l2": "Hammer Blank represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A second hammer head roughly shaped before finishing.",
+    "l2": "A hammer blank is shaped into a head that will be fitted to a handle.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17661,7 +17669,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "hearth_context",
@@ -17673,10 +17685,10 @@
     "ds": -39800,
     "rar": "uncommon",
     "vis": "spike",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Hearth Context represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The setting of a hearth, with its fire and surroundings.",
+    "l2": "A hearth context describes the fire place and the ground around it.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17696,7 +17708,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "fish_cache_2",
@@ -17708,10 +17724,10 @@
     "ds": -299800,
     "rar": "rare",
     "vis": "triangle",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Fish Cache represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A third store of fish kept for later.",
+    "l2": "Fish are dried, salted or kept cool in a container so that they last.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17731,7 +17747,11 @@
       "vessel"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "fishhook_blank_1",
@@ -17743,10 +17763,10 @@
     "ds": -29900,
     "rar": "common",
     "vis": "noise",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Fishhook Blank represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A second fishhook roughly shaped before it is finished.",
+    "l2": "A hook blank is shaped and then pointed and barbed.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17766,7 +17786,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "drying_resin",
@@ -17778,10 +17802,10 @@
     "ds": -69900,
     "rar": "rare",
     "vis": "curve",
-    "l1": "A technique developed during the late period",
-    "l2": "Drying Resin represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "Resin left to dry and harden.",
+    "l2": "Resin hardens as it cools and loses its softer parts.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17801,7 +17825,11 @@
       "technique"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "digging_antler",
@@ -17813,10 +17841,10 @@
     "ds": -39700,
     "rar": "rare",
     "vis": "noise",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Digging Antler represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "An antler used for digging.",
+    "l2": "An antler tine can be used to dig into soft ground.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17836,7 +17864,11 @@
       "animal"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "blade_handle",
@@ -17848,10 +17880,10 @@
     "ds": -59900,
     "rar": "rare",
     "vis": "helix",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Blade Handle represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The handle of a blade.",
+    "l2": "A blade handle gives grip and leverage to the blade.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17871,7 +17903,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "cache_area_3",
@@ -17883,10 +17919,10 @@
     "ds": -299700,
     "rar": "common",
     "vis": "lattice",
-    "l1": "A weapon from the late period",
-    "l2": "Cache Area represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A third area where things were stored.",
+    "l2": "A cache area is a place set aside to keep stores of material.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17906,7 +17942,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "bison_horn",
@@ -17918,10 +17958,10 @@
     "ds": -59800,
     "rar": "common",
     "vis": "curve",
-    "l1": "A technique developed during the late period",
-    "l2": "Bison Horn represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The horn of a bison.",
+    "l2": "Bison horn is dense and can be worked into tools or containers.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17941,7 +17981,11 @@
       "animal"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "pebble_chunk",
@@ -17953,10 +17997,10 @@
     "ds": -29900,
     "rar": "rare",
     "vis": "lattice",
-    "l1": "A weapon from the late period",
-    "l2": "Pebble Chunk represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A lump of pebble, a rounded stone.",
+    "l2": "A pebble chunk is a small fragment of a rounded stone.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -17976,7 +18020,11 @@
       "mineral"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "fishhook_bit",
@@ -17988,10 +18036,10 @@
     "ds": -39900,
     "rar": "common",
     "vis": "curve",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Fishhook Bit represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The point of a fishhook.",
+    "l2": "A hook point is sharp and barbed to hold the fish.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18011,7 +18059,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "knapping_quartz",
@@ -18023,10 +18075,10 @@
     "ds": -299800,
     "rar": "rare",
     "vis": "spike",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Knapping Quartz represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "Quartz used in knapping stone.",
+    "l2": "Quartz breaks with sharp edges and can be struck to remove flakes from another stone.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18046,7 +18098,11 @@
       "technique"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "binding_granite",
@@ -18058,10 +18114,10 @@
     "ds": -39900,
     "rar": "common",
     "vis": "sphere",
-    "l1": "A raw material used in complex social and technical innovations",
-    "l2": "Binding Granite represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "Granite used as a binding or support.",
+    "l2": "Granite is hard and heavy and can hold other materials in place.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18081,7 +18137,11 @@
       "technique"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "hafting_sand",
@@ -18093,10 +18153,10 @@
     "ds": -29900,
     "rar": "common",
     "vis": "wave",
-    "l1": "A technique developed during the late period",
-    "l2": "Hafting Sand represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "Sand used to set or fix a stone tool in its handle.",
+    "l2": "Sand alone does not hold a haft well; the name describes a use that does not match a documented practice.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18116,7 +18176,11 @@
       "technique"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "stone_core_1",
@@ -18128,10 +18192,10 @@
     "ds": -99800,
     "rar": "rare",
     "vis": "blob",
-    "l1": "A food source available in the Stone Age",
-    "l2": "Stone Core represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A second stone core, struck to remove flakes.",
+    "l2": "A core is the stone block that is struck to remove flakes.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18151,7 +18215,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "drying_ash",
@@ -18163,10 +18231,10 @@
     "ds": -39900,
     "rar": "rare",
     "vis": "noise",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Drying Ash represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "Ash dried out before use.",
+    "l2": "Ash is dried to lower its moisture and make it easier to store.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18186,7 +18254,11 @@
       "technique"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "slate_core",
@@ -18198,10 +18270,10 @@
     "ds": -9900,
     "rar": "rare",
     "vis": "spiral",
-    "l1": "An object with potential symbolic or ritual significance",
-    "l2": "Slate Core represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The core of a slate block.",
+    "l2": "Slate splits along its layers. A core is the block from which pieces are taken.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18221,7 +18293,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "bark_storage_2",
@@ -18233,10 +18309,10 @@
     "ds": -19900,
     "rar": "common",
     "vis": "lattice",
-    "l1": "Evidence or remains of animal life",
-    "l2": "Bark Storage represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A third store of bark kept for later use.",
+    "l2": "Bark is dried and stored for later use in binding, cordage or containers.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18256,7 +18332,11 @@
       "vessel"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "insects_container",
@@ -18268,10 +18348,10 @@
     "ds": -49900,
     "rar": "uncommon",
     "vis": "fractal",
-    "l1": "A food source available in the Stone Age",
-    "l2": "Insects Container represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A container for insects.",
+    "l2": "Insects are kept in a sealed container so that they can be carried or stored.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18291,7 +18371,11 @@
       "vessel"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "shovel_blank",
@@ -18303,10 +18387,10 @@
     "ds": -399600,
     "rar": "common",
     "vis": "curve",
-    "l1": "A technique developed during the late period",
-    "l2": "Shovel Blank represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A shovel blade roughly shaped before finishing.",
+    "l2": "A shovel blank is cut to shape and then finished into a digging blade.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18326,7 +18410,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "charcoal_shard",
@@ -18338,10 +18426,10 @@
     "ds": -299800,
     "rar": "rare",
     "vis": "fractal",
-    "l1": "A food source available in the Stone Age",
-    "l2": "Charcoal Shard represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A small fragment of charcoal.",
+    "l2": "Charcoal is burnt wood and is light and brittle.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18361,7 +18449,11 @@
       "mineral"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "mountain_context",
@@ -18373,10 +18465,10 @@
     "ds": -39800,
     "rar": "common",
     "vis": "toroid",
-    "l1": "A food source available in the Stone Age",
-    "l2": "Mountain Context represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The setting of a mountain, with its slopes and rock.",
+    "l2": "A mountain context describes the high ground and the land around it.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18396,7 +18488,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "cave_layer_1",
@@ -18408,10 +18504,10 @@
     "ds": -59900,
     "rar": "rare",
     "vis": "scatter",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Cave Layer represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A second layer of sediment inside a cave.",
+    "l2": "A cave layer is a band of earth or ash laid down in a cave.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18431,7 +18527,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "marrow_container",
@@ -18443,10 +18543,10 @@
     "ds": -299800,
     "rar": "uncommon",
     "vis": "lattice",
-    "l1": "Evidence or remains of animal life",
-    "l2": "Marrow Container represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A container for bone marrow.",
+    "l2": "Marrow is rich in fat and is kept sealed until it is eaten.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18466,7 +18566,11 @@
       "vessel"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "frog_fur",
@@ -18478,10 +18582,10 @@
     "ds": -29800,
     "rar": "common",
     "vis": "triangle",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Frog Fur represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The fur of a frog.",
+    "l2": "Frogs have smooth skin rather than fur, so the name does not match a known animal part.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18501,7 +18605,11 @@
       "animal"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "scraping_stone",
@@ -18513,10 +18621,10 @@
     "ds": -399800,
     "rar": "common",
     "vis": "cobble",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Scraping Stone represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A stone used for scraping.",
+    "l2": "A scraping stone has an edge that removes material from a surface.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18536,7 +18644,11 @@
       "technique"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "bark_preparation_2",
@@ -18548,10 +18660,10 @@
     "ds": -99800,
     "rar": "uncommon",
     "vis": "noise",
-    "l1": "Related to fire and its uses in the late period",
-    "l2": "Bark Preparation represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A third bark prepared for use.",
+    "l2": "Bark can be softened or split for binding or containers.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18571,7 +18683,11 @@
       "prep"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "hyena_horn",
@@ -18583,10 +18699,10 @@
     "ds": -39900,
     "rar": "uncommon",
     "vis": "noise",
-    "l1": "A raw material used in complex social and technical innovations",
-    "l2": "Hyena Horn represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A horn of a hyena.",
+    "l2": "Hyenas do not grow horns, so this is a name that does not match a known animal part.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18606,7 +18722,11 @@
       "animal"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "sinew_nodule",
@@ -18618,10 +18738,10 @@
     "ds": -399800,
     "rar": "uncommon",
     "vis": "curve",
-    "l1": "A late tool used for various tasks",
-    "l2": "Sinew Nodule represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A lump of sinew, the tough tissue of animals.",
+    "l2": "Sinew splits into fibres and binds well when wet.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18641,7 +18761,11 @@
       "mineral"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "quarry_area_1",
@@ -18653,10 +18777,10 @@
     "ds": -39900,
     "rar": "common",
     "vis": "curve",
-    "l1": "A late tool used for various tasks",
-    "l2": "Quarry Area represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A second area of quarry, where stone is cut.",
+    "l2": "A quarry area is the ground where stone was taken.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18676,7 +18800,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "fishhook_head",
@@ -18688,10 +18816,10 @@
     "ds": -99800,
     "rar": "common",
     "vis": "pattern",
-    "l1": "An object with potential symbolic or ritual significance",
-    "l2": "Fishhook Head represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The head or point of a fishhook.",
+    "l2": "A hook head is the sharp, barbed end that holds the fish.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18711,7 +18839,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "reindeer_horn_1",
@@ -18723,10 +18855,10 @@
     "ds": -299800,
     "rar": "common",
     "vis": "sphere",
-    "l1": "A raw material used in complex social and technical innovations",
-    "l2": "Reindeer Horn represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A second horn of a reindeer.",
+    "l2": "Reindeer antler is dense and can be worked into tools.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18746,7 +18878,11 @@
       "animal"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "workshop_context",
@@ -18758,10 +18894,10 @@
     "ds": -399700,
     "rar": "uncommon",
     "vis": "sphere",
-    "l1": "A raw material used in complex social and technical innovations",
-    "l2": "Workshop Context represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The setting of a workshop, where tools are made.",
+    "l2": "A workshop context describes the place and layout where work was done.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18781,7 +18917,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "cache_context",
@@ -18793,10 +18933,10 @@
     "ds": -299700,
     "rar": "common",
     "vis": "cobble",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Cache Context represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The setting of a cache, where things were stored.",
+    "l2": "A cache context describes the place where stores were kept.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18816,7 +18956,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "shelter_area_3",
@@ -18828,10 +18972,10 @@
     "ds": -1999700,
     "rar": "uncommon",
     "vis": "curve",
-    "l1": "A late tool used for various tasks",
-    "l2": "Shelter Area represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A fourth shelter area, a place used as a shelter.",
+    "l2": "A shelter area is a place where a shelter is built or used.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18851,7 +18995,11 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "hoe_head",
@@ -18863,10 +19011,10 @@
     "ds": -19900,
     "rar": "common",
     "vis": "wave",
-    "l1": "Related to fire and its uses in the late period",
-    "l2": "Hoe Head represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The working head of a hoe.",
+    "l2": "A hoe head is the blade that breaks the soil.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18886,7 +19034,11 @@
       "tool"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "pigment_mixture_6",
@@ -18898,10 +19050,10 @@
     "ds": -29900,
     "rar": "rare",
     "vis": "sphere",
-    "l1": "A Stone Age artifact from the late period",
-    "l2": "Pigment Mixture represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A seventh mixture of pigments.",
+    "l2": "Two or more pigments are mixed to make a new colour. The mixture is bound with a medium before use.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18921,7 +19073,11 @@
       "prep"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "liver_cache",
@@ -18933,10 +19089,10 @@
     "ds": -19900,
     "rar": "rare",
     "vis": "toroid",
-    "l1": "A food source available in the Stone Age",
-    "l2": "Liver Cache represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "A store of liver kept for later.",
+    "l2": "Liver is kept cool and sealed until it is cooked or eaten.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18956,7 +19112,11 @@
       "vessel"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "heating_granite",
@@ -18968,10 +19128,10 @@
     "ds": -29800,
     "rar": "common",
     "vis": "pattern",
-    "l1": "An object with potential symbolic or ritual significance",
-    "l2": "Heating Granite represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "Granite heated, for example to shape or break it.",
+    "l2": "Heating can crack granite, which is one way it was broken, though the method is not documented here.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -18991,7 +19151,11 @@
       "technique"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "whale_hide",
@@ -19003,10 +19167,10 @@
     "ds": -39700,
     "rar": "uncommon",
     "vis": "wave",
-    "l1": "Evidence or remains of animal life",
-    "l2": "Whale Hide represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The hide of a whale.",
+    "l2": "The hide of a whale.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -19026,7 +19190,11 @@
       "animal"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   },
   {
     "id": "burial_context",
@@ -19038,10 +19206,10 @@
     "ds": -299600,
     "rar": "common",
     "vis": "helix",
-    "l1": "A late tool used for various tasks",
-    "l2": "Burial Context represents advances in complex social and technical innovations and was crucial for survival and innovation.",
-    "l3": "This item exemplifies the ingenuity and adaptation of humans during the late period of Stone Age development.",
-    "ev": "Not yet sourced",
+    "l1": "The setting of a burial, where the dead were placed.",
+    "l2": "A burial context describes the place and layers where a burial was made.",
+    "l3": "Name-derived description: no documented history is claimed for this entry.",
+    "ev": "No documented source; description follows the item's name and recipe.",
     "src": [
       "source_required"
     ],
@@ -19061,6 +19229,10 @@
       "place"
     ],
     "stone_age_tier": "late",
-    "caution": "Placeholder entry. The name, category, date and recipe are gameplay filler that has not been checked against any source; the position on the timeline is derived from the recipe, not from evidence."
+    "caution": "Generated catalogue entry. The description follows the name and recipe; the object itself is not a documented artefact.",
+    "confidence": {
+      "level": "name-derived",
+      "note": "Generated entry; not a documented object"
+    }
   }
 ]
