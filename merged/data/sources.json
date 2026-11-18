@@ -2624,6 +2624,33 @@
    "type": "encyclopedia-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "hulls_wiki": {
+   "t": "B",
+   "title": "Ancient shipbuilding techniques",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Ancient_shipbuilding_techniques",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "navigation_robinson": {
+   "t": "B",
+   "title": "Old-Time Nautical Instruments (1921)",
+   "org": "Project Gutenberg (John Robinson)",
+   "url": "https://www.gutenberg.org/ebooks/44206",
+   "type": "book-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "bridges_britannica": {
+   "t": "B",
+   "title": "Suspension bridges",
+   "org": "Encyclopaedia Britannica (bridge engineering)",
+   "url": "https://www.britannica.com/technology/bridge-engineering/Suspension-bridges",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

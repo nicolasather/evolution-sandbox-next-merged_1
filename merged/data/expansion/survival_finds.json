@@ -737,122 +737,122 @@
  {
   "id": "exp26_dugout_canoe_hull",
   "n": "Dugout Canoe Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A boat hollowed from a single log."
  },
  {
   "id": "exp26_outrigger_canoe_hull",
   "n": "Outrigger Canoe Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A canoe with a float lashed to one side to keep it upright."
  },
  {
   "id": "exp26_double_outrigger_canoe",
   "n": "Double Outrigger Canoe",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A canoe with floats on both sides for stability."
  },
  {
   "id": "exp26_decked_outrigger_canoe",
   "n": "Decked Outrigger Canoe",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "An outrigger canoe with a deck covering the hull."
  },
  {
   "id": "exp26_planked_boat_hull",
   "n": "Planked Boat Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A hull built from planks joined edge to edge."
  },
  {
   "id": "exp26_clinker_built_hull",
   "n": "Clinker Built Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A hull built from overlapping planks, each lapping over the one below."
  },
  {
   "id": "exp26_carvel_built_hull",
   "n": "Carvel Built Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A hull built with planks laid edge to edge, flush rather than overlapping."
  },
  {
   "id": "exp26_frame_first_ship_hull",
   "n": "Frame First Ship Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A hull built by setting up the frame first and then fitting the planks to it."
  },
  {
   "id": "exp26_flat_bottom_skiff",
   "n": "Flat Bottom Skiff",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A small flat-bottomed boat for shallow water."
  },
  {
   "id": "exp26_punt_boat",
   "n": "Punt Boat",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A flat-bottomed boat pushed along with a pole."
  },
  {
   "id": "exp26_canal_barge",
   "n": "Canal Barge",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A flat-bottomed boat built to carry goods along canals."
  },
  {
   "id": "exp26_motorized_canal_barge",
   "n": "Motorized Canal Barge",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A canal barge driven by its own engine."
  },
  {
   "id": "exp26_skin_covered_frame",
   "n": "Skin Covered Frame",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A light frame of wood or bone covered with stretched animal skin."
  },
  {
   "id": "exp26_skin_boat",
   "n": "Skin Boat",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A boat with a frame covered in animal skin."
  },
  {
   "id": "exp26_decked_skin_boat",
   "n": "Decked Skin Boat",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A skin boat with a deck over the frame."
  },
  {
   "id": "exp26_sealed_kayak_hull",
   "n": "Sealed Kayak Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A narrow skin-covered hull sealed for use on open water."
  },
  {
   "id": "exp26_reed_bundle_hull",
   "n": "Reed Bundle Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A hull made from bundles of reeds tied together."
  },
  {
   "id": "exp26_reed_bundle_canoe",
   "n": "Reed Bundle Canoe",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A canoe made from tied bundles of reeds."
  },
  {
   "id": "exp26_large_reed_boat",
   "n": "Large Reed Boat",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A large boat made from tied reed bundles."
  },
  {
   "id": "exp26_rigged_reed_watercraft",
   "n": "Rigged Reed Watercraft",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A reed boat fitted with a mast and sail."
  },
  {
   "id": "exp26_wooden_keel_timber",
   "n": "Wooden Keel Timber",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A timber laid along the bottom of a hull to form its spine."
  },
  {
   "id": "exp26_keel_and_stem_assembly",
   "n": "Keel And Stem Assembly",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A keel joined to the stem timbers at the bow."
  },
  {
   "id": "exp26_keelson_reinforced_hull",
   "n": "Keelson Reinforced Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A hull reinforced by a timber, the keelson, laid along the keel."
  },
  {
   "id": "exp26_ballasted_keel_hull",
   "n": "Ballasted Keel Hull",
-  "l1": "a design or component for keeping craft buoyant, steerable and structurally sound."
+  "l1": "A hull with added weight low in the keel, to keep it upright."
  },
  {
   "id": "anc27_wattle_and_daub_hut",

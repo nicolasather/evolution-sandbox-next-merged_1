@@ -5000,7 +5000,7 @@
   "label": "Dugout Canoe Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A boat hollowed from a single log.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5012,7 +5012,7 @@
   "label": "Outrigger Canoe Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A canoe with a float lashed to one side to keep it upright.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5024,7 +5024,7 @@
   "label": "Double Outrigger Canoe",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A canoe with floats on both sides for stability.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5036,7 +5036,7 @@
   "label": "Decked Outrigger Canoe",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "An outrigger canoe with a deck covering the hull.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5048,7 +5048,7 @@
   "label": "Planked Boat Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A hull built from planks joined edge to edge.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5060,7 +5060,7 @@
   "label": "Clinker Built Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A hull built from overlapping planks, each lapping over the one below.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5072,7 +5072,7 @@
   "label": "Carvel Built Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A hull built with planks laid edge to edge, flush rather than overlapping.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5084,7 +5084,7 @@
   "label": "Frame First Ship Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A hull built by setting up the frame first and then fitting the planks to it.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5096,7 +5096,7 @@
   "label": "Flat Bottom Skiff",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A small flat-bottomed boat for shallow water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5108,7 +5108,7 @@
   "label": "Punt Boat",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A flat-bottomed boat pushed along with a pole.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5120,7 +5120,7 @@
   "label": "Canal Barge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A flat-bottomed boat built to carry goods along canals.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5132,7 +5132,7 @@
   "label": "Motorized Canal Barge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A canal barge driven by its own engine.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5144,7 +5144,7 @@
   "label": "Skin Covered Frame",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A light frame of wood or bone covered with stretched animal skin.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5156,7 +5156,7 @@
   "label": "Skin Boat",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A boat with a frame covered in animal skin.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5168,7 +5168,7 @@
   "label": "Decked Skin Boat",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A skin boat with a deck over the frame.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5180,7 +5180,7 @@
   "label": "Sealed Kayak Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A narrow skin-covered hull sealed for use on open water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5192,7 +5192,7 @@
   "label": "Reed Bundle Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A hull made from bundles of reeds tied together.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5204,7 +5204,7 @@
   "label": "Reed Bundle Canoe",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A canoe made from tied bundles of reeds.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5216,7 +5216,7 @@
   "label": "Large Reed Boat",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A large boat made from tied reed bundles.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5228,7 +5228,7 @@
   "label": "Rigged Reed Watercraft",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A reed boat fitted with a mast and sail.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5240,7 +5240,7 @@
   "label": "Wooden Keel Timber",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A timber laid along the bottom of a hull to form its spine.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5252,7 +5252,7 @@
   "label": "Keel And Stem Assembly",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A keel joined to the stem timbers at the bow.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5264,7 +5264,7 @@
   "label": "Keelson Reinforced Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A hull reinforced by a timber, the keelson, laid along the keel.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5276,7 +5276,7 @@
   "label": "Ballasted Keel Hull",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for keeping craft buoyant, steerable and structurally sound.",
+  "commonFunction": "A hull with added weight low in the keel, to keep it upright.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5300,7 +5300,7 @@
   "label": "Log Footbridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A footbridge made from a single log laid across a gap.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5312,7 +5312,7 @@
   "label": "Timber Beam Footbridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A footbridge made of timber beams laid across supports.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5324,7 +5324,7 @@
   "label": "Timber Truss Footbridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A footbridge built as a timber truss, a frame of triangles.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5336,7 +5336,7 @@
   "label": "Covered Timber Bridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A timber truss bridge roofed to protect the timbers from weather.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5348,7 +5348,7 @@
   "label": "Stone Stepping Crossing",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A crossing of stones set in a stream, to step across.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5360,7 +5360,7 @@
   "label": "Stone Slab Bridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A bridge made of large stone slabs laid across piers.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5372,7 +5372,7 @@
   "label": "Stone Arch Span",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A single arch of stone blocks that spans a gap.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5384,7 +5384,7 @@
   "label": "Multi Span Stone Arch Bridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A bridge of several stone arches carried on piers.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5396,7 +5396,7 @@
   "label": "Rope Suspension Crossing",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A crossing with its deck hung from ropes between two anchors.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5408,7 +5408,7 @@
   "label": "Simple Rope Bridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A simple bridge of rope with a deck hung between its cables.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5420,7 +5420,7 @@
   "label": "Suspension Footbridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A footbridge whose deck is hung from main cables anchored at each end.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5432,7 +5432,7 @@
   "label": "Cable Stayed Footbridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A footbridge whose deck is held by cables running straight from towers.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5444,7 +5444,7 @@
   "label": "Timber Pile Support",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A support for a bridge made of timber piles driven into the ground.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5456,7 +5456,7 @@
   "label": "Bridge Trestle Pier",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A pier made of a frame of timber posts that carries the bridge deck.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5468,7 +5468,7 @@
   "label": "Braced Bridge Pier",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A bridge pier stiffened with diagonal braces.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5480,7 +5480,7 @@
   "label": "Reinforced Concrete Bridge Pier",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A bridge pier of reinforced concrete.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5492,7 +5492,7 @@
   "label": "Cantilever Timber Beam",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A timber beam supported at one end and projecting beyond the support.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5504,7 +5504,7 @@
   "label": "Cantilever Bridge Arm",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "One arm of a cantilever bridge, projecting from its pier.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5516,7 +5516,7 @@
   "label": "Balanced Cantilever Span",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A span of a cantilever bridge balanced on both sides of its pier.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5528,7 +5528,7 @@
   "label": "Pontoon Float",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A float used to support a bridge deck on water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5540,7 +5540,7 @@
   "label": "Linked Pontoon Bridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A bridge carried on a line of pontoons linked together.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5552,7 +5552,7 @@
   "label": "Anchored Floating Bridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A floating bridge held in place by anchors.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5564,7 +5564,7 @@
   "label": "Modular Military Pontoon Bridge",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for carrying people or loads across obstacles.",
+  "commonFunction": "A pontoon bridge made from standard modules that can be assembled quickly.",
   "affinity": {
    "permanent-settlement": 0.7
   },

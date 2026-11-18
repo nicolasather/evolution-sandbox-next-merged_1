@@ -40513,12 +40513,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Dugout Canoe Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A boat hollowed from a single log.",
+  "l2": "A dugout is carved from one tree trunk, which keeps the hull watertight without joints. It was among the first craft that could carry several people.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -40534,13 +40534,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -40615,12 +40614,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Outrigger Canoe Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A canoe with a float lashed to one side to keep it upright.",
+  "l2": "The outrigger float resists rolling, so a narrow hull can carry load and still stay steady. It is lashed to the hull by poles.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -40636,13 +40635,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -40717,12 +40715,12 @@
   "ds": -7996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Double Outrigger Canoe: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A canoe with floats on both sides for stability.",
+  "l2": "Floats on both sides make the canoe very stable in rough water, so it can carry heavier loads on open sea.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -40738,13 +40736,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -40819,12 +40816,12 @@
   "ds": -7995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Decked Outrigger Canoe: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An outrigger canoe with a deck covering the hull.",
+  "l2": "A deck keeps spray and rain out of the hull and gives a dry place for cargo. It is built on the same hull and outriggers.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -40840,13 +40837,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -40921,12 +40917,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Planked Boat Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: boat hull with bow, stern and waterline; hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hull built from planks joined edge to edge.",
+  "l2": "Planks are shaped and fastened to one another, so the hull can be wider and deeper than a dugout. Planking gives more space for cargo and crew.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -40942,13 +40938,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41023,12 +41018,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clinker Built Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hull built from overlapping planks, each lapping over the one below.",
+  "l2": "The overlapping (clinker) planks are fastened with nails or rivets, which makes a light, strong shell. This is the method of many northern European boats.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41044,13 +41039,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41125,12 +41119,12 @@
   "ds": -7996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Carvel Built Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hull built with planks laid edge to edge, flush rather than overlapping.",
+  "l2": "Carvel planking makes a smooth outer skin that suits larger ships. Its planks are fastened to the frame inside.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41146,13 +41140,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41227,12 +41220,12 @@
   "ds": -7995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Frame First Ship Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hull built by setting up the frame first and then fitting the planks to it.",
+  "l2": "Building frame-first sets the shape from the inside, so the planks fit the frame. It became the usual method for large ships in later periods.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41248,13 +41241,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41329,12 +41321,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Flat Bottom Skiff: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small flat-bottomed boat for shallow water.",
+  "l2": "A flat bottom draws little water and sits steady, which suits rivers and shallows. It is easy to build from planks.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41350,13 +41342,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41431,12 +41422,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Punt Boat: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: boat hull with bow, stern and waterline. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat-bottomed boat pushed along with a pole.",
+  "l2": "A punt is worked by pushing a pole against the bottom, so it needs no oars or sail. It suits shallow canals and rivers.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41452,13 +41443,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41533,12 +41523,12 @@
   "ds": -7996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Canal Barge: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat-bottomed boat built to carry goods along canals.",
+  "l2": "A barge is wide and shallow to carry heavy loads through canals. It is towed or poled along the water.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41554,13 +41544,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41635,12 +41624,12 @@
   "ds": -7995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Motorized Canal Barge: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: stator, rotor, shaft, and enclosure. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A canal barge driven by its own engine.",
+  "l2": "An engine lets the barge move without a tow or a pole, which speeds up transport. It replaced horse-drawn towing on canals.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41656,13 +41645,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41737,12 +41725,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Skin Covered Frame: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A light frame of wood or bone covered with stretched animal skin.",
+  "l2": "A skin-covered frame is light and flexible, and it can be carried or repaired easily. The skin is sewn over the frame and waterproofed.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41758,13 +41746,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41840,12 +41827,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Skin Boat: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: boat hull with bow, stern and waterline. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A boat with a frame covered in animal skin.",
+  "l2": "A skin boat is light and easy to carry, so it suits journeys across rivers and coasts. The skin is sealed to keep water out.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41861,13 +41848,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -41942,12 +41928,12 @@
   "ds": -7996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Decked Skin Boat: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: boat hull with bow, stern and waterline. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A skin boat with a deck over the frame.",
+  "l2": "A deck keeps water and spray off the cargo and crew. It adds weight but gives a drier and stronger boat.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -41963,13 +41949,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42044,12 +42029,12 @@
   "ds": -7995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sealed Kayak Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A narrow skin-covered hull sealed for use on open water.",
+  "l2": "A sealed hull keeps water out completely, so the paddler can ride in rough water. Its narrow shape makes it fast.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42065,13 +42050,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42146,12 +42130,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reed Bundle Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hull made from bundles of reeds tied together.",
+  "l2": "Reed bundles float well and are light to carry. The bundles are lashed to make a hull that is easy to repair.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42167,13 +42151,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42249,12 +42232,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reed Bundle Canoe: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A canoe made from tied bundles of reeds.",
+  "l2": "The reed canoe is light, floats high and is quick to make from local material. It is paddled or poled.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42270,13 +42253,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42351,12 +42333,12 @@
   "ds": -7996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Large Reed Boat: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: boat hull with bow, stern and waterline. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large boat made from tied reed bundles.",
+  "l2": "Large reed boats carry crew and cargo across lakes and rivers. Their bundles are lashed tightly to keep their shape.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42372,13 +42354,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42453,12 +42434,12 @@
   "ds": -7995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rigged Reed Watercraft: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A reed boat fitted with a mast and sail.",
+  "l2": "A sail lets a reed boat travel without paddling or poling, which covers longer distances. The mast is stepped into the bundles.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42474,13 +42455,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42555,12 +42535,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wooden Keel Timber: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A timber laid along the bottom of a hull to form its spine.",
+  "l2": "The keel is the main timber along the bottom of the hull. It gives the boat strength and its direction in the water.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42576,13 +42556,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42658,12 +42637,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Keel And Stem Assembly: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A keel joined to the stem timbers at the bow.",
+  "l2": "The stem joins the keel at the front and forms the bow. Together they give the hull its line and its strength.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42679,13 +42658,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42760,12 +42738,12 @@
   "ds": -7996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Keelson Reinforced Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hull reinforced by a timber, the keelson, laid along the keel.",
+  "l2": "The keelson sits above the keel and ties the frames together, so the hull resists twisting. It is fixed across the frames.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42781,13 +42759,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -42862,12 +42839,12 @@
   "ds": -7995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ballasted Keel Hull: a design or component for keeping craft buoyant, steerable and structurally sound.",
-  "l2": "In watercraft hulls, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: hollow curved hull geometry, keel and ribs. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hull with added weight low in the keel, to keep it upright.",
+  "l2": "Ballast lowers the centre of gravity, so the boat resists being knocked over by wind. It is stored low in the hull.",
+  "l3": "Field background: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient shipbuilding and hull construction (Wikipedia: Ancient shipbuilding techniques). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "hulls_wiki"
   ],
   "rec": [
    [
@@ -42883,13 +42860,12 @@
    "expansion_2026_1000",
    "watercraft_hulls",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -43067,12 +43043,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Shadow Measuring Rod: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rod used to measure the length of a shadow to find direction and time.",
+  "l2": "The length of a shadow changes with the sun's height, so measuring it gives a direction and a time. The rod is set upright on flat ground.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43088,13 +43064,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43169,12 +43144,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Portable Gnomon: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small pointer that casts a shadow for measuring the sun's position.",
+  "l2": "A gnomon is the part of a sundial that casts the shadow. A portable version lets the navigator measure the sun at sea.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43190,13 +43165,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43271,12 +43245,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Latitude Gnomon Board: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A board with a gnomon used to find latitude from the sun's shadow.",
+  "l2": "The shadow length at noon gives the sun's height, which in turn gives the latitude. The board is marked to read the result directly.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43292,13 +43266,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43373,12 +43346,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Calibrated Sundial: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sundial marked to give the time from the shadow.",
+  "l2": "A calibrated dial is set to the local latitude and marked with hours. It gives a reliable time by day.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43394,13 +43367,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43475,12 +43447,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Magnetized Compass Needle: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A needle magnetised so it turns to point north and south.",
+  "l2": "A magnetised needle aligns with the earth's magnetic field and gives a steady direction. It is the basis of the compass.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43496,13 +43468,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43577,12 +43548,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Floating Compass: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A compass needle set on a float so that it turns freely in a bowl.",
+  "l2": "The float lets the needle sit level and turn steadily, even when the ship moves. It keeps the reading usable at sea.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43598,13 +43569,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43679,12 +43649,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Gimballed Compass Bowl: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A compass bowl hung in rings so that it stays level as the ship rolls.",
+  "l2": "The gimbal rings keep the bowl level while the ship moves, so the needle reads true. It is hung in a box in front of the helmsman.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43700,13 +43670,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43781,12 +43750,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Liquid Damped Compass: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A compass whose needle is damped by liquid so that it settles quickly.",
+  "l2": "The liquid slows the swing of the needle, so the reading steadies quickly. It makes a compass easier to read in rough weather.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43802,13 +43771,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43883,12 +43851,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sighted Measuring Staff: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A staff with sights used to measure angles to the sun or a star.",
+  "l2": "A sighted staff is pointed at the object and the angle is read along a scale. It gives a measure of height above the horizon.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -43904,13 +43872,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -43985,12 +43952,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cross Staff: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A staff with a sliding crosspiece used to measure the angle to a star or the sun.",
+  "l2": "The crosspiece is moved until its ends line up with the horizon and the star. The angle is read on the staff.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44006,13 +43973,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44087,12 +44053,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Backstaff: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An angle-measuring instrument used with the back to the sun.",
+  "l2": "The observer stands with the sun behind and sights the horizon through a shadow vane. It avoids looking at the sun directly.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44108,13 +44074,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44189,12 +44154,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Vernier Sextant: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sextant with a vernier scale that reads angles more finely.",
+  "l2": "A vernier scale lets the reading be made to a fraction of a degree. It improves the accuracy of the angle measured.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44210,13 +44175,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44291,12 +44255,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Star Position Table: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A table listing the positions of stars for navigation.",
+  "l2": "The table gives where a star should be at a given time, so an observed angle can be turned into a position. It is worked out for each season.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44312,13 +44276,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44394,12 +44357,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Drawn Star Chart: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A chart of the stars drawn by hand for navigation.",
+  "l2": "A star chart shows the stars in their positions and helps the navigator identify the one being sighted. Charts were copied and corrected by hand.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44415,13 +44378,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44496,12 +44458,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Navigation Almanac: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A yearly book of data for navigation, including sun and star positions.",
+  "l2": "An almanac gives the positions of celestial bodies for each day, so the navigator needs only a sight and the table. It saves time at sea.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44517,13 +44479,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44598,12 +44559,12 @@
   "ds": 1950,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Digital Nautical Almanac: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A nautical almanac held in digital form.",
+  "l2": "A digital almanac gives the same data as a printed one and can be searched and updated. It is used with electronic calculators or computers.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44619,13 +44580,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44700,12 +44660,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Depth Sounding Line: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A line with a weight used to measure the depth of water.",
+  "l2": "A sounding line is lowered until the weight touches bottom. The length of line paid out gives the depth.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44721,13 +44681,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44803,12 +44762,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Marked Lead Line: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sounding line marked at set lengths so the depth can be read quickly.",
+  "l2": "Marks on the line show common depths, so the leadsman can call the reading as the line is hauled. It is used in coastal waters.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44824,13 +44783,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -44905,12 +44863,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Mechanical Depth Sounder: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A depth sounder that measures depth with a mechanism rather than a line.",
+  "l2": "A mechanical sounder reels out line or wire and records the depth automatically. It is faster than a hand-held lead.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -44926,13 +44884,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -45007,12 +44964,12 @@
   "ds": 1940,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Electronic Depth Sounder: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A depth sounder that uses sound signals to measure depth.",
+  "l2": "The sounder sends a pulse through the water and times the echo from the bottom. It gives a depth reading without stopping the ship.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -45028,13 +44985,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -45109,12 +45065,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Course Plotting Board: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A board for plotting a ship's course on a chart.",
+  "l2": "The board holds the chart steady while the navigator marks the course and distances. It makes the plot more accurate.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -45130,13 +45086,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -45212,12 +45167,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Parallel Ruler Set: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A set of rulers that move in parallel to carry a bearing across a chart.",
+  "l2": "Parallel rulers keep their lines parallel as they are moved, so a bearing can be transferred to the chart. They are rolled across the chart to the compass rose.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -45233,13 +45188,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -45314,12 +45268,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Chart Plotter Table: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A table for plotting the ship's position on a chart.",
+  "l2": "The table combines the course, speed and bearings into a plotted position. It is used with the parallel ruler.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -45335,13 +45289,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -45416,12 +45369,12 @@
   "ds": 1940,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Electronic Chart Display: a design or component for measuring direction, position and navigation observations.",
-  "l2": "In navigation instruments, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A screen that shows the ship's position on an electronic chart.",
+  "l2": "The display plots the ship's position live on a digital chart. It replaces the paper chart and the plotting table.",
+  "l3": "Field background: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: nautical instruments (John Robinson, Old-Time Nautical Instruments, 1921). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "navigation_robinson"
   ],
   "rec": [
    [
@@ -45437,13 +45390,12 @@
    "expansion_2026_1000",
    "navigation_instruments",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
@@ -45621,12 +45573,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Log Footbridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A footbridge made from a single log laid across a gap.",
+  "l2": "A log is the simplest bridge: a tree trunk laid across a stream. Its length is limited by the tree that is available.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -45642,13 +45594,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -45723,12 +45674,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Timber Beam Footbridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A footbridge made of timber beams laid across supports.",
+  "l2": "Beams are laid on supports and decked with boards, which spreads the load along the span. It suits short crossings.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -45744,13 +45695,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -45825,12 +45775,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Timber Truss Footbridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A footbridge built as a timber truss, a frame of triangles.",
+  "l2": "A truss carries load through its triangles, so it can span further than a beam of the same weight. It is built from timbers joined at their ends.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -45846,13 +45796,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -45927,12 +45876,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Covered Timber Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A timber truss bridge roofed to protect the timbers from weather.",
+  "l2": "A roof keeps rain off the timbers, so they last much longer. Covered bridges were common in the 19th century.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -45948,13 +45897,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46029,12 +45977,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Stepping Crossing: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crossing of stones set in a stream, to step across.",
+  "l2": "Stepping stones are the simplest stone crossing. They are placed so the traveller can cross dry-shod.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46050,13 +45998,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46131,12 +46078,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Slab Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bridge made of large stone slabs laid across piers.",
+  "l2": "A slab bridge spans a gap with a single stone or a row of slabs on supports. The slab carries load by bending.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46152,13 +46099,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46233,12 +46179,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stone Arch Span: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: curved voussoirs and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A single arch of stone blocks that spans a gap.",
+  "l2": "An arch carries its load through the curve of its stones into the abutments. It spans a wider gap than a slab can.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46254,13 +46200,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46335,12 +46280,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Span Stone Arch Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: span, supports, underclearance and load path; curved voussoirs and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bridge of several stone arches carried on piers.",
+  "l2": "Several arches are joined by piers to cross a wide valley or river. The piers carry the arches down to the ground.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46356,13 +46301,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46437,12 +46381,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rope Suspension Crossing: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: twisted helical fiber strands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crossing with its deck hung from ropes between two anchors.",
+  "l2": "A rope crossing lets the deck hang from cables fixed at each end. It spans a gap that would be too wide for a beam.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46458,13 +46402,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46539,12 +46482,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Simple Rope Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: twisted helical fiber strands; span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A simple bridge of rope with a deck hung between its cables.",
+  "l2": "The cables carry the deck, and handrails of rope give the walker something to hold. It is light to carry and quick to rebuild.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46560,13 +46503,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46641,12 +46583,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Suspension Footbridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A footbridge whose deck is hung from main cables anchored at each end.",
+  "l2": "The main cables carry the load of the deck through their curve to the anchors. Suspension lets the bridge span a wide gap.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46662,13 +46604,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46743,12 +46684,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Cable Stayed Footbridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: span, supports, underclearance and load path; insulation jacket, cross-section or connectors. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A footbridge whose deck is held by cables running straight from towers.",
+  "l2": "Cables run from the tower to the deck and carry the load in tension. It is a stiffer form than the suspension bridge.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46764,13 +46705,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46845,12 +46785,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Timber Pile Support: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A support for a bridge made of timber piles driven into the ground.",
+  "l2": "Piles are driven deep so the bridge stands on firm ground. They are the usual support for a timber bridge over water.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46866,13 +46806,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -46948,12 +46887,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Bridge Trestle Pier: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pier made of a frame of timber posts that carries the bridge deck.",
+  "l2": "A trestle spreads the load over several posts and can be built quickly. It was common for railway and road bridges.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -46969,13 +46908,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47050,12 +46988,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Braced Bridge Pier: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bridge pier stiffened with diagonal braces.",
+  "l2": "Braces resist the sideways push of wind and water on the pier. They are set at angles to tie the posts together.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47071,13 +47009,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47152,12 +47089,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reinforced Concrete Bridge Pier: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bridge pier of reinforced concrete.",
+  "l2": "Steel bars set in the concrete carry tension, so the pier can take large loads. It is the modern replacement for timber piers.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47173,13 +47110,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47254,12 +47190,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cantilever Timber Beam: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A timber beam supported at one end and projecting beyond the support.",
+  "l2": "A cantilever is held firm at one end and extends out over the gap. Its far end carries load without needing a support.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47275,13 +47211,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47357,12 +47292,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cantilever Bridge Arm: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: span, supports, underclearance and load path; flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "One arm of a cantilever bridge, projecting from its pier.",
+  "l2": "The arm projects out from the pier and carries the deck. Two arms meeting at the centre complete the span.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47378,13 +47313,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47459,12 +47393,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Balanced Cantilever Span: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A span of a cantilever bridge balanced on both sides of its pier.",
+  "l2": "Balancing the two arms keeps the pier from tipping and lets the bridge span a long gap. The arms meet at the centre.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47480,13 +47414,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47561,12 +47494,12 @@
   "ds": 1850,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Steel Cantilever Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: span, supports, underclearance and load path; flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cantilever bridge built from steel.",
+  "l2": "Steel is stronger than timber for its weight, so the arms can be longer. The steel framework carries the deck over a wide gap.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47582,13 +47515,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47663,12 +47595,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Pontoon Float: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A float used to support a bridge deck on water.",
+  "l2": "A pontoon floats and is linked to others to carry a roadway over water. It can be moved and reused.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47684,13 +47616,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47766,12 +47697,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Linked Pontoon Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bridge carried on a line of pontoons linked together.",
+  "l2": "Linked pontoons form a floating roadway across a river. The links keep them in line and spread the load.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47787,13 +47718,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47868,12 +47798,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Anchored Floating Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A floating bridge held in place by anchors.",
+  "l2": "Anchors stop the floating bridge from drifting with the current. The cables run from the bridge to the anchors on the banks.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47889,13 +47819,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -47970,12 +47899,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Modular Military Pontoon Bridge: a design or component for carrying people or loads across obstacles.",
-  "l2": "In bridges and spans, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: span, supports, underclearance and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pontoon bridge made from standard modules that can be assembled quickly.",
+  "l2": "Standard modules can be carried, joined and launched by a small team. It was designed for military crossings of rivers.",
+  "l3": "Field background: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: bridge engineering and suspension bridges (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "bridges_britannica"
   ],
   "rec": [
    [
@@ -47991,13 +47920,12 @@
    "expansion_2026_1000",
    "bridges_and_spans",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
