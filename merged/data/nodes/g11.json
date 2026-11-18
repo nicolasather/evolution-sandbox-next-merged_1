@@ -58930,12 +58930,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Apochromatic Telescope: a design or component for controlling light for magnification and observation.",
-  "l2": "In optical apparatus, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: long focal tube and lens mounts. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A telescope with lenses corrected for colour more fully than an achromat.",
+  "l2": "Extra glass types and more careful design cancel colour more completely. The image is sharper and free of coloured edges.",
+  "l3": "Field background: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: the history of lenses and optical instruments (The Open University, OpenLearn). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "optics_openlearn"
   ],
   "rec": [
    [
@@ -58951,13 +58951,12 @@
    "expansion_2026_1000",
    "optical_apparatus",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "abstract_diagram",
