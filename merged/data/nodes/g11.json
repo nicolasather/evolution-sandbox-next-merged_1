@@ -70873,12 +70873,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Boiler Firebox: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: pressurized vessel with heated tube paths. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The chamber in a steam boiler where fuel burns to heat the water.",
+  "l2": "The firebox holds the fire and passes its heat into the boiler water. Its size sets how much steam the boiler can make.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -70894,13 +70894,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70975,12 +70974,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Shell Steam Boiler: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: pressurized vessel with heated tube paths. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A steam boiler made as a large cylindrical shell with a firebox.",
+  "l2": "Water surrounds the firebox and tubes inside a closed shell, which makes steam under pressure. Shell boilers were common in early engines.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -70996,13 +70995,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71077,12 +71075,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Water Tube Boiler: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals; pressurized vessel with heated tube paths. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A steam boiler in which water flows through tubes heated by the fire.",
+  "l2": "Water tubes can take higher pressure than a shell, and they heat steam faster. They suit large power plants.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71098,13 +71096,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71179,12 +71176,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Superheated Steam Boiler: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: pressurized vessel with heated tube paths. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A boiler that heats steam beyond its boiling point to make it drier and more powerful.",
+  "l2": "Superheating dries the steam and adds energy without raising its pressure. It makes engines more efficient.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71200,13 +71197,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71281,12 +71277,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Steam Piston: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A piston moved back and forth by steam pressure.",
+  "l2": "Steam pushes the piston along the cylinder, and the motion drives the engine. The piston seals tightly against the cylinder wall.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71302,13 +71298,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71383,12 +71378,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Single Acting Steam Cylinder: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A steam cylinder in which steam pushes the piston in one direction only.",
+  "l2": "Steam pushes the piston on one stroke, and the piston returns by its own load or a spring. The power comes in one direction only.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71404,13 +71399,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71485,12 +71479,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Double Acting Steam Engine: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A steam engine in which steam pushes the piston in both directions.",
+  "l2": "Steam is admitted to each end of the cylinder in turn, so every stroke produces power. It is more efficient than a single-acting engine.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71506,13 +71500,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71587,12 +71580,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Compound Steam Engine: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A steam engine that uses steam twice, in a high and a low pressure cylinder.",
+  "l2": "Steam expands in the first cylinder and then again in the second, which gets more work from the same steam. It saves fuel.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71608,13 +71601,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71689,12 +71681,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Piston Connecting Rod: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The rod linking a piston to a crankshaft.",
+  "l2": "The connecting rod turns the back-and-forth motion of the piston into the rotation of the crank. It is a key part of the engine.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71710,13 +71702,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71791,12 +71782,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Crank And Rod Drive: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crank with a connecting rod that turns reciprocating motion into rotation.",
+  "l2": "The crank converts the piston's movement into a turning shaft, which can drive machinery. It is the standard drive of the steam engine.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71812,13 +71803,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71893,12 +71883,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Flywheel Crank Drive: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crank drive with a heavy flywheel that smooths the turning motion.",
+  "l2": "The flywheel stores energy between strokes, which keeps the shaft turning evenly. It makes the power steadier.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -71914,13 +71904,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -71995,12 +71984,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rotary Steam Engine: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A steam engine that produces rotary motion directly.",
+  "l2": "The engine turns a shaft continuously, which drives machinery such as mills and ships. It replaced the earlier pumping engines.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72016,13 +72005,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72097,12 +72085,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Slide Valve Blank: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: throttled flow passage and operator. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat valve blank that controls steam entering and leaving a cylinder.",
+  "l2": "The valve slides over ports in the cylinder to admit steam to one side and release it from the other. The blank is machined to fit.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72118,13 +72106,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72200,12 +72187,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Slide Valve Gear: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: teeth arranged around hub and shaft; throttled flow passage and operator. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The mechanism that moves the slide valve in time with the piston.",
+  "l2": "The gear drives the valve so steam is admitted at the right moment in each stroke. Good valve timing gives the engine its efficiency.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72221,13 +72208,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72302,12 +72288,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stephenson Valve Gear: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: teeth arranged around hub and shaft; throttled flow passage and operator. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A valve gear that drives the slide valve from the crank through an adjustable link.",
+  "l2": "The link can be set to change the cut-off point, which lets the driver vary the power. It was widely used on locomotives.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72323,13 +72309,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72404,12 +72389,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Walschaerts Valve Gear: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: teeth arranged around hub and shaft; throttled flow passage and operator. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A valve gear that drives the valves from the crosshead, with a simple linkage.",
+  "l2": "The gear is compact and gives good control over valve timing. It became the standard for many locomotives.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72425,13 +72410,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72506,12 +72490,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Steam Condenser Coil: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A coil of pipe in which exhaust steam is cooled back to water.",
+  "l2": "Condensing steam creates a vacuum that increases the engine's power. The coil is cooled by water flowing around it.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72527,13 +72511,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72609,12 +72592,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Surface Steam Condenser: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A condenser in which exhaust steam is cooled against a surface, not by mixing with water.",
+  "l2": "The steam is cooled on the outside of tubes, and the condensate can be returned to the boiler. This saves water in ships and boilers.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72630,13 +72613,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72711,12 +72693,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Jet Condenser Assembly: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A condenser in which cooling water is sprayed into the steam.",
+  "l2": "The spray condenses the steam quickly and simply. It is cheaper than a surface condenser but mixes the water with the steam.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72732,13 +72714,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72813,12 +72794,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Vacuum Condenser System: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A condenser system that keeps a vacuum at the exhaust to raise engine power.",
+  "l2": "A low exhaust pressure gives the steam more room to expand, which increases the work. The system relies on a pump to keep the vacuum.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72834,13 +72815,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -72915,12 +72895,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Steam Whistle Valve: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: throttled flow passage and operator. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A valve that lets steam into a whistle.",
+  "l2": "Opening the valve sends steam across the whistle's edge, which makes it sound. The valve is worked by a cord or lever.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -72936,13 +72916,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73018,12 +72997,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Steam Whistle: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A whistle sounded by steam.",
+  "l2": "Steam passing over a sharp edge makes a loud note. Steam whistles signalled trains and ships.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -73039,13 +73018,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73120,12 +73098,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Tone Steam Whistle: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A steam whistle with several chambers that give more than one note.",
+  "l2": "Several chambers sound together to make a chord, which is easier to hear than a single note. It is used as a warning or signal.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -73141,13 +73119,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73222,12 +73199,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Air Operated Warning Horn: a design or component for using steam pressure and heat for mechanical work.",
-  "l2": "In steam engineering, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A horn sounded by compressed air.",
+  "l2": "Compressed air drives the horn and gives a loud, clear warning. It replaced the steam whistle on many vehicles.",
+  "l3": "Field background: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: steam engines from Newcomen to Watt (World History Encyclopedia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "steam_whe"
   ],
   "rec": [
    [
@@ -73243,13 +73220,12 @@
    "expansion_2026_1000",
    "steam_engineering",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73427,12 +73403,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Rail Section: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cast or wrought iron rail section for a railway track.",
+  "l2": "The rail carries the weight of the train and guides its wheels. Iron rails were the first durable rails for railways.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -73448,13 +73424,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73529,12 +73504,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fishplate Rail Joint: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: long cross-section rail and fasteners; mating components and connection. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A joint in which two rail ends are bolted together by plates on each side.",
+  "l2": "Fishplates clamp the rail ends together and keep the track in line. The joint is bolted through the web of each rail.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -73550,13 +73525,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73631,12 +73605,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Continuous Welded Rail: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rail made of long lengths welded together, with no joints.",
+  "l2": "Welded rail has no gaps for wheels to hit, so it runs more smoothly and needs less maintenance. It suits high-speed lines.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -73652,13 +73626,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73733,12 +73706,12 @@
   "ds": 1861,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Slab Track Rail: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Rail fixed directly to a concrete slab rather than to ballast.",
+  "l2": "Fixing the rail to a slab gives a stable, low-maintenance track. It is used in tunnels and on high-speed lines.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -73754,13 +73727,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73835,12 +73807,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wooden Sleeper: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A timber beam laid under the rails to hold them to a set gauge.",
+  "l2": "Sleepers hold the rails at the correct distance and spread the load into the ballast. Timber was the standard for a long time.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -73856,13 +73828,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -73937,12 +73908,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Ballasted Track Sleeper: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sleeper bedded in crushed stone that holds it in place.",
+  "l2": "Ballast drains water and holds the sleeper steady under traffic. It keeps the track level and firm.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -73958,13 +73929,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74039,12 +74009,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Concrete Rail Sleeper: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sleeper made from concrete rather than timber.",
+  "l2": "Concrete lasts longer than timber and resists rot and insects. It is heavier and more stable under load.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74060,13 +74030,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74141,12 +74110,12 @@
   "ds": 1861,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Resilient Rail Fastener: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clip that holds the rail to the sleeper and allows a little give.",
+  "l2": "The fastener grips the rail firmly but lets it move slightly under load. This reduces wear and noise.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74162,13 +74131,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74243,12 +74211,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rail Wagon Wheel: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: spokes or rim and central axle; long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wheel for a railway wagon, running on a rail.",
+  "l2": "The wheel carries the wagon's weight on the rail. Its tread is shaped to run on the rail's top.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74264,13 +74232,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74345,12 +74312,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Flanged Rail Wheel: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: spokes or rim and central axle; long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A railway wheel with a flange that keeps it on the rail.",
+  "l2": "The flange on the inside of the wheel guides it along the track. Without flanges a wheel would leave the rail on a bend.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74366,13 +74333,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74447,12 +74413,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rail Wheelset: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: spokes or rim and central axle; long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two wheels fixed to an axle that run on a pair of rails.",
+  "l2": "The wheels are set to the gauge of the track and turn together on the axle. The axle keeps both wheels running true.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74468,13 +74434,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74549,12 +74514,12 @@
   "ds": 1861,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Self Steering Rail Bogie: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bogie whose axles steer themselves around curves.",
+  "l2": "Free-turning axles let the bogie follow a curve with less wear on the wheels and rails. It suits long, heavy vehicles.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74570,13 +74535,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74651,12 +74615,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Operated Track Switch: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A track switch moved by hand to divert a train onto another line.",
+  "l2": "The switch rails are moved by a lever or a handle, which sets the route for the train. It is worked by a signalman or a porter.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74672,13 +74636,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74754,12 +74717,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Lever Track Switch: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A track switch worked by a lever from a signal box.",
+  "l2": "A lever at a central point moves the switch, so one person can control several routes. It is a step towards interlocking.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74775,13 +74738,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74856,12 +74818,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Interlocked Railway Switch: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A track switch locked so that it cannot be moved while a signal is clear.",
+  "l2": "Interlocking stops conflicting routes from being set at the same time. It prevents trains from being sent into one another.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74877,13 +74839,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -74958,12 +74919,12 @@
   "ds": 1861,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Power Operated Track Switch: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A track switch moved by a motor under remote control.",
+  "l2": "A motor moves the switch on command from a control room. It saves labour and allows routes to be set from a distance.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -74979,13 +74940,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75060,12 +75020,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mechanical Rail Signal: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A signal worked by a mechanism from the signal box.",
+  "l2": "Wires or rods link the signal to a lever, so the signal can be set to show clear or danger. It is the basis of mechanical signalling.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75081,13 +75041,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75163,12 +75122,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Semaphore Signal: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A signal with an arm that rises to show a train may proceed.",
+  "l2": "The arm is raised or lowered to show the state of the line. It is visible from a distance and easy to read.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75184,13 +75143,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75265,12 +75223,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Color Light Railway Signal: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A signal that shows its aspect with coloured lights.",
+  "l2": "Coloured lights are easier to read at night and in poor weather than an arm. Each colour gives a clear instruction.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75286,13 +75244,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75367,12 +75324,12 @@
   "ds": 1861,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Cab Signalling Display: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A display in the driver's cab that shows the signal aspect.",
+  "l2": "The driver sees the signal without looking out of the window. It helps keep the train safe at high speed.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75388,13 +75345,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75469,12 +75425,12 @@
   "ds": 1858,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rail Brake Shoe: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: long cross-section rail and fasteners. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A block of material pressed against a wheel to slow the train.",
+  "l2": "The shoe is pushed onto the wheel tread by the brake gear, which slows the train through friction. It wears and must be replaced.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75490,13 +75446,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75572,12 +75527,12 @@
   "ds": 1859,
   "rar": "common",
   "vis": "tool",
-  "l1": "Vacuum Train Brake: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A brake worked by a vacuum that applies the shoes to the wheels.",
+  "l2": "A vacuum pipe runs the length of the train. Releasing the vacuum applies the brakes on every vehicle.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75593,13 +75548,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75674,12 +75628,12 @@
   "ds": 1860,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Air Train Brake: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A brake worked by compressed air that applies the shoes to the wheels.",
+  "l2": "Air pressure is used to apply the brakes, which fails safe if the pipe breaks. It is the standard braking system on modern trains.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75695,13 +75649,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75776,12 +75729,12 @@
   "ds": 1940,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Electronically Controlled Train Brake: a design or component for supporting, guiding and controlling rail vehicles.",
-  "l2": "In railway mechanics, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A train brake controlled electronically along the length of the train.",
+  "l2": "Electronic signals apply the brakes on each vehicle at the same moment, which stops the train more smoothly. It is used on modern high-speed trains.",
+  "l3": "Field background: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: railway history, locomotives, track and signalling (Wikipedia: Railway history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "railway_wiki"
   ],
   "rec": [
    [
@@ -75797,13 +75750,12 @@
    "expansion_2026_1000",
    "railway_mechanics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -75981,12 +75933,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Lined Well: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A well with its shaft lined in stone to keep it from collapsing.",
+  "l2": "The lining stops the earth from falling in and keeps the water clean. A stone-lined well can be used for many years.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76002,13 +75954,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76083,12 +76034,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Covered Village Well: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A well with a cover that keeps out dirt and animals.",
+  "l2": "The cover keeps the water clean and makes the well safer. It is often fitted with a simple lid or roof.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76104,13 +76055,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76185,12 +76135,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Lift Equipped Well: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A well with a bucket and rope system for drawing water.",
+  "l2": "A rope and pulley lift the water from depth to the surface. The lift makes deep wells practical.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76206,13 +76156,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76287,12 +76236,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sanitary Wellhead: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A well head built to keep the water source protected from contamination.",
+  "l2": "The wellhead is raised and sealed, so surface water cannot run into the well. It is a basic protection of drinking water.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76308,13 +76257,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76389,12 +76337,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Pottery Water Pipe: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends; wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fired clay pipe that carries water.",
+  "l2": "Clay pipes are cheap and resist water. They are joined end to end to carry water from source to use.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76410,13 +76358,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76491,12 +76438,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Socketed Water Pipe: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clay water pipe with one end widened to take the next length.",
+  "l2": "The socket joins pipes without a separate fitting and keeps the line straight. The joint is sealed with clay or mortar.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76512,13 +76459,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76593,12 +76539,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Branch Water Junction: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fitting where a branch pipe joins a main water pipe.",
+  "l2": "A junction lets water be drawn off to a branch without disturbing the main line. It is set into the main as it is laid.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76614,13 +76560,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76695,12 +76640,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pressure Water Main: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A main water pipe kept under pressure to carry water to many places.",
+  "l2": "Pressure pushes the water through the network, so it can reach upper floors and distant taps. The main is the trunk of the supply.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76716,13 +76661,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76797,12 +76741,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rainwater Catchment Jar: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: container neck, rim and body. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A jar set to catch rainwater from a roof or ground.",
+  "l2": "The jar collects rain for drinking or washing. It is kept covered to keep the water clean.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76818,13 +76762,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -76899,12 +76842,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Covered Cistern: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A covered tank that stores water.",
+  "l2": "The cover keeps out dirt, light and insects, so the stored water stays clean. The cistern holds water for dry seasons.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -76920,13 +76863,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77001,12 +76943,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Underground Storage Cistern: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cistern built below ground to store water.",
+  "l2": "Storing underground keeps the water cool and shaded, so it stays fresh longer. It takes up little surface space.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77022,13 +76964,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77103,12 +77044,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rainwater Harvesting Tank: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A tank that collects and stores rain for later use.",
+  "l2": "The tank collects rainwater from a roof or a yard. Stored rain supplies water for drinking, washing and irrigation.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77124,13 +77065,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77205,12 +77145,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sand Filter Bed: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bed of sand through which water is passed to remove impurities.",
+  "l2": "Water filters down through the sand, which traps particles and some microbes. The filter is cleaned by removing the top layer.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77226,13 +77166,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77308,12 +77247,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Slow Sand Water Filter: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sand filter in which water passes slowly, and biological action cleans it.",
+  "l2": "Slow passage through sand lets a living layer on the surface remove impurities. The filter works continuously with little attention.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77329,13 +77268,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77410,12 +77348,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rapid Sand Water Filter: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sand filter that passes water quickly, cleaned by backwashing.",
+  "l2": "A fast flow filters much more water in less space. It is cleaned by reversing the flow to wash the sand.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77431,13 +77369,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77512,12 +77449,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Media Filter: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A filter with several layers of different media to trap particles at different depths.",
+  "l2": "Layers of different sizes trap particles through the full depth of the filter. It holds more dirt before it needs cleaning.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77533,13 +77470,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77614,12 +77550,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Open Wastewater Ditch: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An open channel that carries waste water away from a settlement.",
+  "l2": "The ditch takes waste water out of the settlement, but it is open to smell and disease. It was a common early drain.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77635,13 +77571,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77717,12 +77652,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Covered Wastewater Drain: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A drain with a cover that carries waste water away.",
+  "l2": "The cover hides and contains waste and reduces smell and disease. It is set below the street surface.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77738,13 +77673,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77819,12 +77753,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Combined Sewer Channel: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sewer that carries both waste water and rainwater.",
+  "l2": "One channel takes everything, so it can overflow in storms. It is simpler to build than separate sewers.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77840,13 +77774,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -77921,12 +77854,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Separated Sewer Network: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Sewers that carry waste water and rainwater in separate pipes.",
+  "l2": "Separating the flows keeps waste water out of rivers in storms and reduces flooding. It is more costly to build.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -77942,13 +77875,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -78023,12 +77955,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Public Fountain Basin: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A basin of water set up for public use in a street or square.",
+  "l2": "The basin gives people a place to draw water in common. It is fed from a pipe and kept clean by its design.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -78044,13 +77976,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -78126,12 +78057,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Gravity Fed Fountain: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A public fountain fed by the pull of gravity from a higher source.",
+  "l2": "Gravity pushes the water through the fountain without pumping. The height of the source sets the flow.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -78147,13 +78078,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -78228,12 +78158,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Valved Public Fountain: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: throttled flow passage and operator. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A public fountain with a valve that controls the flow.",
+  "l2": "The valve lets the water be turned on and off, so the fountain can be closed for repair or to save water. It is worked by hand.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -78249,13 +78179,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -78330,12 +78259,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Timed Drinking Fountain: a design or component for collecting, distributing and draining settlement water.",
-  "l2": "In public water systems, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A drinking fountain that runs for a set time when used.",
+  "l2": "The water runs for a set period and then stops, which saves water and keeps the fountain available to many people.",
+  "l3": "Field background: public water supply and aqueducts (National Geographic History). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: public water supply and aqueducts (National Geographic History). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "water_natgeo"
   ],
   "rec": [
    [
@@ -78351,13 +78280,12 @@
    "expansion_2026_1000",
    "public_water_systems",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",

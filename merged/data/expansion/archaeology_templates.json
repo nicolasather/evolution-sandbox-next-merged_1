@@ -7163,7 +7163,7 @@
   "label": "Stone Lined Well",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A well with its shaft lined in stone to keep it from collapsing.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7175,7 +7175,7 @@
   "label": "Covered Village Well",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A well with a cover that keeps out dirt and animals.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7187,7 +7187,7 @@
   "label": "Lift Equipped Well",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A well with a bucket and rope system for drawing water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7199,7 +7199,7 @@
   "label": "Sanitary Wellhead",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A well head built to keep the water source protected from contamination.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7211,7 +7211,7 @@
   "label": "Pottery Water Pipe",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A fired clay pipe that carries water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7223,7 +7223,7 @@
   "label": "Socketed Water Pipe",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A clay water pipe with one end widened to take the next length.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7235,7 +7235,7 @@
   "label": "Branch Water Junction",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A fitting where a branch pipe joins a main water pipe.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7247,7 +7247,7 @@
   "label": "Pressure Water Main",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A main water pipe kept under pressure to carry water to many places.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7259,7 +7259,7 @@
   "label": "Rainwater Catchment Jar",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A jar set to catch rainwater from a roof or ground.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7271,7 +7271,7 @@
   "label": "Covered Cistern",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A covered tank that stores water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7283,7 +7283,7 @@
   "label": "Underground Storage Cistern",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A cistern built below ground to store water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7295,7 +7295,7 @@
   "label": "Rainwater Harvesting Tank",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A tank that collects and stores rain for later use.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7307,7 +7307,7 @@
   "label": "Sand Filter Bed",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A bed of sand through which water is passed to remove impurities.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7319,7 +7319,7 @@
   "label": "Slow Sand Water Filter",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A sand filter in which water passes slowly, and biological action cleans it.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7331,7 +7331,7 @@
   "label": "Rapid Sand Water Filter",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A sand filter that passes water quickly, cleaned by backwashing.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7343,7 +7343,7 @@
   "label": "Multi Media Filter",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A filter with several layers of different media to trap particles at different depths.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7355,7 +7355,7 @@
   "label": "Open Wastewater Ditch",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "An open channel that carries waste water away from a settlement.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7367,7 +7367,7 @@
   "label": "Covered Wastewater Drain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A drain with a cover that carries waste water away.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7379,7 +7379,7 @@
   "label": "Combined Sewer Channel",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A sewer that carries both waste water and rainwater.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7391,7 +7391,7 @@
   "label": "Separated Sewer Network",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "Sewers that carry waste water and rainwater in separate pipes.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7403,7 +7403,7 @@
   "label": "Public Fountain Basin",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A basin of water set up for public use in a street or square.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7415,7 +7415,7 @@
   "label": "Gravity Fed Fountain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A public fountain fed by the pull of gravity from a higher source.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7427,7 +7427,7 @@
   "label": "Valved Public Fountain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A public fountain with a valve that controls the flow.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -7439,7 +7439,7 @@
   "label": "Timed Drinking Fountain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for collecting, distributing and draining settlement water.",
+  "commonFunction": "A drinking fountain that runs for a set time when used.",
   "affinity": {
    "permanent-settlement": 0.7
   },

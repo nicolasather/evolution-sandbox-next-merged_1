@@ -2732,6 +2732,33 @@
    "type": "university-article-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "steam_whe": {
+   "t": "B",
+   "title": "Watt Steam Engine",
+   "org": "World History Encyclopedia",
+   "url": "https://www.worldhistory.org/Watt_Steam_Engine",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "railway_wiki": {
+   "t": "B",
+   "title": "History of rail transport",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Railway_history",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "water_natgeo": {
+   "t": "B",
+   "title": "Aqueducts: Quenching Rome's Thirst",
+   "org": "National Geographic History",
+   "url": "https://www.nationalgeographic.com/history/history-magazine/article/roman-aqueducts-engineering-innovation",
+   "type": "magazine-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }
