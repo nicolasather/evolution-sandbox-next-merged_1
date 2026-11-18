@@ -2534,6 +2534,42 @@
    "type": "encyclopedia-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "timber_frid_mortise": {
+   "t": "B",
+   "title": "Mortise and Tenon",
+   "org": "Fine Woodworking (Tage Frid)",
+   "url": "https://finewoodworking.com/1976/08/01/mortise-and-tenon",
+   "type": "trade-magazine-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "timber_scarf_review": {
+   "t": "A",
+   "title": "Historical scarf and splice carpentry joints: state of the art",
+   "org": "Heritage Science (SpringerOpen)",
+   "url": "https://heritagesciencejournal.springeropen.com/articles/10.1186/s40494-020-00448-2",
+   "type": "journal-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "natural_dye_wiki": {
+   "t": "B",
+   "title": "Natural dye",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Natural_dye",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "leather_barbe": {
+   "t": "B",
+   "title": "The History of Leather Tanning",
+   "org": "Maharam (essay by Dr. Josephine Barbe)",
+   "url": "https://www.maharam.com/stories/barbe_the-history-of-leather-tanning",
+   "type": "essay-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

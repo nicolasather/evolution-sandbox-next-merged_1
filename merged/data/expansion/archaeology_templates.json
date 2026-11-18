@@ -941,7 +941,7 @@
   "label": "Timber Peg",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A short, shaped wooden pin driven through a joint to hold it.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -953,7 +953,7 @@
   "label": "Pegged Butt Joint",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "Two timbers butted end to end and held together with a peg.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -965,7 +965,7 @@
   "label": "Pegged Frame Joint",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A frame joint where timbers meet at an angle and are pinned with pegs.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -977,7 +977,7 @@
   "label": "Pegged Timber Truss",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A triangular timber framework that carries a roof, held together with pegged joints.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -989,7 +989,7 @@
   "label": "Mortise Cut",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A rectangular hole cut into a timber to receive a tenon.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1001,7 +1001,7 @@
   "label": "Mortise And Tenon Joint",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A joint where a projecting tenon on one timber fits into a mortise on another.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1013,7 +1013,7 @@
   "label": "Drawbored Tenon",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A mortise and tenon joint pinned with a peg offset from the hole to pull the joint tight.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1025,7 +1025,7 @@
   "label": "Wedged Tenon Frame",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A frame joined with tenons that are locked by wedges driven into the end.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1037,7 +1037,7 @@
   "label": "Wooden Dowel",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A round wooden pin used to align and join two pieces.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1049,7 +1049,7 @@
   "label": "Cross Dowel Joint",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A joint where a dowel passes across the joint, locking the two pieces together.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1061,7 +1061,7 @@
   "label": "Knockdown Dowel Assembly",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A dowelled frame that can be taken apart and reassembled.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1073,7 +1073,7 @@
   "label": "Demountable Timber Frame",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A timber frame built from parts that can be dismantled and moved.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1085,7 +1085,7 @@
   "label": "Lapped Beam",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A beam joined to another by overlapping the two pieces.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1097,7 +1097,7 @@
   "label": "Half Lap Joint",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A lap joint where half the thickness of each timber is cut away so they interlock flush.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1109,7 +1109,7 @@
   "label": "Scarf Joined Beam",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A beam lengthened by a scarf joint, where the ends are cut to overlapping slopes.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1121,7 +1121,7 @@
   "label": "Long Span Scarf Beam",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A scarf-jointed beam long enough to span a wide opening.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1133,7 +1133,7 @@
   "label": "Shaped Rafter",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A roof rafter cut to a fixed shape so that it fits the roof frame.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1145,7 +1145,7 @@
   "label": "Rafter Pair",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "Two rafters joined at the ridge to form the sloping sides of a roof.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1157,7 +1157,7 @@
   "label": "Collar Tie Roof",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A roof frame where a horizontal tie joins the rafters just below the ridge.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1169,7 +1169,7 @@
   "label": "King Post Roof Truss",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A roof truss with a central vertical post that holds up the ridge.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1181,7 +1181,7 @@
   "label": "Split Wooden Plank",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A plank split from a log along the grain rather than sawn.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1193,7 +1193,7 @@
   "label": "Edge Joined Board",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "Two or more boards joined along their edges to make a wider panel.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1205,7 +1205,7 @@
   "label": "Planked Wall Panel",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "A wall panel made from boards fixed to a frame.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -1217,7 +1217,7 @@
   "label": "Weatherboard Cladding",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for joining and supporting wooden structural members.",
+  "commonFunction": "Overlapping horizontal boards that shed rain from a wall.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -2217,7 +2217,7 @@
   "label": "Ground Red Ochre",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Red ochre ground to a fine powder for use as a pigment.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2230,7 +2230,7 @@
   "label": "Ochre Paint Paste",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Ground ochre mixed to a thick paste with a binder.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2243,7 +2243,7 @@
   "label": "Ochre Wash",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Ground ochre thinned with water to a wash of colour.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2256,7 +2256,7 @@
   "label": "Ochre Wall Painting",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A painting made on a wall with ochre pigments.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2269,7 +2269,7 @@
   "label": "Charcoal Black Pigment",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Black pigment ground from charcoal.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2282,7 +2282,7 @@
   "label": "Carbon Ink Paste",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Charcoal pigment mixed with binder into a thick paste.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2295,7 +2295,7 @@
   "label": "Carbon Drawing Ink",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A liquid ink made from charcoal pigment.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2308,7 +2308,7 @@
   "label": "Water Resistant Carbon Ink",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A carbon ink treated with a binder so that it resists water.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2321,7 +2321,7 @@
   "label": "Plant Yellow Dye",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A yellow dye made from plant material.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2334,7 +2334,7 @@
   "label": "Concentrated Yellow Bath",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A strong dye bath made from yellow plant dye.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2347,7 +2347,7 @@
   "label": "Yellow Dyed Thread",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Thread dyed yellow in a plant dye bath.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2360,7 +2360,7 @@
   "label": "Pattern Dyed Textile",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A cloth coloured in a pattern by dyeing selected threads.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2373,7 +2373,7 @@
   "label": "Indigo Leaf Paste",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Indigo leaf prepared as a paste for dyeing.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2386,7 +2386,7 @@
   "label": "Reduced Indigo Vat",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "An indigo dye vat in which the dye is reduced so that it can enter fibre.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2399,7 +2399,7 @@
   "label": "Indigo Dyed Yarn",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Yarn dyed blue in an indigo vat.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2412,7 +2412,7 @@
   "label": "Indigo Resist Cloth",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A cloth dyed in indigo with parts of the weave protected from the dye.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2425,7 +2425,7 @@
   "label": "Iron Tannin Ink",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "An ink made from iron salts and tannin from plants.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2438,7 +2438,7 @@
   "label": "Filtered Iron Gall Ink",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "An iron-gall ink filtered to remove sediment.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2451,7 +2451,7 @@
   "label": "Thickened Writing Ink",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "An ink thickened with a gum so that it flows and holds on the page.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2464,7 +2464,7 @@
   "label": "Bound Ink Recipe",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A written recipe for an ink, with the binder and proportions set down.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2477,7 +2477,7 @@
   "label": "Egg Tempera Medium",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A binder of egg yolk mixed with pigment for painting.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2490,7 +2490,7 @@
   "label": "Tempera Paint",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "Pigment bound with egg tempera for painting.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2503,7 +2503,7 @@
   "label": "Layered Tempera Panel",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A panel painted with several thin layers of tempera.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2516,7 +2516,7 @@
   "label": "Gilded Tempera Panel",
   "material": "pigment, bead or fine-worked material",
   "category": "ornament",
-  "commonFunction": "a design or component for preparing pigments and coloring surfaces or fibre.",
+  "commonFunction": "A tempera panel decorated with applied gold leaf.",
   "affinity": {
    "ceremonial-site": 0.4,
    "permanent-settlement": 0.2
@@ -2542,7 +2542,7 @@
   "label": "Scraped Hide",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A hide with its flesh and hair removed by scraping.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2555,7 +2555,7 @@
   "label": "Softened Hide",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A hide worked to make it soft and pliable.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2568,7 +2568,7 @@
   "label": "Oiled Hide",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A hide treated with oil or fat to keep it supple and waterproof.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2581,7 +2581,7 @@
   "label": "Supple Garment Leather",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "Leather prepared to be soft and flexible enough for clothing.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2594,7 +2594,7 @@
   "label": "Cut Leather Strip",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A narrow strip of leather cut from a hide.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2607,7 +2607,7 @@
   "label": "Leather Lace",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A thin strip of leather used for lacing or tying.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2620,7 +2620,7 @@
   "label": "Stitched Leather Seam",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A seam joined by stitching through leather.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2633,7 +2633,7 @@
   "label": "Reinforced Leather Seam",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A stitched seam with an extra layer of leather or lace for strength.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2646,7 +2646,7 @@
   "label": "Leather Pouch",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A small bag made from leather.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2659,7 +2659,7 @@
   "label": "Drawstring Pouch",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A leather pouch closed by a cord or lace run through its top.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2672,7 +2672,7 @@
   "label": "Flap Closure Pouch",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A leather pouch closed by a flap that folds over the mouth.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2685,7 +2685,7 @@
   "label": "Belt Mounted Pouch",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A pouch that is attached to a belt and worn on the hip.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2698,7 +2698,7 @@
   "label": "Rawhide Sheet",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A sheet of unsmoked, unoiled hide dried stiff.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2711,7 +2711,7 @@
   "label": "Rawhide Binding",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "Rawhide wrapped or lashed around an object to bind it.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2724,7 +2724,7 @@
   "label": "Rawhide Shield Cover",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A rawhide covering stretched over a shield frame.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2737,7 +2737,7 @@
   "label": "Layered Rawhide Shield",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A shield made of several layers of rawhide.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2750,7 +2750,7 @@
   "label": "Leather Sole Blank",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A cut-out leather shape that will be finished into a shoe sole.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2763,7 +2763,7 @@
   "label": "Stitched Sandal Sole",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A sandal sole with its layers stitched together.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2776,7 +2776,7 @@
   "label": "Multi Layer Sandal",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A sandal sole built up from several layers of leather.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2789,7 +2789,7 @@
   "label": "Sewn Leather Shoe",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A shoe with an upper and sole stitched together from leather.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2802,7 +2802,7 @@
   "label": "Leather Water Bag",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A bag made from leather to carry water.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2815,7 +2815,7 @@
   "label": "Pitch Sealed Water Bag",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A leather water bag sealed on the inside with pitch.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2828,7 +2828,7 @@
   "label": "Stitched Water Skin",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A water skin made from a whole hide, closed by stitching.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2841,7 +2841,7 @@
   "label": "Carried Water Skin",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing hide into useful flexible goods.",
+  "commonFunction": "A water skin made to be carried on a journey.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4

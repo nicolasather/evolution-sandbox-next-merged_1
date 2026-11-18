@@ -7,122 +7,122 @@
  {
   "id": "exp26_timber_peg",
   "n": "Timber Peg",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A short, shaped wooden pin driven through a joint to hold it."
  },
  {
   "id": "exp26_pegged_butt_joint",
   "n": "Pegged Butt Joint",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "Two timbers butted end to end and held together with a peg."
  },
  {
   "id": "exp26_pegged_frame_joint",
   "n": "Pegged Frame Joint",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A frame joint where timbers meet at an angle and are pinned with pegs."
  },
  {
   "id": "exp26_pegged_timber_truss",
   "n": "Pegged Timber Truss",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A triangular timber framework that carries a roof, held together with pegged joints."
  },
  {
   "id": "exp26_mortise_cut",
   "n": "Mortise Cut",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A rectangular hole cut into a timber to receive a tenon."
  },
  {
   "id": "exp26_mortise_and_tenon_joint",
   "n": "Mortise And Tenon Joint",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A joint where a projecting tenon on one timber fits into a mortise on another."
  },
  {
   "id": "exp26_drawbored_tenon",
   "n": "Drawbored Tenon",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A mortise and tenon joint pinned with a peg offset from the hole to pull the joint tight."
  },
  {
   "id": "exp26_wedged_tenon_frame",
   "n": "Wedged Tenon Frame",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A frame joined with tenons that are locked by wedges driven into the end."
  },
  {
   "id": "exp26_wooden_dowel",
   "n": "Wooden Dowel",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A round wooden pin used to align and join two pieces."
  },
  {
   "id": "exp26_cross_dowel_joint",
   "n": "Cross Dowel Joint",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A joint where a dowel passes across the joint, locking the two pieces together."
  },
  {
   "id": "exp26_knockdown_dowel_assembly",
   "n": "Knockdown Dowel Assembly",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A dowelled frame that can be taken apart and reassembled."
  },
  {
   "id": "exp26_demountable_timber_frame",
   "n": "Demountable Timber Frame",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A timber frame built from parts that can be dismantled and moved."
  },
  {
   "id": "exp26_lapped_beam",
   "n": "Lapped Beam",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A beam joined to another by overlapping the two pieces."
  },
  {
   "id": "exp26_half_lap_joint",
   "n": "Half Lap Joint",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A lap joint where half the thickness of each timber is cut away so they interlock flush."
  },
  {
   "id": "exp26_scarf_joined_beam",
   "n": "Scarf Joined Beam",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A beam lengthened by a scarf joint, where the ends are cut to overlapping slopes."
  },
  {
   "id": "exp26_long_span_scarf_beam",
   "n": "Long Span Scarf Beam",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A scarf-jointed beam long enough to span a wide opening."
  },
  {
   "id": "exp26_shaped_rafter",
   "n": "Shaped Rafter",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A roof rafter cut to a fixed shape so that it fits the roof frame."
  },
  {
   "id": "exp26_rafter_pair",
   "n": "Rafter Pair",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "Two rafters joined at the ridge to form the sloping sides of a roof."
  },
  {
   "id": "exp26_collar_tie_roof",
   "n": "Collar Tie Roof",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A roof frame where a horizontal tie joins the rafters just below the ridge."
  },
  {
   "id": "exp26_king_post_roof_truss",
   "n": "King Post Roof Truss",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A roof truss with a central vertical post that holds up the ridge."
  },
  {
   "id": "exp26_split_wooden_plank",
   "n": "Split Wooden Plank",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A plank split from a log along the grain rather than sawn."
  },
  {
   "id": "exp26_edge_joined_board",
   "n": "Edge Joined Board",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "Two or more boards joined along their edges to make a wider panel."
  },
  {
   "id": "exp26_planked_wall_panel",
   "n": "Planked Wall Panel",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "A wall panel made from boards fixed to a frame."
  },
  {
   "id": "exp26_weatherboard_cladding",
   "n": "Weatherboard Cladding",
-  "l1": "a design or component for joining and supporting wooden structural members."
+  "l1": "Overlapping horizontal boards that shed rain from a wall."
  },
  {
   "id": "exp26_prepared_plant_bast",
@@ -257,122 +257,122 @@
  {
   "id": "exp26_ground_red_ochre",
   "n": "Ground Red Ochre",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Red ochre ground to a fine powder for use as a pigment."
  },
  {
   "id": "exp26_ochre_paint_paste",
   "n": "Ochre Paint Paste",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Ground ochre mixed to a thick paste with a binder."
  },
  {
   "id": "exp26_ochre_wash",
   "n": "Ochre Wash",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Ground ochre thinned with water to a wash of colour."
  },
  {
   "id": "exp26_ochre_wall_painting",
   "n": "Ochre Wall Painting",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A painting made on a wall with ochre pigments."
  },
  {
   "id": "exp26_charcoal_black_pigment",
   "n": "Charcoal Black Pigment",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Black pigment ground from charcoal."
  },
  {
   "id": "exp26_carbon_ink_paste",
   "n": "Carbon Ink Paste",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Charcoal pigment mixed with binder into a thick paste."
  },
  {
   "id": "exp26_carbon_drawing_ink",
   "n": "Carbon Drawing Ink",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A liquid ink made from charcoal pigment."
  },
  {
   "id": "exp26_water_resistant_carbon_ink",
   "n": "Water Resistant Carbon Ink",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A carbon ink treated with a binder so that it resists water."
  },
  {
   "id": "exp26_plant_yellow_dye",
   "n": "Plant Yellow Dye",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A yellow dye made from plant material."
  },
  {
   "id": "exp26_concentrated_yellow_bath",
   "n": "Concentrated Yellow Bath",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A strong dye bath made from yellow plant dye."
  },
  {
   "id": "exp26_yellow_dyed_thread",
   "n": "Yellow Dyed Thread",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Thread dyed yellow in a plant dye bath."
  },
  {
   "id": "exp26_pattern_dyed_textile",
   "n": "Pattern Dyed Textile",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A cloth coloured in a pattern by dyeing selected threads."
  },
  {
   "id": "exp26_indigo_leaf_paste",
   "n": "Indigo Leaf Paste",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Indigo leaf prepared as a paste for dyeing."
  },
  {
   "id": "exp26_reduced_indigo_vat",
   "n": "Reduced Indigo Vat",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "An indigo dye vat in which the dye is reduced so that it can enter fibre."
  },
  {
   "id": "exp26_indigo_dyed_yarn",
   "n": "Indigo Dyed Yarn",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Yarn dyed blue in an indigo vat."
  },
  {
   "id": "exp26_indigo_resist_cloth",
   "n": "Indigo Resist Cloth",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A cloth dyed in indigo with parts of the weave protected from the dye."
  },
  {
   "id": "exp26_iron_tannin_ink",
   "n": "Iron Tannin Ink",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "An ink made from iron salts and tannin from plants."
  },
  {
   "id": "exp26_filtered_iron_gall_ink",
   "n": "Filtered Iron Gall Ink",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "An iron-gall ink filtered to remove sediment."
  },
  {
   "id": "exp26_thickened_writing_ink",
   "n": "Thickened Writing Ink",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "An ink thickened with a gum so that it flows and holds on the page."
  },
  {
   "id": "exp26_bound_ink_recipe",
   "n": "Bound Ink Recipe",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A written recipe for an ink, with the binder and proportions set down."
  },
  {
   "id": "exp26_egg_tempera_medium",
   "n": "Egg Tempera Medium",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A binder of egg yolk mixed with pigment for painting."
  },
  {
   "id": "exp26_tempera_paint",
   "n": "Tempera Paint",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "Pigment bound with egg tempera for painting."
  },
  {
   "id": "exp26_layered_tempera_panel",
   "n": "Layered Tempera Panel",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A panel painted with several thin layers of tempera."
  },
  {
   "id": "exp26_gilded_tempera_panel",
   "n": "Gilded Tempera Panel",
-  "l1": "a design or component for preparing pigments and coloring surfaces or fibre."
+  "l1": "A tempera panel decorated with applied gold leaf."
  },
  {
   "id": "exp26_prepared_animal_hide",
@@ -382,122 +382,122 @@
  {
   "id": "exp26_scraped_hide",
   "n": "Scraped Hide",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A hide with its flesh and hair removed by scraping."
  },
  {
   "id": "exp26_softened_hide",
   "n": "Softened Hide",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A hide worked to make it soft and pliable."
  },
  {
   "id": "exp26_oiled_hide",
   "n": "Oiled Hide",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A hide treated with oil or fat to keep it supple and waterproof."
  },
  {
   "id": "exp26_supple_garment_leather",
   "n": "Supple Garment Leather",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "Leather prepared to be soft and flexible enough for clothing."
  },
  {
   "id": "exp26_cut_leather_strip",
   "n": "Cut Leather Strip",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A narrow strip of leather cut from a hide."
  },
  {
   "id": "exp26_leather_lace",
   "n": "Leather Lace",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A thin strip of leather used for lacing or tying."
  },
  {
   "id": "exp26_stitched_leather_seam",
   "n": "Stitched Leather Seam",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A seam joined by stitching through leather."
  },
  {
   "id": "exp26_reinforced_leather_seam",
   "n": "Reinforced Leather Seam",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A stitched seam with an extra layer of leather or lace for strength."
  },
  {
   "id": "exp26_leather_pouch",
   "n": "Leather Pouch",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A small bag made from leather."
  },
  {
   "id": "exp26_drawstring_pouch",
   "n": "Drawstring Pouch",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A leather pouch closed by a cord or lace run through its top."
  },
  {
   "id": "exp26_flap_closure_pouch",
   "n": "Flap Closure Pouch",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A leather pouch closed by a flap that folds over the mouth."
  },
  {
   "id": "exp26_belt_mounted_pouch",
   "n": "Belt Mounted Pouch",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A pouch that is attached to a belt and worn on the hip."
  },
  {
   "id": "exp26_rawhide_sheet",
   "n": "Rawhide Sheet",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A sheet of unsmoked, unoiled hide dried stiff."
  },
  {
   "id": "exp26_rawhide_binding",
   "n": "Rawhide Binding",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "Rawhide wrapped or lashed around an object to bind it."
  },
  {
   "id": "exp26_rawhide_shield_cover",
   "n": "Rawhide Shield Cover",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A rawhide covering stretched over a shield frame."
  },
  {
   "id": "exp26_layered_rawhide_shield",
   "n": "Layered Rawhide Shield",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A shield made of several layers of rawhide."
  },
  {
   "id": "exp26_leather_sole_blank",
   "n": "Leather Sole Blank",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A cut-out leather shape that will be finished into a shoe sole."
  },
  {
   "id": "exp26_stitched_sandal_sole",
   "n": "Stitched Sandal Sole",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A sandal sole with its layers stitched together."
  },
  {
   "id": "exp26_multi_layer_sandal",
   "n": "Multi Layer Sandal",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A sandal sole built up from several layers of leather."
  },
  {
   "id": "exp26_sewn_leather_shoe",
   "n": "Sewn Leather Shoe",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A shoe with an upper and sole stitched together from leather."
  },
  {
   "id": "exp26_leather_water_bag",
   "n": "Leather Water Bag",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A bag made from leather to carry water."
  },
  {
   "id": "exp26_pitch_sealed_water_bag",
   "n": "Pitch Sealed Water Bag",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A leather water bag sealed on the inside with pitch."
  },
  {
   "id": "exp26_stitched_water_skin",
   "n": "Stitched Water Skin",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A water skin made from a whole hide, closed by stitching."
  },
  {
   "id": "exp26_carried_water_skin",
   "n": "Carried Water Skin",
-  "l1": "a design or component for processing hide into useful flexible goods."
+  "l1": "A water skin made to be carried on a journey."
  },
  {
   "id": "exp26_food_drying_rack",

@@ -7702,12 +7702,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Timber Peg: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short, shaped wooden pin driven through a joint to hold it.",
+  "l2": "A peg fixes a joint without metal, and it swells slightly when wet, which tightens it. Pegs are cut from seasoned hardwood.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -7723,13 +7723,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -7804,12 +7803,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Pegged Butt Joint: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: mating components and connection. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two timbers butted end to end and held together with a peg.",
+  "l2": "A butt joint is the simplest way to join two timbers end to end. The peg through the joint stops the pieces from sliding apart.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -7825,13 +7824,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -7906,12 +7904,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pegged Frame Joint: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: mating components and connection. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A frame joint where timbers meet at an angle and are pinned with pegs.",
+  "l2": "A frame joint carries load between timbers set at an angle, such as a post and a beam. The pegs keep the joint from pulling apart.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -7927,13 +7925,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8008,12 +8005,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pegged Timber Truss: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A triangular timber framework that carries a roof, held together with pegged joints.",
+  "l2": "A truss turns a set of timbers into a rigid triangle that spans a wide space. The pegged joints allow the frame to be assembled on the ground and raised.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8029,13 +8026,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8110,12 +8106,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mortise Cut: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rectangular hole cut into a timber to receive a tenon.",
+  "l2": "The mortise is chiselled out with straight sides so the tenon fits closely. Its depth and width are marked before the cutting begins.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8131,13 +8127,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8212,12 +8207,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mortise And Tenon Joint: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: mating components and connection. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A joint where a projecting tenon on one timber fits into a mortise on another.",
+  "l2": "The mortise and tenon is one of the oldest and most important woodworking joints. It resists sideways movement and is held by a peg or wedge.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8233,13 +8228,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8314,12 +8308,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Drawbored Tenon: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mortise and tenon joint pinned with a peg offset from the hole to pull the joint tight.",
+  "l2": "The peg hole through the tenon is set slightly out of line with the mortise hole, so driving the peg draws the shoulders together. The joint is tight without glue.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8335,13 +8329,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8416,12 +8409,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Wedged Tenon Frame: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A frame joined with tenons that are locked by wedges driven into the end.",
+  "l2": "A wedge spreads the tenon inside the mortise as it is driven home, locking the joint. It is used where the joint must stay tight over years.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8437,13 +8430,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8518,12 +8510,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wooden Dowel: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A round wooden pin used to align and join two pieces.",
+  "l2": "A dowel fits into matching holes drilled in both pieces, keeping them aligned. It is usually glued or driven into place.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8539,13 +8531,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8620,12 +8611,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cross Dowel Joint: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: mating components and connection. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A joint where a dowel passes across the joint, locking the two pieces together.",
+  "l2": "A cross dowel holds a joint against both pulling apart and sliding. The dowel is set at right angles to the line of the joint.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8641,13 +8632,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8722,12 +8712,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Knockdown Dowel Assembly: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A dowelled frame that can be taken apart and reassembled.",
+  "l2": "Knockdown joints let a frame be transported flat and rebuilt on site. Each joint is made to fit the same way every time it is assembled.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8743,13 +8733,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8824,12 +8813,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Demountable Timber Frame: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A timber frame built from parts that can be dismantled and moved.",
+  "l2": "A demountable frame is designed so that its parts can be unbolted or unpegged and carried elsewhere. It suits temporary buildings and shelters that must be moved.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8845,13 +8834,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -8926,12 +8914,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Lapped Beam: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A beam joined to another by overlapping the two pieces.",
+  "l2": "A lap spreads the joint across the overlap, so the two beams act together. The overlap is cut so that the faces sit flush.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -8947,13 +8935,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9029,12 +9016,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Half Lap Joint: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: mating components and connection. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lap joint where half the thickness of each timber is cut away so they interlock flush.",
+  "l2": "Cutting away half of each piece lets the timbers sit flush on both faces. The joint resists movement along the length of the beams.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9050,13 +9037,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9131,12 +9117,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Scarf Joined Beam: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A beam lengthened by a scarf joint, where the ends are cut to overlapping slopes.",
+  "l2": "A scarf joins two beam ends along a long slanted cut, so the joint is spread over a long length. It makes a beam longer than any single tree trunk would give.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9152,13 +9138,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9233,12 +9218,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Long Span Scarf Beam: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A scarf-jointed beam long enough to span a wide opening.",
+  "l2": "A scarf extends the beam so it can cross a wide space without a support in the middle. The scarf is placed where the load is lowest.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9254,13 +9239,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9335,12 +9319,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Shaped Rafter: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A roof rafter cut to a fixed shape so that it fits the roof frame.",
+  "l2": "A rafter is the sloping timber of a roof, and its shape sets the pitch. Each rafter is cut to match its neighbours.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9356,13 +9340,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9438,12 +9421,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rafter Pair: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two rafters joined at the ridge to form the sloping sides of a roof.",
+  "l2": "The pair meets at the ridge and rests on the wall plate below, forming a triangle that carries the roof covering.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9459,13 +9442,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9540,12 +9522,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Collar Tie Roof: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: sloped roof planes and joining ridge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A roof frame where a horizontal tie joins the rafters just below the ridge.",
+  "l2": "The collar tie stops the rafters from spreading apart under load. It is set across the pair of rafters near the top.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9561,13 +9543,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9642,12 +9623,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "King Post Roof Truss: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: sloped roof planes and joining ridge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A roof truss with a central vertical post that holds up the ridge.",
+  "l2": "The king post carries the ridge in the middle of the span, and braces connect it to the rafters. It is a standard form for spanning medium-sized buildings.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9663,13 +9644,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9744,12 +9724,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Split Wooden Plank: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A plank split from a log along the grain rather than sawn.",
+  "l2": "Splitting follows the grain, so the plank stays strong and does not crack. Planks were split with wedges before saws were common.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9765,13 +9745,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9847,12 +9826,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Edge Joined Board: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two or more boards joined along their edges to make a wider panel.",
+  "l2": "Edge joining builds up a wide surface from narrow boards. The edges are shaped to fit tightly before they are glued or pegged.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9868,13 +9847,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -9949,12 +9927,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Planked Wall Panel: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wall panel made from boards fixed to a frame.",
+  "l2": "A panel spreads the load of the wall over the frame and keeps out wind. The boards are fixed to the posts and rails.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -9970,13 +9948,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -10051,12 +10028,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Weatherboard Cladding: a design or component for joining and supporting wooden structural members.",
-  "l2": "In timber joinery, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Overlapping horizontal boards that shed rain from a wall.",
+  "l2": "Weatherboards overlap so that water runs off and does not reach the frame. They are fixed to the wall studs and can be replaced one at a time.",
+  "l3": "Field background: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timber joinery and the mortise and tenon (Fine Woodworking history article). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timber_frid_mortise"
   ],
   "rec": [
    [
@@ -10072,13 +10049,12 @@
    "expansion_2026_1000",
    "timber_joinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wood_rod",
@@ -17846,12 +17822,12 @@
   "ds": -99998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Ground Red Ochre: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Red ochre ground to a fine powder for use as a pigment.",
+  "l2": "Ochre is an iron-rich earth that colours red or yellow. Grinding it fine makes it easier to mix with water, fat or binder.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -17867,13 +17843,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -17948,12 +17923,12 @@
   "ds": -99997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Ochre Paint Paste: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Ground ochre mixed to a thick paste with a binder.",
+  "l2": "A paste holds its colour on a surface and can be applied with the fingers or a brush. The binder helps it stick to rock or wood.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -17969,13 +17944,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18050,12 +18024,12 @@
   "ds": -99996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ochre Wash: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Ground ochre thinned with water to a wash of colour.",
+  "l2": "A wash stains a surface with a thin, even colour. It was used where a full paint layer was not needed.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18071,13 +18045,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18152,12 +18125,12 @@
   "ds": -99995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ochre Wall Painting: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A painting made on a wall with ochre pigments.",
+  "l2": "Ochre paint on rock or plaster is among the oldest surviving forms of painting. The colour lasts because the iron oxide is stable.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18173,13 +18146,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18254,12 +18226,12 @@
   "ds": -99998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Charcoal Black Pigment: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Black pigment ground from charcoal.",
+  "l2": "Charcoal makes a black pigment that is easy to make from burnt wood. It is ground fine and mixed with a binder.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18275,13 +18247,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18356,12 +18327,12 @@
   "ds": -99997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Carbon Ink Paste: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Charcoal pigment mixed with binder into a thick paste.",
+  "l2": "The paste is used as a drawing medium and can be applied with the fingers or a stick. It is thicker than a liquid ink.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18377,13 +18348,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18458,12 +18428,12 @@
   "ds": -99996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Carbon Drawing Ink: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A liquid ink made from charcoal pigment.",
+  "l2": "Diluted carbon pigment makes a black ink that can be used with a pen or brush. It does not fade in light.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18479,13 +18449,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18560,12 +18529,12 @@
   "ds": -99995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Water Resistant Carbon Ink: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A carbon ink treated with a binder so that it resists water.",
+  "l2": "The binder makes the ink hold on a surface after it dries, even if the surface gets wet. It is a refinement of plain carbon ink.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18581,13 +18550,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18662,12 +18630,12 @@
   "ds": -99998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Plant Yellow Dye: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A yellow dye made from plant material.",
+  "l2": "Yellow dyes come from plant parts that release colour into water. The colour is fixed to fibre with a mordant.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18683,13 +18651,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18764,12 +18731,12 @@
   "ds": -99997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Concentrated Yellow Bath: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A strong dye bath made from yellow plant dye.",
+  "l2": "A concentrated bath colours fibre more deeply in fewer soakings. It is kept warm during dyeing.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18785,13 +18752,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18866,12 +18832,12 @@
   "ds": -99996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Yellow Dyed Thread: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Thread dyed yellow in a plant dye bath.",
+  "l2": "Thread takes dye evenly when it has been mordanted first. The colour is fixed by rinsing and drying.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18887,13 +18853,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -18968,12 +18933,12 @@
   "ds": -99995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pattern Dyed Textile: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cloth coloured in a pattern by dyeing selected threads.",
+  "l2": "Patterns come from the arrangement of dyed and undyed threads in the weave. Each colour is set in the yarn before weaving.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -18989,13 +18954,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19070,12 +19034,12 @@
   "ds": -99998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Indigo Leaf Paste: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Indigo leaf prepared as a paste for dyeing.",
+  "l2": "Indigo gives a blue dye that develops in the air after it is taken out of the vat. The leaf is fermented and dried into a paste.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19091,13 +19055,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19173,12 +19136,12 @@
   "ds": -99997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reduced Indigo Vat: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An indigo dye vat in which the dye is reduced so that it can enter fibre.",
+  "l2": "Indigo is insoluble until it is reduced in an alkaline bath. The fibre is dipped, then lifted into the air, where the colour develops.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19194,13 +19157,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19275,12 +19237,12 @@
   "ds": -99996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Indigo Dyed Yarn: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: twisted aligned fibers, wound in coil. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Yarn dyed blue in an indigo vat.",
+  "l2": "Repeated dips build up the blue colour, and each dip is oxidised in the air. The yarn is then rinsed and dried.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19296,13 +19258,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19377,12 +19338,12 @@
   "ds": -99995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Indigo Resist Cloth: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cloth dyed in indigo with parts of the weave protected from the dye.",
+  "l2": "A resist is tied or sewn around parts of the cloth so that they stay undyed. The pattern appears when the resist is removed.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19398,13 +19359,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19479,12 +19439,12 @@
   "ds": -99998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Tannin Ink: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An ink made from iron salts and tannin from plants.",
+  "l2": "Tannin reacts with iron salts to form a dark ink that binds well to fibre. The ink darkens as it oxidises on the page.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19500,13 +19460,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19582,12 +19541,12 @@
   "ds": -99997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Filtered Iron Gall Ink: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An iron-gall ink filtered to remove sediment.",
+  "l2": "Filtering keeps the ink smooth and stops it clogging the pen. Iron-gall ink was the standard writing ink for many centuries.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19603,13 +19562,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19684,12 +19642,12 @@
   "ds": -99996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Thickened Writing Ink: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An ink thickened with a gum so that it flows and holds on the page.",
+  "l2": "Gum thickens the ink so that it sits on the page without spreading. It is adjusted to the pen and the writing surface.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19705,13 +19663,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19786,12 +19743,12 @@
   "ds": -99995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Bound Ink Recipe: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A written recipe for an ink, with the binder and proportions set down.",
+  "l2": "A recipe fixes the binder, the pigment and the proportions so that the ink can be made the same way each time. Such recipes were kept by scribes and workshops.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19807,13 +19764,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19888,12 +19844,12 @@
   "ds": -99998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Egg Tempera Medium: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A binder of egg yolk mixed with pigment for painting.",
+  "l2": "Egg yolk binds pigment and dries to a hard, durable film. Tempera was a common painting medium before oil paint.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -19909,13 +19865,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -19991,12 +19946,12 @@
   "ds": -99997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Tempera Paint: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Pigment bound with egg tempera for painting.",
+  "l2": "Tempera paint dries quickly and holds fine detail. It is applied in thin layers that build up the colour.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -20012,13 +19967,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -20093,12 +20047,12 @@
   "ds": -99996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Layered Tempera Panel: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A panel painted with several thin layers of tempera.",
+  "l2": "Layering builds depth and colour in tempera, since each thin coat dries before the next is applied. The panel is usually on a prepared wood surface.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -20114,13 +20068,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -20195,12 +20148,12 @@
   "ds": -99995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Gilded Tempera Panel: a design or component for preparing pigments and coloring surfaces or fibre.",
-  "l2": "In natural colorants, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A tempera panel decorated with applied gold leaf.",
+  "l2": "Gold leaf is laid on a sticky ground and burnished to a bright finish. Gilding was used on panels for religious and high-status work.",
+  "l3": "Field background: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: natural dyes, pigments and mordants (Wikipedia: Natural dye). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "natural_dye_wiki"
   ],
   "rec": [
    [
@@ -20216,13 +20169,12 @@
    "expansion_2026_1000",
    "natural_colorants",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -20400,12 +20352,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Scraped Hide: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hide with its flesh and hair removed by scraping.",
+  "l2": "Scraping removes the remaining flesh and hair so the hide can be tanned. The scraper is worked across the surface with a blade.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -20421,13 +20373,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -20502,12 +20453,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Softened Hide: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hide worked to make it soft and pliable.",
+  "l2": "Working the hide by hand or with a rope breaks down its fibres, so it stays flexible. Softening is the stage after scraping and before tanning.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -20523,13 +20474,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -20604,12 +20554,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Oiled Hide: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hide treated with oil or fat to keep it supple and waterproof.",
+  "l2": "Oil coats the fibres so they do not stiffen as they dry. Oiling is used for garments and shoes that must stay flexible.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -20625,13 +20575,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -20706,12 +20655,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Supple Garment Leather: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Leather prepared to be soft and flexible enough for clothing.",
+  "l2": "Garment leather is thinned and worked until it bends easily without cracking. It is cut to the shape of the garment.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -20727,13 +20676,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -20808,12 +20756,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cut Leather Strip: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A narrow strip of leather cut from a hide.",
+  "l2": "Strips are cut from the hide in a spiral or straight line. They are used for lacing, binding and straps.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -20829,13 +20777,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -20910,12 +20857,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Leather Lace: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thin strip of leather used for lacing or tying.",
+  "l2": "A lace is cut thin and can be pulled through holes to close a bag or join a seam. Its strength comes from the hide fibres.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -20931,13 +20878,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21012,12 +20958,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stitched Leather Seam: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: thread crossing seam line. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A seam joined by stitching through leather.",
+  "l2": "Holes are punched along the edges and the seam is stitched through them. The stitches draw the pieces together and hold the join.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21033,13 +20979,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21114,12 +21059,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reinforced Leather Seam: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stitched seam with an extra layer of leather or lace for strength.",
+  "l2": "Reinforcement strengthens the seam where it takes most load. The extra layer is stitched along with the seam.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21135,13 +21080,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21216,12 +21160,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Leather Pouch: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small bag made from leather.",
+  "l2": "A pouch keeps small items safe and dry. It is cut from one or two pieces of hide and stitched closed.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21237,13 +21181,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21318,12 +21261,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Drawstring Pouch: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A leather pouch closed by a cord or lace run through its top.",
+  "l2": "A drawstring closes the pouch quickly and tightens it around the contents. The lace runs through holes around the mouth.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21339,13 +21282,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21420,12 +21362,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Flap Closure Pouch: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A leather pouch closed by a flap that folds over the mouth.",
+  "l2": "The flap keeps out dust and rain and holds the mouth shut without a cord. It is usually fastened with a strap or toggle.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21441,13 +21383,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21522,12 +21463,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Belt Mounted Pouch: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pouch that is attached to a belt and worn on the hip.",
+  "l2": "A belt pouch keeps items within reach while leaving the hands free. It is fixed to the belt by a loop or a strap.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21543,13 +21484,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21624,12 +21564,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rawhide Sheet: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sheet of unsmoked, unoiled hide dried stiff.",
+  "l2": "Rawhide dries hard and holds its shape, which suits it to shields, containers and binding. It must be kept dry or it softens.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21645,13 +21585,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21727,12 +21666,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rawhide Binding: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Rawhide wrapped or lashed around an object to bind it.",
+  "l2": "Wet rawhide shrinks as it dries and tightens around what it binds. It is used for handles and joints.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21748,13 +21687,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21829,12 +21767,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rawhide Shield Cover: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rawhide covering stretched over a shield frame.",
+  "l2": "The rawhide covers the shield's surface and dries tight, giving a firm face. It is bound to the frame at the edges.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21850,13 +21788,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -21931,12 +21868,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Layered Rawhide Shield: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shield made of several layers of rawhide.",
+  "l2": "Layers add strength and stop the shield from splitting under a blow. Each layer is laid and dried before the next is added.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -21952,13 +21889,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22033,12 +21969,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Leather Sole Blank: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cut-out leather shape that will be finished into a shoe sole.",
+  "l2": "A blank is cut from thick leather and then trimmed to the shape of the foot. It is the starting point for a sole.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22054,13 +21990,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22136,12 +22071,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stitched Sandal Sole: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: thread crossing seam line. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sandal sole with its layers stitched together.",
+  "l2": "Stitching holds the layers of the sole together so that it does not separate under walking. The stitches are made through the edge.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22157,13 +22092,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22238,12 +22172,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Layer Sandal: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sandal sole built up from several layers of leather.",
+  "l2": "Layers make the sole thick and hard-wearing. Each layer is stitched or bound before the next is added.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22259,13 +22193,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22340,12 +22273,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sewn Leather Shoe: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shoe with an upper and sole stitched together from leather.",
+  "l2": "The upper is shaped to the foot and stitched to the sole. Stitching keeps the shoe together and lets it be repaired.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22361,13 +22294,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22442,12 +22374,12 @@
   "ds": -11999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Leather Water Bag: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bag made from leather to carry water.",
+  "l2": "A leather bag holds water on a journey and can be tied or sewn shut. It must be sealed well to stop it leaking.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22463,13 +22395,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22545,12 +22476,12 @@
   "ds": -11998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Pitch Sealed Water Bag: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A leather water bag sealed on the inside with pitch.",
+  "l2": "Pitch coats the seams and stops water from seeping through the hide. It is applied warm and left to set.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22566,13 +22497,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22647,12 +22577,12 @@
   "ds": -11997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stitched Water Skin: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: thread crossing seam line. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water skin made from a whole hide, closed by stitching.",
+  "l2": "A whole hide is folded and sewn to form a skin. Its neck is tied off to keep the water in.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22668,13 +22598,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22749,12 +22678,12 @@
   "ds": -11996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Carried Water Skin: a design or component for processing hide into useful flexible goods.",
-  "l2": "In leather crafting, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water skin made to be carried on a journey.",
+  "l2": "A carried skin is sealed, has a strap or loop, and can be filled and emptied easily. It was used for travel where water was scarce.",
+  "l3": "Field background: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: leather tanning and leatherworking (Maharam essay on the history of leather tanning). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "leather_barbe"
   ],
   "rec": [
    [
@@ -22770,13 +22699,12 @@
    "expansion_2026_1000",
    "leather_crafting",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
