@@ -11180,6 +11180,10 @@
    [
     "exp26_fiber_fishing_line",
     "exp26_two_ply_cord"
+   ],
+   [
+    "exp26_fiber_fishing_line",
+    "exp26_mercerized_linen_yarn"
    ]
   ],
   "tags": [
@@ -11281,6 +11285,10 @@
    [
     "exp26_twined_fishing_leader",
     "exp26_round_braided_cord"
+   ],
+   [
+    "exp26_linen_thread",
+    "exp26_fiber_fishing_line"
    ]
   ],
   "tags": [
@@ -11888,6 +11896,10 @@
    [
     "exp26_prepared_plant_bast",
     "exp26_plant_binding_strip"
+   ],
+   [
+    "exp26_two_ply_cord",
+    "exp26_cut_leather_strip"
    ]
   ],
   "tags": [
@@ -16171,6 +16183,10 @@
    [
     "exp26_carded_animal_wool",
     "rope"
+   ],
+   [
+    "exp26_twist_balanced_wool_yarn",
+    "exp26_woolen_yarn"
    ]
   ],
   "tags": [
@@ -22379,6 +22395,10 @@
    [
     "exp26_multi_layer_sandal",
     "exp26_leather_sole_blank"
+   ],
+   [
+    "exp26_leather_sole_blank",
+    "exp26_stitched_leather_seam"
    ]
   ],
   "tags": [
@@ -22481,6 +22501,10 @@
    [
     "exp26_prepared_animal_hide",
     "exp26_leather_sole_blank"
+   ],
+   [
+    "exp26_supple_garment_leather",
+    "exp26_stitched_leather_seam"
    ]
   ],
   "tags": [
@@ -23195,6 +23219,10 @@
    [
     "exp26_twined_reed_panel",
     "exp26_sorted_weaving_reeds"
+   ],
+   [
+    "exp26_reed_bundle",
+    "exp26_plant_binding_strip"
    ]
   ],
   "tags": [
@@ -24003,6 +24031,10 @@
    [
     "exp26_joined_reed_mat",
     "exp26_wicker_carry_basket"
+   ],
+   [
+    "exp26_joined_reed_mat",
+    "exp26_reed_bundle"
    ]
   ],
   "tags": [
@@ -42343,6 +42375,10 @@
    [
     "exp26_reed_bundle_hull",
     "exp26_punt_boat"
+   ],
+   [
+    "exp26_reed_bundle",
+    "exp26_bound_reed_float"
    ]
   ],
   "tags": [
