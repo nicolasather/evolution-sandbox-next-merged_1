@@ -22882,12 +22882,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reed Bundle: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bundle of reeds tied together for weaving or binding.",
+  "l2": "Reeds are gathered, sorted by length and tied in a bundle, so they can be stored and carried. The bundle is opened as the weaver needs each stem.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -22903,13 +22903,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -22984,12 +22983,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Twined Reed Panel: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat panel of reed woven by twining, where paired strands twist around each other.",
+  "l2": "Twining makes a firm, flexible panel from few materials. It was one of the earliest woven techniques.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23005,13 +23004,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23086,12 +23084,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Coiled Reed Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A basket made by coiling a bundle of reed around itself and stitching each turn to the one before.",
+  "l2": "Coiling builds a basket outward from a centre, one turn at a time. Each turn is sewn to the last with a split stem or fibre.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23107,13 +23105,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23188,12 +23185,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Lidded Reed Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A reed basket with a fitted lid.",
+  "l2": "The lid keeps contents dry and out of reach of pests. It is woven to fit over the rim of the basket.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23209,13 +23206,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23290,12 +23286,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Splint Basket Base: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The base of a basket, made from split strips of wood or reed.",
+  "l2": "Splints are split thin and woven into a base that holds its shape. The base is the foundation the rest of the basket is built on.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23311,13 +23307,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23392,12 +23387,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Over Under Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A basket woven in a simple over-and-under pattern.",
+  "l2": "Each weft passes over one warp and under the next, which makes a firm, even surface. It is the simplest form of basket weaving.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23413,13 +23408,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23494,12 +23488,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Wicker Carry Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A carrying basket woven from flexible rods or reeds.",
+  "l2": "Wicker is flexible and light, so the basket carries a load without much weight of its own. Its handles are woven into the sides.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23515,13 +23509,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23596,12 +23589,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reinforced Wicker Hamper: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large wicker basket with a reinforced rim and base.",
+  "l2": "Reinforcement carries heavier loads without the rim splitting. The hamper is used for transport and storage of goods.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23617,13 +23610,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23698,12 +23690,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reed Floor Mat: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A floor mat woven from reeds.",
+  "l2": "Reeds laid side by side and bound give a mat that is soft underfoot and easy to roll up. Mats were used for sleeping and sitting.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23719,13 +23711,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23800,12 +23791,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Joined Reed Mat: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Two or more reed mats joined to make a larger mat.",
+  "l2": "Joining mats gives a floor covering that fits a larger room. The join is sewn so that the mats move as one.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23821,13 +23812,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -23902,12 +23892,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rolled Reed Screen: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: plane with frame or grid. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A reed screen that can be rolled up for storage.",
+  "l2": "A rolled screen can be unrolled to divide or shade a space and rolled away when it is not needed. It is made from reed mat sewn into a long panel.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -23923,13 +23913,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24004,12 +23993,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Freestanding Reed Partition: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A reed partition that stands without a frame.",
+  "l2": "A freestanding partition is held upright by its own weight and by stakes or posts. It divides a room or shelters a space from the wind.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24025,13 +24014,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24106,12 +24094,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fish Basket Frame: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The rigid frame of a fish basket, shaped to hold its woven body.",
+  "l2": "The frame gives the basket its shape and holds it against the water's pressure. Woven reed fills the frame to form the body.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24127,13 +24115,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24209,12 +24196,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Open Fish Trap Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fish basket with an open top, into which fish swim.",
+  "l2": "Fish enter the basket through the open top and cannot easily find the way out. The basket is set in a river or shallow water.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24230,13 +24217,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24311,12 +24297,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Conical Fish Trap: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fish trap shaped like a cone, with a narrow entrance.",
+  "l2": "A cone narrows toward the inside, so fish swim in and cannot turn back against the taper. The shape keeps the catch in the trap.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24332,13 +24318,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24413,12 +24398,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Double Funnel Fish Trap: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fish trap with two funnel entrances that guide fish inward.",
+  "l2": "Two funnels give fish more than one way in and make escape harder. The trap is set across a channel where fish travel.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24434,13 +24419,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24515,12 +24499,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reed Floating Bundle: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bundle of reeds tied to float on water.",
+  "l2": "Reeds are light and hold air, so a tight bundle floats well. Bundles were used as floats, supports and simple craft.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24536,13 +24520,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24618,12 +24601,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Bound Reed Float: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A reed float bound tightly so that it keeps its shape in water.",
+  "l2": "Binding stops the reeds from spreading and taking on water. The float holds weight at the surface.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24639,13 +24622,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24720,12 +24702,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reed Raft Mat: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat mat of bound reeds that floats and carries load.",
+  "l2": "Bound reeds float and can be lashed side by side to a raft or platform. The mat carries people and goods across shallow water.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24741,13 +24723,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24822,12 +24803,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reed Pontoon Float: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large reed float used as a pontoon to support a platform on water.",
+  "l2": "Pontoons are joined to form a platform that floats. Several floats share the load and keep the platform level.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24843,13 +24824,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -24924,12 +24904,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Woven Storage Tray: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shallow woven tray for storing or drying food.",
+  "l2": "A tray is open and flat, so food is spread out to dry and air can circulate. It is woven from strips to be firm but open.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -24945,13 +24925,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -25027,12 +25006,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Shallow Harvest Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shallow basket used to gather harvested grain or fruit.",
+  "l2": "A shallow basket can be filled quickly and carried on the head or hip. Its wide opening makes it easy to tip the harvest out.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -25048,13 +25027,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -25129,12 +25107,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Deep Harvest Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A deep basket used to carry harvested crops from the field.",
+  "l2": "A deep basket holds more than a shallow one and keeps the load steady as it is carried. It is woven in a tight, strong pattern.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -25150,13 +25128,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -25231,12 +25208,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Handled Harvest Basket: a design or component for interlacing flexible plant materials for containment and screening.",
-  "l2": "In basket and reedwork, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A harvest basket with a handle for carrying.",
+  "l2": "A handle lets the basket be carried by hand or slung from the shoulder. It is fixed to the rim so that it does not pull loose.",
+  "l3": "Field background: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: basketry and reedwork (Harvey Mudd College, The Origins of Basketry). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "basketry_origins"
   ],
   "rec": [
    [
@@ -25252,13 +25229,12 @@
    "expansion_2026_1000",
    "basket_and_reedwork",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -25436,12 +25412,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Seed Bed Furrow: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A furrow cut into the soil to receive seed.",
+  "l2": "A furrow gives seed a shallow, even bed, so it is covered by soil and can sprout. Furrows were cut with a hoe or a digging stick.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -25457,13 +25433,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -25538,12 +25513,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Sown Cereal Row: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A row of cereal seed sown by hand along a furrow.",
+  "l2": "Sowing by hand places seed in rows, which makes weeding and harvest easier. The sower scatters or drops seed evenly along the line.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -25559,13 +25534,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -25640,12 +25614,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Seed Drill Row: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A row of seed placed by a seed drill, which sets each grain at a set depth.",
+  "l2": "A seed drill places seed at an even depth and spacing without scattering. It saves seed and gives a more even crop than hand sowing.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -25661,13 +25635,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -25742,12 +25715,12 @@
   "ds": 1750,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Mechanized Row Seeding: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Seeding in rows by a machine that places the seed at set intervals.",
+  "l2": "Machines place seed in rows at a set spacing, which helps the crop grow evenly. Mechanical drills became common in the 18th and 19th centuries.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -25763,13 +25736,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -25844,12 +25816,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Threshing Floor: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hard, level surface where cereal stalks are beaten to free the grain.",
+  "l2": "A threshing floor is firm and clean, so the grain can be gathered without mixing with soil. Animals or flails were used to beat the stalks on it.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -25865,13 +25837,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -25946,12 +25917,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Flail Threshing: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Threshing cereal by beating the stalks with a hand flail.",
+  "l2": "A flail separates grain from the husk and straw by a swinging blow. It is a simple tool that needs little more than a stick and a hinge.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -25967,13 +25938,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26048,12 +26018,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Winnowing Basket: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shallow basket tossed in the air to separate grain from chaff.",
+  "l2": "Tossing lets the wind carry away the light chaff while the heavier grain falls back into the basket. Winnowing baskets are wide and shallow for this reason.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26069,13 +26039,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26150,12 +26119,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Mechanical Grain Thresher: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A machine that separates grain from the straw and chaff.",
+  "l2": "A thresher beats or rubs the grain free mechanically. It replaces the hand flail and works much faster.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26171,13 +26140,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26252,12 +26220,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Grain Winnowing Fan: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fan that separates grain from chaff by moving air across it.",
+  "l2": "Moving air carries the lighter chaff away while the heavier grain falls. A fan does the same work as a winnowing basket without tossing.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26273,13 +26241,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26354,12 +26321,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Screened Grain: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: plane with frame or grid. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Grain sieved to remove stones, straw and other debris.",
+  "l2": "Screening takes out the stones and large debris that a winnowing pass leaves. The grain is then clean enough to store or grind.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26375,13 +26342,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26456,12 +26422,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Graded Seed Grain: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Grain sorted by size or weight to select seed.",
+  "l2": "Grading keeps the largest and heaviest grains for sowing, which tends to give a stronger crop. It is done by sieving or winnowing.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26477,13 +26443,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26558,12 +26523,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Certified Seed Lot: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A batch of seed grain checked and marked as meeting a set standard.",
+  "l2": "Certification records that the seed is pure and of a known quality, so buyers can trust what they sow. It is a modern refinement of grading.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26579,13 +26544,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26660,12 +26624,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Straw Stack: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Cereal straw stacked to keep it dry for later use.",
+  "l2": "A stack keeps straw dry and gives animals fodder and bedding through the winter. The stack is built with its top shaped to shed rain.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26681,13 +26645,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26763,12 +26726,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Thatched Straw Bundle: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Straw gathered into a bundle and tied for roofing or bedding.",
+  "l2": "Bundled straw is used to thatch roofs or bed animals. It sheds rain when laid in layers.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26784,13 +26747,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26865,12 +26827,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Compressed Straw Bale: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Straw pressed into a compact block for storage and transport.",
+  "l2": "Pressing removes air and makes the straw easier to store and move. The bale is tied so that it keeps its shape.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26886,13 +26848,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -26967,12 +26928,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Bound Straw Bale: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A straw bale tied with cord to hold its shape.",
+  "l2": "Binding keeps the bale together while it is handled and stacked. The cord is passed around it at set intervals.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -26988,13 +26949,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27069,12 +27029,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Grain Drying Tray: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shallow tray that holds grain up to dry in air and sun.",
+  "l2": "Spreading grain on a tray exposes it to air and sun so it dries before storage. Damp grain spoils quickly in store.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27090,13 +27050,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27172,12 +27131,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Raised Grain Dryer: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A grain dryer raised above the ground to let air circulate beneath.",
+  "l2": "Raising the dryer lets air move under the grain and keeps it off damp ground. Its frame holds the tray above the surface.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27193,13 +27152,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27274,12 +27232,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ventilated Grain Bin: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A grain store with vents that let air circulate.",
+  "l2": "Ventilation keeps the grain cool and dry, so it does not heat or mould. The vents are set at the base and the top.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27295,13 +27253,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27376,12 +27333,12 @@
   "ds": 1950,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Temperature Managed Grain Bin: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A grain store whose temperature is kept within set limits.",
+  "l2": "Controlled temperature slows insect and fungal damage and keeps grain sound for longer. It is an improvement on a simple ventilated bin.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27397,13 +27354,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27478,12 +27434,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Harvest Sickle Blade: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A curved blade set in a handle, used to cut cereal stalks.",
+  "l2": "A sickle cuts the stalks low and close, which gathers the whole crop quickly. The blade is held by a wooden or bone handle.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27499,13 +27455,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27581,12 +27536,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Composite Harvest Sickle: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sickle built from several parts, with a blade set into a shaped handle.",
+  "l2": "A composite sickle separates the blade from the handle, so the blade can be replaced. The handle is made to fit the hand.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27602,13 +27557,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27683,12 +27637,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Cradle Scythe: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A scythe with a cradle of wooden fingers that gathers the cut stalks.",
+  "l2": "The cradle catches the cut stalks and lays them in a neat line. It makes harvesting faster and keeps the grain in good order.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27704,13 +27658,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27785,12 +27738,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reaper Cutter Bar: a design or component for planting, harvesting and protecting grain crops.",
-  "l2": "In cereal cultivation, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cutter bar that cuts cereal stalks along a row as a machine moves forward.",
+  "l2": "A cutter bar of sharp blades slides back and forth to cut the stalks. It is the cutting part of a mechanical reaper.",
+  "l3": "Field background: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: cereal cultivation and domestication (2016 PNAS study, as reported by Phys.org). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cereal_domestication_phys"
   ],
   "rec": [
    [
@@ -27806,13 +27759,12 @@
    "expansion_2026_1000",
    "cereal_cultivation",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "plant",
@@ -27990,12 +27942,12 @@
   "ds": -5998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Field Water Furrow: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A furrow that carries water across a field.",
+  "l2": "A furrow guides water over the field so that the soil is wetted. The depth and slope are set so that the water spreads evenly.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28011,13 +27963,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28092,12 +28043,12 @@
   "ds": -5997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Branching Field Furrow: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A system of furrows that branch from a main channel to cover a field.",
+  "l2": "Branching furrows spread water over a wide area from a single source. The branches are set so that each part of the field gets its share.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28113,13 +28064,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28194,12 +28144,12 @@
   "ds": -5996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Contour Furrow Grid: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A grid of furrows following the contours of the land.",
+  "l2": "Following the contour keeps water from running too fast down a slope. The grid spreads water evenly and reduces soil loss.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28215,13 +28165,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28296,12 +28245,12 @@
   "ds": -5995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Level Basin Irrigation: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Irrigation of a field held in level basins that fill with water.",
+  "l2": "Each basin is level, so water spreads across it and soaks in. Basins are simple to make and suit flat ground.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28317,13 +28266,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28398,12 +28346,12 @@
   "ds": -5998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Earthen Check Dam: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A low earth dam across a channel that raises the water level behind it.",
+  "l2": "A check dam raises the water level so that it can flow out into a side channel. It is built from packed earth.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28419,13 +28367,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28500,12 +28447,12 @@
   "ds": -5997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Check Weir: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A low stone wall across a channel that raises water and sends it into side channels.",
+  "l2": "A stone weir is stronger than an earth dam and holds its shape through floods. Its crest sets the level of the water upstream.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28521,13 +28468,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28602,12 +28548,12 @@
   "ds": -5996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Diversion Weir: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A weir whose height can be changed to divert more or less water.",
+  "l2": "Adjusting the weir height changes how much water goes into the channel. It lets the farmer share water between fields.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28623,13 +28569,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28704,12 +28649,12 @@
   "ds": -5995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Gated Diversion Weir: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A weir with gates that open and close to control the flow.",
+  "l2": "Gates let the water through in controlled amounts. They are raised and lowered by hand.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28725,13 +28670,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28806,12 +28750,12 @@
   "ds": -5998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Water Lift Bucket: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bucket on a rope or pole for lifting water from a channel to a field.",
+  "l2": "A bucket lifts water a short height to a higher field. It is worked by hand or by a simple pole.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28827,13 +28771,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -28908,12 +28851,12 @@
   "ds": -5997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Counterpoise Water Lift: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water lift with a counterweight on the pole to ease the lift.",
+  "l2": "The counterweight balances the bucket, so less effort is needed to raise it. It is the principle of the shaduf.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -28929,13 +28872,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29010,12 +28952,12 @@
   "ds": -5996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Chain Water Lift: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water lift that raises water on a chain of buckets.",
+  "l2": "A chain of buckets carries water up continuously rather than one bucket at a time. It moves more water with less effort.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29031,13 +28973,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29112,12 +29053,12 @@
   "ds": 1750,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Animal Powered Water Lift: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water lift turned by an animal, such as an ox or donkey.",
+  "l2": "An animal walks a circle to turn the lift, which keeps raising water without tiring the farmer. It is used where the water must be raised a large height.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29133,13 +29074,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29214,12 +29154,12 @@
   "ds": -5998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Channel Gate Board: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A board set in a channel that can be slid or lifted to control the flow.",
+  "l2": "The board is a simple gate: lifting it lets water through and lowering it stops the flow. It is set in grooves in the channel walls.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29235,13 +29175,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29317,12 +29256,12 @@
   "ds": -5997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sliding Sluice Board: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sluice board that slides in grooves to open or close a channel.",
+  "l2": "Sliding the board opens the channel to the desired width. The grooves keep it straight and make it easy to adjust.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29338,13 +29277,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29419,12 +29357,12 @@
   "ds": -5996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Screw Operated Sluice: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sluice gate raised and lowered by a screw.",
+  "l2": "A screw turns the gate in controlled steps, so it can be set precisely. The screw is turned by hand or by a wheel.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29440,13 +29378,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29521,12 +29458,12 @@
   "ds": -5995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Automated Sluice Gate: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sluice gate that opens and closes with a motor or mechanism.",
+  "l2": "A mechanism lets the gate respond to water levels or a set timetable. It removes the need for someone to adjust it by hand.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29542,13 +29479,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29623,12 +29559,12 @@
   "ds": -5998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Settling Pond: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pond where muddy water is left still so that the silt can settle.",
+  "l2": "Still water lets heavy silt sink to the bottom before the water is used. The pond is cleared of silt from time to time.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29644,13 +29580,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29726,12 +29661,12 @@
   "ds": -5997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Desilting Basin: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A basin that removes silt from water before it reaches the fields.",
+  "l2": "A basin slows the water so that silt drops out. It is cleaned periodically to keep it working.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29747,13 +29682,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29828,12 +29762,12 @@
   "ds": -5996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Graded Sediment Trap: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A series of settling chambers, each finer than the last, that trap sediment.",
+  "l2": "Each chamber catches a finer grade of sediment, so the water is cleaner by the end. The chambers are emptied in turn.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29849,13 +29783,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -29930,12 +29863,12 @@
   "ds": -5995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Chamber Sediment Trap: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sediment trap with several connected chambers.",
+  "l2": "Several chambers slow the water in stages, and each removes more silt. It is an extended form of the graded trap.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -29951,13 +29884,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -30032,12 +29964,12 @@
   "ds": -5998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clay Drainage Tile: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fired clay pipe laid underground to drain excess water from soil.",
+  "l2": "A drainage tile carries surplus water away below the surface, so the soil stays aerated. Fired clay does not rot in wet ground.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -30053,13 +29985,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -30135,12 +30066,12 @@
   "ds": -5997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Field Tile Drain: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A set of drainage tiles laid in a field to drain it.",
+  "l2": "Tiles laid at a set depth and slope carry water from the field into a main drain. The field can then be farmed in wet seasons.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -30156,13 +30087,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -30237,12 +30167,12 @@
   "ds": -5996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Collector Drain: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A main drain that collects water from several field drains.",
+  "l2": "A collector gathers the flow of several tile drains into one line. It carries the water away from the field.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -30258,13 +30188,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -30339,12 +30268,12 @@
   "ds": -5995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Controlled Drainage Outlet: a design or component for diverting, measuring and controlling agricultural water.",
-  "l2": "In irrigation works, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An outlet with a gate that controls how much drainage water leaves a field.",
+  "l2": "A gate at the outlet keeps the water level in the field at the right height. It can be closed to hold water back in dry weather.",
+  "l3": "Field background: ancient irrigation systems (Encyclopedia.com). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: ancient irrigation systems (Encyclopedia.com). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "irrigation_encyclopedia"
   ],
   "rec": [
    [
@@ -30360,13 +30289,12 @@
    "expansion_2026_1000",
    "irrigation_works",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",

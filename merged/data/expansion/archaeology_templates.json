@@ -2867,7 +2867,7 @@
   "label": "Reed Bundle",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A bundle of reeds tied together for weaving or binding.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2880,7 +2880,7 @@
   "label": "Twined Reed Panel",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A flat panel of reed woven by twining, where paired strands twist around each other.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2893,7 +2893,7 @@
   "label": "Coiled Reed Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A basket made by coiling a bundle of reed around itself and stitching each turn to the one before.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2906,7 +2906,7 @@
   "label": "Lidded Reed Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A reed basket with a fitted lid.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2919,7 +2919,7 @@
   "label": "Splint Basket Base",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "The base of a basket, made from split strips of wood or reed.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2932,7 +2932,7 @@
   "label": "Over Under Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A basket woven in a simple over-and-under pattern.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2945,7 +2945,7 @@
   "label": "Wicker Carry Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A carrying basket woven from flexible rods or reeds.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2958,7 +2958,7 @@
   "label": "Reinforced Wicker Hamper",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A large wicker basket with a reinforced rim and base.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2971,7 +2971,7 @@
   "label": "Reed Floor Mat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A floor mat woven from reeds.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2984,7 +2984,7 @@
   "label": "Joined Reed Mat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "Two or more reed mats joined to make a larger mat.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2997,7 +2997,7 @@
   "label": "Rolled Reed Screen",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A reed screen that can be rolled up for storage.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3010,7 +3010,7 @@
   "label": "Freestanding Reed Partition",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A reed partition that stands without a frame.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3023,7 +3023,7 @@
   "label": "Fish Basket Frame",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "The rigid frame of a fish basket, shaped to hold its woven body.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3036,7 +3036,7 @@
   "label": "Open Fish Trap Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A fish basket with an open top, into which fish swim.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3049,7 +3049,7 @@
   "label": "Conical Fish Trap",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A fish trap shaped like a cone, with a narrow entrance.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3062,7 +3062,7 @@
   "label": "Double Funnel Fish Trap",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A fish trap with two funnel entrances that guide fish inward.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3075,7 +3075,7 @@
   "label": "Reed Floating Bundle",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A bundle of reeds tied to float on water.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3088,7 +3088,7 @@
   "label": "Bound Reed Float",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A reed float bound tightly so that it keeps its shape in water.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3101,7 +3101,7 @@
   "label": "Reed Raft Mat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A flat mat of bound reeds that floats and carries load.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3114,7 +3114,7 @@
   "label": "Reed Pontoon Float",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A large reed float used as a pontoon to support a platform on water.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3127,7 +3127,7 @@
   "label": "Woven Storage Tray",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A shallow woven tray for storing or drying food.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3140,7 +3140,7 @@
   "label": "Shallow Harvest Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A shallow basket used to gather harvested grain or fruit.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3153,7 +3153,7 @@
   "label": "Deep Harvest Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A deep basket used to carry harvested crops from the field.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3166,7 +3166,7 @@
   "label": "Handled Harvest Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for interlacing flexible plant materials for containment and screening.",
+  "commonFunction": "A harvest basket with a handle for carrying.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3192,7 +3192,7 @@
   "label": "Seed Bed Furrow",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A furrow cut into the soil to receive seed.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3205,7 +3205,7 @@
   "label": "Hand Sown Cereal Row",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A row of cereal seed sown by hand along a furrow.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3218,7 +3218,7 @@
   "label": "Seed Drill Row",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A row of seed placed by a seed drill, which sets each grain at a set depth.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3231,7 +3231,7 @@
   "label": "Threshing Floor",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A hard, level surface where cereal stalks are beaten to free the grain.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3244,7 +3244,7 @@
   "label": "Hand Flail Threshing",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "Threshing cereal by beating the stalks with a hand flail.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3257,7 +3257,7 @@
   "label": "Winnowing Basket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A shallow basket tossed in the air to separate grain from chaff.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3270,7 +3270,7 @@
   "label": "Mechanical Grain Thresher",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A machine that separates grain from the straw and chaff.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3283,7 +3283,7 @@
   "label": "Grain Winnowing Fan",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A fan that separates grain from chaff by moving air across it.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3296,7 +3296,7 @@
   "label": "Screened Grain",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "Grain sieved to remove stones, straw and other debris.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3309,7 +3309,7 @@
   "label": "Graded Seed Grain",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "Grain sorted by size or weight to select seed.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3322,7 +3322,7 @@
   "label": "Certified Seed Lot",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A batch of seed grain checked and marked as meeting a set standard.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3335,7 +3335,7 @@
   "label": "Straw Stack",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "Cereal straw stacked to keep it dry for later use.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3348,7 +3348,7 @@
   "label": "Thatched Straw Bundle",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "Straw gathered into a bundle and tied for roofing or bedding.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3361,7 +3361,7 @@
   "label": "Compressed Straw Bale",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "Straw pressed into a compact block for storage and transport.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3374,7 +3374,7 @@
   "label": "Bound Straw Bale",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A straw bale tied with cord to hold its shape.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3387,7 +3387,7 @@
   "label": "Grain Drying Tray",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A shallow tray that holds grain up to dry in air and sun.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3400,7 +3400,7 @@
   "label": "Raised Grain Dryer",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A grain dryer raised above the ground to let air circulate beneath.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3413,7 +3413,7 @@
   "label": "Ventilated Grain Bin",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A grain store with vents that let air circulate.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3426,7 +3426,7 @@
   "label": "Harvest Sickle Blade",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A curved blade set in a handle, used to cut cereal stalks.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3439,7 +3439,7 @@
   "label": "Composite Harvest Sickle",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A sickle built from several parts, with a blade set into a shaped handle.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3452,7 +3452,7 @@
   "label": "Cradle Scythe",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A scythe with a cradle of wooden fingers that gathers the cut stalks.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3465,7 +3465,7 @@
   "label": "Reaper Cutter Bar",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for planting, harvesting and protecting grain crops.",
+  "commonFunction": "A cutter bar that cuts cereal stalks along a row as a machine moves forward.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3490,7 +3490,7 @@
   "label": "Field Water Furrow",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A furrow that carries water across a field.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3502,7 +3502,7 @@
   "label": "Branching Field Furrow",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A system of furrows that branch from a main channel to cover a field.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3514,7 +3514,7 @@
   "label": "Contour Furrow Grid",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A grid of furrows following the contours of the land.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3526,7 +3526,7 @@
   "label": "Level Basin Irrigation",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "Irrigation of a field held in level basins that fill with water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3538,7 +3538,7 @@
   "label": "Earthen Check Dam",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A low earth dam across a channel that raises the water level behind it.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3550,7 +3550,7 @@
   "label": "Stone Check Weir",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A low stone wall across a channel that raises water and sends it into side channels.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3562,7 +3562,7 @@
   "label": "Adjustable Diversion Weir",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A weir whose height can be changed to divert more or less water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3574,7 +3574,7 @@
   "label": "Gated Diversion Weir",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A weir with gates that open and close to control the flow.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3586,7 +3586,7 @@
   "label": "Water Lift Bucket",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A bucket on a rope or pole for lifting water from a channel to a field.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3598,7 +3598,7 @@
   "label": "Counterpoise Water Lift",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A water lift with a counterweight on the pole to ease the lift.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3610,7 +3610,7 @@
   "label": "Chain Water Lift",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A water lift that raises water on a chain of buckets.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3622,7 +3622,7 @@
   "label": "Channel Gate Board",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A board set in a channel that can be slid or lifted to control the flow.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3634,7 +3634,7 @@
   "label": "Sliding Sluice Board",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A sluice board that slides in grooves to open or close a channel.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3646,7 +3646,7 @@
   "label": "Screw Operated Sluice",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A sluice gate raised and lowered by a screw.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3658,7 +3658,7 @@
   "label": "Automated Sluice Gate",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A sluice gate that opens and closes with a motor or mechanism.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3670,7 +3670,7 @@
   "label": "Settling Pond",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A pond where muddy water is left still so that the silt can settle.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3682,7 +3682,7 @@
   "label": "Desilting Basin",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A basin that removes silt from water before it reaches the fields.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3694,7 +3694,7 @@
   "label": "Graded Sediment Trap",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A series of settling chambers, each finer than the last, that trap sediment.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3706,7 +3706,7 @@
   "label": "Multi Chamber Sediment Trap",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A sediment trap with several connected chambers.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3718,7 +3718,7 @@
   "label": "Clay Drainage Tile",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A fired clay pipe laid underground to drain excess water from soil.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3730,7 +3730,7 @@
   "label": "Field Tile Drain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A set of drainage tiles laid in a field to drain it.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3742,7 +3742,7 @@
   "label": "Collector Drain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "A main drain that collects water from several field drains.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -3754,7 +3754,7 @@
   "label": "Controlled Drainage Outlet",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for diverting, measuring and controlling agricultural water.",
+  "commonFunction": "An outlet with a gate that controls how much drainage water leaves a field.",
   "affinity": {
    "permanent-settlement": 0.7
   },

@@ -2570,6 +2570,33 @@
    "type": "essay-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "basketry_origins": {
+   "t": "B",
+   "title": "The Origins of Basketry",
+   "org": "Harvey Mudd College (Beckman Center, Native American basketry pages)",
+   "url": "https://pages.hmc.edu/beckman/indian/basketry/OriginsOfBasketry.html",
+   "type": "academic-page-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "cereal_domestication_phys": {
+   "t": "B",
+   "title": "Prehistoric plant remains highlight diverse origins of cereal domestication",
+   "org": "Phys.org (news on a 2016 PNAS study)",
+   "url": "https://phys.org/news/2016-12-prehistoric-highlight-diverse-cereal-domestication.html",
+   "type": "news-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "irrigation_encyclopedia": {
+   "t": "B",
+   "title": "Irrigation Systems, Ancient",
+   "org": "Encyclopedia.com",
+   "url": "https://encyclopedia.com/science/news-wires-white-papers-and-books/irrigation-systems-ancient",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }
