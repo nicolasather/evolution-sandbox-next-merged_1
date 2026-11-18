@@ -112,12 +112,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Pinch Pot: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small vessel formed by pinching a ball of clay between thumb and fingers while turning it.",
+  "l2": "Pinching needs no tools or wheel, so it is one of the most accessible ways to make a container. Wall thickness and the rounded base are set by hand, which is why pinched pots vary so much in shape.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -133,13 +133,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -214,12 +213,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Burnished Pinch Pot: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pinch pot whose surface was rubbed with a smooth stone while still damp.",
+  "l2": "Burnishing closes the surface and raises a sheen, and it reduces how much liquid the pot soaks up. It is done at the leather-hard stage, before firing.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -235,13 +234,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -316,12 +314,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Slip Decorated Pot: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pot coated with a thin liquid clay slip and decorated through it.",
+  "l2": "Slip is clay thinned with water, so it can be brushed on and gives a smooth, contrasting surface. Patterns are painted into it or scratched through to the body colour.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -337,13 +335,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -418,12 +415,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Painted Storage Pot: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A storage pot decorated with mineral pigment painted over its slip layer.",
+  "l2": "Pigments such as iron-rich ochre were painted onto the slip before firing, so the decoration becomes part of the fired surface. Painted pots were used to store grain, oil or water.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -439,13 +436,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -520,12 +516,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Coil Pot: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A vessel built from ropes of clay coiled one on another and smoothed into a single wall.",
+  "l2": "Coiling lets a potter make a vessel much larger than a pinched pot can be, one coil at a time. The joins are smoothed so the wall fires as one piece.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -541,13 +537,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -622,12 +617,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Coil Jar: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: container neck, rim and body. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A taller coil-built jar, raised in stages so that the walls stay even.",
+  "l2": "Building in stages gives each section time to firm slightly, so the walls do not slump under their own weight. Coil jars held liquids and dry goods.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -643,13 +638,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -724,12 +718,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Collared Storage Jar: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: container neck, rim and body. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A storage jar with a raised collar around its neck.",
+  "l2": "The collar gives a place to tie a cover or cord and makes the mouth easier to seal. It also strengthens the neck, where a jar is most likely to crack.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -745,13 +739,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -826,12 +819,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Lidded Storage Jar: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: container neck, rim and body. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A storage jar fitted with a separate lid.",
+  "l2": "A lid keeps out insects, dust and rain, so stored food lasts longer. The lid is shaped to sit on the collar of the jar.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -847,13 +840,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -928,12 +920,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clay Cup: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small open vessel for drinking.",
+  "l2": "Cups were made for one person, so they are smaller and thinner-walled than storage pots. The rim is usually finished more carefully because the mouth touches the drinker.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -949,13 +941,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1030,12 +1021,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Handled Drinking Cup: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cup with a handle joined to its side.",
+  "l2": "A handle lets a drinker hold a hot or full cup without touching the body of the vessel. It is attached while the clay is leather-hard.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1051,13 +1042,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1132,12 +1122,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Spouted Cup: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cup with a pouring spout formed at its lip.",
+  "l2": "A spout lets liquid be poured without spilling, which matters when filling a small cup from a larger vessel. The spout is pinched out of the rim while the clay is still soft.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1153,13 +1143,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1234,12 +1223,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pouring Jug: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A jug with a spout and a handle, used to pour liquid from a larger container.",
+  "l2": "A jug combines spout and handle so that a whole vessel can be poured one-handed. It is larger than a cup and carried water, wine or oil.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1255,13 +1244,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1336,12 +1324,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clay Bowl: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An open, wide vessel, deeper than a dish.",
+  "l2": "Bowls hold food for eating and mixing, and their wide mouths suit hands or a spoon. Their shape follows the food they were made to serve.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1357,13 +1345,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1439,12 +1426,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Footed Bowl: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bowl raised on a short foot.",
+  "l2": "The foot keeps the bowl off the surface, so it sits steady and its base is not scuffed. The foot is attached after the bowl body has been shaped.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1460,13 +1447,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1541,12 +1527,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Glazed Serving Bowl: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: ceramic profile with visible glaze boundary. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bowl coated with a glassy glaze that seals the surface.",
+  "l2": "A glaze melts in the kiln to form a smooth, non-porous coating that cleans easily and does not soak up liquid. Glazing needs a more controlled firing than plain pottery.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1562,13 +1548,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1643,12 +1628,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stackable Table Bowl: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bowl shaped so that several can nest inside one another for storage.",
+  "l2": "Nesting shapes save shelf space and make a set of tableware easy to carry. The walls and rim are shaped so each bowl sits in the one beneath.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1664,13 +1649,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1745,12 +1729,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clay Lamp: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shallow clay dish with a pinched lip that holds oil and a wick.",
+  "l2": "A lamp burns oil through a wick held at the lip. The pinched spout gives the wick a fixed place and keeps the flame steady.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1766,13 +1750,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1848,12 +1831,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Double Wick Lamp: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clay lamp with two wicks at separate lips, giving a brighter flame.",
+  "l2": "Two wicks burn side by side and give more light from the same oil. The second lip is pinched out of the rim and has to be placed to balance the flames.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1869,13 +1852,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -1950,12 +1932,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Hanging Oil Lamp: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An oil lamp with a loop or hole for hanging it from a cord or hook.",
+  "l2": "Hanging a lamp lifts the flame above the work area and frees both hands. The suspension hole is made before firing, so it stays strong.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -1971,13 +1953,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -2052,12 +2033,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Nozzle Oil Lamp: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An oil lamp with several wick nozzles around its rim.",
+  "l2": "Several nozzles spread light over a larger room than a single wick could. Each nozzle is shaped to hold its wick firmly.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -2073,13 +2054,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -2154,12 +2134,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clay Lid: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A shaped clay cover that fits over the mouth of a vessel.",
+  "l2": "A lid keeps dust, insects and spilled liquid away from the contents of a pot. It is shaped to sit on the mouth it covers.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -2175,13 +2155,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -2257,12 +2236,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fitted Pot Lid: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lid with a rim that fits inside the mouth of a pot.",
+  "l2": "A fitted rim holds the lid in place, so it does not slide off or need a separate cord. Each lid is made to the inside measure of the pot it covers.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -2278,13 +2257,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -2359,12 +2337,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sealing Jar Lid: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: container neck, rim and body. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lid designed to close a jar tightly against air.",
+  "l2": "A tighter lid slows the exchange of air, which keeps stored food from drying or spoiling. Sealing depended on careful fitting and sometimes on a cord or wax layer.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -2380,13 +2358,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -2461,12 +2438,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reusable Storage Seal: a design or component for containment, serving and storing liquids or food.",
-  "l2": "In clay vessels, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A removable seal that closes a storage vessel and can be opened and closed again.",
+  "l2": "A reusable seal lets a store be opened for use and closed again without breaking the vessel. It works by fitting tightly to the jar's mouth.",
+  "l3": "Field background: clay pottery (World History Encyclopedia, via Brewminate). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: clay pottery (World History Encyclopedia, via Brewminate). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wh_clay_pottery"
   ],
   "rec": [
    [
@@ -2482,13 +2459,12 @@
    "expansion_2026_1000",
    "clay_vessels",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -2666,12 +2642,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sun Dried Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A brick of clay and plant fibre, shaped in a mould and dried in the sun rather than fired.",
+  "l2": "Sun-dried brick needs no kiln, so it can be made wherever clay and dry weather exist. It is weaker than fired brick and must be kept dry.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -2687,13 +2663,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -2768,12 +2743,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fired Building Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A brick of clay fired in a kiln until it is hard.",
+  "l2": "Firing turns clay into a material that does not dissolve in water and carries load well. Fired brick lasted where sun-dried brick would erode.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -2789,13 +2764,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -2870,12 +2844,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Perforated Building Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A brick with holes through it.",
+  "l2": "Holes lighten the brick, let it dry and fire more evenly, and give mortar a better grip. They also use less clay for each brick.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -2891,13 +2865,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -2972,12 +2945,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Hollow Structural Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A brick with large internal cavities.",
+  "l2": "Hollow bricks save weight and material while still resisting compression. The cavities also slow the flow of heat through a wall.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -2993,13 +2966,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3074,12 +3046,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Roof Tile Blank: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: sloped roof planes and joining ridge; flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An unfinished clay shape that will later be trimmed into a roof tile.",
+  "l2": "A blank is shaped roughly, then trimmed once it has dried to the right stiffness. Tiles were the main way of making a roof that sheds rain.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3095,13 +3067,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3176,12 +3147,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Flat Roof Tile: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: sloped roof planes and joining ridge; flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat clay tile laid to shed rain across a roof.",
+  "l2": "Flat tiles overlap at their edges so water runs off without reaching the roof below. Their fired surface gives a durable covering.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3197,13 +3168,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3278,12 +3248,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Interlocking Roof Tile: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: sloped roof planes and joining ridge; flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A roof tile with a shaped edge that locks to its neighbour.",
+  "l2": "Interlocking edges stop tiles from slipping and cut the amount of water that gets under the roof. The profile also helps the roof stay in place in wind.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3299,13 +3269,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3380,12 +3349,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ridge Roof Tile: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: sloped roof planes and joining ridge; flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A curved tile laid along the top of a roof, covering the seam between two slopes.",
+  "l2": "The ridge is the most exposed part of a roof, so a dedicated tile covers the seam. Ridge tiles are shaped to shed rain on both sides.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3401,13 +3370,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3482,12 +3450,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Terracotta Drain: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fired clay channel that carries water away from a building or site.",
+  "l2": "Fired clay resists water and does not rot, so it suits drains in damp ground. Its lengths were laid end to end to form a channel.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3503,13 +3471,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3584,12 +3551,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Socketed Drain Pipe: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A drain pipe with one end widened into a socket that takes the next length.",
+  "l2": "A socket lets lengths join without a separate fitting, keeping the line straight. The joint can be sealed with clay or mortar.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3605,13 +3572,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3686,12 +3652,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Curved Drain Elbow: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short pipe section that turns a drain through a corner.",
+  "l2": "An elbow lets a drain follow a wall or path without a sharp bend that would trap silt. The curve is made as a single piece.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3707,13 +3673,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3788,12 +3753,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Buried Drain Junction: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fitting where a branch drain joins a main line underground.",
+  "l2": "A junction lets several drains feed one outlet, so water from more than one source is carried away. It is set into the line before burial.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3809,13 +3774,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3890,12 +3854,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Floor Paver: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat, fired clay tile laid to make a floor.",
+  "l2": "Fired clay pavers resist wear and lay in rows easily. The surface can be left plain or shaped for grip.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -3911,13 +3875,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -3993,12 +3956,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Patterned Paver: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A paver with a pressed or moulded pattern on its face.",
+  "l2": "A pattern lets a floor be laid to a set design and adds visual interest. The pattern is pressed into the clay before firing.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4014,13 +3977,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4095,12 +4057,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Glazed Floor Paver: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: ceramic profile with visible glaze boundary. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A paver coated in glaze, so its surface is sealed and easy to wash.",
+  "l2": "A glaze makes the floor non-absorbent and cleanable, which suits kitchens and wet rooms. The colour does not wear off as paint would.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4116,13 +4078,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4197,12 +4158,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Non Slip Ceramic Paver: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A paver whose surface is textured to resist slipping.",
+  "l2": "A textured face gives grip when wet, which matters on steps and in bathing areas. The texture is applied before firing.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4218,13 +4179,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4299,12 +4259,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Decorative Tile: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A glazed or painted tile used for decoration rather than structure.",
+  "l2": "Decorative tiles cover walls and floors with pattern and colour. Each tile is a unit that repeats across the surface.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4320,13 +4280,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4402,12 +4361,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Relief Wall Tile: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A tile with a raised design pressed into its face.",
+  "l2": "Raised relief catches light and shadow, so the design reads from across a room. Reliefs were made by pressing clay into moulds.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4423,13 +4382,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4504,12 +4462,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Colored Mosaic Tile: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small coloured tile, set with others to make a picture or pattern.",
+  "l2": "Tiles of different colours are cut and set together to form an image. Mosaic work uses many small pieces to build up a single design.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4525,13 +4483,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4606,12 +4563,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Geometric Tile Panel: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A panel of tiles arranged in a repeating geometric pattern.",
+  "l2": "Geometric patterns repeat across a wall or floor and can be built from identical tiles. The panel is assembled from separate fired pieces.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4627,13 +4584,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4708,12 +4664,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Refractory Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A brick made to withstand very high temperatures without breaking down.",
+  "l2": "Refractory bricks line kilns and furnaces, where heat would destroy ordinary brick. Their mineral mix is chosen for a high melting point and resistance to sudden temperature change.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4729,13 +4685,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4811,12 +4766,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Firebox Lining Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A refractory brick used to line the fire chamber of a furnace.",
+  "l2": "The lining protects the outer wall from direct flame and holds heat inside the firebox. It is the part of a furnace that takes the most wear.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4832,13 +4787,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -4913,12 +4867,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Insulated Furnace Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A light refractory brick that slows heat loss from a furnace.",
+  "l2": "Light, porous bricks hold less heat and let less escape through the wall. They save fuel by keeping the furnace hot with less energy.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -4934,13 +4888,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5015,12 +4968,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "High Alumina Furnace Brick: a design or component for durable fired-clay construction surfaces and elements.",
-  "l2": "In architectural ceramics, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: rectangular fired block with relief and holes where relevant. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A refractory brick with a high alumina content, for the hottest parts of a furnace.",
+  "l2": "Alumina raises the temperature at which the brick softens, so it suits the hottest zones. It is used where ordinary refractory brick would fail under heat.",
+  "l3": "Field background: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fired brick and building ceramics (Encyclopaedia Britannica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "britannica_brick"
   ],
   "rec": [
    [
@@ -5036,13 +4989,12 @@
    "expansion_2026_1000",
    "architectural_ceramics",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5220,12 +5172,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rough Ashlar: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Stone blocks roughly squared, cut to approximate size and shape.",
+  "l2": "Rough ashlar is quarried and roughly squared, then set in courses with little dressing. It is quicker and cheaper than fully finished stone.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5241,13 +5193,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5322,12 +5273,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Dressed Ashlar: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Stone blocks cut to flat faces and square edges for close-fitting courses.",
+  "l2": "Dressing gives each block flat faces and tight joints, so the wall needs little mortar and carries load evenly. Dressed ashlar was kept for the most visible parts of a building.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5343,13 +5294,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5424,12 +5374,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Jointed Ashlar Course: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: mating components and connection. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A course of dressed ashlar set with fine, carefully aligned joints.",
+  "l2": "Tight joints make a wall look even and keep out water. Each course has to be set true for the wall to stay stable.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5445,13 +5395,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5526,12 +5475,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rusticated Stone Facade: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A facade whose blocks have rough, recessed faces with deep joints between them.",
+  "l2": "Rustication emphasises the weight of the blocks and gives a strong, grand look. The rough face is left by the mason and the joints are cut deep.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5547,13 +5496,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5628,12 +5576,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Lintel: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A single stone beam spanning the top of a doorway or window.",
+  "l2": "A lintel carries the wall above an opening, so it must be strong across its length. Stone lintels were common where timber was scarce or the opening had to last.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5649,13 +5597,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5730,12 +5677,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Relieved Stone Lintel: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lintel with a relieving arch or stepped cut above it, to take part of the load.",
+  "l2": "The relieving arch shares the load of the wall above, so the lintel does not carry it alone. This made wider openings possible in stone.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5751,13 +5698,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5832,12 +5778,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Trabeated Stone Portal: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A doorway framed by stone posts and a horizontal lintel.",
+  "l2": "A trabeated opening is a horizontal beam resting on two posts, the simplest way to span a gap in stone. The portal gives the doorway a clear, formal frame.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5853,13 +5799,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -5934,12 +5879,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Monumental Stone Portal: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large, formal stone doorway with a substantial lintel and jambs.",
+  "l2": "A monumental portal marked an entrance and impressed those who passed through it. Its size came from the blocks used for the jambs and lintel.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -5955,13 +5900,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6036,12 +5980,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Column Drum: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cylindrical stone block that is stacked to build up a column.",
+  "l2": "Columns were built from drums stacked one on another, each cut to the same diameter. Joints were often dowelled to keep the column aligned.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6057,13 +6001,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6138,12 +6081,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stacked Column Shaft: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A column built up from several stacked drums.",
+  "l2": "Stacking drums made columns taller than a single block could be quarried. Each drum is dressed so that the stack sits true.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6159,13 +6102,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6240,12 +6182,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Fluted Column Shaft: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A column shaft with vertical grooves cut into its surface.",
+  "l2": "Fluting adds vertical lines that catch light and make the column look taller. The grooves are cut by hand after the shaft is set.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6261,13 +6203,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6342,12 +6283,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stone Colonnade: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A row of columns carrying a horizontal beam or roof.",
+  "l2": "A colonnade makes a covered walkway or a formal front to a building, with the columns carrying the roof above. The rhythm of the columns is a main part of the design.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6363,13 +6304,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6444,12 +6384,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Voussoir: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wedge-shaped stone block used to build an arch.",
+  "l2": "Each voussoir is cut to the angle of the arch, so the blocks press against each other and hold the curve up. The keystone is the last one set.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6465,13 +6405,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6547,12 +6486,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Keyed Stone Arch: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: curved voussoirs and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An arch built from wedge-shaped voussoirs, ending in a keystone.",
+  "l2": "The keystone locks the arch so the blocks cannot fall outward. An arch carries more load than a lintel and spans a wider opening.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6568,13 +6507,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6649,12 +6587,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Barrel Vault: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A continuous arched roof, like a half-cylinder over a long space.",
+  "l2": "A barrel vault extends an arch along a length, forming a ceiling over a corridor or hall. Its thrust is taken by walls on both sides.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6670,13 +6608,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6751,12 +6688,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Groin Vault: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A vault formed where two barrel vaults cross, with ribs at the intersections.",
+  "l2": "Groin vaults concentrate the load at the corners, so the walls can be thinner and windows fit between the ribs. The crossing points carry the design.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6772,13 +6709,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6853,12 +6789,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Foundation Block: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large stone block set in the ground to support a building.",
+  "l2": "Foundation blocks spread the weight of a building onto firm ground and stop the walls above from sinking. They sit below the level of the surface.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6874,13 +6810,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -6956,12 +6891,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stepped Foundation: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A foundation built in stepped levels to suit uneven or sloping ground.",
+  "l2": "Stepping the foundation lets the wall follow the slope while each level stays level. It avoids cutting the ground flat.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -6977,13 +6912,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -7058,12 +6992,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stone Retaining Wall: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wall built to hold back soil or rock on one side.",
+  "l2": "A retaining wall resists the push of earth behind it, so it must be thick at the base and is often battered, leaning back into the slope. Drainage behind it keeps water pressure down.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -7079,13 +7013,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -7160,12 +7093,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Buttressed Retaining Wall: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A retaining wall reinforced by projecting piers on its back face.",
+  "l2": "Buttresses add mass against the push of the earth, so the wall can be built higher or thinner. They are set at regular intervals along the back of the wall.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -7181,13 +7114,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -7262,12 +7194,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Stair Tread: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat stone block forming the step where the foot lands.",
+  "l2": "A tread is the horizontal face of a stair step, and stone treads must be thick enough to bear constant wear. They are set into a stringer or a wall.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -7283,13 +7215,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -7365,12 +7296,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Stair Flight: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A run of stone steps from one level to the next, without a landing.",
+  "l2": "A flight is a continuous set of treads and risers between two floors. Its slope is set so that it is comfortable to climb.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -7386,13 +7317,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -7467,12 +7397,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Spiral Stone Staircase: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stair that climbs in a tight spiral around a central post or column.",
+  "l2": "A spiral stair saves space because it climbs in a small circular footprint. Its steps are wedge-shaped, narrow at the centre and wider at the outer edge.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -7488,13 +7418,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -7569,12 +7498,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Cantilevered Stone Stair: a design or component for load-bearing masonry and architectural shaping.",
-  "l2": "In stone construction, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: flat molded piece and edge details. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stair whose steps are supported from the wall at one end, without a central support.",
+  "l2": "Cantilevered steps are built into the wall and project out, so the stair needs no central post. The stones must be large enough to take the load at their anchored end.",
+  "l3": "Field background: stone walling and masonry (Dry Stone Walling Association history). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: stone walling and masonry (Dry Stone Walling Association history). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wsdswa_walling"
   ],
   "rec": [
    [
@@ -7590,13 +7519,12 @@
    "expansion_2026_1000",
    "stone_construction",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",

@@ -2480,6 +2480,33 @@
    "type": "reference",
    "scope": "topic",
    "checked": "2026-10-16"
+  },
+  "wh_clay_pottery": {
+   "t": "B",
+   "title": "Clay Pottery in the Prehistoric and Ancient Periods",
+   "org": "Brewminate (reprints World History Encyclopedia)",
+   "url": "https://brewminate.com/clay-pottery-in-the-prehistoric-and-ancient-periods/",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "britannica_brick": {
+   "t": "B",
+   "title": "Brick — building material (Introduction)",
+   "org": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/technology/brick-building-material/Introduction",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "wsdswa_walling": {
+   "t": "B",
+   "title": "Brief History of Walling",
+   "org": "Dry Stone Walling Association of Western Australia",
+   "url": "https://wsdswa.org.uk/?p=1858",
+   "type": "association-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

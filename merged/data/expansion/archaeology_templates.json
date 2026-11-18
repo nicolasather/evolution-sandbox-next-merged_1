@@ -17,7 +17,7 @@
   "label": "Pinch Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A small vessel formed by pinching a ball of clay between thumb and fingers while turning it.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -30,7 +30,7 @@
   "label": "Burnished Pinch Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A pinch pot whose surface was rubbed with a smooth stone while still damp.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -43,7 +43,7 @@
   "label": "Slip Decorated Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A pot coated with a thin liquid clay slip and decorated through it.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -56,7 +56,7 @@
   "label": "Painted Storage Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A storage pot decorated with mineral pigment painted over its slip layer.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -69,7 +69,7 @@
   "label": "Coil Pot",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A vessel built from ropes of clay coiled one on another and smoothed into a single wall.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -82,7 +82,7 @@
   "label": "Coil Jar",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A taller coil-built jar, raised in stages so that the walls stay even.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -95,7 +95,7 @@
   "label": "Collared Storage Jar",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A storage jar with a raised collar around its neck.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -108,7 +108,7 @@
   "label": "Lidded Storage Jar",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A storage jar fitted with a separate lid.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -121,7 +121,7 @@
   "label": "Clay Cup",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A small open vessel for drinking.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -134,7 +134,7 @@
   "label": "Handled Drinking Cup",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A cup with a handle joined to its side.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -147,7 +147,7 @@
   "label": "Spouted Cup",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A cup with a pouring spout formed at its lip.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -160,7 +160,7 @@
   "label": "Pouring Jug",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A jug with a spout and a handle, used to pour liquid from a larger container.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -173,7 +173,7 @@
   "label": "Clay Bowl",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "An open, wide vessel, deeper than a dish.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -186,7 +186,7 @@
   "label": "Footed Bowl",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A bowl raised on a short foot.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -199,7 +199,7 @@
   "label": "Glazed Serving Bowl",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A bowl coated with a glassy glaze that seals the surface.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -212,7 +212,7 @@
   "label": "Stackable Table Bowl",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A bowl shaped so that several can nest inside one another for storage.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -225,7 +225,7 @@
   "label": "Clay Lamp",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A shallow clay dish with a pinched lip that holds oil and a wick.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -238,7 +238,7 @@
   "label": "Double Wick Lamp",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A clay lamp with two wicks at separate lips, giving a brighter flame.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -251,7 +251,7 @@
   "label": "Hanging Oil Lamp",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "An oil lamp with a loop or hole for hanging it from a cord or hook.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -264,7 +264,7 @@
   "label": "Multi Nozzle Oil Lamp",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "An oil lamp with several wick nozzles around its rim.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -277,7 +277,7 @@
   "label": "Clay Lid",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A shaped clay cover that fits over the mouth of a vessel.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -290,7 +290,7 @@
   "label": "Fitted Pot Lid",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A lid with a rim that fits inside the mouth of a pot.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -303,7 +303,7 @@
   "label": "Sealing Jar Lid",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A lid designed to close a jar tightly against air.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -316,7 +316,7 @@
   "label": "Reusable Storage Seal",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for containment, serving and storing liquids or food.",
+  "commonFunction": "A removable seal that closes a storage vessel and can be opened and closed again.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -341,7 +341,7 @@
   "label": "Sun Dried Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A brick of clay and plant fibre, shaped in a mould and dried in the sun rather than fired.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -353,7 +353,7 @@
   "label": "Fired Building Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A brick of clay fired in a kiln until it is hard.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -365,7 +365,7 @@
   "label": "Perforated Building Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A brick with holes through it.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -377,7 +377,7 @@
   "label": "Hollow Structural Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A brick with large internal cavities.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -389,7 +389,7 @@
   "label": "Roof Tile Blank",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "An unfinished clay shape that will later be trimmed into a roof tile.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -401,7 +401,7 @@
   "label": "Flat Roof Tile",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A flat clay tile laid to shed rain across a roof.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -413,7 +413,7 @@
   "label": "Interlocking Roof Tile",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A roof tile with a shaped edge that locks to its neighbour.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -425,7 +425,7 @@
   "label": "Ridge Roof Tile",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A curved tile laid along the top of a roof, covering the seam between two slopes.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -437,7 +437,7 @@
   "label": "Terracotta Drain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A fired clay channel that carries water away from a building or site.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -449,7 +449,7 @@
   "label": "Socketed Drain Pipe",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A drain pipe with one end widened into a socket that takes the next length.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -461,7 +461,7 @@
   "label": "Curved Drain Elbow",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A short pipe section that turns a drain through a corner.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -473,7 +473,7 @@
   "label": "Buried Drain Junction",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A fitting where a branch drain joins a main line underground.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -485,7 +485,7 @@
   "label": "Floor Paver",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A flat, fired clay tile laid to make a floor.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -497,7 +497,7 @@
   "label": "Patterned Paver",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A paver with a pressed or moulded pattern on its face.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -509,7 +509,7 @@
   "label": "Glazed Floor Paver",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A paver coated in glaze, so its surface is sealed and easy to wash.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -521,7 +521,7 @@
   "label": "Non Slip Ceramic Paver",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A paver whose surface is textured to resist slipping.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -533,7 +533,7 @@
   "label": "Decorative Tile",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A glazed or painted tile used for decoration rather than structure.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -545,7 +545,7 @@
   "label": "Relief Wall Tile",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A tile with a raised design pressed into its face.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -557,7 +557,7 @@
   "label": "Colored Mosaic Tile",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A small coloured tile, set with others to make a picture or pattern.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -569,7 +569,7 @@
   "label": "Geometric Tile Panel",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A panel of tiles arranged in a repeating geometric pattern.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -581,7 +581,7 @@
   "label": "Refractory Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A brick made to withstand very high temperatures without breaking down.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -593,7 +593,7 @@
   "label": "Firebox Lining Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A refractory brick used to line the fire chamber of a furnace.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -605,7 +605,7 @@
   "label": "Insulated Furnace Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A light refractory brick that slows heat loss from a furnace.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -617,7 +617,7 @@
   "label": "High Alumina Furnace Brick",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for durable fired-clay construction surfaces and elements.",
+  "commonFunction": "A refractory brick with a high alumina content, for the hottest parts of a furnace.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -641,7 +641,7 @@
   "label": "Rough Ashlar",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "Stone blocks roughly squared, cut to approximate size and shape.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -653,7 +653,7 @@
   "label": "Dressed Ashlar",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "Stone blocks cut to flat faces and square edges for close-fitting courses.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -665,7 +665,7 @@
   "label": "Jointed Ashlar Course",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A course of dressed ashlar set with fine, carefully aligned joints.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -677,7 +677,7 @@
   "label": "Rusticated Stone Facade",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A facade whose blocks have rough, recessed faces with deep joints between them.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -689,7 +689,7 @@
   "label": "Stone Lintel",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A single stone beam spanning the top of a doorway or window.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -701,7 +701,7 @@
   "label": "Relieved Stone Lintel",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A lintel with a relieving arch or stepped cut above it, to take part of the load.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -713,7 +713,7 @@
   "label": "Trabeated Stone Portal",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A doorway framed by stone posts and a horizontal lintel.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -725,7 +725,7 @@
   "label": "Monumental Stone Portal",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A large, formal stone doorway with a substantial lintel and jambs.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -737,7 +737,7 @@
   "label": "Stone Column Drum",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A cylindrical stone block that is stacked to build up a column.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -749,7 +749,7 @@
   "label": "Stacked Column Shaft",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A column built up from several stacked drums.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -761,7 +761,7 @@
   "label": "Fluted Column Shaft",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A column shaft with vertical grooves cut into its surface.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -773,7 +773,7 @@
   "label": "Stone Colonnade",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A row of columns carrying a horizontal beam or roof.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -785,7 +785,7 @@
   "label": "Stone Voussoir",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A wedge-shaped stone block used to build an arch.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -797,7 +797,7 @@
   "label": "Keyed Stone Arch",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "An arch built from wedge-shaped voussoirs, ending in a keystone.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -809,7 +809,7 @@
   "label": "Barrel Vault",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A continuous arched roof, like a half-cylinder over a long space.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -821,7 +821,7 @@
   "label": "Groin Vault",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A vault formed where two barrel vaults cross, with ribs at the intersections.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -833,7 +833,7 @@
   "label": "Stone Foundation Block",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A large stone block set in the ground to support a building.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -845,7 +845,7 @@
   "label": "Stepped Foundation",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A foundation built in stepped levels to suit uneven or sloping ground.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -857,7 +857,7 @@
   "label": "Stone Retaining Wall",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A wall built to hold back soil or rock on one side.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -869,7 +869,7 @@
   "label": "Buttressed Retaining Wall",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A retaining wall reinforced by projecting piers on its back face.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -881,7 +881,7 @@
   "label": "Stone Stair Tread",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A flat stone block forming the step where the foot lands.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -893,7 +893,7 @@
   "label": "Stone Stair Flight",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A run of stone steps from one level to the next, without a landing.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -905,7 +905,7 @@
   "label": "Spiral Stone Staircase",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A stair that climbs in a tight spiral around a central post or column.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -917,7 +917,7 @@
   "label": "Cantilevered Stone Stair",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for load-bearing masonry and architectural shaping.",
+  "commonFunction": "A stair whose steps are supported from the wall at one end, without a central support.",
   "affinity": {
    "permanent-settlement": 0.7
   },
