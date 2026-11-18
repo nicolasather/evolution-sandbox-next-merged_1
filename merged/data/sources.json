@@ -2507,6 +2507,33 @@
    "type": "association-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "cordage_oldest_string": {
+   "t": "B",
+   "title": "This is the oldest known string. It was made by a Neandertal",
+   "org": "Science News",
+   "url": "https://www.sciencenews.org/?p=3086796",
+   "type": "news-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "linen_case_study": {
+   "t": "B",
+   "title": "Case study 1 — ancient Egyptian textiles (flax and linen)",
+   "org": "Danish National Museum",
+   "url": "https://en.natmus.dk/fileadmin/user_upload/Editor/natmus/antikken/dokumenter/Case_study_1.pdf",
+   "type": "museum-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "wool_iranica": {
+   "t": "B",
+   "title": "Wool",
+   "org": "Encyclopaedia Iranica",
+   "url": "https://iranicaonline.org/articles/wool",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

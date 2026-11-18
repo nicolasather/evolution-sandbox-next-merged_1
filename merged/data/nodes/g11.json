@@ -10256,12 +10256,12 @@
   "ds": -49998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Twisted Bast Strand: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A single strand of plant bast fibre twisted into a thread.",
+  "l2": "Twisting gives bast fibres enough grip to hold together as one strand. The twist direction is kept the same along the strand so that later plying works.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10277,13 +10277,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -10358,12 +10357,12 @@
   "ds": -49997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Two Ply Cord: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cord made by twisting two strands together in the opposite direction.",
+  "l2": "Plying two strands balances the twist, so the cord does not kink or unravel when loaded. It is stronger than a single strand of the same thickness.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10379,13 +10378,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -10460,12 +10458,12 @@
   "ds": -49996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Three Ply Cord: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cord of three plied strands.",
+  "l2": "A third strand makes the cord rounder and more even under load. Three-ply cord is the base for thicker rope.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10481,13 +10479,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -10562,12 +10559,12 @@
   "ds": -49995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Hawser Laid Rope: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: twisted helical fiber strands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A heavy rope made by laying three cords together in a single twist.",
+  "l2": "Laid rope is made by twisting groups of cord and then twisting the groups together, which spreads the load across the whole rope. It was the usual form of rope for hauling and mooring.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10583,13 +10580,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -10664,12 +10660,12 @@
   "ds": -49998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Braided Plant Cord: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cord made by braiding several strands in an interlocking pattern.",
+  "l2": "Braiding interlocks strands, so the cord does not depend on twist alone for its strength. It is flexible and resists stretching.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10685,13 +10681,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -10766,12 +10761,12 @@
   "ds": -49997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Flat Plaited Cord: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat cord made by plaiting strands side by side.",
+  "l2": "Plaiting lays the strands flat, which makes a wide, strong band. It suits straps and bindings where a flat surface is needed.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10787,13 +10782,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -10868,12 +10862,12 @@
   "ds": -49996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Round Braided Cord: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A round braided cord, with strands interlaced around a central core.",
+  "l2": "The round form spreads the load evenly and resists kinking. Braided cord is used where a rounded, flexible line is needed.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10889,13 +10883,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -10970,12 +10963,12 @@
   "ds": -49995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Eight Strand Braid: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A braid of eight strands, worked in a flat or round pattern.",
+  "l2": "Eight strands give a dense, even braid that holds its shape. The pattern is built by moving each strand over and under its neighbours.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -10991,13 +10984,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11072,12 +11064,12 @@
   "ds": -49998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fiber Fishing Line: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fine cord of plant fibre used as a fishing line.",
+  "l2": "A line has to be fine, strong and not kink in the water. Fibre lines were made from several twisted strands.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11093,13 +11085,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11174,12 +11165,12 @@
   "ds": -49997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Twined Fishing Leader: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short length of twined cord that joins the fishing line to the hook.",
+  "l2": "Twining makes a tough, stiff section that resists a fish's teeth and sharp edges. It sits between the line and the hook.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11195,13 +11186,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11276,12 +11266,12 @@
   "ds": -49996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Knotted Net Cord: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: overlapping cord crossings. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cord with knots tied at regular intervals along its length.",
+  "l2": "Knots fix the mesh of a net at set spacing, so the net keeps its shape and does not slip. Each knot is tied by hand.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11297,13 +11287,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11378,12 +11367,12 @@
   "ds": -49995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Net Repair Cord: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cord used to mend tears in a net.",
+  "l2": "A repair cord is worked into the mesh to close a gap without redoing the whole net. It is matched to the thickness of the original cord.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11399,13 +11388,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11480,12 +11468,12 @@
   "ds": -49998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Plant Binding Strip: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat strip of plant material used to bind things together.",
+  "l2": "A flat strip grips a joint without cutting into the material it binds. It can be wetted and tightened as it dries.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11501,13 +11489,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11583,12 +11570,12 @@
   "ds": -49997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wrapped Lash: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lashing wound tightly around a joint in turns.",
+  "l2": "Wrapping distributes the pull of the lash over many turns, so the joint stays put under load. The turns are tied off at the end.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11604,13 +11591,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11685,12 +11671,12 @@
   "ds": -49996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Cross Lash: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lashing that crosses over itself in an X at a joint.",
+  "l2": "A cross lash locks two poles together against rotation. The crossing points take the load of the joint.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11706,13 +11692,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11787,12 +11772,12 @@
   "ds": -49995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Diagonal Lash: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lashing run diagonally across a joint.",
+  "l2": "A diagonal lash braces a joint against sideways movement. It is used where poles meet at an angle.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11808,13 +11793,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11889,12 +11873,12 @@
   "ds": -49998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fiber Carry Loop: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loop of fibre cord for carrying a load by hand or over the shoulder.",
+  "l2": "A loop spreads the weight across the hand or shoulder. It is tied to the load so that the carrier does not have to hold it directly.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -11910,13 +11894,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -11992,12 +11975,12 @@
   "ds": -49997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Simple Sling: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sling of cord and cloth that holds a load for carrying.",
+  "l2": "A sling cradles a load against the body and frees both hands. Its cord is tied to the load and the carrier's shoulder.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -12013,13 +11996,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12094,12 +12076,12 @@
   "ds": -49996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Woven Carry Strap: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A carrying strap woven from plant fibre.",
+  "l2": "A woven strap is flat and wide, so it does not cut into the shoulder. Weaving makes a strap that can take heavy loads.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -12115,13 +12097,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12196,12 +12177,12 @@
   "ds": -49995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Carry Strap: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A carrying strap whose length can be shortened or lengthened.",
+  "l2": "Adjustment lets the strap fit different carriers and loads. It is tied off at the required length.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -12217,13 +12198,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12298,12 +12278,12 @@
   "ds": -49998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Cord Net Mesh: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mesh of cord knotted into a net-like panel.",
+  "l2": "A mesh of knotted cord makes a light, open net that can hold or catch things. Its size is set by the spacing of the knots.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -12319,13 +12299,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12401,12 +12380,12 @@
   "ds": -49997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Knotted Fishing Mesh: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: overlapping cord crossings. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fishing net made from knotted mesh.",
+  "l2": "Knotted mesh holds its shape in water and catches fish by the gills. The size of the mesh sets which fish are kept.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -12422,13 +12401,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12503,12 +12481,12 @@
   "ds": -49996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Square Net Panel: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A square panel of net, made to be joined to others.",
+  "l2": "A square panel can be sewn to other panels to make a larger net. Panels are easy to repair because each can be replaced alone.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -12524,13 +12502,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12605,12 +12582,12 @@
   "ds": -49995,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Large Seine Net: a design or component for twisting, tying or carrying tensile loads with fibres.",
-  "l2": "In cordage and rope, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A large net worked from the shore or a boat to enclose fish.",
+  "l2": "A seine net is run out in a wide arc and then drawn in, enclosing the fish within it. It needs many people to haul it.",
+  "l3": "Field background: early cordage and string (Science News, on the oldest known string). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early cordage and string (Science News, on the oldest known string). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "cordage_oldest_string"
   ],
   "rec": [
    [
@@ -12626,13 +12603,12 @@
    "expansion_2026_1000",
    "cordage_and_rope",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12810,12 +12786,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Flax Sliver: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loose, drawn strand of flax fibre ready for spinning.",
+  "l2": "Sliver is flax combed into a continuous, loosely twisted strand. It is the stage between raw fibre and spun yarn.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -12831,13 +12807,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -12912,12 +12887,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Spun Linen Yarn: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: twisted aligned fibers, wound in coil. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen yarn spun by hand from flax fibre.",
+  "l2": "Hand spinning twists fibre into yarn by drawing and turning it with the fingers and a spindle. The thickness of the yarn depends on how much it is drawn out.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -12933,13 +12908,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13014,12 +12988,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Two Ply Linen Yarn: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: twisted aligned fibers, wound in coil. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen yarn made by plying two spun yarns together.",
+  "l2": "Two plies balance each other's twist and make a stronger, smoother yarn. The plies are twisted in the opposite direction to the spin.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13035,13 +13009,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13116,12 +13089,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Mercerized Linen Yarn: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: twisted aligned fibers, wound in coil. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen yarn treated to make it smoother and more lustrous.",
+  "l2": "Mercerising swells the fibres so the yarn takes a smoother surface and more sheen. It is a finishing process applied to plied yarn.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13137,13 +13110,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13218,12 +13190,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Plain Linen Cloth: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A plain-weave cloth made from linen yarn.",
+  "l2": "Plain weave interlaces the threads over and under one at a time, which makes an even, strong cloth. Linen gets stronger when wet, which suits it to everyday use.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13239,13 +13211,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13320,12 +13291,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fine Plain Linen: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fine plain-weave linen cloth, made from thin, close-set yarn.",
+  "l2": "Finer yarn set closer together gives a smoother, lighter cloth. It was valued for clothing and for the finest textiles.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13341,13 +13312,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13422,12 +13392,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Bleached Linen Cloth: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen cloth whitened by bleaching in sun and water.",
+  "l2": "Linen is laid on grass and kept wet while the sun works on it, which removes the natural colour. Bleaching makes the cloth white and easier to dye.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13443,13 +13413,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13524,12 +13493,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Damask Linen Cloth: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen woven with a pattern that shows through the weave.",
+  "l2": "Damask weaving makes a pattern from the contrast between satin-woven and plain areas. The pattern is part of the cloth, not printed on it.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13545,13 +13514,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13626,12 +13594,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Linen Thread: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Fine linen yarn used for sewing.",
+  "l2": "Linen thread is strong and holds a seam well, and it does not stretch when the seam is pulled. It is spun finer than yarn for weaving.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13647,13 +13615,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13728,12 +13695,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Running Stitch Seam: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: thread crossing seam line. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A seam joined with a simple running stitch.",
+  "l2": "A running stitch is the simplest hand stitch, passing in and out of the cloth in a line. It joins two pieces with little bulk.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13749,13 +13716,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13830,12 +13796,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Flat Felled Linen Seam: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A seam whose edges are folded and stitched flat against the cloth.",
+  "l2": "A flat felled seam hides the raw edges and gives a strong, flat join. It is used where a garment must wear well.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13851,13 +13817,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -13932,12 +13897,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Tailored Linen Garment: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A linen garment cut and seamed to fit the body.",
+  "l2": "Tailoring shapes cloth to the body with seams and darts. Linen garments keep the wearer cool, and the cut sets their fit.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -13953,13 +13918,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14034,12 +13998,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Warped Linen Frame: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A frame of threads set up on a loom before weaving begins.",
+  "l2": "The warp is the set of threads held under tension before the weft is passed through. It must be set evenly or the cloth will pull crooked.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14055,13 +14019,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14137,12 +14100,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Plain Weave Linen: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen woven in plain weave on a warped frame.",
+  "l2": "Plain weave is the most basic structure: each weft thread passes over and under alternate warp threads. It gives a firm, even cloth.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14158,13 +14121,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14239,12 +14201,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Basket Weave Linen: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: interlaced strips and woven opening. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen woven in basket weave, with paired threads crossing in blocks.",
+  "l2": "Basket weave groups threads in pairs, so the cloth has a textured, checked surface. It is firm and holds its shape.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14260,13 +14222,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14341,12 +14302,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Herringbone Linen: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen woven in a herringbone pattern that zigzags across the cloth.",
+  "l2": "The zigzag is made by reversing the direction of the twill at intervals. The pattern is built into the weave itself.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14362,13 +14323,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14443,12 +14403,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Linen Bandage: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A strip of linen cloth used to wrap a wound or support a limb.",
+  "l2": "Linen is soft and absorbent, so it suits dressing wounds. It can be washed and reused.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14464,13 +14424,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14546,12 +14505,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Folded Linen Dressing: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A linen pad folded into layers to cover a wound.",
+  "l2": "Folding builds up absorbent layers over the wound while keeping the surface clean. The folded pad is held in place by a bandage.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14567,13 +14526,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14648,12 +14606,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sewn Linen Dressing: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A linen dressing sewn into a fixed pad.",
+  "l2": "Sewing keeps the layers from shifting, so the dressing stays where it is put. A sewn pad is easier to apply than loose folds.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14669,13 +14627,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14750,12 +14707,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reusable Linen Dressing: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A linen dressing that can be washed and used again.",
+  "l2": "A dressing built from sewn linen can be laundered and reused, which saves cloth. Reuse depends on careful washing so the linen does not tear.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14771,13 +14728,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14852,12 +14808,12 @@
   "ds": -7998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Linen Sailcloth: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge; woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Linen cloth woven for sails.",
+  "l2": "Sailcloth has to take the wind's pressure without stretching out of shape. Linen was used for sails for centuries.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14873,13 +14829,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -14955,12 +14910,12 @@
   "ds": -7997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reinforced Sailcloth: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge; woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Sailcloth with extra layers or stitching along its edges and corners.",
+  "l2": "Reinforcement strengthens the points where the sail is held and stressed most. The extra cloth or stitching goes where the load is greatest.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -14976,13 +14931,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15057,12 +15011,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Paneled Linen Sail: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sail made from several panels of cloth seamed together.",
+  "l2": "Panels are cut so that the cloth runs with the load, and they are seamed into one large sail. A panelled sail is easier to weave and repair than one wide piece.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -15078,13 +15032,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15159,12 +15112,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reefable Linen Sail: a design or component for spinning, weaving or stitching linen textiles.",
-  "l2": "In linen textile, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sail that can be reduced in area by rolling or folding part of it.",
+  "l2": "Reefing shortens the sail in strong wind so the boat stays under control. The reef is tied in along a set line across the sail.",
+  "l3": "Field background: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: flax and linen in ancient Egypt (Danish National Museum case study). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "linen_case_study"
   ],
   "rec": [
    [
@@ -15180,13 +15133,12 @@
    "expansion_2026_1000",
    "linen_textile",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15364,12 +15316,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wool Roving: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A loose, drawn strand of wool ready for spinning.",
+  "l2": "Roving is wool carded into a continuous, lightly twisted strand. It is the stage between raw fleece and spun yarn.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -15385,13 +15337,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15466,12 +15417,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Woolen Yarn: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: twisted aligned fibers, wound in coil. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A soft, loosely spun wool yarn.",
+  "l2": "Woollen yarn is spun from carded wool, so its fibres lie in many directions. The result is warm, soft and holds air well.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -15487,13 +15438,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15568,12 +15518,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Worsted Yarn: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: twisted aligned fibers, wound in coil. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A smooth, tightly spun wool yarn.",
+  "l2": "Worsted yarn is spun from combed wool, so its fibres lie parallel and make a smooth, strong thread. It suits cloth with a clean surface.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -15589,13 +15539,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15670,12 +15619,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Twist Balanced Wool Yarn: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: twisted aligned fibers, wound in coil. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wool yarn spun so that it does not twist or kink on itself.",
+  "l2": "Balanced twist keeps a yarn straight when it is folded or knitted. It is important for even fabric.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -15691,13 +15640,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15772,12 +15720,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Felt Sheet: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sheet of wool fibre matted into cloth by moisture and working.",
+  "l2": "Felting uses the scales on wool fibres, which lock together when wet and worked. No spinning or weaving is needed to make the sheet.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -15793,13 +15741,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15874,12 +15821,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Thick Felt Mat: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thick mat of felt, made from several felt sheets.",
+  "l2": "A thick mat is warm and cushioning. It is built up from layers of felt worked together.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -15895,13 +15842,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -15976,12 +15922,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Layered Felt Panel: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A panel built from layers of felt bonded together.",
+  "l2": "Layers give the panel body and stiffness. The layers are worked together while wet so that they bond into one piece.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -15997,13 +15943,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16078,12 +16023,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stiffened Felt Hat: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hat made from felt that has been stiffened to keep its shape.",
+  "l2": "Stiffening holds the crown and brim in shape, so the hat does not collapse. The felt is shaped while wet and left to set.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16099,13 +16044,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16180,12 +16124,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wool Cloth: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cloth woven from wool yarn.",
+  "l2": "Woven wool is warm and holds its shape, and it resists rain better than many fibres. Its weave gives it body.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16201,13 +16145,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16282,12 +16225,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fulled Wool Cloth: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Woven wool cloth shrunk and thickened by fulling.",
+  "l2": "Fulling works the wet cloth so that its fibres mat together, making it denser, warmer and less likely to fray. The cloth shrinks as it is worked.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16303,13 +16246,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16384,12 +16326,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Raised Wool Nap: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Wool cloth brushed to raise a soft surface of fibre.",
+  "l2": "Raising teases fibres out of the weave to form a nap that traps air and feels soft. The nap is later trimmed to an even height.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16405,13 +16347,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16486,12 +16427,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sheared Broadcloth: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: woven interlacing yarn pattern and folded hems. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Wool cloth with its nap cut to an even, smooth face.",
+  "l2": "Shearing trims the raised nap to a flat, even face. The cloth is then fine and smooth, suited to tailoring.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16507,13 +16448,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16588,12 +16528,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wool Rib Knit: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A knitted wool fabric with raised vertical ribs.",
+  "l2": "Ribbing stretches and recovers, so it fits closely at cuffs and necks. It is made by alternating knit and purl stitches.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16609,13 +16549,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16691,12 +16630,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Knitted Wool Tube: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A tube of knitted wool, worked in the round.",
+  "l2": "Knitting in the round makes a seamless tube, with no join to wear or chafe. Tubes are used for sleeves and socks.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16712,13 +16651,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16793,12 +16731,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Knitted Wool Sock: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sock knitted from wool.",
+  "l2": "A knitted sock is warm and stretches to fit the foot. Its heel and toe are shaped in the knitting.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16814,13 +16752,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16895,12 +16832,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ribbed Wool Cuff: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A knitted cuff with ribbed wool.",
+  "l2": "The rib keeps the cuff close to the wrist and does not gape or slip. It is worked on the end of a sleeve or sock.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -16916,13 +16853,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -16997,12 +16933,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Woven Wool Blanket: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A blanket woven from wool.",
+  "l2": "A woven blanket is warm and holds air, and wool keeps its warmth even when damp. It is made on a loom in one piece.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17018,13 +16954,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -17100,12 +17035,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Bound Edge Blanket: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A blanket with its edges wrapped in a bound border.",
+  "l2": "A bound border protects the edges from wear and keeps the weave from unravelling. It is stitched or woven along each side.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17121,13 +17056,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -17202,12 +17136,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Patterned Wool Blanket: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A woven wool blanket with a repeating pattern.",
+  "l2": "The pattern comes from the arrangement of coloured or differently woven threads. It is set up on the loom before weaving begins.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17223,13 +17157,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -17304,12 +17237,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Double Weave Blanket: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A blanket woven in two layers that are joined at the edges.",
+  "l2": "Two woven layers make a thicker, warmer blanket. The layers are joined at the border, leaving a cushion of air between them.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17325,13 +17258,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -17406,12 +17338,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wool Twill: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Wool cloth woven in twill, with a diagonal rib.",
+  "l2": "Twill weave makes a diagonal ridge across the cloth, which is stronger and more hard-wearing than plain weave. It drapes well.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17427,13 +17359,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -17509,12 +17440,12 @@
   "ds": -8997,
   "rar": "common",
   "vis": "tool",
-  "l1": "Herringbone Twill: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Wool twill woven in a herringbone pattern.",
+  "l2": "The twill direction reverses at intervals, forming a zigzag across the cloth. The pattern is part of the weave.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17530,13 +17461,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -17611,12 +17541,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Checked Wool Twill: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Wool twill woven in a checked pattern.",
+  "l2": "Checks are made by crossing coloured threads in a repeating square pattern. The cloth is then used for tailored garments.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17632,13 +17562,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -17713,12 +17642,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Tailored Wool Coat: a design or component for processing animal fibres into cloth and garments.",
-  "l2": "In wool manufacture, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wool coat cut and sewn to fit the wearer.",
+  "l2": "Tailoring shapes the coat with seams and set-in sleeves. Wool keeps the wearer warm even in damp weather.",
+  "l3": "Field background: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: wool and woollen manufacture (Encyclopaedia Iranica). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "wool_iranica"
   ],
   "rec": [
    [
@@ -17734,13 +17663,12 @@
    "expansion_2026_1000",
    "wool_manufacture",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",

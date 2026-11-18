@@ -1242,7 +1242,7 @@
   "label": "Twisted Bast Strand",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A single strand of plant bast fibre twisted into a thread.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1255,7 +1255,7 @@
   "label": "Two Ply Cord",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A cord made by twisting two strands together in the opposite direction.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1268,7 +1268,7 @@
   "label": "Three Ply Cord",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A cord of three plied strands.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1281,7 +1281,7 @@
   "label": "Hawser Laid Rope",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A heavy rope made by laying three cords together in a single twist.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1294,7 +1294,7 @@
   "label": "Braided Plant Cord",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A cord made by braiding several strands in an interlocking pattern.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1307,7 +1307,7 @@
   "label": "Flat Plaited Cord",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A flat cord made by plaiting strands side by side.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1320,7 +1320,7 @@
   "label": "Round Braided Cord",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A round braided cord, with strands interlaced around a central core.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1333,7 +1333,7 @@
   "label": "Eight Strand Braid",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A braid of eight strands, worked in a flat or round pattern.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1346,7 +1346,7 @@
   "label": "Fiber Fishing Line",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A fine cord of plant fibre used as a fishing line.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1359,7 +1359,7 @@
   "label": "Twined Fishing Leader",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A short length of twined cord that joins the fishing line to the hook.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1372,7 +1372,7 @@
   "label": "Knotted Net Cord",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A cord with knots tied at regular intervals along its length.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1385,7 +1385,7 @@
   "label": "Net Repair Cord",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A cord used to mend tears in a net.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1398,7 +1398,7 @@
   "label": "Plant Binding Strip",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A flat strip of plant material used to bind things together.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1411,7 +1411,7 @@
   "label": "Wrapped Lash",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A lashing wound tightly around a joint in turns.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1424,7 +1424,7 @@
   "label": "Cross Lash",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A lashing that crosses over itself in an X at a joint.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1437,7 +1437,7 @@
   "label": "Diagonal Lash",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A lashing run diagonally across a joint.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1450,7 +1450,7 @@
   "label": "Fiber Carry Loop",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A loop of fibre cord for carrying a load by hand or over the shoulder.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1463,7 +1463,7 @@
   "label": "Simple Sling",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A sling of cord and cloth that holds a load for carrying.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1476,7 +1476,7 @@
   "label": "Woven Carry Strap",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A carrying strap woven from plant fibre.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1489,7 +1489,7 @@
   "label": "Adjustable Carry Strap",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A carrying strap whose length can be shortened or lengthened.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1502,7 +1502,7 @@
   "label": "Cord Net Mesh",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A mesh of cord knotted into a net-like panel.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1515,7 +1515,7 @@
   "label": "Knotted Fishing Mesh",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A fishing net made from knotted mesh.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1528,7 +1528,7 @@
   "label": "Square Net Panel",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A square panel of net, made to be joined to others.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1541,7 +1541,7 @@
   "label": "Large Seine Net",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for twisting, tying or carrying tensile loads with fibres.",
+  "commonFunction": "A large net worked from the shore or a boat to enclose fish.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1567,7 +1567,7 @@
   "label": "Flax Sliver",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A loose, drawn strand of flax fibre ready for spinning.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1580,7 +1580,7 @@
   "label": "Hand Spun Linen Yarn",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen yarn spun by hand from flax fibre.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1593,7 +1593,7 @@
   "label": "Two Ply Linen Yarn",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen yarn made by plying two spun yarns together.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1606,7 +1606,7 @@
   "label": "Mercerized Linen Yarn",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen yarn treated to make it smoother and more lustrous.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1619,7 +1619,7 @@
   "label": "Plain Linen Cloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A plain-weave cloth made from linen yarn.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1632,7 +1632,7 @@
   "label": "Fine Plain Linen",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A fine plain-weave linen cloth, made from thin, close-set yarn.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1645,7 +1645,7 @@
   "label": "Bleached Linen Cloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen cloth whitened by bleaching in sun and water.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1658,7 +1658,7 @@
   "label": "Damask Linen Cloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen woven with a pattern that shows through the weave.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1671,7 +1671,7 @@
   "label": "Linen Thread",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Fine linen yarn used for sewing.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1684,7 +1684,7 @@
   "label": "Running Stitch Seam",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A seam joined with a simple running stitch.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1697,7 +1697,7 @@
   "label": "Flat Felled Linen Seam",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A seam whose edges are folded and stitched flat against the cloth.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1710,7 +1710,7 @@
   "label": "Tailored Linen Garment",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A linen garment cut and seamed to fit the body.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1723,7 +1723,7 @@
   "label": "Warped Linen Frame",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A frame of threads set up on a loom before weaving begins.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1736,7 +1736,7 @@
   "label": "Plain Weave Linen",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen woven in plain weave on a warped frame.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1749,7 +1749,7 @@
   "label": "Basket Weave Linen",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen woven in basket weave, with paired threads crossing in blocks.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1762,7 +1762,7 @@
   "label": "Herringbone Linen",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen woven in a herringbone pattern that zigzags across the cloth.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1775,7 +1775,7 @@
   "label": "Linen Bandage",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A strip of linen cloth used to wrap a wound or support a limb.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1788,7 +1788,7 @@
   "label": "Folded Linen Dressing",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A linen pad folded into layers to cover a wound.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1801,7 +1801,7 @@
   "label": "Sewn Linen Dressing",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A linen dressing sewn into a fixed pad.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1814,7 +1814,7 @@
   "label": "Reusable Linen Dressing",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A linen dressing that can be washed and used again.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1827,7 +1827,7 @@
   "label": "Linen Sailcloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Linen cloth woven for sails.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1840,7 +1840,7 @@
   "label": "Reinforced Sailcloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "Sailcloth with extra layers or stitching along its edges and corners.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1853,7 +1853,7 @@
   "label": "Paneled Linen Sail",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A sail made from several panels of cloth seamed together.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1866,7 +1866,7 @@
   "label": "Reefable Linen Sail",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for spinning, weaving or stitching linen textiles.",
+  "commonFunction": "A sail that can be reduced in area by rolling or folding part of it.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1892,7 +1892,7 @@
   "label": "Wool Roving",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A loose, drawn strand of wool ready for spinning.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1905,7 +1905,7 @@
   "label": "Woolen Yarn",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A soft, loosely spun wool yarn.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1918,7 +1918,7 @@
   "label": "Worsted Yarn",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A smooth, tightly spun wool yarn.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1931,7 +1931,7 @@
   "label": "Twist Balanced Wool Yarn",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A wool yarn spun so that it does not twist or kink on itself.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1944,7 +1944,7 @@
   "label": "Felt Sheet",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A sheet of wool fibre matted into cloth by moisture and working.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1957,7 +1957,7 @@
   "label": "Thick Felt Mat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A thick mat of felt, made from several felt sheets.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1970,7 +1970,7 @@
   "label": "Layered Felt Panel",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A panel built from layers of felt bonded together.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1983,7 +1983,7 @@
   "label": "Stiffened Felt Hat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A hat made from felt that has been stiffened to keep its shape.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -1996,7 +1996,7 @@
   "label": "Wool Cloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A cloth woven from wool yarn.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2009,7 +2009,7 @@
   "label": "Fulled Wool Cloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "Woven wool cloth shrunk and thickened by fulling.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2022,7 +2022,7 @@
   "label": "Raised Wool Nap",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "Wool cloth brushed to raise a soft surface of fibre.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2035,7 +2035,7 @@
   "label": "Sheared Broadcloth",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "Wool cloth with its nap cut to an even, smooth face.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2048,7 +2048,7 @@
   "label": "Wool Rib Knit",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A knitted wool fabric with raised vertical ribs.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2061,7 +2061,7 @@
   "label": "Knitted Wool Tube",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A tube of knitted wool, worked in the round.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2074,7 +2074,7 @@
   "label": "Knitted Wool Sock",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A sock knitted from wool.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2087,7 +2087,7 @@
   "label": "Ribbed Wool Cuff",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A knitted cuff with ribbed wool.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2100,7 +2100,7 @@
   "label": "Woven Wool Blanket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A blanket woven from wool.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2113,7 +2113,7 @@
   "label": "Bound Edge Blanket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A blanket with its edges wrapped in a bound border.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2126,7 +2126,7 @@
   "label": "Patterned Wool Blanket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A woven wool blanket with a repeating pattern.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2139,7 +2139,7 @@
   "label": "Double Weave Blanket",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A blanket woven in two layers that are joined at the edges.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2152,7 +2152,7 @@
   "label": "Wool Twill",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "Wool cloth woven in twill, with a diagonal rib.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2165,7 +2165,7 @@
   "label": "Herringbone Twill",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "Wool twill woven in a herringbone pattern.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2178,7 +2178,7 @@
   "label": "Checked Wool Twill",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "Wool twill woven in a checked pattern.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -2191,7 +2191,7 @@
   "label": "Tailored Wool Coat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for processing animal fibres into cloth and garments.",
+  "commonFunction": "A wool coat cut and sewn to fit the wearer.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
