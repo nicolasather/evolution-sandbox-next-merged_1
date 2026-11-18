@@ -63283,12 +63283,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Woodblock Printing Plate: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A block of wood carved in relief, inked, and pressed to paper.",
+  "l2": "Carving leaves the design raised, and only the raised parts take ink. The block is used over and over to print copies of the same image or text.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -63304,13 +63304,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -63385,12 +63384,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Relief Woodblock Print: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A print made from an inked woodblock with its raised design.",
+  "l2": "Pressing the paper onto the inked relief transfers the design. Woodblock prints were the main way of multiplying images before printing presses.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -63406,13 +63405,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -63487,12 +63485,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multicolor Woodblock Print: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A woodblock print made with more than one colour block.",
+  "l2": "Each colour needs its own block, carved and inked in turn. The blocks are aligned so the colours fit together.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -63508,13 +63506,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -63589,12 +63586,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Registered Color Woodblock: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A multicolour woodblock print in which the blocks are aligned exactly.",
+  "l2": "Registration marks keep each colour block in the same place on the paper. Precise alignment is what separates a clean colour print from a blurred one.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -63610,13 +63607,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -63691,12 +63687,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Carved Metal Type: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: individual letter blocks and composing stick. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A single letter cut into metal, for pressing onto paper.",
+  "l2": "Metal type is cut or cast in relief, so each letter can be inked and printed. Metal lasts far longer than wood or clay.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -63712,13 +63708,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -63793,12 +63788,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Punch Cut Type: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: individual letter blocks and composing stick. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A letter cut in reverse on a steel punch, used to make matrices.",
+  "l2": "The punch is struck into copper to make a matrix, and the matrix casts many identical letters. Punch-cutting gives even, consistent type.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -63814,13 +63809,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -63895,12 +63889,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Cast Movable Type: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: individual letter blocks and composing stick. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Metal letters cast from matrices, for setting into text.",
+  "l2": "Cast type is made quickly and in quantity from a matrix. Its letters can be rearranged to set new pages.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -63916,13 +63910,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -63997,12 +63990,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Composed Letterpress Form: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A page of metal type locked up in a frame, ready to print.",
+  "l2": "Letters are set in lines and locked in a chase. The form is inked and pressed against the paper, leaving the raised letters printed.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64018,13 +64011,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64099,12 +64091,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Printing Press Screw: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The screw that applies pressure in a printing press.",
+  "l2": "The screw drives the platen down onto the paper, giving the even pressure a print needs. It is turned by a bar.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64120,13 +64112,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64201,12 +64192,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Screw Press: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A printing press pressed by a hand-turned screw.",
+  "l2": "The screw is turned by hand to press the inked form onto the paper. It replaced hand rubbing for larger runs.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64222,13 +64213,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64303,12 +64293,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Iron Hand Press: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A printing press with an iron frame and screw.",
+  "l2": "Iron is stiffer than wood, so the press gives more even pressure and lasts longer. It became the standard press for centuries.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64324,13 +64314,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64405,12 +64394,12 @@
   "ds": 1800,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Steam Driven Printing Press: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A printing press driven by a steam engine.",
+  "l2": "Steam power turned the press in place of hand work, so printing runs became far faster. It was an early step in mass printing.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64426,13 +64415,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64507,12 +64495,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Lithographic Limestone: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fine limestone slab used as a surface for printing.",
+  "l2": "The stone is smooth, dense and takes a drawing made with greasy ink. It is ground flat before use.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64528,13 +64516,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64610,12 +64597,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Greased Lithography Stone: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A limestone slab drawn on with greasy ink or crayon.",
+  "l2": "The grease holds the ink, while the damp stone repels it. The design prints where the grease is.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64631,13 +64618,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64712,12 +64698,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Planographic Lithograph: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A print made from a flat, drawn surface, not a carved one.",
+  "l2": "The image is drawn flat on the stone and printed by the chemistry of grease and water. Lithographs can hold fine tones and soft lines.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64733,13 +64719,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64814,12 +64799,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Offset Lithographic Plate: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A metal plate used in offset printing, where the image is first transferred to a roller.",
+  "l2": "Offset printing transfers the ink from plate to roller to paper, which keeps the plate clean and gives sharp prints. It is a development of lithography.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64835,13 +64820,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -64916,12 +64900,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stencil Sheet: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sheet cut with holes through which ink is pushed onto a surface.",
+  "l2": "Ink passes through the cut openings and leaves the shape on the surface below. Stencils are simple and quick to make.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -64937,13 +64921,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65019,12 +65002,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hand Cut Stencil: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stencil cut by hand from a sheet.",
+  "l2": "The cutter follows the design by hand, so each stencil can be unique. It is used for lettering and simple images.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -65040,13 +65023,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65121,12 +65103,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Silk Screen Stencil: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: plane with frame or grid. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stencil on a fine mesh, through which ink is forced.",
+  "l2": "The mesh holds the stencil in place and lets ink pass where it is open. Silk screens can print many colours on fabric or paper.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -65142,13 +65124,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65223,12 +65204,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Color Screen Print: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: plane with frame or grid. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A screen print made from several colour stencils printed in turn.",
+  "l2": "Each colour has its own stencil, printed one after another, so the layers build up the full image.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -65244,13 +65225,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65325,12 +65305,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Photographic Print Plate: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A printing plate made by exposing a photograph onto a light-sensitive coating.",
+  "l2": "Light hardens the coating where it is exposed, so the image is fixed on the plate. The plate is then inked to print the photograph.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -65346,13 +65326,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65428,12 +65407,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Halftone Printing Plate: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A plate with a dot pattern that renders tones of grey or colour.",
+  "l2": "Dots of different sizes give the impression of tone. The eye blends them into a continuous image.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -65449,13 +65428,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65530,12 +65508,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Four Color Printing Plate: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A set of four plates that print a full-colour image in cyan, magenta, yellow and black.",
+  "l2": "Four inks overlap to make a full range of colours. Each plate carries one colour of the image.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -65551,13 +65529,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65632,12 +65609,12 @@
   "ds": 1950,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Digital Printing Plate: a design or component for transferring repeatable text and images to surfaces.",
-  "l2": "In printing processes, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A plate made from a digital file, ready to print.",
+  "l2": "The image is written to the plate directly from a computer file. It removes the stage of making a photographic film.",
+  "l3": "Field background: printing and printmaking processes (David Darling, history of printing). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: printing and printmaking processes (David Darling, history of printing). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "printing_darling"
   ],
   "rec": [
    [
@@ -65653,13 +65630,12 @@
    "expansion_2026_1000",
    "printing_processes",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65837,12 +65813,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Water Clock Bowl: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bowl with a small hole in its base that empties slowly.",
+  "l2": "Water drips out at a steady rate, so the level in the bowl shows how much time has passed. The bowl is marked to read the hours.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -65858,13 +65834,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -65939,12 +65914,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Overflow Water Clock: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water clock in which the water level is kept constant by an overflow.",
+  "l2": "Overflow keeps the head of water steady, so the flow stays even. The clock keeps better time than a plain bowl.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -65960,13 +65935,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66041,12 +66015,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Regulated Water Clock: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water clock with a regulator that keeps its rate steady.",
+  "l2": "A regulator controls the flow so that the clock keeps time more evenly. It is an improvement on the overflow clock.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66062,13 +66036,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66143,12 +66116,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Automated Water Clock: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water clock that moves its markers or figures by itself.",
+  "l2": "A float or gear is driven by the water, which turns a pointer or figure. The clock shows the time without an observer.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66164,13 +66137,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66245,12 +66217,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sundial Gnomon: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The part of a sundial that casts the shadow.",
+  "l2": "The gnomon's shadow moves across the dial as the sun moves, showing the time. Its angle is set to the latitude.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66266,13 +66238,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66347,12 +66318,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Horizontal Sundial: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sundial with its face laid flat on the ground.",
+  "l2": "A horizontal dial is the simplest form. Its hour lines are marked on a level surface.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66368,13 +66339,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66449,12 +66419,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Equatorial Sundial: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sundial set parallel to the equator.",
+  "l2": "Its face is set at the angle of the equator, so the shadow moves at an even rate through the year. It gives the time with fewer adjustments.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66470,13 +66440,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66551,12 +66520,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Portable Sundial: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A small sundial that can be set to the local latitude and carried.",
+  "l2": "Adjustment lets the dial be set for any latitude. It can be carried on a journey and used anywhere.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66572,13 +66541,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66653,12 +66621,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clock Weight: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A heavy weight that drives a clock by falling slowly.",
+  "l2": "A falling weight turns the clock's train of gears. The clock is wound by raising the weight again.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66674,13 +66642,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66755,12 +66722,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Weight Driven Clock: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clock driven by a falling weight.",
+  "l2": "The weight's slow fall turns the gears and drives the hands. A weight clock keeps running as long as the weight can fall.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66776,13 +66743,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66857,12 +66823,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Escapement Clock: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clock whose escapement releases the gear train in steady steps.",
+  "l2": "The escapement allows the gears to move in regular steps, which makes the clock keep time. It is the key part of a mechanical clock.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66878,13 +66844,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -66959,12 +66924,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pendulum Regulated Clock: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clock whose escapement is regulated by a swinging pendulum.",
+  "l2": "The pendulum swings at a steady rate, so the escapement releases the gears evenly. This made clocks far more accurate.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -66980,13 +66945,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67061,12 +67025,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Watch Mainspring: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: small time display plus crown or strap. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A coiled spring that drives a watch.",
+  "l2": "The spring stores energy as it is wound and releases it slowly to turn the gears. It replaced the falling weight in portable timekeepers.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67082,13 +67046,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67164,12 +67127,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Spring Driven Watch: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: small time display plus crown or strap. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A portable timekeeper driven by a mainspring.",
+  "l2": "The spring lets the watch be carried in a pocket. It is wound by hand and keeps time as the spring unwinds.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67185,13 +67148,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67266,12 +67228,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Balance Wheel Watch: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: spokes or rim and central axle; small time display plus crown or strap. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A watch regulated by a balance wheel that swings back and forth.",
+  "l2": "The balance wheel oscillates at a steady rate, controlling the release of the gears. It is the regulator of a mechanical watch.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67287,13 +67249,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67368,12 +67329,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Lever Escapement Watch: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: small time display plus crown or strap. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A watch with a lever escapement that releases the balance wheel.",
+  "l2": "The lever escapement is the standard in mechanical watches. It is efficient and keeps accurate time.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67389,13 +67350,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67470,12 +67430,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Quartz Crystal Blank: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thin slice of quartz cut for use in an oscillator.",
+  "l2": "Quartz vibrates at a very steady frequency when an electric field is applied. The slice is cut to the right size for that frequency.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67491,13 +67451,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67573,12 +67532,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Quartz Oscillator Module: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A module that uses a quartz crystal to set the timing of a clock or watch.",
+  "l2": "The crystal's steady vibration sets the rate, so the clock keeps time with very high accuracy. It is the basis of modern timekeeping.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67594,13 +67553,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67675,12 +67633,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Quartz Wristwatch: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: small time display plus crown or strap. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wristwatch regulated by a quartz crystal.",
+  "l2": "Quartz makes the watch accurate and cheap to run. It needs only a small battery.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67696,13 +67654,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67777,12 +67734,12 @@
   "ds": 1950,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Radio Controlled Quartz Watch: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: small time display plus crown or strap. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A quartz watch that sets itself from a radio time signal.",
+  "l2": "The watch receives a time signal and corrects itself, so it stays accurate over long periods.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67798,13 +67755,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67879,12 +67835,12 @@
   "ds": 1501,
   "rar": "common",
   "vis": "tool",
-  "l1": "Clock Dial Blank: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat disc prepared to be marked as a clock face.",
+  "l2": "The blank is cut and finished before the hour marks are added. It carries the face of the clock.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -67900,13 +67856,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -67982,12 +67937,12 @@
   "ds": 1502,
   "rar": "common",
   "vis": "tool",
-  "l1": "Numbered Clock Face: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clock face with its hours marked and numbered.",
+  "l2": "The numerals and marks let the time be read at a glance. The face is printed or painted on the dial.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -68003,13 +67958,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68084,12 +68038,12 @@
   "ds": 1503,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Three Hand Clock Face: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: dial or timing mechanism, distinctly placed hands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A clock face with hour, minute and second hands.",
+  "l2": "Three hands show the hours, minutes and seconds. The second hand moves in steps driven by the escapement.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -68105,13 +68059,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68186,12 +68139,12 @@
   "ds": 1661,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Chronograph Watch Dial: a design or component for tracking intervals by repeatable physical processes.",
-  "l2": "In timekeeping devices, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: small time display plus crown or strap. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A watch face with extra dials for timing short intervals.",
+  "l2": "A chronograph has separate counters for elapsed time, used for timing races and events. The dials are read against the main time.",
+  "l3": "Field background: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: timekeeping devices from sundials to watches (Wikipedia: History of timekeeping devices). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "timekeeping_wiki"
   ],
   "rec": [
    [
@@ -68207,13 +68160,12 @@
    "expansion_2026_1000",
    "timekeeping_devices",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68391,12 +68343,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Paddle Waterwheel: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water wheel with paddles that the water pushes around.",
+  "l2": "Water pushes against the paddles and turns the wheel. Paddle wheels were the simplest form of water power.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -68412,13 +68364,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68493,12 +68444,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Undershot Waterwheel: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water wheel driven by water flowing under its lower edge.",
+  "l2": "The water flows beneath the wheel and pushes its paddles. It suits slow, wide rivers with little fall.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -68514,13 +68465,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68595,12 +68545,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Overshot Waterwheel: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water wheel driven by water poured onto its top.",
+  "l2": "Water falls onto the wheel from above, so its weight adds to the turning force. It is efficient where there is a fall of water.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -68616,13 +68566,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68697,12 +68646,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Breastshot Waterwheel: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water wheel driven by water striking its middle.",
+  "l2": "Water enters at about the height of the axle, which suits moderate falls. It combines features of the undershot and overshot wheels.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -68718,13 +68667,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68799,12 +68747,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Millstone Runner: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The upper stone of a mill, turned by the water wheel.",
+  "l2": "The runner rotates over a fixed bed stone and grinds the grain between them. Its speed sets the fineness of the flour.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -68820,13 +68768,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -68901,12 +68848,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Water Driven Millstone: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A millstone turned by a water wheel to grind grain.",
+  "l2": "The wheel turns the runner stone, which grinds grain against the bed stone. A mill can run day and night while there is water.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -68922,13 +68869,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69003,12 +68949,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Grain Mill: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A grain mill whose millstones can be set to grind finer or coarser.",
+  "l2": "Adjusting the gap between the stones sets the fineness of the flour. The miller adjusts it by hand.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69024,13 +68970,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69105,12 +69050,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Automatic Roller Mill: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mill that grinds grain between rollers, not stones.",
+  "l2": "Rollers crush the grain in stages, which gives a more consistent flour. They replaced millstones in larger mills.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69126,13 +69071,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69207,12 +69151,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wooden Pump Piston: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: inlet, outlet and moving mechanism. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wooden piston that moves up and down in a pump barrel.",
+  "l2": "The piston draws water in on the way up and pushes it out on the way down. Wooden pistons were used before iron was widely available.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69228,13 +69172,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69309,12 +69252,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Reciprocating Water Pump: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: inlet, outlet and moving mechanism. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pump in which a piston moves back and forth to lift water.",
+  "l2": "The reciprocating movement draws water into the barrel and pushes it upward. It can lift water from a well or a river.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69330,13 +69273,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69411,12 +69353,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Double Acting Water Pump: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: inlet, outlet and moving mechanism. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pump that lifts water on both the up and down strokes.",
+  "l2": "Two pistons or two chambers work in turn, so water is moved on each stroke. The flow is steadier than a single-acting pump.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69432,13 +69374,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69513,12 +69454,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Stage Piston Pump: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: inlet, outlet and moving mechanism. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pump that lifts water through several stages in series.",
+  "l2": "Each stage lifts the water a set height, so a single pump can raise water a greater distance. The stages are arranged one above another.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69534,13 +69475,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69615,12 +69555,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Water Turbine Runner: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "The rotating part of a water turbine, which the flowing water turns.",
+  "l2": "The runner has curved blades that take the energy of the flowing water. It converts the water's movement into rotary power.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69636,13 +69576,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69718,12 +69657,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Impulse Turbine: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A turbine driven by a jet of water striking its buckets.",
+  "l2": "A high-speed jet strikes buckets on the runner, which turns it. It suits sites with a large fall of water.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69739,13 +69678,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69820,12 +69758,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Francis Turbine: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A turbine in which water flows inward through the runner and out at the centre.",
+  "l2": "Water enters around the outside and flows inward, giving up energy as it goes. It is the most common turbine for medium falls.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69841,13 +69779,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -69922,12 +69859,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Kaplan Turbine: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A turbine with adjustable blades that suit changing flows.",
+  "l2": "The blades can be set to match the water flow, so the turbine stays efficient when the river level changes. It suits low falls.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -69943,13 +69880,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70024,12 +69960,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Water Ram Chamber: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A chamber that traps water and lets it surge out under pressure.",
+  "l2": "Water flowing into the chamber is suddenly stopped, and the pressure rise drives water up a pipe. This is the basis of the water ram.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70045,13 +69981,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70127,12 +70062,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hydraulic Ram Pump: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: inlet, outlet and moving mechanism. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pump powered by the momentum of flowing water, with no other energy.",
+  "l2": "A falling stream of water builds pressure in a closed chamber, which lifts some of the water to a higher level. It runs without fuel.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70148,13 +70083,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70229,12 +70163,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Impulse Ram Pump: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: inlet, outlet and moving mechanism. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hydraulic ram pump with several valves that raise more water.",
+  "l2": "Several impulses each lift a small amount of water, which adds up to a steadier flow. It lifts more water than a single ram.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70250,13 +70184,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70331,12 +70264,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "High Head Ram Pump: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: inlet, outlet and moving mechanism. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hydraulic ram pump that lifts water to a great height.",
+  "l2": "Stronger pressure from a larger fall lets the pump raise water higher. It suits hilly sites with a good supply.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70352,13 +70285,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70433,12 +70365,12 @@
   "ds": 1801,
   "rar": "common",
   "vis": "tool",
-  "l1": "Irrigation Scoop Wheel: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wheel with scoops that lift water from a stream onto fields.",
+  "l2": "The scoops fill as the wheel turns and tip the water into a channel at the top. It lifts water without a person working it.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70454,13 +70386,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70536,12 +70467,12 @@
   "ds": 1857,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sakia Water Wheel: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water wheel with buckets that lifts water to irrigate fields.",
+  "l2": "The wheel is turned by the current and lifts water in its buckets to a channel above. It is used on rivers that are too low for direct irrigation.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70557,13 +70488,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70638,12 +70568,12 @@
   "ds": 1858,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Chain Of Pots Lift: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: wide hollow bowl with visible rim. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A chain of pots that carries water up from a river to a field.",
+  "l2": "The pots are fixed to a chain that passes over a wheel. As the chain turns, the pots fill below and empty above.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70659,13 +70589,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",
@@ -70740,12 +70669,12 @@
   "ds": 1859,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Mechanized Water Lift: a design or component for converting moving water into useful mechanical motion.",
-  "l2": "In water machinery, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A water lift powered by machinery instead of hand or animal labour.",
+  "l2": "A machine turns the lift continuously, which raises more water than hand work. It is used to irrigate larger areas.",
+  "l3": "Field background: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: water wheels and water-powered machinery (Penn State MTAH, vertical waterwheel). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "waterwheel_psu"
   ],
   "rec": [
    [
@@ -70761,13 +70690,12 @@
    "expansion_2026_1000",
    "water_machinery",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "wheel",

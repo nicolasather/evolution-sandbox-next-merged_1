@@ -2705,6 +2705,33 @@
    "type": "association-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "printing_darling": {
+   "t": "B",
+   "title": "History of printing",
+   "org": "David Darling, Encyclopedia of Science (history)",
+   "url": "https://daviddarling.info/encyclopedia_of_history/P/printing_history.html",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "timekeeping_wiki": {
+   "t": "B",
+   "title": "History of timekeeping devices",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/History_of_timekeeping_devices",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "waterwheel_psu": {
+   "t": "A",
+   "title": "Vertical waterwheel",
+   "org": "Penn State, Materials Technology and Historical Analysis (MTAH)",
+   "url": "https://www.engr.psu.edu/MTAH/articles/pdf/vertical_waterwheel.pdf",
+   "type": "university-article-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }
