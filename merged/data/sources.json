@@ -2597,6 +2597,33 @@
    "type": "encyclopedia-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "drying_discover": {
+   "t": "B",
+   "title": "How Did Ancient People Keep Their Food From Rotting?",
+   "org": "Discover Magazine",
+   "url": "https://www.discovermagazine.com/how-did-ancient-people-keep-their-food-from-rotting-41536",
+   "type": "magazine-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "fermentation_sciam": {
+   "t": "B",
+   "title": "Processed Food: A 2-Million-Year History",
+   "org": "Scientific American",
+   "url": "https://www.scientificamerican.com/article/processed-food-a-two-million-year-history/",
+   "type": "magazine-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "lateen_wiki": {
+   "t": "B",
+   "title": "Lateen",
+   "org": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Lateen",
+   "type": "encyclopedia-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

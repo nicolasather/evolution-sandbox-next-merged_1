@@ -3779,7 +3779,7 @@
   "label": "Sun Dried Fruit",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Fruit cut thin and dried in the sun until it keeps for months.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3792,7 +3792,7 @@
   "label": "Layered Fruit Leather",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "A sheet of fruit pulp spread thin and dried in layers.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3805,7 +3805,7 @@
   "label": "Rolled Fruit Leather",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "A sheet of dried fruit rolled up for storage.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3818,7 +3818,7 @@
   "label": "Sealed Fruit Leather",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Dried fruit sheet sealed to keep out air and moisture.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3831,7 +3831,7 @@
   "label": "Air Dried Herbs",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Herbs hung or laid out to dry in moving air.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3844,7 +3844,7 @@
   "label": "Bundled Dry Herbs",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Dried herbs tied into bundles for storage.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3857,7 +3857,7 @@
   "label": "Powdered Dried Herbs",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Dried herbs ground to a powder.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3870,7 +3870,7 @@
   "label": "Stored Herb Sachet",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Powdered herbs kept in a sealed sachet.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3883,7 +3883,7 @@
   "label": "Dried Fish Fillet",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "A fish fillet split and dried in air until firm.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3896,7 +3896,7 @@
   "label": "Salt Cured Fish",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Fish preserved by packing it in salt to draw out water.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3909,7 +3909,7 @@
   "label": "Smoked Salt Fish",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Salt-cured fish that is then dried over smoke.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3922,7 +3922,7 @@
   "label": "Sealed Dried Fish Pack",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Dried fish packed and sealed for storage or carrying.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3935,7 +3935,7 @@
   "label": "Dried Meat Strips",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Meat cut into thin strips and dried.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3948,7 +3948,7 @@
   "label": "Smoke Dried Meat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Dried meat strips that are also smoke-cured.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3961,7 +3961,7 @@
   "label": "Pressed Dried Meat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Dried meat pressed into a compact cake.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3974,7 +3974,7 @@
   "label": "Toasted Grain",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Grain roasted in a dry pan or on hot stones until it is brown.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -3987,7 +3987,7 @@
   "label": "Parched Grain Meal",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Toasted grain ground into a meal.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4000,7 +4000,7 @@
   "label": "Ground Parched Meal",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Parched grain ground to a finer powder.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4013,7 +4013,7 @@
   "label": "Instant Grain Mix",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "A mix of ground grain ready to add to water.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4026,7 +4026,7 @@
   "label": "Sun Dried Vegetables",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Vegetables cut and dried in the sun.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4039,7 +4039,7 @@
   "label": "Blanched Dried Vegetables",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Vegetables briefly scalded, then dried.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4052,7 +4052,7 @@
   "label": "Dehydrated Vegetable Flakes",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for removing moisture from food to help preservation.",
+  "commonFunction": "Dried vegetables reduced to thin flakes.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4078,7 +4078,7 @@
   "label": "Soured Grain Mash",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Ground grain left to sour in water, so it ferments.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4091,7 +4091,7 @@
   "label": "Natural Sourdough Starter",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A culture of wild yeast and bacteria kept alive in flour and water.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4104,7 +4104,7 @@
   "label": "Refreshed Sourdough Starter",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A sourdough starter fed afresh to keep its culture strong.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4117,7 +4117,7 @@
   "label": "Stable Bread Starter",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A sourdough starter kept steady for regular baking.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4130,7 +4130,7 @@
   "label": "Fermented Milk Curds",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Milk soured and thickened into curds.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4143,7 +4143,7 @@
   "label": "Drained Soft Cheese",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Curds drained of whey to make a soft cheese.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4156,7 +4156,7 @@
   "label": "Pressed Cheese Wheel",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A drained cheese pressed into a round wheel.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4169,7 +4169,7 @@
   "label": "Aged Hard Cheese",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A pressed cheese left to age until it hardens.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4182,7 +4182,7 @@
   "label": "Fermented Cabbage",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Cabbage shredded and fermented until sour.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4195,7 +4195,7 @@
   "label": "Salted Vegetable Ferment",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Vegetables fermented in salt brine.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4208,7 +4208,7 @@
   "label": "Weighted Fermentation Crock",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A crock with a weight holding the vegetables under brine.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4221,7 +4221,7 @@
   "label": "Sealed Vegetable Ferment",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A fermented vegetable crock sealed to keep out air.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4234,7 +4234,7 @@
   "label": "Fruit Must",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Crushed fruit juice before it begins to ferment.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4247,7 +4247,7 @@
   "label": "Primary Fruit Ferment",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Fruit must that is fermenting actively.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4260,7 +4260,7 @@
   "label": "Clarified Fruit Ferment",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A fermented fruit drink clarified by settling and racking.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4273,7 +4273,7 @@
   "label": "Bottled Fruit Ferment",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A fermented fruit drink sealed in a bottle.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4286,7 +4286,7 @@
   "label": "Malted Grain Mash",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Grain sprouted, dried and ground for brewing.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4299,7 +4299,7 @@
   "label": "Fermenting Grain Wort",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Sweet grain liquid, or wort, fermenting into beer.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4312,7 +4312,7 @@
   "label": "Conditioned Grain Beverage",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A grain beer left to mature in a sealed vessel.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4325,7 +4325,7 @@
   "label": "Filtered Malt Beverage",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A malt beer filtered to clear it.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4338,7 +4338,7 @@
   "label": "Vinegar Mother",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A living culture of acetic bacteria that turns alcohol into vinegar.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4351,7 +4351,7 @@
   "label": "Acetic Fermentation Jar",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "A jar in which alcohol is turned into vinegar by bacteria.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4364,7 +4364,7 @@
   "label": "Filtered Vinegar",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Vinegar strained of sediment and bacteria.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4377,7 +4377,7 @@
   "label": "Stored Vinegar Bottle",
   "material": "fired clay or glass",
   "category": "pottery",
-  "commonFunction": "a design or component for managing food fermentation and storage.",
+  "commonFunction": "Vinegar sealed in a bottle for storage.",
   "affinity": {
    "permanent-settlement": 0.4,
    "seasonal-camp": 0.3
@@ -4702,7 +4702,7 @@
   "label": "Square Sail Panel",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A panel of sailcloth cut to a square shape for a square sail.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4715,7 +4715,7 @@
   "label": "Square Rig Sail",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A full square sail hung from a yard across the mast.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4728,7 +4728,7 @@
   "label": "Reefed Square Sail",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A square sail reduced in area by reefing its lower edge.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4741,7 +4741,7 @@
   "label": "Multi Mast Square Rig",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A ship with several masts, each carrying square sails.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4754,7 +4754,7 @@
   "label": "Lateen Sail Panel",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A panel of sailcloth cut for a triangular lateen sail.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4767,7 +4767,7 @@
   "label": "Lateen Yard Rig",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A triangular lateen sail hung from a long slanted yard.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4780,7 +4780,7 @@
   "label": "Adjustable Lateen Rig",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A lateen rig whose yard can be moved to suit the wind.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4793,7 +4793,7 @@
   "label": "Balanced Lateen Rig",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A lateen rig set so the sail is balanced around the mast.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4806,7 +4806,7 @@
   "label": "Sail Cleat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A wooden fitting around which a sail rope is wound and held.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4819,7 +4819,7 @@
   "label": "Rigging Cleat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A cleat fitted to the rigging to hold lines in place.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4832,7 +4832,7 @@
   "label": "Deck Mounted Cleat",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A cleat fixed to the deck to hold mooring or sail lines.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4845,7 +4845,7 @@
   "label": "Self Tailing Sail Winch",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A winch that holds a sail line automatically as it is hauled.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4858,7 +4858,7 @@
   "label": "Wooden Mast Section",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A timber section of a mast, shaped and joined to others.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4871,7 +4871,7 @@
   "label": "Stayed Mast",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A mast held upright by stays of rope or cable.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4884,7 +4884,7 @@
   "label": "Multi Spreader Mast",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A mast with spreaders that hold the shrouds away from it.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4897,7 +4897,7 @@
   "label": "Standing Rigging Rope",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "Rope that supports a mast and does not move with the sails.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4910,7 +4910,7 @@
   "label": "Shrouded Mast Rig",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A mast supported by shrouds running from its top to the sides of the ship.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4923,7 +4923,7 @@
   "label": "Turnbuckle Rigging",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A rigging fitting that tightens a stay by turning a threaded barrel.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4936,7 +4936,7 @@
   "label": "Rod Rigging Assembly",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "Standing rigging made from metal rods rather than rope.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4949,7 +4949,7 @@
   "label": "Sail Steering Oar",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "An oar set at the stern to steer a ship.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4962,7 +4962,7 @@
   "label": "Sternpost Rudder",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A rudder hung from a sternpost along the centreline of the ship.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4
@@ -4975,7 +4975,7 @@
   "label": "Wheel Driven Rudder",
   "material": "plant or animal fibre (rarely survives)",
   "category": "organic",
-  "commonFunction": "a design or component for capturing wind and transmitting rigging loads.",
+  "commonFunction": "A rudder turned by a wheel on the deck.",
   "affinity": {
    "seasonal-camp": 0.3,
    "permanent-settlement": 0.4

@@ -30472,12 +30472,12 @@
   "ds": -299999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sun Dried Fruit: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Fruit cut thin and dried in the sun until it keeps for months.",
+  "l2": "Drying removes most of the water that spoilage organisms need, so the fruit keeps without refrigeration. Sweetness is concentrated as the fruit shrinks.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -30493,13 +30493,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -30574,12 +30573,12 @@
   "ds": -299998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Layered Fruit Leather: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sheet of fruit pulp spread thin and dried in layers.",
+  "l2": "Pulp spread in thin layers dries into a flexible sheet that can be rolled and stored. It is a way of keeping a soft fruit that would otherwise spoil quickly.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -30595,13 +30594,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -30676,12 +30674,12 @@
   "ds": -299997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rolled Fruit Leather: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sheet of dried fruit rolled up for storage.",
+  "l2": "Rolling makes the dried sheet compact and easy to carry. It is cut into strips to eat.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -30697,13 +30695,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -30778,12 +30775,12 @@
   "ds": -299996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sealed Fruit Leather: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried fruit sheet sealed to keep out air and moisture.",
+  "l2": "A seal keeps the dried sheet from taking up moisture again. Sealing slows the change in flavour and texture.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -30799,13 +30796,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -30880,12 +30876,12 @@
   "ds": -299999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Air Dried Herbs: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Herbs hung or laid out to dry in moving air.",
+  "l2": "Herbs dry quickly in air without heat, keeping much of their scent. They are stored once they are crisp.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -30901,13 +30897,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -30982,12 +30977,12 @@
   "ds": -299998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Bundled Dry Herbs: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried herbs tied into bundles for storage.",
+  "l2": "Bundling keeps herbs together and easy to hang. The bundle keeps its shape and dries evenly.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31003,13 +30998,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31084,12 +31078,12 @@
   "ds": -299997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Powdered Dried Herbs: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried herbs ground to a powder.",
+  "l2": "Grinding releases the flavour of dried herbs into food. A powder mixes evenly through a dish.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31105,13 +31099,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31186,12 +31179,12 @@
   "ds": -299996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stored Herb Sachet: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Powdered herbs kept in a sealed sachet.",
+  "l2": "A sachet keeps the powder dry and in one place. It is opened when the herbs are needed.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31207,13 +31200,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31288,12 +31280,12 @@
   "ds": -299999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Dried Fish Fillet: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fish fillet split and dried in air until firm.",
+  "l2": "Splitting the fish gives a thin, even fillet that dries quickly. It is hard and keeps for long periods.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31309,13 +31301,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31390,12 +31381,12 @@
   "ds": -299998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Salt Cured Fish: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Fish preserved by packing it in salt to draw out water.",
+  "l2": "Salt draws water out of the flesh and stops spoilage organisms growing. Curing keeps fish edible for months.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31411,13 +31402,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31492,12 +31482,12 @@
   "ds": -299997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Smoked Salt Fish: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Salt-cured fish that is then dried over smoke.",
+  "l2": "Smoke adds flavour and a protective coating on the outside. It dries the fish further and slows spoilage.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31513,13 +31503,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31594,12 +31583,12 @@
   "ds": -299996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sealed Dried Fish Pack: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried fish packed and sealed for storage or carrying.",
+  "l2": "A sealed pack keeps dried fish dry and protected from insects. It is kept until the fish is needed.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31615,13 +31604,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31696,12 +31684,12 @@
   "ds": -299999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Dried Meat Strips: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Meat cut into thin strips and dried.",
+  "l2": "Thin strips dry evenly and keep for long periods. Drying is the simplest way to carry meat over long distances.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31717,13 +31705,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31799,12 +31786,12 @@
   "ds": -299998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Smoke Dried Meat: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried meat strips that are also smoke-cured.",
+  "l2": "Smoke adds flavour and a protective outer layer. It is a long-established way of keeping meat.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31820,13 +31807,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -31901,12 +31887,12 @@
   "ds": -299997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pressed Dried Meat: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried meat pressed into a compact cake.",
+  "l2": "Pressing makes the meat dense and easier to carry. The cake keeps its shape and dries further.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -31922,13 +31908,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32003,12 +31988,12 @@
   "ds": 1900,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Vacuum Packed Dried Meat: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried meat sealed in an airtight pack.",
+  "l2": "An airtight pack keeps out moisture and air, which keeps dried meat good for longer. Modern versions use plastic film.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32024,13 +32009,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32105,12 +32089,12 @@
   "ds": -299999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Toasted Grain: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Grain roasted in a dry pan or on hot stones until it is brown.",
+  "l2": "Toasting dries the grain and gives it a nutty flavour. It stores better than raw grain and cooks faster.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32126,13 +32110,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32208,12 +32191,12 @@
   "ds": -299998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Parched Grain Meal: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: curved voussoirs and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Toasted grain ground into a meal.",
+  "l2": "Parched grain is ground to a fine meal that can be eaten dry or mixed with water. It is light to carry.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32229,13 +32212,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32310,12 +32292,12 @@
   "ds": -299997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Ground Parched Meal: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: curved voussoirs and load path. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Parched grain ground to a finer powder.",
+  "l2": "A finer powder mixes quickly and cooks fast. It is a compact food for travel.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32331,13 +32313,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32412,12 +32393,12 @@
   "ds": -299996,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Instant Grain Mix: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mix of ground grain ready to add to water.",
+  "l2": "The mix needs only water to become a meal, which saves time and fuel on a journey. It is packed dry.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32433,13 +32414,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32514,12 +32494,12 @@
   "ds": -299999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sun Dried Vegetables: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Vegetables cut and dried in the sun.",
+  "l2": "Drying keeps vegetables through the winter when fresh ones are scarce. They are rehydrated in water before cooking.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32535,13 +32515,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32617,12 +32596,12 @@
   "ds": -299998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Blanched Dried Vegetables: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Vegetables briefly scalded, then dried.",
+  "l2": "Scalding slows the enzymes that spoil vegetables, so they keep better when dried. The brief heat also softens them.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32638,13 +32617,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32719,12 +32697,12 @@
   "ds": -299997,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Dehydrated Vegetable Flakes: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Dried vegetables reduced to thin flakes.",
+  "l2": "Flakes dry and rehydrate quickly and mix into soups and stews. They take up little space.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32740,13 +32718,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -32821,12 +32798,12 @@
   "ds": 1900,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Freeze Dried Vegetable Pieces: a design or component for removing moisture from food to help preservation.",
-  "l2": "In food drying, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Vegetable pieces frozen and then dried under low pressure.",
+  "l2": "Freeze drying removes water without melting the food, which keeps its shape and nutrients. It is a method of the twentieth century.",
+  "l3": "Field background: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: food drying and preservation (Discover Magazine on ancient food preservation). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "drying_discover"
   ],
   "rec": [
    [
@@ -32842,13 +32819,12 @@
    "expansion_2026_1000",
    "food_drying",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33026,12 +33002,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Soured Grain Mash: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Ground grain left to sour in water, so it ferments.",
+  "l2": "Wild yeasts and bacteria sour the mash, which makes it keep and gives it flavour. It was an early way to make grain last longer.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33047,13 +33023,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33128,12 +33103,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Natural Sourdough Starter: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A culture of wild yeast and bacteria kept alive in flour and water.",
+  "l2": "A starter is fed with fresh flour and water to keep it active. It raises bread without commercial yeast.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33149,13 +33124,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33230,12 +33204,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Refreshed Sourdough Starter: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sourdough starter fed afresh to keep its culture strong.",
+  "l2": "Refreshing keeps the starter alive and active. A fresh feed replaces the old flour so the culture does not die back.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33251,13 +33225,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33332,12 +33305,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stable Bread Starter: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A sourdough starter kept steady for regular baking.",
+  "l2": "A stable starter rises the same way each time, so the bread is consistent. It is kept fed on a schedule.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33353,13 +33326,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33434,12 +33406,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fermented Milk Curds: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Milk soured and thickened into curds.",
+  "l2": "Souring thickens the milk and separates the curds from the whey. Curds keep better than fresh milk.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33455,13 +33427,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33536,12 +33507,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Drained Soft Cheese: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Curds drained of whey to make a soft cheese.",
+  "l2": "Draining removes the whey, which leaves a soft, short-keeping cheese. It is eaten soon after making.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33557,13 +33528,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33638,12 +33608,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pressed Cheese Wheel: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: spokes or rim and central axle; frame, platen and force screw. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A drained cheese pressed into a round wheel.",
+  "l2": "Pressing removes more whey and gives the cheese a firm, shaped body. The wheel is ready to age.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33659,13 +33629,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33740,12 +33709,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Aged Hard Cheese: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A pressed cheese left to age until it hardens.",
+  "l2": "Ageing firms the cheese and deepens its flavour. A hard cheese keeps for months.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33761,13 +33730,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33842,12 +33810,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fermented Cabbage: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Cabbage shredded and fermented until sour.",
+  "l2": "Fermentation sours the cabbage and preserves it through winter. The shreds are packed tight to exclude air.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33863,13 +33831,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -33944,12 +33911,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Salted Vegetable Ferment: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Vegetables fermented in salt brine.",
+  "l2": "Salt draws water out and keeps out the spoilage organisms, so the right ones sour the vegetables. The ferment keeps for months.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -33965,13 +33932,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34046,12 +34012,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Weighted Fermentation Crock: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A crock with a weight holding the vegetables under brine.",
+  "l2": "The weight keeps the vegetables submerged so that they do not rot at the top. The crock is covered to keep out insects.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34067,13 +34033,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34148,12 +34113,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Sealed Vegetable Ferment: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fermented vegetable crock sealed to keep out air.",
+  "l2": "A seal keeps the ferment anaerobic, which keeps it sour and safe. It is opened when it is needed.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34169,13 +34134,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34250,12 +34214,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fruit Must: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Crushed fruit juice before it begins to ferment.",
+  "l2": "Must is the juice of crushed fruit, which yeasts turn into alcohol. It is kept warm in a closed vessel to begin fermenting.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34271,13 +34235,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34353,12 +34316,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Primary Fruit Ferment: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Fruit must that is fermenting actively.",
+  "l2": "Yeast converts the sugars in the fruit to alcohol and gas. The vessel is kept loosely covered so the gas can escape.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34374,13 +34337,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34455,12 +34417,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Clarified Fruit Ferment: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fermented fruit drink clarified by settling and racking.",
+  "l2": "Racking off the sediment clears the drink and stops it tasting of yeast. It is then ready to bottle.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34476,13 +34438,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34557,12 +34518,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Bottled Fruit Ferment: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: narrow neck above wider hollow vessel. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A fermented fruit drink sealed in a bottle.",
+  "l2": "Sealing keeps the drink from taking in air, which would turn it sour. It keeps for longer in a closed container.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34578,13 +34539,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34659,12 +34619,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Malted Grain Mash: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Grain sprouted, dried and ground for brewing.",
+  "l2": "Malting turns starch into sugar that yeast can ferment. The malt is mashed in warm water to release the sugars.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34680,13 +34640,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34762,12 +34721,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Fermenting Grain Wort: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Sweet grain liquid, or wort, fermenting into beer.",
+  "l2": "The wort is sugar-rich liquid from the mash, and yeast turns its sugars into alcohol. The beer is ready when fermentation stops.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34783,13 +34742,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34864,12 +34822,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Conditioned Grain Beverage: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A grain beer left to mature in a sealed vessel.",
+  "l2": "Conditioning lets the flavour settle and the drink clear. It is kept cool and still.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34885,13 +34843,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -34966,12 +34923,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Filtered Malt Beverage: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A malt beer filtered to clear it.",
+  "l2": "Filtering removes yeast and particles, so the beer is clear and stable. It is then bottled or casked.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -34987,13 +34944,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -35068,12 +35024,12 @@
   "ds": -8999,
   "rar": "common",
   "vis": "tool",
-  "l1": "Vinegar Mother: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A living culture of acetic bacteria that turns alcohol into vinegar.",
+  "l2": "The culture forms a gel-like mass on the surface of the liquid. It converts alcohol to vinegar when fed a sweet or alcoholic liquid.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -35089,13 +35045,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -35171,12 +35126,12 @@
   "ds": -8998,
   "rar": "common",
   "vis": "tool",
-  "l1": "Acetic Fermentation Jar: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: container neck, rim and body. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A jar in which alcohol is turned into vinegar by bacteria.",
+  "l2": "The jar is open to the air so the bacteria can work, since they need oxygen. It is kept warm and shaded.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -35192,13 +35147,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -35273,12 +35227,12 @@
   "ds": -5999,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Filtered Vinegar: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Vinegar strained of sediment and bacteria.",
+  "l2": "Filtering clears the vinegar so it stays bright and does not go cloudy. It is then stored.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -35294,13 +35248,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -35375,12 +35328,12 @@
   "ds": -5998,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Stored Vinegar Bottle: a design or component for managing food fermentation and storage.",
-  "l2": "In fermented foods, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: narrow neck above wider hollow vessel. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Vinegar sealed in a bottle for storage.",
+  "l2": "A sealed bottle keeps the vinegar from over-souring or taking in contaminants. It is kept cool and dark.",
+  "l3": "Field background: fermented foods and processed food history (Scientific American). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: fermented foods and processed food history (Scientific American). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "fermentation_sciam"
   ],
   "rec": [
    [
@@ -35396,13 +35349,12 @@
    "expansion_2026_1000",
    "fermented_foods",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "vessel",
@@ -38031,12 +37983,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Square Sail Panel: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A panel of sailcloth cut to a square shape for a square sail.",
+  "l2": "A square sail is a rectangle of cloth hung from a horizontal yard across the mast. Its panels are seamed together to make the full sail.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38052,13 +38004,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38133,12 +38084,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Square Rig Sail: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A full square sail hung from a yard across the mast.",
+  "l2": "A square sail catches the wind from behind or from the side and drives the ship. It was the main rig of ancient Mediterranean and Indian Ocean ships.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38154,13 +38105,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38235,12 +38185,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reefed Square Sail: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A square sail reduced in area by reefing its lower edge.",
+  "l2": "Reefing shortens the sail in strong wind, so the ship stays under control. The reef points are tied along the sail.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38256,13 +38206,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38337,12 +38286,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Mast Square Rig: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A ship with several masts, each carrying square sails.",
+  "l2": "More masts spread the sail area over the hull, which gives more driving force. Multi-mast ships could carry larger loads.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38358,13 +38307,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38439,12 +38387,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Lateen Sail Panel: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A panel of sailcloth cut for a triangular lateen sail.",
+  "l2": "A lateen sail is a triangle hung from a long yard at an angle to the mast. Its panels are cut to the triangular shape.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38460,13 +38408,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38541,12 +38488,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Lateen Yard Rig: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A triangular lateen sail hung from a long slanted yard.",
+  "l2": "The yard lets the sail point closer into the wind than a square sail can. The sail is turned to suit the wind and the course.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38562,13 +38509,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38643,12 +38589,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Lateen Rig: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lateen rig whose yard can be moved to suit the wind.",
+  "l2": "Adjusting the yard alters how the sail takes the wind. It lets the ship sail closer to the wind.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38664,13 +38610,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38745,12 +38690,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Balanced Lateen Rig: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lateen rig set so the sail is balanced around the mast.",
+  "l2": "Balance reduces the force needed to steer and keeps the ship on course. It is set by the position of the yard.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38766,13 +38711,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38847,12 +38791,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sail Cleat: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wooden fitting around which a sail rope is wound and held.",
+  "l2": "A cleat holds a rope under tension without having to be held by hand. It is fixed to the mast or deck.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38868,13 +38812,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -38949,12 +38892,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rigging Cleat: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cleat fitted to the rigging to hold lines in place.",
+  "l2": "A rigging cleat secures a line that controls a sail or yard. It is placed where the line can be reached easily.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -38970,13 +38913,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39051,12 +38993,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Deck Mounted Cleat: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cleat fixed to the deck to hold mooring or sail lines.",
+  "l2": "A deck cleat holds lines that run to the sails or the shore. It is bolted through the deck.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39072,13 +39014,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39153,12 +39094,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Self Tailing Sail Winch: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A winch that holds a sail line automatically as it is hauled.",
+  "l2": "The winch grips the line so it does not slip back while the crew takes up the strain. It makes sail handling faster.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39174,13 +39115,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39255,12 +39195,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wooden Mast Section: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A timber section of a mast, shaped and joined to others.",
+  "l2": "A mast is made from several timber sections joined together. Each section is shaped to take the load along its length.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39276,13 +39216,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39358,12 +39297,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stayed Mast: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mast held upright by stays of rope or cable.",
+  "l2": "Stays run from the masthead to the deck and hold the mast against the force of the sail. They are set in pairs to resist side loads.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39379,13 +39318,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39460,12 +39398,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Multi Spreader Mast: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mast with spreaders that hold the shrouds away from it.",
+  "l2": "Spreaders push the shrouds outward so that the mast is supported more firmly. More spreaders give a stiffer mast.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39481,13 +39419,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39562,12 +39499,12 @@
   "ds": 1970,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Carbon Composite Mast: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mast made from carbon-fibre composite.",
+  "l2": "Composite masts are light and stiff, which suits fast sailing boats. They replace timber in modern rigs.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39583,13 +39520,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39664,12 +39600,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Standing Rigging Rope: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: twisted helical fiber strands. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Rope that supports a mast and does not move with the sails.",
+  "l2": "Standing rigging holds the mast in place and does not run through blocks. It is set once and tensioned to keep the mast straight.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39685,13 +39621,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39767,12 +39702,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Shrouded Mast Rig: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A mast supported by shrouds running from its top to the sides of the ship.",
+  "l2": "Shrouds carry the sideways load of the mast and stop it falling to leeward. They are set to match the sail area.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39788,13 +39723,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39869,12 +39803,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Turnbuckle Rigging: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rigging fitting that tightens a stay by turning a threaded barrel.",
+  "l2": "A turnbuckle adjusts the tension of the rigging. It is turned to tighten or slacken a line.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39890,13 +39824,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -39971,12 +39904,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Rod Rigging Assembly: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Standing rigging made from metal rods rather than rope.",
+  "l2": "Rods are stiffer and last longer than rope. They are fitted with turnbuckles to set the tension.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -39992,13 +39925,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -40073,12 +40005,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sail Steering Oar: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: fabric panels, seams and rigging edge. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An oar set at the stern to steer a ship.",
+  "l2": "A steering oar is worked from the stern to turn the ship. It was used before the rudder was fitted to the centreline.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -40094,13 +40026,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -40176,12 +40107,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Sternpost Rudder: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rudder hung from a sternpost along the centreline of the ship.",
+  "l2": "A rudder on the centreline turns the ship more efficiently than a side oar. It is hung from pivots on the sternpost.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -40197,13 +40128,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -40278,12 +40208,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Wheel Driven Rudder: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rudder turned by a wheel on the deck.",
+  "l2": "A wheel gives the helmsman more leverage to turn a heavy rudder. Gears or tackle connect the wheel to the rudder stock.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -40299,13 +40229,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
@@ -40380,12 +40309,12 @@
   "ds": 1800,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Hydraulic Steering Gear: a design or component for capturing wind and transmitting rigging loads.",
-  "l2": "In sail technology, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: teeth arranged around hub and shaft. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Steering gear powered by hydraulic pressure.",
+  "l2": "Hydraulic gear moves a large rudder with little effort from the helmsman. It is used on larger ships.",
+  "l3": "Field background: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: sails and rigs, square and lateen (Wikipedia: Lateen). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "lateen_wiki"
   ],
   "rec": [
    [
@@ -40401,13 +40330,12 @@
    "expansion_2026_1000",
    "sail_technology",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "woven_fibre",
