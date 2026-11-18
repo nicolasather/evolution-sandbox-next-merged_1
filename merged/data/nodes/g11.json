@@ -48103,12 +48103,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Compacted Earth Track: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A track of earth packed firm so that it can be walked or driven.",
+  "l2": "Packing the soil makes a surface that carries wheels and feet better than loose ground. It is the simplest road and needs no imported material.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48124,13 +48124,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48205,12 +48204,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Gravel Road Bed: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road base of compacted gravel laid over the earth.",
+  "l2": "Gravel drains water away and bears load better than soil. The bed is laid in layers and rolled flat.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48226,13 +48225,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48307,12 +48305,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Macadam Road Course: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road surface of small, compacted broken stone bound together.",
+  "l2": "Broken stone pieces lock together under traffic, so the road stays hard and drains well. It was developed for road surfacing in the early 19th century.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48328,13 +48326,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48409,12 +48406,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Asphalt Road Surface: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road surface of tar or bitumen bound stone.",
+  "l2": "Bitumen binds the stone and makes the surface waterproof and smooth. It is laid hot and rolled into place.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48430,13 +48427,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48511,12 +48507,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Timber Road Plank: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A wooden plank laid to carry traffic over soft ground.",
+  "l2": "A plank spreads the weight of a wheel or foot over a wider area, so the ground does not sink. Planks are laid end to end.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48532,13 +48528,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48613,12 +48608,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Plank Road: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road surfaced with timber planks laid across its width.",
+  "l2": "Plank roads carry traffic over bog or mud. Their planks are fixed to sleepers to keep them in line.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48634,13 +48629,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48715,12 +48709,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Log Corduroy Road: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road laid with logs set side by side across soft ground.",
+  "l2": "Logs laid across the road make a firm, if bumpy, surface over bog. They are set close together to stop wheels sinking between them.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48736,13 +48730,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48817,12 +48810,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Elevated Boardwalk Road: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A raised timber walkway carried above wet ground.",
+  "l2": "Raising the walkway on posts keeps the surface above water and mud. It suits marsh and flood plains.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48838,13 +48831,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -48919,12 +48911,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Curb Block: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A block of stone set along the edge of a road.",
+  "l2": "A curb block holds the road surface in place and marks the edge for traffic. It is set into the ground at the verge.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -48940,13 +48932,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49021,12 +49012,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Laid Road Kerb: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A line of kerb stones set along the road edge.",
+  "l2": "A kerb keeps the road surface from spreading and protects the verge from wheels. The kerbs are set in a straight line.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49042,13 +49033,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49123,12 +49113,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Kerbed Road Drain: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A drain channel lined by kerbs along the road.",
+  "l2": "A kerbed drain carries water off the road surface and keeps it from pooling. It is set below the level of the road.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49144,13 +49134,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49225,12 +49214,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Continuous Road Gutter: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A continuous gutter running along the road edge to take off water.",
+  "l2": "A continuous gutter carries water away along the whole length of the road. It keeps the surface dry and firm.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49246,13 +49235,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49327,12 +49315,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Road Marker Stone: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stone set beside the road to mark a point or direction.",
+  "l2": "A marker stone shows the route and the distance to a place. Stones were set at intervals along the most important roads.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49348,13 +49336,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49430,12 +49417,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Mile Marker Post: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A post set at each mile to show distance along a road.",
+  "l2": "Mile posts tell travellers how far they have come and how far is left. They are set at regular intervals.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49451,13 +49438,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49532,12 +49518,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Reflective Road Marker: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road marker that reflects light to show the edge of the road at night.",
+  "l2": "A reflective marker returns light from headlamps and shows the road's edge in the dark. It is fixed at the verge.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49553,13 +49539,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49634,12 +49619,12 @@
   "ds": 1940,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Electronic Variable Road Sign: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road sign whose message can be changed electronically.",
+  "l2": "An electronic sign shows different messages as conditions change, such as speed limits or delays. It is controlled from a central system.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49655,13 +49640,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49736,12 +49720,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Wheel Rut Filling: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: spokes or rim and central axle. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Material packed into wheel ruts to level the road surface.",
+  "l2": "Filling ruts keeps water from collecting in them and stops wheels from being guided into the same groove. The filling is rolled flat.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49757,13 +49741,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49839,12 +49822,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Graded Road Crown: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road surface shaped with a raised centre so that water runs off to the sides.",
+  "l2": "The crown sheds rain off the middle of the road into the drains at each side. It is shaped with a roller and a grader.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49860,13 +49843,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -49941,12 +49923,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Cambered Road Surface: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A road surface sloping from its centre to both edges.",
+  "l2": "A camber lets water run off the road quickly and keeps the surface dry. It is a common shape for modern roads.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -49962,13 +49944,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -50043,12 +50024,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Superelevated Road Curve: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A curve in a road banked toward its inside to help vehicles turn.",
+  "l2": "Banking lets a vehicle corner at speed with less side force on the tyres. The bank is set to suit the design speed of the curve.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -50064,13 +50045,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -50145,12 +50125,12 @@
   "ds": -3499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Stone Culvert Slab: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A stone slab laid across a ditch or stream to carry the road over it.",
+  "l2": "A slab makes a short bridge over a small channel. It is set on stone or timber supports.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -50166,13 +50146,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -50248,12 +50227,12 @@
   "ds": -299,
   "rar": "common",
   "vis": "tool",
-  "l1": "Box Culvert: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A box-shaped channel of concrete or stone that carries water under a road.",
+  "l2": "A box culvert carries water through a closed channel beneath the road. Its walls and roof carry the load of the traffic above.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -50269,13 +50248,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -50350,12 +50328,12 @@
   "ds": -298,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pipe Culvert: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: hollow tubular wall and joining ends. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A round pipe that carries water under a road.",
+  "l2": "A pipe culvert is a short length of pipe set under the road. It is cheaper than a box culvert for small streams.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -50371,13 +50349,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -50452,12 +50429,12 @@
   "ds": -297,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Precast Drain Culvert: a design or component for constructing durable travel surfaces and drainage.",
-  "l2": "In road making, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A culvert made as ready-made sections and set in place.",
+  "l2": "Precast sections are made in advance and lowered into place, which speeds up building. The joints are sealed on site.",
+  "l3": "Field background: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: Roman road construction and road making (Geotech article on ancient Roman roads). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "roads_geotech"
   ],
   "rec": [
    [
@@ -50473,13 +50450,12 @@
    "expansion_2026_1000",
    "road_making",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "brick",
@@ -50657,12 +50633,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Sheet Blank: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A thin sheet of copper cut for working.",
+  "l2": "The sheet is cut from a larger piece and shaped by hammering. It is the starting point for many copper objects.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -50678,13 +50654,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -50759,12 +50734,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hammered Copper Sheet: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Copper sheet thinned and shaped by hammering.",
+  "l2": "Hammering work-hardens the copper, so it is stronger but less flexible. It is annealed by heating if more shaping is needed.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -50780,13 +50755,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -50861,12 +50835,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Annealed Copper Sheet: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Copper sheet heated and cooled to make it soft again.",
+  "l2": "Annealing relieves the hardening from hammering so the copper can be worked further. It is heated and then cooled slowly.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -50882,13 +50856,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -50963,12 +50936,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Repousse Copper Panel: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper panel with a design hammered up from the back.",
+  "l2": "Repousse is worked from the reverse, so the design rises in relief on the front. The metal is supported on a pitch or cushion.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -50984,13 +50957,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51065,12 +51037,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Rod Blank: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short length of copper cut for drawing or forging.",
+  "l2": "The blank is a starting length of copper rod. It is drawn to a finer diameter or forged into a shape.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51086,13 +51058,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51167,12 +51138,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Drawn Copper Rod: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper rod drawn through a die to a set thickness.",
+  "l2": "Drawing pulls the copper through a hole smaller than itself, which makes the rod thinner and longer. The copper is annealed as it is drawn.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51188,13 +51159,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51269,12 +51239,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Copper Wire Coil: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Copper wire drawn fine and wound into a coil.",
+  "l2": "Fine wire is wound into a coil for storage and use. It can be cut to length as needed.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51290,13 +51260,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51371,12 +51340,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Insulated Copper Winding: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Copper wire wound with an insulating layer to carry current safely.",
+  "l2": "Insulation keeps the turns of the coil from touching and shorting. It is the basis of electrical windings.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51392,13 +51361,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51473,12 +51441,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Nail Blank: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short piece of copper cut to make a nail.",
+  "l2": "The blank is shaped to a point and head by hammering. It is the starting form of a copper nail.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51494,13 +51462,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51575,12 +51542,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Hammered Copper Nail: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper nail shaped by hammering.",
+  "l2": "Hammering gives the nail its point and head. The nail is driven into timber to fix planks or fittings.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51596,13 +51563,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51677,12 +51643,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Copper Rivet Set: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: shank and deformed head. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A set of copper rivets for joining plates.",
+  "l2": "Rivets are passed through holes in two plates and headed over to join them. A set of rivets fixes a seam or a joint.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51698,13 +51664,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51779,12 +51744,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Flush Copper Rivet: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: shank and deformed head. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rivet whose head sits flush with the plate surface.",
+  "l2": "A flush rivet keeps the surface smooth, which matters for hulls and fine work. Its head is countersunk into the plate.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51800,13 +51765,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51881,12 +51845,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Bowl Blank: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat copper disc cut for shaping into a bowl.",
+  "l2": "The disc is hammered or spun into a bowl shape. It is the starting point for a copper vessel.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -51902,13 +51866,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -51984,12 +51947,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Raised Copper Bowl: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper bowl shaped by hammering from its base up.",
+  "l2": "Raising thins and shapes the metal with a hammer over a stake. The walls rise as the disc is worked.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52005,13 +51968,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52086,12 +52048,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Planished Copper Bowl: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper bowl smoothed by hammering with a flat-faced tool.",
+  "l2": "Planishing removes hammer marks and gives a smooth, bright surface. It is the finishing stage for raised vessels.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52107,13 +52069,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52188,12 +52149,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Spun Copper Vessel: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper vessel shaped by spinning the metal on a lathe.",
+  "l2": "Spinning forms the metal over a former as it turns, which gives an even wall. It is quicker than hand raising for repeated shapes.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52209,13 +52170,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52290,12 +52250,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Tube Blank: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat sheet of copper prepared for forming into a tube.",
+  "l2": "The sheet is rolled or bent around a former and joined along its edge.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52311,13 +52271,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52393,12 +52352,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Rolled Copper Tube: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper tube made by rolling sheet around a former.",
+  "l2": "Rolling bends the sheet into a cylinder, which is then seamed. The tube can be used for pipes and fittings.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52414,13 +52373,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52495,12 +52453,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Brazed Copper Tube: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A rolled copper tube whose seam is joined by brazing.",
+  "l2": "Brazing melts a filler metal into the seam so that it is sealed and strong. Brazing is done at a temperature below the melting point of copper.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52516,13 +52474,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52597,12 +52554,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Seamless Copper Tube: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: tube cross-section, open bore and seals. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper tube made without a seam.",
+  "l2": "A seamless tube is drawn or pierced from solid metal, so it has no weak join. It is used where pressure or fluid must not leak.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52618,13 +52575,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52699,12 +52655,12 @@
   "ds": -2499,
   "rar": "common",
   "vis": "tool",
-  "l1": "Copper Foil Sheet: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A very thin sheet of copper, rolled out from a larger piece.",
+  "l2": "Foil is rolled thin enough to be flexible. It is used where a thin conductive layer is needed.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52720,13 +52676,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52802,12 +52757,12 @@
   "ds": -2498,
   "rar": "common",
   "vis": "tool",
-  "l1": "Thin Copper Foil: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Copper foil rolled to its thinnest practical gauge.",
+  "l2": "Thin foil conducts electricity and is flexible enough to bond to a board. It is produced by repeated rolling and annealing.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52823,13 +52778,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -52904,12 +52858,12 @@
   "ds": -2497,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Patterned Copper Foil: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "Copper foil with a pattern cut or etched into it.",
+  "l2": "A pattern leaves the copper only where a circuit needs it. The unwanted metal is removed from the foil.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -52925,13 +52879,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53006,12 +52959,12 @@
   "ds": -2496,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Printed Circuit Copper Trace: a design or component for forming and joining copper workpieces.",
-  "l2": "In copper fabrication, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: board outline, conductive traces and component packages. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A copper line on a board that carries an electrical signal.",
+  "l2": "A trace is a thin strip of copper etched on a board to connect components. It replaces hand-wired connections.",
+  "l3": "Field background: early copper smelting and working (news report on Belovode, Serbia). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: early copper smelting and working (news report on Belovode, Serbia). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "copper_belovode_jpost"
   ],
   "rec": [
    [
@@ -53027,13 +52980,12 @@
    "expansion_2026_1000",
    "copper_fabrication",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53211,12 +53163,12 @@
   "ds": -1198,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Bar Blank: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 1, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short piece of wrought iron cut for forging.",
+  "l2": "The blank is heated and worked into a bar or a tool. It is the starting length for many forged parts.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53232,13 +53184,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53313,12 +53264,12 @@
   "ds": -1197,
   "rar": "common",
   "vis": "tool",
-  "l1": "Forge Drawn Iron Bar: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 1, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A bar of iron drawn out to length by forging.",
+  "l2": "Heating and hammering stretch the bar to length and thin it. The bar is reheated as it cools to keep it workable.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53334,13 +53285,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53415,12 +53365,12 @@
   "ds": -1196,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Square Iron Bar: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 1, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An iron bar forged to a square section.",
+  "l2": "A square section is easy to hold and to work into shapes. The bar is turned and hammered on each face.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53436,13 +53386,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53517,12 +53466,12 @@
   "ds": -1195,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Threaded Iron Rod: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 1, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An iron rod cut with a screw thread along its length.",
+  "l2": "A thread lets a rod be tightened with a nut or screwed into a fitting. It is cut or rolled into the metal.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53538,13 +53487,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53619,12 +53567,12 @@
   "ds": -1198,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Chisel Blank: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 2, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short iron bar shaped roughly into a chisel.",
+  "l2": "The blank is forged to a rough chisel shape, which is then refined and hardened. The cutting edge is formed last.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53640,13 +53588,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53721,12 +53668,12 @@
   "ds": -1197,
   "rar": "common",
   "vis": "tool",
-  "l1": "Forged Cold Chisel: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 2, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A chisel forged from iron for cutting cold metal.",
+  "l2": "A cold chisel is struck with a hammer to cut or split metal. It is forged to a tough edge.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53742,13 +53689,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53823,12 +53769,12 @@
   "ds": -1196,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Tempered Cold Chisel: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 2, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A cold chisel heated and quenched to harden its edge.",
+  "l2": "Tempering hardens the edge while keeping the body tough. The edge is heated and then cooled at a controlled rate.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53844,13 +53790,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -53925,12 +53870,12 @@
   "ds": -1195,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Set Of Cold Chisels: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 2, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A set of chisels in different widths and profiles.",
+  "l2": "A set covers the range of cuts a smith or mason needs. Each chisel is made for a particular job.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -53946,13 +53891,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54027,12 +53971,12 @@
   "ds": -1198,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Hinge Strap: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 3, phase 1/4. Distinguishing physical or functional feature: two leaves and a pin axis. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat iron strap that carries a hinge.",
+  "l2": "A strap hinge is fixed to a door or gate and to the frame. The strap spreads the load over the timber.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54048,13 +53992,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54129,12 +54072,12 @@
   "ds": -1197,
   "rar": "common",
   "vis": "tool",
-  "l1": "Strap Hinge: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 3, phase 2/4. Distinguishing physical or functional feature: two leaves and a pin axis. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hinge made of two long iron straps joined by a pin.",
+  "l2": "The long straps carry the weight of a heavy door or gate. The pin turns in knuckles on each strap.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54150,13 +54093,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54231,12 +54173,12 @@
   "ds": -1196,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Pin Hinged Gate: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 3, phase 3/4. Distinguishing physical or functional feature: two leaves and a pin axis. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A gate hung on pin hinges.",
+  "l2": "A pin hinge lets the gate swing on a fixed axis. It is set on the posts with the pin vertical.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54252,13 +54194,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54333,12 +54274,12 @@
   "ds": -1195,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Adjustable Iron Hinge: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 3, phase 4/4. Distinguishing physical or functional feature: two leaves and a pin axis. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A hinge whose position can be adjusted to set a gate or door true.",
+  "l2": "Adjustment lets the hinge be set so the door closes evenly. It takes the wear of use without binding.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54354,13 +54295,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54435,12 +54375,12 @@
   "ds": -1198,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Chain Link: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 4, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A single link of iron chain.",
+  "l2": "Each link is forged and closed through the next. The links together carry load along the chain.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54456,13 +54396,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54538,12 +54477,12 @@
   "ds": -1197,
   "rar": "common",
   "vis": "tool",
-  "l1": "Linked Iron Chain: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 4, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A chain of forged iron links.",
+  "l2": "A chain carries load in tension through its links. Each link is worked to match its neighbours.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54559,13 +54498,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54640,12 +54578,12 @@
   "ds": -1196,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Welded Link Chain: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 4, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A chain whose links are welded closed.",
+  "l2": "Welding closes each link so that it is as strong as the metal around it. A welded chain is stronger than one with open links.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54661,13 +54599,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54742,12 +54679,12 @@
   "ds": -1195,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Calibrated Hoist Chain: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 4, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A chain tested and marked with its safe working load.",
+  "l2": "Calibration checks the chain's strength so it can be used to lift safely. It is marked with the load it is rated to carry.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54763,13 +54700,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54844,12 +54780,12 @@
   "ds": -1198,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Hook Blank: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 5, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A short iron bar bent roughly into a hook shape.",
+  "l2": "The blank is heated and bent into a hook. Its point and shank are finished afterward.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54865,13 +54801,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -54947,12 +54882,12 @@
   "ds": -1197,
   "rar": "common",
   "vis": "tool",
-  "l1": "Forged S Hook: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 5, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "An S-shaped hook forged from iron.",
+  "l2": "An S hook joins two links, one at each end. It is used to hang and connect loads.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -54968,13 +54903,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -55049,12 +54983,12 @@
   "ds": -1196,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Forged J Hook: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 5, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A J-shaped hook forged from iron.",
+  "l2": "A J hook takes a load at its point and is fixed to a chain or rope at the other end. It is used for hoisting and hanging.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -55070,13 +55004,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -55151,12 +55084,12 @@
   "ds": -1195,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Load Rated Lifting Hook: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 5, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A lifting hook tested and marked with its safe working load.",
+  "l2": "The hook is rated to carry a stated load, which is marked on it. It is checked before use.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -55172,13 +55105,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -55253,12 +55185,12 @@
   "ds": -1198,
   "rar": "common",
   "vis": "tool",
-  "l1": "Iron Horseshoe Blank: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 6, phase 1/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A flat iron bar shaped roughly to the curve of a horseshoe.",
+  "l2": "The blank is heated and bent to the shape of the hoof. It is then fitted and finished.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -55274,13 +55206,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -55356,12 +55287,12 @@
   "ds": -1197,
   "rar": "common",
   "vis": "tool",
-  "l1": "Forged Horseshoe: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 6, phase 2/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A horseshoe forged from iron and shaped to the hoof.",
+  "l2": "A forged shoe protects the hoof from wear and gives the horse grip. Nails hold it on the hoof wall.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -55377,13 +55308,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -55458,12 +55388,12 @@
   "ds": -1196,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Nailless Horseshoe: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 6, phase 3/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A horseshoe that is fixed to the hoof without nails.",
+  "l2": "A nailless shoe is held by clips or a band rather than nails, which spares the hoof wall. It is used where nails would damage the hoof.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -55479,13 +55409,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",
@@ -55560,12 +55489,12 @@
   "ds": -1195,
   "rar": "uncommon",
   "vis": "tool",
-  "l1": "Orthopedic Horseshoe: a design or component for heating and shaping iron into serviceable fittings.",
-  "l2": "In iron blacksmithing, this named design belongs to lineage 6, phase 4/4. Distinguishing physical or functional feature: custom silhouette identifying the named object; show actual mechanism and part layout from references. Its proposed inputs provide a gameplay prerequisite; they are not evidence of the actual invention process.",
-  "l3": "Research required: compare institutional museum collections, primary technical references, and specialist histories for this exact design, region and technology. Do not infer documented origin from this gameplay sequence.",
-  "ev": "Specific archaeological or technical source not yet confirmed",
+  "l1": "A horseshoe shaped to correct or support the hoof.",
+  "l2": "An orthopedic shoe is shaped to support a hoof that needs correcting or extra protection. It is fitted to the hoof by a farrier.",
+  "l3": "Field background: iron making and blacksmithing (U.S. National Park Service). Item-specific dates and regions are not checked against a primary source; the date field is a sort position only.",
+  "ev": "Field source: iron making and blacksmithing (U.S. National Park Service). Item-specific evidence not yet confirmed.",
   "src": [
-   "source_required"
+   "iron_nps"
   ],
   "rec": [
    [
@@ -55581,13 +55510,12 @@
    "expansion_2026_1000",
    "iron_blacksmithing",
    "design_lineage",
-   "physical",
-   "source_required"
+   "physical"
   ],
-  "caution": "Historical sourcing for this entry is still being researched; the date is a sort position, not an invention date.",
+  "caution": "Item description is written from the object's form and use. The cited field source covers the craft in general; this item's own date, region and documented examples are not verified.",
   "confidence": {
-   "level": "uncertain",
-   "note": "Subject-specific sources not yet checked"
+   "level": "field-sourced",
+   "note": "Field background cited; item-specific history not verified"
   },
   "artifactType": "artifact",
   "visualArchetype": "metal_ingot",

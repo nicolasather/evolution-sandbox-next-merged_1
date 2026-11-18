@@ -2651,6 +2651,33 @@
    "type": "encyclopedia-search-result-not-fetched",
    "scope": "topic",
    "checked": "2026-11-18"
+  },
+  "roads_geotech": {
+   "t": "B",
+   "title": "Ancient Roman roads — a monument to history and road construction",
+   "org": "Geotech (geotech.hr)",
+   "url": "https://www.geotech.hr/en/ancient-roman-roads-a-monument-to-history-and-road-construction/",
+   "type": "engineering-article-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "copper_belovode_jpost": {
+   "t": "B",
+   "title": "Archaeology around the world (copper smelting news, Belovode, Serbia)",
+   "org": "The Jerusalem Post",
+   "url": "https://www.jpost.com/archaeology/archaeology-around-the-world/article-848670",
+   "type": "news-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
+  },
+  "iron_nps": {
+   "t": "B",
+   "title": "Iron Making — Introduction",
+   "org": "U.S. National Park Service",
+   "url": "https://home.nps.gov/articles/000/iron-making-introduction.htm",
+   "type": "government-search-result-not-fetched",
+   "scope": "topic",
+   "checked": "2026-11-18"
   }
  }
 }

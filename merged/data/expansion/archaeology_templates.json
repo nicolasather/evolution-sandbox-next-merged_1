@@ -5588,7 +5588,7 @@
   "label": "Compacted Earth Track",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A track of earth packed firm so that it can be walked or driven.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5600,7 +5600,7 @@
   "label": "Gravel Road Bed",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road base of compacted gravel laid over the earth.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5612,7 +5612,7 @@
   "label": "Macadam Road Course",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road surface of small, compacted broken stone bound together.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5624,7 +5624,7 @@
   "label": "Asphalt Road Surface",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road surface of tar or bitumen bound stone.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5636,7 +5636,7 @@
   "label": "Timber Road Plank",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A wooden plank laid to carry traffic over soft ground.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5648,7 +5648,7 @@
   "label": "Plank Road",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road surfaced with timber planks laid across its width.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5660,7 +5660,7 @@
   "label": "Log Corduroy Road",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road laid with logs set side by side across soft ground.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5672,7 +5672,7 @@
   "label": "Elevated Boardwalk Road",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A raised timber walkway carried above wet ground.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5684,7 +5684,7 @@
   "label": "Stone Curb Block",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A block of stone set along the edge of a road.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5696,7 +5696,7 @@
   "label": "Laid Road Kerb",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A line of kerb stones set along the road edge.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5708,7 +5708,7 @@
   "label": "Kerbed Road Drain",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A drain channel lined by kerbs along the road.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5720,7 +5720,7 @@
   "label": "Continuous Road Gutter",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A continuous gutter running along the road edge to take off water.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5732,7 +5732,7 @@
   "label": "Road Marker Stone",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A stone set beside the road to mark a point or direction.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5744,7 +5744,7 @@
   "label": "Mile Marker Post",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A post set at each mile to show distance along a road.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5756,7 +5756,7 @@
   "label": "Reflective Road Marker",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road marker that reflects light to show the edge of the road at night.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5768,7 +5768,7 @@
   "label": "Wheel Rut Filling",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "Material packed into wheel ruts to level the road surface.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5780,7 +5780,7 @@
   "label": "Graded Road Crown",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road surface shaped with a raised centre so that water runs off to the sides.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5792,7 +5792,7 @@
   "label": "Cambered Road Surface",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A road surface sloping from its centre to both edges.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5804,7 +5804,7 @@
   "label": "Superelevated Road Curve",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A curve in a road banked toward its inside to help vehicles turn.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5816,7 +5816,7 @@
   "label": "Stone Culvert Slab",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A stone slab laid across a ditch or stream to carry the road over it.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5828,7 +5828,7 @@
   "label": "Box Culvert",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A box-shaped channel of concrete or stone that carries water under a road.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5840,7 +5840,7 @@
   "label": "Pipe Culvert",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A round pipe that carries water under a road.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5852,7 +5852,7 @@
   "label": "Precast Drain Culvert",
   "material": "worked earth, timber or stone",
   "category": "structural",
-  "commonFunction": "a design or component for constructing durable travel surfaces and drainage.",
+  "commonFunction": "A culvert made as ready-made sections and set in place.",
   "affinity": {
    "permanent-settlement": 0.7
   },
@@ -5877,7 +5877,7 @@
   "label": "Copper Sheet Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A thin sheet of copper cut for working.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5890,7 +5890,7 @@
   "label": "Hammered Copper Sheet",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "Copper sheet thinned and shaped by hammering.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5903,7 +5903,7 @@
   "label": "Annealed Copper Sheet",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "Copper sheet heated and cooled to make it soft again.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5916,7 +5916,7 @@
   "label": "Repousse Copper Panel",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper panel with a design hammered up from the back.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5929,7 +5929,7 @@
   "label": "Copper Rod Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A short length of copper cut for drawing or forging.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5942,7 +5942,7 @@
   "label": "Drawn Copper Rod",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper rod drawn through a die to a set thickness.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5955,7 +5955,7 @@
   "label": "Copper Wire Coil",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "Copper wire drawn fine and wound into a coil.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5968,7 +5968,7 @@
   "label": "Insulated Copper Winding",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "Copper wire wound with an insulating layer to carry current safely.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5981,7 +5981,7 @@
   "label": "Copper Nail Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A short piece of copper cut to make a nail.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -5994,7 +5994,7 @@
   "label": "Hammered Copper Nail",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper nail shaped by hammering.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6007,7 +6007,7 @@
   "label": "Copper Rivet Set",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A set of copper rivets for joining plates.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6020,7 +6020,7 @@
   "label": "Flush Copper Rivet",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A rivet whose head sits flush with the plate surface.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6033,7 +6033,7 @@
   "label": "Copper Bowl Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A flat copper disc cut for shaping into a bowl.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6046,7 +6046,7 @@
   "label": "Raised Copper Bowl",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper bowl shaped by hammering from its base up.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6059,7 +6059,7 @@
   "label": "Planished Copper Bowl",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper bowl smoothed by hammering with a flat-faced tool.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6072,7 +6072,7 @@
   "label": "Spun Copper Vessel",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper vessel shaped by spinning the metal on a lathe.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6085,7 +6085,7 @@
   "label": "Copper Tube Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A flat sheet of copper prepared for forming into a tube.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6098,7 +6098,7 @@
   "label": "Rolled Copper Tube",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper tube made by rolling sheet around a former.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6111,7 +6111,7 @@
   "label": "Brazed Copper Tube",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A rolled copper tube whose seam is joined by brazing.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6124,7 +6124,7 @@
   "label": "Seamless Copper Tube",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper tube made without a seam.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6137,7 +6137,7 @@
   "label": "Copper Foil Sheet",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A very thin sheet of copper, rolled out from a larger piece.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6150,7 +6150,7 @@
   "label": "Thin Copper Foil",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "Copper foil rolled to its thinnest practical gauge.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6163,7 +6163,7 @@
   "label": "Patterned Copper Foil",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "Copper foil with a pattern cut or etched into it.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6176,7 +6176,7 @@
   "label": "Printed Circuit Copper Trace",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for forming and joining copper workpieces.",
+  "commonFunction": "A copper line on a board that carries an electrical signal.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6202,7 +6202,7 @@
   "label": "Iron Bar Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A short piece of wrought iron cut for forging.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6215,7 +6215,7 @@
   "label": "Forge Drawn Iron Bar",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A bar of iron drawn out to length by forging.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6228,7 +6228,7 @@
   "label": "Square Iron Bar",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "An iron bar forged to a square section.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6241,7 +6241,7 @@
   "label": "Threaded Iron Rod",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "An iron rod cut with a screw thread along its length.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6254,7 +6254,7 @@
   "label": "Iron Chisel Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A short iron bar shaped roughly into a chisel.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6267,7 +6267,7 @@
   "label": "Forged Cold Chisel",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A chisel forged from iron for cutting cold metal.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6280,7 +6280,7 @@
   "label": "Tempered Cold Chisel",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A cold chisel heated and quenched to harden its edge.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6293,7 +6293,7 @@
   "label": "Set Of Cold Chisels",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A set of chisels in different widths and profiles.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6306,7 +6306,7 @@
   "label": "Iron Hinge Strap",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A flat iron strap that carries a hinge.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6319,7 +6319,7 @@
   "label": "Strap Hinge",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A hinge made of two long iron straps joined by a pin.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6332,7 +6332,7 @@
   "label": "Pin Hinged Gate",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A gate hung on pin hinges.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6345,7 +6345,7 @@
   "label": "Adjustable Iron Hinge",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A hinge whose position can be adjusted to set a gate or door true.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6358,7 +6358,7 @@
   "label": "Iron Chain Link",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A single link of iron chain.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6371,7 +6371,7 @@
   "label": "Linked Iron Chain",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A chain of forged iron links.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6384,7 +6384,7 @@
   "label": "Welded Link Chain",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A chain whose links are welded closed.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6397,7 +6397,7 @@
   "label": "Calibrated Hoist Chain",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A chain tested and marked with its safe working load.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6410,7 +6410,7 @@
   "label": "Iron Hook Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A short iron bar bent roughly into a hook shape.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6423,7 +6423,7 @@
   "label": "Forged S Hook",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "An S-shaped hook forged from iron.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6436,7 +6436,7 @@
   "label": "Forged J Hook",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A J-shaped hook forged from iron.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6449,7 +6449,7 @@
   "label": "Load Rated Lifting Hook",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A lifting hook tested and marked with its safe working load.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6462,7 +6462,7 @@
   "label": "Iron Horseshoe Blank",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A flat iron bar shaped roughly to the curve of a horseshoe.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6475,7 +6475,7 @@
   "label": "Forged Horseshoe",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A horseshoe forged from iron and shaped to the hoof.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6488,7 +6488,7 @@
   "label": "Nailless Horseshoe",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A horseshoe that is fixed to the hoof without nails.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
@@ -6501,7 +6501,7 @@
   "label": "Orthopedic Horseshoe",
   "material": "worked metal or stone",
   "category": "lithic",
-  "commonFunction": "a design or component for heating and shaping iron into serviceable fittings.",
+  "commonFunction": "A horseshoe shaped to correct or support the hoof.",
   "affinity": {
    "workshop": 0.6,
    "permanent-settlement": 0.2
