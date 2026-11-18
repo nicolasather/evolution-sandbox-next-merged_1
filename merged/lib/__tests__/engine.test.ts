@@ -111,6 +111,8 @@ describe('hints', () => {
     expect(h2.level).toBe(2);
     const target = e.get(h2.targetId!)!;
     expect(h2.text).not.toContain(target.n);
+    // rung two states the craft outright: the pieces to put together, or the work to do on one
+    expect(h2.text).toMatch(/^(Put .+ together\.|Work .+ with .+\.|Use .+\.)$/);
   });
 
   it('refuses to aim at something out of reach', () => {

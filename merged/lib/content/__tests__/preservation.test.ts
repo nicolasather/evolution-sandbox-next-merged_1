@@ -48,5 +48,5 @@ describe('V3 preservation goldens', () => {
 const GOLD = {
   majors: '4257ccf9d8680cdb',
   museum: 'de2dc494e35af039',
-  nodes918: 'b3c5a5895b97f6b2',
+  nodes918: 'f266749c55163713', // re-recorded: early-craft routes were ADDED to fish_trap, adze, fishing_line, fishing_hook and pestle (no original route was removed)
 };

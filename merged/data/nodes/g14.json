@@ -1,0 +1,692 @@
+[
+  {
+    "id": "basket",
+    "no": 3121,
+    "n": "Basket",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 27,000 years ago (impressions); likely older",
+    "ds": -27000,
+    "rar": "common",
+    "vis": "lattice",
+    "l1": "A container woven from plant fibre or split wood, able to hold what a skin or a bare hand cannot.",
+    "l2": "Weaving turns loose stems into a surface that holds its shape. A woven basket carries seeds, roots and shellfish from the place they were gathered to the place they will be eaten, so it is an early tool for moving food, not only for eating it.",
+    "l3": "Basketry rots, so the earliest evidence is usually impressions in clay and fragments of charred or mineralised fibre. Those dates are minimums; the true age of the technique is unknown.",
+    "ev": "Impressions in fired clay; charred and mineralised plant fibre",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "plant",
+        "wood"
+      ]
+    ],
+    "tags": [
+      "container",
+      "woven",
+      "organic",
+      "basket_and_reedwork"
+    ],
+    "caution": "Basketry is perishable: the dates are lower bounds from preserved impressions and fragments.",
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "grinding_stone",
+    "no": 3122,
+    "n": "Grinding Stone",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 30,000 years ago or earlier (debated)",
+    "ds": -30000,
+    "rar": "common",
+    "vis": "cobble",
+    "l1": "A flat or hollowed stone used with a second stone to crush seeds, nuts and roots.",
+    "l2": "Grinding breaks down the tough walls around seeds and roots, so a person gets more food from the same plants than chewing alone would give. A stone that does this work can be used again and again, which makes stored plant food practical.",
+    "l3": "Starch grains and residues on grinding surfaces are the main evidence, and they show plant processing is older than many people expect. The first use of these stones is still under study.",
+    "ev": "Starch grains and residues on grinding surfaces",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "plant",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "processing",
+      "food",
+      "stone",
+      "milling_baking"
+    ],
+    "caution": "Starch-grain dates are debated and depend on how contamination is excluded.",
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "stone_sinker",
+    "no": 3123,
+    "n": "Stone Sinker",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago (debated)",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "cobble",
+    "l1": "A grooved or notched stone tied to a line or net so that it sinks and holds the gear in place.",
+    "l2": "A weight changes how a line or net behaves in water: it carries the bait down to the depth where fish are, and it keeps a net open rather than letting it float. A stone with a groove turns a simple line into a working fishing system.",
+    "l3": "Grooved stones that may have been net weights come from lakeside and coastal sites. Whether a particular groove was cut for fishing is often argued over.",
+    "ev": "Grooved stones at lakeside and coastal sites",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "fishing",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "fishing",
+      "weight",
+      "stone"
+    ],
+    "caution": "Grooved stones are often read as net weights; the function is inferred, not observed.",
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "sickle",
+    "no": 3127,
+    "n": "Sickle",
+    "era": "agriculture",
+    "cat": "technology",
+    "date": "≈ 15,000 years ago (Natufian)",
+    "ds": -15000,
+    "rar": "uncommon",
+    "vis": "edge-fragment",
+    "l1": "Small sharp stone blades set in a curved handle, used to cut grass and grain stalks.",
+    "l2": "A sickle harvests the seed heads of wild grasses faster than pulling them by hand, and it cuts stalks low enough to keep the grain. Harvesting the same wild stands again and again is one of the early steps toward cultivation.",
+    "l3": "The Natufian culture of the Levant left the clearest evidence: blades with a sheen from cutting silica-rich grass stems. Whether the handles were wood, bone or antler is usually inferred rather than seen.",
+    "ev": "Blades with a harvest sheen from cut grass stems",
+    "src": [
+      "brit_agri"
+    ],
+    "rec": [
+      [
+        "plant",
+        "sharp_stone"
+      ]
+    ],
+    "tags": [
+      "harvest",
+      "agriculture",
+      "blade",
+      "cereal_cultivation"
+    ],
+    "stone_age_tier": "late"
+  },
+  {
+    "id": "smoked_fish",
+    "no": 3128,
+    "n": "Smoked Fish",
+    "era": "fire",
+    "cat": "material",
+    "date": "≈ 10,000 years ago or earlier (debated)",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "flame",
+    "l1": "Fish dried over low smoke, so that it keeps for days instead of hours.",
+    "l2": "Smoke dries the flesh and coats it with compounds that slow spoilage. A smoked catch can be carried and eaten later, which lets a group make the most of a short run of fish.",
+    "l3": "The evidence is indirect: fish bone in smoke-stained hearths, and preserved fish with blackened surfaces. Whether smoking was done for storage or simply for flavour is hard to tell apart.",
+    "ev": "Fish bone in smoke-stained hearths",
+    "src": [
+      "si_ho_hearths"
+    ],
+    "rec": [
+      [
+        "fire",
+        "fishing"
+      ]
+    ],
+    "tags": [
+      "food",
+      "preserved",
+      "smoke",
+      "food_drying"
+    ],
+    "caution": "Smoking for storage is inferred from hearth context; direct proof is rare.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "woven_mat",
+    "no": 3129,
+    "n": "Woven Mat",
+    "era": "settlement",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago (impressions); likely older",
+    "ds": -10000,
+    "rar": "common",
+    "vis": "lattice",
+    "l1": "Reeds or grasses sewn edge to edge into a flat sheet for sleeping, sitting or covering a floor.",
+    "l2": "A mat is the first floor a person can carry. Sewn stems insulate the ground, keep out damp, and give a shelter a sleeping place that is not bare earth.",
+    "l3": "Mats rot, so the record is impressions in clay floors and mats preserved at dry or waterlogged sites. Their age is a lower bound.",
+    "ev": "Impressions in clay floors; preserved mats at dry sites",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "plant"
+      ],
+      [
+        "grass",
+        "needle"
+      ]
+    ],
+    "tags": [
+      "bedding",
+      "woven",
+      "shelter",
+      "basket_and_reedwork"
+    ],
+    "caution": "Mat dates are lower bounds from impressions; no source is attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "seed_meal",
+    "no": 3130,
+    "n": "Seed Meal",
+    "era": "origins",
+    "cat": "material",
+    "date": "≈ 30,000 years ago or earlier (debated)",
+    "ds": -30000,
+    "rar": "common",
+    "vis": "grass-bundle",
+    "l1": "Wild grass seeds crushed between two stones into a coarse flour.",
+    "l2": "Seeds are small and hard, and most of their food value is locked inside the husk. Grinding breaks it open, so a handful of seed meal feeds far more than the same seeds eaten whole, and it keeps for days when dry.",
+    "l3": "The evidence is starch grains and grinding residue on stone surfaces, which show wild grass seeds were processed as well as collected. The first use of these methods is still being pinned down.",
+    "ev": "Starch and grinding residue on stone surfaces; charred seed remains",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "grass",
+        "stone"
+      ]
+    ],
+    "tags": [
+      "food",
+      "processing",
+      "seed"
+    ],
+    "caution": "Seed-processing dates rest on starch-grain evidence, which is debated.",
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "digging_stick",
+    "no": 3131,
+    "n": "Digging Stick",
+    "era": "origins",
+    "cat": "technology",
+    "date": "Older than the surviving record",
+    "ds": -400000,
+    "rar": "common",
+    "vis": "branch",
+    "l1": "A pointed length of wood used to lever roots, tubers and grubs out of the ground.",
+    "l2": "A stick hardened and sharpened at one end turns the hand into a lever. It loosens soil around roots that would otherwise take hours to reach, one of the earliest ways people made plant food reachable at all.",
+    "l3": "Wooden digging sticks almost never survive from the earliest periods. The evidence is indirect: wear and polish on bone and stone, and the tubers and roots such a tool would have dug.",
+    "ev": "Tuber remains and wear on tools; wooden examples only from waterlogged sites",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "wood",
+        "scraping_wood"
+      ]
+    ],
+    "tags": [
+      "digging",
+      "food",
+      "wood"
+    ],
+    "caution": "Wood rarely survives; the date is inferred from tuber remains and tool wear.",
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "hide_pouch",
+    "no": 3132,
+    "n": "Hide Pouch",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 40,000 years ago or earlier (debated)",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "pouch",
+    "l1": "A bag cut and sewn from animal skin, able to carry food, tools or water.",
+    "l2": "Sewing hide into a closed bag gives a person a portable store that keeps out weather and small animals. Needle and sinew make the seams hold, so the pouch can be carried over long distances.",
+    "l3": "Skin decays quickly, so direct examples are rare. Sewing tools such as bone needles, and punched holes in hide fragments, are the usual evidence.",
+    "ev": "Bone needles; punched hide fragments at a few sites",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "needle",
+        "horse_hide"
+      ]
+    ],
+    "tags": [
+      "container",
+      "hide",
+      "sewn"
+    ],
+    "caution": "Skin containers are almost never preserved; the date rests on sewing tools and hide fragments. No verified source attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "hide_thong",
+    "no": 3133,
+    "n": "Hide Thong",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 300,000 years ago or earlier (debated)",
+    "ds": -300000,
+    "rar": "common",
+    "vis": "strip",
+    "l1": "A narrow strip cut from hide, used to lash, bind or tie.",
+    "l2": "A hide strip is strong in tension and lasts longer than plant cord in wet conditions. Cutting a skin in a spiral gives one long strip, so a single animal yields a whole kit of ties and laces.",
+    "l3": "Hide strips rot and rarely survive. Their existence is inferred from cut marks on bone, punched holes, and the lashed tools that remain.",
+    "ev": "Cut marks on skin-processing bone; lashed tools",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "fiber",
+        "horse_hide"
+      ]
+    ],
+    "tags": [
+      "hide",
+      "binding",
+      "cord"
+    ],
+    "caution": "Hide strips are inferred from cut marks and lashing. No verified source attached yet.",
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "smoke_tanned_hide",
+    "no": 3134,
+    "n": "Smoke-Tanned Hide",
+    "era": "fire",
+    "cat": "material",
+    "date": "≈ 40,000 years ago or earlier (debated)",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "hide-sheet",
+    "l1": "Hide cured over smoke, so it stays soft, supple and resistant to rot.",
+    "l2": "Smoke carries tannins and dries the skin evenly. A hide treated this way keeps its flexibility when wet and does not stiffen as raw hide does, so it can be worn, folded and reused.",
+    "l3": "Smoke tanning leaves little trace beyond hearth context and scraping tools. Its early date is argued from those scrapers and from ethnographic parallels.",
+    "ev": "Scraping tools and smoke-stained hearths near hide-processing sites",
+    "src": [
+      "si_ho_hearths"
+    ],
+    "rec": [
+      [
+        "fire",
+        "horse_hide"
+      ]
+    ],
+    "tags": [
+      "hide",
+      "preserved",
+      "smoke"
+    ],
+    "caution": "Smoke tanning is inferred from scrapers and hearth context rather than from preserved hide.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "painted_hide",
+    "no": 3135,
+    "n": "Painted Hide",
+    "era": "origins",
+    "cat": "culture",
+    "date": "≈ 100,000 years ago or earlier (debated)",
+    "ds": -100000,
+    "rar": "uncommon",
+    "vis": "pattern",
+    "l1": "Hide rubbed or painted with ground ochre, so its colour lasts through use.",
+    "l2": "Ochre bound with fat or water stains skin and holds its colour. Painted hide can mark identity, status or belonging, and a coloured surface is easier to read at a distance, which matters for signalling.",
+    "l3": "Coloured residue on stone and bone shows that ochre was prepared and used, but painted skins are almost never preserved. The link between pigment and hide is inferred from residues and later practice.",
+    "ev": "Ochre residues on tools and prepared pigment blocks",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "pigment_compound",
+        "horse_hide"
+      ]
+    ],
+    "tags": [
+      "ornament",
+      "hide",
+      "pigment"
+    ],
+    "caution": "Painted skins are not preserved; the link rests on pigment residues. No verified source attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "trotline",
+    "no": 3136,
+    "n": "Trotline",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago (debated)",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "hook-line",
+    "l1": "A long line with many hooks and weights, left in the water to catch fish unattended.",
+    "l2": "A trotline multiplies a single line by many hooks, so one person can work many fish at once. Weights hold it on the bottom, and it can be left overnight, so fishing works while the fisher rests.",
+    "l3": "Lines and hooks decay, so the evidence is weights and hooks concentrated at the same sites. Whether these were long lines or short ones is hard to tell.",
+    "ev": "Weights and hooks clustered along old shorelines",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "stone_sinker",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "fishing",
+      "line",
+      "weight"
+    ],
+    "caution": "Trotlines are inferred from clusters of weights and hooks, not from preserved lines.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "bound_blade",
+    "no": 3137,
+    "n": "Bound Blade",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 300,000 years ago (debated)",
+    "ds": -300000,
+    "rar": "uncommon",
+    "vis": "hafted_tool",
+    "l1": "A stone blade bound to a handle with sinew, so the edge stays fixed while the haft takes the blow.",
+    "l2": "Binding a stone to wood with wet sinew, which shrinks as it dries, makes a grip that holds tight. The haft lets a short blade do the work of a longer one, and a bound blade can be re-fixed when only its edge is worn.",
+    "l3": "Adhesive residues and lashing wear on stone show that blades were bound to handles long before the best-known examples. The start of the practice is debated.",
+    "ev": "Adhesive residues and lashing wear on blades",
+    "src": [
+      "si_ho_tools"
+    ],
+    "rec": [
+      [
+        "stone",
+        "sinew_chunk"
+      ]
+    ],
+    "tags": [
+      "hafted",
+      "composite",
+      "tool"
+    ],
+    "caution": "Early hafting is inferred from residues and wear; the earliest dates are debated.",
+    "stone_age_tier": "olduvai"
+  },
+  {
+    "id": "seed_cake",
+    "no": 3138,
+    "n": "Seed Cake",
+    "era": "fire",
+    "cat": "material",
+    "date": "≈ 14,000 years ago (debated)",
+    "ds": -14000,
+    "rar": "uncommon",
+    "vis": "disc",
+    "l1": "Ground seed mixed with water and baked on hot stone into a flat, dry cake.",
+    "l2": "Baking turns loose flour into food that keeps and travels. The fire does the cooking, and the flat shape bakes evenly on a hot stone, so one batch can feed a group for several days.",
+    "l3": "Charred flat cakes and seed residue on hearth stones are the strongest evidence. Early baked seed food is debated, since charring can also come from accidental burning.",
+    "ev": "Charred seed cakes and residue on hearth stones",
+    "src": [
+      "si_ho_food"
+    ],
+    "rec": [
+      [
+        "seed_meal",
+        "fire"
+      ]
+    ],
+    "tags": [
+      "food",
+      "baked",
+      "seed"
+    ],
+    "caution": "Early baked seed food is debated; charring can come from accidental burning.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "hide_bedding",
+    "no": 3139,
+    "n": "Hide Bedding",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 100,000 years ago (debated)",
+    "ds": -100000,
+    "rar": "common",
+    "vis": "lattice",
+    "l1": "Grass laid under an animal skin to keep a sleeper off cold, damp ground.",
+    "l2": "Grass raises the body from the ground and holds warmth, and a hide on top sheds damp and wind. Together they make a sleeping place that can be used season after season and moved with the group.",
+    "l3": "Grass beds rot, so the evidence is indirect: flattened ground and sleeping areas marked by ash-free floors, and the hides used on them.",
+    "ev": "Flattened ground and sleeping areas at living floors",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "grass",
+        "horse_hide"
+      ]
+    ],
+    "tags": [
+      "bedding",
+      "shelter",
+      "hide"
+    ],
+    "caution": "Sleeping areas are inferred from site layout. No verified source attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "sinew_cord",
+    "no": 3140,
+    "n": "Sinew Cord",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 50,000 years ago or earlier (debated)",
+    "ds": -50000,
+    "rar": "uncommon",
+    "vis": "sinew-thread",
+    "l1": "Animal tendon split into fine fibres and twisted into a strong, elastic cord.",
+    "l2": "Sinew is stronger and more elastic than most plant fibre, so a cord made from it bears heavy loads and stretches rather than snapping. It is the cord of choice for bows and for fine sewing.",
+    "l3": "Sinew cord is rarely preserved. The evidence is the tools it bound and the fine sewing and bow-making it allowed. The earliest dates are inferred from those tools.",
+    "ev": "Lashed tools, bow remains and fine sewing holes",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "sinew_chunk",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "cord",
+      "sinew",
+      "binding"
+    ],
+    "caution": "No sinew cord has survived from this period; the date is inferred from lashed tools.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "sling",
+    "no": 3141,
+    "n": "Sling",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 15,000 years ago or earlier (debated)",
+    "ds": -15000,
+    "rar": "uncommon",
+    "vis": "sling-loop",
+    "l1": "A cord cradle that whirls a stone and releases it, throwing it much farther than a hand can.",
+    "l2": "A sling stores energy by whirling and lets go at speed, so a small stone hits with real force at range. It lets a person hunt or defend at a distance without a heavy weapon.",
+    "l3": "Slings are made of perishable cord and leather, so the record is the stones themselves, often shaped and worn by throwing. Early examples are debated.",
+    "ev": "Shaped throwing stones and wear on pebbles",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hide_pouch",
+        "cordage"
+      ]
+    ],
+    "tags": [
+      "ranged",
+      "cord",
+      "hide"
+    ],
+    "caution": "Slings are perishable; early examples are inferred from stones. No verified source attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "quiver",
+    "no": 3142,
+    "n": "Quiver",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 20,000 years ago (debated)",
+    "ds": -20000,
+    "rar": "uncommon",
+    "vis": "quiver-tube",
+    "l1": "A hide case that holds arrows point-up, ready to draw.",
+    "l2": "A quiver keeps arrow points sharp and dry and lets a hunter draw quickly. It turns a loose pile of points into a kit carried on the body.",
+    "l3": "Quivers are perishable. The evidence is arrow points found in clusters with hide-working tools, and later preserved examples. The early start of the form is debated.",
+    "ev": "Arrow points found in clusters with hide-working tools",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hide_pouch",
+        "arrow_bit"
+      ]
+    ],
+    "tags": [
+      "ranged",
+      "container",
+      "hide"
+    ],
+    "caution": "Quivers are perishable; no verified source attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "hide_clothing",
+    "no": 3143,
+    "n": "Hide Clothing",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 40,000 years ago or earlier (debated)",
+    "ds": -40000,
+    "rar": "uncommon",
+    "vis": "wrap",
+    "l1": "Skins cut, shaped and sewn into garments that cover the body against cold.",
+    "l2": "Sewn hide turns a single skin into a garment fitted to the body, worn fur-side in or out as the weather needs. Clothing lets people live in cold places they could not otherwise reach.",
+    "l3": "Clothing rots. The clearest evidence is the bone needles and fine scrapers that tailoring needs, and the date of the first cold-climate occupation, which is debated.",
+    "ev": "Bone needles and fine scrapers at cold-climate sites",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "hide_thong",
+        "horse_hide"
+      ]
+    ],
+    "tags": [
+      "clothing",
+      "hide",
+      "sewn"
+    ],
+    "caution": "Clothing dates are inferred from needles and scrapers; the first cold-climate use is debated. No verified source attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "water_skin",
+    "no": 3144,
+    "n": "Water Skin",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 10,000 years ago or earlier (debated)",
+    "ds": -10000,
+    "rar": "uncommon",
+    "vis": "bottle",
+    "l1": "A whole hide sewn closed around water, a portable bottle for a journey.",
+    "l2": "Animal skin holds water when sewn tight at the seams and tied at the neck. It lets a group carry water across dry country between sources, which can decide where a journey is possible.",
+    "l3": "Skins rot and rarely survive. The evidence is sewing tools and the spacing of waterholes along inferred routes. Its start is debated.",
+    "ev": "Sewing tools and waterhole spacing along inferred routes",
+    "src": [
+      "source_required"
+    ],
+    "rec": [
+      [
+        "horse_hide",
+        "thread_and_needle"
+      ]
+    ],
+    "tags": [
+      "container",
+      "water",
+      "hide"
+    ],
+    "caution": "Water skins are perishable; no verified source attached yet.",
+    "stone_age_tier": "middle"
+  },
+  {
+    "id": "resin_haft",
+    "no": 3145,
+    "n": "Resin Haft",
+    "era": "origins",
+    "cat": "technology",
+    "date": "≈ 200,000 years ago (debated)",
+    "ds": -200000,
+    "rar": "uncommon",
+    "vis": "hafted_tool",
+    "l1": "A stone tool fixed to its handle with birch tar, which sets hard and holds through heavy use.",
+    "l2": "Birch tar sets solid when cooled and bonds stone to wood more firmly than wet sinew alone. A glued haft survives heavy work, and it is one of the clearest signs of planned, multi-step production.",
+    "l3": "Birch tar is one of the best-attested early adhesives, found on stone tools and in production pits. Its early date is debated, but the residues and chemistry are well established.",
+    "ev": "Birch tar residues on stone tools; production pits",
+    "src": [
+      "si_ho_tools"
+    ],
+    "rec": [
+      [
+        "tar_chunk",
+        "hafted_tool"
+      ]
+    ],
+    "tags": [
+      "hafted",
+      "adhesive",
+      "tool"
+    ],
+    "caution": "Dates for birch tar are debated; the residues and chemistry are well established.",
+    "stone_age_tier": "middle"
+  }
+]

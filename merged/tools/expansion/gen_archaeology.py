@@ -46,6 +46,8 @@ def first_sentence(s: str) -> str:
 def main():
     out = []
     nodes = [(n, False) for n in json.loads((ROOT / "data/nodes/g11.json").read_text(encoding="utf-8"))]
+    # base-game additions (g14): joined by topic tag, same rules as the g11 base items
+    nodes += [(n, False) for n in json.loads((ROOT / "data/nodes/g14.json").read_text(encoding="utf-8"))]
     g12 = ROOT / "data/nodes/g12.json"
     if g12.exists():
         nodes += [(n, True) for n in json.loads(g12.read_text(encoding="utf-8"))]

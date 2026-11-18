@@ -69,6 +69,13 @@ def main():
     for f in sorted((ROOT / "data/nodes").glob("g*.json")):
         new_nodes += [n for n in json.loads(f.read_text(encoding="utf-8")) if n["id"].startswith(PREFIXES)]
     a["items"] += [{"id": n["id"], "name": n["n"], "era": n["era"], "recipes": n["rec"]} for n in new_nodes]
+    # base-game additions (g14) join the atlas once, so every catalogue item is in Minimum Path
+    have = {i["id"] for i in a["items"]}
+    base_extra = json.loads((ROOT / "data/nodes/g14.json").read_text(encoding="utf-8"))
+    a["items"] += [{"id": n["id"], "name": n["n"], "era": n["era"], "recipes": n["rec"]} for n in base_extra if n["id"] not in have]
+    # keep every atlas item in step with the catalogue: recipes follow the node files, and items no longer in them drop out
+    authored = {n["id"]: n for p in (ROOT / "data/nodes").glob("g*.json") for n in json.loads(p.read_text(encoding="utf-8"))}
+    a["items"] = [dict(i, recipes=authored[i["id"]]["rec"]) for i in a["items"] if i["id"] in authored]
     g = build(a["items"])
     name = {i["id"]: i["name"] for i in a["items"]}
     original = list(a["missions"])

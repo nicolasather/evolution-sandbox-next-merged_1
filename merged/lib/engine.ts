@@ -19,9 +19,8 @@
 import { ACTIONS, capabilityNote, refusal } from './processing/actions';
 import { assess as assessSet, probe as probeSet, type AssessCtx, type Pull, type RecipeRow } from './processing/assess';
 import { multiKey } from './processing/overlay';
-import { actionLine, behaviourLine, coachLine, level2Form, likeLine } from './processing/coach';
+import { actionLine, coachLine } from './processing/coach';
 import { insightFor } from './processing/insights';
-import { physicsOf } from './processing/physics';
 import { rolePhrase, sayRoles, tagsOf } from './processing/tags';
 import { TECHNIQUES, TECH_BY_ID, ruleHolds, type Family } from './processing/techniques';
 import type { Capability, Processing, TransformDef } from './processing/types';
@@ -1069,15 +1068,16 @@ export class Engine {
       return { text: `Something new is hiding among your ${from} finds. Think of ${cat}.`, ...none };
     }
     if (level === 2) {
-      // three shapes of the same rung, stable per target: what a piece is like, a riddle, or how a piece behaves
-      const ing = this.hintIngredient(target);
-      const form = level2Form(target.id);
-      if (ing && form !== 1) {
-        const ph = physicsOf(this.proc, ing);
-        const text = (form === 2 ? behaviourLine(ph) : null) ?? likeLine(ph, !!ing.state);
-        return { text, ...none };
+      // the craft itself, named outright: the way in the hint leans on
+      const r = this.readyRoute(target);
+      if (r && 'via' in r) {
+        return { text: `Work ${this.byId[r.via.from].n} with ${ACTIONS[r.via.action].label}.`, ...none };
       }
-      return { text: `Picture this: “${this.riddle(target)}”`, ...none };
+      const set = r && 'set' in r ? r.set : (target.rec[0] ?? []);
+      if (!set.length) return { text: 'Keep experimenting.', ...none };
+      const names = set.map(i => this.byId[i]?.n ?? i);
+      const list = names.length === 2 ? `${names[0]} and ${names[1]}` : `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+      return { text: names.length === 1 ? `Use ${names[0]}.` : `Put ${list} together.`, ...none };
     }
 
     const route = this.readyRoute(target);

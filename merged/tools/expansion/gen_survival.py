@@ -11,6 +11,8 @@ if os.path.exists(_g12):
 _g13 = os.path.join(ROOT, 'data/nodes/g13.json')
 if os.path.exists(_g13):  # exp28: only items whose installer decision says a survivor could make or find them
     nodes += [n for n in json.load(open(_g13)) if n.get('modeMeta', {}).get('survival', {}).get('candidate')]
+# base-game additions (g14): the era rule below decides which of them can turn up while foraging
+nodes += json.load(open(os.path.join(ROOT, 'data/nodes/g14.json')))
 ok = {'origins', 'fire', 'settlement'}
 out = [{'id': n['id'], 'n': n['n'], 'l1': n['l1'].split(': ', 1)[-1]} for n in sorted(nodes, key=lambda x: x['no']) if n['era'] in ok or n['id'].startswith(('anc27_', 'exp28_'))]
 json.dump(out, open(os.path.join(ROOT, 'data/expansion/survival_finds.json'), 'w'), indent=1)

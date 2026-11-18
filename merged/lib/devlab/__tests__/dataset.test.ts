@@ -41,6 +41,8 @@ describe('visual-lab dataset', () => {
 
   it('is recorded against the catalogue it was checked with', () => {
     // the 100 were checked against the 2758-node catalogue; exp28 additions are covered by the name-clash test above
-    expect(ds.catalogueNodeCount).toBe(db.nodes.filter(n => !n.id.startsWith('exp28_')).length);
+    // items added after the check (the early-craft batch, g14) are not part of what the 100 were checked against
+    const g14 = new Set((JSON.parse(readFileSync(path.join(root, 'data/nodes/g14.json'), 'utf8')) as { id: string }[]).map(n => n.id));
+    expect(ds.catalogueNodeCount).toBe(db.nodes.filter(n => !n.id.startsWith('exp28_') && !g14.has(n.id)).length);
   });
 });

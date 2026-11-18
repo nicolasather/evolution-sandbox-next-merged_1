@@ -7447,6 +7447,71 @@
   "itemId": "exp26_timed_drinking_fountain"
  },
  {
+  "id": "x-basket",
+  "label": "Basket",
+  "material": "plant or animal fibre (rarely survives)",
+  "category": "organic",
+  "commonFunction": "A container woven from plant fibre or split wood, able to hold what a skin or a bare hand cannot.",
+  "affinity": {
+   "seasonal-camp": 0.3,
+   "permanent-settlement": 0.4
+  },
+  "rarity": 1,
+  "itemId": "basket"
+ },
+ {
+  "id": "x-grinding_stone",
+  "label": "Grinding Stone",
+  "material": "worked metal or stone",
+  "category": "lithic",
+  "commonFunction": "A flat or hollowed stone used with a second stone to crush seeds, nuts and roots.",
+  "affinity": {
+   "workshop": 0.6,
+   "permanent-settlement": 0.2
+  },
+  "rarity": 1,
+  "itemId": "grinding_stone"
+ },
+ {
+  "id": "x-sickle",
+  "label": "Sickle",
+  "material": "plant or animal fibre (rarely survives)",
+  "category": "organic",
+  "commonFunction": "Small sharp stone blades set in a curved handle, used to cut grass and grain stalks.",
+  "affinity": {
+   "seasonal-camp": 0.3,
+   "permanent-settlement": 0.4
+  },
+  "rarity": 1,
+  "itemId": "sickle"
+ },
+ {
+  "id": "x-smoked_fish",
+  "label": "Smoked Fish",
+  "material": "plant or animal fibre (rarely survives)",
+  "category": "organic",
+  "commonFunction": "Fish dried over low smoke, so that it keeps for days instead of hours.",
+  "affinity": {
+   "seasonal-camp": 0.3,
+   "permanent-settlement": 0.4
+  },
+  "rarity": 1,
+  "itemId": "smoked_fish"
+ },
+ {
+  "id": "x-woven_mat",
+  "label": "Woven Mat",
+  "material": "plant or animal fibre (rarely survives)",
+  "category": "organic",
+  "commonFunction": "Reeds or grasses sewn edge to edge into a flat sheet for sleeping, sitting or covering a floor.",
+  "affinity": {
+   "seasonal-camp": 0.3,
+   "permanent-settlement": 0.4
+  },
+  "rarity": 1,
+  "itemId": "woven_mat"
+ },
+ {
   "id": "x-anc27_herding_staff",
   "label": "Herding Staff",
   "material": "plant or animal fibre (rarely survives)",

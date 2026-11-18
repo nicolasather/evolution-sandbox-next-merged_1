@@ -157,6 +157,10 @@
       [
         "chisel",
         "hafted_tool"
+      ],
+      [
+        "fiber",
+        "hafted_tool"
       ]
     ],
     "tags": [
@@ -565,6 +569,10 @@
       [
         "bone",
         "fishing"
+      ],
+      [
+        "fishing",
+        "sharp_stone"
       ]
     ],
     "tags": [
@@ -632,6 +640,10 @@
       ],
       [
         "fishing_hook",
+        "fiber"
+      ],
+      [
+        "fishing",
         "fiber"
       ]
     ],
@@ -1445,6 +1457,10 @@
       [
         "stone",
         "hammering"
+      ],
+      [
+        "grinding_stone",
+        "wood"
       ]
     ],
     "tags": [
@@ -3300,6 +3316,10 @@
       [
         "fishing",
         "lumber"
+      ],
+      [
+        "fishing",
+        "wood"
       ]
     ],
     "tags": [

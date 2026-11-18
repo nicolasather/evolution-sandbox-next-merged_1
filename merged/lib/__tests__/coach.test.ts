@@ -3,7 +3,6 @@ import processingJson from '@/data/processing.json';
 import { Engine, STUCK_AFTER } from '@/lib/engine';
 import { applyProcessing } from '@/lib/processing/overlay';
 import { INSIGHTS, insightFor } from '@/lib/processing/insights';
-import { level2Form } from '@/lib/processing/coach';
 import type { ProcessingData } from '@/lib/processing/types';
 import type { Db, HintView } from '@/lib/types';
 
@@ -58,12 +57,6 @@ describe('the five-rung hint ladder', () => {
       const names = ['Stone', 'Stick', 'Fibre Strands'].filter(n => last.text.includes(n));
       expect(names.length).toBeLessThanOrEqual(1);
     }
-  });
-
-  it('gives the second rung a different shape for different targets, stably', () => {
-    const forms = new Set(['sharp_stone', 'fire', 'cordage', 'needle', 'pottery', 'spear', 'lumber', 'bow', 'net', 'thatch'].map(level2Form));
-    expect(forms.size).toBeGreaterThan(1);
-    expect(level2Form('fire')).toBe(level2Form('fire'));
   });
 
   it('leans on what has been tried: right piece, wrong hand', () => {

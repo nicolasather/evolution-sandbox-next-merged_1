@@ -1053,5 +1053,110 @@
   "id": "anc27_river_crossing_ferry",
   "n": "River Crossing Ferry",
   "l1": "River Crossing Ferry is an ancient-world subject for studying river navigation and cargo movement. It illustrates how communities could develop bulk transport and exchange along waterways."
+ },
+ {
+  "id": "basket",
+  "n": "Basket",
+  "l1": "A container woven from plant fibre or split wood, able to hold what a skin or a bare hand cannot."
+ },
+ {
+  "id": "grinding_stone",
+  "n": "Grinding Stone",
+  "l1": "A flat or hollowed stone used with a second stone to crush seeds, nuts and roots."
+ },
+ {
+  "id": "stone_sinker",
+  "n": "Stone Sinker",
+  "l1": "A grooved or notched stone tied to a line or net so that it sinks and holds the gear in place."
+ },
+ {
+  "id": "smoked_fish",
+  "n": "Smoked Fish",
+  "l1": "Fish dried over low smoke, so that it keeps for days instead of hours."
+ },
+ {
+  "id": "woven_mat",
+  "n": "Woven Mat",
+  "l1": "Reeds or grasses sewn edge to edge into a flat sheet for sleeping, sitting or covering a floor."
+ },
+ {
+  "id": "seed_meal",
+  "n": "Seed Meal",
+  "l1": "Wild grass seeds crushed between two stones into a coarse flour."
+ },
+ {
+  "id": "digging_stick",
+  "n": "Digging Stick",
+  "l1": "A pointed length of wood used to lever roots, tubers and grubs out of the ground."
+ },
+ {
+  "id": "hide_pouch",
+  "n": "Hide Pouch",
+  "l1": "A bag cut and sewn from animal skin, able to carry food, tools or water."
+ },
+ {
+  "id": "hide_thong",
+  "n": "Hide Thong",
+  "l1": "A narrow strip cut from hide, used to lash, bind or tie."
+ },
+ {
+  "id": "smoke_tanned_hide",
+  "n": "Smoke-Tanned Hide",
+  "l1": "Hide cured over smoke, so it stays soft, supple and resistant to rot."
+ },
+ {
+  "id": "painted_hide",
+  "n": "Painted Hide",
+  "l1": "Hide rubbed or painted with ground ochre, so its colour lasts through use."
+ },
+ {
+  "id": "trotline",
+  "n": "Trotline",
+  "l1": "A long line with many hooks and weights, left in the water to catch fish unattended."
+ },
+ {
+  "id": "bound_blade",
+  "n": "Bound Blade",
+  "l1": "A stone blade bound to a handle with sinew, so the edge stays fixed while the haft takes the blow."
+ },
+ {
+  "id": "seed_cake",
+  "n": "Seed Cake",
+  "l1": "Ground seed mixed with water and baked on hot stone into a flat, dry cake."
+ },
+ {
+  "id": "hide_bedding",
+  "n": "Hide Bedding",
+  "l1": "Grass laid under an animal skin to keep a sleeper off cold, damp ground."
+ },
+ {
+  "id": "sinew_cord",
+  "n": "Sinew Cord",
+  "l1": "Animal tendon split into fine fibres and twisted into a strong, elastic cord."
+ },
+ {
+  "id": "sling",
+  "n": "Sling",
+  "l1": "A cord cradle that whirls a stone and releases it, throwing it much farther than a hand can."
+ },
+ {
+  "id": "quiver",
+  "n": "Quiver",
+  "l1": "A hide case that holds arrows point-up, ready to draw."
+ },
+ {
+  "id": "hide_clothing",
+  "n": "Hide Clothing",
+  "l1": "Skins cut, shaped and sewn into garments that cover the body against cold."
+ },
+ {
+  "id": "water_skin",
+  "n": "Water Skin",
+  "l1": "A whole hide sewn closed around water, a portable bottle for a journey."
+ },
+ {
+  "id": "resin_haft",
+  "n": "Resin Haft",
+  "l1": "A stone tool fixed to its handle with birch tar, which sets hard and holds through heavy use."
  }
 ]
